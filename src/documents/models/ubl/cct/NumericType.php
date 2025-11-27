@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cct;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
 
 class NumericType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var float|null
+     * @var null|float
      * @JMS\Groups({"ubl"})
      * @JMS\Type("float")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class NumericType
     private $value;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class NumericType
     private $format;
 
     /**
-     * @return float|null
+     * @return null|float
      */
     public function getValue(): ?float
     {
@@ -43,7 +43,7 @@ class NumericType
     }
 
     /**
-     * @param float|null $value
+     * @param  null|float $value
      * @return static
      */
     public function setValue(?float $value = null): static
@@ -64,7 +64,7 @@ class NumericType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getFormat(): ?string
     {
@@ -72,7 +72,7 @@ class NumericType
     }
 
     /**
-     * @param string|null $format
+     * @param  null|string $format
      * @return static
      */
     public function setFormat(?string $format = null): static

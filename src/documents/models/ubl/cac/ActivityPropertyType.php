@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Value;
+use JMS\Serializer\Annotation as JMS;
 
 class ActivityPropertyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ActivityPropertyType
     private $name;
 
     /**
-     * @var Value|null
+     * @var null|Value
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Value")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ActivityPropertyType
     private $value;
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -54,7 +54,7 @@ class ActivityPropertyType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -75,7 +75,7 @@ class ActivityPropertyType
     }
 
     /**
-     * @return Value|null
+     * @return null|Value
      */
     public function getValue(): ?Value
     {
@@ -93,7 +93,7 @@ class ActivityPropertyType
     }
 
     /**
-     * @param Value|null $value
+     * @param  null|Value $value
      * @return static
      */
     public function setValue(?Value $value = null): static

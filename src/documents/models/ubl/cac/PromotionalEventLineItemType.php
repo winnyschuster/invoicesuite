@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Amount;
+use JMS\Serializer\Annotation as JMS;
 
 class PromotionalEventLineItemType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Amount|null
+     * @var null|Amount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class PromotionalEventLineItemType
     private $amount;
 
     /**
-     * @var EventLineItem|null
+     * @var null|EventLineItem
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class PromotionalEventLineItemType
     private $eventLineItem;
 
     /**
-     * @return Amount|null
+     * @return null|Amount
      */
     public function getAmount(): ?Amount
     {
@@ -53,7 +53,7 @@ class PromotionalEventLineItemType
     }
 
     /**
-     * @param Amount|null $amount
+     * @param  null|Amount $amount
      * @return static
      */
     public function setAmount(?Amount $amount = null): static
@@ -74,7 +74,7 @@ class PromotionalEventLineItemType
     }
 
     /**
-     * @return EventLineItem|null
+     * @return null|EventLineItem
      */
     public function getEventLineItem(): ?EventLineItem
     {
@@ -92,7 +92,7 @@ class PromotionalEventLineItemType
     }
 
     /**
-     * @param EventLineItem|null $eventLineItem
+     * @param  null|EventLineItem $eventLineItem
      * @return static
      */
     public function setEventLineItem(?EventLineItem $eventLineItem = null): static

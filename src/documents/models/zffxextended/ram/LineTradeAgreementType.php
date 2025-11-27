@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class LineTradeAgreementType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ReferencedDocumentType|null
+     * @var null|ReferencedDocumentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class LineTradeAgreementType
     private $sellerOrderReferencedDocument;
 
     /**
-     * @var ReferencedDocumentType|null
+     * @var null|ReferencedDocumentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class LineTradeAgreementType
     private $buyerOrderReferencedDocument;
 
     /**
-     * @var ReferencedDocumentType|null
+     * @var null|ReferencedDocumentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class LineTradeAgreementType
     private $quotationReferencedDocument;
 
     /**
-     * @var ReferencedDocumentType|null
+     * @var null|ReferencedDocumentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class LineTradeAgreementType
     private $contractReferencedDocument;
 
     /**
-     * @var array<ReferencedDocumentType>|null
+     * @var null|array<ReferencedDocumentType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType>")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class LineTradeAgreementType
     private $additionalReferencedDocument;
 
     /**
-     * @var TradePriceType|null
+     * @var null|TradePriceType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePriceType")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class LineTradeAgreementType
     private $grossPriceProductTradePrice;
 
     /**
-     * @var TradePriceType|null
+     * @var null|TradePriceType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePriceType")
      * @JMS\Expose
@@ -90,7 +90,7 @@ class LineTradeAgreementType
     private $netPriceProductTradePrice;
 
     /**
-     * @var array<ReferencedDocumentType>|null
+     * @var null|array<ReferencedDocumentType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType>")
      * @JMS\Expose
@@ -102,7 +102,7 @@ class LineTradeAgreementType
     private $ultimateCustomerOrderReferencedDocument;
 
     /**
-     * @return ReferencedDocumentType|null
+     * @return null|ReferencedDocumentType
      */
     public function getSellerOrderReferencedDocument(): ?ReferencedDocumentType
     {
@@ -120,7 +120,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param ReferencedDocumentType|null $sellerOrderReferencedDocument
+     * @param  null|ReferencedDocumentType $sellerOrderReferencedDocument
      * @return static
      */
     public function setSellerOrderReferencedDocument(
@@ -142,7 +142,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return ReferencedDocumentType|null
+     * @return null|ReferencedDocumentType
      */
     public function getBuyerOrderReferencedDocument(): ?ReferencedDocumentType
     {
@@ -160,7 +160,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param ReferencedDocumentType|null $buyerOrderReferencedDocument
+     * @param  null|ReferencedDocumentType $buyerOrderReferencedDocument
      * @return static
      */
     public function setBuyerOrderReferencedDocument(
@@ -182,7 +182,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return ReferencedDocumentType|null
+     * @return null|ReferencedDocumentType
      */
     public function getQuotationReferencedDocument(): ?ReferencedDocumentType
     {
@@ -200,7 +200,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param ReferencedDocumentType|null $quotationReferencedDocument
+     * @param  null|ReferencedDocumentType $quotationReferencedDocument
      * @return static
      */
     public function setQuotationReferencedDocument(?ReferencedDocumentType $quotationReferencedDocument = null): static
@@ -221,7 +221,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return ReferencedDocumentType|null
+     * @return null|ReferencedDocumentType
      */
     public function getContractReferencedDocument(): ?ReferencedDocumentType
     {
@@ -239,7 +239,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param ReferencedDocumentType|null $contractReferencedDocument
+     * @param  null|ReferencedDocumentType $contractReferencedDocument
      * @return static
      */
     public function setContractReferencedDocument(?ReferencedDocumentType $contractReferencedDocument = null): static
@@ -260,7 +260,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return array<ReferencedDocumentType>|null
+     * @return null|array<ReferencedDocumentType>
      */
     public function getAdditionalReferencedDocument(): ?array
     {
@@ -268,7 +268,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param array<ReferencedDocumentType>|null $additionalReferencedDocument
+     * @param  null|array<ReferencedDocumentType> $additionalReferencedDocument
      * @return static
      */
     public function setAdditionalReferencedDocument(?array $additionalReferencedDocument = null): static
@@ -299,7 +299,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param ReferencedDocumentType $additionalReferencedDocument
+     * @param  ReferencedDocumentType $additionalReferencedDocument
      * @return static
      */
     public function addToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): static
@@ -320,7 +320,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param ReferencedDocumentType $additionalReferencedDocument
+     * @param  ReferencedDocumentType $additionalReferencedDocument
      * @return static
      */
     public function addOnceToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): static
@@ -351,7 +351,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return TradePriceType|null
+     * @return null|TradePriceType
      */
     public function getGrossPriceProductTradePrice(): ?TradePriceType
     {
@@ -369,7 +369,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param TradePriceType|null $grossPriceProductTradePrice
+     * @param  null|TradePriceType $grossPriceProductTradePrice
      * @return static
      */
     public function setGrossPriceProductTradePrice(?TradePriceType $grossPriceProductTradePrice = null): static
@@ -390,7 +390,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return TradePriceType|null
+     * @return null|TradePriceType
      */
     public function getNetPriceProductTradePrice(): ?TradePriceType
     {
@@ -408,7 +408,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param TradePriceType|null $netPriceProductTradePrice
+     * @param  null|TradePriceType $netPriceProductTradePrice
      * @return static
      */
     public function setNetPriceProductTradePrice(?TradePriceType $netPriceProductTradePrice = null): static
@@ -429,7 +429,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return array<ReferencedDocumentType>|null
+     * @return null|array<ReferencedDocumentType>
      */
     public function getUltimateCustomerOrderReferencedDocument(): ?array
     {
@@ -437,7 +437,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param array<ReferencedDocumentType>|null $ultimateCustomerOrderReferencedDocument
+     * @param  null|array<ReferencedDocumentType> $ultimateCustomerOrderReferencedDocument
      * @return static
      */
     public function setUltimateCustomerOrderReferencedDocument(
@@ -469,7 +469,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param ReferencedDocumentType $ultimateCustomerOrderReferencedDocument
+     * @param  ReferencedDocumentType $ultimateCustomerOrderReferencedDocument
      * @return static
      */
     public function addToUltimateCustomerOrderReferencedDocument(
@@ -491,7 +491,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param ReferencedDocumentType $ultimateCustomerOrderReferencedDocument
+     * @param  ReferencedDocumentType $ultimateCustomerOrderReferencedDocument
      * @return static
      */
     public function addOnceToUltimateCustomerOrderReferencedDocument(

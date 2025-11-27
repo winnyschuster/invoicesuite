@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MandateTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPaidAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPaymentInstructionsNumeric;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SignatureID;
+use JMS\Serializer\Annotation as JMS;
 
 class PaymentMandateType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class PaymentMandateType
     private $iD;
 
     /**
-     * @var MandateTypeCode|null
+     * @var null|MandateTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MandateTypeCode")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class PaymentMandateType
     private $mandateTypeCode;
 
     /**
-     * @var MaximumPaymentInstructionsNumeric|null
+     * @var null|MaximumPaymentInstructionsNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPaymentInstructionsNumeric")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class PaymentMandateType
     private $maximumPaymentInstructionsNumeric;
 
     /**
-     * @var MaximumPaidAmount|null
+     * @var null|MaximumPaidAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPaidAmount")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class PaymentMandateType
     private $maximumPaidAmount;
 
     /**
-     * @var SignatureID|null
+     * @var null|SignatureID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SignatureID")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class PaymentMandateType
     private $signatureID;
 
     /**
-     * @var PayerParty|null
+     * @var null|PayerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PayerParty")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class PaymentMandateType
     private $payerParty;
 
     /**
-     * @var PayerFinancialAccount|null
+     * @var null|PayerFinancialAccount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PayerFinancialAccount")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class PaymentMandateType
     private $payerFinancialAccount;
 
     /**
-     * @var ValidityPeriod|null
+     * @var null|ValidityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod")
      * @JMS\Expose
@@ -105,7 +105,7 @@ class PaymentMandateType
     private $validityPeriod;
 
     /**
-     * @var PaymentReversalPeriod|null
+     * @var null|PaymentReversalPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PaymentReversalPeriod")
      * @JMS\Expose
@@ -116,7 +116,7 @@ class PaymentMandateType
     private $paymentReversalPeriod;
 
     /**
-     * @var array<Clause>|null
+     * @var null|array<Clause>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Clause>")
      * @JMS\Expose
@@ -128,7 +128,7 @@ class PaymentMandateType
     private $clause;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -146,7 +146,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -167,7 +167,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return MandateTypeCode|null
+     * @return null|MandateTypeCode
      */
     public function getMandateTypeCode(): ?MandateTypeCode
     {
@@ -185,7 +185,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param MandateTypeCode|null $mandateTypeCode
+     * @param  null|MandateTypeCode $mandateTypeCode
      * @return static
      */
     public function setMandateTypeCode(?MandateTypeCode $mandateTypeCode = null): static
@@ -206,7 +206,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return MaximumPaymentInstructionsNumeric|null
+     * @return null|MaximumPaymentInstructionsNumeric
      */
     public function getMaximumPaymentInstructionsNumeric(): ?MaximumPaymentInstructionsNumeric
     {
@@ -224,7 +224,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param MaximumPaymentInstructionsNumeric|null $maximumPaymentInstructionsNumeric
+     * @param  null|MaximumPaymentInstructionsNumeric $maximumPaymentInstructionsNumeric
      * @return static
      */
     public function setMaximumPaymentInstructionsNumeric(
@@ -246,7 +246,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return MaximumPaidAmount|null
+     * @return null|MaximumPaidAmount
      */
     public function getMaximumPaidAmount(): ?MaximumPaidAmount
     {
@@ -264,7 +264,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param MaximumPaidAmount|null $maximumPaidAmount
+     * @param  null|MaximumPaidAmount $maximumPaidAmount
      * @return static
      */
     public function setMaximumPaidAmount(?MaximumPaidAmount $maximumPaidAmount = null): static
@@ -285,7 +285,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return SignatureID|null
+     * @return null|SignatureID
      */
     public function getSignatureID(): ?SignatureID
     {
@@ -303,7 +303,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param SignatureID|null $signatureID
+     * @param  null|SignatureID $signatureID
      * @return static
      */
     public function setSignatureID(?SignatureID $signatureID = null): static
@@ -324,7 +324,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return PayerParty|null
+     * @return null|PayerParty
      */
     public function getPayerParty(): ?PayerParty
     {
@@ -342,7 +342,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param PayerParty|null $payerParty
+     * @param  null|PayerParty $payerParty
      * @return static
      */
     public function setPayerParty(?PayerParty $payerParty = null): static
@@ -363,7 +363,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return PayerFinancialAccount|null
+     * @return null|PayerFinancialAccount
      */
     public function getPayerFinancialAccount(): ?PayerFinancialAccount
     {
@@ -381,7 +381,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param PayerFinancialAccount|null $payerFinancialAccount
+     * @param  null|PayerFinancialAccount $payerFinancialAccount
      * @return static
      */
     public function setPayerFinancialAccount(?PayerFinancialAccount $payerFinancialAccount = null): static
@@ -402,7 +402,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return ValidityPeriod|null
+     * @return null|ValidityPeriod
      */
     public function getValidityPeriod(): ?ValidityPeriod
     {
@@ -420,7 +420,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param ValidityPeriod|null $validityPeriod
+     * @param  null|ValidityPeriod $validityPeriod
      * @return static
      */
     public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): static
@@ -441,7 +441,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return PaymentReversalPeriod|null
+     * @return null|PaymentReversalPeriod
      */
     public function getPaymentReversalPeriod(): ?PaymentReversalPeriod
     {
@@ -459,7 +459,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param PaymentReversalPeriod|null $paymentReversalPeriod
+     * @param  null|PaymentReversalPeriod $paymentReversalPeriod
      * @return static
      */
     public function setPaymentReversalPeriod(?PaymentReversalPeriod $paymentReversalPeriod = null): static
@@ -480,7 +480,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return array<Clause>|null
+     * @return null|array<Clause>
      */
     public function getClause(): ?array
     {
@@ -488,7 +488,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param array<Clause>|null $clause
+     * @param  null|array<Clause> $clause
      * @return static
      */
     public function setClause(?array $clause = null): static
@@ -519,7 +519,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return Clause|null
+     * @return null|Clause
      */
     public function firstClause(): ?Clause
     {
@@ -534,7 +534,7 @@ class PaymentMandateType
     }
 
     /**
-     * @return Clause|null
+     * @return null|Clause
      */
     public function lastClause(): ?Clause
     {
@@ -549,7 +549,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param Clause $clause
+     * @param  Clause $clause
      * @return static
      */
     public function addToClause(Clause $clause): static
@@ -570,7 +570,7 @@ class PaymentMandateType
     }
 
     /**
-     * @param Clause $clause
+     * @param  Clause $clause
      * @return static
      */
     public function addOnceToClause(Clause $clause): static

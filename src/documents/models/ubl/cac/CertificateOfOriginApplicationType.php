@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ApplicationStatusCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateType;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\OriginalJobID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousJobID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks;
+use JMS\Serializer\Annotation as JMS;
 
 class CertificateOfOriginApplicationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ReferenceID|null
+     * @var null|ReferenceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class CertificateOfOriginApplicationType
     private $referenceID;
 
     /**
-     * @var CertificateType|null
+     * @var null|CertificateType
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateType")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class CertificateOfOriginApplicationType
     private $certificateType;
 
     /**
-     * @var ApplicationStatusCode|null
+     * @var null|ApplicationStatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ApplicationStatusCode")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class CertificateOfOriginApplicationType
     private $applicationStatusCode;
 
     /**
-     * @var OriginalJobID|null
+     * @var null|OriginalJobID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OriginalJobID")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class CertificateOfOriginApplicationType
     private $originalJobID;
 
     /**
-     * @var PreviousJobID|null
+     * @var null|PreviousJobID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousJobID")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class CertificateOfOriginApplicationType
     private $previousJobID;
 
     /**
-     * @var array<Remarks>|null
+     * @var null|array<Remarks>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class CertificateOfOriginApplicationType
     private $remarks;
 
     /**
-     * @var Shipment|null
+     * @var null|Shipment
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Shipment")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class CertificateOfOriginApplicationType
     private $shipment;
 
     /**
-     * @var array<EndorserParty>|null
+     * @var null|array<EndorserParty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty>")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class CertificateOfOriginApplicationType
     private $endorserParty;
 
     /**
-     * @var PreparationParty|null
+     * @var null|PreparationParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PreparationParty")
      * @JMS\Expose
@@ -119,7 +119,7 @@ class CertificateOfOriginApplicationType
     private $preparationParty;
 
     /**
-     * @var IssuerParty|null
+     * @var null|IssuerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty")
      * @JMS\Expose
@@ -130,7 +130,7 @@ class CertificateOfOriginApplicationType
     private $issuerParty;
 
     /**
-     * @var ExporterParty|null
+     * @var null|ExporterParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExporterParty")
      * @JMS\Expose
@@ -141,7 +141,7 @@ class CertificateOfOriginApplicationType
     private $exporterParty;
 
     /**
-     * @var ImporterParty|null
+     * @var null|ImporterParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ImporterParty")
      * @JMS\Expose
@@ -152,7 +152,7 @@ class CertificateOfOriginApplicationType
     private $importerParty;
 
     /**
-     * @var IssuingCountry|null
+     * @var null|IssuingCountry
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuingCountry")
      * @JMS\Expose
@@ -163,7 +163,7 @@ class CertificateOfOriginApplicationType
     private $issuingCountry;
 
     /**
-     * @var array<DocumentDistribution>|null
+     * @var null|array<DocumentDistribution>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentDistribution>")
      * @JMS\Expose
@@ -175,7 +175,7 @@ class CertificateOfOriginApplicationType
     private $documentDistribution;
 
     /**
-     * @var array<SupportingDocumentReference>|null
+     * @var null|array<SupportingDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SupportingDocumentReference>")
      * @JMS\Expose
@@ -187,7 +187,7 @@ class CertificateOfOriginApplicationType
     private $supportingDocumentReference;
 
     /**
-     * @var array<Signature>|null
+     * @var null|array<Signature>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Signature>")
      * @JMS\Expose
@@ -199,7 +199,7 @@ class CertificateOfOriginApplicationType
     private $signature;
 
     /**
-     * @return ReferenceID|null
+     * @return null|ReferenceID
      */
     public function getReferenceID(): ?ReferenceID
     {
@@ -217,7 +217,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param ReferenceID|null $referenceID
+     * @param  null|ReferenceID $referenceID
      * @return static
      */
     public function setReferenceID(?ReferenceID $referenceID = null): static
@@ -238,7 +238,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return CertificateType|null
+     * @return null|CertificateType
      */
     public function getCertificateType(): ?CertificateType
     {
@@ -256,7 +256,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param CertificateType|null $certificateType
+     * @param  null|CertificateType $certificateType
      * @return static
      */
     public function setCertificateType(?CertificateType $certificateType = null): static
@@ -277,7 +277,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return ApplicationStatusCode|null
+     * @return null|ApplicationStatusCode
      */
     public function getApplicationStatusCode(): ?ApplicationStatusCode
     {
@@ -295,7 +295,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param ApplicationStatusCode|null $applicationStatusCode
+     * @param  null|ApplicationStatusCode $applicationStatusCode
      * @return static
      */
     public function setApplicationStatusCode(?ApplicationStatusCode $applicationStatusCode = null): static
@@ -316,7 +316,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return OriginalJobID|null
+     * @return null|OriginalJobID
      */
     public function getOriginalJobID(): ?OriginalJobID
     {
@@ -334,7 +334,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param OriginalJobID|null $originalJobID
+     * @param  null|OriginalJobID $originalJobID
      * @return static
      */
     public function setOriginalJobID(?OriginalJobID $originalJobID = null): static
@@ -355,7 +355,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return PreviousJobID|null
+     * @return null|PreviousJobID
      */
     public function getPreviousJobID(): ?PreviousJobID
     {
@@ -373,7 +373,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param PreviousJobID|null $previousJobID
+     * @param  null|PreviousJobID $previousJobID
      * @return static
      */
     public function setPreviousJobID(?PreviousJobID $previousJobID = null): static
@@ -394,7 +394,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return array<Remarks>|null
+     * @return null|array<Remarks>
      */
     public function getRemarks(): ?array
     {
@@ -402,7 +402,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param array<Remarks>|null $remarks
+     * @param  null|array<Remarks> $remarks
      * @return static
      */
     public function setRemarks(?array $remarks = null): static
@@ -433,7 +433,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return Remarks|null
+     * @return null|Remarks
      */
     public function firstRemarks(): ?Remarks
     {
@@ -448,7 +448,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return Remarks|null
+     * @return null|Remarks
      */
     public function lastRemarks(): ?Remarks
     {
@@ -463,7 +463,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param Remarks $remarks
+     * @param  Remarks $remarks
      * @return static
      */
     public function addToRemarks(Remarks $remarks): static
@@ -484,7 +484,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param Remarks $remarks
+     * @param  Remarks $remarks
      * @return static
      */
     public function addOnceToRemarks(Remarks $remarks): static
@@ -515,7 +515,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return Shipment|null
+     * @return null|Shipment
      */
     public function getShipment(): ?Shipment
     {
@@ -533,7 +533,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param Shipment|null $shipment
+     * @param  null|Shipment $shipment
      * @return static
      */
     public function setShipment(?Shipment $shipment = null): static
@@ -554,7 +554,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return array<EndorserParty>|null
+     * @return null|array<EndorserParty>
      */
     public function getEndorserParty(): ?array
     {
@@ -562,7 +562,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param array<EndorserParty>|null $endorserParty
+     * @param  null|array<EndorserParty> $endorserParty
      * @return static
      */
     public function setEndorserParty(?array $endorserParty = null): static
@@ -593,7 +593,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return EndorserParty|null
+     * @return null|EndorserParty
      */
     public function firstEndorserParty(): ?EndorserParty
     {
@@ -608,7 +608,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return EndorserParty|null
+     * @return null|EndorserParty
      */
     public function lastEndorserParty(): ?EndorserParty
     {
@@ -623,7 +623,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param EndorserParty $endorserParty
+     * @param  EndorserParty $endorserParty
      * @return static
      */
     public function addToEndorserParty(EndorserParty $endorserParty): static
@@ -644,7 +644,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param EndorserParty $endorserParty
+     * @param  EndorserParty $endorserParty
      * @return static
      */
     public function addOnceToEndorserParty(EndorserParty $endorserParty): static
@@ -675,7 +675,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return PreparationParty|null
+     * @return null|PreparationParty
      */
     public function getPreparationParty(): ?PreparationParty
     {
@@ -693,7 +693,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param PreparationParty|null $preparationParty
+     * @param  null|PreparationParty $preparationParty
      * @return static
      */
     public function setPreparationParty(?PreparationParty $preparationParty = null): static
@@ -714,7 +714,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return IssuerParty|null
+     * @return null|IssuerParty
      */
     public function getIssuerParty(): ?IssuerParty
     {
@@ -732,7 +732,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param IssuerParty|null $issuerParty
+     * @param  null|IssuerParty $issuerParty
      * @return static
      */
     public function setIssuerParty(?IssuerParty $issuerParty = null): static
@@ -753,7 +753,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return ExporterParty|null
+     * @return null|ExporterParty
      */
     public function getExporterParty(): ?ExporterParty
     {
@@ -771,7 +771,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param ExporterParty|null $exporterParty
+     * @param  null|ExporterParty $exporterParty
      * @return static
      */
     public function setExporterParty(?ExporterParty $exporterParty = null): static
@@ -792,7 +792,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return ImporterParty|null
+     * @return null|ImporterParty
      */
     public function getImporterParty(): ?ImporterParty
     {
@@ -810,7 +810,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param ImporterParty|null $importerParty
+     * @param  null|ImporterParty $importerParty
      * @return static
      */
     public function setImporterParty(?ImporterParty $importerParty = null): static
@@ -831,7 +831,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return IssuingCountry|null
+     * @return null|IssuingCountry
      */
     public function getIssuingCountry(): ?IssuingCountry
     {
@@ -849,7 +849,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param IssuingCountry|null $issuingCountry
+     * @param  null|IssuingCountry $issuingCountry
      * @return static
      */
     public function setIssuingCountry(?IssuingCountry $issuingCountry = null): static
@@ -870,7 +870,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return array<DocumentDistribution>|null
+     * @return null|array<DocumentDistribution>
      */
     public function getDocumentDistribution(): ?array
     {
@@ -878,7 +878,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param array<DocumentDistribution>|null $documentDistribution
+     * @param  null|array<DocumentDistribution> $documentDistribution
      * @return static
      */
     public function setDocumentDistribution(?array $documentDistribution = null): static
@@ -909,7 +909,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return DocumentDistribution|null
+     * @return null|DocumentDistribution
      */
     public function firstDocumentDistribution(): ?DocumentDistribution
     {
@@ -924,7 +924,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return DocumentDistribution|null
+     * @return null|DocumentDistribution
      */
     public function lastDocumentDistribution(): ?DocumentDistribution
     {
@@ -939,7 +939,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param DocumentDistribution $documentDistribution
+     * @param  DocumentDistribution $documentDistribution
      * @return static
      */
     public function addToDocumentDistribution(DocumentDistribution $documentDistribution): static
@@ -960,7 +960,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param DocumentDistribution $documentDistribution
+     * @param  DocumentDistribution $documentDistribution
      * @return static
      */
     public function addOnceToDocumentDistribution(DocumentDistribution $documentDistribution): static
@@ -991,7 +991,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return array<SupportingDocumentReference>|null
+     * @return null|array<SupportingDocumentReference>
      */
     public function getSupportingDocumentReference(): ?array
     {
@@ -999,7 +999,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param array<SupportingDocumentReference>|null $supportingDocumentReference
+     * @param  null|array<SupportingDocumentReference> $supportingDocumentReference
      * @return static
      */
     public function setSupportingDocumentReference(?array $supportingDocumentReference = null): static
@@ -1030,7 +1030,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return SupportingDocumentReference|null
+     * @return null|SupportingDocumentReference
      */
     public function firstSupportingDocumentReference(): ?SupportingDocumentReference
     {
@@ -1045,7 +1045,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return SupportingDocumentReference|null
+     * @return null|SupportingDocumentReference
      */
     public function lastSupportingDocumentReference(): ?SupportingDocumentReference
     {
@@ -1060,7 +1060,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param SupportingDocumentReference $supportingDocumentReference
+     * @param  SupportingDocumentReference $supportingDocumentReference
      * @return static
      */
     public function addToSupportingDocumentReference(SupportingDocumentReference $supportingDocumentReference): static
@@ -1081,7 +1081,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param SupportingDocumentReference $supportingDocumentReference
+     * @param  SupportingDocumentReference $supportingDocumentReference
      * @return static
      */
     public function addOnceToSupportingDocumentReference(
@@ -1113,7 +1113,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return array<Signature>|null
+     * @return null|array<Signature>
      */
     public function getSignature(): ?array
     {
@@ -1121,7 +1121,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param array<Signature>|null $signature
+     * @param  null|array<Signature> $signature
      * @return static
      */
     public function setSignature(?array $signature = null): static
@@ -1152,7 +1152,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return Signature|null
+     * @return null|Signature
      */
     public function firstSignature(): ?Signature
     {
@@ -1167,7 +1167,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @return Signature|null
+     * @return null|Signature
      */
     public function lastSignature(): ?Signature
     {
@@ -1182,7 +1182,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param Signature $signature
+     * @param  Signature $signature
      * @return static
      */
     public function addToSignature(Signature $signature): static
@@ -1203,7 +1203,7 @@ class CertificateOfOriginApplicationType
     }
 
     /**
-     * @param Signature $signature
+     * @param  Signature $signature
      * @return static
      */
     public function addOnceToSignature(Signature $signature): static

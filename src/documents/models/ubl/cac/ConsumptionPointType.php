@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberType;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalDeliveredQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class ConsumptionPointType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class ConsumptionPointType
     private $iD;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class ConsumptionPointType
     private $description;
 
     /**
-     * @var SubscriberID|null
+     * @var null|SubscriberID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberID")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class ConsumptionPointType
     private $subscriberID;
 
     /**
-     * @var SubscriberType|null
+     * @var null|SubscriberType
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberType")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class ConsumptionPointType
     private $subscriberType;
 
     /**
-     * @var SubscriberTypeCode|null
+     * @var null|SubscriberTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberTypeCode")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class ConsumptionPointType
     private $subscriberTypeCode;
 
     /**
-     * @var TotalDeliveredQuantity|null
+     * @var null|TotalDeliveredQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalDeliveredQuantity")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class ConsumptionPointType
     private $totalDeliveredQuantity;
 
     /**
-     * @var Address|null
+     * @var null|Address
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Address")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class ConsumptionPointType
     private $address;
 
     /**
-     * @var WebSiteAccess|null
+     * @var null|WebSiteAccess
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\WebSiteAccess")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class ConsumptionPointType
     private $webSiteAccess;
 
     /**
-     * @var array<UtilityMeter>|null
+     * @var null|array<UtilityMeter>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\UtilityMeter>")
      * @JMS\Expose
@@ -119,7 +119,7 @@ class ConsumptionPointType
     private $utilityMeter;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -137,7 +137,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -158,7 +158,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -166,7 +166,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -197,7 +197,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -212,7 +212,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -227,7 +227,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -248,7 +248,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -279,7 +279,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return SubscriberID|null
+     * @return null|SubscriberID
      */
     public function getSubscriberID(): ?SubscriberID
     {
@@ -297,7 +297,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param SubscriberID|null $subscriberID
+     * @param  null|SubscriberID $subscriberID
      * @return static
      */
     public function setSubscriberID(?SubscriberID $subscriberID = null): static
@@ -318,7 +318,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return SubscriberType|null
+     * @return null|SubscriberType
      */
     public function getSubscriberType(): ?SubscriberType
     {
@@ -336,7 +336,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param SubscriberType|null $subscriberType
+     * @param  null|SubscriberType $subscriberType
      * @return static
      */
     public function setSubscriberType(?SubscriberType $subscriberType = null): static
@@ -357,7 +357,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return SubscriberTypeCode|null
+     * @return null|SubscriberTypeCode
      */
     public function getSubscriberTypeCode(): ?SubscriberTypeCode
     {
@@ -375,7 +375,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param SubscriberTypeCode|null $subscriberTypeCode
+     * @param  null|SubscriberTypeCode $subscriberTypeCode
      * @return static
      */
     public function setSubscriberTypeCode(?SubscriberTypeCode $subscriberTypeCode = null): static
@@ -396,7 +396,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return TotalDeliveredQuantity|null
+     * @return null|TotalDeliveredQuantity
      */
     public function getTotalDeliveredQuantity(): ?TotalDeliveredQuantity
     {
@@ -414,7 +414,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param TotalDeliveredQuantity|null $totalDeliveredQuantity
+     * @param  null|TotalDeliveredQuantity $totalDeliveredQuantity
      * @return static
      */
     public function setTotalDeliveredQuantity(?TotalDeliveredQuantity $totalDeliveredQuantity = null): static
@@ -435,7 +435,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return Address|null
+     * @return null|Address
      */
     public function getAddress(): ?Address
     {
@@ -453,7 +453,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param Address|null $address
+     * @param  null|Address $address
      * @return static
      */
     public function setAddress(?Address $address = null): static
@@ -474,7 +474,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return WebSiteAccess|null
+     * @return null|WebSiteAccess
      */
     public function getWebSiteAccess(): ?WebSiteAccess
     {
@@ -492,7 +492,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param WebSiteAccess|null $webSiteAccess
+     * @param  null|WebSiteAccess $webSiteAccess
      * @return static
      */
     public function setWebSiteAccess(?WebSiteAccess $webSiteAccess = null): static
@@ -513,7 +513,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return array<UtilityMeter>|null
+     * @return null|array<UtilityMeter>
      */
     public function getUtilityMeter(): ?array
     {
@@ -521,7 +521,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param array<UtilityMeter>|null $utilityMeter
+     * @param  null|array<UtilityMeter> $utilityMeter
      * @return static
      */
     public function setUtilityMeter(?array $utilityMeter = null): static
@@ -552,7 +552,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return UtilityMeter|null
+     * @return null|UtilityMeter
      */
     public function firstUtilityMeter(): ?UtilityMeter
     {
@@ -567,7 +567,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @return UtilityMeter|null
+     * @return null|UtilityMeter
      */
     public function lastUtilityMeter(): ?UtilityMeter
     {
@@ -582,7 +582,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param UtilityMeter $utilityMeter
+     * @param  UtilityMeter $utilityMeter
      * @return static
      */
     public function addToUtilityMeter(UtilityMeter $utilityMeter): static
@@ -603,7 +603,7 @@ class ConsumptionPointType
     }
 
     /**
-     * @param UtilityMeter $utilityMeter
+     * @param  UtilityMeter $utilityMeter
      * @return static
      */
     public function addOnceToUtilityMeter(UtilityMeter $utilityMeter): static

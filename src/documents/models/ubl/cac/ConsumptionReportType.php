@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BasicConsumedQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumersEnergyLevel;
@@ -19,13 +18,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\ResidenceType;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ResidenceTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ResidentOccupantsNumeric;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalConsumedQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class ConsumptionReportType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ConsumptionReportType
     private $iD;
 
     /**
-     * @var ConsumptionType|null
+     * @var null|ConsumptionType
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class ConsumptionReportType
     private $consumptionType;
 
     /**
-     * @var ConsumptionTypeCode|null
+     * @var null|ConsumptionTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class ConsumptionReportType
     private $consumptionTypeCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class ConsumptionReportType
     private $description;
 
     /**
-     * @var TotalConsumedQuantity|null
+     * @var null|TotalConsumedQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalConsumedQuantity")
      * @JMS\Expose
@@ -81,7 +81,7 @@ class ConsumptionReportType
     private $totalConsumedQuantity;
 
     /**
-     * @var BasicConsumedQuantity|null
+     * @var null|BasicConsumedQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BasicConsumedQuantity")
      * @JMS\Expose
@@ -92,7 +92,7 @@ class ConsumptionReportType
     private $basicConsumedQuantity;
 
     /**
-     * @var ResidentOccupantsNumeric|null
+     * @var null|ResidentOccupantsNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ResidentOccupantsNumeric")
      * @JMS\Expose
@@ -103,7 +103,7 @@ class ConsumptionReportType
     private $residentOccupantsNumeric;
 
     /**
-     * @var ConsumersEnergyLevelCode|null
+     * @var null|ConsumersEnergyLevelCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumersEnergyLevelCode")
      * @JMS\Expose
@@ -114,7 +114,7 @@ class ConsumptionReportType
     private $consumersEnergyLevelCode;
 
     /**
-     * @var ConsumersEnergyLevel|null
+     * @var null|ConsumersEnergyLevel
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumersEnergyLevel")
      * @JMS\Expose
@@ -125,7 +125,7 @@ class ConsumptionReportType
     private $consumersEnergyLevel;
 
     /**
-     * @var ResidenceType|null
+     * @var null|ResidenceType
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ResidenceType")
      * @JMS\Expose
@@ -136,7 +136,7 @@ class ConsumptionReportType
     private $residenceType;
 
     /**
-     * @var ResidenceTypeCode|null
+     * @var null|ResidenceTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ResidenceTypeCode")
      * @JMS\Expose
@@ -147,7 +147,7 @@ class ConsumptionReportType
     private $residenceTypeCode;
 
     /**
-     * @var HeatingType|null
+     * @var null|HeatingType
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HeatingType")
      * @JMS\Expose
@@ -158,7 +158,7 @@ class ConsumptionReportType
     private $heatingType;
 
     /**
-     * @var HeatingTypeCode|null
+     * @var null|HeatingTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HeatingTypeCode")
      * @JMS\Expose
@@ -169,7 +169,7 @@ class ConsumptionReportType
     private $heatingTypeCode;
 
     /**
-     * @var Period|null
+     * @var null|Period
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Period")
      * @JMS\Expose
@@ -180,7 +180,7 @@ class ConsumptionReportType
     private $period;
 
     /**
-     * @var GuidanceDocumentReference|null
+     * @var null|GuidanceDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\GuidanceDocumentReference")
      * @JMS\Expose
@@ -191,7 +191,7 @@ class ConsumptionReportType
     private $guidanceDocumentReference;
 
     /**
-     * @var DocumentReference|null
+     * @var null|DocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference")
      * @JMS\Expose
@@ -202,7 +202,7 @@ class ConsumptionReportType
     private $documentReference;
 
     /**
-     * @var array<ConsumptionReportReference>|null
+     * @var null|array<ConsumptionReportReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReportReference>")
      * @JMS\Expose
@@ -214,7 +214,7 @@ class ConsumptionReportType
     private $consumptionReportReference;
 
     /**
-     * @var array<ConsumptionHistory>|null
+     * @var null|array<ConsumptionHistory>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionHistory>")
      * @JMS\Expose
@@ -226,7 +226,7 @@ class ConsumptionReportType
     private $consumptionHistory;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -244,7 +244,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -265,7 +265,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return ConsumptionType|null
+     * @return null|ConsumptionType
      */
     public function getConsumptionType(): ?ConsumptionType
     {
@@ -283,7 +283,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param ConsumptionType|null $consumptionType
+     * @param  null|ConsumptionType $consumptionType
      * @return static
      */
     public function setConsumptionType(?ConsumptionType $consumptionType = null): static
@@ -304,7 +304,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return ConsumptionTypeCode|null
+     * @return null|ConsumptionTypeCode
      */
     public function getConsumptionTypeCode(): ?ConsumptionTypeCode
     {
@@ -322,7 +322,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param ConsumptionTypeCode|null $consumptionTypeCode
+     * @param  null|ConsumptionTypeCode $consumptionTypeCode
      * @return static
      */
     public function setConsumptionTypeCode(?ConsumptionTypeCode $consumptionTypeCode = null): static
@@ -343,7 +343,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -351,7 +351,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -382,7 +382,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -397,7 +397,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -412,7 +412,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -433,7 +433,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -464,7 +464,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return TotalConsumedQuantity|null
+     * @return null|TotalConsumedQuantity
      */
     public function getTotalConsumedQuantity(): ?TotalConsumedQuantity
     {
@@ -482,7 +482,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param TotalConsumedQuantity|null $totalConsumedQuantity
+     * @param  null|TotalConsumedQuantity $totalConsumedQuantity
      * @return static
      */
     public function setTotalConsumedQuantity(?TotalConsumedQuantity $totalConsumedQuantity = null): static
@@ -503,7 +503,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return BasicConsumedQuantity|null
+     * @return null|BasicConsumedQuantity
      */
     public function getBasicConsumedQuantity(): ?BasicConsumedQuantity
     {
@@ -521,7 +521,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param BasicConsumedQuantity|null $basicConsumedQuantity
+     * @param  null|BasicConsumedQuantity $basicConsumedQuantity
      * @return static
      */
     public function setBasicConsumedQuantity(?BasicConsumedQuantity $basicConsumedQuantity = null): static
@@ -542,7 +542,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return ResidentOccupantsNumeric|null
+     * @return null|ResidentOccupantsNumeric
      */
     public function getResidentOccupantsNumeric(): ?ResidentOccupantsNumeric
     {
@@ -560,7 +560,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param ResidentOccupantsNumeric|null $residentOccupantsNumeric
+     * @param  null|ResidentOccupantsNumeric $residentOccupantsNumeric
      * @return static
      */
     public function setResidentOccupantsNumeric(?ResidentOccupantsNumeric $residentOccupantsNumeric = null): static
@@ -581,7 +581,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return ConsumersEnergyLevelCode|null
+     * @return null|ConsumersEnergyLevelCode
      */
     public function getConsumersEnergyLevelCode(): ?ConsumersEnergyLevelCode
     {
@@ -599,7 +599,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param ConsumersEnergyLevelCode|null $consumersEnergyLevelCode
+     * @param  null|ConsumersEnergyLevelCode $consumersEnergyLevelCode
      * @return static
      */
     public function setConsumersEnergyLevelCode(?ConsumersEnergyLevelCode $consumersEnergyLevelCode = null): static
@@ -620,7 +620,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return ConsumersEnergyLevel|null
+     * @return null|ConsumersEnergyLevel
      */
     public function getConsumersEnergyLevel(): ?ConsumersEnergyLevel
     {
@@ -638,7 +638,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param ConsumersEnergyLevel|null $consumersEnergyLevel
+     * @param  null|ConsumersEnergyLevel $consumersEnergyLevel
      * @return static
      */
     public function setConsumersEnergyLevel(?ConsumersEnergyLevel $consumersEnergyLevel = null): static
@@ -659,7 +659,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return ResidenceType|null
+     * @return null|ResidenceType
      */
     public function getResidenceType(): ?ResidenceType
     {
@@ -677,7 +677,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param ResidenceType|null $residenceType
+     * @param  null|ResidenceType $residenceType
      * @return static
      */
     public function setResidenceType(?ResidenceType $residenceType = null): static
@@ -698,7 +698,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return ResidenceTypeCode|null
+     * @return null|ResidenceTypeCode
      */
     public function getResidenceTypeCode(): ?ResidenceTypeCode
     {
@@ -716,7 +716,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param ResidenceTypeCode|null $residenceTypeCode
+     * @param  null|ResidenceTypeCode $residenceTypeCode
      * @return static
      */
     public function setResidenceTypeCode(?ResidenceTypeCode $residenceTypeCode = null): static
@@ -737,7 +737,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return HeatingType|null
+     * @return null|HeatingType
      */
     public function getHeatingType(): ?HeatingType
     {
@@ -755,7 +755,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param HeatingType|null $heatingType
+     * @param  null|HeatingType $heatingType
      * @return static
      */
     public function setHeatingType(?HeatingType $heatingType = null): static
@@ -776,7 +776,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return HeatingTypeCode|null
+     * @return null|HeatingTypeCode
      */
     public function getHeatingTypeCode(): ?HeatingTypeCode
     {
@@ -794,7 +794,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param HeatingTypeCode|null $heatingTypeCode
+     * @param  null|HeatingTypeCode $heatingTypeCode
      * @return static
      */
     public function setHeatingTypeCode(?HeatingTypeCode $heatingTypeCode = null): static
@@ -815,7 +815,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return Period|null
+     * @return null|Period
      */
     public function getPeriod(): ?Period
     {
@@ -833,7 +833,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param Period|null $period
+     * @param  null|Period $period
      * @return static
      */
     public function setPeriod(?Period $period = null): static
@@ -854,7 +854,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return GuidanceDocumentReference|null
+     * @return null|GuidanceDocumentReference
      */
     public function getGuidanceDocumentReference(): ?GuidanceDocumentReference
     {
@@ -872,7 +872,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param GuidanceDocumentReference|null $guidanceDocumentReference
+     * @param  null|GuidanceDocumentReference $guidanceDocumentReference
      * @return static
      */
     public function setGuidanceDocumentReference(?GuidanceDocumentReference $guidanceDocumentReference = null): static
@@ -893,7 +893,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function getDocumentReference(): ?DocumentReference
     {
@@ -911,7 +911,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param DocumentReference|null $documentReference
+     * @param  null|DocumentReference $documentReference
      * @return static
      */
     public function setDocumentReference(?DocumentReference $documentReference = null): static
@@ -932,7 +932,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return array<ConsumptionReportReference>|null
+     * @return null|array<ConsumptionReportReference>
      */
     public function getConsumptionReportReference(): ?array
     {
@@ -940,7 +940,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param array<ConsumptionReportReference>|null $consumptionReportReference
+     * @param  null|array<ConsumptionReportReference> $consumptionReportReference
      * @return static
      */
     public function setConsumptionReportReference(?array $consumptionReportReference = null): static
@@ -971,7 +971,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return ConsumptionReportReference|null
+     * @return null|ConsumptionReportReference
      */
     public function firstConsumptionReportReference(): ?ConsumptionReportReference
     {
@@ -986,7 +986,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return ConsumptionReportReference|null
+     * @return null|ConsumptionReportReference
      */
     public function lastConsumptionReportReference(): ?ConsumptionReportReference
     {
@@ -1001,7 +1001,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param ConsumptionReportReference $consumptionReportReference
+     * @param  ConsumptionReportReference $consumptionReportReference
      * @return static
      */
     public function addToConsumptionReportReference(ConsumptionReportReference $consumptionReportReference): static
@@ -1022,7 +1022,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param ConsumptionReportReference $consumptionReportReference
+     * @param  ConsumptionReportReference $consumptionReportReference
      * @return static
      */
     public function addOnceToConsumptionReportReference(ConsumptionReportReference $consumptionReportReference): static
@@ -1053,7 +1053,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return array<ConsumptionHistory>|null
+     * @return null|array<ConsumptionHistory>
      */
     public function getConsumptionHistory(): ?array
     {
@@ -1061,7 +1061,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param array<ConsumptionHistory>|null $consumptionHistory
+     * @param  null|array<ConsumptionHistory> $consumptionHistory
      * @return static
      */
     public function setConsumptionHistory(?array $consumptionHistory = null): static
@@ -1092,7 +1092,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return ConsumptionHistory|null
+     * @return null|ConsumptionHistory
      */
     public function firstConsumptionHistory(): ?ConsumptionHistory
     {
@@ -1107,7 +1107,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @return ConsumptionHistory|null
+     * @return null|ConsumptionHistory
      */
     public function lastConsumptionHistory(): ?ConsumptionHistory
     {
@@ -1122,7 +1122,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param ConsumptionHistory $consumptionHistory
+     * @param  ConsumptionHistory $consumptionHistory
      * @return static
      */
     public function addToConsumptionHistory(ConsumptionHistory $consumptionHistory): static
@@ -1143,7 +1143,7 @@ class ConsumptionReportType
     }
 
     /**
-     * @param ConsumptionHistory $consumptionHistory
+     * @param  ConsumptionHistory $consumptionHistory
      * @return static
      */
     public function addOnceToConsumptionHistory(ConsumptionHistory $consumptionHistory): static

@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ResponseCode;
+use JMS\Serializer\Annotation as JMS;
 
 class ResponseType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ReferenceID|null
+     * @var null|ReferenceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class ResponseType
     private $referenceID;
 
     /**
-     * @var ResponseCode|null
+     * @var null|ResponseCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ResponseCode")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class ResponseType
     private $responseCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class ResponseType
     private $description;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class ResponseType
     private $effectiveDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class ResponseType
     private $effectiveTime;
 
     /**
-     * @var array<Status>|null
+     * @var null|array<Status>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Status>")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class ResponseType
     private $status;
 
     /**
-     * @return ReferenceID|null
+     * @return null|ReferenceID
      */
     public function getReferenceID(): ?ReferenceID
     {
@@ -102,7 +102,7 @@ class ResponseType
     }
 
     /**
-     * @param ReferenceID|null $referenceID
+     * @param  null|ReferenceID $referenceID
      * @return static
      */
     public function setReferenceID(?ReferenceID $referenceID = null): static
@@ -123,7 +123,7 @@ class ResponseType
     }
 
     /**
-     * @return ResponseCode|null
+     * @return null|ResponseCode
      */
     public function getResponseCode(): ?ResponseCode
     {
@@ -141,7 +141,7 @@ class ResponseType
     }
 
     /**
-     * @param ResponseCode|null $responseCode
+     * @param  null|ResponseCode $responseCode
      * @return static
      */
     public function setResponseCode(?ResponseCode $responseCode = null): static
@@ -162,7 +162,7 @@ class ResponseType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -170,7 +170,7 @@ class ResponseType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -201,7 +201,7 @@ class ResponseType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -216,7 +216,7 @@ class ResponseType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -231,7 +231,7 @@ class ResponseType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -252,7 +252,7 @@ class ResponseType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -283,7 +283,7 @@ class ResponseType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getEffectiveDate(): ?DateTimeInterface
     {
@@ -291,7 +291,7 @@ class ResponseType
     }
 
     /**
-     * @param DateTimeInterface|null $effectiveDate
+     * @param  null|DateTimeInterface $effectiveDate
      * @return static
      */
     public function setEffectiveDate(?DateTimeInterface $effectiveDate = null): static
@@ -312,7 +312,7 @@ class ResponseType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getEffectiveTime(): ?DateTimeInterface
     {
@@ -320,7 +320,7 @@ class ResponseType
     }
 
     /**
-     * @param DateTimeInterface|null $effectiveTime
+     * @param  null|DateTimeInterface $effectiveTime
      * @return static
      */
     public function setEffectiveTime(?DateTimeInterface $effectiveTime = null): static
@@ -341,7 +341,7 @@ class ResponseType
     }
 
     /**
-     * @return array<Status>|null
+     * @return null|array<Status>
      */
     public function getStatus(): ?array
     {
@@ -349,7 +349,7 @@ class ResponseType
     }
 
     /**
-     * @param array<Status>|null $status
+     * @param  null|array<Status> $status
      * @return static
      */
     public function setStatus(?array $status = null): static
@@ -380,7 +380,7 @@ class ResponseType
     }
 
     /**
-     * @return Status|null
+     * @return null|Status
      */
     public function firstStatus(): ?Status
     {
@@ -395,7 +395,7 @@ class ResponseType
     }
 
     /**
-     * @return Status|null
+     * @return null|Status
      */
     public function lastStatus(): ?Status
     {
@@ -410,7 +410,7 @@ class ResponseType
     }
 
     /**
-     * @param Status $status
+     * @param  Status $status
      * @return static
      */
     public function addToStatus(Status $status): static
@@ -431,7 +431,7 @@ class ResponseType
     }
 
     /**
-     * @param Status $status
+     * @param  Status $status
      * @return static
      */
     public function addOnceToStatus(Status $status): static

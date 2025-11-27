@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UtilityStatementTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class ConsumptionType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var UtilityStatementTypeCode|null
+     * @var null|UtilityStatementTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UtilityStatementTypeCode")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class ConsumptionType
     private $utilityStatementTypeCode;
 
     /**
-     * @var MainPeriod|null
+     * @var null|MainPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MainPeriod")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class ConsumptionType
     private $mainPeriod;
 
     /**
-     * @var array<AllowanceCharge>|null
+     * @var null|array<AllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class ConsumptionType
     private $allowanceCharge;
 
     /**
-     * @var array<TaxTotal>|null
+     * @var null|array<TaxTotal>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class ConsumptionType
     private $taxTotal;
 
     /**
-     * @var EnergyWaterSupply|null
+     * @var null|EnergyWaterSupply
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterSupply")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class ConsumptionType
     private $energyWaterSupply;
 
     /**
-     * @var TelecommunicationsSupply|null
+     * @var null|TelecommunicationsSupply
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsSupply")
      * @JMS\Expose
@@ -81,7 +81,7 @@ class ConsumptionType
     private $telecommunicationsSupply;
 
     /**
-     * @var LegalMonetaryTotal|null
+     * @var null|LegalMonetaryTotal
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LegalMonetaryTotal")
      * @JMS\Expose
@@ -92,7 +92,7 @@ class ConsumptionType
     private $legalMonetaryTotal;
 
     /**
-     * @return UtilityStatementTypeCode|null
+     * @return null|UtilityStatementTypeCode
      */
     public function getUtilityStatementTypeCode(): ?UtilityStatementTypeCode
     {
@@ -110,7 +110,7 @@ class ConsumptionType
     }
 
     /**
-     * @param UtilityStatementTypeCode|null $utilityStatementTypeCode
+     * @param  null|UtilityStatementTypeCode $utilityStatementTypeCode
      * @return static
      */
     public function setUtilityStatementTypeCode(?UtilityStatementTypeCode $utilityStatementTypeCode = null): static
@@ -131,7 +131,7 @@ class ConsumptionType
     }
 
     /**
-     * @return MainPeriod|null
+     * @return null|MainPeriod
      */
     public function getMainPeriod(): ?MainPeriod
     {
@@ -149,7 +149,7 @@ class ConsumptionType
     }
 
     /**
-     * @param MainPeriod|null $mainPeriod
+     * @param  null|MainPeriod $mainPeriod
      * @return static
      */
     public function setMainPeriod(?MainPeriod $mainPeriod = null): static
@@ -170,7 +170,7 @@ class ConsumptionType
     }
 
     /**
-     * @return array<AllowanceCharge>|null
+     * @return null|array<AllowanceCharge>
      */
     public function getAllowanceCharge(): ?array
     {
@@ -178,7 +178,7 @@ class ConsumptionType
     }
 
     /**
-     * @param array<AllowanceCharge>|null $allowanceCharge
+     * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): static
@@ -209,7 +209,7 @@ class ConsumptionType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -224,7 +224,7 @@ class ConsumptionType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -239,7 +239,7 @@ class ConsumptionType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -260,7 +260,7 @@ class ConsumptionType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -291,7 +291,7 @@ class ConsumptionType
     }
 
     /**
-     * @return array<TaxTotal>|null
+     * @return null|array<TaxTotal>
      */
     public function getTaxTotal(): ?array
     {
@@ -299,7 +299,7 @@ class ConsumptionType
     }
 
     /**
-     * @param array<TaxTotal>|null $taxTotal
+     * @param  null|array<TaxTotal> $taxTotal
      * @return static
      */
     public function setTaxTotal(?array $taxTotal = null): static
@@ -330,7 +330,7 @@ class ConsumptionType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function firstTaxTotal(): ?TaxTotal
     {
@@ -345,7 +345,7 @@ class ConsumptionType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function lastTaxTotal(): ?TaxTotal
     {
@@ -360,7 +360,7 @@ class ConsumptionType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addToTaxTotal(TaxTotal $taxTotal): static
@@ -381,7 +381,7 @@ class ConsumptionType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addOnceToTaxTotal(TaxTotal $taxTotal): static
@@ -412,7 +412,7 @@ class ConsumptionType
     }
 
     /**
-     * @return EnergyWaterSupply|null
+     * @return null|EnergyWaterSupply
      */
     public function getEnergyWaterSupply(): ?EnergyWaterSupply
     {
@@ -430,7 +430,7 @@ class ConsumptionType
     }
 
     /**
-     * @param EnergyWaterSupply|null $energyWaterSupply
+     * @param  null|EnergyWaterSupply $energyWaterSupply
      * @return static
      */
     public function setEnergyWaterSupply(?EnergyWaterSupply $energyWaterSupply = null): static
@@ -451,7 +451,7 @@ class ConsumptionType
     }
 
     /**
-     * @return TelecommunicationsSupply|null
+     * @return null|TelecommunicationsSupply
      */
     public function getTelecommunicationsSupply(): ?TelecommunicationsSupply
     {
@@ -469,7 +469,7 @@ class ConsumptionType
     }
 
     /**
-     * @param TelecommunicationsSupply|null $telecommunicationsSupply
+     * @param  null|TelecommunicationsSupply $telecommunicationsSupply
      * @return static
      */
     public function setTelecommunicationsSupply(?TelecommunicationsSupply $telecommunicationsSupply = null): static
@@ -490,7 +490,7 @@ class ConsumptionType
     }
 
     /**
-     * @return LegalMonetaryTotal|null
+     * @return null|LegalMonetaryTotal
      */
     public function getLegalMonetaryTotal(): ?LegalMonetaryTotal
     {
@@ -508,7 +508,7 @@ class ConsumptionType
     }
 
     /**
-     * @param LegalMonetaryTotal|null $legalMonetaryTotal
+     * @param  null|LegalMonetaryTotal $legalMonetaryTotal
      * @return static
      */
     public function setLegalMonetaryTotal(?LegalMonetaryTotal $legalMonetaryTotal = null): static

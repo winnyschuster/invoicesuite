@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity;
+use JMS\Serializer\Annotation as JMS;
 
 class ItemComparisonType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var PriceAmount|null
+     * @var null|PriceAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ItemComparisonType
     private $priceAmount;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ItemComparisonType
     private $quantity;
 
     /**
-     * @return PriceAmount|null
+     * @return null|PriceAmount
      */
     public function getPriceAmount(): ?PriceAmount
     {
@@ -54,7 +54,7 @@ class ItemComparisonType
     }
 
     /**
-     * @param PriceAmount|null $priceAmount
+     * @param  null|PriceAmount $priceAmount
      * @return static
      */
     public function setPriceAmount(?PriceAmount $priceAmount = null): static
@@ -75,7 +75,7 @@ class ItemComparisonType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -93,7 +93,7 @@ class ItemComparisonType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static

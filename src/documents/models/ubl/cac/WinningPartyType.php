@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Rank;
+use JMS\Serializer\Annotation as JMS;
 
 class WinningPartyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Rank|null
+     * @var null|Rank
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Rank")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class WinningPartyType
     private $rank;
 
     /**
-     * @var Party|null
+     * @var null|Party
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Party")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class WinningPartyType
     private $party;
 
     /**
-     * @return Rank|null
+     * @return null|Rank
      */
     public function getRank(): ?Rank
     {
@@ -53,7 +53,7 @@ class WinningPartyType
     }
 
     /**
-     * @param Rank|null $rank
+     * @param  null|Rank $rank
      * @return static
      */
     public function setRank(?Rank $rank = null): static
@@ -74,7 +74,7 @@ class WinningPartyType
     }
 
     /**
-     * @return Party|null
+     * @return null|Party
      */
     public function getParty(): ?Party
     {
@@ -92,7 +92,7 @@ class WinningPartyType
     }
 
     /**
-     * @param Party|null $party
+     * @param  null|Party $party
      * @return static
      */
     public function setParty(?Party $party = null): static

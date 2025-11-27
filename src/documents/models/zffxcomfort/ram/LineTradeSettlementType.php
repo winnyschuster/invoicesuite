@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxcomfort\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class LineTradeSettlementType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TradeTaxType|null
+     * @var null|TradeTaxType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeTaxType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class LineTradeSettlementType
     private $applicableTradeTax;
 
     /**
-     * @var SpecifiedPeriodType|null
+     * @var null|SpecifiedPeriodType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\SpecifiedPeriodType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class LineTradeSettlementType
     private $billingSpecifiedPeriod;
 
     /**
-     * @var array<TradeAllowanceChargeType>|null
+     * @var null|array<TradeAllowanceChargeType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAllowanceChargeType>")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class LineTradeSettlementType
     private $specifiedTradeAllowanceCharge;
 
     /**
-     * @var TradeSettlementLineMonetarySummationType|null
+     * @var null|TradeSettlementLineMonetarySummationType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeSettlementLineMonetarySummationType")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class LineTradeSettlementType
     private $specifiedTradeSettlementLineMonetarySummation;
 
     /**
-     * @var ReferencedDocumentType|null
+     * @var null|ReferencedDocumentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class LineTradeSettlementType
     private $additionalReferencedDocument;
 
     /**
-     * @var TradeAccountingAccountType|null
+     * @var null|TradeAccountingAccountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradeAccountingAccountType")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class LineTradeSettlementType
     private $receivableSpecifiedTradeAccountingAccount;
 
     /**
-     * @return TradeTaxType|null
+     * @return null|TradeTaxType
      */
     public function getApplicableTradeTax(): ?TradeTaxType
     {
@@ -97,7 +97,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param TradeTaxType|null $applicableTradeTax
+     * @param  null|TradeTaxType $applicableTradeTax
      * @return static
      */
     public function setApplicableTradeTax(?TradeTaxType $applicableTradeTax = null): static
@@ -118,7 +118,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return SpecifiedPeriodType|null
+     * @return null|SpecifiedPeriodType
      */
     public function getBillingSpecifiedPeriod(): ?SpecifiedPeriodType
     {
@@ -136,7 +136,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param SpecifiedPeriodType|null $billingSpecifiedPeriod
+     * @param  null|SpecifiedPeriodType $billingSpecifiedPeriod
      * @return static
      */
     public function setBillingSpecifiedPeriod(?SpecifiedPeriodType $billingSpecifiedPeriod = null): static
@@ -157,7 +157,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return array<TradeAllowanceChargeType>|null
+     * @return null|array<TradeAllowanceChargeType>
      */
     public function getSpecifiedTradeAllowanceCharge(): ?array
     {
@@ -165,7 +165,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param array<TradeAllowanceChargeType>|null $specifiedTradeAllowanceCharge
+     * @param  null|array<TradeAllowanceChargeType> $specifiedTradeAllowanceCharge
      * @return static
      */
     public function setSpecifiedTradeAllowanceCharge(?array $specifiedTradeAllowanceCharge = null): static
@@ -196,7 +196,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param TradeAllowanceChargeType $specifiedTradeAllowanceCharge
+     * @param  TradeAllowanceChargeType $specifiedTradeAllowanceCharge
      * @return static
      */
     public function addToSpecifiedTradeAllowanceCharge(TradeAllowanceChargeType $specifiedTradeAllowanceCharge): static
@@ -217,7 +217,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param TradeAllowanceChargeType $specifiedTradeAllowanceCharge
+     * @param  TradeAllowanceChargeType $specifiedTradeAllowanceCharge
      * @return static
      */
     public function addOnceToSpecifiedTradeAllowanceCharge(
@@ -249,7 +249,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return TradeSettlementLineMonetarySummationType|null
+     * @return null|TradeSettlementLineMonetarySummationType
      */
     public function getSpecifiedTradeSettlementLineMonetarySummation(): ?TradeSettlementLineMonetarySummationType
     {
@@ -267,7 +267,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param TradeSettlementLineMonetarySummationType|null $specifiedTradeSettlementLineMonetarySummation
+     * @param  null|TradeSettlementLineMonetarySummationType $specifiedTradeSettlementLineMonetarySummation
      * @return static
      */
     public function setSpecifiedTradeSettlementLineMonetarySummation(
@@ -289,7 +289,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return ReferencedDocumentType|null
+     * @return null|ReferencedDocumentType
      */
     public function getAdditionalReferencedDocument(): ?ReferencedDocumentType
     {
@@ -307,7 +307,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param ReferencedDocumentType|null $additionalReferencedDocument
+     * @param  null|ReferencedDocumentType $additionalReferencedDocument
      * @return static
      */
     public function setAdditionalReferencedDocument(
@@ -329,7 +329,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @return TradeAccountingAccountType|null
+     * @return null|TradeAccountingAccountType
      */
     public function getReceivableSpecifiedTradeAccountingAccount(): ?TradeAccountingAccountType
     {
@@ -347,7 +347,7 @@ class LineTradeSettlementType
     }
 
     /**
-     * @param TradeAccountingAccountType|null $receivableSpecifiedTradeAccountingAccount
+     * @param  null|TradeAccountingAccountType $receivableSpecifiedTradeAccountingAccount
      * @return static
      */
     public function setReceivableSpecifiedTradeAccountingAccount(

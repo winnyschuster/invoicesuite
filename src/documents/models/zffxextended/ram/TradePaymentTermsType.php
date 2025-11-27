@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradePaymentTermsType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class TradePaymentTermsType
     private $description;
 
     /**
-     * @var DateTimeType|null
+     * @var null|DateTimeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class TradePaymentTermsType
     private $dueDateDateTime;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class TradePaymentTermsType
     private $directDebitMandateID;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class TradePaymentTermsType
     private $partialPaymentAmount;
 
     /**
-     * @var TradePaymentPenaltyTermsType|null
+     * @var null|TradePaymentPenaltyTermsType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePaymentPenaltyTermsType")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class TradePaymentTermsType
     private $applicableTradePaymentPenaltyTerms;
 
     /**
-     * @var TradePaymentDiscountTermsType|null
+     * @var null|TradePaymentDiscountTermsType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePaymentDiscountTermsType")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class TradePaymentTermsType
     private $applicableTradePaymentDiscountTerms;
 
     /**
-     * @var TradePartyType|null
+     * @var null|TradePartyType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType")
      * @JMS\Expose
@@ -93,7 +93,7 @@ class TradePaymentTermsType
     private $payeeTradeParty;
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getDescription(): ?TextType
     {
@@ -111,7 +111,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @param TextType|null $description
+     * @param  null|TextType $description
      * @return static
      */
     public function setDescription(?TextType $description = null): static
@@ -132,7 +132,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return DateTimeType|null
+     * @return null|DateTimeType
      */
     public function getDueDateDateTime(): ?DateTimeType
     {
@@ -150,7 +150,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @param DateTimeType|null $dueDateDateTime
+     * @param  null|DateTimeType $dueDateDateTime
      * @return static
      */
     public function setDueDateDateTime(?DateTimeType $dueDateDateTime = null): static
@@ -171,7 +171,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getDirectDebitMandateID(): ?IDType
     {
@@ -189,7 +189,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @param IDType|null $directDebitMandateID
+     * @param  null|IDType $directDebitMandateID
      * @return static
      */
     public function setDirectDebitMandateID(?IDType $directDebitMandateID = null): static
@@ -210,7 +210,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getPartialPaymentAmount(): ?AmountType
     {
@@ -228,7 +228,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @param AmountType|null $partialPaymentAmount
+     * @param  null|AmountType $partialPaymentAmount
      * @return static
      */
     public function setPartialPaymentAmount(?AmountType $partialPaymentAmount = null): static
@@ -249,7 +249,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return TradePaymentPenaltyTermsType|null
+     * @return null|TradePaymentPenaltyTermsType
      */
     public function getApplicableTradePaymentPenaltyTerms(): ?TradePaymentPenaltyTermsType
     {
@@ -267,7 +267,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @param TradePaymentPenaltyTermsType|null $applicableTradePaymentPenaltyTerms
+     * @param  null|TradePaymentPenaltyTermsType $applicableTradePaymentPenaltyTerms
      * @return static
      */
     public function setApplicableTradePaymentPenaltyTerms(
@@ -289,7 +289,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return TradePaymentDiscountTermsType|null
+     * @return null|TradePaymentDiscountTermsType
      */
     public function getApplicableTradePaymentDiscountTerms(): ?TradePaymentDiscountTermsType
     {
@@ -307,7 +307,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @param TradePaymentDiscountTermsType|null $applicableTradePaymentDiscountTerms
+     * @param  null|TradePaymentDiscountTermsType $applicableTradePaymentDiscountTerms
      * @return static
      */
     public function setApplicableTradePaymentDiscountTerms(
@@ -329,7 +329,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return TradePartyType|null
+     * @return null|TradePartyType
      */
     public function getPayeeTradeParty(): ?TradePartyType
     {
@@ -347,7 +347,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @param TradePartyType|null $payeeTradeParty
+     * @param  null|TradePartyType $payeeTradeParty
      * @return static
      */
     public function setPayeeTradeParty(?TradePartyType $payeeTradeParty = null): static

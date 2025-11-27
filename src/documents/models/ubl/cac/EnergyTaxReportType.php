@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyBalanceAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyOnAccountAmount;
+use JMS\Serializer\Annotation as JMS;
 
 class EnergyTaxReportType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TaxEnergyAmount|null
+     * @var null|TaxEnergyAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyAmount")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class EnergyTaxReportType
     private $taxEnergyAmount;
 
     /**
-     * @var TaxEnergyOnAccountAmount|null
+     * @var null|TaxEnergyOnAccountAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyOnAccountAmount")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class EnergyTaxReportType
     private $taxEnergyOnAccountAmount;
 
     /**
-     * @var TaxEnergyBalanceAmount|null
+     * @var null|TaxEnergyBalanceAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxEnergyBalanceAmount")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class EnergyTaxReportType
     private $taxEnergyBalanceAmount;
 
     /**
-     * @var TaxScheme|null
+     * @var null|TaxScheme
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TaxScheme")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class EnergyTaxReportType
     private $taxScheme;
 
     /**
-     * @return TaxEnergyAmount|null
+     * @return null|TaxEnergyAmount
      */
     public function getTaxEnergyAmount(): ?TaxEnergyAmount
     {
@@ -77,7 +77,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @param TaxEnergyAmount|null $taxEnergyAmount
+     * @param  null|TaxEnergyAmount $taxEnergyAmount
      * @return static
      */
     public function setTaxEnergyAmount(?TaxEnergyAmount $taxEnergyAmount = null): static
@@ -98,7 +98,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @return TaxEnergyOnAccountAmount|null
+     * @return null|TaxEnergyOnAccountAmount
      */
     public function getTaxEnergyOnAccountAmount(): ?TaxEnergyOnAccountAmount
     {
@@ -116,7 +116,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @param TaxEnergyOnAccountAmount|null $taxEnergyOnAccountAmount
+     * @param  null|TaxEnergyOnAccountAmount $taxEnergyOnAccountAmount
      * @return static
      */
     public function setTaxEnergyOnAccountAmount(?TaxEnergyOnAccountAmount $taxEnergyOnAccountAmount = null): static
@@ -137,7 +137,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @return TaxEnergyBalanceAmount|null
+     * @return null|TaxEnergyBalanceAmount
      */
     public function getTaxEnergyBalanceAmount(): ?TaxEnergyBalanceAmount
     {
@@ -155,7 +155,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @param TaxEnergyBalanceAmount|null $taxEnergyBalanceAmount
+     * @param  null|TaxEnergyBalanceAmount $taxEnergyBalanceAmount
      * @return static
      */
     public function setTaxEnergyBalanceAmount(?TaxEnergyBalanceAmount $taxEnergyBalanceAmount = null): static
@@ -176,7 +176,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @return TaxScheme|null
+     * @return null|TaxScheme
      */
     public function getTaxScheme(): ?TaxScheme
     {
@@ -194,7 +194,7 @@ class EnergyTaxReportType
     }
 
     /**
-     * @param TaxScheme|null $taxScheme
+     * @param  null|TaxScheme $taxScheme
      * @return static
      */
     public function setTaxScheme(?TaxScheme $taxScheme = null): static

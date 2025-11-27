@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CrewQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DemurrageInstructions;
@@ -17,13 +16,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\SuccessiveSequenceID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TransitDirectionCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TransportMeansTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TransportModeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class ShipmentStageType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class ShipmentStageType
     private $iD;
 
     /**
-     * @var TransportModeCode|null
+     * @var null|TransportModeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TransportModeCode")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class ShipmentStageType
     private $transportModeCode;
 
     /**
-     * @var TransportMeansTypeCode|null
+     * @var null|TransportMeansTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TransportMeansTypeCode")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class ShipmentStageType
     private $transportMeansTypeCode;
 
     /**
-     * @var TransitDirectionCode|null
+     * @var null|TransitDirectionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TransitDirectionCode")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class ShipmentStageType
     private $transitDirectionCode;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -78,7 +78,7 @@ class ShipmentStageType
     private $preCarriageIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -89,7 +89,7 @@ class ShipmentStageType
     private $onCarriageIndicator;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -100,7 +100,7 @@ class ShipmentStageType
     private $estimatedDeliveryDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -111,7 +111,7 @@ class ShipmentStageType
     private $estimatedDeliveryTime;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -122,7 +122,7 @@ class ShipmentStageType
     private $requiredDeliveryDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -133,7 +133,7 @@ class ShipmentStageType
     private $requiredDeliveryTime;
 
     /**
-     * @var LoadingSequenceID|null
+     * @var null|LoadingSequenceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LoadingSequenceID")
      * @JMS\Expose
@@ -144,7 +144,7 @@ class ShipmentStageType
     private $loadingSequenceID;
 
     /**
-     * @var SuccessiveSequenceID|null
+     * @var null|SuccessiveSequenceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SuccessiveSequenceID")
      * @JMS\Expose
@@ -155,7 +155,7 @@ class ShipmentStageType
     private $successiveSequenceID;
 
     /**
-     * @var array<Instructions>|null
+     * @var null|array<Instructions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Instructions>")
      * @JMS\Expose
@@ -167,7 +167,7 @@ class ShipmentStageType
     private $instructions;
 
     /**
-     * @var array<DemurrageInstructions>|null
+     * @var null|array<DemurrageInstructions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\DemurrageInstructions>")
      * @JMS\Expose
@@ -179,7 +179,7 @@ class ShipmentStageType
     private $demurrageInstructions;
 
     /**
-     * @var CrewQuantity|null
+     * @var null|CrewQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CrewQuantity")
      * @JMS\Expose
@@ -190,7 +190,7 @@ class ShipmentStageType
     private $crewQuantity;
 
     /**
-     * @var PassengerQuantity|null
+     * @var null|PassengerQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PassengerQuantity")
      * @JMS\Expose
@@ -201,7 +201,7 @@ class ShipmentStageType
     private $passengerQuantity;
 
     /**
-     * @var TransitPeriod|null
+     * @var null|TransitPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TransitPeriod")
      * @JMS\Expose
@@ -212,7 +212,7 @@ class ShipmentStageType
     private $transitPeriod;
 
     /**
-     * @var array<CarrierParty>|null
+     * @var null|array<CarrierParty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\CarrierParty>")
      * @JMS\Expose
@@ -224,7 +224,7 @@ class ShipmentStageType
     private $carrierParty;
 
     /**
-     * @var TransportMeans|null
+     * @var null|TransportMeans
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TransportMeans")
      * @JMS\Expose
@@ -235,7 +235,7 @@ class ShipmentStageType
     private $transportMeans;
 
     /**
-     * @var LoadingPortLocation|null
+     * @var null|LoadingPortLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LoadingPortLocation")
      * @JMS\Expose
@@ -246,7 +246,7 @@ class ShipmentStageType
     private $loadingPortLocation;
 
     /**
-     * @var UnloadingPortLocation|null
+     * @var null|UnloadingPortLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\UnloadingPortLocation")
      * @JMS\Expose
@@ -257,7 +257,7 @@ class ShipmentStageType
     private $unloadingPortLocation;
 
     /**
-     * @var TransshipPortLocation|null
+     * @var null|TransshipPortLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TransshipPortLocation")
      * @JMS\Expose
@@ -268,7 +268,7 @@ class ShipmentStageType
     private $transshipPortLocation;
 
     /**
-     * @var LoadingTransportEvent|null
+     * @var null|LoadingTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LoadingTransportEvent")
      * @JMS\Expose
@@ -279,7 +279,7 @@ class ShipmentStageType
     private $loadingTransportEvent;
 
     /**
-     * @var ExaminationTransportEvent|null
+     * @var null|ExaminationTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExaminationTransportEvent")
      * @JMS\Expose
@@ -290,7 +290,7 @@ class ShipmentStageType
     private $examinationTransportEvent;
 
     /**
-     * @var AvailabilityTransportEvent|null
+     * @var null|AvailabilityTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AvailabilityTransportEvent")
      * @JMS\Expose
@@ -301,7 +301,7 @@ class ShipmentStageType
     private $availabilityTransportEvent;
 
     /**
-     * @var ExportationTransportEvent|null
+     * @var null|ExportationTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExportationTransportEvent")
      * @JMS\Expose
@@ -312,7 +312,7 @@ class ShipmentStageType
     private $exportationTransportEvent;
 
     /**
-     * @var DischargeTransportEvent|null
+     * @var null|DischargeTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DischargeTransportEvent")
      * @JMS\Expose
@@ -323,7 +323,7 @@ class ShipmentStageType
     private $dischargeTransportEvent;
 
     /**
-     * @var WarehousingTransportEvent|null
+     * @var null|WarehousingTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\WarehousingTransportEvent")
      * @JMS\Expose
@@ -334,7 +334,7 @@ class ShipmentStageType
     private $warehousingTransportEvent;
 
     /**
-     * @var TakeoverTransportEvent|null
+     * @var null|TakeoverTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TakeoverTransportEvent")
      * @JMS\Expose
@@ -345,7 +345,7 @@ class ShipmentStageType
     private $takeoverTransportEvent;
 
     /**
-     * @var OptionalTakeoverTransportEvent|null
+     * @var null|OptionalTakeoverTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OptionalTakeoverTransportEvent")
      * @JMS\Expose
@@ -356,7 +356,7 @@ class ShipmentStageType
     private $optionalTakeoverTransportEvent;
 
     /**
-     * @var DropoffTransportEvent|null
+     * @var null|DropoffTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DropoffTransportEvent")
      * @JMS\Expose
@@ -367,7 +367,7 @@ class ShipmentStageType
     private $dropoffTransportEvent;
 
     /**
-     * @var ActualPickupTransportEvent|null
+     * @var null|ActualPickupTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ActualPickupTransportEvent")
      * @JMS\Expose
@@ -378,7 +378,7 @@ class ShipmentStageType
     private $actualPickupTransportEvent;
 
     /**
-     * @var DeliveryTransportEvent|null
+     * @var null|DeliveryTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTransportEvent")
      * @JMS\Expose
@@ -389,7 +389,7 @@ class ShipmentStageType
     private $deliveryTransportEvent;
 
     /**
-     * @var ReceiptTransportEvent|null
+     * @var null|ReceiptTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ReceiptTransportEvent")
      * @JMS\Expose
@@ -400,7 +400,7 @@ class ShipmentStageType
     private $receiptTransportEvent;
 
     /**
-     * @var StorageTransportEvent|null
+     * @var null|StorageTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\StorageTransportEvent")
      * @JMS\Expose
@@ -411,7 +411,7 @@ class ShipmentStageType
     private $storageTransportEvent;
 
     /**
-     * @var AcceptanceTransportEvent|null
+     * @var null|AcceptanceTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AcceptanceTransportEvent")
      * @JMS\Expose
@@ -422,7 +422,7 @@ class ShipmentStageType
     private $acceptanceTransportEvent;
 
     /**
-     * @var TerminalOperatorParty|null
+     * @var null|TerminalOperatorParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TerminalOperatorParty")
      * @JMS\Expose
@@ -433,7 +433,7 @@ class ShipmentStageType
     private $terminalOperatorParty;
 
     /**
-     * @var CustomsAgentParty|null
+     * @var null|CustomsAgentParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CustomsAgentParty")
      * @JMS\Expose
@@ -444,7 +444,7 @@ class ShipmentStageType
     private $customsAgentParty;
 
     /**
-     * @var EstimatedTransitPeriod|null
+     * @var null|EstimatedTransitPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EstimatedTransitPeriod")
      * @JMS\Expose
@@ -455,7 +455,7 @@ class ShipmentStageType
     private $estimatedTransitPeriod;
 
     /**
-     * @var array<FreightAllowanceCharge>|null
+     * @var null|array<FreightAllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge>")
      * @JMS\Expose
@@ -467,7 +467,7 @@ class ShipmentStageType
     private $freightAllowanceCharge;
 
     /**
-     * @var FreightChargeLocation|null
+     * @var null|FreightChargeLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FreightChargeLocation")
      * @JMS\Expose
@@ -478,7 +478,7 @@ class ShipmentStageType
     private $freightChargeLocation;
 
     /**
-     * @var array<DetentionTransportEvent>|null
+     * @var null|array<DetentionTransportEvent>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DetentionTransportEvent>")
      * @JMS\Expose
@@ -490,7 +490,7 @@ class ShipmentStageType
     private $detentionTransportEvent;
 
     /**
-     * @var RequestedDepartureTransportEvent|null
+     * @var null|RequestedDepartureTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RequestedDepartureTransportEvent")
      * @JMS\Expose
@@ -501,7 +501,7 @@ class ShipmentStageType
     private $requestedDepartureTransportEvent;
 
     /**
-     * @var RequestedArrivalTransportEvent|null
+     * @var null|RequestedArrivalTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RequestedArrivalTransportEvent")
      * @JMS\Expose
@@ -512,7 +512,7 @@ class ShipmentStageType
     private $requestedArrivalTransportEvent;
 
     /**
-     * @var array<RequestedWaypointTransportEvent>|null
+     * @var null|array<RequestedWaypointTransportEvent>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RequestedWaypointTransportEvent>")
      * @JMS\Expose
@@ -524,7 +524,7 @@ class ShipmentStageType
     private $requestedWaypointTransportEvent;
 
     /**
-     * @var PlannedDepartureTransportEvent|null
+     * @var null|PlannedDepartureTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PlannedDepartureTransportEvent")
      * @JMS\Expose
@@ -535,7 +535,7 @@ class ShipmentStageType
     private $plannedDepartureTransportEvent;
 
     /**
-     * @var PlannedArrivalTransportEvent|null
+     * @var null|PlannedArrivalTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PlannedArrivalTransportEvent")
      * @JMS\Expose
@@ -546,7 +546,7 @@ class ShipmentStageType
     private $plannedArrivalTransportEvent;
 
     /**
-     * @var array<PlannedWaypointTransportEvent>|null
+     * @var null|array<PlannedWaypointTransportEvent>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PlannedWaypointTransportEvent>")
      * @JMS\Expose
@@ -558,7 +558,7 @@ class ShipmentStageType
     private $plannedWaypointTransportEvent;
 
     /**
-     * @var ActualDepartureTransportEvent|null
+     * @var null|ActualDepartureTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ActualDepartureTransportEvent")
      * @JMS\Expose
@@ -569,7 +569,7 @@ class ShipmentStageType
     private $actualDepartureTransportEvent;
 
     /**
-     * @var ActualWaypointTransportEvent|null
+     * @var null|ActualWaypointTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ActualWaypointTransportEvent")
      * @JMS\Expose
@@ -580,7 +580,7 @@ class ShipmentStageType
     private $actualWaypointTransportEvent;
 
     /**
-     * @var ActualArrivalTransportEvent|null
+     * @var null|ActualArrivalTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ActualArrivalTransportEvent")
      * @JMS\Expose
@@ -591,7 +591,7 @@ class ShipmentStageType
     private $actualArrivalTransportEvent;
 
     /**
-     * @var array<TransportEvent>|null
+     * @var null|array<TransportEvent>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TransportEvent>")
      * @JMS\Expose
@@ -603,7 +603,7 @@ class ShipmentStageType
     private $transportEvent;
 
     /**
-     * @var EstimatedDepartureTransportEvent|null
+     * @var null|EstimatedDepartureTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EstimatedDepartureTransportEvent")
      * @JMS\Expose
@@ -614,7 +614,7 @@ class ShipmentStageType
     private $estimatedDepartureTransportEvent;
 
     /**
-     * @var EstimatedArrivalTransportEvent|null
+     * @var null|EstimatedArrivalTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EstimatedArrivalTransportEvent")
      * @JMS\Expose
@@ -625,7 +625,7 @@ class ShipmentStageType
     private $estimatedArrivalTransportEvent;
 
     /**
-     * @var array<PassengerPerson>|null
+     * @var null|array<PassengerPerson>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PassengerPerson>")
      * @JMS\Expose
@@ -637,7 +637,7 @@ class ShipmentStageType
     private $passengerPerson;
 
     /**
-     * @var array<DriverPerson>|null
+     * @var null|array<DriverPerson>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DriverPerson>")
      * @JMS\Expose
@@ -649,7 +649,7 @@ class ShipmentStageType
     private $driverPerson;
 
     /**
-     * @var ReportingPerson|null
+     * @var null|ReportingPerson
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ReportingPerson")
      * @JMS\Expose
@@ -660,7 +660,7 @@ class ShipmentStageType
     private $reportingPerson;
 
     /**
-     * @var array<CrewMemberPerson>|null
+     * @var null|array<CrewMemberPerson>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\CrewMemberPerson>")
      * @JMS\Expose
@@ -672,7 +672,7 @@ class ShipmentStageType
     private $crewMemberPerson;
 
     /**
-     * @var SecurityOfficerPerson|null
+     * @var null|SecurityOfficerPerson
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SecurityOfficerPerson")
      * @JMS\Expose
@@ -683,7 +683,7 @@ class ShipmentStageType
     private $securityOfficerPerson;
 
     /**
-     * @var MasterPerson|null
+     * @var null|MasterPerson
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MasterPerson")
      * @JMS\Expose
@@ -694,7 +694,7 @@ class ShipmentStageType
     private $masterPerson;
 
     /**
-     * @var ShipsSurgeonPerson|null
+     * @var null|ShipsSurgeonPerson
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ShipsSurgeonPerson")
      * @JMS\Expose
@@ -705,7 +705,7 @@ class ShipmentStageType
     private $shipsSurgeonPerson;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -723,7 +723,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -744,7 +744,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return TransportModeCode|null
+     * @return null|TransportModeCode
      */
     public function getTransportModeCode(): ?TransportModeCode
     {
@@ -762,7 +762,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param TransportModeCode|null $transportModeCode
+     * @param  null|TransportModeCode $transportModeCode
      * @return static
      */
     public function setTransportModeCode(?TransportModeCode $transportModeCode = null): static
@@ -783,7 +783,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return TransportMeansTypeCode|null
+     * @return null|TransportMeansTypeCode
      */
     public function getTransportMeansTypeCode(): ?TransportMeansTypeCode
     {
@@ -801,7 +801,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param TransportMeansTypeCode|null $transportMeansTypeCode
+     * @param  null|TransportMeansTypeCode $transportMeansTypeCode
      * @return static
      */
     public function setTransportMeansTypeCode(?TransportMeansTypeCode $transportMeansTypeCode = null): static
@@ -822,7 +822,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return TransitDirectionCode|null
+     * @return null|TransitDirectionCode
      */
     public function getTransitDirectionCode(): ?TransitDirectionCode
     {
@@ -840,7 +840,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param TransitDirectionCode|null $transitDirectionCode
+     * @param  null|TransitDirectionCode $transitDirectionCode
      * @return static
      */
     public function setTransitDirectionCode(?TransitDirectionCode $transitDirectionCode = null): static
@@ -861,7 +861,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getPreCarriageIndicator(): ?bool
     {
@@ -869,7 +869,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param bool|null $preCarriageIndicator
+     * @param  null|bool $preCarriageIndicator
      * @return static
      */
     public function setPreCarriageIndicator(?bool $preCarriageIndicator = null): static
@@ -890,7 +890,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getOnCarriageIndicator(): ?bool
     {
@@ -898,7 +898,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param bool|null $onCarriageIndicator
+     * @param  null|bool $onCarriageIndicator
      * @return static
      */
     public function setOnCarriageIndicator(?bool $onCarriageIndicator = null): static
@@ -919,7 +919,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getEstimatedDeliveryDate(): ?DateTimeInterface
     {
@@ -927,7 +927,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param DateTimeInterface|null $estimatedDeliveryDate
+     * @param  null|DateTimeInterface $estimatedDeliveryDate
      * @return static
      */
     public function setEstimatedDeliveryDate(?DateTimeInterface $estimatedDeliveryDate = null): static
@@ -948,7 +948,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getEstimatedDeliveryTime(): ?DateTimeInterface
     {
@@ -956,7 +956,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param DateTimeInterface|null $estimatedDeliveryTime
+     * @param  null|DateTimeInterface $estimatedDeliveryTime
      * @return static
      */
     public function setEstimatedDeliveryTime(?DateTimeInterface $estimatedDeliveryTime = null): static
@@ -977,7 +977,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getRequiredDeliveryDate(): ?DateTimeInterface
     {
@@ -985,7 +985,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param DateTimeInterface|null $requiredDeliveryDate
+     * @param  null|DateTimeInterface $requiredDeliveryDate
      * @return static
      */
     public function setRequiredDeliveryDate(?DateTimeInterface $requiredDeliveryDate = null): static
@@ -1006,7 +1006,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getRequiredDeliveryTime(): ?DateTimeInterface
     {
@@ -1014,7 +1014,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param DateTimeInterface|null $requiredDeliveryTime
+     * @param  null|DateTimeInterface $requiredDeliveryTime
      * @return static
      */
     public function setRequiredDeliveryTime(?DateTimeInterface $requiredDeliveryTime = null): static
@@ -1035,7 +1035,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return LoadingSequenceID|null
+     * @return null|LoadingSequenceID
      */
     public function getLoadingSequenceID(): ?LoadingSequenceID
     {
@@ -1053,7 +1053,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param LoadingSequenceID|null $loadingSequenceID
+     * @param  null|LoadingSequenceID $loadingSequenceID
      * @return static
      */
     public function setLoadingSequenceID(?LoadingSequenceID $loadingSequenceID = null): static
@@ -1074,7 +1074,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return SuccessiveSequenceID|null
+     * @return null|SuccessiveSequenceID
      */
     public function getSuccessiveSequenceID(): ?SuccessiveSequenceID
     {
@@ -1092,7 +1092,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param SuccessiveSequenceID|null $successiveSequenceID
+     * @param  null|SuccessiveSequenceID $successiveSequenceID
      * @return static
      */
     public function setSuccessiveSequenceID(?SuccessiveSequenceID $successiveSequenceID = null): static
@@ -1113,7 +1113,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return array<Instructions>|null
+     * @return null|array<Instructions>
      */
     public function getInstructions(): ?array
     {
@@ -1121,7 +1121,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param array<Instructions>|null $instructions
+     * @param  null|array<Instructions> $instructions
      * @return static
      */
     public function setInstructions(?array $instructions = null): static
@@ -1152,7 +1152,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return Instructions|null
+     * @return null|Instructions
      */
     public function firstInstructions(): ?Instructions
     {
@@ -1167,7 +1167,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return Instructions|null
+     * @return null|Instructions
      */
     public function lastInstructions(): ?Instructions
     {
@@ -1182,7 +1182,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param Instructions $instructions
+     * @param  Instructions $instructions
      * @return static
      */
     public function addToInstructions(Instructions $instructions): static
@@ -1203,7 +1203,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param Instructions $instructions
+     * @param  Instructions $instructions
      * @return static
      */
     public function addOnceToInstructions(Instructions $instructions): static
@@ -1234,7 +1234,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return array<DemurrageInstructions>|null
+     * @return null|array<DemurrageInstructions>
      */
     public function getDemurrageInstructions(): ?array
     {
@@ -1242,7 +1242,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param array<DemurrageInstructions>|null $demurrageInstructions
+     * @param  null|array<DemurrageInstructions> $demurrageInstructions
      * @return static
      */
     public function setDemurrageInstructions(?array $demurrageInstructions = null): static
@@ -1273,7 +1273,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return DemurrageInstructions|null
+     * @return null|DemurrageInstructions
      */
     public function firstDemurrageInstructions(): ?DemurrageInstructions
     {
@@ -1288,7 +1288,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return DemurrageInstructions|null
+     * @return null|DemurrageInstructions
      */
     public function lastDemurrageInstructions(): ?DemurrageInstructions
     {
@@ -1303,7 +1303,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param DemurrageInstructions $demurrageInstructions
+     * @param  DemurrageInstructions $demurrageInstructions
      * @return static
      */
     public function addToDemurrageInstructions(DemurrageInstructions $demurrageInstructions): static
@@ -1324,7 +1324,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param DemurrageInstructions $demurrageInstructions
+     * @param  DemurrageInstructions $demurrageInstructions
      * @return static
      */
     public function addOnceToDemurrageInstructions(DemurrageInstructions $demurrageInstructions): static
@@ -1355,7 +1355,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return CrewQuantity|null
+     * @return null|CrewQuantity
      */
     public function getCrewQuantity(): ?CrewQuantity
     {
@@ -1373,7 +1373,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param CrewQuantity|null $crewQuantity
+     * @param  null|CrewQuantity $crewQuantity
      * @return static
      */
     public function setCrewQuantity(?CrewQuantity $crewQuantity = null): static
@@ -1394,7 +1394,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return PassengerQuantity|null
+     * @return null|PassengerQuantity
      */
     public function getPassengerQuantity(): ?PassengerQuantity
     {
@@ -1412,7 +1412,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param PassengerQuantity|null $passengerQuantity
+     * @param  null|PassengerQuantity $passengerQuantity
      * @return static
      */
     public function setPassengerQuantity(?PassengerQuantity $passengerQuantity = null): static
@@ -1433,7 +1433,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return TransitPeriod|null
+     * @return null|TransitPeriod
      */
     public function getTransitPeriod(): ?TransitPeriod
     {
@@ -1451,7 +1451,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param TransitPeriod|null $transitPeriod
+     * @param  null|TransitPeriod $transitPeriod
      * @return static
      */
     public function setTransitPeriod(?TransitPeriod $transitPeriod = null): static
@@ -1472,7 +1472,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return array<CarrierParty>|null
+     * @return null|array<CarrierParty>
      */
     public function getCarrierParty(): ?array
     {
@@ -1480,7 +1480,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param array<CarrierParty>|null $carrierParty
+     * @param  null|array<CarrierParty> $carrierParty
      * @return static
      */
     public function setCarrierParty(?array $carrierParty = null): static
@@ -1511,7 +1511,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return CarrierParty|null
+     * @return null|CarrierParty
      */
     public function firstCarrierParty(): ?CarrierParty
     {
@@ -1526,7 +1526,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return CarrierParty|null
+     * @return null|CarrierParty
      */
     public function lastCarrierParty(): ?CarrierParty
     {
@@ -1541,7 +1541,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param CarrierParty $carrierParty
+     * @param  CarrierParty $carrierParty
      * @return static
      */
     public function addToCarrierParty(CarrierParty $carrierParty): static
@@ -1562,7 +1562,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param CarrierParty $carrierParty
+     * @param  CarrierParty $carrierParty
      * @return static
      */
     public function addOnceToCarrierParty(CarrierParty $carrierParty): static
@@ -1593,7 +1593,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return TransportMeans|null
+     * @return null|TransportMeans
      */
     public function getTransportMeans(): ?TransportMeans
     {
@@ -1611,7 +1611,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param TransportMeans|null $transportMeans
+     * @param  null|TransportMeans $transportMeans
      * @return static
      */
     public function setTransportMeans(?TransportMeans $transportMeans = null): static
@@ -1632,7 +1632,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return LoadingPortLocation|null
+     * @return null|LoadingPortLocation
      */
     public function getLoadingPortLocation(): ?LoadingPortLocation
     {
@@ -1650,7 +1650,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param LoadingPortLocation|null $loadingPortLocation
+     * @param  null|LoadingPortLocation $loadingPortLocation
      * @return static
      */
     public function setLoadingPortLocation(?LoadingPortLocation $loadingPortLocation = null): static
@@ -1671,7 +1671,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return UnloadingPortLocation|null
+     * @return null|UnloadingPortLocation
      */
     public function getUnloadingPortLocation(): ?UnloadingPortLocation
     {
@@ -1689,7 +1689,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param UnloadingPortLocation|null $unloadingPortLocation
+     * @param  null|UnloadingPortLocation $unloadingPortLocation
      * @return static
      */
     public function setUnloadingPortLocation(?UnloadingPortLocation $unloadingPortLocation = null): static
@@ -1710,7 +1710,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return TransshipPortLocation|null
+     * @return null|TransshipPortLocation
      */
     public function getTransshipPortLocation(): ?TransshipPortLocation
     {
@@ -1728,7 +1728,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param TransshipPortLocation|null $transshipPortLocation
+     * @param  null|TransshipPortLocation $transshipPortLocation
      * @return static
      */
     public function setTransshipPortLocation(?TransshipPortLocation $transshipPortLocation = null): static
@@ -1749,7 +1749,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return LoadingTransportEvent|null
+     * @return null|LoadingTransportEvent
      */
     public function getLoadingTransportEvent(): ?LoadingTransportEvent
     {
@@ -1767,7 +1767,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param LoadingTransportEvent|null $loadingTransportEvent
+     * @param  null|LoadingTransportEvent $loadingTransportEvent
      * @return static
      */
     public function setLoadingTransportEvent(?LoadingTransportEvent $loadingTransportEvent = null): static
@@ -1788,7 +1788,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return ExaminationTransportEvent|null
+     * @return null|ExaminationTransportEvent
      */
     public function getExaminationTransportEvent(): ?ExaminationTransportEvent
     {
@@ -1806,7 +1806,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param ExaminationTransportEvent|null $examinationTransportEvent
+     * @param  null|ExaminationTransportEvent $examinationTransportEvent
      * @return static
      */
     public function setExaminationTransportEvent(?ExaminationTransportEvent $examinationTransportEvent = null): static
@@ -1827,7 +1827,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return AvailabilityTransportEvent|null
+     * @return null|AvailabilityTransportEvent
      */
     public function getAvailabilityTransportEvent(): ?AvailabilityTransportEvent
     {
@@ -1845,7 +1845,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param AvailabilityTransportEvent|null $availabilityTransportEvent
+     * @param  null|AvailabilityTransportEvent $availabilityTransportEvent
      * @return static
      */
     public function setAvailabilityTransportEvent(
@@ -1867,7 +1867,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return ExportationTransportEvent|null
+     * @return null|ExportationTransportEvent
      */
     public function getExportationTransportEvent(): ?ExportationTransportEvent
     {
@@ -1885,7 +1885,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param ExportationTransportEvent|null $exportationTransportEvent
+     * @param  null|ExportationTransportEvent $exportationTransportEvent
      * @return static
      */
     public function setExportationTransportEvent(?ExportationTransportEvent $exportationTransportEvent = null): static
@@ -1906,7 +1906,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return DischargeTransportEvent|null
+     * @return null|DischargeTransportEvent
      */
     public function getDischargeTransportEvent(): ?DischargeTransportEvent
     {
@@ -1924,7 +1924,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param DischargeTransportEvent|null $dischargeTransportEvent
+     * @param  null|DischargeTransportEvent $dischargeTransportEvent
      * @return static
      */
     public function setDischargeTransportEvent(?DischargeTransportEvent $dischargeTransportEvent = null): static
@@ -1945,7 +1945,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return WarehousingTransportEvent|null
+     * @return null|WarehousingTransportEvent
      */
     public function getWarehousingTransportEvent(): ?WarehousingTransportEvent
     {
@@ -1963,7 +1963,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param WarehousingTransportEvent|null $warehousingTransportEvent
+     * @param  null|WarehousingTransportEvent $warehousingTransportEvent
      * @return static
      */
     public function setWarehousingTransportEvent(?WarehousingTransportEvent $warehousingTransportEvent = null): static
@@ -1984,7 +1984,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return TakeoverTransportEvent|null
+     * @return null|TakeoverTransportEvent
      */
     public function getTakeoverTransportEvent(): ?TakeoverTransportEvent
     {
@@ -2002,7 +2002,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param TakeoverTransportEvent|null $takeoverTransportEvent
+     * @param  null|TakeoverTransportEvent $takeoverTransportEvent
      * @return static
      */
     public function setTakeoverTransportEvent(?TakeoverTransportEvent $takeoverTransportEvent = null): static
@@ -2023,7 +2023,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return OptionalTakeoverTransportEvent|null
+     * @return null|OptionalTakeoverTransportEvent
      */
     public function getOptionalTakeoverTransportEvent(): ?OptionalTakeoverTransportEvent
     {
@@ -2041,7 +2041,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param OptionalTakeoverTransportEvent|null $optionalTakeoverTransportEvent
+     * @param  null|OptionalTakeoverTransportEvent $optionalTakeoverTransportEvent
      * @return static
      */
     public function setOptionalTakeoverTransportEvent(
@@ -2063,7 +2063,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return DropoffTransportEvent|null
+     * @return null|DropoffTransportEvent
      */
     public function getDropoffTransportEvent(): ?DropoffTransportEvent
     {
@@ -2081,7 +2081,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param DropoffTransportEvent|null $dropoffTransportEvent
+     * @param  null|DropoffTransportEvent $dropoffTransportEvent
      * @return static
      */
     public function setDropoffTransportEvent(?DropoffTransportEvent $dropoffTransportEvent = null): static
@@ -2102,7 +2102,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return ActualPickupTransportEvent|null
+     * @return null|ActualPickupTransportEvent
      */
     public function getActualPickupTransportEvent(): ?ActualPickupTransportEvent
     {
@@ -2120,7 +2120,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param ActualPickupTransportEvent|null $actualPickupTransportEvent
+     * @param  null|ActualPickupTransportEvent $actualPickupTransportEvent
      * @return static
      */
     public function setActualPickupTransportEvent(
@@ -2142,7 +2142,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return DeliveryTransportEvent|null
+     * @return null|DeliveryTransportEvent
      */
     public function getDeliveryTransportEvent(): ?DeliveryTransportEvent
     {
@@ -2160,7 +2160,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param DeliveryTransportEvent|null $deliveryTransportEvent
+     * @param  null|DeliveryTransportEvent $deliveryTransportEvent
      * @return static
      */
     public function setDeliveryTransportEvent(?DeliveryTransportEvent $deliveryTransportEvent = null): static
@@ -2181,7 +2181,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return ReceiptTransportEvent|null
+     * @return null|ReceiptTransportEvent
      */
     public function getReceiptTransportEvent(): ?ReceiptTransportEvent
     {
@@ -2199,7 +2199,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param ReceiptTransportEvent|null $receiptTransportEvent
+     * @param  null|ReceiptTransportEvent $receiptTransportEvent
      * @return static
      */
     public function setReceiptTransportEvent(?ReceiptTransportEvent $receiptTransportEvent = null): static
@@ -2220,7 +2220,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return StorageTransportEvent|null
+     * @return null|StorageTransportEvent
      */
     public function getStorageTransportEvent(): ?StorageTransportEvent
     {
@@ -2238,7 +2238,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param StorageTransportEvent|null $storageTransportEvent
+     * @param  null|StorageTransportEvent $storageTransportEvent
      * @return static
      */
     public function setStorageTransportEvent(?StorageTransportEvent $storageTransportEvent = null): static
@@ -2259,7 +2259,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return AcceptanceTransportEvent|null
+     * @return null|AcceptanceTransportEvent
      */
     public function getAcceptanceTransportEvent(): ?AcceptanceTransportEvent
     {
@@ -2277,7 +2277,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param AcceptanceTransportEvent|null $acceptanceTransportEvent
+     * @param  null|AcceptanceTransportEvent $acceptanceTransportEvent
      * @return static
      */
     public function setAcceptanceTransportEvent(?AcceptanceTransportEvent $acceptanceTransportEvent = null): static
@@ -2298,7 +2298,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return TerminalOperatorParty|null
+     * @return null|TerminalOperatorParty
      */
     public function getTerminalOperatorParty(): ?TerminalOperatorParty
     {
@@ -2316,7 +2316,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param TerminalOperatorParty|null $terminalOperatorParty
+     * @param  null|TerminalOperatorParty $terminalOperatorParty
      * @return static
      */
     public function setTerminalOperatorParty(?TerminalOperatorParty $terminalOperatorParty = null): static
@@ -2337,7 +2337,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return CustomsAgentParty|null
+     * @return null|CustomsAgentParty
      */
     public function getCustomsAgentParty(): ?CustomsAgentParty
     {
@@ -2355,7 +2355,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param CustomsAgentParty|null $customsAgentParty
+     * @param  null|CustomsAgentParty $customsAgentParty
      * @return static
      */
     public function setCustomsAgentParty(?CustomsAgentParty $customsAgentParty = null): static
@@ -2376,7 +2376,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return EstimatedTransitPeriod|null
+     * @return null|EstimatedTransitPeriod
      */
     public function getEstimatedTransitPeriod(): ?EstimatedTransitPeriod
     {
@@ -2394,7 +2394,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param EstimatedTransitPeriod|null $estimatedTransitPeriod
+     * @param  null|EstimatedTransitPeriod $estimatedTransitPeriod
      * @return static
      */
     public function setEstimatedTransitPeriod(?EstimatedTransitPeriod $estimatedTransitPeriod = null): static
@@ -2415,7 +2415,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return array<FreightAllowanceCharge>|null
+     * @return null|array<FreightAllowanceCharge>
      */
     public function getFreightAllowanceCharge(): ?array
     {
@@ -2423,7 +2423,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param array<FreightAllowanceCharge>|null $freightAllowanceCharge
+     * @param  null|array<FreightAllowanceCharge> $freightAllowanceCharge
      * @return static
      */
     public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): static
@@ -2454,7 +2454,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return FreightAllowanceCharge|null
+     * @return null|FreightAllowanceCharge
      */
     public function firstFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
@@ -2469,7 +2469,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return FreightAllowanceCharge|null
+     * @return null|FreightAllowanceCharge
      */
     public function lastFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
@@ -2484,7 +2484,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param FreightAllowanceCharge $freightAllowanceCharge
+     * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
     public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
@@ -2505,7 +2505,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param FreightAllowanceCharge $freightAllowanceCharge
+     * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
     public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
@@ -2536,7 +2536,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return FreightChargeLocation|null
+     * @return null|FreightChargeLocation
      */
     public function getFreightChargeLocation(): ?FreightChargeLocation
     {
@@ -2554,7 +2554,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param FreightChargeLocation|null $freightChargeLocation
+     * @param  null|FreightChargeLocation $freightChargeLocation
      * @return static
      */
     public function setFreightChargeLocation(?FreightChargeLocation $freightChargeLocation = null): static
@@ -2575,7 +2575,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return array<DetentionTransportEvent>|null
+     * @return null|array<DetentionTransportEvent>
      */
     public function getDetentionTransportEvent(): ?array
     {
@@ -2583,7 +2583,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param array<DetentionTransportEvent>|null $detentionTransportEvent
+     * @param  null|array<DetentionTransportEvent> $detentionTransportEvent
      * @return static
      */
     public function setDetentionTransportEvent(?array $detentionTransportEvent = null): static
@@ -2614,7 +2614,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return DetentionTransportEvent|null
+     * @return null|DetentionTransportEvent
      */
     public function firstDetentionTransportEvent(): ?DetentionTransportEvent
     {
@@ -2629,7 +2629,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return DetentionTransportEvent|null
+     * @return null|DetentionTransportEvent
      */
     public function lastDetentionTransportEvent(): ?DetentionTransportEvent
     {
@@ -2644,7 +2644,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param DetentionTransportEvent $detentionTransportEvent
+     * @param  DetentionTransportEvent $detentionTransportEvent
      * @return static
      */
     public function addToDetentionTransportEvent(DetentionTransportEvent $detentionTransportEvent): static
@@ -2665,7 +2665,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param DetentionTransportEvent $detentionTransportEvent
+     * @param  DetentionTransportEvent $detentionTransportEvent
      * @return static
      */
     public function addOnceToDetentionTransportEvent(DetentionTransportEvent $detentionTransportEvent): static
@@ -2696,7 +2696,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return RequestedDepartureTransportEvent|null
+     * @return null|RequestedDepartureTransportEvent
      */
     public function getRequestedDepartureTransportEvent(): ?RequestedDepartureTransportEvent
     {
@@ -2714,7 +2714,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param RequestedDepartureTransportEvent|null $requestedDepartureTransportEvent
+     * @param  null|RequestedDepartureTransportEvent $requestedDepartureTransportEvent
      * @return static
      */
     public function setRequestedDepartureTransportEvent(
@@ -2736,7 +2736,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return RequestedArrivalTransportEvent|null
+     * @return null|RequestedArrivalTransportEvent
      */
     public function getRequestedArrivalTransportEvent(): ?RequestedArrivalTransportEvent
     {
@@ -2754,7 +2754,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param RequestedArrivalTransportEvent|null $requestedArrivalTransportEvent
+     * @param  null|RequestedArrivalTransportEvent $requestedArrivalTransportEvent
      * @return static
      */
     public function setRequestedArrivalTransportEvent(
@@ -2776,7 +2776,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return array<RequestedWaypointTransportEvent>|null
+     * @return null|array<RequestedWaypointTransportEvent>
      */
     public function getRequestedWaypointTransportEvent(): ?array
     {
@@ -2784,7 +2784,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param array<RequestedWaypointTransportEvent>|null $requestedWaypointTransportEvent
+     * @param  null|array<RequestedWaypointTransportEvent> $requestedWaypointTransportEvent
      * @return static
      */
     public function setRequestedWaypointTransportEvent(?array $requestedWaypointTransportEvent = null): static
@@ -2815,7 +2815,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return RequestedWaypointTransportEvent|null
+     * @return null|RequestedWaypointTransportEvent
      */
     public function firstRequestedWaypointTransportEvent(): ?RequestedWaypointTransportEvent
     {
@@ -2830,7 +2830,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return RequestedWaypointTransportEvent|null
+     * @return null|RequestedWaypointTransportEvent
      */
     public function lastRequestedWaypointTransportEvent(): ?RequestedWaypointTransportEvent
     {
@@ -2845,7 +2845,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param RequestedWaypointTransportEvent $requestedWaypointTransportEvent
+     * @param  RequestedWaypointTransportEvent $requestedWaypointTransportEvent
      * @return static
      */
     public function addToRequestedWaypointTransportEvent(
@@ -2867,7 +2867,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param RequestedWaypointTransportEvent $requestedWaypointTransportEvent
+     * @param  RequestedWaypointTransportEvent $requestedWaypointTransportEvent
      * @return static
      */
     public function addOnceToRequestedWaypointTransportEvent(
@@ -2899,7 +2899,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return PlannedDepartureTransportEvent|null
+     * @return null|PlannedDepartureTransportEvent
      */
     public function getPlannedDepartureTransportEvent(): ?PlannedDepartureTransportEvent
     {
@@ -2917,7 +2917,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param PlannedDepartureTransportEvent|null $plannedDepartureTransportEvent
+     * @param  null|PlannedDepartureTransportEvent $plannedDepartureTransportEvent
      * @return static
      */
     public function setPlannedDepartureTransportEvent(
@@ -2939,7 +2939,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return PlannedArrivalTransportEvent|null
+     * @return null|PlannedArrivalTransportEvent
      */
     public function getPlannedArrivalTransportEvent(): ?PlannedArrivalTransportEvent
     {
@@ -2957,7 +2957,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param PlannedArrivalTransportEvent|null $plannedArrivalTransportEvent
+     * @param  null|PlannedArrivalTransportEvent $plannedArrivalTransportEvent
      * @return static
      */
     public function setPlannedArrivalTransportEvent(
@@ -2979,7 +2979,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return array<PlannedWaypointTransportEvent>|null
+     * @return null|array<PlannedWaypointTransportEvent>
      */
     public function getPlannedWaypointTransportEvent(): ?array
     {
@@ -2987,7 +2987,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param array<PlannedWaypointTransportEvent>|null $plannedWaypointTransportEvent
+     * @param  null|array<PlannedWaypointTransportEvent> $plannedWaypointTransportEvent
      * @return static
      */
     public function setPlannedWaypointTransportEvent(?array $plannedWaypointTransportEvent = null): static
@@ -3018,7 +3018,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return PlannedWaypointTransportEvent|null
+     * @return null|PlannedWaypointTransportEvent
      */
     public function firstPlannedWaypointTransportEvent(): ?PlannedWaypointTransportEvent
     {
@@ -3033,7 +3033,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return PlannedWaypointTransportEvent|null
+     * @return null|PlannedWaypointTransportEvent
      */
     public function lastPlannedWaypointTransportEvent(): ?PlannedWaypointTransportEvent
     {
@@ -3048,7 +3048,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param PlannedWaypointTransportEvent $plannedWaypointTransportEvent
+     * @param  PlannedWaypointTransportEvent $plannedWaypointTransportEvent
      * @return static
      */
     public function addToPlannedWaypointTransportEvent(
@@ -3070,7 +3070,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param PlannedWaypointTransportEvent $plannedWaypointTransportEvent
+     * @param  PlannedWaypointTransportEvent $plannedWaypointTransportEvent
      * @return static
      */
     public function addOnceToPlannedWaypointTransportEvent(
@@ -3102,7 +3102,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return ActualDepartureTransportEvent|null
+     * @return null|ActualDepartureTransportEvent
      */
     public function getActualDepartureTransportEvent(): ?ActualDepartureTransportEvent
     {
@@ -3120,7 +3120,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param ActualDepartureTransportEvent|null $actualDepartureTransportEvent
+     * @param  null|ActualDepartureTransportEvent $actualDepartureTransportEvent
      * @return static
      */
     public function setActualDepartureTransportEvent(
@@ -3142,7 +3142,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return ActualWaypointTransportEvent|null
+     * @return null|ActualWaypointTransportEvent
      */
     public function getActualWaypointTransportEvent(): ?ActualWaypointTransportEvent
     {
@@ -3160,7 +3160,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param ActualWaypointTransportEvent|null $actualWaypointTransportEvent
+     * @param  null|ActualWaypointTransportEvent $actualWaypointTransportEvent
      * @return static
      */
     public function setActualWaypointTransportEvent(
@@ -3182,7 +3182,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return ActualArrivalTransportEvent|null
+     * @return null|ActualArrivalTransportEvent
      */
     public function getActualArrivalTransportEvent(): ?ActualArrivalTransportEvent
     {
@@ -3200,7 +3200,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param ActualArrivalTransportEvent|null $actualArrivalTransportEvent
+     * @param  null|ActualArrivalTransportEvent $actualArrivalTransportEvent
      * @return static
      */
     public function setActualArrivalTransportEvent(
@@ -3222,7 +3222,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return array<TransportEvent>|null
+     * @return null|array<TransportEvent>
      */
     public function getTransportEvent(): ?array
     {
@@ -3230,7 +3230,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param array<TransportEvent>|null $transportEvent
+     * @param  null|array<TransportEvent> $transportEvent
      * @return static
      */
     public function setTransportEvent(?array $transportEvent = null): static
@@ -3261,7 +3261,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return TransportEvent|null
+     * @return null|TransportEvent
      */
     public function firstTransportEvent(): ?TransportEvent
     {
@@ -3276,7 +3276,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return TransportEvent|null
+     * @return null|TransportEvent
      */
     public function lastTransportEvent(): ?TransportEvent
     {
@@ -3291,7 +3291,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param TransportEvent $transportEvent
+     * @param  TransportEvent $transportEvent
      * @return static
      */
     public function addToTransportEvent(TransportEvent $transportEvent): static
@@ -3312,7 +3312,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param TransportEvent $transportEvent
+     * @param  TransportEvent $transportEvent
      * @return static
      */
     public function addOnceToTransportEvent(TransportEvent $transportEvent): static
@@ -3343,7 +3343,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return EstimatedDepartureTransportEvent|null
+     * @return null|EstimatedDepartureTransportEvent
      */
     public function getEstimatedDepartureTransportEvent(): ?EstimatedDepartureTransportEvent
     {
@@ -3361,7 +3361,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param EstimatedDepartureTransportEvent|null $estimatedDepartureTransportEvent
+     * @param  null|EstimatedDepartureTransportEvent $estimatedDepartureTransportEvent
      * @return static
      */
     public function setEstimatedDepartureTransportEvent(
@@ -3383,7 +3383,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return EstimatedArrivalTransportEvent|null
+     * @return null|EstimatedArrivalTransportEvent
      */
     public function getEstimatedArrivalTransportEvent(): ?EstimatedArrivalTransportEvent
     {
@@ -3401,7 +3401,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param EstimatedArrivalTransportEvent|null $estimatedArrivalTransportEvent
+     * @param  null|EstimatedArrivalTransportEvent $estimatedArrivalTransportEvent
      * @return static
      */
     public function setEstimatedArrivalTransportEvent(
@@ -3423,7 +3423,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return array<PassengerPerson>|null
+     * @return null|array<PassengerPerson>
      */
     public function getPassengerPerson(): ?array
     {
@@ -3431,7 +3431,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param array<PassengerPerson>|null $passengerPerson
+     * @param  null|array<PassengerPerson> $passengerPerson
      * @return static
      */
     public function setPassengerPerson(?array $passengerPerson = null): static
@@ -3462,7 +3462,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return PassengerPerson|null
+     * @return null|PassengerPerson
      */
     public function firstPassengerPerson(): ?PassengerPerson
     {
@@ -3477,7 +3477,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return PassengerPerson|null
+     * @return null|PassengerPerson
      */
     public function lastPassengerPerson(): ?PassengerPerson
     {
@@ -3492,7 +3492,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param PassengerPerson $passengerPerson
+     * @param  PassengerPerson $passengerPerson
      * @return static
      */
     public function addToPassengerPerson(PassengerPerson $passengerPerson): static
@@ -3513,7 +3513,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param PassengerPerson $passengerPerson
+     * @param  PassengerPerson $passengerPerson
      * @return static
      */
     public function addOnceToPassengerPerson(PassengerPerson $passengerPerson): static
@@ -3544,7 +3544,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return array<DriverPerson>|null
+     * @return null|array<DriverPerson>
      */
     public function getDriverPerson(): ?array
     {
@@ -3552,7 +3552,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param array<DriverPerson>|null $driverPerson
+     * @param  null|array<DriverPerson> $driverPerson
      * @return static
      */
     public function setDriverPerson(?array $driverPerson = null): static
@@ -3583,7 +3583,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return DriverPerson|null
+     * @return null|DriverPerson
      */
     public function firstDriverPerson(): ?DriverPerson
     {
@@ -3598,7 +3598,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return DriverPerson|null
+     * @return null|DriverPerson
      */
     public function lastDriverPerson(): ?DriverPerson
     {
@@ -3613,7 +3613,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param DriverPerson $driverPerson
+     * @param  DriverPerson $driverPerson
      * @return static
      */
     public function addToDriverPerson(DriverPerson $driverPerson): static
@@ -3634,7 +3634,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param DriverPerson $driverPerson
+     * @param  DriverPerson $driverPerson
      * @return static
      */
     public function addOnceToDriverPerson(DriverPerson $driverPerson): static
@@ -3665,7 +3665,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return ReportingPerson|null
+     * @return null|ReportingPerson
      */
     public function getReportingPerson(): ?ReportingPerson
     {
@@ -3683,7 +3683,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param ReportingPerson|null $reportingPerson
+     * @param  null|ReportingPerson $reportingPerson
      * @return static
      */
     public function setReportingPerson(?ReportingPerson $reportingPerson = null): static
@@ -3704,7 +3704,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return array<CrewMemberPerson>|null
+     * @return null|array<CrewMemberPerson>
      */
     public function getCrewMemberPerson(): ?array
     {
@@ -3712,7 +3712,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param array<CrewMemberPerson>|null $crewMemberPerson
+     * @param  null|array<CrewMemberPerson> $crewMemberPerson
      * @return static
      */
     public function setCrewMemberPerson(?array $crewMemberPerson = null): static
@@ -3743,7 +3743,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return CrewMemberPerson|null
+     * @return null|CrewMemberPerson
      */
     public function firstCrewMemberPerson(): ?CrewMemberPerson
     {
@@ -3758,7 +3758,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return CrewMemberPerson|null
+     * @return null|CrewMemberPerson
      */
     public function lastCrewMemberPerson(): ?CrewMemberPerson
     {
@@ -3773,7 +3773,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param CrewMemberPerson $crewMemberPerson
+     * @param  CrewMemberPerson $crewMemberPerson
      * @return static
      */
     public function addToCrewMemberPerson(CrewMemberPerson $crewMemberPerson): static
@@ -3794,7 +3794,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param CrewMemberPerson $crewMemberPerson
+     * @param  CrewMemberPerson $crewMemberPerson
      * @return static
      */
     public function addOnceToCrewMemberPerson(CrewMemberPerson $crewMemberPerson): static
@@ -3825,7 +3825,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return SecurityOfficerPerson|null
+     * @return null|SecurityOfficerPerson
      */
     public function getSecurityOfficerPerson(): ?SecurityOfficerPerson
     {
@@ -3843,7 +3843,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param SecurityOfficerPerson|null $securityOfficerPerson
+     * @param  null|SecurityOfficerPerson $securityOfficerPerson
      * @return static
      */
     public function setSecurityOfficerPerson(?SecurityOfficerPerson $securityOfficerPerson = null): static
@@ -3864,7 +3864,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return MasterPerson|null
+     * @return null|MasterPerson
      */
     public function getMasterPerson(): ?MasterPerson
     {
@@ -3882,7 +3882,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param MasterPerson|null $masterPerson
+     * @param  null|MasterPerson $masterPerson
      * @return static
      */
     public function setMasterPerson(?MasterPerson $masterPerson = null): static
@@ -3903,7 +3903,7 @@ class ShipmentStageType
     }
 
     /**
-     * @return ShipsSurgeonPerson|null
+     * @return null|ShipsSurgeonPerson
      */
     public function getShipsSurgeonPerson(): ?ShipsSurgeonPerson
     {
@@ -3921,7 +3921,7 @@ class ShipmentStageType
     }
 
     /**
-     * @param ShipsSurgeonPerson|null $shipsSurgeonPerson
+     * @param  null|ShipsSurgeonPerson $shipsSurgeonPerson
      * @return static
      */
     public function setShipsSurgeonPerson(?ShipsSurgeonPerson $shipsSurgeonPerson = null): static

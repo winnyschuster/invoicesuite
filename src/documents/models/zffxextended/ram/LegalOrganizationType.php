@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class LegalOrganizationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class LegalOrganizationType
     private $iD;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class LegalOrganizationType
     private $tradingBusinessName;
 
     /**
-     * @var TradeAddressType|null
+     * @var null|TradeAddressType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAddressType")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class LegalOrganizationType
     private $postalTradeAddress;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getID(): ?IDType
     {
@@ -65,7 +65,7 @@ class LegalOrganizationType
     }
 
     /**
-     * @param IDType|null $iD
+     * @param  null|IDType $iD
      * @return static
      */
     public function setID(?IDType $iD = null): static
@@ -86,7 +86,7 @@ class LegalOrganizationType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getTradingBusinessName(): ?TextType
     {
@@ -104,7 +104,7 @@ class LegalOrganizationType
     }
 
     /**
-     * @param TextType|null $tradingBusinessName
+     * @param  null|TextType $tradingBusinessName
      * @return static
      */
     public function setTradingBusinessName(?TextType $tradingBusinessName = null): static
@@ -125,7 +125,7 @@ class LegalOrganizationType
     }
 
     /**
-     * @return TradeAddressType|null
+     * @return null|TradeAddressType
      */
     public function getPostalTradeAddress(): ?TradeAddressType
     {
@@ -143,7 +143,7 @@ class LegalOrganizationType
     }
 
     /**
-     * @param TradeAddressType|null $postalTradeAddress
+     * @param  null|TradeAddressType $postalTradeAddress
      * @return static
      */
     public function setPostalTradeAddress(?TradeAddressType $postalTradeAddress = null): static

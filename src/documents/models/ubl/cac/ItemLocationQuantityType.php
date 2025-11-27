@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LeadTimeMeasure;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TradingRestrictions;
+use JMS\Serializer\Annotation as JMS;
 
 class ItemLocationQuantityType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var LeadTimeMeasure|null
+     * @var null|LeadTimeMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LeadTimeMeasure")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class ItemLocationQuantityType
     private $leadTimeMeasure;
 
     /**
-     * @var MinimumQuantity|null
+     * @var null|MinimumQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class ItemLocationQuantityType
     private $minimumQuantity;
 
     /**
-     * @var MaximumQuantity|null
+     * @var null|MaximumQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class ItemLocationQuantityType
     private $maximumQuantity;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ItemLocationQuantityType
     private $hazardousRiskIndicator;
 
     /**
-     * @var array<TradingRestrictions>|null
+     * @var null|array<TradingRestrictions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\TradingRestrictions>")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class ItemLocationQuantityType
     private $tradingRestrictions;
 
     /**
-     * @var array<ApplicableTerritoryAddress>|null
+     * @var null|array<ApplicableTerritoryAddress>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTerritoryAddress>")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class ItemLocationQuantityType
     private $applicableTerritoryAddress;
 
     /**
-     * @var Price|null
+     * @var null|Price
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Price")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class ItemLocationQuantityType
     private $price;
 
     /**
-     * @var array<DeliveryUnit>|null
+     * @var null|array<DeliveryUnit>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryUnit>")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class ItemLocationQuantityType
     private $deliveryUnit;
 
     /**
-     * @var array<ApplicableTaxCategory>|null
+     * @var null|array<ApplicableTaxCategory>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory>")
      * @JMS\Expose
@@ -119,7 +119,7 @@ class ItemLocationQuantityType
     private $applicableTaxCategory;
 
     /**
-     * @var Package|null
+     * @var null|Package
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Package")
      * @JMS\Expose
@@ -130,7 +130,7 @@ class ItemLocationQuantityType
     private $package;
 
     /**
-     * @var array<AllowanceCharge>|null
+     * @var null|array<AllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -142,7 +142,7 @@ class ItemLocationQuantityType
     private $allowanceCharge;
 
     /**
-     * @var DependentPriceReference|null
+     * @var null|DependentPriceReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DependentPriceReference")
      * @JMS\Expose
@@ -153,7 +153,7 @@ class ItemLocationQuantityType
     private $dependentPriceReference;
 
     /**
-     * @return LeadTimeMeasure|null
+     * @return null|LeadTimeMeasure
      */
     public function getLeadTimeMeasure(): ?LeadTimeMeasure
     {
@@ -171,7 +171,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param LeadTimeMeasure|null $leadTimeMeasure
+     * @param  null|LeadTimeMeasure $leadTimeMeasure
      * @return static
      */
     public function setLeadTimeMeasure(?LeadTimeMeasure $leadTimeMeasure = null): static
@@ -192,7 +192,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return MinimumQuantity|null
+     * @return null|MinimumQuantity
      */
     public function getMinimumQuantity(): ?MinimumQuantity
     {
@@ -210,7 +210,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param MinimumQuantity|null $minimumQuantity
+     * @param  null|MinimumQuantity $minimumQuantity
      * @return static
      */
     public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): static
@@ -231,7 +231,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return MaximumQuantity|null
+     * @return null|MaximumQuantity
      */
     public function getMaximumQuantity(): ?MaximumQuantity
     {
@@ -249,7 +249,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param MaximumQuantity|null $maximumQuantity
+     * @param  null|MaximumQuantity $maximumQuantity
      * @return static
      */
     public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): static
@@ -270,7 +270,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getHazardousRiskIndicator(): ?bool
     {
@@ -278,7 +278,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param bool|null $hazardousRiskIndicator
+     * @param  null|bool $hazardousRiskIndicator
      * @return static
      */
     public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): static
@@ -299,7 +299,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return array<TradingRestrictions>|null
+     * @return null|array<TradingRestrictions>
      */
     public function getTradingRestrictions(): ?array
     {
@@ -307,7 +307,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param array<TradingRestrictions>|null $tradingRestrictions
+     * @param  null|array<TradingRestrictions> $tradingRestrictions
      * @return static
      */
     public function setTradingRestrictions(?array $tradingRestrictions = null): static
@@ -338,7 +338,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return TradingRestrictions|null
+     * @return null|TradingRestrictions
      */
     public function firstTradingRestrictions(): ?TradingRestrictions
     {
@@ -353,7 +353,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return TradingRestrictions|null
+     * @return null|TradingRestrictions
      */
     public function lastTradingRestrictions(): ?TradingRestrictions
     {
@@ -368,7 +368,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param TradingRestrictions $tradingRestrictions
+     * @param  TradingRestrictions $tradingRestrictions
      * @return static
      */
     public function addToTradingRestrictions(TradingRestrictions $tradingRestrictions): static
@@ -389,7 +389,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param TradingRestrictions $tradingRestrictions
+     * @param  TradingRestrictions $tradingRestrictions
      * @return static
      */
     public function addOnceToTradingRestrictions(TradingRestrictions $tradingRestrictions): static
@@ -420,7 +420,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return array<ApplicableTerritoryAddress>|null
+     * @return null|array<ApplicableTerritoryAddress>
      */
     public function getApplicableTerritoryAddress(): ?array
     {
@@ -428,7 +428,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param array<ApplicableTerritoryAddress>|null $applicableTerritoryAddress
+     * @param  null|array<ApplicableTerritoryAddress> $applicableTerritoryAddress
      * @return static
      */
     public function setApplicableTerritoryAddress(?array $applicableTerritoryAddress = null): static
@@ -459,7 +459,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return ApplicableTerritoryAddress|null
+     * @return null|ApplicableTerritoryAddress
      */
     public function firstApplicableTerritoryAddress(): ?ApplicableTerritoryAddress
     {
@@ -474,7 +474,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return ApplicableTerritoryAddress|null
+     * @return null|ApplicableTerritoryAddress
      */
     public function lastApplicableTerritoryAddress(): ?ApplicableTerritoryAddress
     {
@@ -489,7 +489,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param ApplicableTerritoryAddress $applicableTerritoryAddress
+     * @param  ApplicableTerritoryAddress $applicableTerritoryAddress
      * @return static
      */
     public function addToApplicableTerritoryAddress(ApplicableTerritoryAddress $applicableTerritoryAddress): static
@@ -510,7 +510,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param ApplicableTerritoryAddress $applicableTerritoryAddress
+     * @param  ApplicableTerritoryAddress $applicableTerritoryAddress
      * @return static
      */
     public function addOnceToApplicableTerritoryAddress(ApplicableTerritoryAddress $applicableTerritoryAddress): static
@@ -541,7 +541,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return Price|null
+     * @return null|Price
      */
     public function getPrice(): ?Price
     {
@@ -559,7 +559,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param Price|null $price
+     * @param  null|Price $price
      * @return static
      */
     public function setPrice(?Price $price = null): static
@@ -580,7 +580,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return array<DeliveryUnit>|null
+     * @return null|array<DeliveryUnit>
      */
     public function getDeliveryUnit(): ?array
     {
@@ -588,7 +588,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param array<DeliveryUnit>|null $deliveryUnit
+     * @param  null|array<DeliveryUnit> $deliveryUnit
      * @return static
      */
     public function setDeliveryUnit(?array $deliveryUnit = null): static
@@ -619,7 +619,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return DeliveryUnit|null
+     * @return null|DeliveryUnit
      */
     public function firstDeliveryUnit(): ?DeliveryUnit
     {
@@ -634,7 +634,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return DeliveryUnit|null
+     * @return null|DeliveryUnit
      */
     public function lastDeliveryUnit(): ?DeliveryUnit
     {
@@ -649,7 +649,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param DeliveryUnit $deliveryUnit
+     * @param  DeliveryUnit $deliveryUnit
      * @return static
      */
     public function addToDeliveryUnit(DeliveryUnit $deliveryUnit): static
@@ -670,7 +670,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param DeliveryUnit $deliveryUnit
+     * @param  DeliveryUnit $deliveryUnit
      * @return static
      */
     public function addOnceToDeliveryUnit(DeliveryUnit $deliveryUnit): static
@@ -701,7 +701,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return array<ApplicableTaxCategory>|null
+     * @return null|array<ApplicableTaxCategory>
      */
     public function getApplicableTaxCategory(): ?array
     {
@@ -709,7 +709,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param array<ApplicableTaxCategory>|null $applicableTaxCategory
+     * @param  null|array<ApplicableTaxCategory> $applicableTaxCategory
      * @return static
      */
     public function setApplicableTaxCategory(?array $applicableTaxCategory = null): static
@@ -740,7 +740,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return ApplicableTaxCategory|null
+     * @return null|ApplicableTaxCategory
      */
     public function firstApplicableTaxCategory(): ?ApplicableTaxCategory
     {
@@ -755,7 +755,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return ApplicableTaxCategory|null
+     * @return null|ApplicableTaxCategory
      */
     public function lastApplicableTaxCategory(): ?ApplicableTaxCategory
     {
@@ -770,7 +770,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param ApplicableTaxCategory $applicableTaxCategory
+     * @param  ApplicableTaxCategory $applicableTaxCategory
      * @return static
      */
     public function addToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): static
@@ -791,7 +791,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param ApplicableTaxCategory $applicableTaxCategory
+     * @param  ApplicableTaxCategory $applicableTaxCategory
      * @return static
      */
     public function addOnceToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): static
@@ -822,7 +822,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return Package|null
+     * @return null|Package
      */
     public function getPackage(): ?Package
     {
@@ -840,7 +840,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param Package|null $package
+     * @param  null|Package $package
      * @return static
      */
     public function setPackage(?Package $package = null): static
@@ -861,7 +861,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return array<AllowanceCharge>|null
+     * @return null|array<AllowanceCharge>
      */
     public function getAllowanceCharge(): ?array
     {
@@ -869,7 +869,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param array<AllowanceCharge>|null $allowanceCharge
+     * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): static
@@ -900,7 +900,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -915,7 +915,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -930,7 +930,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -951,7 +951,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -982,7 +982,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @return DependentPriceReference|null
+     * @return null|DependentPriceReference
      */
     public function getDependentPriceReference(): ?DependentPriceReference
     {
@@ -1000,7 +1000,7 @@ class ItemLocationQuantityType
     }
 
     /**
-     * @param DependentPriceReference|null $dependentPriceReference
+     * @param  null|DependentPriceReference $dependentPriceReference
      * @return static
      */
     public function setDependentPriceReference(?DependentPriceReference $dependentPriceReference = null): static

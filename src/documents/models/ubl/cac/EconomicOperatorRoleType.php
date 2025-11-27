@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\RoleCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\RoleDescription;
+use JMS\Serializer\Annotation as JMS;
 
 class EconomicOperatorRoleType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var RoleCode|null
+     * @var null|RoleCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RoleCode")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class EconomicOperatorRoleType
     private $roleCode;
 
     /**
-     * @var array<RoleDescription>|null
+     * @var null|array<RoleDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\RoleDescription>")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class EconomicOperatorRoleType
     private $roleDescription;
 
     /**
-     * @return RoleCode|null
+     * @return null|RoleCode
      */
     public function getRoleCode(): ?RoleCode
     {
@@ -55,7 +55,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @param RoleCode|null $roleCode
+     * @param  null|RoleCode $roleCode
      * @return static
      */
     public function setRoleCode(?RoleCode $roleCode = null): static
@@ -76,7 +76,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @return array<RoleDescription>|null
+     * @return null|array<RoleDescription>
      */
     public function getRoleDescription(): ?array
     {
@@ -84,7 +84,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @param array<RoleDescription>|null $roleDescription
+     * @param  null|array<RoleDescription> $roleDescription
      * @return static
      */
     public function setRoleDescription(?array $roleDescription = null): static
@@ -115,7 +115,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @return RoleDescription|null
+     * @return null|RoleDescription
      */
     public function firstRoleDescription(): ?RoleDescription
     {
@@ -130,7 +130,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @return RoleDescription|null
+     * @return null|RoleDescription
      */
     public function lastRoleDescription(): ?RoleDescription
     {
@@ -145,7 +145,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @param RoleDescription $roleDescription
+     * @param  RoleDescription $roleDescription
      * @return static
      */
     public function addToRoleDescription(RoleDescription $roleDescription): static
@@ -166,7 +166,7 @@ class EconomicOperatorRoleType
     }
 
     /**
-     * @param RoleDescription $roleDescription
+     * @param  RoleDescription $roleDescription
      * @return static
      */
     public function addOnceToRoleDescription(RoleDescription $roleDescription): static

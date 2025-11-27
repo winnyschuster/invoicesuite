@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxminimum\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxminimum\udt\AmountType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeSettlementHeaderMonetarySummationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\udt\AmountType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class TradeSettlementHeaderMonetarySummationType
     private $taxBasisTotalAmount;
 
     /**
-     * @var array<AmountType>|null
+     * @var null|array<AmountType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxminimum\udt\AmountType>")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TradeSettlementHeaderMonetarySummationType
     private $taxTotalAmount;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\udt\AmountType")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class TradeSettlementHeaderMonetarySummationType
     private $grandTotalAmount;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\udt\AmountType")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class TradeSettlementHeaderMonetarySummationType
     private $duePayableAmount;
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getTaxBasisTotalAmount(): ?AmountType
     {
@@ -76,7 +76,7 @@ class TradeSettlementHeaderMonetarySummationType
     }
 
     /**
-     * @param AmountType|null $taxBasisTotalAmount
+     * @param  null|AmountType $taxBasisTotalAmount
      * @return static
      */
     public function setTaxBasisTotalAmount(?AmountType $taxBasisTotalAmount = null): static
@@ -97,7 +97,7 @@ class TradeSettlementHeaderMonetarySummationType
     }
 
     /**
-     * @return array<AmountType>|null
+     * @return null|array<AmountType>
      */
     public function getTaxTotalAmount(): ?array
     {
@@ -105,7 +105,7 @@ class TradeSettlementHeaderMonetarySummationType
     }
 
     /**
-     * @param array<AmountType>|null $taxTotalAmount
+     * @param  null|array<AmountType> $taxTotalAmount
      * @return static
      */
     public function setTaxTotalAmount(?array $taxTotalAmount = null): static
@@ -136,7 +136,7 @@ class TradeSettlementHeaderMonetarySummationType
     }
 
     /**
-     * @param AmountType $taxTotalAmount
+     * @param  AmountType $taxTotalAmount
      * @return static
      */
     public function addToTaxTotalAmount(AmountType $taxTotalAmount): static
@@ -157,7 +157,7 @@ class TradeSettlementHeaderMonetarySummationType
     }
 
     /**
-     * @param AmountType $taxTotalAmount
+     * @param  AmountType $taxTotalAmount
      * @return static
      */
     public function addOnceToTaxTotalAmount(AmountType $taxTotalAmount): static
@@ -188,7 +188,7 @@ class TradeSettlementHeaderMonetarySummationType
     }
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getGrandTotalAmount(): ?AmountType
     {
@@ -206,7 +206,7 @@ class TradeSettlementHeaderMonetarySummationType
     }
 
     /**
-     * @param AmountType|null $grandTotalAmount
+     * @param  null|AmountType $grandTotalAmount
      * @return static
      */
     public function setGrandTotalAmount(?AmountType $grandTotalAmount = null): static
@@ -227,7 +227,7 @@ class TradeSettlementHeaderMonetarySummationType
     }
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getDuePayableAmount(): ?AmountType
     {
@@ -245,7 +245,7 @@ class TradeSettlementHeaderMonetarySummationType
     }
 
     /**
-     * @param AmountType|null $duePayableAmount
+     * @param  null|AmountType $duePayableAmount
      * @return static
      */
     public function setDuePayableAmount(?AmountType $duePayableAmount = null): static

@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BaseUnitMeasure;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
-use horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Percent;
+use horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TaxExemptionReason;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TaxExemptionReasonCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TierRange;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TierRatePercent;
+use JMS\Serializer\Annotation as JMS;
 
 class TaxCategoryType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class TaxCategoryType
     private $iD;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class TaxCategoryType
     private $name;
 
     /**
-     * @var Percent|null
+     * @var null|Percent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Percent")
      * @JMS\Expose
@@ -54,7 +54,7 @@ class TaxCategoryType
     private $percent;
 
     /**
-     * @var BaseUnitMeasure|null
+     * @var null|BaseUnitMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BaseUnitMeasure")
      * @JMS\Expose
@@ -65,7 +65,7 @@ class TaxCategoryType
     private $baseUnitMeasure;
 
     /**
-     * @var PerUnitAmount|null
+     * @var null|PerUnitAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount")
      * @JMS\Expose
@@ -76,7 +76,7 @@ class TaxCategoryType
     private $perUnitAmount;
 
     /**
-     * @var TaxExemptionReasonCode|null
+     * @var null|TaxExemptionReasonCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxExemptionReasonCode")
      * @JMS\Expose
@@ -87,7 +87,7 @@ class TaxCategoryType
     private $taxExemptionReasonCode;
 
     /**
-     * @var array<TaxExemptionReason>|null
+     * @var null|array<TaxExemptionReason>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\TaxExemptionReason>")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class TaxCategoryType
     private $taxExemptionReason;
 
     /**
-     * @var TierRange|null
+     * @var null|TierRange
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TierRange")
      * @JMS\Expose
@@ -110,7 +110,7 @@ class TaxCategoryType
     private $tierRange;
 
     /**
-     * @var TierRatePercent|null
+     * @var null|TierRatePercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TierRatePercent")
      * @JMS\Expose
@@ -121,7 +121,7 @@ class TaxCategoryType
     private $tierRatePercent;
 
     /**
-     * @var TaxScheme|null
+     * @var null|TaxScheme
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TaxScheme")
      * @JMS\Expose
@@ -132,7 +132,7 @@ class TaxCategoryType
     private $taxScheme;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -150,7 +150,7 @@ class TaxCategoryType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -171,7 +171,7 @@ class TaxCategoryType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -189,7 +189,7 @@ class TaxCategoryType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -210,7 +210,7 @@ class TaxCategoryType
     }
 
     /**
-     * @return Percent|null
+     * @return null|Percent
      */
     public function getPercent(): ?Percent
     {
@@ -228,7 +228,7 @@ class TaxCategoryType
     }
 
     /**
-     * @param Percent|null $percent
+     * @param  null|Percent $percent
      * @return static
      */
     public function setPercent(?Percent $percent = null): static
@@ -249,7 +249,7 @@ class TaxCategoryType
     }
 
     /**
-     * @return BaseUnitMeasure|null
+     * @return null|BaseUnitMeasure
      */
     public function getBaseUnitMeasure(): ?BaseUnitMeasure
     {
@@ -267,7 +267,7 @@ class TaxCategoryType
     }
 
     /**
-     * @param BaseUnitMeasure|null $baseUnitMeasure
+     * @param  null|BaseUnitMeasure $baseUnitMeasure
      * @return static
      */
     public function setBaseUnitMeasure(?BaseUnitMeasure $baseUnitMeasure = null): static
@@ -288,7 +288,7 @@ class TaxCategoryType
     }
 
     /**
-     * @return PerUnitAmount|null
+     * @return null|PerUnitAmount
      */
     public function getPerUnitAmount(): ?PerUnitAmount
     {
@@ -306,7 +306,7 @@ class TaxCategoryType
     }
 
     /**
-     * @param PerUnitAmount|null $perUnitAmount
+     * @param  null|PerUnitAmount $perUnitAmount
      * @return static
      */
     public function setPerUnitAmount(?PerUnitAmount $perUnitAmount = null): static
@@ -327,7 +327,7 @@ class TaxCategoryType
     }
 
     /**
-     * @return TaxExemptionReasonCode|null
+     * @return null|TaxExemptionReasonCode
      */
     public function getTaxExemptionReasonCode(): ?TaxExemptionReasonCode
     {
@@ -345,7 +345,7 @@ class TaxCategoryType
     }
 
     /**
-     * @param TaxExemptionReasonCode|null $taxExemptionReasonCode
+     * @param  null|TaxExemptionReasonCode $taxExemptionReasonCode
      * @return static
      */
     public function setTaxExemptionReasonCode(?TaxExemptionReasonCode $taxExemptionReasonCode = null): static
@@ -366,7 +366,7 @@ class TaxCategoryType
     }
 
     /**
-     * @return array<TaxExemptionReason>|null
+     * @return null|array<TaxExemptionReason>
      */
     public function getTaxExemptionReason(): ?array
     {
@@ -374,7 +374,7 @@ class TaxCategoryType
     }
 
     /**
-     * @param array<TaxExemptionReason>|null $taxExemptionReason
+     * @param  null|array<TaxExemptionReason> $taxExemptionReason
      * @return static
      */
     public function setTaxExemptionReason(?array $taxExemptionReason = null): static
@@ -405,7 +405,7 @@ class TaxCategoryType
     }
 
     /**
-     * @return TaxExemptionReason|null
+     * @return null|TaxExemptionReason
      */
     public function firstTaxExemptionReason(): ?TaxExemptionReason
     {
@@ -420,7 +420,7 @@ class TaxCategoryType
     }
 
     /**
-     * @return TaxExemptionReason|null
+     * @return null|TaxExemptionReason
      */
     public function lastTaxExemptionReason(): ?TaxExemptionReason
     {
@@ -435,7 +435,7 @@ class TaxCategoryType
     }
 
     /**
-     * @param TaxExemptionReason $taxExemptionReason
+     * @param  TaxExemptionReason $taxExemptionReason
      * @return static
      */
     public function addToTaxExemptionReason(TaxExemptionReason $taxExemptionReason): static
@@ -456,7 +456,7 @@ class TaxCategoryType
     }
 
     /**
-     * @param TaxExemptionReason $taxExemptionReason
+     * @param  TaxExemptionReason $taxExemptionReason
      * @return static
      */
     public function addOnceToTaxExemptionReason(TaxExemptionReason $taxExemptionReason): static
@@ -487,7 +487,7 @@ class TaxCategoryType
     }
 
     /**
-     * @return TierRange|null
+     * @return null|TierRange
      */
     public function getTierRange(): ?TierRange
     {
@@ -505,7 +505,7 @@ class TaxCategoryType
     }
 
     /**
-     * @param TierRange|null $tierRange
+     * @param  null|TierRange $tierRange
      * @return static
      */
     public function setTierRange(?TierRange $tierRange = null): static
@@ -526,7 +526,7 @@ class TaxCategoryType
     }
 
     /**
-     * @return TierRatePercent|null
+     * @return null|TierRatePercent
      */
     public function getTierRatePercent(): ?TierRatePercent
     {
@@ -544,7 +544,7 @@ class TaxCategoryType
     }
 
     /**
-     * @param TierRatePercent|null $tierRatePercent
+     * @param  null|TierRatePercent $tierRatePercent
      * @return static
      */
     public function setTierRatePercent(?TierRatePercent $tierRatePercent = null): static
@@ -565,7 +565,7 @@ class TaxCategoryType
     }
 
     /**
-     * @return TaxScheme|null
+     * @return null|TaxScheme
      */
     public function getTaxScheme(): ?TaxScheme
     {
@@ -583,7 +583,7 @@ class TaxCategoryType
     }
 
     /**
-     * @param TaxScheme|null $taxScheme
+     * @param  null|TaxScheme $taxScheme
      * @return static
      */
     public function setTaxScheme(?TaxScheme $taxScheme = null): static

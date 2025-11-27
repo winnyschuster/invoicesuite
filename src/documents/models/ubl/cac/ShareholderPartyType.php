@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PartecipationPercent;
+use JMS\Serializer\Annotation as JMS;
 
 class ShareholderPartyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var PartecipationPercent|null
+     * @var null|PartecipationPercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PartecipationPercent")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class ShareholderPartyType
     private $partecipationPercent;
 
     /**
-     * @var Party|null
+     * @var null|Party
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Party")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class ShareholderPartyType
     private $party;
 
     /**
-     * @return PartecipationPercent|null
+     * @return null|PartecipationPercent
      */
     public function getPartecipationPercent(): ?PartecipationPercent
     {
@@ -53,7 +53,7 @@ class ShareholderPartyType
     }
 
     /**
-     * @param PartecipationPercent|null $partecipationPercent
+     * @param  null|PartecipationPercent $partecipationPercent
      * @return static
      */
     public function setPartecipationPercent(?PartecipationPercent $partecipationPercent = null): static
@@ -74,7 +74,7 @@ class ShareholderPartyType
     }
 
     /**
-     * @return Party|null
+     * @return null|Party
      */
     public function getParty(): ?Party
     {
@@ -92,7 +92,7 @@ class ShareholderPartyType
     }
 
     /**
-     * @param Party|null $party
+     * @param  null|Party $party
      * @return static
      */
     public function setParty(?Party $party = null): static

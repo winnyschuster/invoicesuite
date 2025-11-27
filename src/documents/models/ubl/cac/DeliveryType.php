@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity;
@@ -13,13 +12,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ReleaseID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TrackingID;
+use JMS\Serializer\Annotation as JMS;
 
 class DeliveryType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -30,7 +30,7 @@ class DeliveryType
     private $iD;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class DeliveryType
     private $quantity;
 
     /**
-     * @var MinimumQuantity|null
+     * @var null|MinimumQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class DeliveryType
     private $minimumQuantity;
 
     /**
-     * @var MaximumQuantity|null
+     * @var null|MaximumQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class DeliveryType
     private $maximumQuantity;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class DeliveryType
     private $actualDeliveryDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class DeliveryType
     private $actualDeliveryTime;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class DeliveryType
     private $latestDeliveryDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class DeliveryType
     private $latestDeliveryTime;
 
     /**
-     * @var ReleaseID|null
+     * @var null|ReleaseID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReleaseID")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class DeliveryType
     private $releaseID;
 
     /**
-     * @var TrackingID|null
+     * @var null|TrackingID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TrackingID")
      * @JMS\Expose
@@ -129,7 +129,7 @@ class DeliveryType
     private $trackingID;
 
     /**
-     * @var DeliveryAddress|null
+     * @var null|DeliveryAddress
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryAddress")
      * @JMS\Expose
@@ -140,7 +140,7 @@ class DeliveryType
     private $deliveryAddress;
 
     /**
-     * @var DeliveryLocation|null
+     * @var null|DeliveryLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryLocation")
      * @JMS\Expose
@@ -151,7 +151,7 @@ class DeliveryType
     private $deliveryLocation;
 
     /**
-     * @var AlternativeDeliveryLocation|null
+     * @var null|AlternativeDeliveryLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeDeliveryLocation")
      * @JMS\Expose
@@ -162,7 +162,7 @@ class DeliveryType
     private $alternativeDeliveryLocation;
 
     /**
-     * @var RequestedDeliveryPeriod|null
+     * @var null|RequestedDeliveryPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RequestedDeliveryPeriod")
      * @JMS\Expose
@@ -173,7 +173,7 @@ class DeliveryType
     private $requestedDeliveryPeriod;
 
     /**
-     * @var PromisedDeliveryPeriod|null
+     * @var null|PromisedDeliveryPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PromisedDeliveryPeriod")
      * @JMS\Expose
@@ -184,7 +184,7 @@ class DeliveryType
     private $promisedDeliveryPeriod;
 
     /**
-     * @var EstimatedDeliveryPeriod|null
+     * @var null|EstimatedDeliveryPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EstimatedDeliveryPeriod")
      * @JMS\Expose
@@ -195,7 +195,7 @@ class DeliveryType
     private $estimatedDeliveryPeriod;
 
     /**
-     * @var CarrierParty|null
+     * @var null|CarrierParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CarrierParty")
      * @JMS\Expose
@@ -206,7 +206,7 @@ class DeliveryType
     private $carrierParty;
 
     /**
-     * @var DeliveryParty|null
+     * @var null|DeliveryParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryParty")
      * @JMS\Expose
@@ -217,7 +217,7 @@ class DeliveryType
     private $deliveryParty;
 
     /**
-     * @var array<NotifyParty>|null
+     * @var null|array<NotifyParty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty>")
      * @JMS\Expose
@@ -229,7 +229,7 @@ class DeliveryType
     private $notifyParty;
 
     /**
-     * @var Despatch|null
+     * @var null|Despatch
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Despatch")
      * @JMS\Expose
@@ -240,7 +240,7 @@ class DeliveryType
     private $despatch;
 
     /**
-     * @var array<DeliveryTerms>|null
+     * @var null|array<DeliveryTerms>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms>")
      * @JMS\Expose
@@ -252,7 +252,7 @@ class DeliveryType
     private $deliveryTerms;
 
     /**
-     * @var MinimumDeliveryUnit|null
+     * @var null|MinimumDeliveryUnit
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MinimumDeliveryUnit")
      * @JMS\Expose
@@ -263,7 +263,7 @@ class DeliveryType
     private $minimumDeliveryUnit;
 
     /**
-     * @var MaximumDeliveryUnit|null
+     * @var null|MaximumDeliveryUnit
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MaximumDeliveryUnit")
      * @JMS\Expose
@@ -274,7 +274,7 @@ class DeliveryType
     private $maximumDeliveryUnit;
 
     /**
-     * @var Shipment|null
+     * @var null|Shipment
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Shipment")
      * @JMS\Expose
@@ -285,7 +285,7 @@ class DeliveryType
     private $shipment;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -303,7 +303,7 @@ class DeliveryType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -324,7 +324,7 @@ class DeliveryType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -342,7 +342,7 @@ class DeliveryType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -363,7 +363,7 @@ class DeliveryType
     }
 
     /**
-     * @return MinimumQuantity|null
+     * @return null|MinimumQuantity
      */
     public function getMinimumQuantity(): ?MinimumQuantity
     {
@@ -381,7 +381,7 @@ class DeliveryType
     }
 
     /**
-     * @param MinimumQuantity|null $minimumQuantity
+     * @param  null|MinimumQuantity $minimumQuantity
      * @return static
      */
     public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): static
@@ -402,7 +402,7 @@ class DeliveryType
     }
 
     /**
-     * @return MaximumQuantity|null
+     * @return null|MaximumQuantity
      */
     public function getMaximumQuantity(): ?MaximumQuantity
     {
@@ -420,7 +420,7 @@ class DeliveryType
     }
 
     /**
-     * @param MaximumQuantity|null $maximumQuantity
+     * @param  null|MaximumQuantity $maximumQuantity
      * @return static
      */
     public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): static
@@ -441,7 +441,7 @@ class DeliveryType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getActualDeliveryDate(): ?DateTimeInterface
     {
@@ -449,7 +449,7 @@ class DeliveryType
     }
 
     /**
-     * @param DateTimeInterface|null $actualDeliveryDate
+     * @param  null|DateTimeInterface $actualDeliveryDate
      * @return static
      */
     public function setActualDeliveryDate(?DateTimeInterface $actualDeliveryDate = null): static
@@ -470,7 +470,7 @@ class DeliveryType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getActualDeliveryTime(): ?DateTimeInterface
     {
@@ -478,7 +478,7 @@ class DeliveryType
     }
 
     /**
-     * @param DateTimeInterface|null $actualDeliveryTime
+     * @param  null|DateTimeInterface $actualDeliveryTime
      * @return static
      */
     public function setActualDeliveryTime(?DateTimeInterface $actualDeliveryTime = null): static
@@ -499,7 +499,7 @@ class DeliveryType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getLatestDeliveryDate(): ?DateTimeInterface
     {
@@ -507,7 +507,7 @@ class DeliveryType
     }
 
     /**
-     * @param DateTimeInterface|null $latestDeliveryDate
+     * @param  null|DateTimeInterface $latestDeliveryDate
      * @return static
      */
     public function setLatestDeliveryDate(?DateTimeInterface $latestDeliveryDate = null): static
@@ -528,7 +528,7 @@ class DeliveryType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getLatestDeliveryTime(): ?DateTimeInterface
     {
@@ -536,7 +536,7 @@ class DeliveryType
     }
 
     /**
-     * @param DateTimeInterface|null $latestDeliveryTime
+     * @param  null|DateTimeInterface $latestDeliveryTime
      * @return static
      */
     public function setLatestDeliveryTime(?DateTimeInterface $latestDeliveryTime = null): static
@@ -557,7 +557,7 @@ class DeliveryType
     }
 
     /**
-     * @return ReleaseID|null
+     * @return null|ReleaseID
      */
     public function getReleaseID(): ?ReleaseID
     {
@@ -575,7 +575,7 @@ class DeliveryType
     }
 
     /**
-     * @param ReleaseID|null $releaseID
+     * @param  null|ReleaseID $releaseID
      * @return static
      */
     public function setReleaseID(?ReleaseID $releaseID = null): static
@@ -596,7 +596,7 @@ class DeliveryType
     }
 
     /**
-     * @return TrackingID|null
+     * @return null|TrackingID
      */
     public function getTrackingID(): ?TrackingID
     {
@@ -614,7 +614,7 @@ class DeliveryType
     }
 
     /**
-     * @param TrackingID|null $trackingID
+     * @param  null|TrackingID $trackingID
      * @return static
      */
     public function setTrackingID(?TrackingID $trackingID = null): static
@@ -635,7 +635,7 @@ class DeliveryType
     }
 
     /**
-     * @return DeliveryAddress|null
+     * @return null|DeliveryAddress
      */
     public function getDeliveryAddress(): ?DeliveryAddress
     {
@@ -653,7 +653,7 @@ class DeliveryType
     }
 
     /**
-     * @param DeliveryAddress|null $deliveryAddress
+     * @param  null|DeliveryAddress $deliveryAddress
      * @return static
      */
     public function setDeliveryAddress(?DeliveryAddress $deliveryAddress = null): static
@@ -674,7 +674,7 @@ class DeliveryType
     }
 
     /**
-     * @return DeliveryLocation|null
+     * @return null|DeliveryLocation
      */
     public function getDeliveryLocation(): ?DeliveryLocation
     {
@@ -692,7 +692,7 @@ class DeliveryType
     }
 
     /**
-     * @param DeliveryLocation|null $deliveryLocation
+     * @param  null|DeliveryLocation $deliveryLocation
      * @return static
      */
     public function setDeliveryLocation(?DeliveryLocation $deliveryLocation = null): static
@@ -713,7 +713,7 @@ class DeliveryType
     }
 
     /**
-     * @return AlternativeDeliveryLocation|null
+     * @return null|AlternativeDeliveryLocation
      */
     public function getAlternativeDeliveryLocation(): ?AlternativeDeliveryLocation
     {
@@ -731,7 +731,7 @@ class DeliveryType
     }
 
     /**
-     * @param AlternativeDeliveryLocation|null $alternativeDeliveryLocation
+     * @param  null|AlternativeDeliveryLocation $alternativeDeliveryLocation
      * @return static
      */
     public function setAlternativeDeliveryLocation(
@@ -753,7 +753,7 @@ class DeliveryType
     }
 
     /**
-     * @return RequestedDeliveryPeriod|null
+     * @return null|RequestedDeliveryPeriod
      */
     public function getRequestedDeliveryPeriod(): ?RequestedDeliveryPeriod
     {
@@ -771,7 +771,7 @@ class DeliveryType
     }
 
     /**
-     * @param RequestedDeliveryPeriod|null $requestedDeliveryPeriod
+     * @param  null|RequestedDeliveryPeriod $requestedDeliveryPeriod
      * @return static
      */
     public function setRequestedDeliveryPeriod(?RequestedDeliveryPeriod $requestedDeliveryPeriod = null): static
@@ -792,7 +792,7 @@ class DeliveryType
     }
 
     /**
-     * @return PromisedDeliveryPeriod|null
+     * @return null|PromisedDeliveryPeriod
      */
     public function getPromisedDeliveryPeriod(): ?PromisedDeliveryPeriod
     {
@@ -810,7 +810,7 @@ class DeliveryType
     }
 
     /**
-     * @param PromisedDeliveryPeriod|null $promisedDeliveryPeriod
+     * @param  null|PromisedDeliveryPeriod $promisedDeliveryPeriod
      * @return static
      */
     public function setPromisedDeliveryPeriod(?PromisedDeliveryPeriod $promisedDeliveryPeriod = null): static
@@ -831,7 +831,7 @@ class DeliveryType
     }
 
     /**
-     * @return EstimatedDeliveryPeriod|null
+     * @return null|EstimatedDeliveryPeriod
      */
     public function getEstimatedDeliveryPeriod(): ?EstimatedDeliveryPeriod
     {
@@ -849,7 +849,7 @@ class DeliveryType
     }
 
     /**
-     * @param EstimatedDeliveryPeriod|null $estimatedDeliveryPeriod
+     * @param  null|EstimatedDeliveryPeriod $estimatedDeliveryPeriod
      * @return static
      */
     public function setEstimatedDeliveryPeriod(?EstimatedDeliveryPeriod $estimatedDeliveryPeriod = null): static
@@ -870,7 +870,7 @@ class DeliveryType
     }
 
     /**
-     * @return CarrierParty|null
+     * @return null|CarrierParty
      */
     public function getCarrierParty(): ?CarrierParty
     {
@@ -888,7 +888,7 @@ class DeliveryType
     }
 
     /**
-     * @param CarrierParty|null $carrierParty
+     * @param  null|CarrierParty $carrierParty
      * @return static
      */
     public function setCarrierParty(?CarrierParty $carrierParty = null): static
@@ -909,7 +909,7 @@ class DeliveryType
     }
 
     /**
-     * @return DeliveryParty|null
+     * @return null|DeliveryParty
      */
     public function getDeliveryParty(): ?DeliveryParty
     {
@@ -927,7 +927,7 @@ class DeliveryType
     }
 
     /**
-     * @param DeliveryParty|null $deliveryParty
+     * @param  null|DeliveryParty $deliveryParty
      * @return static
      */
     public function setDeliveryParty(?DeliveryParty $deliveryParty = null): static
@@ -948,7 +948,7 @@ class DeliveryType
     }
 
     /**
-     * @return array<NotifyParty>|null
+     * @return null|array<NotifyParty>
      */
     public function getNotifyParty(): ?array
     {
@@ -956,7 +956,7 @@ class DeliveryType
     }
 
     /**
-     * @param array<NotifyParty>|null $notifyParty
+     * @param  null|array<NotifyParty> $notifyParty
      * @return static
      */
     public function setNotifyParty(?array $notifyParty = null): static
@@ -987,7 +987,7 @@ class DeliveryType
     }
 
     /**
-     * @return NotifyParty|null
+     * @return null|NotifyParty
      */
     public function firstNotifyParty(): ?NotifyParty
     {
@@ -1002,7 +1002,7 @@ class DeliveryType
     }
 
     /**
-     * @return NotifyParty|null
+     * @return null|NotifyParty
      */
     public function lastNotifyParty(): ?NotifyParty
     {
@@ -1017,7 +1017,7 @@ class DeliveryType
     }
 
     /**
-     * @param NotifyParty $notifyParty
+     * @param  NotifyParty $notifyParty
      * @return static
      */
     public function addToNotifyParty(NotifyParty $notifyParty): static
@@ -1038,7 +1038,7 @@ class DeliveryType
     }
 
     /**
-     * @param NotifyParty $notifyParty
+     * @param  NotifyParty $notifyParty
      * @return static
      */
     public function addOnceToNotifyParty(NotifyParty $notifyParty): static
@@ -1069,7 +1069,7 @@ class DeliveryType
     }
 
     /**
-     * @return Despatch|null
+     * @return null|Despatch
      */
     public function getDespatch(): ?Despatch
     {
@@ -1087,7 +1087,7 @@ class DeliveryType
     }
 
     /**
-     * @param Despatch|null $despatch
+     * @param  null|Despatch $despatch
      * @return static
      */
     public function setDespatch(?Despatch $despatch = null): static
@@ -1108,7 +1108,7 @@ class DeliveryType
     }
 
     /**
-     * @return array<DeliveryTerms>|null
+     * @return null|array<DeliveryTerms>
      */
     public function getDeliveryTerms(): ?array
     {
@@ -1116,7 +1116,7 @@ class DeliveryType
     }
 
     /**
-     * @param array<DeliveryTerms>|null $deliveryTerms
+     * @param  null|array<DeliveryTerms> $deliveryTerms
      * @return static
      */
     public function setDeliveryTerms(?array $deliveryTerms = null): static
@@ -1147,7 +1147,7 @@ class DeliveryType
     }
 
     /**
-     * @return DeliveryTerms|null
+     * @return null|DeliveryTerms
      */
     public function firstDeliveryTerms(): ?DeliveryTerms
     {
@@ -1162,7 +1162,7 @@ class DeliveryType
     }
 
     /**
-     * @return DeliveryTerms|null
+     * @return null|DeliveryTerms
      */
     public function lastDeliveryTerms(): ?DeliveryTerms
     {
@@ -1177,7 +1177,7 @@ class DeliveryType
     }
 
     /**
-     * @param DeliveryTerms $deliveryTerms
+     * @param  DeliveryTerms $deliveryTerms
      * @return static
      */
     public function addToDeliveryTerms(DeliveryTerms $deliveryTerms): static
@@ -1198,7 +1198,7 @@ class DeliveryType
     }
 
     /**
-     * @param DeliveryTerms $deliveryTerms
+     * @param  DeliveryTerms $deliveryTerms
      * @return static
      */
     public function addOnceToDeliveryTerms(DeliveryTerms $deliveryTerms): static
@@ -1229,7 +1229,7 @@ class DeliveryType
     }
 
     /**
-     * @return MinimumDeliveryUnit|null
+     * @return null|MinimumDeliveryUnit
      */
     public function getMinimumDeliveryUnit(): ?MinimumDeliveryUnit
     {
@@ -1247,7 +1247,7 @@ class DeliveryType
     }
 
     /**
-     * @param MinimumDeliveryUnit|null $minimumDeliveryUnit
+     * @param  null|MinimumDeliveryUnit $minimumDeliveryUnit
      * @return static
      */
     public function setMinimumDeliveryUnit(?MinimumDeliveryUnit $minimumDeliveryUnit = null): static
@@ -1268,7 +1268,7 @@ class DeliveryType
     }
 
     /**
-     * @return MaximumDeliveryUnit|null
+     * @return null|MaximumDeliveryUnit
      */
     public function getMaximumDeliveryUnit(): ?MaximumDeliveryUnit
     {
@@ -1286,7 +1286,7 @@ class DeliveryType
     }
 
     /**
-     * @param MaximumDeliveryUnit|null $maximumDeliveryUnit
+     * @param  null|MaximumDeliveryUnit $maximumDeliveryUnit
      * @return static
      */
     public function setMaximumDeliveryUnit(?MaximumDeliveryUnit $maximumDeliveryUnit = null): static
@@ -1307,7 +1307,7 @@ class DeliveryType
     }
 
     /**
-     * @return Shipment|null
+     * @return null|Shipment
      */
     public function getShipment(): ?Shipment
     {
@@ -1325,7 +1325,7 @@ class DeliveryType
     }
 
     /**
-     * @param Shipment|null $shipment
+     * @param  null|Shipment $shipment
      * @return static
      */
     public function setShipment(?Shipment $shipment = null): static

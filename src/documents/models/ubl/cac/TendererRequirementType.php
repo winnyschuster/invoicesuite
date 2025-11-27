@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LegalReference;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TendererRequirementTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class TendererRequirementType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var array<Name>|null
+     * @var null|array<Name>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Name>")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class TendererRequirementType
     private $name;
 
     /**
-     * @var TendererRequirementTypeCode|null
+     * @var null|TendererRequirementTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TendererRequirementTypeCode")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class TendererRequirementType
     private $tendererRequirementTypeCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class TendererRequirementType
     private $description;
 
     /**
-     * @var LegalReference|null
+     * @var null|LegalReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LegalReference")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class TendererRequirementType
     private $legalReference;
 
     /**
-     * @var array<SuggestedEvidence>|null
+     * @var null|array<SuggestedEvidence>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence>")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class TendererRequirementType
     private $suggestedEvidence;
 
     /**
-     * @return array<Name>|null
+     * @return null|array<Name>
      */
     public function getName(): ?array
     {
@@ -82,7 +82,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param array<Name>|null $name
+     * @param  null|array<Name> $name
      * @return static
      */
     public function setName(?array $name = null): static
@@ -113,7 +113,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function firstName(): ?Name
     {
@@ -128,7 +128,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function lastName(): ?Name
     {
@@ -143,7 +143,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param Name $name
+     * @param  Name   $name
      * @return static
      */
     public function addToName(Name $name): static
@@ -164,7 +164,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param Name $name
+     * @param  Name   $name
      * @return static
      */
     public function addOnceToName(Name $name): static
@@ -195,7 +195,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return TendererRequirementTypeCode|null
+     * @return null|TendererRequirementTypeCode
      */
     public function getTendererRequirementTypeCode(): ?TendererRequirementTypeCode
     {
@@ -213,7 +213,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param TendererRequirementTypeCode|null $tendererRequirementTypeCode
+     * @param  null|TendererRequirementTypeCode $tendererRequirementTypeCode
      * @return static
      */
     public function setTendererRequirementTypeCode(
@@ -235,7 +235,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -243,7 +243,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -274,7 +274,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -289,7 +289,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -304,7 +304,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -325,7 +325,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -356,7 +356,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return LegalReference|null
+     * @return null|LegalReference
      */
     public function getLegalReference(): ?LegalReference
     {
@@ -374,7 +374,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param LegalReference|null $legalReference
+     * @param  null|LegalReference $legalReference
      * @return static
      */
     public function setLegalReference(?LegalReference $legalReference = null): static
@@ -395,7 +395,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return array<SuggestedEvidence>|null
+     * @return null|array<SuggestedEvidence>
      */
     public function getSuggestedEvidence(): ?array
     {
@@ -403,7 +403,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param array<SuggestedEvidence>|null $suggestedEvidence
+     * @param  null|array<SuggestedEvidence> $suggestedEvidence
      * @return static
      */
     public function setSuggestedEvidence(?array $suggestedEvidence = null): static
@@ -434,7 +434,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return SuggestedEvidence|null
+     * @return null|SuggestedEvidence
      */
     public function firstSuggestedEvidence(): ?SuggestedEvidence
     {
@@ -449,7 +449,7 @@ class TendererRequirementType
     }
 
     /**
-     * @return SuggestedEvidence|null
+     * @return null|SuggestedEvidence
      */
     public function lastSuggestedEvidence(): ?SuggestedEvidence
     {
@@ -464,7 +464,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param SuggestedEvidence $suggestedEvidence
+     * @param  SuggestedEvidence $suggestedEvidence
      * @return static
      */
     public function addToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): static
@@ -485,7 +485,7 @@ class TendererRequirementType
     }
 
     /**
-     * @param SuggestedEvidence $suggestedEvidence
+     * @param  SuggestedEvidence $suggestedEvidence
      * @return static
      */
     public function addOnceToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): static

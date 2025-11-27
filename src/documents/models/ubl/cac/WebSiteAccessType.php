@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Login;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Password;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\URI;
+use JMS\Serializer\Annotation as JMS;
 
 class WebSiteAccessType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var URI|null
+     * @var null|URI
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\URI")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class WebSiteAccessType
     private $uRI;
 
     /**
-     * @var Password|null
+     * @var null|Password
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Password")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class WebSiteAccessType
     private $password;
 
     /**
-     * @var Login|null
+     * @var null|Login
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Login")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class WebSiteAccessType
     private $login;
 
     /**
-     * @return URI|null
+     * @return null|URI
      */
     public function getURI(): ?URI
     {
@@ -66,7 +66,7 @@ class WebSiteAccessType
     }
 
     /**
-     * @param URI|null $uRI
+     * @param  null|URI $uRI
      * @return static
      */
     public function setURI(?URI $uRI = null): static
@@ -87,7 +87,7 @@ class WebSiteAccessType
     }
 
     /**
-     * @return Password|null
+     * @return null|Password
      */
     public function getPassword(): ?Password
     {
@@ -105,7 +105,7 @@ class WebSiteAccessType
     }
 
     /**
-     * @param Password|null $password
+     * @param  null|Password $password
      * @return static
      */
     public function setPassword(?Password $password = null): static
@@ -126,7 +126,7 @@ class WebSiteAccessType
     }
 
     /**
-     * @return Login|null
+     * @return null|Login
      */
     public function getLogin(): ?Login
     {
@@ -144,7 +144,7 @@ class WebSiteAccessType
     }
 
     /**
-     * @param Login|null $login
+     * @param  null|Login $login
      * @return static
      */
     public function setLogin(?Login $login = null): static

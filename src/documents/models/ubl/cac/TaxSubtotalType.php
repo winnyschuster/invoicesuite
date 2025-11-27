@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BaseUnitMeasure;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationSequenceNumeric;
-use horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Percent;
-use horstoeko\invoicesuite\documents\models\ubl\cbc\TaxAmount;
+use horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TaxableAmount;
+use horstoeko\invoicesuite\documents\models\ubl\cbc\TaxAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TierRange;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TierRatePercent;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TransactionCurrencyTaxAmount;
+use JMS\Serializer\Annotation as JMS;
 
 class TaxSubtotalType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TaxableAmount|null
+     * @var null|TaxableAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxableAmount")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class TaxSubtotalType
     private $taxableAmount;
 
     /**
-     * @var TaxAmount|null
+     * @var null|TaxAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxAmount")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class TaxSubtotalType
     private $taxAmount;
 
     /**
-     * @var CalculationSequenceNumeric|null
+     * @var null|CalculationSequenceNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationSequenceNumeric")
      * @JMS\Expose
@@ -54,7 +54,7 @@ class TaxSubtotalType
     private $calculationSequenceNumeric;
 
     /**
-     * @var TransactionCurrencyTaxAmount|null
+     * @var null|TransactionCurrencyTaxAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TransactionCurrencyTaxAmount")
      * @JMS\Expose
@@ -65,7 +65,7 @@ class TaxSubtotalType
     private $transactionCurrencyTaxAmount;
 
     /**
-     * @var Percent|null
+     * @var null|Percent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Percent")
      * @JMS\Expose
@@ -76,7 +76,7 @@ class TaxSubtotalType
     private $percent;
 
     /**
-     * @var BaseUnitMeasure|null
+     * @var null|BaseUnitMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BaseUnitMeasure")
      * @JMS\Expose
@@ -87,7 +87,7 @@ class TaxSubtotalType
     private $baseUnitMeasure;
 
     /**
-     * @var PerUnitAmount|null
+     * @var null|PerUnitAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount")
      * @JMS\Expose
@@ -98,7 +98,7 @@ class TaxSubtotalType
     private $perUnitAmount;
 
     /**
-     * @var TierRange|null
+     * @var null|TierRange
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TierRange")
      * @JMS\Expose
@@ -109,7 +109,7 @@ class TaxSubtotalType
     private $tierRange;
 
     /**
-     * @var TierRatePercent|null
+     * @var null|TierRatePercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TierRatePercent")
      * @JMS\Expose
@@ -120,7 +120,7 @@ class TaxSubtotalType
     private $tierRatePercent;
 
     /**
-     * @var TaxCategory|null
+     * @var null|TaxCategory
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory")
      * @JMS\Expose
@@ -131,7 +131,7 @@ class TaxSubtotalType
     private $taxCategory;
 
     /**
-     * @return TaxableAmount|null
+     * @return null|TaxableAmount
      */
     public function getTaxableAmount(): ?TaxableAmount
     {
@@ -149,7 +149,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param TaxableAmount|null $taxableAmount
+     * @param  null|TaxableAmount $taxableAmount
      * @return static
      */
     public function setTaxableAmount(?TaxableAmount $taxableAmount = null): static
@@ -170,7 +170,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return TaxAmount|null
+     * @return null|TaxAmount
      */
     public function getTaxAmount(): ?TaxAmount
     {
@@ -188,7 +188,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param TaxAmount|null $taxAmount
+     * @param  null|TaxAmount $taxAmount
      * @return static
      */
     public function setTaxAmount(?TaxAmount $taxAmount = null): static
@@ -209,7 +209,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return CalculationSequenceNumeric|null
+     * @return null|CalculationSequenceNumeric
      */
     public function getCalculationSequenceNumeric(): ?CalculationSequenceNumeric
     {
@@ -227,7 +227,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param CalculationSequenceNumeric|null $calculationSequenceNumeric
+     * @param  null|CalculationSequenceNumeric $calculationSequenceNumeric
      * @return static
      */
     public function setCalculationSequenceNumeric(
@@ -249,7 +249,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return TransactionCurrencyTaxAmount|null
+     * @return null|TransactionCurrencyTaxAmount
      */
     public function getTransactionCurrencyTaxAmount(): ?TransactionCurrencyTaxAmount
     {
@@ -267,7 +267,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param TransactionCurrencyTaxAmount|null $transactionCurrencyTaxAmount
+     * @param  null|TransactionCurrencyTaxAmount $transactionCurrencyTaxAmount
      * @return static
      */
     public function setTransactionCurrencyTaxAmount(
@@ -289,7 +289,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return Percent|null
+     * @return null|Percent
      */
     public function getPercent(): ?Percent
     {
@@ -307,7 +307,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param Percent|null $percent
+     * @param  null|Percent $percent
      * @return static
      */
     public function setPercent(?Percent $percent = null): static
@@ -328,7 +328,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return BaseUnitMeasure|null
+     * @return null|BaseUnitMeasure
      */
     public function getBaseUnitMeasure(): ?BaseUnitMeasure
     {
@@ -346,7 +346,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param BaseUnitMeasure|null $baseUnitMeasure
+     * @param  null|BaseUnitMeasure $baseUnitMeasure
      * @return static
      */
     public function setBaseUnitMeasure(?BaseUnitMeasure $baseUnitMeasure = null): static
@@ -367,7 +367,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return PerUnitAmount|null
+     * @return null|PerUnitAmount
      */
     public function getPerUnitAmount(): ?PerUnitAmount
     {
@@ -385,7 +385,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param PerUnitAmount|null $perUnitAmount
+     * @param  null|PerUnitAmount $perUnitAmount
      * @return static
      */
     public function setPerUnitAmount(?PerUnitAmount $perUnitAmount = null): static
@@ -406,7 +406,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return TierRange|null
+     * @return null|TierRange
      */
     public function getTierRange(): ?TierRange
     {
@@ -424,7 +424,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param TierRange|null $tierRange
+     * @param  null|TierRange $tierRange
      * @return static
      */
     public function setTierRange(?TierRange $tierRange = null): static
@@ -445,7 +445,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return TierRatePercent|null
+     * @return null|TierRatePercent
      */
     public function getTierRatePercent(): ?TierRatePercent
     {
@@ -463,7 +463,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param TierRatePercent|null $tierRatePercent
+     * @param  null|TierRatePercent $tierRatePercent
      * @return static
      */
     public function setTierRatePercent(?TierRatePercent $tierRatePercent = null): static
@@ -484,7 +484,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @return TaxCategory|null
+     * @return null|TaxCategory
      */
     public function getTaxCategory(): ?TaxCategory
     {
@@ -502,7 +502,7 @@ class TaxSubtotalType
     }
 
     /**
-     * @param TaxCategory|null $taxCategory
+     * @param  null|TaxCategory $taxCategory
      * @return static
      */
     public function setTaxCategory(?TaxCategory $taxCategory = null): static

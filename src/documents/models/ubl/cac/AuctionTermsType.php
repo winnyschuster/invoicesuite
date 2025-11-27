@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AuctionURI;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionsDescription;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ElectronicDeviceDescription;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\JustificationDescription;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessDescription;
+use JMS\Serializer\Annotation as JMS;
 
 class AuctionTermsType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class AuctionTermsType
     private $auctionConstraintIndicator;
 
     /**
-     * @var array<JustificationDescription>|null
+     * @var null|array<JustificationDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\JustificationDescription>")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class AuctionTermsType
     private $justificationDescription;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -53,7 +53,7 @@ class AuctionTermsType
     private $description;
 
     /**
-     * @var array<ProcessDescription>|null
+     * @var null|array<ProcessDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessDescription>")
      * @JMS\Expose
@@ -65,7 +65,7 @@ class AuctionTermsType
     private $processDescription;
 
     /**
-     * @var array<ConditionsDescription>|null
+     * @var null|array<ConditionsDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionsDescription>")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class AuctionTermsType
     private $conditionsDescription;
 
     /**
-     * @var array<ElectronicDeviceDescription>|null
+     * @var null|array<ElectronicDeviceDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ElectronicDeviceDescription>")
      * @JMS\Expose
@@ -89,7 +89,7 @@ class AuctionTermsType
     private $electronicDeviceDescription;
 
     /**
-     * @var AuctionURI|null
+     * @var null|AuctionURI
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AuctionURI")
      * @JMS\Expose
@@ -100,7 +100,7 @@ class AuctionTermsType
     private $auctionURI;
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getAuctionConstraintIndicator(): ?bool
     {
@@ -108,7 +108,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param bool|null $auctionConstraintIndicator
+     * @param  null|bool $auctionConstraintIndicator
      * @return static
      */
     public function setAuctionConstraintIndicator(?bool $auctionConstraintIndicator = null): static
@@ -129,7 +129,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return array<JustificationDescription>|null
+     * @return null|array<JustificationDescription>
      */
     public function getJustificationDescription(): ?array
     {
@@ -137,7 +137,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param array<JustificationDescription>|null $justificationDescription
+     * @param  null|array<JustificationDescription> $justificationDescription
      * @return static
      */
     public function setJustificationDescription(?array $justificationDescription = null): static
@@ -168,7 +168,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return JustificationDescription|null
+     * @return null|JustificationDescription
      */
     public function firstJustificationDescription(): ?JustificationDescription
     {
@@ -183,7 +183,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return JustificationDescription|null
+     * @return null|JustificationDescription
      */
     public function lastJustificationDescription(): ?JustificationDescription
     {
@@ -198,7 +198,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param JustificationDescription $justificationDescription
+     * @param  JustificationDescription $justificationDescription
      * @return static
      */
     public function addToJustificationDescription(JustificationDescription $justificationDescription): static
@@ -219,7 +219,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param JustificationDescription $justificationDescription
+     * @param  JustificationDescription $justificationDescription
      * @return static
      */
     public function addOnceToJustificationDescription(JustificationDescription $justificationDescription): static
@@ -250,7 +250,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -258,7 +258,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -289,7 +289,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -304,7 +304,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -319,7 +319,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -340,7 +340,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -371,7 +371,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return array<ProcessDescription>|null
+     * @return null|array<ProcessDescription>
      */
     public function getProcessDescription(): ?array
     {
@@ -379,7 +379,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param array<ProcessDescription>|null $processDescription
+     * @param  null|array<ProcessDescription> $processDescription
      * @return static
      */
     public function setProcessDescription(?array $processDescription = null): static
@@ -410,7 +410,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return ProcessDescription|null
+     * @return null|ProcessDescription
      */
     public function firstProcessDescription(): ?ProcessDescription
     {
@@ -425,7 +425,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return ProcessDescription|null
+     * @return null|ProcessDescription
      */
     public function lastProcessDescription(): ?ProcessDescription
     {
@@ -440,7 +440,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param ProcessDescription $processDescription
+     * @param  ProcessDescription $processDescription
      * @return static
      */
     public function addToProcessDescription(ProcessDescription $processDescription): static
@@ -461,7 +461,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param ProcessDescription $processDescription
+     * @param  ProcessDescription $processDescription
      * @return static
      */
     public function addOnceToProcessDescription(ProcessDescription $processDescription): static
@@ -492,7 +492,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return array<ConditionsDescription>|null
+     * @return null|array<ConditionsDescription>
      */
     public function getConditionsDescription(): ?array
     {
@@ -500,7 +500,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param array<ConditionsDescription>|null $conditionsDescription
+     * @param  null|array<ConditionsDescription> $conditionsDescription
      * @return static
      */
     public function setConditionsDescription(?array $conditionsDescription = null): static
@@ -531,7 +531,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return ConditionsDescription|null
+     * @return null|ConditionsDescription
      */
     public function firstConditionsDescription(): ?ConditionsDescription
     {
@@ -546,7 +546,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return ConditionsDescription|null
+     * @return null|ConditionsDescription
      */
     public function lastConditionsDescription(): ?ConditionsDescription
     {
@@ -561,7 +561,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param ConditionsDescription $conditionsDescription
+     * @param  ConditionsDescription $conditionsDescription
      * @return static
      */
     public function addToConditionsDescription(ConditionsDescription $conditionsDescription): static
@@ -582,7 +582,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param ConditionsDescription $conditionsDescription
+     * @param  ConditionsDescription $conditionsDescription
      * @return static
      */
     public function addOnceToConditionsDescription(ConditionsDescription $conditionsDescription): static
@@ -613,7 +613,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return array<ElectronicDeviceDescription>|null
+     * @return null|array<ElectronicDeviceDescription>
      */
     public function getElectronicDeviceDescription(): ?array
     {
@@ -621,7 +621,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param array<ElectronicDeviceDescription>|null $electronicDeviceDescription
+     * @param  null|array<ElectronicDeviceDescription> $electronicDeviceDescription
      * @return static
      */
     public function setElectronicDeviceDescription(?array $electronicDeviceDescription = null): static
@@ -652,7 +652,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return ElectronicDeviceDescription|null
+     * @return null|ElectronicDeviceDescription
      */
     public function firstElectronicDeviceDescription(): ?ElectronicDeviceDescription
     {
@@ -667,7 +667,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return ElectronicDeviceDescription|null
+     * @return null|ElectronicDeviceDescription
      */
     public function lastElectronicDeviceDescription(): ?ElectronicDeviceDescription
     {
@@ -682,7 +682,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param ElectronicDeviceDescription $electronicDeviceDescription
+     * @param  ElectronicDeviceDescription $electronicDeviceDescription
      * @return static
      */
     public function addToElectronicDeviceDescription(ElectronicDeviceDescription $electronicDeviceDescription): static
@@ -703,7 +703,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param ElectronicDeviceDescription $electronicDeviceDescription
+     * @param  ElectronicDeviceDescription $electronicDeviceDescription
      * @return static
      */
     public function addOnceToElectronicDeviceDescription(
@@ -735,7 +735,7 @@ class AuctionTermsType
     }
 
     /**
-     * @return AuctionURI|null
+     * @return null|AuctionURI
      */
     public function getAuctionURI(): ?AuctionURI
     {
@@ -753,7 +753,7 @@ class AuctionTermsType
     }
 
     /**
-     * @param AuctionURI|null $auctionURI
+     * @param  null|AuctionURI $auctionURI
      * @return static
      */
     public function setAuctionURI(?AuctionURI $auctionURI = null): static

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\EvaluationCriterionTypeCode;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\Expression;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ExpressionCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class EvaluationCriterionType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var EvaluationCriterionTypeCode|null
+     * @var null|EvaluationCriterionTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EvaluationCriterionTypeCode")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class EvaluationCriterionType
     private $evaluationCriterionTypeCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class EvaluationCriterionType
     private $description;
 
     /**
-     * @var ThresholdAmount|null
+     * @var null|ThresholdAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdAmount")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class EvaluationCriterionType
     private $thresholdAmount;
 
     /**
-     * @var ThresholdQuantity|null
+     * @var null|ThresholdQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdQuantity")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class EvaluationCriterionType
     private $thresholdQuantity;
 
     /**
-     * @var ExpressionCode|null
+     * @var null|ExpressionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExpressionCode")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class EvaluationCriterionType
     private $expressionCode;
 
     /**
-     * @var array<Expression>|null
+     * @var null|array<Expression>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Expression>")
      * @JMS\Expose
@@ -86,7 +86,7 @@ class EvaluationCriterionType
     private $expression;
 
     /**
-     * @var DurationPeriod|null
+     * @var null|DurationPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DurationPeriod")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class EvaluationCriterionType
     private $durationPeriod;
 
     /**
-     * @var array<SuggestedEvidence>|null
+     * @var null|array<SuggestedEvidence>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SuggestedEvidence>")
      * @JMS\Expose
@@ -109,7 +109,7 @@ class EvaluationCriterionType
     private $suggestedEvidence;
 
     /**
-     * @return EvaluationCriterionTypeCode|null
+     * @return null|EvaluationCriterionTypeCode
      */
     public function getEvaluationCriterionTypeCode(): ?EvaluationCriterionTypeCode
     {
@@ -127,7 +127,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param EvaluationCriterionTypeCode|null $evaluationCriterionTypeCode
+     * @param  null|EvaluationCriterionTypeCode $evaluationCriterionTypeCode
      * @return static
      */
     public function setEvaluationCriterionTypeCode(
@@ -149,7 +149,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -157,7 +157,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -188,7 +188,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -203,7 +203,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -218,7 +218,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -239,7 +239,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -270,7 +270,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return ThresholdAmount|null
+     * @return null|ThresholdAmount
      */
     public function getThresholdAmount(): ?ThresholdAmount
     {
@@ -288,7 +288,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param ThresholdAmount|null $thresholdAmount
+     * @param  null|ThresholdAmount $thresholdAmount
      * @return static
      */
     public function setThresholdAmount(?ThresholdAmount $thresholdAmount = null): static
@@ -309,7 +309,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return ThresholdQuantity|null
+     * @return null|ThresholdQuantity
      */
     public function getThresholdQuantity(): ?ThresholdQuantity
     {
@@ -327,7 +327,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param ThresholdQuantity|null $thresholdQuantity
+     * @param  null|ThresholdQuantity $thresholdQuantity
      * @return static
      */
     public function setThresholdQuantity(?ThresholdQuantity $thresholdQuantity = null): static
@@ -348,7 +348,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return ExpressionCode|null
+     * @return null|ExpressionCode
      */
     public function getExpressionCode(): ?ExpressionCode
     {
@@ -366,7 +366,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param ExpressionCode|null $expressionCode
+     * @param  null|ExpressionCode $expressionCode
      * @return static
      */
     public function setExpressionCode(?ExpressionCode $expressionCode = null): static
@@ -387,7 +387,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return array<Expression>|null
+     * @return null|array<Expression>
      */
     public function getExpression(): ?array
     {
@@ -395,7 +395,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param array<Expression>|null $expression
+     * @param  null|array<Expression> $expression
      * @return static
      */
     public function setExpression(?array $expression = null): static
@@ -426,7 +426,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return Expression|null
+     * @return null|Expression
      */
     public function firstExpression(): ?Expression
     {
@@ -441,7 +441,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return Expression|null
+     * @return null|Expression
      */
     public function lastExpression(): ?Expression
     {
@@ -456,7 +456,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param Expression $expression
+     * @param  Expression $expression
      * @return static
      */
     public function addToExpression(Expression $expression): static
@@ -477,7 +477,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param Expression $expression
+     * @param  Expression $expression
      * @return static
      */
     public function addOnceToExpression(Expression $expression): static
@@ -508,7 +508,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return DurationPeriod|null
+     * @return null|DurationPeriod
      */
     public function getDurationPeriod(): ?DurationPeriod
     {
@@ -526,7 +526,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param DurationPeriod|null $durationPeriod
+     * @param  null|DurationPeriod $durationPeriod
      * @return static
      */
     public function setDurationPeriod(?DurationPeriod $durationPeriod = null): static
@@ -547,7 +547,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return array<SuggestedEvidence>|null
+     * @return null|array<SuggestedEvidence>
      */
     public function getSuggestedEvidence(): ?array
     {
@@ -555,7 +555,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param array<SuggestedEvidence>|null $suggestedEvidence
+     * @param  null|array<SuggestedEvidence> $suggestedEvidence
      * @return static
      */
     public function setSuggestedEvidence(?array $suggestedEvidence = null): static
@@ -586,7 +586,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return SuggestedEvidence|null
+     * @return null|SuggestedEvidence
      */
     public function firstSuggestedEvidence(): ?SuggestedEvidence
     {
@@ -601,7 +601,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @return SuggestedEvidence|null
+     * @return null|SuggestedEvidence
      */
     public function lastSuggestedEvidence(): ?SuggestedEvidence
     {
@@ -616,7 +616,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param SuggestedEvidence $suggestedEvidence
+     * @param  SuggestedEvidence $suggestedEvidence
      * @return static
      */
     public function addToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): static
@@ -637,7 +637,7 @@ class EvaluationCriterionType
     }
 
     /**
-     * @param SuggestedEvidence $suggestedEvidence
+     * @param  SuggestedEvidence $suggestedEvidence
      * @return static
      */
     public function addOnceToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): static

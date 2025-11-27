@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumCopiesNumeric;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PrintQualifier;
+use JMS\Serializer\Annotation as JMS;
 
 class DocumentDistributionType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var PrintQualifier|null
+     * @var null|PrintQualifier
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PrintQualifier")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class DocumentDistributionType
     private $printQualifier;
 
     /**
-     * @var MaximumCopiesNumeric|null
+     * @var null|MaximumCopiesNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumCopiesNumeric")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class DocumentDistributionType
     private $maximumCopiesNumeric;
 
     /**
-     * @var Party|null
+     * @var null|Party
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Party")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class DocumentDistributionType
     private $party;
 
     /**
-     * @return PrintQualifier|null
+     * @return null|PrintQualifier
      */
     public function getPrintQualifier(): ?PrintQualifier
     {
@@ -65,7 +65,7 @@ class DocumentDistributionType
     }
 
     /**
-     * @param PrintQualifier|null $printQualifier
+     * @param  null|PrintQualifier $printQualifier
      * @return static
      */
     public function setPrintQualifier(?PrintQualifier $printQualifier = null): static
@@ -86,7 +86,7 @@ class DocumentDistributionType
     }
 
     /**
-     * @return MaximumCopiesNumeric|null
+     * @return null|MaximumCopiesNumeric
      */
     public function getMaximumCopiesNumeric(): ?MaximumCopiesNumeric
     {
@@ -104,7 +104,7 @@ class DocumentDistributionType
     }
 
     /**
-     * @param MaximumCopiesNumeric|null $maximumCopiesNumeric
+     * @param  null|MaximumCopiesNumeric $maximumCopiesNumeric
      * @return static
      */
     public function setMaximumCopiesNumeric(?MaximumCopiesNumeric $maximumCopiesNumeric = null): static
@@ -125,7 +125,7 @@ class DocumentDistributionType
     }
 
     /**
-     * @return Party|null
+     * @return null|Party
      */
     public function getParty(): ?Party
     {
@@ -143,7 +143,7 @@ class DocumentDistributionType
     }
 
     /**
-     * @param Party|null $party
+     * @param  null|Party $party
      * @return static
      */
     public function setParty(?Party $party = null): static

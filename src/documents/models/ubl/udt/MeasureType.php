@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\udt;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
-use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\documents\models\ubl\cct\MeasureType as MeasureTypeBase;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
 
 class MeasureType extends MeasureTypeBase
 {
     use HandlesObjectFlags;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class MeasureType extends MeasureTypeBase
     private $unitCode;
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getUnitCode(): ?string
     {
@@ -33,7 +33,7 @@ class MeasureType extends MeasureTypeBase
     }
 
     /**
-     * @param string|null $unitCode
+     * @param  null|string $unitCode
      * @return static
      */
     public function setUnitCode(?string $unitCode = null): static

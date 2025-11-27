@@ -5,16 +5,16 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Comment;
+use JMS\Serializer\Annotation as JMS;
 
 class EventCommentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Comment|null
+     * @var null|Comment
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Comment")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class EventCommentType
     private $comment;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class EventCommentType
     private $issueDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class EventCommentType
     private $issueTime;
 
     /**
-     * @return Comment|null
+     * @return null|Comment
      */
     public function getComment(): ?Comment
     {
@@ -65,7 +65,7 @@ class EventCommentType
     }
 
     /**
-     * @param Comment|null $comment
+     * @param  null|Comment $comment
      * @return static
      */
     public function setComment(?Comment $comment = null): static
@@ -86,7 +86,7 @@ class EventCommentType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueDate(): ?DateTimeInterface
     {
@@ -94,7 +94,7 @@ class EventCommentType
     }
 
     /**
-     * @param DateTimeInterface|null $issueDate
+     * @param  null|DateTimeInterface $issueDate
      * @return static
      */
     public function setIssueDate(?DateTimeInterface $issueDate = null): static
@@ -115,7 +115,7 @@ class EventCommentType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueTime(): ?DateTimeInterface
     {
@@ -123,7 +123,7 @@ class EventCommentType
     }
 
     /**
-     * @param DateTimeInterface|null $issueTime
+     * @param  null|DateTimeInterface $issueTime
      * @return static
      */
     public function setIssueTime(?DateTimeInterface $issueTime = null): static

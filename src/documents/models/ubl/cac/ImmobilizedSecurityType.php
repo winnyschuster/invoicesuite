@@ -5,20 +5,20 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\FaceValueAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ImmobilizationCertificateID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MarketValueAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SecurityID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SharesNumberQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class ImmobilizedSecurityType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ImmobilizationCertificateID|null
+     * @var null|ImmobilizationCertificateID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ImmobilizationCertificateID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class ImmobilizedSecurityType
     private $immobilizationCertificateID;
 
     /**
-     * @var SecurityID|null
+     * @var null|SecurityID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SecurityID")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class ImmobilizedSecurityType
     private $securityID;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class ImmobilizedSecurityType
     private $issueDate;
 
     /**
-     * @var FaceValueAmount|null
+     * @var null|FaceValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FaceValueAmount")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class ImmobilizedSecurityType
     private $faceValueAmount;
 
     /**
-     * @var MarketValueAmount|null
+     * @var null|MarketValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MarketValueAmount")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class ImmobilizedSecurityType
     private $marketValueAmount;
 
     /**
-     * @var SharesNumberQuantity|null
+     * @var null|SharesNumberQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SharesNumberQuantity")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class ImmobilizedSecurityType
     private $sharesNumberQuantity;
 
     /**
-     * @var IssuerParty|null
+     * @var null|IssuerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class ImmobilizedSecurityType
     private $issuerParty;
 
     /**
-     * @return ImmobilizationCertificateID|null
+     * @return null|ImmobilizationCertificateID
      */
     public function getImmobilizationCertificateID(): ?ImmobilizationCertificateID
     {
@@ -113,7 +113,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @param ImmobilizationCertificateID|null $immobilizationCertificateID
+     * @param  null|ImmobilizationCertificateID $immobilizationCertificateID
      * @return static
      */
     public function setImmobilizationCertificateID(
@@ -135,7 +135,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return SecurityID|null
+     * @return null|SecurityID
      */
     public function getSecurityID(): ?SecurityID
     {
@@ -153,7 +153,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @param SecurityID|null $securityID
+     * @param  null|SecurityID $securityID
      * @return static
      */
     public function setSecurityID(?SecurityID $securityID = null): static
@@ -174,7 +174,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueDate(): ?DateTimeInterface
     {
@@ -182,7 +182,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @param DateTimeInterface|null $issueDate
+     * @param  null|DateTimeInterface $issueDate
      * @return static
      */
     public function setIssueDate(?DateTimeInterface $issueDate = null): static
@@ -203,7 +203,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return FaceValueAmount|null
+     * @return null|FaceValueAmount
      */
     public function getFaceValueAmount(): ?FaceValueAmount
     {
@@ -221,7 +221,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @param FaceValueAmount|null $faceValueAmount
+     * @param  null|FaceValueAmount $faceValueAmount
      * @return static
      */
     public function setFaceValueAmount(?FaceValueAmount $faceValueAmount = null): static
@@ -242,7 +242,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return MarketValueAmount|null
+     * @return null|MarketValueAmount
      */
     public function getMarketValueAmount(): ?MarketValueAmount
     {
@@ -260,7 +260,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @param MarketValueAmount|null $marketValueAmount
+     * @param  null|MarketValueAmount $marketValueAmount
      * @return static
      */
     public function setMarketValueAmount(?MarketValueAmount $marketValueAmount = null): static
@@ -281,7 +281,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return SharesNumberQuantity|null
+     * @return null|SharesNumberQuantity
      */
     public function getSharesNumberQuantity(): ?SharesNumberQuantity
     {
@@ -299,7 +299,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @param SharesNumberQuantity|null $sharesNumberQuantity
+     * @param  null|SharesNumberQuantity $sharesNumberQuantity
      * @return static
      */
     public function setSharesNumberQuantity(?SharesNumberQuantity $sharesNumberQuantity = null): static
@@ -320,7 +320,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @return IssuerParty|null
+     * @return null|IssuerParty
      */
     public function getIssuerParty(): ?IssuerParty
     {
@@ -338,7 +338,7 @@ class ImmobilizedSecurityType
     }
 
     /**
-     * @param IssuerParty|null $issuerParty
+     * @param  null|IssuerParty $issuerParty
      * @return static
      */
     public function setIssuerParty(?IssuerParty $issuerParty = null): static

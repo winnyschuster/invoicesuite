@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousCancellationReasonCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReason;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReasonCode;
+use JMS\Serializer\Annotation as JMS;
 
 class ProcessJustificationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var PreviousCancellationReasonCode|null
+     * @var null|PreviousCancellationReasonCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousCancellationReasonCode")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class ProcessJustificationType
     private $previousCancellationReasonCode;
 
     /**
-     * @var ProcessReasonCode|null
+     * @var null|ProcessReasonCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReasonCode")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class ProcessJustificationType
     private $processReasonCode;
 
     /**
-     * @var array<ProcessReason>|null
+     * @var null|array<ProcessReason>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ProcessReason>")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class ProcessJustificationType
     private $processReason;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class ProcessJustificationType
     private $description;
 
     /**
-     * @return PreviousCancellationReasonCode|null
+     * @return null|PreviousCancellationReasonCode
      */
     public function getPreviousCancellationReasonCode(): ?PreviousCancellationReasonCode
     {
@@ -80,7 +80,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param PreviousCancellationReasonCode|null $previousCancellationReasonCode
+     * @param  null|PreviousCancellationReasonCode $previousCancellationReasonCode
      * @return static
      */
     public function setPreviousCancellationReasonCode(
@@ -102,7 +102,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return ProcessReasonCode|null
+     * @return null|ProcessReasonCode
      */
     public function getProcessReasonCode(): ?ProcessReasonCode
     {
@@ -120,7 +120,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param ProcessReasonCode|null $processReasonCode
+     * @param  null|ProcessReasonCode $processReasonCode
      * @return static
      */
     public function setProcessReasonCode(?ProcessReasonCode $processReasonCode = null): static
@@ -141,7 +141,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return array<ProcessReason>|null
+     * @return null|array<ProcessReason>
      */
     public function getProcessReason(): ?array
     {
@@ -149,7 +149,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param array<ProcessReason>|null $processReason
+     * @param  null|array<ProcessReason> $processReason
      * @return static
      */
     public function setProcessReason(?array $processReason = null): static
@@ -180,7 +180,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return ProcessReason|null
+     * @return null|ProcessReason
      */
     public function firstProcessReason(): ?ProcessReason
     {
@@ -195,7 +195,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return ProcessReason|null
+     * @return null|ProcessReason
      */
     public function lastProcessReason(): ?ProcessReason
     {
@@ -210,7 +210,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param ProcessReason $processReason
+     * @param  ProcessReason $processReason
      * @return static
      */
     public function addToProcessReason(ProcessReason $processReason): static
@@ -231,7 +231,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param ProcessReason $processReason
+     * @param  ProcessReason $processReason
      * @return static
      */
     public function addOnceToProcessReason(ProcessReason $processReason): static
@@ -262,7 +262,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -270,7 +270,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -301,7 +301,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -316,7 +316,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -331,7 +331,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -352,7 +352,7 @@ class ProcessJustificationType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static

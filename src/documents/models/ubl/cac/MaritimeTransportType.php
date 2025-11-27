@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\GrossTonnageMeasure;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\NetTonnageMeasure;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\RadioCallSignID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ShipsRequirements;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\VesselID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\VesselName;
+use JMS\Serializer\Annotation as JMS;
 
 class MaritimeTransportType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var VesselID|null
+     * @var null|VesselID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\VesselID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class MaritimeTransportType
     private $vesselID;
 
     /**
-     * @var VesselName|null
+     * @var null|VesselName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\VesselName")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class MaritimeTransportType
     private $vesselName;
 
     /**
-     * @var RadioCallSignID|null
+     * @var null|RadioCallSignID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RadioCallSignID")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class MaritimeTransportType
     private $radioCallSignID;
 
     /**
-     * @var array<ShipsRequirements>|null
+     * @var null|array<ShipsRequirements>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ShipsRequirements>")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class MaritimeTransportType
     private $shipsRequirements;
 
     /**
-     * @var GrossTonnageMeasure|null
+     * @var null|GrossTonnageMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GrossTonnageMeasure")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class MaritimeTransportType
     private $grossTonnageMeasure;
 
     /**
-     * @var NetTonnageMeasure|null
+     * @var null|NetTonnageMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetTonnageMeasure")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class MaritimeTransportType
     private $netTonnageMeasure;
 
     /**
-     * @var RegistryCertificateDocumentReference|null
+     * @var null|RegistryCertificateDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RegistryCertificateDocumentReference")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class MaritimeTransportType
     private $registryCertificateDocumentReference;
 
     /**
-     * @var RegistryPortLocation|null
+     * @var null|RegistryPortLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RegistryPortLocation")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class MaritimeTransportType
     private $registryPortLocation;
 
     /**
-     * @return VesselID|null
+     * @return null|VesselID
      */
     public function getVesselID(): ?VesselID
     {
@@ -125,7 +125,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param VesselID|null $vesselID
+     * @param  null|VesselID $vesselID
      * @return static
      */
     public function setVesselID(?VesselID $vesselID = null): static
@@ -146,7 +146,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return VesselName|null
+     * @return null|VesselName
      */
     public function getVesselName(): ?VesselName
     {
@@ -164,7 +164,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param VesselName|null $vesselName
+     * @param  null|VesselName $vesselName
      * @return static
      */
     public function setVesselName(?VesselName $vesselName = null): static
@@ -185,7 +185,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return RadioCallSignID|null
+     * @return null|RadioCallSignID
      */
     public function getRadioCallSignID(): ?RadioCallSignID
     {
@@ -203,7 +203,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param RadioCallSignID|null $radioCallSignID
+     * @param  null|RadioCallSignID $radioCallSignID
      * @return static
      */
     public function setRadioCallSignID(?RadioCallSignID $radioCallSignID = null): static
@@ -224,7 +224,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return array<ShipsRequirements>|null
+     * @return null|array<ShipsRequirements>
      */
     public function getShipsRequirements(): ?array
     {
@@ -232,7 +232,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param array<ShipsRequirements>|null $shipsRequirements
+     * @param  null|array<ShipsRequirements> $shipsRequirements
      * @return static
      */
     public function setShipsRequirements(?array $shipsRequirements = null): static
@@ -263,7 +263,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return ShipsRequirements|null
+     * @return null|ShipsRequirements
      */
     public function firstShipsRequirements(): ?ShipsRequirements
     {
@@ -278,7 +278,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return ShipsRequirements|null
+     * @return null|ShipsRequirements
      */
     public function lastShipsRequirements(): ?ShipsRequirements
     {
@@ -293,7 +293,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param ShipsRequirements $shipsRequirements
+     * @param  ShipsRequirements $shipsRequirements
      * @return static
      */
     public function addToShipsRequirements(ShipsRequirements $shipsRequirements): static
@@ -314,7 +314,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param ShipsRequirements $shipsRequirements
+     * @param  ShipsRequirements $shipsRequirements
      * @return static
      */
     public function addOnceToShipsRequirements(ShipsRequirements $shipsRequirements): static
@@ -345,7 +345,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return GrossTonnageMeasure|null
+     * @return null|GrossTonnageMeasure
      */
     public function getGrossTonnageMeasure(): ?GrossTonnageMeasure
     {
@@ -363,7 +363,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param GrossTonnageMeasure|null $grossTonnageMeasure
+     * @param  null|GrossTonnageMeasure $grossTonnageMeasure
      * @return static
      */
     public function setGrossTonnageMeasure(?GrossTonnageMeasure $grossTonnageMeasure = null): static
@@ -384,7 +384,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return NetTonnageMeasure|null
+     * @return null|NetTonnageMeasure
      */
     public function getNetTonnageMeasure(): ?NetTonnageMeasure
     {
@@ -402,7 +402,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param NetTonnageMeasure|null $netTonnageMeasure
+     * @param  null|NetTonnageMeasure $netTonnageMeasure
      * @return static
      */
     public function setNetTonnageMeasure(?NetTonnageMeasure $netTonnageMeasure = null): static
@@ -423,7 +423,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return RegistryCertificateDocumentReference|null
+     * @return null|RegistryCertificateDocumentReference
      */
     public function getRegistryCertificateDocumentReference(): ?RegistryCertificateDocumentReference
     {
@@ -441,7 +441,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param RegistryCertificateDocumentReference|null $registryCertificateDocumentReference
+     * @param  null|RegistryCertificateDocumentReference $registryCertificateDocumentReference
      * @return static
      */
     public function setRegistryCertificateDocumentReference(
@@ -463,7 +463,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @return RegistryPortLocation|null
+     * @return null|RegistryPortLocation
      */
     public function getRegistryPortLocation(): ?RegistryPortLocation
     {
@@ -481,7 +481,7 @@ class MaritimeTransportType
     }
 
     /**
-     * @param RegistryPortLocation|null $registryPortLocation
+     * @param  null|RegistryPortLocation $registryPortLocation
      * @return static
      */
     public function setRegistryPortLocation(?RegistryPortLocation $registryPortLocation = null): static

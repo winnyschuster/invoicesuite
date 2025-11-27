@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AdditionalStreetName;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AddressFormatCode;
@@ -30,13 +29,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\Region;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Room;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\StreetName;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TimezoneOffset;
+use JMS\Serializer\Annotation as JMS;
 
 class AddressType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class AddressType
     private $iD;
 
     /**
-     * @var AddressTypeCode|null
+     * @var null|AddressTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AddressTypeCode")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class AddressType
     private $addressTypeCode;
 
     /**
-     * @var AddressFormatCode|null
+     * @var null|AddressFormatCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AddressFormatCode")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class AddressType
     private $addressFormatCode;
 
     /**
-     * @var Postbox|null
+     * @var null|Postbox
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Postbox")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class AddressType
     private $postbox;
 
     /**
-     * @var Floor|null
+     * @var null|Floor
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Floor")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class AddressType
     private $floor;
 
     /**
-     * @var Room|null
+     * @var null|Room
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Room")
      * @JMS\Expose
@@ -102,7 +102,7 @@ class AddressType
     private $room;
 
     /**
-     * @var StreetName|null
+     * @var null|StreetName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\StreetName")
      * @JMS\Expose
@@ -113,7 +113,7 @@ class AddressType
     private $streetName;
 
     /**
-     * @var AdditionalStreetName|null
+     * @var null|AdditionalStreetName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AdditionalStreetName")
      * @JMS\Expose
@@ -124,7 +124,7 @@ class AddressType
     private $additionalStreetName;
 
     /**
-     * @var BlockName|null
+     * @var null|BlockName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BlockName")
      * @JMS\Expose
@@ -135,7 +135,7 @@ class AddressType
     private $blockName;
 
     /**
-     * @var BuildingName|null
+     * @var null|BuildingName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BuildingName")
      * @JMS\Expose
@@ -146,7 +146,7 @@ class AddressType
     private $buildingName;
 
     /**
-     * @var BuildingNumber|null
+     * @var null|BuildingNumber
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BuildingNumber")
      * @JMS\Expose
@@ -157,7 +157,7 @@ class AddressType
     private $buildingNumber;
 
     /**
-     * @var InhouseMail|null
+     * @var null|InhouseMail
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InhouseMail")
      * @JMS\Expose
@@ -168,7 +168,7 @@ class AddressType
     private $inhouseMail;
 
     /**
-     * @var Department|null
+     * @var null|Department
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Department")
      * @JMS\Expose
@@ -179,7 +179,7 @@ class AddressType
     private $department;
 
     /**
-     * @var MarkAttention|null
+     * @var null|MarkAttention
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MarkAttention")
      * @JMS\Expose
@@ -190,7 +190,7 @@ class AddressType
     private $markAttention;
 
     /**
-     * @var MarkCare|null
+     * @var null|MarkCare
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MarkCare")
      * @JMS\Expose
@@ -201,7 +201,7 @@ class AddressType
     private $markCare;
 
     /**
-     * @var PlotIdentification|null
+     * @var null|PlotIdentification
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PlotIdentification")
      * @JMS\Expose
@@ -212,7 +212,7 @@ class AddressType
     private $plotIdentification;
 
     /**
-     * @var CitySubdivisionName|null
+     * @var null|CitySubdivisionName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CitySubdivisionName")
      * @JMS\Expose
@@ -223,7 +223,7 @@ class AddressType
     private $citySubdivisionName;
 
     /**
-     * @var CityName|null
+     * @var null|CityName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CityName")
      * @JMS\Expose
@@ -234,7 +234,7 @@ class AddressType
     private $cityName;
 
     /**
-     * @var PostalZone|null
+     * @var null|PostalZone
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PostalZone")
      * @JMS\Expose
@@ -245,7 +245,7 @@ class AddressType
     private $postalZone;
 
     /**
-     * @var CountrySubentity|null
+     * @var null|CountrySubentity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentity")
      * @JMS\Expose
@@ -256,7 +256,7 @@ class AddressType
     private $countrySubentity;
 
     /**
-     * @var CountrySubentityCode|null
+     * @var null|CountrySubentityCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentityCode")
      * @JMS\Expose
@@ -267,7 +267,7 @@ class AddressType
     private $countrySubentityCode;
 
     /**
-     * @var Region|null
+     * @var null|Region
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Region")
      * @JMS\Expose
@@ -278,7 +278,7 @@ class AddressType
     private $region;
 
     /**
-     * @var District|null
+     * @var null|District
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\District")
      * @JMS\Expose
@@ -289,7 +289,7 @@ class AddressType
     private $district;
 
     /**
-     * @var TimezoneOffset|null
+     * @var null|TimezoneOffset
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TimezoneOffset")
      * @JMS\Expose
@@ -300,7 +300,7 @@ class AddressType
     private $timezoneOffset;
 
     /**
-     * @var array<AddressLine>|null
+     * @var null|array<AddressLine>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AddressLine>")
      * @JMS\Expose
@@ -312,7 +312,7 @@ class AddressType
     private $addressLine;
 
     /**
-     * @var Country|null
+     * @var null|Country
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Country")
      * @JMS\Expose
@@ -323,7 +323,7 @@ class AddressType
     private $country;
 
     /**
-     * @var array<LocationCoordinate>|null
+     * @var null|array<LocationCoordinate>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate>")
      * @JMS\Expose
@@ -335,7 +335,7 @@ class AddressType
     private $locationCoordinate;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -353,7 +353,7 @@ class AddressType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -374,7 +374,7 @@ class AddressType
     }
 
     /**
-     * @return AddressTypeCode|null
+     * @return null|AddressTypeCode
      */
     public function getAddressTypeCode(): ?AddressTypeCode
     {
@@ -392,7 +392,7 @@ class AddressType
     }
 
     /**
-     * @param AddressTypeCode|null $addressTypeCode
+     * @param  null|AddressTypeCode $addressTypeCode
      * @return static
      */
     public function setAddressTypeCode(?AddressTypeCode $addressTypeCode = null): static
@@ -413,7 +413,7 @@ class AddressType
     }
 
     /**
-     * @return AddressFormatCode|null
+     * @return null|AddressFormatCode
      */
     public function getAddressFormatCode(): ?AddressFormatCode
     {
@@ -431,7 +431,7 @@ class AddressType
     }
 
     /**
-     * @param AddressFormatCode|null $addressFormatCode
+     * @param  null|AddressFormatCode $addressFormatCode
      * @return static
      */
     public function setAddressFormatCode(?AddressFormatCode $addressFormatCode = null): static
@@ -452,7 +452,7 @@ class AddressType
     }
 
     /**
-     * @return Postbox|null
+     * @return null|Postbox
      */
     public function getPostbox(): ?Postbox
     {
@@ -470,7 +470,7 @@ class AddressType
     }
 
     /**
-     * @param Postbox|null $postbox
+     * @param  null|Postbox $postbox
      * @return static
      */
     public function setPostbox(?Postbox $postbox = null): static
@@ -491,7 +491,7 @@ class AddressType
     }
 
     /**
-     * @return Floor|null
+     * @return null|Floor
      */
     public function getFloor(): ?Floor
     {
@@ -509,7 +509,7 @@ class AddressType
     }
 
     /**
-     * @param Floor|null $floor
+     * @param  null|Floor $floor
      * @return static
      */
     public function setFloor(?Floor $floor = null): static
@@ -530,7 +530,7 @@ class AddressType
     }
 
     /**
-     * @return Room|null
+     * @return null|Room
      */
     public function getRoom(): ?Room
     {
@@ -548,7 +548,7 @@ class AddressType
     }
 
     /**
-     * @param Room|null $room
+     * @param  null|Room $room
      * @return static
      */
     public function setRoom(?Room $room = null): static
@@ -569,7 +569,7 @@ class AddressType
     }
 
     /**
-     * @return StreetName|null
+     * @return null|StreetName
      */
     public function getStreetName(): ?StreetName
     {
@@ -587,7 +587,7 @@ class AddressType
     }
 
     /**
-     * @param StreetName|null $streetName
+     * @param  null|StreetName $streetName
      * @return static
      */
     public function setStreetName(?StreetName $streetName = null): static
@@ -608,7 +608,7 @@ class AddressType
     }
 
     /**
-     * @return AdditionalStreetName|null
+     * @return null|AdditionalStreetName
      */
     public function getAdditionalStreetName(): ?AdditionalStreetName
     {
@@ -626,7 +626,7 @@ class AddressType
     }
 
     /**
-     * @param AdditionalStreetName|null $additionalStreetName
+     * @param  null|AdditionalStreetName $additionalStreetName
      * @return static
      */
     public function setAdditionalStreetName(?AdditionalStreetName $additionalStreetName = null): static
@@ -647,7 +647,7 @@ class AddressType
     }
 
     /**
-     * @return BlockName|null
+     * @return null|BlockName
      */
     public function getBlockName(): ?BlockName
     {
@@ -665,7 +665,7 @@ class AddressType
     }
 
     /**
-     * @param BlockName|null $blockName
+     * @param  null|BlockName $blockName
      * @return static
      */
     public function setBlockName(?BlockName $blockName = null): static
@@ -686,7 +686,7 @@ class AddressType
     }
 
     /**
-     * @return BuildingName|null
+     * @return null|BuildingName
      */
     public function getBuildingName(): ?BuildingName
     {
@@ -704,7 +704,7 @@ class AddressType
     }
 
     /**
-     * @param BuildingName|null $buildingName
+     * @param  null|BuildingName $buildingName
      * @return static
      */
     public function setBuildingName(?BuildingName $buildingName = null): static
@@ -725,7 +725,7 @@ class AddressType
     }
 
     /**
-     * @return BuildingNumber|null
+     * @return null|BuildingNumber
      */
     public function getBuildingNumber(): ?BuildingNumber
     {
@@ -743,7 +743,7 @@ class AddressType
     }
 
     /**
-     * @param BuildingNumber|null $buildingNumber
+     * @param  null|BuildingNumber $buildingNumber
      * @return static
      */
     public function setBuildingNumber(?BuildingNumber $buildingNumber = null): static
@@ -764,7 +764,7 @@ class AddressType
     }
 
     /**
-     * @return InhouseMail|null
+     * @return null|InhouseMail
      */
     public function getInhouseMail(): ?InhouseMail
     {
@@ -782,7 +782,7 @@ class AddressType
     }
 
     /**
-     * @param InhouseMail|null $inhouseMail
+     * @param  null|InhouseMail $inhouseMail
      * @return static
      */
     public function setInhouseMail(?InhouseMail $inhouseMail = null): static
@@ -803,7 +803,7 @@ class AddressType
     }
 
     /**
-     * @return Department|null
+     * @return null|Department
      */
     public function getDepartment(): ?Department
     {
@@ -821,7 +821,7 @@ class AddressType
     }
 
     /**
-     * @param Department|null $department
+     * @param  null|Department $department
      * @return static
      */
     public function setDepartment(?Department $department = null): static
@@ -842,7 +842,7 @@ class AddressType
     }
 
     /**
-     * @return MarkAttention|null
+     * @return null|MarkAttention
      */
     public function getMarkAttention(): ?MarkAttention
     {
@@ -860,7 +860,7 @@ class AddressType
     }
 
     /**
-     * @param MarkAttention|null $markAttention
+     * @param  null|MarkAttention $markAttention
      * @return static
      */
     public function setMarkAttention(?MarkAttention $markAttention = null): static
@@ -881,7 +881,7 @@ class AddressType
     }
 
     /**
-     * @return MarkCare|null
+     * @return null|MarkCare
      */
     public function getMarkCare(): ?MarkCare
     {
@@ -899,7 +899,7 @@ class AddressType
     }
 
     /**
-     * @param MarkCare|null $markCare
+     * @param  null|MarkCare $markCare
      * @return static
      */
     public function setMarkCare(?MarkCare $markCare = null): static
@@ -920,7 +920,7 @@ class AddressType
     }
 
     /**
-     * @return PlotIdentification|null
+     * @return null|PlotIdentification
      */
     public function getPlotIdentification(): ?PlotIdentification
     {
@@ -938,7 +938,7 @@ class AddressType
     }
 
     /**
-     * @param PlotIdentification|null $plotIdentification
+     * @param  null|PlotIdentification $plotIdentification
      * @return static
      */
     public function setPlotIdentification(?PlotIdentification $plotIdentification = null): static
@@ -959,7 +959,7 @@ class AddressType
     }
 
     /**
-     * @return CitySubdivisionName|null
+     * @return null|CitySubdivisionName
      */
     public function getCitySubdivisionName(): ?CitySubdivisionName
     {
@@ -977,7 +977,7 @@ class AddressType
     }
 
     /**
-     * @param CitySubdivisionName|null $citySubdivisionName
+     * @param  null|CitySubdivisionName $citySubdivisionName
      * @return static
      */
     public function setCitySubdivisionName(?CitySubdivisionName $citySubdivisionName = null): static
@@ -998,7 +998,7 @@ class AddressType
     }
 
     /**
-     * @return CityName|null
+     * @return null|CityName
      */
     public function getCityName(): ?CityName
     {
@@ -1016,7 +1016,7 @@ class AddressType
     }
 
     /**
-     * @param CityName|null $cityName
+     * @param  null|CityName $cityName
      * @return static
      */
     public function setCityName(?CityName $cityName = null): static
@@ -1037,7 +1037,7 @@ class AddressType
     }
 
     /**
-     * @return PostalZone|null
+     * @return null|PostalZone
      */
     public function getPostalZone(): ?PostalZone
     {
@@ -1055,7 +1055,7 @@ class AddressType
     }
 
     /**
-     * @param PostalZone|null $postalZone
+     * @param  null|PostalZone $postalZone
      * @return static
      */
     public function setPostalZone(?PostalZone $postalZone = null): static
@@ -1076,7 +1076,7 @@ class AddressType
     }
 
     /**
-     * @return CountrySubentity|null
+     * @return null|CountrySubentity
      */
     public function getCountrySubentity(): ?CountrySubentity
     {
@@ -1094,7 +1094,7 @@ class AddressType
     }
 
     /**
-     * @param CountrySubentity|null $countrySubentity
+     * @param  null|CountrySubentity $countrySubentity
      * @return static
      */
     public function setCountrySubentity(?CountrySubentity $countrySubentity = null): static
@@ -1115,7 +1115,7 @@ class AddressType
     }
 
     /**
-     * @return CountrySubentityCode|null
+     * @return null|CountrySubentityCode
      */
     public function getCountrySubentityCode(): ?CountrySubentityCode
     {
@@ -1133,7 +1133,7 @@ class AddressType
     }
 
     /**
-     * @param CountrySubentityCode|null $countrySubentityCode
+     * @param  null|CountrySubentityCode $countrySubentityCode
      * @return static
      */
     public function setCountrySubentityCode(?CountrySubentityCode $countrySubentityCode = null): static
@@ -1154,7 +1154,7 @@ class AddressType
     }
 
     /**
-     * @return Region|null
+     * @return null|Region
      */
     public function getRegion(): ?Region
     {
@@ -1172,7 +1172,7 @@ class AddressType
     }
 
     /**
-     * @param Region|null $region
+     * @param  null|Region $region
      * @return static
      */
     public function setRegion(?Region $region = null): static
@@ -1193,7 +1193,7 @@ class AddressType
     }
 
     /**
-     * @return District|null
+     * @return null|District
      */
     public function getDistrict(): ?District
     {
@@ -1211,7 +1211,7 @@ class AddressType
     }
 
     /**
-     * @param District|null $district
+     * @param  null|District $district
      * @return static
      */
     public function setDistrict(?District $district = null): static
@@ -1232,7 +1232,7 @@ class AddressType
     }
 
     /**
-     * @return TimezoneOffset|null
+     * @return null|TimezoneOffset
      */
     public function getTimezoneOffset(): ?TimezoneOffset
     {
@@ -1250,7 +1250,7 @@ class AddressType
     }
 
     /**
-     * @param TimezoneOffset|null $timezoneOffset
+     * @param  null|TimezoneOffset $timezoneOffset
      * @return static
      */
     public function setTimezoneOffset(?TimezoneOffset $timezoneOffset = null): static
@@ -1271,7 +1271,7 @@ class AddressType
     }
 
     /**
-     * @return array<AddressLine>|null
+     * @return null|array<AddressLine>
      */
     public function getAddressLine(): ?array
     {
@@ -1279,7 +1279,7 @@ class AddressType
     }
 
     /**
-     * @param array<AddressLine>|null $addressLine
+     * @param  null|array<AddressLine> $addressLine
      * @return static
      */
     public function setAddressLine(?array $addressLine = null): static
@@ -1310,7 +1310,7 @@ class AddressType
     }
 
     /**
-     * @return AddressLine|null
+     * @return null|AddressLine
      */
     public function firstAddressLine(): ?AddressLine
     {
@@ -1325,7 +1325,7 @@ class AddressType
     }
 
     /**
-     * @return AddressLine|null
+     * @return null|AddressLine
      */
     public function lastAddressLine(): ?AddressLine
     {
@@ -1340,7 +1340,7 @@ class AddressType
     }
 
     /**
-     * @param AddressLine $addressLine
+     * @param  AddressLine $addressLine
      * @return static
      */
     public function addToAddressLine(AddressLine $addressLine): static
@@ -1361,7 +1361,7 @@ class AddressType
     }
 
     /**
-     * @param AddressLine $addressLine
+     * @param  AddressLine $addressLine
      * @return static
      */
     public function addOnceToAddressLine(AddressLine $addressLine): static
@@ -1392,7 +1392,7 @@ class AddressType
     }
 
     /**
-     * @return Country|null
+     * @return null|Country
      */
     public function getCountry(): ?Country
     {
@@ -1410,7 +1410,7 @@ class AddressType
     }
 
     /**
-     * @param Country|null $country
+     * @param  null|Country $country
      * @return static
      */
     public function setCountry(?Country $country = null): static
@@ -1431,7 +1431,7 @@ class AddressType
     }
 
     /**
-     * @return array<LocationCoordinate>|null
+     * @return null|array<LocationCoordinate>
      */
     public function getLocationCoordinate(): ?array
     {
@@ -1439,7 +1439,7 @@ class AddressType
     }
 
     /**
-     * @param array<LocationCoordinate>|null $locationCoordinate
+     * @param  null|array<LocationCoordinate> $locationCoordinate
      * @return static
      */
     public function setLocationCoordinate(?array $locationCoordinate = null): static
@@ -1470,7 +1470,7 @@ class AddressType
     }
 
     /**
-     * @return LocationCoordinate|null
+     * @return null|LocationCoordinate
      */
     public function firstLocationCoordinate(): ?LocationCoordinate
     {
@@ -1485,7 +1485,7 @@ class AddressType
     }
 
     /**
-     * @return LocationCoordinate|null
+     * @return null|LocationCoordinate
      */
     public function lastLocationCoordinate(): ?LocationCoordinate
     {
@@ -1500,7 +1500,7 @@ class AddressType
     }
 
     /**
-     * @param LocationCoordinate $locationCoordinate
+     * @param  LocationCoordinate $locationCoordinate
      * @return static
      */
     public function addToLocationCoordinate(LocationCoordinate $locationCoordinate): static
@@ -1521,7 +1521,7 @@ class AddressType
     }
 
     /**
-     * @param LocationCoordinate $locationCoordinate
+     * @param  LocationCoordinate $locationCoordinate
      * @return static
      */
     public function addOnceToLocationCoordinate(LocationCoordinate $locationCoordinate): static

@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class EnergyWaterSupplyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var array<ConsumptionReport>|null
+     * @var null|array<ConsumptionReport>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionReport>")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class EnergyWaterSupplyType
     private $consumptionReport;
 
     /**
-     * @var array<EnergyTaxReport>|null
+     * @var null|array<EnergyTaxReport>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EnergyTaxReport>")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class EnergyWaterSupplyType
     private $energyTaxReport;
 
     /**
-     * @var array<ConsumptionAverage>|null
+     * @var null|array<ConsumptionAverage>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionAverage>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class EnergyWaterSupplyType
     private $consumptionAverage;
 
     /**
-     * @var array<EnergyWaterConsumptionCorrection>|null
+     * @var null|array<EnergyWaterConsumptionCorrection>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EnergyWaterConsumptionCorrection>")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class EnergyWaterSupplyType
     private $energyWaterConsumptionCorrection;
 
     /**
-     * @return array<ConsumptionReport>|null
+     * @return null|array<ConsumptionReport>
      */
     public function getConsumptionReport(): ?array
     {
@@ -68,7 +68,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param array<ConsumptionReport>|null $consumptionReport
+     * @param  null|array<ConsumptionReport> $consumptionReport
      * @return static
      */
     public function setConsumptionReport(?array $consumptionReport = null): static
@@ -99,7 +99,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return ConsumptionReport|null
+     * @return null|ConsumptionReport
      */
     public function firstConsumptionReport(): ?ConsumptionReport
     {
@@ -114,7 +114,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return ConsumptionReport|null
+     * @return null|ConsumptionReport
      */
     public function lastConsumptionReport(): ?ConsumptionReport
     {
@@ -129,7 +129,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param ConsumptionReport $consumptionReport
+     * @param  ConsumptionReport $consumptionReport
      * @return static
      */
     public function addToConsumptionReport(ConsumptionReport $consumptionReport): static
@@ -150,7 +150,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param ConsumptionReport $consumptionReport
+     * @param  ConsumptionReport $consumptionReport
      * @return static
      */
     public function addOnceToConsumptionReport(ConsumptionReport $consumptionReport): static
@@ -181,7 +181,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return array<EnergyTaxReport>|null
+     * @return null|array<EnergyTaxReport>
      */
     public function getEnergyTaxReport(): ?array
     {
@@ -189,7 +189,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param array<EnergyTaxReport>|null $energyTaxReport
+     * @param  null|array<EnergyTaxReport> $energyTaxReport
      * @return static
      */
     public function setEnergyTaxReport(?array $energyTaxReport = null): static
@@ -220,7 +220,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return EnergyTaxReport|null
+     * @return null|EnergyTaxReport
      */
     public function firstEnergyTaxReport(): ?EnergyTaxReport
     {
@@ -235,7 +235,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return EnergyTaxReport|null
+     * @return null|EnergyTaxReport
      */
     public function lastEnergyTaxReport(): ?EnergyTaxReport
     {
@@ -250,7 +250,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param EnergyTaxReport $energyTaxReport
+     * @param  EnergyTaxReport $energyTaxReport
      * @return static
      */
     public function addToEnergyTaxReport(EnergyTaxReport $energyTaxReport): static
@@ -271,7 +271,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param EnergyTaxReport $energyTaxReport
+     * @param  EnergyTaxReport $energyTaxReport
      * @return static
      */
     public function addOnceToEnergyTaxReport(EnergyTaxReport $energyTaxReport): static
@@ -302,7 +302,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return array<ConsumptionAverage>|null
+     * @return null|array<ConsumptionAverage>
      */
     public function getConsumptionAverage(): ?array
     {
@@ -310,7 +310,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param array<ConsumptionAverage>|null $consumptionAverage
+     * @param  null|array<ConsumptionAverage> $consumptionAverage
      * @return static
      */
     public function setConsumptionAverage(?array $consumptionAverage = null): static
@@ -341,7 +341,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return ConsumptionAverage|null
+     * @return null|ConsumptionAverage
      */
     public function firstConsumptionAverage(): ?ConsumptionAverage
     {
@@ -356,7 +356,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return ConsumptionAverage|null
+     * @return null|ConsumptionAverage
      */
     public function lastConsumptionAverage(): ?ConsumptionAverage
     {
@@ -371,7 +371,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param ConsumptionAverage $consumptionAverage
+     * @param  ConsumptionAverage $consumptionAverage
      * @return static
      */
     public function addToConsumptionAverage(ConsumptionAverage $consumptionAverage): static
@@ -392,7 +392,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param ConsumptionAverage $consumptionAverage
+     * @param  ConsumptionAverage $consumptionAverage
      * @return static
      */
     public function addOnceToConsumptionAverage(ConsumptionAverage $consumptionAverage): static
@@ -423,7 +423,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return array<EnergyWaterConsumptionCorrection>|null
+     * @return null|array<EnergyWaterConsumptionCorrection>
      */
     public function getEnergyWaterConsumptionCorrection(): ?array
     {
@@ -431,7 +431,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param array<EnergyWaterConsumptionCorrection>|null $energyWaterConsumptionCorrection
+     * @param  null|array<EnergyWaterConsumptionCorrection> $energyWaterConsumptionCorrection
      * @return static
      */
     public function setEnergyWaterConsumptionCorrection(?array $energyWaterConsumptionCorrection = null): static
@@ -462,7 +462,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return EnergyWaterConsumptionCorrection|null
+     * @return null|EnergyWaterConsumptionCorrection
      */
     public function firstEnergyWaterConsumptionCorrection(): ?EnergyWaterConsumptionCorrection
     {
@@ -477,7 +477,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @return EnergyWaterConsumptionCorrection|null
+     * @return null|EnergyWaterConsumptionCorrection
      */
     public function lastEnergyWaterConsumptionCorrection(): ?EnergyWaterConsumptionCorrection
     {
@@ -492,7 +492,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param EnergyWaterConsumptionCorrection $energyWaterConsumptionCorrection
+     * @param  EnergyWaterConsumptionCorrection $energyWaterConsumptionCorrection
      * @return static
      */
     public function addToEnergyWaterConsumptionCorrection(
@@ -514,7 +514,7 @@ class EnergyWaterSupplyType
     }
 
     /**
-     * @param EnergyWaterConsumptionCorrection $energyWaterConsumptionCorrection
+     * @param  EnergyWaterConsumptionCorrection $energyWaterConsumptionCorrection
      * @return static
      */
     public function addOnceToEnergyWaterConsumptionCorrection(

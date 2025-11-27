@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType;
+use JMS\Serializer\Annotation as JMS;
 
 class CreditorFinancialInstitutionType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class CreditorFinancialInstitutionType
     private $bICID;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getBICID(): ?IDType
     {
@@ -42,7 +42,7 @@ class CreditorFinancialInstitutionType
     }
 
     /**
-     * @param IDType|null $bICID
+     * @param  null|IDType $bICID
      * @return static
      */
     public function setBICID(?IDType $bICID = null): static

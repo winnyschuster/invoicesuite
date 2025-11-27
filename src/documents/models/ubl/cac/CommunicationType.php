@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Channel;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ChannelCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Value;
+use JMS\Serializer\Annotation as JMS;
 
 class CommunicationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ChannelCode|null
+     * @var null|ChannelCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ChannelCode")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class CommunicationType
     private $channelCode;
 
     /**
-     * @var Channel|null
+     * @var null|Channel
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Channel")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class CommunicationType
     private $channel;
 
     /**
-     * @var Value|null
+     * @var null|Value
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Value")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class CommunicationType
     private $value;
 
     /**
-     * @return ChannelCode|null
+     * @return null|ChannelCode
      */
     public function getChannelCode(): ?ChannelCode
     {
@@ -66,7 +66,7 @@ class CommunicationType
     }
 
     /**
-     * @param ChannelCode|null $channelCode
+     * @param  null|ChannelCode $channelCode
      * @return static
      */
     public function setChannelCode(?ChannelCode $channelCode = null): static
@@ -87,7 +87,7 @@ class CommunicationType
     }
 
     /**
-     * @return Channel|null
+     * @return null|Channel
      */
     public function getChannel(): ?Channel
     {
@@ -105,7 +105,7 @@ class CommunicationType
     }
 
     /**
-     * @param Channel|null $channel
+     * @param  null|Channel $channel
      * @return static
      */
     public function setChannel(?Channel $channel = null): static
@@ -126,7 +126,7 @@ class CommunicationType
     }
 
     /**
-     * @return Value|null
+     * @return null|Value
      */
     public function getValue(): ?Value
     {
@@ -144,7 +144,7 @@ class CommunicationType
     }
 
     /**
-     * @param Value|null $value
+     * @param  null|Value $value
      * @return static
      */
     public function setValue(?Value $value = null): static

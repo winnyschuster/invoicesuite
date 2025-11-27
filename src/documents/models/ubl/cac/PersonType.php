@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BirthplaceName;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\FamilyName;
@@ -19,13 +18,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\NationalityID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\OrganizationDepartment;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\OtherName;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Title;
+use JMS\Serializer\Annotation as JMS;
 
 class PersonType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class PersonType
     private $iD;
 
     /**
-     * @var FirstName|null
+     * @var null|FirstName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FirstName")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class PersonType
     private $firstName;
 
     /**
-     * @var FamilyName|null
+     * @var null|FamilyName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FamilyName")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class PersonType
     private $familyName;
 
     /**
-     * @var Title|null
+     * @var null|Title
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Title")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class PersonType
     private $title;
 
     /**
-     * @var MiddleName|null
+     * @var null|MiddleName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MiddleName")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class PersonType
     private $middleName;
 
     /**
-     * @var OtherName|null
+     * @var null|OtherName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OtherName")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class PersonType
     private $otherName;
 
     /**
-     * @var NameSuffix|null
+     * @var null|NameSuffix
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NameSuffix")
      * @JMS\Expose
@@ -102,7 +102,7 @@ class PersonType
     private $nameSuffix;
 
     /**
-     * @var JobTitle|null
+     * @var null|JobTitle
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\JobTitle")
      * @JMS\Expose
@@ -113,7 +113,7 @@ class PersonType
     private $jobTitle;
 
     /**
-     * @var NationalityID|null
+     * @var null|NationalityID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NationalityID")
      * @JMS\Expose
@@ -124,7 +124,7 @@ class PersonType
     private $nationalityID;
 
     /**
-     * @var GenderCode|null
+     * @var null|GenderCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GenderCode")
      * @JMS\Expose
@@ -135,7 +135,7 @@ class PersonType
     private $genderCode;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -146,7 +146,7 @@ class PersonType
     private $birthDate;
 
     /**
-     * @var BirthplaceName|null
+     * @var null|BirthplaceName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BirthplaceName")
      * @JMS\Expose
@@ -157,7 +157,7 @@ class PersonType
     private $birthplaceName;
 
     /**
-     * @var OrganizationDepartment|null
+     * @var null|OrganizationDepartment
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OrganizationDepartment")
      * @JMS\Expose
@@ -168,7 +168,7 @@ class PersonType
     private $organizationDepartment;
 
     /**
-     * @var Contact|null
+     * @var null|Contact
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Contact")
      * @JMS\Expose
@@ -179,7 +179,7 @@ class PersonType
     private $contact;
 
     /**
-     * @var FinancialAccount|null
+     * @var null|FinancialAccount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FinancialAccount")
      * @JMS\Expose
@@ -190,7 +190,7 @@ class PersonType
     private $financialAccount;
 
     /**
-     * @var array<IdentityDocumentReference>|null
+     * @var null|array<IdentityDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\IdentityDocumentReference>")
      * @JMS\Expose
@@ -202,7 +202,7 @@ class PersonType
     private $identityDocumentReference;
 
     /**
-     * @var ResidenceAddress|null
+     * @var null|ResidenceAddress
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ResidenceAddress")
      * @JMS\Expose
@@ -213,7 +213,7 @@ class PersonType
     private $residenceAddress;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -231,7 +231,7 @@ class PersonType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -252,7 +252,7 @@ class PersonType
     }
 
     /**
-     * @return FirstName|null
+     * @return null|FirstName
      */
     public function getFirstName(): ?FirstName
     {
@@ -270,7 +270,7 @@ class PersonType
     }
 
     /**
-     * @param FirstName|null $firstName
+     * @param  null|FirstName $firstName
      * @return static
      */
     public function setFirstName(?FirstName $firstName = null): static
@@ -291,7 +291,7 @@ class PersonType
     }
 
     /**
-     * @return FamilyName|null
+     * @return null|FamilyName
      */
     public function getFamilyName(): ?FamilyName
     {
@@ -309,7 +309,7 @@ class PersonType
     }
 
     /**
-     * @param FamilyName|null $familyName
+     * @param  null|FamilyName $familyName
      * @return static
      */
     public function setFamilyName(?FamilyName $familyName = null): static
@@ -330,7 +330,7 @@ class PersonType
     }
 
     /**
-     * @return Title|null
+     * @return null|Title
      */
     public function getTitle(): ?Title
     {
@@ -348,7 +348,7 @@ class PersonType
     }
 
     /**
-     * @param Title|null $title
+     * @param  null|Title $title
      * @return static
      */
     public function setTitle(?Title $title = null): static
@@ -369,7 +369,7 @@ class PersonType
     }
 
     /**
-     * @return MiddleName|null
+     * @return null|MiddleName
      */
     public function getMiddleName(): ?MiddleName
     {
@@ -387,7 +387,7 @@ class PersonType
     }
 
     /**
-     * @param MiddleName|null $middleName
+     * @param  null|MiddleName $middleName
      * @return static
      */
     public function setMiddleName(?MiddleName $middleName = null): static
@@ -408,7 +408,7 @@ class PersonType
     }
 
     /**
-     * @return OtherName|null
+     * @return null|OtherName
      */
     public function getOtherName(): ?OtherName
     {
@@ -426,7 +426,7 @@ class PersonType
     }
 
     /**
-     * @param OtherName|null $otherName
+     * @param  null|OtherName $otherName
      * @return static
      */
     public function setOtherName(?OtherName $otherName = null): static
@@ -447,7 +447,7 @@ class PersonType
     }
 
     /**
-     * @return NameSuffix|null
+     * @return null|NameSuffix
      */
     public function getNameSuffix(): ?NameSuffix
     {
@@ -465,7 +465,7 @@ class PersonType
     }
 
     /**
-     * @param NameSuffix|null $nameSuffix
+     * @param  null|NameSuffix $nameSuffix
      * @return static
      */
     public function setNameSuffix(?NameSuffix $nameSuffix = null): static
@@ -486,7 +486,7 @@ class PersonType
     }
 
     /**
-     * @return JobTitle|null
+     * @return null|JobTitle
      */
     public function getJobTitle(): ?JobTitle
     {
@@ -504,7 +504,7 @@ class PersonType
     }
 
     /**
-     * @param JobTitle|null $jobTitle
+     * @param  null|JobTitle $jobTitle
      * @return static
      */
     public function setJobTitle(?JobTitle $jobTitle = null): static
@@ -525,7 +525,7 @@ class PersonType
     }
 
     /**
-     * @return NationalityID|null
+     * @return null|NationalityID
      */
     public function getNationalityID(): ?NationalityID
     {
@@ -543,7 +543,7 @@ class PersonType
     }
 
     /**
-     * @param NationalityID|null $nationalityID
+     * @param  null|NationalityID $nationalityID
      * @return static
      */
     public function setNationalityID(?NationalityID $nationalityID = null): static
@@ -564,7 +564,7 @@ class PersonType
     }
 
     /**
-     * @return GenderCode|null
+     * @return null|GenderCode
      */
     public function getGenderCode(): ?GenderCode
     {
@@ -582,7 +582,7 @@ class PersonType
     }
 
     /**
-     * @param GenderCode|null $genderCode
+     * @param  null|GenderCode $genderCode
      * @return static
      */
     public function setGenderCode(?GenderCode $genderCode = null): static
@@ -603,7 +603,7 @@ class PersonType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getBirthDate(): ?DateTimeInterface
     {
@@ -611,7 +611,7 @@ class PersonType
     }
 
     /**
-     * @param DateTimeInterface|null $birthDate
+     * @param  null|DateTimeInterface $birthDate
      * @return static
      */
     public function setBirthDate(?DateTimeInterface $birthDate = null): static
@@ -632,7 +632,7 @@ class PersonType
     }
 
     /**
-     * @return BirthplaceName|null
+     * @return null|BirthplaceName
      */
     public function getBirthplaceName(): ?BirthplaceName
     {
@@ -650,7 +650,7 @@ class PersonType
     }
 
     /**
-     * @param BirthplaceName|null $birthplaceName
+     * @param  null|BirthplaceName $birthplaceName
      * @return static
      */
     public function setBirthplaceName(?BirthplaceName $birthplaceName = null): static
@@ -671,7 +671,7 @@ class PersonType
     }
 
     /**
-     * @return OrganizationDepartment|null
+     * @return null|OrganizationDepartment
      */
     public function getOrganizationDepartment(): ?OrganizationDepartment
     {
@@ -689,7 +689,7 @@ class PersonType
     }
 
     /**
-     * @param OrganizationDepartment|null $organizationDepartment
+     * @param  null|OrganizationDepartment $organizationDepartment
      * @return static
      */
     public function setOrganizationDepartment(?OrganizationDepartment $organizationDepartment = null): static
@@ -710,7 +710,7 @@ class PersonType
     }
 
     /**
-     * @return Contact|null
+     * @return null|Contact
      */
     public function getContact(): ?Contact
     {
@@ -728,7 +728,7 @@ class PersonType
     }
 
     /**
-     * @param Contact|null $contact
+     * @param  null|Contact $contact
      * @return static
      */
     public function setContact(?Contact $contact = null): static
@@ -749,7 +749,7 @@ class PersonType
     }
 
     /**
-     * @return FinancialAccount|null
+     * @return null|FinancialAccount
      */
     public function getFinancialAccount(): ?FinancialAccount
     {
@@ -767,7 +767,7 @@ class PersonType
     }
 
     /**
-     * @param FinancialAccount|null $financialAccount
+     * @param  null|FinancialAccount $financialAccount
      * @return static
      */
     public function setFinancialAccount(?FinancialAccount $financialAccount = null): static
@@ -788,7 +788,7 @@ class PersonType
     }
 
     /**
-     * @return array<IdentityDocumentReference>|null
+     * @return null|array<IdentityDocumentReference>
      */
     public function getIdentityDocumentReference(): ?array
     {
@@ -796,7 +796,7 @@ class PersonType
     }
 
     /**
-     * @param array<IdentityDocumentReference>|null $identityDocumentReference
+     * @param  null|array<IdentityDocumentReference> $identityDocumentReference
      * @return static
      */
     public function setIdentityDocumentReference(?array $identityDocumentReference = null): static
@@ -827,7 +827,7 @@ class PersonType
     }
 
     /**
-     * @return IdentityDocumentReference|null
+     * @return null|IdentityDocumentReference
      */
     public function firstIdentityDocumentReference(): ?IdentityDocumentReference
     {
@@ -842,7 +842,7 @@ class PersonType
     }
 
     /**
-     * @return IdentityDocumentReference|null
+     * @return null|IdentityDocumentReference
      */
     public function lastIdentityDocumentReference(): ?IdentityDocumentReference
     {
@@ -857,7 +857,7 @@ class PersonType
     }
 
     /**
-     * @param IdentityDocumentReference $identityDocumentReference
+     * @param  IdentityDocumentReference $identityDocumentReference
      * @return static
      */
     public function addToIdentityDocumentReference(IdentityDocumentReference $identityDocumentReference): static
@@ -878,7 +878,7 @@ class PersonType
     }
 
     /**
-     * @param IdentityDocumentReference $identityDocumentReference
+     * @param  IdentityDocumentReference $identityDocumentReference
      * @return static
      */
     public function addOnceToIdentityDocumentReference(IdentityDocumentReference $identityDocumentReference): static
@@ -909,7 +909,7 @@ class PersonType
     }
 
     /**
-     * @return ResidenceAddress|null
+     * @return null|ResidenceAddress
      */
     public function getResidenceAddress(): ?ResidenceAddress
     {
@@ -927,7 +927,7 @@ class PersonType
     }
 
     /**
-     * @param ResidenceAddress|null $residenceAddress
+     * @param  null|ResidenceAddress $residenceAddress
      * @return static
      */
     public function setResidenceAddress(?ResidenceAddress $residenceAddress = null): static

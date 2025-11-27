@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Amount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPercent;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumPercent;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Rate;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SubcontractingConditionsCode;
+use JMS\Serializer\Annotation as JMS;
 
 class SubcontractTermsType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Rate|null
+     * @var null|Rate
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Rate")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class SubcontractTermsType
     private $rate;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class SubcontractTermsType
     private $unknownPriceIndicator;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class SubcontractTermsType
     private $description;
 
     /**
-     * @var Amount|null
+     * @var null|Amount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class SubcontractTermsType
     private $amount;
 
     /**
-     * @var SubcontractingConditionsCode|null
+     * @var null|SubcontractingConditionsCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubcontractingConditionsCode")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class SubcontractTermsType
     private $subcontractingConditionsCode;
 
     /**
-     * @var MaximumPercent|null
+     * @var null|MaximumPercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumPercent")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class SubcontractTermsType
     private $maximumPercent;
 
     /**
-     * @var MinimumPercent|null
+     * @var null|MinimumPercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumPercent")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class SubcontractTermsType
     private $minimumPercent;
 
     /**
-     * @return Rate|null
+     * @return null|Rate
      */
     public function getRate(): ?Rate
     {
@@ -114,7 +114,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param Rate|null $rate
+     * @param  null|Rate $rate
      * @return static
      */
     public function setRate(?Rate $rate = null): static
@@ -135,7 +135,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getUnknownPriceIndicator(): ?bool
     {
@@ -143,7 +143,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param bool|null $unknownPriceIndicator
+     * @param  null|bool $unknownPriceIndicator
      * @return static
      */
     public function setUnknownPriceIndicator(?bool $unknownPriceIndicator = null): static
@@ -164,7 +164,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -172,7 +172,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -203,7 +203,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -218,7 +218,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -233,7 +233,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -254,7 +254,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -285,7 +285,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return Amount|null
+     * @return null|Amount
      */
     public function getAmount(): ?Amount
     {
@@ -303,7 +303,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param Amount|null $amount
+     * @param  null|Amount $amount
      * @return static
      */
     public function setAmount(?Amount $amount = null): static
@@ -324,7 +324,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return SubcontractingConditionsCode|null
+     * @return null|SubcontractingConditionsCode
      */
     public function getSubcontractingConditionsCode(): ?SubcontractingConditionsCode
     {
@@ -342,7 +342,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param SubcontractingConditionsCode|null $subcontractingConditionsCode
+     * @param  null|SubcontractingConditionsCode $subcontractingConditionsCode
      * @return static
      */
     public function setSubcontractingConditionsCode(
@@ -364,7 +364,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return MaximumPercent|null
+     * @return null|MaximumPercent
      */
     public function getMaximumPercent(): ?MaximumPercent
     {
@@ -382,7 +382,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param MaximumPercent|null $maximumPercent
+     * @param  null|MaximumPercent $maximumPercent
      * @return static
      */
     public function setMaximumPercent(?MaximumPercent $maximumPercent = null): static
@@ -403,7 +403,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @return MinimumPercent|null
+     * @return null|MinimumPercent
      */
     public function getMinimumPercent(): ?MinimumPercent
     {
@@ -421,7 +421,7 @@ class SubcontractTermsType
     }
 
     /**
-     * @param MinimumPercent|null $minimumPercent
+     * @param  null|MinimumPercent $minimumPercent
      * @return static
      */
     public function setMinimumPercent(?MinimumPercent $minimumPercent = null): static

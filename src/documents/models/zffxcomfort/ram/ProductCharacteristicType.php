@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxcomfort\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class ProductCharacteristicType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class ProductCharacteristicType
     private $description;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class ProductCharacteristicType
     private $value;
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getDescription(): ?TextType
     {
@@ -53,7 +53,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @param TextType|null $description
+     * @param  null|TextType $description
      * @return static
      */
     public function setDescription(?TextType $description = null): static
@@ -74,7 +74,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getValue(): ?TextType
     {
@@ -92,7 +92,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @param TextType|null $value
+     * @param  null|TextType $value
      * @return static
      */
     public function setValue(?TextType $value = null): static

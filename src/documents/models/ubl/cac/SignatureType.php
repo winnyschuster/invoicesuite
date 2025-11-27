@@ -5,20 +5,20 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CanonicalizationMethod;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SignatureMethod;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValidatorID;
+use JMS\Serializer\Annotation as JMS;
 
 class SignatureType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class SignatureType
     private $iD;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class SignatureType
     private $note;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class SignatureType
     private $validationDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class SignatureType
     private $validationTime;
 
     /**
-     * @var ValidatorID|null
+     * @var null|ValidatorID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValidatorID")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class SignatureType
     private $validatorID;
 
     /**
-     * @var CanonicalizationMethod|null
+     * @var null|CanonicalizationMethod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CanonicalizationMethod")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class SignatureType
     private $canonicalizationMethod;
 
     /**
-     * @var SignatureMethod|null
+     * @var null|SignatureMethod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SignatureMethod")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class SignatureType
     private $signatureMethod;
 
     /**
-     * @var SignatoryParty|null
+     * @var null|SignatoryParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryParty")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class SignatureType
     private $signatoryParty;
 
     /**
-     * @var DigitalSignatureAttachment|null
+     * @var null|DigitalSignatureAttachment
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DigitalSignatureAttachment")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class SignatureType
     private $digitalSignatureAttachment;
 
     /**
-     * @var OriginalDocumentReference|null
+     * @var null|OriginalDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginalDocumentReference")
      * @JMS\Expose
@@ -129,7 +129,7 @@ class SignatureType
     private $originalDocumentReference;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -147,7 +147,7 @@ class SignatureType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -168,7 +168,7 @@ class SignatureType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -176,7 +176,7 @@ class SignatureType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -207,7 +207,7 @@ class SignatureType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -222,7 +222,7 @@ class SignatureType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -237,7 +237,7 @@ class SignatureType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -258,7 +258,7 @@ class SignatureType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -289,7 +289,7 @@ class SignatureType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getValidationDate(): ?DateTimeInterface
     {
@@ -297,7 +297,7 @@ class SignatureType
     }
 
     /**
-     * @param DateTimeInterface|null $validationDate
+     * @param  null|DateTimeInterface $validationDate
      * @return static
      */
     public function setValidationDate(?DateTimeInterface $validationDate = null): static
@@ -318,7 +318,7 @@ class SignatureType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getValidationTime(): ?DateTimeInterface
     {
@@ -326,7 +326,7 @@ class SignatureType
     }
 
     /**
-     * @param DateTimeInterface|null $validationTime
+     * @param  null|DateTimeInterface $validationTime
      * @return static
      */
     public function setValidationTime(?DateTimeInterface $validationTime = null): static
@@ -347,7 +347,7 @@ class SignatureType
     }
 
     /**
-     * @return ValidatorID|null
+     * @return null|ValidatorID
      */
     public function getValidatorID(): ?ValidatorID
     {
@@ -365,7 +365,7 @@ class SignatureType
     }
 
     /**
-     * @param ValidatorID|null $validatorID
+     * @param  null|ValidatorID $validatorID
      * @return static
      */
     public function setValidatorID(?ValidatorID $validatorID = null): static
@@ -386,7 +386,7 @@ class SignatureType
     }
 
     /**
-     * @return CanonicalizationMethod|null
+     * @return null|CanonicalizationMethod
      */
     public function getCanonicalizationMethod(): ?CanonicalizationMethod
     {
@@ -404,7 +404,7 @@ class SignatureType
     }
 
     /**
-     * @param CanonicalizationMethod|null $canonicalizationMethod
+     * @param  null|CanonicalizationMethod $canonicalizationMethod
      * @return static
      */
     public function setCanonicalizationMethod(?CanonicalizationMethod $canonicalizationMethod = null): static
@@ -425,7 +425,7 @@ class SignatureType
     }
 
     /**
-     * @return SignatureMethod|null
+     * @return null|SignatureMethod
      */
     public function getSignatureMethod(): ?SignatureMethod
     {
@@ -443,7 +443,7 @@ class SignatureType
     }
 
     /**
-     * @param SignatureMethod|null $signatureMethod
+     * @param  null|SignatureMethod $signatureMethod
      * @return static
      */
     public function setSignatureMethod(?SignatureMethod $signatureMethod = null): static
@@ -464,7 +464,7 @@ class SignatureType
     }
 
     /**
-     * @return SignatoryParty|null
+     * @return null|SignatoryParty
      */
     public function getSignatoryParty(): ?SignatoryParty
     {
@@ -482,7 +482,7 @@ class SignatureType
     }
 
     /**
-     * @param SignatoryParty|null $signatoryParty
+     * @param  null|SignatoryParty $signatoryParty
      * @return static
      */
     public function setSignatoryParty(?SignatoryParty $signatoryParty = null): static
@@ -503,7 +503,7 @@ class SignatureType
     }
 
     /**
-     * @return DigitalSignatureAttachment|null
+     * @return null|DigitalSignatureAttachment
      */
     public function getDigitalSignatureAttachment(): ?DigitalSignatureAttachment
     {
@@ -521,7 +521,7 @@ class SignatureType
     }
 
     /**
-     * @param DigitalSignatureAttachment|null $digitalSignatureAttachment
+     * @param  null|DigitalSignatureAttachment $digitalSignatureAttachment
      * @return static
      */
     public function setDigitalSignatureAttachment(
@@ -543,7 +543,7 @@ class SignatureType
     }
 
     /**
-     * @return OriginalDocumentReference|null
+     * @return null|OriginalDocumentReference
      */
     public function getOriginalDocumentReference(): ?OriginalDocumentReference
     {
@@ -561,7 +561,7 @@ class SignatureType
     }
 
     /**
-     * @param OriginalDocumentReference|null $originalDocumentReference
+     * @param  null|OriginalDocumentReference $originalDocumentReference
      * @return static
      */
     public function setOriginalDocumentReference(?OriginalDocumentReference $originalDocumentReference = null): static

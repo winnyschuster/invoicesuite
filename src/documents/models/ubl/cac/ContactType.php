@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ElectronicMail;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Telefax;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Telephone;
+use JMS\Serializer\Annotation as JMS;
 
 class ContactType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class ContactType
     private $iD;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class ContactType
     private $name;
 
     /**
-     * @var Telephone|null
+     * @var null|Telephone
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Telephone")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class ContactType
     private $telephone;
 
     /**
-     * @var Telefax|null
+     * @var null|Telefax
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Telefax")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class ContactType
     private $telefax;
 
     /**
-     * @var ElectronicMail|null
+     * @var null|ElectronicMail
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ElectronicMail")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class ContactType
     private $electronicMail;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class ContactType
     private $note;
 
     /**
-     * @var array<OtherCommunication>|null
+     * @var null|array<OtherCommunication>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\OtherCommunication>")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class ContactType
     private $otherCommunication;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -115,7 +115,7 @@ class ContactType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -136,7 +136,7 @@ class ContactType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -154,7 +154,7 @@ class ContactType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -175,7 +175,7 @@ class ContactType
     }
 
     /**
-     * @return Telephone|null
+     * @return null|Telephone
      */
     public function getTelephone(): ?Telephone
     {
@@ -193,7 +193,7 @@ class ContactType
     }
 
     /**
-     * @param Telephone|null $telephone
+     * @param  null|Telephone $telephone
      * @return static
      */
     public function setTelephone(?Telephone $telephone = null): static
@@ -214,7 +214,7 @@ class ContactType
     }
 
     /**
-     * @return Telefax|null
+     * @return null|Telefax
      */
     public function getTelefax(): ?Telefax
     {
@@ -232,7 +232,7 @@ class ContactType
     }
 
     /**
-     * @param Telefax|null $telefax
+     * @param  null|Telefax $telefax
      * @return static
      */
     public function setTelefax(?Telefax $telefax = null): static
@@ -253,7 +253,7 @@ class ContactType
     }
 
     /**
-     * @return ElectronicMail|null
+     * @return null|ElectronicMail
      */
     public function getElectronicMail(): ?ElectronicMail
     {
@@ -271,7 +271,7 @@ class ContactType
     }
 
     /**
-     * @param ElectronicMail|null $electronicMail
+     * @param  null|ElectronicMail $electronicMail
      * @return static
      */
     public function setElectronicMail(?ElectronicMail $electronicMail = null): static
@@ -292,7 +292,7 @@ class ContactType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -300,7 +300,7 @@ class ContactType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -331,7 +331,7 @@ class ContactType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -346,7 +346,7 @@ class ContactType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -361,7 +361,7 @@ class ContactType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -382,7 +382,7 @@ class ContactType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -413,7 +413,7 @@ class ContactType
     }
 
     /**
-     * @return array<OtherCommunication>|null
+     * @return null|array<OtherCommunication>
      */
     public function getOtherCommunication(): ?array
     {
@@ -421,7 +421,7 @@ class ContactType
     }
 
     /**
-     * @param array<OtherCommunication>|null $otherCommunication
+     * @param  null|array<OtherCommunication> $otherCommunication
      * @return static
      */
     public function setOtherCommunication(?array $otherCommunication = null): static
@@ -452,7 +452,7 @@ class ContactType
     }
 
     /**
-     * @return OtherCommunication|null
+     * @return null|OtherCommunication
      */
     public function firstOtherCommunication(): ?OtherCommunication
     {
@@ -467,7 +467,7 @@ class ContactType
     }
 
     /**
-     * @return OtherCommunication|null
+     * @return null|OtherCommunication
      */
     public function lastOtherCommunication(): ?OtherCommunication
     {
@@ -482,7 +482,7 @@ class ContactType
     }
 
     /**
-     * @param OtherCommunication $otherCommunication
+     * @param  OtherCommunication $otherCommunication
      * @return static
      */
     public function addToOtherCommunication(OtherCommunication $otherCommunication): static
@@ -503,7 +503,7 @@ class ContactType
     }
 
     /**
-     * @param OtherCommunication $otherCommunication
+     * @param  OtherCommunication $otherCommunication
      * @return static
      */
     public function addOnceToOtherCommunication(OtherCommunication $otherCommunication): static

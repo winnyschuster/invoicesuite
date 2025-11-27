@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LegalReference;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\OntologyURI;
+use JMS\Serializer\Annotation as JMS;
 
 class RegulationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class RegulationType
     private $name;
 
     /**
-     * @var LegalReference|null
+     * @var null|LegalReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LegalReference")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class RegulationType
     private $legalReference;
 
     /**
-     * @var OntologyURI|null
+     * @var null|OntologyURI
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OntologyURI")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class RegulationType
     private $ontologyURI;
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -66,7 +66,7 @@ class RegulationType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -87,7 +87,7 @@ class RegulationType
     }
 
     /**
-     * @return LegalReference|null
+     * @return null|LegalReference
      */
     public function getLegalReference(): ?LegalReference
     {
@@ -105,7 +105,7 @@ class RegulationType
     }
 
     /**
-     * @param LegalReference|null $legalReference
+     * @param  null|LegalReference $legalReference
      * @return static
      */
     public function setLegalReference(?LegalReference $legalReference = null): static
@@ -126,7 +126,7 @@ class RegulationType
     }
 
     /**
-     * @return OntologyURI|null
+     * @return null|OntologyURI
      */
     public function getOntologyURI(): ?OntologyURI
     {
@@ -144,7 +144,7 @@ class RegulationType
     }
 
     /**
-     * @param OntologyURI|null $ontologyURI
+     * @param  null|OntologyURI $ontologyURI
      * @return static
      */
     public function setOntologyURI(?OntologyURI $ontologyURI = null): static

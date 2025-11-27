@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxminimum\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxminimum\qdt\CountryIDType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeAddressType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var CountryIDType|null
+     * @var null|CountryIDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\qdt\CountryIDType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class TradeAddressType
     private $countryID;
 
     /**
-     * @return CountryIDType|null
+     * @return null|CountryIDType
      */
     public function getCountryID(): ?CountryIDType
     {
@@ -42,7 +42,7 @@ class TradeAddressType
     }
 
     /**
-     * @param CountryIDType|null $countryID
+     * @param  null|CountryIDType $countryID
      * @return static
      */
     public function setCountryID(?CountryIDType $countryID = null): static

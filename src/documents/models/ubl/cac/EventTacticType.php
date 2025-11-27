@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Comment;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity;
+use JMS\Serializer\Annotation as JMS;
 
 class EventTacticType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Comment|null
+     * @var null|Comment
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Comment")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class EventTacticType
     private $comment;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class EventTacticType
     private $quantity;
 
     /**
-     * @var EventTacticEnumeration|null
+     * @var null|EventTacticEnumeration
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EventTacticEnumeration")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class EventTacticType
     private $eventTacticEnumeration;
 
     /**
-     * @var Period|null
+     * @var null|Period
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Period")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class EventTacticType
     private $period;
 
     /**
-     * @return Comment|null
+     * @return null|Comment
      */
     public function getComment(): ?Comment
     {
@@ -76,7 +76,7 @@ class EventTacticType
     }
 
     /**
-     * @param Comment|null $comment
+     * @param  null|Comment $comment
      * @return static
      */
     public function setComment(?Comment $comment = null): static
@@ -97,7 +97,7 @@ class EventTacticType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -115,7 +115,7 @@ class EventTacticType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -136,7 +136,7 @@ class EventTacticType
     }
 
     /**
-     * @return EventTacticEnumeration|null
+     * @return null|EventTacticEnumeration
      */
     public function getEventTacticEnumeration(): ?EventTacticEnumeration
     {
@@ -154,7 +154,7 @@ class EventTacticType
     }
 
     /**
-     * @param EventTacticEnumeration|null $eventTacticEnumeration
+     * @param  null|EventTacticEnumeration $eventTacticEnumeration
      * @return static
      */
     public function setEventTacticEnumeration(?EventTacticEnumeration $eventTacticEnumeration = null): static
@@ -175,7 +175,7 @@ class EventTacticType
     }
 
     /**
-     * @return Period|null
+     * @return null|Period
      */
     public function getPeriod(): ?Period
     {
@@ -193,7 +193,7 @@ class EventTacticType
     }
 
     /**
-     * @param Period|null $period
+     * @param  null|Period $period
      * @return static
      */
     public function setPeriod(?Period $period = null): static

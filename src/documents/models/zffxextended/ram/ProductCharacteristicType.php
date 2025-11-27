@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\MeasureType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class ProductCharacteristicType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var CodeType|null
+     * @var null|CodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class ProductCharacteristicType
     private $typeCode;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class ProductCharacteristicType
     private $description;
 
     /**
-     * @var MeasureType|null
+     * @var null|MeasureType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\MeasureType")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class ProductCharacteristicType
     private $valueMeasure;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class ProductCharacteristicType
     private $value;
 
     /**
-     * @return CodeType|null
+     * @return null|CodeType
      */
     public function getTypeCode(): ?CodeType
     {
@@ -77,7 +77,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @param CodeType|null $typeCode
+     * @param  null|CodeType $typeCode
      * @return static
      */
     public function setTypeCode(?CodeType $typeCode = null): static
@@ -98,7 +98,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getDescription(): ?TextType
     {
@@ -116,7 +116,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @param TextType|null $description
+     * @param  null|TextType $description
      * @return static
      */
     public function setDescription(?TextType $description = null): static
@@ -137,7 +137,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return MeasureType|null
+     * @return null|MeasureType
      */
     public function getValueMeasure(): ?MeasureType
     {
@@ -155,7 +155,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @param MeasureType|null $valueMeasure
+     * @param  null|MeasureType $valueMeasure
      * @return static
      */
     public function setValueMeasure(?MeasureType $valueMeasure = null): static
@@ -176,7 +176,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getValue(): ?TextType
     {
@@ -194,7 +194,7 @@ class ProductCharacteristicType
     }
 
     /**
-     * @param TextType|null $value
+     * @param  null|TextType $value
      * @return static
      */
     public function setValue(?TextType $value = null): static

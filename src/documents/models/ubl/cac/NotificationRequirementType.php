@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\NotificationTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PostEventNotificationDurationMeasure;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PreEventNotificationDurationMeasure;
+use JMS\Serializer\Annotation as JMS;
 
 class NotificationRequirementType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var NotificationTypeCode|null
+     * @var null|NotificationTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NotificationTypeCode")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class NotificationRequirementType
     private $notificationTypeCode;
 
     /**
-     * @var PostEventNotificationDurationMeasure|null
+     * @var null|PostEventNotificationDurationMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PostEventNotificationDurationMeasure")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class NotificationRequirementType
     private $postEventNotificationDurationMeasure;
 
     /**
-     * @var PreEventNotificationDurationMeasure|null
+     * @var null|PreEventNotificationDurationMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PreEventNotificationDurationMeasure")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class NotificationRequirementType
     private $preEventNotificationDurationMeasure;
 
     /**
-     * @var array<NotifyParty>|null
+     * @var null|array<NotifyParty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty>")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class NotificationRequirementType
     private $notifyParty;
 
     /**
-     * @var array<NotificationPeriod>|null
+     * @var null|array<NotificationPeriod>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\NotificationPeriod>")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class NotificationRequirementType
     private $notificationPeriod;
 
     /**
-     * @var array<NotificationLocation>|null
+     * @var null|array<NotificationLocation>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\NotificationLocation>")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class NotificationRequirementType
     private $notificationLocation;
 
     /**
-     * @return NotificationTypeCode|null
+     * @return null|NotificationTypeCode
      */
     public function getNotificationTypeCode(): ?NotificationTypeCode
     {
@@ -102,7 +102,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param NotificationTypeCode|null $notificationTypeCode
+     * @param  null|NotificationTypeCode $notificationTypeCode
      * @return static
      */
     public function setNotificationTypeCode(?NotificationTypeCode $notificationTypeCode = null): static
@@ -123,7 +123,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return PostEventNotificationDurationMeasure|null
+     * @return null|PostEventNotificationDurationMeasure
      */
     public function getPostEventNotificationDurationMeasure(): ?PostEventNotificationDurationMeasure
     {
@@ -141,7 +141,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param PostEventNotificationDurationMeasure|null $postEventNotificationDurationMeasure
+     * @param  null|PostEventNotificationDurationMeasure $postEventNotificationDurationMeasure
      * @return static
      */
     public function setPostEventNotificationDurationMeasure(
@@ -163,7 +163,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return PreEventNotificationDurationMeasure|null
+     * @return null|PreEventNotificationDurationMeasure
      */
     public function getPreEventNotificationDurationMeasure(): ?PreEventNotificationDurationMeasure
     {
@@ -181,7 +181,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param PreEventNotificationDurationMeasure|null $preEventNotificationDurationMeasure
+     * @param  null|PreEventNotificationDurationMeasure $preEventNotificationDurationMeasure
      * @return static
      */
     public function setPreEventNotificationDurationMeasure(
@@ -203,7 +203,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return array<NotifyParty>|null
+     * @return null|array<NotifyParty>
      */
     public function getNotifyParty(): ?array
     {
@@ -211,7 +211,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param array<NotifyParty>|null $notifyParty
+     * @param  null|array<NotifyParty> $notifyParty
      * @return static
      */
     public function setNotifyParty(?array $notifyParty = null): static
@@ -242,7 +242,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return NotifyParty|null
+     * @return null|NotifyParty
      */
     public function firstNotifyParty(): ?NotifyParty
     {
@@ -257,7 +257,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return NotifyParty|null
+     * @return null|NotifyParty
      */
     public function lastNotifyParty(): ?NotifyParty
     {
@@ -272,7 +272,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param NotifyParty $notifyParty
+     * @param  NotifyParty $notifyParty
      * @return static
      */
     public function addToNotifyParty(NotifyParty $notifyParty): static
@@ -293,7 +293,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param NotifyParty $notifyParty
+     * @param  NotifyParty $notifyParty
      * @return static
      */
     public function addOnceToNotifyParty(NotifyParty $notifyParty): static
@@ -324,7 +324,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return array<NotificationPeriod>|null
+     * @return null|array<NotificationPeriod>
      */
     public function getNotificationPeriod(): ?array
     {
@@ -332,7 +332,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param array<NotificationPeriod>|null $notificationPeriod
+     * @param  null|array<NotificationPeriod> $notificationPeriod
      * @return static
      */
     public function setNotificationPeriod(?array $notificationPeriod = null): static
@@ -363,7 +363,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return NotificationPeriod|null
+     * @return null|NotificationPeriod
      */
     public function firstNotificationPeriod(): ?NotificationPeriod
     {
@@ -378,7 +378,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return NotificationPeriod|null
+     * @return null|NotificationPeriod
      */
     public function lastNotificationPeriod(): ?NotificationPeriod
     {
@@ -393,7 +393,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param NotificationPeriod $notificationPeriod
+     * @param  NotificationPeriod $notificationPeriod
      * @return static
      */
     public function addToNotificationPeriod(NotificationPeriod $notificationPeriod): static
@@ -414,7 +414,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param NotificationPeriod $notificationPeriod
+     * @param  NotificationPeriod $notificationPeriod
      * @return static
      */
     public function addOnceToNotificationPeriod(NotificationPeriod $notificationPeriod): static
@@ -445,7 +445,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return array<NotificationLocation>|null
+     * @return null|array<NotificationLocation>
      */
     public function getNotificationLocation(): ?array
     {
@@ -453,7 +453,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param array<NotificationLocation>|null $notificationLocation
+     * @param  null|array<NotificationLocation> $notificationLocation
      * @return static
      */
     public function setNotificationLocation(?array $notificationLocation = null): static
@@ -484,7 +484,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return NotificationLocation|null
+     * @return null|NotificationLocation
      */
     public function firstNotificationLocation(): ?NotificationLocation
     {
@@ -499,7 +499,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @return NotificationLocation|null
+     * @return null|NotificationLocation
      */
     public function lastNotificationLocation(): ?NotificationLocation
     {
@@ -514,7 +514,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param NotificationLocation $notificationLocation
+     * @param  NotificationLocation $notificationLocation
      * @return static
      */
     public function addToNotificationLocation(NotificationLocation $notificationLocation): static
@@ -535,7 +535,7 @@ class NotificationRequirementType
     }
 
     /**
-     * @param NotificationLocation $notificationLocation
+     * @param  NotificationLocation $notificationLocation
      * @return static
      */
     public function addOnceToNotificationLocation(NotificationLocation $notificationLocation): static

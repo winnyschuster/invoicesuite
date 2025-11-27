@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Amount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
@@ -20,13 +19,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\PrepaidPaymentReferenceID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceEventCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SettlementDiscountAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SettlementDiscountPercent;
+use JMS\Serializer\Annotation as JMS;
 
 class PaymentTermsType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class PaymentTermsType
     private $iD;
 
     /**
-     * @var array<PaymentMeansID>|null
+     * @var null|array<PaymentMeansID>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentMeansID>")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class PaymentTermsType
     private $paymentMeansID;
 
     /**
-     * @var PrepaidPaymentReferenceID|null
+     * @var null|PrepaidPaymentReferenceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PrepaidPaymentReferenceID")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class PaymentTermsType
     private $prepaidPaymentReferenceID;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class PaymentTermsType
     private $note;
 
     /**
-     * @var ReferenceEventCode|null
+     * @var null|ReferenceEventCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReferenceEventCode")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class PaymentTermsType
     private $referenceEventCode;
 
     /**
-     * @var SettlementDiscountPercent|null
+     * @var null|SettlementDiscountPercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SettlementDiscountPercent")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class PaymentTermsType
     private $settlementDiscountPercent;
 
     /**
-     * @var PenaltySurchargePercent|null
+     * @var null|PenaltySurchargePercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltySurchargePercent")
      * @JMS\Expose
@@ -105,7 +105,7 @@ class PaymentTermsType
     private $penaltySurchargePercent;
 
     /**
-     * @var PaymentPercent|null
+     * @var null|PaymentPercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPercent")
      * @JMS\Expose
@@ -116,7 +116,7 @@ class PaymentTermsType
     private $paymentPercent;
 
     /**
-     * @var Amount|null
+     * @var null|Amount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -127,7 +127,7 @@ class PaymentTermsType
     private $amount;
 
     /**
-     * @var SettlementDiscountAmount|null
+     * @var null|SettlementDiscountAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SettlementDiscountAmount")
      * @JMS\Expose
@@ -138,7 +138,7 @@ class PaymentTermsType
     private $settlementDiscountAmount;
 
     /**
-     * @var PenaltyAmount|null
+     * @var null|PenaltyAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltyAmount")
      * @JMS\Expose
@@ -149,7 +149,7 @@ class PaymentTermsType
     private $penaltyAmount;
 
     /**
-     * @var PaymentTermsDetailsURI|null
+     * @var null|PaymentTermsDetailsURI
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentTermsDetailsURI")
      * @JMS\Expose
@@ -160,7 +160,7 @@ class PaymentTermsType
     private $paymentTermsDetailsURI;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -171,7 +171,7 @@ class PaymentTermsType
     private $paymentDueDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -182,7 +182,7 @@ class PaymentTermsType
     private $installmentDueDate;
 
     /**
-     * @var InvoicingPartyReference|null
+     * @var null|InvoicingPartyReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InvoicingPartyReference")
      * @JMS\Expose
@@ -193,7 +193,7 @@ class PaymentTermsType
     private $invoicingPartyReference;
 
     /**
-     * @var SettlementPeriod|null
+     * @var null|SettlementPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SettlementPeriod")
      * @JMS\Expose
@@ -204,7 +204,7 @@ class PaymentTermsType
     private $settlementPeriod;
 
     /**
-     * @var PenaltyPeriod|null
+     * @var null|PenaltyPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PenaltyPeriod")
      * @JMS\Expose
@@ -215,7 +215,7 @@ class PaymentTermsType
     private $penaltyPeriod;
 
     /**
-     * @var ExchangeRate|null
+     * @var null|ExchangeRate
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate")
      * @JMS\Expose
@@ -226,7 +226,7 @@ class PaymentTermsType
     private $exchangeRate;
 
     /**
-     * @var ValidityPeriod|null
+     * @var null|ValidityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod")
      * @JMS\Expose
@@ -237,7 +237,7 @@ class PaymentTermsType
     private $validityPeriod;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -255,7 +255,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -276,7 +276,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return array<PaymentMeansID>|null
+     * @return null|array<PaymentMeansID>
      */
     public function getPaymentMeansID(): ?array
     {
@@ -284,7 +284,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param array<PaymentMeansID>|null $paymentMeansID
+     * @param  null|array<PaymentMeansID> $paymentMeansID
      * @return static
      */
     public function setPaymentMeansID(?array $paymentMeansID = null): static
@@ -315,7 +315,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return PaymentMeansID|null
+     * @return null|PaymentMeansID
      */
     public function firstPaymentMeansID(): ?PaymentMeansID
     {
@@ -330,7 +330,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return PaymentMeansID|null
+     * @return null|PaymentMeansID
      */
     public function lastPaymentMeansID(): ?PaymentMeansID
     {
@@ -345,7 +345,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param PaymentMeansID $paymentMeansID
+     * @param  PaymentMeansID $paymentMeansID
      * @return static
      */
     public function addToPaymentMeansID(PaymentMeansID $paymentMeansID): static
@@ -366,7 +366,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param PaymentMeansID $paymentMeansID
+     * @param  PaymentMeansID $paymentMeansID
      * @return static
      */
     public function addOnceToPaymentMeansID(PaymentMeansID $paymentMeansID): static
@@ -397,7 +397,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return PrepaidPaymentReferenceID|null
+     * @return null|PrepaidPaymentReferenceID
      */
     public function getPrepaidPaymentReferenceID(): ?PrepaidPaymentReferenceID
     {
@@ -415,7 +415,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param PrepaidPaymentReferenceID|null $prepaidPaymentReferenceID
+     * @param  null|PrepaidPaymentReferenceID $prepaidPaymentReferenceID
      * @return static
      */
     public function setPrepaidPaymentReferenceID(?PrepaidPaymentReferenceID $prepaidPaymentReferenceID = null): static
@@ -436,7 +436,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -444,7 +444,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -475,7 +475,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -490,7 +490,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -505,7 +505,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -526,7 +526,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -557,7 +557,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return ReferenceEventCode|null
+     * @return null|ReferenceEventCode
      */
     public function getReferenceEventCode(): ?ReferenceEventCode
     {
@@ -575,7 +575,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param ReferenceEventCode|null $referenceEventCode
+     * @param  null|ReferenceEventCode $referenceEventCode
      * @return static
      */
     public function setReferenceEventCode(?ReferenceEventCode $referenceEventCode = null): static
@@ -596,7 +596,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return SettlementDiscountPercent|null
+     * @return null|SettlementDiscountPercent
      */
     public function getSettlementDiscountPercent(): ?SettlementDiscountPercent
     {
@@ -614,7 +614,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param SettlementDiscountPercent|null $settlementDiscountPercent
+     * @param  null|SettlementDiscountPercent $settlementDiscountPercent
      * @return static
      */
     public function setSettlementDiscountPercent(?SettlementDiscountPercent $settlementDiscountPercent = null): static
@@ -635,7 +635,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return PenaltySurchargePercent|null
+     * @return null|PenaltySurchargePercent
      */
     public function getPenaltySurchargePercent(): ?PenaltySurchargePercent
     {
@@ -653,7 +653,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param PenaltySurchargePercent|null $penaltySurchargePercent
+     * @param  null|PenaltySurchargePercent $penaltySurchargePercent
      * @return static
      */
     public function setPenaltySurchargePercent(?PenaltySurchargePercent $penaltySurchargePercent = null): static
@@ -674,7 +674,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return PaymentPercent|null
+     * @return null|PaymentPercent
      */
     public function getPaymentPercent(): ?PaymentPercent
     {
@@ -692,7 +692,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param PaymentPercent|null $paymentPercent
+     * @param  null|PaymentPercent $paymentPercent
      * @return static
      */
     public function setPaymentPercent(?PaymentPercent $paymentPercent = null): static
@@ -713,7 +713,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return Amount|null
+     * @return null|Amount
      */
     public function getAmount(): ?Amount
     {
@@ -731,7 +731,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param Amount|null $amount
+     * @param  null|Amount $amount
      * @return static
      */
     public function setAmount(?Amount $amount = null): static
@@ -752,7 +752,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return SettlementDiscountAmount|null
+     * @return null|SettlementDiscountAmount
      */
     public function getSettlementDiscountAmount(): ?SettlementDiscountAmount
     {
@@ -770,7 +770,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param SettlementDiscountAmount|null $settlementDiscountAmount
+     * @param  null|SettlementDiscountAmount $settlementDiscountAmount
      * @return static
      */
     public function setSettlementDiscountAmount(?SettlementDiscountAmount $settlementDiscountAmount = null): static
@@ -791,7 +791,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return PenaltyAmount|null
+     * @return null|PenaltyAmount
      */
     public function getPenaltyAmount(): ?PenaltyAmount
     {
@@ -809,7 +809,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param PenaltyAmount|null $penaltyAmount
+     * @param  null|PenaltyAmount $penaltyAmount
      * @return static
      */
     public function setPenaltyAmount(?PenaltyAmount $penaltyAmount = null): static
@@ -830,7 +830,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return PaymentTermsDetailsURI|null
+     * @return null|PaymentTermsDetailsURI
      */
     public function getPaymentTermsDetailsURI(): ?PaymentTermsDetailsURI
     {
@@ -848,7 +848,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param PaymentTermsDetailsURI|null $paymentTermsDetailsURI
+     * @param  null|PaymentTermsDetailsURI $paymentTermsDetailsURI
      * @return static
      */
     public function setPaymentTermsDetailsURI(?PaymentTermsDetailsURI $paymentTermsDetailsURI = null): static
@@ -869,7 +869,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getPaymentDueDate(): ?DateTimeInterface
     {
@@ -877,7 +877,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param DateTimeInterface|null $paymentDueDate
+     * @param  null|DateTimeInterface $paymentDueDate
      * @return static
      */
     public function setPaymentDueDate(?DateTimeInterface $paymentDueDate = null): static
@@ -898,7 +898,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getInstallmentDueDate(): ?DateTimeInterface
     {
@@ -906,7 +906,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param DateTimeInterface|null $installmentDueDate
+     * @param  null|DateTimeInterface $installmentDueDate
      * @return static
      */
     public function setInstallmentDueDate(?DateTimeInterface $installmentDueDate = null): static
@@ -927,7 +927,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return InvoicingPartyReference|null
+     * @return null|InvoicingPartyReference
      */
     public function getInvoicingPartyReference(): ?InvoicingPartyReference
     {
@@ -945,7 +945,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param InvoicingPartyReference|null $invoicingPartyReference
+     * @param  null|InvoicingPartyReference $invoicingPartyReference
      * @return static
      */
     public function setInvoicingPartyReference(?InvoicingPartyReference $invoicingPartyReference = null): static
@@ -966,7 +966,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return SettlementPeriod|null
+     * @return null|SettlementPeriod
      */
     public function getSettlementPeriod(): ?SettlementPeriod
     {
@@ -984,7 +984,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param SettlementPeriod|null $settlementPeriod
+     * @param  null|SettlementPeriod $settlementPeriod
      * @return static
      */
     public function setSettlementPeriod(?SettlementPeriod $settlementPeriod = null): static
@@ -1005,7 +1005,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return PenaltyPeriod|null
+     * @return null|PenaltyPeriod
      */
     public function getPenaltyPeriod(): ?PenaltyPeriod
     {
@@ -1023,7 +1023,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param PenaltyPeriod|null $penaltyPeriod
+     * @param  null|PenaltyPeriod $penaltyPeriod
      * @return static
      */
     public function setPenaltyPeriod(?PenaltyPeriod $penaltyPeriod = null): static
@@ -1044,7 +1044,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return ExchangeRate|null
+     * @return null|ExchangeRate
      */
     public function getExchangeRate(): ?ExchangeRate
     {
@@ -1062,7 +1062,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param ExchangeRate|null $exchangeRate
+     * @param  null|ExchangeRate $exchangeRate
      * @return static
      */
     public function setExchangeRate(?ExchangeRate $exchangeRate = null): static
@@ -1083,7 +1083,7 @@ class PaymentTermsType
     }
 
     /**
-     * @return ValidityPeriod|null
+     * @return null|ValidityPeriod
      */
     public function getValidityPeriod(): ?ValidityPeriod
     {
@@ -1101,7 +1101,7 @@ class PaymentTermsType
     }
 
     /**
-     * @param ValidityPeriod|null $validityPeriod
+     * @param  null|ValidityPeriod $validityPeriod
      * @return static
      */
     public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): static

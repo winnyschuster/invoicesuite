@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\udt;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
 
 class BinaryObjectType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"zffx"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class BinaryObjectType
     private $value;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"zffx"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class BinaryObjectType
     private $mimeCode;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"zffx"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class BinaryObjectType
     private $filename;
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getValue(): ?string
     {
@@ -54,7 +54,7 @@ class BinaryObjectType
     }
 
     /**
-     * @param string|null $value
+     * @param  null|string $value
      * @return static
      */
     public function setValue(?string $value = null): static
@@ -75,7 +75,7 @@ class BinaryObjectType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getMimeCode(): ?string
     {
@@ -83,7 +83,7 @@ class BinaryObjectType
     }
 
     /**
-     * @param string|null $mimeCode
+     * @param  null|string $mimeCode
      * @return static
      */
     public function setMimeCode(?string $mimeCode = null): static
@@ -104,7 +104,7 @@ class BinaryObjectType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getFilename(): ?string
     {
@@ -112,7 +112,7 @@ class BinaryObjectType
     }
 
     /**
-     * @param string|null $filename
+     * @param  null|string $filename
      * @return static
      */
     public function setFilename(?string $filename = null): static

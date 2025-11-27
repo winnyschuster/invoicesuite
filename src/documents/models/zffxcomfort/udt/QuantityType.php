@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxcomfort\udt;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
 
 class QuantityType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var float|null
+     * @var null|float
      * @JMS\Groups({"zffx"})
      * @JMS\Type("float")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class QuantityType
     private $value;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"zffx"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class QuantityType
     private $unitCode;
 
     /**
-     * @return float|null
+     * @return null|float
      */
     public function getValue(): ?float
     {
@@ -43,7 +43,7 @@ class QuantityType
     }
 
     /**
-     * @param float|null $value
+     * @param  null|float $value
      * @return static
      */
     public function setValue(?float $value = null): static
@@ -64,7 +64,7 @@ class QuantityType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getUnitCode(): ?string
     {
@@ -72,7 +72,7 @@ class QuantityType
     }
 
     /**
-     * @param string|null $unitCode
+     * @param  null|string $unitCode
      * @return static
      */
     public function setUnitCode(?string $unitCode = null): static

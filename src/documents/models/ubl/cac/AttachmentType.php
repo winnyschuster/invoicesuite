@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\EmbeddedDocumentBinaryObject;
+use JMS\Serializer\Annotation as JMS;
 
 class AttachmentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var EmbeddedDocumentBinaryObject|null
+     * @var null|EmbeddedDocumentBinaryObject
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EmbeddedDocumentBinaryObject")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class AttachmentType
     private $embeddedDocumentBinaryObject;
 
     /**
-     * @var ExternalReference|null
+     * @var null|ExternalReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExternalReference")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class AttachmentType
     private $externalReference;
 
     /**
-     * @return EmbeddedDocumentBinaryObject|null
+     * @return null|EmbeddedDocumentBinaryObject
      */
     public function getEmbeddedDocumentBinaryObject(): ?EmbeddedDocumentBinaryObject
     {
@@ -53,7 +53,7 @@ class AttachmentType
     }
 
     /**
-     * @param EmbeddedDocumentBinaryObject|null $embeddedDocumentBinaryObject
+     * @param  null|EmbeddedDocumentBinaryObject $embeddedDocumentBinaryObject
      * @return static
      */
     public function setEmbeddedDocumentBinaryObject(
@@ -75,7 +75,7 @@ class AttachmentType
     }
 
     /**
-     * @return ExternalReference|null
+     * @return null|ExternalReference
      */
     public function getExternalReference(): ?ExternalReference
     {
@@ -93,7 +93,7 @@ class AttachmentType
     }
 
     /**
-     * @param ExternalReference|null $externalReference
+     * @param  null|ExternalReference $externalReference
      * @return static
      */
     public function setExternalReference(?ExternalReference $externalReference = null): static

@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasic\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class LineTradeAgreementType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TradePriceType|null
+     * @var null|TradePriceType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\ram\TradePriceType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class LineTradeAgreementType
     private $grossPriceProductTradePrice;
 
     /**
-     * @var TradePriceType|null
+     * @var null|TradePriceType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\ram\TradePriceType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class LineTradeAgreementType
     private $netPriceProductTradePrice;
 
     /**
-     * @return TradePriceType|null
+     * @return null|TradePriceType
      */
     public function getGrossPriceProductTradePrice(): ?TradePriceType
     {
@@ -52,7 +52,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param TradePriceType|null $grossPriceProductTradePrice
+     * @param  null|TradePriceType $grossPriceProductTradePrice
      * @return static
      */
     public function setGrossPriceProductTradePrice(?TradePriceType $grossPriceProductTradePrice = null): static
@@ -73,7 +73,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return TradePriceType|null
+     * @return null|TradePriceType
      */
     public function getNetPriceProductTradePrice(): ?TradePriceType
     {
@@ -91,7 +91,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param TradePriceType|null $netPriceProductTradePrice
+     * @param  null|TradePriceType $netPriceProductTradePrice
      * @return static
      */
     public function setNetPriceProductTradePrice(?TradePriceType $netPriceProductTradePrice = null): static

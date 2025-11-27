@@ -5,20 +5,20 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount;
+use JMS\Serializer\Annotation as JMS;
 
 class StockAvailabilityReportLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class StockAvailabilityReportLineType
     private $iD;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class StockAvailabilityReportLineType
     private $note;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class StockAvailabilityReportLineType
     private $quantity;
 
     /**
-     * @var ValueAmount|null
+     * @var null|ValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class StockAvailabilityReportLineType
     private $valueAmount;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class StockAvailabilityReportLineType
     private $availabilityDate;
 
     /**
-     * @var AvailabilityStatusCode|null
+     * @var null|AvailabilityStatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class StockAvailabilityReportLineType
     private $availabilityStatusCode;
 
     /**
-     * @var Item|null
+     * @var null|Item
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class StockAvailabilityReportLineType
     private $item;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -114,7 +114,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -135,7 +135,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -143,7 +143,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -174,7 +174,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -189,7 +189,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -204,7 +204,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -225,7 +225,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -256,7 +256,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -274,7 +274,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -295,7 +295,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return ValueAmount|null
+     * @return null|ValueAmount
      */
     public function getValueAmount(): ?ValueAmount
     {
@@ -313,7 +313,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param ValueAmount|null $valueAmount
+     * @param  null|ValueAmount $valueAmount
      * @return static
      */
     public function setValueAmount(?ValueAmount $valueAmount = null): static
@@ -334,7 +334,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getAvailabilityDate(): ?DateTimeInterface
     {
@@ -342,7 +342,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param DateTimeInterface|null $availabilityDate
+     * @param  null|DateTimeInterface $availabilityDate
      * @return static
      */
     public function setAvailabilityDate(?DateTimeInterface $availabilityDate = null): static
@@ -363,7 +363,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return AvailabilityStatusCode|null
+     * @return null|AvailabilityStatusCode
      */
     public function getAvailabilityStatusCode(): ?AvailabilityStatusCode
     {
@@ -381,7 +381,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param AvailabilityStatusCode|null $availabilityStatusCode
+     * @param  null|AvailabilityStatusCode $availabilityStatusCode
      * @return static
      */
     public function setAvailabilityStatusCode(?AvailabilityStatusCode $availabilityStatusCode = null): static
@@ -402,7 +402,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function getItem(): ?Item
     {
@@ -420,7 +420,7 @@ class StockAvailabilityReportLineType
     }
 
     /**
-     * @param Item|null $item
+     * @param  null|Item $item
      * @return static
      */
     public function setItem(?Item $item = null): static

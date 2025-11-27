@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
+use JMS\Serializer\Annotation as JMS;
 
 class CataloguePricingUpdateLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class CataloguePricingUpdateLineType
     private $iD;
 
     /**
-     * @var ContractorCustomerParty|null
+     * @var null|ContractorCustomerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContractorCustomerParty")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class CataloguePricingUpdateLineType
     private $contractorCustomerParty;
 
     /**
-     * @var SellerSupplierParty|null
+     * @var null|SellerSupplierParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class CataloguePricingUpdateLineType
     private $sellerSupplierParty;
 
     /**
-     * @var array<RequiredItemLocationQuantity>|null
+     * @var null|array<RequiredItemLocationQuantity>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity>")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class CataloguePricingUpdateLineType
     private $requiredItemLocationQuantity;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -76,7 +76,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -97,7 +97,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return ContractorCustomerParty|null
+     * @return null|ContractorCustomerParty
      */
     public function getContractorCustomerParty(): ?ContractorCustomerParty
     {
@@ -115,7 +115,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @param ContractorCustomerParty|null $contractorCustomerParty
+     * @param  null|ContractorCustomerParty $contractorCustomerParty
      * @return static
      */
     public function setContractorCustomerParty(?ContractorCustomerParty $contractorCustomerParty = null): static
@@ -136,7 +136,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return SellerSupplierParty|null
+     * @return null|SellerSupplierParty
      */
     public function getSellerSupplierParty(): ?SellerSupplierParty
     {
@@ -154,7 +154,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @param SellerSupplierParty|null $sellerSupplierParty
+     * @param  null|SellerSupplierParty $sellerSupplierParty
      * @return static
      */
     public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
@@ -175,7 +175,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return array<RequiredItemLocationQuantity>|null
+     * @return null|array<RequiredItemLocationQuantity>
      */
     public function getRequiredItemLocationQuantity(): ?array
     {
@@ -183,7 +183,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @param array<RequiredItemLocationQuantity>|null $requiredItemLocationQuantity
+     * @param  null|array<RequiredItemLocationQuantity> $requiredItemLocationQuantity
      * @return static
      */
     public function setRequiredItemLocationQuantity(?array $requiredItemLocationQuantity = null): static
@@ -214,7 +214,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return RequiredItemLocationQuantity|null
+     * @return null|RequiredItemLocationQuantity
      */
     public function firstRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
@@ -229,7 +229,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @return RequiredItemLocationQuantity|null
+     * @return null|RequiredItemLocationQuantity
      */
     public function lastRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
@@ -244,7 +244,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param  RequiredItemLocationQuantity $requiredItemLocationQuantity
      * @return static
      */
     public function addToRequiredItemLocationQuantity(
@@ -266,7 +266,7 @@ class CataloguePricingUpdateLineType
     }
 
     /**
-     * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param  RequiredItemLocationQuantity $requiredItemLocationQuantity
      * @return static
      */
     public function addOnceToRequiredItemLocationQuantity(

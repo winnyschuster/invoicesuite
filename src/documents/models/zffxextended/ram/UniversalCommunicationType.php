@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class UniversalCommunicationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class UniversalCommunicationType
     private $uRIID;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class UniversalCommunicationType
     private $completeNumber;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getURIID(): ?IDType
     {
@@ -54,7 +54,7 @@ class UniversalCommunicationType
     }
 
     /**
-     * @param IDType|null $uRIID
+     * @param  null|IDType $uRIID
      * @return static
      */
     public function setURIID(?IDType $uRIID = null): static
@@ -75,7 +75,7 @@ class UniversalCommunicationType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getCompleteNumber(): ?TextType
     {
@@ -93,7 +93,7 @@ class UniversalCommunicationType
     }
 
     /**
-     * @param TextType|null $completeNumber
+     * @param  null|TextType $completeNumber
      * @return static
      */
     public function setCompleteNumber(?TextType $completeNumber = null): static

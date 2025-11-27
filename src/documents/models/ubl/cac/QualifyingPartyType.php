@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BusinessClassificationEvidenceID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BusinessIdentityEvidenceID;
@@ -13,13 +12,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\OperatingYearsQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ParticipationPercent;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PersonalSituation;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TendererRoleCode;
+use JMS\Serializer\Annotation as JMS;
 
 class QualifyingPartyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ParticipationPercent|null
+     * @var null|ParticipationPercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ParticipationPercent")
      * @JMS\Expose
@@ -30,7 +30,7 @@ class QualifyingPartyType
     private $participationPercent;
 
     /**
-     * @var array<PersonalSituation>|null
+     * @var null|array<PersonalSituation>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PersonalSituation>")
      * @JMS\Expose
@@ -42,7 +42,7 @@ class QualifyingPartyType
     private $personalSituation;
 
     /**
-     * @var OperatingYearsQuantity|null
+     * @var null|OperatingYearsQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OperatingYearsQuantity")
      * @JMS\Expose
@@ -53,7 +53,7 @@ class QualifyingPartyType
     private $operatingYearsQuantity;
 
     /**
-     * @var EmployeeQuantity|null
+     * @var null|EmployeeQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EmployeeQuantity")
      * @JMS\Expose
@@ -64,7 +64,7 @@ class QualifyingPartyType
     private $employeeQuantity;
 
     /**
-     * @var BusinessClassificationEvidenceID|null
+     * @var null|BusinessClassificationEvidenceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BusinessClassificationEvidenceID")
      * @JMS\Expose
@@ -75,7 +75,7 @@ class QualifyingPartyType
     private $businessClassificationEvidenceID;
 
     /**
-     * @var BusinessIdentityEvidenceID|null
+     * @var null|BusinessIdentityEvidenceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BusinessIdentityEvidenceID")
      * @JMS\Expose
@@ -86,7 +86,7 @@ class QualifyingPartyType
     private $businessIdentityEvidenceID;
 
     /**
-     * @var TendererRoleCode|null
+     * @var null|TendererRoleCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TendererRoleCode")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class QualifyingPartyType
     private $tendererRoleCode;
 
     /**
-     * @var BusinessClassificationScheme|null
+     * @var null|BusinessClassificationScheme
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\BusinessClassificationScheme")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class QualifyingPartyType
     private $businessClassificationScheme;
 
     /**
-     * @var array<TechnicalCapability>|null
+     * @var null|array<TechnicalCapability>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCapability>")
      * @JMS\Expose
@@ -120,7 +120,7 @@ class QualifyingPartyType
     private $technicalCapability;
 
     /**
-     * @var array<FinancialCapability>|null
+     * @var null|array<FinancialCapability>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\FinancialCapability>")
      * @JMS\Expose
@@ -132,7 +132,7 @@ class QualifyingPartyType
     private $financialCapability;
 
     /**
-     * @var array<CompletedTask>|null
+     * @var null|array<CompletedTask>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\CompletedTask>")
      * @JMS\Expose
@@ -144,7 +144,7 @@ class QualifyingPartyType
     private $completedTask;
 
     /**
-     * @var array<Declaration>|null
+     * @var null|array<Declaration>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Declaration>")
      * @JMS\Expose
@@ -156,7 +156,7 @@ class QualifyingPartyType
     private $declaration;
 
     /**
-     * @var Party|null
+     * @var null|Party
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Party")
      * @JMS\Expose
@@ -167,7 +167,7 @@ class QualifyingPartyType
     private $party;
 
     /**
-     * @var EconomicOperatorRole|null
+     * @var null|EconomicOperatorRole
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EconomicOperatorRole")
      * @JMS\Expose
@@ -178,7 +178,7 @@ class QualifyingPartyType
     private $economicOperatorRole;
 
     /**
-     * @return ParticipationPercent|null
+     * @return null|ParticipationPercent
      */
     public function getParticipationPercent(): ?ParticipationPercent
     {
@@ -196,7 +196,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param ParticipationPercent|null $participationPercent
+     * @param  null|ParticipationPercent $participationPercent
      * @return static
      */
     public function setParticipationPercent(?ParticipationPercent $participationPercent = null): static
@@ -217,7 +217,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return array<PersonalSituation>|null
+     * @return null|array<PersonalSituation>
      */
     public function getPersonalSituation(): ?array
     {
@@ -225,7 +225,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param array<PersonalSituation>|null $personalSituation
+     * @param  null|array<PersonalSituation> $personalSituation
      * @return static
      */
     public function setPersonalSituation(?array $personalSituation = null): static
@@ -256,7 +256,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return PersonalSituation|null
+     * @return null|PersonalSituation
      */
     public function firstPersonalSituation(): ?PersonalSituation
     {
@@ -271,7 +271,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return PersonalSituation|null
+     * @return null|PersonalSituation
      */
     public function lastPersonalSituation(): ?PersonalSituation
     {
@@ -286,7 +286,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param PersonalSituation $personalSituation
+     * @param  PersonalSituation $personalSituation
      * @return static
      */
     public function addToPersonalSituation(PersonalSituation $personalSituation): static
@@ -307,7 +307,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param PersonalSituation $personalSituation
+     * @param  PersonalSituation $personalSituation
      * @return static
      */
     public function addOnceToPersonalSituation(PersonalSituation $personalSituation): static
@@ -338,7 +338,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return OperatingYearsQuantity|null
+     * @return null|OperatingYearsQuantity
      */
     public function getOperatingYearsQuantity(): ?OperatingYearsQuantity
     {
@@ -356,7 +356,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param OperatingYearsQuantity|null $operatingYearsQuantity
+     * @param  null|OperatingYearsQuantity $operatingYearsQuantity
      * @return static
      */
     public function setOperatingYearsQuantity(?OperatingYearsQuantity $operatingYearsQuantity = null): static
@@ -377,7 +377,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return EmployeeQuantity|null
+     * @return null|EmployeeQuantity
      */
     public function getEmployeeQuantity(): ?EmployeeQuantity
     {
@@ -395,7 +395,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param EmployeeQuantity|null $employeeQuantity
+     * @param  null|EmployeeQuantity $employeeQuantity
      * @return static
      */
     public function setEmployeeQuantity(?EmployeeQuantity $employeeQuantity = null): static
@@ -416,7 +416,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return BusinessClassificationEvidenceID|null
+     * @return null|BusinessClassificationEvidenceID
      */
     public function getBusinessClassificationEvidenceID(): ?BusinessClassificationEvidenceID
     {
@@ -434,7 +434,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param BusinessClassificationEvidenceID|null $businessClassificationEvidenceID
+     * @param  null|BusinessClassificationEvidenceID $businessClassificationEvidenceID
      * @return static
      */
     public function setBusinessClassificationEvidenceID(
@@ -456,7 +456,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return BusinessIdentityEvidenceID|null
+     * @return null|BusinessIdentityEvidenceID
      */
     public function getBusinessIdentityEvidenceID(): ?BusinessIdentityEvidenceID
     {
@@ -474,7 +474,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param BusinessIdentityEvidenceID|null $businessIdentityEvidenceID
+     * @param  null|BusinessIdentityEvidenceID $businessIdentityEvidenceID
      * @return static
      */
     public function setBusinessIdentityEvidenceID(
@@ -496,7 +496,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return TendererRoleCode|null
+     * @return null|TendererRoleCode
      */
     public function getTendererRoleCode(): ?TendererRoleCode
     {
@@ -514,7 +514,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param TendererRoleCode|null $tendererRoleCode
+     * @param  null|TendererRoleCode $tendererRoleCode
      * @return static
      */
     public function setTendererRoleCode(?TendererRoleCode $tendererRoleCode = null): static
@@ -535,7 +535,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return BusinessClassificationScheme|null
+     * @return null|BusinessClassificationScheme
      */
     public function getBusinessClassificationScheme(): ?BusinessClassificationScheme
     {
@@ -553,7 +553,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param BusinessClassificationScheme|null $businessClassificationScheme
+     * @param  null|BusinessClassificationScheme $businessClassificationScheme
      * @return static
      */
     public function setBusinessClassificationScheme(
@@ -575,7 +575,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return array<TechnicalCapability>|null
+     * @return null|array<TechnicalCapability>
      */
     public function getTechnicalCapability(): ?array
     {
@@ -583,7 +583,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param array<TechnicalCapability>|null $technicalCapability
+     * @param  null|array<TechnicalCapability> $technicalCapability
      * @return static
      */
     public function setTechnicalCapability(?array $technicalCapability = null): static
@@ -614,7 +614,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return TechnicalCapability|null
+     * @return null|TechnicalCapability
      */
     public function firstTechnicalCapability(): ?TechnicalCapability
     {
@@ -629,7 +629,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return TechnicalCapability|null
+     * @return null|TechnicalCapability
      */
     public function lastTechnicalCapability(): ?TechnicalCapability
     {
@@ -644,7 +644,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param TechnicalCapability $technicalCapability
+     * @param  TechnicalCapability $technicalCapability
      * @return static
      */
     public function addToTechnicalCapability(TechnicalCapability $technicalCapability): static
@@ -665,7 +665,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param TechnicalCapability $technicalCapability
+     * @param  TechnicalCapability $technicalCapability
      * @return static
      */
     public function addOnceToTechnicalCapability(TechnicalCapability $technicalCapability): static
@@ -696,7 +696,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return array<FinancialCapability>|null
+     * @return null|array<FinancialCapability>
      */
     public function getFinancialCapability(): ?array
     {
@@ -704,7 +704,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param array<FinancialCapability>|null $financialCapability
+     * @param  null|array<FinancialCapability> $financialCapability
      * @return static
      */
     public function setFinancialCapability(?array $financialCapability = null): static
@@ -735,7 +735,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return FinancialCapability|null
+     * @return null|FinancialCapability
      */
     public function firstFinancialCapability(): ?FinancialCapability
     {
@@ -750,7 +750,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return FinancialCapability|null
+     * @return null|FinancialCapability
      */
     public function lastFinancialCapability(): ?FinancialCapability
     {
@@ -765,7 +765,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param FinancialCapability $financialCapability
+     * @param  FinancialCapability $financialCapability
      * @return static
      */
     public function addToFinancialCapability(FinancialCapability $financialCapability): static
@@ -786,7 +786,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param FinancialCapability $financialCapability
+     * @param  FinancialCapability $financialCapability
      * @return static
      */
     public function addOnceToFinancialCapability(FinancialCapability $financialCapability): static
@@ -817,7 +817,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return array<CompletedTask>|null
+     * @return null|array<CompletedTask>
      */
     public function getCompletedTask(): ?array
     {
@@ -825,7 +825,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param array<CompletedTask>|null $completedTask
+     * @param  null|array<CompletedTask> $completedTask
      * @return static
      */
     public function setCompletedTask(?array $completedTask = null): static
@@ -856,7 +856,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return CompletedTask|null
+     * @return null|CompletedTask
      */
     public function firstCompletedTask(): ?CompletedTask
     {
@@ -871,7 +871,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return CompletedTask|null
+     * @return null|CompletedTask
      */
     public function lastCompletedTask(): ?CompletedTask
     {
@@ -886,7 +886,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param CompletedTask $completedTask
+     * @param  CompletedTask $completedTask
      * @return static
      */
     public function addToCompletedTask(CompletedTask $completedTask): static
@@ -907,7 +907,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param CompletedTask $completedTask
+     * @param  CompletedTask $completedTask
      * @return static
      */
     public function addOnceToCompletedTask(CompletedTask $completedTask): static
@@ -938,7 +938,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return array<Declaration>|null
+     * @return null|array<Declaration>
      */
     public function getDeclaration(): ?array
     {
@@ -946,7 +946,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param array<Declaration>|null $declaration
+     * @param  null|array<Declaration> $declaration
      * @return static
      */
     public function setDeclaration(?array $declaration = null): static
@@ -977,7 +977,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return Declaration|null
+     * @return null|Declaration
      */
     public function firstDeclaration(): ?Declaration
     {
@@ -992,7 +992,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return Declaration|null
+     * @return null|Declaration
      */
     public function lastDeclaration(): ?Declaration
     {
@@ -1007,7 +1007,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param Declaration $declaration
+     * @param  Declaration $declaration
      * @return static
      */
     public function addToDeclaration(Declaration $declaration): static
@@ -1028,7 +1028,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param Declaration $declaration
+     * @param  Declaration $declaration
      * @return static
      */
     public function addOnceToDeclaration(Declaration $declaration): static
@@ -1059,7 +1059,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return Party|null
+     * @return null|Party
      */
     public function getParty(): ?Party
     {
@@ -1077,7 +1077,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param Party|null $party
+     * @param  null|Party $party
      * @return static
      */
     public function setParty(?Party $party = null): static
@@ -1098,7 +1098,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @return EconomicOperatorRole|null
+     * @return null|EconomicOperatorRole
      */
     public function getEconomicOperatorRole(): ?EconomicOperatorRole
     {
@@ -1116,7 +1116,7 @@ class QualifyingPartyType
     }
 
     /**
-     * @param EconomicOperatorRole|null $economicOperatorRole
+     * @param  null|EconomicOperatorRole $economicOperatorRole
      * @return static
      */
     public function setEconomicOperatorRole(?EconomicOperatorRole $economicOperatorRole = null): static

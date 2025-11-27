@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PhoneNumber;
+use JMS\Serializer\Annotation as JMS;
 
 class TelecommunicationsSupplyLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class TelecommunicationsSupplyLineType
     private $iD;
 
     /**
-     * @var PhoneNumber|null
+     * @var null|PhoneNumber
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PhoneNumber")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class TelecommunicationsSupplyLineType
     private $phoneNumber;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class TelecommunicationsSupplyLineType
     private $description;
 
     /**
-     * @var LineExtensionAmount|null
+     * @var null|LineExtensionAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class TelecommunicationsSupplyLineType
     private $lineExtensionAmount;
 
     /**
-     * @var array<ExchangeRate>|null
+     * @var null|array<ExchangeRate>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate>")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class TelecommunicationsSupplyLineType
     private $exchangeRate;
 
     /**
-     * @var array<AllowanceCharge>|null
+     * @var null|array<AllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class TelecommunicationsSupplyLineType
     private $allowanceCharge;
 
     /**
-     * @var array<TaxTotal>|null
+     * @var null|array<TaxTotal>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class TelecommunicationsSupplyLineType
     private $taxTotal;
 
     /**
-     * @var array<TelecommunicationsService>|null
+     * @var null|array<TelecommunicationsService>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsService>")
      * @JMS\Expose
@@ -109,7 +109,7 @@ class TelecommunicationsSupplyLineType
     private $telecommunicationsService;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -127,7 +127,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -148,7 +148,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return PhoneNumber|null
+     * @return null|PhoneNumber
      */
     public function getPhoneNumber(): ?PhoneNumber
     {
@@ -166,7 +166,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param PhoneNumber|null $phoneNumber
+     * @param  null|PhoneNumber $phoneNumber
      * @return static
      */
     public function setPhoneNumber(?PhoneNumber $phoneNumber = null): static
@@ -187,7 +187,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -195,7 +195,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -226,7 +226,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -241,7 +241,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -256,7 +256,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -277,7 +277,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -308,7 +308,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return LineExtensionAmount|null
+     * @return null|LineExtensionAmount
      */
     public function getLineExtensionAmount(): ?LineExtensionAmount
     {
@@ -326,7 +326,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param LineExtensionAmount|null $lineExtensionAmount
+     * @param  null|LineExtensionAmount $lineExtensionAmount
      * @return static
      */
     public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
@@ -347,7 +347,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return array<ExchangeRate>|null
+     * @return null|array<ExchangeRate>
      */
     public function getExchangeRate(): ?array
     {
@@ -355,7 +355,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param array<ExchangeRate>|null $exchangeRate
+     * @param  null|array<ExchangeRate> $exchangeRate
      * @return static
      */
     public function setExchangeRate(?array $exchangeRate = null): static
@@ -386,7 +386,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return ExchangeRate|null
+     * @return null|ExchangeRate
      */
     public function firstExchangeRate(): ?ExchangeRate
     {
@@ -401,7 +401,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return ExchangeRate|null
+     * @return null|ExchangeRate
      */
     public function lastExchangeRate(): ?ExchangeRate
     {
@@ -416,7 +416,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param ExchangeRate $exchangeRate
+     * @param  ExchangeRate $exchangeRate
      * @return static
      */
     public function addToExchangeRate(ExchangeRate $exchangeRate): static
@@ -437,7 +437,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param ExchangeRate $exchangeRate
+     * @param  ExchangeRate $exchangeRate
      * @return static
      */
     public function addOnceToExchangeRate(ExchangeRate $exchangeRate): static
@@ -468,7 +468,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return array<AllowanceCharge>|null
+     * @return null|array<AllowanceCharge>
      */
     public function getAllowanceCharge(): ?array
     {
@@ -476,7 +476,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param array<AllowanceCharge>|null $allowanceCharge
+     * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): static
@@ -507,7 +507,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -522,7 +522,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -537,7 +537,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -558,7 +558,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -589,7 +589,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return array<TaxTotal>|null
+     * @return null|array<TaxTotal>
      */
     public function getTaxTotal(): ?array
     {
@@ -597,7 +597,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param array<TaxTotal>|null $taxTotal
+     * @param  null|array<TaxTotal> $taxTotal
      * @return static
      */
     public function setTaxTotal(?array $taxTotal = null): static
@@ -628,7 +628,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function firstTaxTotal(): ?TaxTotal
     {
@@ -643,7 +643,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function lastTaxTotal(): ?TaxTotal
     {
@@ -658,7 +658,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addToTaxTotal(TaxTotal $taxTotal): static
@@ -679,7 +679,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addOnceToTaxTotal(TaxTotal $taxTotal): static
@@ -710,7 +710,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return array<TelecommunicationsService>|null
+     * @return null|array<TelecommunicationsService>
      */
     public function getTelecommunicationsService(): ?array
     {
@@ -718,7 +718,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param array<TelecommunicationsService>|null $telecommunicationsService
+     * @param  null|array<TelecommunicationsService> $telecommunicationsService
      * @return static
      */
     public function setTelecommunicationsService(?array $telecommunicationsService = null): static
@@ -749,7 +749,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return TelecommunicationsService|null
+     * @return null|TelecommunicationsService
      */
     public function firstTelecommunicationsService(): ?TelecommunicationsService
     {
@@ -764,7 +764,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @return TelecommunicationsService|null
+     * @return null|TelecommunicationsService
      */
     public function lastTelecommunicationsService(): ?TelecommunicationsService
     {
@@ -779,7 +779,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param TelecommunicationsService $telecommunicationsService
+     * @param  TelecommunicationsService $telecommunicationsService
      * @return static
      */
     public function addToTelecommunicationsService(TelecommunicationsService $telecommunicationsService): static
@@ -800,7 +800,7 @@ class TelecommunicationsSupplyLineType
     }
 
     /**
-     * @param TelecommunicationsService $telecommunicationsService
+     * @param  TelecommunicationsService $telecommunicationsService
      * @return static
      */
     public function addOnceToTelecommunicationsService(TelecommunicationsService $telecommunicationsService): static

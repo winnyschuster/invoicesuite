@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Instructions;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ReleaseID;
+use JMS\Serializer\Annotation as JMS;
 
 class DespatchType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class DespatchType
     private $iD;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class DespatchType
     private $requestedDespatchDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class DespatchType
     private $requestedDespatchTime;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class DespatchType
     private $estimatedDespatchDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class DespatchType
     private $estimatedDespatchTime;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class DespatchType
     private $actualDespatchDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -93,7 +93,7 @@ class DespatchType
     private $actualDespatchTime;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -104,7 +104,7 @@ class DespatchType
     private $guaranteedDespatchDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -115,7 +115,7 @@ class DespatchType
     private $guaranteedDespatchTime;
 
     /**
-     * @var ReleaseID|null
+     * @var null|ReleaseID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReleaseID")
      * @JMS\Expose
@@ -126,7 +126,7 @@ class DespatchType
     private $releaseID;
 
     /**
-     * @var array<Instructions>|null
+     * @var null|array<Instructions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Instructions>")
      * @JMS\Expose
@@ -138,7 +138,7 @@ class DespatchType
     private $instructions;
 
     /**
-     * @var DespatchAddress|null
+     * @var null|DespatchAddress
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DespatchAddress")
      * @JMS\Expose
@@ -149,7 +149,7 @@ class DespatchType
     private $despatchAddress;
 
     /**
-     * @var DespatchLocation|null
+     * @var null|DespatchLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DespatchLocation")
      * @JMS\Expose
@@ -160,7 +160,7 @@ class DespatchType
     private $despatchLocation;
 
     /**
-     * @var DespatchParty|null
+     * @var null|DespatchParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DespatchParty")
      * @JMS\Expose
@@ -171,7 +171,7 @@ class DespatchType
     private $despatchParty;
 
     /**
-     * @var CarrierParty|null
+     * @var null|CarrierParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CarrierParty")
      * @JMS\Expose
@@ -182,7 +182,7 @@ class DespatchType
     private $carrierParty;
 
     /**
-     * @var array<NotifyParty>|null
+     * @var null|array<NotifyParty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty>")
      * @JMS\Expose
@@ -194,7 +194,7 @@ class DespatchType
     private $notifyParty;
 
     /**
-     * @var Contact|null
+     * @var null|Contact
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Contact")
      * @JMS\Expose
@@ -205,7 +205,7 @@ class DespatchType
     private $contact;
 
     /**
-     * @var EstimatedDespatchPeriod|null
+     * @var null|EstimatedDespatchPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EstimatedDespatchPeriod")
      * @JMS\Expose
@@ -216,7 +216,7 @@ class DespatchType
     private $estimatedDespatchPeriod;
 
     /**
-     * @var RequestedDespatchPeriod|null
+     * @var null|RequestedDespatchPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RequestedDespatchPeriod")
      * @JMS\Expose
@@ -227,7 +227,7 @@ class DespatchType
     private $requestedDespatchPeriod;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -245,7 +245,7 @@ class DespatchType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -266,7 +266,7 @@ class DespatchType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getRequestedDespatchDate(): ?DateTimeInterface
     {
@@ -274,7 +274,7 @@ class DespatchType
     }
 
     /**
-     * @param DateTimeInterface|null $requestedDespatchDate
+     * @param  null|DateTimeInterface $requestedDespatchDate
      * @return static
      */
     public function setRequestedDespatchDate(?DateTimeInterface $requestedDespatchDate = null): static
@@ -295,7 +295,7 @@ class DespatchType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getRequestedDespatchTime(): ?DateTimeInterface
     {
@@ -303,7 +303,7 @@ class DespatchType
     }
 
     /**
-     * @param DateTimeInterface|null $requestedDespatchTime
+     * @param  null|DateTimeInterface $requestedDespatchTime
      * @return static
      */
     public function setRequestedDespatchTime(?DateTimeInterface $requestedDespatchTime = null): static
@@ -324,7 +324,7 @@ class DespatchType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getEstimatedDespatchDate(): ?DateTimeInterface
     {
@@ -332,7 +332,7 @@ class DespatchType
     }
 
     /**
-     * @param DateTimeInterface|null $estimatedDespatchDate
+     * @param  null|DateTimeInterface $estimatedDespatchDate
      * @return static
      */
     public function setEstimatedDespatchDate(?DateTimeInterface $estimatedDespatchDate = null): static
@@ -353,7 +353,7 @@ class DespatchType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getEstimatedDespatchTime(): ?DateTimeInterface
     {
@@ -361,7 +361,7 @@ class DespatchType
     }
 
     /**
-     * @param DateTimeInterface|null $estimatedDespatchTime
+     * @param  null|DateTimeInterface $estimatedDespatchTime
      * @return static
      */
     public function setEstimatedDespatchTime(?DateTimeInterface $estimatedDespatchTime = null): static
@@ -382,7 +382,7 @@ class DespatchType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getActualDespatchDate(): ?DateTimeInterface
     {
@@ -390,7 +390,7 @@ class DespatchType
     }
 
     /**
-     * @param DateTimeInterface|null $actualDespatchDate
+     * @param  null|DateTimeInterface $actualDespatchDate
      * @return static
      */
     public function setActualDespatchDate(?DateTimeInterface $actualDespatchDate = null): static
@@ -411,7 +411,7 @@ class DespatchType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getActualDespatchTime(): ?DateTimeInterface
     {
@@ -419,7 +419,7 @@ class DespatchType
     }
 
     /**
-     * @param DateTimeInterface|null $actualDespatchTime
+     * @param  null|DateTimeInterface $actualDespatchTime
      * @return static
      */
     public function setActualDespatchTime(?DateTimeInterface $actualDespatchTime = null): static
@@ -440,7 +440,7 @@ class DespatchType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getGuaranteedDespatchDate(): ?DateTimeInterface
     {
@@ -448,7 +448,7 @@ class DespatchType
     }
 
     /**
-     * @param DateTimeInterface|null $guaranteedDespatchDate
+     * @param  null|DateTimeInterface $guaranteedDespatchDate
      * @return static
      */
     public function setGuaranteedDespatchDate(?DateTimeInterface $guaranteedDespatchDate = null): static
@@ -469,7 +469,7 @@ class DespatchType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getGuaranteedDespatchTime(): ?DateTimeInterface
     {
@@ -477,7 +477,7 @@ class DespatchType
     }
 
     /**
-     * @param DateTimeInterface|null $guaranteedDespatchTime
+     * @param  null|DateTimeInterface $guaranteedDespatchTime
      * @return static
      */
     public function setGuaranteedDespatchTime(?DateTimeInterface $guaranteedDespatchTime = null): static
@@ -498,7 +498,7 @@ class DespatchType
     }
 
     /**
-     * @return ReleaseID|null
+     * @return null|ReleaseID
      */
     public function getReleaseID(): ?ReleaseID
     {
@@ -516,7 +516,7 @@ class DespatchType
     }
 
     /**
-     * @param ReleaseID|null $releaseID
+     * @param  null|ReleaseID $releaseID
      * @return static
      */
     public function setReleaseID(?ReleaseID $releaseID = null): static
@@ -537,7 +537,7 @@ class DespatchType
     }
 
     /**
-     * @return array<Instructions>|null
+     * @return null|array<Instructions>
      */
     public function getInstructions(): ?array
     {
@@ -545,7 +545,7 @@ class DespatchType
     }
 
     /**
-     * @param array<Instructions>|null $instructions
+     * @param  null|array<Instructions> $instructions
      * @return static
      */
     public function setInstructions(?array $instructions = null): static
@@ -576,7 +576,7 @@ class DespatchType
     }
 
     /**
-     * @return Instructions|null
+     * @return null|Instructions
      */
     public function firstInstructions(): ?Instructions
     {
@@ -591,7 +591,7 @@ class DespatchType
     }
 
     /**
-     * @return Instructions|null
+     * @return null|Instructions
      */
     public function lastInstructions(): ?Instructions
     {
@@ -606,7 +606,7 @@ class DespatchType
     }
 
     /**
-     * @param Instructions $instructions
+     * @param  Instructions $instructions
      * @return static
      */
     public function addToInstructions(Instructions $instructions): static
@@ -627,7 +627,7 @@ class DespatchType
     }
 
     /**
-     * @param Instructions $instructions
+     * @param  Instructions $instructions
      * @return static
      */
     public function addOnceToInstructions(Instructions $instructions): static
@@ -658,7 +658,7 @@ class DespatchType
     }
 
     /**
-     * @return DespatchAddress|null
+     * @return null|DespatchAddress
      */
     public function getDespatchAddress(): ?DespatchAddress
     {
@@ -676,7 +676,7 @@ class DespatchType
     }
 
     /**
-     * @param DespatchAddress|null $despatchAddress
+     * @param  null|DespatchAddress $despatchAddress
      * @return static
      */
     public function setDespatchAddress(?DespatchAddress $despatchAddress = null): static
@@ -697,7 +697,7 @@ class DespatchType
     }
 
     /**
-     * @return DespatchLocation|null
+     * @return null|DespatchLocation
      */
     public function getDespatchLocation(): ?DespatchLocation
     {
@@ -715,7 +715,7 @@ class DespatchType
     }
 
     /**
-     * @param DespatchLocation|null $despatchLocation
+     * @param  null|DespatchLocation $despatchLocation
      * @return static
      */
     public function setDespatchLocation(?DespatchLocation $despatchLocation = null): static
@@ -736,7 +736,7 @@ class DespatchType
     }
 
     /**
-     * @return DespatchParty|null
+     * @return null|DespatchParty
      */
     public function getDespatchParty(): ?DespatchParty
     {
@@ -754,7 +754,7 @@ class DespatchType
     }
 
     /**
-     * @param DespatchParty|null $despatchParty
+     * @param  null|DespatchParty $despatchParty
      * @return static
      */
     public function setDespatchParty(?DespatchParty $despatchParty = null): static
@@ -775,7 +775,7 @@ class DespatchType
     }
 
     /**
-     * @return CarrierParty|null
+     * @return null|CarrierParty
      */
     public function getCarrierParty(): ?CarrierParty
     {
@@ -793,7 +793,7 @@ class DespatchType
     }
 
     /**
-     * @param CarrierParty|null $carrierParty
+     * @param  null|CarrierParty $carrierParty
      * @return static
      */
     public function setCarrierParty(?CarrierParty $carrierParty = null): static
@@ -814,7 +814,7 @@ class DespatchType
     }
 
     /**
-     * @return array<NotifyParty>|null
+     * @return null|array<NotifyParty>
      */
     public function getNotifyParty(): ?array
     {
@@ -822,7 +822,7 @@ class DespatchType
     }
 
     /**
-     * @param array<NotifyParty>|null $notifyParty
+     * @param  null|array<NotifyParty> $notifyParty
      * @return static
      */
     public function setNotifyParty(?array $notifyParty = null): static
@@ -853,7 +853,7 @@ class DespatchType
     }
 
     /**
-     * @return NotifyParty|null
+     * @return null|NotifyParty
      */
     public function firstNotifyParty(): ?NotifyParty
     {
@@ -868,7 +868,7 @@ class DespatchType
     }
 
     /**
-     * @return NotifyParty|null
+     * @return null|NotifyParty
      */
     public function lastNotifyParty(): ?NotifyParty
     {
@@ -883,7 +883,7 @@ class DespatchType
     }
 
     /**
-     * @param NotifyParty $notifyParty
+     * @param  NotifyParty $notifyParty
      * @return static
      */
     public function addToNotifyParty(NotifyParty $notifyParty): static
@@ -904,7 +904,7 @@ class DespatchType
     }
 
     /**
-     * @param NotifyParty $notifyParty
+     * @param  NotifyParty $notifyParty
      * @return static
      */
     public function addOnceToNotifyParty(NotifyParty $notifyParty): static
@@ -935,7 +935,7 @@ class DespatchType
     }
 
     /**
-     * @return Contact|null
+     * @return null|Contact
      */
     public function getContact(): ?Contact
     {
@@ -953,7 +953,7 @@ class DespatchType
     }
 
     /**
-     * @param Contact|null $contact
+     * @param  null|Contact $contact
      * @return static
      */
     public function setContact(?Contact $contact = null): static
@@ -974,7 +974,7 @@ class DespatchType
     }
 
     /**
-     * @return EstimatedDespatchPeriod|null
+     * @return null|EstimatedDespatchPeriod
      */
     public function getEstimatedDespatchPeriod(): ?EstimatedDespatchPeriod
     {
@@ -992,7 +992,7 @@ class DespatchType
     }
 
     /**
-     * @param EstimatedDespatchPeriod|null $estimatedDespatchPeriod
+     * @param  null|EstimatedDespatchPeriod $estimatedDespatchPeriod
      * @return static
      */
     public function setEstimatedDespatchPeriod(?EstimatedDespatchPeriod $estimatedDespatchPeriod = null): static
@@ -1013,7 +1013,7 @@ class DespatchType
     }
 
     /**
-     * @return RequestedDespatchPeriod|null
+     * @return null|RequestedDespatchPeriod
      */
     public function getRequestedDespatchPeriod(): ?RequestedDespatchPeriod
     {
@@ -1031,7 +1031,7 @@ class DespatchType
     }
 
     /**
-     * @param RequestedDespatchPeriod|null $requestedDespatchPeriod
+     * @param  null|RequestedDespatchPeriod $requestedDespatchPeriod
      * @return static
      */
     public function setRequestedDespatchPeriod(?RequestedDespatchPeriod $requestedDespatchPeriod = null): static

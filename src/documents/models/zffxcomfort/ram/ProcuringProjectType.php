@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxcomfort\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class ProcuringProjectType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ProcuringProjectType
     private $iD;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ProcuringProjectType
     private $name;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getID(): ?IDType
     {
@@ -54,7 +54,7 @@ class ProcuringProjectType
     }
 
     /**
-     * @param IDType|null $iD
+     * @param  null|IDType $iD
      * @return static
      */
     public function setID(?IDType $iD = null): static
@@ -75,7 +75,7 @@ class ProcuringProjectType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getName(): ?TextType
     {
@@ -93,7 +93,7 @@ class ProcuringProjectType
     }
 
     /**
-     * @param TextType|null $name
+     * @param  null|TextType $name
      * @return static
      */
     public function setName(?TextType $name = null): static

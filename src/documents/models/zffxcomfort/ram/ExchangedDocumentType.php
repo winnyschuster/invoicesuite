@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxcomfort\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\DocumentCodeType;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateTimeType;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType;
+use JMS\Serializer\Annotation as JMS;
 
 class ExchangedDocumentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\IDType")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class ExchangedDocumentType
     private $iD;
 
     /**
-     * @var DocumentCodeType|null
+     * @var null|DocumentCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\DocumentCodeType")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class ExchangedDocumentType
     private $typeCode;
 
     /**
-     * @var DateTimeType|null
+     * @var null|DateTimeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateTimeType")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class ExchangedDocumentType
     private $issueDateTime;
 
     /**
-     * @var array<NoteType>|null
+     * @var null|array<NoteType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxcomfort\ram\NoteType>")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ExchangedDocumentType
     private $includedNote;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getID(): ?IDType
     {
@@ -78,7 +78,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @param IDType|null $iD
+     * @param  null|IDType $iD
      * @return static
      */
     public function setID(?IDType $iD = null): static
@@ -99,7 +99,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return DocumentCodeType|null
+     * @return null|DocumentCodeType
      */
     public function getTypeCode(): ?DocumentCodeType
     {
@@ -117,7 +117,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @param DocumentCodeType|null $typeCode
+     * @param  null|DocumentCodeType $typeCode
      * @return static
      */
     public function setTypeCode(?DocumentCodeType $typeCode = null): static
@@ -138,7 +138,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return DateTimeType|null
+     * @return null|DateTimeType
      */
     public function getIssueDateTime(): ?DateTimeType
     {
@@ -156,7 +156,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @param DateTimeType|null $issueDateTime
+     * @param  null|DateTimeType $issueDateTime
      * @return static
      */
     public function setIssueDateTime(?DateTimeType $issueDateTime = null): static
@@ -177,7 +177,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return array<NoteType>|null
+     * @return null|array<NoteType>
      */
     public function getIncludedNote(): ?array
     {
@@ -185,7 +185,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @param array<NoteType>|null $includedNote
+     * @param  null|array<NoteType> $includedNote
      * @return static
      */
     public function setIncludedNote(?array $includedNote = null): static
@@ -216,7 +216,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @param NoteType $includedNote
+     * @param  NoteType $includedNote
      * @return static
      */
     public function addToIncludedNote(NoteType $includedNote): static
@@ -237,7 +237,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @param NoteType $includedNote
+     * @param  NoteType $includedNote
      * @return static
      */
     public function addOnceToIncludedNote(NoteType $includedNote): static

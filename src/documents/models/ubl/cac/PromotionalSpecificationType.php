@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SpecificationID;
+use JMS\Serializer\Annotation as JMS;
 
 class PromotionalSpecificationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var SpecificationID|null
+     * @var null|SpecificationID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SpecificationID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class PromotionalSpecificationType
     private $specificationID;
 
     /**
-     * @var array<PromotionalEventLineItem>|null
+     * @var null|array<PromotionalEventLineItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PromotionalEventLineItem>")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class PromotionalSpecificationType
     private $promotionalEventLineItem;
 
     /**
-     * @var array<EventTactic>|null
+     * @var null|array<EventTactic>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EventTactic>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class PromotionalSpecificationType
     private $eventTactic;
 
     /**
-     * @return SpecificationID|null
+     * @return null|SpecificationID
      */
     public function getSpecificationID(): ?SpecificationID
     {
@@ -66,7 +66,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @param SpecificationID|null $specificationID
+     * @param  null|SpecificationID $specificationID
      * @return static
      */
     public function setSpecificationID(?SpecificationID $specificationID = null): static
@@ -87,7 +87,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return array<PromotionalEventLineItem>|null
+     * @return null|array<PromotionalEventLineItem>
      */
     public function getPromotionalEventLineItem(): ?array
     {
@@ -95,7 +95,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @param array<PromotionalEventLineItem>|null $promotionalEventLineItem
+     * @param  null|array<PromotionalEventLineItem> $promotionalEventLineItem
      * @return static
      */
     public function setPromotionalEventLineItem(?array $promotionalEventLineItem = null): static
@@ -126,7 +126,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return PromotionalEventLineItem|null
+     * @return null|PromotionalEventLineItem
      */
     public function firstPromotionalEventLineItem(): ?PromotionalEventLineItem
     {
@@ -141,7 +141,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return PromotionalEventLineItem|null
+     * @return null|PromotionalEventLineItem
      */
     public function lastPromotionalEventLineItem(): ?PromotionalEventLineItem
     {
@@ -156,7 +156,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @param PromotionalEventLineItem $promotionalEventLineItem
+     * @param  PromotionalEventLineItem $promotionalEventLineItem
      * @return static
      */
     public function addToPromotionalEventLineItem(PromotionalEventLineItem $promotionalEventLineItem): static
@@ -177,7 +177,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @param PromotionalEventLineItem $promotionalEventLineItem
+     * @param  PromotionalEventLineItem $promotionalEventLineItem
      * @return static
      */
     public function addOnceToPromotionalEventLineItem(PromotionalEventLineItem $promotionalEventLineItem): static
@@ -208,7 +208,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return array<EventTactic>|null
+     * @return null|array<EventTactic>
      */
     public function getEventTactic(): ?array
     {
@@ -216,7 +216,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @param array<EventTactic>|null $eventTactic
+     * @param  null|array<EventTactic> $eventTactic
      * @return static
      */
     public function setEventTactic(?array $eventTactic = null): static
@@ -247,7 +247,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return EventTactic|null
+     * @return null|EventTactic
      */
     public function firstEventTactic(): ?EventTactic
     {
@@ -262,7 +262,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @return EventTactic|null
+     * @return null|EventTactic
      */
     public function lastEventTactic(): ?EventTactic
     {
@@ -277,7 +277,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @param EventTactic $eventTactic
+     * @param  EventTactic $eventTactic
      * @return static
      */
     public function addToEventTactic(EventTactic $eventTactic): static
@@ -298,7 +298,7 @@ class PromotionalSpecificationType
     }
 
     /**
-     * @param EventTactic $eventTactic
+     * @param  EventTactic $eventTactic
      * @return static
      */
     public function addOnceToEventTactic(EventTactic $eventTactic): static

@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LineID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderLineID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
+use JMS\Serializer\Annotation as JMS;
 
 class OrderLineReferenceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var LineID|null
+     * @var null|LineID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class OrderLineReferenceType
     private $lineID;
 
     /**
-     * @var SalesOrderLineID|null
+     * @var null|SalesOrderLineID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderLineID")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class OrderLineReferenceType
     private $salesOrderLineID;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class OrderLineReferenceType
     private $uUID;
 
     /**
-     * @var LineStatusCode|null
+     * @var null|LineStatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class OrderLineReferenceType
     private $lineStatusCode;
 
     /**
-     * @var OrderReference|null
+     * @var null|OrderReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OrderReference")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class OrderLineReferenceType
     private $orderReference;
 
     /**
-     * @return LineID|null
+     * @return null|LineID
      */
     public function getLineID(): ?LineID
     {
@@ -89,7 +89,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @param LineID|null $lineID
+     * @param  null|LineID $lineID
      * @return static
      */
     public function setLineID(?LineID $lineID = null): static
@@ -110,7 +110,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return SalesOrderLineID|null
+     * @return null|SalesOrderLineID
      */
     public function getSalesOrderLineID(): ?SalesOrderLineID
     {
@@ -128,7 +128,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @param SalesOrderLineID|null $salesOrderLineID
+     * @param  null|SalesOrderLineID $salesOrderLineID
      * @return static
      */
     public function setSalesOrderLineID(?SalesOrderLineID $salesOrderLineID = null): static
@@ -149,7 +149,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -167,7 +167,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -188,7 +188,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return LineStatusCode|null
+     * @return null|LineStatusCode
      */
     public function getLineStatusCode(): ?LineStatusCode
     {
@@ -206,7 +206,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @param LineStatusCode|null $lineStatusCode
+     * @param  null|LineStatusCode $lineStatusCode
      * @return static
      */
     public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): static
@@ -227,7 +227,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @return OrderReference|null
+     * @return null|OrderReference
      */
     public function getOrderReference(): ?OrderReference
     {
@@ -245,7 +245,7 @@ class OrderLineReferenceType
     }
 
     /**
-     * @param OrderReference|null $orderReference
+     * @param  null|OrderReference $orderReference
      * @return static
      */
     public function setOrderReference(?OrderReference $orderReference = null): static

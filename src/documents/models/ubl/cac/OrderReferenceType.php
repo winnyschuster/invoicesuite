@@ -5,20 +5,20 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CustomerReference;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\OrderTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
+use JMS\Serializer\Annotation as JMS;
 
 class OrderReferenceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class OrderReferenceType
     private $iD;
 
     /**
-     * @var SalesOrderID|null
+     * @var null|SalesOrderID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderID")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class OrderReferenceType
     private $salesOrderID;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class OrderReferenceType
     private $copyIndicator;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class OrderReferenceType
     private $uUID;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class OrderReferenceType
     private $issueDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class OrderReferenceType
     private $issueTime;
 
     /**
-     * @var CustomerReference|null
+     * @var null|CustomerReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CustomerReference")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class OrderReferenceType
     private $customerReference;
 
     /**
-     * @var OrderTypeCode|null
+     * @var null|OrderTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OrderTypeCode")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class OrderReferenceType
     private $orderTypeCode;
 
     /**
-     * @var DocumentReference|null
+     * @var null|DocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference")
      * @JMS\Expose
@@ -117,7 +117,7 @@ class OrderReferenceType
     private $documentReference;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -135,7 +135,7 @@ class OrderReferenceType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -156,7 +156,7 @@ class OrderReferenceType
     }
 
     /**
-     * @return SalesOrderID|null
+     * @return null|SalesOrderID
      */
     public function getSalesOrderID(): ?SalesOrderID
     {
@@ -174,7 +174,7 @@ class OrderReferenceType
     }
 
     /**
-     * @param SalesOrderID|null $salesOrderID
+     * @param  null|SalesOrderID $salesOrderID
      * @return static
      */
     public function setSalesOrderID(?SalesOrderID $salesOrderID = null): static
@@ -195,7 +195,7 @@ class OrderReferenceType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getCopyIndicator(): ?bool
     {
@@ -203,7 +203,7 @@ class OrderReferenceType
     }
 
     /**
-     * @param bool|null $copyIndicator
+     * @param  null|bool $copyIndicator
      * @return static
      */
     public function setCopyIndicator(?bool $copyIndicator = null): static
@@ -224,7 +224,7 @@ class OrderReferenceType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -242,7 +242,7 @@ class OrderReferenceType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -263,7 +263,7 @@ class OrderReferenceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueDate(): ?DateTimeInterface
     {
@@ -271,7 +271,7 @@ class OrderReferenceType
     }
 
     /**
-     * @param DateTimeInterface|null $issueDate
+     * @param  null|DateTimeInterface $issueDate
      * @return static
      */
     public function setIssueDate(?DateTimeInterface $issueDate = null): static
@@ -292,7 +292,7 @@ class OrderReferenceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueTime(): ?DateTimeInterface
     {
@@ -300,7 +300,7 @@ class OrderReferenceType
     }
 
     /**
-     * @param DateTimeInterface|null $issueTime
+     * @param  null|DateTimeInterface $issueTime
      * @return static
      */
     public function setIssueTime(?DateTimeInterface $issueTime = null): static
@@ -321,7 +321,7 @@ class OrderReferenceType
     }
 
     /**
-     * @return CustomerReference|null
+     * @return null|CustomerReference
      */
     public function getCustomerReference(): ?CustomerReference
     {
@@ -339,7 +339,7 @@ class OrderReferenceType
     }
 
     /**
-     * @param CustomerReference|null $customerReference
+     * @param  null|CustomerReference $customerReference
      * @return static
      */
     public function setCustomerReference(?CustomerReference $customerReference = null): static
@@ -360,7 +360,7 @@ class OrderReferenceType
     }
 
     /**
-     * @return OrderTypeCode|null
+     * @return null|OrderTypeCode
      */
     public function getOrderTypeCode(): ?OrderTypeCode
     {
@@ -378,7 +378,7 @@ class OrderReferenceType
     }
 
     /**
-     * @param OrderTypeCode|null $orderTypeCode
+     * @param  null|OrderTypeCode $orderTypeCode
      * @return static
      */
     public function setOrderTypeCode(?OrderTypeCode $orderTypeCode = null): static
@@ -399,7 +399,7 @@ class OrderReferenceType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function getDocumentReference(): ?DocumentReference
     {
@@ -417,7 +417,7 @@ class OrderReferenceType
     }
 
     /**
-     * @param DocumentReference|null $documentReference
+     * @param  null|DocumentReference $documentReference
      * @return static
      */
     public function setDocumentReference(?DocumentReference $documentReference = null): static

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ActualTemperatureReductionQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionEnergyQuantity;
@@ -18,13 +17,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\DifferenceTemperatureReducti
 use horstoeko\invoicesuite\documents\models\ubl\cbc\GasPressureQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\NormalTemperatureReductionQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class ConsumptionCorrectionType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var CorrectionType|null
+     * @var null|CorrectionType
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class ConsumptionCorrectionType
     private $correctionType;
 
     /**
-     * @var CorrectionTypeCode|null
+     * @var null|CorrectionTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionTypeCode")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class ConsumptionCorrectionType
     private $correctionTypeCode;
 
     /**
-     * @var MeterNumber|null
+     * @var null|MeterNumber
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class ConsumptionCorrectionType
     private $meterNumber;
 
     /**
-     * @var GasPressureQuantity|null
+     * @var null|GasPressureQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GasPressureQuantity")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class ConsumptionCorrectionType
     private $gasPressureQuantity;
 
     /**
-     * @var ActualTemperatureReductionQuantity|null
+     * @var null|ActualTemperatureReductionQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ActualTemperatureReductionQuantity")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class ConsumptionCorrectionType
     private $actualTemperatureReductionQuantity;
 
     /**
-     * @var NormalTemperatureReductionQuantity|null
+     * @var null|NormalTemperatureReductionQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NormalTemperatureReductionQuantity")
      * @JMS\Expose
@@ -90,7 +90,7 @@ class ConsumptionCorrectionType
     private $normalTemperatureReductionQuantity;
 
     /**
-     * @var DifferenceTemperatureReductionQuantity|null
+     * @var null|DifferenceTemperatureReductionQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DifferenceTemperatureReductionQuantity")
      * @JMS\Expose
@@ -101,7 +101,7 @@ class ConsumptionCorrectionType
     private $differenceTemperatureReductionQuantity;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -113,7 +113,7 @@ class ConsumptionCorrectionType
     private $description;
 
     /**
-     * @var CorrectionUnitAmount|null
+     * @var null|CorrectionUnitAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionUnitAmount")
      * @JMS\Expose
@@ -124,7 +124,7 @@ class ConsumptionCorrectionType
     private $correctionUnitAmount;
 
     /**
-     * @var ConsumptionEnergyQuantity|null
+     * @var null|ConsumptionEnergyQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionEnergyQuantity")
      * @JMS\Expose
@@ -135,7 +135,7 @@ class ConsumptionCorrectionType
     private $consumptionEnergyQuantity;
 
     /**
-     * @var ConsumptionWaterQuantity|null
+     * @var null|ConsumptionWaterQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionWaterQuantity")
      * @JMS\Expose
@@ -146,7 +146,7 @@ class ConsumptionCorrectionType
     private $consumptionWaterQuantity;
 
     /**
-     * @var CorrectionAmount|null
+     * @var null|CorrectionAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CorrectionAmount")
      * @JMS\Expose
@@ -157,7 +157,7 @@ class ConsumptionCorrectionType
     private $correctionAmount;
 
     /**
-     * @return CorrectionType|null
+     * @return null|CorrectionType
      */
     public function getCorrectionType(): ?CorrectionType
     {
@@ -175,7 +175,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param CorrectionType|null $correctionType
+     * @param  null|CorrectionType $correctionType
      * @return static
      */
     public function setCorrectionType(?CorrectionType $correctionType = null): static
@@ -196,7 +196,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return CorrectionTypeCode|null
+     * @return null|CorrectionTypeCode
      */
     public function getCorrectionTypeCode(): ?CorrectionTypeCode
     {
@@ -214,7 +214,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param CorrectionTypeCode|null $correctionTypeCode
+     * @param  null|CorrectionTypeCode $correctionTypeCode
      * @return static
      */
     public function setCorrectionTypeCode(?CorrectionTypeCode $correctionTypeCode = null): static
@@ -235,7 +235,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return MeterNumber|null
+     * @return null|MeterNumber
      */
     public function getMeterNumber(): ?MeterNumber
     {
@@ -253,7 +253,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param MeterNumber|null $meterNumber
+     * @param  null|MeterNumber $meterNumber
      * @return static
      */
     public function setMeterNumber(?MeterNumber $meterNumber = null): static
@@ -274,7 +274,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return GasPressureQuantity|null
+     * @return null|GasPressureQuantity
      */
     public function getGasPressureQuantity(): ?GasPressureQuantity
     {
@@ -292,7 +292,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param GasPressureQuantity|null $gasPressureQuantity
+     * @param  null|GasPressureQuantity $gasPressureQuantity
      * @return static
      */
     public function setGasPressureQuantity(?GasPressureQuantity $gasPressureQuantity = null): static
@@ -313,7 +313,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return ActualTemperatureReductionQuantity|null
+     * @return null|ActualTemperatureReductionQuantity
      */
     public function getActualTemperatureReductionQuantity(): ?ActualTemperatureReductionQuantity
     {
@@ -331,7 +331,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param ActualTemperatureReductionQuantity|null $actualTemperatureReductionQuantity
+     * @param  null|ActualTemperatureReductionQuantity $actualTemperatureReductionQuantity
      * @return static
      */
     public function setActualTemperatureReductionQuantity(
@@ -353,7 +353,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return NormalTemperatureReductionQuantity|null
+     * @return null|NormalTemperatureReductionQuantity
      */
     public function getNormalTemperatureReductionQuantity(): ?NormalTemperatureReductionQuantity
     {
@@ -371,7 +371,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param NormalTemperatureReductionQuantity|null $normalTemperatureReductionQuantity
+     * @param  null|NormalTemperatureReductionQuantity $normalTemperatureReductionQuantity
      * @return static
      */
     public function setNormalTemperatureReductionQuantity(
@@ -393,7 +393,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return DifferenceTemperatureReductionQuantity|null
+     * @return null|DifferenceTemperatureReductionQuantity
      */
     public function getDifferenceTemperatureReductionQuantity(): ?DifferenceTemperatureReductionQuantity
     {
@@ -411,7 +411,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param DifferenceTemperatureReductionQuantity|null $differenceTemperatureReductionQuantity
+     * @param  null|DifferenceTemperatureReductionQuantity $differenceTemperatureReductionQuantity
      * @return static
      */
     public function setDifferenceTemperatureReductionQuantity(
@@ -433,7 +433,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -441,7 +441,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -472,7 +472,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -487,7 +487,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -502,7 +502,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -523,7 +523,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -554,7 +554,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return CorrectionUnitAmount|null
+     * @return null|CorrectionUnitAmount
      */
     public function getCorrectionUnitAmount(): ?CorrectionUnitAmount
     {
@@ -572,7 +572,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param CorrectionUnitAmount|null $correctionUnitAmount
+     * @param  null|CorrectionUnitAmount $correctionUnitAmount
      * @return static
      */
     public function setCorrectionUnitAmount(?CorrectionUnitAmount $correctionUnitAmount = null): static
@@ -593,7 +593,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return ConsumptionEnergyQuantity|null
+     * @return null|ConsumptionEnergyQuantity
      */
     public function getConsumptionEnergyQuantity(): ?ConsumptionEnergyQuantity
     {
@@ -611,7 +611,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param ConsumptionEnergyQuantity|null $consumptionEnergyQuantity
+     * @param  null|ConsumptionEnergyQuantity $consumptionEnergyQuantity
      * @return static
      */
     public function setConsumptionEnergyQuantity(?ConsumptionEnergyQuantity $consumptionEnergyQuantity = null): static
@@ -632,7 +632,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return ConsumptionWaterQuantity|null
+     * @return null|ConsumptionWaterQuantity
      */
     public function getConsumptionWaterQuantity(): ?ConsumptionWaterQuantity
     {
@@ -650,7 +650,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param ConsumptionWaterQuantity|null $consumptionWaterQuantity
+     * @param  null|ConsumptionWaterQuantity $consumptionWaterQuantity
      * @return static
      */
     public function setConsumptionWaterQuantity(?ConsumptionWaterQuantity $consumptionWaterQuantity = null): static
@@ -671,7 +671,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @return CorrectionAmount|null
+     * @return null|CorrectionAmount
      */
     public function getCorrectionAmount(): ?CorrectionAmount
     {
@@ -689,7 +689,7 @@ class ConsumptionCorrectionType
     }
 
     /**
-     * @param CorrectionAmount|null $correctionAmount
+     * @param  null|CorrectionAmount $correctionAmount
      * @return static
      */
     public function setCorrectionAmount(?CorrectionAmount $correctionAmount = null): static

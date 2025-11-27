@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AirFlowPercent;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Characteristics;
@@ -26,13 +25,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\TareWeightMeasure;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TraceID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TrackingDeviceCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TransportEquipmentTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class TransportEquipmentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class TransportEquipmentType
     private $iD;
 
     /**
-     * @var array<ReferencedConsignmentID>|null
+     * @var null|array<ReferencedConsignmentID>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ReferencedConsignmentID>")
      * @JMS\Expose
@@ -55,7 +55,7 @@ class TransportEquipmentType
     private $referencedConsignmentID;
 
     /**
-     * @var TransportEquipmentTypeCode|null
+     * @var null|TransportEquipmentTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TransportEquipmentTypeCode")
      * @JMS\Expose
@@ -66,7 +66,7 @@ class TransportEquipmentType
     private $transportEquipmentTypeCode;
 
     /**
-     * @var ProviderTypeCode|null
+     * @var null|ProviderTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProviderTypeCode")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class TransportEquipmentType
     private $providerTypeCode;
 
     /**
-     * @var OwnerTypeCode|null
+     * @var null|OwnerTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OwnerTypeCode")
      * @JMS\Expose
@@ -88,7 +88,7 @@ class TransportEquipmentType
     private $ownerTypeCode;
 
     /**
-     * @var SizeTypeCode|null
+     * @var null|SizeTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SizeTypeCode")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class TransportEquipmentType
     private $sizeTypeCode;
 
     /**
-     * @var DispositionCode|null
+     * @var null|DispositionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DispositionCode")
      * @JMS\Expose
@@ -110,7 +110,7 @@ class TransportEquipmentType
     private $dispositionCode;
 
     /**
-     * @var FullnessIndicationCode|null
+     * @var null|FullnessIndicationCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FullnessIndicationCode")
      * @JMS\Expose
@@ -121,7 +121,7 @@ class TransportEquipmentType
     private $fullnessIndicationCode;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -132,7 +132,7 @@ class TransportEquipmentType
     private $refrigerationOnIndicator;
 
     /**
-     * @var array<Information>|null
+     * @var null|array<Information>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Information>")
      * @JMS\Expose
@@ -144,7 +144,7 @@ class TransportEquipmentType
     private $information;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -155,7 +155,7 @@ class TransportEquipmentType
     private $returnabilityIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -166,7 +166,7 @@ class TransportEquipmentType
     private $legalStatusIndicator;
 
     /**
-     * @var AirFlowPercent|null
+     * @var null|AirFlowPercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AirFlowPercent")
      * @JMS\Expose
@@ -177,7 +177,7 @@ class TransportEquipmentType
     private $airFlowPercent;
 
     /**
-     * @var HumidityPercent|null
+     * @var null|HumidityPercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HumidityPercent")
      * @JMS\Expose
@@ -188,7 +188,7 @@ class TransportEquipmentType
     private $humidityPercent;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -199,7 +199,7 @@ class TransportEquipmentType
     private $animalFoodApprovedIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -210,7 +210,7 @@ class TransportEquipmentType
     private $humanFoodApprovedIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -221,7 +221,7 @@ class TransportEquipmentType
     private $dangerousGoodsApprovedIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -232,7 +232,7 @@ class TransportEquipmentType
     private $refrigeratedIndicator;
 
     /**
-     * @var Characteristics|null
+     * @var null|Characteristics
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Characteristics")
      * @JMS\Expose
@@ -243,7 +243,7 @@ class TransportEquipmentType
     private $characteristics;
 
     /**
-     * @var array<DamageRemarks>|null
+     * @var null|array<DamageRemarks>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\DamageRemarks>")
      * @JMS\Expose
@@ -255,7 +255,7 @@ class TransportEquipmentType
     private $damageRemarks;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -267,7 +267,7 @@ class TransportEquipmentType
     private $description;
 
     /**
-     * @var array<SpecialTransportRequirements>|null
+     * @var null|array<SpecialTransportRequirements>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTransportRequirements>")
      * @JMS\Expose
@@ -279,7 +279,7 @@ class TransportEquipmentType
     private $specialTransportRequirements;
 
     /**
-     * @var GrossWeightMeasure|null
+     * @var null|GrossWeightMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GrossWeightMeasure")
      * @JMS\Expose
@@ -290,7 +290,7 @@ class TransportEquipmentType
     private $grossWeightMeasure;
 
     /**
-     * @var GrossVolumeMeasure|null
+     * @var null|GrossVolumeMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GrossVolumeMeasure")
      * @JMS\Expose
@@ -301,7 +301,7 @@ class TransportEquipmentType
     private $grossVolumeMeasure;
 
     /**
-     * @var TareWeightMeasure|null
+     * @var null|TareWeightMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TareWeightMeasure")
      * @JMS\Expose
@@ -312,7 +312,7 @@ class TransportEquipmentType
     private $tareWeightMeasure;
 
     /**
-     * @var TrackingDeviceCode|null
+     * @var null|TrackingDeviceCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TrackingDeviceCode")
      * @JMS\Expose
@@ -323,7 +323,7 @@ class TransportEquipmentType
     private $trackingDeviceCode;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -334,7 +334,7 @@ class TransportEquipmentType
     private $powerIndicator;
 
     /**
-     * @var TraceID|null
+     * @var null|TraceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TraceID")
      * @JMS\Expose
@@ -345,7 +345,7 @@ class TransportEquipmentType
     private $traceID;
 
     /**
-     * @var array<MeasurementDimension>|null
+     * @var null|array<MeasurementDimension>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>")
      * @JMS\Expose
@@ -357,7 +357,7 @@ class TransportEquipmentType
     private $measurementDimension;
 
     /**
-     * @var array<TransportEquipmentSeal>|null
+     * @var null|array<TransportEquipmentSeal>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipmentSeal>")
      * @JMS\Expose
@@ -369,7 +369,7 @@ class TransportEquipmentType
     private $transportEquipmentSeal;
 
     /**
-     * @var MinimumTemperature|null
+     * @var null|MinimumTemperature
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MinimumTemperature")
      * @JMS\Expose
@@ -380,7 +380,7 @@ class TransportEquipmentType
     private $minimumTemperature;
 
     /**
-     * @var MaximumTemperature|null
+     * @var null|MaximumTemperature
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MaximumTemperature")
      * @JMS\Expose
@@ -391,7 +391,7 @@ class TransportEquipmentType
     private $maximumTemperature;
 
     /**
-     * @var ProviderParty|null
+     * @var null|ProviderParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ProviderParty")
      * @JMS\Expose
@@ -402,7 +402,7 @@ class TransportEquipmentType
     private $providerParty;
 
     /**
-     * @var LoadingProofParty|null
+     * @var null|LoadingProofParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LoadingProofParty")
      * @JMS\Expose
@@ -413,7 +413,7 @@ class TransportEquipmentType
     private $loadingProofParty;
 
     /**
-     * @var SupplierParty|null
+     * @var null|SupplierParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SupplierParty")
      * @JMS\Expose
@@ -424,7 +424,7 @@ class TransportEquipmentType
     private $supplierParty;
 
     /**
-     * @var OwnerParty|null
+     * @var null|OwnerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OwnerParty")
      * @JMS\Expose
@@ -435,7 +435,7 @@ class TransportEquipmentType
     private $ownerParty;
 
     /**
-     * @var OperatingParty|null
+     * @var null|OperatingParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OperatingParty")
      * @JMS\Expose
@@ -446,7 +446,7 @@ class TransportEquipmentType
     private $operatingParty;
 
     /**
-     * @var LoadingLocation|null
+     * @var null|LoadingLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LoadingLocation")
      * @JMS\Expose
@@ -457,7 +457,7 @@ class TransportEquipmentType
     private $loadingLocation;
 
     /**
-     * @var UnloadingLocation|null
+     * @var null|UnloadingLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\UnloadingLocation")
      * @JMS\Expose
@@ -468,7 +468,7 @@ class TransportEquipmentType
     private $unloadingLocation;
 
     /**
-     * @var StorageLocation|null
+     * @var null|StorageLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\StorageLocation")
      * @JMS\Expose
@@ -479,7 +479,7 @@ class TransportEquipmentType
     private $storageLocation;
 
     /**
-     * @var array<PositioningTransportEvent>|null
+     * @var null|array<PositioningTransportEvent>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PositioningTransportEvent>")
      * @JMS\Expose
@@ -491,7 +491,7 @@ class TransportEquipmentType
     private $positioningTransportEvent;
 
     /**
-     * @var array<QuarantineTransportEvent>|null
+     * @var null|array<QuarantineTransportEvent>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\QuarantineTransportEvent>")
      * @JMS\Expose
@@ -503,7 +503,7 @@ class TransportEquipmentType
     private $quarantineTransportEvent;
 
     /**
-     * @var array<DeliveryTransportEvent>|null
+     * @var null|array<DeliveryTransportEvent>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTransportEvent>")
      * @JMS\Expose
@@ -515,7 +515,7 @@ class TransportEquipmentType
     private $deliveryTransportEvent;
 
     /**
-     * @var array<PickupTransportEvent>|null
+     * @var null|array<PickupTransportEvent>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PickupTransportEvent>")
      * @JMS\Expose
@@ -527,7 +527,7 @@ class TransportEquipmentType
     private $pickupTransportEvent;
 
     /**
-     * @var array<HandlingTransportEvent>|null
+     * @var null|array<HandlingTransportEvent>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\HandlingTransportEvent>")
      * @JMS\Expose
@@ -539,7 +539,7 @@ class TransportEquipmentType
     private $handlingTransportEvent;
 
     /**
-     * @var array<LoadingTransportEvent>|null
+     * @var null|array<LoadingTransportEvent>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\LoadingTransportEvent>")
      * @JMS\Expose
@@ -551,7 +551,7 @@ class TransportEquipmentType
     private $loadingTransportEvent;
 
     /**
-     * @var array<TransportEvent>|null
+     * @var null|array<TransportEvent>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TransportEvent>")
      * @JMS\Expose
@@ -563,7 +563,7 @@ class TransportEquipmentType
     private $transportEvent;
 
     /**
-     * @var ApplicableTransportMeans|null
+     * @var null|ApplicableTransportMeans
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTransportMeans")
      * @JMS\Expose
@@ -574,7 +574,7 @@ class TransportEquipmentType
     private $applicableTransportMeans;
 
     /**
-     * @var array<HaulageTradingTerms>|null
+     * @var null|array<HaulageTradingTerms>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\HaulageTradingTerms>")
      * @JMS\Expose
@@ -586,7 +586,7 @@ class TransportEquipmentType
     private $haulageTradingTerms;
 
     /**
-     * @var array<HazardousGoodsTransit>|null
+     * @var null|array<HazardousGoodsTransit>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\HazardousGoodsTransit>")
      * @JMS\Expose
@@ -598,7 +598,7 @@ class TransportEquipmentType
     private $hazardousGoodsTransit;
 
     /**
-     * @var array<PackagedTransportHandlingUnit>|null
+     * @var null|array<PackagedTransportHandlingUnit>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PackagedTransportHandlingUnit>")
      * @JMS\Expose
@@ -610,7 +610,7 @@ class TransportEquipmentType
     private $packagedTransportHandlingUnit;
 
     /**
-     * @var array<ServiceAllowanceCharge>|null
+     * @var null|array<ServiceAllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ServiceAllowanceCharge>")
      * @JMS\Expose
@@ -622,7 +622,7 @@ class TransportEquipmentType
     private $serviceAllowanceCharge;
 
     /**
-     * @var array<FreightAllowanceCharge>|null
+     * @var null|array<FreightAllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge>")
      * @JMS\Expose
@@ -634,7 +634,7 @@ class TransportEquipmentType
     private $freightAllowanceCharge;
 
     /**
-     * @var array<AttachedTransportEquipment>|null
+     * @var null|array<AttachedTransportEquipment>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AttachedTransportEquipment>")
      * @JMS\Expose
@@ -646,7 +646,7 @@ class TransportEquipmentType
     private $attachedTransportEquipment;
 
     /**
-     * @var Delivery|null
+     * @var null|Delivery
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Delivery")
      * @JMS\Expose
@@ -657,7 +657,7 @@ class TransportEquipmentType
     private $delivery;
 
     /**
-     * @var Pickup|null
+     * @var null|Pickup
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Pickup")
      * @JMS\Expose
@@ -668,7 +668,7 @@ class TransportEquipmentType
     private $pickup;
 
     /**
-     * @var Despatch|null
+     * @var null|Despatch
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Despatch")
      * @JMS\Expose
@@ -679,7 +679,7 @@ class TransportEquipmentType
     private $despatch;
 
     /**
-     * @var array<ShipmentDocumentReference>|null
+     * @var null|array<ShipmentDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentDocumentReference>")
      * @JMS\Expose
@@ -691,7 +691,7 @@ class TransportEquipmentType
     private $shipmentDocumentReference;
 
     /**
-     * @var array<ContainedInTransportEquipment>|null
+     * @var null|array<ContainedInTransportEquipment>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ContainedInTransportEquipment>")
      * @JMS\Expose
@@ -703,7 +703,7 @@ class TransportEquipmentType
     private $containedInTransportEquipment;
 
     /**
-     * @var array<Package>|null
+     * @var null|array<Package>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Package>")
      * @JMS\Expose
@@ -715,7 +715,7 @@ class TransportEquipmentType
     private $package;
 
     /**
-     * @var array<GoodsItem>|null
+     * @var null|array<GoodsItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem>")
      * @JMS\Expose
@@ -727,7 +727,7 @@ class TransportEquipmentType
     private $goodsItem;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -745,7 +745,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -766,7 +766,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<ReferencedConsignmentID>|null
+     * @return null|array<ReferencedConsignmentID>
      */
     public function getReferencedConsignmentID(): ?array
     {
@@ -774,7 +774,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<ReferencedConsignmentID>|null $referencedConsignmentID
+     * @param  null|array<ReferencedConsignmentID> $referencedConsignmentID
      * @return static
      */
     public function setReferencedConsignmentID(?array $referencedConsignmentID = null): static
@@ -805,7 +805,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return ReferencedConsignmentID|null
+     * @return null|ReferencedConsignmentID
      */
     public function firstReferencedConsignmentID(): ?ReferencedConsignmentID
     {
@@ -820,7 +820,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return ReferencedConsignmentID|null
+     * @return null|ReferencedConsignmentID
      */
     public function lastReferencedConsignmentID(): ?ReferencedConsignmentID
     {
@@ -835,7 +835,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param ReferencedConsignmentID $referencedConsignmentID
+     * @param  ReferencedConsignmentID $referencedConsignmentID
      * @return static
      */
     public function addToReferencedConsignmentID(ReferencedConsignmentID $referencedConsignmentID): static
@@ -856,7 +856,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param ReferencedConsignmentID $referencedConsignmentID
+     * @param  ReferencedConsignmentID $referencedConsignmentID
      * @return static
      */
     public function addOnceToReferencedConsignmentID(ReferencedConsignmentID $referencedConsignmentID): static
@@ -887,7 +887,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return TransportEquipmentTypeCode|null
+     * @return null|TransportEquipmentTypeCode
      */
     public function getTransportEquipmentTypeCode(): ?TransportEquipmentTypeCode
     {
@@ -905,7 +905,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param TransportEquipmentTypeCode|null $transportEquipmentTypeCode
+     * @param  null|TransportEquipmentTypeCode $transportEquipmentTypeCode
      * @return static
      */
     public function setTransportEquipmentTypeCode(
@@ -927,7 +927,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return ProviderTypeCode|null
+     * @return null|ProviderTypeCode
      */
     public function getProviderTypeCode(): ?ProviderTypeCode
     {
@@ -945,7 +945,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param ProviderTypeCode|null $providerTypeCode
+     * @param  null|ProviderTypeCode $providerTypeCode
      * @return static
      */
     public function setProviderTypeCode(?ProviderTypeCode $providerTypeCode = null): static
@@ -966,7 +966,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return OwnerTypeCode|null
+     * @return null|OwnerTypeCode
      */
     public function getOwnerTypeCode(): ?OwnerTypeCode
     {
@@ -984,7 +984,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param OwnerTypeCode|null $ownerTypeCode
+     * @param  null|OwnerTypeCode $ownerTypeCode
      * @return static
      */
     public function setOwnerTypeCode(?OwnerTypeCode $ownerTypeCode = null): static
@@ -1005,7 +1005,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return SizeTypeCode|null
+     * @return null|SizeTypeCode
      */
     public function getSizeTypeCode(): ?SizeTypeCode
     {
@@ -1023,7 +1023,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param SizeTypeCode|null $sizeTypeCode
+     * @param  null|SizeTypeCode $sizeTypeCode
      * @return static
      */
     public function setSizeTypeCode(?SizeTypeCode $sizeTypeCode = null): static
@@ -1044,7 +1044,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return DispositionCode|null
+     * @return null|DispositionCode
      */
     public function getDispositionCode(): ?DispositionCode
     {
@@ -1062,7 +1062,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param DispositionCode|null $dispositionCode
+     * @param  null|DispositionCode $dispositionCode
      * @return static
      */
     public function setDispositionCode(?DispositionCode $dispositionCode = null): static
@@ -1083,7 +1083,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return FullnessIndicationCode|null
+     * @return null|FullnessIndicationCode
      */
     public function getFullnessIndicationCode(): ?FullnessIndicationCode
     {
@@ -1101,7 +1101,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param FullnessIndicationCode|null $fullnessIndicationCode
+     * @param  null|FullnessIndicationCode $fullnessIndicationCode
      * @return static
      */
     public function setFullnessIndicationCode(?FullnessIndicationCode $fullnessIndicationCode = null): static
@@ -1122,7 +1122,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getRefrigerationOnIndicator(): ?bool
     {
@@ -1130,7 +1130,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param bool|null $refrigerationOnIndicator
+     * @param  null|bool $refrigerationOnIndicator
      * @return static
      */
     public function setRefrigerationOnIndicator(?bool $refrigerationOnIndicator = null): static
@@ -1151,7 +1151,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<Information>|null
+     * @return null|array<Information>
      */
     public function getInformation(): ?array
     {
@@ -1159,7 +1159,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<Information>|null $information
+     * @param  null|array<Information> $information
      * @return static
      */
     public function setInformation(?array $information = null): static
@@ -1190,7 +1190,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return Information|null
+     * @return null|Information
      */
     public function firstInformation(): ?Information
     {
@@ -1205,7 +1205,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return Information|null
+     * @return null|Information
      */
     public function lastInformation(): ?Information
     {
@@ -1220,7 +1220,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param Information $information
+     * @param  Information $information
      * @return static
      */
     public function addToInformation(Information $information): static
@@ -1241,7 +1241,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param Information $information
+     * @param  Information $information
      * @return static
      */
     public function addOnceToInformation(Information $information): static
@@ -1272,7 +1272,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getReturnabilityIndicator(): ?bool
     {
@@ -1280,7 +1280,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param bool|null $returnabilityIndicator
+     * @param  null|bool $returnabilityIndicator
      * @return static
      */
     public function setReturnabilityIndicator(?bool $returnabilityIndicator = null): static
@@ -1301,7 +1301,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getLegalStatusIndicator(): ?bool
     {
@@ -1309,7 +1309,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param bool|null $legalStatusIndicator
+     * @param  null|bool $legalStatusIndicator
      * @return static
      */
     public function setLegalStatusIndicator(?bool $legalStatusIndicator = null): static
@@ -1330,7 +1330,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return AirFlowPercent|null
+     * @return null|AirFlowPercent
      */
     public function getAirFlowPercent(): ?AirFlowPercent
     {
@@ -1348,7 +1348,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param AirFlowPercent|null $airFlowPercent
+     * @param  null|AirFlowPercent $airFlowPercent
      * @return static
      */
     public function setAirFlowPercent(?AirFlowPercent $airFlowPercent = null): static
@@ -1369,7 +1369,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return HumidityPercent|null
+     * @return null|HumidityPercent
      */
     public function getHumidityPercent(): ?HumidityPercent
     {
@@ -1387,7 +1387,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param HumidityPercent|null $humidityPercent
+     * @param  null|HumidityPercent $humidityPercent
      * @return static
      */
     public function setHumidityPercent(?HumidityPercent $humidityPercent = null): static
@@ -1408,7 +1408,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getAnimalFoodApprovedIndicator(): ?bool
     {
@@ -1416,7 +1416,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param bool|null $animalFoodApprovedIndicator
+     * @param  null|bool $animalFoodApprovedIndicator
      * @return static
      */
     public function setAnimalFoodApprovedIndicator(?bool $animalFoodApprovedIndicator = null): static
@@ -1437,7 +1437,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getHumanFoodApprovedIndicator(): ?bool
     {
@@ -1445,7 +1445,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param bool|null $humanFoodApprovedIndicator
+     * @param  null|bool $humanFoodApprovedIndicator
      * @return static
      */
     public function setHumanFoodApprovedIndicator(?bool $humanFoodApprovedIndicator = null): static
@@ -1466,7 +1466,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getDangerousGoodsApprovedIndicator(): ?bool
     {
@@ -1474,7 +1474,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param bool|null $dangerousGoodsApprovedIndicator
+     * @param  null|bool $dangerousGoodsApprovedIndicator
      * @return static
      */
     public function setDangerousGoodsApprovedIndicator(?bool $dangerousGoodsApprovedIndicator = null): static
@@ -1495,7 +1495,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getRefrigeratedIndicator(): ?bool
     {
@@ -1503,7 +1503,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param bool|null $refrigeratedIndicator
+     * @param  null|bool $refrigeratedIndicator
      * @return static
      */
     public function setRefrigeratedIndicator(?bool $refrigeratedIndicator = null): static
@@ -1524,7 +1524,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return Characteristics|null
+     * @return null|Characteristics
      */
     public function getCharacteristics(): ?Characteristics
     {
@@ -1542,7 +1542,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param Characteristics|null $characteristics
+     * @param  null|Characteristics $characteristics
      * @return static
      */
     public function setCharacteristics(?Characteristics $characteristics = null): static
@@ -1563,7 +1563,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<DamageRemarks>|null
+     * @return null|array<DamageRemarks>
      */
     public function getDamageRemarks(): ?array
     {
@@ -1571,7 +1571,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<DamageRemarks>|null $damageRemarks
+     * @param  null|array<DamageRemarks> $damageRemarks
      * @return static
      */
     public function setDamageRemarks(?array $damageRemarks = null): static
@@ -1602,7 +1602,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return DamageRemarks|null
+     * @return null|DamageRemarks
      */
     public function firstDamageRemarks(): ?DamageRemarks
     {
@@ -1617,7 +1617,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return DamageRemarks|null
+     * @return null|DamageRemarks
      */
     public function lastDamageRemarks(): ?DamageRemarks
     {
@@ -1632,7 +1632,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param DamageRemarks $damageRemarks
+     * @param  DamageRemarks $damageRemarks
      * @return static
      */
     public function addToDamageRemarks(DamageRemarks $damageRemarks): static
@@ -1653,7 +1653,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param DamageRemarks $damageRemarks
+     * @param  DamageRemarks $damageRemarks
      * @return static
      */
     public function addOnceToDamageRemarks(DamageRemarks $damageRemarks): static
@@ -1684,7 +1684,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -1692,7 +1692,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -1723,7 +1723,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -1738,7 +1738,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -1753,7 +1753,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -1774,7 +1774,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -1805,7 +1805,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<SpecialTransportRequirements>|null
+     * @return null|array<SpecialTransportRequirements>
      */
     public function getSpecialTransportRequirements(): ?array
     {
@@ -1813,7 +1813,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<SpecialTransportRequirements>|null $specialTransportRequirements
+     * @param  null|array<SpecialTransportRequirements> $specialTransportRequirements
      * @return static
      */
     public function setSpecialTransportRequirements(?array $specialTransportRequirements = null): static
@@ -1844,7 +1844,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return SpecialTransportRequirements|null
+     * @return null|SpecialTransportRequirements
      */
     public function firstSpecialTransportRequirements(): ?SpecialTransportRequirements
     {
@@ -1859,7 +1859,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return SpecialTransportRequirements|null
+     * @return null|SpecialTransportRequirements
      */
     public function lastSpecialTransportRequirements(): ?SpecialTransportRequirements
     {
@@ -1874,7 +1874,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param SpecialTransportRequirements $specialTransportRequirements
+     * @param  SpecialTransportRequirements $specialTransportRequirements
      * @return static
      */
     public function addToSpecialTransportRequirements(
@@ -1896,7 +1896,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param SpecialTransportRequirements $specialTransportRequirements
+     * @param  SpecialTransportRequirements $specialTransportRequirements
      * @return static
      */
     public function addOnceToSpecialTransportRequirements(
@@ -1928,7 +1928,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return GrossWeightMeasure|null
+     * @return null|GrossWeightMeasure
      */
     public function getGrossWeightMeasure(): ?GrossWeightMeasure
     {
@@ -1946,7 +1946,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param GrossWeightMeasure|null $grossWeightMeasure
+     * @param  null|GrossWeightMeasure $grossWeightMeasure
      * @return static
      */
     public function setGrossWeightMeasure(?GrossWeightMeasure $grossWeightMeasure = null): static
@@ -1967,7 +1967,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return GrossVolumeMeasure|null
+     * @return null|GrossVolumeMeasure
      */
     public function getGrossVolumeMeasure(): ?GrossVolumeMeasure
     {
@@ -1985,7 +1985,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param GrossVolumeMeasure|null $grossVolumeMeasure
+     * @param  null|GrossVolumeMeasure $grossVolumeMeasure
      * @return static
      */
     public function setGrossVolumeMeasure(?GrossVolumeMeasure $grossVolumeMeasure = null): static
@@ -2006,7 +2006,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return TareWeightMeasure|null
+     * @return null|TareWeightMeasure
      */
     public function getTareWeightMeasure(): ?TareWeightMeasure
     {
@@ -2024,7 +2024,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param TareWeightMeasure|null $tareWeightMeasure
+     * @param  null|TareWeightMeasure $tareWeightMeasure
      * @return static
      */
     public function setTareWeightMeasure(?TareWeightMeasure $tareWeightMeasure = null): static
@@ -2045,7 +2045,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return TrackingDeviceCode|null
+     * @return null|TrackingDeviceCode
      */
     public function getTrackingDeviceCode(): ?TrackingDeviceCode
     {
@@ -2063,7 +2063,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param TrackingDeviceCode|null $trackingDeviceCode
+     * @param  null|TrackingDeviceCode $trackingDeviceCode
      * @return static
      */
     public function setTrackingDeviceCode(?TrackingDeviceCode $trackingDeviceCode = null): static
@@ -2084,7 +2084,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getPowerIndicator(): ?bool
     {
@@ -2092,7 +2092,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param bool|null $powerIndicator
+     * @param  null|bool $powerIndicator
      * @return static
      */
     public function setPowerIndicator(?bool $powerIndicator = null): static
@@ -2113,7 +2113,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return TraceID|null
+     * @return null|TraceID
      */
     public function getTraceID(): ?TraceID
     {
@@ -2131,7 +2131,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param TraceID|null $traceID
+     * @param  null|TraceID $traceID
      * @return static
      */
     public function setTraceID(?TraceID $traceID = null): static
@@ -2152,7 +2152,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<MeasurementDimension>|null
+     * @return null|array<MeasurementDimension>
      */
     public function getMeasurementDimension(): ?array
     {
@@ -2160,7 +2160,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<MeasurementDimension>|null $measurementDimension
+     * @param  null|array<MeasurementDimension> $measurementDimension
      * @return static
      */
     public function setMeasurementDimension(?array $measurementDimension = null): static
@@ -2191,7 +2191,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return MeasurementDimension|null
+     * @return null|MeasurementDimension
      */
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
@@ -2206,7 +2206,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return MeasurementDimension|null
+     * @return null|MeasurementDimension
      */
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
@@ -2221,7 +2221,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param MeasurementDimension $measurementDimension
+     * @param  MeasurementDimension $measurementDimension
      * @return static
      */
     public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
@@ -2242,7 +2242,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param MeasurementDimension $measurementDimension
+     * @param  MeasurementDimension $measurementDimension
      * @return static
      */
     public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static
@@ -2273,7 +2273,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<TransportEquipmentSeal>|null
+     * @return null|array<TransportEquipmentSeal>
      */
     public function getTransportEquipmentSeal(): ?array
     {
@@ -2281,7 +2281,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<TransportEquipmentSeal>|null $transportEquipmentSeal
+     * @param  null|array<TransportEquipmentSeal> $transportEquipmentSeal
      * @return static
      */
     public function setTransportEquipmentSeal(?array $transportEquipmentSeal = null): static
@@ -2312,7 +2312,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return TransportEquipmentSeal|null
+     * @return null|TransportEquipmentSeal
      */
     public function firstTransportEquipmentSeal(): ?TransportEquipmentSeal
     {
@@ -2327,7 +2327,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return TransportEquipmentSeal|null
+     * @return null|TransportEquipmentSeal
      */
     public function lastTransportEquipmentSeal(): ?TransportEquipmentSeal
     {
@@ -2342,7 +2342,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param TransportEquipmentSeal $transportEquipmentSeal
+     * @param  TransportEquipmentSeal $transportEquipmentSeal
      * @return static
      */
     public function addToTransportEquipmentSeal(TransportEquipmentSeal $transportEquipmentSeal): static
@@ -2363,7 +2363,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param TransportEquipmentSeal $transportEquipmentSeal
+     * @param  TransportEquipmentSeal $transportEquipmentSeal
      * @return static
      */
     public function addOnceToTransportEquipmentSeal(TransportEquipmentSeal $transportEquipmentSeal): static
@@ -2394,7 +2394,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return MinimumTemperature|null
+     * @return null|MinimumTemperature
      */
     public function getMinimumTemperature(): ?MinimumTemperature
     {
@@ -2412,7 +2412,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param MinimumTemperature|null $minimumTemperature
+     * @param  null|MinimumTemperature $minimumTemperature
      * @return static
      */
     public function setMinimumTemperature(?MinimumTemperature $minimumTemperature = null): static
@@ -2433,7 +2433,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return MaximumTemperature|null
+     * @return null|MaximumTemperature
      */
     public function getMaximumTemperature(): ?MaximumTemperature
     {
@@ -2451,7 +2451,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param MaximumTemperature|null $maximumTemperature
+     * @param  null|MaximumTemperature $maximumTemperature
      * @return static
      */
     public function setMaximumTemperature(?MaximumTemperature $maximumTemperature = null): static
@@ -2472,7 +2472,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return ProviderParty|null
+     * @return null|ProviderParty
      */
     public function getProviderParty(): ?ProviderParty
     {
@@ -2490,7 +2490,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param ProviderParty|null $providerParty
+     * @param  null|ProviderParty $providerParty
      * @return static
      */
     public function setProviderParty(?ProviderParty $providerParty = null): static
@@ -2511,7 +2511,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return LoadingProofParty|null
+     * @return null|LoadingProofParty
      */
     public function getLoadingProofParty(): ?LoadingProofParty
     {
@@ -2529,7 +2529,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param LoadingProofParty|null $loadingProofParty
+     * @param  null|LoadingProofParty $loadingProofParty
      * @return static
      */
     public function setLoadingProofParty(?LoadingProofParty $loadingProofParty = null): static
@@ -2550,7 +2550,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return SupplierParty|null
+     * @return null|SupplierParty
      */
     public function getSupplierParty(): ?SupplierParty
     {
@@ -2568,7 +2568,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param SupplierParty|null $supplierParty
+     * @param  null|SupplierParty $supplierParty
      * @return static
      */
     public function setSupplierParty(?SupplierParty $supplierParty = null): static
@@ -2589,7 +2589,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return OwnerParty|null
+     * @return null|OwnerParty
      */
     public function getOwnerParty(): ?OwnerParty
     {
@@ -2607,7 +2607,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param OwnerParty|null $ownerParty
+     * @param  null|OwnerParty $ownerParty
      * @return static
      */
     public function setOwnerParty(?OwnerParty $ownerParty = null): static
@@ -2628,7 +2628,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return OperatingParty|null
+     * @return null|OperatingParty
      */
     public function getOperatingParty(): ?OperatingParty
     {
@@ -2646,7 +2646,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param OperatingParty|null $operatingParty
+     * @param  null|OperatingParty $operatingParty
      * @return static
      */
     public function setOperatingParty(?OperatingParty $operatingParty = null): static
@@ -2667,7 +2667,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return LoadingLocation|null
+     * @return null|LoadingLocation
      */
     public function getLoadingLocation(): ?LoadingLocation
     {
@@ -2685,7 +2685,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param LoadingLocation|null $loadingLocation
+     * @param  null|LoadingLocation $loadingLocation
      * @return static
      */
     public function setLoadingLocation(?LoadingLocation $loadingLocation = null): static
@@ -2706,7 +2706,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return UnloadingLocation|null
+     * @return null|UnloadingLocation
      */
     public function getUnloadingLocation(): ?UnloadingLocation
     {
@@ -2724,7 +2724,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param UnloadingLocation|null $unloadingLocation
+     * @param  null|UnloadingLocation $unloadingLocation
      * @return static
      */
     public function setUnloadingLocation(?UnloadingLocation $unloadingLocation = null): static
@@ -2745,7 +2745,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return StorageLocation|null
+     * @return null|StorageLocation
      */
     public function getStorageLocation(): ?StorageLocation
     {
@@ -2763,7 +2763,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param StorageLocation|null $storageLocation
+     * @param  null|StorageLocation $storageLocation
      * @return static
      */
     public function setStorageLocation(?StorageLocation $storageLocation = null): static
@@ -2784,7 +2784,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<PositioningTransportEvent>|null
+     * @return null|array<PositioningTransportEvent>
      */
     public function getPositioningTransportEvent(): ?array
     {
@@ -2792,7 +2792,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<PositioningTransportEvent>|null $positioningTransportEvent
+     * @param  null|array<PositioningTransportEvent> $positioningTransportEvent
      * @return static
      */
     public function setPositioningTransportEvent(?array $positioningTransportEvent = null): static
@@ -2823,7 +2823,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return PositioningTransportEvent|null
+     * @return null|PositioningTransportEvent
      */
     public function firstPositioningTransportEvent(): ?PositioningTransportEvent
     {
@@ -2838,7 +2838,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return PositioningTransportEvent|null
+     * @return null|PositioningTransportEvent
      */
     public function lastPositioningTransportEvent(): ?PositioningTransportEvent
     {
@@ -2853,7 +2853,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param PositioningTransportEvent $positioningTransportEvent
+     * @param  PositioningTransportEvent $positioningTransportEvent
      * @return static
      */
     public function addToPositioningTransportEvent(PositioningTransportEvent $positioningTransportEvent): static
@@ -2874,7 +2874,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param PositioningTransportEvent $positioningTransportEvent
+     * @param  PositioningTransportEvent $positioningTransportEvent
      * @return static
      */
     public function addOnceToPositioningTransportEvent(PositioningTransportEvent $positioningTransportEvent): static
@@ -2905,7 +2905,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<QuarantineTransportEvent>|null
+     * @return null|array<QuarantineTransportEvent>
      */
     public function getQuarantineTransportEvent(): ?array
     {
@@ -2913,7 +2913,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<QuarantineTransportEvent>|null $quarantineTransportEvent
+     * @param  null|array<QuarantineTransportEvent> $quarantineTransportEvent
      * @return static
      */
     public function setQuarantineTransportEvent(?array $quarantineTransportEvent = null): static
@@ -2944,7 +2944,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return QuarantineTransportEvent|null
+     * @return null|QuarantineTransportEvent
      */
     public function firstQuarantineTransportEvent(): ?QuarantineTransportEvent
     {
@@ -2959,7 +2959,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return QuarantineTransportEvent|null
+     * @return null|QuarantineTransportEvent
      */
     public function lastQuarantineTransportEvent(): ?QuarantineTransportEvent
     {
@@ -2974,7 +2974,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param QuarantineTransportEvent $quarantineTransportEvent
+     * @param  QuarantineTransportEvent $quarantineTransportEvent
      * @return static
      */
     public function addToQuarantineTransportEvent(QuarantineTransportEvent $quarantineTransportEvent): static
@@ -2995,7 +2995,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param QuarantineTransportEvent $quarantineTransportEvent
+     * @param  QuarantineTransportEvent $quarantineTransportEvent
      * @return static
      */
     public function addOnceToQuarantineTransportEvent(QuarantineTransportEvent $quarantineTransportEvent): static
@@ -3026,7 +3026,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<DeliveryTransportEvent>|null
+     * @return null|array<DeliveryTransportEvent>
      */
     public function getDeliveryTransportEvent(): ?array
     {
@@ -3034,7 +3034,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<DeliveryTransportEvent>|null $deliveryTransportEvent
+     * @param  null|array<DeliveryTransportEvent> $deliveryTransportEvent
      * @return static
      */
     public function setDeliveryTransportEvent(?array $deliveryTransportEvent = null): static
@@ -3065,7 +3065,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return DeliveryTransportEvent|null
+     * @return null|DeliveryTransportEvent
      */
     public function firstDeliveryTransportEvent(): ?DeliveryTransportEvent
     {
@@ -3080,7 +3080,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return DeliveryTransportEvent|null
+     * @return null|DeliveryTransportEvent
      */
     public function lastDeliveryTransportEvent(): ?DeliveryTransportEvent
     {
@@ -3095,7 +3095,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param DeliveryTransportEvent $deliveryTransportEvent
+     * @param  DeliveryTransportEvent $deliveryTransportEvent
      * @return static
      */
     public function addToDeliveryTransportEvent(DeliveryTransportEvent $deliveryTransportEvent): static
@@ -3116,7 +3116,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param DeliveryTransportEvent $deliveryTransportEvent
+     * @param  DeliveryTransportEvent $deliveryTransportEvent
      * @return static
      */
     public function addOnceToDeliveryTransportEvent(DeliveryTransportEvent $deliveryTransportEvent): static
@@ -3147,7 +3147,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<PickupTransportEvent>|null
+     * @return null|array<PickupTransportEvent>
      */
     public function getPickupTransportEvent(): ?array
     {
@@ -3155,7 +3155,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<PickupTransportEvent>|null $pickupTransportEvent
+     * @param  null|array<PickupTransportEvent> $pickupTransportEvent
      * @return static
      */
     public function setPickupTransportEvent(?array $pickupTransportEvent = null): static
@@ -3186,7 +3186,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return PickupTransportEvent|null
+     * @return null|PickupTransportEvent
      */
     public function firstPickupTransportEvent(): ?PickupTransportEvent
     {
@@ -3201,7 +3201,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return PickupTransportEvent|null
+     * @return null|PickupTransportEvent
      */
     public function lastPickupTransportEvent(): ?PickupTransportEvent
     {
@@ -3216,7 +3216,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param PickupTransportEvent $pickupTransportEvent
+     * @param  PickupTransportEvent $pickupTransportEvent
      * @return static
      */
     public function addToPickupTransportEvent(PickupTransportEvent $pickupTransportEvent): static
@@ -3237,7 +3237,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param PickupTransportEvent $pickupTransportEvent
+     * @param  PickupTransportEvent $pickupTransportEvent
      * @return static
      */
     public function addOnceToPickupTransportEvent(PickupTransportEvent $pickupTransportEvent): static
@@ -3268,7 +3268,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<HandlingTransportEvent>|null
+     * @return null|array<HandlingTransportEvent>
      */
     public function getHandlingTransportEvent(): ?array
     {
@@ -3276,7 +3276,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<HandlingTransportEvent>|null $handlingTransportEvent
+     * @param  null|array<HandlingTransportEvent> $handlingTransportEvent
      * @return static
      */
     public function setHandlingTransportEvent(?array $handlingTransportEvent = null): static
@@ -3307,7 +3307,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return HandlingTransportEvent|null
+     * @return null|HandlingTransportEvent
      */
     public function firstHandlingTransportEvent(): ?HandlingTransportEvent
     {
@@ -3322,7 +3322,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return HandlingTransportEvent|null
+     * @return null|HandlingTransportEvent
      */
     public function lastHandlingTransportEvent(): ?HandlingTransportEvent
     {
@@ -3337,7 +3337,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param HandlingTransportEvent $handlingTransportEvent
+     * @param  HandlingTransportEvent $handlingTransportEvent
      * @return static
      */
     public function addToHandlingTransportEvent(HandlingTransportEvent $handlingTransportEvent): static
@@ -3358,7 +3358,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param HandlingTransportEvent $handlingTransportEvent
+     * @param  HandlingTransportEvent $handlingTransportEvent
      * @return static
      */
     public function addOnceToHandlingTransportEvent(HandlingTransportEvent $handlingTransportEvent): static
@@ -3389,7 +3389,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<LoadingTransportEvent>|null
+     * @return null|array<LoadingTransportEvent>
      */
     public function getLoadingTransportEvent(): ?array
     {
@@ -3397,7 +3397,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<LoadingTransportEvent>|null $loadingTransportEvent
+     * @param  null|array<LoadingTransportEvent> $loadingTransportEvent
      * @return static
      */
     public function setLoadingTransportEvent(?array $loadingTransportEvent = null): static
@@ -3428,7 +3428,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return LoadingTransportEvent|null
+     * @return null|LoadingTransportEvent
      */
     public function firstLoadingTransportEvent(): ?LoadingTransportEvent
     {
@@ -3443,7 +3443,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return LoadingTransportEvent|null
+     * @return null|LoadingTransportEvent
      */
     public function lastLoadingTransportEvent(): ?LoadingTransportEvent
     {
@@ -3458,7 +3458,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param LoadingTransportEvent $loadingTransportEvent
+     * @param  LoadingTransportEvent $loadingTransportEvent
      * @return static
      */
     public function addToLoadingTransportEvent(LoadingTransportEvent $loadingTransportEvent): static
@@ -3479,7 +3479,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param LoadingTransportEvent $loadingTransportEvent
+     * @param  LoadingTransportEvent $loadingTransportEvent
      * @return static
      */
     public function addOnceToLoadingTransportEvent(LoadingTransportEvent $loadingTransportEvent): static
@@ -3510,7 +3510,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<TransportEvent>|null
+     * @return null|array<TransportEvent>
      */
     public function getTransportEvent(): ?array
     {
@@ -3518,7 +3518,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<TransportEvent>|null $transportEvent
+     * @param  null|array<TransportEvent> $transportEvent
      * @return static
      */
     public function setTransportEvent(?array $transportEvent = null): static
@@ -3549,7 +3549,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return TransportEvent|null
+     * @return null|TransportEvent
      */
     public function firstTransportEvent(): ?TransportEvent
     {
@@ -3564,7 +3564,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return TransportEvent|null
+     * @return null|TransportEvent
      */
     public function lastTransportEvent(): ?TransportEvent
     {
@@ -3579,7 +3579,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param TransportEvent $transportEvent
+     * @param  TransportEvent $transportEvent
      * @return static
      */
     public function addToTransportEvent(TransportEvent $transportEvent): static
@@ -3600,7 +3600,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param TransportEvent $transportEvent
+     * @param  TransportEvent $transportEvent
      * @return static
      */
     public function addOnceToTransportEvent(TransportEvent $transportEvent): static
@@ -3631,7 +3631,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return ApplicableTransportMeans|null
+     * @return null|ApplicableTransportMeans
      */
     public function getApplicableTransportMeans(): ?ApplicableTransportMeans
     {
@@ -3649,7 +3649,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param ApplicableTransportMeans|null $applicableTransportMeans
+     * @param  null|ApplicableTransportMeans $applicableTransportMeans
      * @return static
      */
     public function setApplicableTransportMeans(?ApplicableTransportMeans $applicableTransportMeans = null): static
@@ -3670,7 +3670,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<HaulageTradingTerms>|null
+     * @return null|array<HaulageTradingTerms>
      */
     public function getHaulageTradingTerms(): ?array
     {
@@ -3678,7 +3678,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<HaulageTradingTerms>|null $haulageTradingTerms
+     * @param  null|array<HaulageTradingTerms> $haulageTradingTerms
      * @return static
      */
     public function setHaulageTradingTerms(?array $haulageTradingTerms = null): static
@@ -3709,7 +3709,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return HaulageTradingTerms|null
+     * @return null|HaulageTradingTerms
      */
     public function firstHaulageTradingTerms(): ?HaulageTradingTerms
     {
@@ -3724,7 +3724,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return HaulageTradingTerms|null
+     * @return null|HaulageTradingTerms
      */
     public function lastHaulageTradingTerms(): ?HaulageTradingTerms
     {
@@ -3739,7 +3739,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param HaulageTradingTerms $haulageTradingTerms
+     * @param  HaulageTradingTerms $haulageTradingTerms
      * @return static
      */
     public function addToHaulageTradingTerms(HaulageTradingTerms $haulageTradingTerms): static
@@ -3760,7 +3760,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param HaulageTradingTerms $haulageTradingTerms
+     * @param  HaulageTradingTerms $haulageTradingTerms
      * @return static
      */
     public function addOnceToHaulageTradingTerms(HaulageTradingTerms $haulageTradingTerms): static
@@ -3791,7 +3791,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<HazardousGoodsTransit>|null
+     * @return null|array<HazardousGoodsTransit>
      */
     public function getHazardousGoodsTransit(): ?array
     {
@@ -3799,7 +3799,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<HazardousGoodsTransit>|null $hazardousGoodsTransit
+     * @param  null|array<HazardousGoodsTransit> $hazardousGoodsTransit
      * @return static
      */
     public function setHazardousGoodsTransit(?array $hazardousGoodsTransit = null): static
@@ -3830,7 +3830,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return HazardousGoodsTransit|null
+     * @return null|HazardousGoodsTransit
      */
     public function firstHazardousGoodsTransit(): ?HazardousGoodsTransit
     {
@@ -3845,7 +3845,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return HazardousGoodsTransit|null
+     * @return null|HazardousGoodsTransit
      */
     public function lastHazardousGoodsTransit(): ?HazardousGoodsTransit
     {
@@ -3860,7 +3860,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param HazardousGoodsTransit $hazardousGoodsTransit
+     * @param  HazardousGoodsTransit $hazardousGoodsTransit
      * @return static
      */
     public function addToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): static
@@ -3881,7 +3881,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param HazardousGoodsTransit $hazardousGoodsTransit
+     * @param  HazardousGoodsTransit $hazardousGoodsTransit
      * @return static
      */
     public function addOnceToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): static
@@ -3912,7 +3912,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<PackagedTransportHandlingUnit>|null
+     * @return null|array<PackagedTransportHandlingUnit>
      */
     public function getPackagedTransportHandlingUnit(): ?array
     {
@@ -3920,7 +3920,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<PackagedTransportHandlingUnit>|null $packagedTransportHandlingUnit
+     * @param  null|array<PackagedTransportHandlingUnit> $packagedTransportHandlingUnit
      * @return static
      */
     public function setPackagedTransportHandlingUnit(?array $packagedTransportHandlingUnit = null): static
@@ -3951,7 +3951,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return PackagedTransportHandlingUnit|null
+     * @return null|PackagedTransportHandlingUnit
      */
     public function firstPackagedTransportHandlingUnit(): ?PackagedTransportHandlingUnit
     {
@@ -3966,7 +3966,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return PackagedTransportHandlingUnit|null
+     * @return null|PackagedTransportHandlingUnit
      */
     public function lastPackagedTransportHandlingUnit(): ?PackagedTransportHandlingUnit
     {
@@ -3981,7 +3981,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param PackagedTransportHandlingUnit $packagedTransportHandlingUnit
+     * @param  PackagedTransportHandlingUnit $packagedTransportHandlingUnit
      * @return static
      */
     public function addToPackagedTransportHandlingUnit(
@@ -4003,7 +4003,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param PackagedTransportHandlingUnit $packagedTransportHandlingUnit
+     * @param  PackagedTransportHandlingUnit $packagedTransportHandlingUnit
      * @return static
      */
     public function addOnceToPackagedTransportHandlingUnit(
@@ -4035,7 +4035,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<ServiceAllowanceCharge>|null
+     * @return null|array<ServiceAllowanceCharge>
      */
     public function getServiceAllowanceCharge(): ?array
     {
@@ -4043,7 +4043,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<ServiceAllowanceCharge>|null $serviceAllowanceCharge
+     * @param  null|array<ServiceAllowanceCharge> $serviceAllowanceCharge
      * @return static
      */
     public function setServiceAllowanceCharge(?array $serviceAllowanceCharge = null): static
@@ -4074,7 +4074,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return ServiceAllowanceCharge|null
+     * @return null|ServiceAllowanceCharge
      */
     public function firstServiceAllowanceCharge(): ?ServiceAllowanceCharge
     {
@@ -4089,7 +4089,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return ServiceAllowanceCharge|null
+     * @return null|ServiceAllowanceCharge
      */
     public function lastServiceAllowanceCharge(): ?ServiceAllowanceCharge
     {
@@ -4104,7 +4104,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param ServiceAllowanceCharge $serviceAllowanceCharge
+     * @param  ServiceAllowanceCharge $serviceAllowanceCharge
      * @return static
      */
     public function addToServiceAllowanceCharge(ServiceAllowanceCharge $serviceAllowanceCharge): static
@@ -4125,7 +4125,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param ServiceAllowanceCharge $serviceAllowanceCharge
+     * @param  ServiceAllowanceCharge $serviceAllowanceCharge
      * @return static
      */
     public function addOnceToServiceAllowanceCharge(ServiceAllowanceCharge $serviceAllowanceCharge): static
@@ -4156,7 +4156,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<FreightAllowanceCharge>|null
+     * @return null|array<FreightAllowanceCharge>
      */
     public function getFreightAllowanceCharge(): ?array
     {
@@ -4164,7 +4164,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<FreightAllowanceCharge>|null $freightAllowanceCharge
+     * @param  null|array<FreightAllowanceCharge> $freightAllowanceCharge
      * @return static
      */
     public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): static
@@ -4195,7 +4195,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return FreightAllowanceCharge|null
+     * @return null|FreightAllowanceCharge
      */
     public function firstFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
@@ -4210,7 +4210,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return FreightAllowanceCharge|null
+     * @return null|FreightAllowanceCharge
      */
     public function lastFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
@@ -4225,7 +4225,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param FreightAllowanceCharge $freightAllowanceCharge
+     * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
     public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
@@ -4246,7 +4246,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param FreightAllowanceCharge $freightAllowanceCharge
+     * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
     public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
@@ -4277,7 +4277,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<AttachedTransportEquipment>|null
+     * @return null|array<AttachedTransportEquipment>
      */
     public function getAttachedTransportEquipment(): ?array
     {
@@ -4285,7 +4285,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<AttachedTransportEquipment>|null $attachedTransportEquipment
+     * @param  null|array<AttachedTransportEquipment> $attachedTransportEquipment
      * @return static
      */
     public function setAttachedTransportEquipment(?array $attachedTransportEquipment = null): static
@@ -4316,7 +4316,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return AttachedTransportEquipment|null
+     * @return null|AttachedTransportEquipment
      */
     public function firstAttachedTransportEquipment(): ?AttachedTransportEquipment
     {
@@ -4331,7 +4331,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return AttachedTransportEquipment|null
+     * @return null|AttachedTransportEquipment
      */
     public function lastAttachedTransportEquipment(): ?AttachedTransportEquipment
     {
@@ -4346,7 +4346,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param AttachedTransportEquipment $attachedTransportEquipment
+     * @param  AttachedTransportEquipment $attachedTransportEquipment
      * @return static
      */
     public function addToAttachedTransportEquipment(AttachedTransportEquipment $attachedTransportEquipment): static
@@ -4367,7 +4367,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param AttachedTransportEquipment $attachedTransportEquipment
+     * @param  AttachedTransportEquipment $attachedTransportEquipment
      * @return static
      */
     public function addOnceToAttachedTransportEquipment(AttachedTransportEquipment $attachedTransportEquipment): static
@@ -4398,7 +4398,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return Delivery|null
+     * @return null|Delivery
      */
     public function getDelivery(): ?Delivery
     {
@@ -4416,7 +4416,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param Delivery|null $delivery
+     * @param  null|Delivery $delivery
      * @return static
      */
     public function setDelivery(?Delivery $delivery = null): static
@@ -4437,7 +4437,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return Pickup|null
+     * @return null|Pickup
      */
     public function getPickup(): ?Pickup
     {
@@ -4455,7 +4455,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param Pickup|null $pickup
+     * @param  null|Pickup $pickup
      * @return static
      */
     public function setPickup(?Pickup $pickup = null): static
@@ -4476,7 +4476,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return Despatch|null
+     * @return null|Despatch
      */
     public function getDespatch(): ?Despatch
     {
@@ -4494,7 +4494,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param Despatch|null $despatch
+     * @param  null|Despatch $despatch
      * @return static
      */
     public function setDespatch(?Despatch $despatch = null): static
@@ -4515,7 +4515,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<ShipmentDocumentReference>|null
+     * @return null|array<ShipmentDocumentReference>
      */
     public function getShipmentDocumentReference(): ?array
     {
@@ -4523,7 +4523,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<ShipmentDocumentReference>|null $shipmentDocumentReference
+     * @param  null|array<ShipmentDocumentReference> $shipmentDocumentReference
      * @return static
      */
     public function setShipmentDocumentReference(?array $shipmentDocumentReference = null): static
@@ -4554,7 +4554,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return ShipmentDocumentReference|null
+     * @return null|ShipmentDocumentReference
      */
     public function firstShipmentDocumentReference(): ?ShipmentDocumentReference
     {
@@ -4569,7 +4569,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return ShipmentDocumentReference|null
+     * @return null|ShipmentDocumentReference
      */
     public function lastShipmentDocumentReference(): ?ShipmentDocumentReference
     {
@@ -4584,7 +4584,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param ShipmentDocumentReference $shipmentDocumentReference
+     * @param  ShipmentDocumentReference $shipmentDocumentReference
      * @return static
      */
     public function addToShipmentDocumentReference(ShipmentDocumentReference $shipmentDocumentReference): static
@@ -4605,7 +4605,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param ShipmentDocumentReference $shipmentDocumentReference
+     * @param  ShipmentDocumentReference $shipmentDocumentReference
      * @return static
      */
     public function addOnceToShipmentDocumentReference(ShipmentDocumentReference $shipmentDocumentReference): static
@@ -4636,7 +4636,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<ContainedInTransportEquipment>|null
+     * @return null|array<ContainedInTransportEquipment>
      */
     public function getContainedInTransportEquipment(): ?array
     {
@@ -4644,7 +4644,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<ContainedInTransportEquipment>|null $containedInTransportEquipment
+     * @param  null|array<ContainedInTransportEquipment> $containedInTransportEquipment
      * @return static
      */
     public function setContainedInTransportEquipment(?array $containedInTransportEquipment = null): static
@@ -4675,7 +4675,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return ContainedInTransportEquipment|null
+     * @return null|ContainedInTransportEquipment
      */
     public function firstContainedInTransportEquipment(): ?ContainedInTransportEquipment
     {
@@ -4690,7 +4690,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return ContainedInTransportEquipment|null
+     * @return null|ContainedInTransportEquipment
      */
     public function lastContainedInTransportEquipment(): ?ContainedInTransportEquipment
     {
@@ -4705,7 +4705,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param ContainedInTransportEquipment $containedInTransportEquipment
+     * @param  ContainedInTransportEquipment $containedInTransportEquipment
      * @return static
      */
     public function addToContainedInTransportEquipment(
@@ -4727,7 +4727,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param ContainedInTransportEquipment $containedInTransportEquipment
+     * @param  ContainedInTransportEquipment $containedInTransportEquipment
      * @return static
      */
     public function addOnceToContainedInTransportEquipment(
@@ -4759,7 +4759,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<Package>|null
+     * @return null|array<Package>
      */
     public function getPackage(): ?array
     {
@@ -4767,7 +4767,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<Package>|null $package
+     * @param  null|array<Package> $package
      * @return static
      */
     public function setPackage(?array $package = null): static
@@ -4798,7 +4798,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return Package|null
+     * @return null|Package
      */
     public function firstPackage(): ?Package
     {
@@ -4813,7 +4813,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return Package|null
+     * @return null|Package
      */
     public function lastPackage(): ?Package
     {
@@ -4828,7 +4828,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param Package $package
+     * @param  Package $package
      * @return static
      */
     public function addToPackage(Package $package): static
@@ -4849,7 +4849,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param Package $package
+     * @param  Package $package
      * @return static
      */
     public function addOnceToPackage(Package $package): static
@@ -4880,7 +4880,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return array<GoodsItem>|null
+     * @return null|array<GoodsItem>
      */
     public function getGoodsItem(): ?array
     {
@@ -4888,7 +4888,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param array<GoodsItem>|null $goodsItem
+     * @param  null|array<GoodsItem> $goodsItem
      * @return static
      */
     public function setGoodsItem(?array $goodsItem = null): static
@@ -4919,7 +4919,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return GoodsItem|null
+     * @return null|GoodsItem
      */
     public function firstGoodsItem(): ?GoodsItem
     {
@@ -4934,7 +4934,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @return GoodsItem|null
+     * @return null|GoodsItem
      */
     public function lastGoodsItem(): ?GoodsItem
     {
@@ -4949,7 +4949,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param GoodsItem $goodsItem
+     * @param  GoodsItem $goodsItem
      * @return static
      */
     public function addToGoodsItem(GoodsItem $goodsItem): static
@@ -4970,7 +4970,7 @@ class TransportEquipmentType
     }
 
     /**
-     * @param GoodsItem $goodsItem
+     * @param  GoodsItem $goodsItem
      * @return static
      */
     public function addOnceToGoodsItem(GoodsItem $goodsItem): static

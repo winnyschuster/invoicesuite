@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasic\rsm;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 /**
  * @JMS\XmlRoot(name="rsm:CrossIndustryInvoice", namespace="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100")

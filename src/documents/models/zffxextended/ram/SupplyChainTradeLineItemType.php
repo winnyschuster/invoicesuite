@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class SupplyChainTradeLineItemType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var DocumentLineDocumentType|null
+     * @var null|DocumentLineDocumentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentLineDocumentType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class SupplyChainTradeLineItemType
     private $associatedDocumentLineDocument;
 
     /**
-     * @var TradeProductType|null
+     * @var null|TradeProductType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeProductType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class SupplyChainTradeLineItemType
     private $specifiedTradeProduct;
 
     /**
-     * @var LineTradeAgreementType|null
+     * @var null|LineTradeAgreementType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeAgreementType")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class SupplyChainTradeLineItemType
     private $specifiedLineTradeAgreement;
 
     /**
-     * @var LineTradeDeliveryType|null
+     * @var null|LineTradeDeliveryType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeDeliveryType")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class SupplyChainTradeLineItemType
     private $specifiedLineTradeDelivery;
 
     /**
-     * @var LineTradeSettlementType|null
+     * @var null|LineTradeSettlementType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\LineTradeSettlementType")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class SupplyChainTradeLineItemType
     private $specifiedLineTradeSettlement;
 
     /**
-     * @return DocumentLineDocumentType|null
+     * @return null|DocumentLineDocumentType
      */
     public function getAssociatedDocumentLineDocument(): ?DocumentLineDocumentType
     {
@@ -85,7 +85,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @param DocumentLineDocumentType|null $associatedDocumentLineDocument
+     * @param  null|DocumentLineDocumentType $associatedDocumentLineDocument
      * @return static
      */
     public function setAssociatedDocumentLineDocument(
@@ -107,7 +107,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return TradeProductType|null
+     * @return null|TradeProductType
      */
     public function getSpecifiedTradeProduct(): ?TradeProductType
     {
@@ -125,7 +125,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @param TradeProductType|null $specifiedTradeProduct
+     * @param  null|TradeProductType $specifiedTradeProduct
      * @return static
      */
     public function setSpecifiedTradeProduct(?TradeProductType $specifiedTradeProduct = null): static
@@ -146,7 +146,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return LineTradeAgreementType|null
+     * @return null|LineTradeAgreementType
      */
     public function getSpecifiedLineTradeAgreement(): ?LineTradeAgreementType
     {
@@ -164,7 +164,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @param LineTradeAgreementType|null $specifiedLineTradeAgreement
+     * @param  null|LineTradeAgreementType $specifiedLineTradeAgreement
      * @return static
      */
     public function setSpecifiedLineTradeAgreement(?LineTradeAgreementType $specifiedLineTradeAgreement = null): static
@@ -185,7 +185,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return LineTradeDeliveryType|null
+     * @return null|LineTradeDeliveryType
      */
     public function getSpecifiedLineTradeDelivery(): ?LineTradeDeliveryType
     {
@@ -203,7 +203,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @param LineTradeDeliveryType|null $specifiedLineTradeDelivery
+     * @param  null|LineTradeDeliveryType $specifiedLineTradeDelivery
      * @return static
      */
     public function setSpecifiedLineTradeDelivery(?LineTradeDeliveryType $specifiedLineTradeDelivery = null): static
@@ -224,7 +224,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @return LineTradeSettlementType|null
+     * @return null|LineTradeSettlementType
      */
     public function getSpecifiedLineTradeSettlement(): ?LineTradeSettlementType
     {
@@ -242,7 +242,7 @@ class SupplyChainTradeLineItemType
     }
 
     /**
-     * @param LineTradeSettlementType|null $specifiedLineTradeSettlement
+     * @param  null|LineTradeSettlementType $specifiedLineTradeSettlement
      * @return static
      */
     public function setSpecifiedLineTradeSettlement(

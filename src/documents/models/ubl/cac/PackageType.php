@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PackageLevelCode;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\PackagingTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PackingMaterial;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TraceID;
+use JMS\Serializer\Annotation as JMS;
 
 class PackageType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class PackageType
     private $iD;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class PackageType
     private $quantity;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class PackageType
     private $returnableMaterialIndicator;
 
     /**
-     * @var PackageLevelCode|null
+     * @var null|PackageLevelCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PackageLevelCode")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class PackageType
     private $packageLevelCode;
 
     /**
-     * @var PackagingTypeCode|null
+     * @var null|PackagingTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PackagingTypeCode")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class PackageType
     private $packagingTypeCode;
 
     /**
-     * @var array<PackingMaterial>|null
+     * @var null|array<PackingMaterial>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PackingMaterial>")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class PackageType
     private $packingMaterial;
 
     /**
-     * @var TraceID|null
+     * @var null|TraceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TraceID")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class PackageType
     private $traceID;
 
     /**
-     * @var array<ContainedPackage>|null
+     * @var null|array<ContainedPackage>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ContainedPackage>")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class PackageType
     private $containedPackage;
 
     /**
-     * @var ContainingTransportEquipment|null
+     * @var null|ContainingTransportEquipment
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContainingTransportEquipment")
      * @JMS\Expose
@@ -119,7 +119,7 @@ class PackageType
     private $containingTransportEquipment;
 
     /**
-     * @var array<GoodsItem>|null
+     * @var null|array<GoodsItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem>")
      * @JMS\Expose
@@ -131,7 +131,7 @@ class PackageType
     private $goodsItem;
 
     /**
-     * @var array<MeasurementDimension>|null
+     * @var null|array<MeasurementDimension>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>")
      * @JMS\Expose
@@ -143,7 +143,7 @@ class PackageType
     private $measurementDimension;
 
     /**
-     * @var array<DeliveryUnit>|null
+     * @var null|array<DeliveryUnit>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryUnit>")
      * @JMS\Expose
@@ -155,7 +155,7 @@ class PackageType
     private $deliveryUnit;
 
     /**
-     * @var Delivery|null
+     * @var null|Delivery
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Delivery")
      * @JMS\Expose
@@ -166,7 +166,7 @@ class PackageType
     private $delivery;
 
     /**
-     * @var Pickup|null
+     * @var null|Pickup
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Pickup")
      * @JMS\Expose
@@ -177,7 +177,7 @@ class PackageType
     private $pickup;
 
     /**
-     * @var Despatch|null
+     * @var null|Despatch
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Despatch")
      * @JMS\Expose
@@ -188,7 +188,7 @@ class PackageType
     private $despatch;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -206,7 +206,7 @@ class PackageType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -227,7 +227,7 @@ class PackageType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -245,7 +245,7 @@ class PackageType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -266,7 +266,7 @@ class PackageType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getReturnableMaterialIndicator(): ?bool
     {
@@ -274,7 +274,7 @@ class PackageType
     }
 
     /**
-     * @param bool|null $returnableMaterialIndicator
+     * @param  null|bool $returnableMaterialIndicator
      * @return static
      */
     public function setReturnableMaterialIndicator(?bool $returnableMaterialIndicator = null): static
@@ -295,7 +295,7 @@ class PackageType
     }
 
     /**
-     * @return PackageLevelCode|null
+     * @return null|PackageLevelCode
      */
     public function getPackageLevelCode(): ?PackageLevelCode
     {
@@ -313,7 +313,7 @@ class PackageType
     }
 
     /**
-     * @param PackageLevelCode|null $packageLevelCode
+     * @param  null|PackageLevelCode $packageLevelCode
      * @return static
      */
     public function setPackageLevelCode(?PackageLevelCode $packageLevelCode = null): static
@@ -334,7 +334,7 @@ class PackageType
     }
 
     /**
-     * @return PackagingTypeCode|null
+     * @return null|PackagingTypeCode
      */
     public function getPackagingTypeCode(): ?PackagingTypeCode
     {
@@ -352,7 +352,7 @@ class PackageType
     }
 
     /**
-     * @param PackagingTypeCode|null $packagingTypeCode
+     * @param  null|PackagingTypeCode $packagingTypeCode
      * @return static
      */
     public function setPackagingTypeCode(?PackagingTypeCode $packagingTypeCode = null): static
@@ -373,7 +373,7 @@ class PackageType
     }
 
     /**
-     * @return array<PackingMaterial>|null
+     * @return null|array<PackingMaterial>
      */
     public function getPackingMaterial(): ?array
     {
@@ -381,7 +381,7 @@ class PackageType
     }
 
     /**
-     * @param array<PackingMaterial>|null $packingMaterial
+     * @param  null|array<PackingMaterial> $packingMaterial
      * @return static
      */
     public function setPackingMaterial(?array $packingMaterial = null): static
@@ -412,7 +412,7 @@ class PackageType
     }
 
     /**
-     * @return PackingMaterial|null
+     * @return null|PackingMaterial
      */
     public function firstPackingMaterial(): ?PackingMaterial
     {
@@ -427,7 +427,7 @@ class PackageType
     }
 
     /**
-     * @return PackingMaterial|null
+     * @return null|PackingMaterial
      */
     public function lastPackingMaterial(): ?PackingMaterial
     {
@@ -442,7 +442,7 @@ class PackageType
     }
 
     /**
-     * @param PackingMaterial $packingMaterial
+     * @param  PackingMaterial $packingMaterial
      * @return static
      */
     public function addToPackingMaterial(PackingMaterial $packingMaterial): static
@@ -463,7 +463,7 @@ class PackageType
     }
 
     /**
-     * @param PackingMaterial $packingMaterial
+     * @param  PackingMaterial $packingMaterial
      * @return static
      */
     public function addOnceToPackingMaterial(PackingMaterial $packingMaterial): static
@@ -494,7 +494,7 @@ class PackageType
     }
 
     /**
-     * @return TraceID|null
+     * @return null|TraceID
      */
     public function getTraceID(): ?TraceID
     {
@@ -512,7 +512,7 @@ class PackageType
     }
 
     /**
-     * @param TraceID|null $traceID
+     * @param  null|TraceID $traceID
      * @return static
      */
     public function setTraceID(?TraceID $traceID = null): static
@@ -533,7 +533,7 @@ class PackageType
     }
 
     /**
-     * @return array<ContainedPackage>|null
+     * @return null|array<ContainedPackage>
      */
     public function getContainedPackage(): ?array
     {
@@ -541,7 +541,7 @@ class PackageType
     }
 
     /**
-     * @param array<ContainedPackage>|null $containedPackage
+     * @param  null|array<ContainedPackage> $containedPackage
      * @return static
      */
     public function setContainedPackage(?array $containedPackage = null): static
@@ -572,7 +572,7 @@ class PackageType
     }
 
     /**
-     * @return ContainedPackage|null
+     * @return null|ContainedPackage
      */
     public function firstContainedPackage(): ?ContainedPackage
     {
@@ -587,7 +587,7 @@ class PackageType
     }
 
     /**
-     * @return ContainedPackage|null
+     * @return null|ContainedPackage
      */
     public function lastContainedPackage(): ?ContainedPackage
     {
@@ -602,7 +602,7 @@ class PackageType
     }
 
     /**
-     * @param ContainedPackage $containedPackage
+     * @param  ContainedPackage $containedPackage
      * @return static
      */
     public function addToContainedPackage(ContainedPackage $containedPackage): static
@@ -623,7 +623,7 @@ class PackageType
     }
 
     /**
-     * @param ContainedPackage $containedPackage
+     * @param  ContainedPackage $containedPackage
      * @return static
      */
     public function addOnceToContainedPackage(ContainedPackage $containedPackage): static
@@ -654,7 +654,7 @@ class PackageType
     }
 
     /**
-     * @return ContainingTransportEquipment|null
+     * @return null|ContainingTransportEquipment
      */
     public function getContainingTransportEquipment(): ?ContainingTransportEquipment
     {
@@ -672,7 +672,7 @@ class PackageType
     }
 
     /**
-     * @param ContainingTransportEquipment|null $containingTransportEquipment
+     * @param  null|ContainingTransportEquipment $containingTransportEquipment
      * @return static
      */
     public function setContainingTransportEquipment(
@@ -694,7 +694,7 @@ class PackageType
     }
 
     /**
-     * @return array<GoodsItem>|null
+     * @return null|array<GoodsItem>
      */
     public function getGoodsItem(): ?array
     {
@@ -702,7 +702,7 @@ class PackageType
     }
 
     /**
-     * @param array<GoodsItem>|null $goodsItem
+     * @param  null|array<GoodsItem> $goodsItem
      * @return static
      */
     public function setGoodsItem(?array $goodsItem = null): static
@@ -733,7 +733,7 @@ class PackageType
     }
 
     /**
-     * @return GoodsItem|null
+     * @return null|GoodsItem
      */
     public function firstGoodsItem(): ?GoodsItem
     {
@@ -748,7 +748,7 @@ class PackageType
     }
 
     /**
-     * @return GoodsItem|null
+     * @return null|GoodsItem
      */
     public function lastGoodsItem(): ?GoodsItem
     {
@@ -763,7 +763,7 @@ class PackageType
     }
 
     /**
-     * @param GoodsItem $goodsItem
+     * @param  GoodsItem $goodsItem
      * @return static
      */
     public function addToGoodsItem(GoodsItem $goodsItem): static
@@ -784,7 +784,7 @@ class PackageType
     }
 
     /**
-     * @param GoodsItem $goodsItem
+     * @param  GoodsItem $goodsItem
      * @return static
      */
     public function addOnceToGoodsItem(GoodsItem $goodsItem): static
@@ -815,7 +815,7 @@ class PackageType
     }
 
     /**
-     * @return array<MeasurementDimension>|null
+     * @return null|array<MeasurementDimension>
      */
     public function getMeasurementDimension(): ?array
     {
@@ -823,7 +823,7 @@ class PackageType
     }
 
     /**
-     * @param array<MeasurementDimension>|null $measurementDimension
+     * @param  null|array<MeasurementDimension> $measurementDimension
      * @return static
      */
     public function setMeasurementDimension(?array $measurementDimension = null): static
@@ -854,7 +854,7 @@ class PackageType
     }
 
     /**
-     * @return MeasurementDimension|null
+     * @return null|MeasurementDimension
      */
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
@@ -869,7 +869,7 @@ class PackageType
     }
 
     /**
-     * @return MeasurementDimension|null
+     * @return null|MeasurementDimension
      */
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
@@ -884,7 +884,7 @@ class PackageType
     }
 
     /**
-     * @param MeasurementDimension $measurementDimension
+     * @param  MeasurementDimension $measurementDimension
      * @return static
      */
     public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
@@ -905,7 +905,7 @@ class PackageType
     }
 
     /**
-     * @param MeasurementDimension $measurementDimension
+     * @param  MeasurementDimension $measurementDimension
      * @return static
      */
     public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static
@@ -936,7 +936,7 @@ class PackageType
     }
 
     /**
-     * @return array<DeliveryUnit>|null
+     * @return null|array<DeliveryUnit>
      */
     public function getDeliveryUnit(): ?array
     {
@@ -944,7 +944,7 @@ class PackageType
     }
 
     /**
-     * @param array<DeliveryUnit>|null $deliveryUnit
+     * @param  null|array<DeliveryUnit> $deliveryUnit
      * @return static
      */
     public function setDeliveryUnit(?array $deliveryUnit = null): static
@@ -975,7 +975,7 @@ class PackageType
     }
 
     /**
-     * @return DeliveryUnit|null
+     * @return null|DeliveryUnit
      */
     public function firstDeliveryUnit(): ?DeliveryUnit
     {
@@ -990,7 +990,7 @@ class PackageType
     }
 
     /**
-     * @return DeliveryUnit|null
+     * @return null|DeliveryUnit
      */
     public function lastDeliveryUnit(): ?DeliveryUnit
     {
@@ -1005,7 +1005,7 @@ class PackageType
     }
 
     /**
-     * @param DeliveryUnit $deliveryUnit
+     * @param  DeliveryUnit $deliveryUnit
      * @return static
      */
     public function addToDeliveryUnit(DeliveryUnit $deliveryUnit): static
@@ -1026,7 +1026,7 @@ class PackageType
     }
 
     /**
-     * @param DeliveryUnit $deliveryUnit
+     * @param  DeliveryUnit $deliveryUnit
      * @return static
      */
     public function addOnceToDeliveryUnit(DeliveryUnit $deliveryUnit): static
@@ -1057,7 +1057,7 @@ class PackageType
     }
 
     /**
-     * @return Delivery|null
+     * @return null|Delivery
      */
     public function getDelivery(): ?Delivery
     {
@@ -1075,7 +1075,7 @@ class PackageType
     }
 
     /**
-     * @param Delivery|null $delivery
+     * @param  null|Delivery $delivery
      * @return static
      */
     public function setDelivery(?Delivery $delivery = null): static
@@ -1096,7 +1096,7 @@ class PackageType
     }
 
     /**
-     * @return Pickup|null
+     * @return null|Pickup
      */
     public function getPickup(): ?Pickup
     {
@@ -1114,7 +1114,7 @@ class PackageType
     }
 
     /**
-     * @param Pickup|null $pickup
+     * @param  null|Pickup $pickup
      * @return static
      */
     public function setPickup(?Pickup $pickup = null): static
@@ -1135,7 +1135,7 @@ class PackageType
     }
 
     /**
-     * @return Despatch|null
+     * @return null|Despatch
      */
     public function getDespatch(): ?Despatch
     {
@@ -1153,7 +1153,7 @@ class PackageType
     }
 
     /**
-     * @param Despatch|null $despatch
+     * @param  null|Despatch $despatch
      * @return static
      */
     public function setDespatch(?Despatch $despatch = null): static

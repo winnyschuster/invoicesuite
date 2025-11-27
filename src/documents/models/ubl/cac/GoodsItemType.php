@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ChargeableQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ChargeableWeightMeasure;
@@ -29,13 +28,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\ReturnableQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumberID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TraceID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount;
+use JMS\Serializer\Annotation as JMS;
 
 class GoodsItemType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class GoodsItemType
     private $iD;
 
     /**
-     * @var SequenceNumberID|null
+     * @var null|SequenceNumberID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumberID")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class GoodsItemType
     private $sequenceNumberID;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class GoodsItemType
     private $description;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class GoodsItemType
     private $hazardousRiskIndicator;
 
     /**
-     * @var DeclaredCustomsValueAmount|null
+     * @var null|DeclaredCustomsValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredCustomsValueAmount")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class GoodsItemType
     private $declaredCustomsValueAmount;
 
     /**
-     * @var DeclaredForCarriageValueAmount|null
+     * @var null|DeclaredForCarriageValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredForCarriageValueAmount")
      * @JMS\Expose
@@ -102,7 +102,7 @@ class GoodsItemType
     private $declaredForCarriageValueAmount;
 
     /**
-     * @var DeclaredStatisticsValueAmount|null
+     * @var null|DeclaredStatisticsValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredStatisticsValueAmount")
      * @JMS\Expose
@@ -113,7 +113,7 @@ class GoodsItemType
     private $declaredStatisticsValueAmount;
 
     /**
-     * @var FreeOnBoardValueAmount|null
+     * @var null|FreeOnBoardValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FreeOnBoardValueAmount")
      * @JMS\Expose
@@ -124,7 +124,7 @@ class GoodsItemType
     private $freeOnBoardValueAmount;
 
     /**
-     * @var InsuranceValueAmount|null
+     * @var null|InsuranceValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InsuranceValueAmount")
      * @JMS\Expose
@@ -135,7 +135,7 @@ class GoodsItemType
     private $insuranceValueAmount;
 
     /**
-     * @var ValueAmount|null
+     * @var null|ValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount")
      * @JMS\Expose
@@ -146,7 +146,7 @@ class GoodsItemType
     private $valueAmount;
 
     /**
-     * @var GrossWeightMeasure|null
+     * @var null|GrossWeightMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GrossWeightMeasure")
      * @JMS\Expose
@@ -157,7 +157,7 @@ class GoodsItemType
     private $grossWeightMeasure;
 
     /**
-     * @var NetWeightMeasure|null
+     * @var null|NetWeightMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetWeightMeasure")
      * @JMS\Expose
@@ -168,7 +168,7 @@ class GoodsItemType
     private $netWeightMeasure;
 
     /**
-     * @var NetNetWeightMeasure|null
+     * @var null|NetNetWeightMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetNetWeightMeasure")
      * @JMS\Expose
@@ -179,7 +179,7 @@ class GoodsItemType
     private $netNetWeightMeasure;
 
     /**
-     * @var ChargeableWeightMeasure|null
+     * @var null|ChargeableWeightMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ChargeableWeightMeasure")
      * @JMS\Expose
@@ -190,7 +190,7 @@ class GoodsItemType
     private $chargeableWeightMeasure;
 
     /**
-     * @var GrossVolumeMeasure|null
+     * @var null|GrossVolumeMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GrossVolumeMeasure")
      * @JMS\Expose
@@ -201,7 +201,7 @@ class GoodsItemType
     private $grossVolumeMeasure;
 
     /**
-     * @var NetVolumeMeasure|null
+     * @var null|NetVolumeMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetVolumeMeasure")
      * @JMS\Expose
@@ -212,7 +212,7 @@ class GoodsItemType
     private $netVolumeMeasure;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -223,7 +223,7 @@ class GoodsItemType
     private $quantity;
 
     /**
-     * @var PreferenceCriterionCode|null
+     * @var null|PreferenceCriterionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PreferenceCriterionCode")
      * @JMS\Expose
@@ -234,7 +234,7 @@ class GoodsItemType
     private $preferenceCriterionCode;
 
     /**
-     * @var RequiredCustomsID|null
+     * @var null|RequiredCustomsID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RequiredCustomsID")
      * @JMS\Expose
@@ -245,7 +245,7 @@ class GoodsItemType
     private $requiredCustomsID;
 
     /**
-     * @var CustomsStatusCode|null
+     * @var null|CustomsStatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CustomsStatusCode")
      * @JMS\Expose
@@ -256,7 +256,7 @@ class GoodsItemType
     private $customsStatusCode;
 
     /**
-     * @var CustomsTariffQuantity|null
+     * @var null|CustomsTariffQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CustomsTariffQuantity")
      * @JMS\Expose
@@ -267,7 +267,7 @@ class GoodsItemType
     private $customsTariffQuantity;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -278,7 +278,7 @@ class GoodsItemType
     private $customsImportClassifiedIndicator;
 
     /**
-     * @var ChargeableQuantity|null
+     * @var null|ChargeableQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ChargeableQuantity")
      * @JMS\Expose
@@ -289,7 +289,7 @@ class GoodsItemType
     private $chargeableQuantity;
 
     /**
-     * @var ReturnableQuantity|null
+     * @var null|ReturnableQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReturnableQuantity")
      * @JMS\Expose
@@ -300,7 +300,7 @@ class GoodsItemType
     private $returnableQuantity;
 
     /**
-     * @var TraceID|null
+     * @var null|TraceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TraceID")
      * @JMS\Expose
@@ -311,7 +311,7 @@ class GoodsItemType
     private $traceID;
 
     /**
-     * @var array<Item>|null
+     * @var null|array<Item>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Item>")
      * @JMS\Expose
@@ -323,7 +323,7 @@ class GoodsItemType
     private $item;
 
     /**
-     * @var array<GoodsItemContainer>|null
+     * @var null|array<GoodsItemContainer>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItemContainer>")
      * @JMS\Expose
@@ -335,7 +335,7 @@ class GoodsItemType
     private $goodsItemContainer;
 
     /**
-     * @var array<FreightAllowanceCharge>|null
+     * @var null|array<FreightAllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge>")
      * @JMS\Expose
@@ -347,7 +347,7 @@ class GoodsItemType
     private $freightAllowanceCharge;
 
     /**
-     * @var array<InvoiceLine>|null
+     * @var null|array<InvoiceLine>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\InvoiceLine>")
      * @JMS\Expose
@@ -359,7 +359,7 @@ class GoodsItemType
     private $invoiceLine;
 
     /**
-     * @var array<Temperature>|null
+     * @var null|array<Temperature>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Temperature>")
      * @JMS\Expose
@@ -371,7 +371,7 @@ class GoodsItemType
     private $temperature;
 
     /**
-     * @var array<ContainedGoodsItem>|null
+     * @var null|array<ContainedGoodsItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ContainedGoodsItem>")
      * @JMS\Expose
@@ -383,7 +383,7 @@ class GoodsItemType
     private $containedGoodsItem;
 
     /**
-     * @var OriginAddress|null
+     * @var null|OriginAddress
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginAddress")
      * @JMS\Expose
@@ -394,7 +394,7 @@ class GoodsItemType
     private $originAddress;
 
     /**
-     * @var Delivery|null
+     * @var null|Delivery
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Delivery")
      * @JMS\Expose
@@ -405,7 +405,7 @@ class GoodsItemType
     private $delivery;
 
     /**
-     * @var Pickup|null
+     * @var null|Pickup
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Pickup")
      * @JMS\Expose
@@ -416,7 +416,7 @@ class GoodsItemType
     private $pickup;
 
     /**
-     * @var Despatch|null
+     * @var null|Despatch
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Despatch")
      * @JMS\Expose
@@ -427,7 +427,7 @@ class GoodsItemType
     private $despatch;
 
     /**
-     * @var array<MeasurementDimension>|null
+     * @var null|array<MeasurementDimension>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>")
      * @JMS\Expose
@@ -439,7 +439,7 @@ class GoodsItemType
     private $measurementDimension;
 
     /**
-     * @var array<ContainingPackage>|null
+     * @var null|array<ContainingPackage>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ContainingPackage>")
      * @JMS\Expose
@@ -451,7 +451,7 @@ class GoodsItemType
     private $containingPackage;
 
     /**
-     * @var ShipmentDocumentReference|null
+     * @var null|ShipmentDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentDocumentReference")
      * @JMS\Expose
@@ -462,7 +462,7 @@ class GoodsItemType
     private $shipmentDocumentReference;
 
     /**
-     * @var MinimumTemperature|null
+     * @var null|MinimumTemperature
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MinimumTemperature")
      * @JMS\Expose
@@ -473,7 +473,7 @@ class GoodsItemType
     private $minimumTemperature;
 
     /**
-     * @var MaximumTemperature|null
+     * @var null|MaximumTemperature
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MaximumTemperature")
      * @JMS\Expose
@@ -484,7 +484,7 @@ class GoodsItemType
     private $maximumTemperature;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -502,7 +502,7 @@ class GoodsItemType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -523,7 +523,7 @@ class GoodsItemType
     }
 
     /**
-     * @return SequenceNumberID|null
+     * @return null|SequenceNumberID
      */
     public function getSequenceNumberID(): ?SequenceNumberID
     {
@@ -541,7 +541,7 @@ class GoodsItemType
     }
 
     /**
-     * @param SequenceNumberID|null $sequenceNumberID
+     * @param  null|SequenceNumberID $sequenceNumberID
      * @return static
      */
     public function setSequenceNumberID(?SequenceNumberID $sequenceNumberID = null): static
@@ -562,7 +562,7 @@ class GoodsItemType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -570,7 +570,7 @@ class GoodsItemType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -601,7 +601,7 @@ class GoodsItemType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -616,7 +616,7 @@ class GoodsItemType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -631,7 +631,7 @@ class GoodsItemType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -652,7 +652,7 @@ class GoodsItemType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -683,7 +683,7 @@ class GoodsItemType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getHazardousRiskIndicator(): ?bool
     {
@@ -691,7 +691,7 @@ class GoodsItemType
     }
 
     /**
-     * @param bool|null $hazardousRiskIndicator
+     * @param  null|bool $hazardousRiskIndicator
      * @return static
      */
     public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): static
@@ -712,7 +712,7 @@ class GoodsItemType
     }
 
     /**
-     * @return DeclaredCustomsValueAmount|null
+     * @return null|DeclaredCustomsValueAmount
      */
     public function getDeclaredCustomsValueAmount(): ?DeclaredCustomsValueAmount
     {
@@ -730,7 +730,7 @@ class GoodsItemType
     }
 
     /**
-     * @param DeclaredCustomsValueAmount|null $declaredCustomsValueAmount
+     * @param  null|DeclaredCustomsValueAmount $declaredCustomsValueAmount
      * @return static
      */
     public function setDeclaredCustomsValueAmount(
@@ -752,7 +752,7 @@ class GoodsItemType
     }
 
     /**
-     * @return DeclaredForCarriageValueAmount|null
+     * @return null|DeclaredForCarriageValueAmount
      */
     public function getDeclaredForCarriageValueAmount(): ?DeclaredForCarriageValueAmount
     {
@@ -770,7 +770,7 @@ class GoodsItemType
     }
 
     /**
-     * @param DeclaredForCarriageValueAmount|null $declaredForCarriageValueAmount
+     * @param  null|DeclaredForCarriageValueAmount $declaredForCarriageValueAmount
      * @return static
      */
     public function setDeclaredForCarriageValueAmount(
@@ -792,7 +792,7 @@ class GoodsItemType
     }
 
     /**
-     * @return DeclaredStatisticsValueAmount|null
+     * @return null|DeclaredStatisticsValueAmount
      */
     public function getDeclaredStatisticsValueAmount(): ?DeclaredStatisticsValueAmount
     {
@@ -810,7 +810,7 @@ class GoodsItemType
     }
 
     /**
-     * @param DeclaredStatisticsValueAmount|null $declaredStatisticsValueAmount
+     * @param  null|DeclaredStatisticsValueAmount $declaredStatisticsValueAmount
      * @return static
      */
     public function setDeclaredStatisticsValueAmount(
@@ -832,7 +832,7 @@ class GoodsItemType
     }
 
     /**
-     * @return FreeOnBoardValueAmount|null
+     * @return null|FreeOnBoardValueAmount
      */
     public function getFreeOnBoardValueAmount(): ?FreeOnBoardValueAmount
     {
@@ -850,7 +850,7 @@ class GoodsItemType
     }
 
     /**
-     * @param FreeOnBoardValueAmount|null $freeOnBoardValueAmount
+     * @param  null|FreeOnBoardValueAmount $freeOnBoardValueAmount
      * @return static
      */
     public function setFreeOnBoardValueAmount(?FreeOnBoardValueAmount $freeOnBoardValueAmount = null): static
@@ -871,7 +871,7 @@ class GoodsItemType
     }
 
     /**
-     * @return InsuranceValueAmount|null
+     * @return null|InsuranceValueAmount
      */
     public function getInsuranceValueAmount(): ?InsuranceValueAmount
     {
@@ -889,7 +889,7 @@ class GoodsItemType
     }
 
     /**
-     * @param InsuranceValueAmount|null $insuranceValueAmount
+     * @param  null|InsuranceValueAmount $insuranceValueAmount
      * @return static
      */
     public function setInsuranceValueAmount(?InsuranceValueAmount $insuranceValueAmount = null): static
@@ -910,7 +910,7 @@ class GoodsItemType
     }
 
     /**
-     * @return ValueAmount|null
+     * @return null|ValueAmount
      */
     public function getValueAmount(): ?ValueAmount
     {
@@ -928,7 +928,7 @@ class GoodsItemType
     }
 
     /**
-     * @param ValueAmount|null $valueAmount
+     * @param  null|ValueAmount $valueAmount
      * @return static
      */
     public function setValueAmount(?ValueAmount $valueAmount = null): static
@@ -949,7 +949,7 @@ class GoodsItemType
     }
 
     /**
-     * @return GrossWeightMeasure|null
+     * @return null|GrossWeightMeasure
      */
     public function getGrossWeightMeasure(): ?GrossWeightMeasure
     {
@@ -967,7 +967,7 @@ class GoodsItemType
     }
 
     /**
-     * @param GrossWeightMeasure|null $grossWeightMeasure
+     * @param  null|GrossWeightMeasure $grossWeightMeasure
      * @return static
      */
     public function setGrossWeightMeasure(?GrossWeightMeasure $grossWeightMeasure = null): static
@@ -988,7 +988,7 @@ class GoodsItemType
     }
 
     /**
-     * @return NetWeightMeasure|null
+     * @return null|NetWeightMeasure
      */
     public function getNetWeightMeasure(): ?NetWeightMeasure
     {
@@ -1006,7 +1006,7 @@ class GoodsItemType
     }
 
     /**
-     * @param NetWeightMeasure|null $netWeightMeasure
+     * @param  null|NetWeightMeasure $netWeightMeasure
      * @return static
      */
     public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): static
@@ -1027,7 +1027,7 @@ class GoodsItemType
     }
 
     /**
-     * @return NetNetWeightMeasure|null
+     * @return null|NetNetWeightMeasure
      */
     public function getNetNetWeightMeasure(): ?NetNetWeightMeasure
     {
@@ -1045,7 +1045,7 @@ class GoodsItemType
     }
 
     /**
-     * @param NetNetWeightMeasure|null $netNetWeightMeasure
+     * @param  null|NetNetWeightMeasure $netNetWeightMeasure
      * @return static
      */
     public function setNetNetWeightMeasure(?NetNetWeightMeasure $netNetWeightMeasure = null): static
@@ -1066,7 +1066,7 @@ class GoodsItemType
     }
 
     /**
-     * @return ChargeableWeightMeasure|null
+     * @return null|ChargeableWeightMeasure
      */
     public function getChargeableWeightMeasure(): ?ChargeableWeightMeasure
     {
@@ -1084,7 +1084,7 @@ class GoodsItemType
     }
 
     /**
-     * @param ChargeableWeightMeasure|null $chargeableWeightMeasure
+     * @param  null|ChargeableWeightMeasure $chargeableWeightMeasure
      * @return static
      */
     public function setChargeableWeightMeasure(?ChargeableWeightMeasure $chargeableWeightMeasure = null): static
@@ -1105,7 +1105,7 @@ class GoodsItemType
     }
 
     /**
-     * @return GrossVolumeMeasure|null
+     * @return null|GrossVolumeMeasure
      */
     public function getGrossVolumeMeasure(): ?GrossVolumeMeasure
     {
@@ -1123,7 +1123,7 @@ class GoodsItemType
     }
 
     /**
-     * @param GrossVolumeMeasure|null $grossVolumeMeasure
+     * @param  null|GrossVolumeMeasure $grossVolumeMeasure
      * @return static
      */
     public function setGrossVolumeMeasure(?GrossVolumeMeasure $grossVolumeMeasure = null): static
@@ -1144,7 +1144,7 @@ class GoodsItemType
     }
 
     /**
-     * @return NetVolumeMeasure|null
+     * @return null|NetVolumeMeasure
      */
     public function getNetVolumeMeasure(): ?NetVolumeMeasure
     {
@@ -1162,7 +1162,7 @@ class GoodsItemType
     }
 
     /**
-     * @param NetVolumeMeasure|null $netVolumeMeasure
+     * @param  null|NetVolumeMeasure $netVolumeMeasure
      * @return static
      */
     public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): static
@@ -1183,7 +1183,7 @@ class GoodsItemType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -1201,7 +1201,7 @@ class GoodsItemType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -1222,7 +1222,7 @@ class GoodsItemType
     }
 
     /**
-     * @return PreferenceCriterionCode|null
+     * @return null|PreferenceCriterionCode
      */
     public function getPreferenceCriterionCode(): ?PreferenceCriterionCode
     {
@@ -1240,7 +1240,7 @@ class GoodsItemType
     }
 
     /**
-     * @param PreferenceCriterionCode|null $preferenceCriterionCode
+     * @param  null|PreferenceCriterionCode $preferenceCriterionCode
      * @return static
      */
     public function setPreferenceCriterionCode(?PreferenceCriterionCode $preferenceCriterionCode = null): static
@@ -1261,7 +1261,7 @@ class GoodsItemType
     }
 
     /**
-     * @return RequiredCustomsID|null
+     * @return null|RequiredCustomsID
      */
     public function getRequiredCustomsID(): ?RequiredCustomsID
     {
@@ -1279,7 +1279,7 @@ class GoodsItemType
     }
 
     /**
-     * @param RequiredCustomsID|null $requiredCustomsID
+     * @param  null|RequiredCustomsID $requiredCustomsID
      * @return static
      */
     public function setRequiredCustomsID(?RequiredCustomsID $requiredCustomsID = null): static
@@ -1300,7 +1300,7 @@ class GoodsItemType
     }
 
     /**
-     * @return CustomsStatusCode|null
+     * @return null|CustomsStatusCode
      */
     public function getCustomsStatusCode(): ?CustomsStatusCode
     {
@@ -1318,7 +1318,7 @@ class GoodsItemType
     }
 
     /**
-     * @param CustomsStatusCode|null $customsStatusCode
+     * @param  null|CustomsStatusCode $customsStatusCode
      * @return static
      */
     public function setCustomsStatusCode(?CustomsStatusCode $customsStatusCode = null): static
@@ -1339,7 +1339,7 @@ class GoodsItemType
     }
 
     /**
-     * @return CustomsTariffQuantity|null
+     * @return null|CustomsTariffQuantity
      */
     public function getCustomsTariffQuantity(): ?CustomsTariffQuantity
     {
@@ -1357,7 +1357,7 @@ class GoodsItemType
     }
 
     /**
-     * @param CustomsTariffQuantity|null $customsTariffQuantity
+     * @param  null|CustomsTariffQuantity $customsTariffQuantity
      * @return static
      */
     public function setCustomsTariffQuantity(?CustomsTariffQuantity $customsTariffQuantity = null): static
@@ -1378,7 +1378,7 @@ class GoodsItemType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getCustomsImportClassifiedIndicator(): ?bool
     {
@@ -1386,7 +1386,7 @@ class GoodsItemType
     }
 
     /**
-     * @param bool|null $customsImportClassifiedIndicator
+     * @param  null|bool $customsImportClassifiedIndicator
      * @return static
      */
     public function setCustomsImportClassifiedIndicator(?bool $customsImportClassifiedIndicator = null): static
@@ -1407,7 +1407,7 @@ class GoodsItemType
     }
 
     /**
-     * @return ChargeableQuantity|null
+     * @return null|ChargeableQuantity
      */
     public function getChargeableQuantity(): ?ChargeableQuantity
     {
@@ -1425,7 +1425,7 @@ class GoodsItemType
     }
 
     /**
-     * @param ChargeableQuantity|null $chargeableQuantity
+     * @param  null|ChargeableQuantity $chargeableQuantity
      * @return static
      */
     public function setChargeableQuantity(?ChargeableQuantity $chargeableQuantity = null): static
@@ -1446,7 +1446,7 @@ class GoodsItemType
     }
 
     /**
-     * @return ReturnableQuantity|null
+     * @return null|ReturnableQuantity
      */
     public function getReturnableQuantity(): ?ReturnableQuantity
     {
@@ -1464,7 +1464,7 @@ class GoodsItemType
     }
 
     /**
-     * @param ReturnableQuantity|null $returnableQuantity
+     * @param  null|ReturnableQuantity $returnableQuantity
      * @return static
      */
     public function setReturnableQuantity(?ReturnableQuantity $returnableQuantity = null): static
@@ -1485,7 +1485,7 @@ class GoodsItemType
     }
 
     /**
-     * @return TraceID|null
+     * @return null|TraceID
      */
     public function getTraceID(): ?TraceID
     {
@@ -1503,7 +1503,7 @@ class GoodsItemType
     }
 
     /**
-     * @param TraceID|null $traceID
+     * @param  null|TraceID $traceID
      * @return static
      */
     public function setTraceID(?TraceID $traceID = null): static
@@ -1524,7 +1524,7 @@ class GoodsItemType
     }
 
     /**
-     * @return array<Item>|null
+     * @return null|array<Item>
      */
     public function getItem(): ?array
     {
@@ -1532,7 +1532,7 @@ class GoodsItemType
     }
 
     /**
-     * @param array<Item>|null $item
+     * @param  null|array<Item> $item
      * @return static
      */
     public function setItem(?array $item = null): static
@@ -1563,7 +1563,7 @@ class GoodsItemType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function firstItem(): ?Item
     {
@@ -1578,7 +1578,7 @@ class GoodsItemType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function lastItem(): ?Item
     {
@@ -1593,7 +1593,7 @@ class GoodsItemType
     }
 
     /**
-     * @param Item $item
+     * @param  Item   $item
      * @return static
      */
     public function addToItem(Item $item): static
@@ -1614,7 +1614,7 @@ class GoodsItemType
     }
 
     /**
-     * @param Item $item
+     * @param  Item   $item
      * @return static
      */
     public function addOnceToItem(Item $item): static
@@ -1645,7 +1645,7 @@ class GoodsItemType
     }
 
     /**
-     * @return array<GoodsItemContainer>|null
+     * @return null|array<GoodsItemContainer>
      */
     public function getGoodsItemContainer(): ?array
     {
@@ -1653,7 +1653,7 @@ class GoodsItemType
     }
 
     /**
-     * @param array<GoodsItemContainer>|null $goodsItemContainer
+     * @param  null|array<GoodsItemContainer> $goodsItemContainer
      * @return static
      */
     public function setGoodsItemContainer(?array $goodsItemContainer = null): static
@@ -1684,7 +1684,7 @@ class GoodsItemType
     }
 
     /**
-     * @return GoodsItemContainer|null
+     * @return null|GoodsItemContainer
      */
     public function firstGoodsItemContainer(): ?GoodsItemContainer
     {
@@ -1699,7 +1699,7 @@ class GoodsItemType
     }
 
     /**
-     * @return GoodsItemContainer|null
+     * @return null|GoodsItemContainer
      */
     public function lastGoodsItemContainer(): ?GoodsItemContainer
     {
@@ -1714,7 +1714,7 @@ class GoodsItemType
     }
 
     /**
-     * @param GoodsItemContainer $goodsItemContainer
+     * @param  GoodsItemContainer $goodsItemContainer
      * @return static
      */
     public function addToGoodsItemContainer(GoodsItemContainer $goodsItemContainer): static
@@ -1735,7 +1735,7 @@ class GoodsItemType
     }
 
     /**
-     * @param GoodsItemContainer $goodsItemContainer
+     * @param  GoodsItemContainer $goodsItemContainer
      * @return static
      */
     public function addOnceToGoodsItemContainer(GoodsItemContainer $goodsItemContainer): static
@@ -1766,7 +1766,7 @@ class GoodsItemType
     }
 
     /**
-     * @return array<FreightAllowanceCharge>|null
+     * @return null|array<FreightAllowanceCharge>
      */
     public function getFreightAllowanceCharge(): ?array
     {
@@ -1774,7 +1774,7 @@ class GoodsItemType
     }
 
     /**
-     * @param array<FreightAllowanceCharge>|null $freightAllowanceCharge
+     * @param  null|array<FreightAllowanceCharge> $freightAllowanceCharge
      * @return static
      */
     public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): static
@@ -1805,7 +1805,7 @@ class GoodsItemType
     }
 
     /**
-     * @return FreightAllowanceCharge|null
+     * @return null|FreightAllowanceCharge
      */
     public function firstFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
@@ -1820,7 +1820,7 @@ class GoodsItemType
     }
 
     /**
-     * @return FreightAllowanceCharge|null
+     * @return null|FreightAllowanceCharge
      */
     public function lastFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
@@ -1835,7 +1835,7 @@ class GoodsItemType
     }
 
     /**
-     * @param FreightAllowanceCharge $freightAllowanceCharge
+     * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
     public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
@@ -1856,7 +1856,7 @@ class GoodsItemType
     }
 
     /**
-     * @param FreightAllowanceCharge $freightAllowanceCharge
+     * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
     public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
@@ -1887,7 +1887,7 @@ class GoodsItemType
     }
 
     /**
-     * @return array<InvoiceLine>|null
+     * @return null|array<InvoiceLine>
      */
     public function getInvoiceLine(): ?array
     {
@@ -1895,7 +1895,7 @@ class GoodsItemType
     }
 
     /**
-     * @param array<InvoiceLine>|null $invoiceLine
+     * @param  null|array<InvoiceLine> $invoiceLine
      * @return static
      */
     public function setInvoiceLine(?array $invoiceLine = null): static
@@ -1926,7 +1926,7 @@ class GoodsItemType
     }
 
     /**
-     * @return InvoiceLine|null
+     * @return null|InvoiceLine
      */
     public function firstInvoiceLine(): ?InvoiceLine
     {
@@ -1941,7 +1941,7 @@ class GoodsItemType
     }
 
     /**
-     * @return InvoiceLine|null
+     * @return null|InvoiceLine
      */
     public function lastInvoiceLine(): ?InvoiceLine
     {
@@ -1956,7 +1956,7 @@ class GoodsItemType
     }
 
     /**
-     * @param InvoiceLine $invoiceLine
+     * @param  InvoiceLine $invoiceLine
      * @return static
      */
     public function addToInvoiceLine(InvoiceLine $invoiceLine): static
@@ -1977,7 +1977,7 @@ class GoodsItemType
     }
 
     /**
-     * @param InvoiceLine $invoiceLine
+     * @param  InvoiceLine $invoiceLine
      * @return static
      */
     public function addOnceToInvoiceLine(InvoiceLine $invoiceLine): static
@@ -2008,7 +2008,7 @@ class GoodsItemType
     }
 
     /**
-     * @return array<Temperature>|null
+     * @return null|array<Temperature>
      */
     public function getTemperature(): ?array
     {
@@ -2016,7 +2016,7 @@ class GoodsItemType
     }
 
     /**
-     * @param array<Temperature>|null $temperature
+     * @param  null|array<Temperature> $temperature
      * @return static
      */
     public function setTemperature(?array $temperature = null): static
@@ -2047,7 +2047,7 @@ class GoodsItemType
     }
 
     /**
-     * @return Temperature|null
+     * @return null|Temperature
      */
     public function firstTemperature(): ?Temperature
     {
@@ -2062,7 +2062,7 @@ class GoodsItemType
     }
 
     /**
-     * @return Temperature|null
+     * @return null|Temperature
      */
     public function lastTemperature(): ?Temperature
     {
@@ -2077,7 +2077,7 @@ class GoodsItemType
     }
 
     /**
-     * @param Temperature $temperature
+     * @param  Temperature $temperature
      * @return static
      */
     public function addToTemperature(Temperature $temperature): static
@@ -2098,7 +2098,7 @@ class GoodsItemType
     }
 
     /**
-     * @param Temperature $temperature
+     * @param  Temperature $temperature
      * @return static
      */
     public function addOnceToTemperature(Temperature $temperature): static
@@ -2129,7 +2129,7 @@ class GoodsItemType
     }
 
     /**
-     * @return array<ContainedGoodsItem>|null
+     * @return null|array<ContainedGoodsItem>
      */
     public function getContainedGoodsItem(): ?array
     {
@@ -2137,7 +2137,7 @@ class GoodsItemType
     }
 
     /**
-     * @param array<ContainedGoodsItem>|null $containedGoodsItem
+     * @param  null|array<ContainedGoodsItem> $containedGoodsItem
      * @return static
      */
     public function setContainedGoodsItem(?array $containedGoodsItem = null): static
@@ -2168,7 +2168,7 @@ class GoodsItemType
     }
 
     /**
-     * @return ContainedGoodsItem|null
+     * @return null|ContainedGoodsItem
      */
     public function firstContainedGoodsItem(): ?ContainedGoodsItem
     {
@@ -2183,7 +2183,7 @@ class GoodsItemType
     }
 
     /**
-     * @return ContainedGoodsItem|null
+     * @return null|ContainedGoodsItem
      */
     public function lastContainedGoodsItem(): ?ContainedGoodsItem
     {
@@ -2198,7 +2198,7 @@ class GoodsItemType
     }
 
     /**
-     * @param ContainedGoodsItem $containedGoodsItem
+     * @param  ContainedGoodsItem $containedGoodsItem
      * @return static
      */
     public function addToContainedGoodsItem(ContainedGoodsItem $containedGoodsItem): static
@@ -2219,7 +2219,7 @@ class GoodsItemType
     }
 
     /**
-     * @param ContainedGoodsItem $containedGoodsItem
+     * @param  ContainedGoodsItem $containedGoodsItem
      * @return static
      */
     public function addOnceToContainedGoodsItem(ContainedGoodsItem $containedGoodsItem): static
@@ -2250,7 +2250,7 @@ class GoodsItemType
     }
 
     /**
-     * @return OriginAddress|null
+     * @return null|OriginAddress
      */
     public function getOriginAddress(): ?OriginAddress
     {
@@ -2268,7 +2268,7 @@ class GoodsItemType
     }
 
     /**
-     * @param OriginAddress|null $originAddress
+     * @param  null|OriginAddress $originAddress
      * @return static
      */
     public function setOriginAddress(?OriginAddress $originAddress = null): static
@@ -2289,7 +2289,7 @@ class GoodsItemType
     }
 
     /**
-     * @return Delivery|null
+     * @return null|Delivery
      */
     public function getDelivery(): ?Delivery
     {
@@ -2307,7 +2307,7 @@ class GoodsItemType
     }
 
     /**
-     * @param Delivery|null $delivery
+     * @param  null|Delivery $delivery
      * @return static
      */
     public function setDelivery(?Delivery $delivery = null): static
@@ -2328,7 +2328,7 @@ class GoodsItemType
     }
 
     /**
-     * @return Pickup|null
+     * @return null|Pickup
      */
     public function getPickup(): ?Pickup
     {
@@ -2346,7 +2346,7 @@ class GoodsItemType
     }
 
     /**
-     * @param Pickup|null $pickup
+     * @param  null|Pickup $pickup
      * @return static
      */
     public function setPickup(?Pickup $pickup = null): static
@@ -2367,7 +2367,7 @@ class GoodsItemType
     }
 
     /**
-     * @return Despatch|null
+     * @return null|Despatch
      */
     public function getDespatch(): ?Despatch
     {
@@ -2385,7 +2385,7 @@ class GoodsItemType
     }
 
     /**
-     * @param Despatch|null $despatch
+     * @param  null|Despatch $despatch
      * @return static
      */
     public function setDespatch(?Despatch $despatch = null): static
@@ -2406,7 +2406,7 @@ class GoodsItemType
     }
 
     /**
-     * @return array<MeasurementDimension>|null
+     * @return null|array<MeasurementDimension>
      */
     public function getMeasurementDimension(): ?array
     {
@@ -2414,7 +2414,7 @@ class GoodsItemType
     }
 
     /**
-     * @param array<MeasurementDimension>|null $measurementDimension
+     * @param  null|array<MeasurementDimension> $measurementDimension
      * @return static
      */
     public function setMeasurementDimension(?array $measurementDimension = null): static
@@ -2445,7 +2445,7 @@ class GoodsItemType
     }
 
     /**
-     * @return MeasurementDimension|null
+     * @return null|MeasurementDimension
      */
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
@@ -2460,7 +2460,7 @@ class GoodsItemType
     }
 
     /**
-     * @return MeasurementDimension|null
+     * @return null|MeasurementDimension
      */
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
@@ -2475,7 +2475,7 @@ class GoodsItemType
     }
 
     /**
-     * @param MeasurementDimension $measurementDimension
+     * @param  MeasurementDimension $measurementDimension
      * @return static
      */
     public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
@@ -2496,7 +2496,7 @@ class GoodsItemType
     }
 
     /**
-     * @param MeasurementDimension $measurementDimension
+     * @param  MeasurementDimension $measurementDimension
      * @return static
      */
     public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static
@@ -2527,7 +2527,7 @@ class GoodsItemType
     }
 
     /**
-     * @return array<ContainingPackage>|null
+     * @return null|array<ContainingPackage>
      */
     public function getContainingPackage(): ?array
     {
@@ -2535,7 +2535,7 @@ class GoodsItemType
     }
 
     /**
-     * @param array<ContainingPackage>|null $containingPackage
+     * @param  null|array<ContainingPackage> $containingPackage
      * @return static
      */
     public function setContainingPackage(?array $containingPackage = null): static
@@ -2566,7 +2566,7 @@ class GoodsItemType
     }
 
     /**
-     * @return ContainingPackage|null
+     * @return null|ContainingPackage
      */
     public function firstContainingPackage(): ?ContainingPackage
     {
@@ -2581,7 +2581,7 @@ class GoodsItemType
     }
 
     /**
-     * @return ContainingPackage|null
+     * @return null|ContainingPackage
      */
     public function lastContainingPackage(): ?ContainingPackage
     {
@@ -2596,7 +2596,7 @@ class GoodsItemType
     }
 
     /**
-     * @param ContainingPackage $containingPackage
+     * @param  ContainingPackage $containingPackage
      * @return static
      */
     public function addToContainingPackage(ContainingPackage $containingPackage): static
@@ -2617,7 +2617,7 @@ class GoodsItemType
     }
 
     /**
-     * @param ContainingPackage $containingPackage
+     * @param  ContainingPackage $containingPackage
      * @return static
      */
     public function addOnceToContainingPackage(ContainingPackage $containingPackage): static
@@ -2648,7 +2648,7 @@ class GoodsItemType
     }
 
     /**
-     * @return ShipmentDocumentReference|null
+     * @return null|ShipmentDocumentReference
      */
     public function getShipmentDocumentReference(): ?ShipmentDocumentReference
     {
@@ -2666,7 +2666,7 @@ class GoodsItemType
     }
 
     /**
-     * @param ShipmentDocumentReference|null $shipmentDocumentReference
+     * @param  null|ShipmentDocumentReference $shipmentDocumentReference
      * @return static
      */
     public function setShipmentDocumentReference(?ShipmentDocumentReference $shipmentDocumentReference = null): static
@@ -2687,7 +2687,7 @@ class GoodsItemType
     }
 
     /**
-     * @return MinimumTemperature|null
+     * @return null|MinimumTemperature
      */
     public function getMinimumTemperature(): ?MinimumTemperature
     {
@@ -2705,7 +2705,7 @@ class GoodsItemType
     }
 
     /**
-     * @param MinimumTemperature|null $minimumTemperature
+     * @param  null|MinimumTemperature $minimumTemperature
      * @return static
      */
     public function setMinimumTemperature(?MinimumTemperature $minimumTemperature = null): static
@@ -2726,7 +2726,7 @@ class GoodsItemType
     }
 
     /**
-     * @return MaximumTemperature|null
+     * @return null|MaximumTemperature
      */
     public function getMaximumTemperature(): ?MaximumTemperature
     {
@@ -2744,7 +2744,7 @@ class GoodsItemType
     }
 
     /**
-     * @param MaximumTemperature|null $maximumTemperature
+     * @param  null|MaximumTemperature $maximumTemperature
      * @return static
      */
     public function setMaximumTemperature(?MaximumTemperature $maximumTemperature = null): static

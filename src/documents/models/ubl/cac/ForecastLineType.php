@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
+use JMS\Serializer\Annotation as JMS;
 
 class ForecastLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class ForecastLineType
     private $iD;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class ForecastLineType
     private $note;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class ForecastLineType
     private $frozenDocumentIndicator;
 
     /**
-     * @var ForecastTypeCode|null
+     * @var null|ForecastTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ForecastLineType
     private $forecastTypeCode;
 
     /**
-     * @var ForecastPeriod|null
+     * @var null|ForecastPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ForecastPeriod")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class ForecastLineType
     private $forecastPeriod;
 
     /**
-     * @var SalesItem|null
+     * @var null|SalesItem
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class ForecastLineType
     private $salesItem;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -100,7 +100,7 @@ class ForecastLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -121,7 +121,7 @@ class ForecastLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -129,7 +129,7 @@ class ForecastLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -160,7 +160,7 @@ class ForecastLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -175,7 +175,7 @@ class ForecastLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -190,7 +190,7 @@ class ForecastLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -211,7 +211,7 @@ class ForecastLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -242,7 +242,7 @@ class ForecastLineType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getFrozenDocumentIndicator(): ?bool
     {
@@ -250,7 +250,7 @@ class ForecastLineType
     }
 
     /**
-     * @param bool|null $frozenDocumentIndicator
+     * @param  null|bool $frozenDocumentIndicator
      * @return static
      */
     public function setFrozenDocumentIndicator(?bool $frozenDocumentIndicator = null): static
@@ -271,7 +271,7 @@ class ForecastLineType
     }
 
     /**
-     * @return ForecastTypeCode|null
+     * @return null|ForecastTypeCode
      */
     public function getForecastTypeCode(): ?ForecastTypeCode
     {
@@ -289,7 +289,7 @@ class ForecastLineType
     }
 
     /**
-     * @param ForecastTypeCode|null $forecastTypeCode
+     * @param  null|ForecastTypeCode $forecastTypeCode
      * @return static
      */
     public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): static
@@ -310,7 +310,7 @@ class ForecastLineType
     }
 
     /**
-     * @return ForecastPeriod|null
+     * @return null|ForecastPeriod
      */
     public function getForecastPeriod(): ?ForecastPeriod
     {
@@ -328,7 +328,7 @@ class ForecastLineType
     }
 
     /**
-     * @param ForecastPeriod|null $forecastPeriod
+     * @param  null|ForecastPeriod $forecastPeriod
      * @return static
      */
     public function setForecastPeriod(?ForecastPeriod $forecastPeriod = null): static
@@ -349,7 +349,7 @@ class ForecastLineType
     }
 
     /**
-     * @return SalesItem|null
+     * @return null|SalesItem
      */
     public function getSalesItem(): ?SalesItem
     {
@@ -367,7 +367,7 @@ class ForecastLineType
     }
 
     /**
-     * @param SalesItem|null $salesItem
+     * @param  null|SalesItem $salesItem
      * @return static
      */
     public function setSalesItem(?SalesItem $salesItem = null): static

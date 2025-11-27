@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DeclarationTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
+use JMS\Serializer\Annotation as JMS;
 
 class DeclarationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var array<Name>|null
+     * @var null|array<Name>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Name>")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class DeclarationType
     private $name;
 
     /**
-     * @var DeclarationTypeCode|null
+     * @var null|DeclarationTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeclarationTypeCode")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class DeclarationType
     private $declarationTypeCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class DeclarationType
     private $description;
 
     /**
-     * @var array<EvidenceSupplied>|null
+     * @var null|array<EvidenceSupplied>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied>")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class DeclarationType
     private $evidenceSupplied;
 
     /**
-     * @return array<Name>|null
+     * @return null|array<Name>
      */
     public function getName(): ?array
     {
@@ -70,7 +70,7 @@ class DeclarationType
     }
 
     /**
-     * @param array<Name>|null $name
+     * @param  null|array<Name> $name
      * @return static
      */
     public function setName(?array $name = null): static
@@ -101,7 +101,7 @@ class DeclarationType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function firstName(): ?Name
     {
@@ -116,7 +116,7 @@ class DeclarationType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function lastName(): ?Name
     {
@@ -131,7 +131,7 @@ class DeclarationType
     }
 
     /**
-     * @param Name $name
+     * @param  Name   $name
      * @return static
      */
     public function addToName(Name $name): static
@@ -152,7 +152,7 @@ class DeclarationType
     }
 
     /**
-     * @param Name $name
+     * @param  Name   $name
      * @return static
      */
     public function addOnceToName(Name $name): static
@@ -183,7 +183,7 @@ class DeclarationType
     }
 
     /**
-     * @return DeclarationTypeCode|null
+     * @return null|DeclarationTypeCode
      */
     public function getDeclarationTypeCode(): ?DeclarationTypeCode
     {
@@ -201,7 +201,7 @@ class DeclarationType
     }
 
     /**
-     * @param DeclarationTypeCode|null $declarationTypeCode
+     * @param  null|DeclarationTypeCode $declarationTypeCode
      * @return static
      */
     public function setDeclarationTypeCode(?DeclarationTypeCode $declarationTypeCode = null): static
@@ -222,7 +222,7 @@ class DeclarationType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -230,7 +230,7 @@ class DeclarationType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -261,7 +261,7 @@ class DeclarationType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -276,7 +276,7 @@ class DeclarationType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -291,7 +291,7 @@ class DeclarationType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -312,7 +312,7 @@ class DeclarationType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -343,7 +343,7 @@ class DeclarationType
     }
 
     /**
-     * @return array<EvidenceSupplied>|null
+     * @return null|array<EvidenceSupplied>
      */
     public function getEvidenceSupplied(): ?array
     {
@@ -351,7 +351,7 @@ class DeclarationType
     }
 
     /**
-     * @param array<EvidenceSupplied>|null $evidenceSupplied
+     * @param  null|array<EvidenceSupplied> $evidenceSupplied
      * @return static
      */
     public function setEvidenceSupplied(?array $evidenceSupplied = null): static
@@ -382,7 +382,7 @@ class DeclarationType
     }
 
     /**
-     * @return EvidenceSupplied|null
+     * @return null|EvidenceSupplied
      */
     public function firstEvidenceSupplied(): ?EvidenceSupplied
     {
@@ -397,7 +397,7 @@ class DeclarationType
     }
 
     /**
-     * @return EvidenceSupplied|null
+     * @return null|EvidenceSupplied
      */
     public function lastEvidenceSupplied(): ?EvidenceSupplied
     {
@@ -412,7 +412,7 @@ class DeclarationType
     }
 
     /**
-     * @param EvidenceSupplied $evidenceSupplied
+     * @param  EvidenceSupplied $evidenceSupplied
      * @return static
      */
     public function addToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
@@ -433,7 +433,7 @@ class DeclarationType
     }
 
     /**
-     * @param EvidenceSupplied $evidenceSupplied
+     * @param  EvidenceSupplied $evidenceSupplied
      * @return static
      */
     public function addOnceToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static

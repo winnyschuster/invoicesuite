@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AverageSubsequentContractAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedOverallContractAmount;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MonetaryScope;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount;
+use JMS\Serializer\Annotation as JMS;
 
 class RequestedTenderTotalType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var EstimatedOverallContractAmount|null
+     * @var null|EstimatedOverallContractAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedOverallContractAmount")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class RequestedTenderTotalType
     private $estimatedOverallContractAmount;
 
     /**
-     * @var TotalAmount|null
+     * @var null|TotalAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class RequestedTenderTotalType
     private $totalAmount;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class RequestedTenderTotalType
     private $taxIncludedIndicator;
 
     /**
-     * @var MinimumAmount|null
+     * @var null|MinimumAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class RequestedTenderTotalType
     private $minimumAmount;
 
     /**
-     * @var MaximumAmount|null
+     * @var null|MaximumAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class RequestedTenderTotalType
     private $maximumAmount;
 
     /**
-     * @var array<MonetaryScope>|null
+     * @var null|array<MonetaryScope>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\MonetaryScope>")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class RequestedTenderTotalType
     private $monetaryScope;
 
     /**
-     * @var AverageSubsequentContractAmount|null
+     * @var null|AverageSubsequentContractAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AverageSubsequentContractAmount")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class RequestedTenderTotalType
     private $averageSubsequentContractAmount;
 
     /**
-     * @var array<ApplicableTaxCategory>|null
+     * @var null|array<ApplicableTaxCategory>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableTaxCategory>")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class RequestedTenderTotalType
     private $applicableTaxCategory;
 
     /**
-     * @return EstimatedOverallContractAmount|null
+     * @return null|EstimatedOverallContractAmount
      */
     public function getEstimatedOverallContractAmount(): ?EstimatedOverallContractAmount
     {
@@ -126,7 +126,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param EstimatedOverallContractAmount|null $estimatedOverallContractAmount
+     * @param  null|EstimatedOverallContractAmount $estimatedOverallContractAmount
      * @return static
      */
     public function setEstimatedOverallContractAmount(
@@ -148,7 +148,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return TotalAmount|null
+     * @return null|TotalAmount
      */
     public function getTotalAmount(): ?TotalAmount
     {
@@ -166,7 +166,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param TotalAmount|null $totalAmount
+     * @param  null|TotalAmount $totalAmount
      * @return static
      */
     public function setTotalAmount(?TotalAmount $totalAmount = null): static
@@ -187,7 +187,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getTaxIncludedIndicator(): ?bool
     {
@@ -195,7 +195,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param bool|null $taxIncludedIndicator
+     * @param  null|bool $taxIncludedIndicator
      * @return static
      */
     public function setTaxIncludedIndicator(?bool $taxIncludedIndicator = null): static
@@ -216,7 +216,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return MinimumAmount|null
+     * @return null|MinimumAmount
      */
     public function getMinimumAmount(): ?MinimumAmount
     {
@@ -234,7 +234,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param MinimumAmount|null $minimumAmount
+     * @param  null|MinimumAmount $minimumAmount
      * @return static
      */
     public function setMinimumAmount(?MinimumAmount $minimumAmount = null): static
@@ -255,7 +255,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return MaximumAmount|null
+     * @return null|MaximumAmount
      */
     public function getMaximumAmount(): ?MaximumAmount
     {
@@ -273,7 +273,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param MaximumAmount|null $maximumAmount
+     * @param  null|MaximumAmount $maximumAmount
      * @return static
      */
     public function setMaximumAmount(?MaximumAmount $maximumAmount = null): static
@@ -294,7 +294,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return array<MonetaryScope>|null
+     * @return null|array<MonetaryScope>
      */
     public function getMonetaryScope(): ?array
     {
@@ -302,7 +302,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param array<MonetaryScope>|null $monetaryScope
+     * @param  null|array<MonetaryScope> $monetaryScope
      * @return static
      */
     public function setMonetaryScope(?array $monetaryScope = null): static
@@ -333,7 +333,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return MonetaryScope|null
+     * @return null|MonetaryScope
      */
     public function firstMonetaryScope(): ?MonetaryScope
     {
@@ -348,7 +348,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return MonetaryScope|null
+     * @return null|MonetaryScope
      */
     public function lastMonetaryScope(): ?MonetaryScope
     {
@@ -363,7 +363,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param MonetaryScope $monetaryScope
+     * @param  MonetaryScope $monetaryScope
      * @return static
      */
     public function addToMonetaryScope(MonetaryScope $monetaryScope): static
@@ -384,7 +384,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param MonetaryScope $monetaryScope
+     * @param  MonetaryScope $monetaryScope
      * @return static
      */
     public function addOnceToMonetaryScope(MonetaryScope $monetaryScope): static
@@ -415,7 +415,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return AverageSubsequentContractAmount|null
+     * @return null|AverageSubsequentContractAmount
      */
     public function getAverageSubsequentContractAmount(): ?AverageSubsequentContractAmount
     {
@@ -433,7 +433,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param AverageSubsequentContractAmount|null $averageSubsequentContractAmount
+     * @param  null|AverageSubsequentContractAmount $averageSubsequentContractAmount
      * @return static
      */
     public function setAverageSubsequentContractAmount(
@@ -455,7 +455,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return array<ApplicableTaxCategory>|null
+     * @return null|array<ApplicableTaxCategory>
      */
     public function getApplicableTaxCategory(): ?array
     {
@@ -463,7 +463,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param array<ApplicableTaxCategory>|null $applicableTaxCategory
+     * @param  null|array<ApplicableTaxCategory> $applicableTaxCategory
      * @return static
      */
     public function setApplicableTaxCategory(?array $applicableTaxCategory = null): static
@@ -494,7 +494,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return ApplicableTaxCategory|null
+     * @return null|ApplicableTaxCategory
      */
     public function firstApplicableTaxCategory(): ?ApplicableTaxCategory
     {
@@ -509,7 +509,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @return ApplicableTaxCategory|null
+     * @return null|ApplicableTaxCategory
      */
     public function lastApplicableTaxCategory(): ?ApplicableTaxCategory
     {
@@ -524,7 +524,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param ApplicableTaxCategory $applicableTaxCategory
+     * @param  ApplicableTaxCategory $applicableTaxCategory
      * @return static
      */
     public function addToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): static
@@ -545,7 +545,7 @@ class RequestedTenderTotalType
     }
 
     /**
-     * @param ApplicableTaxCategory $applicableTaxCategory
+     * @param  ApplicableTaxCategory $applicableTaxCategory
      * @return static
      */
     public function addOnceToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): static

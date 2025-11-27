@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\IndustryClassificationCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LogoReferenceID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\WebsiteURI;
+use JMS\Serializer\Annotation as JMS;
 
 class PartyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class PartyType
     private $markCareIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class PartyType
     private $markAttentionIndicator;
 
     /**
-     * @var WebsiteURI|null
+     * @var null|WebsiteURI
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\WebsiteURI")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class PartyType
     private $websiteURI;
 
     /**
-     * @var LogoReferenceID|null
+     * @var null|LogoReferenceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LogoReferenceID")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class PartyType
     private $logoReferenceID;
 
     /**
-     * @var EndpointID|null
+     * @var null|EndpointID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EndpointID")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class PartyType
     private $endpointID;
 
     /**
-     * @var IndustryClassificationCode|null
+     * @var null|IndustryClassificationCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\IndustryClassificationCode")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class PartyType
     private $industryClassificationCode;
 
     /**
-     * @var array<PartyIdentification>|null
+     * @var null|array<PartyIdentification>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PartyIdentification>")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class PartyType
     private $partyIdentification;
 
     /**
-     * @var array<PartyName>|null
+     * @var null|array<PartyName>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PartyName>")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class PartyType
     private $partyName;
 
     /**
-     * @var Language|null
+     * @var null|Language
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Language")
      * @JMS\Expose
@@ -117,7 +117,7 @@ class PartyType
     private $language;
 
     /**
-     * @var PostalAddress|null
+     * @var null|PostalAddress
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PostalAddress")
      * @JMS\Expose
@@ -128,7 +128,7 @@ class PartyType
     private $postalAddress;
 
     /**
-     * @var PhysicalLocation|null
+     * @var null|PhysicalLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalLocation")
      * @JMS\Expose
@@ -139,7 +139,7 @@ class PartyType
     private $physicalLocation;
 
     /**
-     * @var array<PartyTaxScheme>|null
+     * @var null|array<PartyTaxScheme>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PartyTaxScheme>")
      * @JMS\Expose
@@ -151,7 +151,7 @@ class PartyType
     private $partyTaxScheme;
 
     /**
-     * @var array<PartyLegalEntity>|null
+     * @var null|array<PartyLegalEntity>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PartyLegalEntity>")
      * @JMS\Expose
@@ -163,7 +163,7 @@ class PartyType
     private $partyLegalEntity;
 
     /**
-     * @var Contact|null
+     * @var null|Contact
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Contact")
      * @JMS\Expose
@@ -174,7 +174,7 @@ class PartyType
     private $contact;
 
     /**
-     * @var array<Person>|null
+     * @var null|array<Person>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Person>")
      * @JMS\Expose
@@ -186,7 +186,7 @@ class PartyType
     private $person;
 
     /**
-     * @var AgentParty|null
+     * @var null|AgentParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AgentParty")
      * @JMS\Expose
@@ -197,7 +197,7 @@ class PartyType
     private $agentParty;
 
     /**
-     * @var array<ServiceProviderParty>|null
+     * @var null|array<ServiceProviderParty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ServiceProviderParty>")
      * @JMS\Expose
@@ -209,7 +209,7 @@ class PartyType
     private $serviceProviderParty;
 
     /**
-     * @var array<PowerOfAttorney>|null
+     * @var null|array<PowerOfAttorney>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PowerOfAttorney>")
      * @JMS\Expose
@@ -221,7 +221,7 @@ class PartyType
     private $powerOfAttorney;
 
     /**
-     * @var FinancialAccount|null
+     * @var null|FinancialAccount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FinancialAccount")
      * @JMS\Expose
@@ -232,7 +232,7 @@ class PartyType
     private $financialAccount;
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getMarkCareIndicator(): ?bool
     {
@@ -240,7 +240,7 @@ class PartyType
     }
 
     /**
-     * @param bool|null $markCareIndicator
+     * @param  null|bool $markCareIndicator
      * @return static
      */
     public function setMarkCareIndicator(?bool $markCareIndicator = null): static
@@ -261,7 +261,7 @@ class PartyType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getMarkAttentionIndicator(): ?bool
     {
@@ -269,7 +269,7 @@ class PartyType
     }
 
     /**
-     * @param bool|null $markAttentionIndicator
+     * @param  null|bool $markAttentionIndicator
      * @return static
      */
     public function setMarkAttentionIndicator(?bool $markAttentionIndicator = null): static
@@ -290,7 +290,7 @@ class PartyType
     }
 
     /**
-     * @return WebsiteURI|null
+     * @return null|WebsiteURI
      */
     public function getWebsiteURI(): ?WebsiteURI
     {
@@ -308,7 +308,7 @@ class PartyType
     }
 
     /**
-     * @param WebsiteURI|null $websiteURI
+     * @param  null|WebsiteURI $websiteURI
      * @return static
      */
     public function setWebsiteURI(?WebsiteURI $websiteURI = null): static
@@ -329,7 +329,7 @@ class PartyType
     }
 
     /**
-     * @return LogoReferenceID|null
+     * @return null|LogoReferenceID
      */
     public function getLogoReferenceID(): ?LogoReferenceID
     {
@@ -347,7 +347,7 @@ class PartyType
     }
 
     /**
-     * @param LogoReferenceID|null $logoReferenceID
+     * @param  null|LogoReferenceID $logoReferenceID
      * @return static
      */
     public function setLogoReferenceID(?LogoReferenceID $logoReferenceID = null): static
@@ -368,7 +368,7 @@ class PartyType
     }
 
     /**
-     * @return EndpointID|null
+     * @return null|EndpointID
      */
     public function getEndpointID(): ?EndpointID
     {
@@ -386,7 +386,7 @@ class PartyType
     }
 
     /**
-     * @param EndpointID|null $endpointID
+     * @param  null|EndpointID $endpointID
      * @return static
      */
     public function setEndpointID(?EndpointID $endpointID = null): static
@@ -407,7 +407,7 @@ class PartyType
     }
 
     /**
-     * @return IndustryClassificationCode|null
+     * @return null|IndustryClassificationCode
      */
     public function getIndustryClassificationCode(): ?IndustryClassificationCode
     {
@@ -425,7 +425,7 @@ class PartyType
     }
 
     /**
-     * @param IndustryClassificationCode|null $industryClassificationCode
+     * @param  null|IndustryClassificationCode $industryClassificationCode
      * @return static
      */
     public function setIndustryClassificationCode(
@@ -447,7 +447,7 @@ class PartyType
     }
 
     /**
-     * @return array<PartyIdentification>|null
+     * @return null|array<PartyIdentification>
      */
     public function getPartyIdentification(): ?array
     {
@@ -455,7 +455,7 @@ class PartyType
     }
 
     /**
-     * @param array<PartyIdentification>|null $partyIdentification
+     * @param  null|array<PartyIdentification> $partyIdentification
      * @return static
      */
     public function setPartyIdentification(?array $partyIdentification = null): static
@@ -486,7 +486,7 @@ class PartyType
     }
 
     /**
-     * @return PartyIdentification|null
+     * @return null|PartyIdentification
      */
     public function firstPartyIdentification(): ?PartyIdentification
     {
@@ -501,7 +501,7 @@ class PartyType
     }
 
     /**
-     * @return PartyIdentification|null
+     * @return null|PartyIdentification
      */
     public function lastPartyIdentification(): ?PartyIdentification
     {
@@ -516,7 +516,7 @@ class PartyType
     }
 
     /**
-     * @param PartyIdentification $partyIdentification
+     * @param  PartyIdentification $partyIdentification
      * @return static
      */
     public function addToPartyIdentification(PartyIdentification $partyIdentification): static
@@ -537,7 +537,7 @@ class PartyType
     }
 
     /**
-     * @param PartyIdentification $partyIdentification
+     * @param  PartyIdentification $partyIdentification
      * @return static
      */
     public function addOnceToPartyIdentification(PartyIdentification $partyIdentification): static
@@ -568,7 +568,7 @@ class PartyType
     }
 
     /**
-     * @return array<PartyName>|null
+     * @return null|array<PartyName>
      */
     public function getPartyName(): ?array
     {
@@ -576,7 +576,7 @@ class PartyType
     }
 
     /**
-     * @param array<PartyName>|null $partyName
+     * @param  null|array<PartyName> $partyName
      * @return static
      */
     public function setPartyName(?array $partyName = null): static
@@ -607,7 +607,7 @@ class PartyType
     }
 
     /**
-     * @return PartyName|null
+     * @return null|PartyName
      */
     public function firstPartyName(): ?PartyName
     {
@@ -622,7 +622,7 @@ class PartyType
     }
 
     /**
-     * @return PartyName|null
+     * @return null|PartyName
      */
     public function lastPartyName(): ?PartyName
     {
@@ -637,7 +637,7 @@ class PartyType
     }
 
     /**
-     * @param PartyName $partyName
+     * @param  PartyName $partyName
      * @return static
      */
     public function addToPartyName(PartyName $partyName): static
@@ -658,7 +658,7 @@ class PartyType
     }
 
     /**
-     * @param PartyName $partyName
+     * @param  PartyName $partyName
      * @return static
      */
     public function addOnceToPartyName(PartyName $partyName): static
@@ -689,7 +689,7 @@ class PartyType
     }
 
     /**
-     * @return Language|null
+     * @return null|Language
      */
     public function getLanguage(): ?Language
     {
@@ -707,7 +707,7 @@ class PartyType
     }
 
     /**
-     * @param Language|null $language
+     * @param  null|Language $language
      * @return static
      */
     public function setLanguage(?Language $language = null): static
@@ -728,7 +728,7 @@ class PartyType
     }
 
     /**
-     * @return PostalAddress|null
+     * @return null|PostalAddress
      */
     public function getPostalAddress(): ?PostalAddress
     {
@@ -746,7 +746,7 @@ class PartyType
     }
 
     /**
-     * @param PostalAddress|null $postalAddress
+     * @param  null|PostalAddress $postalAddress
      * @return static
      */
     public function setPostalAddress(?PostalAddress $postalAddress = null): static
@@ -767,7 +767,7 @@ class PartyType
     }
 
     /**
-     * @return PhysicalLocation|null
+     * @return null|PhysicalLocation
      */
     public function getPhysicalLocation(): ?PhysicalLocation
     {
@@ -785,7 +785,7 @@ class PartyType
     }
 
     /**
-     * @param PhysicalLocation|null $physicalLocation
+     * @param  null|PhysicalLocation $physicalLocation
      * @return static
      */
     public function setPhysicalLocation(?PhysicalLocation $physicalLocation = null): static
@@ -806,7 +806,7 @@ class PartyType
     }
 
     /**
-     * @return array<PartyTaxScheme>|null
+     * @return null|array<PartyTaxScheme>
      */
     public function getPartyTaxScheme(): ?array
     {
@@ -814,7 +814,7 @@ class PartyType
     }
 
     /**
-     * @param array<PartyTaxScheme>|null $partyTaxScheme
+     * @param  null|array<PartyTaxScheme> $partyTaxScheme
      * @return static
      */
     public function setPartyTaxScheme(?array $partyTaxScheme = null): static
@@ -845,7 +845,7 @@ class PartyType
     }
 
     /**
-     * @return PartyTaxScheme|null
+     * @return null|PartyTaxScheme
      */
     public function firstPartyTaxScheme(): ?PartyTaxScheme
     {
@@ -860,7 +860,7 @@ class PartyType
     }
 
     /**
-     * @return PartyTaxScheme|null
+     * @return null|PartyTaxScheme
      */
     public function lastPartyTaxScheme(): ?PartyTaxScheme
     {
@@ -875,7 +875,7 @@ class PartyType
     }
 
     /**
-     * @param PartyTaxScheme $partyTaxScheme
+     * @param  PartyTaxScheme $partyTaxScheme
      * @return static
      */
     public function addToPartyTaxScheme(PartyTaxScheme $partyTaxScheme): static
@@ -896,7 +896,7 @@ class PartyType
     }
 
     /**
-     * @param PartyTaxScheme $partyTaxScheme
+     * @param  PartyTaxScheme $partyTaxScheme
      * @return static
      */
     public function addOnceToPartyTaxScheme(PartyTaxScheme $partyTaxScheme): static
@@ -927,7 +927,7 @@ class PartyType
     }
 
     /**
-     * @return array<PartyLegalEntity>|null
+     * @return null|array<PartyLegalEntity>
      */
     public function getPartyLegalEntity(): ?array
     {
@@ -935,7 +935,7 @@ class PartyType
     }
 
     /**
-     * @param array<PartyLegalEntity>|null $partyLegalEntity
+     * @param  null|array<PartyLegalEntity> $partyLegalEntity
      * @return static
      */
     public function setPartyLegalEntity(?array $partyLegalEntity = null): static
@@ -966,7 +966,7 @@ class PartyType
     }
 
     /**
-     * @return PartyLegalEntity|null
+     * @return null|PartyLegalEntity
      */
     public function firstPartyLegalEntity(): ?PartyLegalEntity
     {
@@ -981,7 +981,7 @@ class PartyType
     }
 
     /**
-     * @return PartyLegalEntity|null
+     * @return null|PartyLegalEntity
      */
     public function lastPartyLegalEntity(): ?PartyLegalEntity
     {
@@ -996,7 +996,7 @@ class PartyType
     }
 
     /**
-     * @param PartyLegalEntity $partyLegalEntity
+     * @param  PartyLegalEntity $partyLegalEntity
      * @return static
      */
     public function addToPartyLegalEntity(PartyLegalEntity $partyLegalEntity): static
@@ -1017,7 +1017,7 @@ class PartyType
     }
 
     /**
-     * @param PartyLegalEntity $partyLegalEntity
+     * @param  PartyLegalEntity $partyLegalEntity
      * @return static
      */
     public function addOnceToPartyLegalEntity(PartyLegalEntity $partyLegalEntity): static
@@ -1048,7 +1048,7 @@ class PartyType
     }
 
     /**
-     * @return Contact|null
+     * @return null|Contact
      */
     public function getContact(): ?Contact
     {
@@ -1066,7 +1066,7 @@ class PartyType
     }
 
     /**
-     * @param Contact|null $contact
+     * @param  null|Contact $contact
      * @return static
      */
     public function setContact(?Contact $contact = null): static
@@ -1087,7 +1087,7 @@ class PartyType
     }
 
     /**
-     * @return array<Person>|null
+     * @return null|array<Person>
      */
     public function getPerson(): ?array
     {
@@ -1095,7 +1095,7 @@ class PartyType
     }
 
     /**
-     * @param array<Person>|null $person
+     * @param  null|array<Person> $person
      * @return static
      */
     public function setPerson(?array $person = null): static
@@ -1126,7 +1126,7 @@ class PartyType
     }
 
     /**
-     * @return Person|null
+     * @return null|Person
      */
     public function firstPerson(): ?Person
     {
@@ -1141,7 +1141,7 @@ class PartyType
     }
 
     /**
-     * @return Person|null
+     * @return null|Person
      */
     public function lastPerson(): ?Person
     {
@@ -1156,7 +1156,7 @@ class PartyType
     }
 
     /**
-     * @param Person $person
+     * @param  Person $person
      * @return static
      */
     public function addToPerson(Person $person): static
@@ -1177,7 +1177,7 @@ class PartyType
     }
 
     /**
-     * @param Person $person
+     * @param  Person $person
      * @return static
      */
     public function addOnceToPerson(Person $person): static
@@ -1208,7 +1208,7 @@ class PartyType
     }
 
     /**
-     * @return AgentParty|null
+     * @return null|AgentParty
      */
     public function getAgentParty(): ?AgentParty
     {
@@ -1226,7 +1226,7 @@ class PartyType
     }
 
     /**
-     * @param AgentParty|null $agentParty
+     * @param  null|AgentParty $agentParty
      * @return static
      */
     public function setAgentParty(?AgentParty $agentParty = null): static
@@ -1247,7 +1247,7 @@ class PartyType
     }
 
     /**
-     * @return array<ServiceProviderParty>|null
+     * @return null|array<ServiceProviderParty>
      */
     public function getServiceProviderParty(): ?array
     {
@@ -1255,7 +1255,7 @@ class PartyType
     }
 
     /**
-     * @param array<ServiceProviderParty>|null $serviceProviderParty
+     * @param  null|array<ServiceProviderParty> $serviceProviderParty
      * @return static
      */
     public function setServiceProviderParty(?array $serviceProviderParty = null): static
@@ -1286,7 +1286,7 @@ class PartyType
     }
 
     /**
-     * @return ServiceProviderParty|null
+     * @return null|ServiceProviderParty
      */
     public function firstServiceProviderParty(): ?ServiceProviderParty
     {
@@ -1301,7 +1301,7 @@ class PartyType
     }
 
     /**
-     * @return ServiceProviderParty|null
+     * @return null|ServiceProviderParty
      */
     public function lastServiceProviderParty(): ?ServiceProviderParty
     {
@@ -1316,7 +1316,7 @@ class PartyType
     }
 
     /**
-     * @param ServiceProviderParty $serviceProviderParty
+     * @param  ServiceProviderParty $serviceProviderParty
      * @return static
      */
     public function addToServiceProviderParty(ServiceProviderParty $serviceProviderParty): static
@@ -1337,7 +1337,7 @@ class PartyType
     }
 
     /**
-     * @param ServiceProviderParty $serviceProviderParty
+     * @param  ServiceProviderParty $serviceProviderParty
      * @return static
      */
     public function addOnceToServiceProviderParty(ServiceProviderParty $serviceProviderParty): static
@@ -1368,7 +1368,7 @@ class PartyType
     }
 
     /**
-     * @return array<PowerOfAttorney>|null
+     * @return null|array<PowerOfAttorney>
      */
     public function getPowerOfAttorney(): ?array
     {
@@ -1376,7 +1376,7 @@ class PartyType
     }
 
     /**
-     * @param array<PowerOfAttorney>|null $powerOfAttorney
+     * @param  null|array<PowerOfAttorney> $powerOfAttorney
      * @return static
      */
     public function setPowerOfAttorney(?array $powerOfAttorney = null): static
@@ -1407,7 +1407,7 @@ class PartyType
     }
 
     /**
-     * @return PowerOfAttorney|null
+     * @return null|PowerOfAttorney
      */
     public function firstPowerOfAttorney(): ?PowerOfAttorney
     {
@@ -1422,7 +1422,7 @@ class PartyType
     }
 
     /**
-     * @return PowerOfAttorney|null
+     * @return null|PowerOfAttorney
      */
     public function lastPowerOfAttorney(): ?PowerOfAttorney
     {
@@ -1437,7 +1437,7 @@ class PartyType
     }
 
     /**
-     * @param PowerOfAttorney $powerOfAttorney
+     * @param  PowerOfAttorney $powerOfAttorney
      * @return static
      */
     public function addToPowerOfAttorney(PowerOfAttorney $powerOfAttorney): static
@@ -1458,7 +1458,7 @@ class PartyType
     }
 
     /**
-     * @param PowerOfAttorney $powerOfAttorney
+     * @param  PowerOfAttorney $powerOfAttorney
      * @return static
      */
     public function addOnceToPowerOfAttorney(PowerOfAttorney $powerOfAttorney): static
@@ -1489,7 +1489,7 @@ class PartyType
     }
 
     /**
-     * @return FinancialAccount|null
+     * @return null|FinancialAccount
      */
     public function getFinancialAccount(): ?FinancialAccount
     {
@@ -1507,7 +1507,7 @@ class PartyType
     }
 
     /**
-     * @param FinancialAccount|null $financialAccount
+     * @param  null|FinancialAccount $financialAccount
      * @return static
      */
     public function setFinancialAccount(?FinancialAccount $financialAccount = null): static

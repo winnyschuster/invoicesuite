@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CollaborationPriorityCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ExceptionResolutionCode;
@@ -15,13 +14,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdValueComparisonCode;
+use JMS\Serializer\Annotation as JMS;
 
 class ExceptionCriteriaLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class ExceptionCriteriaLineType
     private $iD;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class ExceptionCriteriaLineType
     private $note;
 
     /**
-     * @var ThresholdValueComparisonCode|null
+     * @var null|ThresholdValueComparisonCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdValueComparisonCode")
      * @JMS\Expose
@@ -55,7 +55,7 @@ class ExceptionCriteriaLineType
     private $thresholdValueComparisonCode;
 
     /**
-     * @var ThresholdQuantity|null
+     * @var null|ThresholdQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ThresholdQuantity")
      * @JMS\Expose
@@ -66,7 +66,7 @@ class ExceptionCriteriaLineType
     private $thresholdQuantity;
 
     /**
-     * @var ExceptionStatusCode|null
+     * @var null|ExceptionStatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExceptionStatusCode")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class ExceptionCriteriaLineType
     private $exceptionStatusCode;
 
     /**
-     * @var CollaborationPriorityCode|null
+     * @var null|CollaborationPriorityCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CollaborationPriorityCode")
      * @JMS\Expose
@@ -88,7 +88,7 @@ class ExceptionCriteriaLineType
     private $collaborationPriorityCode;
 
     /**
-     * @var ExceptionResolutionCode|null
+     * @var null|ExceptionResolutionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExceptionResolutionCode")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class ExceptionCriteriaLineType
     private $exceptionResolutionCode;
 
     /**
-     * @var SupplyChainActivityTypeCode|null
+     * @var null|SupplyChainActivityTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode")
      * @JMS\Expose
@@ -110,7 +110,7 @@ class ExceptionCriteriaLineType
     private $supplyChainActivityTypeCode;
 
     /**
-     * @var PerformanceMetricTypeCode|null
+     * @var null|PerformanceMetricTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode")
      * @JMS\Expose
@@ -121,7 +121,7 @@ class ExceptionCriteriaLineType
     private $performanceMetricTypeCode;
 
     /**
-     * @var EffectivePeriod|null
+     * @var null|EffectivePeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EffectivePeriod")
      * @JMS\Expose
@@ -132,7 +132,7 @@ class ExceptionCriteriaLineType
     private $effectivePeriod;
 
     /**
-     * @var array<SupplyItem>|null
+     * @var null|array<SupplyItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem>")
      * @JMS\Expose
@@ -144,7 +144,7 @@ class ExceptionCriteriaLineType
     private $supplyItem;
 
     /**
-     * @var ForecastExceptionCriterionLine|null
+     * @var null|ForecastExceptionCriterionLine
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ForecastExceptionCriterionLine")
      * @JMS\Expose
@@ -155,7 +155,7 @@ class ExceptionCriteriaLineType
     private $forecastExceptionCriterionLine;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -173,7 +173,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -194,7 +194,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -202,7 +202,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -233,7 +233,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -248,7 +248,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -263,7 +263,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -284,7 +284,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -315,7 +315,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return ThresholdValueComparisonCode|null
+     * @return null|ThresholdValueComparisonCode
      */
     public function getThresholdValueComparisonCode(): ?ThresholdValueComparisonCode
     {
@@ -333,7 +333,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param ThresholdValueComparisonCode|null $thresholdValueComparisonCode
+     * @param  null|ThresholdValueComparisonCode $thresholdValueComparisonCode
      * @return static
      */
     public function setThresholdValueComparisonCode(
@@ -355,7 +355,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return ThresholdQuantity|null
+     * @return null|ThresholdQuantity
      */
     public function getThresholdQuantity(): ?ThresholdQuantity
     {
@@ -373,7 +373,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param ThresholdQuantity|null $thresholdQuantity
+     * @param  null|ThresholdQuantity $thresholdQuantity
      * @return static
      */
     public function setThresholdQuantity(?ThresholdQuantity $thresholdQuantity = null): static
@@ -394,7 +394,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return ExceptionStatusCode|null
+     * @return null|ExceptionStatusCode
      */
     public function getExceptionStatusCode(): ?ExceptionStatusCode
     {
@@ -412,7 +412,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param ExceptionStatusCode|null $exceptionStatusCode
+     * @param  null|ExceptionStatusCode $exceptionStatusCode
      * @return static
      */
     public function setExceptionStatusCode(?ExceptionStatusCode $exceptionStatusCode = null): static
@@ -433,7 +433,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return CollaborationPriorityCode|null
+     * @return null|CollaborationPriorityCode
      */
     public function getCollaborationPriorityCode(): ?CollaborationPriorityCode
     {
@@ -451,7 +451,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param CollaborationPriorityCode|null $collaborationPriorityCode
+     * @param  null|CollaborationPriorityCode $collaborationPriorityCode
      * @return static
      */
     public function setCollaborationPriorityCode(?CollaborationPriorityCode $collaborationPriorityCode = null): static
@@ -472,7 +472,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return ExceptionResolutionCode|null
+     * @return null|ExceptionResolutionCode
      */
     public function getExceptionResolutionCode(): ?ExceptionResolutionCode
     {
@@ -490,7 +490,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param ExceptionResolutionCode|null $exceptionResolutionCode
+     * @param  null|ExceptionResolutionCode $exceptionResolutionCode
      * @return static
      */
     public function setExceptionResolutionCode(?ExceptionResolutionCode $exceptionResolutionCode = null): static
@@ -511,7 +511,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return SupplyChainActivityTypeCode|null
+     * @return null|SupplyChainActivityTypeCode
      */
     public function getSupplyChainActivityTypeCode(): ?SupplyChainActivityTypeCode
     {
@@ -529,7 +529,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param SupplyChainActivityTypeCode|null $supplyChainActivityTypeCode
+     * @param  null|SupplyChainActivityTypeCode $supplyChainActivityTypeCode
      * @return static
      */
     public function setSupplyChainActivityTypeCode(
@@ -551,7 +551,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return PerformanceMetricTypeCode|null
+     * @return null|PerformanceMetricTypeCode
      */
     public function getPerformanceMetricTypeCode(): ?PerformanceMetricTypeCode
     {
@@ -569,7 +569,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param PerformanceMetricTypeCode|null $performanceMetricTypeCode
+     * @param  null|PerformanceMetricTypeCode $performanceMetricTypeCode
      * @return static
      */
     public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): static
@@ -590,7 +590,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return EffectivePeriod|null
+     * @return null|EffectivePeriod
      */
     public function getEffectivePeriod(): ?EffectivePeriod
     {
@@ -608,7 +608,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param EffectivePeriod|null $effectivePeriod
+     * @param  null|EffectivePeriod $effectivePeriod
      * @return static
      */
     public function setEffectivePeriod(?EffectivePeriod $effectivePeriod = null): static
@@ -629,7 +629,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return array<SupplyItem>|null
+     * @return null|array<SupplyItem>
      */
     public function getSupplyItem(): ?array
     {
@@ -637,7 +637,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param array<SupplyItem>|null $supplyItem
+     * @param  null|array<SupplyItem> $supplyItem
      * @return static
      */
     public function setSupplyItem(?array $supplyItem = null): static
@@ -668,7 +668,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return SupplyItem|null
+     * @return null|SupplyItem
      */
     public function firstSupplyItem(): ?SupplyItem
     {
@@ -683,7 +683,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return SupplyItem|null
+     * @return null|SupplyItem
      */
     public function lastSupplyItem(): ?SupplyItem
     {
@@ -698,7 +698,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param SupplyItem $supplyItem
+     * @param  SupplyItem $supplyItem
      * @return static
      */
     public function addToSupplyItem(SupplyItem $supplyItem): static
@@ -719,7 +719,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param SupplyItem $supplyItem
+     * @param  SupplyItem $supplyItem
      * @return static
      */
     public function addOnceToSupplyItem(SupplyItem $supplyItem): static
@@ -750,7 +750,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @return ForecastExceptionCriterionLine|null
+     * @return null|ForecastExceptionCriterionLine
      */
     public function getForecastExceptionCriterionLine(): ?ForecastExceptionCriterionLine
     {
@@ -768,7 +768,7 @@ class ExceptionCriteriaLineType
     }
 
     /**
-     * @param ForecastExceptionCriterionLine|null $forecastExceptionCriterionLine
+     * @param  null|ForecastExceptionCriterionLine $forecastExceptionCriterionLine
      * @return static
      */
     public function setForecastExceptionCriterionLine(

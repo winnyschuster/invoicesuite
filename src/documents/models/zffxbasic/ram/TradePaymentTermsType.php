@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasic\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType;
 use horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType;
 use horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradePaymentTermsType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class TradePaymentTermsType
     private $description;
 
     /**
-     * @var DateTimeType|null
+     * @var null|DateTimeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class TradePaymentTermsType
     private $dueDateDateTime;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class TradePaymentTermsType
     private $directDebitMandateID;
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getDescription(): ?TextType
     {
@@ -66,7 +66,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @param TextType|null $description
+     * @param  null|TextType $description
      * @return static
      */
     public function setDescription(?TextType $description = null): static
@@ -87,7 +87,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return DateTimeType|null
+     * @return null|DateTimeType
      */
     public function getDueDateDateTime(): ?DateTimeType
     {
@@ -105,7 +105,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @param DateTimeType|null $dueDateDateTime
+     * @param  null|DateTimeType $dueDateDateTime
      * @return static
      */
     public function setDueDateDateTime(?DateTimeType $dueDateDateTime = null): static
@@ -126,7 +126,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getDirectDebitMandateID(): ?IDType
     {
@@ -144,7 +144,7 @@ class TradePaymentTermsType
     }
 
     /**
-     * @param IDType|null $directDebitMandateID
+     * @param  null|IDType $directDebitMandateID
      * @return static
      */
     public function setDirectDebitMandateID(?IDType $directDebitMandateID = null): static

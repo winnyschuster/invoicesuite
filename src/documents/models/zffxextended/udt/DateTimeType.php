@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\udt;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType\DateTimeStringAType;
+use JMS\Serializer\Annotation as JMS;
 
 class DateTimeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var DateTimeStringAType|null
+     * @var null|DateTimeStringAType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType\DateTimeStringAType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class DateTimeType
     private $dateTimeString;
 
     /**
-     * @return DateTimeStringAType|null
+     * @return null|DateTimeStringAType
      */
     public function getDateTimeString(): ?DateTimeStringAType
     {
@@ -42,7 +42,7 @@ class DateTimeType
     }
 
     /**
-     * @param DateTimeStringAType|null $dateTimeString
+     * @param  null|DateTimeStringAType $dateTimeString
      * @return static
      */
     public function setDateTimeString(?DateTimeStringAType $dateTimeString = null): static

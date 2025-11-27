@@ -5,16 +5,16 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
+use JMS\Serializer\Annotation as JMS;
 
 class PickupType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class PickupType
     private $iD;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class PickupType
     private $actualPickupDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class PickupType
     private $actualPickupTime;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class PickupType
     private $earliestPickupDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class PickupType
     private $earliestPickupTime;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class PickupType
     private $latestPickupDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class PickupType
     private $latestPickupTime;
 
     /**
-     * @var PickupLocation|null
+     * @var null|PickupLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PickupLocation")
      * @JMS\Expose
@@ -102,7 +102,7 @@ class PickupType
     private $pickupLocation;
 
     /**
-     * @var PickupParty|null
+     * @var null|PickupParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PickupParty")
      * @JMS\Expose
@@ -113,7 +113,7 @@ class PickupType
     private $pickupParty;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -131,7 +131,7 @@ class PickupType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -152,7 +152,7 @@ class PickupType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getActualPickupDate(): ?DateTimeInterface
     {
@@ -160,7 +160,7 @@ class PickupType
     }
 
     /**
-     * @param DateTimeInterface|null $actualPickupDate
+     * @param  null|DateTimeInterface $actualPickupDate
      * @return static
      */
     public function setActualPickupDate(?DateTimeInterface $actualPickupDate = null): static
@@ -181,7 +181,7 @@ class PickupType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getActualPickupTime(): ?DateTimeInterface
     {
@@ -189,7 +189,7 @@ class PickupType
     }
 
     /**
-     * @param DateTimeInterface|null $actualPickupTime
+     * @param  null|DateTimeInterface $actualPickupTime
      * @return static
      */
     public function setActualPickupTime(?DateTimeInterface $actualPickupTime = null): static
@@ -210,7 +210,7 @@ class PickupType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getEarliestPickupDate(): ?DateTimeInterface
     {
@@ -218,7 +218,7 @@ class PickupType
     }
 
     /**
-     * @param DateTimeInterface|null $earliestPickupDate
+     * @param  null|DateTimeInterface $earliestPickupDate
      * @return static
      */
     public function setEarliestPickupDate(?DateTimeInterface $earliestPickupDate = null): static
@@ -239,7 +239,7 @@ class PickupType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getEarliestPickupTime(): ?DateTimeInterface
     {
@@ -247,7 +247,7 @@ class PickupType
     }
 
     /**
-     * @param DateTimeInterface|null $earliestPickupTime
+     * @param  null|DateTimeInterface $earliestPickupTime
      * @return static
      */
     public function setEarliestPickupTime(?DateTimeInterface $earliestPickupTime = null): static
@@ -268,7 +268,7 @@ class PickupType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getLatestPickupDate(): ?DateTimeInterface
     {
@@ -276,7 +276,7 @@ class PickupType
     }
 
     /**
-     * @param DateTimeInterface|null $latestPickupDate
+     * @param  null|DateTimeInterface $latestPickupDate
      * @return static
      */
     public function setLatestPickupDate(?DateTimeInterface $latestPickupDate = null): static
@@ -297,7 +297,7 @@ class PickupType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getLatestPickupTime(): ?DateTimeInterface
     {
@@ -305,7 +305,7 @@ class PickupType
     }
 
     /**
-     * @param DateTimeInterface|null $latestPickupTime
+     * @param  null|DateTimeInterface $latestPickupTime
      * @return static
      */
     public function setLatestPickupTime(?DateTimeInterface $latestPickupTime = null): static
@@ -326,7 +326,7 @@ class PickupType
     }
 
     /**
-     * @return PickupLocation|null
+     * @return null|PickupLocation
      */
     public function getPickupLocation(): ?PickupLocation
     {
@@ -344,7 +344,7 @@ class PickupType
     }
 
     /**
-     * @param PickupLocation|null $pickupLocation
+     * @param  null|PickupLocation $pickupLocation
      * @return static
      */
     public function setPickupLocation(?PickupLocation $pickupLocation = null): static
@@ -365,7 +365,7 @@ class PickupType
     }
 
     /**
-     * @return PickupParty|null
+     * @return null|PickupParty
      */
     public function getPickupParty(): ?PickupParty
     {
@@ -383,7 +383,7 @@ class PickupType
     }
 
     /**
-     * @param PickupParty|null $pickupParty
+     * @param  null|PickupParty $pickupParty
      * @return static
      */
     public function setPickupParty(?PickupParty $pickupParty = null): static

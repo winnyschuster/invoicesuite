@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cct;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
 
 class QuantityType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var float|null
+     * @var null|float
      * @JMS\Groups({"ubl"})
      * @JMS\Type("float")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class QuantityType
     private $value;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class QuantityType
     private $unitCode;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class QuantityType
     private $unitCodeListID;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class QuantityType
     private $unitCodeListAgencyID;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class QuantityType
     private $unitCodeListAgencyName;
 
     /**
-     * @return float|null
+     * @return null|float
      */
     public function getValue(): ?float
     {
@@ -76,7 +76,7 @@ class QuantityType
     }
 
     /**
-     * @param float|null $value
+     * @param  null|float $value
      * @return static
      */
     public function setValue(?float $value = null): static
@@ -97,7 +97,7 @@ class QuantityType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getUnitCode(): ?string
     {
@@ -105,7 +105,7 @@ class QuantityType
     }
 
     /**
-     * @param string|null $unitCode
+     * @param  null|string $unitCode
      * @return static
      */
     public function setUnitCode(?string $unitCode = null): static
@@ -126,7 +126,7 @@ class QuantityType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getUnitCodeListID(): ?string
     {
@@ -134,7 +134,7 @@ class QuantityType
     }
 
     /**
-     * @param string|null $unitCodeListID
+     * @param  null|string $unitCodeListID
      * @return static
      */
     public function setUnitCodeListID(?string $unitCodeListID = null): static
@@ -155,7 +155,7 @@ class QuantityType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getUnitCodeListAgencyID(): ?string
     {
@@ -163,7 +163,7 @@ class QuantityType
     }
 
     /**
-     * @param string|null $unitCodeListAgencyID
+     * @param  null|string $unitCodeListAgencyID
      * @return static
      */
     public function setUnitCodeListAgencyID(?string $unitCodeListAgencyID = null): static
@@ -184,7 +184,7 @@ class QuantityType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getUnitCodeListAgencyName(): ?string
     {
@@ -192,7 +192,7 @@ class QuantityType
     }
 
     /**
-     * @param string|null $unitCodeListAgencyName
+     * @param  null|string $unitCodeListAgencyName
      * @return static
      */
     public function setUnitCodeListAgencyName(?string $unitCodeListAgencyName = null): static

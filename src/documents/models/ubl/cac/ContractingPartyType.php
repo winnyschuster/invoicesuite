@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cac\ContractingPartyType as ContractingPartyType1;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BuyerProfileURI;
+use JMS\Serializer\Annotation as JMS;
 
 class ContractingPartyType extends ContractingPartyTypeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var BuyerProfileURI|null
+     * @var null|BuyerProfileURI
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BuyerProfileURI")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     private $buyerProfileURI;
 
     /**
-     * @var array<\horstoeko\invoicesuite\documents\models\ubl\cac\ContractingPartyType>|null
+     * @var null|array<ContractingPartyType1>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ContractingPartyType>")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     private $contractingPartyType;
 
     /**
-     * @var array<ContractingActivity>|null
+     * @var null|array<ContractingActivity>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ContractingActivity>")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     private $contractingActivity;
 
     /**
-     * @var Party|null
+     * @var null|Party
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Party")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     private $party;
 
     /**
-     * @return BuyerProfileURI|null
+     * @return null|BuyerProfileURI
      */
     public function getBuyerProfileURI(): ?BuyerProfileURI
     {
@@ -78,7 +78,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @param BuyerProfileURI|null $buyerProfileURI
+     * @param  null|BuyerProfileURI $buyerProfileURI
      * @return static
      */
     public function setBuyerProfileURI(?BuyerProfileURI $buyerProfileURI = null): static
@@ -99,7 +99,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @return array<\horstoeko\invoicesuite\documents\models\ubl\cac\ContractingPartyType>|null
+     * @return null|array<ContractingPartyType1>
      */
     public function getContractingPartyType(): ?array
     {
@@ -107,7 +107,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @param array<\horstoeko\invoicesuite\documents\models\ubl\cac\ContractingPartyType>|null $contractingPartyType
+     * @param  null|array<ContractingPartyType1> $contractingPartyType
      * @return static
      */
     public function setContractingPartyType(?array $contractingPartyType = null): static
@@ -138,7 +138,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractingPartyType|null
+     * @return null|ContractingPartyType1
      */
     public function firstContractingPartyType(): ?ContractingPartyType1
     {
@@ -153,7 +153,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractingPartyType|null
+     * @return null|ContractingPartyType1
      */
     public function lastContractingPartyType(): ?ContractingPartyType1
     {
@@ -168,7 +168,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ContractingPartyType $contractingPartyType
+     * @param  ContractingPartyType1 $contractingPartyType
      * @return static
      */
     public function addToContractingPartyType(ContractingPartyType1 $contractingPartyType): static
@@ -179,7 +179,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractingPartyType
+     * @return ContractingPartyType1
      */
     public function addToContractingPartyTypeWithCreate(): ContractingPartyType1
     {
@@ -189,7 +189,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cac\ContractingPartyType $contractingPartyType
+     * @param  ContractingPartyType1 $contractingPartyType
      * @return static
      */
     public function addOnceToContractingPartyType(ContractingPartyType1 $contractingPartyType): static
@@ -204,7 +204,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cac\ContractingPartyType
+     * @return ContractingPartyType1
      */
     public function addOnceToContractingPartyTypeWithCreate(): ContractingPartyType1
     {
@@ -220,7 +220,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @return array<ContractingActivity>|null
+     * @return null|array<ContractingActivity>
      */
     public function getContractingActivity(): ?array
     {
@@ -228,7 +228,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @param array<ContractingActivity>|null $contractingActivity
+     * @param  null|array<ContractingActivity> $contractingActivity
      * @return static
      */
     public function setContractingActivity(?array $contractingActivity = null): static
@@ -259,7 +259,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @return ContractingActivity|null
+     * @return null|ContractingActivity
      */
     public function firstContractingActivity(): ?ContractingActivity
     {
@@ -274,7 +274,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @return ContractingActivity|null
+     * @return null|ContractingActivity
      */
     public function lastContractingActivity(): ?ContractingActivity
     {
@@ -289,7 +289,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @param ContractingActivity $contractingActivity
+     * @param  ContractingActivity $contractingActivity
      * @return static
      */
     public function addToContractingActivity(ContractingActivity $contractingActivity): static
@@ -310,7 +310,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @param ContractingActivity $contractingActivity
+     * @param  ContractingActivity $contractingActivity
      * @return static
      */
     public function addOnceToContractingActivity(ContractingActivity $contractingActivity): static
@@ -341,7 +341,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @return Party|null
+     * @return null|Party
      */
     public function getParty(): ?Party
     {
@@ -359,7 +359,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     }
 
     /**
-     * @param Party|null $party
+     * @param  null|Party $party
      * @return static
      */
     public function setParty(?Party $party = null): static

@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
+use JMS\Serializer\Annotation as JMS;
 
 class AppealTermsType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class AppealTermsType
     private $description;
 
     /**
-     * @var PresentationPeriod|null
+     * @var null|PresentationPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PresentationPeriod")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class AppealTermsType
     private $presentationPeriod;
 
     /**
-     * @var AppealInformationParty|null
+     * @var null|AppealInformationParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AppealInformationParty")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class AppealTermsType
     private $appealInformationParty;
 
     /**
-     * @var AppealReceiverParty|null
+     * @var null|AppealReceiverParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AppealReceiverParty")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class AppealTermsType
     private $appealReceiverParty;
 
     /**
-     * @var MediationParty|null
+     * @var null|MediationParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MediationParty")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class AppealTermsType
     private $mediationParty;
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -77,7 +77,7 @@ class AppealTermsType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -108,7 +108,7 @@ class AppealTermsType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -123,7 +123,7 @@ class AppealTermsType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -138,7 +138,7 @@ class AppealTermsType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -159,7 +159,7 @@ class AppealTermsType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -190,7 +190,7 @@ class AppealTermsType
     }
 
     /**
-     * @return PresentationPeriod|null
+     * @return null|PresentationPeriod
      */
     public function getPresentationPeriod(): ?PresentationPeriod
     {
@@ -208,7 +208,7 @@ class AppealTermsType
     }
 
     /**
-     * @param PresentationPeriod|null $presentationPeriod
+     * @param  null|PresentationPeriod $presentationPeriod
      * @return static
      */
     public function setPresentationPeriod(?PresentationPeriod $presentationPeriod = null): static
@@ -229,7 +229,7 @@ class AppealTermsType
     }
 
     /**
-     * @return AppealInformationParty|null
+     * @return null|AppealInformationParty
      */
     public function getAppealInformationParty(): ?AppealInformationParty
     {
@@ -247,7 +247,7 @@ class AppealTermsType
     }
 
     /**
-     * @param AppealInformationParty|null $appealInformationParty
+     * @param  null|AppealInformationParty $appealInformationParty
      * @return static
      */
     public function setAppealInformationParty(?AppealInformationParty $appealInformationParty = null): static
@@ -268,7 +268,7 @@ class AppealTermsType
     }
 
     /**
-     * @return AppealReceiverParty|null
+     * @return null|AppealReceiverParty
      */
     public function getAppealReceiverParty(): ?AppealReceiverParty
     {
@@ -286,7 +286,7 @@ class AppealTermsType
     }
 
     /**
-     * @param AppealReceiverParty|null $appealReceiverParty
+     * @param  null|AppealReceiverParty $appealReceiverParty
      * @return static
      */
     public function setAppealReceiverParty(?AppealReceiverParty $appealReceiverParty = null): static
@@ -307,7 +307,7 @@ class AppealTermsType
     }
 
     /**
-     * @return MediationParty|null
+     * @return null|MediationParty
      */
     public function getMediationParty(): ?MediationParty
     {
@@ -325,7 +325,7 @@ class AppealTermsType
     }
 
     /**
-     * @param MediationParty|null $mediationParty
+     * @param  null|MediationParty $mediationParty
      * @return static
      */
     public function setMediationParty(?MediationParty $mediationParty = null): static

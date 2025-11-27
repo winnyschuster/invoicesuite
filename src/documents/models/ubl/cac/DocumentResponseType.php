@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class DocumentResponseType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Response|null
+     * @var null|Response
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Response")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class DocumentResponseType
     private $response;
 
     /**
-     * @var array<DocumentReference>|null
+     * @var null|array<DocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class DocumentResponseType
     private $documentReference;
 
     /**
-     * @var IssuerParty|null
+     * @var null|IssuerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class DocumentResponseType
     private $issuerParty;
 
     /**
-     * @var RecipientParty|null
+     * @var null|RecipientParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RecipientParty")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class DocumentResponseType
     private $recipientParty;
 
     /**
-     * @var array<LineResponse>|null
+     * @var null|array<LineResponse>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\LineResponse>")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class DocumentResponseType
     private $lineResponse;
 
     /**
-     * @return Response|null
+     * @return null|Response
      */
     public function getResponse(): ?Response
     {
@@ -87,7 +87,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param Response|null $response
+     * @param  null|Response $response
      * @return static
      */
     public function setResponse(?Response $response = null): static
@@ -108,7 +108,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return array<DocumentReference>|null
+     * @return null|array<DocumentReference>
      */
     public function getDocumentReference(): ?array
     {
@@ -116,7 +116,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param array<DocumentReference>|null $documentReference
+     * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
     public function setDocumentReference(?array $documentReference = null): static
@@ -147,7 +147,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -162,7 +162,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -177,7 +177,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addToDocumentReference(DocumentReference $documentReference): static
@@ -198,7 +198,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): static
@@ -229,7 +229,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return IssuerParty|null
+     * @return null|IssuerParty
      */
     public function getIssuerParty(): ?IssuerParty
     {
@@ -247,7 +247,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param IssuerParty|null $issuerParty
+     * @param  null|IssuerParty $issuerParty
      * @return static
      */
     public function setIssuerParty(?IssuerParty $issuerParty = null): static
@@ -268,7 +268,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return RecipientParty|null
+     * @return null|RecipientParty
      */
     public function getRecipientParty(): ?RecipientParty
     {
@@ -286,7 +286,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param RecipientParty|null $recipientParty
+     * @param  null|RecipientParty $recipientParty
      * @return static
      */
     public function setRecipientParty(?RecipientParty $recipientParty = null): static
@@ -307,7 +307,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return array<LineResponse>|null
+     * @return null|array<LineResponse>
      */
     public function getLineResponse(): ?array
     {
@@ -315,7 +315,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param array<LineResponse>|null $lineResponse
+     * @param  null|array<LineResponse> $lineResponse
      * @return static
      */
     public function setLineResponse(?array $lineResponse = null): static
@@ -346,7 +346,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return LineResponse|null
+     * @return null|LineResponse
      */
     public function firstLineResponse(): ?LineResponse
     {
@@ -361,7 +361,7 @@ class DocumentResponseType
     }
 
     /**
-     * @return LineResponse|null
+     * @return null|LineResponse
      */
     public function lastLineResponse(): ?LineResponse
     {
@@ -376,7 +376,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param LineResponse $lineResponse
+     * @param  LineResponse $lineResponse
      * @return static
      */
     public function addToLineResponse(LineResponse $lineResponse): static
@@ -397,7 +397,7 @@ class DocumentResponseType
     }
 
     /**
-     * @param LineResponse $lineResponse
+     * @param  LineResponse $lineResponse
      * @return static
      */
     public function addOnceToLineResponse(LineResponse $lineResponse): static

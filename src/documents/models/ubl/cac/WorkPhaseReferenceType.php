@@ -5,19 +5,19 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ProgressPercent;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhase;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhaseCode;
+use JMS\Serializer\Annotation as JMS;
 
 class WorkPhaseReferenceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class WorkPhaseReferenceType
     private $iD;
 
     /**
-     * @var WorkPhaseCode|null
+     * @var null|WorkPhaseCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhaseCode")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class WorkPhaseReferenceType
     private $workPhaseCode;
 
     /**
-     * @var array<WorkPhase>|null
+     * @var null|array<WorkPhase>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\WorkPhase>")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class WorkPhaseReferenceType
     private $workPhase;
 
     /**
-     * @var ProgressPercent|null
+     * @var null|ProgressPercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProgressPercent")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class WorkPhaseReferenceType
     private $progressPercent;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class WorkPhaseReferenceType
     private $startDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class WorkPhaseReferenceType
     private $endDate;
 
     /**
-     * @var array<WorkOrderDocumentReference>|null
+     * @var null|array<WorkOrderDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\WorkOrderDocumentReference>")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class WorkPhaseReferenceType
     private $workOrderDocumentReference;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -114,7 +114,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -135,7 +135,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return WorkPhaseCode|null
+     * @return null|WorkPhaseCode
      */
     public function getWorkPhaseCode(): ?WorkPhaseCode
     {
@@ -153,7 +153,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param WorkPhaseCode|null $workPhaseCode
+     * @param  null|WorkPhaseCode $workPhaseCode
      * @return static
      */
     public function setWorkPhaseCode(?WorkPhaseCode $workPhaseCode = null): static
@@ -174,7 +174,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return array<WorkPhase>|null
+     * @return null|array<WorkPhase>
      */
     public function getWorkPhase(): ?array
     {
@@ -182,7 +182,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param array<WorkPhase>|null $workPhase
+     * @param  null|array<WorkPhase> $workPhase
      * @return static
      */
     public function setWorkPhase(?array $workPhase = null): static
@@ -213,7 +213,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return WorkPhase|null
+     * @return null|WorkPhase
      */
     public function firstWorkPhase(): ?WorkPhase
     {
@@ -228,7 +228,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return WorkPhase|null
+     * @return null|WorkPhase
      */
     public function lastWorkPhase(): ?WorkPhase
     {
@@ -243,7 +243,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param WorkPhase $workPhase
+     * @param  WorkPhase $workPhase
      * @return static
      */
     public function addToWorkPhase(WorkPhase $workPhase): static
@@ -264,7 +264,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param WorkPhase $workPhase
+     * @param  WorkPhase $workPhase
      * @return static
      */
     public function addOnceToWorkPhase(WorkPhase $workPhase): static
@@ -295,7 +295,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return ProgressPercent|null
+     * @return null|ProgressPercent
      */
     public function getProgressPercent(): ?ProgressPercent
     {
@@ -313,7 +313,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param ProgressPercent|null $progressPercent
+     * @param  null|ProgressPercent $progressPercent
      * @return static
      */
     public function setProgressPercent(?ProgressPercent $progressPercent = null): static
@@ -334,7 +334,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getStartDate(): ?DateTimeInterface
     {
@@ -342,7 +342,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param DateTimeInterface|null $startDate
+     * @param  null|DateTimeInterface $startDate
      * @return static
      */
     public function setStartDate(?DateTimeInterface $startDate = null): static
@@ -363,7 +363,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getEndDate(): ?DateTimeInterface
     {
@@ -371,7 +371,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param DateTimeInterface|null $endDate
+     * @param  null|DateTimeInterface $endDate
      * @return static
      */
     public function setEndDate(?DateTimeInterface $endDate = null): static
@@ -392,7 +392,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return array<WorkOrderDocumentReference>|null
+     * @return null|array<WorkOrderDocumentReference>
      */
     public function getWorkOrderDocumentReference(): ?array
     {
@@ -400,7 +400,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param array<WorkOrderDocumentReference>|null $workOrderDocumentReference
+     * @param  null|array<WorkOrderDocumentReference> $workOrderDocumentReference
      * @return static
      */
     public function setWorkOrderDocumentReference(?array $workOrderDocumentReference = null): static
@@ -431,7 +431,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return WorkOrderDocumentReference|null
+     * @return null|WorkOrderDocumentReference
      */
     public function firstWorkOrderDocumentReference(): ?WorkOrderDocumentReference
     {
@@ -446,7 +446,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @return WorkOrderDocumentReference|null
+     * @return null|WorkOrderDocumentReference
      */
     public function lastWorkOrderDocumentReference(): ?WorkOrderDocumentReference
     {
@@ -461,7 +461,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param WorkOrderDocumentReference $workOrderDocumentReference
+     * @param  WorkOrderDocumentReference $workOrderDocumentReference
      * @return static
      */
     public function addToWorkOrderDocumentReference(WorkOrderDocumentReference $workOrderDocumentReference): static
@@ -482,7 +482,7 @@ class WorkPhaseReferenceType
     }
 
     /**
-     * @param WorkOrderDocumentReference $workOrderDocumentReference
+     * @param  WorkOrderDocumentReference $workOrderDocumentReference
      * @return static
      */
     public function addOnceToWorkOrderDocumentReference(WorkOrderDocumentReference $workOrderDocumentReference): static

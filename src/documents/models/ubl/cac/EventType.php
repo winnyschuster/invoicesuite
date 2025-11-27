@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\IdentificationID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class EventType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IdentificationID|null
+     * @var null|IdentificationID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\IdentificationID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class EventType
     private $identificationID;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class EventType
     private $occurrenceDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class EventType
     private $occurrenceTime;
 
     /**
-     * @var TypeCode|null
+     * @var null|TypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TypeCode")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class EventType
     private $typeCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class EventType
     private $description;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class EventType
     private $completionIndicator;
 
     /**
-     * @var array<CurrentStatus>|null
+     * @var null|array<CurrentStatus>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\CurrentStatus>")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class EventType
     private $currentStatus;
 
     /**
-     * @var array<Contact>|null
+     * @var null|array<Contact>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Contact>")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class EventType
     private $contact;
 
     /**
-     * @var OccurenceLocation|null
+     * @var null|OccurenceLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OccurenceLocation")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class EventType
     private $occurenceLocation;
 
     /**
-     * @return IdentificationID|null
+     * @return null|IdentificationID
      */
     public function getIdentificationID(): ?IdentificationID
     {
@@ -136,7 +136,7 @@ class EventType
     }
 
     /**
-     * @param IdentificationID|null $identificationID
+     * @param  null|IdentificationID $identificationID
      * @return static
      */
     public function setIdentificationID(?IdentificationID $identificationID = null): static
@@ -157,7 +157,7 @@ class EventType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getOccurrenceDate(): ?DateTimeInterface
     {
@@ -165,7 +165,7 @@ class EventType
     }
 
     /**
-     * @param DateTimeInterface|null $occurrenceDate
+     * @param  null|DateTimeInterface $occurrenceDate
      * @return static
      */
     public function setOccurrenceDate(?DateTimeInterface $occurrenceDate = null): static
@@ -186,7 +186,7 @@ class EventType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getOccurrenceTime(): ?DateTimeInterface
     {
@@ -194,7 +194,7 @@ class EventType
     }
 
     /**
-     * @param DateTimeInterface|null $occurrenceTime
+     * @param  null|DateTimeInterface $occurrenceTime
      * @return static
      */
     public function setOccurrenceTime(?DateTimeInterface $occurrenceTime = null): static
@@ -215,7 +215,7 @@ class EventType
     }
 
     /**
-     * @return TypeCode|null
+     * @return null|TypeCode
      */
     public function getTypeCode(): ?TypeCode
     {
@@ -233,7 +233,7 @@ class EventType
     }
 
     /**
-     * @param TypeCode|null $typeCode
+     * @param  null|TypeCode $typeCode
      * @return static
      */
     public function setTypeCode(?TypeCode $typeCode = null): static
@@ -254,7 +254,7 @@ class EventType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -262,7 +262,7 @@ class EventType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -293,7 +293,7 @@ class EventType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -308,7 +308,7 @@ class EventType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -323,7 +323,7 @@ class EventType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -344,7 +344,7 @@ class EventType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -375,7 +375,7 @@ class EventType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getCompletionIndicator(): ?bool
     {
@@ -383,7 +383,7 @@ class EventType
     }
 
     /**
-     * @param bool|null $completionIndicator
+     * @param  null|bool $completionIndicator
      * @return static
      */
     public function setCompletionIndicator(?bool $completionIndicator = null): static
@@ -404,7 +404,7 @@ class EventType
     }
 
     /**
-     * @return array<CurrentStatus>|null
+     * @return null|array<CurrentStatus>
      */
     public function getCurrentStatus(): ?array
     {
@@ -412,7 +412,7 @@ class EventType
     }
 
     /**
-     * @param array<CurrentStatus>|null $currentStatus
+     * @param  null|array<CurrentStatus> $currentStatus
      * @return static
      */
     public function setCurrentStatus(?array $currentStatus = null): static
@@ -443,7 +443,7 @@ class EventType
     }
 
     /**
-     * @return CurrentStatus|null
+     * @return null|CurrentStatus
      */
     public function firstCurrentStatus(): ?CurrentStatus
     {
@@ -458,7 +458,7 @@ class EventType
     }
 
     /**
-     * @return CurrentStatus|null
+     * @return null|CurrentStatus
      */
     public function lastCurrentStatus(): ?CurrentStatus
     {
@@ -473,7 +473,7 @@ class EventType
     }
 
     /**
-     * @param CurrentStatus $currentStatus
+     * @param  CurrentStatus $currentStatus
      * @return static
      */
     public function addToCurrentStatus(CurrentStatus $currentStatus): static
@@ -494,7 +494,7 @@ class EventType
     }
 
     /**
-     * @param CurrentStatus $currentStatus
+     * @param  CurrentStatus $currentStatus
      * @return static
      */
     public function addOnceToCurrentStatus(CurrentStatus $currentStatus): static
@@ -525,7 +525,7 @@ class EventType
     }
 
     /**
-     * @return array<Contact>|null
+     * @return null|array<Contact>
      */
     public function getContact(): ?array
     {
@@ -533,7 +533,7 @@ class EventType
     }
 
     /**
-     * @param array<Contact>|null $contact
+     * @param  null|array<Contact> $contact
      * @return static
      */
     public function setContact(?array $contact = null): static
@@ -564,7 +564,7 @@ class EventType
     }
 
     /**
-     * @return Contact|null
+     * @return null|Contact
      */
     public function firstContact(): ?Contact
     {
@@ -579,7 +579,7 @@ class EventType
     }
 
     /**
-     * @return Contact|null
+     * @return null|Contact
      */
     public function lastContact(): ?Contact
     {
@@ -594,7 +594,7 @@ class EventType
     }
 
     /**
-     * @param Contact $contact
+     * @param  Contact $contact
      * @return static
      */
     public function addToContact(Contact $contact): static
@@ -615,7 +615,7 @@ class EventType
     }
 
     /**
-     * @param Contact $contact
+     * @param  Contact $contact
      * @return static
      */
     public function addOnceToContact(Contact $contact): static
@@ -646,7 +646,7 @@ class EventType
     }
 
     /**
-     * @return OccurenceLocation|null
+     * @return null|OccurenceLocation
      */
     public function getOccurenceLocation(): ?OccurenceLocation
     {
@@ -664,7 +664,7 @@ class EventType
     }
 
     /**
-     * @param OccurenceLocation|null $occurenceLocation
+     * @param  null|OccurenceLocation $occurenceLocation
      * @return static
      */
     public function setOccurenceLocation(?OccurenceLocation $occurenceLocation = null): static

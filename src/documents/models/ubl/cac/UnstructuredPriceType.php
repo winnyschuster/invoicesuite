@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TimeAmount;
+use JMS\Serializer\Annotation as JMS;
 
 class UnstructuredPriceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var PriceAmount|null
+     * @var null|PriceAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class UnstructuredPriceType
     private $priceAmount;
 
     /**
-     * @var TimeAmount|null
+     * @var null|TimeAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TimeAmount")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class UnstructuredPriceType
     private $timeAmount;
 
     /**
-     * @return PriceAmount|null
+     * @return null|PriceAmount
      */
     public function getPriceAmount(): ?PriceAmount
     {
@@ -54,7 +54,7 @@ class UnstructuredPriceType
     }
 
     /**
-     * @param PriceAmount|null $priceAmount
+     * @param  null|PriceAmount $priceAmount
      * @return static
      */
     public function setPriceAmount(?PriceAmount $priceAmount = null): static
@@ -75,7 +75,7 @@ class UnstructuredPriceType
     }
 
     /**
-     * @return TimeAmount|null
+     * @return null|TimeAmount
      */
     public function getTimeAmount(): ?TimeAmount
     {
@@ -93,7 +93,7 @@ class UnstructuredPriceType
     }
 
     /**
-     * @param TimeAmount|null $timeAmount
+     * @param  null|TimeAmount $timeAmount
      * @return static
      */
     public function setTimeAmount(?TimeAmount $timeAmount = null): static

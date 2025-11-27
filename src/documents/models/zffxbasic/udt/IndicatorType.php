@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasic\udt;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class IndicatorType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"zffx"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class IndicatorType
     private $indicator;
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getIndicator(): ?bool
     {
@@ -31,7 +31,7 @@ class IndicatorType
     }
 
     /**
-     * @param bool|null $indicator
+     * @param  null|bool $indicator
      * @return static
      */
     public function setIndicator(?bool $indicator = null): static

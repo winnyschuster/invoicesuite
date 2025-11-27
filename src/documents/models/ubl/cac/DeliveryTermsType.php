@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Amount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LossRisk;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LossRiskResponsibilityCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTerms;
+use JMS\Serializer\Annotation as JMS;
 
 class DeliveryTermsType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class DeliveryTermsType
     private $iD;
 
     /**
-     * @var array<SpecialTerms>|null
+     * @var null|array<SpecialTerms>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialTerms>")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class DeliveryTermsType
     private $specialTerms;
 
     /**
-     * @var LossRiskResponsibilityCode|null
+     * @var null|LossRiskResponsibilityCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LossRiskResponsibilityCode")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class DeliveryTermsType
     private $lossRiskResponsibilityCode;
 
     /**
-     * @var array<LossRisk>|null
+     * @var null|array<LossRisk>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\LossRisk>")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class DeliveryTermsType
     private $lossRisk;
 
     /**
-     * @var Amount|null
+     * @var null|Amount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class DeliveryTermsType
     private $amount;
 
     /**
-     * @var DeliveryLocation|null
+     * @var null|DeliveryLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryLocation")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class DeliveryTermsType
     private $deliveryLocation;
 
     /**
-     * @var AllowanceCharge|null
+     * @var null|AllowanceCharge
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class DeliveryTermsType
     private $allowanceCharge;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -114,7 +114,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -135,7 +135,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return array<SpecialTerms>|null
+     * @return null|array<SpecialTerms>
      */
     public function getSpecialTerms(): ?array
     {
@@ -143,7 +143,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param array<SpecialTerms>|null $specialTerms
+     * @param  null|array<SpecialTerms> $specialTerms
      * @return static
      */
     public function setSpecialTerms(?array $specialTerms = null): static
@@ -174,7 +174,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return SpecialTerms|null
+     * @return null|SpecialTerms
      */
     public function firstSpecialTerms(): ?SpecialTerms
     {
@@ -189,7 +189,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return SpecialTerms|null
+     * @return null|SpecialTerms
      */
     public function lastSpecialTerms(): ?SpecialTerms
     {
@@ -204,7 +204,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param SpecialTerms $specialTerms
+     * @param  SpecialTerms $specialTerms
      * @return static
      */
     public function addToSpecialTerms(SpecialTerms $specialTerms): static
@@ -225,7 +225,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param SpecialTerms $specialTerms
+     * @param  SpecialTerms $specialTerms
      * @return static
      */
     public function addOnceToSpecialTerms(SpecialTerms $specialTerms): static
@@ -256,7 +256,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return LossRiskResponsibilityCode|null
+     * @return null|LossRiskResponsibilityCode
      */
     public function getLossRiskResponsibilityCode(): ?LossRiskResponsibilityCode
     {
@@ -274,7 +274,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param LossRiskResponsibilityCode|null $lossRiskResponsibilityCode
+     * @param  null|LossRiskResponsibilityCode $lossRiskResponsibilityCode
      * @return static
      */
     public function setLossRiskResponsibilityCode(
@@ -296,7 +296,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return array<LossRisk>|null
+     * @return null|array<LossRisk>
      */
     public function getLossRisk(): ?array
     {
@@ -304,7 +304,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param array<LossRisk>|null $lossRisk
+     * @param  null|array<LossRisk> $lossRisk
      * @return static
      */
     public function setLossRisk(?array $lossRisk = null): static
@@ -335,7 +335,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return LossRisk|null
+     * @return null|LossRisk
      */
     public function firstLossRisk(): ?LossRisk
     {
@@ -350,7 +350,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return LossRisk|null
+     * @return null|LossRisk
      */
     public function lastLossRisk(): ?LossRisk
     {
@@ -365,7 +365,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param LossRisk $lossRisk
+     * @param  LossRisk $lossRisk
      * @return static
      */
     public function addToLossRisk(LossRisk $lossRisk): static
@@ -386,7 +386,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param LossRisk $lossRisk
+     * @param  LossRisk $lossRisk
      * @return static
      */
     public function addOnceToLossRisk(LossRisk $lossRisk): static
@@ -417,7 +417,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return Amount|null
+     * @return null|Amount
      */
     public function getAmount(): ?Amount
     {
@@ -435,7 +435,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param Amount|null $amount
+     * @param  null|Amount $amount
      * @return static
      */
     public function setAmount(?Amount $amount = null): static
@@ -456,7 +456,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return DeliveryLocation|null
+     * @return null|DeliveryLocation
      */
     public function getDeliveryLocation(): ?DeliveryLocation
     {
@@ -474,7 +474,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param DeliveryLocation|null $deliveryLocation
+     * @param  null|DeliveryLocation $deliveryLocation
      * @return static
      */
     public function setDeliveryLocation(?DeliveryLocation $deliveryLocation = null): static
@@ -495,7 +495,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function getAllowanceCharge(): ?AllowanceCharge
     {
@@ -513,7 +513,7 @@ class DeliveryTermsType
     }
 
     /**
-     * @param AllowanceCharge|null $allowanceCharge
+     * @param  null|AllowanceCharge $allowanceCharge
      * @return static
      */
     public function setAllowanceCharge(?AllowanceCharge $allowanceCharge = null): static

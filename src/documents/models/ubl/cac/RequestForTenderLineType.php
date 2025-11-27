@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
@@ -15,13 +14,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
+use JMS\Serializer\Annotation as JMS;
 
 class RequestForTenderLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class RequestForTenderLineType
     private $iD;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class RequestForTenderLineType
     private $uUID;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -55,7 +55,7 @@ class RequestForTenderLineType
     private $note;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -66,7 +66,7 @@ class RequestForTenderLineType
     private $quantity;
 
     /**
-     * @var MinimumQuantity|null
+     * @var null|MinimumQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class RequestForTenderLineType
     private $minimumQuantity;
 
     /**
-     * @var MaximumQuantity|null
+     * @var null|MaximumQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity")
      * @JMS\Expose
@@ -88,7 +88,7 @@ class RequestForTenderLineType
     private $maximumQuantity;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class RequestForTenderLineType
     private $taxIncludedIndicator;
 
     /**
-     * @var MinimumAmount|null
+     * @var null|MinimumAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount")
      * @JMS\Expose
@@ -110,7 +110,7 @@ class RequestForTenderLineType
     private $minimumAmount;
 
     /**
-     * @var MaximumAmount|null
+     * @var null|MaximumAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount")
      * @JMS\Expose
@@ -121,7 +121,7 @@ class RequestForTenderLineType
     private $maximumAmount;
 
     /**
-     * @var EstimatedAmount|null
+     * @var null|EstimatedAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedAmount")
      * @JMS\Expose
@@ -132,7 +132,7 @@ class RequestForTenderLineType
     private $estimatedAmount;
 
     /**
-     * @var array<DocumentReference>|null
+     * @var null|array<DocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -144,7 +144,7 @@ class RequestForTenderLineType
     private $documentReference;
 
     /**
-     * @var array<DeliveryPeriod>|null
+     * @var null|array<DeliveryPeriod>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryPeriod>")
      * @JMS\Expose
@@ -156,7 +156,7 @@ class RequestForTenderLineType
     private $deliveryPeriod;
 
     /**
-     * @var array<RequiredItemLocationQuantity>|null
+     * @var null|array<RequiredItemLocationQuantity>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity>")
      * @JMS\Expose
@@ -168,7 +168,7 @@ class RequestForTenderLineType
     private $requiredItemLocationQuantity;
 
     /**
-     * @var WarrantyValidityPeriod|null
+     * @var null|WarrantyValidityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyValidityPeriod")
      * @JMS\Expose
@@ -179,7 +179,7 @@ class RequestForTenderLineType
     private $warrantyValidityPeriod;
 
     /**
-     * @var Item|null
+     * @var null|Item
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -190,7 +190,7 @@ class RequestForTenderLineType
     private $item;
 
     /**
-     * @var array<SubRequestForTenderLine>|null
+     * @var null|array<SubRequestForTenderLine>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubRequestForTenderLine>")
      * @JMS\Expose
@@ -202,7 +202,7 @@ class RequestForTenderLineType
     private $subRequestForTenderLine;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -220,7 +220,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -241,7 +241,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -259,7 +259,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -280,7 +280,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -288,7 +288,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -319,7 +319,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -334,7 +334,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -349,7 +349,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -370,7 +370,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -401,7 +401,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -419,7 +419,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -440,7 +440,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return MinimumQuantity|null
+     * @return null|MinimumQuantity
      */
     public function getMinimumQuantity(): ?MinimumQuantity
     {
@@ -458,7 +458,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param MinimumQuantity|null $minimumQuantity
+     * @param  null|MinimumQuantity $minimumQuantity
      * @return static
      */
     public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): static
@@ -479,7 +479,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return MaximumQuantity|null
+     * @return null|MaximumQuantity
      */
     public function getMaximumQuantity(): ?MaximumQuantity
     {
@@ -497,7 +497,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param MaximumQuantity|null $maximumQuantity
+     * @param  null|MaximumQuantity $maximumQuantity
      * @return static
      */
     public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): static
@@ -518,7 +518,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getTaxIncludedIndicator(): ?bool
     {
@@ -526,7 +526,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param bool|null $taxIncludedIndicator
+     * @param  null|bool $taxIncludedIndicator
      * @return static
      */
     public function setTaxIncludedIndicator(?bool $taxIncludedIndicator = null): static
@@ -547,7 +547,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return MinimumAmount|null
+     * @return null|MinimumAmount
      */
     public function getMinimumAmount(): ?MinimumAmount
     {
@@ -565,7 +565,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param MinimumAmount|null $minimumAmount
+     * @param  null|MinimumAmount $minimumAmount
      * @return static
      */
     public function setMinimumAmount(?MinimumAmount $minimumAmount = null): static
@@ -586,7 +586,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return MaximumAmount|null
+     * @return null|MaximumAmount
      */
     public function getMaximumAmount(): ?MaximumAmount
     {
@@ -604,7 +604,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param MaximumAmount|null $maximumAmount
+     * @param  null|MaximumAmount $maximumAmount
      * @return static
      */
     public function setMaximumAmount(?MaximumAmount $maximumAmount = null): static
@@ -625,7 +625,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return EstimatedAmount|null
+     * @return null|EstimatedAmount
      */
     public function getEstimatedAmount(): ?EstimatedAmount
     {
@@ -643,7 +643,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param EstimatedAmount|null $estimatedAmount
+     * @param  null|EstimatedAmount $estimatedAmount
      * @return static
      */
     public function setEstimatedAmount(?EstimatedAmount $estimatedAmount = null): static
@@ -664,7 +664,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return array<DocumentReference>|null
+     * @return null|array<DocumentReference>
      */
     public function getDocumentReference(): ?array
     {
@@ -672,7 +672,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param array<DocumentReference>|null $documentReference
+     * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
     public function setDocumentReference(?array $documentReference = null): static
@@ -703,7 +703,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -718,7 +718,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -733,7 +733,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addToDocumentReference(DocumentReference $documentReference): static
@@ -754,7 +754,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): static
@@ -785,7 +785,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return array<DeliveryPeriod>|null
+     * @return null|array<DeliveryPeriod>
      */
     public function getDeliveryPeriod(): ?array
     {
@@ -793,7 +793,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param array<DeliveryPeriod>|null $deliveryPeriod
+     * @param  null|array<DeliveryPeriod> $deliveryPeriod
      * @return static
      */
     public function setDeliveryPeriod(?array $deliveryPeriod = null): static
@@ -824,7 +824,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return DeliveryPeriod|null
+     * @return null|DeliveryPeriod
      */
     public function firstDeliveryPeriod(): ?DeliveryPeriod
     {
@@ -839,7 +839,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return DeliveryPeriod|null
+     * @return null|DeliveryPeriod
      */
     public function lastDeliveryPeriod(): ?DeliveryPeriod
     {
@@ -854,7 +854,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param DeliveryPeriod $deliveryPeriod
+     * @param  DeliveryPeriod $deliveryPeriod
      * @return static
      */
     public function addToDeliveryPeriod(DeliveryPeriod $deliveryPeriod): static
@@ -875,7 +875,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param DeliveryPeriod $deliveryPeriod
+     * @param  DeliveryPeriod $deliveryPeriod
      * @return static
      */
     public function addOnceToDeliveryPeriod(DeliveryPeriod $deliveryPeriod): static
@@ -906,7 +906,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return array<RequiredItemLocationQuantity>|null
+     * @return null|array<RequiredItemLocationQuantity>
      */
     public function getRequiredItemLocationQuantity(): ?array
     {
@@ -914,7 +914,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param array<RequiredItemLocationQuantity>|null $requiredItemLocationQuantity
+     * @param  null|array<RequiredItemLocationQuantity> $requiredItemLocationQuantity
      * @return static
      */
     public function setRequiredItemLocationQuantity(?array $requiredItemLocationQuantity = null): static
@@ -945,7 +945,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return RequiredItemLocationQuantity|null
+     * @return null|RequiredItemLocationQuantity
      */
     public function firstRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
@@ -960,7 +960,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return RequiredItemLocationQuantity|null
+     * @return null|RequiredItemLocationQuantity
      */
     public function lastRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
@@ -975,7 +975,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param  RequiredItemLocationQuantity $requiredItemLocationQuantity
      * @return static
      */
     public function addToRequiredItemLocationQuantity(
@@ -997,7 +997,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param  RequiredItemLocationQuantity $requiredItemLocationQuantity
      * @return static
      */
     public function addOnceToRequiredItemLocationQuantity(
@@ -1029,7 +1029,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return WarrantyValidityPeriod|null
+     * @return null|WarrantyValidityPeriod
      */
     public function getWarrantyValidityPeriod(): ?WarrantyValidityPeriod
     {
@@ -1047,7 +1047,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param WarrantyValidityPeriod|null $warrantyValidityPeriod
+     * @param  null|WarrantyValidityPeriod $warrantyValidityPeriod
      * @return static
      */
     public function setWarrantyValidityPeriod(?WarrantyValidityPeriod $warrantyValidityPeriod = null): static
@@ -1068,7 +1068,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function getItem(): ?Item
     {
@@ -1086,7 +1086,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param Item|null $item
+     * @param  null|Item $item
      * @return static
      */
     public function setItem(?Item $item = null): static
@@ -1107,7 +1107,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return array<SubRequestForTenderLine>|null
+     * @return null|array<SubRequestForTenderLine>
      */
     public function getSubRequestForTenderLine(): ?array
     {
@@ -1115,7 +1115,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param array<SubRequestForTenderLine>|null $subRequestForTenderLine
+     * @param  null|array<SubRequestForTenderLine> $subRequestForTenderLine
      * @return static
      */
     public function setSubRequestForTenderLine(?array $subRequestForTenderLine = null): static
@@ -1146,7 +1146,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return SubRequestForTenderLine|null
+     * @return null|SubRequestForTenderLine
      */
     public function firstSubRequestForTenderLine(): ?SubRequestForTenderLine
     {
@@ -1161,7 +1161,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @return SubRequestForTenderLine|null
+     * @return null|SubRequestForTenderLine
      */
     public function lastSubRequestForTenderLine(): ?SubRequestForTenderLine
     {
@@ -1176,7 +1176,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param SubRequestForTenderLine $subRequestForTenderLine
+     * @param  SubRequestForTenderLine $subRequestForTenderLine
      * @return static
      */
     public function addToSubRequestForTenderLine(SubRequestForTenderLine $subRequestForTenderLine): static
@@ -1197,7 +1197,7 @@ class RequestForTenderLineType
     }
 
     /**
-     * @param SubRequestForTenderLine $subRequestForTenderLine
+     * @param  SubRequestForTenderLine $subRequestForTenderLine
      * @return static
      */
     public function addOnceToSubRequestForTenderLine(SubRequestForTenderLine $subRequestForTenderLine): static

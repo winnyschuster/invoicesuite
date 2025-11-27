@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\ext;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class UBLExtensionsType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var array<UBLExtension>|null
+     * @var null|array<UBLExtension>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\ext\UBLExtension>")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class UBLExtensionsType
     private $uBLExtension;
 
     /**
-     * @return array<UBLExtension>|null
+     * @return null|array<UBLExtension>
      */
     public function getUBLExtension(): ?array
     {
@@ -32,7 +32,7 @@ class UBLExtensionsType
     }
 
     /**
-     * @param array<UBLExtension>|null $uBLExtension
+     * @param  null|array<UBLExtension> $uBLExtension
      * @return static
      */
     public function setUBLExtension(?array $uBLExtension = null): static
@@ -63,7 +63,7 @@ class UBLExtensionsType
     }
 
     /**
-     * @return UBLExtension|null
+     * @return null|UBLExtension
      */
     public function firstUBLExtension(): ?UBLExtension
     {
@@ -78,7 +78,7 @@ class UBLExtensionsType
     }
 
     /**
-     * @return UBLExtension|null
+     * @return null|UBLExtension
      */
     public function lastUBLExtension(): ?UBLExtension
     {
@@ -93,7 +93,7 @@ class UBLExtensionsType
     }
 
     /**
-     * @param UBLExtension $uBLExtension
+     * @param  UBLExtension $uBLExtension
      * @return static
      */
     public function addToUBLExtension(UBLExtension $uBLExtension): static
@@ -114,7 +114,7 @@ class UBLExtensionsType
     }
 
     /**
-     * @param UBLExtension $uBLExtension
+     * @param  UBLExtension $uBLExtension
      * @return static
      */
     public function addOnceToUBLExtension(UBLExtension $uBLExtension): static

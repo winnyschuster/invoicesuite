@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BalanceAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount;
@@ -14,13 +13,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\InvoicingPartyReference;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
+use JMS\Serializer\Annotation as JMS;
 
 class RemittanceAdviceLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -31,7 +31,7 @@ class RemittanceAdviceLineType
     private $iD;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class RemittanceAdviceLineType
     private $note;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -54,7 +54,7 @@ class RemittanceAdviceLineType
     private $uUID;
 
     /**
-     * @var DebitLineAmount|null
+     * @var null|DebitLineAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount")
      * @JMS\Expose
@@ -65,7 +65,7 @@ class RemittanceAdviceLineType
     private $debitLineAmount;
 
     /**
-     * @var CreditLineAmount|null
+     * @var null|CreditLineAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount")
      * @JMS\Expose
@@ -76,7 +76,7 @@ class RemittanceAdviceLineType
     private $creditLineAmount;
 
     /**
-     * @var BalanceAmount|null
+     * @var null|BalanceAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BalanceAmount")
      * @JMS\Expose
@@ -87,7 +87,7 @@ class RemittanceAdviceLineType
     private $balanceAmount;
 
     /**
-     * @var PaymentPurposeCode|null
+     * @var null|PaymentPurposeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode")
      * @JMS\Expose
@@ -98,7 +98,7 @@ class RemittanceAdviceLineType
     private $paymentPurposeCode;
 
     /**
-     * @var InvoicingPartyReference|null
+     * @var null|InvoicingPartyReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InvoicingPartyReference")
      * @JMS\Expose
@@ -109,7 +109,7 @@ class RemittanceAdviceLineType
     private $invoicingPartyReference;
 
     /**
-     * @var AccountingSupplierParty|null
+     * @var null|AccountingSupplierParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AccountingSupplierParty")
      * @JMS\Expose
@@ -120,7 +120,7 @@ class RemittanceAdviceLineType
     private $accountingSupplierParty;
 
     /**
-     * @var AccountingCustomerParty|null
+     * @var null|AccountingCustomerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AccountingCustomerParty")
      * @JMS\Expose
@@ -131,7 +131,7 @@ class RemittanceAdviceLineType
     private $accountingCustomerParty;
 
     /**
-     * @var BuyerCustomerParty|null
+     * @var null|BuyerCustomerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty")
      * @JMS\Expose
@@ -142,7 +142,7 @@ class RemittanceAdviceLineType
     private $buyerCustomerParty;
 
     /**
-     * @var SellerSupplierParty|null
+     * @var null|SellerSupplierParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty")
      * @JMS\Expose
@@ -153,7 +153,7 @@ class RemittanceAdviceLineType
     private $sellerSupplierParty;
 
     /**
-     * @var OriginatorCustomerParty|null
+     * @var null|OriginatorCustomerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorCustomerParty")
      * @JMS\Expose
@@ -164,7 +164,7 @@ class RemittanceAdviceLineType
     private $originatorCustomerParty;
 
     /**
-     * @var PayeeParty|null
+     * @var null|PayeeParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PayeeParty")
      * @JMS\Expose
@@ -175,7 +175,7 @@ class RemittanceAdviceLineType
     private $payeeParty;
 
     /**
-     * @var array<InvoicePeriod>|null
+     * @var null|array<InvoicePeriod>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod>")
      * @JMS\Expose
@@ -187,7 +187,7 @@ class RemittanceAdviceLineType
     private $invoicePeriod;
 
     /**
-     * @var array<BillingReference>|null
+     * @var null|array<BillingReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>")
      * @JMS\Expose
@@ -199,7 +199,7 @@ class RemittanceAdviceLineType
     private $billingReference;
 
     /**
-     * @var array<DocumentReference>|null
+     * @var null|array<DocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -211,7 +211,7 @@ class RemittanceAdviceLineType
     private $documentReference;
 
     /**
-     * @var ExchangeRate|null
+     * @var null|ExchangeRate
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate")
      * @JMS\Expose
@@ -222,7 +222,7 @@ class RemittanceAdviceLineType
     private $exchangeRate;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -240,7 +240,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -261,7 +261,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -269,7 +269,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -300,7 +300,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -315,7 +315,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -330,7 +330,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -351,7 +351,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -382,7 +382,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -400,7 +400,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -421,7 +421,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return DebitLineAmount|null
+     * @return null|DebitLineAmount
      */
     public function getDebitLineAmount(): ?DebitLineAmount
     {
@@ -439,7 +439,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param DebitLineAmount|null $debitLineAmount
+     * @param  null|DebitLineAmount $debitLineAmount
      * @return static
      */
     public function setDebitLineAmount(?DebitLineAmount $debitLineAmount = null): static
@@ -460,7 +460,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return CreditLineAmount|null
+     * @return null|CreditLineAmount
      */
     public function getCreditLineAmount(): ?CreditLineAmount
     {
@@ -478,7 +478,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param CreditLineAmount|null $creditLineAmount
+     * @param  null|CreditLineAmount $creditLineAmount
      * @return static
      */
     public function setCreditLineAmount(?CreditLineAmount $creditLineAmount = null): static
@@ -499,7 +499,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return BalanceAmount|null
+     * @return null|BalanceAmount
      */
     public function getBalanceAmount(): ?BalanceAmount
     {
@@ -517,7 +517,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param BalanceAmount|null $balanceAmount
+     * @param  null|BalanceAmount $balanceAmount
      * @return static
      */
     public function setBalanceAmount(?BalanceAmount $balanceAmount = null): static
@@ -538,7 +538,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return PaymentPurposeCode|null
+     * @return null|PaymentPurposeCode
      */
     public function getPaymentPurposeCode(): ?PaymentPurposeCode
     {
@@ -556,7 +556,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param PaymentPurposeCode|null $paymentPurposeCode
+     * @param  null|PaymentPurposeCode $paymentPurposeCode
      * @return static
      */
     public function setPaymentPurposeCode(?PaymentPurposeCode $paymentPurposeCode = null): static
@@ -577,7 +577,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return InvoicingPartyReference|null
+     * @return null|InvoicingPartyReference
      */
     public function getInvoicingPartyReference(): ?InvoicingPartyReference
     {
@@ -595,7 +595,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param InvoicingPartyReference|null $invoicingPartyReference
+     * @param  null|InvoicingPartyReference $invoicingPartyReference
      * @return static
      */
     public function setInvoicingPartyReference(?InvoicingPartyReference $invoicingPartyReference = null): static
@@ -616,7 +616,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return AccountingSupplierParty|null
+     * @return null|AccountingSupplierParty
      */
     public function getAccountingSupplierParty(): ?AccountingSupplierParty
     {
@@ -634,7 +634,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param AccountingSupplierParty|null $accountingSupplierParty
+     * @param  null|AccountingSupplierParty $accountingSupplierParty
      * @return static
      */
     public function setAccountingSupplierParty(?AccountingSupplierParty $accountingSupplierParty = null): static
@@ -655,7 +655,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return AccountingCustomerParty|null
+     * @return null|AccountingCustomerParty
      */
     public function getAccountingCustomerParty(): ?AccountingCustomerParty
     {
@@ -673,7 +673,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param AccountingCustomerParty|null $accountingCustomerParty
+     * @param  null|AccountingCustomerParty $accountingCustomerParty
      * @return static
      */
     public function setAccountingCustomerParty(?AccountingCustomerParty $accountingCustomerParty = null): static
@@ -694,7 +694,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return BuyerCustomerParty|null
+     * @return null|BuyerCustomerParty
      */
     public function getBuyerCustomerParty(): ?BuyerCustomerParty
     {
@@ -712,7 +712,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param BuyerCustomerParty|null $buyerCustomerParty
+     * @param  null|BuyerCustomerParty $buyerCustomerParty
      * @return static
      */
     public function setBuyerCustomerParty(?BuyerCustomerParty $buyerCustomerParty = null): static
@@ -733,7 +733,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return SellerSupplierParty|null
+     * @return null|SellerSupplierParty
      */
     public function getSellerSupplierParty(): ?SellerSupplierParty
     {
@@ -751,7 +751,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param SellerSupplierParty|null $sellerSupplierParty
+     * @param  null|SellerSupplierParty $sellerSupplierParty
      * @return static
      */
     public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
@@ -772,7 +772,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return OriginatorCustomerParty|null
+     * @return null|OriginatorCustomerParty
      */
     public function getOriginatorCustomerParty(): ?OriginatorCustomerParty
     {
@@ -790,7 +790,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param OriginatorCustomerParty|null $originatorCustomerParty
+     * @param  null|OriginatorCustomerParty $originatorCustomerParty
      * @return static
      */
     public function setOriginatorCustomerParty(?OriginatorCustomerParty $originatorCustomerParty = null): static
@@ -811,7 +811,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return PayeeParty|null
+     * @return null|PayeeParty
      */
     public function getPayeeParty(): ?PayeeParty
     {
@@ -829,7 +829,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param PayeeParty|null $payeeParty
+     * @param  null|PayeeParty $payeeParty
      * @return static
      */
     public function setPayeeParty(?PayeeParty $payeeParty = null): static
@@ -850,7 +850,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return array<InvoicePeriod>|null
+     * @return null|array<InvoicePeriod>
      */
     public function getInvoicePeriod(): ?array
     {
@@ -858,7 +858,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param array<InvoicePeriod>|null $invoicePeriod
+     * @param  null|array<InvoicePeriod> $invoicePeriod
      * @return static
      */
     public function setInvoicePeriod(?array $invoicePeriod = null): static
@@ -889,7 +889,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return InvoicePeriod|null
+     * @return null|InvoicePeriod
      */
     public function firstInvoicePeriod(): ?InvoicePeriod
     {
@@ -904,7 +904,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return InvoicePeriod|null
+     * @return null|InvoicePeriod
      */
     public function lastInvoicePeriod(): ?InvoicePeriod
     {
@@ -919,7 +919,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param InvoicePeriod $invoicePeriod
+     * @param  InvoicePeriod $invoicePeriod
      * @return static
      */
     public function addToInvoicePeriod(InvoicePeriod $invoicePeriod): static
@@ -940,7 +940,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param InvoicePeriod $invoicePeriod
+     * @param  InvoicePeriod $invoicePeriod
      * @return static
      */
     public function addOnceToInvoicePeriod(InvoicePeriod $invoicePeriod): static
@@ -971,7 +971,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return array<BillingReference>|null
+     * @return null|array<BillingReference>
      */
     public function getBillingReference(): ?array
     {
@@ -979,7 +979,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param array<BillingReference>|null $billingReference
+     * @param  null|array<BillingReference> $billingReference
      * @return static
      */
     public function setBillingReference(?array $billingReference = null): static
@@ -1010,7 +1010,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return BillingReference|null
+     * @return null|BillingReference
      */
     public function firstBillingReference(): ?BillingReference
     {
@@ -1025,7 +1025,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return BillingReference|null
+     * @return null|BillingReference
      */
     public function lastBillingReference(): ?BillingReference
     {
@@ -1040,7 +1040,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param BillingReference $billingReference
+     * @param  BillingReference $billingReference
      * @return static
      */
     public function addToBillingReference(BillingReference $billingReference): static
@@ -1061,7 +1061,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param BillingReference $billingReference
+     * @param  BillingReference $billingReference
      * @return static
      */
     public function addOnceToBillingReference(BillingReference $billingReference): static
@@ -1092,7 +1092,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return array<DocumentReference>|null
+     * @return null|array<DocumentReference>
      */
     public function getDocumentReference(): ?array
     {
@@ -1100,7 +1100,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param array<DocumentReference>|null $documentReference
+     * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
     public function setDocumentReference(?array $documentReference = null): static
@@ -1131,7 +1131,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -1146,7 +1146,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -1161,7 +1161,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addToDocumentReference(DocumentReference $documentReference): static
@@ -1182,7 +1182,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): static
@@ -1213,7 +1213,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @return ExchangeRate|null
+     * @return null|ExchangeRate
      */
     public function getExchangeRate(): ?ExchangeRate
     {
@@ -1231,7 +1231,7 @@ class RemittanceAdviceLineType
     }
 
     /**
-     * @param ExchangeRate|null $exchangeRate
+     * @param  null|ExchangeRate $exchangeRate
      * @return static
      */
     public function setExchangeRate(?ExchangeRate $exchangeRate = null): static

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AdvertisementAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
@@ -15,13 +14,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedElectronicTenderQuan
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedForeignTenderQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedTenderQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TenderResultCode;
+use JMS\Serializer\Annotation as JMS;
 
 class TenderResultType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TenderResultCode|null
+     * @var null|TenderResultCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TenderResultCode")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class TenderResultType
     private $tenderResultCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class TenderResultType
     private $description;
 
     /**
-     * @var AdvertisementAmount|null
+     * @var null|AdvertisementAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AdvertisementAmount")
      * @JMS\Expose
@@ -55,7 +55,7 @@ class TenderResultType
     private $advertisementAmount;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -66,7 +66,7 @@ class TenderResultType
     private $awardDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class TenderResultType
     private $awardTime;
 
     /**
-     * @var ReceivedTenderQuantity|null
+     * @var null|ReceivedTenderQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedTenderQuantity")
      * @JMS\Expose
@@ -88,7 +88,7 @@ class TenderResultType
     private $receivedTenderQuantity;
 
     /**
-     * @var LowerTenderAmount|null
+     * @var null|LowerTenderAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LowerTenderAmount")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class TenderResultType
     private $lowerTenderAmount;
 
     /**
-     * @var HigherTenderAmount|null
+     * @var null|HigherTenderAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HigherTenderAmount")
      * @JMS\Expose
@@ -110,7 +110,7 @@ class TenderResultType
     private $higherTenderAmount;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -121,7 +121,7 @@ class TenderResultType
     private $startDate;
 
     /**
-     * @var ReceivedElectronicTenderQuantity|null
+     * @var null|ReceivedElectronicTenderQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedElectronicTenderQuantity")
      * @JMS\Expose
@@ -132,7 +132,7 @@ class TenderResultType
     private $receivedElectronicTenderQuantity;
 
     /**
-     * @var ReceivedForeignTenderQuantity|null
+     * @var null|ReceivedForeignTenderQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedForeignTenderQuantity")
      * @JMS\Expose
@@ -143,7 +143,7 @@ class TenderResultType
     private $receivedForeignTenderQuantity;
 
     /**
-     * @var Contract|null
+     * @var null|Contract
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Contract")
      * @JMS\Expose
@@ -154,7 +154,7 @@ class TenderResultType
     private $contract;
 
     /**
-     * @var AwardedTenderedProject|null
+     * @var null|AwardedTenderedProject
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AwardedTenderedProject")
      * @JMS\Expose
@@ -165,7 +165,7 @@ class TenderResultType
     private $awardedTenderedProject;
 
     /**
-     * @var ContractFormalizationPeriod|null
+     * @var null|ContractFormalizationPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContractFormalizationPeriod")
      * @JMS\Expose
@@ -176,7 +176,7 @@ class TenderResultType
     private $contractFormalizationPeriod;
 
     /**
-     * @var array<SubcontractTerms>|null
+     * @var null|array<SubcontractTerms>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubcontractTerms>")
      * @JMS\Expose
@@ -188,7 +188,7 @@ class TenderResultType
     private $subcontractTerms;
 
     /**
-     * @var array<WinningParty>|null
+     * @var null|array<WinningParty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\WinningParty>")
      * @JMS\Expose
@@ -200,7 +200,7 @@ class TenderResultType
     private $winningParty;
 
     /**
-     * @return TenderResultCode|null
+     * @return null|TenderResultCode
      */
     public function getTenderResultCode(): ?TenderResultCode
     {
@@ -218,7 +218,7 @@ class TenderResultType
     }
 
     /**
-     * @param TenderResultCode|null $tenderResultCode
+     * @param  null|TenderResultCode $tenderResultCode
      * @return static
      */
     public function setTenderResultCode(?TenderResultCode $tenderResultCode = null): static
@@ -239,7 +239,7 @@ class TenderResultType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -247,7 +247,7 @@ class TenderResultType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -278,7 +278,7 @@ class TenderResultType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -293,7 +293,7 @@ class TenderResultType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -308,7 +308,7 @@ class TenderResultType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -329,7 +329,7 @@ class TenderResultType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -360,7 +360,7 @@ class TenderResultType
     }
 
     /**
-     * @return AdvertisementAmount|null
+     * @return null|AdvertisementAmount
      */
     public function getAdvertisementAmount(): ?AdvertisementAmount
     {
@@ -378,7 +378,7 @@ class TenderResultType
     }
 
     /**
-     * @param AdvertisementAmount|null $advertisementAmount
+     * @param  null|AdvertisementAmount $advertisementAmount
      * @return static
      */
     public function setAdvertisementAmount(?AdvertisementAmount $advertisementAmount = null): static
@@ -399,7 +399,7 @@ class TenderResultType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getAwardDate(): ?DateTimeInterface
     {
@@ -407,7 +407,7 @@ class TenderResultType
     }
 
     /**
-     * @param DateTimeInterface|null $awardDate
+     * @param  null|DateTimeInterface $awardDate
      * @return static
      */
     public function setAwardDate(?DateTimeInterface $awardDate = null): static
@@ -428,7 +428,7 @@ class TenderResultType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getAwardTime(): ?DateTimeInterface
     {
@@ -436,7 +436,7 @@ class TenderResultType
     }
 
     /**
-     * @param DateTimeInterface|null $awardTime
+     * @param  null|DateTimeInterface $awardTime
      * @return static
      */
     public function setAwardTime(?DateTimeInterface $awardTime = null): static
@@ -457,7 +457,7 @@ class TenderResultType
     }
 
     /**
-     * @return ReceivedTenderQuantity|null
+     * @return null|ReceivedTenderQuantity
      */
     public function getReceivedTenderQuantity(): ?ReceivedTenderQuantity
     {
@@ -475,7 +475,7 @@ class TenderResultType
     }
 
     /**
-     * @param ReceivedTenderQuantity|null $receivedTenderQuantity
+     * @param  null|ReceivedTenderQuantity $receivedTenderQuantity
      * @return static
      */
     public function setReceivedTenderQuantity(?ReceivedTenderQuantity $receivedTenderQuantity = null): static
@@ -496,7 +496,7 @@ class TenderResultType
     }
 
     /**
-     * @return LowerTenderAmount|null
+     * @return null|LowerTenderAmount
      */
     public function getLowerTenderAmount(): ?LowerTenderAmount
     {
@@ -514,7 +514,7 @@ class TenderResultType
     }
 
     /**
-     * @param LowerTenderAmount|null $lowerTenderAmount
+     * @param  null|LowerTenderAmount $lowerTenderAmount
      * @return static
      */
     public function setLowerTenderAmount(?LowerTenderAmount $lowerTenderAmount = null): static
@@ -535,7 +535,7 @@ class TenderResultType
     }
 
     /**
-     * @return HigherTenderAmount|null
+     * @return null|HigherTenderAmount
      */
     public function getHigherTenderAmount(): ?HigherTenderAmount
     {
@@ -553,7 +553,7 @@ class TenderResultType
     }
 
     /**
-     * @param HigherTenderAmount|null $higherTenderAmount
+     * @param  null|HigherTenderAmount $higherTenderAmount
      * @return static
      */
     public function setHigherTenderAmount(?HigherTenderAmount $higherTenderAmount = null): static
@@ -574,7 +574,7 @@ class TenderResultType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getStartDate(): ?DateTimeInterface
     {
@@ -582,7 +582,7 @@ class TenderResultType
     }
 
     /**
-     * @param DateTimeInterface|null $startDate
+     * @param  null|DateTimeInterface $startDate
      * @return static
      */
     public function setStartDate(?DateTimeInterface $startDate = null): static
@@ -603,7 +603,7 @@ class TenderResultType
     }
 
     /**
-     * @return ReceivedElectronicTenderQuantity|null
+     * @return null|ReceivedElectronicTenderQuantity
      */
     public function getReceivedElectronicTenderQuantity(): ?ReceivedElectronicTenderQuantity
     {
@@ -621,7 +621,7 @@ class TenderResultType
     }
 
     /**
-     * @param ReceivedElectronicTenderQuantity|null $receivedElectronicTenderQuantity
+     * @param  null|ReceivedElectronicTenderQuantity $receivedElectronicTenderQuantity
      * @return static
      */
     public function setReceivedElectronicTenderQuantity(
@@ -643,7 +643,7 @@ class TenderResultType
     }
 
     /**
-     * @return ReceivedForeignTenderQuantity|null
+     * @return null|ReceivedForeignTenderQuantity
      */
     public function getReceivedForeignTenderQuantity(): ?ReceivedForeignTenderQuantity
     {
@@ -661,7 +661,7 @@ class TenderResultType
     }
 
     /**
-     * @param ReceivedForeignTenderQuantity|null $receivedForeignTenderQuantity
+     * @param  null|ReceivedForeignTenderQuantity $receivedForeignTenderQuantity
      * @return static
      */
     public function setReceivedForeignTenderQuantity(
@@ -683,7 +683,7 @@ class TenderResultType
     }
 
     /**
-     * @return Contract|null
+     * @return null|Contract
      */
     public function getContract(): ?Contract
     {
@@ -701,7 +701,7 @@ class TenderResultType
     }
 
     /**
-     * @param Contract|null $contract
+     * @param  null|Contract $contract
      * @return static
      */
     public function setContract(?Contract $contract = null): static
@@ -722,7 +722,7 @@ class TenderResultType
     }
 
     /**
-     * @return AwardedTenderedProject|null
+     * @return null|AwardedTenderedProject
      */
     public function getAwardedTenderedProject(): ?AwardedTenderedProject
     {
@@ -740,7 +740,7 @@ class TenderResultType
     }
 
     /**
-     * @param AwardedTenderedProject|null $awardedTenderedProject
+     * @param  null|AwardedTenderedProject $awardedTenderedProject
      * @return static
      */
     public function setAwardedTenderedProject(?AwardedTenderedProject $awardedTenderedProject = null): static
@@ -761,7 +761,7 @@ class TenderResultType
     }
 
     /**
-     * @return ContractFormalizationPeriod|null
+     * @return null|ContractFormalizationPeriod
      */
     public function getContractFormalizationPeriod(): ?ContractFormalizationPeriod
     {
@@ -779,7 +779,7 @@ class TenderResultType
     }
 
     /**
-     * @param ContractFormalizationPeriod|null $contractFormalizationPeriod
+     * @param  null|ContractFormalizationPeriod $contractFormalizationPeriod
      * @return static
      */
     public function setContractFormalizationPeriod(
@@ -801,7 +801,7 @@ class TenderResultType
     }
 
     /**
-     * @return array<SubcontractTerms>|null
+     * @return null|array<SubcontractTerms>
      */
     public function getSubcontractTerms(): ?array
     {
@@ -809,7 +809,7 @@ class TenderResultType
     }
 
     /**
-     * @param array<SubcontractTerms>|null $subcontractTerms
+     * @param  null|array<SubcontractTerms> $subcontractTerms
      * @return static
      */
     public function setSubcontractTerms(?array $subcontractTerms = null): static
@@ -840,7 +840,7 @@ class TenderResultType
     }
 
     /**
-     * @return SubcontractTerms|null
+     * @return null|SubcontractTerms
      */
     public function firstSubcontractTerms(): ?SubcontractTerms
     {
@@ -855,7 +855,7 @@ class TenderResultType
     }
 
     /**
-     * @return SubcontractTerms|null
+     * @return null|SubcontractTerms
      */
     public function lastSubcontractTerms(): ?SubcontractTerms
     {
@@ -870,7 +870,7 @@ class TenderResultType
     }
 
     /**
-     * @param SubcontractTerms $subcontractTerms
+     * @param  SubcontractTerms $subcontractTerms
      * @return static
      */
     public function addToSubcontractTerms(SubcontractTerms $subcontractTerms): static
@@ -891,7 +891,7 @@ class TenderResultType
     }
 
     /**
-     * @param SubcontractTerms $subcontractTerms
+     * @param  SubcontractTerms $subcontractTerms
      * @return static
      */
     public function addOnceToSubcontractTerms(SubcontractTerms $subcontractTerms): static
@@ -922,7 +922,7 @@ class TenderResultType
     }
 
     /**
-     * @return array<WinningParty>|null
+     * @return null|array<WinningParty>
      */
     public function getWinningParty(): ?array
     {
@@ -930,7 +930,7 @@ class TenderResultType
     }
 
     /**
-     * @param array<WinningParty>|null $winningParty
+     * @param  null|array<WinningParty> $winningParty
      * @return static
      */
     public function setWinningParty(?array $winningParty = null): static
@@ -961,7 +961,7 @@ class TenderResultType
     }
 
     /**
-     * @return WinningParty|null
+     * @return null|WinningParty
      */
     public function firstWinningParty(): ?WinningParty
     {
@@ -976,7 +976,7 @@ class TenderResultType
     }
 
     /**
-     * @return WinningParty|null
+     * @return null|WinningParty
      */
     public function lastWinningParty(): ?WinningParty
     {
@@ -991,7 +991,7 @@ class TenderResultType
     }
 
     /**
-     * @param WinningParty $winningParty
+     * @param  WinningParty $winningParty
      * @return static
      */
     public function addToWinningParty(WinningParty $winningParty): static
@@ -1012,7 +1012,7 @@ class TenderResultType
     }
 
     /**
-     * @param WinningParty $winningParty
+     * @param  WinningParty $winningParty
      * @return static
      */
     public function addOnceToWinningParty(WinningParty $winningParty): static

@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CargoTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CommodityCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ItemClassificationCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\NatureCode;
+use JMS\Serializer\Annotation as JMS;
 
 class CommodityClassificationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var NatureCode|null
+     * @var null|NatureCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NatureCode")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class CommodityClassificationType
     private $natureCode;
 
     /**
-     * @var CargoTypeCode|null
+     * @var null|CargoTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CargoTypeCode")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class CommodityClassificationType
     private $cargoTypeCode;
 
     /**
-     * @var CommodityCode|null
+     * @var null|CommodityCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CommodityCode")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class CommodityClassificationType
     private $commodityCode;
 
     /**
-     * @var ItemClassificationCode|null
+     * @var null|ItemClassificationCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ItemClassificationCode")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class CommodityClassificationType
     private $itemClassificationCode;
 
     /**
-     * @return NatureCode|null
+     * @return null|NatureCode
      */
     public function getNatureCode(): ?NatureCode
     {
@@ -78,7 +78,7 @@ class CommodityClassificationType
     }
 
     /**
-     * @param NatureCode|null $natureCode
+     * @param  null|NatureCode $natureCode
      * @return static
      */
     public function setNatureCode(?NatureCode $natureCode = null): static
@@ -99,7 +99,7 @@ class CommodityClassificationType
     }
 
     /**
-     * @return CargoTypeCode|null
+     * @return null|CargoTypeCode
      */
     public function getCargoTypeCode(): ?CargoTypeCode
     {
@@ -117,7 +117,7 @@ class CommodityClassificationType
     }
 
     /**
-     * @param CargoTypeCode|null $cargoTypeCode
+     * @param  null|CargoTypeCode $cargoTypeCode
      * @return static
      */
     public function setCargoTypeCode(?CargoTypeCode $cargoTypeCode = null): static
@@ -138,7 +138,7 @@ class CommodityClassificationType
     }
 
     /**
-     * @return CommodityCode|null
+     * @return null|CommodityCode
      */
     public function getCommodityCode(): ?CommodityCode
     {
@@ -156,7 +156,7 @@ class CommodityClassificationType
     }
 
     /**
-     * @param CommodityCode|null $commodityCode
+     * @param  null|CommodityCode $commodityCode
      * @return static
      */
     public function setCommodityCode(?CommodityCode $commodityCode = null): static
@@ -177,7 +177,7 @@ class CommodityClassificationType
     }
 
     /**
-     * @return ItemClassificationCode|null
+     * @return null|ItemClassificationCode
      */
     public function getItemClassificationCode(): ?ItemClassificationCode
     {
@@ -195,7 +195,7 @@ class CommodityClassificationType
     }
 
     /**
-     * @param ItemClassificationCode|null $itemClassificationCode
+     * @param  null|ItemClassificationCode $itemClassificationCode
      * @return static
      */
     public function setItemClassificationCode(?ItemClassificationCode $itemClassificationCode = null): static

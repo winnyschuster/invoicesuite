@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cbc;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class SourceForecastIssueTimeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class SourceForecastIssueTimeType
     private $value;
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getValue(): ?DateTimeInterface
     {
@@ -32,7 +32,7 @@ class SourceForecastIssueTimeType
     }
 
     /**
-     * @param DateTimeInterface|null $value
+     * @param  null|DateTimeInterface $value
      * @return static
      */
     public function setValue(?DateTimeInterface $value = null): static

@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasic\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxbasic\udt\QuantityType;
+use JMS\Serializer\Annotation as JMS;
 
 class LineTradeDeliveryType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var QuantityType|null
+     * @var null|QuantityType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\QuantityType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class LineTradeDeliveryType
     private $billedQuantity;
 
     /**
-     * @return QuantityType|null
+     * @return null|QuantityType
      */
     public function getBilledQuantity(): ?QuantityType
     {
@@ -42,7 +42,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @param QuantityType|null $billedQuantity
+     * @param  null|QuantityType $billedQuantity
      * @return static
      */
     public function setBilledQuantity(?QuantityType $billedQuantity = null): static

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CallBaseAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CallExtensionAmount;
@@ -19,13 +18,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCal
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCallCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCategory;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCategoryCode;
+use JMS\Serializer\Annotation as JMS;
 
 class TelecommunicationsServiceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TelecommunicationsServiceType
     private $iD;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class TelecommunicationsServiceType
     private $callDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class TelecommunicationsServiceType
     private $callTime;
 
     /**
-     * @var ServiceNumberCalled|null
+     * @var null|ServiceNumberCalled
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceNumberCalled")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class TelecommunicationsServiceType
     private $serviceNumberCalled;
 
     /**
-     * @var TelecommunicationsServiceCategory|null
+     * @var null|TelecommunicationsServiceCategory
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCategory")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class TelecommunicationsServiceType
     private $telecommunicationsServiceCategory;
 
     /**
-     * @var TelecommunicationsServiceCategoryCode|null
+     * @var null|TelecommunicationsServiceCategoryCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCategoryCode")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class TelecommunicationsServiceType
     private $telecommunicationsServiceCategoryCode;
 
     /**
-     * @var MovieTitle|null
+     * @var null|MovieTitle
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MovieTitle")
      * @JMS\Expose
@@ -102,7 +102,7 @@ class TelecommunicationsServiceType
     private $movieTitle;
 
     /**
-     * @var RoamingPartnerName|null
+     * @var null|RoamingPartnerName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RoamingPartnerName")
      * @JMS\Expose
@@ -113,7 +113,7 @@ class TelecommunicationsServiceType
     private $roamingPartnerName;
 
     /**
-     * @var PayPerView|null
+     * @var null|PayPerView
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PayPerView")
      * @JMS\Expose
@@ -124,7 +124,7 @@ class TelecommunicationsServiceType
     private $payPerView;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -135,7 +135,7 @@ class TelecommunicationsServiceType
     private $quantity;
 
     /**
-     * @var TelecommunicationsServiceCall|null
+     * @var null|TelecommunicationsServiceCall
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCall")
      * @JMS\Expose
@@ -146,7 +146,7 @@ class TelecommunicationsServiceType
     private $telecommunicationsServiceCall;
 
     /**
-     * @var TelecommunicationsServiceCallCode|null
+     * @var null|TelecommunicationsServiceCallCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsServiceCallCode")
      * @JMS\Expose
@@ -157,7 +157,7 @@ class TelecommunicationsServiceType
     private $telecommunicationsServiceCallCode;
 
     /**
-     * @var CallBaseAmount|null
+     * @var null|CallBaseAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CallBaseAmount")
      * @JMS\Expose
@@ -168,7 +168,7 @@ class TelecommunicationsServiceType
     private $callBaseAmount;
 
     /**
-     * @var CallExtensionAmount|null
+     * @var null|CallExtensionAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CallExtensionAmount")
      * @JMS\Expose
@@ -179,7 +179,7 @@ class TelecommunicationsServiceType
     private $callExtensionAmount;
 
     /**
-     * @var Price|null
+     * @var null|Price
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Price")
      * @JMS\Expose
@@ -190,7 +190,7 @@ class TelecommunicationsServiceType
     private $price;
 
     /**
-     * @var Country|null
+     * @var null|Country
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Country")
      * @JMS\Expose
@@ -201,7 +201,7 @@ class TelecommunicationsServiceType
     private $country;
 
     /**
-     * @var array<ExchangeRate>|null
+     * @var null|array<ExchangeRate>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate>")
      * @JMS\Expose
@@ -213,7 +213,7 @@ class TelecommunicationsServiceType
     private $exchangeRate;
 
     /**
-     * @var array<AllowanceCharge>|null
+     * @var null|array<AllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -225,7 +225,7 @@ class TelecommunicationsServiceType
     private $allowanceCharge;
 
     /**
-     * @var array<TaxTotal>|null
+     * @var null|array<TaxTotal>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>")
      * @JMS\Expose
@@ -237,7 +237,7 @@ class TelecommunicationsServiceType
     private $taxTotal;
 
     /**
-     * @var array<CallDuty>|null
+     * @var null|array<CallDuty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\CallDuty>")
      * @JMS\Expose
@@ -249,7 +249,7 @@ class TelecommunicationsServiceType
     private $callDuty;
 
     /**
-     * @var array<TimeDuty>|null
+     * @var null|array<TimeDuty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TimeDuty>")
      * @JMS\Expose
@@ -261,7 +261,7 @@ class TelecommunicationsServiceType
     private $timeDuty;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -279,7 +279,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -300,7 +300,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getCallDate(): ?DateTimeInterface
     {
@@ -308,7 +308,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param DateTimeInterface|null $callDate
+     * @param  null|DateTimeInterface $callDate
      * @return static
      */
     public function setCallDate(?DateTimeInterface $callDate = null): static
@@ -329,7 +329,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getCallTime(): ?DateTimeInterface
     {
@@ -337,7 +337,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param DateTimeInterface|null $callTime
+     * @param  null|DateTimeInterface $callTime
      * @return static
      */
     public function setCallTime(?DateTimeInterface $callTime = null): static
@@ -358,7 +358,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return ServiceNumberCalled|null
+     * @return null|ServiceNumberCalled
      */
     public function getServiceNumberCalled(): ?ServiceNumberCalled
     {
@@ -376,7 +376,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param ServiceNumberCalled|null $serviceNumberCalled
+     * @param  null|ServiceNumberCalled $serviceNumberCalled
      * @return static
      */
     public function setServiceNumberCalled(?ServiceNumberCalled $serviceNumberCalled = null): static
@@ -397,7 +397,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return TelecommunicationsServiceCategory|null
+     * @return null|TelecommunicationsServiceCategory
      */
     public function getTelecommunicationsServiceCategory(): ?TelecommunicationsServiceCategory
     {
@@ -415,7 +415,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param TelecommunicationsServiceCategory|null $telecommunicationsServiceCategory
+     * @param  null|TelecommunicationsServiceCategory $telecommunicationsServiceCategory
      * @return static
      */
     public function setTelecommunicationsServiceCategory(
@@ -437,7 +437,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return TelecommunicationsServiceCategoryCode|null
+     * @return null|TelecommunicationsServiceCategoryCode
      */
     public function getTelecommunicationsServiceCategoryCode(): ?TelecommunicationsServiceCategoryCode
     {
@@ -455,7 +455,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param TelecommunicationsServiceCategoryCode|null $telecommunicationsServiceCategoryCode
+     * @param  null|TelecommunicationsServiceCategoryCode $telecommunicationsServiceCategoryCode
      * @return static
      */
     public function setTelecommunicationsServiceCategoryCode(
@@ -477,7 +477,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return MovieTitle|null
+     * @return null|MovieTitle
      */
     public function getMovieTitle(): ?MovieTitle
     {
@@ -495,7 +495,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param MovieTitle|null $movieTitle
+     * @param  null|MovieTitle $movieTitle
      * @return static
      */
     public function setMovieTitle(?MovieTitle $movieTitle = null): static
@@ -516,7 +516,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return RoamingPartnerName|null
+     * @return null|RoamingPartnerName
      */
     public function getRoamingPartnerName(): ?RoamingPartnerName
     {
@@ -534,7 +534,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param RoamingPartnerName|null $roamingPartnerName
+     * @param  null|RoamingPartnerName $roamingPartnerName
      * @return static
      */
     public function setRoamingPartnerName(?RoamingPartnerName $roamingPartnerName = null): static
@@ -555,7 +555,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return PayPerView|null
+     * @return null|PayPerView
      */
     public function getPayPerView(): ?PayPerView
     {
@@ -573,7 +573,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param PayPerView|null $payPerView
+     * @param  null|PayPerView $payPerView
      * @return static
      */
     public function setPayPerView(?PayPerView $payPerView = null): static
@@ -594,7 +594,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -612,7 +612,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -633,7 +633,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return TelecommunicationsServiceCall|null
+     * @return null|TelecommunicationsServiceCall
      */
     public function getTelecommunicationsServiceCall(): ?TelecommunicationsServiceCall
     {
@@ -651,7 +651,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param TelecommunicationsServiceCall|null $telecommunicationsServiceCall
+     * @param  null|TelecommunicationsServiceCall $telecommunicationsServiceCall
      * @return static
      */
     public function setTelecommunicationsServiceCall(
@@ -673,7 +673,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return TelecommunicationsServiceCallCode|null
+     * @return null|TelecommunicationsServiceCallCode
      */
     public function getTelecommunicationsServiceCallCode(): ?TelecommunicationsServiceCallCode
     {
@@ -691,7 +691,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param TelecommunicationsServiceCallCode|null $telecommunicationsServiceCallCode
+     * @param  null|TelecommunicationsServiceCallCode $telecommunicationsServiceCallCode
      * @return static
      */
     public function setTelecommunicationsServiceCallCode(
@@ -713,7 +713,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return CallBaseAmount|null
+     * @return null|CallBaseAmount
      */
     public function getCallBaseAmount(): ?CallBaseAmount
     {
@@ -731,7 +731,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param CallBaseAmount|null $callBaseAmount
+     * @param  null|CallBaseAmount $callBaseAmount
      * @return static
      */
     public function setCallBaseAmount(?CallBaseAmount $callBaseAmount = null): static
@@ -752,7 +752,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return CallExtensionAmount|null
+     * @return null|CallExtensionAmount
      */
     public function getCallExtensionAmount(): ?CallExtensionAmount
     {
@@ -770,7 +770,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param CallExtensionAmount|null $callExtensionAmount
+     * @param  null|CallExtensionAmount $callExtensionAmount
      * @return static
      */
     public function setCallExtensionAmount(?CallExtensionAmount $callExtensionAmount = null): static
@@ -791,7 +791,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return Price|null
+     * @return null|Price
      */
     public function getPrice(): ?Price
     {
@@ -809,7 +809,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param Price|null $price
+     * @param  null|Price $price
      * @return static
      */
     public function setPrice(?Price $price = null): static
@@ -830,7 +830,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return Country|null
+     * @return null|Country
      */
     public function getCountry(): ?Country
     {
@@ -848,7 +848,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param Country|null $country
+     * @param  null|Country $country
      * @return static
      */
     public function setCountry(?Country $country = null): static
@@ -869,7 +869,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return array<ExchangeRate>|null
+     * @return null|array<ExchangeRate>
      */
     public function getExchangeRate(): ?array
     {
@@ -877,7 +877,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param array<ExchangeRate>|null $exchangeRate
+     * @param  null|array<ExchangeRate> $exchangeRate
      * @return static
      */
     public function setExchangeRate(?array $exchangeRate = null): static
@@ -908,7 +908,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return ExchangeRate|null
+     * @return null|ExchangeRate
      */
     public function firstExchangeRate(): ?ExchangeRate
     {
@@ -923,7 +923,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return ExchangeRate|null
+     * @return null|ExchangeRate
      */
     public function lastExchangeRate(): ?ExchangeRate
     {
@@ -938,7 +938,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param ExchangeRate $exchangeRate
+     * @param  ExchangeRate $exchangeRate
      * @return static
      */
     public function addToExchangeRate(ExchangeRate $exchangeRate): static
@@ -959,7 +959,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param ExchangeRate $exchangeRate
+     * @param  ExchangeRate $exchangeRate
      * @return static
      */
     public function addOnceToExchangeRate(ExchangeRate $exchangeRate): static
@@ -990,7 +990,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return array<AllowanceCharge>|null
+     * @return null|array<AllowanceCharge>
      */
     public function getAllowanceCharge(): ?array
     {
@@ -998,7 +998,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param array<AllowanceCharge>|null $allowanceCharge
+     * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): static
@@ -1029,7 +1029,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -1044,7 +1044,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -1059,7 +1059,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -1080,7 +1080,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -1111,7 +1111,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return array<TaxTotal>|null
+     * @return null|array<TaxTotal>
      */
     public function getTaxTotal(): ?array
     {
@@ -1119,7 +1119,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param array<TaxTotal>|null $taxTotal
+     * @param  null|array<TaxTotal> $taxTotal
      * @return static
      */
     public function setTaxTotal(?array $taxTotal = null): static
@@ -1150,7 +1150,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function firstTaxTotal(): ?TaxTotal
     {
@@ -1165,7 +1165,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function lastTaxTotal(): ?TaxTotal
     {
@@ -1180,7 +1180,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addToTaxTotal(TaxTotal $taxTotal): static
@@ -1201,7 +1201,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addOnceToTaxTotal(TaxTotal $taxTotal): static
@@ -1232,7 +1232,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return array<CallDuty>|null
+     * @return null|array<CallDuty>
      */
     public function getCallDuty(): ?array
     {
@@ -1240,7 +1240,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param array<CallDuty>|null $callDuty
+     * @param  null|array<CallDuty> $callDuty
      * @return static
      */
     public function setCallDuty(?array $callDuty = null): static
@@ -1271,7 +1271,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return CallDuty|null
+     * @return null|CallDuty
      */
     public function firstCallDuty(): ?CallDuty
     {
@@ -1286,7 +1286,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return CallDuty|null
+     * @return null|CallDuty
      */
     public function lastCallDuty(): ?CallDuty
     {
@@ -1301,7 +1301,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param CallDuty $callDuty
+     * @param  CallDuty $callDuty
      * @return static
      */
     public function addToCallDuty(CallDuty $callDuty): static
@@ -1322,7 +1322,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param CallDuty $callDuty
+     * @param  CallDuty $callDuty
      * @return static
      */
     public function addOnceToCallDuty(CallDuty $callDuty): static
@@ -1353,7 +1353,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return array<TimeDuty>|null
+     * @return null|array<TimeDuty>
      */
     public function getTimeDuty(): ?array
     {
@@ -1361,7 +1361,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param array<TimeDuty>|null $timeDuty
+     * @param  null|array<TimeDuty> $timeDuty
      * @return static
      */
     public function setTimeDuty(?array $timeDuty = null): static
@@ -1392,7 +1392,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return TimeDuty|null
+     * @return null|TimeDuty
      */
     public function firstTimeDuty(): ?TimeDuty
     {
@@ -1407,7 +1407,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @return TimeDuty|null
+     * @return null|TimeDuty
      */
     public function lastTimeDuty(): ?TimeDuty
     {
@@ -1422,7 +1422,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param TimeDuty $timeDuty
+     * @param  TimeDuty $timeDuty
      * @return static
      */
     public function addToTimeDuty(TimeDuty $timeDuty): static
@@ -1443,7 +1443,7 @@ class TelecommunicationsServiceType
     }
 
     /**
-     * @param TimeDuty $timeDuty
+     * @param  TimeDuty $timeDuty
      * @return static
      */
     public function addOnceToTimeDuty(TimeDuty $timeDuty): static

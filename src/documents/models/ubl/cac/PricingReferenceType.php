@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class PricingReferenceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var OriginalItemLocationQuantity|null
+     * @var null|OriginalItemLocationQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginalItemLocationQuantity")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class PricingReferenceType
     private $originalItemLocationQuantity;
 
     /**
-     * @var array<AlternativeConditionPrice>|null
+     * @var null|array<AlternativeConditionPrice>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeConditionPrice>")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class PricingReferenceType
     private $alternativeConditionPrice;
 
     /**
-     * @return OriginalItemLocationQuantity|null
+     * @return null|OriginalItemLocationQuantity
      */
     public function getOriginalItemLocationQuantity(): ?OriginalItemLocationQuantity
     {
@@ -53,7 +53,7 @@ class PricingReferenceType
     }
 
     /**
-     * @param OriginalItemLocationQuantity|null $originalItemLocationQuantity
+     * @param  null|OriginalItemLocationQuantity $originalItemLocationQuantity
      * @return static
      */
     public function setOriginalItemLocationQuantity(
@@ -75,7 +75,7 @@ class PricingReferenceType
     }
 
     /**
-     * @return array<AlternativeConditionPrice>|null
+     * @return null|array<AlternativeConditionPrice>
      */
     public function getAlternativeConditionPrice(): ?array
     {
@@ -83,7 +83,7 @@ class PricingReferenceType
     }
 
     /**
-     * @param array<AlternativeConditionPrice>|null $alternativeConditionPrice
+     * @param  null|array<AlternativeConditionPrice> $alternativeConditionPrice
      * @return static
      */
     public function setAlternativeConditionPrice(?array $alternativeConditionPrice = null): static
@@ -114,7 +114,7 @@ class PricingReferenceType
     }
 
     /**
-     * @return AlternativeConditionPrice|null
+     * @return null|AlternativeConditionPrice
      */
     public function firstAlternativeConditionPrice(): ?AlternativeConditionPrice
     {
@@ -129,7 +129,7 @@ class PricingReferenceType
     }
 
     /**
-     * @return AlternativeConditionPrice|null
+     * @return null|AlternativeConditionPrice
      */
     public function lastAlternativeConditionPrice(): ?AlternativeConditionPrice
     {
@@ -144,7 +144,7 @@ class PricingReferenceType
     }
 
     /**
-     * @param AlternativeConditionPrice $alternativeConditionPrice
+     * @param  AlternativeConditionPrice $alternativeConditionPrice
      * @return static
      */
     public function addToAlternativeConditionPrice(AlternativeConditionPrice $alternativeConditionPrice): static
@@ -165,7 +165,7 @@ class PricingReferenceType
     }
 
     /**
-     * @param AlternativeConditionPrice $alternativeConditionPrice
+     * @param  AlternativeConditionPrice $alternativeConditionPrice
      * @return static
      */
     public function addOnceToAlternativeConditionPrice(AlternativeConditionPrice $alternativeConditionPrice): static

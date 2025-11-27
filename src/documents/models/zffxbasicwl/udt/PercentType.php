@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasicwl\udt;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class PercentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var float|null
+     * @var null|float
      * @JMS\Groups({"zffx"})
      * @JMS\Type("float")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class PercentType
     private $value;
 
     /**
-     * @return float|null
+     * @return null|float
      */
     public function getValue(): ?float
     {
@@ -31,7 +31,7 @@ class PercentType
     }
 
     /**
-     * @param float|null $value
+     * @param  null|float $value
      * @return static
      */
     public function setValue(?float $value = null): static

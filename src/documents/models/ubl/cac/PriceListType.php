@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\StatusCode;
+use JMS\Serializer\Annotation as JMS;
 
 class PriceListType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class PriceListType
     private $iD;
 
     /**
-     * @var StatusCode|null
+     * @var null|StatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\StatusCode")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class PriceListType
     private $statusCode;
 
     /**
-     * @var array<ValidityPeriod>|null
+     * @var null|array<ValidityPeriod>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class PriceListType
     private $validityPeriod;
 
     /**
-     * @var PreviousPriceList|null
+     * @var null|PreviousPriceList
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PreviousPriceList")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class PriceListType
     private $previousPriceList;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -77,7 +77,7 @@ class PriceListType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -98,7 +98,7 @@ class PriceListType
     }
 
     /**
-     * @return StatusCode|null
+     * @return null|StatusCode
      */
     public function getStatusCode(): ?StatusCode
     {
@@ -116,7 +116,7 @@ class PriceListType
     }
 
     /**
-     * @param StatusCode|null $statusCode
+     * @param  null|StatusCode $statusCode
      * @return static
      */
     public function setStatusCode(?StatusCode $statusCode = null): static
@@ -137,7 +137,7 @@ class PriceListType
     }
 
     /**
-     * @return array<ValidityPeriod>|null
+     * @return null|array<ValidityPeriod>
      */
     public function getValidityPeriod(): ?array
     {
@@ -145,7 +145,7 @@ class PriceListType
     }
 
     /**
-     * @param array<ValidityPeriod>|null $validityPeriod
+     * @param  null|array<ValidityPeriod> $validityPeriod
      * @return static
      */
     public function setValidityPeriod(?array $validityPeriod = null): static
@@ -176,7 +176,7 @@ class PriceListType
     }
 
     /**
-     * @return ValidityPeriod|null
+     * @return null|ValidityPeriod
      */
     public function firstValidityPeriod(): ?ValidityPeriod
     {
@@ -191,7 +191,7 @@ class PriceListType
     }
 
     /**
-     * @return ValidityPeriod|null
+     * @return null|ValidityPeriod
      */
     public function lastValidityPeriod(): ?ValidityPeriod
     {
@@ -206,7 +206,7 @@ class PriceListType
     }
 
     /**
-     * @param ValidityPeriod $validityPeriod
+     * @param  ValidityPeriod $validityPeriod
      * @return static
      */
     public function addToValidityPeriod(ValidityPeriod $validityPeriod): static
@@ -227,7 +227,7 @@ class PriceListType
     }
 
     /**
-     * @param ValidityPeriod $validityPeriod
+     * @param  ValidityPeriod $validityPeriod
      * @return static
      */
     public function addOnceToValidityPeriod(ValidityPeriod $validityPeriod): static
@@ -258,7 +258,7 @@ class PriceListType
     }
 
     /**
-     * @return PreviousPriceList|null
+     * @return null|PreviousPriceList
      */
     public function getPreviousPriceList(): ?PreviousPriceList
     {
@@ -276,7 +276,7 @@ class PriceListType
     }
 
     /**
-     * @param PreviousPriceList|null $previousPriceList
+     * @param  null|PreviousPriceList $previousPriceList
      * @return static
      */
     public function setPreviousPriceList(?PreviousPriceList $previousPriceList = null): static

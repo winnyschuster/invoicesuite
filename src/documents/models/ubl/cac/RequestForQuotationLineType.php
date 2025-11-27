@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PrivacyCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SecurityClassificationCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
+use JMS\Serializer\Annotation as JMS;
 
 class RequestForQuotationLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class RequestForQuotationLineType
     private $iD;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class RequestForQuotationLineType
     private $uUID;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class RequestForQuotationLineType
     private $note;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class RequestForQuotationLineType
     private $optionalLineItemIndicator;
 
     /**
-     * @var PrivacyCode|null
+     * @var null|PrivacyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PrivacyCode")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class RequestForQuotationLineType
     private $privacyCode;
 
     /**
-     * @var SecurityClassificationCode|null
+     * @var null|SecurityClassificationCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SecurityClassificationCode")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class RequestForQuotationLineType
     private $securityClassificationCode;
 
     /**
-     * @var array<DocumentReference>|null
+     * @var null|array<DocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class RequestForQuotationLineType
     private $documentReference;
 
     /**
-     * @var LineItem|null
+     * @var null|LineItem
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LineItem")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class RequestForQuotationLineType
     private $lineItem;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -125,7 +125,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -146,7 +146,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -164,7 +164,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -185,7 +185,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -193,7 +193,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -224,7 +224,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -239,7 +239,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -254,7 +254,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -275,7 +275,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -306,7 +306,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getOptionalLineItemIndicator(): ?bool
     {
@@ -314,7 +314,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @param bool|null $optionalLineItemIndicator
+     * @param  null|bool $optionalLineItemIndicator
      * @return static
      */
     public function setOptionalLineItemIndicator(?bool $optionalLineItemIndicator = null): static
@@ -335,7 +335,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return PrivacyCode|null
+     * @return null|PrivacyCode
      */
     public function getPrivacyCode(): ?PrivacyCode
     {
@@ -353,7 +353,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @param PrivacyCode|null $privacyCode
+     * @param  null|PrivacyCode $privacyCode
      * @return static
      */
     public function setPrivacyCode(?PrivacyCode $privacyCode = null): static
@@ -374,7 +374,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return SecurityClassificationCode|null
+     * @return null|SecurityClassificationCode
      */
     public function getSecurityClassificationCode(): ?SecurityClassificationCode
     {
@@ -392,7 +392,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @param SecurityClassificationCode|null $securityClassificationCode
+     * @param  null|SecurityClassificationCode $securityClassificationCode
      * @return static
      */
     public function setSecurityClassificationCode(
@@ -414,7 +414,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return array<DocumentReference>|null
+     * @return null|array<DocumentReference>
      */
     public function getDocumentReference(): ?array
     {
@@ -422,7 +422,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @param array<DocumentReference>|null $documentReference
+     * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
     public function setDocumentReference(?array $documentReference = null): static
@@ -453,7 +453,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -468,7 +468,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -483,7 +483,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addToDocumentReference(DocumentReference $documentReference): static
@@ -504,7 +504,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): static
@@ -535,7 +535,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @return LineItem|null
+     * @return null|LineItem
      */
     public function getLineItem(): ?LineItem
     {
@@ -553,7 +553,7 @@ class RequestForQuotationLineType
     }
 
     /**
-     * @param LineItem|null $lineItem
+     * @param  null|LineItem $lineItem
      * @return static
      */
     public function setLineItem(?LineItem $lineItem = null): static

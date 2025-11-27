@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxminimum\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxminimum\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradePartyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\udt\TextType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class TradePartyType
     private $name;
 
     /**
-     * @var LegalOrganizationType|null
+     * @var null|LegalOrganizationType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\ram\LegalOrganizationType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class TradePartyType
     private $specifiedLegalOrganization;
 
     /**
-     * @var TradeAddressType|null
+     * @var null|TradeAddressType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradeAddressType")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class TradePartyType
     private $postalTradeAddress;
 
     /**
-     * @var array<TaxRegistrationType>|null
+     * @var null|array<TaxRegistrationType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxminimum\ram\TaxRegistrationType>")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class TradePartyType
     private $specifiedTaxRegistration;
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getName(): ?TextType
     {
@@ -76,7 +76,7 @@ class TradePartyType
     }
 
     /**
-     * @param TextType|null $name
+     * @param  null|TextType $name
      * @return static
      */
     public function setName(?TextType $name = null): static
@@ -97,7 +97,7 @@ class TradePartyType
     }
 
     /**
-     * @return LegalOrganizationType|null
+     * @return null|LegalOrganizationType
      */
     public function getSpecifiedLegalOrganization(): ?LegalOrganizationType
     {
@@ -115,7 +115,7 @@ class TradePartyType
     }
 
     /**
-     * @param LegalOrganizationType|null $specifiedLegalOrganization
+     * @param  null|LegalOrganizationType $specifiedLegalOrganization
      * @return static
      */
     public function setSpecifiedLegalOrganization(?LegalOrganizationType $specifiedLegalOrganization = null): static
@@ -136,7 +136,7 @@ class TradePartyType
     }
 
     /**
-     * @return TradeAddressType|null
+     * @return null|TradeAddressType
      */
     public function getPostalTradeAddress(): ?TradeAddressType
     {
@@ -154,7 +154,7 @@ class TradePartyType
     }
 
     /**
-     * @param TradeAddressType|null $postalTradeAddress
+     * @param  null|TradeAddressType $postalTradeAddress
      * @return static
      */
     public function setPostalTradeAddress(?TradeAddressType $postalTradeAddress = null): static
@@ -175,7 +175,7 @@ class TradePartyType
     }
 
     /**
-     * @return array<TaxRegistrationType>|null
+     * @return null|array<TaxRegistrationType>
      */
     public function getSpecifiedTaxRegistration(): ?array
     {
@@ -183,7 +183,7 @@ class TradePartyType
     }
 
     /**
-     * @param array<TaxRegistrationType>|null $specifiedTaxRegistration
+     * @param  null|array<TaxRegistrationType> $specifiedTaxRegistration
      * @return static
      */
     public function setSpecifiedTaxRegistration(?array $specifiedTaxRegistration = null): static
@@ -214,7 +214,7 @@ class TradePartyType
     }
 
     /**
-     * @param TaxRegistrationType $specifiedTaxRegistration
+     * @param  TaxRegistrationType $specifiedTaxRegistration
      * @return static
      */
     public function addToSpecifiedTaxRegistration(TaxRegistrationType $specifiedTaxRegistration): static
@@ -235,7 +235,7 @@ class TradePartyType
     }
 
     /**
-     * @param TaxRegistrationType $specifiedTaxRegistration
+     * @param  TaxRegistrationType $specifiedTaxRegistration
      * @return static
      */
     public function addOnceToSpecifiedTaxRegistration(TaxRegistrationType $specifiedTaxRegistration): static

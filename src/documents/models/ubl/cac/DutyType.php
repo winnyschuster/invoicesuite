@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Amount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Duty;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DutyCode;
+use JMS\Serializer\Annotation as JMS;
 
 class DutyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Amount|null
+     * @var null|Amount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class DutyType
     private $amount;
 
     /**
-     * @var Duty|null
+     * @var null|Duty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Duty")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class DutyType
     private $duty;
 
     /**
-     * @var DutyCode|null
+     * @var null|DutyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DutyCode")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class DutyType
     private $dutyCode;
 
     /**
-     * @var TaxCategory|null
+     * @var null|TaxCategory
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class DutyType
     private $taxCategory;
 
     /**
-     * @return Amount|null
+     * @return null|Amount
      */
     public function getAmount(): ?Amount
     {
@@ -77,7 +77,7 @@ class DutyType
     }
 
     /**
-     * @param Amount|null $amount
+     * @param  null|Amount $amount
      * @return static
      */
     public function setAmount(?Amount $amount = null): static
@@ -98,7 +98,7 @@ class DutyType
     }
 
     /**
-     * @return Duty|null
+     * @return null|Duty
      */
     public function getDuty(): ?Duty
     {
@@ -116,7 +116,7 @@ class DutyType
     }
 
     /**
-     * @param Duty|null $duty
+     * @param  null|Duty $duty
      * @return static
      */
     public function setDuty(?Duty $duty = null): static
@@ -137,7 +137,7 @@ class DutyType
     }
 
     /**
-     * @return DutyCode|null
+     * @return null|DutyCode
      */
     public function getDutyCode(): ?DutyCode
     {
@@ -155,7 +155,7 @@ class DutyType
     }
 
     /**
-     * @param DutyCode|null $dutyCode
+     * @param  null|DutyCode $dutyCode
      * @return static
      */
     public function setDutyCode(?DutyCode $dutyCode = null): static
@@ -176,7 +176,7 @@ class DutyType
     }
 
     /**
-     * @return TaxCategory|null
+     * @return null|TaxCategory
      */
     public function getTaxCategory(): ?TaxCategory
     {
@@ -194,7 +194,7 @@ class DutyType
     }
 
     /**
-     * @param TaxCategory|null $taxCategory
+     * @param  null|TaxCategory $taxCategory
      * @return static
      */
     public function setTaxCategory(?TaxCategory $taxCategory = null): static

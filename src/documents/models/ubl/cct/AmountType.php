@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cct;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
 
 class AmountType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var float|null
+     * @var null|float
      * @JMS\Groups({"ubl"})
      * @JMS\Type("float")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class AmountType
     private $value;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class AmountType
     private $currencyID;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class AmountType
     private $currencyCodeListVersionID;
 
     /**
-     * @return float|null
+     * @return null|float
      */
     public function getValue(): ?float
     {
@@ -54,7 +54,7 @@ class AmountType
     }
 
     /**
-     * @param float|null $value
+     * @param  null|float $value
      * @return static
      */
     public function setValue(?float $value = null): static
@@ -75,7 +75,7 @@ class AmountType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getCurrencyID(): ?string
     {
@@ -83,7 +83,7 @@ class AmountType
     }
 
     /**
-     * @param string|null $currencyID
+     * @param  null|string $currencyID
      * @return static
      */
     public function setCurrencyID(?string $currencyID = null): static
@@ -104,7 +104,7 @@ class AmountType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getCurrencyCodeListVersionID(): ?string
     {
@@ -112,7 +112,7 @@ class AmountType
     }
 
     /**
-     * @param string|null $currencyCodeListVersionID
+     * @param  null|string $currencyCodeListVersionID
      * @return static
      */
     public function setCurrencyCodeListVersionID(?string $currencyCodeListVersionID = null): static

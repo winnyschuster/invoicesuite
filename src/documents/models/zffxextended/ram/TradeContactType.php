@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeContactType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class TradeContactType
     private $personName;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TradeContactType
     private $departmentName;
 
     /**
-     * @var CodeType|null
+     * @var null|CodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class TradeContactType
     private $typeCode;
 
     /**
-     * @var UniversalCommunicationType|null
+     * @var null|UniversalCommunicationType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\UniversalCommunicationType")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class TradeContactType
     private $telephoneUniversalCommunication;
 
     /**
-     * @var UniversalCommunicationType|null
+     * @var null|UniversalCommunicationType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\UniversalCommunicationType")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class TradeContactType
     private $faxUniversalCommunication;
 
     /**
-     * @var UniversalCommunicationType|null
+     * @var null|UniversalCommunicationType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\UniversalCommunicationType")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class TradeContactType
     private $emailURIUniversalCommunication;
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getPersonName(): ?TextType
     {
@@ -98,7 +98,7 @@ class TradeContactType
     }
 
     /**
-     * @param TextType|null $personName
+     * @param  null|TextType $personName
      * @return static
      */
     public function setPersonName(?TextType $personName = null): static
@@ -119,7 +119,7 @@ class TradeContactType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getDepartmentName(): ?TextType
     {
@@ -137,7 +137,7 @@ class TradeContactType
     }
 
     /**
-     * @param TextType|null $departmentName
+     * @param  null|TextType $departmentName
      * @return static
      */
     public function setDepartmentName(?TextType $departmentName = null): static
@@ -158,7 +158,7 @@ class TradeContactType
     }
 
     /**
-     * @return CodeType|null
+     * @return null|CodeType
      */
     public function getTypeCode(): ?CodeType
     {
@@ -176,7 +176,7 @@ class TradeContactType
     }
 
     /**
-     * @param CodeType|null $typeCode
+     * @param  null|CodeType $typeCode
      * @return static
      */
     public function setTypeCode(?CodeType $typeCode = null): static
@@ -197,7 +197,7 @@ class TradeContactType
     }
 
     /**
-     * @return UniversalCommunicationType|null
+     * @return null|UniversalCommunicationType
      */
     public function getTelephoneUniversalCommunication(): ?UniversalCommunicationType
     {
@@ -215,7 +215,7 @@ class TradeContactType
     }
 
     /**
-     * @param UniversalCommunicationType|null $telephoneUniversalCommunication
+     * @param  null|UniversalCommunicationType $telephoneUniversalCommunication
      * @return static
      */
     public function setTelephoneUniversalCommunication(
@@ -237,7 +237,7 @@ class TradeContactType
     }
 
     /**
-     * @return UniversalCommunicationType|null
+     * @return null|UniversalCommunicationType
      */
     public function getFaxUniversalCommunication(): ?UniversalCommunicationType
     {
@@ -255,7 +255,7 @@ class TradeContactType
     }
 
     /**
-     * @param UniversalCommunicationType|null $faxUniversalCommunication
+     * @param  null|UniversalCommunicationType $faxUniversalCommunication
      * @return static
      */
     public function setFaxUniversalCommunication(?UniversalCommunicationType $faxUniversalCommunication = null): static
@@ -276,7 +276,7 @@ class TradeContactType
     }
 
     /**
-     * @return UniversalCommunicationType|null
+     * @return null|UniversalCommunicationType
      */
     public function getEmailURIUniversalCommunication(): ?UniversalCommunicationType
     {
@@ -294,7 +294,7 @@ class TradeContactType
     }
 
     /**
-     * @param UniversalCommunicationType|null $emailURIUniversalCommunication
+     * @param  null|UniversalCommunicationType $emailURIUniversalCommunication
      * @return static
      */
     public function setEmailURIUniversalCommunication(

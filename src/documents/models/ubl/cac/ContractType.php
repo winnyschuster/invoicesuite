@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ContractType as ContractType1;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ContractTypeCode;
@@ -13,13 +12,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID;
+use JMS\Serializer\Annotation as JMS;
 
 class ContractType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -30,7 +30,7 @@ class ContractType
     private $iD;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class ContractType
     private $issueDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class ContractType
     private $issueTime;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class ContractType
     private $nominationDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class ContractType
     private $nominationTime;
 
     /**
-     * @var ContractTypeCode|null
+     * @var null|ContractTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ContractTypeCode")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class ContractType
     private $contractTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\ContractType|null
+     * @var null|ContractType1
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ContractType")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class ContractType
     private $contractType;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class ContractType
     private $note;
 
     /**
-     * @var VersionID|null
+     * @var null|VersionID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID")
      * @JMS\Expose
@@ -119,7 +119,7 @@ class ContractType
     private $versionID;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -131,7 +131,7 @@ class ContractType
     private $description;
 
     /**
-     * @var ValidityPeriod|null
+     * @var null|ValidityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod")
      * @JMS\Expose
@@ -142,7 +142,7 @@ class ContractType
     private $validityPeriod;
 
     /**
-     * @var array<ContractDocumentReference>|null
+     * @var null|array<ContractDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference>")
      * @JMS\Expose
@@ -154,7 +154,7 @@ class ContractType
     private $contractDocumentReference;
 
     /**
-     * @var NominationPeriod|null
+     * @var null|NominationPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\NominationPeriod")
      * @JMS\Expose
@@ -165,7 +165,7 @@ class ContractType
     private $nominationPeriod;
 
     /**
-     * @var ContractualDelivery|null
+     * @var null|ContractualDelivery
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContractualDelivery")
      * @JMS\Expose
@@ -176,7 +176,7 @@ class ContractType
     private $contractualDelivery;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -194,7 +194,7 @@ class ContractType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -215,7 +215,7 @@ class ContractType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueDate(): ?DateTimeInterface
     {
@@ -223,7 +223,7 @@ class ContractType
     }
 
     /**
-     * @param DateTimeInterface|null $issueDate
+     * @param  null|DateTimeInterface $issueDate
      * @return static
      */
     public function setIssueDate(?DateTimeInterface $issueDate = null): static
@@ -244,7 +244,7 @@ class ContractType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueTime(): ?DateTimeInterface
     {
@@ -252,7 +252,7 @@ class ContractType
     }
 
     /**
-     * @param DateTimeInterface|null $issueTime
+     * @param  null|DateTimeInterface $issueTime
      * @return static
      */
     public function setIssueTime(?DateTimeInterface $issueTime = null): static
@@ -273,7 +273,7 @@ class ContractType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getNominationDate(): ?DateTimeInterface
     {
@@ -281,7 +281,7 @@ class ContractType
     }
 
     /**
-     * @param DateTimeInterface|null $nominationDate
+     * @param  null|DateTimeInterface $nominationDate
      * @return static
      */
     public function setNominationDate(?DateTimeInterface $nominationDate = null): static
@@ -302,7 +302,7 @@ class ContractType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getNominationTime(): ?DateTimeInterface
     {
@@ -310,7 +310,7 @@ class ContractType
     }
 
     /**
-     * @param DateTimeInterface|null $nominationTime
+     * @param  null|DateTimeInterface $nominationTime
      * @return static
      */
     public function setNominationTime(?DateTimeInterface $nominationTime = null): static
@@ -331,7 +331,7 @@ class ContractType
     }
 
     /**
-     * @return ContractTypeCode|null
+     * @return null|ContractTypeCode
      */
     public function getContractTypeCode(): ?ContractTypeCode
     {
@@ -349,7 +349,7 @@ class ContractType
     }
 
     /**
-     * @param ContractTypeCode|null $contractTypeCode
+     * @param  null|ContractTypeCode $contractTypeCode
      * @return static
      */
     public function setContractTypeCode(?ContractTypeCode $contractTypeCode = null): static
@@ -370,7 +370,7 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ContractType|null
+     * @return null|ContractType1
      */
     public function getContractType(): ?ContractType1
     {
@@ -378,17 +378,17 @@ class ContractType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\ContractType
+     * @return ContractType1
      */
     public function getContractTypeWithCreate(): ContractType1
     {
-        $this->contractType = is_null($this->contractType) ? new ContractType() : $this->contractType;
+        $this->contractType = is_null($this->contractType) ? new self() : $this->contractType;
 
         return $this->contractType;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\ContractType|null $contractType
+     * @param  null|ContractType1 $contractType
      * @return static
      */
     public function setContractType(?ContractType1 $contractType = null): static
@@ -409,7 +409,7 @@ class ContractType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -417,7 +417,7 @@ class ContractType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -448,7 +448,7 @@ class ContractType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -463,7 +463,7 @@ class ContractType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -478,7 +478,7 @@ class ContractType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -499,7 +499,7 @@ class ContractType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -530,7 +530,7 @@ class ContractType
     }
 
     /**
-     * @return VersionID|null
+     * @return null|VersionID
      */
     public function getVersionID(): ?VersionID
     {
@@ -548,7 +548,7 @@ class ContractType
     }
 
     /**
-     * @param VersionID|null $versionID
+     * @param  null|VersionID $versionID
      * @return static
      */
     public function setVersionID(?VersionID $versionID = null): static
@@ -569,7 +569,7 @@ class ContractType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -577,7 +577,7 @@ class ContractType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -608,7 +608,7 @@ class ContractType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -623,7 +623,7 @@ class ContractType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -638,7 +638,7 @@ class ContractType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -659,7 +659,7 @@ class ContractType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -690,7 +690,7 @@ class ContractType
     }
 
     /**
-     * @return ValidityPeriod|null
+     * @return null|ValidityPeriod
      */
     public function getValidityPeriod(): ?ValidityPeriod
     {
@@ -708,7 +708,7 @@ class ContractType
     }
 
     /**
-     * @param ValidityPeriod|null $validityPeriod
+     * @param  null|ValidityPeriod $validityPeriod
      * @return static
      */
     public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): static
@@ -729,7 +729,7 @@ class ContractType
     }
 
     /**
-     * @return array<ContractDocumentReference>|null
+     * @return null|array<ContractDocumentReference>
      */
     public function getContractDocumentReference(): ?array
     {
@@ -737,7 +737,7 @@ class ContractType
     }
 
     /**
-     * @param array<ContractDocumentReference>|null $contractDocumentReference
+     * @param  null|array<ContractDocumentReference> $contractDocumentReference
      * @return static
      */
     public function setContractDocumentReference(?array $contractDocumentReference = null): static
@@ -768,7 +768,7 @@ class ContractType
     }
 
     /**
-     * @return ContractDocumentReference|null
+     * @return null|ContractDocumentReference
      */
     public function firstContractDocumentReference(): ?ContractDocumentReference
     {
@@ -783,7 +783,7 @@ class ContractType
     }
 
     /**
-     * @return ContractDocumentReference|null
+     * @return null|ContractDocumentReference
      */
     public function lastContractDocumentReference(): ?ContractDocumentReference
     {
@@ -798,7 +798,7 @@ class ContractType
     }
 
     /**
-     * @param ContractDocumentReference $contractDocumentReference
+     * @param  ContractDocumentReference $contractDocumentReference
      * @return static
      */
     public function addToContractDocumentReference(ContractDocumentReference $contractDocumentReference): static
@@ -819,7 +819,7 @@ class ContractType
     }
 
     /**
-     * @param ContractDocumentReference $contractDocumentReference
+     * @param  ContractDocumentReference $contractDocumentReference
      * @return static
      */
     public function addOnceToContractDocumentReference(ContractDocumentReference $contractDocumentReference): static
@@ -850,7 +850,7 @@ class ContractType
     }
 
     /**
-     * @return NominationPeriod|null
+     * @return null|NominationPeriod
      */
     public function getNominationPeriod(): ?NominationPeriod
     {
@@ -868,7 +868,7 @@ class ContractType
     }
 
     /**
-     * @param NominationPeriod|null $nominationPeriod
+     * @param  null|NominationPeriod $nominationPeriod
      * @return static
      */
     public function setNominationPeriod(?NominationPeriod $nominationPeriod = null): static
@@ -889,7 +889,7 @@ class ContractType
     }
 
     /**
-     * @return ContractualDelivery|null
+     * @return null|ContractualDelivery
      */
     public function getContractualDelivery(): ?ContractualDelivery
     {
@@ -907,7 +907,7 @@ class ContractType
     }
 
     /**
-     * @param ContractualDelivery|null $contractualDelivery
+     * @param  null|ContractualDelivery $contractualDelivery
      * @return static
      */
     public function setContractualDelivery(?ContractualDelivery $contractualDelivery = null): static

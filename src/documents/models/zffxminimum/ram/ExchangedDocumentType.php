@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxminimum\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxminimum\qdt\DocumentCodeType;
 use horstoeko\invoicesuite\documents\models\zffxminimum\udt\DateTimeType;
 use horstoeko\invoicesuite\documents\models\zffxminimum\udt\IDType;
+use JMS\Serializer\Annotation as JMS;
 
 class ExchangedDocumentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\udt\IDType")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class ExchangedDocumentType
     private $iD;
 
     /**
-     * @var DocumentCodeType|null
+     * @var null|DocumentCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\qdt\DocumentCodeType")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class ExchangedDocumentType
     private $typeCode;
 
     /**
-     * @var DateTimeType|null
+     * @var null|DateTimeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\udt\DateTimeType")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class ExchangedDocumentType
     private $issueDateTime;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getID(): ?IDType
     {
@@ -66,7 +66,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @param IDType|null $iD
+     * @param  null|IDType $iD
      * @return static
      */
     public function setID(?IDType $iD = null): static
@@ -87,7 +87,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return DocumentCodeType|null
+     * @return null|DocumentCodeType
      */
     public function getTypeCode(): ?DocumentCodeType
     {
@@ -105,7 +105,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @param DocumentCodeType|null $typeCode
+     * @param  null|DocumentCodeType $typeCode
      * @return static
      */
     public function setTypeCode(?DocumentCodeType $typeCode = null): static
@@ -126,7 +126,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @return DateTimeType|null
+     * @return null|DateTimeType
      */
     public function getIssueDateTime(): ?DateTimeType
     {
@@ -144,7 +144,7 @@ class ExchangedDocumentType
     }
 
     /**
-     * @param DateTimeType|null $issueDateTime
+     * @param  null|DateTimeType $issueDateTime
      * @return static
      */
     public function setIssueDateTime(?DateTimeType $issueDateTime = null): static

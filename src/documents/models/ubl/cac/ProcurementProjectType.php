@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedOverallContractQuantity;
@@ -17,13 +16,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\ProcurementSubTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ProcurementTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\QualityControlCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\RequiredFeeAmount;
+use JMS\Serializer\Annotation as JMS;
 
 class ProcurementProjectType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class ProcurementProjectType
     private $iD;
 
     /**
-     * @var array<Name>|null
+     * @var null|array<Name>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Name>")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class ProcurementProjectType
     private $name;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class ProcurementProjectType
     private $description;
 
     /**
-     * @var ProcurementTypeCode|null
+     * @var null|ProcurementTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProcurementTypeCode")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class ProcurementProjectType
     private $procurementTypeCode;
 
     /**
-     * @var ProcurementSubTypeCode|null
+     * @var null|ProcurementSubTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProcurementSubTypeCode")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class ProcurementProjectType
     private $procurementSubTypeCode;
 
     /**
-     * @var QualityControlCode|null
+     * @var null|QualityControlCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\QualityControlCode")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class ProcurementProjectType
     private $qualityControlCode;
 
     /**
-     * @var RequiredFeeAmount|null
+     * @var null|RequiredFeeAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RequiredFeeAmount")
      * @JMS\Expose
@@ -102,7 +102,7 @@ class ProcurementProjectType
     private $requiredFeeAmount;
 
     /**
-     * @var array<FeeDescription>|null
+     * @var null|array<FeeDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription>")
      * @JMS\Expose
@@ -114,7 +114,7 @@ class ProcurementProjectType
     private $feeDescription;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -125,7 +125,7 @@ class ProcurementProjectType
     private $requestedDeliveryDate;
 
     /**
-     * @var EstimatedOverallContractQuantity|null
+     * @var null|EstimatedOverallContractQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedOverallContractQuantity")
      * @JMS\Expose
@@ -136,7 +136,7 @@ class ProcurementProjectType
     private $estimatedOverallContractQuantity;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -148,7 +148,7 @@ class ProcurementProjectType
     private $note;
 
     /**
-     * @var RequestedTenderTotal|null
+     * @var null|RequestedTenderTotal
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RequestedTenderTotal")
      * @JMS\Expose
@@ -159,7 +159,7 @@ class ProcurementProjectType
     private $requestedTenderTotal;
 
     /**
-     * @var MainCommodityClassification|null
+     * @var null|MainCommodityClassification
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MainCommodityClassification")
      * @JMS\Expose
@@ -170,7 +170,7 @@ class ProcurementProjectType
     private $mainCommodityClassification;
 
     /**
-     * @var array<AdditionalCommodityClassification>|null
+     * @var null|array<AdditionalCommodityClassification>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalCommodityClassification>")
      * @JMS\Expose
@@ -182,7 +182,7 @@ class ProcurementProjectType
     private $additionalCommodityClassification;
 
     /**
-     * @var array<RealizedLocation>|null
+     * @var null|array<RealizedLocation>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RealizedLocation>")
      * @JMS\Expose
@@ -194,7 +194,7 @@ class ProcurementProjectType
     private $realizedLocation;
 
     /**
-     * @var PlannedPeriod|null
+     * @var null|PlannedPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PlannedPeriod")
      * @JMS\Expose
@@ -205,7 +205,7 @@ class ProcurementProjectType
     private $plannedPeriod;
 
     /**
-     * @var ContractExtension|null
+     * @var null|ContractExtension
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContractExtension")
      * @JMS\Expose
@@ -216,7 +216,7 @@ class ProcurementProjectType
     private $contractExtension;
 
     /**
-     * @var array<RequestForTenderLine>|null
+     * @var null|array<RequestForTenderLine>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RequestForTenderLine>")
      * @JMS\Expose
@@ -228,7 +228,7 @@ class ProcurementProjectType
     private $requestForTenderLine;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -246,7 +246,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -267,7 +267,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return array<Name>|null
+     * @return null|array<Name>
      */
     public function getName(): ?array
     {
@@ -275,7 +275,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param array<Name>|null $name
+     * @param  null|array<Name> $name
      * @return static
      */
     public function setName(?array $name = null): static
@@ -306,7 +306,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function firstName(): ?Name
     {
@@ -321,7 +321,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function lastName(): ?Name
     {
@@ -336,7 +336,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param Name $name
+     * @param  Name   $name
      * @return static
      */
     public function addToName(Name $name): static
@@ -357,7 +357,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param Name $name
+     * @param  Name   $name
      * @return static
      */
     public function addOnceToName(Name $name): static
@@ -388,7 +388,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -396,7 +396,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -427,7 +427,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -442,7 +442,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -457,7 +457,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -478,7 +478,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -509,7 +509,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return ProcurementTypeCode|null
+     * @return null|ProcurementTypeCode
      */
     public function getProcurementTypeCode(): ?ProcurementTypeCode
     {
@@ -527,7 +527,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param ProcurementTypeCode|null $procurementTypeCode
+     * @param  null|ProcurementTypeCode $procurementTypeCode
      * @return static
      */
     public function setProcurementTypeCode(?ProcurementTypeCode $procurementTypeCode = null): static
@@ -548,7 +548,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return ProcurementSubTypeCode|null
+     * @return null|ProcurementSubTypeCode
      */
     public function getProcurementSubTypeCode(): ?ProcurementSubTypeCode
     {
@@ -566,7 +566,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param ProcurementSubTypeCode|null $procurementSubTypeCode
+     * @param  null|ProcurementSubTypeCode $procurementSubTypeCode
      * @return static
      */
     public function setProcurementSubTypeCode(?ProcurementSubTypeCode $procurementSubTypeCode = null): static
@@ -587,7 +587,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return QualityControlCode|null
+     * @return null|QualityControlCode
      */
     public function getQualityControlCode(): ?QualityControlCode
     {
@@ -605,7 +605,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param QualityControlCode|null $qualityControlCode
+     * @param  null|QualityControlCode $qualityControlCode
      * @return static
      */
     public function setQualityControlCode(?QualityControlCode $qualityControlCode = null): static
@@ -626,7 +626,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return RequiredFeeAmount|null
+     * @return null|RequiredFeeAmount
      */
     public function getRequiredFeeAmount(): ?RequiredFeeAmount
     {
@@ -644,7 +644,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param RequiredFeeAmount|null $requiredFeeAmount
+     * @param  null|RequiredFeeAmount $requiredFeeAmount
      * @return static
      */
     public function setRequiredFeeAmount(?RequiredFeeAmount $requiredFeeAmount = null): static
@@ -665,7 +665,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return array<FeeDescription>|null
+     * @return null|array<FeeDescription>
      */
     public function getFeeDescription(): ?array
     {
@@ -673,7 +673,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param array<FeeDescription>|null $feeDescription
+     * @param  null|array<FeeDescription> $feeDescription
      * @return static
      */
     public function setFeeDescription(?array $feeDescription = null): static
@@ -704,7 +704,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return FeeDescription|null
+     * @return null|FeeDescription
      */
     public function firstFeeDescription(): ?FeeDescription
     {
@@ -719,7 +719,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return FeeDescription|null
+     * @return null|FeeDescription
      */
     public function lastFeeDescription(): ?FeeDescription
     {
@@ -734,7 +734,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param FeeDescription $feeDescription
+     * @param  FeeDescription $feeDescription
      * @return static
      */
     public function addToFeeDescription(FeeDescription $feeDescription): static
@@ -755,7 +755,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param FeeDescription $feeDescription
+     * @param  FeeDescription $feeDescription
      * @return static
      */
     public function addOnceToFeeDescription(FeeDescription $feeDescription): static
@@ -786,7 +786,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getRequestedDeliveryDate(): ?DateTimeInterface
     {
@@ -794,7 +794,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param DateTimeInterface|null $requestedDeliveryDate
+     * @param  null|DateTimeInterface $requestedDeliveryDate
      * @return static
      */
     public function setRequestedDeliveryDate(?DateTimeInterface $requestedDeliveryDate = null): static
@@ -815,7 +815,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return EstimatedOverallContractQuantity|null
+     * @return null|EstimatedOverallContractQuantity
      */
     public function getEstimatedOverallContractQuantity(): ?EstimatedOverallContractQuantity
     {
@@ -833,7 +833,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param EstimatedOverallContractQuantity|null $estimatedOverallContractQuantity
+     * @param  null|EstimatedOverallContractQuantity $estimatedOverallContractQuantity
      * @return static
      */
     public function setEstimatedOverallContractQuantity(
@@ -855,7 +855,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -863,7 +863,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -894,7 +894,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -909,7 +909,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -924,7 +924,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -945,7 +945,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -976,7 +976,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return RequestedTenderTotal|null
+     * @return null|RequestedTenderTotal
      */
     public function getRequestedTenderTotal(): ?RequestedTenderTotal
     {
@@ -994,7 +994,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param RequestedTenderTotal|null $requestedTenderTotal
+     * @param  null|RequestedTenderTotal $requestedTenderTotal
      * @return static
      */
     public function setRequestedTenderTotal(?RequestedTenderTotal $requestedTenderTotal = null): static
@@ -1015,7 +1015,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return MainCommodityClassification|null
+     * @return null|MainCommodityClassification
      */
     public function getMainCommodityClassification(): ?MainCommodityClassification
     {
@@ -1033,7 +1033,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param MainCommodityClassification|null $mainCommodityClassification
+     * @param  null|MainCommodityClassification $mainCommodityClassification
      * @return static
      */
     public function setMainCommodityClassification(
@@ -1055,7 +1055,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return array<AdditionalCommodityClassification>|null
+     * @return null|array<AdditionalCommodityClassification>
      */
     public function getAdditionalCommodityClassification(): ?array
     {
@@ -1063,7 +1063,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param array<AdditionalCommodityClassification>|null $additionalCommodityClassification
+     * @param  null|array<AdditionalCommodityClassification> $additionalCommodityClassification
      * @return static
      */
     public function setAdditionalCommodityClassification(?array $additionalCommodityClassification = null): static
@@ -1094,7 +1094,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return AdditionalCommodityClassification|null
+     * @return null|AdditionalCommodityClassification
      */
     public function firstAdditionalCommodityClassification(): ?AdditionalCommodityClassification
     {
@@ -1109,7 +1109,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return AdditionalCommodityClassification|null
+     * @return null|AdditionalCommodityClassification
      */
     public function lastAdditionalCommodityClassification(): ?AdditionalCommodityClassification
     {
@@ -1124,7 +1124,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param AdditionalCommodityClassification $additionalCommodityClassification
+     * @param  AdditionalCommodityClassification $additionalCommodityClassification
      * @return static
      */
     public function addToAdditionalCommodityClassification(
@@ -1146,7 +1146,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param AdditionalCommodityClassification $additionalCommodityClassification
+     * @param  AdditionalCommodityClassification $additionalCommodityClassification
      * @return static
      */
     public function addOnceToAdditionalCommodityClassification(
@@ -1178,7 +1178,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return array<RealizedLocation>|null
+     * @return null|array<RealizedLocation>
      */
     public function getRealizedLocation(): ?array
     {
@@ -1186,7 +1186,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param array<RealizedLocation>|null $realizedLocation
+     * @param  null|array<RealizedLocation> $realizedLocation
      * @return static
      */
     public function setRealizedLocation(?array $realizedLocation = null): static
@@ -1217,7 +1217,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return RealizedLocation|null
+     * @return null|RealizedLocation
      */
     public function firstRealizedLocation(): ?RealizedLocation
     {
@@ -1232,7 +1232,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return RealizedLocation|null
+     * @return null|RealizedLocation
      */
     public function lastRealizedLocation(): ?RealizedLocation
     {
@@ -1247,7 +1247,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param RealizedLocation $realizedLocation
+     * @param  RealizedLocation $realizedLocation
      * @return static
      */
     public function addToRealizedLocation(RealizedLocation $realizedLocation): static
@@ -1268,7 +1268,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param RealizedLocation $realizedLocation
+     * @param  RealizedLocation $realizedLocation
      * @return static
      */
     public function addOnceToRealizedLocation(RealizedLocation $realizedLocation): static
@@ -1299,7 +1299,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return PlannedPeriod|null
+     * @return null|PlannedPeriod
      */
     public function getPlannedPeriod(): ?PlannedPeriod
     {
@@ -1317,7 +1317,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param PlannedPeriod|null $plannedPeriod
+     * @param  null|PlannedPeriod $plannedPeriod
      * @return static
      */
     public function setPlannedPeriod(?PlannedPeriod $plannedPeriod = null): static
@@ -1338,7 +1338,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return ContractExtension|null
+     * @return null|ContractExtension
      */
     public function getContractExtension(): ?ContractExtension
     {
@@ -1356,7 +1356,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param ContractExtension|null $contractExtension
+     * @param  null|ContractExtension $contractExtension
      * @return static
      */
     public function setContractExtension(?ContractExtension $contractExtension = null): static
@@ -1377,7 +1377,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return array<RequestForTenderLine>|null
+     * @return null|array<RequestForTenderLine>
      */
     public function getRequestForTenderLine(): ?array
     {
@@ -1385,7 +1385,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param array<RequestForTenderLine>|null $requestForTenderLine
+     * @param  null|array<RequestForTenderLine> $requestForTenderLine
      * @return static
      */
     public function setRequestForTenderLine(?array $requestForTenderLine = null): static
@@ -1416,7 +1416,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return RequestForTenderLine|null
+     * @return null|RequestForTenderLine
      */
     public function firstRequestForTenderLine(): ?RequestForTenderLine
     {
@@ -1431,7 +1431,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @return RequestForTenderLine|null
+     * @return null|RequestForTenderLine
      */
     public function lastRequestForTenderLine(): ?RequestForTenderLine
     {
@@ -1446,7 +1446,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param RequestForTenderLine $requestForTenderLine
+     * @param  RequestForTenderLine $requestForTenderLine
      * @return static
      */
     public function addToRequestForTenderLine(RequestForTenderLine $requestForTenderLine): static
@@ -1467,7 +1467,7 @@ class ProcurementProjectType
     }
 
     /**
-     * @param RequestForTenderLine $requestForTenderLine
+     * @param  RequestForTenderLine $requestForTenderLine
      * @return static
      */
     public function addOnceToRequestForTenderLine(RequestForTenderLine $requestForTenderLine): static

@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumNumberNumeric;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumNumberNumeric;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\OptionsDescription;
+use JMS\Serializer\Annotation as JMS;
 
 class ContractExtensionType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var array<OptionsDescription>|null
+     * @var null|array<OptionsDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\OptionsDescription>")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class ContractExtensionType
     private $optionsDescription;
 
     /**
-     * @var MinimumNumberNumeric|null
+     * @var null|MinimumNumberNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumNumberNumeric")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class ContractExtensionType
     private $minimumNumberNumeric;
 
     /**
-     * @var MaximumNumberNumeric|null
+     * @var null|MaximumNumberNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumNumberNumeric")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class ContractExtensionType
     private $maximumNumberNumeric;
 
     /**
-     * @var OptionValidityPeriod|null
+     * @var null|OptionValidityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OptionValidityPeriod")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ContractExtensionType
     private $optionValidityPeriod;
 
     /**
-     * @var array<Renewal>|null
+     * @var null|array<Renewal>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Renewal>")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class ContractExtensionType
     private $renewal;
 
     /**
-     * @return array<OptionsDescription>|null
+     * @return null|array<OptionsDescription>
      */
     public function getOptionsDescription(): ?array
     {
@@ -80,7 +80,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param array<OptionsDescription>|null $optionsDescription
+     * @param  null|array<OptionsDescription> $optionsDescription
      * @return static
      */
     public function setOptionsDescription(?array $optionsDescription = null): static
@@ -111,7 +111,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return OptionsDescription|null
+     * @return null|OptionsDescription
      */
     public function firstOptionsDescription(): ?OptionsDescription
     {
@@ -126,7 +126,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return OptionsDescription|null
+     * @return null|OptionsDescription
      */
     public function lastOptionsDescription(): ?OptionsDescription
     {
@@ -141,7 +141,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param OptionsDescription $optionsDescription
+     * @param  OptionsDescription $optionsDescription
      * @return static
      */
     public function addToOptionsDescription(OptionsDescription $optionsDescription): static
@@ -162,7 +162,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param OptionsDescription $optionsDescription
+     * @param  OptionsDescription $optionsDescription
      * @return static
      */
     public function addOnceToOptionsDescription(OptionsDescription $optionsDescription): static
@@ -193,7 +193,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return MinimumNumberNumeric|null
+     * @return null|MinimumNumberNumeric
      */
     public function getMinimumNumberNumeric(): ?MinimumNumberNumeric
     {
@@ -211,7 +211,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param MinimumNumberNumeric|null $minimumNumberNumeric
+     * @param  null|MinimumNumberNumeric $minimumNumberNumeric
      * @return static
      */
     public function setMinimumNumberNumeric(?MinimumNumberNumeric $minimumNumberNumeric = null): static
@@ -232,7 +232,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return MaximumNumberNumeric|null
+     * @return null|MaximumNumberNumeric
      */
     public function getMaximumNumberNumeric(): ?MaximumNumberNumeric
     {
@@ -250,7 +250,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param MaximumNumberNumeric|null $maximumNumberNumeric
+     * @param  null|MaximumNumberNumeric $maximumNumberNumeric
      * @return static
      */
     public function setMaximumNumberNumeric(?MaximumNumberNumeric $maximumNumberNumeric = null): static
@@ -271,7 +271,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return OptionValidityPeriod|null
+     * @return null|OptionValidityPeriod
      */
     public function getOptionValidityPeriod(): ?OptionValidityPeriod
     {
@@ -289,7 +289,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param OptionValidityPeriod|null $optionValidityPeriod
+     * @param  null|OptionValidityPeriod $optionValidityPeriod
      * @return static
      */
     public function setOptionValidityPeriod(?OptionValidityPeriod $optionValidityPeriod = null): static
@@ -310,7 +310,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return array<Renewal>|null
+     * @return null|array<Renewal>
      */
     public function getRenewal(): ?array
     {
@@ -318,7 +318,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param array<Renewal>|null $renewal
+     * @param  null|array<Renewal> $renewal
      * @return static
      */
     public function setRenewal(?array $renewal = null): static
@@ -349,7 +349,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return Renewal|null
+     * @return null|Renewal
      */
     public function firstRenewal(): ?Renewal
     {
@@ -364,7 +364,7 @@ class ContractExtensionType
     }
 
     /**
-     * @return Renewal|null
+     * @return null|Renewal
      */
     public function lastRenewal(): ?Renewal
     {
@@ -379,7 +379,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param Renewal $renewal
+     * @param  Renewal $renewal
      * @return static
      */
     public function addToRenewal(Renewal $renewal): static
@@ -400,7 +400,7 @@ class ContractExtensionType
     }
 
     /**
-     * @param Renewal $renewal
+     * @param  Renewal $renewal
      * @return static
      */
     public function addOnceToRenewal(Renewal $renewal): static

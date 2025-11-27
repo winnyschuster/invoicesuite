@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Content;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
+use JMS\Serializer\Annotation as JMS;
 
 class ClauseType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ClauseType
     private $iD;
 
     /**
-     * @var array<Content>|null
+     * @var null|array<Content>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Content>")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class ClauseType
     private $content;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -55,7 +55,7 @@ class ClauseType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -76,7 +76,7 @@ class ClauseType
     }
 
     /**
-     * @return array<Content>|null
+     * @return null|array<Content>
      */
     public function getContent(): ?array
     {
@@ -84,7 +84,7 @@ class ClauseType
     }
 
     /**
-     * @param array<Content>|null $content
+     * @param  null|array<Content> $content
      * @return static
      */
     public function setContent(?array $content = null): static
@@ -115,7 +115,7 @@ class ClauseType
     }
 
     /**
-     * @return Content|null
+     * @return null|Content
      */
     public function firstContent(): ?Content
     {
@@ -130,7 +130,7 @@ class ClauseType
     }
 
     /**
-     * @return Content|null
+     * @return null|Content
      */
     public function lastContent(): ?Content
     {
@@ -145,7 +145,7 @@ class ClauseType
     }
 
     /**
-     * @param Content $content
+     * @param  Content $content
      * @return static
      */
     public function addToContent(Content $content): static
@@ -166,7 +166,7 @@ class ClauseType
     }
 
     /**
-     * @param Content $content
+     * @param  Content $content
      * @return static
      */
     public function addOnceToContent(Content $content): static

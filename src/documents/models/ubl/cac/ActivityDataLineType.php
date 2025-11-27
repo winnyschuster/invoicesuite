@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class ActivityDataLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ActivityDataLineType
     private $iD;
 
     /**
-     * @var SupplyChainActivityTypeCode|null
+     * @var null|SupplyChainActivityTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ActivityDataLineType
     private $supplyChainActivityTypeCode;
 
     /**
-     * @var BuyerCustomerParty|null
+     * @var null|BuyerCustomerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class ActivityDataLineType
     private $buyerCustomerParty;
 
     /**
-     * @var SellerSupplierParty|null
+     * @var null|SellerSupplierParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class ActivityDataLineType
     private $sellerSupplierParty;
 
     /**
-     * @var ActivityPeriod|null
+     * @var null|ActivityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ActivityPeriod")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class ActivityDataLineType
     private $activityPeriod;
 
     /**
-     * @var ActivityOriginLocation|null
+     * @var null|ActivityOriginLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ActivityOriginLocation")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class ActivityDataLineType
     private $activityOriginLocation;
 
     /**
-     * @var ActivityFinalLocation|null
+     * @var null|ActivityFinalLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ActivityFinalLocation")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class ActivityDataLineType
     private $activityFinalLocation;
 
     /**
-     * @var array<SalesItem>|null
+     * @var null|array<SalesItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem>")
      * @JMS\Expose
@@ -103,7 +103,7 @@ class ActivityDataLineType
     private $salesItem;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -121,7 +121,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -142,7 +142,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return SupplyChainActivityTypeCode|null
+     * @return null|SupplyChainActivityTypeCode
      */
     public function getSupplyChainActivityTypeCode(): ?SupplyChainActivityTypeCode
     {
@@ -160,7 +160,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param SupplyChainActivityTypeCode|null $supplyChainActivityTypeCode
+     * @param  null|SupplyChainActivityTypeCode $supplyChainActivityTypeCode
      * @return static
      */
     public function setSupplyChainActivityTypeCode(
@@ -182,7 +182,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return BuyerCustomerParty|null
+     * @return null|BuyerCustomerParty
      */
     public function getBuyerCustomerParty(): ?BuyerCustomerParty
     {
@@ -200,7 +200,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param BuyerCustomerParty|null $buyerCustomerParty
+     * @param  null|BuyerCustomerParty $buyerCustomerParty
      * @return static
      */
     public function setBuyerCustomerParty(?BuyerCustomerParty $buyerCustomerParty = null): static
@@ -221,7 +221,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return SellerSupplierParty|null
+     * @return null|SellerSupplierParty
      */
     public function getSellerSupplierParty(): ?SellerSupplierParty
     {
@@ -239,7 +239,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param SellerSupplierParty|null $sellerSupplierParty
+     * @param  null|SellerSupplierParty $sellerSupplierParty
      * @return static
      */
     public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
@@ -260,7 +260,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return ActivityPeriod|null
+     * @return null|ActivityPeriod
      */
     public function getActivityPeriod(): ?ActivityPeriod
     {
@@ -278,7 +278,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param ActivityPeriod|null $activityPeriod
+     * @param  null|ActivityPeriod $activityPeriod
      * @return static
      */
     public function setActivityPeriod(?ActivityPeriod $activityPeriod = null): static
@@ -299,7 +299,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return ActivityOriginLocation|null
+     * @return null|ActivityOriginLocation
      */
     public function getActivityOriginLocation(): ?ActivityOriginLocation
     {
@@ -317,7 +317,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param ActivityOriginLocation|null $activityOriginLocation
+     * @param  null|ActivityOriginLocation $activityOriginLocation
      * @return static
      */
     public function setActivityOriginLocation(?ActivityOriginLocation $activityOriginLocation = null): static
@@ -338,7 +338,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return ActivityFinalLocation|null
+     * @return null|ActivityFinalLocation
      */
     public function getActivityFinalLocation(): ?ActivityFinalLocation
     {
@@ -356,7 +356,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param ActivityFinalLocation|null $activityFinalLocation
+     * @param  null|ActivityFinalLocation $activityFinalLocation
      * @return static
      */
     public function setActivityFinalLocation(?ActivityFinalLocation $activityFinalLocation = null): static
@@ -377,7 +377,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return array<SalesItem>|null
+     * @return null|array<SalesItem>
      */
     public function getSalesItem(): ?array
     {
@@ -385,7 +385,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param array<SalesItem>|null $salesItem
+     * @param  null|array<SalesItem> $salesItem
      * @return static
      */
     public function setSalesItem(?array $salesItem = null): static
@@ -416,7 +416,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return SalesItem|null
+     * @return null|SalesItem
      */
     public function firstSalesItem(): ?SalesItem
     {
@@ -431,7 +431,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @return SalesItem|null
+     * @return null|SalesItem
      */
     public function lastSalesItem(): ?SalesItem
     {
@@ -446,7 +446,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param SalesItem $salesItem
+     * @param  SalesItem $salesItem
      * @return static
      */
     public function addToSalesItem(SalesItem $salesItem): static
@@ -467,7 +467,7 @@ class ActivityDataLineType
     }
 
     /**
-     * @param SalesItem $salesItem
+     * @param  SalesItem $salesItem
      * @return static
      */
     public function addOnceToSalesItem(SalesItem $salesItem): static

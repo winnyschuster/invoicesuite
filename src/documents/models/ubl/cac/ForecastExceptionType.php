@@ -5,19 +5,19 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ComparisonDataCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DataSourceCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastPurposeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class ForecastExceptionType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ForecastPurposeCode|null
+     * @var null|ForecastPurposeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastPurposeCode")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class ForecastExceptionType
     private $forecastPurposeCode;
 
     /**
-     * @var ForecastTypeCode|null
+     * @var null|ForecastTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class ForecastExceptionType
     private $forecastTypeCode;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class ForecastExceptionType
     private $issueDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class ForecastExceptionType
     private $issueTime;
 
     /**
-     * @var DataSourceCode|null
+     * @var null|DataSourceCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DataSourceCode")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class ForecastExceptionType
     private $dataSourceCode;
 
     /**
-     * @var ComparisonDataCode|null
+     * @var null|ComparisonDataCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ComparisonDataCode")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class ForecastExceptionType
     private $comparisonDataCode;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class ForecastExceptionType
     private $comparisonForecastIssueTime;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -105,7 +105,7 @@ class ForecastExceptionType
     private $comparisonForecastIssueDate;
 
     /**
-     * @return ForecastPurposeCode|null
+     * @return null|ForecastPurposeCode
      */
     public function getForecastPurposeCode(): ?ForecastPurposeCode
     {
@@ -123,7 +123,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @param ForecastPurposeCode|null $forecastPurposeCode
+     * @param  null|ForecastPurposeCode $forecastPurposeCode
      * @return static
      */
     public function setForecastPurposeCode(?ForecastPurposeCode $forecastPurposeCode = null): static
@@ -144,7 +144,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @return ForecastTypeCode|null
+     * @return null|ForecastTypeCode
      */
     public function getForecastTypeCode(): ?ForecastTypeCode
     {
@@ -162,7 +162,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @param ForecastTypeCode|null $forecastTypeCode
+     * @param  null|ForecastTypeCode $forecastTypeCode
      * @return static
      */
     public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): static
@@ -183,7 +183,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueDate(): ?DateTimeInterface
     {
@@ -191,7 +191,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @param DateTimeInterface|null $issueDate
+     * @param  null|DateTimeInterface $issueDate
      * @return static
      */
     public function setIssueDate(?DateTimeInterface $issueDate = null): static
@@ -212,7 +212,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueTime(): ?DateTimeInterface
     {
@@ -220,7 +220,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @param DateTimeInterface|null $issueTime
+     * @param  null|DateTimeInterface $issueTime
      * @return static
      */
     public function setIssueTime(?DateTimeInterface $issueTime = null): static
@@ -241,7 +241,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @return DataSourceCode|null
+     * @return null|DataSourceCode
      */
     public function getDataSourceCode(): ?DataSourceCode
     {
@@ -259,7 +259,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @param DataSourceCode|null $dataSourceCode
+     * @param  null|DataSourceCode $dataSourceCode
      * @return static
      */
     public function setDataSourceCode(?DataSourceCode $dataSourceCode = null): static
@@ -280,7 +280,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @return ComparisonDataCode|null
+     * @return null|ComparisonDataCode
      */
     public function getComparisonDataCode(): ?ComparisonDataCode
     {
@@ -298,7 +298,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @param ComparisonDataCode|null $comparisonDataCode
+     * @param  null|ComparisonDataCode $comparisonDataCode
      * @return static
      */
     public function setComparisonDataCode(?ComparisonDataCode $comparisonDataCode = null): static
@@ -319,7 +319,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getComparisonForecastIssueTime(): ?DateTimeInterface
     {
@@ -327,7 +327,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @param DateTimeInterface|null $comparisonForecastIssueTime
+     * @param  null|DateTimeInterface $comparisonForecastIssueTime
      * @return static
      */
     public function setComparisonForecastIssueTime(?DateTimeInterface $comparisonForecastIssueTime = null): static
@@ -348,7 +348,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getComparisonForecastIssueDate(): ?DateTimeInterface
     {
@@ -356,7 +356,7 @@ class ForecastExceptionType
     }
 
     /**
-     * @param DateTimeInterface|null $comparisonForecastIssueDate
+     * @param  null|DateTimeInterface $comparisonForecastIssueDate
      * @return static
      */
     public function setComparisonForecastIssueDate(?DateTimeInterface $comparisonForecastIssueDate = null): static

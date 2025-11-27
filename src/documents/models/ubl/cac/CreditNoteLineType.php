@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode;
@@ -15,13 +14,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
+use JMS\Serializer\Annotation as JMS;
 
 class CreditNoteLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class CreditNoteLineType
     private $iD;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class CreditNoteLineType
     private $uUID;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -55,7 +55,7 @@ class CreditNoteLineType
     private $note;
 
     /**
-     * @var CreditedQuantity|null
+     * @var null|CreditedQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CreditedQuantity")
      * @JMS\Expose
@@ -66,7 +66,7 @@ class CreditNoteLineType
     private $creditedQuantity;
 
     /**
-     * @var LineExtensionAmount|null
+     * @var null|LineExtensionAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class CreditNoteLineType
     private $lineExtensionAmount;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -88,7 +88,7 @@ class CreditNoteLineType
     private $taxPointDate;
 
     /**
-     * @var AccountingCostCode|null
+     * @var null|AccountingCostCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class CreditNoteLineType
     private $accountingCostCode;
 
     /**
-     * @var AccountingCost|null
+     * @var null|AccountingCost
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost")
      * @JMS\Expose
@@ -110,7 +110,7 @@ class CreditNoteLineType
     private $accountingCost;
 
     /**
-     * @var PaymentPurposeCode|null
+     * @var null|PaymentPurposeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode")
      * @JMS\Expose
@@ -121,7 +121,7 @@ class CreditNoteLineType
     private $paymentPurposeCode;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -132,7 +132,7 @@ class CreditNoteLineType
     private $freeOfChargeIndicator;
 
     /**
-     * @var array<InvoicePeriod>|null
+     * @var null|array<InvoicePeriod>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod>")
      * @JMS\Expose
@@ -144,7 +144,7 @@ class CreditNoteLineType
     private $invoicePeriod;
 
     /**
-     * @var array<OrderLineReference>|null
+     * @var null|array<OrderLineReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference>")
      * @JMS\Expose
@@ -156,7 +156,7 @@ class CreditNoteLineType
     private $orderLineReference;
 
     /**
-     * @var array<DiscrepancyResponse>|null
+     * @var null|array<DiscrepancyResponse>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DiscrepancyResponse>")
      * @JMS\Expose
@@ -168,7 +168,7 @@ class CreditNoteLineType
     private $discrepancyResponse;
 
     /**
-     * @var array<DespatchLineReference>|null
+     * @var null|array<DespatchLineReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DespatchLineReference>")
      * @JMS\Expose
@@ -180,7 +180,7 @@ class CreditNoteLineType
     private $despatchLineReference;
 
     /**
-     * @var array<ReceiptLineReference>|null
+     * @var null|array<ReceiptLineReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ReceiptLineReference>")
      * @JMS\Expose
@@ -192,7 +192,7 @@ class CreditNoteLineType
     private $receiptLineReference;
 
     /**
-     * @var array<BillingReference>|null
+     * @var null|array<BillingReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>")
      * @JMS\Expose
@@ -204,7 +204,7 @@ class CreditNoteLineType
     private $billingReference;
 
     /**
-     * @var array<DocumentReference>|null
+     * @var null|array<DocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -216,7 +216,7 @@ class CreditNoteLineType
     private $documentReference;
 
     /**
-     * @var PricingReference|null
+     * @var null|PricingReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PricingReference")
      * @JMS\Expose
@@ -227,7 +227,7 @@ class CreditNoteLineType
     private $pricingReference;
 
     /**
-     * @var OriginatorParty|null
+     * @var null|OriginatorParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorParty")
      * @JMS\Expose
@@ -238,7 +238,7 @@ class CreditNoteLineType
     private $originatorParty;
 
     /**
-     * @var array<Delivery>|null
+     * @var null|array<Delivery>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Delivery>")
      * @JMS\Expose
@@ -250,7 +250,7 @@ class CreditNoteLineType
     private $delivery;
 
     /**
-     * @var array<PaymentTerms>|null
+     * @var null|array<PaymentTerms>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>")
      * @JMS\Expose
@@ -262,7 +262,7 @@ class CreditNoteLineType
     private $paymentTerms;
 
     /**
-     * @var array<TaxTotal>|null
+     * @var null|array<TaxTotal>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>")
      * @JMS\Expose
@@ -274,7 +274,7 @@ class CreditNoteLineType
     private $taxTotal;
 
     /**
-     * @var array<AllowanceCharge>|null
+     * @var null|array<AllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -286,7 +286,7 @@ class CreditNoteLineType
     private $allowanceCharge;
 
     /**
-     * @var Item|null
+     * @var null|Item
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -297,7 +297,7 @@ class CreditNoteLineType
     private $item;
 
     /**
-     * @var Price|null
+     * @var null|Price
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Price")
      * @JMS\Expose
@@ -308,7 +308,7 @@ class CreditNoteLineType
     private $price;
 
     /**
-     * @var array<DeliveryTerms>|null
+     * @var null|array<DeliveryTerms>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms>")
      * @JMS\Expose
@@ -320,7 +320,7 @@ class CreditNoteLineType
     private $deliveryTerms;
 
     /**
-     * @var array<SubCreditNoteLine>|null
+     * @var null|array<SubCreditNoteLine>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubCreditNoteLine>")
      * @JMS\Expose
@@ -332,7 +332,7 @@ class CreditNoteLineType
     private $subCreditNoteLine;
 
     /**
-     * @var ItemPriceExtension|null
+     * @var null|ItemPriceExtension
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ItemPriceExtension")
      * @JMS\Expose
@@ -343,7 +343,7 @@ class CreditNoteLineType
     private $itemPriceExtension;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -361,7 +361,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -382,7 +382,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -400,7 +400,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -421,7 +421,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -429,7 +429,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -460,7 +460,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -475,7 +475,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -490,7 +490,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -511,7 +511,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -542,7 +542,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return CreditedQuantity|null
+     * @return null|CreditedQuantity
      */
     public function getCreditedQuantity(): ?CreditedQuantity
     {
@@ -560,7 +560,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param CreditedQuantity|null $creditedQuantity
+     * @param  null|CreditedQuantity $creditedQuantity
      * @return static
      */
     public function setCreditedQuantity(?CreditedQuantity $creditedQuantity = null): static
@@ -581,7 +581,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return LineExtensionAmount|null
+     * @return null|LineExtensionAmount
      */
     public function getLineExtensionAmount(): ?LineExtensionAmount
     {
@@ -599,7 +599,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param LineExtensionAmount|null $lineExtensionAmount
+     * @param  null|LineExtensionAmount $lineExtensionAmount
      * @return static
      */
     public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
@@ -620,7 +620,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getTaxPointDate(): ?DateTimeInterface
     {
@@ -628,7 +628,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param DateTimeInterface|null $taxPointDate
+     * @param  null|DateTimeInterface $taxPointDate
      * @return static
      */
     public function setTaxPointDate(?DateTimeInterface $taxPointDate = null): static
@@ -649,7 +649,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return AccountingCostCode|null
+     * @return null|AccountingCostCode
      */
     public function getAccountingCostCode(): ?AccountingCostCode
     {
@@ -667,7 +667,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param AccountingCostCode|null $accountingCostCode
+     * @param  null|AccountingCostCode $accountingCostCode
      * @return static
      */
     public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): static
@@ -688,7 +688,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return AccountingCost|null
+     * @return null|AccountingCost
      */
     public function getAccountingCost(): ?AccountingCost
     {
@@ -706,7 +706,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param AccountingCost|null $accountingCost
+     * @param  null|AccountingCost $accountingCost
      * @return static
      */
     public function setAccountingCost(?AccountingCost $accountingCost = null): static
@@ -727,7 +727,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return PaymentPurposeCode|null
+     * @return null|PaymentPurposeCode
      */
     public function getPaymentPurposeCode(): ?PaymentPurposeCode
     {
@@ -745,7 +745,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param PaymentPurposeCode|null $paymentPurposeCode
+     * @param  null|PaymentPurposeCode $paymentPurposeCode
      * @return static
      */
     public function setPaymentPurposeCode(?PaymentPurposeCode $paymentPurposeCode = null): static
@@ -766,7 +766,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getFreeOfChargeIndicator(): ?bool
     {
@@ -774,7 +774,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param bool|null $freeOfChargeIndicator
+     * @param  null|bool $freeOfChargeIndicator
      * @return static
      */
     public function setFreeOfChargeIndicator(?bool $freeOfChargeIndicator = null): static
@@ -795,7 +795,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return array<InvoicePeriod>|null
+     * @return null|array<InvoicePeriod>
      */
     public function getInvoicePeriod(): ?array
     {
@@ -803,7 +803,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param array<InvoicePeriod>|null $invoicePeriod
+     * @param  null|array<InvoicePeriod> $invoicePeriod
      * @return static
      */
     public function setInvoicePeriod(?array $invoicePeriod = null): static
@@ -834,7 +834,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return InvoicePeriod|null
+     * @return null|InvoicePeriod
      */
     public function firstInvoicePeriod(): ?InvoicePeriod
     {
@@ -849,7 +849,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return InvoicePeriod|null
+     * @return null|InvoicePeriod
      */
     public function lastInvoicePeriod(): ?InvoicePeriod
     {
@@ -864,7 +864,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param InvoicePeriod $invoicePeriod
+     * @param  InvoicePeriod $invoicePeriod
      * @return static
      */
     public function addToInvoicePeriod(InvoicePeriod $invoicePeriod): static
@@ -885,7 +885,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param InvoicePeriod $invoicePeriod
+     * @param  InvoicePeriod $invoicePeriod
      * @return static
      */
     public function addOnceToInvoicePeriod(InvoicePeriod $invoicePeriod): static
@@ -916,7 +916,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return array<OrderLineReference>|null
+     * @return null|array<OrderLineReference>
      */
     public function getOrderLineReference(): ?array
     {
@@ -924,7 +924,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param array<OrderLineReference>|null $orderLineReference
+     * @param  null|array<OrderLineReference> $orderLineReference
      * @return static
      */
     public function setOrderLineReference(?array $orderLineReference = null): static
@@ -955,7 +955,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return OrderLineReference|null
+     * @return null|OrderLineReference
      */
     public function firstOrderLineReference(): ?OrderLineReference
     {
@@ -970,7 +970,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return OrderLineReference|null
+     * @return null|OrderLineReference
      */
     public function lastOrderLineReference(): ?OrderLineReference
     {
@@ -985,7 +985,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param OrderLineReference $orderLineReference
+     * @param  OrderLineReference $orderLineReference
      * @return static
      */
     public function addToOrderLineReference(OrderLineReference $orderLineReference): static
@@ -1006,7 +1006,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param OrderLineReference $orderLineReference
+     * @param  OrderLineReference $orderLineReference
      * @return static
      */
     public function addOnceToOrderLineReference(OrderLineReference $orderLineReference): static
@@ -1037,7 +1037,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return array<DiscrepancyResponse>|null
+     * @return null|array<DiscrepancyResponse>
      */
     public function getDiscrepancyResponse(): ?array
     {
@@ -1045,7 +1045,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param array<DiscrepancyResponse>|null $discrepancyResponse
+     * @param  null|array<DiscrepancyResponse> $discrepancyResponse
      * @return static
      */
     public function setDiscrepancyResponse(?array $discrepancyResponse = null): static
@@ -1076,7 +1076,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return DiscrepancyResponse|null
+     * @return null|DiscrepancyResponse
      */
     public function firstDiscrepancyResponse(): ?DiscrepancyResponse
     {
@@ -1091,7 +1091,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return DiscrepancyResponse|null
+     * @return null|DiscrepancyResponse
      */
     public function lastDiscrepancyResponse(): ?DiscrepancyResponse
     {
@@ -1106,7 +1106,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param DiscrepancyResponse $discrepancyResponse
+     * @param  DiscrepancyResponse $discrepancyResponse
      * @return static
      */
     public function addToDiscrepancyResponse(DiscrepancyResponse $discrepancyResponse): static
@@ -1127,7 +1127,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param DiscrepancyResponse $discrepancyResponse
+     * @param  DiscrepancyResponse $discrepancyResponse
      * @return static
      */
     public function addOnceToDiscrepancyResponse(DiscrepancyResponse $discrepancyResponse): static
@@ -1158,7 +1158,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return array<DespatchLineReference>|null
+     * @return null|array<DespatchLineReference>
      */
     public function getDespatchLineReference(): ?array
     {
@@ -1166,7 +1166,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param array<DespatchLineReference>|null $despatchLineReference
+     * @param  null|array<DespatchLineReference> $despatchLineReference
      * @return static
      */
     public function setDespatchLineReference(?array $despatchLineReference = null): static
@@ -1197,7 +1197,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return DespatchLineReference|null
+     * @return null|DespatchLineReference
      */
     public function firstDespatchLineReference(): ?DespatchLineReference
     {
@@ -1212,7 +1212,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return DespatchLineReference|null
+     * @return null|DespatchLineReference
      */
     public function lastDespatchLineReference(): ?DespatchLineReference
     {
@@ -1227,7 +1227,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param DespatchLineReference $despatchLineReference
+     * @param  DespatchLineReference $despatchLineReference
      * @return static
      */
     public function addToDespatchLineReference(DespatchLineReference $despatchLineReference): static
@@ -1248,7 +1248,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param DespatchLineReference $despatchLineReference
+     * @param  DespatchLineReference $despatchLineReference
      * @return static
      */
     public function addOnceToDespatchLineReference(DespatchLineReference $despatchLineReference): static
@@ -1279,7 +1279,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return array<ReceiptLineReference>|null
+     * @return null|array<ReceiptLineReference>
      */
     public function getReceiptLineReference(): ?array
     {
@@ -1287,7 +1287,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param array<ReceiptLineReference>|null $receiptLineReference
+     * @param  null|array<ReceiptLineReference> $receiptLineReference
      * @return static
      */
     public function setReceiptLineReference(?array $receiptLineReference = null): static
@@ -1318,7 +1318,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return ReceiptLineReference|null
+     * @return null|ReceiptLineReference
      */
     public function firstReceiptLineReference(): ?ReceiptLineReference
     {
@@ -1333,7 +1333,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return ReceiptLineReference|null
+     * @return null|ReceiptLineReference
      */
     public function lastReceiptLineReference(): ?ReceiptLineReference
     {
@@ -1348,7 +1348,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param ReceiptLineReference $receiptLineReference
+     * @param  ReceiptLineReference $receiptLineReference
      * @return static
      */
     public function addToReceiptLineReference(ReceiptLineReference $receiptLineReference): static
@@ -1369,7 +1369,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param ReceiptLineReference $receiptLineReference
+     * @param  ReceiptLineReference $receiptLineReference
      * @return static
      */
     public function addOnceToReceiptLineReference(ReceiptLineReference $receiptLineReference): static
@@ -1400,7 +1400,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return array<BillingReference>|null
+     * @return null|array<BillingReference>
      */
     public function getBillingReference(): ?array
     {
@@ -1408,7 +1408,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param array<BillingReference>|null $billingReference
+     * @param  null|array<BillingReference> $billingReference
      * @return static
      */
     public function setBillingReference(?array $billingReference = null): static
@@ -1439,7 +1439,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return BillingReference|null
+     * @return null|BillingReference
      */
     public function firstBillingReference(): ?BillingReference
     {
@@ -1454,7 +1454,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return BillingReference|null
+     * @return null|BillingReference
      */
     public function lastBillingReference(): ?BillingReference
     {
@@ -1469,7 +1469,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param BillingReference $billingReference
+     * @param  BillingReference $billingReference
      * @return static
      */
     public function addToBillingReference(BillingReference $billingReference): static
@@ -1490,7 +1490,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param BillingReference $billingReference
+     * @param  BillingReference $billingReference
      * @return static
      */
     public function addOnceToBillingReference(BillingReference $billingReference): static
@@ -1521,7 +1521,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return array<DocumentReference>|null
+     * @return null|array<DocumentReference>
      */
     public function getDocumentReference(): ?array
     {
@@ -1529,7 +1529,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param array<DocumentReference>|null $documentReference
+     * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
     public function setDocumentReference(?array $documentReference = null): static
@@ -1560,7 +1560,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -1575,7 +1575,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -1590,7 +1590,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addToDocumentReference(DocumentReference $documentReference): static
@@ -1611,7 +1611,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): static
@@ -1642,7 +1642,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return PricingReference|null
+     * @return null|PricingReference
      */
     public function getPricingReference(): ?PricingReference
     {
@@ -1660,7 +1660,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param PricingReference|null $pricingReference
+     * @param  null|PricingReference $pricingReference
      * @return static
      */
     public function setPricingReference(?PricingReference $pricingReference = null): static
@@ -1681,7 +1681,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return OriginatorParty|null
+     * @return null|OriginatorParty
      */
     public function getOriginatorParty(): ?OriginatorParty
     {
@@ -1699,7 +1699,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param OriginatorParty|null $originatorParty
+     * @param  null|OriginatorParty $originatorParty
      * @return static
      */
     public function setOriginatorParty(?OriginatorParty $originatorParty = null): static
@@ -1720,7 +1720,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return array<Delivery>|null
+     * @return null|array<Delivery>
      */
     public function getDelivery(): ?array
     {
@@ -1728,7 +1728,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param array<Delivery>|null $delivery
+     * @param  null|array<Delivery> $delivery
      * @return static
      */
     public function setDelivery(?array $delivery = null): static
@@ -1759,7 +1759,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return Delivery|null
+     * @return null|Delivery
      */
     public function firstDelivery(): ?Delivery
     {
@@ -1774,7 +1774,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return Delivery|null
+     * @return null|Delivery
      */
     public function lastDelivery(): ?Delivery
     {
@@ -1789,7 +1789,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param Delivery $delivery
+     * @param  Delivery $delivery
      * @return static
      */
     public function addToDelivery(Delivery $delivery): static
@@ -1810,7 +1810,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param Delivery $delivery
+     * @param  Delivery $delivery
      * @return static
      */
     public function addOnceToDelivery(Delivery $delivery): static
@@ -1841,7 +1841,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return array<PaymentTerms>|null
+     * @return null|array<PaymentTerms>
      */
     public function getPaymentTerms(): ?array
     {
@@ -1849,7 +1849,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param array<PaymentTerms>|null $paymentTerms
+     * @param  null|array<PaymentTerms> $paymentTerms
      * @return static
      */
     public function setPaymentTerms(?array $paymentTerms = null): static
@@ -1880,7 +1880,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return PaymentTerms|null
+     * @return null|PaymentTerms
      */
     public function firstPaymentTerms(): ?PaymentTerms
     {
@@ -1895,7 +1895,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return PaymentTerms|null
+     * @return null|PaymentTerms
      */
     public function lastPaymentTerms(): ?PaymentTerms
     {
@@ -1910,7 +1910,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param PaymentTerms $paymentTerms
+     * @param  PaymentTerms $paymentTerms
      * @return static
      */
     public function addToPaymentTerms(PaymentTerms $paymentTerms): static
@@ -1931,7 +1931,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param PaymentTerms $paymentTerms
+     * @param  PaymentTerms $paymentTerms
      * @return static
      */
     public function addOnceToPaymentTerms(PaymentTerms $paymentTerms): static
@@ -1962,7 +1962,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return array<TaxTotal>|null
+     * @return null|array<TaxTotal>
      */
     public function getTaxTotal(): ?array
     {
@@ -1970,7 +1970,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param array<TaxTotal>|null $taxTotal
+     * @param  null|array<TaxTotal> $taxTotal
      * @return static
      */
     public function setTaxTotal(?array $taxTotal = null): static
@@ -2001,7 +2001,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function firstTaxTotal(): ?TaxTotal
     {
@@ -2016,7 +2016,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function lastTaxTotal(): ?TaxTotal
     {
@@ -2031,7 +2031,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addToTaxTotal(TaxTotal $taxTotal): static
@@ -2052,7 +2052,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addOnceToTaxTotal(TaxTotal $taxTotal): static
@@ -2083,7 +2083,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return array<AllowanceCharge>|null
+     * @return null|array<AllowanceCharge>
      */
     public function getAllowanceCharge(): ?array
     {
@@ -2091,7 +2091,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param array<AllowanceCharge>|null $allowanceCharge
+     * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): static
@@ -2122,7 +2122,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -2137,7 +2137,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -2152,7 +2152,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -2173,7 +2173,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -2204,7 +2204,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function getItem(): ?Item
     {
@@ -2222,7 +2222,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param Item|null $item
+     * @param  null|Item $item
      * @return static
      */
     public function setItem(?Item $item = null): static
@@ -2243,7 +2243,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return Price|null
+     * @return null|Price
      */
     public function getPrice(): ?Price
     {
@@ -2261,7 +2261,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param Price|null $price
+     * @param  null|Price $price
      * @return static
      */
     public function setPrice(?Price $price = null): static
@@ -2282,7 +2282,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return array<DeliveryTerms>|null
+     * @return null|array<DeliveryTerms>
      */
     public function getDeliveryTerms(): ?array
     {
@@ -2290,7 +2290,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param array<DeliveryTerms>|null $deliveryTerms
+     * @param  null|array<DeliveryTerms> $deliveryTerms
      * @return static
      */
     public function setDeliveryTerms(?array $deliveryTerms = null): static
@@ -2321,7 +2321,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return DeliveryTerms|null
+     * @return null|DeliveryTerms
      */
     public function firstDeliveryTerms(): ?DeliveryTerms
     {
@@ -2336,7 +2336,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return DeliveryTerms|null
+     * @return null|DeliveryTerms
      */
     public function lastDeliveryTerms(): ?DeliveryTerms
     {
@@ -2351,7 +2351,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param DeliveryTerms $deliveryTerms
+     * @param  DeliveryTerms $deliveryTerms
      * @return static
      */
     public function addToDeliveryTerms(DeliveryTerms $deliveryTerms): static
@@ -2372,7 +2372,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param DeliveryTerms $deliveryTerms
+     * @param  DeliveryTerms $deliveryTerms
      * @return static
      */
     public function addOnceToDeliveryTerms(DeliveryTerms $deliveryTerms): static
@@ -2403,7 +2403,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return array<SubCreditNoteLine>|null
+     * @return null|array<SubCreditNoteLine>
      */
     public function getSubCreditNoteLine(): ?array
     {
@@ -2411,7 +2411,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param array<SubCreditNoteLine>|null $subCreditNoteLine
+     * @param  null|array<SubCreditNoteLine> $subCreditNoteLine
      * @return static
      */
     public function setSubCreditNoteLine(?array $subCreditNoteLine = null): static
@@ -2442,7 +2442,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return SubCreditNoteLine|null
+     * @return null|SubCreditNoteLine
      */
     public function firstSubCreditNoteLine(): ?SubCreditNoteLine
     {
@@ -2457,7 +2457,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return SubCreditNoteLine|null
+     * @return null|SubCreditNoteLine
      */
     public function lastSubCreditNoteLine(): ?SubCreditNoteLine
     {
@@ -2472,7 +2472,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param SubCreditNoteLine $subCreditNoteLine
+     * @param  SubCreditNoteLine $subCreditNoteLine
      * @return static
      */
     public function addToSubCreditNoteLine(SubCreditNoteLine $subCreditNoteLine): static
@@ -2493,7 +2493,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param SubCreditNoteLine $subCreditNoteLine
+     * @param  SubCreditNoteLine $subCreditNoteLine
      * @return static
      */
     public function addOnceToSubCreditNoteLine(SubCreditNoteLine $subCreditNoteLine): static
@@ -2524,7 +2524,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @return ItemPriceExtension|null
+     * @return null|ItemPriceExtension
      */
     public function getItemPriceExtension(): ?ItemPriceExtension
     {
@@ -2542,7 +2542,7 @@ class CreditNoteLineType
     }
 
     /**
-     * @param ItemPriceExtension|null $itemPriceExtension
+     * @param  null|ItemPriceExtension $itemPriceExtension
      * @return static
      */
     public function setItemPriceExtension(?ItemPriceExtension $itemPriceExtension = null): static

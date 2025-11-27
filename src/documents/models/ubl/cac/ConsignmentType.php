@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BrokerAssignedID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CarrierAssignedID;
@@ -50,13 +49,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalGoodsItemQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalInvoiceAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalPackagesQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTransportHandlingUnitQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class ConsignmentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class ConsignmentType
     private $iD;
 
     /**
-     * @var CarrierAssignedID|null
+     * @var null|CarrierAssignedID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CarrierAssignedID")
      * @JMS\Expose
@@ -78,7 +78,7 @@ class ConsignmentType
     private $carrierAssignedID;
 
     /**
-     * @var ConsigneeAssignedID|null
+     * @var null|ConsigneeAssignedID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsigneeAssignedID")
      * @JMS\Expose
@@ -89,7 +89,7 @@ class ConsignmentType
     private $consigneeAssignedID;
 
     /**
-     * @var ConsignorAssignedID|null
+     * @var null|ConsignorAssignedID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsignorAssignedID")
      * @JMS\Expose
@@ -100,7 +100,7 @@ class ConsignmentType
     private $consignorAssignedID;
 
     /**
-     * @var FreightForwarderAssignedID|null
+     * @var null|FreightForwarderAssignedID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FreightForwarderAssignedID")
      * @JMS\Expose
@@ -111,7 +111,7 @@ class ConsignmentType
     private $freightForwarderAssignedID;
 
     /**
-     * @var BrokerAssignedID|null
+     * @var null|BrokerAssignedID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BrokerAssignedID")
      * @JMS\Expose
@@ -122,7 +122,7 @@ class ConsignmentType
     private $brokerAssignedID;
 
     /**
-     * @var ContractedCarrierAssignedID|null
+     * @var null|ContractedCarrierAssignedID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ContractedCarrierAssignedID")
      * @JMS\Expose
@@ -133,7 +133,7 @@ class ConsignmentType
     private $contractedCarrierAssignedID;
 
     /**
-     * @var PerformingCarrierAssignedID|null
+     * @var null|PerformingCarrierAssignedID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PerformingCarrierAssignedID")
      * @JMS\Expose
@@ -144,7 +144,7 @@ class ConsignmentType
     private $performingCarrierAssignedID;
 
     /**
-     * @var array<SummaryDescription>|null
+     * @var null|array<SummaryDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\SummaryDescription>")
      * @JMS\Expose
@@ -156,7 +156,7 @@ class ConsignmentType
     private $summaryDescription;
 
     /**
-     * @var TotalInvoiceAmount|null
+     * @var null|TotalInvoiceAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalInvoiceAmount")
      * @JMS\Expose
@@ -167,7 +167,7 @@ class ConsignmentType
     private $totalInvoiceAmount;
 
     /**
-     * @var DeclaredCustomsValueAmount|null
+     * @var null|DeclaredCustomsValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredCustomsValueAmount")
      * @JMS\Expose
@@ -178,7 +178,7 @@ class ConsignmentType
     private $declaredCustomsValueAmount;
 
     /**
-     * @var array<TariffDescription>|null
+     * @var null|array<TariffDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\TariffDescription>")
      * @JMS\Expose
@@ -190,7 +190,7 @@ class ConsignmentType
     private $tariffDescription;
 
     /**
-     * @var TariffCode|null
+     * @var null|TariffCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TariffCode")
      * @JMS\Expose
@@ -201,7 +201,7 @@ class ConsignmentType
     private $tariffCode;
 
     /**
-     * @var InsurancePremiumAmount|null
+     * @var null|InsurancePremiumAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InsurancePremiumAmount")
      * @JMS\Expose
@@ -212,7 +212,7 @@ class ConsignmentType
     private $insurancePremiumAmount;
 
     /**
-     * @var GrossWeightMeasure|null
+     * @var null|GrossWeightMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GrossWeightMeasure")
      * @JMS\Expose
@@ -223,7 +223,7 @@ class ConsignmentType
     private $grossWeightMeasure;
 
     /**
-     * @var NetWeightMeasure|null
+     * @var null|NetWeightMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetWeightMeasure")
      * @JMS\Expose
@@ -234,7 +234,7 @@ class ConsignmentType
     private $netWeightMeasure;
 
     /**
-     * @var NetNetWeightMeasure|null
+     * @var null|NetNetWeightMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetNetWeightMeasure")
      * @JMS\Expose
@@ -245,7 +245,7 @@ class ConsignmentType
     private $netNetWeightMeasure;
 
     /**
-     * @var ChargeableWeightMeasure|null
+     * @var null|ChargeableWeightMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ChargeableWeightMeasure")
      * @JMS\Expose
@@ -256,7 +256,7 @@ class ConsignmentType
     private $chargeableWeightMeasure;
 
     /**
-     * @var GrossVolumeMeasure|null
+     * @var null|GrossVolumeMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GrossVolumeMeasure")
      * @JMS\Expose
@@ -267,7 +267,7 @@ class ConsignmentType
     private $grossVolumeMeasure;
 
     /**
-     * @var NetVolumeMeasure|null
+     * @var null|NetVolumeMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetVolumeMeasure")
      * @JMS\Expose
@@ -278,7 +278,7 @@ class ConsignmentType
     private $netVolumeMeasure;
 
     /**
-     * @var LoadingLengthMeasure|null
+     * @var null|LoadingLengthMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LoadingLengthMeasure")
      * @JMS\Expose
@@ -289,7 +289,7 @@ class ConsignmentType
     private $loadingLengthMeasure;
 
     /**
-     * @var array<Remarks>|null
+     * @var null|array<Remarks>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>")
      * @JMS\Expose
@@ -301,7 +301,7 @@ class ConsignmentType
     private $remarks;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -312,7 +312,7 @@ class ConsignmentType
     private $hazardousRiskIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -323,7 +323,7 @@ class ConsignmentType
     private $animalFoodIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -334,7 +334,7 @@ class ConsignmentType
     private $humanFoodIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -345,7 +345,7 @@ class ConsignmentType
     private $livestockIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -356,7 +356,7 @@ class ConsignmentType
     private $bulkCargoIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -367,7 +367,7 @@ class ConsignmentType
     private $containerizedIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -378,7 +378,7 @@ class ConsignmentType
     private $generalCargoIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -389,7 +389,7 @@ class ConsignmentType
     private $specialSecurityIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -400,7 +400,7 @@ class ConsignmentType
     private $thirdPartyPayerIndicator;
 
     /**
-     * @var array<CarrierServiceInstructions>|null
+     * @var null|array<CarrierServiceInstructions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\CarrierServiceInstructions>")
      * @JMS\Expose
@@ -412,7 +412,7 @@ class ConsignmentType
     private $carrierServiceInstructions;
 
     /**
-     * @var array<CustomsClearanceServiceInstructions>|null
+     * @var null|array<CustomsClearanceServiceInstructions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\CustomsClearanceServiceInstructions>")
      * @JMS\Expose
@@ -424,7 +424,7 @@ class ConsignmentType
     private $customsClearanceServiceInstructions;
 
     /**
-     * @var array<ForwarderServiceInstructions>|null
+     * @var null|array<ForwarderServiceInstructions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ForwarderServiceInstructions>")
      * @JMS\Expose
@@ -436,7 +436,7 @@ class ConsignmentType
     private $forwarderServiceInstructions;
 
     /**
-     * @var array<SpecialServiceInstructions>|null
+     * @var null|array<SpecialServiceInstructions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialServiceInstructions>")
      * @JMS\Expose
@@ -448,7 +448,7 @@ class ConsignmentType
     private $specialServiceInstructions;
 
     /**
-     * @var SequenceID|null
+     * @var null|SequenceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceID")
      * @JMS\Expose
@@ -459,7 +459,7 @@ class ConsignmentType
     private $sequenceID;
 
     /**
-     * @var ShippingPriorityLevelCode|null
+     * @var null|ShippingPriorityLevelCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ShippingPriorityLevelCode")
      * @JMS\Expose
@@ -470,7 +470,7 @@ class ConsignmentType
     private $shippingPriorityLevelCode;
 
     /**
-     * @var HandlingCode|null
+     * @var null|HandlingCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingCode")
      * @JMS\Expose
@@ -481,7 +481,7 @@ class ConsignmentType
     private $handlingCode;
 
     /**
-     * @var array<HandlingInstructions>|null
+     * @var null|array<HandlingInstructions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingInstructions>")
      * @JMS\Expose
@@ -493,7 +493,7 @@ class ConsignmentType
     private $handlingInstructions;
 
     /**
-     * @var array<Information>|null
+     * @var null|array<Information>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Information>")
      * @JMS\Expose
@@ -505,7 +505,7 @@ class ConsignmentType
     private $information;
 
     /**
-     * @var TotalGoodsItemQuantity|null
+     * @var null|TotalGoodsItemQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalGoodsItemQuantity")
      * @JMS\Expose
@@ -516,7 +516,7 @@ class ConsignmentType
     private $totalGoodsItemQuantity;
 
     /**
-     * @var TotalTransportHandlingUnitQuantity|null
+     * @var null|TotalTransportHandlingUnitQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTransportHandlingUnitQuantity")
      * @JMS\Expose
@@ -527,7 +527,7 @@ class ConsignmentType
     private $totalTransportHandlingUnitQuantity;
 
     /**
-     * @var InsuranceValueAmount|null
+     * @var null|InsuranceValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InsuranceValueAmount")
      * @JMS\Expose
@@ -538,7 +538,7 @@ class ConsignmentType
     private $insuranceValueAmount;
 
     /**
-     * @var DeclaredForCarriageValueAmount|null
+     * @var null|DeclaredForCarriageValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredForCarriageValueAmount")
      * @JMS\Expose
@@ -549,7 +549,7 @@ class ConsignmentType
     private $declaredForCarriageValueAmount;
 
     /**
-     * @var DeclaredStatisticsValueAmount|null
+     * @var null|DeclaredStatisticsValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredStatisticsValueAmount")
      * @JMS\Expose
@@ -560,7 +560,7 @@ class ConsignmentType
     private $declaredStatisticsValueAmount;
 
     /**
-     * @var FreeOnBoardValueAmount|null
+     * @var null|FreeOnBoardValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FreeOnBoardValueAmount")
      * @JMS\Expose
@@ -571,7 +571,7 @@ class ConsignmentType
     private $freeOnBoardValueAmount;
 
     /**
-     * @var array<SpecialInstructions>|null
+     * @var null|array<SpecialInstructions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialInstructions>")
      * @JMS\Expose
@@ -583,7 +583,7 @@ class ConsignmentType
     private $specialInstructions;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -594,7 +594,7 @@ class ConsignmentType
     private $splitConsignmentIndicator;
 
     /**
-     * @var array<DeliveryInstructions>|null
+     * @var null|array<DeliveryInstructions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\DeliveryInstructions>")
      * @JMS\Expose
@@ -606,7 +606,7 @@ class ConsignmentType
     private $deliveryInstructions;
 
     /**
-     * @var ConsignmentQuantity|null
+     * @var null|ConsignmentQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsignmentQuantity")
      * @JMS\Expose
@@ -617,7 +617,7 @@ class ConsignmentType
     private $consignmentQuantity;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -628,7 +628,7 @@ class ConsignmentType
     private $consolidatableIndicator;
 
     /**
-     * @var array<HaulageInstructions>|null
+     * @var null|array<HaulageInstructions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\HaulageInstructions>")
      * @JMS\Expose
@@ -640,7 +640,7 @@ class ConsignmentType
     private $haulageInstructions;
 
     /**
-     * @var LoadingSequenceID|null
+     * @var null|LoadingSequenceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LoadingSequenceID")
      * @JMS\Expose
@@ -651,7 +651,7 @@ class ConsignmentType
     private $loadingSequenceID;
 
     /**
-     * @var ChildConsignmentQuantity|null
+     * @var null|ChildConsignmentQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ChildConsignmentQuantity")
      * @JMS\Expose
@@ -662,7 +662,7 @@ class ConsignmentType
     private $childConsignmentQuantity;
 
     /**
-     * @var TotalPackagesQuantity|null
+     * @var null|TotalPackagesQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalPackagesQuantity")
      * @JMS\Expose
@@ -673,7 +673,7 @@ class ConsignmentType
     private $totalPackagesQuantity;
 
     /**
-     * @var array<ConsolidatedShipment>|null
+     * @var null|array<ConsolidatedShipment>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ConsolidatedShipment>")
      * @JMS\Expose
@@ -685,7 +685,7 @@ class ConsignmentType
     private $consolidatedShipment;
 
     /**
-     * @var array<CustomsDeclaration>|null
+     * @var null|array<CustomsDeclaration>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\CustomsDeclaration>")
      * @JMS\Expose
@@ -697,7 +697,7 @@ class ConsignmentType
     private $customsDeclaration;
 
     /**
-     * @var RequestedPickupTransportEvent|null
+     * @var null|RequestedPickupTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RequestedPickupTransportEvent")
      * @JMS\Expose
@@ -708,7 +708,7 @@ class ConsignmentType
     private $requestedPickupTransportEvent;
 
     /**
-     * @var RequestedDeliveryTransportEvent|null
+     * @var null|RequestedDeliveryTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RequestedDeliveryTransportEvent")
      * @JMS\Expose
@@ -719,7 +719,7 @@ class ConsignmentType
     private $requestedDeliveryTransportEvent;
 
     /**
-     * @var PlannedPickupTransportEvent|null
+     * @var null|PlannedPickupTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PlannedPickupTransportEvent")
      * @JMS\Expose
@@ -730,7 +730,7 @@ class ConsignmentType
     private $plannedPickupTransportEvent;
 
     /**
-     * @var PlannedDeliveryTransportEvent|null
+     * @var null|PlannedDeliveryTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PlannedDeliveryTransportEvent")
      * @JMS\Expose
@@ -741,7 +741,7 @@ class ConsignmentType
     private $plannedDeliveryTransportEvent;
 
     /**
-     * @var array<Status>|null
+     * @var null|array<Status>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Status>")
      * @JMS\Expose
@@ -753,7 +753,7 @@ class ConsignmentType
     private $status;
 
     /**
-     * @var array<ChildConsignment>|null
+     * @var null|array<ChildConsignment>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ChildConsignment>")
      * @JMS\Expose
@@ -765,7 +765,7 @@ class ConsignmentType
     private $childConsignment;
 
     /**
-     * @var ConsigneeParty|null
+     * @var null|ConsigneeParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ConsigneeParty")
      * @JMS\Expose
@@ -776,7 +776,7 @@ class ConsignmentType
     private $consigneeParty;
 
     /**
-     * @var ExporterParty|null
+     * @var null|ExporterParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExporterParty")
      * @JMS\Expose
@@ -787,7 +787,7 @@ class ConsignmentType
     private $exporterParty;
 
     /**
-     * @var ConsignorParty|null
+     * @var null|ConsignorParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ConsignorParty")
      * @JMS\Expose
@@ -798,7 +798,7 @@ class ConsignmentType
     private $consignorParty;
 
     /**
-     * @var ImporterParty|null
+     * @var null|ImporterParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ImporterParty")
      * @JMS\Expose
@@ -809,7 +809,7 @@ class ConsignmentType
     private $importerParty;
 
     /**
-     * @var CarrierParty|null
+     * @var null|CarrierParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CarrierParty")
      * @JMS\Expose
@@ -820,7 +820,7 @@ class ConsignmentType
     private $carrierParty;
 
     /**
-     * @var FreightForwarderParty|null
+     * @var null|FreightForwarderParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FreightForwarderParty")
      * @JMS\Expose
@@ -831,7 +831,7 @@ class ConsignmentType
     private $freightForwarderParty;
 
     /**
-     * @var NotifyParty|null
+     * @var null|NotifyParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\NotifyParty")
      * @JMS\Expose
@@ -842,7 +842,7 @@ class ConsignmentType
     private $notifyParty;
 
     /**
-     * @var OriginalDespatchParty|null
+     * @var null|OriginalDespatchParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginalDespatchParty")
      * @JMS\Expose
@@ -853,7 +853,7 @@ class ConsignmentType
     private $originalDespatchParty;
 
     /**
-     * @var FinalDeliveryParty|null
+     * @var null|FinalDeliveryParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FinalDeliveryParty")
      * @JMS\Expose
@@ -864,7 +864,7 @@ class ConsignmentType
     private $finalDeliveryParty;
 
     /**
-     * @var PerformingCarrierParty|null
+     * @var null|PerformingCarrierParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PerformingCarrierParty")
      * @JMS\Expose
@@ -875,7 +875,7 @@ class ConsignmentType
     private $performingCarrierParty;
 
     /**
-     * @var SubstituteCarrierParty|null
+     * @var null|SubstituteCarrierParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SubstituteCarrierParty")
      * @JMS\Expose
@@ -886,7 +886,7 @@ class ConsignmentType
     private $substituteCarrierParty;
 
     /**
-     * @var LogisticsOperatorParty|null
+     * @var null|LogisticsOperatorParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LogisticsOperatorParty")
      * @JMS\Expose
@@ -897,7 +897,7 @@ class ConsignmentType
     private $logisticsOperatorParty;
 
     /**
-     * @var TransportAdvisorParty|null
+     * @var null|TransportAdvisorParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TransportAdvisorParty")
      * @JMS\Expose
@@ -908,7 +908,7 @@ class ConsignmentType
     private $transportAdvisorParty;
 
     /**
-     * @var HazardousItemNotificationParty|null
+     * @var null|HazardousItemNotificationParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\HazardousItemNotificationParty")
      * @JMS\Expose
@@ -919,7 +919,7 @@ class ConsignmentType
     private $hazardousItemNotificationParty;
 
     /**
-     * @var InsuranceParty|null
+     * @var null|InsuranceParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\InsuranceParty")
      * @JMS\Expose
@@ -930,7 +930,7 @@ class ConsignmentType
     private $insuranceParty;
 
     /**
-     * @var MortgageHolderParty|null
+     * @var null|MortgageHolderParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MortgageHolderParty")
      * @JMS\Expose
@@ -941,7 +941,7 @@ class ConsignmentType
     private $mortgageHolderParty;
 
     /**
-     * @var BillOfLadingHolderParty|null
+     * @var null|BillOfLadingHolderParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\BillOfLadingHolderParty")
      * @JMS\Expose
@@ -952,7 +952,7 @@ class ConsignmentType
     private $billOfLadingHolderParty;
 
     /**
-     * @var OriginalDepartureCountry|null
+     * @var null|OriginalDepartureCountry
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginalDepartureCountry")
      * @JMS\Expose
@@ -963,7 +963,7 @@ class ConsignmentType
     private $originalDepartureCountry;
 
     /**
-     * @var FinalDestinationCountry|null
+     * @var null|FinalDestinationCountry
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FinalDestinationCountry")
      * @JMS\Expose
@@ -974,7 +974,7 @@ class ConsignmentType
     private $finalDestinationCountry;
 
     /**
-     * @var array<TransitCountry>|null
+     * @var null|array<TransitCountry>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TransitCountry>")
      * @JMS\Expose
@@ -986,7 +986,7 @@ class ConsignmentType
     private $transitCountry;
 
     /**
-     * @var TransportContract|null
+     * @var null|TransportContract
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TransportContract")
      * @JMS\Expose
@@ -997,7 +997,7 @@ class ConsignmentType
     private $transportContract;
 
     /**
-     * @var array<TransportEvent>|null
+     * @var null|array<TransportEvent>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TransportEvent>")
      * @JMS\Expose
@@ -1009,7 +1009,7 @@ class ConsignmentType
     private $transportEvent;
 
     /**
-     * @var OriginalDespatchTransportationService|null
+     * @var null|OriginalDespatchTransportationService
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginalDespatchTransportationService")
      * @JMS\Expose
@@ -1020,7 +1020,7 @@ class ConsignmentType
     private $originalDespatchTransportationService;
 
     /**
-     * @var FinalDeliveryTransportationService|null
+     * @var null|FinalDeliveryTransportationService
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FinalDeliveryTransportationService")
      * @JMS\Expose
@@ -1031,7 +1031,7 @@ class ConsignmentType
     private $finalDeliveryTransportationService;
 
     /**
-     * @var DeliveryTerms|null
+     * @var null|DeliveryTerms
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms")
      * @JMS\Expose
@@ -1042,7 +1042,7 @@ class ConsignmentType
     private $deliveryTerms;
 
     /**
-     * @var PaymentTerms|null
+     * @var null|PaymentTerms
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms")
      * @JMS\Expose
@@ -1053,7 +1053,7 @@ class ConsignmentType
     private $paymentTerms;
 
     /**
-     * @var CollectPaymentTerms|null
+     * @var null|CollectPaymentTerms
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CollectPaymentTerms")
      * @JMS\Expose
@@ -1064,7 +1064,7 @@ class ConsignmentType
     private $collectPaymentTerms;
 
     /**
-     * @var DisbursementPaymentTerms|null
+     * @var null|DisbursementPaymentTerms
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DisbursementPaymentTerms")
      * @JMS\Expose
@@ -1075,7 +1075,7 @@ class ConsignmentType
     private $disbursementPaymentTerms;
 
     /**
-     * @var PrepaidPaymentTerms|null
+     * @var null|PrepaidPaymentTerms
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PrepaidPaymentTerms")
      * @JMS\Expose
@@ -1086,7 +1086,7 @@ class ConsignmentType
     private $prepaidPaymentTerms;
 
     /**
-     * @var array<FreightAllowanceCharge>|null
+     * @var null|array<FreightAllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge>")
      * @JMS\Expose
@@ -1098,7 +1098,7 @@ class ConsignmentType
     private $freightAllowanceCharge;
 
     /**
-     * @var array<ExtraAllowanceCharge>|null
+     * @var null|array<ExtraAllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ExtraAllowanceCharge>")
      * @JMS\Expose
@@ -1110,7 +1110,7 @@ class ConsignmentType
     private $extraAllowanceCharge;
 
     /**
-     * @var array<MainCarriageShipmentStage>|null
+     * @var null|array<MainCarriageShipmentStage>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MainCarriageShipmentStage>")
      * @JMS\Expose
@@ -1122,7 +1122,7 @@ class ConsignmentType
     private $mainCarriageShipmentStage;
 
     /**
-     * @var array<PreCarriageShipmentStage>|null
+     * @var null|array<PreCarriageShipmentStage>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PreCarriageShipmentStage>")
      * @JMS\Expose
@@ -1134,7 +1134,7 @@ class ConsignmentType
     private $preCarriageShipmentStage;
 
     /**
-     * @var array<OnCarriageShipmentStage>|null
+     * @var null|array<OnCarriageShipmentStage>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\OnCarriageShipmentStage>")
      * @JMS\Expose
@@ -1146,7 +1146,7 @@ class ConsignmentType
     private $onCarriageShipmentStage;
 
     /**
-     * @var array<TransportHandlingUnit>|null
+     * @var null|array<TransportHandlingUnit>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TransportHandlingUnit>")
      * @JMS\Expose
@@ -1158,7 +1158,7 @@ class ConsignmentType
     private $transportHandlingUnit;
 
     /**
-     * @var FirstArrivalPortLocation|null
+     * @var null|FirstArrivalPortLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FirstArrivalPortLocation")
      * @JMS\Expose
@@ -1169,7 +1169,7 @@ class ConsignmentType
     private $firstArrivalPortLocation;
 
     /**
-     * @var LastExitPortLocation|null
+     * @var null|LastExitPortLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LastExitPortLocation")
      * @JMS\Expose
@@ -1180,7 +1180,7 @@ class ConsignmentType
     private $lastExitPortLocation;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -1198,7 +1198,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -1219,7 +1219,7 @@ class ConsignmentType
     }
 
     /**
-     * @return CarrierAssignedID|null
+     * @return null|CarrierAssignedID
      */
     public function getCarrierAssignedID(): ?CarrierAssignedID
     {
@@ -1237,7 +1237,7 @@ class ConsignmentType
     }
 
     /**
-     * @param CarrierAssignedID|null $carrierAssignedID
+     * @param  null|CarrierAssignedID $carrierAssignedID
      * @return static
      */
     public function setCarrierAssignedID(?CarrierAssignedID $carrierAssignedID = null): static
@@ -1258,7 +1258,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ConsigneeAssignedID|null
+     * @return null|ConsigneeAssignedID
      */
     public function getConsigneeAssignedID(): ?ConsigneeAssignedID
     {
@@ -1276,7 +1276,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ConsigneeAssignedID|null $consigneeAssignedID
+     * @param  null|ConsigneeAssignedID $consigneeAssignedID
      * @return static
      */
     public function setConsigneeAssignedID(?ConsigneeAssignedID $consigneeAssignedID = null): static
@@ -1297,7 +1297,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ConsignorAssignedID|null
+     * @return null|ConsignorAssignedID
      */
     public function getConsignorAssignedID(): ?ConsignorAssignedID
     {
@@ -1315,7 +1315,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ConsignorAssignedID|null $consignorAssignedID
+     * @param  null|ConsignorAssignedID $consignorAssignedID
      * @return static
      */
     public function setConsignorAssignedID(?ConsignorAssignedID $consignorAssignedID = null): static
@@ -1336,7 +1336,7 @@ class ConsignmentType
     }
 
     /**
-     * @return FreightForwarderAssignedID|null
+     * @return null|FreightForwarderAssignedID
      */
     public function getFreightForwarderAssignedID(): ?FreightForwarderAssignedID
     {
@@ -1354,7 +1354,7 @@ class ConsignmentType
     }
 
     /**
-     * @param FreightForwarderAssignedID|null $freightForwarderAssignedID
+     * @param  null|FreightForwarderAssignedID $freightForwarderAssignedID
      * @return static
      */
     public function setFreightForwarderAssignedID(
@@ -1376,7 +1376,7 @@ class ConsignmentType
     }
 
     /**
-     * @return BrokerAssignedID|null
+     * @return null|BrokerAssignedID
      */
     public function getBrokerAssignedID(): ?BrokerAssignedID
     {
@@ -1394,7 +1394,7 @@ class ConsignmentType
     }
 
     /**
-     * @param BrokerAssignedID|null $brokerAssignedID
+     * @param  null|BrokerAssignedID $brokerAssignedID
      * @return static
      */
     public function setBrokerAssignedID(?BrokerAssignedID $brokerAssignedID = null): static
@@ -1415,7 +1415,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ContractedCarrierAssignedID|null
+     * @return null|ContractedCarrierAssignedID
      */
     public function getContractedCarrierAssignedID(): ?ContractedCarrierAssignedID
     {
@@ -1433,7 +1433,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ContractedCarrierAssignedID|null $contractedCarrierAssignedID
+     * @param  null|ContractedCarrierAssignedID $contractedCarrierAssignedID
      * @return static
      */
     public function setContractedCarrierAssignedID(
@@ -1455,7 +1455,7 @@ class ConsignmentType
     }
 
     /**
-     * @return PerformingCarrierAssignedID|null
+     * @return null|PerformingCarrierAssignedID
      */
     public function getPerformingCarrierAssignedID(): ?PerformingCarrierAssignedID
     {
@@ -1473,7 +1473,7 @@ class ConsignmentType
     }
 
     /**
-     * @param PerformingCarrierAssignedID|null $performingCarrierAssignedID
+     * @param  null|PerformingCarrierAssignedID $performingCarrierAssignedID
      * @return static
      */
     public function setPerformingCarrierAssignedID(
@@ -1495,7 +1495,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<SummaryDescription>|null
+     * @return null|array<SummaryDescription>
      */
     public function getSummaryDescription(): ?array
     {
@@ -1503,7 +1503,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<SummaryDescription>|null $summaryDescription
+     * @param  null|array<SummaryDescription> $summaryDescription
      * @return static
      */
     public function setSummaryDescription(?array $summaryDescription = null): static
@@ -1534,7 +1534,7 @@ class ConsignmentType
     }
 
     /**
-     * @return SummaryDescription|null
+     * @return null|SummaryDescription
      */
     public function firstSummaryDescription(): ?SummaryDescription
     {
@@ -1549,7 +1549,7 @@ class ConsignmentType
     }
 
     /**
-     * @return SummaryDescription|null
+     * @return null|SummaryDescription
      */
     public function lastSummaryDescription(): ?SummaryDescription
     {
@@ -1564,7 +1564,7 @@ class ConsignmentType
     }
 
     /**
-     * @param SummaryDescription $summaryDescription
+     * @param  SummaryDescription $summaryDescription
      * @return static
      */
     public function addToSummaryDescription(SummaryDescription $summaryDescription): static
@@ -1585,7 +1585,7 @@ class ConsignmentType
     }
 
     /**
-     * @param SummaryDescription $summaryDescription
+     * @param  SummaryDescription $summaryDescription
      * @return static
      */
     public function addOnceToSummaryDescription(SummaryDescription $summaryDescription): static
@@ -1616,7 +1616,7 @@ class ConsignmentType
     }
 
     /**
-     * @return TotalInvoiceAmount|null
+     * @return null|TotalInvoiceAmount
      */
     public function getTotalInvoiceAmount(): ?TotalInvoiceAmount
     {
@@ -1634,7 +1634,7 @@ class ConsignmentType
     }
 
     /**
-     * @param TotalInvoiceAmount|null $totalInvoiceAmount
+     * @param  null|TotalInvoiceAmount $totalInvoiceAmount
      * @return static
      */
     public function setTotalInvoiceAmount(?TotalInvoiceAmount $totalInvoiceAmount = null): static
@@ -1655,7 +1655,7 @@ class ConsignmentType
     }
 
     /**
-     * @return DeclaredCustomsValueAmount|null
+     * @return null|DeclaredCustomsValueAmount
      */
     public function getDeclaredCustomsValueAmount(): ?DeclaredCustomsValueAmount
     {
@@ -1673,7 +1673,7 @@ class ConsignmentType
     }
 
     /**
-     * @param DeclaredCustomsValueAmount|null $declaredCustomsValueAmount
+     * @param  null|DeclaredCustomsValueAmount $declaredCustomsValueAmount
      * @return static
      */
     public function setDeclaredCustomsValueAmount(
@@ -1695,7 +1695,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<TariffDescription>|null
+     * @return null|array<TariffDescription>
      */
     public function getTariffDescription(): ?array
     {
@@ -1703,7 +1703,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<TariffDescription>|null $tariffDescription
+     * @param  null|array<TariffDescription> $tariffDescription
      * @return static
      */
     public function setTariffDescription(?array $tariffDescription = null): static
@@ -1734,7 +1734,7 @@ class ConsignmentType
     }
 
     /**
-     * @return TariffDescription|null
+     * @return null|TariffDescription
      */
     public function firstTariffDescription(): ?TariffDescription
     {
@@ -1749,7 +1749,7 @@ class ConsignmentType
     }
 
     /**
-     * @return TariffDescription|null
+     * @return null|TariffDescription
      */
     public function lastTariffDescription(): ?TariffDescription
     {
@@ -1764,7 +1764,7 @@ class ConsignmentType
     }
 
     /**
-     * @param TariffDescription $tariffDescription
+     * @param  TariffDescription $tariffDescription
      * @return static
      */
     public function addToTariffDescription(TariffDescription $tariffDescription): static
@@ -1785,7 +1785,7 @@ class ConsignmentType
     }
 
     /**
-     * @param TariffDescription $tariffDescription
+     * @param  TariffDescription $tariffDescription
      * @return static
      */
     public function addOnceToTariffDescription(TariffDescription $tariffDescription): static
@@ -1816,7 +1816,7 @@ class ConsignmentType
     }
 
     /**
-     * @return TariffCode|null
+     * @return null|TariffCode
      */
     public function getTariffCode(): ?TariffCode
     {
@@ -1834,7 +1834,7 @@ class ConsignmentType
     }
 
     /**
-     * @param TariffCode|null $tariffCode
+     * @param  null|TariffCode $tariffCode
      * @return static
      */
     public function setTariffCode(?TariffCode $tariffCode = null): static
@@ -1855,7 +1855,7 @@ class ConsignmentType
     }
 
     /**
-     * @return InsurancePremiumAmount|null
+     * @return null|InsurancePremiumAmount
      */
     public function getInsurancePremiumAmount(): ?InsurancePremiumAmount
     {
@@ -1873,7 +1873,7 @@ class ConsignmentType
     }
 
     /**
-     * @param InsurancePremiumAmount|null $insurancePremiumAmount
+     * @param  null|InsurancePremiumAmount $insurancePremiumAmount
      * @return static
      */
     public function setInsurancePremiumAmount(?InsurancePremiumAmount $insurancePremiumAmount = null): static
@@ -1894,7 +1894,7 @@ class ConsignmentType
     }
 
     /**
-     * @return GrossWeightMeasure|null
+     * @return null|GrossWeightMeasure
      */
     public function getGrossWeightMeasure(): ?GrossWeightMeasure
     {
@@ -1912,7 +1912,7 @@ class ConsignmentType
     }
 
     /**
-     * @param GrossWeightMeasure|null $grossWeightMeasure
+     * @param  null|GrossWeightMeasure $grossWeightMeasure
      * @return static
      */
     public function setGrossWeightMeasure(?GrossWeightMeasure $grossWeightMeasure = null): static
@@ -1933,7 +1933,7 @@ class ConsignmentType
     }
 
     /**
-     * @return NetWeightMeasure|null
+     * @return null|NetWeightMeasure
      */
     public function getNetWeightMeasure(): ?NetWeightMeasure
     {
@@ -1951,7 +1951,7 @@ class ConsignmentType
     }
 
     /**
-     * @param NetWeightMeasure|null $netWeightMeasure
+     * @param  null|NetWeightMeasure $netWeightMeasure
      * @return static
      */
     public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): static
@@ -1972,7 +1972,7 @@ class ConsignmentType
     }
 
     /**
-     * @return NetNetWeightMeasure|null
+     * @return null|NetNetWeightMeasure
      */
     public function getNetNetWeightMeasure(): ?NetNetWeightMeasure
     {
@@ -1990,7 +1990,7 @@ class ConsignmentType
     }
 
     /**
-     * @param NetNetWeightMeasure|null $netNetWeightMeasure
+     * @param  null|NetNetWeightMeasure $netNetWeightMeasure
      * @return static
      */
     public function setNetNetWeightMeasure(?NetNetWeightMeasure $netNetWeightMeasure = null): static
@@ -2011,7 +2011,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ChargeableWeightMeasure|null
+     * @return null|ChargeableWeightMeasure
      */
     public function getChargeableWeightMeasure(): ?ChargeableWeightMeasure
     {
@@ -2029,7 +2029,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ChargeableWeightMeasure|null $chargeableWeightMeasure
+     * @param  null|ChargeableWeightMeasure $chargeableWeightMeasure
      * @return static
      */
     public function setChargeableWeightMeasure(?ChargeableWeightMeasure $chargeableWeightMeasure = null): static
@@ -2050,7 +2050,7 @@ class ConsignmentType
     }
 
     /**
-     * @return GrossVolumeMeasure|null
+     * @return null|GrossVolumeMeasure
      */
     public function getGrossVolumeMeasure(): ?GrossVolumeMeasure
     {
@@ -2068,7 +2068,7 @@ class ConsignmentType
     }
 
     /**
-     * @param GrossVolumeMeasure|null $grossVolumeMeasure
+     * @param  null|GrossVolumeMeasure $grossVolumeMeasure
      * @return static
      */
     public function setGrossVolumeMeasure(?GrossVolumeMeasure $grossVolumeMeasure = null): static
@@ -2089,7 +2089,7 @@ class ConsignmentType
     }
 
     /**
-     * @return NetVolumeMeasure|null
+     * @return null|NetVolumeMeasure
      */
     public function getNetVolumeMeasure(): ?NetVolumeMeasure
     {
@@ -2107,7 +2107,7 @@ class ConsignmentType
     }
 
     /**
-     * @param NetVolumeMeasure|null $netVolumeMeasure
+     * @param  null|NetVolumeMeasure $netVolumeMeasure
      * @return static
      */
     public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): static
@@ -2128,7 +2128,7 @@ class ConsignmentType
     }
 
     /**
-     * @return LoadingLengthMeasure|null
+     * @return null|LoadingLengthMeasure
      */
     public function getLoadingLengthMeasure(): ?LoadingLengthMeasure
     {
@@ -2146,7 +2146,7 @@ class ConsignmentType
     }
 
     /**
-     * @param LoadingLengthMeasure|null $loadingLengthMeasure
+     * @param  null|LoadingLengthMeasure $loadingLengthMeasure
      * @return static
      */
     public function setLoadingLengthMeasure(?LoadingLengthMeasure $loadingLengthMeasure = null): static
@@ -2167,7 +2167,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<Remarks>|null
+     * @return null|array<Remarks>
      */
     public function getRemarks(): ?array
     {
@@ -2175,7 +2175,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<Remarks>|null $remarks
+     * @param  null|array<Remarks> $remarks
      * @return static
      */
     public function setRemarks(?array $remarks = null): static
@@ -2206,7 +2206,7 @@ class ConsignmentType
     }
 
     /**
-     * @return Remarks|null
+     * @return null|Remarks
      */
     public function firstRemarks(): ?Remarks
     {
@@ -2221,7 +2221,7 @@ class ConsignmentType
     }
 
     /**
-     * @return Remarks|null
+     * @return null|Remarks
      */
     public function lastRemarks(): ?Remarks
     {
@@ -2236,7 +2236,7 @@ class ConsignmentType
     }
 
     /**
-     * @param Remarks $remarks
+     * @param  Remarks $remarks
      * @return static
      */
     public function addToRemarks(Remarks $remarks): static
@@ -2257,7 +2257,7 @@ class ConsignmentType
     }
 
     /**
-     * @param Remarks $remarks
+     * @param  Remarks $remarks
      * @return static
      */
     public function addOnceToRemarks(Remarks $remarks): static
@@ -2288,7 +2288,7 @@ class ConsignmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getHazardousRiskIndicator(): ?bool
     {
@@ -2296,7 +2296,7 @@ class ConsignmentType
     }
 
     /**
-     * @param bool|null $hazardousRiskIndicator
+     * @param  null|bool $hazardousRiskIndicator
      * @return static
      */
     public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): static
@@ -2317,7 +2317,7 @@ class ConsignmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getAnimalFoodIndicator(): ?bool
     {
@@ -2325,7 +2325,7 @@ class ConsignmentType
     }
 
     /**
-     * @param bool|null $animalFoodIndicator
+     * @param  null|bool $animalFoodIndicator
      * @return static
      */
     public function setAnimalFoodIndicator(?bool $animalFoodIndicator = null): static
@@ -2346,7 +2346,7 @@ class ConsignmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getHumanFoodIndicator(): ?bool
     {
@@ -2354,7 +2354,7 @@ class ConsignmentType
     }
 
     /**
-     * @param bool|null $humanFoodIndicator
+     * @param  null|bool $humanFoodIndicator
      * @return static
      */
     public function setHumanFoodIndicator(?bool $humanFoodIndicator = null): static
@@ -2375,7 +2375,7 @@ class ConsignmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getLivestockIndicator(): ?bool
     {
@@ -2383,7 +2383,7 @@ class ConsignmentType
     }
 
     /**
-     * @param bool|null $livestockIndicator
+     * @param  null|bool $livestockIndicator
      * @return static
      */
     public function setLivestockIndicator(?bool $livestockIndicator = null): static
@@ -2404,7 +2404,7 @@ class ConsignmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getBulkCargoIndicator(): ?bool
     {
@@ -2412,7 +2412,7 @@ class ConsignmentType
     }
 
     /**
-     * @param bool|null $bulkCargoIndicator
+     * @param  null|bool $bulkCargoIndicator
      * @return static
      */
     public function setBulkCargoIndicator(?bool $bulkCargoIndicator = null): static
@@ -2433,7 +2433,7 @@ class ConsignmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getContainerizedIndicator(): ?bool
     {
@@ -2441,7 +2441,7 @@ class ConsignmentType
     }
 
     /**
-     * @param bool|null $containerizedIndicator
+     * @param  null|bool $containerizedIndicator
      * @return static
      */
     public function setContainerizedIndicator(?bool $containerizedIndicator = null): static
@@ -2462,7 +2462,7 @@ class ConsignmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getGeneralCargoIndicator(): ?bool
     {
@@ -2470,7 +2470,7 @@ class ConsignmentType
     }
 
     /**
-     * @param bool|null $generalCargoIndicator
+     * @param  null|bool $generalCargoIndicator
      * @return static
      */
     public function setGeneralCargoIndicator(?bool $generalCargoIndicator = null): static
@@ -2491,7 +2491,7 @@ class ConsignmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getSpecialSecurityIndicator(): ?bool
     {
@@ -2499,7 +2499,7 @@ class ConsignmentType
     }
 
     /**
-     * @param bool|null $specialSecurityIndicator
+     * @param  null|bool $specialSecurityIndicator
      * @return static
      */
     public function setSpecialSecurityIndicator(?bool $specialSecurityIndicator = null): static
@@ -2520,7 +2520,7 @@ class ConsignmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getThirdPartyPayerIndicator(): ?bool
     {
@@ -2528,7 +2528,7 @@ class ConsignmentType
     }
 
     /**
-     * @param bool|null $thirdPartyPayerIndicator
+     * @param  null|bool $thirdPartyPayerIndicator
      * @return static
      */
     public function setThirdPartyPayerIndicator(?bool $thirdPartyPayerIndicator = null): static
@@ -2549,7 +2549,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<CarrierServiceInstructions>|null
+     * @return null|array<CarrierServiceInstructions>
      */
     public function getCarrierServiceInstructions(): ?array
     {
@@ -2557,7 +2557,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<CarrierServiceInstructions>|null $carrierServiceInstructions
+     * @param  null|array<CarrierServiceInstructions> $carrierServiceInstructions
      * @return static
      */
     public function setCarrierServiceInstructions(?array $carrierServiceInstructions = null): static
@@ -2588,7 +2588,7 @@ class ConsignmentType
     }
 
     /**
-     * @return CarrierServiceInstructions|null
+     * @return null|CarrierServiceInstructions
      */
     public function firstCarrierServiceInstructions(): ?CarrierServiceInstructions
     {
@@ -2603,7 +2603,7 @@ class ConsignmentType
     }
 
     /**
-     * @return CarrierServiceInstructions|null
+     * @return null|CarrierServiceInstructions
      */
     public function lastCarrierServiceInstructions(): ?CarrierServiceInstructions
     {
@@ -2618,7 +2618,7 @@ class ConsignmentType
     }
 
     /**
-     * @param CarrierServiceInstructions $carrierServiceInstructions
+     * @param  CarrierServiceInstructions $carrierServiceInstructions
      * @return static
      */
     public function addToCarrierServiceInstructions(CarrierServiceInstructions $carrierServiceInstructions): static
@@ -2639,7 +2639,7 @@ class ConsignmentType
     }
 
     /**
-     * @param CarrierServiceInstructions $carrierServiceInstructions
+     * @param  CarrierServiceInstructions $carrierServiceInstructions
      * @return static
      */
     public function addOnceToCarrierServiceInstructions(CarrierServiceInstructions $carrierServiceInstructions): static
@@ -2670,7 +2670,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<CustomsClearanceServiceInstructions>|null
+     * @return null|array<CustomsClearanceServiceInstructions>
      */
     public function getCustomsClearanceServiceInstructions(): ?array
     {
@@ -2678,7 +2678,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<CustomsClearanceServiceInstructions>|null $customsClearanceServiceInstructions
+     * @param  null|array<CustomsClearanceServiceInstructions> $customsClearanceServiceInstructions
      * @return static
      */
     public function setCustomsClearanceServiceInstructions(?array $customsClearanceServiceInstructions = null): static
@@ -2709,7 +2709,7 @@ class ConsignmentType
     }
 
     /**
-     * @return CustomsClearanceServiceInstructions|null
+     * @return null|CustomsClearanceServiceInstructions
      */
     public function firstCustomsClearanceServiceInstructions(): ?CustomsClearanceServiceInstructions
     {
@@ -2724,7 +2724,7 @@ class ConsignmentType
     }
 
     /**
-     * @return CustomsClearanceServiceInstructions|null
+     * @return null|CustomsClearanceServiceInstructions
      */
     public function lastCustomsClearanceServiceInstructions(): ?CustomsClearanceServiceInstructions
     {
@@ -2739,7 +2739,7 @@ class ConsignmentType
     }
 
     /**
-     * @param CustomsClearanceServiceInstructions $customsClearanceServiceInstructions
+     * @param  CustomsClearanceServiceInstructions $customsClearanceServiceInstructions
      * @return static
      */
     public function addToCustomsClearanceServiceInstructions(
@@ -2761,7 +2761,7 @@ class ConsignmentType
     }
 
     /**
-     * @param CustomsClearanceServiceInstructions $customsClearanceServiceInstructions
+     * @param  CustomsClearanceServiceInstructions $customsClearanceServiceInstructions
      * @return static
      */
     public function addOnceToCustomsClearanceServiceInstructions(
@@ -2793,7 +2793,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<ForwarderServiceInstructions>|null
+     * @return null|array<ForwarderServiceInstructions>
      */
     public function getForwarderServiceInstructions(): ?array
     {
@@ -2801,7 +2801,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<ForwarderServiceInstructions>|null $forwarderServiceInstructions
+     * @param  null|array<ForwarderServiceInstructions> $forwarderServiceInstructions
      * @return static
      */
     public function setForwarderServiceInstructions(?array $forwarderServiceInstructions = null): static
@@ -2832,7 +2832,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ForwarderServiceInstructions|null
+     * @return null|ForwarderServiceInstructions
      */
     public function firstForwarderServiceInstructions(): ?ForwarderServiceInstructions
     {
@@ -2847,7 +2847,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ForwarderServiceInstructions|null
+     * @return null|ForwarderServiceInstructions
      */
     public function lastForwarderServiceInstructions(): ?ForwarderServiceInstructions
     {
@@ -2862,7 +2862,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ForwarderServiceInstructions $forwarderServiceInstructions
+     * @param  ForwarderServiceInstructions $forwarderServiceInstructions
      * @return static
      */
     public function addToForwarderServiceInstructions(
@@ -2884,7 +2884,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ForwarderServiceInstructions $forwarderServiceInstructions
+     * @param  ForwarderServiceInstructions $forwarderServiceInstructions
      * @return static
      */
     public function addOnceToForwarderServiceInstructions(
@@ -2916,7 +2916,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<SpecialServiceInstructions>|null
+     * @return null|array<SpecialServiceInstructions>
      */
     public function getSpecialServiceInstructions(): ?array
     {
@@ -2924,7 +2924,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<SpecialServiceInstructions>|null $specialServiceInstructions
+     * @param  null|array<SpecialServiceInstructions> $specialServiceInstructions
      * @return static
      */
     public function setSpecialServiceInstructions(?array $specialServiceInstructions = null): static
@@ -2955,7 +2955,7 @@ class ConsignmentType
     }
 
     /**
-     * @return SpecialServiceInstructions|null
+     * @return null|SpecialServiceInstructions
      */
     public function firstSpecialServiceInstructions(): ?SpecialServiceInstructions
     {
@@ -2970,7 +2970,7 @@ class ConsignmentType
     }
 
     /**
-     * @return SpecialServiceInstructions|null
+     * @return null|SpecialServiceInstructions
      */
     public function lastSpecialServiceInstructions(): ?SpecialServiceInstructions
     {
@@ -2985,7 +2985,7 @@ class ConsignmentType
     }
 
     /**
-     * @param SpecialServiceInstructions $specialServiceInstructions
+     * @param  SpecialServiceInstructions $specialServiceInstructions
      * @return static
      */
     public function addToSpecialServiceInstructions(SpecialServiceInstructions $specialServiceInstructions): static
@@ -3006,7 +3006,7 @@ class ConsignmentType
     }
 
     /**
-     * @param SpecialServiceInstructions $specialServiceInstructions
+     * @param  SpecialServiceInstructions $specialServiceInstructions
      * @return static
      */
     public function addOnceToSpecialServiceInstructions(SpecialServiceInstructions $specialServiceInstructions): static
@@ -3037,7 +3037,7 @@ class ConsignmentType
     }
 
     /**
-     * @return SequenceID|null
+     * @return null|SequenceID
      */
     public function getSequenceID(): ?SequenceID
     {
@@ -3055,7 +3055,7 @@ class ConsignmentType
     }
 
     /**
-     * @param SequenceID|null $sequenceID
+     * @param  null|SequenceID $sequenceID
      * @return static
      */
     public function setSequenceID(?SequenceID $sequenceID = null): static
@@ -3076,7 +3076,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ShippingPriorityLevelCode|null
+     * @return null|ShippingPriorityLevelCode
      */
     public function getShippingPriorityLevelCode(): ?ShippingPriorityLevelCode
     {
@@ -3094,7 +3094,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ShippingPriorityLevelCode|null $shippingPriorityLevelCode
+     * @param  null|ShippingPriorityLevelCode $shippingPriorityLevelCode
      * @return static
      */
     public function setShippingPriorityLevelCode(?ShippingPriorityLevelCode $shippingPriorityLevelCode = null): static
@@ -3115,7 +3115,7 @@ class ConsignmentType
     }
 
     /**
-     * @return HandlingCode|null
+     * @return null|HandlingCode
      */
     public function getHandlingCode(): ?HandlingCode
     {
@@ -3133,7 +3133,7 @@ class ConsignmentType
     }
 
     /**
-     * @param HandlingCode|null $handlingCode
+     * @param  null|HandlingCode $handlingCode
      * @return static
      */
     public function setHandlingCode(?HandlingCode $handlingCode = null): static
@@ -3154,7 +3154,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<HandlingInstructions>|null
+     * @return null|array<HandlingInstructions>
      */
     public function getHandlingInstructions(): ?array
     {
@@ -3162,7 +3162,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<HandlingInstructions>|null $handlingInstructions
+     * @param  null|array<HandlingInstructions> $handlingInstructions
      * @return static
      */
     public function setHandlingInstructions(?array $handlingInstructions = null): static
@@ -3193,7 +3193,7 @@ class ConsignmentType
     }
 
     /**
-     * @return HandlingInstructions|null
+     * @return null|HandlingInstructions
      */
     public function firstHandlingInstructions(): ?HandlingInstructions
     {
@@ -3208,7 +3208,7 @@ class ConsignmentType
     }
 
     /**
-     * @return HandlingInstructions|null
+     * @return null|HandlingInstructions
      */
     public function lastHandlingInstructions(): ?HandlingInstructions
     {
@@ -3223,7 +3223,7 @@ class ConsignmentType
     }
 
     /**
-     * @param HandlingInstructions $handlingInstructions
+     * @param  HandlingInstructions $handlingInstructions
      * @return static
      */
     public function addToHandlingInstructions(HandlingInstructions $handlingInstructions): static
@@ -3244,7 +3244,7 @@ class ConsignmentType
     }
 
     /**
-     * @param HandlingInstructions $handlingInstructions
+     * @param  HandlingInstructions $handlingInstructions
      * @return static
      */
     public function addOnceToHandlingInstructions(HandlingInstructions $handlingInstructions): static
@@ -3275,7 +3275,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<Information>|null
+     * @return null|array<Information>
      */
     public function getInformation(): ?array
     {
@@ -3283,7 +3283,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<Information>|null $information
+     * @param  null|array<Information> $information
      * @return static
      */
     public function setInformation(?array $information = null): static
@@ -3314,7 +3314,7 @@ class ConsignmentType
     }
 
     /**
-     * @return Information|null
+     * @return null|Information
      */
     public function firstInformation(): ?Information
     {
@@ -3329,7 +3329,7 @@ class ConsignmentType
     }
 
     /**
-     * @return Information|null
+     * @return null|Information
      */
     public function lastInformation(): ?Information
     {
@@ -3344,7 +3344,7 @@ class ConsignmentType
     }
 
     /**
-     * @param Information $information
+     * @param  Information $information
      * @return static
      */
     public function addToInformation(Information $information): static
@@ -3365,7 +3365,7 @@ class ConsignmentType
     }
 
     /**
-     * @param Information $information
+     * @param  Information $information
      * @return static
      */
     public function addOnceToInformation(Information $information): static
@@ -3396,7 +3396,7 @@ class ConsignmentType
     }
 
     /**
-     * @return TotalGoodsItemQuantity|null
+     * @return null|TotalGoodsItemQuantity
      */
     public function getTotalGoodsItemQuantity(): ?TotalGoodsItemQuantity
     {
@@ -3414,7 +3414,7 @@ class ConsignmentType
     }
 
     /**
-     * @param TotalGoodsItemQuantity|null $totalGoodsItemQuantity
+     * @param  null|TotalGoodsItemQuantity $totalGoodsItemQuantity
      * @return static
      */
     public function setTotalGoodsItemQuantity(?TotalGoodsItemQuantity $totalGoodsItemQuantity = null): static
@@ -3435,7 +3435,7 @@ class ConsignmentType
     }
 
     /**
-     * @return TotalTransportHandlingUnitQuantity|null
+     * @return null|TotalTransportHandlingUnitQuantity
      */
     public function getTotalTransportHandlingUnitQuantity(): ?TotalTransportHandlingUnitQuantity
     {
@@ -3453,7 +3453,7 @@ class ConsignmentType
     }
 
     /**
-     * @param TotalTransportHandlingUnitQuantity|null $totalTransportHandlingUnitQuantity
+     * @param  null|TotalTransportHandlingUnitQuantity $totalTransportHandlingUnitQuantity
      * @return static
      */
     public function setTotalTransportHandlingUnitQuantity(
@@ -3475,7 +3475,7 @@ class ConsignmentType
     }
 
     /**
-     * @return InsuranceValueAmount|null
+     * @return null|InsuranceValueAmount
      */
     public function getInsuranceValueAmount(): ?InsuranceValueAmount
     {
@@ -3493,7 +3493,7 @@ class ConsignmentType
     }
 
     /**
-     * @param InsuranceValueAmount|null $insuranceValueAmount
+     * @param  null|InsuranceValueAmount $insuranceValueAmount
      * @return static
      */
     public function setInsuranceValueAmount(?InsuranceValueAmount $insuranceValueAmount = null): static
@@ -3514,7 +3514,7 @@ class ConsignmentType
     }
 
     /**
-     * @return DeclaredForCarriageValueAmount|null
+     * @return null|DeclaredForCarriageValueAmount
      */
     public function getDeclaredForCarriageValueAmount(): ?DeclaredForCarriageValueAmount
     {
@@ -3532,7 +3532,7 @@ class ConsignmentType
     }
 
     /**
-     * @param DeclaredForCarriageValueAmount|null $declaredForCarriageValueAmount
+     * @param  null|DeclaredForCarriageValueAmount $declaredForCarriageValueAmount
      * @return static
      */
     public function setDeclaredForCarriageValueAmount(
@@ -3554,7 +3554,7 @@ class ConsignmentType
     }
 
     /**
-     * @return DeclaredStatisticsValueAmount|null
+     * @return null|DeclaredStatisticsValueAmount
      */
     public function getDeclaredStatisticsValueAmount(): ?DeclaredStatisticsValueAmount
     {
@@ -3572,7 +3572,7 @@ class ConsignmentType
     }
 
     /**
-     * @param DeclaredStatisticsValueAmount|null $declaredStatisticsValueAmount
+     * @param  null|DeclaredStatisticsValueAmount $declaredStatisticsValueAmount
      * @return static
      */
     public function setDeclaredStatisticsValueAmount(
@@ -3594,7 +3594,7 @@ class ConsignmentType
     }
 
     /**
-     * @return FreeOnBoardValueAmount|null
+     * @return null|FreeOnBoardValueAmount
      */
     public function getFreeOnBoardValueAmount(): ?FreeOnBoardValueAmount
     {
@@ -3612,7 +3612,7 @@ class ConsignmentType
     }
 
     /**
-     * @param FreeOnBoardValueAmount|null $freeOnBoardValueAmount
+     * @param  null|FreeOnBoardValueAmount $freeOnBoardValueAmount
      * @return static
      */
     public function setFreeOnBoardValueAmount(?FreeOnBoardValueAmount $freeOnBoardValueAmount = null): static
@@ -3633,7 +3633,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<SpecialInstructions>|null
+     * @return null|array<SpecialInstructions>
      */
     public function getSpecialInstructions(): ?array
     {
@@ -3641,7 +3641,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<SpecialInstructions>|null $specialInstructions
+     * @param  null|array<SpecialInstructions> $specialInstructions
      * @return static
      */
     public function setSpecialInstructions(?array $specialInstructions = null): static
@@ -3672,7 +3672,7 @@ class ConsignmentType
     }
 
     /**
-     * @return SpecialInstructions|null
+     * @return null|SpecialInstructions
      */
     public function firstSpecialInstructions(): ?SpecialInstructions
     {
@@ -3687,7 +3687,7 @@ class ConsignmentType
     }
 
     /**
-     * @return SpecialInstructions|null
+     * @return null|SpecialInstructions
      */
     public function lastSpecialInstructions(): ?SpecialInstructions
     {
@@ -3702,7 +3702,7 @@ class ConsignmentType
     }
 
     /**
-     * @param SpecialInstructions $specialInstructions
+     * @param  SpecialInstructions $specialInstructions
      * @return static
      */
     public function addToSpecialInstructions(SpecialInstructions $specialInstructions): static
@@ -3723,7 +3723,7 @@ class ConsignmentType
     }
 
     /**
-     * @param SpecialInstructions $specialInstructions
+     * @param  SpecialInstructions $specialInstructions
      * @return static
      */
     public function addOnceToSpecialInstructions(SpecialInstructions $specialInstructions): static
@@ -3754,7 +3754,7 @@ class ConsignmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getSplitConsignmentIndicator(): ?bool
     {
@@ -3762,7 +3762,7 @@ class ConsignmentType
     }
 
     /**
-     * @param bool|null $splitConsignmentIndicator
+     * @param  null|bool $splitConsignmentIndicator
      * @return static
      */
     public function setSplitConsignmentIndicator(?bool $splitConsignmentIndicator = null): static
@@ -3783,7 +3783,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<DeliveryInstructions>|null
+     * @return null|array<DeliveryInstructions>
      */
     public function getDeliveryInstructions(): ?array
     {
@@ -3791,7 +3791,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<DeliveryInstructions>|null $deliveryInstructions
+     * @param  null|array<DeliveryInstructions> $deliveryInstructions
      * @return static
      */
     public function setDeliveryInstructions(?array $deliveryInstructions = null): static
@@ -3822,7 +3822,7 @@ class ConsignmentType
     }
 
     /**
-     * @return DeliveryInstructions|null
+     * @return null|DeliveryInstructions
      */
     public function firstDeliveryInstructions(): ?DeliveryInstructions
     {
@@ -3837,7 +3837,7 @@ class ConsignmentType
     }
 
     /**
-     * @return DeliveryInstructions|null
+     * @return null|DeliveryInstructions
      */
     public function lastDeliveryInstructions(): ?DeliveryInstructions
     {
@@ -3852,7 +3852,7 @@ class ConsignmentType
     }
 
     /**
-     * @param DeliveryInstructions $deliveryInstructions
+     * @param  DeliveryInstructions $deliveryInstructions
      * @return static
      */
     public function addToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): static
@@ -3873,7 +3873,7 @@ class ConsignmentType
     }
 
     /**
-     * @param DeliveryInstructions $deliveryInstructions
+     * @param  DeliveryInstructions $deliveryInstructions
      * @return static
      */
     public function addOnceToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): static
@@ -3904,7 +3904,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ConsignmentQuantity|null
+     * @return null|ConsignmentQuantity
      */
     public function getConsignmentQuantity(): ?ConsignmentQuantity
     {
@@ -3922,7 +3922,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ConsignmentQuantity|null $consignmentQuantity
+     * @param  null|ConsignmentQuantity $consignmentQuantity
      * @return static
      */
     public function setConsignmentQuantity(?ConsignmentQuantity $consignmentQuantity = null): static
@@ -3943,7 +3943,7 @@ class ConsignmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getConsolidatableIndicator(): ?bool
     {
@@ -3951,7 +3951,7 @@ class ConsignmentType
     }
 
     /**
-     * @param bool|null $consolidatableIndicator
+     * @param  null|bool $consolidatableIndicator
      * @return static
      */
     public function setConsolidatableIndicator(?bool $consolidatableIndicator = null): static
@@ -3972,7 +3972,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<HaulageInstructions>|null
+     * @return null|array<HaulageInstructions>
      */
     public function getHaulageInstructions(): ?array
     {
@@ -3980,7 +3980,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<HaulageInstructions>|null $haulageInstructions
+     * @param  null|array<HaulageInstructions> $haulageInstructions
      * @return static
      */
     public function setHaulageInstructions(?array $haulageInstructions = null): static
@@ -4011,7 +4011,7 @@ class ConsignmentType
     }
 
     /**
-     * @return HaulageInstructions|null
+     * @return null|HaulageInstructions
      */
     public function firstHaulageInstructions(): ?HaulageInstructions
     {
@@ -4026,7 +4026,7 @@ class ConsignmentType
     }
 
     /**
-     * @return HaulageInstructions|null
+     * @return null|HaulageInstructions
      */
     public function lastHaulageInstructions(): ?HaulageInstructions
     {
@@ -4041,7 +4041,7 @@ class ConsignmentType
     }
 
     /**
-     * @param HaulageInstructions $haulageInstructions
+     * @param  HaulageInstructions $haulageInstructions
      * @return static
      */
     public function addToHaulageInstructions(HaulageInstructions $haulageInstructions): static
@@ -4062,7 +4062,7 @@ class ConsignmentType
     }
 
     /**
-     * @param HaulageInstructions $haulageInstructions
+     * @param  HaulageInstructions $haulageInstructions
      * @return static
      */
     public function addOnceToHaulageInstructions(HaulageInstructions $haulageInstructions): static
@@ -4093,7 +4093,7 @@ class ConsignmentType
     }
 
     /**
-     * @return LoadingSequenceID|null
+     * @return null|LoadingSequenceID
      */
     public function getLoadingSequenceID(): ?LoadingSequenceID
     {
@@ -4111,7 +4111,7 @@ class ConsignmentType
     }
 
     /**
-     * @param LoadingSequenceID|null $loadingSequenceID
+     * @param  null|LoadingSequenceID $loadingSequenceID
      * @return static
      */
     public function setLoadingSequenceID(?LoadingSequenceID $loadingSequenceID = null): static
@@ -4132,7 +4132,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ChildConsignmentQuantity|null
+     * @return null|ChildConsignmentQuantity
      */
     public function getChildConsignmentQuantity(): ?ChildConsignmentQuantity
     {
@@ -4150,7 +4150,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ChildConsignmentQuantity|null $childConsignmentQuantity
+     * @param  null|ChildConsignmentQuantity $childConsignmentQuantity
      * @return static
      */
     public function setChildConsignmentQuantity(?ChildConsignmentQuantity $childConsignmentQuantity = null): static
@@ -4171,7 +4171,7 @@ class ConsignmentType
     }
 
     /**
-     * @return TotalPackagesQuantity|null
+     * @return null|TotalPackagesQuantity
      */
     public function getTotalPackagesQuantity(): ?TotalPackagesQuantity
     {
@@ -4189,7 +4189,7 @@ class ConsignmentType
     }
 
     /**
-     * @param TotalPackagesQuantity|null $totalPackagesQuantity
+     * @param  null|TotalPackagesQuantity $totalPackagesQuantity
      * @return static
      */
     public function setTotalPackagesQuantity(?TotalPackagesQuantity $totalPackagesQuantity = null): static
@@ -4210,7 +4210,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<ConsolidatedShipment>|null
+     * @return null|array<ConsolidatedShipment>
      */
     public function getConsolidatedShipment(): ?array
     {
@@ -4218,7 +4218,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<ConsolidatedShipment>|null $consolidatedShipment
+     * @param  null|array<ConsolidatedShipment> $consolidatedShipment
      * @return static
      */
     public function setConsolidatedShipment(?array $consolidatedShipment = null): static
@@ -4249,7 +4249,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ConsolidatedShipment|null
+     * @return null|ConsolidatedShipment
      */
     public function firstConsolidatedShipment(): ?ConsolidatedShipment
     {
@@ -4264,7 +4264,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ConsolidatedShipment|null
+     * @return null|ConsolidatedShipment
      */
     public function lastConsolidatedShipment(): ?ConsolidatedShipment
     {
@@ -4279,7 +4279,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ConsolidatedShipment $consolidatedShipment
+     * @param  ConsolidatedShipment $consolidatedShipment
      * @return static
      */
     public function addToConsolidatedShipment(ConsolidatedShipment $consolidatedShipment): static
@@ -4300,7 +4300,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ConsolidatedShipment $consolidatedShipment
+     * @param  ConsolidatedShipment $consolidatedShipment
      * @return static
      */
     public function addOnceToConsolidatedShipment(ConsolidatedShipment $consolidatedShipment): static
@@ -4331,7 +4331,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<CustomsDeclaration>|null
+     * @return null|array<CustomsDeclaration>
      */
     public function getCustomsDeclaration(): ?array
     {
@@ -4339,7 +4339,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<CustomsDeclaration>|null $customsDeclaration
+     * @param  null|array<CustomsDeclaration> $customsDeclaration
      * @return static
      */
     public function setCustomsDeclaration(?array $customsDeclaration = null): static
@@ -4370,7 +4370,7 @@ class ConsignmentType
     }
 
     /**
-     * @return CustomsDeclaration|null
+     * @return null|CustomsDeclaration
      */
     public function firstCustomsDeclaration(): ?CustomsDeclaration
     {
@@ -4385,7 +4385,7 @@ class ConsignmentType
     }
 
     /**
-     * @return CustomsDeclaration|null
+     * @return null|CustomsDeclaration
      */
     public function lastCustomsDeclaration(): ?CustomsDeclaration
     {
@@ -4400,7 +4400,7 @@ class ConsignmentType
     }
 
     /**
-     * @param CustomsDeclaration $customsDeclaration
+     * @param  CustomsDeclaration $customsDeclaration
      * @return static
      */
     public function addToCustomsDeclaration(CustomsDeclaration $customsDeclaration): static
@@ -4421,7 +4421,7 @@ class ConsignmentType
     }
 
     /**
-     * @param CustomsDeclaration $customsDeclaration
+     * @param  CustomsDeclaration $customsDeclaration
      * @return static
      */
     public function addOnceToCustomsDeclaration(CustomsDeclaration $customsDeclaration): static
@@ -4452,7 +4452,7 @@ class ConsignmentType
     }
 
     /**
-     * @return RequestedPickupTransportEvent|null
+     * @return null|RequestedPickupTransportEvent
      */
     public function getRequestedPickupTransportEvent(): ?RequestedPickupTransportEvent
     {
@@ -4470,7 +4470,7 @@ class ConsignmentType
     }
 
     /**
-     * @param RequestedPickupTransportEvent|null $requestedPickupTransportEvent
+     * @param  null|RequestedPickupTransportEvent $requestedPickupTransportEvent
      * @return static
      */
     public function setRequestedPickupTransportEvent(
@@ -4492,7 +4492,7 @@ class ConsignmentType
     }
 
     /**
-     * @return RequestedDeliveryTransportEvent|null
+     * @return null|RequestedDeliveryTransportEvent
      */
     public function getRequestedDeliveryTransportEvent(): ?RequestedDeliveryTransportEvent
     {
@@ -4510,7 +4510,7 @@ class ConsignmentType
     }
 
     /**
-     * @param RequestedDeliveryTransportEvent|null $requestedDeliveryTransportEvent
+     * @param  null|RequestedDeliveryTransportEvent $requestedDeliveryTransportEvent
      * @return static
      */
     public function setRequestedDeliveryTransportEvent(
@@ -4532,7 +4532,7 @@ class ConsignmentType
     }
 
     /**
-     * @return PlannedPickupTransportEvent|null
+     * @return null|PlannedPickupTransportEvent
      */
     public function getPlannedPickupTransportEvent(): ?PlannedPickupTransportEvent
     {
@@ -4550,7 +4550,7 @@ class ConsignmentType
     }
 
     /**
-     * @param PlannedPickupTransportEvent|null $plannedPickupTransportEvent
+     * @param  null|PlannedPickupTransportEvent $plannedPickupTransportEvent
      * @return static
      */
     public function setPlannedPickupTransportEvent(
@@ -4572,7 +4572,7 @@ class ConsignmentType
     }
 
     /**
-     * @return PlannedDeliveryTransportEvent|null
+     * @return null|PlannedDeliveryTransportEvent
      */
     public function getPlannedDeliveryTransportEvent(): ?PlannedDeliveryTransportEvent
     {
@@ -4590,7 +4590,7 @@ class ConsignmentType
     }
 
     /**
-     * @param PlannedDeliveryTransportEvent|null $plannedDeliveryTransportEvent
+     * @param  null|PlannedDeliveryTransportEvent $plannedDeliveryTransportEvent
      * @return static
      */
     public function setPlannedDeliveryTransportEvent(
@@ -4612,7 +4612,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<Status>|null
+     * @return null|array<Status>
      */
     public function getStatus(): ?array
     {
@@ -4620,7 +4620,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<Status>|null $status
+     * @param  null|array<Status> $status
      * @return static
      */
     public function setStatus(?array $status = null): static
@@ -4651,7 +4651,7 @@ class ConsignmentType
     }
 
     /**
-     * @return Status|null
+     * @return null|Status
      */
     public function firstStatus(): ?Status
     {
@@ -4666,7 +4666,7 @@ class ConsignmentType
     }
 
     /**
-     * @return Status|null
+     * @return null|Status
      */
     public function lastStatus(): ?Status
     {
@@ -4681,7 +4681,7 @@ class ConsignmentType
     }
 
     /**
-     * @param Status $status
+     * @param  Status $status
      * @return static
      */
     public function addToStatus(Status $status): static
@@ -4702,7 +4702,7 @@ class ConsignmentType
     }
 
     /**
-     * @param Status $status
+     * @param  Status $status
      * @return static
      */
     public function addOnceToStatus(Status $status): static
@@ -4733,7 +4733,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<ChildConsignment>|null
+     * @return null|array<ChildConsignment>
      */
     public function getChildConsignment(): ?array
     {
@@ -4741,7 +4741,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<ChildConsignment>|null $childConsignment
+     * @param  null|array<ChildConsignment> $childConsignment
      * @return static
      */
     public function setChildConsignment(?array $childConsignment = null): static
@@ -4772,7 +4772,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ChildConsignment|null
+     * @return null|ChildConsignment
      */
     public function firstChildConsignment(): ?ChildConsignment
     {
@@ -4787,7 +4787,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ChildConsignment|null
+     * @return null|ChildConsignment
      */
     public function lastChildConsignment(): ?ChildConsignment
     {
@@ -4802,7 +4802,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ChildConsignment $childConsignment
+     * @param  ChildConsignment $childConsignment
      * @return static
      */
     public function addToChildConsignment(ChildConsignment $childConsignment): static
@@ -4823,7 +4823,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ChildConsignment $childConsignment
+     * @param  ChildConsignment $childConsignment
      * @return static
      */
     public function addOnceToChildConsignment(ChildConsignment $childConsignment): static
@@ -4854,7 +4854,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ConsigneeParty|null
+     * @return null|ConsigneeParty
      */
     public function getConsigneeParty(): ?ConsigneeParty
     {
@@ -4872,7 +4872,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ConsigneeParty|null $consigneeParty
+     * @param  null|ConsigneeParty $consigneeParty
      * @return static
      */
     public function setConsigneeParty(?ConsigneeParty $consigneeParty = null): static
@@ -4893,7 +4893,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ExporterParty|null
+     * @return null|ExporterParty
      */
     public function getExporterParty(): ?ExporterParty
     {
@@ -4911,7 +4911,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ExporterParty|null $exporterParty
+     * @param  null|ExporterParty $exporterParty
      * @return static
      */
     public function setExporterParty(?ExporterParty $exporterParty = null): static
@@ -4932,7 +4932,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ConsignorParty|null
+     * @return null|ConsignorParty
      */
     public function getConsignorParty(): ?ConsignorParty
     {
@@ -4950,7 +4950,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ConsignorParty|null $consignorParty
+     * @param  null|ConsignorParty $consignorParty
      * @return static
      */
     public function setConsignorParty(?ConsignorParty $consignorParty = null): static
@@ -4971,7 +4971,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ImporterParty|null
+     * @return null|ImporterParty
      */
     public function getImporterParty(): ?ImporterParty
     {
@@ -4989,7 +4989,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ImporterParty|null $importerParty
+     * @param  null|ImporterParty $importerParty
      * @return static
      */
     public function setImporterParty(?ImporterParty $importerParty = null): static
@@ -5010,7 +5010,7 @@ class ConsignmentType
     }
 
     /**
-     * @return CarrierParty|null
+     * @return null|CarrierParty
      */
     public function getCarrierParty(): ?CarrierParty
     {
@@ -5028,7 +5028,7 @@ class ConsignmentType
     }
 
     /**
-     * @param CarrierParty|null $carrierParty
+     * @param  null|CarrierParty $carrierParty
      * @return static
      */
     public function setCarrierParty(?CarrierParty $carrierParty = null): static
@@ -5049,7 +5049,7 @@ class ConsignmentType
     }
 
     /**
-     * @return FreightForwarderParty|null
+     * @return null|FreightForwarderParty
      */
     public function getFreightForwarderParty(): ?FreightForwarderParty
     {
@@ -5067,7 +5067,7 @@ class ConsignmentType
     }
 
     /**
-     * @param FreightForwarderParty|null $freightForwarderParty
+     * @param  null|FreightForwarderParty $freightForwarderParty
      * @return static
      */
     public function setFreightForwarderParty(?FreightForwarderParty $freightForwarderParty = null): static
@@ -5088,7 +5088,7 @@ class ConsignmentType
     }
 
     /**
-     * @return NotifyParty|null
+     * @return null|NotifyParty
      */
     public function getNotifyParty(): ?NotifyParty
     {
@@ -5106,7 +5106,7 @@ class ConsignmentType
     }
 
     /**
-     * @param NotifyParty|null $notifyParty
+     * @param  null|NotifyParty $notifyParty
      * @return static
      */
     public function setNotifyParty(?NotifyParty $notifyParty = null): static
@@ -5127,7 +5127,7 @@ class ConsignmentType
     }
 
     /**
-     * @return OriginalDespatchParty|null
+     * @return null|OriginalDespatchParty
      */
     public function getOriginalDespatchParty(): ?OriginalDespatchParty
     {
@@ -5145,7 +5145,7 @@ class ConsignmentType
     }
 
     /**
-     * @param OriginalDespatchParty|null $originalDespatchParty
+     * @param  null|OriginalDespatchParty $originalDespatchParty
      * @return static
      */
     public function setOriginalDespatchParty(?OriginalDespatchParty $originalDespatchParty = null): static
@@ -5166,7 +5166,7 @@ class ConsignmentType
     }
 
     /**
-     * @return FinalDeliveryParty|null
+     * @return null|FinalDeliveryParty
      */
     public function getFinalDeliveryParty(): ?FinalDeliveryParty
     {
@@ -5184,7 +5184,7 @@ class ConsignmentType
     }
 
     /**
-     * @param FinalDeliveryParty|null $finalDeliveryParty
+     * @param  null|FinalDeliveryParty $finalDeliveryParty
      * @return static
      */
     public function setFinalDeliveryParty(?FinalDeliveryParty $finalDeliveryParty = null): static
@@ -5205,7 +5205,7 @@ class ConsignmentType
     }
 
     /**
-     * @return PerformingCarrierParty|null
+     * @return null|PerformingCarrierParty
      */
     public function getPerformingCarrierParty(): ?PerformingCarrierParty
     {
@@ -5223,7 +5223,7 @@ class ConsignmentType
     }
 
     /**
-     * @param PerformingCarrierParty|null $performingCarrierParty
+     * @param  null|PerformingCarrierParty $performingCarrierParty
      * @return static
      */
     public function setPerformingCarrierParty(?PerformingCarrierParty $performingCarrierParty = null): static
@@ -5244,7 +5244,7 @@ class ConsignmentType
     }
 
     /**
-     * @return SubstituteCarrierParty|null
+     * @return null|SubstituteCarrierParty
      */
     public function getSubstituteCarrierParty(): ?SubstituteCarrierParty
     {
@@ -5262,7 +5262,7 @@ class ConsignmentType
     }
 
     /**
-     * @param SubstituteCarrierParty|null $substituteCarrierParty
+     * @param  null|SubstituteCarrierParty $substituteCarrierParty
      * @return static
      */
     public function setSubstituteCarrierParty(?SubstituteCarrierParty $substituteCarrierParty = null): static
@@ -5283,7 +5283,7 @@ class ConsignmentType
     }
 
     /**
-     * @return LogisticsOperatorParty|null
+     * @return null|LogisticsOperatorParty
      */
     public function getLogisticsOperatorParty(): ?LogisticsOperatorParty
     {
@@ -5301,7 +5301,7 @@ class ConsignmentType
     }
 
     /**
-     * @param LogisticsOperatorParty|null $logisticsOperatorParty
+     * @param  null|LogisticsOperatorParty $logisticsOperatorParty
      * @return static
      */
     public function setLogisticsOperatorParty(?LogisticsOperatorParty $logisticsOperatorParty = null): static
@@ -5322,7 +5322,7 @@ class ConsignmentType
     }
 
     /**
-     * @return TransportAdvisorParty|null
+     * @return null|TransportAdvisorParty
      */
     public function getTransportAdvisorParty(): ?TransportAdvisorParty
     {
@@ -5340,7 +5340,7 @@ class ConsignmentType
     }
 
     /**
-     * @param TransportAdvisorParty|null $transportAdvisorParty
+     * @param  null|TransportAdvisorParty $transportAdvisorParty
      * @return static
      */
     public function setTransportAdvisorParty(?TransportAdvisorParty $transportAdvisorParty = null): static
@@ -5361,7 +5361,7 @@ class ConsignmentType
     }
 
     /**
-     * @return HazardousItemNotificationParty|null
+     * @return null|HazardousItemNotificationParty
      */
     public function getHazardousItemNotificationParty(): ?HazardousItemNotificationParty
     {
@@ -5379,7 +5379,7 @@ class ConsignmentType
     }
 
     /**
-     * @param HazardousItemNotificationParty|null $hazardousItemNotificationParty
+     * @param  null|HazardousItemNotificationParty $hazardousItemNotificationParty
      * @return static
      */
     public function setHazardousItemNotificationParty(
@@ -5401,7 +5401,7 @@ class ConsignmentType
     }
 
     /**
-     * @return InsuranceParty|null
+     * @return null|InsuranceParty
      */
     public function getInsuranceParty(): ?InsuranceParty
     {
@@ -5419,7 +5419,7 @@ class ConsignmentType
     }
 
     /**
-     * @param InsuranceParty|null $insuranceParty
+     * @param  null|InsuranceParty $insuranceParty
      * @return static
      */
     public function setInsuranceParty(?InsuranceParty $insuranceParty = null): static
@@ -5440,7 +5440,7 @@ class ConsignmentType
     }
 
     /**
-     * @return MortgageHolderParty|null
+     * @return null|MortgageHolderParty
      */
     public function getMortgageHolderParty(): ?MortgageHolderParty
     {
@@ -5458,7 +5458,7 @@ class ConsignmentType
     }
 
     /**
-     * @param MortgageHolderParty|null $mortgageHolderParty
+     * @param  null|MortgageHolderParty $mortgageHolderParty
      * @return static
      */
     public function setMortgageHolderParty(?MortgageHolderParty $mortgageHolderParty = null): static
@@ -5479,7 +5479,7 @@ class ConsignmentType
     }
 
     /**
-     * @return BillOfLadingHolderParty|null
+     * @return null|BillOfLadingHolderParty
      */
     public function getBillOfLadingHolderParty(): ?BillOfLadingHolderParty
     {
@@ -5497,7 +5497,7 @@ class ConsignmentType
     }
 
     /**
-     * @param BillOfLadingHolderParty|null $billOfLadingHolderParty
+     * @param  null|BillOfLadingHolderParty $billOfLadingHolderParty
      * @return static
      */
     public function setBillOfLadingHolderParty(?BillOfLadingHolderParty $billOfLadingHolderParty = null): static
@@ -5518,7 +5518,7 @@ class ConsignmentType
     }
 
     /**
-     * @return OriginalDepartureCountry|null
+     * @return null|OriginalDepartureCountry
      */
     public function getOriginalDepartureCountry(): ?OriginalDepartureCountry
     {
@@ -5536,7 +5536,7 @@ class ConsignmentType
     }
 
     /**
-     * @param OriginalDepartureCountry|null $originalDepartureCountry
+     * @param  null|OriginalDepartureCountry $originalDepartureCountry
      * @return static
      */
     public function setOriginalDepartureCountry(?OriginalDepartureCountry $originalDepartureCountry = null): static
@@ -5557,7 +5557,7 @@ class ConsignmentType
     }
 
     /**
-     * @return FinalDestinationCountry|null
+     * @return null|FinalDestinationCountry
      */
     public function getFinalDestinationCountry(): ?FinalDestinationCountry
     {
@@ -5575,7 +5575,7 @@ class ConsignmentType
     }
 
     /**
-     * @param FinalDestinationCountry|null $finalDestinationCountry
+     * @param  null|FinalDestinationCountry $finalDestinationCountry
      * @return static
      */
     public function setFinalDestinationCountry(?FinalDestinationCountry $finalDestinationCountry = null): static
@@ -5596,7 +5596,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<TransitCountry>|null
+     * @return null|array<TransitCountry>
      */
     public function getTransitCountry(): ?array
     {
@@ -5604,7 +5604,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<TransitCountry>|null $transitCountry
+     * @param  null|array<TransitCountry> $transitCountry
      * @return static
      */
     public function setTransitCountry(?array $transitCountry = null): static
@@ -5635,7 +5635,7 @@ class ConsignmentType
     }
 
     /**
-     * @return TransitCountry|null
+     * @return null|TransitCountry
      */
     public function firstTransitCountry(): ?TransitCountry
     {
@@ -5650,7 +5650,7 @@ class ConsignmentType
     }
 
     /**
-     * @return TransitCountry|null
+     * @return null|TransitCountry
      */
     public function lastTransitCountry(): ?TransitCountry
     {
@@ -5665,7 +5665,7 @@ class ConsignmentType
     }
 
     /**
-     * @param TransitCountry $transitCountry
+     * @param  TransitCountry $transitCountry
      * @return static
      */
     public function addToTransitCountry(TransitCountry $transitCountry): static
@@ -5686,7 +5686,7 @@ class ConsignmentType
     }
 
     /**
-     * @param TransitCountry $transitCountry
+     * @param  TransitCountry $transitCountry
      * @return static
      */
     public function addOnceToTransitCountry(TransitCountry $transitCountry): static
@@ -5717,7 +5717,7 @@ class ConsignmentType
     }
 
     /**
-     * @return TransportContract|null
+     * @return null|TransportContract
      */
     public function getTransportContract(): ?TransportContract
     {
@@ -5735,7 +5735,7 @@ class ConsignmentType
     }
 
     /**
-     * @param TransportContract|null $transportContract
+     * @param  null|TransportContract $transportContract
      * @return static
      */
     public function setTransportContract(?TransportContract $transportContract = null): static
@@ -5756,7 +5756,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<TransportEvent>|null
+     * @return null|array<TransportEvent>
      */
     public function getTransportEvent(): ?array
     {
@@ -5764,7 +5764,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<TransportEvent>|null $transportEvent
+     * @param  null|array<TransportEvent> $transportEvent
      * @return static
      */
     public function setTransportEvent(?array $transportEvent = null): static
@@ -5795,7 +5795,7 @@ class ConsignmentType
     }
 
     /**
-     * @return TransportEvent|null
+     * @return null|TransportEvent
      */
     public function firstTransportEvent(): ?TransportEvent
     {
@@ -5810,7 +5810,7 @@ class ConsignmentType
     }
 
     /**
-     * @return TransportEvent|null
+     * @return null|TransportEvent
      */
     public function lastTransportEvent(): ?TransportEvent
     {
@@ -5825,7 +5825,7 @@ class ConsignmentType
     }
 
     /**
-     * @param TransportEvent $transportEvent
+     * @param  TransportEvent $transportEvent
      * @return static
      */
     public function addToTransportEvent(TransportEvent $transportEvent): static
@@ -5846,7 +5846,7 @@ class ConsignmentType
     }
 
     /**
-     * @param TransportEvent $transportEvent
+     * @param  TransportEvent $transportEvent
      * @return static
      */
     public function addOnceToTransportEvent(TransportEvent $transportEvent): static
@@ -5877,7 +5877,7 @@ class ConsignmentType
     }
 
     /**
-     * @return OriginalDespatchTransportationService|null
+     * @return null|OriginalDespatchTransportationService
      */
     public function getOriginalDespatchTransportationService(): ?OriginalDespatchTransportationService
     {
@@ -5895,7 +5895,7 @@ class ConsignmentType
     }
 
     /**
-     * @param OriginalDespatchTransportationService|null $originalDespatchTransportationService
+     * @param  null|OriginalDespatchTransportationService $originalDespatchTransportationService
      * @return static
      */
     public function setOriginalDespatchTransportationService(
@@ -5917,7 +5917,7 @@ class ConsignmentType
     }
 
     /**
-     * @return FinalDeliveryTransportationService|null
+     * @return null|FinalDeliveryTransportationService
      */
     public function getFinalDeliveryTransportationService(): ?FinalDeliveryTransportationService
     {
@@ -5935,7 +5935,7 @@ class ConsignmentType
     }
 
     /**
-     * @param FinalDeliveryTransportationService|null $finalDeliveryTransportationService
+     * @param  null|FinalDeliveryTransportationService $finalDeliveryTransportationService
      * @return static
      */
     public function setFinalDeliveryTransportationService(
@@ -5957,7 +5957,7 @@ class ConsignmentType
     }
 
     /**
-     * @return DeliveryTerms|null
+     * @return null|DeliveryTerms
      */
     public function getDeliveryTerms(): ?DeliveryTerms
     {
@@ -5975,7 +5975,7 @@ class ConsignmentType
     }
 
     /**
-     * @param DeliveryTerms|null $deliveryTerms
+     * @param  null|DeliveryTerms $deliveryTerms
      * @return static
      */
     public function setDeliveryTerms(?DeliveryTerms $deliveryTerms = null): static
@@ -5996,7 +5996,7 @@ class ConsignmentType
     }
 
     /**
-     * @return PaymentTerms|null
+     * @return null|PaymentTerms
      */
     public function getPaymentTerms(): ?PaymentTerms
     {
@@ -6014,7 +6014,7 @@ class ConsignmentType
     }
 
     /**
-     * @param PaymentTerms|null $paymentTerms
+     * @param  null|PaymentTerms $paymentTerms
      * @return static
      */
     public function setPaymentTerms(?PaymentTerms $paymentTerms = null): static
@@ -6035,7 +6035,7 @@ class ConsignmentType
     }
 
     /**
-     * @return CollectPaymentTerms|null
+     * @return null|CollectPaymentTerms
      */
     public function getCollectPaymentTerms(): ?CollectPaymentTerms
     {
@@ -6053,7 +6053,7 @@ class ConsignmentType
     }
 
     /**
-     * @param CollectPaymentTerms|null $collectPaymentTerms
+     * @param  null|CollectPaymentTerms $collectPaymentTerms
      * @return static
      */
     public function setCollectPaymentTerms(?CollectPaymentTerms $collectPaymentTerms = null): static
@@ -6074,7 +6074,7 @@ class ConsignmentType
     }
 
     /**
-     * @return DisbursementPaymentTerms|null
+     * @return null|DisbursementPaymentTerms
      */
     public function getDisbursementPaymentTerms(): ?DisbursementPaymentTerms
     {
@@ -6092,7 +6092,7 @@ class ConsignmentType
     }
 
     /**
-     * @param DisbursementPaymentTerms|null $disbursementPaymentTerms
+     * @param  null|DisbursementPaymentTerms $disbursementPaymentTerms
      * @return static
      */
     public function setDisbursementPaymentTerms(?DisbursementPaymentTerms $disbursementPaymentTerms = null): static
@@ -6113,7 +6113,7 @@ class ConsignmentType
     }
 
     /**
-     * @return PrepaidPaymentTerms|null
+     * @return null|PrepaidPaymentTerms
      */
     public function getPrepaidPaymentTerms(): ?PrepaidPaymentTerms
     {
@@ -6131,7 +6131,7 @@ class ConsignmentType
     }
 
     /**
-     * @param PrepaidPaymentTerms|null $prepaidPaymentTerms
+     * @param  null|PrepaidPaymentTerms $prepaidPaymentTerms
      * @return static
      */
     public function setPrepaidPaymentTerms(?PrepaidPaymentTerms $prepaidPaymentTerms = null): static
@@ -6152,7 +6152,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<FreightAllowanceCharge>|null
+     * @return null|array<FreightAllowanceCharge>
      */
     public function getFreightAllowanceCharge(): ?array
     {
@@ -6160,7 +6160,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<FreightAllowanceCharge>|null $freightAllowanceCharge
+     * @param  null|array<FreightAllowanceCharge> $freightAllowanceCharge
      * @return static
      */
     public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): static
@@ -6191,7 +6191,7 @@ class ConsignmentType
     }
 
     /**
-     * @return FreightAllowanceCharge|null
+     * @return null|FreightAllowanceCharge
      */
     public function firstFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
@@ -6206,7 +6206,7 @@ class ConsignmentType
     }
 
     /**
-     * @return FreightAllowanceCharge|null
+     * @return null|FreightAllowanceCharge
      */
     public function lastFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
@@ -6221,7 +6221,7 @@ class ConsignmentType
     }
 
     /**
-     * @param FreightAllowanceCharge $freightAllowanceCharge
+     * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
     public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
@@ -6242,7 +6242,7 @@ class ConsignmentType
     }
 
     /**
-     * @param FreightAllowanceCharge $freightAllowanceCharge
+     * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
     public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
@@ -6273,7 +6273,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<ExtraAllowanceCharge>|null
+     * @return null|array<ExtraAllowanceCharge>
      */
     public function getExtraAllowanceCharge(): ?array
     {
@@ -6281,7 +6281,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<ExtraAllowanceCharge>|null $extraAllowanceCharge
+     * @param  null|array<ExtraAllowanceCharge> $extraAllowanceCharge
      * @return static
      */
     public function setExtraAllowanceCharge(?array $extraAllowanceCharge = null): static
@@ -6312,7 +6312,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ExtraAllowanceCharge|null
+     * @return null|ExtraAllowanceCharge
      */
     public function firstExtraAllowanceCharge(): ?ExtraAllowanceCharge
     {
@@ -6327,7 +6327,7 @@ class ConsignmentType
     }
 
     /**
-     * @return ExtraAllowanceCharge|null
+     * @return null|ExtraAllowanceCharge
      */
     public function lastExtraAllowanceCharge(): ?ExtraAllowanceCharge
     {
@@ -6342,7 +6342,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ExtraAllowanceCharge $extraAllowanceCharge
+     * @param  ExtraAllowanceCharge $extraAllowanceCharge
      * @return static
      */
     public function addToExtraAllowanceCharge(ExtraAllowanceCharge $extraAllowanceCharge): static
@@ -6363,7 +6363,7 @@ class ConsignmentType
     }
 
     /**
-     * @param ExtraAllowanceCharge $extraAllowanceCharge
+     * @param  ExtraAllowanceCharge $extraAllowanceCharge
      * @return static
      */
     public function addOnceToExtraAllowanceCharge(ExtraAllowanceCharge $extraAllowanceCharge): static
@@ -6394,7 +6394,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<MainCarriageShipmentStage>|null
+     * @return null|array<MainCarriageShipmentStage>
      */
     public function getMainCarriageShipmentStage(): ?array
     {
@@ -6402,7 +6402,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<MainCarriageShipmentStage>|null $mainCarriageShipmentStage
+     * @param  null|array<MainCarriageShipmentStage> $mainCarriageShipmentStage
      * @return static
      */
     public function setMainCarriageShipmentStage(?array $mainCarriageShipmentStage = null): static
@@ -6433,7 +6433,7 @@ class ConsignmentType
     }
 
     /**
-     * @return MainCarriageShipmentStage|null
+     * @return null|MainCarriageShipmentStage
      */
     public function firstMainCarriageShipmentStage(): ?MainCarriageShipmentStage
     {
@@ -6448,7 +6448,7 @@ class ConsignmentType
     }
 
     /**
-     * @return MainCarriageShipmentStage|null
+     * @return null|MainCarriageShipmentStage
      */
     public function lastMainCarriageShipmentStage(): ?MainCarriageShipmentStage
     {
@@ -6463,7 +6463,7 @@ class ConsignmentType
     }
 
     /**
-     * @param MainCarriageShipmentStage $mainCarriageShipmentStage
+     * @param  MainCarriageShipmentStage $mainCarriageShipmentStage
      * @return static
      */
     public function addToMainCarriageShipmentStage(MainCarriageShipmentStage $mainCarriageShipmentStage): static
@@ -6484,7 +6484,7 @@ class ConsignmentType
     }
 
     /**
-     * @param MainCarriageShipmentStage $mainCarriageShipmentStage
+     * @param  MainCarriageShipmentStage $mainCarriageShipmentStage
      * @return static
      */
     public function addOnceToMainCarriageShipmentStage(MainCarriageShipmentStage $mainCarriageShipmentStage): static
@@ -6515,7 +6515,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<PreCarriageShipmentStage>|null
+     * @return null|array<PreCarriageShipmentStage>
      */
     public function getPreCarriageShipmentStage(): ?array
     {
@@ -6523,7 +6523,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<PreCarriageShipmentStage>|null $preCarriageShipmentStage
+     * @param  null|array<PreCarriageShipmentStage> $preCarriageShipmentStage
      * @return static
      */
     public function setPreCarriageShipmentStage(?array $preCarriageShipmentStage = null): static
@@ -6554,7 +6554,7 @@ class ConsignmentType
     }
 
     /**
-     * @return PreCarriageShipmentStage|null
+     * @return null|PreCarriageShipmentStage
      */
     public function firstPreCarriageShipmentStage(): ?PreCarriageShipmentStage
     {
@@ -6569,7 +6569,7 @@ class ConsignmentType
     }
 
     /**
-     * @return PreCarriageShipmentStage|null
+     * @return null|PreCarriageShipmentStage
      */
     public function lastPreCarriageShipmentStage(): ?PreCarriageShipmentStage
     {
@@ -6584,7 +6584,7 @@ class ConsignmentType
     }
 
     /**
-     * @param PreCarriageShipmentStage $preCarriageShipmentStage
+     * @param  PreCarriageShipmentStage $preCarriageShipmentStage
      * @return static
      */
     public function addToPreCarriageShipmentStage(PreCarriageShipmentStage $preCarriageShipmentStage): static
@@ -6605,7 +6605,7 @@ class ConsignmentType
     }
 
     /**
-     * @param PreCarriageShipmentStage $preCarriageShipmentStage
+     * @param  PreCarriageShipmentStage $preCarriageShipmentStage
      * @return static
      */
     public function addOnceToPreCarriageShipmentStage(PreCarriageShipmentStage $preCarriageShipmentStage): static
@@ -6636,7 +6636,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<OnCarriageShipmentStage>|null
+     * @return null|array<OnCarriageShipmentStage>
      */
     public function getOnCarriageShipmentStage(): ?array
     {
@@ -6644,7 +6644,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<OnCarriageShipmentStage>|null $onCarriageShipmentStage
+     * @param  null|array<OnCarriageShipmentStage> $onCarriageShipmentStage
      * @return static
      */
     public function setOnCarriageShipmentStage(?array $onCarriageShipmentStage = null): static
@@ -6675,7 +6675,7 @@ class ConsignmentType
     }
 
     /**
-     * @return OnCarriageShipmentStage|null
+     * @return null|OnCarriageShipmentStage
      */
     public function firstOnCarriageShipmentStage(): ?OnCarriageShipmentStage
     {
@@ -6690,7 +6690,7 @@ class ConsignmentType
     }
 
     /**
-     * @return OnCarriageShipmentStage|null
+     * @return null|OnCarriageShipmentStage
      */
     public function lastOnCarriageShipmentStage(): ?OnCarriageShipmentStage
     {
@@ -6705,7 +6705,7 @@ class ConsignmentType
     }
 
     /**
-     * @param OnCarriageShipmentStage $onCarriageShipmentStage
+     * @param  OnCarriageShipmentStage $onCarriageShipmentStage
      * @return static
      */
     public function addToOnCarriageShipmentStage(OnCarriageShipmentStage $onCarriageShipmentStage): static
@@ -6726,7 +6726,7 @@ class ConsignmentType
     }
 
     /**
-     * @param OnCarriageShipmentStage $onCarriageShipmentStage
+     * @param  OnCarriageShipmentStage $onCarriageShipmentStage
      * @return static
      */
     public function addOnceToOnCarriageShipmentStage(OnCarriageShipmentStage $onCarriageShipmentStage): static
@@ -6757,7 +6757,7 @@ class ConsignmentType
     }
 
     /**
-     * @return array<TransportHandlingUnit>|null
+     * @return null|array<TransportHandlingUnit>
      */
     public function getTransportHandlingUnit(): ?array
     {
@@ -6765,7 +6765,7 @@ class ConsignmentType
     }
 
     /**
-     * @param array<TransportHandlingUnit>|null $transportHandlingUnit
+     * @param  null|array<TransportHandlingUnit> $transportHandlingUnit
      * @return static
      */
     public function setTransportHandlingUnit(?array $transportHandlingUnit = null): static
@@ -6796,7 +6796,7 @@ class ConsignmentType
     }
 
     /**
-     * @return TransportHandlingUnit|null
+     * @return null|TransportHandlingUnit
      */
     public function firstTransportHandlingUnit(): ?TransportHandlingUnit
     {
@@ -6811,7 +6811,7 @@ class ConsignmentType
     }
 
     /**
-     * @return TransportHandlingUnit|null
+     * @return null|TransportHandlingUnit
      */
     public function lastTransportHandlingUnit(): ?TransportHandlingUnit
     {
@@ -6826,7 +6826,7 @@ class ConsignmentType
     }
 
     /**
-     * @param TransportHandlingUnit $transportHandlingUnit
+     * @param  TransportHandlingUnit $transportHandlingUnit
      * @return static
      */
     public function addToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): static
@@ -6847,7 +6847,7 @@ class ConsignmentType
     }
 
     /**
-     * @param TransportHandlingUnit $transportHandlingUnit
+     * @param  TransportHandlingUnit $transportHandlingUnit
      * @return static
      */
     public function addOnceToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): static
@@ -6878,7 +6878,7 @@ class ConsignmentType
     }
 
     /**
-     * @return FirstArrivalPortLocation|null
+     * @return null|FirstArrivalPortLocation
      */
     public function getFirstArrivalPortLocation(): ?FirstArrivalPortLocation
     {
@@ -6896,7 +6896,7 @@ class ConsignmentType
     }
 
     /**
-     * @param FirstArrivalPortLocation|null $firstArrivalPortLocation
+     * @param  null|FirstArrivalPortLocation $firstArrivalPortLocation
      * @return static
      */
     public function setFirstArrivalPortLocation(?FirstArrivalPortLocation $firstArrivalPortLocation = null): static
@@ -6917,7 +6917,7 @@ class ConsignmentType
     }
 
     /**
-     * @return LastExitPortLocation|null
+     * @return null|LastExitPortLocation
      */
     public function getLastExitPortLocation(): ?LastExitPortLocation
     {
@@ -6935,7 +6935,7 @@ class ConsignmentType
     }
 
     /**
-     * @param LastExitPortLocation|null $lastExitPortLocation
+     * @param  null|LastExitPortLocation $lastExitPortLocation
      * @return static
      */
     public function setLastExitPortLocation(?LastExitPortLocation $lastExitPortLocation = null): static

@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\EnvironmentalEmissionTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValueMeasure;
+use JMS\Serializer\Annotation as JMS;
 
 class EnvironmentalEmissionType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var EnvironmentalEmissionTypeCode|null
+     * @var null|EnvironmentalEmissionTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EnvironmentalEmissionTypeCode")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class EnvironmentalEmissionType
     private $environmentalEmissionTypeCode;
 
     /**
-     * @var ValueMeasure|null
+     * @var null|ValueMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValueMeasure")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class EnvironmentalEmissionType
     private $valueMeasure;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class EnvironmentalEmissionType
     private $description;
 
     /**
-     * @var array<EmissionCalculationMethod>|null
+     * @var null|array<EmissionCalculationMethod>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EmissionCalculationMethod>")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class EnvironmentalEmissionType
     private $emissionCalculationMethod;
 
     /**
-     * @return EnvironmentalEmissionTypeCode|null
+     * @return null|EnvironmentalEmissionTypeCode
      */
     public function getEnvironmentalEmissionTypeCode(): ?EnvironmentalEmissionTypeCode
     {
@@ -79,7 +79,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param EnvironmentalEmissionTypeCode|null $environmentalEmissionTypeCode
+     * @param  null|EnvironmentalEmissionTypeCode $environmentalEmissionTypeCode
      * @return static
      */
     public function setEnvironmentalEmissionTypeCode(
@@ -101,7 +101,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return ValueMeasure|null
+     * @return null|ValueMeasure
      */
     public function getValueMeasure(): ?ValueMeasure
     {
@@ -119,7 +119,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param ValueMeasure|null $valueMeasure
+     * @param  null|ValueMeasure $valueMeasure
      * @return static
      */
     public function setValueMeasure(?ValueMeasure $valueMeasure = null): static
@@ -140,7 +140,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -148,7 +148,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -179,7 +179,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -194,7 +194,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -209,7 +209,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -230,7 +230,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -261,7 +261,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return array<EmissionCalculationMethod>|null
+     * @return null|array<EmissionCalculationMethod>
      */
     public function getEmissionCalculationMethod(): ?array
     {
@@ -269,7 +269,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param array<EmissionCalculationMethod>|null $emissionCalculationMethod
+     * @param  null|array<EmissionCalculationMethod> $emissionCalculationMethod
      * @return static
      */
     public function setEmissionCalculationMethod(?array $emissionCalculationMethod = null): static
@@ -300,7 +300,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return EmissionCalculationMethod|null
+     * @return null|EmissionCalculationMethod
      */
     public function firstEmissionCalculationMethod(): ?EmissionCalculationMethod
     {
@@ -315,7 +315,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @return EmissionCalculationMethod|null
+     * @return null|EmissionCalculationMethod
      */
     public function lastEmissionCalculationMethod(): ?EmissionCalculationMethod
     {
@@ -330,7 +330,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param EmissionCalculationMethod $emissionCalculationMethod
+     * @param  EmissionCalculationMethod $emissionCalculationMethod
      * @return static
      */
     public function addToEmissionCalculationMethod(EmissionCalculationMethod $emissionCalculationMethod): static
@@ -351,7 +351,7 @@ class EnvironmentalEmissionType
     }
 
     /**
-     * @param EmissionCalculationMethod $emissionCalculationMethod
+     * @param  EmissionCalculationMethod $emissionCalculationMethod
      * @return static
      */
     public function addOnceToEmissionCalculationMethod(EmissionCalculationMethod $emissionCalculationMethod): static

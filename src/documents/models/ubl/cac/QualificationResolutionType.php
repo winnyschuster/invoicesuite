@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AdmissionCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ExclusionReason;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Resolution;
+use JMS\Serializer\Annotation as JMS;
 
 class QualificationResolutionType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AdmissionCode|null
+     * @var null|AdmissionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AdmissionCode")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class QualificationResolutionType
     private $admissionCode;
 
     /**
-     * @var array<ExclusionReason>|null
+     * @var null|array<ExclusionReason>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ExclusionReason>")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class QualificationResolutionType
     private $exclusionReason;
 
     /**
-     * @var array<Resolution>|null
+     * @var null|array<Resolution>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Resolution>")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class QualificationResolutionType
     private $resolution;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class QualificationResolutionType
     private $resolutionDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class QualificationResolutionType
     private $resolutionTime;
 
     /**
-     * @var ProcurementProjectLot|null
+     * @var null|ProcurementProjectLot
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class QualificationResolutionType
     private $procurementProjectLot;
 
     /**
-     * @return AdmissionCode|null
+     * @return null|AdmissionCode
      */
     public function getAdmissionCode(): ?AdmissionCode
     {
@@ -102,7 +102,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param AdmissionCode|null $admissionCode
+     * @param  null|AdmissionCode $admissionCode
      * @return static
      */
     public function setAdmissionCode(?AdmissionCode $admissionCode = null): static
@@ -123,7 +123,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return array<ExclusionReason>|null
+     * @return null|array<ExclusionReason>
      */
     public function getExclusionReason(): ?array
     {
@@ -131,7 +131,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param array<ExclusionReason>|null $exclusionReason
+     * @param  null|array<ExclusionReason> $exclusionReason
      * @return static
      */
     public function setExclusionReason(?array $exclusionReason = null): static
@@ -162,7 +162,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return ExclusionReason|null
+     * @return null|ExclusionReason
      */
     public function firstExclusionReason(): ?ExclusionReason
     {
@@ -177,7 +177,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return ExclusionReason|null
+     * @return null|ExclusionReason
      */
     public function lastExclusionReason(): ?ExclusionReason
     {
@@ -192,7 +192,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param ExclusionReason $exclusionReason
+     * @param  ExclusionReason $exclusionReason
      * @return static
      */
     public function addToExclusionReason(ExclusionReason $exclusionReason): static
@@ -213,7 +213,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param ExclusionReason $exclusionReason
+     * @param  ExclusionReason $exclusionReason
      * @return static
      */
     public function addOnceToExclusionReason(ExclusionReason $exclusionReason): static
@@ -244,7 +244,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return array<Resolution>|null
+     * @return null|array<Resolution>
      */
     public function getResolution(): ?array
     {
@@ -252,7 +252,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param array<Resolution>|null $resolution
+     * @param  null|array<Resolution> $resolution
      * @return static
      */
     public function setResolution(?array $resolution = null): static
@@ -283,7 +283,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return Resolution|null
+     * @return null|Resolution
      */
     public function firstResolution(): ?Resolution
     {
@@ -298,7 +298,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return Resolution|null
+     * @return null|Resolution
      */
     public function lastResolution(): ?Resolution
     {
@@ -313,7 +313,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param Resolution $resolution
+     * @param  Resolution $resolution
      * @return static
      */
     public function addToResolution(Resolution $resolution): static
@@ -334,7 +334,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param Resolution $resolution
+     * @param  Resolution $resolution
      * @return static
      */
     public function addOnceToResolution(Resolution $resolution): static
@@ -365,7 +365,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getResolutionDate(): ?DateTimeInterface
     {
@@ -373,7 +373,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param DateTimeInterface|null $resolutionDate
+     * @param  null|DateTimeInterface $resolutionDate
      * @return static
      */
     public function setResolutionDate(?DateTimeInterface $resolutionDate = null): static
@@ -394,7 +394,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getResolutionTime(): ?DateTimeInterface
     {
@@ -402,7 +402,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param DateTimeInterface|null $resolutionTime
+     * @param  null|DateTimeInterface $resolutionTime
      * @return static
      */
     public function setResolutionTime(?DateTimeInterface $resolutionTime = null): static
@@ -423,7 +423,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @return ProcurementProjectLot|null
+     * @return null|ProcurementProjectLot
      */
     public function getProcurementProjectLot(): ?ProcurementProjectLot
     {
@@ -441,7 +441,7 @@ class QualificationResolutionType
     }
 
     /**
-     * @param ProcurementProjectLot|null $procurementProjectLot
+     * @param  null|ProcurementProjectLot $procurementProjectLot
      * @return static
      */
     public function setProcurementProjectLot(?ProcurementProjectLot $procurementProjectLot = null): static

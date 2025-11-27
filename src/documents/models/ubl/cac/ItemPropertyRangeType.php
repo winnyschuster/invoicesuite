@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumValue;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumValue;
+use JMS\Serializer\Annotation as JMS;
 
 class ItemPropertyRangeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var MinimumValue|null
+     * @var null|MinimumValue
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumValue")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ItemPropertyRangeType
     private $minimumValue;
 
     /**
-     * @var MaximumValue|null
+     * @var null|MaximumValue
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumValue")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ItemPropertyRangeType
     private $maximumValue;
 
     /**
-     * @return MinimumValue|null
+     * @return null|MinimumValue
      */
     public function getMinimumValue(): ?MinimumValue
     {
@@ -54,7 +54,7 @@ class ItemPropertyRangeType
     }
 
     /**
-     * @param MinimumValue|null $minimumValue
+     * @param  null|MinimumValue $minimumValue
      * @return static
      */
     public function setMinimumValue(?MinimumValue $minimumValue = null): static
@@ -75,7 +75,7 @@ class ItemPropertyRangeType
     }
 
     /**
-     * @return MaximumValue|null
+     * @return null|MaximumValue
      */
     public function getMaximumValue(): ?MaximumValue
     {
@@ -93,7 +93,7 @@ class ItemPropertyRangeType
     }
 
     /**
-     * @param MaximumValue|null $maximumValue
+     * @param  null|MaximumValue $maximumValue
      * @return static
      */
     public function setMaximumValue(?MaximumValue $maximumValue = null): static

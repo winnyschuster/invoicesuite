@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AdditionalInformation;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BrandName;
@@ -14,13 +13,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\ModelName;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PackQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PackSizeNumeric;
+use JMS\Serializer\Annotation as JMS;
 
 class ItemType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class ItemType
     private $description;
 
     /**
-     * @var PackQuantity|null
+     * @var null|PackQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PackQuantity")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class ItemType
     private $packQuantity;
 
     /**
-     * @var PackSizeNumeric|null
+     * @var null|PackSizeNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PackSizeNumeric")
      * @JMS\Expose
@@ -54,7 +54,7 @@ class ItemType
     private $packSizeNumeric;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -65,7 +65,7 @@ class ItemType
     private $catalogueIndicator;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -76,7 +76,7 @@ class ItemType
     private $name;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -87,7 +87,7 @@ class ItemType
     private $hazardousRiskIndicator;
 
     /**
-     * @var array<AdditionalInformation>|null
+     * @var null|array<AdditionalInformation>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\AdditionalInformation>")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class ItemType
     private $additionalInformation;
 
     /**
-     * @var array<Keyword>|null
+     * @var null|array<Keyword>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Keyword>")
      * @JMS\Expose
@@ -111,7 +111,7 @@ class ItemType
     private $keyword;
 
     /**
-     * @var array<BrandName>|null
+     * @var null|array<BrandName>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\BrandName>")
      * @JMS\Expose
@@ -123,7 +123,7 @@ class ItemType
     private $brandName;
 
     /**
-     * @var array<ModelName>|null
+     * @var null|array<ModelName>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ModelName>")
      * @JMS\Expose
@@ -135,7 +135,7 @@ class ItemType
     private $modelName;
 
     /**
-     * @var BuyersItemIdentification|null
+     * @var null|BuyersItemIdentification
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\BuyersItemIdentification")
      * @JMS\Expose
@@ -146,7 +146,7 @@ class ItemType
     private $buyersItemIdentification;
 
     /**
-     * @var SellersItemIdentification|null
+     * @var null|SellersItemIdentification
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SellersItemIdentification")
      * @JMS\Expose
@@ -157,7 +157,7 @@ class ItemType
     private $sellersItemIdentification;
 
     /**
-     * @var array<ManufacturersItemIdentification>|null
+     * @var null|array<ManufacturersItemIdentification>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ManufacturersItemIdentification>")
      * @JMS\Expose
@@ -169,7 +169,7 @@ class ItemType
     private $manufacturersItemIdentification;
 
     /**
-     * @var StandardItemIdentification|null
+     * @var null|StandardItemIdentification
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\StandardItemIdentification")
      * @JMS\Expose
@@ -180,7 +180,7 @@ class ItemType
     private $standardItemIdentification;
 
     /**
-     * @var CatalogueItemIdentification|null
+     * @var null|CatalogueItemIdentification
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CatalogueItemIdentification")
      * @JMS\Expose
@@ -191,7 +191,7 @@ class ItemType
     private $catalogueItemIdentification;
 
     /**
-     * @var array<AdditionalItemIdentification>|null
+     * @var null|array<AdditionalItemIdentification>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemIdentification>")
      * @JMS\Expose
@@ -203,7 +203,7 @@ class ItemType
     private $additionalItemIdentification;
 
     /**
-     * @var CatalogueDocumentReference|null
+     * @var null|CatalogueDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CatalogueDocumentReference")
      * @JMS\Expose
@@ -214,7 +214,7 @@ class ItemType
     private $catalogueDocumentReference;
 
     /**
-     * @var array<ItemSpecificationDocumentReference>|null
+     * @var null|array<ItemSpecificationDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ItemSpecificationDocumentReference>")
      * @JMS\Expose
@@ -226,7 +226,7 @@ class ItemType
     private $itemSpecificationDocumentReference;
 
     /**
-     * @var OriginCountry|null
+     * @var null|OriginCountry
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginCountry")
      * @JMS\Expose
@@ -237,7 +237,7 @@ class ItemType
     private $originCountry;
 
     /**
-     * @var array<CommodityClassification>|null
+     * @var null|array<CommodityClassification>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\CommodityClassification>")
      * @JMS\Expose
@@ -249,7 +249,7 @@ class ItemType
     private $commodityClassification;
 
     /**
-     * @var array<TransactionConditions>|null
+     * @var null|array<TransactionConditions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TransactionConditions>")
      * @JMS\Expose
@@ -261,7 +261,7 @@ class ItemType
     private $transactionConditions;
 
     /**
-     * @var array<HazardousItem>|null
+     * @var null|array<HazardousItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\HazardousItem>")
      * @JMS\Expose
@@ -273,7 +273,7 @@ class ItemType
     private $hazardousItem;
 
     /**
-     * @var array<ClassifiedTaxCategory>|null
+     * @var null|array<ClassifiedTaxCategory>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ClassifiedTaxCategory>")
      * @JMS\Expose
@@ -285,7 +285,7 @@ class ItemType
     private $classifiedTaxCategory;
 
     /**
-     * @var array<AdditionalItemProperty>|null
+     * @var null|array<AdditionalItemProperty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty>")
      * @JMS\Expose
@@ -297,7 +297,7 @@ class ItemType
     private $additionalItemProperty;
 
     /**
-     * @var array<ManufacturerParty>|null
+     * @var null|array<ManufacturerParty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ManufacturerParty>")
      * @JMS\Expose
@@ -309,7 +309,7 @@ class ItemType
     private $manufacturerParty;
 
     /**
-     * @var InformationContentProviderParty|null
+     * @var null|InformationContentProviderParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\InformationContentProviderParty")
      * @JMS\Expose
@@ -320,7 +320,7 @@ class ItemType
     private $informationContentProviderParty;
 
     /**
-     * @var array<OriginAddress>|null
+     * @var null|array<OriginAddress>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\OriginAddress>")
      * @JMS\Expose
@@ -332,7 +332,7 @@ class ItemType
     private $originAddress;
 
     /**
-     * @var array<ItemInstance>|null
+     * @var null|array<ItemInstance>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ItemInstance>")
      * @JMS\Expose
@@ -344,7 +344,7 @@ class ItemType
     private $itemInstance;
 
     /**
-     * @var array<Certificate>|null
+     * @var null|array<Certificate>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Certificate>")
      * @JMS\Expose
@@ -356,7 +356,7 @@ class ItemType
     private $certificate;
 
     /**
-     * @var array<Dimension>|null
+     * @var null|array<Dimension>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Dimension>")
      * @JMS\Expose
@@ -368,7 +368,7 @@ class ItemType
     private $dimension;
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -376,7 +376,7 @@ class ItemType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -407,7 +407,7 @@ class ItemType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -422,7 +422,7 @@ class ItemType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -437,7 +437,7 @@ class ItemType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -458,7 +458,7 @@ class ItemType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -489,7 +489,7 @@ class ItemType
     }
 
     /**
-     * @return PackQuantity|null
+     * @return null|PackQuantity
      */
     public function getPackQuantity(): ?PackQuantity
     {
@@ -507,7 +507,7 @@ class ItemType
     }
 
     /**
-     * @param PackQuantity|null $packQuantity
+     * @param  null|PackQuantity $packQuantity
      * @return static
      */
     public function setPackQuantity(?PackQuantity $packQuantity = null): static
@@ -528,7 +528,7 @@ class ItemType
     }
 
     /**
-     * @return PackSizeNumeric|null
+     * @return null|PackSizeNumeric
      */
     public function getPackSizeNumeric(): ?PackSizeNumeric
     {
@@ -546,7 +546,7 @@ class ItemType
     }
 
     /**
-     * @param PackSizeNumeric|null $packSizeNumeric
+     * @param  null|PackSizeNumeric $packSizeNumeric
      * @return static
      */
     public function setPackSizeNumeric(?PackSizeNumeric $packSizeNumeric = null): static
@@ -567,7 +567,7 @@ class ItemType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getCatalogueIndicator(): ?bool
     {
@@ -575,7 +575,7 @@ class ItemType
     }
 
     /**
-     * @param bool|null $catalogueIndicator
+     * @param  null|bool $catalogueIndicator
      * @return static
      */
     public function setCatalogueIndicator(?bool $catalogueIndicator = null): static
@@ -596,7 +596,7 @@ class ItemType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -614,7 +614,7 @@ class ItemType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -635,7 +635,7 @@ class ItemType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getHazardousRiskIndicator(): ?bool
     {
@@ -643,7 +643,7 @@ class ItemType
     }
 
     /**
-     * @param bool|null $hazardousRiskIndicator
+     * @param  null|bool $hazardousRiskIndicator
      * @return static
      */
     public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): static
@@ -664,7 +664,7 @@ class ItemType
     }
 
     /**
-     * @return array<AdditionalInformation>|null
+     * @return null|array<AdditionalInformation>
      */
     public function getAdditionalInformation(): ?array
     {
@@ -672,7 +672,7 @@ class ItemType
     }
 
     /**
-     * @param array<AdditionalInformation>|null $additionalInformation
+     * @param  null|array<AdditionalInformation> $additionalInformation
      * @return static
      */
     public function setAdditionalInformation(?array $additionalInformation = null): static
@@ -703,7 +703,7 @@ class ItemType
     }
 
     /**
-     * @return AdditionalInformation|null
+     * @return null|AdditionalInformation
      */
     public function firstAdditionalInformation(): ?AdditionalInformation
     {
@@ -718,7 +718,7 @@ class ItemType
     }
 
     /**
-     * @return AdditionalInformation|null
+     * @return null|AdditionalInformation
      */
     public function lastAdditionalInformation(): ?AdditionalInformation
     {
@@ -733,7 +733,7 @@ class ItemType
     }
 
     /**
-     * @param AdditionalInformation $additionalInformation
+     * @param  AdditionalInformation $additionalInformation
      * @return static
      */
     public function addToAdditionalInformation(AdditionalInformation $additionalInformation): static
@@ -754,7 +754,7 @@ class ItemType
     }
 
     /**
-     * @param AdditionalInformation $additionalInformation
+     * @param  AdditionalInformation $additionalInformation
      * @return static
      */
     public function addOnceToAdditionalInformation(AdditionalInformation $additionalInformation): static
@@ -785,7 +785,7 @@ class ItemType
     }
 
     /**
-     * @return array<Keyword>|null
+     * @return null|array<Keyword>
      */
     public function getKeyword(): ?array
     {
@@ -793,7 +793,7 @@ class ItemType
     }
 
     /**
-     * @param array<Keyword>|null $keyword
+     * @param  null|array<Keyword> $keyword
      * @return static
      */
     public function setKeyword(?array $keyword = null): static
@@ -824,7 +824,7 @@ class ItemType
     }
 
     /**
-     * @return Keyword|null
+     * @return null|Keyword
      */
     public function firstKeyword(): ?Keyword
     {
@@ -839,7 +839,7 @@ class ItemType
     }
 
     /**
-     * @return Keyword|null
+     * @return null|Keyword
      */
     public function lastKeyword(): ?Keyword
     {
@@ -854,7 +854,7 @@ class ItemType
     }
 
     /**
-     * @param Keyword $keyword
+     * @param  Keyword $keyword
      * @return static
      */
     public function addToKeyword(Keyword $keyword): static
@@ -875,7 +875,7 @@ class ItemType
     }
 
     /**
-     * @param Keyword $keyword
+     * @param  Keyword $keyword
      * @return static
      */
     public function addOnceToKeyword(Keyword $keyword): static
@@ -906,7 +906,7 @@ class ItemType
     }
 
     /**
-     * @return array<BrandName>|null
+     * @return null|array<BrandName>
      */
     public function getBrandName(): ?array
     {
@@ -914,7 +914,7 @@ class ItemType
     }
 
     /**
-     * @param array<BrandName>|null $brandName
+     * @param  null|array<BrandName> $brandName
      * @return static
      */
     public function setBrandName(?array $brandName = null): static
@@ -945,7 +945,7 @@ class ItemType
     }
 
     /**
-     * @return BrandName|null
+     * @return null|BrandName
      */
     public function firstBrandName(): ?BrandName
     {
@@ -960,7 +960,7 @@ class ItemType
     }
 
     /**
-     * @return BrandName|null
+     * @return null|BrandName
      */
     public function lastBrandName(): ?BrandName
     {
@@ -975,7 +975,7 @@ class ItemType
     }
 
     /**
-     * @param BrandName $brandName
+     * @param  BrandName $brandName
      * @return static
      */
     public function addToBrandName(BrandName $brandName): static
@@ -996,7 +996,7 @@ class ItemType
     }
 
     /**
-     * @param BrandName $brandName
+     * @param  BrandName $brandName
      * @return static
      */
     public function addOnceToBrandName(BrandName $brandName): static
@@ -1027,7 +1027,7 @@ class ItemType
     }
 
     /**
-     * @return array<ModelName>|null
+     * @return null|array<ModelName>
      */
     public function getModelName(): ?array
     {
@@ -1035,7 +1035,7 @@ class ItemType
     }
 
     /**
-     * @param array<ModelName>|null $modelName
+     * @param  null|array<ModelName> $modelName
      * @return static
      */
     public function setModelName(?array $modelName = null): static
@@ -1066,7 +1066,7 @@ class ItemType
     }
 
     /**
-     * @return ModelName|null
+     * @return null|ModelName
      */
     public function firstModelName(): ?ModelName
     {
@@ -1081,7 +1081,7 @@ class ItemType
     }
 
     /**
-     * @return ModelName|null
+     * @return null|ModelName
      */
     public function lastModelName(): ?ModelName
     {
@@ -1096,7 +1096,7 @@ class ItemType
     }
 
     /**
-     * @param ModelName $modelName
+     * @param  ModelName $modelName
      * @return static
      */
     public function addToModelName(ModelName $modelName): static
@@ -1117,7 +1117,7 @@ class ItemType
     }
 
     /**
-     * @param ModelName $modelName
+     * @param  ModelName $modelName
      * @return static
      */
     public function addOnceToModelName(ModelName $modelName): static
@@ -1148,7 +1148,7 @@ class ItemType
     }
 
     /**
-     * @return BuyersItemIdentification|null
+     * @return null|BuyersItemIdentification
      */
     public function getBuyersItemIdentification(): ?BuyersItemIdentification
     {
@@ -1166,7 +1166,7 @@ class ItemType
     }
 
     /**
-     * @param BuyersItemIdentification|null $buyersItemIdentification
+     * @param  null|BuyersItemIdentification $buyersItemIdentification
      * @return static
      */
     public function setBuyersItemIdentification(?BuyersItemIdentification $buyersItemIdentification = null): static
@@ -1187,7 +1187,7 @@ class ItemType
     }
 
     /**
-     * @return SellersItemIdentification|null
+     * @return null|SellersItemIdentification
      */
     public function getSellersItemIdentification(): ?SellersItemIdentification
     {
@@ -1205,7 +1205,7 @@ class ItemType
     }
 
     /**
-     * @param SellersItemIdentification|null $sellersItemIdentification
+     * @param  null|SellersItemIdentification $sellersItemIdentification
      * @return static
      */
     public function setSellersItemIdentification(?SellersItemIdentification $sellersItemIdentification = null): static
@@ -1226,7 +1226,7 @@ class ItemType
     }
 
     /**
-     * @return array<ManufacturersItemIdentification>|null
+     * @return null|array<ManufacturersItemIdentification>
      */
     public function getManufacturersItemIdentification(): ?array
     {
@@ -1234,7 +1234,7 @@ class ItemType
     }
 
     /**
-     * @param array<ManufacturersItemIdentification>|null $manufacturersItemIdentification
+     * @param  null|array<ManufacturersItemIdentification> $manufacturersItemIdentification
      * @return static
      */
     public function setManufacturersItemIdentification(?array $manufacturersItemIdentification = null): static
@@ -1265,7 +1265,7 @@ class ItemType
     }
 
     /**
-     * @return ManufacturersItemIdentification|null
+     * @return null|ManufacturersItemIdentification
      */
     public function firstManufacturersItemIdentification(): ?ManufacturersItemIdentification
     {
@@ -1280,7 +1280,7 @@ class ItemType
     }
 
     /**
-     * @return ManufacturersItemIdentification|null
+     * @return null|ManufacturersItemIdentification
      */
     public function lastManufacturersItemIdentification(): ?ManufacturersItemIdentification
     {
@@ -1295,7 +1295,7 @@ class ItemType
     }
 
     /**
-     * @param ManufacturersItemIdentification $manufacturersItemIdentification
+     * @param  ManufacturersItemIdentification $manufacturersItemIdentification
      * @return static
      */
     public function addToManufacturersItemIdentification(
@@ -1317,7 +1317,7 @@ class ItemType
     }
 
     /**
-     * @param ManufacturersItemIdentification $manufacturersItemIdentification
+     * @param  ManufacturersItemIdentification $manufacturersItemIdentification
      * @return static
      */
     public function addOnceToManufacturersItemIdentification(
@@ -1349,7 +1349,7 @@ class ItemType
     }
 
     /**
-     * @return StandardItemIdentification|null
+     * @return null|StandardItemIdentification
      */
     public function getStandardItemIdentification(): ?StandardItemIdentification
     {
@@ -1367,7 +1367,7 @@ class ItemType
     }
 
     /**
-     * @param StandardItemIdentification|null $standardItemIdentification
+     * @param  null|StandardItemIdentification $standardItemIdentification
      * @return static
      */
     public function setStandardItemIdentification(
@@ -1389,7 +1389,7 @@ class ItemType
     }
 
     /**
-     * @return CatalogueItemIdentification|null
+     * @return null|CatalogueItemIdentification
      */
     public function getCatalogueItemIdentification(): ?CatalogueItemIdentification
     {
@@ -1407,7 +1407,7 @@ class ItemType
     }
 
     /**
-     * @param CatalogueItemIdentification|null $catalogueItemIdentification
+     * @param  null|CatalogueItemIdentification $catalogueItemIdentification
      * @return static
      */
     public function setCatalogueItemIdentification(
@@ -1429,7 +1429,7 @@ class ItemType
     }
 
     /**
-     * @return array<AdditionalItemIdentification>|null
+     * @return null|array<AdditionalItemIdentification>
      */
     public function getAdditionalItemIdentification(): ?array
     {
@@ -1437,7 +1437,7 @@ class ItemType
     }
 
     /**
-     * @param array<AdditionalItemIdentification>|null $additionalItemIdentification
+     * @param  null|array<AdditionalItemIdentification> $additionalItemIdentification
      * @return static
      */
     public function setAdditionalItemIdentification(?array $additionalItemIdentification = null): static
@@ -1468,7 +1468,7 @@ class ItemType
     }
 
     /**
-     * @return AdditionalItemIdentification|null
+     * @return null|AdditionalItemIdentification
      */
     public function firstAdditionalItemIdentification(): ?AdditionalItemIdentification
     {
@@ -1483,7 +1483,7 @@ class ItemType
     }
 
     /**
-     * @return AdditionalItemIdentification|null
+     * @return null|AdditionalItemIdentification
      */
     public function lastAdditionalItemIdentification(): ?AdditionalItemIdentification
     {
@@ -1498,7 +1498,7 @@ class ItemType
     }
 
     /**
-     * @param AdditionalItemIdentification $additionalItemIdentification
+     * @param  AdditionalItemIdentification $additionalItemIdentification
      * @return static
      */
     public function addToAdditionalItemIdentification(
@@ -1520,7 +1520,7 @@ class ItemType
     }
 
     /**
-     * @param AdditionalItemIdentification $additionalItemIdentification
+     * @param  AdditionalItemIdentification $additionalItemIdentification
      * @return static
      */
     public function addOnceToAdditionalItemIdentification(
@@ -1552,7 +1552,7 @@ class ItemType
     }
 
     /**
-     * @return CatalogueDocumentReference|null
+     * @return null|CatalogueDocumentReference
      */
     public function getCatalogueDocumentReference(): ?CatalogueDocumentReference
     {
@@ -1570,7 +1570,7 @@ class ItemType
     }
 
     /**
-     * @param CatalogueDocumentReference|null $catalogueDocumentReference
+     * @param  null|CatalogueDocumentReference $catalogueDocumentReference
      * @return static
      */
     public function setCatalogueDocumentReference(
@@ -1592,7 +1592,7 @@ class ItemType
     }
 
     /**
-     * @return array<ItemSpecificationDocumentReference>|null
+     * @return null|array<ItemSpecificationDocumentReference>
      */
     public function getItemSpecificationDocumentReference(): ?array
     {
@@ -1600,7 +1600,7 @@ class ItemType
     }
 
     /**
-     * @param array<ItemSpecificationDocumentReference>|null $itemSpecificationDocumentReference
+     * @param  null|array<ItemSpecificationDocumentReference> $itemSpecificationDocumentReference
      * @return static
      */
     public function setItemSpecificationDocumentReference(?array $itemSpecificationDocumentReference = null): static
@@ -1631,7 +1631,7 @@ class ItemType
     }
 
     /**
-     * @return ItemSpecificationDocumentReference|null
+     * @return null|ItemSpecificationDocumentReference
      */
     public function firstItemSpecificationDocumentReference(): ?ItemSpecificationDocumentReference
     {
@@ -1646,7 +1646,7 @@ class ItemType
     }
 
     /**
-     * @return ItemSpecificationDocumentReference|null
+     * @return null|ItemSpecificationDocumentReference
      */
     public function lastItemSpecificationDocumentReference(): ?ItemSpecificationDocumentReference
     {
@@ -1661,7 +1661,7 @@ class ItemType
     }
 
     /**
-     * @param ItemSpecificationDocumentReference $itemSpecificationDocumentReference
+     * @param  ItemSpecificationDocumentReference $itemSpecificationDocumentReference
      * @return static
      */
     public function addToItemSpecificationDocumentReference(
@@ -1683,7 +1683,7 @@ class ItemType
     }
 
     /**
-     * @param ItemSpecificationDocumentReference $itemSpecificationDocumentReference
+     * @param  ItemSpecificationDocumentReference $itemSpecificationDocumentReference
      * @return static
      */
     public function addOnceToItemSpecificationDocumentReference(
@@ -1715,7 +1715,7 @@ class ItemType
     }
 
     /**
-     * @return OriginCountry|null
+     * @return null|OriginCountry
      */
     public function getOriginCountry(): ?OriginCountry
     {
@@ -1733,7 +1733,7 @@ class ItemType
     }
 
     /**
-     * @param OriginCountry|null $originCountry
+     * @param  null|OriginCountry $originCountry
      * @return static
      */
     public function setOriginCountry(?OriginCountry $originCountry = null): static
@@ -1754,7 +1754,7 @@ class ItemType
     }
 
     /**
-     * @return array<CommodityClassification>|null
+     * @return null|array<CommodityClassification>
      */
     public function getCommodityClassification(): ?array
     {
@@ -1762,7 +1762,7 @@ class ItemType
     }
 
     /**
-     * @param array<CommodityClassification>|null $commodityClassification
+     * @param  null|array<CommodityClassification> $commodityClassification
      * @return static
      */
     public function setCommodityClassification(?array $commodityClassification = null): static
@@ -1793,7 +1793,7 @@ class ItemType
     }
 
     /**
-     * @return CommodityClassification|null
+     * @return null|CommodityClassification
      */
     public function firstCommodityClassification(): ?CommodityClassification
     {
@@ -1808,7 +1808,7 @@ class ItemType
     }
 
     /**
-     * @return CommodityClassification|null
+     * @return null|CommodityClassification
      */
     public function lastCommodityClassification(): ?CommodityClassification
     {
@@ -1823,7 +1823,7 @@ class ItemType
     }
 
     /**
-     * @param CommodityClassification $commodityClassification
+     * @param  CommodityClassification $commodityClassification
      * @return static
      */
     public function addToCommodityClassification(CommodityClassification $commodityClassification): static
@@ -1844,7 +1844,7 @@ class ItemType
     }
 
     /**
-     * @param CommodityClassification $commodityClassification
+     * @param  CommodityClassification $commodityClassification
      * @return static
      */
     public function addOnceToCommodityClassification(CommodityClassification $commodityClassification): static
@@ -1875,7 +1875,7 @@ class ItemType
     }
 
     /**
-     * @return array<TransactionConditions>|null
+     * @return null|array<TransactionConditions>
      */
     public function getTransactionConditions(): ?array
     {
@@ -1883,7 +1883,7 @@ class ItemType
     }
 
     /**
-     * @param array<TransactionConditions>|null $transactionConditions
+     * @param  null|array<TransactionConditions> $transactionConditions
      * @return static
      */
     public function setTransactionConditions(?array $transactionConditions = null): static
@@ -1914,7 +1914,7 @@ class ItemType
     }
 
     /**
-     * @return TransactionConditions|null
+     * @return null|TransactionConditions
      */
     public function firstTransactionConditions(): ?TransactionConditions
     {
@@ -1929,7 +1929,7 @@ class ItemType
     }
 
     /**
-     * @return TransactionConditions|null
+     * @return null|TransactionConditions
      */
     public function lastTransactionConditions(): ?TransactionConditions
     {
@@ -1944,7 +1944,7 @@ class ItemType
     }
 
     /**
-     * @param TransactionConditions $transactionConditions
+     * @param  TransactionConditions $transactionConditions
      * @return static
      */
     public function addToTransactionConditions(TransactionConditions $transactionConditions): static
@@ -1965,7 +1965,7 @@ class ItemType
     }
 
     /**
-     * @param TransactionConditions $transactionConditions
+     * @param  TransactionConditions $transactionConditions
      * @return static
      */
     public function addOnceToTransactionConditions(TransactionConditions $transactionConditions): static
@@ -1996,7 +1996,7 @@ class ItemType
     }
 
     /**
-     * @return array<HazardousItem>|null
+     * @return null|array<HazardousItem>
      */
     public function getHazardousItem(): ?array
     {
@@ -2004,7 +2004,7 @@ class ItemType
     }
 
     /**
-     * @param array<HazardousItem>|null $hazardousItem
+     * @param  null|array<HazardousItem> $hazardousItem
      * @return static
      */
     public function setHazardousItem(?array $hazardousItem = null): static
@@ -2035,7 +2035,7 @@ class ItemType
     }
 
     /**
-     * @return HazardousItem|null
+     * @return null|HazardousItem
      */
     public function firstHazardousItem(): ?HazardousItem
     {
@@ -2050,7 +2050,7 @@ class ItemType
     }
 
     /**
-     * @return HazardousItem|null
+     * @return null|HazardousItem
      */
     public function lastHazardousItem(): ?HazardousItem
     {
@@ -2065,7 +2065,7 @@ class ItemType
     }
 
     /**
-     * @param HazardousItem $hazardousItem
+     * @param  HazardousItem $hazardousItem
      * @return static
      */
     public function addToHazardousItem(HazardousItem $hazardousItem): static
@@ -2086,7 +2086,7 @@ class ItemType
     }
 
     /**
-     * @param HazardousItem $hazardousItem
+     * @param  HazardousItem $hazardousItem
      * @return static
      */
     public function addOnceToHazardousItem(HazardousItem $hazardousItem): static
@@ -2117,7 +2117,7 @@ class ItemType
     }
 
     /**
-     * @return array<ClassifiedTaxCategory>|null
+     * @return null|array<ClassifiedTaxCategory>
      */
     public function getClassifiedTaxCategory(): ?array
     {
@@ -2125,7 +2125,7 @@ class ItemType
     }
 
     /**
-     * @param array<ClassifiedTaxCategory>|null $classifiedTaxCategory
+     * @param  null|array<ClassifiedTaxCategory> $classifiedTaxCategory
      * @return static
      */
     public function setClassifiedTaxCategory(?array $classifiedTaxCategory = null): static
@@ -2156,7 +2156,7 @@ class ItemType
     }
 
     /**
-     * @return ClassifiedTaxCategory|null
+     * @return null|ClassifiedTaxCategory
      */
     public function firstClassifiedTaxCategory(): ?ClassifiedTaxCategory
     {
@@ -2171,7 +2171,7 @@ class ItemType
     }
 
     /**
-     * @return ClassifiedTaxCategory|null
+     * @return null|ClassifiedTaxCategory
      */
     public function lastClassifiedTaxCategory(): ?ClassifiedTaxCategory
     {
@@ -2186,7 +2186,7 @@ class ItemType
     }
 
     /**
-     * @param ClassifiedTaxCategory $classifiedTaxCategory
+     * @param  ClassifiedTaxCategory $classifiedTaxCategory
      * @return static
      */
     public function addToClassifiedTaxCategory(ClassifiedTaxCategory $classifiedTaxCategory): static
@@ -2207,7 +2207,7 @@ class ItemType
     }
 
     /**
-     * @param ClassifiedTaxCategory $classifiedTaxCategory
+     * @param  ClassifiedTaxCategory $classifiedTaxCategory
      * @return static
      */
     public function addOnceToClassifiedTaxCategory(ClassifiedTaxCategory $classifiedTaxCategory): static
@@ -2238,7 +2238,7 @@ class ItemType
     }
 
     /**
-     * @return array<AdditionalItemProperty>|null
+     * @return null|array<AdditionalItemProperty>
      */
     public function getAdditionalItemProperty(): ?array
     {
@@ -2246,7 +2246,7 @@ class ItemType
     }
 
     /**
-     * @param array<AdditionalItemProperty>|null $additionalItemProperty
+     * @param  null|array<AdditionalItemProperty> $additionalItemProperty
      * @return static
      */
     public function setAdditionalItemProperty(?array $additionalItemProperty = null): static
@@ -2277,7 +2277,7 @@ class ItemType
     }
 
     /**
-     * @return AdditionalItemProperty|null
+     * @return null|AdditionalItemProperty
      */
     public function firstAdditionalItemProperty(): ?AdditionalItemProperty
     {
@@ -2292,7 +2292,7 @@ class ItemType
     }
 
     /**
-     * @return AdditionalItemProperty|null
+     * @return null|AdditionalItemProperty
      */
     public function lastAdditionalItemProperty(): ?AdditionalItemProperty
     {
@@ -2307,7 +2307,7 @@ class ItemType
     }
 
     /**
-     * @param AdditionalItemProperty $additionalItemProperty
+     * @param  AdditionalItemProperty $additionalItemProperty
      * @return static
      */
     public function addToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static
@@ -2328,7 +2328,7 @@ class ItemType
     }
 
     /**
-     * @param AdditionalItemProperty $additionalItemProperty
+     * @param  AdditionalItemProperty $additionalItemProperty
      * @return static
      */
     public function addOnceToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static
@@ -2359,7 +2359,7 @@ class ItemType
     }
 
     /**
-     * @return array<ManufacturerParty>|null
+     * @return null|array<ManufacturerParty>
      */
     public function getManufacturerParty(): ?array
     {
@@ -2367,7 +2367,7 @@ class ItemType
     }
 
     /**
-     * @param array<ManufacturerParty>|null $manufacturerParty
+     * @param  null|array<ManufacturerParty> $manufacturerParty
      * @return static
      */
     public function setManufacturerParty(?array $manufacturerParty = null): static
@@ -2398,7 +2398,7 @@ class ItemType
     }
 
     /**
-     * @return ManufacturerParty|null
+     * @return null|ManufacturerParty
      */
     public function firstManufacturerParty(): ?ManufacturerParty
     {
@@ -2413,7 +2413,7 @@ class ItemType
     }
 
     /**
-     * @return ManufacturerParty|null
+     * @return null|ManufacturerParty
      */
     public function lastManufacturerParty(): ?ManufacturerParty
     {
@@ -2428,7 +2428,7 @@ class ItemType
     }
 
     /**
-     * @param ManufacturerParty $manufacturerParty
+     * @param  ManufacturerParty $manufacturerParty
      * @return static
      */
     public function addToManufacturerParty(ManufacturerParty $manufacturerParty): static
@@ -2449,7 +2449,7 @@ class ItemType
     }
 
     /**
-     * @param ManufacturerParty $manufacturerParty
+     * @param  ManufacturerParty $manufacturerParty
      * @return static
      */
     public function addOnceToManufacturerParty(ManufacturerParty $manufacturerParty): static
@@ -2480,7 +2480,7 @@ class ItemType
     }
 
     /**
-     * @return InformationContentProviderParty|null
+     * @return null|InformationContentProviderParty
      */
     public function getInformationContentProviderParty(): ?InformationContentProviderParty
     {
@@ -2498,7 +2498,7 @@ class ItemType
     }
 
     /**
-     * @param InformationContentProviderParty|null $informationContentProviderParty
+     * @param  null|InformationContentProviderParty $informationContentProviderParty
      * @return static
      */
     public function setInformationContentProviderParty(
@@ -2520,7 +2520,7 @@ class ItemType
     }
 
     /**
-     * @return array<OriginAddress>|null
+     * @return null|array<OriginAddress>
      */
     public function getOriginAddress(): ?array
     {
@@ -2528,7 +2528,7 @@ class ItemType
     }
 
     /**
-     * @param array<OriginAddress>|null $originAddress
+     * @param  null|array<OriginAddress> $originAddress
      * @return static
      */
     public function setOriginAddress(?array $originAddress = null): static
@@ -2559,7 +2559,7 @@ class ItemType
     }
 
     /**
-     * @return OriginAddress|null
+     * @return null|OriginAddress
      */
     public function firstOriginAddress(): ?OriginAddress
     {
@@ -2574,7 +2574,7 @@ class ItemType
     }
 
     /**
-     * @return OriginAddress|null
+     * @return null|OriginAddress
      */
     public function lastOriginAddress(): ?OriginAddress
     {
@@ -2589,7 +2589,7 @@ class ItemType
     }
 
     /**
-     * @param OriginAddress $originAddress
+     * @param  OriginAddress $originAddress
      * @return static
      */
     public function addToOriginAddress(OriginAddress $originAddress): static
@@ -2610,7 +2610,7 @@ class ItemType
     }
 
     /**
-     * @param OriginAddress $originAddress
+     * @param  OriginAddress $originAddress
      * @return static
      */
     public function addOnceToOriginAddress(OriginAddress $originAddress): static
@@ -2641,7 +2641,7 @@ class ItemType
     }
 
     /**
-     * @return array<ItemInstance>|null
+     * @return null|array<ItemInstance>
      */
     public function getItemInstance(): ?array
     {
@@ -2649,7 +2649,7 @@ class ItemType
     }
 
     /**
-     * @param array<ItemInstance>|null $itemInstance
+     * @param  null|array<ItemInstance> $itemInstance
      * @return static
      */
     public function setItemInstance(?array $itemInstance = null): static
@@ -2680,7 +2680,7 @@ class ItemType
     }
 
     /**
-     * @return ItemInstance|null
+     * @return null|ItemInstance
      */
     public function firstItemInstance(): ?ItemInstance
     {
@@ -2695,7 +2695,7 @@ class ItemType
     }
 
     /**
-     * @return ItemInstance|null
+     * @return null|ItemInstance
      */
     public function lastItemInstance(): ?ItemInstance
     {
@@ -2710,7 +2710,7 @@ class ItemType
     }
 
     /**
-     * @param ItemInstance $itemInstance
+     * @param  ItemInstance $itemInstance
      * @return static
      */
     public function addToItemInstance(ItemInstance $itemInstance): static
@@ -2731,7 +2731,7 @@ class ItemType
     }
 
     /**
-     * @param ItemInstance $itemInstance
+     * @param  ItemInstance $itemInstance
      * @return static
      */
     public function addOnceToItemInstance(ItemInstance $itemInstance): static
@@ -2762,7 +2762,7 @@ class ItemType
     }
 
     /**
-     * @return array<Certificate>|null
+     * @return null|array<Certificate>
      */
     public function getCertificate(): ?array
     {
@@ -2770,7 +2770,7 @@ class ItemType
     }
 
     /**
-     * @param array<Certificate>|null $certificate
+     * @param  null|array<Certificate> $certificate
      * @return static
      */
     public function setCertificate(?array $certificate = null): static
@@ -2801,7 +2801,7 @@ class ItemType
     }
 
     /**
-     * @return Certificate|null
+     * @return null|Certificate
      */
     public function firstCertificate(): ?Certificate
     {
@@ -2816,7 +2816,7 @@ class ItemType
     }
 
     /**
-     * @return Certificate|null
+     * @return null|Certificate
      */
     public function lastCertificate(): ?Certificate
     {
@@ -2831,7 +2831,7 @@ class ItemType
     }
 
     /**
-     * @param Certificate $certificate
+     * @param  Certificate $certificate
      * @return static
      */
     public function addToCertificate(Certificate $certificate): static
@@ -2852,7 +2852,7 @@ class ItemType
     }
 
     /**
-     * @param Certificate $certificate
+     * @param  Certificate $certificate
      * @return static
      */
     public function addOnceToCertificate(Certificate $certificate): static
@@ -2883,7 +2883,7 @@ class ItemType
     }
 
     /**
-     * @return array<Dimension>|null
+     * @return null|array<Dimension>
      */
     public function getDimension(): ?array
     {
@@ -2891,7 +2891,7 @@ class ItemType
     }
 
     /**
-     * @param array<Dimension>|null $dimension
+     * @param  null|array<Dimension> $dimension
      * @return static
      */
     public function setDimension(?array $dimension = null): static
@@ -2922,7 +2922,7 @@ class ItemType
     }
 
     /**
-     * @return Dimension|null
+     * @return null|Dimension
      */
     public function firstDimension(): ?Dimension
     {
@@ -2937,7 +2937,7 @@ class ItemType
     }
 
     /**
-     * @return Dimension|null
+     * @return null|Dimension
      */
     public function lastDimension(): ?Dimension
     {
@@ -2952,7 +2952,7 @@ class ItemType
     }
 
     /**
-     * @param Dimension $dimension
+     * @param  Dimension $dimension
      * @return static
      */
     public function addToDimension(Dimension $dimension): static
@@ -2973,7 +2973,7 @@ class ItemType
     }
 
     /**
-     * @param Dimension $dimension
+     * @param  Dimension $dimension
      * @return static
      */
     public function addOnceToDimension(Dimension $dimension): static

@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxcomfort\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\udt\CodeType;
+use JMS\Serializer\Annotation as JMS;
 
 class ProductClassificationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var CodeType|null
+     * @var null|CodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\CodeType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class ProductClassificationType
     private $classCode;
 
     /**
-     * @return CodeType|null
+     * @return null|CodeType
      */
     public function getClassCode(): ?CodeType
     {
@@ -42,7 +42,7 @@ class ProductClassificationType
     }
 
     /**
-     * @param CodeType|null $classCode
+     * @param  null|CodeType $classCode
      * @return static
      */
     public function setClassCode(?CodeType $classCode = null): static

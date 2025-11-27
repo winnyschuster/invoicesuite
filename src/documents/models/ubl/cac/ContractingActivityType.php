@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ActivityType;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ActivityTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class ContractingActivityType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ActivityTypeCode|null
+     * @var null|ActivityTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ActivityTypeCode")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ContractingActivityType
     private $activityTypeCode;
 
     /**
-     * @var ActivityType|null
+     * @var null|ActivityType
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ActivityType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ContractingActivityType
     private $activityType;
 
     /**
-     * @return ActivityTypeCode|null
+     * @return null|ActivityTypeCode
      */
     public function getActivityTypeCode(): ?ActivityTypeCode
     {
@@ -54,7 +54,7 @@ class ContractingActivityType
     }
 
     /**
-     * @param ActivityTypeCode|null $activityTypeCode
+     * @param  null|ActivityTypeCode $activityTypeCode
      * @return static
      */
     public function setActivityTypeCode(?ActivityTypeCode $activityTypeCode = null): static
@@ -75,7 +75,7 @@ class ContractingActivityType
     }
 
     /**
-     * @return ActivityType|null
+     * @return null|ActivityType
      */
     public function getActivityType(): ?ActivityType
     {
@@ -93,7 +93,7 @@ class ContractingActivityType
     }
 
     /**
-     * @param ActivityType|null $activityType
+     * @param  null|ActivityType $activityType
      * @return static
      */
     public function setActivityType(?ActivityType $activityType = null): static

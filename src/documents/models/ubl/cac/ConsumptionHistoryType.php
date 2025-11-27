@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Amount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionLevel;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionLevelCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity;
+use JMS\Serializer\Annotation as JMS;
 
 class ConsumptionHistoryType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var MeterNumber|null
+     * @var null|MeterNumber
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class ConsumptionHistoryType
     private $meterNumber;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class ConsumptionHistoryType
     private $quantity;
 
     /**
-     * @var Amount|null
+     * @var null|Amount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class ConsumptionHistoryType
     private $amount;
 
     /**
-     * @var ConsumptionLevelCode|null
+     * @var null|ConsumptionLevelCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionLevelCode")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class ConsumptionHistoryType
     private $consumptionLevelCode;
 
     /**
-     * @var ConsumptionLevel|null
+     * @var null|ConsumptionLevel
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionLevel")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class ConsumptionHistoryType
     private $consumptionLevel;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class ConsumptionHistoryType
     private $description;
 
     /**
-     * @var Period|null
+     * @var null|Period
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Period")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class ConsumptionHistoryType
     private $period;
 
     /**
-     * @return MeterNumber|null
+     * @return null|MeterNumber
      */
     public function getMeterNumber(): ?MeterNumber
     {
@@ -114,7 +114,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param MeterNumber|null $meterNumber
+     * @param  null|MeterNumber $meterNumber
      * @return static
      */
     public function setMeterNumber(?MeterNumber $meterNumber = null): static
@@ -135,7 +135,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -153,7 +153,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -174,7 +174,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return Amount|null
+     * @return null|Amount
      */
     public function getAmount(): ?Amount
     {
@@ -192,7 +192,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param Amount|null $amount
+     * @param  null|Amount $amount
      * @return static
      */
     public function setAmount(?Amount $amount = null): static
@@ -213,7 +213,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return ConsumptionLevelCode|null
+     * @return null|ConsumptionLevelCode
      */
     public function getConsumptionLevelCode(): ?ConsumptionLevelCode
     {
@@ -231,7 +231,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param ConsumptionLevelCode|null $consumptionLevelCode
+     * @param  null|ConsumptionLevelCode $consumptionLevelCode
      * @return static
      */
     public function setConsumptionLevelCode(?ConsumptionLevelCode $consumptionLevelCode = null): static
@@ -252,7 +252,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return ConsumptionLevel|null
+     * @return null|ConsumptionLevel
      */
     public function getConsumptionLevel(): ?ConsumptionLevel
     {
@@ -270,7 +270,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param ConsumptionLevel|null $consumptionLevel
+     * @param  null|ConsumptionLevel $consumptionLevel
      * @return static
      */
     public function setConsumptionLevel(?ConsumptionLevel $consumptionLevel = null): static
@@ -291,7 +291,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -299,7 +299,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -330,7 +330,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -345,7 +345,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -360,7 +360,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -381,7 +381,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -412,7 +412,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @return Period|null
+     * @return null|Period
      */
     public function getPeriod(): ?Period
     {
@@ -430,7 +430,7 @@ class ConsumptionHistoryType
     }
 
     /**
-     * @param Period|null $period
+     * @param  null|Period $period
      * @return static
      */
     public function setPeriod(?Period $period = null): static

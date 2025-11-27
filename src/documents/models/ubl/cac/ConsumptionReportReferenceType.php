@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionReportID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalConsumedQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class ConsumptionReportReferenceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ConsumptionReportID|null
+     * @var null|ConsumptionReportID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionReportID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class ConsumptionReportReferenceType
     private $consumptionReportID;
 
     /**
-     * @var ConsumptionType|null
+     * @var null|ConsumptionType
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class ConsumptionReportReferenceType
     private $consumptionType;
 
     /**
-     * @var ConsumptionTypeCode|null
+     * @var null|ConsumptionTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class ConsumptionReportReferenceType
     private $consumptionTypeCode;
 
     /**
-     * @var TotalConsumedQuantity|null
+     * @var null|TotalConsumedQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalConsumedQuantity")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ConsumptionReportReferenceType
     private $totalConsumedQuantity;
 
     /**
-     * @var Period|null
+     * @var null|Period
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Period")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class ConsumptionReportReferenceType
     private $period;
 
     /**
-     * @return ConsumptionReportID|null
+     * @return null|ConsumptionReportID
      */
     public function getConsumptionReportID(): ?ConsumptionReportID
     {
@@ -89,7 +89,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @param ConsumptionReportID|null $consumptionReportID
+     * @param  null|ConsumptionReportID $consumptionReportID
      * @return static
      */
     public function setConsumptionReportID(?ConsumptionReportID $consumptionReportID = null): static
@@ -110,7 +110,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return ConsumptionType|null
+     * @return null|ConsumptionType
      */
     public function getConsumptionType(): ?ConsumptionType
     {
@@ -128,7 +128,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @param ConsumptionType|null $consumptionType
+     * @param  null|ConsumptionType $consumptionType
      * @return static
      */
     public function setConsumptionType(?ConsumptionType $consumptionType = null): static
@@ -149,7 +149,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return ConsumptionTypeCode|null
+     * @return null|ConsumptionTypeCode
      */
     public function getConsumptionTypeCode(): ?ConsumptionTypeCode
     {
@@ -167,7 +167,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @param ConsumptionTypeCode|null $consumptionTypeCode
+     * @param  null|ConsumptionTypeCode $consumptionTypeCode
      * @return static
      */
     public function setConsumptionTypeCode(?ConsumptionTypeCode $consumptionTypeCode = null): static
@@ -188,7 +188,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return TotalConsumedQuantity|null
+     * @return null|TotalConsumedQuantity
      */
     public function getTotalConsumedQuantity(): ?TotalConsumedQuantity
     {
@@ -206,7 +206,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @param TotalConsumedQuantity|null $totalConsumedQuantity
+     * @param  null|TotalConsumedQuantity $totalConsumedQuantity
      * @return static
      */
     public function setTotalConsumedQuantity(?TotalConsumedQuantity $totalConsumedQuantity = null): static
@@ -227,7 +227,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @return Period|null
+     * @return null|Period
      */
     public function getPeriod(): ?Period
     {
@@ -245,7 +245,7 @@ class ConsumptionReportReferenceType
     }
 
     /**
-     * @param Period|null $period
+     * @param  null|Period $period
      * @return static
      */
     public function setPeriod(?Period $period = null): static

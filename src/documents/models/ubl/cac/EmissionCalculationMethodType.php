@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationMethodCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\FullnessIndicationCode;
+use JMS\Serializer\Annotation as JMS;
 
 class EmissionCalculationMethodType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var CalculationMethodCode|null
+     * @var null|CalculationMethodCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationMethodCode")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class EmissionCalculationMethodType
     private $calculationMethodCode;
 
     /**
-     * @var FullnessIndicationCode|null
+     * @var null|FullnessIndicationCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FullnessIndicationCode")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class EmissionCalculationMethodType
     private $fullnessIndicationCode;
 
     /**
-     * @var MeasurementFromLocation|null
+     * @var null|MeasurementFromLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementFromLocation")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class EmissionCalculationMethodType
     private $measurementFromLocation;
 
     /**
-     * @var MeasurementToLocation|null
+     * @var null|MeasurementToLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementToLocation")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class EmissionCalculationMethodType
     private $measurementToLocation;
 
     /**
-     * @return CalculationMethodCode|null
+     * @return null|CalculationMethodCode
      */
     public function getCalculationMethodCode(): ?CalculationMethodCode
     {
@@ -76,7 +76,7 @@ class EmissionCalculationMethodType
     }
 
     /**
-     * @param CalculationMethodCode|null $calculationMethodCode
+     * @param  null|CalculationMethodCode $calculationMethodCode
      * @return static
      */
     public function setCalculationMethodCode(?CalculationMethodCode $calculationMethodCode = null): static
@@ -97,7 +97,7 @@ class EmissionCalculationMethodType
     }
 
     /**
-     * @return FullnessIndicationCode|null
+     * @return null|FullnessIndicationCode
      */
     public function getFullnessIndicationCode(): ?FullnessIndicationCode
     {
@@ -115,7 +115,7 @@ class EmissionCalculationMethodType
     }
 
     /**
-     * @param FullnessIndicationCode|null $fullnessIndicationCode
+     * @param  null|FullnessIndicationCode $fullnessIndicationCode
      * @return static
      */
     public function setFullnessIndicationCode(?FullnessIndicationCode $fullnessIndicationCode = null): static
@@ -136,7 +136,7 @@ class EmissionCalculationMethodType
     }
 
     /**
-     * @return MeasurementFromLocation|null
+     * @return null|MeasurementFromLocation
      */
     public function getMeasurementFromLocation(): ?MeasurementFromLocation
     {
@@ -154,7 +154,7 @@ class EmissionCalculationMethodType
     }
 
     /**
-     * @param MeasurementFromLocation|null $measurementFromLocation
+     * @param  null|MeasurementFromLocation $measurementFromLocation
      * @return static
      */
     public function setMeasurementFromLocation(?MeasurementFromLocation $measurementFromLocation = null): static
@@ -175,7 +175,7 @@ class EmissionCalculationMethodType
     }
 
     /**
-     * @return MeasurementToLocation|null
+     * @return null|MeasurementToLocation
      */
     public function getMeasurementToLocation(): ?MeasurementToLocation
     {
@@ -193,7 +193,7 @@ class EmissionCalculationMethodType
     }
 
     /**
-     * @param MeasurementToLocation|null $measurementToLocation
+     * @param  null|MeasurementToLocation $measurementToLocation
      * @return static
      */
     public function setMeasurementToLocation(?MeasurementToLocation $measurementToLocation = null): static

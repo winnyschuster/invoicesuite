@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\InvoicedQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ParentDocumentLineReferenceID;
+use JMS\Serializer\Annotation as JMS;
 
 class ConsumptionLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class ConsumptionLineType
     private $iD;
 
     /**
-     * @var ParentDocumentLineReferenceID|null
+     * @var null|ParentDocumentLineReferenceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ParentDocumentLineReferenceID")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class ConsumptionLineType
     private $parentDocumentLineReferenceID;
 
     /**
-     * @var InvoicedQuantity|null
+     * @var null|InvoicedQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InvoicedQuantity")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class ConsumptionLineType
     private $invoicedQuantity;
 
     /**
-     * @var LineExtensionAmount|null
+     * @var null|LineExtensionAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ConsumptionLineType
     private $lineExtensionAmount;
 
     /**
-     * @var Period|null
+     * @var null|Period
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Period")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class ConsumptionLineType
     private $period;
 
     /**
-     * @var array<Delivery>|null
+     * @var null|array<Delivery>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Delivery>")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class ConsumptionLineType
     private $delivery;
 
     /**
-     * @var array<AllowanceCharge>|null
+     * @var null|array<AllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class ConsumptionLineType
     private $allowanceCharge;
 
     /**
-     * @var array<TaxTotal>|null
+     * @var null|array<TaxTotal>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class ConsumptionLineType
     private $taxTotal;
 
     /**
-     * @var UtilityItem|null
+     * @var null|UtilityItem
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\UtilityItem")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class ConsumptionLineType
     private $utilityItem;
 
     /**
-     * @var Price|null
+     * @var null|Price
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Price")
      * @JMS\Expose
@@ -129,7 +129,7 @@ class ConsumptionLineType
     private $price;
 
     /**
-     * @var UnstructuredPrice|null
+     * @var null|UnstructuredPrice
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\UnstructuredPrice")
      * @JMS\Expose
@@ -140,7 +140,7 @@ class ConsumptionLineType
     private $unstructuredPrice;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -158,7 +158,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -179,7 +179,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return ParentDocumentLineReferenceID|null
+     * @return null|ParentDocumentLineReferenceID
      */
     public function getParentDocumentLineReferenceID(): ?ParentDocumentLineReferenceID
     {
@@ -197,7 +197,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param ParentDocumentLineReferenceID|null $parentDocumentLineReferenceID
+     * @param  null|ParentDocumentLineReferenceID $parentDocumentLineReferenceID
      * @return static
      */
     public function setParentDocumentLineReferenceID(
@@ -219,7 +219,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return InvoicedQuantity|null
+     * @return null|InvoicedQuantity
      */
     public function getInvoicedQuantity(): ?InvoicedQuantity
     {
@@ -237,7 +237,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param InvoicedQuantity|null $invoicedQuantity
+     * @param  null|InvoicedQuantity $invoicedQuantity
      * @return static
      */
     public function setInvoicedQuantity(?InvoicedQuantity $invoicedQuantity = null): static
@@ -258,7 +258,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return LineExtensionAmount|null
+     * @return null|LineExtensionAmount
      */
     public function getLineExtensionAmount(): ?LineExtensionAmount
     {
@@ -276,7 +276,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param LineExtensionAmount|null $lineExtensionAmount
+     * @param  null|LineExtensionAmount $lineExtensionAmount
      * @return static
      */
     public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
@@ -297,7 +297,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return Period|null
+     * @return null|Period
      */
     public function getPeriod(): ?Period
     {
@@ -315,7 +315,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param Period|null $period
+     * @param  null|Period $period
      * @return static
      */
     public function setPeriod(?Period $period = null): static
@@ -336,7 +336,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return array<Delivery>|null
+     * @return null|array<Delivery>
      */
     public function getDelivery(): ?array
     {
@@ -344,7 +344,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param array<Delivery>|null $delivery
+     * @param  null|array<Delivery> $delivery
      * @return static
      */
     public function setDelivery(?array $delivery = null): static
@@ -375,7 +375,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return Delivery|null
+     * @return null|Delivery
      */
     public function firstDelivery(): ?Delivery
     {
@@ -390,7 +390,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return Delivery|null
+     * @return null|Delivery
      */
     public function lastDelivery(): ?Delivery
     {
@@ -405,7 +405,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param Delivery $delivery
+     * @param  Delivery $delivery
      * @return static
      */
     public function addToDelivery(Delivery $delivery): static
@@ -426,7 +426,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param Delivery $delivery
+     * @param  Delivery $delivery
      * @return static
      */
     public function addOnceToDelivery(Delivery $delivery): static
@@ -457,7 +457,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return array<AllowanceCharge>|null
+     * @return null|array<AllowanceCharge>
      */
     public function getAllowanceCharge(): ?array
     {
@@ -465,7 +465,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param array<AllowanceCharge>|null $allowanceCharge
+     * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): static
@@ -496,7 +496,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -511,7 +511,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -526,7 +526,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -547,7 +547,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -578,7 +578,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return array<TaxTotal>|null
+     * @return null|array<TaxTotal>
      */
     public function getTaxTotal(): ?array
     {
@@ -586,7 +586,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param array<TaxTotal>|null $taxTotal
+     * @param  null|array<TaxTotal> $taxTotal
      * @return static
      */
     public function setTaxTotal(?array $taxTotal = null): static
@@ -617,7 +617,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function firstTaxTotal(): ?TaxTotal
     {
@@ -632,7 +632,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function lastTaxTotal(): ?TaxTotal
     {
@@ -647,7 +647,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addToTaxTotal(TaxTotal $taxTotal): static
@@ -668,7 +668,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addOnceToTaxTotal(TaxTotal $taxTotal): static
@@ -699,7 +699,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return UtilityItem|null
+     * @return null|UtilityItem
      */
     public function getUtilityItem(): ?UtilityItem
     {
@@ -717,7 +717,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param UtilityItem|null $utilityItem
+     * @param  null|UtilityItem $utilityItem
      * @return static
      */
     public function setUtilityItem(?UtilityItem $utilityItem = null): static
@@ -738,7 +738,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return Price|null
+     * @return null|Price
      */
     public function getPrice(): ?Price
     {
@@ -756,7 +756,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param Price|null $price
+     * @param  null|Price $price
      * @return static
      */
     public function setPrice(?Price $price = null): static
@@ -777,7 +777,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @return UnstructuredPrice|null
+     * @return null|UnstructuredPrice
      */
     public function getUnstructuredPrice(): ?UnstructuredPrice
     {
@@ -795,7 +795,7 @@ class ConsumptionLineType
     }
 
     /**
-     * @param UnstructuredPrice|null $unstructuredPrice
+     * @param  null|UnstructuredPrice $unstructuredPrice
      * @return static
      */
     public function setUnstructuredPrice(?UnstructuredPrice $unstructuredPrice = null): static

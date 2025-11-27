@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\qdt\CountryIDType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeAddressType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var CodeType|null
+     * @var null|CodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class TradeAddressType
     private $postcodeCode;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class TradeAddressType
     private $lineOne;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class TradeAddressType
     private $lineTwo;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class TradeAddressType
     private $lineThree;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class TradeAddressType
     private $cityName;
 
     /**
-     * @var CountryIDType|null
+     * @var null|CountryIDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\CountryIDType")
      * @JMS\Expose
@@ -81,7 +81,7 @@ class TradeAddressType
     private $countryID;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -92,7 +92,7 @@ class TradeAddressType
     private $countrySubDivisionName;
 
     /**
-     * @return CodeType|null
+     * @return null|CodeType
      */
     public function getPostcodeCode(): ?CodeType
     {
@@ -110,7 +110,7 @@ class TradeAddressType
     }
 
     /**
-     * @param CodeType|null $postcodeCode
+     * @param  null|CodeType $postcodeCode
      * @return static
      */
     public function setPostcodeCode(?CodeType $postcodeCode = null): static
@@ -131,7 +131,7 @@ class TradeAddressType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getLineOne(): ?TextType
     {
@@ -149,7 +149,7 @@ class TradeAddressType
     }
 
     /**
-     * @param TextType|null $lineOne
+     * @param  null|TextType $lineOne
      * @return static
      */
     public function setLineOne(?TextType $lineOne = null): static
@@ -170,7 +170,7 @@ class TradeAddressType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getLineTwo(): ?TextType
     {
@@ -188,7 +188,7 @@ class TradeAddressType
     }
 
     /**
-     * @param TextType|null $lineTwo
+     * @param  null|TextType $lineTwo
      * @return static
      */
     public function setLineTwo(?TextType $lineTwo = null): static
@@ -209,7 +209,7 @@ class TradeAddressType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getLineThree(): ?TextType
     {
@@ -227,7 +227,7 @@ class TradeAddressType
     }
 
     /**
-     * @param TextType|null $lineThree
+     * @param  null|TextType $lineThree
      * @return static
      */
     public function setLineThree(?TextType $lineThree = null): static
@@ -248,7 +248,7 @@ class TradeAddressType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getCityName(): ?TextType
     {
@@ -266,7 +266,7 @@ class TradeAddressType
     }
 
     /**
-     * @param TextType|null $cityName
+     * @param  null|TextType $cityName
      * @return static
      */
     public function setCityName(?TextType $cityName = null): static
@@ -287,7 +287,7 @@ class TradeAddressType
     }
 
     /**
-     * @return CountryIDType|null
+     * @return null|CountryIDType
      */
     public function getCountryID(): ?CountryIDType
     {
@@ -305,7 +305,7 @@ class TradeAddressType
     }
 
     /**
-     * @param CountryIDType|null $countryID
+     * @param  null|CountryIDType $countryID
      * @return static
      */
     public function setCountryID(?CountryIDType $countryID = null): static
@@ -326,7 +326,7 @@ class TradeAddressType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getCountrySubDivisionName(): ?TextType
     {
@@ -344,7 +344,7 @@ class TradeAddressType
     }
 
     /**
-     * @param TextType|null $countrySubDivisionName
+     * @param  null|TextType $countrySubDivisionName
      * @return static
      */
     public function setCountrySubDivisionName(?TextType $countrySubDivisionName = null): static

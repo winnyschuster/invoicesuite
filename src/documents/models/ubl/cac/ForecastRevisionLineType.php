@@ -5,20 +5,20 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AdjustmentReasonCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\RevisedForecastLineID;
+use JMS\Serializer\Annotation as JMS;
 
 class ForecastRevisionLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class ForecastRevisionLineType
     private $iD;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class ForecastRevisionLineType
     private $note;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -53,7 +53,7 @@ class ForecastRevisionLineType
     private $description;
 
     /**
-     * @var RevisedForecastLineID|null
+     * @var null|RevisedForecastLineID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RevisedForecastLineID")
      * @JMS\Expose
@@ -64,7 +64,7 @@ class ForecastRevisionLineType
     private $revisedForecastLineID;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -75,7 +75,7 @@ class ForecastRevisionLineType
     private $sourceForecastIssueDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -86,7 +86,7 @@ class ForecastRevisionLineType
     private $sourceForecastIssueTime;
 
     /**
-     * @var AdjustmentReasonCode|null
+     * @var null|AdjustmentReasonCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AdjustmentReasonCode")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class ForecastRevisionLineType
     private $adjustmentReasonCode;
 
     /**
-     * @var ForecastPeriod|null
+     * @var null|ForecastPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ForecastPeriod")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class ForecastRevisionLineType
     private $forecastPeriod;
 
     /**
-     * @var SalesItem|null
+     * @var null|SalesItem
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem")
      * @JMS\Expose
@@ -119,7 +119,7 @@ class ForecastRevisionLineType
     private $salesItem;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -137,7 +137,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -158,7 +158,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -166,7 +166,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -197,7 +197,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -212,7 +212,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -227,7 +227,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -248,7 +248,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -279,7 +279,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -287,7 +287,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -318,7 +318,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -333,7 +333,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -348,7 +348,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -369,7 +369,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -400,7 +400,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return RevisedForecastLineID|null
+     * @return null|RevisedForecastLineID
      */
     public function getRevisedForecastLineID(): ?RevisedForecastLineID
     {
@@ -418,7 +418,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param RevisedForecastLineID|null $revisedForecastLineID
+     * @param  null|RevisedForecastLineID $revisedForecastLineID
      * @return static
      */
     public function setRevisedForecastLineID(?RevisedForecastLineID $revisedForecastLineID = null): static
@@ -439,7 +439,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getSourceForecastIssueDate(): ?DateTimeInterface
     {
@@ -447,7 +447,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param DateTimeInterface|null $sourceForecastIssueDate
+     * @param  null|DateTimeInterface $sourceForecastIssueDate
      * @return static
      */
     public function setSourceForecastIssueDate(?DateTimeInterface $sourceForecastIssueDate = null): static
@@ -468,7 +468,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getSourceForecastIssueTime(): ?DateTimeInterface
     {
@@ -476,7 +476,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param DateTimeInterface|null $sourceForecastIssueTime
+     * @param  null|DateTimeInterface $sourceForecastIssueTime
      * @return static
      */
     public function setSourceForecastIssueTime(?DateTimeInterface $sourceForecastIssueTime = null): static
@@ -497,7 +497,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return AdjustmentReasonCode|null
+     * @return null|AdjustmentReasonCode
      */
     public function getAdjustmentReasonCode(): ?AdjustmentReasonCode
     {
@@ -515,7 +515,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param AdjustmentReasonCode|null $adjustmentReasonCode
+     * @param  null|AdjustmentReasonCode $adjustmentReasonCode
      * @return static
      */
     public function setAdjustmentReasonCode(?AdjustmentReasonCode $adjustmentReasonCode = null): static
@@ -536,7 +536,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return ForecastPeriod|null
+     * @return null|ForecastPeriod
      */
     public function getForecastPeriod(): ?ForecastPeriod
     {
@@ -554,7 +554,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param ForecastPeriod|null $forecastPeriod
+     * @param  null|ForecastPeriod $forecastPeriod
      * @return static
      */
     public function setForecastPeriod(?ForecastPeriod $forecastPeriod = null): static
@@ -575,7 +575,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @return SalesItem|null
+     * @return null|SalesItem
      */
     public function getSalesItem(): ?SalesItem
     {
@@ -593,7 +593,7 @@ class ForecastRevisionLineType
     }
 
     /**
-     * @param SalesItem|null $salesItem
+     * @param  null|SalesItem $salesItem
      * @return static
      */
     public function setSalesItem(?SalesItem $salesItem = null): static

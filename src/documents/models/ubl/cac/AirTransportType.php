@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AircraftID;
+use JMS\Serializer\Annotation as JMS;
 
 class AirTransportType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AircraftID|null
+     * @var null|AircraftID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AircraftID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class AirTransportType
     private $aircraftID;
 
     /**
-     * @return AircraftID|null
+     * @return null|AircraftID
      */
     public function getAircraftID(): ?AircraftID
     {
@@ -42,7 +42,7 @@ class AirTransportType
     }
 
     /**
-     * @param AircraftID|null $aircraftID
+     * @param  null|AircraftID $aircraftID
      * @return static
      */
     public function setAircraftID(?AircraftID $aircraftID = null): static

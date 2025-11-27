@@ -5,20 +5,20 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\InventoryValueAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity;
+use JMS\Serializer\Annotation as JMS;
 
 class InventoryReportLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class InventoryReportLineType
     private $iD;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class InventoryReportLineType
     private $note;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class InventoryReportLineType
     private $quantity;
 
     /**
-     * @var InventoryValueAmount|null
+     * @var null|InventoryValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InventoryValueAmount")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class InventoryReportLineType
     private $inventoryValueAmount;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class InventoryReportLineType
     private $availabilityDate;
 
     /**
-     * @var AvailabilityStatusCode|null
+     * @var null|AvailabilityStatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AvailabilityStatusCode")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class InventoryReportLineType
     private $availabilityStatusCode;
 
     /**
-     * @var Item|null
+     * @var null|Item
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class InventoryReportLineType
     private $item;
 
     /**
-     * @var InventoryLocation|null
+     * @var null|InventoryLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\InventoryLocation")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class InventoryReportLineType
     private $inventoryLocation;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -125,7 +125,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -146,7 +146,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -154,7 +154,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -185,7 +185,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -200,7 +200,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -215,7 +215,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -236,7 +236,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -267,7 +267,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -285,7 +285,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -306,7 +306,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return InventoryValueAmount|null
+     * @return null|InventoryValueAmount
      */
     public function getInventoryValueAmount(): ?InventoryValueAmount
     {
@@ -324,7 +324,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param InventoryValueAmount|null $inventoryValueAmount
+     * @param  null|InventoryValueAmount $inventoryValueAmount
      * @return static
      */
     public function setInventoryValueAmount(?InventoryValueAmount $inventoryValueAmount = null): static
@@ -345,7 +345,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getAvailabilityDate(): ?DateTimeInterface
     {
@@ -353,7 +353,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param DateTimeInterface|null $availabilityDate
+     * @param  null|DateTimeInterface $availabilityDate
      * @return static
      */
     public function setAvailabilityDate(?DateTimeInterface $availabilityDate = null): static
@@ -374,7 +374,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return AvailabilityStatusCode|null
+     * @return null|AvailabilityStatusCode
      */
     public function getAvailabilityStatusCode(): ?AvailabilityStatusCode
     {
@@ -392,7 +392,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param AvailabilityStatusCode|null $availabilityStatusCode
+     * @param  null|AvailabilityStatusCode $availabilityStatusCode
      * @return static
      */
     public function setAvailabilityStatusCode(?AvailabilityStatusCode $availabilityStatusCode = null): static
@@ -413,7 +413,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function getItem(): ?Item
     {
@@ -431,7 +431,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param Item|null $item
+     * @param  null|Item $item
      * @return static
      */
     public function setItem(?Item $item = null): static
@@ -452,7 +452,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @return InventoryLocation|null
+     * @return null|InventoryLocation
      */
     public function getInventoryLocation(): ?InventoryLocation
     {
@@ -470,7 +470,7 @@ class InventoryReportLineType
     }
 
     /**
-     * @param InventoryLocation|null $inventoryLocation
+     * @param  null|InventoryLocation $inventoryLocation
      * @return static
      */
     public function setInventoryLocation(?InventoryLocation $inventoryLocation = null): static

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode;
@@ -15,13 +14,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
+use JMS\Serializer\Annotation as JMS;
 
 class DebitNoteLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class DebitNoteLineType
     private $iD;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class DebitNoteLineType
     private $uUID;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -55,7 +55,7 @@ class DebitNoteLineType
     private $note;
 
     /**
-     * @var DebitedQuantity|null
+     * @var null|DebitedQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DebitedQuantity")
      * @JMS\Expose
@@ -66,7 +66,7 @@ class DebitNoteLineType
     private $debitedQuantity;
 
     /**
-     * @var LineExtensionAmount|null
+     * @var null|LineExtensionAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class DebitNoteLineType
     private $lineExtensionAmount;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -88,7 +88,7 @@ class DebitNoteLineType
     private $taxPointDate;
 
     /**
-     * @var AccountingCostCode|null
+     * @var null|AccountingCostCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class DebitNoteLineType
     private $accountingCostCode;
 
     /**
-     * @var AccountingCost|null
+     * @var null|AccountingCost
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost")
      * @JMS\Expose
@@ -110,7 +110,7 @@ class DebitNoteLineType
     private $accountingCost;
 
     /**
-     * @var PaymentPurposeCode|null
+     * @var null|PaymentPurposeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode")
      * @JMS\Expose
@@ -121,7 +121,7 @@ class DebitNoteLineType
     private $paymentPurposeCode;
 
     /**
-     * @var array<DiscrepancyResponse>|null
+     * @var null|array<DiscrepancyResponse>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DiscrepancyResponse>")
      * @JMS\Expose
@@ -133,7 +133,7 @@ class DebitNoteLineType
     private $discrepancyResponse;
 
     /**
-     * @var array<DespatchLineReference>|null
+     * @var null|array<DespatchLineReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DespatchLineReference>")
      * @JMS\Expose
@@ -145,7 +145,7 @@ class DebitNoteLineType
     private $despatchLineReference;
 
     /**
-     * @var array<ReceiptLineReference>|null
+     * @var null|array<ReceiptLineReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ReceiptLineReference>")
      * @JMS\Expose
@@ -157,7 +157,7 @@ class DebitNoteLineType
     private $receiptLineReference;
 
     /**
-     * @var array<BillingReference>|null
+     * @var null|array<BillingReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>")
      * @JMS\Expose
@@ -169,7 +169,7 @@ class DebitNoteLineType
     private $billingReference;
 
     /**
-     * @var array<DocumentReference>|null
+     * @var null|array<DocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -181,7 +181,7 @@ class DebitNoteLineType
     private $documentReference;
 
     /**
-     * @var PricingReference|null
+     * @var null|PricingReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PricingReference")
      * @JMS\Expose
@@ -192,7 +192,7 @@ class DebitNoteLineType
     private $pricingReference;
 
     /**
-     * @var array<Delivery>|null
+     * @var null|array<Delivery>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Delivery>")
      * @JMS\Expose
@@ -204,7 +204,7 @@ class DebitNoteLineType
     private $delivery;
 
     /**
-     * @var array<TaxTotal>|null
+     * @var null|array<TaxTotal>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>")
      * @JMS\Expose
@@ -216,7 +216,7 @@ class DebitNoteLineType
     private $taxTotal;
 
     /**
-     * @var array<AllowanceCharge>|null
+     * @var null|array<AllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -228,7 +228,7 @@ class DebitNoteLineType
     private $allowanceCharge;
 
     /**
-     * @var Item|null
+     * @var null|Item
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -239,7 +239,7 @@ class DebitNoteLineType
     private $item;
 
     /**
-     * @var Price|null
+     * @var null|Price
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Price")
      * @JMS\Expose
@@ -250,7 +250,7 @@ class DebitNoteLineType
     private $price;
 
     /**
-     * @var array<SubDebitNoteLine>|null
+     * @var null|array<SubDebitNoteLine>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubDebitNoteLine>")
      * @JMS\Expose
@@ -262,7 +262,7 @@ class DebitNoteLineType
     private $subDebitNoteLine;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -280,7 +280,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -301,7 +301,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -319,7 +319,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -340,7 +340,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -348,7 +348,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -379,7 +379,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -394,7 +394,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -409,7 +409,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -430,7 +430,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -461,7 +461,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return DebitedQuantity|null
+     * @return null|DebitedQuantity
      */
     public function getDebitedQuantity(): ?DebitedQuantity
     {
@@ -479,7 +479,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param DebitedQuantity|null $debitedQuantity
+     * @param  null|DebitedQuantity $debitedQuantity
      * @return static
      */
     public function setDebitedQuantity(?DebitedQuantity $debitedQuantity = null): static
@@ -500,7 +500,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return LineExtensionAmount|null
+     * @return null|LineExtensionAmount
      */
     public function getLineExtensionAmount(): ?LineExtensionAmount
     {
@@ -518,7 +518,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param LineExtensionAmount|null $lineExtensionAmount
+     * @param  null|LineExtensionAmount $lineExtensionAmount
      * @return static
      */
     public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
@@ -539,7 +539,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getTaxPointDate(): ?DateTimeInterface
     {
@@ -547,7 +547,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param DateTimeInterface|null $taxPointDate
+     * @param  null|DateTimeInterface $taxPointDate
      * @return static
      */
     public function setTaxPointDate(?DateTimeInterface $taxPointDate = null): static
@@ -568,7 +568,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return AccountingCostCode|null
+     * @return null|AccountingCostCode
      */
     public function getAccountingCostCode(): ?AccountingCostCode
     {
@@ -586,7 +586,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param AccountingCostCode|null $accountingCostCode
+     * @param  null|AccountingCostCode $accountingCostCode
      * @return static
      */
     public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): static
@@ -607,7 +607,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return AccountingCost|null
+     * @return null|AccountingCost
      */
     public function getAccountingCost(): ?AccountingCost
     {
@@ -625,7 +625,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param AccountingCost|null $accountingCost
+     * @param  null|AccountingCost $accountingCost
      * @return static
      */
     public function setAccountingCost(?AccountingCost $accountingCost = null): static
@@ -646,7 +646,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return PaymentPurposeCode|null
+     * @return null|PaymentPurposeCode
      */
     public function getPaymentPurposeCode(): ?PaymentPurposeCode
     {
@@ -664,7 +664,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param PaymentPurposeCode|null $paymentPurposeCode
+     * @param  null|PaymentPurposeCode $paymentPurposeCode
      * @return static
      */
     public function setPaymentPurposeCode(?PaymentPurposeCode $paymentPurposeCode = null): static
@@ -685,7 +685,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return array<DiscrepancyResponse>|null
+     * @return null|array<DiscrepancyResponse>
      */
     public function getDiscrepancyResponse(): ?array
     {
@@ -693,7 +693,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param array<DiscrepancyResponse>|null $discrepancyResponse
+     * @param  null|array<DiscrepancyResponse> $discrepancyResponse
      * @return static
      */
     public function setDiscrepancyResponse(?array $discrepancyResponse = null): static
@@ -724,7 +724,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return DiscrepancyResponse|null
+     * @return null|DiscrepancyResponse
      */
     public function firstDiscrepancyResponse(): ?DiscrepancyResponse
     {
@@ -739,7 +739,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return DiscrepancyResponse|null
+     * @return null|DiscrepancyResponse
      */
     public function lastDiscrepancyResponse(): ?DiscrepancyResponse
     {
@@ -754,7 +754,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param DiscrepancyResponse $discrepancyResponse
+     * @param  DiscrepancyResponse $discrepancyResponse
      * @return static
      */
     public function addToDiscrepancyResponse(DiscrepancyResponse $discrepancyResponse): static
@@ -775,7 +775,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param DiscrepancyResponse $discrepancyResponse
+     * @param  DiscrepancyResponse $discrepancyResponse
      * @return static
      */
     public function addOnceToDiscrepancyResponse(DiscrepancyResponse $discrepancyResponse): static
@@ -806,7 +806,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return array<DespatchLineReference>|null
+     * @return null|array<DespatchLineReference>
      */
     public function getDespatchLineReference(): ?array
     {
@@ -814,7 +814,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param array<DespatchLineReference>|null $despatchLineReference
+     * @param  null|array<DespatchLineReference> $despatchLineReference
      * @return static
      */
     public function setDespatchLineReference(?array $despatchLineReference = null): static
@@ -845,7 +845,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return DespatchLineReference|null
+     * @return null|DespatchLineReference
      */
     public function firstDespatchLineReference(): ?DespatchLineReference
     {
@@ -860,7 +860,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return DespatchLineReference|null
+     * @return null|DespatchLineReference
      */
     public function lastDespatchLineReference(): ?DespatchLineReference
     {
@@ -875,7 +875,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param DespatchLineReference $despatchLineReference
+     * @param  DespatchLineReference $despatchLineReference
      * @return static
      */
     public function addToDespatchLineReference(DespatchLineReference $despatchLineReference): static
@@ -896,7 +896,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param DespatchLineReference $despatchLineReference
+     * @param  DespatchLineReference $despatchLineReference
      * @return static
      */
     public function addOnceToDespatchLineReference(DespatchLineReference $despatchLineReference): static
@@ -927,7 +927,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return array<ReceiptLineReference>|null
+     * @return null|array<ReceiptLineReference>
      */
     public function getReceiptLineReference(): ?array
     {
@@ -935,7 +935,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param array<ReceiptLineReference>|null $receiptLineReference
+     * @param  null|array<ReceiptLineReference> $receiptLineReference
      * @return static
      */
     public function setReceiptLineReference(?array $receiptLineReference = null): static
@@ -966,7 +966,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return ReceiptLineReference|null
+     * @return null|ReceiptLineReference
      */
     public function firstReceiptLineReference(): ?ReceiptLineReference
     {
@@ -981,7 +981,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return ReceiptLineReference|null
+     * @return null|ReceiptLineReference
      */
     public function lastReceiptLineReference(): ?ReceiptLineReference
     {
@@ -996,7 +996,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param ReceiptLineReference $receiptLineReference
+     * @param  ReceiptLineReference $receiptLineReference
      * @return static
      */
     public function addToReceiptLineReference(ReceiptLineReference $receiptLineReference): static
@@ -1017,7 +1017,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param ReceiptLineReference $receiptLineReference
+     * @param  ReceiptLineReference $receiptLineReference
      * @return static
      */
     public function addOnceToReceiptLineReference(ReceiptLineReference $receiptLineReference): static
@@ -1048,7 +1048,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return array<BillingReference>|null
+     * @return null|array<BillingReference>
      */
     public function getBillingReference(): ?array
     {
@@ -1056,7 +1056,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param array<BillingReference>|null $billingReference
+     * @param  null|array<BillingReference> $billingReference
      * @return static
      */
     public function setBillingReference(?array $billingReference = null): static
@@ -1087,7 +1087,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return BillingReference|null
+     * @return null|BillingReference
      */
     public function firstBillingReference(): ?BillingReference
     {
@@ -1102,7 +1102,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return BillingReference|null
+     * @return null|BillingReference
      */
     public function lastBillingReference(): ?BillingReference
     {
@@ -1117,7 +1117,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param BillingReference $billingReference
+     * @param  BillingReference $billingReference
      * @return static
      */
     public function addToBillingReference(BillingReference $billingReference): static
@@ -1138,7 +1138,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param BillingReference $billingReference
+     * @param  BillingReference $billingReference
      * @return static
      */
     public function addOnceToBillingReference(BillingReference $billingReference): static
@@ -1169,7 +1169,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return array<DocumentReference>|null
+     * @return null|array<DocumentReference>
      */
     public function getDocumentReference(): ?array
     {
@@ -1177,7 +1177,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param array<DocumentReference>|null $documentReference
+     * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
     public function setDocumentReference(?array $documentReference = null): static
@@ -1208,7 +1208,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -1223,7 +1223,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -1238,7 +1238,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addToDocumentReference(DocumentReference $documentReference): static
@@ -1259,7 +1259,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): static
@@ -1290,7 +1290,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return PricingReference|null
+     * @return null|PricingReference
      */
     public function getPricingReference(): ?PricingReference
     {
@@ -1308,7 +1308,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param PricingReference|null $pricingReference
+     * @param  null|PricingReference $pricingReference
      * @return static
      */
     public function setPricingReference(?PricingReference $pricingReference = null): static
@@ -1329,7 +1329,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return array<Delivery>|null
+     * @return null|array<Delivery>
      */
     public function getDelivery(): ?array
     {
@@ -1337,7 +1337,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param array<Delivery>|null $delivery
+     * @param  null|array<Delivery> $delivery
      * @return static
      */
     public function setDelivery(?array $delivery = null): static
@@ -1368,7 +1368,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return Delivery|null
+     * @return null|Delivery
      */
     public function firstDelivery(): ?Delivery
     {
@@ -1383,7 +1383,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return Delivery|null
+     * @return null|Delivery
      */
     public function lastDelivery(): ?Delivery
     {
@@ -1398,7 +1398,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param Delivery $delivery
+     * @param  Delivery $delivery
      * @return static
      */
     public function addToDelivery(Delivery $delivery): static
@@ -1419,7 +1419,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param Delivery $delivery
+     * @param  Delivery $delivery
      * @return static
      */
     public function addOnceToDelivery(Delivery $delivery): static
@@ -1450,7 +1450,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return array<TaxTotal>|null
+     * @return null|array<TaxTotal>
      */
     public function getTaxTotal(): ?array
     {
@@ -1458,7 +1458,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param array<TaxTotal>|null $taxTotal
+     * @param  null|array<TaxTotal> $taxTotal
      * @return static
      */
     public function setTaxTotal(?array $taxTotal = null): static
@@ -1489,7 +1489,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function firstTaxTotal(): ?TaxTotal
     {
@@ -1504,7 +1504,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function lastTaxTotal(): ?TaxTotal
     {
@@ -1519,7 +1519,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addToTaxTotal(TaxTotal $taxTotal): static
@@ -1540,7 +1540,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addOnceToTaxTotal(TaxTotal $taxTotal): static
@@ -1571,7 +1571,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return array<AllowanceCharge>|null
+     * @return null|array<AllowanceCharge>
      */
     public function getAllowanceCharge(): ?array
     {
@@ -1579,7 +1579,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param array<AllowanceCharge>|null $allowanceCharge
+     * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): static
@@ -1610,7 +1610,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -1625,7 +1625,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -1640,7 +1640,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -1661,7 +1661,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -1692,7 +1692,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function getItem(): ?Item
     {
@@ -1710,7 +1710,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param Item|null $item
+     * @param  null|Item $item
      * @return static
      */
     public function setItem(?Item $item = null): static
@@ -1731,7 +1731,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return Price|null
+     * @return null|Price
      */
     public function getPrice(): ?Price
     {
@@ -1749,7 +1749,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param Price|null $price
+     * @param  null|Price $price
      * @return static
      */
     public function setPrice(?Price $price = null): static
@@ -1770,7 +1770,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return array<SubDebitNoteLine>|null
+     * @return null|array<SubDebitNoteLine>
      */
     public function getSubDebitNoteLine(): ?array
     {
@@ -1778,7 +1778,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param array<SubDebitNoteLine>|null $subDebitNoteLine
+     * @param  null|array<SubDebitNoteLine> $subDebitNoteLine
      * @return static
      */
     public function setSubDebitNoteLine(?array $subDebitNoteLine = null): static
@@ -1809,7 +1809,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return SubDebitNoteLine|null
+     * @return null|SubDebitNoteLine
      */
     public function firstSubDebitNoteLine(): ?SubDebitNoteLine
     {
@@ -1824,7 +1824,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @return SubDebitNoteLine|null
+     * @return null|SubDebitNoteLine
      */
     public function lastSubDebitNoteLine(): ?SubDebitNoteLine
     {
@@ -1839,7 +1839,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param SubDebitNoteLine $subDebitNoteLine
+     * @param  SubDebitNoteLine $subDebitNoteLine
      * @return static
      */
     public function addToSubDebitNoteLine(SubDebitNoteLine $subDebitNoteLine): static
@@ -1860,7 +1860,7 @@ class DebitNoteLineType
     }
 
     /**
-     * @param SubDebitNoteLine $subDebitNoteLine
+     * @param  SubDebitNoteLine $subDebitNoteLine
      * @return static
      */
     public function addOnceToSubDebitNoteLine(SubDebitNoteLine $subDebitNoteLine): static

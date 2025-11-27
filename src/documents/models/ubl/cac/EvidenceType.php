@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CandidateStatement;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\EvidenceTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
+use JMS\Serializer\Annotation as JMS;
 
 class EvidenceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class EvidenceType
     private $iD;
 
     /**
-     * @var EvidenceTypeCode|null
+     * @var null|EvidenceTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EvidenceTypeCode")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class EvidenceType
     private $evidenceTypeCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class EvidenceType
     private $description;
 
     /**
-     * @var array<CandidateStatement>|null
+     * @var null|array<CandidateStatement>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\CandidateStatement>")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class EvidenceType
     private $candidateStatement;
 
     /**
-     * @var EvidenceIssuingParty|null
+     * @var null|EvidenceIssuingParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceIssuingParty")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class EvidenceType
     private $evidenceIssuingParty;
 
     /**
-     * @var DocumentReference|null
+     * @var null|DocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class EvidenceType
     private $documentReference;
 
     /**
-     * @var Language|null
+     * @var null|Language
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Language")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class EvidenceType
     private $language;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -113,7 +113,7 @@ class EvidenceType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -134,7 +134,7 @@ class EvidenceType
     }
 
     /**
-     * @return EvidenceTypeCode|null
+     * @return null|EvidenceTypeCode
      */
     public function getEvidenceTypeCode(): ?EvidenceTypeCode
     {
@@ -152,7 +152,7 @@ class EvidenceType
     }
 
     /**
-     * @param EvidenceTypeCode|null $evidenceTypeCode
+     * @param  null|EvidenceTypeCode $evidenceTypeCode
      * @return static
      */
     public function setEvidenceTypeCode(?EvidenceTypeCode $evidenceTypeCode = null): static
@@ -173,7 +173,7 @@ class EvidenceType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -181,7 +181,7 @@ class EvidenceType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -212,7 +212,7 @@ class EvidenceType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -227,7 +227,7 @@ class EvidenceType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -242,7 +242,7 @@ class EvidenceType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -263,7 +263,7 @@ class EvidenceType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -294,7 +294,7 @@ class EvidenceType
     }
 
     /**
-     * @return array<CandidateStatement>|null
+     * @return null|array<CandidateStatement>
      */
     public function getCandidateStatement(): ?array
     {
@@ -302,7 +302,7 @@ class EvidenceType
     }
 
     /**
-     * @param array<CandidateStatement>|null $candidateStatement
+     * @param  null|array<CandidateStatement> $candidateStatement
      * @return static
      */
     public function setCandidateStatement(?array $candidateStatement = null): static
@@ -333,7 +333,7 @@ class EvidenceType
     }
 
     /**
-     * @return CandidateStatement|null
+     * @return null|CandidateStatement
      */
     public function firstCandidateStatement(): ?CandidateStatement
     {
@@ -348,7 +348,7 @@ class EvidenceType
     }
 
     /**
-     * @return CandidateStatement|null
+     * @return null|CandidateStatement
      */
     public function lastCandidateStatement(): ?CandidateStatement
     {
@@ -363,7 +363,7 @@ class EvidenceType
     }
 
     /**
-     * @param CandidateStatement $candidateStatement
+     * @param  CandidateStatement $candidateStatement
      * @return static
      */
     public function addToCandidateStatement(CandidateStatement $candidateStatement): static
@@ -384,7 +384,7 @@ class EvidenceType
     }
 
     /**
-     * @param CandidateStatement $candidateStatement
+     * @param  CandidateStatement $candidateStatement
      * @return static
      */
     public function addOnceToCandidateStatement(CandidateStatement $candidateStatement): static
@@ -415,7 +415,7 @@ class EvidenceType
     }
 
     /**
-     * @return EvidenceIssuingParty|null
+     * @return null|EvidenceIssuingParty
      */
     public function getEvidenceIssuingParty(): ?EvidenceIssuingParty
     {
@@ -433,7 +433,7 @@ class EvidenceType
     }
 
     /**
-     * @param EvidenceIssuingParty|null $evidenceIssuingParty
+     * @param  null|EvidenceIssuingParty $evidenceIssuingParty
      * @return static
      */
     public function setEvidenceIssuingParty(?EvidenceIssuingParty $evidenceIssuingParty = null): static
@@ -454,7 +454,7 @@ class EvidenceType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function getDocumentReference(): ?DocumentReference
     {
@@ -472,7 +472,7 @@ class EvidenceType
     }
 
     /**
-     * @param DocumentReference|null $documentReference
+     * @param  null|DocumentReference $documentReference
      * @return static
      */
     public function setDocumentReference(?DocumentReference $documentReference = null): static
@@ -493,7 +493,7 @@ class EvidenceType
     }
 
     /**
-     * @return Language|null
+     * @return null|Language
      */
     public function getLanguage(): ?Language
     {
@@ -511,7 +511,7 @@ class EvidenceType
     }
 
     /**
-     * @param Language|null $language
+     * @param  null|Language $language
      * @return static
      */
     public function setLanguage(?Language $language = null): static

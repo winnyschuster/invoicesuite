@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
+use JMS\Serializer\Annotation as JMS;
 
 class SupplierConsumptionType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class SupplierConsumptionType
     private $description;
 
     /**
-     * @var UtilitySupplierParty|null
+     * @var null|UtilitySupplierParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\UtilitySupplierParty")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class SupplierConsumptionType
     private $utilitySupplierParty;
 
     /**
-     * @var UtilityCustomerParty|null
+     * @var null|UtilityCustomerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\UtilityCustomerParty")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class SupplierConsumptionType
     private $utilityCustomerParty;
 
     /**
-     * @var Consumption|null
+     * @var null|Consumption
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Consumption")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class SupplierConsumptionType
     private $consumption;
 
     /**
-     * @var Contract|null
+     * @var null|Contract
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Contract")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class SupplierConsumptionType
     private $contract;
 
     /**
-     * @var array<ConsumptionLine>|null
+     * @var null|array<ConsumptionLine>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ConsumptionLine>")
      * @JMS\Expose
@@ -81,7 +81,7 @@ class SupplierConsumptionType
     private $consumptionLine;
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -89,7 +89,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -120,7 +120,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -135,7 +135,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -150,7 +150,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -171,7 +171,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -202,7 +202,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return UtilitySupplierParty|null
+     * @return null|UtilitySupplierParty
      */
     public function getUtilitySupplierParty(): ?UtilitySupplierParty
     {
@@ -220,7 +220,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param UtilitySupplierParty|null $utilitySupplierParty
+     * @param  null|UtilitySupplierParty $utilitySupplierParty
      * @return static
      */
     public function setUtilitySupplierParty(?UtilitySupplierParty $utilitySupplierParty = null): static
@@ -241,7 +241,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return UtilityCustomerParty|null
+     * @return null|UtilityCustomerParty
      */
     public function getUtilityCustomerParty(): ?UtilityCustomerParty
     {
@@ -259,7 +259,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param UtilityCustomerParty|null $utilityCustomerParty
+     * @param  null|UtilityCustomerParty $utilityCustomerParty
      * @return static
      */
     public function setUtilityCustomerParty(?UtilityCustomerParty $utilityCustomerParty = null): static
@@ -280,7 +280,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return Consumption|null
+     * @return null|Consumption
      */
     public function getConsumption(): ?Consumption
     {
@@ -298,7 +298,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param Consumption|null $consumption
+     * @param  null|Consumption $consumption
      * @return static
      */
     public function setConsumption(?Consumption $consumption = null): static
@@ -319,7 +319,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return Contract|null
+     * @return null|Contract
      */
     public function getContract(): ?Contract
     {
@@ -337,7 +337,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param Contract|null $contract
+     * @param  null|Contract $contract
      * @return static
      */
     public function setContract(?Contract $contract = null): static
@@ -358,7 +358,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return array<ConsumptionLine>|null
+     * @return null|array<ConsumptionLine>
      */
     public function getConsumptionLine(): ?array
     {
@@ -366,7 +366,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param array<ConsumptionLine>|null $consumptionLine
+     * @param  null|array<ConsumptionLine> $consumptionLine
      * @return static
      */
     public function setConsumptionLine(?array $consumptionLine = null): static
@@ -397,7 +397,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return ConsumptionLine|null
+     * @return null|ConsumptionLine
      */
     public function firstConsumptionLine(): ?ConsumptionLine
     {
@@ -412,7 +412,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @return ConsumptionLine|null
+     * @return null|ConsumptionLine
      */
     public function lastConsumptionLine(): ?ConsumptionLine
     {
@@ -427,7 +427,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param ConsumptionLine $consumptionLine
+     * @param  ConsumptionLine $consumptionLine
      * @return static
      */
     public function addToConsumptionLine(ConsumptionLine $consumptionLine): static
@@ -448,7 +448,7 @@ class SupplierConsumptionType
     }
 
     /**
-     * @param ConsumptionLine $consumptionLine
+     * @param  ConsumptionLine $consumptionLine
      * @return static
      */
     public function addOnceToConsumptionLine(ConsumptionLine $consumptionLine): static

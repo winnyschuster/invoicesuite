@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ImportanceCode;
@@ -15,13 +14,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\TestMethod;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Value;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class ItemPropertyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class ItemPropertyType
     private $iD;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class ItemPropertyType
     private $name;
 
     /**
-     * @var NameCode|null
+     * @var null|NameCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NameCode")
      * @JMS\Expose
@@ -54,7 +54,7 @@ class ItemPropertyType
     private $nameCode;
 
     /**
-     * @var TestMethod|null
+     * @var null|TestMethod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TestMethod")
      * @JMS\Expose
@@ -65,7 +65,7 @@ class ItemPropertyType
     private $testMethod;
 
     /**
-     * @var Value|null
+     * @var null|Value
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Value")
      * @JMS\Expose
@@ -76,7 +76,7 @@ class ItemPropertyType
     private $value;
 
     /**
-     * @var ValueQuantity|null
+     * @var null|ValueQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity")
      * @JMS\Expose
@@ -87,7 +87,7 @@ class ItemPropertyType
     private $valueQuantity;
 
     /**
-     * @var array<ValueQualifier>|null
+     * @var null|array<ValueQualifier>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier>")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class ItemPropertyType
     private $valueQualifier;
 
     /**
-     * @var ImportanceCode|null
+     * @var null|ImportanceCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ImportanceCode")
      * @JMS\Expose
@@ -110,7 +110,7 @@ class ItemPropertyType
     private $importanceCode;
 
     /**
-     * @var array<ListValue>|null
+     * @var null|array<ListValue>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ListValue>")
      * @JMS\Expose
@@ -122,7 +122,7 @@ class ItemPropertyType
     private $listValue;
 
     /**
-     * @var UsabilityPeriod|null
+     * @var null|UsabilityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\UsabilityPeriod")
      * @JMS\Expose
@@ -133,7 +133,7 @@ class ItemPropertyType
     private $usabilityPeriod;
 
     /**
-     * @var array<ItemPropertyGroup>|null
+     * @var null|array<ItemPropertyGroup>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyGroup>")
      * @JMS\Expose
@@ -145,7 +145,7 @@ class ItemPropertyType
     private $itemPropertyGroup;
 
     /**
-     * @var RangeDimension|null
+     * @var null|RangeDimension
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RangeDimension")
      * @JMS\Expose
@@ -156,7 +156,7 @@ class ItemPropertyType
     private $rangeDimension;
 
     /**
-     * @var ItemPropertyRange|null
+     * @var null|ItemPropertyRange
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ItemPropertyRange")
      * @JMS\Expose
@@ -167,7 +167,7 @@ class ItemPropertyType
     private $itemPropertyRange;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -185,7 +185,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -206,7 +206,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -224,7 +224,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -245,7 +245,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return NameCode|null
+     * @return null|NameCode
      */
     public function getNameCode(): ?NameCode
     {
@@ -263,7 +263,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param NameCode|null $nameCode
+     * @param  null|NameCode $nameCode
      * @return static
      */
     public function setNameCode(?NameCode $nameCode = null): static
@@ -284,7 +284,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return TestMethod|null
+     * @return null|TestMethod
      */
     public function getTestMethod(): ?TestMethod
     {
@@ -302,7 +302,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param TestMethod|null $testMethod
+     * @param  null|TestMethod $testMethod
      * @return static
      */
     public function setTestMethod(?TestMethod $testMethod = null): static
@@ -323,7 +323,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return Value|null
+     * @return null|Value
      */
     public function getValue(): ?Value
     {
@@ -341,7 +341,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param Value|null $value
+     * @param  null|Value $value
      * @return static
      */
     public function setValue(?Value $value = null): static
@@ -362,7 +362,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return ValueQuantity|null
+     * @return null|ValueQuantity
      */
     public function getValueQuantity(): ?ValueQuantity
     {
@@ -380,7 +380,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param ValueQuantity|null $valueQuantity
+     * @param  null|ValueQuantity $valueQuantity
      * @return static
      */
     public function setValueQuantity(?ValueQuantity $valueQuantity = null): static
@@ -401,7 +401,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return array<ValueQualifier>|null
+     * @return null|array<ValueQualifier>
      */
     public function getValueQualifier(): ?array
     {
@@ -409,7 +409,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param array<ValueQualifier>|null $valueQualifier
+     * @param  null|array<ValueQualifier> $valueQualifier
      * @return static
      */
     public function setValueQualifier(?array $valueQualifier = null): static
@@ -440,7 +440,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return ValueQualifier|null
+     * @return null|ValueQualifier
      */
     public function firstValueQualifier(): ?ValueQualifier
     {
@@ -455,7 +455,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return ValueQualifier|null
+     * @return null|ValueQualifier
      */
     public function lastValueQualifier(): ?ValueQualifier
     {
@@ -470,7 +470,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param ValueQualifier $valueQualifier
+     * @param  ValueQualifier $valueQualifier
      * @return static
      */
     public function addToValueQualifier(ValueQualifier $valueQualifier): static
@@ -491,7 +491,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param ValueQualifier $valueQualifier
+     * @param  ValueQualifier $valueQualifier
      * @return static
      */
     public function addOnceToValueQualifier(ValueQualifier $valueQualifier): static
@@ -522,7 +522,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return ImportanceCode|null
+     * @return null|ImportanceCode
      */
     public function getImportanceCode(): ?ImportanceCode
     {
@@ -540,7 +540,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param ImportanceCode|null $importanceCode
+     * @param  null|ImportanceCode $importanceCode
      * @return static
      */
     public function setImportanceCode(?ImportanceCode $importanceCode = null): static
@@ -561,7 +561,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return array<ListValue>|null
+     * @return null|array<ListValue>
      */
     public function getListValue(): ?array
     {
@@ -569,7 +569,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param array<ListValue>|null $listValue
+     * @param  null|array<ListValue> $listValue
      * @return static
      */
     public function setListValue(?array $listValue = null): static
@@ -600,7 +600,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return ListValue|null
+     * @return null|ListValue
      */
     public function firstListValue(): ?ListValue
     {
@@ -615,7 +615,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return ListValue|null
+     * @return null|ListValue
      */
     public function lastListValue(): ?ListValue
     {
@@ -630,7 +630,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param ListValue $listValue
+     * @param  ListValue $listValue
      * @return static
      */
     public function addToListValue(ListValue $listValue): static
@@ -651,7 +651,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param ListValue $listValue
+     * @param  ListValue $listValue
      * @return static
      */
     public function addOnceToListValue(ListValue $listValue): static
@@ -682,7 +682,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return UsabilityPeriod|null
+     * @return null|UsabilityPeriod
      */
     public function getUsabilityPeriod(): ?UsabilityPeriod
     {
@@ -700,7 +700,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param UsabilityPeriod|null $usabilityPeriod
+     * @param  null|UsabilityPeriod $usabilityPeriod
      * @return static
      */
     public function setUsabilityPeriod(?UsabilityPeriod $usabilityPeriod = null): static
@@ -721,7 +721,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return array<ItemPropertyGroup>|null
+     * @return null|array<ItemPropertyGroup>
      */
     public function getItemPropertyGroup(): ?array
     {
@@ -729,7 +729,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param array<ItemPropertyGroup>|null $itemPropertyGroup
+     * @param  null|array<ItemPropertyGroup> $itemPropertyGroup
      * @return static
      */
     public function setItemPropertyGroup(?array $itemPropertyGroup = null): static
@@ -760,7 +760,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return ItemPropertyGroup|null
+     * @return null|ItemPropertyGroup
      */
     public function firstItemPropertyGroup(): ?ItemPropertyGroup
     {
@@ -775,7 +775,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return ItemPropertyGroup|null
+     * @return null|ItemPropertyGroup
      */
     public function lastItemPropertyGroup(): ?ItemPropertyGroup
     {
@@ -790,7 +790,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param ItemPropertyGroup $itemPropertyGroup
+     * @param  ItemPropertyGroup $itemPropertyGroup
      * @return static
      */
     public function addToItemPropertyGroup(ItemPropertyGroup $itemPropertyGroup): static
@@ -811,7 +811,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param ItemPropertyGroup $itemPropertyGroup
+     * @param  ItemPropertyGroup $itemPropertyGroup
      * @return static
      */
     public function addOnceToItemPropertyGroup(ItemPropertyGroup $itemPropertyGroup): static
@@ -842,7 +842,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return RangeDimension|null
+     * @return null|RangeDimension
      */
     public function getRangeDimension(): ?RangeDimension
     {
@@ -860,7 +860,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param RangeDimension|null $rangeDimension
+     * @param  null|RangeDimension $rangeDimension
      * @return static
      */
     public function setRangeDimension(?RangeDimension $rangeDimension = null): static
@@ -881,7 +881,7 @@ class ItemPropertyType
     }
 
     /**
-     * @return ItemPropertyRange|null
+     * @return null|ItemPropertyRange
      */
     public function getItemPropertyRange(): ?ItemPropertyRange
     {
@@ -899,7 +899,7 @@ class ItemPropertyType
     }
 
     /**
-     * @param ItemPropertyRange|null $itemPropertyRange
+     * @param  null|ItemPropertyRange $itemPropertyRange
      * @return static
      */
     public function setItemPropertyRange(?ItemPropertyRange $itemPropertyRange = null): static

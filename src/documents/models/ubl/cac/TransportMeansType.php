@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DirectionCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\JourneyID;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationality;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationalityID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TradeServiceCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TransportMeansTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class TransportMeansType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var JourneyID|null
+     * @var null|JourneyID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\JourneyID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class TransportMeansType
     private $journeyID;
 
     /**
-     * @var RegistrationNationalityID|null
+     * @var null|RegistrationNationalityID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationalityID")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class TransportMeansType
     private $registrationNationalityID;
 
     /**
-     * @var array<RegistrationNationality>|null
+     * @var null|array<RegistrationNationality>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationNationality>")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class TransportMeansType
     private $registrationNationality;
 
     /**
-     * @var DirectionCode|null
+     * @var null|DirectionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DirectionCode")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class TransportMeansType
     private $directionCode;
 
     /**
-     * @var TransportMeansTypeCode|null
+     * @var null|TransportMeansTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TransportMeansTypeCode")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class TransportMeansType
     private $transportMeansTypeCode;
 
     /**
-     * @var TradeServiceCode|null
+     * @var null|TradeServiceCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TradeServiceCode")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class TransportMeansType
     private $tradeServiceCode;
 
     /**
-     * @var Stowage|null
+     * @var null|Stowage
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Stowage")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class TransportMeansType
     private $stowage;
 
     /**
-     * @var AirTransport|null
+     * @var null|AirTransport
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AirTransport")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class TransportMeansType
     private $airTransport;
 
     /**
-     * @var RoadTransport|null
+     * @var null|RoadTransport
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RoadTransport")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class TransportMeansType
     private $roadTransport;
 
     /**
-     * @var RailTransport|null
+     * @var null|RailTransport
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RailTransport")
      * @JMS\Expose
@@ -129,7 +129,7 @@ class TransportMeansType
     private $railTransport;
 
     /**
-     * @var MaritimeTransport|null
+     * @var null|MaritimeTransport
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MaritimeTransport")
      * @JMS\Expose
@@ -140,7 +140,7 @@ class TransportMeansType
     private $maritimeTransport;
 
     /**
-     * @var OwnerParty|null
+     * @var null|OwnerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OwnerParty")
      * @JMS\Expose
@@ -151,7 +151,7 @@ class TransportMeansType
     private $ownerParty;
 
     /**
-     * @var array<MeasurementDimension>|null
+     * @var null|array<MeasurementDimension>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>")
      * @JMS\Expose
@@ -163,7 +163,7 @@ class TransportMeansType
     private $measurementDimension;
 
     /**
-     * @return JourneyID|null
+     * @return null|JourneyID
      */
     public function getJourneyID(): ?JourneyID
     {
@@ -181,7 +181,7 @@ class TransportMeansType
     }
 
     /**
-     * @param JourneyID|null $journeyID
+     * @param  null|JourneyID $journeyID
      * @return static
      */
     public function setJourneyID(?JourneyID $journeyID = null): static
@@ -202,7 +202,7 @@ class TransportMeansType
     }
 
     /**
-     * @return RegistrationNationalityID|null
+     * @return null|RegistrationNationalityID
      */
     public function getRegistrationNationalityID(): ?RegistrationNationalityID
     {
@@ -220,7 +220,7 @@ class TransportMeansType
     }
 
     /**
-     * @param RegistrationNationalityID|null $registrationNationalityID
+     * @param  null|RegistrationNationalityID $registrationNationalityID
      * @return static
      */
     public function setRegistrationNationalityID(?RegistrationNationalityID $registrationNationalityID = null): static
@@ -241,7 +241,7 @@ class TransportMeansType
     }
 
     /**
-     * @return array<RegistrationNationality>|null
+     * @return null|array<RegistrationNationality>
      */
     public function getRegistrationNationality(): ?array
     {
@@ -249,7 +249,7 @@ class TransportMeansType
     }
 
     /**
-     * @param array<RegistrationNationality>|null $registrationNationality
+     * @param  null|array<RegistrationNationality> $registrationNationality
      * @return static
      */
     public function setRegistrationNationality(?array $registrationNationality = null): static
@@ -280,7 +280,7 @@ class TransportMeansType
     }
 
     /**
-     * @return RegistrationNationality|null
+     * @return null|RegistrationNationality
      */
     public function firstRegistrationNationality(): ?RegistrationNationality
     {
@@ -295,7 +295,7 @@ class TransportMeansType
     }
 
     /**
-     * @return RegistrationNationality|null
+     * @return null|RegistrationNationality
      */
     public function lastRegistrationNationality(): ?RegistrationNationality
     {
@@ -310,7 +310,7 @@ class TransportMeansType
     }
 
     /**
-     * @param RegistrationNationality $registrationNationality
+     * @param  RegistrationNationality $registrationNationality
      * @return static
      */
     public function addToRegistrationNationality(RegistrationNationality $registrationNationality): static
@@ -331,7 +331,7 @@ class TransportMeansType
     }
 
     /**
-     * @param RegistrationNationality $registrationNationality
+     * @param  RegistrationNationality $registrationNationality
      * @return static
      */
     public function addOnceToRegistrationNationality(RegistrationNationality $registrationNationality): static
@@ -362,7 +362,7 @@ class TransportMeansType
     }
 
     /**
-     * @return DirectionCode|null
+     * @return null|DirectionCode
      */
     public function getDirectionCode(): ?DirectionCode
     {
@@ -380,7 +380,7 @@ class TransportMeansType
     }
 
     /**
-     * @param DirectionCode|null $directionCode
+     * @param  null|DirectionCode $directionCode
      * @return static
      */
     public function setDirectionCode(?DirectionCode $directionCode = null): static
@@ -401,7 +401,7 @@ class TransportMeansType
     }
 
     /**
-     * @return TransportMeansTypeCode|null
+     * @return null|TransportMeansTypeCode
      */
     public function getTransportMeansTypeCode(): ?TransportMeansTypeCode
     {
@@ -419,7 +419,7 @@ class TransportMeansType
     }
 
     /**
-     * @param TransportMeansTypeCode|null $transportMeansTypeCode
+     * @param  null|TransportMeansTypeCode $transportMeansTypeCode
      * @return static
      */
     public function setTransportMeansTypeCode(?TransportMeansTypeCode $transportMeansTypeCode = null): static
@@ -440,7 +440,7 @@ class TransportMeansType
     }
 
     /**
-     * @return TradeServiceCode|null
+     * @return null|TradeServiceCode
      */
     public function getTradeServiceCode(): ?TradeServiceCode
     {
@@ -458,7 +458,7 @@ class TransportMeansType
     }
 
     /**
-     * @param TradeServiceCode|null $tradeServiceCode
+     * @param  null|TradeServiceCode $tradeServiceCode
      * @return static
      */
     public function setTradeServiceCode(?TradeServiceCode $tradeServiceCode = null): static
@@ -479,7 +479,7 @@ class TransportMeansType
     }
 
     /**
-     * @return Stowage|null
+     * @return null|Stowage
      */
     public function getStowage(): ?Stowage
     {
@@ -497,7 +497,7 @@ class TransportMeansType
     }
 
     /**
-     * @param Stowage|null $stowage
+     * @param  null|Stowage $stowage
      * @return static
      */
     public function setStowage(?Stowage $stowage = null): static
@@ -518,7 +518,7 @@ class TransportMeansType
     }
 
     /**
-     * @return AirTransport|null
+     * @return null|AirTransport
      */
     public function getAirTransport(): ?AirTransport
     {
@@ -536,7 +536,7 @@ class TransportMeansType
     }
 
     /**
-     * @param AirTransport|null $airTransport
+     * @param  null|AirTransport $airTransport
      * @return static
      */
     public function setAirTransport(?AirTransport $airTransport = null): static
@@ -557,7 +557,7 @@ class TransportMeansType
     }
 
     /**
-     * @return RoadTransport|null
+     * @return null|RoadTransport
      */
     public function getRoadTransport(): ?RoadTransport
     {
@@ -575,7 +575,7 @@ class TransportMeansType
     }
 
     /**
-     * @param RoadTransport|null $roadTransport
+     * @param  null|RoadTransport $roadTransport
      * @return static
      */
     public function setRoadTransport(?RoadTransport $roadTransport = null): static
@@ -596,7 +596,7 @@ class TransportMeansType
     }
 
     /**
-     * @return RailTransport|null
+     * @return null|RailTransport
      */
     public function getRailTransport(): ?RailTransport
     {
@@ -614,7 +614,7 @@ class TransportMeansType
     }
 
     /**
-     * @param RailTransport|null $railTransport
+     * @param  null|RailTransport $railTransport
      * @return static
      */
     public function setRailTransport(?RailTransport $railTransport = null): static
@@ -635,7 +635,7 @@ class TransportMeansType
     }
 
     /**
-     * @return MaritimeTransport|null
+     * @return null|MaritimeTransport
      */
     public function getMaritimeTransport(): ?MaritimeTransport
     {
@@ -653,7 +653,7 @@ class TransportMeansType
     }
 
     /**
-     * @param MaritimeTransport|null $maritimeTransport
+     * @param  null|MaritimeTransport $maritimeTransport
      * @return static
      */
     public function setMaritimeTransport(?MaritimeTransport $maritimeTransport = null): static
@@ -674,7 +674,7 @@ class TransportMeansType
     }
 
     /**
-     * @return OwnerParty|null
+     * @return null|OwnerParty
      */
     public function getOwnerParty(): ?OwnerParty
     {
@@ -692,7 +692,7 @@ class TransportMeansType
     }
 
     /**
-     * @param OwnerParty|null $ownerParty
+     * @param  null|OwnerParty $ownerParty
      * @return static
      */
     public function setOwnerParty(?OwnerParty $ownerParty = null): static
@@ -713,7 +713,7 @@ class TransportMeansType
     }
 
     /**
-     * @return array<MeasurementDimension>|null
+     * @return null|array<MeasurementDimension>
      */
     public function getMeasurementDimension(): ?array
     {
@@ -721,7 +721,7 @@ class TransportMeansType
     }
 
     /**
-     * @param array<MeasurementDimension>|null $measurementDimension
+     * @param  null|array<MeasurementDimension> $measurementDimension
      * @return static
      */
     public function setMeasurementDimension(?array $measurementDimension = null): static
@@ -752,7 +752,7 @@ class TransportMeansType
     }
 
     /**
-     * @return MeasurementDimension|null
+     * @return null|MeasurementDimension
      */
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
@@ -767,7 +767,7 @@ class TransportMeansType
     }
 
     /**
-     * @return MeasurementDimension|null
+     * @return null|MeasurementDimension
      */
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
@@ -782,7 +782,7 @@ class TransportMeansType
     }
 
     /**
-     * @param MeasurementDimension $measurementDimension
+     * @param  MeasurementDimension $measurementDimension
      * @return static
      */
     public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
@@ -803,7 +803,7 @@ class TransportMeansType
     }
 
     /**
-     * @param MeasurementDimension $measurementDimension
+     * @param  MeasurementDimension $measurementDimension
      * @return static
      */
     public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static

@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\OpenTenderID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class TenderPreparationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TenderEnvelopeID|null
+     * @var null|TenderEnvelopeID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class TenderPreparationType
     private $tenderEnvelopeID;
 
     /**
-     * @var TenderEnvelopeTypeCode|null
+     * @var null|TenderEnvelopeTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeTypeCode")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class TenderPreparationType
     private $tenderEnvelopeTypeCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class TenderPreparationType
     private $description;
 
     /**
-     * @var OpenTenderID|null
+     * @var null|OpenTenderID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OpenTenderID")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class TenderPreparationType
     private $openTenderID;
 
     /**
-     * @var array<ProcurementProjectLot>|null
+     * @var null|array<ProcurementProjectLot>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot>")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class TenderPreparationType
     private $procurementProjectLot;
 
     /**
-     * @var array<DocumentTenderRequirement>|null
+     * @var null|array<DocumentTenderRequirement>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentTenderRequirement>")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class TenderPreparationType
     private $documentTenderRequirement;
 
     /**
-     * @return TenderEnvelopeID|null
+     * @return null|TenderEnvelopeID
      */
     public function getTenderEnvelopeID(): ?TenderEnvelopeID
     {
@@ -103,7 +103,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param TenderEnvelopeID|null $tenderEnvelopeID
+     * @param  null|TenderEnvelopeID $tenderEnvelopeID
      * @return static
      */
     public function setTenderEnvelopeID(?TenderEnvelopeID $tenderEnvelopeID = null): static
@@ -124,7 +124,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return TenderEnvelopeTypeCode|null
+     * @return null|TenderEnvelopeTypeCode
      */
     public function getTenderEnvelopeTypeCode(): ?TenderEnvelopeTypeCode
     {
@@ -142,7 +142,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param TenderEnvelopeTypeCode|null $tenderEnvelopeTypeCode
+     * @param  null|TenderEnvelopeTypeCode $tenderEnvelopeTypeCode
      * @return static
      */
     public function setTenderEnvelopeTypeCode(?TenderEnvelopeTypeCode $tenderEnvelopeTypeCode = null): static
@@ -163,7 +163,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -171,7 +171,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -202,7 +202,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -217,7 +217,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -232,7 +232,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -253,7 +253,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -284,7 +284,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return OpenTenderID|null
+     * @return null|OpenTenderID
      */
     public function getOpenTenderID(): ?OpenTenderID
     {
@@ -302,7 +302,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param OpenTenderID|null $openTenderID
+     * @param  null|OpenTenderID $openTenderID
      * @return static
      */
     public function setOpenTenderID(?OpenTenderID $openTenderID = null): static
@@ -323,7 +323,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return array<ProcurementProjectLot>|null
+     * @return null|array<ProcurementProjectLot>
      */
     public function getProcurementProjectLot(): ?array
     {
@@ -331,7 +331,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param array<ProcurementProjectLot>|null $procurementProjectLot
+     * @param  null|array<ProcurementProjectLot> $procurementProjectLot
      * @return static
      */
     public function setProcurementProjectLot(?array $procurementProjectLot = null): static
@@ -362,7 +362,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return ProcurementProjectLot|null
+     * @return null|ProcurementProjectLot
      */
     public function firstProcurementProjectLot(): ?ProcurementProjectLot
     {
@@ -377,7 +377,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return ProcurementProjectLot|null
+     * @return null|ProcurementProjectLot
      */
     public function lastProcurementProjectLot(): ?ProcurementProjectLot
     {
@@ -392,7 +392,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param ProcurementProjectLot $procurementProjectLot
+     * @param  ProcurementProjectLot $procurementProjectLot
      * @return static
      */
     public function addToProcurementProjectLot(ProcurementProjectLot $procurementProjectLot): static
@@ -413,7 +413,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param ProcurementProjectLot $procurementProjectLot
+     * @param  ProcurementProjectLot $procurementProjectLot
      * @return static
      */
     public function addOnceToProcurementProjectLot(ProcurementProjectLot $procurementProjectLot): static
@@ -444,7 +444,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return array<DocumentTenderRequirement>|null
+     * @return null|array<DocumentTenderRequirement>
      */
     public function getDocumentTenderRequirement(): ?array
     {
@@ -452,7 +452,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param array<DocumentTenderRequirement>|null $documentTenderRequirement
+     * @param  null|array<DocumentTenderRequirement> $documentTenderRequirement
      * @return static
      */
     public function setDocumentTenderRequirement(?array $documentTenderRequirement = null): static
@@ -483,7 +483,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return DocumentTenderRequirement|null
+     * @return null|DocumentTenderRequirement
      */
     public function firstDocumentTenderRequirement(): ?DocumentTenderRequirement
     {
@@ -498,7 +498,7 @@ class TenderPreparationType
     }
 
     /**
-     * @return DocumentTenderRequirement|null
+     * @return null|DocumentTenderRequirement
      */
     public function lastDocumentTenderRequirement(): ?DocumentTenderRequirement
     {
@@ -513,7 +513,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param DocumentTenderRequirement $documentTenderRequirement
+     * @param  DocumentTenderRequirement $documentTenderRequirement
      * @return static
      */
     public function addToDocumentTenderRequirement(DocumentTenderRequirement $documentTenderRequirement): static
@@ -534,7 +534,7 @@ class TenderPreparationType
     }
 
     /**
-     * @param DocumentTenderRequirement $documentTenderRequirement
+     * @param  DocumentTenderRequirement $documentTenderRequirement
      * @return static
      */
     public function addOnceToDocumentTenderRequirement(DocumentTenderRequirement $documentTenderRequirement): static

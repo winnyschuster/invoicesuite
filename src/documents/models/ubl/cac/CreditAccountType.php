@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AccountID;
+use JMS\Serializer\Annotation as JMS;
 
 class CreditAccountType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AccountID|null
+     * @var null|AccountID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class CreditAccountType
     private $accountID;
 
     /**
-     * @return AccountID|null
+     * @return null|AccountID
      */
     public function getAccountID(): ?AccountID
     {
@@ -42,7 +42,7 @@ class CreditAccountType
     }
 
     /**
-     * @param AccountID|null $accountID
+     * @param  null|AccountID $accountID
      * @return static
      */
     public function setAccountID(?AccountID $accountID = null): static

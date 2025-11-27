@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\RoundingAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TaxAmount;
+use JMS\Serializer\Annotation as JMS;
 
 class TaxTotalType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TaxAmount|null
+     * @var null|TaxAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxAmount")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class TaxTotalType
     private $taxAmount;
 
     /**
-     * @var RoundingAmount|null
+     * @var null|RoundingAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RoundingAmount")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TaxTotalType
     private $roundingAmount;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class TaxTotalType
     private $taxEvidenceIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class TaxTotalType
     private $taxIncludedIndicator;
 
     /**
-     * @var array<TaxSubtotal>|null
+     * @var null|array<TaxSubtotal>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxSubtotal>")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class TaxTotalType
     private $taxSubtotal;
 
     /**
-     * @return TaxAmount|null
+     * @return null|TaxAmount
      */
     public function getTaxAmount(): ?TaxAmount
     {
@@ -88,7 +88,7 @@ class TaxTotalType
     }
 
     /**
-     * @param TaxAmount|null $taxAmount
+     * @param  null|TaxAmount $taxAmount
      * @return static
      */
     public function setTaxAmount(?TaxAmount $taxAmount = null): static
@@ -109,7 +109,7 @@ class TaxTotalType
     }
 
     /**
-     * @return RoundingAmount|null
+     * @return null|RoundingAmount
      */
     public function getRoundingAmount(): ?RoundingAmount
     {
@@ -127,7 +127,7 @@ class TaxTotalType
     }
 
     /**
-     * @param RoundingAmount|null $roundingAmount
+     * @param  null|RoundingAmount $roundingAmount
      * @return static
      */
     public function setRoundingAmount(?RoundingAmount $roundingAmount = null): static
@@ -148,7 +148,7 @@ class TaxTotalType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getTaxEvidenceIndicator(): ?bool
     {
@@ -156,7 +156,7 @@ class TaxTotalType
     }
 
     /**
-     * @param bool|null $taxEvidenceIndicator
+     * @param  null|bool $taxEvidenceIndicator
      * @return static
      */
     public function setTaxEvidenceIndicator(?bool $taxEvidenceIndicator = null): static
@@ -177,7 +177,7 @@ class TaxTotalType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getTaxIncludedIndicator(): ?bool
     {
@@ -185,7 +185,7 @@ class TaxTotalType
     }
 
     /**
-     * @param bool|null $taxIncludedIndicator
+     * @param  null|bool $taxIncludedIndicator
      * @return static
      */
     public function setTaxIncludedIndicator(?bool $taxIncludedIndicator = null): static
@@ -206,7 +206,7 @@ class TaxTotalType
     }
 
     /**
-     * @return array<TaxSubtotal>|null
+     * @return null|array<TaxSubtotal>
      */
     public function getTaxSubtotal(): ?array
     {
@@ -214,7 +214,7 @@ class TaxTotalType
     }
 
     /**
-     * @param array<TaxSubtotal>|null $taxSubtotal
+     * @param  null|array<TaxSubtotal> $taxSubtotal
      * @return static
      */
     public function setTaxSubtotal(?array $taxSubtotal = null): static
@@ -245,7 +245,7 @@ class TaxTotalType
     }
 
     /**
-     * @return TaxSubtotal|null
+     * @return null|TaxSubtotal
      */
     public function firstTaxSubtotal(): ?TaxSubtotal
     {
@@ -260,7 +260,7 @@ class TaxTotalType
     }
 
     /**
-     * @return TaxSubtotal|null
+     * @return null|TaxSubtotal
      */
     public function lastTaxSubtotal(): ?TaxSubtotal
     {
@@ -275,7 +275,7 @@ class TaxTotalType
     }
 
     /**
-     * @param TaxSubtotal $taxSubtotal
+     * @param  TaxSubtotal $taxSubtotal
      * @return static
      */
     public function addToTaxSubtotal(TaxSubtotal $taxSubtotal): static
@@ -296,7 +296,7 @@ class TaxTotalType
     }
 
     /**
-     * @param TaxSubtotal $taxSubtotal
+     * @param  TaxSubtotal $taxSubtotal
      * @return static
      */
     public function addOnceToTaxSubtotal(TaxSubtotal $taxSubtotal): static

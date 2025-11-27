@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\main;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 /**
  * @JMS\XmlNamespace(uri="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2", prefix="ubl")

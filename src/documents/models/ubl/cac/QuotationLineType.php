@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\RequestForQuotationLineID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaxAmount;
+use JMS\Serializer\Annotation as JMS;
 
 class QuotationLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class QuotationLineType
     private $iD;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class QuotationLineType
     private $note;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class QuotationLineType
     private $quantity;
 
     /**
-     * @var LineExtensionAmount|null
+     * @var null|LineExtensionAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class QuotationLineType
     private $lineExtensionAmount;
 
     /**
-     * @var TotalTaxAmount|null
+     * @var null|TotalTaxAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaxAmount")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class QuotationLineType
     private $totalTaxAmount;
 
     /**
-     * @var RequestForQuotationLineID|null
+     * @var null|RequestForQuotationLineID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RequestForQuotationLineID")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class QuotationLineType
     private $requestForQuotationLineID;
 
     /**
-     * @var array<DocumentReference>|null
+     * @var null|array<DocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class QuotationLineType
     private $documentReference;
 
     /**
-     * @var LineItem|null
+     * @var null|LineItem
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LineItem")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class QuotationLineType
     private $lineItem;
 
     /**
-     * @var array<SellerProposedSubstituteLineItem>|null
+     * @var null|array<SellerProposedSubstituteLineItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem>")
      * @JMS\Expose
@@ -120,7 +120,7 @@ class QuotationLineType
     private $sellerProposedSubstituteLineItem;
 
     /**
-     * @var array<AlternativeLineItem>|null
+     * @var null|array<AlternativeLineItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AlternativeLineItem>")
      * @JMS\Expose
@@ -132,7 +132,7 @@ class QuotationLineType
     private $alternativeLineItem;
 
     /**
-     * @var RequestLineReference|null
+     * @var null|RequestLineReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RequestLineReference")
      * @JMS\Expose
@@ -143,7 +143,7 @@ class QuotationLineType
     private $requestLineReference;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -161,7 +161,7 @@ class QuotationLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -182,7 +182,7 @@ class QuotationLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -190,7 +190,7 @@ class QuotationLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -221,7 +221,7 @@ class QuotationLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -236,7 +236,7 @@ class QuotationLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -251,7 +251,7 @@ class QuotationLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -272,7 +272,7 @@ class QuotationLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -303,7 +303,7 @@ class QuotationLineType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -321,7 +321,7 @@ class QuotationLineType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -342,7 +342,7 @@ class QuotationLineType
     }
 
     /**
-     * @return LineExtensionAmount|null
+     * @return null|LineExtensionAmount
      */
     public function getLineExtensionAmount(): ?LineExtensionAmount
     {
@@ -360,7 +360,7 @@ class QuotationLineType
     }
 
     /**
-     * @param LineExtensionAmount|null $lineExtensionAmount
+     * @param  null|LineExtensionAmount $lineExtensionAmount
      * @return static
      */
     public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
@@ -381,7 +381,7 @@ class QuotationLineType
     }
 
     /**
-     * @return TotalTaxAmount|null
+     * @return null|TotalTaxAmount
      */
     public function getTotalTaxAmount(): ?TotalTaxAmount
     {
@@ -399,7 +399,7 @@ class QuotationLineType
     }
 
     /**
-     * @param TotalTaxAmount|null $totalTaxAmount
+     * @param  null|TotalTaxAmount $totalTaxAmount
      * @return static
      */
     public function setTotalTaxAmount(?TotalTaxAmount $totalTaxAmount = null): static
@@ -420,7 +420,7 @@ class QuotationLineType
     }
 
     /**
-     * @return RequestForQuotationLineID|null
+     * @return null|RequestForQuotationLineID
      */
     public function getRequestForQuotationLineID(): ?RequestForQuotationLineID
     {
@@ -438,7 +438,7 @@ class QuotationLineType
     }
 
     /**
-     * @param RequestForQuotationLineID|null $requestForQuotationLineID
+     * @param  null|RequestForQuotationLineID $requestForQuotationLineID
      * @return static
      */
     public function setRequestForQuotationLineID(?RequestForQuotationLineID $requestForQuotationLineID = null): static
@@ -459,7 +459,7 @@ class QuotationLineType
     }
 
     /**
-     * @return array<DocumentReference>|null
+     * @return null|array<DocumentReference>
      */
     public function getDocumentReference(): ?array
     {
@@ -467,7 +467,7 @@ class QuotationLineType
     }
 
     /**
-     * @param array<DocumentReference>|null $documentReference
+     * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
     public function setDocumentReference(?array $documentReference = null): static
@@ -498,7 +498,7 @@ class QuotationLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -513,7 +513,7 @@ class QuotationLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -528,7 +528,7 @@ class QuotationLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addToDocumentReference(DocumentReference $documentReference): static
@@ -549,7 +549,7 @@ class QuotationLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): static
@@ -580,7 +580,7 @@ class QuotationLineType
     }
 
     /**
-     * @return LineItem|null
+     * @return null|LineItem
      */
     public function getLineItem(): ?LineItem
     {
@@ -598,7 +598,7 @@ class QuotationLineType
     }
 
     /**
-     * @param LineItem|null $lineItem
+     * @param  null|LineItem $lineItem
      * @return static
      */
     public function setLineItem(?LineItem $lineItem = null): static
@@ -619,7 +619,7 @@ class QuotationLineType
     }
 
     /**
-     * @return array<SellerProposedSubstituteLineItem>|null
+     * @return null|array<SellerProposedSubstituteLineItem>
      */
     public function getSellerProposedSubstituteLineItem(): ?array
     {
@@ -627,7 +627,7 @@ class QuotationLineType
     }
 
     /**
-     * @param array<SellerProposedSubstituteLineItem>|null $sellerProposedSubstituteLineItem
+     * @param  null|array<SellerProposedSubstituteLineItem> $sellerProposedSubstituteLineItem
      * @return static
      */
     public function setSellerProposedSubstituteLineItem(?array $sellerProposedSubstituteLineItem = null): static
@@ -658,7 +658,7 @@ class QuotationLineType
     }
 
     /**
-     * @return SellerProposedSubstituteLineItem|null
+     * @return null|SellerProposedSubstituteLineItem
      */
     public function firstSellerProposedSubstituteLineItem(): ?SellerProposedSubstituteLineItem
     {
@@ -673,7 +673,7 @@ class QuotationLineType
     }
 
     /**
-     * @return SellerProposedSubstituteLineItem|null
+     * @return null|SellerProposedSubstituteLineItem
      */
     public function lastSellerProposedSubstituteLineItem(): ?SellerProposedSubstituteLineItem
     {
@@ -688,7 +688,7 @@ class QuotationLineType
     }
 
     /**
-     * @param SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
+     * @param  SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
      * @return static
      */
     public function addToSellerProposedSubstituteLineItem(
@@ -710,7 +710,7 @@ class QuotationLineType
     }
 
     /**
-     * @param SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
+     * @param  SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
      * @return static
      */
     public function addOnceToSellerProposedSubstituteLineItem(
@@ -742,7 +742,7 @@ class QuotationLineType
     }
 
     /**
-     * @return array<AlternativeLineItem>|null
+     * @return null|array<AlternativeLineItem>
      */
     public function getAlternativeLineItem(): ?array
     {
@@ -750,7 +750,7 @@ class QuotationLineType
     }
 
     /**
-     * @param array<AlternativeLineItem>|null $alternativeLineItem
+     * @param  null|array<AlternativeLineItem> $alternativeLineItem
      * @return static
      */
     public function setAlternativeLineItem(?array $alternativeLineItem = null): static
@@ -781,7 +781,7 @@ class QuotationLineType
     }
 
     /**
-     * @return AlternativeLineItem|null
+     * @return null|AlternativeLineItem
      */
     public function firstAlternativeLineItem(): ?AlternativeLineItem
     {
@@ -796,7 +796,7 @@ class QuotationLineType
     }
 
     /**
-     * @return AlternativeLineItem|null
+     * @return null|AlternativeLineItem
      */
     public function lastAlternativeLineItem(): ?AlternativeLineItem
     {
@@ -811,7 +811,7 @@ class QuotationLineType
     }
 
     /**
-     * @param AlternativeLineItem $alternativeLineItem
+     * @param  AlternativeLineItem $alternativeLineItem
      * @return static
      */
     public function addToAlternativeLineItem(AlternativeLineItem $alternativeLineItem): static
@@ -832,7 +832,7 @@ class QuotationLineType
     }
 
     /**
-     * @param AlternativeLineItem $alternativeLineItem
+     * @param  AlternativeLineItem $alternativeLineItem
      * @return static
      */
     public function addOnceToAlternativeLineItem(AlternativeLineItem $alternativeLineItem): static
@@ -863,7 +863,7 @@ class QuotationLineType
     }
 
     /**
-     * @return RequestLineReference|null
+     * @return null|RequestLineReference
      */
     public function getRequestLineReference(): ?RequestLineReference
     {
@@ -881,7 +881,7 @@ class QuotationLineType
     }
 
     /**
-     * @param RequestLineReference|null $requestLineReference
+     * @param  null|RequestLineReference $requestLineReference
      * @return static
      */
     public function setRequestLineReference(?RequestLineReference $requestLineReference = null): static

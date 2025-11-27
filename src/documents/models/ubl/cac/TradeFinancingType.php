@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\FinancingInstrumentCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeFinancingType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class TradeFinancingType
     private $iD;
 
     /**
-     * @var FinancingInstrumentCode|null
+     * @var null|FinancingInstrumentCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FinancingInstrumentCode")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TradeFinancingType
     private $financingInstrumentCode;
 
     /**
-     * @var ContractDocumentReference|null
+     * @var null|ContractDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class TradeFinancingType
     private $contractDocumentReference;
 
     /**
-     * @var array<DocumentReference>|null
+     * @var null|array<DocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class TradeFinancingType
     private $documentReference;
 
     /**
-     * @var FinancingParty|null
+     * @var null|FinancingParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FinancingParty")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class TradeFinancingType
     private $financingParty;
 
     /**
-     * @var FinancingFinancialAccount|null
+     * @var null|FinancingFinancialAccount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FinancingFinancialAccount")
      * @JMS\Expose
@@ -81,7 +81,7 @@ class TradeFinancingType
     private $financingFinancialAccount;
 
     /**
-     * @var array<Clause>|null
+     * @var null|array<Clause>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Clause>")
      * @JMS\Expose
@@ -93,7 +93,7 @@ class TradeFinancingType
     private $clause;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -111,7 +111,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -132,7 +132,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return FinancingInstrumentCode|null
+     * @return null|FinancingInstrumentCode
      */
     public function getFinancingInstrumentCode(): ?FinancingInstrumentCode
     {
@@ -150,7 +150,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param FinancingInstrumentCode|null $financingInstrumentCode
+     * @param  null|FinancingInstrumentCode $financingInstrumentCode
      * @return static
      */
     public function setFinancingInstrumentCode(?FinancingInstrumentCode $financingInstrumentCode = null): static
@@ -171,7 +171,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return ContractDocumentReference|null
+     * @return null|ContractDocumentReference
      */
     public function getContractDocumentReference(): ?ContractDocumentReference
     {
@@ -189,7 +189,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param ContractDocumentReference|null $contractDocumentReference
+     * @param  null|ContractDocumentReference $contractDocumentReference
      * @return static
      */
     public function setContractDocumentReference(?ContractDocumentReference $contractDocumentReference = null): static
@@ -210,7 +210,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return array<DocumentReference>|null
+     * @return null|array<DocumentReference>
      */
     public function getDocumentReference(): ?array
     {
@@ -218,7 +218,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param array<DocumentReference>|null $documentReference
+     * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
     public function setDocumentReference(?array $documentReference = null): static
@@ -249,7 +249,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -264,7 +264,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -279,7 +279,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addToDocumentReference(DocumentReference $documentReference): static
@@ -300,7 +300,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): static
@@ -331,7 +331,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return FinancingParty|null
+     * @return null|FinancingParty
      */
     public function getFinancingParty(): ?FinancingParty
     {
@@ -349,7 +349,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param FinancingParty|null $financingParty
+     * @param  null|FinancingParty $financingParty
      * @return static
      */
     public function setFinancingParty(?FinancingParty $financingParty = null): static
@@ -370,7 +370,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return FinancingFinancialAccount|null
+     * @return null|FinancingFinancialAccount
      */
     public function getFinancingFinancialAccount(): ?FinancingFinancialAccount
     {
@@ -388,7 +388,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param FinancingFinancialAccount|null $financingFinancialAccount
+     * @param  null|FinancingFinancialAccount $financingFinancialAccount
      * @return static
      */
     public function setFinancingFinancialAccount(?FinancingFinancialAccount $financingFinancialAccount = null): static
@@ -409,7 +409,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return array<Clause>|null
+     * @return null|array<Clause>
      */
     public function getClause(): ?array
     {
@@ -417,7 +417,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param array<Clause>|null $clause
+     * @param  null|array<Clause> $clause
      * @return static
      */
     public function setClause(?array $clause = null): static
@@ -448,7 +448,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return Clause|null
+     * @return null|Clause
      */
     public function firstClause(): ?Clause
     {
@@ -463,7 +463,7 @@ class TradeFinancingType
     }
 
     /**
-     * @return Clause|null
+     * @return null|Clause
      */
     public function lastClause(): ?Clause
     {
@@ -478,7 +478,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param Clause $clause
+     * @param  Clause $clause
      * @return static
      */
     public function addToClause(Clause $clause): static
@@ -499,7 +499,7 @@ class TradeFinancingType
     }
 
     /**
-     * @param Clause $clause
+     * @param  Clause $clause
      * @return static
      */
     public function addOnceToClause(Clause $clause): static

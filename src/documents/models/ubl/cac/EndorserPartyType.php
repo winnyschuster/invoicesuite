@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\RoleCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric;
+use JMS\Serializer\Annotation as JMS;
 
 class EndorserPartyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var RoleCode|null
+     * @var null|RoleCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RoleCode")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class EndorserPartyType
     private $roleCode;
 
     /**
-     * @var SequenceNumeric|null
+     * @var null|SequenceNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class EndorserPartyType
     private $sequenceNumeric;
 
     /**
-     * @var Party|null
+     * @var null|Party
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Party")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class EndorserPartyType
     private $party;
 
     /**
-     * @var SignatoryContact|null
+     * @var null|SignatoryContact
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryContact")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class EndorserPartyType
     private $signatoryContact;
 
     /**
-     * @return RoleCode|null
+     * @return null|RoleCode
      */
     public function getRoleCode(): ?RoleCode
     {
@@ -76,7 +76,7 @@ class EndorserPartyType
     }
 
     /**
-     * @param RoleCode|null $roleCode
+     * @param  null|RoleCode $roleCode
      * @return static
      */
     public function setRoleCode(?RoleCode $roleCode = null): static
@@ -97,7 +97,7 @@ class EndorserPartyType
     }
 
     /**
-     * @return SequenceNumeric|null
+     * @return null|SequenceNumeric
      */
     public function getSequenceNumeric(): ?SequenceNumeric
     {
@@ -115,7 +115,7 @@ class EndorserPartyType
     }
 
     /**
-     * @param SequenceNumeric|null $sequenceNumeric
+     * @param  null|SequenceNumeric $sequenceNumeric
      * @return static
      */
     public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): static
@@ -136,7 +136,7 @@ class EndorserPartyType
     }
 
     /**
-     * @return Party|null
+     * @return null|Party
      */
     public function getParty(): ?Party
     {
@@ -154,7 +154,7 @@ class EndorserPartyType
     }
 
     /**
-     * @param Party|null $party
+     * @param  null|Party $party
      * @return static
      */
     public function setParty(?Party $party = null): static
@@ -175,7 +175,7 @@ class EndorserPartyType
     }
 
     /**
-     * @return SignatoryContact|null
+     * @return null|SignatoryContact
      */
     public function getSignatoryContact(): ?SignatoryContact
     {
@@ -193,7 +193,7 @@ class EndorserPartyType
     }
 
     /**
-     * @param SignatoryContact|null $signatoryContact
+     * @param  null|SignatoryContact $signatoryContact
      * @return static
      */
     public function setSignatoryContact(?SignatoryContact $signatoryContact = null): static

@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Amount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastPurposeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class RetailPlannedImpactType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Amount|null
+     * @var null|Amount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class RetailPlannedImpactType
     private $amount;
 
     /**
-     * @var ForecastPurposeCode|null
+     * @var null|ForecastPurposeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastPurposeCode")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class RetailPlannedImpactType
     private $forecastPurposeCode;
 
     /**
-     * @var ForecastTypeCode|null
+     * @var null|ForecastTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class RetailPlannedImpactType
     private $forecastTypeCode;
 
     /**
-     * @var Period|null
+     * @var null|Period
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Period")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class RetailPlannedImpactType
     private $period;
 
     /**
-     * @return Amount|null
+     * @return null|Amount
      */
     public function getAmount(): ?Amount
     {
@@ -77,7 +77,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @param Amount|null $amount
+     * @param  null|Amount $amount
      * @return static
      */
     public function setAmount(?Amount $amount = null): static
@@ -98,7 +98,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @return ForecastPurposeCode|null
+     * @return null|ForecastPurposeCode
      */
     public function getForecastPurposeCode(): ?ForecastPurposeCode
     {
@@ -116,7 +116,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @param ForecastPurposeCode|null $forecastPurposeCode
+     * @param  null|ForecastPurposeCode $forecastPurposeCode
      * @return static
      */
     public function setForecastPurposeCode(?ForecastPurposeCode $forecastPurposeCode = null): static
@@ -137,7 +137,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @return ForecastTypeCode|null
+     * @return null|ForecastTypeCode
      */
     public function getForecastTypeCode(): ?ForecastTypeCode
     {
@@ -155,7 +155,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @param ForecastTypeCode|null $forecastTypeCode
+     * @param  null|ForecastTypeCode $forecastTypeCode
      * @return static
      */
     public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): static
@@ -176,7 +176,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @return Period|null
+     * @return null|Period
      */
     public function getPeriod(): ?Period
     {
@@ -194,7 +194,7 @@ class RetailPlannedImpactType
     }
 
     /**
-     * @param Period|null $period
+     * @param  null|Period $period
      * @return static
      */
     public function setPeriod(?Period $period = null): static

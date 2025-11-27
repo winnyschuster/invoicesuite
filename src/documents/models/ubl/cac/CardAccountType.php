@@ -5,24 +5,24 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
-use horstoeko\invoicesuite\documents\models\ubl\cbc\CV2ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CardChipCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CardTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ChipApplicationID;
+use horstoeko\invoicesuite\documents\models\ubl\cbc\CV2ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\HolderName;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\IssueNumberID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\IssuerID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\NetworkID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PrimaryAccountNumberID;
+use JMS\Serializer\Annotation as JMS;
 
 class CardAccountType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var PrimaryAccountNumberID|null
+     * @var null|PrimaryAccountNumberID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PrimaryAccountNumberID")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class CardAccountType
     private $primaryAccountNumberID;
 
     /**
-     * @var NetworkID|null
+     * @var null|NetworkID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetworkID")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class CardAccountType
     private $networkID;
 
     /**
-     * @var CardTypeCode|null
+     * @var null|CardTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CardTypeCode")
      * @JMS\Expose
@@ -55,7 +55,7 @@ class CardAccountType
     private $cardTypeCode;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -66,7 +66,7 @@ class CardAccountType
     private $validityStartDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class CardAccountType
     private $expiryDate;
 
     /**
-     * @var IssuerID|null
+     * @var null|IssuerID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\IssuerID")
      * @JMS\Expose
@@ -88,7 +88,7 @@ class CardAccountType
     private $issuerID;
 
     /**
-     * @var IssueNumberID|null
+     * @var null|IssueNumberID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\IssueNumberID")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class CardAccountType
     private $issueNumberID;
 
     /**
-     * @var CV2ID|null
+     * @var null|CV2ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CV2ID")
      * @JMS\Expose
@@ -110,7 +110,7 @@ class CardAccountType
     private $cV2ID;
 
     /**
-     * @var CardChipCode|null
+     * @var null|CardChipCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CardChipCode")
      * @JMS\Expose
@@ -121,7 +121,7 @@ class CardAccountType
     private $cardChipCode;
 
     /**
-     * @var ChipApplicationID|null
+     * @var null|ChipApplicationID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ChipApplicationID")
      * @JMS\Expose
@@ -132,7 +132,7 @@ class CardAccountType
     private $chipApplicationID;
 
     /**
-     * @var HolderName|null
+     * @var null|HolderName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HolderName")
      * @JMS\Expose
@@ -143,7 +143,7 @@ class CardAccountType
     private $holderName;
 
     /**
-     * @return PrimaryAccountNumberID|null
+     * @return null|PrimaryAccountNumberID
      */
     public function getPrimaryAccountNumberID(): ?PrimaryAccountNumberID
     {
@@ -161,7 +161,7 @@ class CardAccountType
     }
 
     /**
-     * @param PrimaryAccountNumberID|null $primaryAccountNumberID
+     * @param  null|PrimaryAccountNumberID $primaryAccountNumberID
      * @return static
      */
     public function setPrimaryAccountNumberID(?PrimaryAccountNumberID $primaryAccountNumberID = null): static
@@ -182,7 +182,7 @@ class CardAccountType
     }
 
     /**
-     * @return NetworkID|null
+     * @return null|NetworkID
      */
     public function getNetworkID(): ?NetworkID
     {
@@ -200,7 +200,7 @@ class CardAccountType
     }
 
     /**
-     * @param NetworkID|null $networkID
+     * @param  null|NetworkID $networkID
      * @return static
      */
     public function setNetworkID(?NetworkID $networkID = null): static
@@ -221,7 +221,7 @@ class CardAccountType
     }
 
     /**
-     * @return CardTypeCode|null
+     * @return null|CardTypeCode
      */
     public function getCardTypeCode(): ?CardTypeCode
     {
@@ -239,7 +239,7 @@ class CardAccountType
     }
 
     /**
-     * @param CardTypeCode|null $cardTypeCode
+     * @param  null|CardTypeCode $cardTypeCode
      * @return static
      */
     public function setCardTypeCode(?CardTypeCode $cardTypeCode = null): static
@@ -260,7 +260,7 @@ class CardAccountType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getValidityStartDate(): ?DateTimeInterface
     {
@@ -268,7 +268,7 @@ class CardAccountType
     }
 
     /**
-     * @param DateTimeInterface|null $validityStartDate
+     * @param  null|DateTimeInterface $validityStartDate
      * @return static
      */
     public function setValidityStartDate(?DateTimeInterface $validityStartDate = null): static
@@ -289,7 +289,7 @@ class CardAccountType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getExpiryDate(): ?DateTimeInterface
     {
@@ -297,7 +297,7 @@ class CardAccountType
     }
 
     /**
-     * @param DateTimeInterface|null $expiryDate
+     * @param  null|DateTimeInterface $expiryDate
      * @return static
      */
     public function setExpiryDate(?DateTimeInterface $expiryDate = null): static
@@ -318,7 +318,7 @@ class CardAccountType
     }
 
     /**
-     * @return IssuerID|null
+     * @return null|IssuerID
      */
     public function getIssuerID(): ?IssuerID
     {
@@ -336,7 +336,7 @@ class CardAccountType
     }
 
     /**
-     * @param IssuerID|null $issuerID
+     * @param  null|IssuerID $issuerID
      * @return static
      */
     public function setIssuerID(?IssuerID $issuerID = null): static
@@ -357,7 +357,7 @@ class CardAccountType
     }
 
     /**
-     * @return IssueNumberID|null
+     * @return null|IssueNumberID
      */
     public function getIssueNumberID(): ?IssueNumberID
     {
@@ -375,7 +375,7 @@ class CardAccountType
     }
 
     /**
-     * @param IssueNumberID|null $issueNumberID
+     * @param  null|IssueNumberID $issueNumberID
      * @return static
      */
     public function setIssueNumberID(?IssueNumberID $issueNumberID = null): static
@@ -396,7 +396,7 @@ class CardAccountType
     }
 
     /**
-     * @return CV2ID|null
+     * @return null|CV2ID
      */
     public function getCV2ID(): ?CV2ID
     {
@@ -414,7 +414,7 @@ class CardAccountType
     }
 
     /**
-     * @param CV2ID|null $cV2ID
+     * @param  null|CV2ID $cV2ID
      * @return static
      */
     public function setCV2ID(?CV2ID $cV2ID = null): static
@@ -435,7 +435,7 @@ class CardAccountType
     }
 
     /**
-     * @return CardChipCode|null
+     * @return null|CardChipCode
      */
     public function getCardChipCode(): ?CardChipCode
     {
@@ -453,7 +453,7 @@ class CardAccountType
     }
 
     /**
-     * @param CardChipCode|null $cardChipCode
+     * @param  null|CardChipCode $cardChipCode
      * @return static
      */
     public function setCardChipCode(?CardChipCode $cardChipCode = null): static
@@ -474,7 +474,7 @@ class CardAccountType
     }
 
     /**
-     * @return ChipApplicationID|null
+     * @return null|ChipApplicationID
      */
     public function getChipApplicationID(): ?ChipApplicationID
     {
@@ -492,7 +492,7 @@ class CardAccountType
     }
 
     /**
-     * @param ChipApplicationID|null $chipApplicationID
+     * @param  null|ChipApplicationID $chipApplicationID
      * @return static
      */
     public function setChipApplicationID(?ChipApplicationID $chipApplicationID = null): static
@@ -513,7 +513,7 @@ class CardAccountType
     }
 
     /**
-     * @return HolderName|null
+     * @return null|HolderName
      */
     public function getHolderName(): ?HolderName
     {
@@ -531,7 +531,7 @@ class CardAccountType
     }
 
     /**
-     * @param HolderName|null $holderName
+     * @param  null|HolderName $holderName
      * @return static
      */
     public function setHolderName(?HolderName $holderName = null): static

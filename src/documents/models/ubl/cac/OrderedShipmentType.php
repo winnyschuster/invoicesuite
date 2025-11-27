@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class OrderedShipmentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Shipment|null
+     * @var null|Shipment
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Shipment")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class OrderedShipmentType
     private $shipment;
 
     /**
-     * @var array<Package>|null
+     * @var null|array<Package>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Package>")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class OrderedShipmentType
     private $package;
 
     /**
-     * @return Shipment|null
+     * @return null|Shipment
      */
     public function getShipment(): ?Shipment
     {
@@ -53,7 +53,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @param Shipment|null $shipment
+     * @param  null|Shipment $shipment
      * @return static
      */
     public function setShipment(?Shipment $shipment = null): static
@@ -74,7 +74,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @return array<Package>|null
+     * @return null|array<Package>
      */
     public function getPackage(): ?array
     {
@@ -82,7 +82,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @param array<Package>|null $package
+     * @param  null|array<Package> $package
      * @return static
      */
     public function setPackage(?array $package = null): static
@@ -113,7 +113,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @return Package|null
+     * @return null|Package
      */
     public function firstPackage(): ?Package
     {
@@ -128,7 +128,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @return Package|null
+     * @return null|Package
      */
     public function lastPackage(): ?Package
     {
@@ -143,7 +143,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @param Package $package
+     * @param  Package $package
      * @return static
      */
     public function addToPackage(Package $package): static
@@ -164,7 +164,7 @@ class OrderedShipmentType
     }
 
     /**
-     * @param Package $package
+     * @param  Package $package
      * @return static
      */
     public function addOnceToPackage(Package $package): static

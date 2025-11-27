@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasic\rsm;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxbasic\ram\ExchangedDocumentContextType;
 use horstoeko\invoicesuite\documents\models\zffxbasic\ram\ExchangedDocumentType;
 use horstoeko\invoicesuite\documents\models\zffxbasic\ram\SupplyChainTradeTransactionType;
+use JMS\Serializer\Annotation as JMS;
 
 /**
  * @JMS\XmlNamespace(uri="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100", prefix="rsm")
@@ -23,7 +23,7 @@ class CrossIndustryInvoiceType
     use HandlesObjectFlags;
 
     /**
-     * @var ExchangedDocumentContextType|null
+     * @var null|ExchangedDocumentContextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\ram\ExchangedDocumentContextType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class CrossIndustryInvoiceType
     private $exchangedDocumentContext;
 
     /**
-     * @var ExchangedDocumentType|null
+     * @var null|ExchangedDocumentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\ram\ExchangedDocumentType")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class CrossIndustryInvoiceType
     private $exchangedDocument;
 
     /**
-     * @var SupplyChainTradeTransactionType|null
+     * @var null|SupplyChainTradeTransactionType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\ram\SupplyChainTradeTransactionType")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class CrossIndustryInvoiceType
     private $supplyChainTradeTransaction;
 
     /**
-     * @return ExchangedDocumentContextType|null
+     * @return null|ExchangedDocumentContextType
      */
     public function getExchangedDocumentContext(): ?ExchangedDocumentContextType
     {
@@ -74,7 +74,7 @@ class CrossIndustryInvoiceType
     }
 
     /**
-     * @param ExchangedDocumentContextType|null $exchangedDocumentContext
+     * @param  null|ExchangedDocumentContextType $exchangedDocumentContext
      * @return static
      */
     public function setExchangedDocumentContext(?ExchangedDocumentContextType $exchangedDocumentContext = null): static
@@ -95,7 +95,7 @@ class CrossIndustryInvoiceType
     }
 
     /**
-     * @return ExchangedDocumentType|null
+     * @return null|ExchangedDocumentType
      */
     public function getExchangedDocument(): ?ExchangedDocumentType
     {
@@ -113,7 +113,7 @@ class CrossIndustryInvoiceType
     }
 
     /**
-     * @param ExchangedDocumentType|null $exchangedDocument
+     * @param  null|ExchangedDocumentType $exchangedDocument
      * @return static
      */
     public function setExchangedDocument(?ExchangedDocumentType $exchangedDocument = null): static
@@ -134,7 +134,7 @@ class CrossIndustryInvoiceType
     }
 
     /**
-     * @return SupplyChainTradeTransactionType|null
+     * @return null|SupplyChainTradeTransactionType
      */
     public function getSupplyChainTradeTransaction(): ?SupplyChainTradeTransactionType
     {
@@ -152,7 +152,7 @@ class CrossIndustryInvoiceType
     }
 
     /**
-     * @param SupplyChainTradeTransactionType|null $supplyChainTradeTransaction
+     * @param  null|SupplyChainTradeTransactionType $supplyChainTradeTransaction
      * @return static
      */
     public function setSupplyChainTradeTransaction(

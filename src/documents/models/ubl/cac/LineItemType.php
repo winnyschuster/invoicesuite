@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode;
@@ -22,13 +21,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaxAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\WarrantyInformation;
+use JMS\Serializer\Annotation as JMS;
 
 class LineItemType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class LineItemType
     private $iD;
 
     /**
-     * @var SalesOrderID|null
+     * @var null|SalesOrderID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SalesOrderID")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class LineItemType
     private $salesOrderID;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class LineItemType
     private $uUID;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class LineItemType
     private $note;
 
     /**
-     * @var LineStatusCode|null
+     * @var null|LineStatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class LineItemType
     private $lineStatusCode;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class LineItemType
     private $quantity;
 
     /**
-     * @var LineExtensionAmount|null
+     * @var null|LineExtensionAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class LineItemType
     private $lineExtensionAmount;
 
     /**
-     * @var TotalTaxAmount|null
+     * @var null|TotalTaxAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaxAmount")
      * @JMS\Expose
@@ -117,7 +117,7 @@ class LineItemType
     private $totalTaxAmount;
 
     /**
-     * @var MinimumQuantity|null
+     * @var null|MinimumQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity")
      * @JMS\Expose
@@ -128,7 +128,7 @@ class LineItemType
     private $minimumQuantity;
 
     /**
-     * @var MaximumQuantity|null
+     * @var null|MaximumQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity")
      * @JMS\Expose
@@ -139,7 +139,7 @@ class LineItemType
     private $maximumQuantity;
 
     /**
-     * @var MinimumBackorderQuantity|null
+     * @var null|MinimumBackorderQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumBackorderQuantity")
      * @JMS\Expose
@@ -150,7 +150,7 @@ class LineItemType
     private $minimumBackorderQuantity;
 
     /**
-     * @var MaximumBackorderQuantity|null
+     * @var null|MaximumBackorderQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumBackorderQuantity")
      * @JMS\Expose
@@ -161,7 +161,7 @@ class LineItemType
     private $maximumBackorderQuantity;
 
     /**
-     * @var InspectionMethodCode|null
+     * @var null|InspectionMethodCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InspectionMethodCode")
      * @JMS\Expose
@@ -172,7 +172,7 @@ class LineItemType
     private $inspectionMethodCode;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -183,7 +183,7 @@ class LineItemType
     private $partialDeliveryIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -194,7 +194,7 @@ class LineItemType
     private $backOrderAllowedIndicator;
 
     /**
-     * @var AccountingCostCode|null
+     * @var null|AccountingCostCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode")
      * @JMS\Expose
@@ -205,7 +205,7 @@ class LineItemType
     private $accountingCostCode;
 
     /**
-     * @var AccountingCost|null
+     * @var null|AccountingCost
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost")
      * @JMS\Expose
@@ -216,7 +216,7 @@ class LineItemType
     private $accountingCost;
 
     /**
-     * @var array<WarrantyInformation>|null
+     * @var null|array<WarrantyInformation>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\WarrantyInformation>")
      * @JMS\Expose
@@ -228,7 +228,7 @@ class LineItemType
     private $warrantyInformation;
 
     /**
-     * @var array<Delivery>|null
+     * @var null|array<Delivery>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Delivery>")
      * @JMS\Expose
@@ -240,7 +240,7 @@ class LineItemType
     private $delivery;
 
     /**
-     * @var DeliveryTerms|null
+     * @var null|DeliveryTerms
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms")
      * @JMS\Expose
@@ -251,7 +251,7 @@ class LineItemType
     private $deliveryTerms;
 
     /**
-     * @var OriginatorParty|null
+     * @var null|OriginatorParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorParty")
      * @JMS\Expose
@@ -262,7 +262,7 @@ class LineItemType
     private $originatorParty;
 
     /**
-     * @var array<OrderedShipment>|null
+     * @var null|array<OrderedShipment>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\OrderedShipment>")
      * @JMS\Expose
@@ -274,7 +274,7 @@ class LineItemType
     private $orderedShipment;
 
     /**
-     * @var PricingReference|null
+     * @var null|PricingReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PricingReference")
      * @JMS\Expose
@@ -285,7 +285,7 @@ class LineItemType
     private $pricingReference;
 
     /**
-     * @var array<AllowanceCharge>|null
+     * @var null|array<AllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -297,7 +297,7 @@ class LineItemType
     private $allowanceCharge;
 
     /**
-     * @var Price|null
+     * @var null|Price
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Price")
      * @JMS\Expose
@@ -308,7 +308,7 @@ class LineItemType
     private $price;
 
     /**
-     * @var Item|null
+     * @var null|Item
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -319,7 +319,7 @@ class LineItemType
     private $item;
 
     /**
-     * @var array<SubLineItem>|null
+     * @var null|array<SubLineItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubLineItem>")
      * @JMS\Expose
@@ -331,7 +331,7 @@ class LineItemType
     private $subLineItem;
 
     /**
-     * @var WarrantyValidityPeriod|null
+     * @var null|WarrantyValidityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyValidityPeriod")
      * @JMS\Expose
@@ -342,7 +342,7 @@ class LineItemType
     private $warrantyValidityPeriod;
 
     /**
-     * @var WarrantyParty|null
+     * @var null|WarrantyParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyParty")
      * @JMS\Expose
@@ -353,7 +353,7 @@ class LineItemType
     private $warrantyParty;
 
     /**
-     * @var array<TaxTotal>|null
+     * @var null|array<TaxTotal>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>")
      * @JMS\Expose
@@ -365,7 +365,7 @@ class LineItemType
     private $taxTotal;
 
     /**
-     * @var ItemPriceExtension|null
+     * @var null|ItemPriceExtension
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ItemPriceExtension")
      * @JMS\Expose
@@ -376,7 +376,7 @@ class LineItemType
     private $itemPriceExtension;
 
     /**
-     * @var array<LineReference>|null
+     * @var null|array<LineReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\LineReference>")
      * @JMS\Expose
@@ -388,7 +388,7 @@ class LineItemType
     private $lineReference;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -406,7 +406,7 @@ class LineItemType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -427,7 +427,7 @@ class LineItemType
     }
 
     /**
-     * @return SalesOrderID|null
+     * @return null|SalesOrderID
      */
     public function getSalesOrderID(): ?SalesOrderID
     {
@@ -445,7 +445,7 @@ class LineItemType
     }
 
     /**
-     * @param SalesOrderID|null $salesOrderID
+     * @param  null|SalesOrderID $salesOrderID
      * @return static
      */
     public function setSalesOrderID(?SalesOrderID $salesOrderID = null): static
@@ -466,7 +466,7 @@ class LineItemType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -484,7 +484,7 @@ class LineItemType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -505,7 +505,7 @@ class LineItemType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -513,7 +513,7 @@ class LineItemType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -544,7 +544,7 @@ class LineItemType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -559,7 +559,7 @@ class LineItemType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -574,7 +574,7 @@ class LineItemType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -595,7 +595,7 @@ class LineItemType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -626,7 +626,7 @@ class LineItemType
     }
 
     /**
-     * @return LineStatusCode|null
+     * @return null|LineStatusCode
      */
     public function getLineStatusCode(): ?LineStatusCode
     {
@@ -644,7 +644,7 @@ class LineItemType
     }
 
     /**
-     * @param LineStatusCode|null $lineStatusCode
+     * @param  null|LineStatusCode $lineStatusCode
      * @return static
      */
     public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): static
@@ -665,7 +665,7 @@ class LineItemType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -683,7 +683,7 @@ class LineItemType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -704,7 +704,7 @@ class LineItemType
     }
 
     /**
-     * @return LineExtensionAmount|null
+     * @return null|LineExtensionAmount
      */
     public function getLineExtensionAmount(): ?LineExtensionAmount
     {
@@ -722,7 +722,7 @@ class LineItemType
     }
 
     /**
-     * @param LineExtensionAmount|null $lineExtensionAmount
+     * @param  null|LineExtensionAmount $lineExtensionAmount
      * @return static
      */
     public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
@@ -743,7 +743,7 @@ class LineItemType
     }
 
     /**
-     * @return TotalTaxAmount|null
+     * @return null|TotalTaxAmount
      */
     public function getTotalTaxAmount(): ?TotalTaxAmount
     {
@@ -761,7 +761,7 @@ class LineItemType
     }
 
     /**
-     * @param TotalTaxAmount|null $totalTaxAmount
+     * @param  null|TotalTaxAmount $totalTaxAmount
      * @return static
      */
     public function setTotalTaxAmount(?TotalTaxAmount $totalTaxAmount = null): static
@@ -782,7 +782,7 @@ class LineItemType
     }
 
     /**
-     * @return MinimumQuantity|null
+     * @return null|MinimumQuantity
      */
     public function getMinimumQuantity(): ?MinimumQuantity
     {
@@ -800,7 +800,7 @@ class LineItemType
     }
 
     /**
-     * @param MinimumQuantity|null $minimumQuantity
+     * @param  null|MinimumQuantity $minimumQuantity
      * @return static
      */
     public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): static
@@ -821,7 +821,7 @@ class LineItemType
     }
 
     /**
-     * @return MaximumQuantity|null
+     * @return null|MaximumQuantity
      */
     public function getMaximumQuantity(): ?MaximumQuantity
     {
@@ -839,7 +839,7 @@ class LineItemType
     }
 
     /**
-     * @param MaximumQuantity|null $maximumQuantity
+     * @param  null|MaximumQuantity $maximumQuantity
      * @return static
      */
     public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): static
@@ -860,7 +860,7 @@ class LineItemType
     }
 
     /**
-     * @return MinimumBackorderQuantity|null
+     * @return null|MinimumBackorderQuantity
      */
     public function getMinimumBackorderQuantity(): ?MinimumBackorderQuantity
     {
@@ -878,7 +878,7 @@ class LineItemType
     }
 
     /**
-     * @param MinimumBackorderQuantity|null $minimumBackorderQuantity
+     * @param  null|MinimumBackorderQuantity $minimumBackorderQuantity
      * @return static
      */
     public function setMinimumBackorderQuantity(?MinimumBackorderQuantity $minimumBackorderQuantity = null): static
@@ -899,7 +899,7 @@ class LineItemType
     }
 
     /**
-     * @return MaximumBackorderQuantity|null
+     * @return null|MaximumBackorderQuantity
      */
     public function getMaximumBackorderQuantity(): ?MaximumBackorderQuantity
     {
@@ -917,7 +917,7 @@ class LineItemType
     }
 
     /**
-     * @param MaximumBackorderQuantity|null $maximumBackorderQuantity
+     * @param  null|MaximumBackorderQuantity $maximumBackorderQuantity
      * @return static
      */
     public function setMaximumBackorderQuantity(?MaximumBackorderQuantity $maximumBackorderQuantity = null): static
@@ -938,7 +938,7 @@ class LineItemType
     }
 
     /**
-     * @return InspectionMethodCode|null
+     * @return null|InspectionMethodCode
      */
     public function getInspectionMethodCode(): ?InspectionMethodCode
     {
@@ -956,7 +956,7 @@ class LineItemType
     }
 
     /**
-     * @param InspectionMethodCode|null $inspectionMethodCode
+     * @param  null|InspectionMethodCode $inspectionMethodCode
      * @return static
      */
     public function setInspectionMethodCode(?InspectionMethodCode $inspectionMethodCode = null): static
@@ -977,7 +977,7 @@ class LineItemType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getPartialDeliveryIndicator(): ?bool
     {
@@ -985,7 +985,7 @@ class LineItemType
     }
 
     /**
-     * @param bool|null $partialDeliveryIndicator
+     * @param  null|bool $partialDeliveryIndicator
      * @return static
      */
     public function setPartialDeliveryIndicator(?bool $partialDeliveryIndicator = null): static
@@ -1006,7 +1006,7 @@ class LineItemType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getBackOrderAllowedIndicator(): ?bool
     {
@@ -1014,7 +1014,7 @@ class LineItemType
     }
 
     /**
-     * @param bool|null $backOrderAllowedIndicator
+     * @param  null|bool $backOrderAllowedIndicator
      * @return static
      */
     public function setBackOrderAllowedIndicator(?bool $backOrderAllowedIndicator = null): static
@@ -1035,7 +1035,7 @@ class LineItemType
     }
 
     /**
-     * @return AccountingCostCode|null
+     * @return null|AccountingCostCode
      */
     public function getAccountingCostCode(): ?AccountingCostCode
     {
@@ -1053,7 +1053,7 @@ class LineItemType
     }
 
     /**
-     * @param AccountingCostCode|null $accountingCostCode
+     * @param  null|AccountingCostCode $accountingCostCode
      * @return static
      */
     public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): static
@@ -1074,7 +1074,7 @@ class LineItemType
     }
 
     /**
-     * @return AccountingCost|null
+     * @return null|AccountingCost
      */
     public function getAccountingCost(): ?AccountingCost
     {
@@ -1092,7 +1092,7 @@ class LineItemType
     }
 
     /**
-     * @param AccountingCost|null $accountingCost
+     * @param  null|AccountingCost $accountingCost
      * @return static
      */
     public function setAccountingCost(?AccountingCost $accountingCost = null): static
@@ -1113,7 +1113,7 @@ class LineItemType
     }
 
     /**
-     * @return array<WarrantyInformation>|null
+     * @return null|array<WarrantyInformation>
      */
     public function getWarrantyInformation(): ?array
     {
@@ -1121,7 +1121,7 @@ class LineItemType
     }
 
     /**
-     * @param array<WarrantyInformation>|null $warrantyInformation
+     * @param  null|array<WarrantyInformation> $warrantyInformation
      * @return static
      */
     public function setWarrantyInformation(?array $warrantyInformation = null): static
@@ -1152,7 +1152,7 @@ class LineItemType
     }
 
     /**
-     * @return WarrantyInformation|null
+     * @return null|WarrantyInformation
      */
     public function firstWarrantyInformation(): ?WarrantyInformation
     {
@@ -1167,7 +1167,7 @@ class LineItemType
     }
 
     /**
-     * @return WarrantyInformation|null
+     * @return null|WarrantyInformation
      */
     public function lastWarrantyInformation(): ?WarrantyInformation
     {
@@ -1182,7 +1182,7 @@ class LineItemType
     }
 
     /**
-     * @param WarrantyInformation $warrantyInformation
+     * @param  WarrantyInformation $warrantyInformation
      * @return static
      */
     public function addToWarrantyInformation(WarrantyInformation $warrantyInformation): static
@@ -1203,7 +1203,7 @@ class LineItemType
     }
 
     /**
-     * @param WarrantyInformation $warrantyInformation
+     * @param  WarrantyInformation $warrantyInformation
      * @return static
      */
     public function addOnceToWarrantyInformation(WarrantyInformation $warrantyInformation): static
@@ -1234,7 +1234,7 @@ class LineItemType
     }
 
     /**
-     * @return array<Delivery>|null
+     * @return null|array<Delivery>
      */
     public function getDelivery(): ?array
     {
@@ -1242,7 +1242,7 @@ class LineItemType
     }
 
     /**
-     * @param array<Delivery>|null $delivery
+     * @param  null|array<Delivery> $delivery
      * @return static
      */
     public function setDelivery(?array $delivery = null): static
@@ -1273,7 +1273,7 @@ class LineItemType
     }
 
     /**
-     * @return Delivery|null
+     * @return null|Delivery
      */
     public function firstDelivery(): ?Delivery
     {
@@ -1288,7 +1288,7 @@ class LineItemType
     }
 
     /**
-     * @return Delivery|null
+     * @return null|Delivery
      */
     public function lastDelivery(): ?Delivery
     {
@@ -1303,7 +1303,7 @@ class LineItemType
     }
 
     /**
-     * @param Delivery $delivery
+     * @param  Delivery $delivery
      * @return static
      */
     public function addToDelivery(Delivery $delivery): static
@@ -1324,7 +1324,7 @@ class LineItemType
     }
 
     /**
-     * @param Delivery $delivery
+     * @param  Delivery $delivery
      * @return static
      */
     public function addOnceToDelivery(Delivery $delivery): static
@@ -1355,7 +1355,7 @@ class LineItemType
     }
 
     /**
-     * @return DeliveryTerms|null
+     * @return null|DeliveryTerms
      */
     public function getDeliveryTerms(): ?DeliveryTerms
     {
@@ -1373,7 +1373,7 @@ class LineItemType
     }
 
     /**
-     * @param DeliveryTerms|null $deliveryTerms
+     * @param  null|DeliveryTerms $deliveryTerms
      * @return static
      */
     public function setDeliveryTerms(?DeliveryTerms $deliveryTerms = null): static
@@ -1394,7 +1394,7 @@ class LineItemType
     }
 
     /**
-     * @return OriginatorParty|null
+     * @return null|OriginatorParty
      */
     public function getOriginatorParty(): ?OriginatorParty
     {
@@ -1412,7 +1412,7 @@ class LineItemType
     }
 
     /**
-     * @param OriginatorParty|null $originatorParty
+     * @param  null|OriginatorParty $originatorParty
      * @return static
      */
     public function setOriginatorParty(?OriginatorParty $originatorParty = null): static
@@ -1433,7 +1433,7 @@ class LineItemType
     }
 
     /**
-     * @return array<OrderedShipment>|null
+     * @return null|array<OrderedShipment>
      */
     public function getOrderedShipment(): ?array
     {
@@ -1441,7 +1441,7 @@ class LineItemType
     }
 
     /**
-     * @param array<OrderedShipment>|null $orderedShipment
+     * @param  null|array<OrderedShipment> $orderedShipment
      * @return static
      */
     public function setOrderedShipment(?array $orderedShipment = null): static
@@ -1472,7 +1472,7 @@ class LineItemType
     }
 
     /**
-     * @return OrderedShipment|null
+     * @return null|OrderedShipment
      */
     public function firstOrderedShipment(): ?OrderedShipment
     {
@@ -1487,7 +1487,7 @@ class LineItemType
     }
 
     /**
-     * @return OrderedShipment|null
+     * @return null|OrderedShipment
      */
     public function lastOrderedShipment(): ?OrderedShipment
     {
@@ -1502,7 +1502,7 @@ class LineItemType
     }
 
     /**
-     * @param OrderedShipment $orderedShipment
+     * @param  OrderedShipment $orderedShipment
      * @return static
      */
     public function addToOrderedShipment(OrderedShipment $orderedShipment): static
@@ -1523,7 +1523,7 @@ class LineItemType
     }
 
     /**
-     * @param OrderedShipment $orderedShipment
+     * @param  OrderedShipment $orderedShipment
      * @return static
      */
     public function addOnceToOrderedShipment(OrderedShipment $orderedShipment): static
@@ -1554,7 +1554,7 @@ class LineItemType
     }
 
     /**
-     * @return PricingReference|null
+     * @return null|PricingReference
      */
     public function getPricingReference(): ?PricingReference
     {
@@ -1572,7 +1572,7 @@ class LineItemType
     }
 
     /**
-     * @param PricingReference|null $pricingReference
+     * @param  null|PricingReference $pricingReference
      * @return static
      */
     public function setPricingReference(?PricingReference $pricingReference = null): static
@@ -1593,7 +1593,7 @@ class LineItemType
     }
 
     /**
-     * @return array<AllowanceCharge>|null
+     * @return null|array<AllowanceCharge>
      */
     public function getAllowanceCharge(): ?array
     {
@@ -1601,7 +1601,7 @@ class LineItemType
     }
 
     /**
-     * @param array<AllowanceCharge>|null $allowanceCharge
+     * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): static
@@ -1632,7 +1632,7 @@ class LineItemType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -1647,7 +1647,7 @@ class LineItemType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -1662,7 +1662,7 @@ class LineItemType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -1683,7 +1683,7 @@ class LineItemType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -1714,7 +1714,7 @@ class LineItemType
     }
 
     /**
-     * @return Price|null
+     * @return null|Price
      */
     public function getPrice(): ?Price
     {
@@ -1732,7 +1732,7 @@ class LineItemType
     }
 
     /**
-     * @param Price|null $price
+     * @param  null|Price $price
      * @return static
      */
     public function setPrice(?Price $price = null): static
@@ -1753,7 +1753,7 @@ class LineItemType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function getItem(): ?Item
     {
@@ -1771,7 +1771,7 @@ class LineItemType
     }
 
     /**
-     * @param Item|null $item
+     * @param  null|Item $item
      * @return static
      */
     public function setItem(?Item $item = null): static
@@ -1792,7 +1792,7 @@ class LineItemType
     }
 
     /**
-     * @return array<SubLineItem>|null
+     * @return null|array<SubLineItem>
      */
     public function getSubLineItem(): ?array
     {
@@ -1800,7 +1800,7 @@ class LineItemType
     }
 
     /**
-     * @param array<SubLineItem>|null $subLineItem
+     * @param  null|array<SubLineItem> $subLineItem
      * @return static
      */
     public function setSubLineItem(?array $subLineItem = null): static
@@ -1831,7 +1831,7 @@ class LineItemType
     }
 
     /**
-     * @return SubLineItem|null
+     * @return null|SubLineItem
      */
     public function firstSubLineItem(): ?SubLineItem
     {
@@ -1846,7 +1846,7 @@ class LineItemType
     }
 
     /**
-     * @return SubLineItem|null
+     * @return null|SubLineItem
      */
     public function lastSubLineItem(): ?SubLineItem
     {
@@ -1861,7 +1861,7 @@ class LineItemType
     }
 
     /**
-     * @param SubLineItem $subLineItem
+     * @param  SubLineItem $subLineItem
      * @return static
      */
     public function addToSubLineItem(SubLineItem $subLineItem): static
@@ -1882,7 +1882,7 @@ class LineItemType
     }
 
     /**
-     * @param SubLineItem $subLineItem
+     * @param  SubLineItem $subLineItem
      * @return static
      */
     public function addOnceToSubLineItem(SubLineItem $subLineItem): static
@@ -1913,7 +1913,7 @@ class LineItemType
     }
 
     /**
-     * @return WarrantyValidityPeriod|null
+     * @return null|WarrantyValidityPeriod
      */
     public function getWarrantyValidityPeriod(): ?WarrantyValidityPeriod
     {
@@ -1931,7 +1931,7 @@ class LineItemType
     }
 
     /**
-     * @param WarrantyValidityPeriod|null $warrantyValidityPeriod
+     * @param  null|WarrantyValidityPeriod $warrantyValidityPeriod
      * @return static
      */
     public function setWarrantyValidityPeriod(?WarrantyValidityPeriod $warrantyValidityPeriod = null): static
@@ -1952,7 +1952,7 @@ class LineItemType
     }
 
     /**
-     * @return WarrantyParty|null
+     * @return null|WarrantyParty
      */
     public function getWarrantyParty(): ?WarrantyParty
     {
@@ -1970,7 +1970,7 @@ class LineItemType
     }
 
     /**
-     * @param WarrantyParty|null $warrantyParty
+     * @param  null|WarrantyParty $warrantyParty
      * @return static
      */
     public function setWarrantyParty(?WarrantyParty $warrantyParty = null): static
@@ -1991,7 +1991,7 @@ class LineItemType
     }
 
     /**
-     * @return array<TaxTotal>|null
+     * @return null|array<TaxTotal>
      */
     public function getTaxTotal(): ?array
     {
@@ -1999,7 +1999,7 @@ class LineItemType
     }
 
     /**
-     * @param array<TaxTotal>|null $taxTotal
+     * @param  null|array<TaxTotal> $taxTotal
      * @return static
      */
     public function setTaxTotal(?array $taxTotal = null): static
@@ -2030,7 +2030,7 @@ class LineItemType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function firstTaxTotal(): ?TaxTotal
     {
@@ -2045,7 +2045,7 @@ class LineItemType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function lastTaxTotal(): ?TaxTotal
     {
@@ -2060,7 +2060,7 @@ class LineItemType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addToTaxTotal(TaxTotal $taxTotal): static
@@ -2081,7 +2081,7 @@ class LineItemType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addOnceToTaxTotal(TaxTotal $taxTotal): static
@@ -2112,7 +2112,7 @@ class LineItemType
     }
 
     /**
-     * @return ItemPriceExtension|null
+     * @return null|ItemPriceExtension
      */
     public function getItemPriceExtension(): ?ItemPriceExtension
     {
@@ -2130,7 +2130,7 @@ class LineItemType
     }
 
     /**
-     * @param ItemPriceExtension|null $itemPriceExtension
+     * @param  null|ItemPriceExtension $itemPriceExtension
      * @return static
      */
     public function setItemPriceExtension(?ItemPriceExtension $itemPriceExtension = null): static
@@ -2151,7 +2151,7 @@ class LineItemType
     }
 
     /**
-     * @return array<LineReference>|null
+     * @return null|array<LineReference>
      */
     public function getLineReference(): ?array
     {
@@ -2159,7 +2159,7 @@ class LineItemType
     }
 
     /**
-     * @param array<LineReference>|null $lineReference
+     * @param  null|array<LineReference> $lineReference
      * @return static
      */
     public function setLineReference(?array $lineReference = null): static
@@ -2190,7 +2190,7 @@ class LineItemType
     }
 
     /**
-     * @return LineReference|null
+     * @return null|LineReference
      */
     public function firstLineReference(): ?LineReference
     {
@@ -2205,7 +2205,7 @@ class LineItemType
     }
 
     /**
-     * @return LineReference|null
+     * @return null|LineReference
      */
     public function lastLineReference(): ?LineReference
     {
@@ -2220,7 +2220,7 @@ class LineItemType
     }
 
     /**
-     * @param LineReference $lineReference
+     * @param  LineReference $lineReference
      * @return static
      */
     public function addToLineReference(LineReference $lineReference): static
@@ -2241,7 +2241,7 @@ class LineItemType
     }
 
     /**
-     * @param LineReference $lineReference
+     * @param  LineReference $lineReference
      * @return static
      */
     public function addOnceToLineReference(LineReference $lineReference): static

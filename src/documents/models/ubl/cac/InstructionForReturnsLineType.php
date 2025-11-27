@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity;
+use JMS\Serializer\Annotation as JMS;
 
 class InstructionForReturnsLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class InstructionForReturnsLineType
     private $iD;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class InstructionForReturnsLineType
     private $note;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class InstructionForReturnsLineType
     private $quantity;
 
     /**
-     * @var ManufacturerParty|null
+     * @var null|ManufacturerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ManufacturerParty")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class InstructionForReturnsLineType
     private $manufacturerParty;
 
     /**
-     * @var Item|null
+     * @var null|Item
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class InstructionForReturnsLineType
     private $item;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -89,7 +89,7 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -110,7 +110,7 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -118,7 +118,7 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -149,7 +149,7 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -164,7 +164,7 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -179,7 +179,7 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -200,7 +200,7 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -231,7 +231,7 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -249,7 +249,7 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -270,7 +270,7 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @return ManufacturerParty|null
+     * @return null|ManufacturerParty
      */
     public function getManufacturerParty(): ?ManufacturerParty
     {
@@ -288,7 +288,7 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @param ManufacturerParty|null $manufacturerParty
+     * @param  null|ManufacturerParty $manufacturerParty
      * @return static
      */
     public function setManufacturerParty(?ManufacturerParty $manufacturerParty = null): static
@@ -309,7 +309,7 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function getItem(): ?Item
     {
@@ -327,7 +327,7 @@ class InstructionForReturnsLineType
     }
 
     /**
-     * @param Item|null $item
+     * @param  null|Item $item
      * @return static
      */
     public function setItem(?Item $item = null): static

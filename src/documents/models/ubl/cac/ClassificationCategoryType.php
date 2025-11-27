@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CodeValue;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
+use JMS\Serializer\Annotation as JMS;
 
 class ClassificationCategoryType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class ClassificationCategoryType
     private $name;
 
     /**
-     * @var CodeValue|null
+     * @var null|CodeValue
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CodeValue")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class ClassificationCategoryType
     private $codeValue;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class ClassificationCategoryType
     private $description;
 
     /**
-     * @var array<CategorizesClassificationCategory>|null
+     * @var null|array<CategorizesClassificationCategory>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\CategorizesClassificationCategory>")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class ClassificationCategoryType
     private $categorizesClassificationCategory;
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -79,7 +79,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -100,7 +100,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return CodeValue|null
+     * @return null|CodeValue
      */
     public function getCodeValue(): ?CodeValue
     {
@@ -118,7 +118,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param CodeValue|null $codeValue
+     * @param  null|CodeValue $codeValue
      * @return static
      */
     public function setCodeValue(?CodeValue $codeValue = null): static
@@ -139,7 +139,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -147,7 +147,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -178,7 +178,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -193,7 +193,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -208,7 +208,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -229,7 +229,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -260,7 +260,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return array<CategorizesClassificationCategory>|null
+     * @return null|array<CategorizesClassificationCategory>
      */
     public function getCategorizesClassificationCategory(): ?array
     {
@@ -268,7 +268,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param array<CategorizesClassificationCategory>|null $categorizesClassificationCategory
+     * @param  null|array<CategorizesClassificationCategory> $categorizesClassificationCategory
      * @return static
      */
     public function setCategorizesClassificationCategory(?array $categorizesClassificationCategory = null): static
@@ -299,7 +299,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return CategorizesClassificationCategory|null
+     * @return null|CategorizesClassificationCategory
      */
     public function firstCategorizesClassificationCategory(): ?CategorizesClassificationCategory
     {
@@ -314,7 +314,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @return CategorizesClassificationCategory|null
+     * @return null|CategorizesClassificationCategory
      */
     public function lastCategorizesClassificationCategory(): ?CategorizesClassificationCategory
     {
@@ -329,7 +329,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param CategorizesClassificationCategory $categorizesClassificationCategory
+     * @param  CategorizesClassificationCategory $categorizesClassificationCategory
      * @return static
      */
     public function addToCategorizesClassificationCategory(
@@ -351,7 +351,7 @@ class ClassificationCategoryType
     }
 
     /**
-     * @param CategorizesClassificationCategory $categorizesClassificationCategory
+     * @param  CategorizesClassificationCategory $categorizesClassificationCategory
      * @return static
      */
     public function addOnceToCategorizesClassificationCategory(

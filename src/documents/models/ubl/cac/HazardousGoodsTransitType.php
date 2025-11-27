@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\HazardousRegulationCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\InhalationToxicityZoneCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PackingCriteriaCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TransportAuthorizationCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TransportEmergencyCardCode;
+use JMS\Serializer\Annotation as JMS;
 
 class HazardousGoodsTransitType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TransportEmergencyCardCode|null
+     * @var null|TransportEmergencyCardCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TransportEmergencyCardCode")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class HazardousGoodsTransitType
     private $transportEmergencyCardCode;
 
     /**
-     * @var PackingCriteriaCode|null
+     * @var null|PackingCriteriaCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PackingCriteriaCode")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class HazardousGoodsTransitType
     private $packingCriteriaCode;
 
     /**
-     * @var HazardousRegulationCode|null
+     * @var null|HazardousRegulationCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HazardousRegulationCode")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class HazardousGoodsTransitType
     private $hazardousRegulationCode;
 
     /**
-     * @var InhalationToxicityZoneCode|null
+     * @var null|InhalationToxicityZoneCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InhalationToxicityZoneCode")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class HazardousGoodsTransitType
     private $inhalationToxicityZoneCode;
 
     /**
-     * @var TransportAuthorizationCode|null
+     * @var null|TransportAuthorizationCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TransportAuthorizationCode")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class HazardousGoodsTransitType
     private $transportAuthorizationCode;
 
     /**
-     * @var MaximumTemperature|null
+     * @var null|MaximumTemperature
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MaximumTemperature")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class HazardousGoodsTransitType
     private $maximumTemperature;
 
     /**
-     * @var MinimumTemperature|null
+     * @var null|MinimumTemperature
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MinimumTemperature")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class HazardousGoodsTransitType
     private $minimumTemperature;
 
     /**
-     * @return TransportEmergencyCardCode|null
+     * @return null|TransportEmergencyCardCode
      */
     public function getTransportEmergencyCardCode(): ?TransportEmergencyCardCode
     {
@@ -112,7 +112,7 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @param TransportEmergencyCardCode|null $transportEmergencyCardCode
+     * @param  null|TransportEmergencyCardCode $transportEmergencyCardCode
      * @return static
      */
     public function setTransportEmergencyCardCode(
@@ -134,7 +134,7 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @return PackingCriteriaCode|null
+     * @return null|PackingCriteriaCode
      */
     public function getPackingCriteriaCode(): ?PackingCriteriaCode
     {
@@ -152,7 +152,7 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @param PackingCriteriaCode|null $packingCriteriaCode
+     * @param  null|PackingCriteriaCode $packingCriteriaCode
      * @return static
      */
     public function setPackingCriteriaCode(?PackingCriteriaCode $packingCriteriaCode = null): static
@@ -173,7 +173,7 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @return HazardousRegulationCode|null
+     * @return null|HazardousRegulationCode
      */
     public function getHazardousRegulationCode(): ?HazardousRegulationCode
     {
@@ -191,7 +191,7 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @param HazardousRegulationCode|null $hazardousRegulationCode
+     * @param  null|HazardousRegulationCode $hazardousRegulationCode
      * @return static
      */
     public function setHazardousRegulationCode(?HazardousRegulationCode $hazardousRegulationCode = null): static
@@ -212,7 +212,7 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @return InhalationToxicityZoneCode|null
+     * @return null|InhalationToxicityZoneCode
      */
     public function getInhalationToxicityZoneCode(): ?InhalationToxicityZoneCode
     {
@@ -230,7 +230,7 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @param InhalationToxicityZoneCode|null $inhalationToxicityZoneCode
+     * @param  null|InhalationToxicityZoneCode $inhalationToxicityZoneCode
      * @return static
      */
     public function setInhalationToxicityZoneCode(
@@ -252,7 +252,7 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @return TransportAuthorizationCode|null
+     * @return null|TransportAuthorizationCode
      */
     public function getTransportAuthorizationCode(): ?TransportAuthorizationCode
     {
@@ -270,7 +270,7 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @param TransportAuthorizationCode|null $transportAuthorizationCode
+     * @param  null|TransportAuthorizationCode $transportAuthorizationCode
      * @return static
      */
     public function setTransportAuthorizationCode(
@@ -292,7 +292,7 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @return MaximumTemperature|null
+     * @return null|MaximumTemperature
      */
     public function getMaximumTemperature(): ?MaximumTemperature
     {
@@ -310,7 +310,7 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @param MaximumTemperature|null $maximumTemperature
+     * @param  null|MaximumTemperature $maximumTemperature
      * @return static
      */
     public function setMaximumTemperature(?MaximumTemperature $maximumTemperature = null): static
@@ -331,7 +331,7 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @return MinimumTemperature|null
+     * @return null|MinimumTemperature
      */
     public function getMinimumTemperature(): ?MinimumTemperature
     {
@@ -349,7 +349,7 @@ class HazardousGoodsTransitType
     }
 
     /**
-     * @param MinimumTemperature|null $minimumTemperature
+     * @param  null|MinimumTemperature $minimumTemperature
      * @return static
      */
     public function setMinimumTemperature(?MinimumTemperature $minimumTemperature = null): static

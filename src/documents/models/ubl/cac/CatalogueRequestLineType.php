@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ContractSubdivision;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
+use JMS\Serializer\Annotation as JMS;
 
 class CatalogueRequestLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class CatalogueRequestLineType
     private $iD;
 
     /**
-     * @var ContractSubdivision|null
+     * @var null|ContractSubdivision
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ContractSubdivision")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class CatalogueRequestLineType
     private $contractSubdivision;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class CatalogueRequestLineType
     private $note;
 
     /**
-     * @var LineValidityPeriod|null
+     * @var null|LineValidityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LineValidityPeriod")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class CatalogueRequestLineType
     private $lineValidityPeriod;
 
     /**
-     * @var array<RequiredItemLocationQuantity>|null
+     * @var null|array<RequiredItemLocationQuantity>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity>")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class CatalogueRequestLineType
     private $requiredItemLocationQuantity;
 
     /**
-     * @var Item|null
+     * @var null|Item
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class CatalogueRequestLineType
     private $item;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -101,7 +101,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -122,7 +122,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return ContractSubdivision|null
+     * @return null|ContractSubdivision
      */
     public function getContractSubdivision(): ?ContractSubdivision
     {
@@ -140,7 +140,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @param ContractSubdivision|null $contractSubdivision
+     * @param  null|ContractSubdivision $contractSubdivision
      * @return static
      */
     public function setContractSubdivision(?ContractSubdivision $contractSubdivision = null): static
@@ -161,7 +161,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -169,7 +169,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -200,7 +200,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -215,7 +215,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -230,7 +230,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -251,7 +251,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -282,7 +282,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return LineValidityPeriod|null
+     * @return null|LineValidityPeriod
      */
     public function getLineValidityPeriod(): ?LineValidityPeriod
     {
@@ -300,7 +300,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @param LineValidityPeriod|null $lineValidityPeriod
+     * @param  null|LineValidityPeriod $lineValidityPeriod
      * @return static
      */
     public function setLineValidityPeriod(?LineValidityPeriod $lineValidityPeriod = null): static
@@ -321,7 +321,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return array<RequiredItemLocationQuantity>|null
+     * @return null|array<RequiredItemLocationQuantity>
      */
     public function getRequiredItemLocationQuantity(): ?array
     {
@@ -329,7 +329,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @param array<RequiredItemLocationQuantity>|null $requiredItemLocationQuantity
+     * @param  null|array<RequiredItemLocationQuantity> $requiredItemLocationQuantity
      * @return static
      */
     public function setRequiredItemLocationQuantity(?array $requiredItemLocationQuantity = null): static
@@ -360,7 +360,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return RequiredItemLocationQuantity|null
+     * @return null|RequiredItemLocationQuantity
      */
     public function firstRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
@@ -375,7 +375,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return RequiredItemLocationQuantity|null
+     * @return null|RequiredItemLocationQuantity
      */
     public function lastRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
@@ -390,7 +390,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param  RequiredItemLocationQuantity $requiredItemLocationQuantity
      * @return static
      */
     public function addToRequiredItemLocationQuantity(
@@ -412,7 +412,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param  RequiredItemLocationQuantity $requiredItemLocationQuantity
      * @return static
      */
     public function addOnceToRequiredItemLocationQuantity(
@@ -444,7 +444,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function getItem(): ?Item
     {
@@ -462,7 +462,7 @@ class CatalogueRequestLineType
     }
 
     /**
-     * @param Item|null $item
+     * @param  null|Item $item
      * @return static
      */
     public function setItem(?Item $item = null): static

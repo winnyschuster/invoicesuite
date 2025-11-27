@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ContractingSystemCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
@@ -16,13 +15,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\PartPresentationCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ProcedureCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SubmissionMethodCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UrgencyCode;
+use JMS\Serializer\Annotation as JMS;
 
 class TenderingProcessType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class TenderingProcessType
     private $iD;
 
     /**
-     * @var OriginalContractingSystemID|null
+     * @var null|OriginalContractingSystemID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OriginalContractingSystemID")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class TenderingProcessType
     private $originalContractingSystemID;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class TenderingProcessType
     private $description;
 
     /**
-     * @var array<NegotiationDescription>|null
+     * @var null|array<NegotiationDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\NegotiationDescription>")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class TenderingProcessType
     private $negotiationDescription;
 
     /**
-     * @var ProcedureCode|null
+     * @var null|ProcedureCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProcedureCode")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class TenderingProcessType
     private $procedureCode;
 
     /**
-     * @var UrgencyCode|null
+     * @var null|UrgencyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UrgencyCode")
      * @JMS\Expose
@@ -90,7 +90,7 @@ class TenderingProcessType
     private $urgencyCode;
 
     /**
-     * @var ExpenseCode|null
+     * @var null|ExpenseCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExpenseCode")
      * @JMS\Expose
@@ -101,7 +101,7 @@ class TenderingProcessType
     private $expenseCode;
 
     /**
-     * @var PartPresentationCode|null
+     * @var null|PartPresentationCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PartPresentationCode")
      * @JMS\Expose
@@ -112,7 +112,7 @@ class TenderingProcessType
     private $partPresentationCode;
 
     /**
-     * @var ContractingSystemCode|null
+     * @var null|ContractingSystemCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ContractingSystemCode")
      * @JMS\Expose
@@ -123,7 +123,7 @@ class TenderingProcessType
     private $contractingSystemCode;
 
     /**
-     * @var SubmissionMethodCode|null
+     * @var null|SubmissionMethodCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubmissionMethodCode")
      * @JMS\Expose
@@ -134,7 +134,7 @@ class TenderingProcessType
     private $submissionMethodCode;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -145,7 +145,7 @@ class TenderingProcessType
     private $candidateReductionConstraintIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -156,7 +156,7 @@ class TenderingProcessType
     private $governmentAgreementConstraintIndicator;
 
     /**
-     * @var DocumentAvailabilityPeriod|null
+     * @var null|DocumentAvailabilityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DocumentAvailabilityPeriod")
      * @JMS\Expose
@@ -167,7 +167,7 @@ class TenderingProcessType
     private $documentAvailabilityPeriod;
 
     /**
-     * @var TenderSubmissionDeadlinePeriod|null
+     * @var null|TenderSubmissionDeadlinePeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TenderSubmissionDeadlinePeriod")
      * @JMS\Expose
@@ -178,7 +178,7 @@ class TenderingProcessType
     private $tenderSubmissionDeadlinePeriod;
 
     /**
-     * @var InvitationSubmissionPeriod|null
+     * @var null|InvitationSubmissionPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\InvitationSubmissionPeriod")
      * @JMS\Expose
@@ -189,7 +189,7 @@ class TenderingProcessType
     private $invitationSubmissionPeriod;
 
     /**
-     * @var ParticipationRequestReceptionPeriod|null
+     * @var null|ParticipationRequestReceptionPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ParticipationRequestReceptionPeriod")
      * @JMS\Expose
@@ -200,7 +200,7 @@ class TenderingProcessType
     private $participationRequestReceptionPeriod;
 
     /**
-     * @var array<NoticeDocumentReference>|null
+     * @var null|array<NoticeDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\NoticeDocumentReference>")
      * @JMS\Expose
@@ -212,7 +212,7 @@ class TenderingProcessType
     private $noticeDocumentReference;
 
     /**
-     * @var array<AdditionalDocumentReference>|null
+     * @var null|array<AdditionalDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference>")
      * @JMS\Expose
@@ -224,7 +224,7 @@ class TenderingProcessType
     private $additionalDocumentReference;
 
     /**
-     * @var array<ProcessJustification>|null
+     * @var null|array<ProcessJustification>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ProcessJustification>")
      * @JMS\Expose
@@ -236,7 +236,7 @@ class TenderingProcessType
     private $processJustification;
 
     /**
-     * @var EconomicOperatorShortList|null
+     * @var null|EconomicOperatorShortList
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EconomicOperatorShortList")
      * @JMS\Expose
@@ -247,7 +247,7 @@ class TenderingProcessType
     private $economicOperatorShortList;
 
     /**
-     * @var array<OpenTenderEvent>|null
+     * @var null|array<OpenTenderEvent>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\OpenTenderEvent>")
      * @JMS\Expose
@@ -259,7 +259,7 @@ class TenderingProcessType
     private $openTenderEvent;
 
     /**
-     * @var AuctionTerms|null
+     * @var null|AuctionTerms
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AuctionTerms")
      * @JMS\Expose
@@ -270,7 +270,7 @@ class TenderingProcessType
     private $auctionTerms;
 
     /**
-     * @var FrameworkAgreement|null
+     * @var null|FrameworkAgreement
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FrameworkAgreement")
      * @JMS\Expose
@@ -281,7 +281,7 @@ class TenderingProcessType
     private $frameworkAgreement;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -299,7 +299,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -320,7 +320,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return OriginalContractingSystemID|null
+     * @return null|OriginalContractingSystemID
      */
     public function getOriginalContractingSystemID(): ?OriginalContractingSystemID
     {
@@ -338,7 +338,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param OriginalContractingSystemID|null $originalContractingSystemID
+     * @param  null|OriginalContractingSystemID $originalContractingSystemID
      * @return static
      */
     public function setOriginalContractingSystemID(
@@ -360,7 +360,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -368,7 +368,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -399,7 +399,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -414,7 +414,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -429,7 +429,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -450,7 +450,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -481,7 +481,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return array<NegotiationDescription>|null
+     * @return null|array<NegotiationDescription>
      */
     public function getNegotiationDescription(): ?array
     {
@@ -489,7 +489,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param array<NegotiationDescription>|null $negotiationDescription
+     * @param  null|array<NegotiationDescription> $negotiationDescription
      * @return static
      */
     public function setNegotiationDescription(?array $negotiationDescription = null): static
@@ -520,7 +520,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return NegotiationDescription|null
+     * @return null|NegotiationDescription
      */
     public function firstNegotiationDescription(): ?NegotiationDescription
     {
@@ -535,7 +535,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return NegotiationDescription|null
+     * @return null|NegotiationDescription
      */
     public function lastNegotiationDescription(): ?NegotiationDescription
     {
@@ -550,7 +550,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param NegotiationDescription $negotiationDescription
+     * @param  NegotiationDescription $negotiationDescription
      * @return static
      */
     public function addToNegotiationDescription(NegotiationDescription $negotiationDescription): static
@@ -571,7 +571,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param NegotiationDescription $negotiationDescription
+     * @param  NegotiationDescription $negotiationDescription
      * @return static
      */
     public function addOnceToNegotiationDescription(NegotiationDescription $negotiationDescription): static
@@ -602,7 +602,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return ProcedureCode|null
+     * @return null|ProcedureCode
      */
     public function getProcedureCode(): ?ProcedureCode
     {
@@ -620,7 +620,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param ProcedureCode|null $procedureCode
+     * @param  null|ProcedureCode $procedureCode
      * @return static
      */
     public function setProcedureCode(?ProcedureCode $procedureCode = null): static
@@ -641,7 +641,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return UrgencyCode|null
+     * @return null|UrgencyCode
      */
     public function getUrgencyCode(): ?UrgencyCode
     {
@@ -659,7 +659,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param UrgencyCode|null $urgencyCode
+     * @param  null|UrgencyCode $urgencyCode
      * @return static
      */
     public function setUrgencyCode(?UrgencyCode $urgencyCode = null): static
@@ -680,7 +680,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return ExpenseCode|null
+     * @return null|ExpenseCode
      */
     public function getExpenseCode(): ?ExpenseCode
     {
@@ -698,7 +698,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param ExpenseCode|null $expenseCode
+     * @param  null|ExpenseCode $expenseCode
      * @return static
      */
     public function setExpenseCode(?ExpenseCode $expenseCode = null): static
@@ -719,7 +719,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return PartPresentationCode|null
+     * @return null|PartPresentationCode
      */
     public function getPartPresentationCode(): ?PartPresentationCode
     {
@@ -737,7 +737,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param PartPresentationCode|null $partPresentationCode
+     * @param  null|PartPresentationCode $partPresentationCode
      * @return static
      */
     public function setPartPresentationCode(?PartPresentationCode $partPresentationCode = null): static
@@ -758,7 +758,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return ContractingSystemCode|null
+     * @return null|ContractingSystemCode
      */
     public function getContractingSystemCode(): ?ContractingSystemCode
     {
@@ -776,7 +776,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param ContractingSystemCode|null $contractingSystemCode
+     * @param  null|ContractingSystemCode $contractingSystemCode
      * @return static
      */
     public function setContractingSystemCode(?ContractingSystemCode $contractingSystemCode = null): static
@@ -797,7 +797,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return SubmissionMethodCode|null
+     * @return null|SubmissionMethodCode
      */
     public function getSubmissionMethodCode(): ?SubmissionMethodCode
     {
@@ -815,7 +815,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param SubmissionMethodCode|null $submissionMethodCode
+     * @param  null|SubmissionMethodCode $submissionMethodCode
      * @return static
      */
     public function setSubmissionMethodCode(?SubmissionMethodCode $submissionMethodCode = null): static
@@ -836,7 +836,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getCandidateReductionConstraintIndicator(): ?bool
     {
@@ -844,7 +844,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param bool|null $candidateReductionConstraintIndicator
+     * @param  null|bool $candidateReductionConstraintIndicator
      * @return static
      */
     public function setCandidateReductionConstraintIndicator(
@@ -866,7 +866,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getGovernmentAgreementConstraintIndicator(): ?bool
     {
@@ -874,7 +874,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param bool|null $governmentAgreementConstraintIndicator
+     * @param  null|bool $governmentAgreementConstraintIndicator
      * @return static
      */
     public function setGovernmentAgreementConstraintIndicator(
@@ -896,7 +896,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return DocumentAvailabilityPeriod|null
+     * @return null|DocumentAvailabilityPeriod
      */
     public function getDocumentAvailabilityPeriod(): ?DocumentAvailabilityPeriod
     {
@@ -914,7 +914,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param DocumentAvailabilityPeriod|null $documentAvailabilityPeriod
+     * @param  null|DocumentAvailabilityPeriod $documentAvailabilityPeriod
      * @return static
      */
     public function setDocumentAvailabilityPeriod(
@@ -936,7 +936,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return TenderSubmissionDeadlinePeriod|null
+     * @return null|TenderSubmissionDeadlinePeriod
      */
     public function getTenderSubmissionDeadlinePeriod(): ?TenderSubmissionDeadlinePeriod
     {
@@ -954,7 +954,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param TenderSubmissionDeadlinePeriod|null $tenderSubmissionDeadlinePeriod
+     * @param  null|TenderSubmissionDeadlinePeriod $tenderSubmissionDeadlinePeriod
      * @return static
      */
     public function setTenderSubmissionDeadlinePeriod(
@@ -976,7 +976,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return InvitationSubmissionPeriod|null
+     * @return null|InvitationSubmissionPeriod
      */
     public function getInvitationSubmissionPeriod(): ?InvitationSubmissionPeriod
     {
@@ -994,7 +994,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param InvitationSubmissionPeriod|null $invitationSubmissionPeriod
+     * @param  null|InvitationSubmissionPeriod $invitationSubmissionPeriod
      * @return static
      */
     public function setInvitationSubmissionPeriod(
@@ -1016,7 +1016,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return ParticipationRequestReceptionPeriod|null
+     * @return null|ParticipationRequestReceptionPeriod
      */
     public function getParticipationRequestReceptionPeriod(): ?ParticipationRequestReceptionPeriod
     {
@@ -1034,7 +1034,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param ParticipationRequestReceptionPeriod|null $participationRequestReceptionPeriod
+     * @param  null|ParticipationRequestReceptionPeriod $participationRequestReceptionPeriod
      * @return static
      */
     public function setParticipationRequestReceptionPeriod(
@@ -1056,7 +1056,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return array<NoticeDocumentReference>|null
+     * @return null|array<NoticeDocumentReference>
      */
     public function getNoticeDocumentReference(): ?array
     {
@@ -1064,7 +1064,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param array<NoticeDocumentReference>|null $noticeDocumentReference
+     * @param  null|array<NoticeDocumentReference> $noticeDocumentReference
      * @return static
      */
     public function setNoticeDocumentReference(?array $noticeDocumentReference = null): static
@@ -1095,7 +1095,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return NoticeDocumentReference|null
+     * @return null|NoticeDocumentReference
      */
     public function firstNoticeDocumentReference(): ?NoticeDocumentReference
     {
@@ -1110,7 +1110,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return NoticeDocumentReference|null
+     * @return null|NoticeDocumentReference
      */
     public function lastNoticeDocumentReference(): ?NoticeDocumentReference
     {
@@ -1125,7 +1125,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param NoticeDocumentReference $noticeDocumentReference
+     * @param  NoticeDocumentReference $noticeDocumentReference
      * @return static
      */
     public function addToNoticeDocumentReference(NoticeDocumentReference $noticeDocumentReference): static
@@ -1146,7 +1146,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param NoticeDocumentReference $noticeDocumentReference
+     * @param  NoticeDocumentReference $noticeDocumentReference
      * @return static
      */
     public function addOnceToNoticeDocumentReference(NoticeDocumentReference $noticeDocumentReference): static
@@ -1177,7 +1177,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return array<AdditionalDocumentReference>|null
+     * @return null|array<AdditionalDocumentReference>
      */
     public function getAdditionalDocumentReference(): ?array
     {
@@ -1185,7 +1185,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param array<AdditionalDocumentReference>|null $additionalDocumentReference
+     * @param  null|array<AdditionalDocumentReference> $additionalDocumentReference
      * @return static
      */
     public function setAdditionalDocumentReference(?array $additionalDocumentReference = null): static
@@ -1216,7 +1216,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return AdditionalDocumentReference|null
+     * @return null|AdditionalDocumentReference
      */
     public function firstAdditionalDocumentReference(): ?AdditionalDocumentReference
     {
@@ -1231,7 +1231,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return AdditionalDocumentReference|null
+     * @return null|AdditionalDocumentReference
      */
     public function lastAdditionalDocumentReference(): ?AdditionalDocumentReference
     {
@@ -1246,7 +1246,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param AdditionalDocumentReference $additionalDocumentReference
+     * @param  AdditionalDocumentReference $additionalDocumentReference
      * @return static
      */
     public function addToAdditionalDocumentReference(AdditionalDocumentReference $additionalDocumentReference): static
@@ -1267,7 +1267,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param AdditionalDocumentReference $additionalDocumentReference
+     * @param  AdditionalDocumentReference $additionalDocumentReference
      * @return static
      */
     public function addOnceToAdditionalDocumentReference(
@@ -1299,7 +1299,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return array<ProcessJustification>|null
+     * @return null|array<ProcessJustification>
      */
     public function getProcessJustification(): ?array
     {
@@ -1307,7 +1307,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param array<ProcessJustification>|null $processJustification
+     * @param  null|array<ProcessJustification> $processJustification
      * @return static
      */
     public function setProcessJustification(?array $processJustification = null): static
@@ -1338,7 +1338,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return ProcessJustification|null
+     * @return null|ProcessJustification
      */
     public function firstProcessJustification(): ?ProcessJustification
     {
@@ -1353,7 +1353,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return ProcessJustification|null
+     * @return null|ProcessJustification
      */
     public function lastProcessJustification(): ?ProcessJustification
     {
@@ -1368,7 +1368,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param ProcessJustification $processJustification
+     * @param  ProcessJustification $processJustification
      * @return static
      */
     public function addToProcessJustification(ProcessJustification $processJustification): static
@@ -1389,7 +1389,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param ProcessJustification $processJustification
+     * @param  ProcessJustification $processJustification
      * @return static
      */
     public function addOnceToProcessJustification(ProcessJustification $processJustification): static
@@ -1420,7 +1420,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return EconomicOperatorShortList|null
+     * @return null|EconomicOperatorShortList
      */
     public function getEconomicOperatorShortList(): ?EconomicOperatorShortList
     {
@@ -1438,7 +1438,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param EconomicOperatorShortList|null $economicOperatorShortList
+     * @param  null|EconomicOperatorShortList $economicOperatorShortList
      * @return static
      */
     public function setEconomicOperatorShortList(?EconomicOperatorShortList $economicOperatorShortList = null): static
@@ -1459,7 +1459,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return array<OpenTenderEvent>|null
+     * @return null|array<OpenTenderEvent>
      */
     public function getOpenTenderEvent(): ?array
     {
@@ -1467,7 +1467,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param array<OpenTenderEvent>|null $openTenderEvent
+     * @param  null|array<OpenTenderEvent> $openTenderEvent
      * @return static
      */
     public function setOpenTenderEvent(?array $openTenderEvent = null): static
@@ -1498,7 +1498,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return OpenTenderEvent|null
+     * @return null|OpenTenderEvent
      */
     public function firstOpenTenderEvent(): ?OpenTenderEvent
     {
@@ -1513,7 +1513,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return OpenTenderEvent|null
+     * @return null|OpenTenderEvent
      */
     public function lastOpenTenderEvent(): ?OpenTenderEvent
     {
@@ -1528,7 +1528,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param OpenTenderEvent $openTenderEvent
+     * @param  OpenTenderEvent $openTenderEvent
      * @return static
      */
     public function addToOpenTenderEvent(OpenTenderEvent $openTenderEvent): static
@@ -1549,7 +1549,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param OpenTenderEvent $openTenderEvent
+     * @param  OpenTenderEvent $openTenderEvent
      * @return static
      */
     public function addOnceToOpenTenderEvent(OpenTenderEvent $openTenderEvent): static
@@ -1580,7 +1580,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return AuctionTerms|null
+     * @return null|AuctionTerms
      */
     public function getAuctionTerms(): ?AuctionTerms
     {
@@ -1598,7 +1598,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param AuctionTerms|null $auctionTerms
+     * @param  null|AuctionTerms $auctionTerms
      * @return static
      */
     public function setAuctionTerms(?AuctionTerms $auctionTerms = null): static
@@ -1619,7 +1619,7 @@ class TenderingProcessType
     }
 
     /**
-     * @return FrameworkAgreement|null
+     * @return null|FrameworkAgreement
      */
     public function getFrameworkAgreement(): ?FrameworkAgreement
     {
@@ -1637,7 +1637,7 @@ class TenderingProcessType
     }
 
     /**
-     * @param FrameworkAgreement|null $frameworkAgreement
+     * @param  null|FrameworkAgreement $frameworkAgreement
      * @return static
      */
     public function setFrameworkAgreement(?FrameworkAgreement $frameworkAgreement = null): static

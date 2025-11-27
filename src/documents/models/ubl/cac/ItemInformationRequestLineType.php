@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TimeFrequencyCode;
+use JMS\Serializer\Annotation as JMS;
 
 class ItemInformationRequestLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TimeFrequencyCode|null
+     * @var null|TimeFrequencyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TimeFrequencyCode")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class ItemInformationRequestLineType
     private $timeFrequencyCode;
 
     /**
-     * @var SupplyChainActivityTypeCode|null
+     * @var null|SupplyChainActivityTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class ItemInformationRequestLineType
     private $supplyChainActivityTypeCode;
 
     /**
-     * @var ForecastTypeCode|null
+     * @var null|ForecastTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ForecastTypeCode")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class ItemInformationRequestLineType
     private $forecastTypeCode;
 
     /**
-     * @var PerformanceMetricTypeCode|null
+     * @var null|PerformanceMetricTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ItemInformationRequestLineType
     private $performanceMetricTypeCode;
 
     /**
-     * @var array<Period>|null
+     * @var null|array<Period>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Period>")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class ItemInformationRequestLineType
     private $period;
 
     /**
-     * @var array<SalesItem>|null
+     * @var null|array<SalesItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SalesItem>")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class ItemInformationRequestLineType
     private $salesItem;
 
     /**
-     * @return TimeFrequencyCode|null
+     * @return null|TimeFrequencyCode
      */
     public function getTimeFrequencyCode(): ?TimeFrequencyCode
     {
@@ -102,7 +102,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param TimeFrequencyCode|null $timeFrequencyCode
+     * @param  null|TimeFrequencyCode $timeFrequencyCode
      * @return static
      */
     public function setTimeFrequencyCode(?TimeFrequencyCode $timeFrequencyCode = null): static
@@ -123,7 +123,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return SupplyChainActivityTypeCode|null
+     * @return null|SupplyChainActivityTypeCode
      */
     public function getSupplyChainActivityTypeCode(): ?SupplyChainActivityTypeCode
     {
@@ -141,7 +141,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param SupplyChainActivityTypeCode|null $supplyChainActivityTypeCode
+     * @param  null|SupplyChainActivityTypeCode $supplyChainActivityTypeCode
      * @return static
      */
     public function setSupplyChainActivityTypeCode(
@@ -163,7 +163,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return ForecastTypeCode|null
+     * @return null|ForecastTypeCode
      */
     public function getForecastTypeCode(): ?ForecastTypeCode
     {
@@ -181,7 +181,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param ForecastTypeCode|null $forecastTypeCode
+     * @param  null|ForecastTypeCode $forecastTypeCode
      * @return static
      */
     public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): static
@@ -202,7 +202,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return PerformanceMetricTypeCode|null
+     * @return null|PerformanceMetricTypeCode
      */
     public function getPerformanceMetricTypeCode(): ?PerformanceMetricTypeCode
     {
@@ -220,7 +220,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param PerformanceMetricTypeCode|null $performanceMetricTypeCode
+     * @param  null|PerformanceMetricTypeCode $performanceMetricTypeCode
      * @return static
      */
     public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): static
@@ -241,7 +241,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return array<Period>|null
+     * @return null|array<Period>
      */
     public function getPeriod(): ?array
     {
@@ -249,7 +249,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param array<Period>|null $period
+     * @param  null|array<Period> $period
      * @return static
      */
     public function setPeriod(?array $period = null): static
@@ -280,7 +280,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return Period|null
+     * @return null|Period
      */
     public function firstPeriod(): ?Period
     {
@@ -295,7 +295,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return Period|null
+     * @return null|Period
      */
     public function lastPeriod(): ?Period
     {
@@ -310,7 +310,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param Period $period
+     * @param  Period $period
      * @return static
      */
     public function addToPeriod(Period $period): static
@@ -331,7 +331,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param Period $period
+     * @param  Period $period
      * @return static
      */
     public function addOnceToPeriod(Period $period): static
@@ -362,7 +362,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return array<SalesItem>|null
+     * @return null|array<SalesItem>
      */
     public function getSalesItem(): ?array
     {
@@ -370,7 +370,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param array<SalesItem>|null $salesItem
+     * @param  null|array<SalesItem> $salesItem
      * @return static
      */
     public function setSalesItem(?array $salesItem = null): static
@@ -401,7 +401,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return SalesItem|null
+     * @return null|SalesItem
      */
     public function firstSalesItem(): ?SalesItem
     {
@@ -416,7 +416,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @return SalesItem|null
+     * @return null|SalesItem
      */
     public function lastSalesItem(): ?SalesItem
     {
@@ -431,7 +431,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param SalesItem $salesItem
+     * @param  SalesItem $salesItem
      * @return static
      */
     public function addToSalesItem(SalesItem $salesItem): static
@@ -452,7 +452,7 @@ class ItemInformationRequestLineType
     }
 
     /**
-     * @param SalesItem $salesItem
+     * @param  SalesItem $salesItem
      * @return static
      */
     public function addOnceToSalesItem(SalesItem $salesItem): static

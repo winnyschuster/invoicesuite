@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AdditionalAccountID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CustomerAssignedAccountID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DataSendingCapability;
+use JMS\Serializer\Annotation as JMS;
 
 class SupplierPartyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var CustomerAssignedAccountID|null
+     * @var null|CustomerAssignedAccountID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CustomerAssignedAccountID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class SupplierPartyType
     private $customerAssignedAccountID;
 
     /**
-     * @var array<AdditionalAccountID>|null
+     * @var null|array<AdditionalAccountID>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\AdditionalAccountID>")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class SupplierPartyType
     private $additionalAccountID;
 
     /**
-     * @var DataSendingCapability|null
+     * @var null|DataSendingCapability
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DataSendingCapability")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class SupplierPartyType
     private $dataSendingCapability;
 
     /**
-     * @var Party|null
+     * @var null|Party
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Party")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class SupplierPartyType
     private $party;
 
     /**
-     * @var DespatchContact|null
+     * @var null|DespatchContact
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DespatchContact")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class SupplierPartyType
     private $despatchContact;
 
     /**
-     * @var AccountingContact|null
+     * @var null|AccountingContact
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AccountingContact")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class SupplierPartyType
     private $accountingContact;
 
     /**
-     * @var SellerContact|null
+     * @var null|SellerContact
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SellerContact")
      * @JMS\Expose
@@ -93,7 +93,7 @@ class SupplierPartyType
     private $sellerContact;
 
     /**
-     * @return CustomerAssignedAccountID|null
+     * @return null|CustomerAssignedAccountID
      */
     public function getCustomerAssignedAccountID(): ?CustomerAssignedAccountID
     {
@@ -111,7 +111,7 @@ class SupplierPartyType
     }
 
     /**
-     * @param CustomerAssignedAccountID|null $customerAssignedAccountID
+     * @param  null|CustomerAssignedAccountID $customerAssignedAccountID
      * @return static
      */
     public function setCustomerAssignedAccountID(?CustomerAssignedAccountID $customerAssignedAccountID = null): static
@@ -132,7 +132,7 @@ class SupplierPartyType
     }
 
     /**
-     * @return array<AdditionalAccountID>|null
+     * @return null|array<AdditionalAccountID>
      */
     public function getAdditionalAccountID(): ?array
     {
@@ -140,7 +140,7 @@ class SupplierPartyType
     }
 
     /**
-     * @param array<AdditionalAccountID>|null $additionalAccountID
+     * @param  null|array<AdditionalAccountID> $additionalAccountID
      * @return static
      */
     public function setAdditionalAccountID(?array $additionalAccountID = null): static
@@ -171,7 +171,7 @@ class SupplierPartyType
     }
 
     /**
-     * @return AdditionalAccountID|null
+     * @return null|AdditionalAccountID
      */
     public function firstAdditionalAccountID(): ?AdditionalAccountID
     {
@@ -186,7 +186,7 @@ class SupplierPartyType
     }
 
     /**
-     * @return AdditionalAccountID|null
+     * @return null|AdditionalAccountID
      */
     public function lastAdditionalAccountID(): ?AdditionalAccountID
     {
@@ -201,7 +201,7 @@ class SupplierPartyType
     }
 
     /**
-     * @param AdditionalAccountID $additionalAccountID
+     * @param  AdditionalAccountID $additionalAccountID
      * @return static
      */
     public function addToAdditionalAccountID(AdditionalAccountID $additionalAccountID): static
@@ -222,7 +222,7 @@ class SupplierPartyType
     }
 
     /**
-     * @param AdditionalAccountID $additionalAccountID
+     * @param  AdditionalAccountID $additionalAccountID
      * @return static
      */
     public function addOnceToAdditionalAccountID(AdditionalAccountID $additionalAccountID): static
@@ -253,7 +253,7 @@ class SupplierPartyType
     }
 
     /**
-     * @return DataSendingCapability|null
+     * @return null|DataSendingCapability
      */
     public function getDataSendingCapability(): ?DataSendingCapability
     {
@@ -271,7 +271,7 @@ class SupplierPartyType
     }
 
     /**
-     * @param DataSendingCapability|null $dataSendingCapability
+     * @param  null|DataSendingCapability $dataSendingCapability
      * @return static
      */
     public function setDataSendingCapability(?DataSendingCapability $dataSendingCapability = null): static
@@ -292,7 +292,7 @@ class SupplierPartyType
     }
 
     /**
-     * @return Party|null
+     * @return null|Party
      */
     public function getParty(): ?Party
     {
@@ -310,7 +310,7 @@ class SupplierPartyType
     }
 
     /**
-     * @param Party|null $party
+     * @param  null|Party $party
      * @return static
      */
     public function setParty(?Party $party = null): static
@@ -331,7 +331,7 @@ class SupplierPartyType
     }
 
     /**
-     * @return DespatchContact|null
+     * @return null|DespatchContact
      */
     public function getDespatchContact(): ?DespatchContact
     {
@@ -349,7 +349,7 @@ class SupplierPartyType
     }
 
     /**
-     * @param DespatchContact|null $despatchContact
+     * @param  null|DespatchContact $despatchContact
      * @return static
      */
     public function setDespatchContact(?DespatchContact $despatchContact = null): static
@@ -370,7 +370,7 @@ class SupplierPartyType
     }
 
     /**
-     * @return AccountingContact|null
+     * @return null|AccountingContact
      */
     public function getAccountingContact(): ?AccountingContact
     {
@@ -388,7 +388,7 @@ class SupplierPartyType
     }
 
     /**
-     * @param AccountingContact|null $accountingContact
+     * @param  null|AccountingContact $accountingContact
      * @return static
      */
     public function setAccountingContact(?AccountingContact $accountingContact = null): static
@@ -409,7 +409,7 @@ class SupplierPartyType
     }
 
     /**
-     * @return SellerContact|null
+     * @return null|SellerContact
      */
     public function getSellerContact(): ?SellerContact
     {
@@ -427,7 +427,7 @@ class SupplierPartyType
     }
 
     /**
-     * @param SellerContact|null $sellerContact
+     * @param  null|SellerContact $sellerContact
      * @return static
      */
     public function setSellerContact(?SellerContact $sellerContact = null): static

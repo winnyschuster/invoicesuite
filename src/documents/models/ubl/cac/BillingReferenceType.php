@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class BillingReferenceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var InvoiceDocumentReference|null
+     * @var null|InvoiceDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\InvoiceDocumentReference")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class BillingReferenceType
     private $invoiceDocumentReference;
 
     /**
-     * @var SelfBilledInvoiceDocumentReference|null
+     * @var null|SelfBilledInvoiceDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SelfBilledInvoiceDocumentReference")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class BillingReferenceType
     private $selfBilledInvoiceDocumentReference;
 
     /**
-     * @var CreditNoteDocumentReference|null
+     * @var null|CreditNoteDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CreditNoteDocumentReference")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class BillingReferenceType
     private $creditNoteDocumentReference;
 
     /**
-     * @var SelfBilledCreditNoteDocumentReference|null
+     * @var null|SelfBilledCreditNoteDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SelfBilledCreditNoteDocumentReference")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class BillingReferenceType
     private $selfBilledCreditNoteDocumentReference;
 
     /**
-     * @var DebitNoteDocumentReference|null
+     * @var null|DebitNoteDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DebitNoteDocumentReference")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class BillingReferenceType
     private $debitNoteDocumentReference;
 
     /**
-     * @var ReminderDocumentReference|null
+     * @var null|ReminderDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ReminderDocumentReference")
      * @JMS\Expose
@@ -78,7 +78,7 @@ class BillingReferenceType
     private $reminderDocumentReference;
 
     /**
-     * @var AdditionalDocumentReference|null
+     * @var null|AdditionalDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference")
      * @JMS\Expose
@@ -89,7 +89,7 @@ class BillingReferenceType
     private $additionalDocumentReference;
 
     /**
-     * @var array<BillingReferenceLine>|null
+     * @var null|array<BillingReferenceLine>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\BillingReferenceLine>")
      * @JMS\Expose
@@ -101,7 +101,7 @@ class BillingReferenceType
     private $billingReferenceLine;
 
     /**
-     * @return InvoiceDocumentReference|null
+     * @return null|InvoiceDocumentReference
      */
     public function getInvoiceDocumentReference(): ?InvoiceDocumentReference
     {
@@ -119,7 +119,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param InvoiceDocumentReference|null $invoiceDocumentReference
+     * @param  null|InvoiceDocumentReference $invoiceDocumentReference
      * @return static
      */
     public function setInvoiceDocumentReference(?InvoiceDocumentReference $invoiceDocumentReference = null): static
@@ -140,7 +140,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return SelfBilledInvoiceDocumentReference|null
+     * @return null|SelfBilledInvoiceDocumentReference
      */
     public function getSelfBilledInvoiceDocumentReference(): ?SelfBilledInvoiceDocumentReference
     {
@@ -158,7 +158,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param SelfBilledInvoiceDocumentReference|null $selfBilledInvoiceDocumentReference
+     * @param  null|SelfBilledInvoiceDocumentReference $selfBilledInvoiceDocumentReference
      * @return static
      */
     public function setSelfBilledInvoiceDocumentReference(
@@ -180,7 +180,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return CreditNoteDocumentReference|null
+     * @return null|CreditNoteDocumentReference
      */
     public function getCreditNoteDocumentReference(): ?CreditNoteDocumentReference
     {
@@ -198,7 +198,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param CreditNoteDocumentReference|null $creditNoteDocumentReference
+     * @param  null|CreditNoteDocumentReference $creditNoteDocumentReference
      * @return static
      */
     public function setCreditNoteDocumentReference(
@@ -220,7 +220,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return SelfBilledCreditNoteDocumentReference|null
+     * @return null|SelfBilledCreditNoteDocumentReference
      */
     public function getSelfBilledCreditNoteDocumentReference(): ?SelfBilledCreditNoteDocumentReference
     {
@@ -238,7 +238,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param SelfBilledCreditNoteDocumentReference|null $selfBilledCreditNoteDocumentReference
+     * @param  null|SelfBilledCreditNoteDocumentReference $selfBilledCreditNoteDocumentReference
      * @return static
      */
     public function setSelfBilledCreditNoteDocumentReference(
@@ -260,7 +260,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return DebitNoteDocumentReference|null
+     * @return null|DebitNoteDocumentReference
      */
     public function getDebitNoteDocumentReference(): ?DebitNoteDocumentReference
     {
@@ -278,7 +278,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param DebitNoteDocumentReference|null $debitNoteDocumentReference
+     * @param  null|DebitNoteDocumentReference $debitNoteDocumentReference
      * @return static
      */
     public function setDebitNoteDocumentReference(
@@ -300,7 +300,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return ReminderDocumentReference|null
+     * @return null|ReminderDocumentReference
      */
     public function getReminderDocumentReference(): ?ReminderDocumentReference
     {
@@ -318,7 +318,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param ReminderDocumentReference|null $reminderDocumentReference
+     * @param  null|ReminderDocumentReference $reminderDocumentReference
      * @return static
      */
     public function setReminderDocumentReference(?ReminderDocumentReference $reminderDocumentReference = null): static
@@ -339,7 +339,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return AdditionalDocumentReference|null
+     * @return null|AdditionalDocumentReference
      */
     public function getAdditionalDocumentReference(): ?AdditionalDocumentReference
     {
@@ -357,7 +357,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param AdditionalDocumentReference|null $additionalDocumentReference
+     * @param  null|AdditionalDocumentReference $additionalDocumentReference
      * @return static
      */
     public function setAdditionalDocumentReference(
@@ -379,7 +379,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return array<BillingReferenceLine>|null
+     * @return null|array<BillingReferenceLine>
      */
     public function getBillingReferenceLine(): ?array
     {
@@ -387,7 +387,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param array<BillingReferenceLine>|null $billingReferenceLine
+     * @param  null|array<BillingReferenceLine> $billingReferenceLine
      * @return static
      */
     public function setBillingReferenceLine(?array $billingReferenceLine = null): static
@@ -418,7 +418,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return BillingReferenceLine|null
+     * @return null|BillingReferenceLine
      */
     public function firstBillingReferenceLine(): ?BillingReferenceLine
     {
@@ -433,7 +433,7 @@ class BillingReferenceType
     }
 
     /**
-     * @return BillingReferenceLine|null
+     * @return null|BillingReferenceLine
      */
     public function lastBillingReferenceLine(): ?BillingReferenceLine
     {
@@ -448,7 +448,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param BillingReferenceLine $billingReferenceLine
+     * @param  BillingReferenceLine $billingReferenceLine
      * @return static
      */
     public function addToBillingReferenceLine(BillingReferenceLine $billingReferenceLine): static
@@ -469,7 +469,7 @@ class BillingReferenceType
     }
 
     /**
-     * @param BillingReferenceLine $billingReferenceLine
+     * @param  BillingReferenceLine $billingReferenceLine
      * @return static
      */
     public function addOnceToBillingReferenceLine(BillingReferenceLine $billingReferenceLine): static

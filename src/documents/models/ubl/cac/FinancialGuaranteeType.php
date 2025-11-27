@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AmountRate;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\GuaranteeTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LiabilityAmount;
+use JMS\Serializer\Annotation as JMS;
 
 class FinancialGuaranteeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var GuaranteeTypeCode|null
+     * @var null|GuaranteeTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GuaranteeTypeCode")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class FinancialGuaranteeType
     private $guaranteeTypeCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class FinancialGuaranteeType
     private $description;
 
     /**
-     * @var LiabilityAmount|null
+     * @var null|LiabilityAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LiabilityAmount")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class FinancialGuaranteeType
     private $liabilityAmount;
 
     /**
-     * @var AmountRate|null
+     * @var null|AmountRate
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AmountRate")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class FinancialGuaranteeType
     private $amountRate;
 
     /**
-     * @var ConstitutionPeriod|null
+     * @var null|ConstitutionPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ConstitutionPeriod")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class FinancialGuaranteeType
     private $constitutionPeriod;
 
     /**
-     * @return GuaranteeTypeCode|null
+     * @return null|GuaranteeTypeCode
      */
     public function getGuaranteeTypeCode(): ?GuaranteeTypeCode
     {
@@ -90,7 +90,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @param GuaranteeTypeCode|null $guaranteeTypeCode
+     * @param  null|GuaranteeTypeCode $guaranteeTypeCode
      * @return static
      */
     public function setGuaranteeTypeCode(?GuaranteeTypeCode $guaranteeTypeCode = null): static
@@ -111,7 +111,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -119,7 +119,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -150,7 +150,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -165,7 +165,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -180,7 +180,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -201,7 +201,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -232,7 +232,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return LiabilityAmount|null
+     * @return null|LiabilityAmount
      */
     public function getLiabilityAmount(): ?LiabilityAmount
     {
@@ -250,7 +250,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @param LiabilityAmount|null $liabilityAmount
+     * @param  null|LiabilityAmount $liabilityAmount
      * @return static
      */
     public function setLiabilityAmount(?LiabilityAmount $liabilityAmount = null): static
@@ -271,7 +271,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return AmountRate|null
+     * @return null|AmountRate
      */
     public function getAmountRate(): ?AmountRate
     {
@@ -289,7 +289,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @param AmountRate|null $amountRate
+     * @param  null|AmountRate $amountRate
      * @return static
      */
     public function setAmountRate(?AmountRate $amountRate = null): static
@@ -310,7 +310,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @return ConstitutionPeriod|null
+     * @return null|ConstitutionPeriod
      */
     public function getConstitutionPeriod(): ?ConstitutionPeriod
     {
@@ -328,7 +328,7 @@ class FinancialGuaranteeType
     }
 
     /**
-     * @param ConstitutionPeriod|null $constitutionPeriod
+     * @param  null|ConstitutionPeriod $constitutionPeriod
      * @return static
      */
     public function setConstitutionPeriod(?ConstitutionPeriod $constitutionPeriod = null): static

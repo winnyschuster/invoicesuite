@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LicensePlateID;
+use JMS\Serializer\Annotation as JMS;
 
 class RoadTransportType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var LicensePlateID|null
+     * @var null|LicensePlateID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LicensePlateID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class RoadTransportType
     private $licensePlateID;
 
     /**
-     * @return LicensePlateID|null
+     * @return null|LicensePlateID
      */
     public function getLicensePlateID(): ?LicensePlateID
     {
@@ -42,7 +42,7 @@ class RoadTransportType
     }
 
     /**
-     * @param LicensePlateID|null $licensePlateID
+     * @param  null|LicensePlateID $licensePlateID
      * @return static
      */
     public function setLicensePlateID(?LicensePlateID $licensePlateID = null): static

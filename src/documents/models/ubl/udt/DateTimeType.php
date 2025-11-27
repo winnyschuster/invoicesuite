@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\udt;
 
 use DateTime;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class DateTimeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var DateTime|null
+     * @var null|DateTime
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\DateTime")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class DateTimeType
     private $value;
 
     /**
-     * @return DateTime|null
+     * @return null|DateTime
      */
     public function getValue(): ?DateTime
     {
@@ -32,7 +32,7 @@ class DateTimeType
     }
 
     /**
-     * @return DateTime|null
+     * @return null|DateTime
      */
     public function getValueWithCreate(): ?DateTime
     {
@@ -42,7 +42,7 @@ class DateTimeType
     }
 
     /**
-     * @param DateTime|null $value
+     * @param  null|DateTime $value
      * @return static
      */
     public function setValue(?DateTime $value = null): static

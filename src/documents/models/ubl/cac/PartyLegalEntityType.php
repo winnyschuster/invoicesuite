@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalForm;
@@ -13,13 +12,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalFormCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLiquidationStatusCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CorporateStockAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationName;
+use JMS\Serializer\Annotation as JMS;
 
 class PartyLegalEntityType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var RegistrationName|null
+     * @var null|RegistrationName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationName")
      * @JMS\Expose
@@ -30,7 +30,7 @@ class PartyLegalEntityType
     private $registrationName;
 
     /**
-     * @var CompanyID|null
+     * @var null|CompanyID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyID")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class PartyLegalEntityType
     private $companyID;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class PartyLegalEntityType
     private $registrationDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class PartyLegalEntityType
     private $registrationExpirationDate;
 
     /**
-     * @var CompanyLegalFormCode|null
+     * @var null|CompanyLegalFormCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalFormCode")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class PartyLegalEntityType
     private $companyLegalFormCode;
 
     /**
-     * @var CompanyLegalForm|null
+     * @var null|CompanyLegalForm
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalForm")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class PartyLegalEntityType
     private $companyLegalForm;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class PartyLegalEntityType
     private $soleProprietorshipIndicator;
 
     /**
-     * @var CompanyLiquidationStatusCode|null
+     * @var null|CompanyLiquidationStatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLiquidationStatusCode")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class PartyLegalEntityType
     private $companyLiquidationStatusCode;
 
     /**
-     * @var CorporateStockAmount|null
+     * @var null|CorporateStockAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CorporateStockAmount")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class PartyLegalEntityType
     private $corporateStockAmount;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -129,7 +129,7 @@ class PartyLegalEntityType
     private $fullyPaidSharesIndicator;
 
     /**
-     * @var RegistrationAddress|null
+     * @var null|RegistrationAddress
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RegistrationAddress")
      * @JMS\Expose
@@ -140,7 +140,7 @@ class PartyLegalEntityType
     private $registrationAddress;
 
     /**
-     * @var CorporateRegistrationScheme|null
+     * @var null|CorporateRegistrationScheme
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CorporateRegistrationScheme")
      * @JMS\Expose
@@ -151,7 +151,7 @@ class PartyLegalEntityType
     private $corporateRegistrationScheme;
 
     /**
-     * @var HeadOfficeParty|null
+     * @var null|HeadOfficeParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\HeadOfficeParty")
      * @JMS\Expose
@@ -162,7 +162,7 @@ class PartyLegalEntityType
     private $headOfficeParty;
 
     /**
-     * @var array<ShareholderParty>|null
+     * @var null|array<ShareholderParty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ShareholderParty>")
      * @JMS\Expose
@@ -174,7 +174,7 @@ class PartyLegalEntityType
     private $shareholderParty;
 
     /**
-     * @return RegistrationName|null
+     * @return null|RegistrationName
      */
     public function getRegistrationName(): ?RegistrationName
     {
@@ -192,7 +192,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param RegistrationName|null $registrationName
+     * @param  null|RegistrationName $registrationName
      * @return static
      */
     public function setRegistrationName(?RegistrationName $registrationName = null): static
@@ -213,7 +213,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return CompanyID|null
+     * @return null|CompanyID
      */
     public function getCompanyID(): ?CompanyID
     {
@@ -231,7 +231,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param CompanyID|null $companyID
+     * @param  null|CompanyID $companyID
      * @return static
      */
     public function setCompanyID(?CompanyID $companyID = null): static
@@ -252,7 +252,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getRegistrationDate(): ?DateTimeInterface
     {
@@ -260,7 +260,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param DateTimeInterface|null $registrationDate
+     * @param  null|DateTimeInterface $registrationDate
      * @return static
      */
     public function setRegistrationDate(?DateTimeInterface $registrationDate = null): static
@@ -281,7 +281,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getRegistrationExpirationDate(): ?DateTimeInterface
     {
@@ -289,7 +289,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param DateTimeInterface|null $registrationExpirationDate
+     * @param  null|DateTimeInterface $registrationExpirationDate
      * @return static
      */
     public function setRegistrationExpirationDate(?DateTimeInterface $registrationExpirationDate = null): static
@@ -310,7 +310,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return CompanyLegalFormCode|null
+     * @return null|CompanyLegalFormCode
      */
     public function getCompanyLegalFormCode(): ?CompanyLegalFormCode
     {
@@ -328,7 +328,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param CompanyLegalFormCode|null $companyLegalFormCode
+     * @param  null|CompanyLegalFormCode $companyLegalFormCode
      * @return static
      */
     public function setCompanyLegalFormCode(?CompanyLegalFormCode $companyLegalFormCode = null): static
@@ -349,7 +349,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return CompanyLegalForm|null
+     * @return null|CompanyLegalForm
      */
     public function getCompanyLegalForm(): ?CompanyLegalForm
     {
@@ -367,7 +367,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param CompanyLegalForm|null $companyLegalForm
+     * @param  null|CompanyLegalForm $companyLegalForm
      * @return static
      */
     public function setCompanyLegalForm(?CompanyLegalForm $companyLegalForm = null): static
@@ -388,7 +388,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getSoleProprietorshipIndicator(): ?bool
     {
@@ -396,7 +396,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param bool|null $soleProprietorshipIndicator
+     * @param  null|bool $soleProprietorshipIndicator
      * @return static
      */
     public function setSoleProprietorshipIndicator(?bool $soleProprietorshipIndicator = null): static
@@ -417,7 +417,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return CompanyLiquidationStatusCode|null
+     * @return null|CompanyLiquidationStatusCode
      */
     public function getCompanyLiquidationStatusCode(): ?CompanyLiquidationStatusCode
     {
@@ -435,7 +435,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param CompanyLiquidationStatusCode|null $companyLiquidationStatusCode
+     * @param  null|CompanyLiquidationStatusCode $companyLiquidationStatusCode
      * @return static
      */
     public function setCompanyLiquidationStatusCode(
@@ -457,7 +457,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return CorporateStockAmount|null
+     * @return null|CorporateStockAmount
      */
     public function getCorporateStockAmount(): ?CorporateStockAmount
     {
@@ -475,7 +475,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param CorporateStockAmount|null $corporateStockAmount
+     * @param  null|CorporateStockAmount $corporateStockAmount
      * @return static
      */
     public function setCorporateStockAmount(?CorporateStockAmount $corporateStockAmount = null): static
@@ -496,7 +496,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getFullyPaidSharesIndicator(): ?bool
     {
@@ -504,7 +504,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param bool|null $fullyPaidSharesIndicator
+     * @param  null|bool $fullyPaidSharesIndicator
      * @return static
      */
     public function setFullyPaidSharesIndicator(?bool $fullyPaidSharesIndicator = null): static
@@ -525,7 +525,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return RegistrationAddress|null
+     * @return null|RegistrationAddress
      */
     public function getRegistrationAddress(): ?RegistrationAddress
     {
@@ -543,7 +543,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param RegistrationAddress|null $registrationAddress
+     * @param  null|RegistrationAddress $registrationAddress
      * @return static
      */
     public function setRegistrationAddress(?RegistrationAddress $registrationAddress = null): static
@@ -564,7 +564,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return CorporateRegistrationScheme|null
+     * @return null|CorporateRegistrationScheme
      */
     public function getCorporateRegistrationScheme(): ?CorporateRegistrationScheme
     {
@@ -582,7 +582,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param CorporateRegistrationScheme|null $corporateRegistrationScheme
+     * @param  null|CorporateRegistrationScheme $corporateRegistrationScheme
      * @return static
      */
     public function setCorporateRegistrationScheme(
@@ -604,7 +604,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return HeadOfficeParty|null
+     * @return null|HeadOfficeParty
      */
     public function getHeadOfficeParty(): ?HeadOfficeParty
     {
@@ -622,7 +622,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param HeadOfficeParty|null $headOfficeParty
+     * @param  null|HeadOfficeParty $headOfficeParty
      * @return static
      */
     public function setHeadOfficeParty(?HeadOfficeParty $headOfficeParty = null): static
@@ -643,7 +643,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return array<ShareholderParty>|null
+     * @return null|array<ShareholderParty>
      */
     public function getShareholderParty(): ?array
     {
@@ -651,7 +651,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param array<ShareholderParty>|null $shareholderParty
+     * @param  null|array<ShareholderParty> $shareholderParty
      * @return static
      */
     public function setShareholderParty(?array $shareholderParty = null): static
@@ -682,7 +682,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return ShareholderParty|null
+     * @return null|ShareholderParty
      */
     public function firstShareholderParty(): ?ShareholderParty
     {
@@ -697,7 +697,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @return ShareholderParty|null
+     * @return null|ShareholderParty
      */
     public function lastShareholderParty(): ?ShareholderParty
     {
@@ -712,7 +712,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param ShareholderParty $shareholderParty
+     * @param  ShareholderParty $shareholderParty
      * @return static
      */
     public function addToShareholderParty(ShareholderParty $shareholderParty): static
@@ -733,7 +733,7 @@ class PartyLegalEntityType
     }
 
     /**
-     * @param ShareholderParty $shareholderParty
+     * @param  ShareholderParty $shareholderParty
      * @return static
      */
     public function addOnceToShareholderParty(ShareholderParty $shareholderParty): static

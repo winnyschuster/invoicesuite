@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\qdt\TransportModeCodeType;
+use JMS\Serializer\Annotation as JMS;
 
 class LogisticsTransportMovementType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TransportModeCodeType|null
+     * @var null|TransportModeCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\TransportModeCodeType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class LogisticsTransportMovementType
     private $modeCode;
 
     /**
-     * @return TransportModeCodeType|null
+     * @return null|TransportModeCodeType
      */
     public function getModeCode(): ?TransportModeCodeType
     {
@@ -42,7 +42,7 @@ class LogisticsTransportMovementType
     }
 
     /**
-     * @param TransportModeCodeType|null $modeCode
+     * @param  null|TransportModeCodeType $modeCode
      * @return static
      */
     public function setModeCode(?TransportModeCodeType $modeCode = null): static

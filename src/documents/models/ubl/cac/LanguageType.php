@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LocaleCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
+use JMS\Serializer\Annotation as JMS;
 
 class LanguageType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class LanguageType
     private $iD;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class LanguageType
     private $name;
 
     /**
-     * @var LocaleCode|null
+     * @var null|LocaleCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LocaleCode")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class LanguageType
     private $localeCode;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -66,7 +66,7 @@ class LanguageType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -87,7 +87,7 @@ class LanguageType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -105,7 +105,7 @@ class LanguageType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -126,7 +126,7 @@ class LanguageType
     }
 
     /**
-     * @return LocaleCode|null
+     * @return null|LocaleCode
      */
     public function getLocaleCode(): ?LocaleCode
     {
@@ -144,7 +144,7 @@ class LanguageType
     }
 
     /**
-     * @param LocaleCode|null $localeCode
+     * @param  null|LocaleCode $localeCode
      * @return static
      */
     public function setLocaleCode(?LocaleCode $localeCode = null): static

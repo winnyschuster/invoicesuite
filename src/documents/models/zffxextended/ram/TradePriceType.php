@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradePriceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class TradePriceType
     private $chargeAmount;
 
     /**
-     * @var QuantityType|null
+     * @var null|QuantityType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TradePriceType
     private $basisQuantity;
 
     /**
-     * @var array<TradeAllowanceChargeType>|null
+     * @var null|array<TradeAllowanceChargeType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAllowanceChargeType>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class TradePriceType
     private $appliedTradeAllowanceCharge;
 
     /**
-     * @var TradeTaxType|null
+     * @var null|TradeTaxType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class TradePriceType
     private $includedTradeTax;
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getChargeAmount(): ?AmountType
     {
@@ -77,7 +77,7 @@ class TradePriceType
     }
 
     /**
-     * @param AmountType|null $chargeAmount
+     * @param  null|AmountType $chargeAmount
      * @return static
      */
     public function setChargeAmount(?AmountType $chargeAmount = null): static
@@ -98,7 +98,7 @@ class TradePriceType
     }
 
     /**
-     * @return QuantityType|null
+     * @return null|QuantityType
      */
     public function getBasisQuantity(): ?QuantityType
     {
@@ -116,7 +116,7 @@ class TradePriceType
     }
 
     /**
-     * @param QuantityType|null $basisQuantity
+     * @param  null|QuantityType $basisQuantity
      * @return static
      */
     public function setBasisQuantity(?QuantityType $basisQuantity = null): static
@@ -137,7 +137,7 @@ class TradePriceType
     }
 
     /**
-     * @return array<TradeAllowanceChargeType>|null
+     * @return null|array<TradeAllowanceChargeType>
      */
     public function getAppliedTradeAllowanceCharge(): ?array
     {
@@ -145,7 +145,7 @@ class TradePriceType
     }
 
     /**
-     * @param array<TradeAllowanceChargeType>|null $appliedTradeAllowanceCharge
+     * @param  null|array<TradeAllowanceChargeType> $appliedTradeAllowanceCharge
      * @return static
      */
     public function setAppliedTradeAllowanceCharge(?array $appliedTradeAllowanceCharge = null): static
@@ -176,7 +176,7 @@ class TradePriceType
     }
 
     /**
-     * @param TradeAllowanceChargeType $appliedTradeAllowanceCharge
+     * @param  TradeAllowanceChargeType $appliedTradeAllowanceCharge
      * @return static
      */
     public function addToAppliedTradeAllowanceCharge(TradeAllowanceChargeType $appliedTradeAllowanceCharge): static
@@ -197,7 +197,7 @@ class TradePriceType
     }
 
     /**
-     * @param TradeAllowanceChargeType $appliedTradeAllowanceCharge
+     * @param  TradeAllowanceChargeType $appliedTradeAllowanceCharge
      * @return static
      */
     public function addOnceToAppliedTradeAllowanceCharge(TradeAllowanceChargeType $appliedTradeAllowanceCharge): static
@@ -228,7 +228,7 @@ class TradePriceType
     }
 
     /**
-     * @return TradeTaxType|null
+     * @return null|TradeTaxType
      */
     public function getIncludedTradeTax(): ?TradeTaxType
     {
@@ -246,7 +246,7 @@ class TradePriceType
     }
 
     /**
-     * @param TradeTaxType|null $includedTradeTax
+     * @param  null|TradeTaxType $includedTradeTax
      * @return static
      */
     public function setIncludedTradeTax(?TradeTaxType $includedTradeTax = null): static

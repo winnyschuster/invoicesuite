@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateType as CertificateType1;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks;
+use JMS\Serializer\Annotation as JMS;
 
 class CertificateType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class CertificateType
     private $iD;
 
     /**
-     * @var CertificateTypeCode|null
+     * @var null|CertificateTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateTypeCode")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class CertificateType
     private $certificateTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateType|null
+     * @var null|CertificateType1
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateType")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class CertificateType
     private $certificateType;
 
     /**
-     * @var array<Remarks>|null
+     * @var null|array<Remarks>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class CertificateType
     private $remarks;
 
     /**
-     * @var IssuerParty|null
+     * @var null|IssuerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class CertificateType
     private $issuerParty;
 
     /**
-     * @var array<DocumentReference>|null
+     * @var null|array<DocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class CertificateType
     private $documentReference;
 
     /**
-     * @var array<Signature>|null
+     * @var null|array<Signature>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Signature>")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class CertificateType
     private $signature;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -114,7 +114,7 @@ class CertificateType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -135,7 +135,7 @@ class CertificateType
     }
 
     /**
-     * @return CertificateTypeCode|null
+     * @return null|CertificateTypeCode
      */
     public function getCertificateTypeCode(): ?CertificateTypeCode
     {
@@ -153,7 +153,7 @@ class CertificateType
     }
 
     /**
-     * @param CertificateTypeCode|null $certificateTypeCode
+     * @param  null|CertificateTypeCode $certificateTypeCode
      * @return static
      */
     public function setCertificateTypeCode(?CertificateTypeCode $certificateTypeCode = null): static
@@ -174,7 +174,7 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateType|null
+     * @return null|CertificateType1
      */
     public function getCertificateType(): ?CertificateType1
     {
@@ -182,17 +182,17 @@ class CertificateType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateType
+     * @return CertificateType1
      */
     public function getCertificateTypeWithCreate(): CertificateType1
     {
-        $this->certificateType = is_null($this->certificateType) ? new CertificateType() : $this->certificateType;
+        $this->certificateType = is_null($this->certificateType) ? new self() : $this->certificateType;
 
         return $this->certificateType;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\CertificateType|null $certificateType
+     * @param  null|CertificateType1 $certificateType
      * @return static
      */
     public function setCertificateType(?CertificateType1 $certificateType = null): static
@@ -213,7 +213,7 @@ class CertificateType
     }
 
     /**
-     * @return array<Remarks>|null
+     * @return null|array<Remarks>
      */
     public function getRemarks(): ?array
     {
@@ -221,7 +221,7 @@ class CertificateType
     }
 
     /**
-     * @param array<Remarks>|null $remarks
+     * @param  null|array<Remarks> $remarks
      * @return static
      */
     public function setRemarks(?array $remarks = null): static
@@ -252,7 +252,7 @@ class CertificateType
     }
 
     /**
-     * @return Remarks|null
+     * @return null|Remarks
      */
     public function firstRemarks(): ?Remarks
     {
@@ -267,7 +267,7 @@ class CertificateType
     }
 
     /**
-     * @return Remarks|null
+     * @return null|Remarks
      */
     public function lastRemarks(): ?Remarks
     {
@@ -282,7 +282,7 @@ class CertificateType
     }
 
     /**
-     * @param Remarks $remarks
+     * @param  Remarks $remarks
      * @return static
      */
     public function addToRemarks(Remarks $remarks): static
@@ -303,7 +303,7 @@ class CertificateType
     }
 
     /**
-     * @param Remarks $remarks
+     * @param  Remarks $remarks
      * @return static
      */
     public function addOnceToRemarks(Remarks $remarks): static
@@ -334,7 +334,7 @@ class CertificateType
     }
 
     /**
-     * @return IssuerParty|null
+     * @return null|IssuerParty
      */
     public function getIssuerParty(): ?IssuerParty
     {
@@ -352,7 +352,7 @@ class CertificateType
     }
 
     /**
-     * @param IssuerParty|null $issuerParty
+     * @param  null|IssuerParty $issuerParty
      * @return static
      */
     public function setIssuerParty(?IssuerParty $issuerParty = null): static
@@ -373,7 +373,7 @@ class CertificateType
     }
 
     /**
-     * @return array<DocumentReference>|null
+     * @return null|array<DocumentReference>
      */
     public function getDocumentReference(): ?array
     {
@@ -381,7 +381,7 @@ class CertificateType
     }
 
     /**
-     * @param array<DocumentReference>|null $documentReference
+     * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
     public function setDocumentReference(?array $documentReference = null): static
@@ -412,7 +412,7 @@ class CertificateType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -427,7 +427,7 @@ class CertificateType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -442,7 +442,7 @@ class CertificateType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addToDocumentReference(DocumentReference $documentReference): static
@@ -463,7 +463,7 @@ class CertificateType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): static
@@ -494,7 +494,7 @@ class CertificateType
     }
 
     /**
-     * @return array<Signature>|null
+     * @return null|array<Signature>
      */
     public function getSignature(): ?array
     {
@@ -502,7 +502,7 @@ class CertificateType
     }
 
     /**
-     * @param array<Signature>|null $signature
+     * @param  null|array<Signature> $signature
      * @return static
      */
     public function setSignature(?array $signature = null): static
@@ -533,7 +533,7 @@ class CertificateType
     }
 
     /**
-     * @return Signature|null
+     * @return null|Signature
      */
     public function firstSignature(): ?Signature
     {
@@ -548,7 +548,7 @@ class CertificateType
     }
 
     /**
-     * @return Signature|null
+     * @return null|Signature
      */
     public function lastSignature(): ?Signature
     {
@@ -563,7 +563,7 @@ class CertificateType
     }
 
     /**
-     * @param Signature $signature
+     * @param  Signature $signature
      * @return static
      */
     public function addToSignature(Signature $signature): static
@@ -584,7 +584,7 @@ class CertificateType
     }
 
     /**
-     * @param Signature $signature
+     * @param  Signature $signature
      * @return static
      */
     public function addOnceToSignature(Signature $signature): static

@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity;
+use JMS\Serializer\Annotation as JMS;
 
 class SalesItemType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class SalesItemType
     private $quantity;
 
     /**
-     * @var array<ActivityProperty>|null
+     * @var null|array<ActivityProperty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ActivityProperty>")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class SalesItemType
     private $activityProperty;
 
     /**
-     * @var array<TaxExclusivePrice>|null
+     * @var null|array<TaxExclusivePrice>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxExclusivePrice>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class SalesItemType
     private $taxExclusivePrice;
 
     /**
-     * @var array<TaxInclusivePrice>|null
+     * @var null|array<TaxInclusivePrice>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxInclusivePrice>")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class SalesItemType
     private $taxInclusivePrice;
 
     /**
-     * @var Item|null
+     * @var null|Item
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class SalesItemType
     private $item;
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -89,7 +89,7 @@ class SalesItemType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -110,7 +110,7 @@ class SalesItemType
     }
 
     /**
-     * @return array<ActivityProperty>|null
+     * @return null|array<ActivityProperty>
      */
     public function getActivityProperty(): ?array
     {
@@ -118,7 +118,7 @@ class SalesItemType
     }
 
     /**
-     * @param array<ActivityProperty>|null $activityProperty
+     * @param  null|array<ActivityProperty> $activityProperty
      * @return static
      */
     public function setActivityProperty(?array $activityProperty = null): static
@@ -149,7 +149,7 @@ class SalesItemType
     }
 
     /**
-     * @return ActivityProperty|null
+     * @return null|ActivityProperty
      */
     public function firstActivityProperty(): ?ActivityProperty
     {
@@ -164,7 +164,7 @@ class SalesItemType
     }
 
     /**
-     * @return ActivityProperty|null
+     * @return null|ActivityProperty
      */
     public function lastActivityProperty(): ?ActivityProperty
     {
@@ -179,7 +179,7 @@ class SalesItemType
     }
 
     /**
-     * @param ActivityProperty $activityProperty
+     * @param  ActivityProperty $activityProperty
      * @return static
      */
     public function addToActivityProperty(ActivityProperty $activityProperty): static
@@ -200,7 +200,7 @@ class SalesItemType
     }
 
     /**
-     * @param ActivityProperty $activityProperty
+     * @param  ActivityProperty $activityProperty
      * @return static
      */
     public function addOnceToActivityProperty(ActivityProperty $activityProperty): static
@@ -231,7 +231,7 @@ class SalesItemType
     }
 
     /**
-     * @return array<TaxExclusivePrice>|null
+     * @return null|array<TaxExclusivePrice>
      */
     public function getTaxExclusivePrice(): ?array
     {
@@ -239,7 +239,7 @@ class SalesItemType
     }
 
     /**
-     * @param array<TaxExclusivePrice>|null $taxExclusivePrice
+     * @param  null|array<TaxExclusivePrice> $taxExclusivePrice
      * @return static
      */
     public function setTaxExclusivePrice(?array $taxExclusivePrice = null): static
@@ -270,7 +270,7 @@ class SalesItemType
     }
 
     /**
-     * @return TaxExclusivePrice|null
+     * @return null|TaxExclusivePrice
      */
     public function firstTaxExclusivePrice(): ?TaxExclusivePrice
     {
@@ -285,7 +285,7 @@ class SalesItemType
     }
 
     /**
-     * @return TaxExclusivePrice|null
+     * @return null|TaxExclusivePrice
      */
     public function lastTaxExclusivePrice(): ?TaxExclusivePrice
     {
@@ -300,7 +300,7 @@ class SalesItemType
     }
 
     /**
-     * @param TaxExclusivePrice $taxExclusivePrice
+     * @param  TaxExclusivePrice $taxExclusivePrice
      * @return static
      */
     public function addToTaxExclusivePrice(TaxExclusivePrice $taxExclusivePrice): static
@@ -321,7 +321,7 @@ class SalesItemType
     }
 
     /**
-     * @param TaxExclusivePrice $taxExclusivePrice
+     * @param  TaxExclusivePrice $taxExclusivePrice
      * @return static
      */
     public function addOnceToTaxExclusivePrice(TaxExclusivePrice $taxExclusivePrice): static
@@ -352,7 +352,7 @@ class SalesItemType
     }
 
     /**
-     * @return array<TaxInclusivePrice>|null
+     * @return null|array<TaxInclusivePrice>
      */
     public function getTaxInclusivePrice(): ?array
     {
@@ -360,7 +360,7 @@ class SalesItemType
     }
 
     /**
-     * @param array<TaxInclusivePrice>|null $taxInclusivePrice
+     * @param  null|array<TaxInclusivePrice> $taxInclusivePrice
      * @return static
      */
     public function setTaxInclusivePrice(?array $taxInclusivePrice = null): static
@@ -391,7 +391,7 @@ class SalesItemType
     }
 
     /**
-     * @return TaxInclusivePrice|null
+     * @return null|TaxInclusivePrice
      */
     public function firstTaxInclusivePrice(): ?TaxInclusivePrice
     {
@@ -406,7 +406,7 @@ class SalesItemType
     }
 
     /**
-     * @return TaxInclusivePrice|null
+     * @return null|TaxInclusivePrice
      */
     public function lastTaxInclusivePrice(): ?TaxInclusivePrice
     {
@@ -421,7 +421,7 @@ class SalesItemType
     }
 
     /**
-     * @param TaxInclusivePrice $taxInclusivePrice
+     * @param  TaxInclusivePrice $taxInclusivePrice
      * @return static
      */
     public function addToTaxInclusivePrice(TaxInclusivePrice $taxInclusivePrice): static
@@ -442,7 +442,7 @@ class SalesItemType
     }
 
     /**
-     * @param TaxInclusivePrice $taxInclusivePrice
+     * @param  TaxInclusivePrice $taxInclusivePrice
      * @return static
      */
     public function addOnceToTaxInclusivePrice(TaxInclusivePrice $taxInclusivePrice): static
@@ -473,7 +473,7 @@ class SalesItemType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function getItem(): ?Item
     {
@@ -491,7 +491,7 @@ class SalesItemType
     }
 
     /**
-     * @param Item|null $item
+     * @param  null|Item $item
      * @return static
      */
     public function setItem(?Item $item = null): static

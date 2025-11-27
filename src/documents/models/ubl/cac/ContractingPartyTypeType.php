@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PartyType;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PartyTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class ContractingPartyTypeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var PartyTypeCode|null
+     * @var null|PartyTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PartyTypeCode")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ContractingPartyTypeType
     private $partyTypeCode;
 
     /**
-     * @var PartyType|null
+     * @var null|PartyType
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PartyType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ContractingPartyTypeType
     private $partyType;
 
     /**
-     * @return PartyTypeCode|null
+     * @return null|PartyTypeCode
      */
     public function getPartyTypeCode(): ?PartyTypeCode
     {
@@ -54,7 +54,7 @@ class ContractingPartyTypeType
     }
 
     /**
-     * @param PartyTypeCode|null $partyTypeCode
+     * @param  null|PartyTypeCode $partyTypeCode
      * @return static
      */
     public function setPartyTypeCode(?PartyTypeCode $partyTypeCode = null): static
@@ -75,7 +75,7 @@ class ContractingPartyTypeType
     }
 
     /**
-     * @return PartyType|null
+     * @return null|PartyType
      */
     public function getPartyType(): ?PartyType
     {
@@ -93,7 +93,7 @@ class ContractingPartyTypeType
     }
 
     /**
-     * @param PartyType|null $partyType
+     * @param  null|PartyType $partyType
      * @return static
      */
     public function setPartyType(?PartyType $partyType = null): static

@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ExecutionRequirementCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
+use JMS\Serializer\Annotation as JMS;
 
 class ContractExecutionRequirementType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var array<Name>|null
+     * @var null|array<Name>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Name>")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class ContractExecutionRequirementType
     private $name;
 
     /**
-     * @var ExecutionRequirementCode|null
+     * @var null|ExecutionRequirementCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExecutionRequirementCode")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class ContractExecutionRequirementType
     private $executionRequirementCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class ContractExecutionRequirementType
     private $description;
 
     /**
-     * @return array<Name>|null
+     * @return null|array<Name>
      */
     public function getName(): ?array
     {
@@ -58,7 +58,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @param array<Name>|null $name
+     * @param  null|array<Name> $name
      * @return static
      */
     public function setName(?array $name = null): static
@@ -89,7 +89,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function firstName(): ?Name
     {
@@ -104,7 +104,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function lastName(): ?Name
     {
@@ -119,7 +119,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @param Name $name
+     * @param  Name   $name
      * @return static
      */
     public function addToName(Name $name): static
@@ -140,7 +140,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @param Name $name
+     * @param  Name   $name
      * @return static
      */
     public function addOnceToName(Name $name): static
@@ -171,7 +171,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return ExecutionRequirementCode|null
+     * @return null|ExecutionRequirementCode
      */
     public function getExecutionRequirementCode(): ?ExecutionRequirementCode
     {
@@ -189,7 +189,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @param ExecutionRequirementCode|null $executionRequirementCode
+     * @param  null|ExecutionRequirementCode $executionRequirementCode
      * @return static
      */
     public function setExecutionRequirementCode(?ExecutionRequirementCode $executionRequirementCode = null): static
@@ -210,7 +210,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -218,7 +218,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -249,7 +249,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -264,7 +264,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -279,7 +279,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -300,7 +300,7 @@ class ContractExecutionRequirementType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static

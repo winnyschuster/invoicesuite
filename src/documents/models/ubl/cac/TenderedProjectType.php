@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\FeeAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\VariantID;
+use JMS\Serializer\Annotation as JMS;
 
 class TenderedProjectType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var VariantID|null
+     * @var null|VariantID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\VariantID")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class TenderedProjectType
     private $variantID;
 
     /**
-     * @var FeeAmount|null
+     * @var null|FeeAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FeeAmount")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class TenderedProjectType
     private $feeAmount;
 
     /**
-     * @var array<FeeDescription>|null
+     * @var null|array<FeeDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\FeeDescription>")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class TenderedProjectType
     private $feeDescription;
 
     /**
-     * @var TenderEnvelopeID|null
+     * @var null|TenderEnvelopeID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeID")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class TenderedProjectType
     private $tenderEnvelopeID;
 
     /**
-     * @var TenderEnvelopeTypeCode|null
+     * @var null|TenderEnvelopeTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TenderEnvelopeTypeCode")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class TenderedProjectType
     private $tenderEnvelopeTypeCode;
 
     /**
-     * @var ProcurementProjectLot|null
+     * @var null|ProcurementProjectLot
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProjectLot")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class TenderedProjectType
     private $procurementProjectLot;
 
     /**
-     * @var array<EvidenceDocumentReference>|null
+     * @var null|array<EvidenceDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceDocumentReference>")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class TenderedProjectType
     private $evidenceDocumentReference;
 
     /**
-     * @var array<TaxTotal>|null
+     * @var null|array<TaxTotal>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class TenderedProjectType
     private $taxTotal;
 
     /**
-     * @var LegalMonetaryTotal|null
+     * @var null|LegalMonetaryTotal
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LegalMonetaryTotal")
      * @JMS\Expose
@@ -119,7 +119,7 @@ class TenderedProjectType
     private $legalMonetaryTotal;
 
     /**
-     * @var array<TenderLine>|null
+     * @var null|array<TenderLine>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TenderLine>")
      * @JMS\Expose
@@ -131,7 +131,7 @@ class TenderedProjectType
     private $tenderLine;
 
     /**
-     * @var array<AwardingCriterionResponse>|null
+     * @var null|array<AwardingCriterionResponse>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterionResponse>")
      * @JMS\Expose
@@ -143,7 +143,7 @@ class TenderedProjectType
     private $awardingCriterionResponse;
 
     /**
-     * @return VariantID|null
+     * @return null|VariantID
      */
     public function getVariantID(): ?VariantID
     {
@@ -161,7 +161,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param VariantID|null $variantID
+     * @param  null|VariantID $variantID
      * @return static
      */
     public function setVariantID(?VariantID $variantID = null): static
@@ -182,7 +182,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return FeeAmount|null
+     * @return null|FeeAmount
      */
     public function getFeeAmount(): ?FeeAmount
     {
@@ -200,7 +200,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param FeeAmount|null $feeAmount
+     * @param  null|FeeAmount $feeAmount
      * @return static
      */
     public function setFeeAmount(?FeeAmount $feeAmount = null): static
@@ -221,7 +221,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return array<FeeDescription>|null
+     * @return null|array<FeeDescription>
      */
     public function getFeeDescription(): ?array
     {
@@ -229,7 +229,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param array<FeeDescription>|null $feeDescription
+     * @param  null|array<FeeDescription> $feeDescription
      * @return static
      */
     public function setFeeDescription(?array $feeDescription = null): static
@@ -260,7 +260,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return FeeDescription|null
+     * @return null|FeeDescription
      */
     public function firstFeeDescription(): ?FeeDescription
     {
@@ -275,7 +275,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return FeeDescription|null
+     * @return null|FeeDescription
      */
     public function lastFeeDescription(): ?FeeDescription
     {
@@ -290,7 +290,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param FeeDescription $feeDescription
+     * @param  FeeDescription $feeDescription
      * @return static
      */
     public function addToFeeDescription(FeeDescription $feeDescription): static
@@ -311,7 +311,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param FeeDescription $feeDescription
+     * @param  FeeDescription $feeDescription
      * @return static
      */
     public function addOnceToFeeDescription(FeeDescription $feeDescription): static
@@ -342,7 +342,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return TenderEnvelopeID|null
+     * @return null|TenderEnvelopeID
      */
     public function getTenderEnvelopeID(): ?TenderEnvelopeID
     {
@@ -360,7 +360,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param TenderEnvelopeID|null $tenderEnvelopeID
+     * @param  null|TenderEnvelopeID $tenderEnvelopeID
      * @return static
      */
     public function setTenderEnvelopeID(?TenderEnvelopeID $tenderEnvelopeID = null): static
@@ -381,7 +381,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return TenderEnvelopeTypeCode|null
+     * @return null|TenderEnvelopeTypeCode
      */
     public function getTenderEnvelopeTypeCode(): ?TenderEnvelopeTypeCode
     {
@@ -399,7 +399,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param TenderEnvelopeTypeCode|null $tenderEnvelopeTypeCode
+     * @param  null|TenderEnvelopeTypeCode $tenderEnvelopeTypeCode
      * @return static
      */
     public function setTenderEnvelopeTypeCode(?TenderEnvelopeTypeCode $tenderEnvelopeTypeCode = null): static
@@ -420,7 +420,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return ProcurementProjectLot|null
+     * @return null|ProcurementProjectLot
      */
     public function getProcurementProjectLot(): ?ProcurementProjectLot
     {
@@ -438,7 +438,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param ProcurementProjectLot|null $procurementProjectLot
+     * @param  null|ProcurementProjectLot $procurementProjectLot
      * @return static
      */
     public function setProcurementProjectLot(?ProcurementProjectLot $procurementProjectLot = null): static
@@ -459,7 +459,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return array<EvidenceDocumentReference>|null
+     * @return null|array<EvidenceDocumentReference>
      */
     public function getEvidenceDocumentReference(): ?array
     {
@@ -467,7 +467,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param array<EvidenceDocumentReference>|null $evidenceDocumentReference
+     * @param  null|array<EvidenceDocumentReference> $evidenceDocumentReference
      * @return static
      */
     public function setEvidenceDocumentReference(?array $evidenceDocumentReference = null): static
@@ -498,7 +498,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return EvidenceDocumentReference|null
+     * @return null|EvidenceDocumentReference
      */
     public function firstEvidenceDocumentReference(): ?EvidenceDocumentReference
     {
@@ -513,7 +513,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return EvidenceDocumentReference|null
+     * @return null|EvidenceDocumentReference
      */
     public function lastEvidenceDocumentReference(): ?EvidenceDocumentReference
     {
@@ -528,7 +528,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param EvidenceDocumentReference $evidenceDocumentReference
+     * @param  EvidenceDocumentReference $evidenceDocumentReference
      * @return static
      */
     public function addToEvidenceDocumentReference(EvidenceDocumentReference $evidenceDocumentReference): static
@@ -549,7 +549,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param EvidenceDocumentReference $evidenceDocumentReference
+     * @param  EvidenceDocumentReference $evidenceDocumentReference
      * @return static
      */
     public function addOnceToEvidenceDocumentReference(EvidenceDocumentReference $evidenceDocumentReference): static
@@ -580,7 +580,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return array<TaxTotal>|null
+     * @return null|array<TaxTotal>
      */
     public function getTaxTotal(): ?array
     {
@@ -588,7 +588,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param array<TaxTotal>|null $taxTotal
+     * @param  null|array<TaxTotal> $taxTotal
      * @return static
      */
     public function setTaxTotal(?array $taxTotal = null): static
@@ -619,7 +619,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function firstTaxTotal(): ?TaxTotal
     {
@@ -634,7 +634,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function lastTaxTotal(): ?TaxTotal
     {
@@ -649,7 +649,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addToTaxTotal(TaxTotal $taxTotal): static
@@ -670,7 +670,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addOnceToTaxTotal(TaxTotal $taxTotal): static
@@ -701,7 +701,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return LegalMonetaryTotal|null
+     * @return null|LegalMonetaryTotal
      */
     public function getLegalMonetaryTotal(): ?LegalMonetaryTotal
     {
@@ -719,7 +719,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param LegalMonetaryTotal|null $legalMonetaryTotal
+     * @param  null|LegalMonetaryTotal $legalMonetaryTotal
      * @return static
      */
     public function setLegalMonetaryTotal(?LegalMonetaryTotal $legalMonetaryTotal = null): static
@@ -740,7 +740,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return array<TenderLine>|null
+     * @return null|array<TenderLine>
      */
     public function getTenderLine(): ?array
     {
@@ -748,7 +748,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param array<TenderLine>|null $tenderLine
+     * @param  null|array<TenderLine> $tenderLine
      * @return static
      */
     public function setTenderLine(?array $tenderLine = null): static
@@ -779,7 +779,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return TenderLine|null
+     * @return null|TenderLine
      */
     public function firstTenderLine(): ?TenderLine
     {
@@ -794,7 +794,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return TenderLine|null
+     * @return null|TenderLine
      */
     public function lastTenderLine(): ?TenderLine
     {
@@ -809,7 +809,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param TenderLine $tenderLine
+     * @param  TenderLine $tenderLine
      * @return static
      */
     public function addToTenderLine(TenderLine $tenderLine): static
@@ -830,7 +830,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param TenderLine $tenderLine
+     * @param  TenderLine $tenderLine
      * @return static
      */
     public function addOnceToTenderLine(TenderLine $tenderLine): static
@@ -861,7 +861,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return array<AwardingCriterionResponse>|null
+     * @return null|array<AwardingCriterionResponse>
      */
     public function getAwardingCriterionResponse(): ?array
     {
@@ -869,7 +869,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param array<AwardingCriterionResponse>|null $awardingCriterionResponse
+     * @param  null|array<AwardingCriterionResponse> $awardingCriterionResponse
      * @return static
      */
     public function setAwardingCriterionResponse(?array $awardingCriterionResponse = null): static
@@ -900,7 +900,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return AwardingCriterionResponse|null
+     * @return null|AwardingCriterionResponse
      */
     public function firstAwardingCriterionResponse(): ?AwardingCriterionResponse
     {
@@ -915,7 +915,7 @@ class TenderedProjectType
     }
 
     /**
-     * @return AwardingCriterionResponse|null
+     * @return null|AwardingCriterionResponse
      */
     public function lastAwardingCriterionResponse(): ?AwardingCriterionResponse
     {
@@ -930,7 +930,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param AwardingCriterionResponse $awardingCriterionResponse
+     * @param  AwardingCriterionResponse $awardingCriterionResponse
      * @return static
      */
     public function addToAwardingCriterionResponse(AwardingCriterionResponse $awardingCriterionResponse): static
@@ -951,7 +951,7 @@ class TenderedProjectType
     }
 
     /**
-     * @param AwardingCriterionResponse $awardingCriterionResponse
+     * @param  AwardingCriterionResponse $awardingCriterionResponse
      * @return static
      */
     public function addOnceToAwardingCriterionResponse(AwardingCriterionResponse $awardingCriterionResponse): static

@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
-use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
 
 class TradePartyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var array<IDType>|null
+     * @var null|array<IDType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType>")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class TradePartyType
     private $iD;
 
     /**
-     * @var array<IDType>|null
+     * @var null|array<IDType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType>")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class TradePartyType
     private $globalID;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class TradePartyType
     private $name;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"zffx"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class TradePartyType
     private $roleCode;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class TradePartyType
     private $description;
 
     /**
-     * @var LegalOrganizationType|null
+     * @var null|LegalOrganizationType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\LegalOrganizationType")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class TradePartyType
     private $specifiedLegalOrganization;
 
     /**
-     * @var array<TradeContactType>|null
+     * @var null|array<TradeContactType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeContactType>")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class TradePartyType
     private $definedTradeContact;
 
     /**
-     * @var TradeAddressType|null
+     * @var null|TradeAddressType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeAddressType")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class TradePartyType
     private $postalTradeAddress;
 
     /**
-     * @var UniversalCommunicationType|null
+     * @var null|UniversalCommunicationType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\UniversalCommunicationType")
      * @JMS\Expose
@@ -117,7 +117,7 @@ class TradePartyType
     private $uRIUniversalCommunication;
 
     /**
-     * @var array<TaxRegistrationType>|null
+     * @var null|array<TaxRegistrationType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\TaxRegistrationType>")
      * @JMS\Expose
@@ -129,7 +129,7 @@ class TradePartyType
     private $specifiedTaxRegistration;
 
     /**
-     * @return array<IDType>|null
+     * @return null|array<IDType>
      */
     public function getID(): ?array
     {
@@ -137,7 +137,7 @@ class TradePartyType
     }
 
     /**
-     * @param array<IDType>|null $iD
+     * @param  null|array<IDType> $iD
      * @return static
      */
     public function setID(?array $iD = null): static
@@ -168,7 +168,7 @@ class TradePartyType
     }
 
     /**
-     * @param IDType $iD
+     * @param  IDType $iD
      * @return static
      */
     public function addToID(IDType $iD): static
@@ -189,7 +189,7 @@ class TradePartyType
     }
 
     /**
-     * @param IDType $iD
+     * @param  IDType $iD
      * @return static
      */
     public function addOnceToID(IDType $iD): static
@@ -220,7 +220,7 @@ class TradePartyType
     }
 
     /**
-     * @return array<IDType>|null
+     * @return null|array<IDType>
      */
     public function getGlobalID(): ?array
     {
@@ -228,7 +228,7 @@ class TradePartyType
     }
 
     /**
-     * @param array<IDType>|null $globalID
+     * @param  null|array<IDType> $globalID
      * @return static
      */
     public function setGlobalID(?array $globalID = null): static
@@ -259,7 +259,7 @@ class TradePartyType
     }
 
     /**
-     * @param IDType $globalID
+     * @param  IDType $globalID
      * @return static
      */
     public function addToGlobalID(IDType $globalID): static
@@ -280,7 +280,7 @@ class TradePartyType
     }
 
     /**
-     * @param IDType $globalID
+     * @param  IDType $globalID
      * @return static
      */
     public function addOnceToGlobalID(IDType $globalID): static
@@ -311,7 +311,7 @@ class TradePartyType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getName(): ?TextType
     {
@@ -329,7 +329,7 @@ class TradePartyType
     }
 
     /**
-     * @param TextType|null $name
+     * @param  null|TextType $name
      * @return static
      */
     public function setName(?TextType $name = null): static
@@ -350,7 +350,7 @@ class TradePartyType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getRoleCode(): ?string
     {
@@ -358,7 +358,7 @@ class TradePartyType
     }
 
     /**
-     * @param string|null $roleCode
+     * @param  null|string $roleCode
      * @return static
      */
     public function setRoleCode(?string $roleCode = null): static
@@ -379,7 +379,7 @@ class TradePartyType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getDescription(): ?TextType
     {
@@ -397,7 +397,7 @@ class TradePartyType
     }
 
     /**
-     * @param TextType|null $description
+     * @param  null|TextType $description
      * @return static
      */
     public function setDescription(?TextType $description = null): static
@@ -418,7 +418,7 @@ class TradePartyType
     }
 
     /**
-     * @return LegalOrganizationType|null
+     * @return null|LegalOrganizationType
      */
     public function getSpecifiedLegalOrganization(): ?LegalOrganizationType
     {
@@ -436,7 +436,7 @@ class TradePartyType
     }
 
     /**
-     * @param LegalOrganizationType|null $specifiedLegalOrganization
+     * @param  null|LegalOrganizationType $specifiedLegalOrganization
      * @return static
      */
     public function setSpecifiedLegalOrganization(?LegalOrganizationType $specifiedLegalOrganization = null): static
@@ -457,7 +457,7 @@ class TradePartyType
     }
 
     /**
-     * @return array<TradeContactType>|null
+     * @return null|array<TradeContactType>
      */
     public function getDefinedTradeContact(): ?array
     {
@@ -465,7 +465,7 @@ class TradePartyType
     }
 
     /**
-     * @param array<TradeContactType>|null $definedTradeContact
+     * @param  null|array<TradeContactType> $definedTradeContact
      * @return static
      */
     public function setDefinedTradeContact(?array $definedTradeContact = null): static
@@ -496,7 +496,7 @@ class TradePartyType
     }
 
     /**
-     * @param TradeContactType $definedTradeContact
+     * @param  TradeContactType $definedTradeContact
      * @return static
      */
     public function addToDefinedTradeContact(TradeContactType $definedTradeContact): static
@@ -517,7 +517,7 @@ class TradePartyType
     }
 
     /**
-     * @param TradeContactType $definedTradeContact
+     * @param  TradeContactType $definedTradeContact
      * @return static
      */
     public function addOnceToDefinedTradeContact(TradeContactType $definedTradeContact): static
@@ -548,7 +548,7 @@ class TradePartyType
     }
 
     /**
-     * @return TradeAddressType|null
+     * @return null|TradeAddressType
      */
     public function getPostalTradeAddress(): ?TradeAddressType
     {
@@ -566,7 +566,7 @@ class TradePartyType
     }
 
     /**
-     * @param TradeAddressType|null $postalTradeAddress
+     * @param  null|TradeAddressType $postalTradeAddress
      * @return static
      */
     public function setPostalTradeAddress(?TradeAddressType $postalTradeAddress = null): static
@@ -587,7 +587,7 @@ class TradePartyType
     }
 
     /**
-     * @return UniversalCommunicationType|null
+     * @return null|UniversalCommunicationType
      */
     public function getURIUniversalCommunication(): ?UniversalCommunicationType
     {
@@ -605,7 +605,7 @@ class TradePartyType
     }
 
     /**
-     * @param UniversalCommunicationType|null $uRIUniversalCommunication
+     * @param  null|UniversalCommunicationType $uRIUniversalCommunication
      * @return static
      */
     public function setURIUniversalCommunication(?UniversalCommunicationType $uRIUniversalCommunication = null): static
@@ -626,7 +626,7 @@ class TradePartyType
     }
 
     /**
-     * @return array<TaxRegistrationType>|null
+     * @return null|array<TaxRegistrationType>
      */
     public function getSpecifiedTaxRegistration(): ?array
     {
@@ -634,7 +634,7 @@ class TradePartyType
     }
 
     /**
-     * @param array<TaxRegistrationType>|null $specifiedTaxRegistration
+     * @param  null|array<TaxRegistrationType> $specifiedTaxRegistration
      * @return static
      */
     public function setSpecifiedTaxRegistration(?array $specifiedTaxRegistration = null): static
@@ -665,7 +665,7 @@ class TradePartyType
     }
 
     /**
-     * @param TaxRegistrationType $specifiedTaxRegistration
+     * @param  TaxRegistrationType $specifiedTaxRegistration
      * @return static
      */
     public function addToSpecifiedTaxRegistration(TaxRegistrationType $specifiedTaxRegistration): static
@@ -686,7 +686,7 @@ class TradePartyType
     }
 
     /**
-     * @param TaxRegistrationType $specifiedTaxRegistration
+     * @param  TaxRegistrationType $specifiedTaxRegistration
      * @return static
      */
     public function addOnceToSpecifiedTaxRegistration(TaxRegistrationType $specifiedTaxRegistration): static

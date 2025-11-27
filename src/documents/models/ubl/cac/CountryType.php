@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\IdentificationCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
+use JMS\Serializer\Annotation as JMS;
 
 class CountryType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IdentificationCode|null
+     * @var null|IdentificationCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\IdentificationCode")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class CountryType
     private $identificationCode;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class CountryType
     private $name;
 
     /**
-     * @return IdentificationCode|null
+     * @return null|IdentificationCode
      */
     public function getIdentificationCode(): ?IdentificationCode
     {
@@ -54,7 +54,7 @@ class CountryType
     }
 
     /**
-     * @param IdentificationCode|null $identificationCode
+     * @param  null|IdentificationCode $identificationCode
      * @return static
      */
     public function setIdentificationCode(?IdentificationCode $identificationCode = null): static
@@ -75,7 +75,7 @@ class CountryType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -93,7 +93,7 @@ class CountryType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static

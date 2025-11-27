@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\udt;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
-use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\documents\models\ubl\cct\AmountType as AmountTypeBase;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
 
 class AmountType extends AmountTypeBase
 {
     use HandlesObjectFlags;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class AmountType extends AmountTypeBase
     private $currencyID;
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getCurrencyID(): ?string
     {
@@ -33,7 +33,7 @@ class AmountType extends AmountTypeBase
     }
 
     /**
-     * @param string|null $currencyID
+     * @param  null|string $currencyID
      * @return static
      */
     public function setCurrencyID(?string $currencyID = null): static

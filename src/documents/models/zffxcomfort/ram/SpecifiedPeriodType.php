@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxcomfort\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateTimeType;
+use JMS\Serializer\Annotation as JMS;
 
 class SpecifiedPeriodType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var DateTimeType|null
+     * @var null|DateTimeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateTimeType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class SpecifiedPeriodType
     private $startDateTime;
 
     /**
-     * @var DateTimeType|null
+     * @var null|DateTimeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateTimeType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class SpecifiedPeriodType
     private $endDateTime;
 
     /**
-     * @return DateTimeType|null
+     * @return null|DateTimeType
      */
     public function getStartDateTime(): ?DateTimeType
     {
@@ -53,7 +53,7 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @param DateTimeType|null $startDateTime
+     * @param  null|DateTimeType $startDateTime
      * @return static
      */
     public function setStartDateTime(?DateTimeType $startDateTime = null): static
@@ -74,7 +74,7 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @return DateTimeType|null
+     * @return null|DateTimeType
      */
     public function getEndDateTime(): ?DateTimeType
     {
@@ -92,7 +92,7 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @param DateTimeType|null $endDateTime
+     * @param  null|DateTimeType $endDateTime
      * @return static
      */
     public function setEndDateTime(?DateTimeType $endDateTime = null): static

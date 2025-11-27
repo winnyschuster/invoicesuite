@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpression;
@@ -18,13 +17,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumImprovementBid;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Weight;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\WeightNumeric;
+use JMS\Serializer\Annotation as JMS;
 
 class AwardingCriterionType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class AwardingCriterionType
     private $iD;
 
     /**
-     * @var AwardingCriterionTypeCode|null
+     * @var null|AwardingCriterionTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionTypeCode")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class AwardingCriterionType
     private $awardingCriterionTypeCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class AwardingCriterionType
     private $description;
 
     /**
-     * @var WeightNumeric|null
+     * @var null|WeightNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\WeightNumeric")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class AwardingCriterionType
     private $weightNumeric;
 
     /**
-     * @var array<Weight>|null
+     * @var null|array<Weight>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Weight>")
      * @JMS\Expose
@@ -81,7 +81,7 @@ class AwardingCriterionType
     private $weight;
 
     /**
-     * @var array<CalculationExpression>|null
+     * @var null|array<CalculationExpression>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpression>")
      * @JMS\Expose
@@ -93,7 +93,7 @@ class AwardingCriterionType
     private $calculationExpression;
 
     /**
-     * @var CalculationExpressionCode|null
+     * @var null|CalculationExpressionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationExpressionCode")
      * @JMS\Expose
@@ -104,7 +104,7 @@ class AwardingCriterionType
     private $calculationExpressionCode;
 
     /**
-     * @var MinimumQuantity|null
+     * @var null|MinimumQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity")
      * @JMS\Expose
@@ -115,7 +115,7 @@ class AwardingCriterionType
     private $minimumQuantity;
 
     /**
-     * @var MaximumQuantity|null
+     * @var null|MaximumQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity")
      * @JMS\Expose
@@ -126,7 +126,7 @@ class AwardingCriterionType
     private $maximumQuantity;
 
     /**
-     * @var MinimumAmount|null
+     * @var null|MinimumAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumAmount")
      * @JMS\Expose
@@ -137,7 +137,7 @@ class AwardingCriterionType
     private $minimumAmount;
 
     /**
-     * @var MaximumAmount|null
+     * @var null|MaximumAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAmount")
      * @JMS\Expose
@@ -148,7 +148,7 @@ class AwardingCriterionType
     private $maximumAmount;
 
     /**
-     * @var array<MinimumImprovementBid>|null
+     * @var null|array<MinimumImprovementBid>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumImprovementBid>")
      * @JMS\Expose
@@ -160,7 +160,7 @@ class AwardingCriterionType
     private $minimumImprovementBid;
 
     /**
-     * @var array<SubordinateAwardingCriterion>|null
+     * @var null|array<SubordinateAwardingCriterion>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterion>")
      * @JMS\Expose
@@ -172,7 +172,7 @@ class AwardingCriterionType
     private $subordinateAwardingCriterion;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -190,7 +190,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -211,7 +211,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return AwardingCriterionTypeCode|null
+     * @return null|AwardingCriterionTypeCode
      */
     public function getAwardingCriterionTypeCode(): ?AwardingCriterionTypeCode
     {
@@ -229,7 +229,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param AwardingCriterionTypeCode|null $awardingCriterionTypeCode
+     * @param  null|AwardingCriterionTypeCode $awardingCriterionTypeCode
      * @return static
      */
     public function setAwardingCriterionTypeCode(?AwardingCriterionTypeCode $awardingCriterionTypeCode = null): static
@@ -250,7 +250,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -258,7 +258,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -289,7 +289,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -304,7 +304,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -319,7 +319,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -340,7 +340,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -371,7 +371,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return WeightNumeric|null
+     * @return null|WeightNumeric
      */
     public function getWeightNumeric(): ?WeightNumeric
     {
@@ -389,7 +389,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param WeightNumeric|null $weightNumeric
+     * @param  null|WeightNumeric $weightNumeric
      * @return static
      */
     public function setWeightNumeric(?WeightNumeric $weightNumeric = null): static
@@ -410,7 +410,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return array<Weight>|null
+     * @return null|array<Weight>
      */
     public function getWeight(): ?array
     {
@@ -418,7 +418,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param array<Weight>|null $weight
+     * @param  null|array<Weight> $weight
      * @return static
      */
     public function setWeight(?array $weight = null): static
@@ -449,7 +449,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return Weight|null
+     * @return null|Weight
      */
     public function firstWeight(): ?Weight
     {
@@ -464,7 +464,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return Weight|null
+     * @return null|Weight
      */
     public function lastWeight(): ?Weight
     {
@@ -479,7 +479,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param Weight $weight
+     * @param  Weight $weight
      * @return static
      */
     public function addToWeight(Weight $weight): static
@@ -500,7 +500,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param Weight $weight
+     * @param  Weight $weight
      * @return static
      */
     public function addOnceToWeight(Weight $weight): static
@@ -531,7 +531,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return array<CalculationExpression>|null
+     * @return null|array<CalculationExpression>
      */
     public function getCalculationExpression(): ?array
     {
@@ -539,7 +539,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param array<CalculationExpression>|null $calculationExpression
+     * @param  null|array<CalculationExpression> $calculationExpression
      * @return static
      */
     public function setCalculationExpression(?array $calculationExpression = null): static
@@ -570,7 +570,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return CalculationExpression|null
+     * @return null|CalculationExpression
      */
     public function firstCalculationExpression(): ?CalculationExpression
     {
@@ -585,7 +585,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return CalculationExpression|null
+     * @return null|CalculationExpression
      */
     public function lastCalculationExpression(): ?CalculationExpression
     {
@@ -600,7 +600,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param CalculationExpression $calculationExpression
+     * @param  CalculationExpression $calculationExpression
      * @return static
      */
     public function addToCalculationExpression(CalculationExpression $calculationExpression): static
@@ -621,7 +621,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param CalculationExpression $calculationExpression
+     * @param  CalculationExpression $calculationExpression
      * @return static
      */
     public function addOnceToCalculationExpression(CalculationExpression $calculationExpression): static
@@ -652,7 +652,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return CalculationExpressionCode|null
+     * @return null|CalculationExpressionCode
      */
     public function getCalculationExpressionCode(): ?CalculationExpressionCode
     {
@@ -670,7 +670,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param CalculationExpressionCode|null $calculationExpressionCode
+     * @param  null|CalculationExpressionCode $calculationExpressionCode
      * @return static
      */
     public function setCalculationExpressionCode(?CalculationExpressionCode $calculationExpressionCode = null): static
@@ -691,7 +691,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return MinimumQuantity|null
+     * @return null|MinimumQuantity
      */
     public function getMinimumQuantity(): ?MinimumQuantity
     {
@@ -709,7 +709,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param MinimumQuantity|null $minimumQuantity
+     * @param  null|MinimumQuantity $minimumQuantity
      * @return static
      */
     public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): static
@@ -730,7 +730,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return MaximumQuantity|null
+     * @return null|MaximumQuantity
      */
     public function getMaximumQuantity(): ?MaximumQuantity
     {
@@ -748,7 +748,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param MaximumQuantity|null $maximumQuantity
+     * @param  null|MaximumQuantity $maximumQuantity
      * @return static
      */
     public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): static
@@ -769,7 +769,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return MinimumAmount|null
+     * @return null|MinimumAmount
      */
     public function getMinimumAmount(): ?MinimumAmount
     {
@@ -787,7 +787,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param MinimumAmount|null $minimumAmount
+     * @param  null|MinimumAmount $minimumAmount
      * @return static
      */
     public function setMinimumAmount(?MinimumAmount $minimumAmount = null): static
@@ -808,7 +808,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return MaximumAmount|null
+     * @return null|MaximumAmount
      */
     public function getMaximumAmount(): ?MaximumAmount
     {
@@ -826,7 +826,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param MaximumAmount|null $maximumAmount
+     * @param  null|MaximumAmount $maximumAmount
      * @return static
      */
     public function setMaximumAmount(?MaximumAmount $maximumAmount = null): static
@@ -847,7 +847,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return array<MinimumImprovementBid>|null
+     * @return null|array<MinimumImprovementBid>
      */
     public function getMinimumImprovementBid(): ?array
     {
@@ -855,7 +855,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param array<MinimumImprovementBid>|null $minimumImprovementBid
+     * @param  null|array<MinimumImprovementBid> $minimumImprovementBid
      * @return static
      */
     public function setMinimumImprovementBid(?array $minimumImprovementBid = null): static
@@ -886,7 +886,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return MinimumImprovementBid|null
+     * @return null|MinimumImprovementBid
      */
     public function firstMinimumImprovementBid(): ?MinimumImprovementBid
     {
@@ -901,7 +901,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return MinimumImprovementBid|null
+     * @return null|MinimumImprovementBid
      */
     public function lastMinimumImprovementBid(): ?MinimumImprovementBid
     {
@@ -916,7 +916,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param MinimumImprovementBid $minimumImprovementBid
+     * @param  MinimumImprovementBid $minimumImprovementBid
      * @return static
      */
     public function addToMinimumImprovementBid(MinimumImprovementBid $minimumImprovementBid): static
@@ -937,7 +937,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param MinimumImprovementBid $minimumImprovementBid
+     * @param  MinimumImprovementBid $minimumImprovementBid
      * @return static
      */
     public function addOnceToMinimumImprovementBid(MinimumImprovementBid $minimumImprovementBid): static
@@ -968,7 +968,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return array<SubordinateAwardingCriterion>|null
+     * @return null|array<SubordinateAwardingCriterion>
      */
     public function getSubordinateAwardingCriterion(): ?array
     {
@@ -976,7 +976,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param array<SubordinateAwardingCriterion>|null $subordinateAwardingCriterion
+     * @param  null|array<SubordinateAwardingCriterion> $subordinateAwardingCriterion
      * @return static
      */
     public function setSubordinateAwardingCriterion(?array $subordinateAwardingCriterion = null): static
@@ -1007,7 +1007,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return SubordinateAwardingCriterion|null
+     * @return null|SubordinateAwardingCriterion
      */
     public function firstSubordinateAwardingCriterion(): ?SubordinateAwardingCriterion
     {
@@ -1022,7 +1022,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @return SubordinateAwardingCriterion|null
+     * @return null|SubordinateAwardingCriterion
      */
     public function lastSubordinateAwardingCriterion(): ?SubordinateAwardingCriterion
     {
@@ -1037,7 +1037,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param SubordinateAwardingCriterion $subordinateAwardingCriterion
+     * @param  SubordinateAwardingCriterion $subordinateAwardingCriterion
      * @return static
      */
     public function addToSubordinateAwardingCriterion(
@@ -1059,7 +1059,7 @@ class AwardingCriterionType
     }
 
     /**
-     * @param SubordinateAwardingCriterion $subordinateAwardingCriterion
+     * @param  SubordinateAwardingCriterion $subordinateAwardingCriterion
      * @return static
      */
     public function addOnceToSubordinateAwardingCriterion(

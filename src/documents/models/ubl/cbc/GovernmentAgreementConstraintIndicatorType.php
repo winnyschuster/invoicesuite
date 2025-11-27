@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cbc;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class GovernmentAgreementConstraintIndicatorType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class GovernmentAgreementConstraintIndicatorType
     private $value;
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getValue(): ?bool
     {
@@ -31,7 +31,7 @@ class GovernmentAgreementConstraintIndicatorType
     }
 
     /**
-     * @param bool|null $value
+     * @param  null|bool $value
      * @return static
      */
     public function setValue(?bool $value = null): static

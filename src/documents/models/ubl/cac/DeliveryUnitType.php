@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BatchQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumerUnitQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class DeliveryUnitType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var BatchQuantity|null
+     * @var null|BatchQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BatchQuantity")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class DeliveryUnitType
     private $batchQuantity;
 
     /**
-     * @var ConsumerUnitQuantity|null
+     * @var null|ConsumerUnitQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumerUnitQuantity")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class DeliveryUnitType
     private $consumerUnitQuantity;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class DeliveryUnitType
     private $hazardousRiskIndicator;
 
     /**
-     * @return BatchQuantity|null
+     * @return null|BatchQuantity
      */
     public function getBatchQuantity(): ?BatchQuantity
     {
@@ -65,7 +65,7 @@ class DeliveryUnitType
     }
 
     /**
-     * @param BatchQuantity|null $batchQuantity
+     * @param  null|BatchQuantity $batchQuantity
      * @return static
      */
     public function setBatchQuantity(?BatchQuantity $batchQuantity = null): static
@@ -86,7 +86,7 @@ class DeliveryUnitType
     }
 
     /**
-     * @return ConsumerUnitQuantity|null
+     * @return null|ConsumerUnitQuantity
      */
     public function getConsumerUnitQuantity(): ?ConsumerUnitQuantity
     {
@@ -104,7 +104,7 @@ class DeliveryUnitType
     }
 
     /**
-     * @param ConsumerUnitQuantity|null $consumerUnitQuantity
+     * @param  null|ConsumerUnitQuantity $consumerUnitQuantity
      * @return static
      */
     public function setConsumerUnitQuantity(?ConsumerUnitQuantity $consumerUnitQuantity = null): static
@@ -125,7 +125,7 @@ class DeliveryUnitType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getHazardousRiskIndicator(): ?bool
     {
@@ -133,7 +133,7 @@ class DeliveryUnitType
     }
 
     /**
-     * @param bool|null $hazardousRiskIndicator
+     * @param  null|bool $hazardousRiskIndicator
      * @return static
      */
     public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): static

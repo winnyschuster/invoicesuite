@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AccountFormatCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AccountTypeCode;
@@ -13,13 +12,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\CurrencyCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentNote;
+use JMS\Serializer\Annotation as JMS;
 
 class FinancialAccountType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -30,7 +30,7 @@ class FinancialAccountType
     private $iD;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class FinancialAccountType
     private $name;
 
     /**
-     * @var AliasName|null
+     * @var null|AliasName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AliasName")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class FinancialAccountType
     private $aliasName;
 
     /**
-     * @var AccountTypeCode|null
+     * @var null|AccountTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountTypeCode")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class FinancialAccountType
     private $accountTypeCode;
 
     /**
-     * @var AccountFormatCode|null
+     * @var null|AccountFormatCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountFormatCode")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class FinancialAccountType
     private $accountFormatCode;
 
     /**
-     * @var CurrencyCode|null
+     * @var null|CurrencyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CurrencyCode")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class FinancialAccountType
     private $currencyCode;
 
     /**
-     * @var array<PaymentNote>|null
+     * @var null|array<PaymentNote>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentNote>")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class FinancialAccountType
     private $paymentNote;
 
     /**
-     * @var FinancialInstitutionBranch|null
+     * @var null|FinancialInstitutionBranch
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FinancialInstitutionBranch")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class FinancialAccountType
     private $financialInstitutionBranch;
 
     /**
-     * @var Country|null
+     * @var null|Country
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Country")
      * @JMS\Expose
@@ -119,7 +119,7 @@ class FinancialAccountType
     private $country;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -137,7 +137,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -158,7 +158,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -176,7 +176,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -197,7 +197,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return AliasName|null
+     * @return null|AliasName
      */
     public function getAliasName(): ?AliasName
     {
@@ -215,7 +215,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param AliasName|null $aliasName
+     * @param  null|AliasName $aliasName
      * @return static
      */
     public function setAliasName(?AliasName $aliasName = null): static
@@ -236,7 +236,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return AccountTypeCode|null
+     * @return null|AccountTypeCode
      */
     public function getAccountTypeCode(): ?AccountTypeCode
     {
@@ -254,7 +254,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param AccountTypeCode|null $accountTypeCode
+     * @param  null|AccountTypeCode $accountTypeCode
      * @return static
      */
     public function setAccountTypeCode(?AccountTypeCode $accountTypeCode = null): static
@@ -275,7 +275,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return AccountFormatCode|null
+     * @return null|AccountFormatCode
      */
     public function getAccountFormatCode(): ?AccountFormatCode
     {
@@ -293,7 +293,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param AccountFormatCode|null $accountFormatCode
+     * @param  null|AccountFormatCode $accountFormatCode
      * @return static
      */
     public function setAccountFormatCode(?AccountFormatCode $accountFormatCode = null): static
@@ -314,7 +314,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return CurrencyCode|null
+     * @return null|CurrencyCode
      */
     public function getCurrencyCode(): ?CurrencyCode
     {
@@ -332,7 +332,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param CurrencyCode|null $currencyCode
+     * @param  null|CurrencyCode $currencyCode
      * @return static
      */
     public function setCurrencyCode(?CurrencyCode $currencyCode = null): static
@@ -353,7 +353,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return array<PaymentNote>|null
+     * @return null|array<PaymentNote>
      */
     public function getPaymentNote(): ?array
     {
@@ -361,7 +361,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param array<PaymentNote>|null $paymentNote
+     * @param  null|array<PaymentNote> $paymentNote
      * @return static
      */
     public function setPaymentNote(?array $paymentNote = null): static
@@ -392,7 +392,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return PaymentNote|null
+     * @return null|PaymentNote
      */
     public function firstPaymentNote(): ?PaymentNote
     {
@@ -407,7 +407,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return PaymentNote|null
+     * @return null|PaymentNote
      */
     public function lastPaymentNote(): ?PaymentNote
     {
@@ -422,7 +422,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param PaymentNote $paymentNote
+     * @param  PaymentNote $paymentNote
      * @return static
      */
     public function addToPaymentNote(PaymentNote $paymentNote): static
@@ -443,7 +443,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param PaymentNote $paymentNote
+     * @param  PaymentNote $paymentNote
      * @return static
      */
     public function addOnceToPaymentNote(PaymentNote $paymentNote): static
@@ -474,7 +474,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return FinancialInstitutionBranch|null
+     * @return null|FinancialInstitutionBranch
      */
     public function getFinancialInstitutionBranch(): ?FinancialInstitutionBranch
     {
@@ -492,7 +492,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param FinancialInstitutionBranch|null $financialInstitutionBranch
+     * @param  null|FinancialInstitutionBranch $financialInstitutionBranch
      * @return static
      */
     public function setFinancialInstitutionBranch(
@@ -514,7 +514,7 @@ class FinancialAccountType
     }
 
     /**
-     * @return Country|null
+     * @return null|Country
      */
     public function getCountry(): ?Country
     {
@@ -532,7 +532,7 @@ class FinancialAccountType
     }
 
     /**
-     * @param Country|null $country
+     * @param  null|Country $country
      * @return static
      */
     public function setCountry(?Country $country = null): static

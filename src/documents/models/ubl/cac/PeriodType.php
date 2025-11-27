@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DurationMeasure;
+use JMS\Serializer\Annotation as JMS;
 
 class PeriodType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class PeriodType
     private $startDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class PeriodType
     private $startTime;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class PeriodType
     private $endDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class PeriodType
     private $endTime;
 
     /**
-     * @var DurationMeasure|null
+     * @var null|DurationMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DurationMeasure")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class PeriodType
     private $durationMeasure;
 
     /**
-     * @var array<DescriptionCode>|null
+     * @var null|array<DescriptionCode>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode>")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class PeriodType
     private $descriptionCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class PeriodType
     private $description;
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getStartDate(): ?DateTimeInterface
     {
@@ -103,7 +103,7 @@ class PeriodType
     }
 
     /**
-     * @param DateTimeInterface|null $startDate
+     * @param  null|DateTimeInterface $startDate
      * @return static
      */
     public function setStartDate(?DateTimeInterface $startDate = null): static
@@ -124,7 +124,7 @@ class PeriodType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getStartTime(): ?DateTimeInterface
     {
@@ -132,7 +132,7 @@ class PeriodType
     }
 
     /**
-     * @param DateTimeInterface|null $startTime
+     * @param  null|DateTimeInterface $startTime
      * @return static
      */
     public function setStartTime(?DateTimeInterface $startTime = null): static
@@ -153,7 +153,7 @@ class PeriodType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getEndDate(): ?DateTimeInterface
     {
@@ -161,7 +161,7 @@ class PeriodType
     }
 
     /**
-     * @param DateTimeInterface|null $endDate
+     * @param  null|DateTimeInterface $endDate
      * @return static
      */
     public function setEndDate(?DateTimeInterface $endDate = null): static
@@ -182,7 +182,7 @@ class PeriodType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getEndTime(): ?DateTimeInterface
     {
@@ -190,7 +190,7 @@ class PeriodType
     }
 
     /**
-     * @param DateTimeInterface|null $endTime
+     * @param  null|DateTimeInterface $endTime
      * @return static
      */
     public function setEndTime(?DateTimeInterface $endTime = null): static
@@ -211,7 +211,7 @@ class PeriodType
     }
 
     /**
-     * @return DurationMeasure|null
+     * @return null|DurationMeasure
      */
     public function getDurationMeasure(): ?DurationMeasure
     {
@@ -229,7 +229,7 @@ class PeriodType
     }
 
     /**
-     * @param DurationMeasure|null $durationMeasure
+     * @param  null|DurationMeasure $durationMeasure
      * @return static
      */
     public function setDurationMeasure(?DurationMeasure $durationMeasure = null): static
@@ -250,7 +250,7 @@ class PeriodType
     }
 
     /**
-     * @return array<DescriptionCode>|null
+     * @return null|array<DescriptionCode>
      */
     public function getDescriptionCode(): ?array
     {
@@ -258,7 +258,7 @@ class PeriodType
     }
 
     /**
-     * @param array<DescriptionCode>|null $descriptionCode
+     * @param  null|array<DescriptionCode> $descriptionCode
      * @return static
      */
     public function setDescriptionCode(?array $descriptionCode = null): static
@@ -289,7 +289,7 @@ class PeriodType
     }
 
     /**
-     * @return DescriptionCode|null
+     * @return null|DescriptionCode
      */
     public function firstDescriptionCode(): ?DescriptionCode
     {
@@ -304,7 +304,7 @@ class PeriodType
     }
 
     /**
-     * @return DescriptionCode|null
+     * @return null|DescriptionCode
      */
     public function lastDescriptionCode(): ?DescriptionCode
     {
@@ -319,7 +319,7 @@ class PeriodType
     }
 
     /**
-     * @param DescriptionCode $descriptionCode
+     * @param  DescriptionCode $descriptionCode
      * @return static
      */
     public function addToDescriptionCode(DescriptionCode $descriptionCode): static
@@ -340,7 +340,7 @@ class PeriodType
     }
 
     /**
-     * @param DescriptionCode $descriptionCode
+     * @param  DescriptionCode $descriptionCode
      * @return static
      */
     public function addOnceToDescriptionCode(DescriptionCode $descriptionCode): static
@@ -371,7 +371,7 @@ class PeriodType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -379,7 +379,7 @@ class PeriodType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -410,7 +410,7 @@ class PeriodType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -425,7 +425,7 @@ class PeriodType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -440,7 +440,7 @@ class PeriodType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -461,7 +461,7 @@ class PeriodType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static

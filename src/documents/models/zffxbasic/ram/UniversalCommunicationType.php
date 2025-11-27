@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasic\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType;
+use JMS\Serializer\Annotation as JMS;
 
 class UniversalCommunicationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class UniversalCommunicationType
     private $uRIID;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getURIID(): ?IDType
     {
@@ -42,7 +42,7 @@ class UniversalCommunicationType
     }
 
     /**
-     * @param IDType|null $uRIID
+     * @param  null|IDType $uRIID
      * @return static
      */
     public function setURIID(?IDType $uRIID = null): static

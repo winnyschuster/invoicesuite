@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasicwl\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class ExchangedDocumentContextType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var DocumentContextParameterType|null
+     * @var null|DocumentContextParameterType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\DocumentContextParameterType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class ExchangedDocumentContextType
     private $businessProcessSpecifiedDocumentContextParameter;
 
     /**
-     * @var DocumentContextParameterType|null
+     * @var null|DocumentContextParameterType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\DocumentContextParameterType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class ExchangedDocumentContextType
     private $guidelineSpecifiedDocumentContextParameter;
 
     /**
-     * @return DocumentContextParameterType|null
+     * @return null|DocumentContextParameterType
      */
     public function getBusinessProcessSpecifiedDocumentContextParameter(): ?DocumentContextParameterType
     {
@@ -52,7 +52,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @param DocumentContextParameterType|null $businessProcessSpecifiedDocumentContextParameter
+     * @param  null|DocumentContextParameterType $businessProcessSpecifiedDocumentContextParameter
      * @return static
      */
     public function setBusinessProcessSpecifiedDocumentContextParameter(
@@ -74,7 +74,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @return DocumentContextParameterType|null
+     * @return null|DocumentContextParameterType
      */
     public function getGuidelineSpecifiedDocumentContextParameter(): ?DocumentContextParameterType
     {
@@ -92,7 +92,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @param DocumentContextParameterType|null $guidelineSpecifiedDocumentContextParameter
+     * @param  null|DocumentContextParameterType $guidelineSpecifiedDocumentContextParameter
      * @return static
      */
     public function setGuidelineSpecifiedDocumentContextParameter(

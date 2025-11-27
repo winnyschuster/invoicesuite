@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\qdt\LineStatusCodeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType;
+use JMS\Serializer\Annotation as JMS;
 
 class DocumentLineDocumentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class DocumentLineDocumentType
     private $lineID;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class DocumentLineDocumentType
     private $parentLineID;
 
     /**
-     * @var LineStatusCodeType|null
+     * @var null|LineStatusCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\LineStatusCodeType")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class DocumentLineDocumentType
     private $lineStatusCode;
 
     /**
-     * @var CodeType|null
+     * @var null|CodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class DocumentLineDocumentType
     private $lineStatusReasonCode;
 
     /**
-     * @var array<NoteType>|null
+     * @var null|array<NoteType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\NoteType>")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class DocumentLineDocumentType
     private $includedNote;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getLineID(): ?IDType
     {
@@ -89,7 +89,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param IDType|null $lineID
+     * @param  null|IDType $lineID
      * @return static
      */
     public function setLineID(?IDType $lineID = null): static
@@ -110,7 +110,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getParentLineID(): ?IDType
     {
@@ -128,7 +128,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param IDType|null $parentLineID
+     * @param  null|IDType $parentLineID
      * @return static
      */
     public function setParentLineID(?IDType $parentLineID = null): static
@@ -149,7 +149,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return LineStatusCodeType|null
+     * @return null|LineStatusCodeType
      */
     public function getLineStatusCode(): ?LineStatusCodeType
     {
@@ -167,7 +167,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param LineStatusCodeType|null $lineStatusCode
+     * @param  null|LineStatusCodeType $lineStatusCode
      * @return static
      */
     public function setLineStatusCode(?LineStatusCodeType $lineStatusCode = null): static
@@ -188,7 +188,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return CodeType|null
+     * @return null|CodeType
      */
     public function getLineStatusReasonCode(): ?CodeType
     {
@@ -206,7 +206,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param CodeType|null $lineStatusReasonCode
+     * @param  null|CodeType $lineStatusReasonCode
      * @return static
      */
     public function setLineStatusReasonCode(?CodeType $lineStatusReasonCode = null): static
@@ -227,7 +227,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return array<NoteType>|null
+     * @return null|array<NoteType>
      */
     public function getIncludedNote(): ?array
     {
@@ -235,7 +235,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param array<NoteType>|null $includedNote
+     * @param  null|array<NoteType> $includedNote
      * @return static
      */
     public function setIncludedNote(?array $includedNote = null): static
@@ -266,7 +266,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param NoteType $includedNote
+     * @param  NoteType $includedNote
      * @return static
      */
     public function addToIncludedNote(NoteType $includedNote): static
@@ -287,7 +287,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param NoteType $includedNote
+     * @param  NoteType $includedNote
      * @return static
      */
     public function addOnceToIncludedNote(NoteType $includedNote): static

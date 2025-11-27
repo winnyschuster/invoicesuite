@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\qdt;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
 
 class TaxCategoryCodeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"zffx"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class TaxCategoryCodeType
     private $value;
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getValue(): ?string
     {
@@ -32,7 +32,7 @@ class TaxCategoryCodeType
     }
 
     /**
-     * @param string|null $value
+     * @param  null|string $value
      * @return static
      */
     public function setValue(?string $value = null): static

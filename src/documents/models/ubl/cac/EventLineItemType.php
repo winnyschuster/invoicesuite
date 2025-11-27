@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LineNumberNumeric;
+use JMS\Serializer\Annotation as JMS;
 
 class EventLineItemType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var LineNumberNumeric|null
+     * @var null|LineNumberNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineNumberNumeric")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class EventLineItemType
     private $lineNumberNumeric;
 
     /**
-     * @var ParticipatingLocationsLocation|null
+     * @var null|ParticipatingLocationsLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ParticipatingLocationsLocation")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class EventLineItemType
     private $participatingLocationsLocation;
 
     /**
-     * @var array<RetailPlannedImpact>|null
+     * @var null|array<RetailPlannedImpact>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RetailPlannedImpact>")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class EventLineItemType
     private $retailPlannedImpact;
 
     /**
-     * @var SupplyItem|null
+     * @var null|SupplyItem
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class EventLineItemType
     private $supplyItem;
 
     /**
-     * @return LineNumberNumeric|null
+     * @return null|LineNumberNumeric
      */
     public function getLineNumberNumeric(): ?LineNumberNumeric
     {
@@ -76,7 +76,7 @@ class EventLineItemType
     }
 
     /**
-     * @param LineNumberNumeric|null $lineNumberNumeric
+     * @param  null|LineNumberNumeric $lineNumberNumeric
      * @return static
      */
     public function setLineNumberNumeric(?LineNumberNumeric $lineNumberNumeric = null): static
@@ -97,7 +97,7 @@ class EventLineItemType
     }
 
     /**
-     * @return ParticipatingLocationsLocation|null
+     * @return null|ParticipatingLocationsLocation
      */
     public function getParticipatingLocationsLocation(): ?ParticipatingLocationsLocation
     {
@@ -115,7 +115,7 @@ class EventLineItemType
     }
 
     /**
-     * @param ParticipatingLocationsLocation|null $participatingLocationsLocation
+     * @param  null|ParticipatingLocationsLocation $participatingLocationsLocation
      * @return static
      */
     public function setParticipatingLocationsLocation(
@@ -137,7 +137,7 @@ class EventLineItemType
     }
 
     /**
-     * @return array<RetailPlannedImpact>|null
+     * @return null|array<RetailPlannedImpact>
      */
     public function getRetailPlannedImpact(): ?array
     {
@@ -145,7 +145,7 @@ class EventLineItemType
     }
 
     /**
-     * @param array<RetailPlannedImpact>|null $retailPlannedImpact
+     * @param  null|array<RetailPlannedImpact> $retailPlannedImpact
      * @return static
      */
     public function setRetailPlannedImpact(?array $retailPlannedImpact = null): static
@@ -176,7 +176,7 @@ class EventLineItemType
     }
 
     /**
-     * @return RetailPlannedImpact|null
+     * @return null|RetailPlannedImpact
      */
     public function firstRetailPlannedImpact(): ?RetailPlannedImpact
     {
@@ -191,7 +191,7 @@ class EventLineItemType
     }
 
     /**
-     * @return RetailPlannedImpact|null
+     * @return null|RetailPlannedImpact
      */
     public function lastRetailPlannedImpact(): ?RetailPlannedImpact
     {
@@ -206,7 +206,7 @@ class EventLineItemType
     }
 
     /**
-     * @param RetailPlannedImpact $retailPlannedImpact
+     * @param  RetailPlannedImpact $retailPlannedImpact
      * @return static
      */
     public function addToRetailPlannedImpact(RetailPlannedImpact $retailPlannedImpact): static
@@ -227,7 +227,7 @@ class EventLineItemType
     }
 
     /**
-     * @param RetailPlannedImpact $retailPlannedImpact
+     * @param  RetailPlannedImpact $retailPlannedImpact
      * @return static
      */
     public function addOnceToRetailPlannedImpact(RetailPlannedImpact $retailPlannedImpact): static
@@ -258,7 +258,7 @@ class EventLineItemType
     }
 
     /**
-     * @return SupplyItem|null
+     * @return null|SupplyItem
      */
     public function getSupplyItem(): ?SupplyItem
     {
@@ -276,7 +276,7 @@ class EventLineItemType
     }
 
     /**
-     * @param SupplyItem|null $supplyItem
+     * @param  null|SupplyItem $supplyItem
      * @return static
      */
     public function setSupplyItem(?SupplyItem $supplyItem = null): static

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BackorderQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BackorderReason;
@@ -16,13 +15,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\OutstandingQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\OutstandingReason;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\OversupplyQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
+use JMS\Serializer\Annotation as JMS;
 
 class DespatchLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class DespatchLineType
     private $iD;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class DespatchLineType
     private $uUID;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class DespatchLineType
     private $note;
 
     /**
-     * @var LineStatusCode|null
+     * @var null|LineStatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class DespatchLineType
     private $lineStatusCode;
 
     /**
-     * @var DeliveredQuantity|null
+     * @var null|DeliveredQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeliveredQuantity")
      * @JMS\Expose
@@ -78,7 +78,7 @@ class DespatchLineType
     private $deliveredQuantity;
 
     /**
-     * @var BackorderQuantity|null
+     * @var null|BackorderQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BackorderQuantity")
      * @JMS\Expose
@@ -89,7 +89,7 @@ class DespatchLineType
     private $backorderQuantity;
 
     /**
-     * @var array<BackorderReason>|null
+     * @var null|array<BackorderReason>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\BackorderReason>")
      * @JMS\Expose
@@ -101,7 +101,7 @@ class DespatchLineType
     private $backorderReason;
 
     /**
-     * @var OutstandingQuantity|null
+     * @var null|OutstandingQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OutstandingQuantity")
      * @JMS\Expose
@@ -112,7 +112,7 @@ class DespatchLineType
     private $outstandingQuantity;
 
     /**
-     * @var array<OutstandingReason>|null
+     * @var null|array<OutstandingReason>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\OutstandingReason>")
      * @JMS\Expose
@@ -124,7 +124,7 @@ class DespatchLineType
     private $outstandingReason;
 
     /**
-     * @var OversupplyQuantity|null
+     * @var null|OversupplyQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OversupplyQuantity")
      * @JMS\Expose
@@ -135,7 +135,7 @@ class DespatchLineType
     private $oversupplyQuantity;
 
     /**
-     * @var array<OrderLineReference>|null
+     * @var null|array<OrderLineReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference>")
      * @JMS\Expose
@@ -147,7 +147,7 @@ class DespatchLineType
     private $orderLineReference;
 
     /**
-     * @var array<DocumentReference>|null
+     * @var null|array<DocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -159,7 +159,7 @@ class DespatchLineType
     private $documentReference;
 
     /**
-     * @var Item|null
+     * @var null|Item
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -170,7 +170,7 @@ class DespatchLineType
     private $item;
 
     /**
-     * @var array<Shipment>|null
+     * @var null|array<Shipment>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Shipment>")
      * @JMS\Expose
@@ -182,7 +182,7 @@ class DespatchLineType
     private $shipment;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -200,7 +200,7 @@ class DespatchLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -221,7 +221,7 @@ class DespatchLineType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -239,7 +239,7 @@ class DespatchLineType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -260,7 +260,7 @@ class DespatchLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -268,7 +268,7 @@ class DespatchLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -299,7 +299,7 @@ class DespatchLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -314,7 +314,7 @@ class DespatchLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -329,7 +329,7 @@ class DespatchLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -350,7 +350,7 @@ class DespatchLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -381,7 +381,7 @@ class DespatchLineType
     }
 
     /**
-     * @return LineStatusCode|null
+     * @return null|LineStatusCode
      */
     public function getLineStatusCode(): ?LineStatusCode
     {
@@ -399,7 +399,7 @@ class DespatchLineType
     }
 
     /**
-     * @param LineStatusCode|null $lineStatusCode
+     * @param  null|LineStatusCode $lineStatusCode
      * @return static
      */
     public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): static
@@ -420,7 +420,7 @@ class DespatchLineType
     }
 
     /**
-     * @return DeliveredQuantity|null
+     * @return null|DeliveredQuantity
      */
     public function getDeliveredQuantity(): ?DeliveredQuantity
     {
@@ -438,7 +438,7 @@ class DespatchLineType
     }
 
     /**
-     * @param DeliveredQuantity|null $deliveredQuantity
+     * @param  null|DeliveredQuantity $deliveredQuantity
      * @return static
      */
     public function setDeliveredQuantity(?DeliveredQuantity $deliveredQuantity = null): static
@@ -459,7 +459,7 @@ class DespatchLineType
     }
 
     /**
-     * @return BackorderQuantity|null
+     * @return null|BackorderQuantity
      */
     public function getBackorderQuantity(): ?BackorderQuantity
     {
@@ -477,7 +477,7 @@ class DespatchLineType
     }
 
     /**
-     * @param BackorderQuantity|null $backorderQuantity
+     * @param  null|BackorderQuantity $backorderQuantity
      * @return static
      */
     public function setBackorderQuantity(?BackorderQuantity $backorderQuantity = null): static
@@ -498,7 +498,7 @@ class DespatchLineType
     }
 
     /**
-     * @return array<BackorderReason>|null
+     * @return null|array<BackorderReason>
      */
     public function getBackorderReason(): ?array
     {
@@ -506,7 +506,7 @@ class DespatchLineType
     }
 
     /**
-     * @param array<BackorderReason>|null $backorderReason
+     * @param  null|array<BackorderReason> $backorderReason
      * @return static
      */
     public function setBackorderReason(?array $backorderReason = null): static
@@ -537,7 +537,7 @@ class DespatchLineType
     }
 
     /**
-     * @return BackorderReason|null
+     * @return null|BackorderReason
      */
     public function firstBackorderReason(): ?BackorderReason
     {
@@ -552,7 +552,7 @@ class DespatchLineType
     }
 
     /**
-     * @return BackorderReason|null
+     * @return null|BackorderReason
      */
     public function lastBackorderReason(): ?BackorderReason
     {
@@ -567,7 +567,7 @@ class DespatchLineType
     }
 
     /**
-     * @param BackorderReason $backorderReason
+     * @param  BackorderReason $backorderReason
      * @return static
      */
     public function addToBackorderReason(BackorderReason $backorderReason): static
@@ -588,7 +588,7 @@ class DespatchLineType
     }
 
     /**
-     * @param BackorderReason $backorderReason
+     * @param  BackorderReason $backorderReason
      * @return static
      */
     public function addOnceToBackorderReason(BackorderReason $backorderReason): static
@@ -619,7 +619,7 @@ class DespatchLineType
     }
 
     /**
-     * @return OutstandingQuantity|null
+     * @return null|OutstandingQuantity
      */
     public function getOutstandingQuantity(): ?OutstandingQuantity
     {
@@ -637,7 +637,7 @@ class DespatchLineType
     }
 
     /**
-     * @param OutstandingQuantity|null $outstandingQuantity
+     * @param  null|OutstandingQuantity $outstandingQuantity
      * @return static
      */
     public function setOutstandingQuantity(?OutstandingQuantity $outstandingQuantity = null): static
@@ -658,7 +658,7 @@ class DespatchLineType
     }
 
     /**
-     * @return array<OutstandingReason>|null
+     * @return null|array<OutstandingReason>
      */
     public function getOutstandingReason(): ?array
     {
@@ -666,7 +666,7 @@ class DespatchLineType
     }
 
     /**
-     * @param array<OutstandingReason>|null $outstandingReason
+     * @param  null|array<OutstandingReason> $outstandingReason
      * @return static
      */
     public function setOutstandingReason(?array $outstandingReason = null): static
@@ -697,7 +697,7 @@ class DespatchLineType
     }
 
     /**
-     * @return OutstandingReason|null
+     * @return null|OutstandingReason
      */
     public function firstOutstandingReason(): ?OutstandingReason
     {
@@ -712,7 +712,7 @@ class DespatchLineType
     }
 
     /**
-     * @return OutstandingReason|null
+     * @return null|OutstandingReason
      */
     public function lastOutstandingReason(): ?OutstandingReason
     {
@@ -727,7 +727,7 @@ class DespatchLineType
     }
 
     /**
-     * @param OutstandingReason $outstandingReason
+     * @param  OutstandingReason $outstandingReason
      * @return static
      */
     public function addToOutstandingReason(OutstandingReason $outstandingReason): static
@@ -748,7 +748,7 @@ class DespatchLineType
     }
 
     /**
-     * @param OutstandingReason $outstandingReason
+     * @param  OutstandingReason $outstandingReason
      * @return static
      */
     public function addOnceToOutstandingReason(OutstandingReason $outstandingReason): static
@@ -779,7 +779,7 @@ class DespatchLineType
     }
 
     /**
-     * @return OversupplyQuantity|null
+     * @return null|OversupplyQuantity
      */
     public function getOversupplyQuantity(): ?OversupplyQuantity
     {
@@ -797,7 +797,7 @@ class DespatchLineType
     }
 
     /**
-     * @param OversupplyQuantity|null $oversupplyQuantity
+     * @param  null|OversupplyQuantity $oversupplyQuantity
      * @return static
      */
     public function setOversupplyQuantity(?OversupplyQuantity $oversupplyQuantity = null): static
@@ -818,7 +818,7 @@ class DespatchLineType
     }
 
     /**
-     * @return array<OrderLineReference>|null
+     * @return null|array<OrderLineReference>
      */
     public function getOrderLineReference(): ?array
     {
@@ -826,7 +826,7 @@ class DespatchLineType
     }
 
     /**
-     * @param array<OrderLineReference>|null $orderLineReference
+     * @param  null|array<OrderLineReference> $orderLineReference
      * @return static
      */
     public function setOrderLineReference(?array $orderLineReference = null): static
@@ -857,7 +857,7 @@ class DespatchLineType
     }
 
     /**
-     * @return OrderLineReference|null
+     * @return null|OrderLineReference
      */
     public function firstOrderLineReference(): ?OrderLineReference
     {
@@ -872,7 +872,7 @@ class DespatchLineType
     }
 
     /**
-     * @return OrderLineReference|null
+     * @return null|OrderLineReference
      */
     public function lastOrderLineReference(): ?OrderLineReference
     {
@@ -887,7 +887,7 @@ class DespatchLineType
     }
 
     /**
-     * @param OrderLineReference $orderLineReference
+     * @param  OrderLineReference $orderLineReference
      * @return static
      */
     public function addToOrderLineReference(OrderLineReference $orderLineReference): static
@@ -908,7 +908,7 @@ class DespatchLineType
     }
 
     /**
-     * @param OrderLineReference $orderLineReference
+     * @param  OrderLineReference $orderLineReference
      * @return static
      */
     public function addOnceToOrderLineReference(OrderLineReference $orderLineReference): static
@@ -939,7 +939,7 @@ class DespatchLineType
     }
 
     /**
-     * @return array<DocumentReference>|null
+     * @return null|array<DocumentReference>
      */
     public function getDocumentReference(): ?array
     {
@@ -947,7 +947,7 @@ class DespatchLineType
     }
 
     /**
-     * @param array<DocumentReference>|null $documentReference
+     * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
     public function setDocumentReference(?array $documentReference = null): static
@@ -978,7 +978,7 @@ class DespatchLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -993,7 +993,7 @@ class DespatchLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -1008,7 +1008,7 @@ class DespatchLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addToDocumentReference(DocumentReference $documentReference): static
@@ -1029,7 +1029,7 @@ class DespatchLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): static
@@ -1060,7 +1060,7 @@ class DespatchLineType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function getItem(): ?Item
     {
@@ -1078,7 +1078,7 @@ class DespatchLineType
     }
 
     /**
-     * @param Item|null $item
+     * @param  null|Item $item
      * @return static
      */
     public function setItem(?Item $item = null): static
@@ -1099,7 +1099,7 @@ class DespatchLineType
     }
 
     /**
-     * @return array<Shipment>|null
+     * @return null|array<Shipment>
      */
     public function getShipment(): ?array
     {
@@ -1107,7 +1107,7 @@ class DespatchLineType
     }
 
     /**
-     * @param array<Shipment>|null $shipment
+     * @param  null|array<Shipment> $shipment
      * @return static
      */
     public function setShipment(?array $shipment = null): static
@@ -1138,7 +1138,7 @@ class DespatchLineType
     }
 
     /**
-     * @return Shipment|null
+     * @return null|Shipment
      */
     public function firstShipment(): ?Shipment
     {
@@ -1153,7 +1153,7 @@ class DespatchLineType
     }
 
     /**
-     * @return Shipment|null
+     * @return null|Shipment
      */
     public function lastShipment(): ?Shipment
     {
@@ -1168,7 +1168,7 @@ class DespatchLineType
     }
 
     /**
-     * @param Shipment $shipment
+     * @param  Shipment $shipment
      * @return static
      */
     public function addToShipment(Shipment $shipment): static
@@ -1189,7 +1189,7 @@ class DespatchLineType
     }
 
     /**
-     * @param Shipment $shipment
+     * @param  Shipment $shipment
      * @return static
      */
     public function addOnceToShipment(Shipment $shipment): static

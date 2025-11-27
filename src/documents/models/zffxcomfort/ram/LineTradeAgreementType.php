@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxcomfort\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class LineTradeAgreementType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ReferencedDocumentType|null
+     * @var null|ReferencedDocumentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class LineTradeAgreementType
     private $buyerOrderReferencedDocument;
 
     /**
-     * @var TradePriceType|null
+     * @var null|TradePriceType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradePriceType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class LineTradeAgreementType
     private $grossPriceProductTradePrice;
 
     /**
-     * @var TradePriceType|null
+     * @var null|TradePriceType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradePriceType")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class LineTradeAgreementType
     private $netPriceProductTradePrice;
 
     /**
-     * @return ReferencedDocumentType|null
+     * @return null|ReferencedDocumentType
      */
     public function getBuyerOrderReferencedDocument(): ?ReferencedDocumentType
     {
@@ -63,7 +63,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param ReferencedDocumentType|null $buyerOrderReferencedDocument
+     * @param  null|ReferencedDocumentType $buyerOrderReferencedDocument
      * @return static
      */
     public function setBuyerOrderReferencedDocument(
@@ -85,7 +85,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return TradePriceType|null
+     * @return null|TradePriceType
      */
     public function getGrossPriceProductTradePrice(): ?TradePriceType
     {
@@ -103,7 +103,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param TradePriceType|null $grossPriceProductTradePrice
+     * @param  null|TradePriceType $grossPriceProductTradePrice
      * @return static
      */
     public function setGrossPriceProductTradePrice(?TradePriceType $grossPriceProductTradePrice = null): static
@@ -124,7 +124,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @return TradePriceType|null
+     * @return null|TradePriceType
      */
     public function getNetPriceProductTradePrice(): ?TradePriceType
     {
@@ -142,7 +142,7 @@ class LineTradeAgreementType
     }
 
     /**
-     * @param TradePriceType|null $netPriceProductTradePrice
+     * @param  null|TradePriceType $netPriceProductTradePrice
      * @return static
      */
     public function setNetPriceProductTradePrice(?TradePriceType $netPriceProductTradePrice = null): static

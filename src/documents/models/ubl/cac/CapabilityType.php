@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CapabilityTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class CapabilityType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var CapabilityTypeCode|null
+     * @var null|CapabilityTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CapabilityTypeCode")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class CapabilityType
     private $capabilityTypeCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class CapabilityType
     private $description;
 
     /**
-     * @var ValueAmount|null
+     * @var null|ValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValueAmount")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class CapabilityType
     private $valueAmount;
 
     /**
-     * @var ValueQuantity|null
+     * @var null|ValueQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class CapabilityType
     private $valueQuantity;
 
     /**
-     * @var array<EvidenceSupplied>|null
+     * @var null|array<EvidenceSupplied>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied>")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class CapabilityType
     private $evidenceSupplied;
 
     /**
-     * @var ValidityPeriod|null
+     * @var null|ValidityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class CapabilityType
     private $validityPeriod;
 
     /**
-     * @return CapabilityTypeCode|null
+     * @return null|CapabilityTypeCode
      */
     public function getCapabilityTypeCode(): ?CapabilityTypeCode
     {
@@ -102,7 +102,7 @@ class CapabilityType
     }
 
     /**
-     * @param CapabilityTypeCode|null $capabilityTypeCode
+     * @param  null|CapabilityTypeCode $capabilityTypeCode
      * @return static
      */
     public function setCapabilityTypeCode(?CapabilityTypeCode $capabilityTypeCode = null): static
@@ -123,7 +123,7 @@ class CapabilityType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -131,7 +131,7 @@ class CapabilityType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -162,7 +162,7 @@ class CapabilityType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -177,7 +177,7 @@ class CapabilityType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -192,7 +192,7 @@ class CapabilityType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -213,7 +213,7 @@ class CapabilityType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -244,7 +244,7 @@ class CapabilityType
     }
 
     /**
-     * @return ValueAmount|null
+     * @return null|ValueAmount
      */
     public function getValueAmount(): ?ValueAmount
     {
@@ -262,7 +262,7 @@ class CapabilityType
     }
 
     /**
-     * @param ValueAmount|null $valueAmount
+     * @param  null|ValueAmount $valueAmount
      * @return static
      */
     public function setValueAmount(?ValueAmount $valueAmount = null): static
@@ -283,7 +283,7 @@ class CapabilityType
     }
 
     /**
-     * @return ValueQuantity|null
+     * @return null|ValueQuantity
      */
     public function getValueQuantity(): ?ValueQuantity
     {
@@ -301,7 +301,7 @@ class CapabilityType
     }
 
     /**
-     * @param ValueQuantity|null $valueQuantity
+     * @param  null|ValueQuantity $valueQuantity
      * @return static
      */
     public function setValueQuantity(?ValueQuantity $valueQuantity = null): static
@@ -322,7 +322,7 @@ class CapabilityType
     }
 
     /**
-     * @return array<EvidenceSupplied>|null
+     * @return null|array<EvidenceSupplied>
      */
     public function getEvidenceSupplied(): ?array
     {
@@ -330,7 +330,7 @@ class CapabilityType
     }
 
     /**
-     * @param array<EvidenceSupplied>|null $evidenceSupplied
+     * @param  null|array<EvidenceSupplied> $evidenceSupplied
      * @return static
      */
     public function setEvidenceSupplied(?array $evidenceSupplied = null): static
@@ -361,7 +361,7 @@ class CapabilityType
     }
 
     /**
-     * @return EvidenceSupplied|null
+     * @return null|EvidenceSupplied
      */
     public function firstEvidenceSupplied(): ?EvidenceSupplied
     {
@@ -376,7 +376,7 @@ class CapabilityType
     }
 
     /**
-     * @return EvidenceSupplied|null
+     * @return null|EvidenceSupplied
      */
     public function lastEvidenceSupplied(): ?EvidenceSupplied
     {
@@ -391,7 +391,7 @@ class CapabilityType
     }
 
     /**
-     * @param EvidenceSupplied $evidenceSupplied
+     * @param  EvidenceSupplied $evidenceSupplied
      * @return static
      */
     public function addToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
@@ -412,7 +412,7 @@ class CapabilityType
     }
 
     /**
-     * @param EvidenceSupplied $evidenceSupplied
+     * @param  EvidenceSupplied $evidenceSupplied
      * @return static
      */
     public function addOnceToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
@@ -443,7 +443,7 @@ class CapabilityType
     }
 
     /**
-     * @return ValidityPeriod|null
+     * @return null|ValidityPeriod
      */
     public function getValidityPeriod(): ?ValidityPeriod
     {
@@ -461,7 +461,7 @@ class CapabilityType
     }
 
     /**
-     * @param ValidityPeriod|null $validityPeriod
+     * @param  null|ValidityPeriod $validityPeriod
      * @return static
      */
     public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): static

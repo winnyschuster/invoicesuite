@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MeterConstant;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MeterConstantCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MeterName;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalDeliveredQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class MeterType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var MeterNumber|null
+     * @var null|MeterNumber
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MeterNumber")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class MeterType
     private $meterNumber;
 
     /**
-     * @var MeterName|null
+     * @var null|MeterName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MeterName")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class MeterType
     private $meterName;
 
     /**
-     * @var MeterConstant|null
+     * @var null|MeterConstant
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MeterConstant")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class MeterType
     private $meterConstant;
 
     /**
-     * @var MeterConstantCode|null
+     * @var null|MeterConstantCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MeterConstantCode")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class MeterType
     private $meterConstantCode;
 
     /**
-     * @var TotalDeliveredQuantity|null
+     * @var null|TotalDeliveredQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalDeliveredQuantity")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class MeterType
     private $totalDeliveredQuantity;
 
     /**
-     * @var array<MeterReading>|null
+     * @var null|array<MeterReading>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MeterReading>")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class MeterType
     private $meterReading;
 
     /**
-     * @var array<MeterProperty>|null
+     * @var null|array<MeterProperty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MeterProperty>")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class MeterType
     private $meterProperty;
 
     /**
-     * @return MeterNumber|null
+     * @return null|MeterNumber
      */
     public function getMeterNumber(): ?MeterNumber
     {
@@ -114,7 +114,7 @@ class MeterType
     }
 
     /**
-     * @param MeterNumber|null $meterNumber
+     * @param  null|MeterNumber $meterNumber
      * @return static
      */
     public function setMeterNumber(?MeterNumber $meterNumber = null): static
@@ -135,7 +135,7 @@ class MeterType
     }
 
     /**
-     * @return MeterName|null
+     * @return null|MeterName
      */
     public function getMeterName(): ?MeterName
     {
@@ -153,7 +153,7 @@ class MeterType
     }
 
     /**
-     * @param MeterName|null $meterName
+     * @param  null|MeterName $meterName
      * @return static
      */
     public function setMeterName(?MeterName $meterName = null): static
@@ -174,7 +174,7 @@ class MeterType
     }
 
     /**
-     * @return MeterConstant|null
+     * @return null|MeterConstant
      */
     public function getMeterConstant(): ?MeterConstant
     {
@@ -192,7 +192,7 @@ class MeterType
     }
 
     /**
-     * @param MeterConstant|null $meterConstant
+     * @param  null|MeterConstant $meterConstant
      * @return static
      */
     public function setMeterConstant(?MeterConstant $meterConstant = null): static
@@ -213,7 +213,7 @@ class MeterType
     }
 
     /**
-     * @return MeterConstantCode|null
+     * @return null|MeterConstantCode
      */
     public function getMeterConstantCode(): ?MeterConstantCode
     {
@@ -231,7 +231,7 @@ class MeterType
     }
 
     /**
-     * @param MeterConstantCode|null $meterConstantCode
+     * @param  null|MeterConstantCode $meterConstantCode
      * @return static
      */
     public function setMeterConstantCode(?MeterConstantCode $meterConstantCode = null): static
@@ -252,7 +252,7 @@ class MeterType
     }
 
     /**
-     * @return TotalDeliveredQuantity|null
+     * @return null|TotalDeliveredQuantity
      */
     public function getTotalDeliveredQuantity(): ?TotalDeliveredQuantity
     {
@@ -270,7 +270,7 @@ class MeterType
     }
 
     /**
-     * @param TotalDeliveredQuantity|null $totalDeliveredQuantity
+     * @param  null|TotalDeliveredQuantity $totalDeliveredQuantity
      * @return static
      */
     public function setTotalDeliveredQuantity(?TotalDeliveredQuantity $totalDeliveredQuantity = null): static
@@ -291,7 +291,7 @@ class MeterType
     }
 
     /**
-     * @return array<MeterReading>|null
+     * @return null|array<MeterReading>
      */
     public function getMeterReading(): ?array
     {
@@ -299,7 +299,7 @@ class MeterType
     }
 
     /**
-     * @param array<MeterReading>|null $meterReading
+     * @param  null|array<MeterReading> $meterReading
      * @return static
      */
     public function setMeterReading(?array $meterReading = null): static
@@ -330,7 +330,7 @@ class MeterType
     }
 
     /**
-     * @return MeterReading|null
+     * @return null|MeterReading
      */
     public function firstMeterReading(): ?MeterReading
     {
@@ -345,7 +345,7 @@ class MeterType
     }
 
     /**
-     * @return MeterReading|null
+     * @return null|MeterReading
      */
     public function lastMeterReading(): ?MeterReading
     {
@@ -360,7 +360,7 @@ class MeterType
     }
 
     /**
-     * @param MeterReading $meterReading
+     * @param  MeterReading $meterReading
      * @return static
      */
     public function addToMeterReading(MeterReading $meterReading): static
@@ -381,7 +381,7 @@ class MeterType
     }
 
     /**
-     * @param MeterReading $meterReading
+     * @param  MeterReading $meterReading
      * @return static
      */
     public function addOnceToMeterReading(MeterReading $meterReading): static
@@ -412,7 +412,7 @@ class MeterType
     }
 
     /**
-     * @return array<MeterProperty>|null
+     * @return null|array<MeterProperty>
      */
     public function getMeterProperty(): ?array
     {
@@ -420,7 +420,7 @@ class MeterType
     }
 
     /**
-     * @param array<MeterProperty>|null $meterProperty
+     * @param  null|array<MeterProperty> $meterProperty
      * @return static
      */
     public function setMeterProperty(?array $meterProperty = null): static
@@ -451,7 +451,7 @@ class MeterType
     }
 
     /**
-     * @return MeterProperty|null
+     * @return null|MeterProperty
      */
     public function firstMeterProperty(): ?MeterProperty
     {
@@ -466,7 +466,7 @@ class MeterType
     }
 
     /**
-     * @return MeterProperty|null
+     * @return null|MeterProperty
      */
     public function lastMeterProperty(): ?MeterProperty
     {
@@ -481,7 +481,7 @@ class MeterType
     }
 
     /**
-     * @param MeterProperty $meterProperty
+     * @param  MeterProperty $meterProperty
      * @return static
      */
     public function addToMeterProperty(MeterProperty $meterProperty): static
@@ -502,7 +502,7 @@ class MeterType
     }
 
     /**
-     * @param MeterProperty $meterProperty
+     * @param  MeterProperty $meterProperty
      * @return static
      */
     public function addOnceToMeterProperty(MeterProperty $meterProperty): static

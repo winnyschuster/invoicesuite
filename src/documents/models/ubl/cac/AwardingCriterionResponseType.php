@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Amount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionDescription;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity;
+use JMS\Serializer\Annotation as JMS;
 
 class AwardingCriterionResponseType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class AwardingCriterionResponseType
     private $iD;
 
     /**
-     * @var AwardingCriterionID|null
+     * @var null|AwardingCriterionID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionID")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class AwardingCriterionResponseType
     private $awardingCriterionID;
 
     /**
-     * @var array<AwardingCriterionDescription>|null
+     * @var null|array<AwardingCriterionDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingCriterionDescription>")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class AwardingCriterionResponseType
     private $awardingCriterionDescription;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -64,7 +64,7 @@ class AwardingCriterionResponseType
     private $description;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -75,7 +75,7 @@ class AwardingCriterionResponseType
     private $quantity;
 
     /**
-     * @var Amount|null
+     * @var null|Amount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -86,7 +86,7 @@ class AwardingCriterionResponseType
     private $amount;
 
     /**
-     * @var array<SubordinateAwardingCriterionResponse>|null
+     * @var null|array<SubordinateAwardingCriterionResponse>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubordinateAwardingCriterionResponse>")
      * @JMS\Expose
@@ -98,7 +98,7 @@ class AwardingCriterionResponseType
     private $subordinateAwardingCriterionResponse;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -116,7 +116,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -137,7 +137,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return AwardingCriterionID|null
+     * @return null|AwardingCriterionID
      */
     public function getAwardingCriterionID(): ?AwardingCriterionID
     {
@@ -155,7 +155,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param AwardingCriterionID|null $awardingCriterionID
+     * @param  null|AwardingCriterionID $awardingCriterionID
      * @return static
      */
     public function setAwardingCriterionID(?AwardingCriterionID $awardingCriterionID = null): static
@@ -176,7 +176,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return array<AwardingCriterionDescription>|null
+     * @return null|array<AwardingCriterionDescription>
      */
     public function getAwardingCriterionDescription(): ?array
     {
@@ -184,7 +184,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param array<AwardingCriterionDescription>|null $awardingCriterionDescription
+     * @param  null|array<AwardingCriterionDescription> $awardingCriterionDescription
      * @return static
      */
     public function setAwardingCriterionDescription(?array $awardingCriterionDescription = null): static
@@ -215,7 +215,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return AwardingCriterionDescription|null
+     * @return null|AwardingCriterionDescription
      */
     public function firstAwardingCriterionDescription(): ?AwardingCriterionDescription
     {
@@ -230,7 +230,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return AwardingCriterionDescription|null
+     * @return null|AwardingCriterionDescription
      */
     public function lastAwardingCriterionDescription(): ?AwardingCriterionDescription
     {
@@ -245,7 +245,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param AwardingCriterionDescription $awardingCriterionDescription
+     * @param  AwardingCriterionDescription $awardingCriterionDescription
      * @return static
      */
     public function addToAwardingCriterionDescription(
@@ -267,7 +267,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param AwardingCriterionDescription $awardingCriterionDescription
+     * @param  AwardingCriterionDescription $awardingCriterionDescription
      * @return static
      */
     public function addOnceToAwardingCriterionDescription(
@@ -299,7 +299,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -307,7 +307,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -338,7 +338,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -353,7 +353,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -368,7 +368,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -389,7 +389,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -420,7 +420,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -438,7 +438,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -459,7 +459,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return Amount|null
+     * @return null|Amount
      */
     public function getAmount(): ?Amount
     {
@@ -477,7 +477,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param Amount|null $amount
+     * @param  null|Amount $amount
      * @return static
      */
     public function setAmount(?Amount $amount = null): static
@@ -498,7 +498,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return array<SubordinateAwardingCriterionResponse>|null
+     * @return null|array<SubordinateAwardingCriterionResponse>
      */
     public function getSubordinateAwardingCriterionResponse(): ?array
     {
@@ -506,7 +506,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param array<SubordinateAwardingCriterionResponse>|null $subordinateAwardingCriterionResponse
+     * @param  null|array<SubordinateAwardingCriterionResponse> $subordinateAwardingCriterionResponse
      * @return static
      */
     public function setSubordinateAwardingCriterionResponse(?array $subordinateAwardingCriterionResponse = null): static
@@ -537,7 +537,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return SubordinateAwardingCriterionResponse|null
+     * @return null|SubordinateAwardingCriterionResponse
      */
     public function firstSubordinateAwardingCriterionResponse(): ?SubordinateAwardingCriterionResponse
     {
@@ -552,7 +552,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @return SubordinateAwardingCriterionResponse|null
+     * @return null|SubordinateAwardingCriterionResponse
      */
     public function lastSubordinateAwardingCriterionResponse(): ?SubordinateAwardingCriterionResponse
     {
@@ -567,7 +567,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param SubordinateAwardingCriterionResponse $subordinateAwardingCriterionResponse
+     * @param  SubordinateAwardingCriterionResponse $subordinateAwardingCriterionResponse
      * @return static
      */
     public function addToSubordinateAwardingCriterionResponse(
@@ -589,7 +589,7 @@ class AwardingCriterionResponseType
     }
 
     /**
-     * @param SubordinateAwardingCriterionResponse $subordinateAwardingCriterionResponse
+     * @param  SubordinateAwardingCriterionResponse $subordinateAwardingCriterionResponse
      * @return static
      */
     public function addOnceToSubordinateAwardingCriterionResponse(

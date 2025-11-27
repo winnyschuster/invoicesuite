@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumMeasure;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Measure;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumMeasure;
+use JMS\Serializer\Annotation as JMS;
 
 class DimensionType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AttributeID|null
+     * @var null|AttributeID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class DimensionType
     private $attributeID;
 
     /**
-     * @var Measure|null
+     * @var null|Measure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Measure")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class DimensionType
     private $measure;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class DimensionType
     private $description;
 
     /**
-     * @var MinimumMeasure|null
+     * @var null|MinimumMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumMeasure")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class DimensionType
     private $minimumMeasure;
 
     /**
-     * @var MaximumMeasure|null
+     * @var null|MaximumMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumMeasure")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class DimensionType
     private $maximumMeasure;
 
     /**
-     * @return AttributeID|null
+     * @return null|AttributeID
      */
     public function getAttributeID(): ?AttributeID
     {
@@ -91,7 +91,7 @@ class DimensionType
     }
 
     /**
-     * @param AttributeID|null $attributeID
+     * @param  null|AttributeID $attributeID
      * @return static
      */
     public function setAttributeID(?AttributeID $attributeID = null): static
@@ -112,7 +112,7 @@ class DimensionType
     }
 
     /**
-     * @return Measure|null
+     * @return null|Measure
      */
     public function getMeasure(): ?Measure
     {
@@ -130,7 +130,7 @@ class DimensionType
     }
 
     /**
-     * @param Measure|null $measure
+     * @param  null|Measure $measure
      * @return static
      */
     public function setMeasure(?Measure $measure = null): static
@@ -151,7 +151,7 @@ class DimensionType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -159,7 +159,7 @@ class DimensionType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -190,7 +190,7 @@ class DimensionType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -205,7 +205,7 @@ class DimensionType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -220,7 +220,7 @@ class DimensionType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -241,7 +241,7 @@ class DimensionType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -272,7 +272,7 @@ class DimensionType
     }
 
     /**
-     * @return MinimumMeasure|null
+     * @return null|MinimumMeasure
      */
     public function getMinimumMeasure(): ?MinimumMeasure
     {
@@ -290,7 +290,7 @@ class DimensionType
     }
 
     /**
-     * @param MinimumMeasure|null $minimumMeasure
+     * @param  null|MinimumMeasure $minimumMeasure
      * @return static
      */
     public function setMinimumMeasure(?MinimumMeasure $minimumMeasure = null): static
@@ -311,7 +311,7 @@ class DimensionType
     }
 
     /**
-     * @return MaximumMeasure|null
+     * @return null|MaximumMeasure
      */
     public function getMaximumMeasure(): ?MaximumMeasure
     {
@@ -329,7 +329,7 @@ class DimensionType
     }
 
     /**
-     * @param MaximumMeasure|null $maximumMeasure
+     * @param  null|MaximumMeasure $maximumMeasure
      * @return static
      */
     public function setMaximumMeasure(?MaximumMeasure $maximumMeasure = null): static

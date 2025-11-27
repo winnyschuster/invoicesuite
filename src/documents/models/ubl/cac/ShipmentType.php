@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ConsignmentQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredCustomsValueAmount;
@@ -26,13 +25,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\ShippingPriorityLevelCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialInstructions;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalGoodsItemQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTransportHandlingUnitQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class ShipmentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class ShipmentType
     private $iD;
 
     /**
-     * @var ShippingPriorityLevelCode|null
+     * @var null|ShippingPriorityLevelCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ShippingPriorityLevelCode")
      * @JMS\Expose
@@ -54,7 +54,7 @@ class ShipmentType
     private $shippingPriorityLevelCode;
 
     /**
-     * @var HandlingCode|null
+     * @var null|HandlingCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingCode")
      * @JMS\Expose
@@ -65,7 +65,7 @@ class ShipmentType
     private $handlingCode;
 
     /**
-     * @var array<HandlingInstructions>|null
+     * @var null|array<HandlingInstructions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\HandlingInstructions>")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class ShipmentType
     private $handlingInstructions;
 
     /**
-     * @var array<Information>|null
+     * @var null|array<Information>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Information>")
      * @JMS\Expose
@@ -89,7 +89,7 @@ class ShipmentType
     private $information;
 
     /**
-     * @var GrossWeightMeasure|null
+     * @var null|GrossWeightMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GrossWeightMeasure")
      * @JMS\Expose
@@ -100,7 +100,7 @@ class ShipmentType
     private $grossWeightMeasure;
 
     /**
-     * @var NetWeightMeasure|null
+     * @var null|NetWeightMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetWeightMeasure")
      * @JMS\Expose
@@ -111,7 +111,7 @@ class ShipmentType
     private $netWeightMeasure;
 
     /**
-     * @var NetNetWeightMeasure|null
+     * @var null|NetNetWeightMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetNetWeightMeasure")
      * @JMS\Expose
@@ -122,7 +122,7 @@ class ShipmentType
     private $netNetWeightMeasure;
 
     /**
-     * @var GrossVolumeMeasure|null
+     * @var null|GrossVolumeMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\GrossVolumeMeasure")
      * @JMS\Expose
@@ -133,7 +133,7 @@ class ShipmentType
     private $grossVolumeMeasure;
 
     /**
-     * @var NetVolumeMeasure|null
+     * @var null|NetVolumeMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetVolumeMeasure")
      * @JMS\Expose
@@ -144,7 +144,7 @@ class ShipmentType
     private $netVolumeMeasure;
 
     /**
-     * @var TotalGoodsItemQuantity|null
+     * @var null|TotalGoodsItemQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalGoodsItemQuantity")
      * @JMS\Expose
@@ -155,7 +155,7 @@ class ShipmentType
     private $totalGoodsItemQuantity;
 
     /**
-     * @var TotalTransportHandlingUnitQuantity|null
+     * @var null|TotalTransportHandlingUnitQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTransportHandlingUnitQuantity")
      * @JMS\Expose
@@ -166,7 +166,7 @@ class ShipmentType
     private $totalTransportHandlingUnitQuantity;
 
     /**
-     * @var InsuranceValueAmount|null
+     * @var null|InsuranceValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InsuranceValueAmount")
      * @JMS\Expose
@@ -177,7 +177,7 @@ class ShipmentType
     private $insuranceValueAmount;
 
     /**
-     * @var DeclaredCustomsValueAmount|null
+     * @var null|DeclaredCustomsValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredCustomsValueAmount")
      * @JMS\Expose
@@ -188,7 +188,7 @@ class ShipmentType
     private $declaredCustomsValueAmount;
 
     /**
-     * @var DeclaredForCarriageValueAmount|null
+     * @var null|DeclaredForCarriageValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredForCarriageValueAmount")
      * @JMS\Expose
@@ -199,7 +199,7 @@ class ShipmentType
     private $declaredForCarriageValueAmount;
 
     /**
-     * @var DeclaredStatisticsValueAmount|null
+     * @var null|DeclaredStatisticsValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeclaredStatisticsValueAmount")
      * @JMS\Expose
@@ -210,7 +210,7 @@ class ShipmentType
     private $declaredStatisticsValueAmount;
 
     /**
-     * @var FreeOnBoardValueAmount|null
+     * @var null|FreeOnBoardValueAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FreeOnBoardValueAmount")
      * @JMS\Expose
@@ -221,7 +221,7 @@ class ShipmentType
     private $freeOnBoardValueAmount;
 
     /**
-     * @var array<SpecialInstructions>|null
+     * @var null|array<SpecialInstructions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\SpecialInstructions>")
      * @JMS\Expose
@@ -233,7 +233,7 @@ class ShipmentType
     private $specialInstructions;
 
     /**
-     * @var array<DeliveryInstructions>|null
+     * @var null|array<DeliveryInstructions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\DeliveryInstructions>")
      * @JMS\Expose
@@ -245,7 +245,7 @@ class ShipmentType
     private $deliveryInstructions;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -256,7 +256,7 @@ class ShipmentType
     private $splitConsignmentIndicator;
 
     /**
-     * @var ConsignmentQuantity|null
+     * @var null|ConsignmentQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsignmentQuantity")
      * @JMS\Expose
@@ -267,7 +267,7 @@ class ShipmentType
     private $consignmentQuantity;
 
     /**
-     * @var array<Consignment>|null
+     * @var null|array<Consignment>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Consignment>")
      * @JMS\Expose
@@ -279,7 +279,7 @@ class ShipmentType
     private $consignment;
 
     /**
-     * @var array<GoodsItem>|null
+     * @var null|array<GoodsItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\GoodsItem>")
      * @JMS\Expose
@@ -291,7 +291,7 @@ class ShipmentType
     private $goodsItem;
 
     /**
-     * @var array<ShipmentStage>|null
+     * @var null|array<ShipmentStage>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentStage>")
      * @JMS\Expose
@@ -303,7 +303,7 @@ class ShipmentType
     private $shipmentStage;
 
     /**
-     * @var Delivery|null
+     * @var null|Delivery
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Delivery")
      * @JMS\Expose
@@ -314,7 +314,7 @@ class ShipmentType
     private $delivery;
 
     /**
-     * @var array<TransportHandlingUnit>|null
+     * @var null|array<TransportHandlingUnit>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TransportHandlingUnit>")
      * @JMS\Expose
@@ -326,7 +326,7 @@ class ShipmentType
     private $transportHandlingUnit;
 
     /**
-     * @var ReturnAddress|null
+     * @var null|ReturnAddress
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ReturnAddress")
      * @JMS\Expose
@@ -337,7 +337,7 @@ class ShipmentType
     private $returnAddress;
 
     /**
-     * @var OriginAddress|null
+     * @var null|OriginAddress
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OriginAddress")
      * @JMS\Expose
@@ -348,7 +348,7 @@ class ShipmentType
     private $originAddress;
 
     /**
-     * @var FirstArrivalPortLocation|null
+     * @var null|FirstArrivalPortLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FirstArrivalPortLocation")
      * @JMS\Expose
@@ -359,7 +359,7 @@ class ShipmentType
     private $firstArrivalPortLocation;
 
     /**
-     * @var LastExitPortLocation|null
+     * @var null|LastExitPortLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LastExitPortLocation")
      * @JMS\Expose
@@ -370,7 +370,7 @@ class ShipmentType
     private $lastExitPortLocation;
 
     /**
-     * @var ExportCountry|null
+     * @var null|ExportCountry
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExportCountry")
      * @JMS\Expose
@@ -381,7 +381,7 @@ class ShipmentType
     private $exportCountry;
 
     /**
-     * @var array<FreightAllowanceCharge>|null
+     * @var null|array<FreightAllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\FreightAllowanceCharge>")
      * @JMS\Expose
@@ -393,7 +393,7 @@ class ShipmentType
     private $freightAllowanceCharge;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -411,7 +411,7 @@ class ShipmentType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -432,7 +432,7 @@ class ShipmentType
     }
 
     /**
-     * @return ShippingPriorityLevelCode|null
+     * @return null|ShippingPriorityLevelCode
      */
     public function getShippingPriorityLevelCode(): ?ShippingPriorityLevelCode
     {
@@ -450,7 +450,7 @@ class ShipmentType
     }
 
     /**
-     * @param ShippingPriorityLevelCode|null $shippingPriorityLevelCode
+     * @param  null|ShippingPriorityLevelCode $shippingPriorityLevelCode
      * @return static
      */
     public function setShippingPriorityLevelCode(?ShippingPriorityLevelCode $shippingPriorityLevelCode = null): static
@@ -471,7 +471,7 @@ class ShipmentType
     }
 
     /**
-     * @return HandlingCode|null
+     * @return null|HandlingCode
      */
     public function getHandlingCode(): ?HandlingCode
     {
@@ -489,7 +489,7 @@ class ShipmentType
     }
 
     /**
-     * @param HandlingCode|null $handlingCode
+     * @param  null|HandlingCode $handlingCode
      * @return static
      */
     public function setHandlingCode(?HandlingCode $handlingCode = null): static
@@ -510,7 +510,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<HandlingInstructions>|null
+     * @return null|array<HandlingInstructions>
      */
     public function getHandlingInstructions(): ?array
     {
@@ -518,7 +518,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<HandlingInstructions>|null $handlingInstructions
+     * @param  null|array<HandlingInstructions> $handlingInstructions
      * @return static
      */
     public function setHandlingInstructions(?array $handlingInstructions = null): static
@@ -549,7 +549,7 @@ class ShipmentType
     }
 
     /**
-     * @return HandlingInstructions|null
+     * @return null|HandlingInstructions
      */
     public function firstHandlingInstructions(): ?HandlingInstructions
     {
@@ -564,7 +564,7 @@ class ShipmentType
     }
 
     /**
-     * @return HandlingInstructions|null
+     * @return null|HandlingInstructions
      */
     public function lastHandlingInstructions(): ?HandlingInstructions
     {
@@ -579,7 +579,7 @@ class ShipmentType
     }
 
     /**
-     * @param HandlingInstructions $handlingInstructions
+     * @param  HandlingInstructions $handlingInstructions
      * @return static
      */
     public function addToHandlingInstructions(HandlingInstructions $handlingInstructions): static
@@ -600,7 +600,7 @@ class ShipmentType
     }
 
     /**
-     * @param HandlingInstructions $handlingInstructions
+     * @param  HandlingInstructions $handlingInstructions
      * @return static
      */
     public function addOnceToHandlingInstructions(HandlingInstructions $handlingInstructions): static
@@ -631,7 +631,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<Information>|null
+     * @return null|array<Information>
      */
     public function getInformation(): ?array
     {
@@ -639,7 +639,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<Information>|null $information
+     * @param  null|array<Information> $information
      * @return static
      */
     public function setInformation(?array $information = null): static
@@ -670,7 +670,7 @@ class ShipmentType
     }
 
     /**
-     * @return Information|null
+     * @return null|Information
      */
     public function firstInformation(): ?Information
     {
@@ -685,7 +685,7 @@ class ShipmentType
     }
 
     /**
-     * @return Information|null
+     * @return null|Information
      */
     public function lastInformation(): ?Information
     {
@@ -700,7 +700,7 @@ class ShipmentType
     }
 
     /**
-     * @param Information $information
+     * @param  Information $information
      * @return static
      */
     public function addToInformation(Information $information): static
@@ -721,7 +721,7 @@ class ShipmentType
     }
 
     /**
-     * @param Information $information
+     * @param  Information $information
      * @return static
      */
     public function addOnceToInformation(Information $information): static
@@ -752,7 +752,7 @@ class ShipmentType
     }
 
     /**
-     * @return GrossWeightMeasure|null
+     * @return null|GrossWeightMeasure
      */
     public function getGrossWeightMeasure(): ?GrossWeightMeasure
     {
@@ -770,7 +770,7 @@ class ShipmentType
     }
 
     /**
-     * @param GrossWeightMeasure|null $grossWeightMeasure
+     * @param  null|GrossWeightMeasure $grossWeightMeasure
      * @return static
      */
     public function setGrossWeightMeasure(?GrossWeightMeasure $grossWeightMeasure = null): static
@@ -791,7 +791,7 @@ class ShipmentType
     }
 
     /**
-     * @return NetWeightMeasure|null
+     * @return null|NetWeightMeasure
      */
     public function getNetWeightMeasure(): ?NetWeightMeasure
     {
@@ -809,7 +809,7 @@ class ShipmentType
     }
 
     /**
-     * @param NetWeightMeasure|null $netWeightMeasure
+     * @param  null|NetWeightMeasure $netWeightMeasure
      * @return static
      */
     public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): static
@@ -830,7 +830,7 @@ class ShipmentType
     }
 
     /**
-     * @return NetNetWeightMeasure|null
+     * @return null|NetNetWeightMeasure
      */
     public function getNetNetWeightMeasure(): ?NetNetWeightMeasure
     {
@@ -848,7 +848,7 @@ class ShipmentType
     }
 
     /**
-     * @param NetNetWeightMeasure|null $netNetWeightMeasure
+     * @param  null|NetNetWeightMeasure $netNetWeightMeasure
      * @return static
      */
     public function setNetNetWeightMeasure(?NetNetWeightMeasure $netNetWeightMeasure = null): static
@@ -869,7 +869,7 @@ class ShipmentType
     }
 
     /**
-     * @return GrossVolumeMeasure|null
+     * @return null|GrossVolumeMeasure
      */
     public function getGrossVolumeMeasure(): ?GrossVolumeMeasure
     {
@@ -887,7 +887,7 @@ class ShipmentType
     }
 
     /**
-     * @param GrossVolumeMeasure|null $grossVolumeMeasure
+     * @param  null|GrossVolumeMeasure $grossVolumeMeasure
      * @return static
      */
     public function setGrossVolumeMeasure(?GrossVolumeMeasure $grossVolumeMeasure = null): static
@@ -908,7 +908,7 @@ class ShipmentType
     }
 
     /**
-     * @return NetVolumeMeasure|null
+     * @return null|NetVolumeMeasure
      */
     public function getNetVolumeMeasure(): ?NetVolumeMeasure
     {
@@ -926,7 +926,7 @@ class ShipmentType
     }
 
     /**
-     * @param NetVolumeMeasure|null $netVolumeMeasure
+     * @param  null|NetVolumeMeasure $netVolumeMeasure
      * @return static
      */
     public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): static
@@ -947,7 +947,7 @@ class ShipmentType
     }
 
     /**
-     * @return TotalGoodsItemQuantity|null
+     * @return null|TotalGoodsItemQuantity
      */
     public function getTotalGoodsItemQuantity(): ?TotalGoodsItemQuantity
     {
@@ -965,7 +965,7 @@ class ShipmentType
     }
 
     /**
-     * @param TotalGoodsItemQuantity|null $totalGoodsItemQuantity
+     * @param  null|TotalGoodsItemQuantity $totalGoodsItemQuantity
      * @return static
      */
     public function setTotalGoodsItemQuantity(?TotalGoodsItemQuantity $totalGoodsItemQuantity = null): static
@@ -986,7 +986,7 @@ class ShipmentType
     }
 
     /**
-     * @return TotalTransportHandlingUnitQuantity|null
+     * @return null|TotalTransportHandlingUnitQuantity
      */
     public function getTotalTransportHandlingUnitQuantity(): ?TotalTransportHandlingUnitQuantity
     {
@@ -1004,7 +1004,7 @@ class ShipmentType
     }
 
     /**
-     * @param TotalTransportHandlingUnitQuantity|null $totalTransportHandlingUnitQuantity
+     * @param  null|TotalTransportHandlingUnitQuantity $totalTransportHandlingUnitQuantity
      * @return static
      */
     public function setTotalTransportHandlingUnitQuantity(
@@ -1026,7 +1026,7 @@ class ShipmentType
     }
 
     /**
-     * @return InsuranceValueAmount|null
+     * @return null|InsuranceValueAmount
      */
     public function getInsuranceValueAmount(): ?InsuranceValueAmount
     {
@@ -1044,7 +1044,7 @@ class ShipmentType
     }
 
     /**
-     * @param InsuranceValueAmount|null $insuranceValueAmount
+     * @param  null|InsuranceValueAmount $insuranceValueAmount
      * @return static
      */
     public function setInsuranceValueAmount(?InsuranceValueAmount $insuranceValueAmount = null): static
@@ -1065,7 +1065,7 @@ class ShipmentType
     }
 
     /**
-     * @return DeclaredCustomsValueAmount|null
+     * @return null|DeclaredCustomsValueAmount
      */
     public function getDeclaredCustomsValueAmount(): ?DeclaredCustomsValueAmount
     {
@@ -1083,7 +1083,7 @@ class ShipmentType
     }
 
     /**
-     * @param DeclaredCustomsValueAmount|null $declaredCustomsValueAmount
+     * @param  null|DeclaredCustomsValueAmount $declaredCustomsValueAmount
      * @return static
      */
     public function setDeclaredCustomsValueAmount(
@@ -1105,7 +1105,7 @@ class ShipmentType
     }
 
     /**
-     * @return DeclaredForCarriageValueAmount|null
+     * @return null|DeclaredForCarriageValueAmount
      */
     public function getDeclaredForCarriageValueAmount(): ?DeclaredForCarriageValueAmount
     {
@@ -1123,7 +1123,7 @@ class ShipmentType
     }
 
     /**
-     * @param DeclaredForCarriageValueAmount|null $declaredForCarriageValueAmount
+     * @param  null|DeclaredForCarriageValueAmount $declaredForCarriageValueAmount
      * @return static
      */
     public function setDeclaredForCarriageValueAmount(
@@ -1145,7 +1145,7 @@ class ShipmentType
     }
 
     /**
-     * @return DeclaredStatisticsValueAmount|null
+     * @return null|DeclaredStatisticsValueAmount
      */
     public function getDeclaredStatisticsValueAmount(): ?DeclaredStatisticsValueAmount
     {
@@ -1163,7 +1163,7 @@ class ShipmentType
     }
 
     /**
-     * @param DeclaredStatisticsValueAmount|null $declaredStatisticsValueAmount
+     * @param  null|DeclaredStatisticsValueAmount $declaredStatisticsValueAmount
      * @return static
      */
     public function setDeclaredStatisticsValueAmount(
@@ -1185,7 +1185,7 @@ class ShipmentType
     }
 
     /**
-     * @return FreeOnBoardValueAmount|null
+     * @return null|FreeOnBoardValueAmount
      */
     public function getFreeOnBoardValueAmount(): ?FreeOnBoardValueAmount
     {
@@ -1203,7 +1203,7 @@ class ShipmentType
     }
 
     /**
-     * @param FreeOnBoardValueAmount|null $freeOnBoardValueAmount
+     * @param  null|FreeOnBoardValueAmount $freeOnBoardValueAmount
      * @return static
      */
     public function setFreeOnBoardValueAmount(?FreeOnBoardValueAmount $freeOnBoardValueAmount = null): static
@@ -1224,7 +1224,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<SpecialInstructions>|null
+     * @return null|array<SpecialInstructions>
      */
     public function getSpecialInstructions(): ?array
     {
@@ -1232,7 +1232,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<SpecialInstructions>|null $specialInstructions
+     * @param  null|array<SpecialInstructions> $specialInstructions
      * @return static
      */
     public function setSpecialInstructions(?array $specialInstructions = null): static
@@ -1263,7 +1263,7 @@ class ShipmentType
     }
 
     /**
-     * @return SpecialInstructions|null
+     * @return null|SpecialInstructions
      */
     public function firstSpecialInstructions(): ?SpecialInstructions
     {
@@ -1278,7 +1278,7 @@ class ShipmentType
     }
 
     /**
-     * @return SpecialInstructions|null
+     * @return null|SpecialInstructions
      */
     public function lastSpecialInstructions(): ?SpecialInstructions
     {
@@ -1293,7 +1293,7 @@ class ShipmentType
     }
 
     /**
-     * @param SpecialInstructions $specialInstructions
+     * @param  SpecialInstructions $specialInstructions
      * @return static
      */
     public function addToSpecialInstructions(SpecialInstructions $specialInstructions): static
@@ -1314,7 +1314,7 @@ class ShipmentType
     }
 
     /**
-     * @param SpecialInstructions $specialInstructions
+     * @param  SpecialInstructions $specialInstructions
      * @return static
      */
     public function addOnceToSpecialInstructions(SpecialInstructions $specialInstructions): static
@@ -1345,7 +1345,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<DeliveryInstructions>|null
+     * @return null|array<DeliveryInstructions>
      */
     public function getDeliveryInstructions(): ?array
     {
@@ -1353,7 +1353,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<DeliveryInstructions>|null $deliveryInstructions
+     * @param  null|array<DeliveryInstructions> $deliveryInstructions
      * @return static
      */
     public function setDeliveryInstructions(?array $deliveryInstructions = null): static
@@ -1384,7 +1384,7 @@ class ShipmentType
     }
 
     /**
-     * @return DeliveryInstructions|null
+     * @return null|DeliveryInstructions
      */
     public function firstDeliveryInstructions(): ?DeliveryInstructions
     {
@@ -1399,7 +1399,7 @@ class ShipmentType
     }
 
     /**
-     * @return DeliveryInstructions|null
+     * @return null|DeliveryInstructions
      */
     public function lastDeliveryInstructions(): ?DeliveryInstructions
     {
@@ -1414,7 +1414,7 @@ class ShipmentType
     }
 
     /**
-     * @param DeliveryInstructions $deliveryInstructions
+     * @param  DeliveryInstructions $deliveryInstructions
      * @return static
      */
     public function addToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): static
@@ -1435,7 +1435,7 @@ class ShipmentType
     }
 
     /**
-     * @param DeliveryInstructions $deliveryInstructions
+     * @param  DeliveryInstructions $deliveryInstructions
      * @return static
      */
     public function addOnceToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): static
@@ -1466,7 +1466,7 @@ class ShipmentType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getSplitConsignmentIndicator(): ?bool
     {
@@ -1474,7 +1474,7 @@ class ShipmentType
     }
 
     /**
-     * @param bool|null $splitConsignmentIndicator
+     * @param  null|bool $splitConsignmentIndicator
      * @return static
      */
     public function setSplitConsignmentIndicator(?bool $splitConsignmentIndicator = null): static
@@ -1495,7 +1495,7 @@ class ShipmentType
     }
 
     /**
-     * @return ConsignmentQuantity|null
+     * @return null|ConsignmentQuantity
      */
     public function getConsignmentQuantity(): ?ConsignmentQuantity
     {
@@ -1513,7 +1513,7 @@ class ShipmentType
     }
 
     /**
-     * @param ConsignmentQuantity|null $consignmentQuantity
+     * @param  null|ConsignmentQuantity $consignmentQuantity
      * @return static
      */
     public function setConsignmentQuantity(?ConsignmentQuantity $consignmentQuantity = null): static
@@ -1534,7 +1534,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<Consignment>|null
+     * @return null|array<Consignment>
      */
     public function getConsignment(): ?array
     {
@@ -1542,7 +1542,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<Consignment>|null $consignment
+     * @param  null|array<Consignment> $consignment
      * @return static
      */
     public function setConsignment(?array $consignment = null): static
@@ -1573,7 +1573,7 @@ class ShipmentType
     }
 
     /**
-     * @return Consignment|null
+     * @return null|Consignment
      */
     public function firstConsignment(): ?Consignment
     {
@@ -1588,7 +1588,7 @@ class ShipmentType
     }
 
     /**
-     * @return Consignment|null
+     * @return null|Consignment
      */
     public function lastConsignment(): ?Consignment
     {
@@ -1603,7 +1603,7 @@ class ShipmentType
     }
 
     /**
-     * @param Consignment $consignment
+     * @param  Consignment $consignment
      * @return static
      */
     public function addToConsignment(Consignment $consignment): static
@@ -1624,7 +1624,7 @@ class ShipmentType
     }
 
     /**
-     * @param Consignment $consignment
+     * @param  Consignment $consignment
      * @return static
      */
     public function addOnceToConsignment(Consignment $consignment): static
@@ -1655,7 +1655,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<GoodsItem>|null
+     * @return null|array<GoodsItem>
      */
     public function getGoodsItem(): ?array
     {
@@ -1663,7 +1663,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<GoodsItem>|null $goodsItem
+     * @param  null|array<GoodsItem> $goodsItem
      * @return static
      */
     public function setGoodsItem(?array $goodsItem = null): static
@@ -1694,7 +1694,7 @@ class ShipmentType
     }
 
     /**
-     * @return GoodsItem|null
+     * @return null|GoodsItem
      */
     public function firstGoodsItem(): ?GoodsItem
     {
@@ -1709,7 +1709,7 @@ class ShipmentType
     }
 
     /**
-     * @return GoodsItem|null
+     * @return null|GoodsItem
      */
     public function lastGoodsItem(): ?GoodsItem
     {
@@ -1724,7 +1724,7 @@ class ShipmentType
     }
 
     /**
-     * @param GoodsItem $goodsItem
+     * @param  GoodsItem $goodsItem
      * @return static
      */
     public function addToGoodsItem(GoodsItem $goodsItem): static
@@ -1745,7 +1745,7 @@ class ShipmentType
     }
 
     /**
-     * @param GoodsItem $goodsItem
+     * @param  GoodsItem $goodsItem
      * @return static
      */
     public function addOnceToGoodsItem(GoodsItem $goodsItem): static
@@ -1776,7 +1776,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<ShipmentStage>|null
+     * @return null|array<ShipmentStage>
      */
     public function getShipmentStage(): ?array
     {
@@ -1784,7 +1784,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<ShipmentStage>|null $shipmentStage
+     * @param  null|array<ShipmentStage> $shipmentStage
      * @return static
      */
     public function setShipmentStage(?array $shipmentStage = null): static
@@ -1815,7 +1815,7 @@ class ShipmentType
     }
 
     /**
-     * @return ShipmentStage|null
+     * @return null|ShipmentStage
      */
     public function firstShipmentStage(): ?ShipmentStage
     {
@@ -1830,7 +1830,7 @@ class ShipmentType
     }
 
     /**
-     * @return ShipmentStage|null
+     * @return null|ShipmentStage
      */
     public function lastShipmentStage(): ?ShipmentStage
     {
@@ -1845,7 +1845,7 @@ class ShipmentType
     }
 
     /**
-     * @param ShipmentStage $shipmentStage
+     * @param  ShipmentStage $shipmentStage
      * @return static
      */
     public function addToShipmentStage(ShipmentStage $shipmentStage): static
@@ -1866,7 +1866,7 @@ class ShipmentType
     }
 
     /**
-     * @param ShipmentStage $shipmentStage
+     * @param  ShipmentStage $shipmentStage
      * @return static
      */
     public function addOnceToShipmentStage(ShipmentStage $shipmentStage): static
@@ -1897,7 +1897,7 @@ class ShipmentType
     }
 
     /**
-     * @return Delivery|null
+     * @return null|Delivery
      */
     public function getDelivery(): ?Delivery
     {
@@ -1915,7 +1915,7 @@ class ShipmentType
     }
 
     /**
-     * @param Delivery|null $delivery
+     * @param  null|Delivery $delivery
      * @return static
      */
     public function setDelivery(?Delivery $delivery = null): static
@@ -1936,7 +1936,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<TransportHandlingUnit>|null
+     * @return null|array<TransportHandlingUnit>
      */
     public function getTransportHandlingUnit(): ?array
     {
@@ -1944,7 +1944,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<TransportHandlingUnit>|null $transportHandlingUnit
+     * @param  null|array<TransportHandlingUnit> $transportHandlingUnit
      * @return static
      */
     public function setTransportHandlingUnit(?array $transportHandlingUnit = null): static
@@ -1975,7 +1975,7 @@ class ShipmentType
     }
 
     /**
-     * @return TransportHandlingUnit|null
+     * @return null|TransportHandlingUnit
      */
     public function firstTransportHandlingUnit(): ?TransportHandlingUnit
     {
@@ -1990,7 +1990,7 @@ class ShipmentType
     }
 
     /**
-     * @return TransportHandlingUnit|null
+     * @return null|TransportHandlingUnit
      */
     public function lastTransportHandlingUnit(): ?TransportHandlingUnit
     {
@@ -2005,7 +2005,7 @@ class ShipmentType
     }
 
     /**
-     * @param TransportHandlingUnit $transportHandlingUnit
+     * @param  TransportHandlingUnit $transportHandlingUnit
      * @return static
      */
     public function addToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): static
@@ -2026,7 +2026,7 @@ class ShipmentType
     }
 
     /**
-     * @param TransportHandlingUnit $transportHandlingUnit
+     * @param  TransportHandlingUnit $transportHandlingUnit
      * @return static
      */
     public function addOnceToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): static
@@ -2057,7 +2057,7 @@ class ShipmentType
     }
 
     /**
-     * @return ReturnAddress|null
+     * @return null|ReturnAddress
      */
     public function getReturnAddress(): ?ReturnAddress
     {
@@ -2075,7 +2075,7 @@ class ShipmentType
     }
 
     /**
-     * @param ReturnAddress|null $returnAddress
+     * @param  null|ReturnAddress $returnAddress
      * @return static
      */
     public function setReturnAddress(?ReturnAddress $returnAddress = null): static
@@ -2096,7 +2096,7 @@ class ShipmentType
     }
 
     /**
-     * @return OriginAddress|null
+     * @return null|OriginAddress
      */
     public function getOriginAddress(): ?OriginAddress
     {
@@ -2114,7 +2114,7 @@ class ShipmentType
     }
 
     /**
-     * @param OriginAddress|null $originAddress
+     * @param  null|OriginAddress $originAddress
      * @return static
      */
     public function setOriginAddress(?OriginAddress $originAddress = null): static
@@ -2135,7 +2135,7 @@ class ShipmentType
     }
 
     /**
-     * @return FirstArrivalPortLocation|null
+     * @return null|FirstArrivalPortLocation
      */
     public function getFirstArrivalPortLocation(): ?FirstArrivalPortLocation
     {
@@ -2153,7 +2153,7 @@ class ShipmentType
     }
 
     /**
-     * @param FirstArrivalPortLocation|null $firstArrivalPortLocation
+     * @param  null|FirstArrivalPortLocation $firstArrivalPortLocation
      * @return static
      */
     public function setFirstArrivalPortLocation(?FirstArrivalPortLocation $firstArrivalPortLocation = null): static
@@ -2174,7 +2174,7 @@ class ShipmentType
     }
 
     /**
-     * @return LastExitPortLocation|null
+     * @return null|LastExitPortLocation
      */
     public function getLastExitPortLocation(): ?LastExitPortLocation
     {
@@ -2192,7 +2192,7 @@ class ShipmentType
     }
 
     /**
-     * @param LastExitPortLocation|null $lastExitPortLocation
+     * @param  null|LastExitPortLocation $lastExitPortLocation
      * @return static
      */
     public function setLastExitPortLocation(?LastExitPortLocation $lastExitPortLocation = null): static
@@ -2213,7 +2213,7 @@ class ShipmentType
     }
 
     /**
-     * @return ExportCountry|null
+     * @return null|ExportCountry
      */
     public function getExportCountry(): ?ExportCountry
     {
@@ -2231,7 +2231,7 @@ class ShipmentType
     }
 
     /**
-     * @param ExportCountry|null $exportCountry
+     * @param  null|ExportCountry $exportCountry
      * @return static
      */
     public function setExportCountry(?ExportCountry $exportCountry = null): static
@@ -2252,7 +2252,7 @@ class ShipmentType
     }
 
     /**
-     * @return array<FreightAllowanceCharge>|null
+     * @return null|array<FreightAllowanceCharge>
      */
     public function getFreightAllowanceCharge(): ?array
     {
@@ -2260,7 +2260,7 @@ class ShipmentType
     }
 
     /**
-     * @param array<FreightAllowanceCharge>|null $freightAllowanceCharge
+     * @param  null|array<FreightAllowanceCharge> $freightAllowanceCharge
      * @return static
      */
     public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): static
@@ -2291,7 +2291,7 @@ class ShipmentType
     }
 
     /**
-     * @return FreightAllowanceCharge|null
+     * @return null|FreightAllowanceCharge
      */
     public function firstFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
@@ -2306,7 +2306,7 @@ class ShipmentType
     }
 
     /**
-     * @return FreightAllowanceCharge|null
+     * @return null|FreightAllowanceCharge
      */
     public function lastFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
@@ -2321,7 +2321,7 @@ class ShipmentType
     }
 
     /**
-     * @param FreightAllowanceCharge $freightAllowanceCharge
+     * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
     public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
@@ -2342,7 +2342,7 @@ class ShipmentType
     }
 
     /**
-     * @param FreightAllowanceCharge $freightAllowanceCharge
+     * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
     public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static

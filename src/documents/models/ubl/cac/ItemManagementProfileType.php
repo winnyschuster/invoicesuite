@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\FrozenPeriodDaysNumeric;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumInventoryQuantity;
@@ -13,13 +12,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\OrderIntervalDaysNumeric;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ReplenishmentOwnerDescription;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TargetInventoryQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TargetServicePercent;
+use JMS\Serializer\Annotation as JMS;
 
 class ItemManagementProfileType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var FrozenPeriodDaysNumeric|null
+     * @var null|FrozenPeriodDaysNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FrozenPeriodDaysNumeric")
      * @JMS\Expose
@@ -30,7 +30,7 @@ class ItemManagementProfileType
     private $frozenPeriodDaysNumeric;
 
     /**
-     * @var MinimumInventoryQuantity|null
+     * @var null|MinimumInventoryQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumInventoryQuantity")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class ItemManagementProfileType
     private $minimumInventoryQuantity;
 
     /**
-     * @var MultipleOrderQuantity|null
+     * @var null|MultipleOrderQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MultipleOrderQuantity")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class ItemManagementProfileType
     private $multipleOrderQuantity;
 
     /**
-     * @var OrderIntervalDaysNumeric|null
+     * @var null|OrderIntervalDaysNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OrderIntervalDaysNumeric")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class ItemManagementProfileType
     private $orderIntervalDaysNumeric;
 
     /**
-     * @var array<ReplenishmentOwnerDescription>|null
+     * @var null|array<ReplenishmentOwnerDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ReplenishmentOwnerDescription>")
      * @JMS\Expose
@@ -75,7 +75,7 @@ class ItemManagementProfileType
     private $replenishmentOwnerDescription;
 
     /**
-     * @var TargetServicePercent|null
+     * @var null|TargetServicePercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TargetServicePercent")
      * @JMS\Expose
@@ -86,7 +86,7 @@ class ItemManagementProfileType
     private $targetServicePercent;
 
     /**
-     * @var TargetInventoryQuantity|null
+     * @var null|TargetInventoryQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TargetInventoryQuantity")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class ItemManagementProfileType
     private $targetInventoryQuantity;
 
     /**
-     * @var EffectivePeriod|null
+     * @var null|EffectivePeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EffectivePeriod")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class ItemManagementProfileType
     private $effectivePeriod;
 
     /**
-     * @var Item|null
+     * @var null|Item
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -119,7 +119,7 @@ class ItemManagementProfileType
     private $item;
 
     /**
-     * @var ItemLocationQuantity|null
+     * @var null|ItemLocationQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ItemLocationQuantity")
      * @JMS\Expose
@@ -130,7 +130,7 @@ class ItemManagementProfileType
     private $itemLocationQuantity;
 
     /**
-     * @return FrozenPeriodDaysNumeric|null
+     * @return null|FrozenPeriodDaysNumeric
      */
     public function getFrozenPeriodDaysNumeric(): ?FrozenPeriodDaysNumeric
     {
@@ -148,7 +148,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param FrozenPeriodDaysNumeric|null $frozenPeriodDaysNumeric
+     * @param  null|FrozenPeriodDaysNumeric $frozenPeriodDaysNumeric
      * @return static
      */
     public function setFrozenPeriodDaysNumeric(?FrozenPeriodDaysNumeric $frozenPeriodDaysNumeric = null): static
@@ -169,7 +169,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return MinimumInventoryQuantity|null
+     * @return null|MinimumInventoryQuantity
      */
     public function getMinimumInventoryQuantity(): ?MinimumInventoryQuantity
     {
@@ -187,7 +187,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param MinimumInventoryQuantity|null $minimumInventoryQuantity
+     * @param  null|MinimumInventoryQuantity $minimumInventoryQuantity
      * @return static
      */
     public function setMinimumInventoryQuantity(?MinimumInventoryQuantity $minimumInventoryQuantity = null): static
@@ -208,7 +208,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return MultipleOrderQuantity|null
+     * @return null|MultipleOrderQuantity
      */
     public function getMultipleOrderQuantity(): ?MultipleOrderQuantity
     {
@@ -226,7 +226,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param MultipleOrderQuantity|null $multipleOrderQuantity
+     * @param  null|MultipleOrderQuantity $multipleOrderQuantity
      * @return static
      */
     public function setMultipleOrderQuantity(?MultipleOrderQuantity $multipleOrderQuantity = null): static
@@ -247,7 +247,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return OrderIntervalDaysNumeric|null
+     * @return null|OrderIntervalDaysNumeric
      */
     public function getOrderIntervalDaysNumeric(): ?OrderIntervalDaysNumeric
     {
@@ -265,7 +265,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param OrderIntervalDaysNumeric|null $orderIntervalDaysNumeric
+     * @param  null|OrderIntervalDaysNumeric $orderIntervalDaysNumeric
      * @return static
      */
     public function setOrderIntervalDaysNumeric(?OrderIntervalDaysNumeric $orderIntervalDaysNumeric = null): static
@@ -286,7 +286,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return array<ReplenishmentOwnerDescription>|null
+     * @return null|array<ReplenishmentOwnerDescription>
      */
     public function getReplenishmentOwnerDescription(): ?array
     {
@@ -294,7 +294,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param array<ReplenishmentOwnerDescription>|null $replenishmentOwnerDescription
+     * @param  null|array<ReplenishmentOwnerDescription> $replenishmentOwnerDescription
      * @return static
      */
     public function setReplenishmentOwnerDescription(?array $replenishmentOwnerDescription = null): static
@@ -325,7 +325,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return ReplenishmentOwnerDescription|null
+     * @return null|ReplenishmentOwnerDescription
      */
     public function firstReplenishmentOwnerDescription(): ?ReplenishmentOwnerDescription
     {
@@ -340,7 +340,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return ReplenishmentOwnerDescription|null
+     * @return null|ReplenishmentOwnerDescription
      */
     public function lastReplenishmentOwnerDescription(): ?ReplenishmentOwnerDescription
     {
@@ -355,7 +355,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param ReplenishmentOwnerDescription $replenishmentOwnerDescription
+     * @param  ReplenishmentOwnerDescription $replenishmentOwnerDescription
      * @return static
      */
     public function addToReplenishmentOwnerDescription(
@@ -377,7 +377,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param ReplenishmentOwnerDescription $replenishmentOwnerDescription
+     * @param  ReplenishmentOwnerDescription $replenishmentOwnerDescription
      * @return static
      */
     public function addOnceToReplenishmentOwnerDescription(
@@ -409,7 +409,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return TargetServicePercent|null
+     * @return null|TargetServicePercent
      */
     public function getTargetServicePercent(): ?TargetServicePercent
     {
@@ -427,7 +427,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param TargetServicePercent|null $targetServicePercent
+     * @param  null|TargetServicePercent $targetServicePercent
      * @return static
      */
     public function setTargetServicePercent(?TargetServicePercent $targetServicePercent = null): static
@@ -448,7 +448,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return TargetInventoryQuantity|null
+     * @return null|TargetInventoryQuantity
      */
     public function getTargetInventoryQuantity(): ?TargetInventoryQuantity
     {
@@ -466,7 +466,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param TargetInventoryQuantity|null $targetInventoryQuantity
+     * @param  null|TargetInventoryQuantity $targetInventoryQuantity
      * @return static
      */
     public function setTargetInventoryQuantity(?TargetInventoryQuantity $targetInventoryQuantity = null): static
@@ -487,7 +487,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return EffectivePeriod|null
+     * @return null|EffectivePeriod
      */
     public function getEffectivePeriod(): ?EffectivePeriod
     {
@@ -505,7 +505,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param EffectivePeriod|null $effectivePeriod
+     * @param  null|EffectivePeriod $effectivePeriod
      * @return static
      */
     public function setEffectivePeriod(?EffectivePeriod $effectivePeriod = null): static
@@ -526,7 +526,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function getItem(): ?Item
     {
@@ -544,7 +544,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param Item|null $item
+     * @param  null|Item $item
      * @return static
      */
     public function setItem(?Item $item = null): static
@@ -565,7 +565,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @return ItemLocationQuantity|null
+     * @return null|ItemLocationQuantity
      */
     public function getItemLocationQuantity(): ?ItemLocationQuantity
     {
@@ -583,7 +583,7 @@ class ItemManagementProfileType
     }
 
     /**
-     * @param ItemLocationQuantity|null $itemLocationQuantity
+     * @param  null|ItemLocationQuantity $itemLocationQuantity
      * @return static
      */
     public function setItemLocationQuantity(?ItemLocationQuantity $itemLocationQuantity = null): static

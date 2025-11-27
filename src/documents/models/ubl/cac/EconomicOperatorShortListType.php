@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ExpectedQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LimitationDescription;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class EconomicOperatorShortListType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var array<LimitationDescription>|null
+     * @var null|array<LimitationDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\LimitationDescription>")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class EconomicOperatorShortListType
     private $limitationDescription;
 
     /**
-     * @var ExpectedQuantity|null
+     * @var null|ExpectedQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExpectedQuantity")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class EconomicOperatorShortListType
     private $expectedQuantity;
 
     /**
-     * @var MaximumQuantity|null
+     * @var null|MaximumQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumQuantity")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class EconomicOperatorShortListType
     private $maximumQuantity;
 
     /**
-     * @var MinimumQuantity|null
+     * @var null|MinimumQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumQuantity")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class EconomicOperatorShortListType
     private $minimumQuantity;
 
     /**
-     * @var array<PreSelectedParty>|null
+     * @var null|array<PreSelectedParty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PreSelectedParty>")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class EconomicOperatorShortListType
     private $preSelectedParty;
 
     /**
-     * @return array<LimitationDescription>|null
+     * @return null|array<LimitationDescription>
      */
     public function getLimitationDescription(): ?array
     {
@@ -81,7 +81,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param array<LimitationDescription>|null $limitationDescription
+     * @param  null|array<LimitationDescription> $limitationDescription
      * @return static
      */
     public function setLimitationDescription(?array $limitationDescription = null): static
@@ -112,7 +112,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return LimitationDescription|null
+     * @return null|LimitationDescription
      */
     public function firstLimitationDescription(): ?LimitationDescription
     {
@@ -127,7 +127,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return LimitationDescription|null
+     * @return null|LimitationDescription
      */
     public function lastLimitationDescription(): ?LimitationDescription
     {
@@ -142,7 +142,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param LimitationDescription $limitationDescription
+     * @param  LimitationDescription $limitationDescription
      * @return static
      */
     public function addToLimitationDescription(LimitationDescription $limitationDescription): static
@@ -163,7 +163,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param LimitationDescription $limitationDescription
+     * @param  LimitationDescription $limitationDescription
      * @return static
      */
     public function addOnceToLimitationDescription(LimitationDescription $limitationDescription): static
@@ -194,7 +194,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return ExpectedQuantity|null
+     * @return null|ExpectedQuantity
      */
     public function getExpectedQuantity(): ?ExpectedQuantity
     {
@@ -212,7 +212,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param ExpectedQuantity|null $expectedQuantity
+     * @param  null|ExpectedQuantity $expectedQuantity
      * @return static
      */
     public function setExpectedQuantity(?ExpectedQuantity $expectedQuantity = null): static
@@ -233,7 +233,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return MaximumQuantity|null
+     * @return null|MaximumQuantity
      */
     public function getMaximumQuantity(): ?MaximumQuantity
     {
@@ -251,7 +251,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param MaximumQuantity|null $maximumQuantity
+     * @param  null|MaximumQuantity $maximumQuantity
      * @return static
      */
     public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): static
@@ -272,7 +272,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return MinimumQuantity|null
+     * @return null|MinimumQuantity
      */
     public function getMinimumQuantity(): ?MinimumQuantity
     {
@@ -290,7 +290,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param MinimumQuantity|null $minimumQuantity
+     * @param  null|MinimumQuantity $minimumQuantity
      * @return static
      */
     public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): static
@@ -311,7 +311,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return array<PreSelectedParty>|null
+     * @return null|array<PreSelectedParty>
      */
     public function getPreSelectedParty(): ?array
     {
@@ -319,7 +319,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param array<PreSelectedParty>|null $preSelectedParty
+     * @param  null|array<PreSelectedParty> $preSelectedParty
      * @return static
      */
     public function setPreSelectedParty(?array $preSelectedParty = null): static
@@ -350,7 +350,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return PreSelectedParty|null
+     * @return null|PreSelectedParty
      */
     public function firstPreSelectedParty(): ?PreSelectedParty
     {
@@ -365,7 +365,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @return PreSelectedParty|null
+     * @return null|PreSelectedParty
      */
     public function lastPreSelectedParty(): ?PreSelectedParty
     {
@@ -380,7 +380,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param PreSelectedParty $preSelectedParty
+     * @param  PreSelectedParty $preSelectedParty
      * @return static
      */
     public function addToPreSelectedParty(PreSelectedParty $preSelectedParty): static
@@ -401,7 +401,7 @@ class EconomicOperatorShortListType
     }
 
     /**
-     * @param PreSelectedParty $preSelectedParty
+     * @param  PreSelectedParty $preSelectedParty
      * @return static
      */
     public function addOnceToPreSelectedParty(PreSelectedParty $preSelectedParty): static

@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasic\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType;
 use horstoeko\invoicesuite\documents\models\zffxbasic\udt\QuantityType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradePriceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class TradePriceType
     private $chargeAmount;
 
     /**
-     * @var QuantityType|null
+     * @var null|QuantityType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\QuantityType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TradePriceType
     private $basisQuantity;
 
     /**
-     * @var TradeAllowanceChargeType|null
+     * @var null|TradeAllowanceChargeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\ram\TradeAllowanceChargeType")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class TradePriceType
     private $appliedTradeAllowanceCharge;
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getChargeAmount(): ?AmountType
     {
@@ -65,7 +65,7 @@ class TradePriceType
     }
 
     /**
-     * @param AmountType|null $chargeAmount
+     * @param  null|AmountType $chargeAmount
      * @return static
      */
     public function setChargeAmount(?AmountType $chargeAmount = null): static
@@ -86,7 +86,7 @@ class TradePriceType
     }
 
     /**
-     * @return QuantityType|null
+     * @return null|QuantityType
      */
     public function getBasisQuantity(): ?QuantityType
     {
@@ -104,7 +104,7 @@ class TradePriceType
     }
 
     /**
-     * @param QuantityType|null $basisQuantity
+     * @param  null|QuantityType $basisQuantity
      * @return static
      */
     public function setBasisQuantity(?QuantityType $basisQuantity = null): static
@@ -125,7 +125,7 @@ class TradePriceType
     }
 
     /**
-     * @return TradeAllowanceChargeType|null
+     * @return null|TradeAllowanceChargeType
      */
     public function getAppliedTradeAllowanceCharge(): ?TradeAllowanceChargeType
     {
@@ -143,7 +143,7 @@ class TradePriceType
     }
 
     /**
-     * @param TradeAllowanceChargeType|null $appliedTradeAllowanceCharge
+     * @param  null|TradeAllowanceChargeType $appliedTradeAllowanceCharge
      * @return static
      */
     public function setAppliedTradeAllowanceCharge(

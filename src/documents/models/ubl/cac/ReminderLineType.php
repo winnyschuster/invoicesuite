@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode;
@@ -16,13 +15,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltySurchargePercent;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
+use JMS\Serializer\Annotation as JMS;
 
 class ReminderLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class ReminderLineType
     private $iD;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class ReminderLineType
     private $note;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class ReminderLineType
     private $uUID;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class ReminderLineType
     private $balanceBroughtForwardIndicator;
 
     /**
-     * @var DebitLineAmount|null
+     * @var null|DebitLineAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DebitLineAmount")
      * @JMS\Expose
@@ -78,7 +78,7 @@ class ReminderLineType
     private $debitLineAmount;
 
     /**
-     * @var CreditLineAmount|null
+     * @var null|CreditLineAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CreditLineAmount")
      * @JMS\Expose
@@ -89,7 +89,7 @@ class ReminderLineType
     private $creditLineAmount;
 
     /**
-     * @var AccountingCostCode|null
+     * @var null|AccountingCostCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode")
      * @JMS\Expose
@@ -100,7 +100,7 @@ class ReminderLineType
     private $accountingCostCode;
 
     /**
-     * @var AccountingCost|null
+     * @var null|AccountingCost
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost")
      * @JMS\Expose
@@ -111,7 +111,7 @@ class ReminderLineType
     private $accountingCost;
 
     /**
-     * @var PenaltySurchargePercent|null
+     * @var null|PenaltySurchargePercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PenaltySurchargePercent")
      * @JMS\Expose
@@ -122,7 +122,7 @@ class ReminderLineType
     private $penaltySurchargePercent;
 
     /**
-     * @var Amount|null
+     * @var null|Amount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -133,7 +133,7 @@ class ReminderLineType
     private $amount;
 
     /**
-     * @var PaymentPurposeCode|null
+     * @var null|PaymentPurposeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentPurposeCode")
      * @JMS\Expose
@@ -144,7 +144,7 @@ class ReminderLineType
     private $paymentPurposeCode;
 
     /**
-     * @var array<ReminderPeriod>|null
+     * @var null|array<ReminderPeriod>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ReminderPeriod>")
      * @JMS\Expose
@@ -156,7 +156,7 @@ class ReminderLineType
     private $reminderPeriod;
 
     /**
-     * @var array<BillingReference>|null
+     * @var null|array<BillingReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>")
      * @JMS\Expose
@@ -168,7 +168,7 @@ class ReminderLineType
     private $billingReference;
 
     /**
-     * @var ExchangeRate|null
+     * @var null|ExchangeRate
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExchangeRate")
      * @JMS\Expose
@@ -179,7 +179,7 @@ class ReminderLineType
     private $exchangeRate;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -197,7 +197,7 @@ class ReminderLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -218,7 +218,7 @@ class ReminderLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -226,7 +226,7 @@ class ReminderLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -257,7 +257,7 @@ class ReminderLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -272,7 +272,7 @@ class ReminderLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -287,7 +287,7 @@ class ReminderLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -308,7 +308,7 @@ class ReminderLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -339,7 +339,7 @@ class ReminderLineType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -357,7 +357,7 @@ class ReminderLineType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -378,7 +378,7 @@ class ReminderLineType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getBalanceBroughtForwardIndicator(): ?bool
     {
@@ -386,7 +386,7 @@ class ReminderLineType
     }
 
     /**
-     * @param bool|null $balanceBroughtForwardIndicator
+     * @param  null|bool $balanceBroughtForwardIndicator
      * @return static
      */
     public function setBalanceBroughtForwardIndicator(?bool $balanceBroughtForwardIndicator = null): static
@@ -407,7 +407,7 @@ class ReminderLineType
     }
 
     /**
-     * @return DebitLineAmount|null
+     * @return null|DebitLineAmount
      */
     public function getDebitLineAmount(): ?DebitLineAmount
     {
@@ -425,7 +425,7 @@ class ReminderLineType
     }
 
     /**
-     * @param DebitLineAmount|null $debitLineAmount
+     * @param  null|DebitLineAmount $debitLineAmount
      * @return static
      */
     public function setDebitLineAmount(?DebitLineAmount $debitLineAmount = null): static
@@ -446,7 +446,7 @@ class ReminderLineType
     }
 
     /**
-     * @return CreditLineAmount|null
+     * @return null|CreditLineAmount
      */
     public function getCreditLineAmount(): ?CreditLineAmount
     {
@@ -464,7 +464,7 @@ class ReminderLineType
     }
 
     /**
-     * @param CreditLineAmount|null $creditLineAmount
+     * @param  null|CreditLineAmount $creditLineAmount
      * @return static
      */
     public function setCreditLineAmount(?CreditLineAmount $creditLineAmount = null): static
@@ -485,7 +485,7 @@ class ReminderLineType
     }
 
     /**
-     * @return AccountingCostCode|null
+     * @return null|AccountingCostCode
      */
     public function getAccountingCostCode(): ?AccountingCostCode
     {
@@ -503,7 +503,7 @@ class ReminderLineType
     }
 
     /**
-     * @param AccountingCostCode|null $accountingCostCode
+     * @param  null|AccountingCostCode $accountingCostCode
      * @return static
      */
     public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): static
@@ -524,7 +524,7 @@ class ReminderLineType
     }
 
     /**
-     * @return AccountingCost|null
+     * @return null|AccountingCost
      */
     public function getAccountingCost(): ?AccountingCost
     {
@@ -542,7 +542,7 @@ class ReminderLineType
     }
 
     /**
-     * @param AccountingCost|null $accountingCost
+     * @param  null|AccountingCost $accountingCost
      * @return static
      */
     public function setAccountingCost(?AccountingCost $accountingCost = null): static
@@ -563,7 +563,7 @@ class ReminderLineType
     }
 
     /**
-     * @return PenaltySurchargePercent|null
+     * @return null|PenaltySurchargePercent
      */
     public function getPenaltySurchargePercent(): ?PenaltySurchargePercent
     {
@@ -581,7 +581,7 @@ class ReminderLineType
     }
 
     /**
-     * @param PenaltySurchargePercent|null $penaltySurchargePercent
+     * @param  null|PenaltySurchargePercent $penaltySurchargePercent
      * @return static
      */
     public function setPenaltySurchargePercent(?PenaltySurchargePercent $penaltySurchargePercent = null): static
@@ -602,7 +602,7 @@ class ReminderLineType
     }
 
     /**
-     * @return Amount|null
+     * @return null|Amount
      */
     public function getAmount(): ?Amount
     {
@@ -620,7 +620,7 @@ class ReminderLineType
     }
 
     /**
-     * @param Amount|null $amount
+     * @param  null|Amount $amount
      * @return static
      */
     public function setAmount(?Amount $amount = null): static
@@ -641,7 +641,7 @@ class ReminderLineType
     }
 
     /**
-     * @return PaymentPurposeCode|null
+     * @return null|PaymentPurposeCode
      */
     public function getPaymentPurposeCode(): ?PaymentPurposeCode
     {
@@ -659,7 +659,7 @@ class ReminderLineType
     }
 
     /**
-     * @param PaymentPurposeCode|null $paymentPurposeCode
+     * @param  null|PaymentPurposeCode $paymentPurposeCode
      * @return static
      */
     public function setPaymentPurposeCode(?PaymentPurposeCode $paymentPurposeCode = null): static
@@ -680,7 +680,7 @@ class ReminderLineType
     }
 
     /**
-     * @return array<ReminderPeriod>|null
+     * @return null|array<ReminderPeriod>
      */
     public function getReminderPeriod(): ?array
     {
@@ -688,7 +688,7 @@ class ReminderLineType
     }
 
     /**
-     * @param array<ReminderPeriod>|null $reminderPeriod
+     * @param  null|array<ReminderPeriod> $reminderPeriod
      * @return static
      */
     public function setReminderPeriod(?array $reminderPeriod = null): static
@@ -719,7 +719,7 @@ class ReminderLineType
     }
 
     /**
-     * @return ReminderPeriod|null
+     * @return null|ReminderPeriod
      */
     public function firstReminderPeriod(): ?ReminderPeriod
     {
@@ -734,7 +734,7 @@ class ReminderLineType
     }
 
     /**
-     * @return ReminderPeriod|null
+     * @return null|ReminderPeriod
      */
     public function lastReminderPeriod(): ?ReminderPeriod
     {
@@ -749,7 +749,7 @@ class ReminderLineType
     }
 
     /**
-     * @param ReminderPeriod $reminderPeriod
+     * @param  ReminderPeriod $reminderPeriod
      * @return static
      */
     public function addToReminderPeriod(ReminderPeriod $reminderPeriod): static
@@ -770,7 +770,7 @@ class ReminderLineType
     }
 
     /**
-     * @param ReminderPeriod $reminderPeriod
+     * @param  ReminderPeriod $reminderPeriod
      * @return static
      */
     public function addOnceToReminderPeriod(ReminderPeriod $reminderPeriod): static
@@ -801,7 +801,7 @@ class ReminderLineType
     }
 
     /**
-     * @return array<BillingReference>|null
+     * @return null|array<BillingReference>
      */
     public function getBillingReference(): ?array
     {
@@ -809,7 +809,7 @@ class ReminderLineType
     }
 
     /**
-     * @param array<BillingReference>|null $billingReference
+     * @param  null|array<BillingReference> $billingReference
      * @return static
      */
     public function setBillingReference(?array $billingReference = null): static
@@ -840,7 +840,7 @@ class ReminderLineType
     }
 
     /**
-     * @return BillingReference|null
+     * @return null|BillingReference
      */
     public function firstBillingReference(): ?BillingReference
     {
@@ -855,7 +855,7 @@ class ReminderLineType
     }
 
     /**
-     * @return BillingReference|null
+     * @return null|BillingReference
      */
     public function lastBillingReference(): ?BillingReference
     {
@@ -870,7 +870,7 @@ class ReminderLineType
     }
 
     /**
-     * @param BillingReference $billingReference
+     * @param  BillingReference $billingReference
      * @return static
      */
     public function addToBillingReference(BillingReference $billingReference): static
@@ -891,7 +891,7 @@ class ReminderLineType
     }
 
     /**
-     * @param BillingReference $billingReference
+     * @param  BillingReference $billingReference
      * @return static
      */
     public function addOnceToBillingReference(BillingReference $billingReference): static
@@ -922,7 +922,7 @@ class ReminderLineType
     }
 
     /**
-     * @return ExchangeRate|null
+     * @return null|ExchangeRate
      */
     public function getExchangeRate(): ?ExchangeRate
     {
@@ -940,7 +940,7 @@ class ReminderLineType
     }
 
     /**
-     * @param ExchangeRate|null $exchangeRate
+     * @param  null|ExchangeRate $exchangeRate
      * @return static
      */
     public function setExchangeRate(?ExchangeRate $exchangeRate = null): static

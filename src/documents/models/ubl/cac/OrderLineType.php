@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SubstitutionStatusCode;
+use JMS\Serializer\Annotation as JMS;
 
 class OrderLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var SubstitutionStatusCode|null
+     * @var null|SubstitutionStatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubstitutionStatusCode")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class OrderLineType
     private $substitutionStatusCode;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class OrderLineType
     private $note;
 
     /**
-     * @var LineItem|null
+     * @var null|LineItem
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LineItem")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class OrderLineType
     private $lineItem;
 
     /**
-     * @var array<SellerProposedSubstituteLineItem>|null
+     * @var null|array<SellerProposedSubstituteLineItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SellerProposedSubstituteLineItem>")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class OrderLineType
     private $sellerProposedSubstituteLineItem;
 
     /**
-     * @var array<SellerSubstitutedLineItem>|null
+     * @var null|array<SellerSubstitutedLineItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SellerSubstitutedLineItem>")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class OrderLineType
     private $sellerSubstitutedLineItem;
 
     /**
-     * @var array<BuyerProposedSubstituteLineItem>|null
+     * @var null|array<BuyerProposedSubstituteLineItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\BuyerProposedSubstituteLineItem>")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class OrderLineType
     private $buyerProposedSubstituteLineItem;
 
     /**
-     * @var CatalogueLineReference|null
+     * @var null|CatalogueLineReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CatalogueLineReference")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class OrderLineType
     private $catalogueLineReference;
 
     /**
-     * @var QuotationLineReference|null
+     * @var null|QuotationLineReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\QuotationLineReference")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class OrderLineType
     private $quotationLineReference;
 
     /**
-     * @var array<OrderLineReference>|null
+     * @var null|array<OrderLineReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference>")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class OrderLineType
     private $orderLineReference;
 
     /**
-     * @var array<DocumentReference>|null
+     * @var null|array<DocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -130,7 +130,7 @@ class OrderLineType
     private $documentReference;
 
     /**
-     * @return SubstitutionStatusCode|null
+     * @return null|SubstitutionStatusCode
      */
     public function getSubstitutionStatusCode(): ?SubstitutionStatusCode
     {
@@ -148,7 +148,7 @@ class OrderLineType
     }
 
     /**
-     * @param SubstitutionStatusCode|null $substitutionStatusCode
+     * @param  null|SubstitutionStatusCode $substitutionStatusCode
      * @return static
      */
     public function setSubstitutionStatusCode(?SubstitutionStatusCode $substitutionStatusCode = null): static
@@ -169,7 +169,7 @@ class OrderLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -177,7 +177,7 @@ class OrderLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -208,7 +208,7 @@ class OrderLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -223,7 +223,7 @@ class OrderLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -238,7 +238,7 @@ class OrderLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -259,7 +259,7 @@ class OrderLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -290,7 +290,7 @@ class OrderLineType
     }
 
     /**
-     * @return LineItem|null
+     * @return null|LineItem
      */
     public function getLineItem(): ?LineItem
     {
@@ -308,7 +308,7 @@ class OrderLineType
     }
 
     /**
-     * @param LineItem|null $lineItem
+     * @param  null|LineItem $lineItem
      * @return static
      */
     public function setLineItem(?LineItem $lineItem = null): static
@@ -329,7 +329,7 @@ class OrderLineType
     }
 
     /**
-     * @return array<SellerProposedSubstituteLineItem>|null
+     * @return null|array<SellerProposedSubstituteLineItem>
      */
     public function getSellerProposedSubstituteLineItem(): ?array
     {
@@ -337,7 +337,7 @@ class OrderLineType
     }
 
     /**
-     * @param array<SellerProposedSubstituteLineItem>|null $sellerProposedSubstituteLineItem
+     * @param  null|array<SellerProposedSubstituteLineItem> $sellerProposedSubstituteLineItem
      * @return static
      */
     public function setSellerProposedSubstituteLineItem(?array $sellerProposedSubstituteLineItem = null): static
@@ -368,7 +368,7 @@ class OrderLineType
     }
 
     /**
-     * @return SellerProposedSubstituteLineItem|null
+     * @return null|SellerProposedSubstituteLineItem
      */
     public function firstSellerProposedSubstituteLineItem(): ?SellerProposedSubstituteLineItem
     {
@@ -383,7 +383,7 @@ class OrderLineType
     }
 
     /**
-     * @return SellerProposedSubstituteLineItem|null
+     * @return null|SellerProposedSubstituteLineItem
      */
     public function lastSellerProposedSubstituteLineItem(): ?SellerProposedSubstituteLineItem
     {
@@ -398,7 +398,7 @@ class OrderLineType
     }
 
     /**
-     * @param SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
+     * @param  SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
      * @return static
      */
     public function addToSellerProposedSubstituteLineItem(
@@ -420,7 +420,7 @@ class OrderLineType
     }
 
     /**
-     * @param SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
+     * @param  SellerProposedSubstituteLineItem $sellerProposedSubstituteLineItem
      * @return static
      */
     public function addOnceToSellerProposedSubstituteLineItem(
@@ -452,7 +452,7 @@ class OrderLineType
     }
 
     /**
-     * @return array<SellerSubstitutedLineItem>|null
+     * @return null|array<SellerSubstitutedLineItem>
      */
     public function getSellerSubstitutedLineItem(): ?array
     {
@@ -460,7 +460,7 @@ class OrderLineType
     }
 
     /**
-     * @param array<SellerSubstitutedLineItem>|null $sellerSubstitutedLineItem
+     * @param  null|array<SellerSubstitutedLineItem> $sellerSubstitutedLineItem
      * @return static
      */
     public function setSellerSubstitutedLineItem(?array $sellerSubstitutedLineItem = null): static
@@ -491,7 +491,7 @@ class OrderLineType
     }
 
     /**
-     * @return SellerSubstitutedLineItem|null
+     * @return null|SellerSubstitutedLineItem
      */
     public function firstSellerSubstitutedLineItem(): ?SellerSubstitutedLineItem
     {
@@ -506,7 +506,7 @@ class OrderLineType
     }
 
     /**
-     * @return SellerSubstitutedLineItem|null
+     * @return null|SellerSubstitutedLineItem
      */
     public function lastSellerSubstitutedLineItem(): ?SellerSubstitutedLineItem
     {
@@ -521,7 +521,7 @@ class OrderLineType
     }
 
     /**
-     * @param SellerSubstitutedLineItem $sellerSubstitutedLineItem
+     * @param  SellerSubstitutedLineItem $sellerSubstitutedLineItem
      * @return static
      */
     public function addToSellerSubstitutedLineItem(SellerSubstitutedLineItem $sellerSubstitutedLineItem): static
@@ -542,7 +542,7 @@ class OrderLineType
     }
 
     /**
-     * @param SellerSubstitutedLineItem $sellerSubstitutedLineItem
+     * @param  SellerSubstitutedLineItem $sellerSubstitutedLineItem
      * @return static
      */
     public function addOnceToSellerSubstitutedLineItem(SellerSubstitutedLineItem $sellerSubstitutedLineItem): static
@@ -573,7 +573,7 @@ class OrderLineType
     }
 
     /**
-     * @return array<BuyerProposedSubstituteLineItem>|null
+     * @return null|array<BuyerProposedSubstituteLineItem>
      */
     public function getBuyerProposedSubstituteLineItem(): ?array
     {
@@ -581,7 +581,7 @@ class OrderLineType
     }
 
     /**
-     * @param array<BuyerProposedSubstituteLineItem>|null $buyerProposedSubstituteLineItem
+     * @param  null|array<BuyerProposedSubstituteLineItem> $buyerProposedSubstituteLineItem
      * @return static
      */
     public function setBuyerProposedSubstituteLineItem(?array $buyerProposedSubstituteLineItem = null): static
@@ -612,7 +612,7 @@ class OrderLineType
     }
 
     /**
-     * @return BuyerProposedSubstituteLineItem|null
+     * @return null|BuyerProposedSubstituteLineItem
      */
     public function firstBuyerProposedSubstituteLineItem(): ?BuyerProposedSubstituteLineItem
     {
@@ -627,7 +627,7 @@ class OrderLineType
     }
 
     /**
-     * @return BuyerProposedSubstituteLineItem|null
+     * @return null|BuyerProposedSubstituteLineItem
      */
     public function lastBuyerProposedSubstituteLineItem(): ?BuyerProposedSubstituteLineItem
     {
@@ -642,7 +642,7 @@ class OrderLineType
     }
 
     /**
-     * @param BuyerProposedSubstituteLineItem $buyerProposedSubstituteLineItem
+     * @param  BuyerProposedSubstituteLineItem $buyerProposedSubstituteLineItem
      * @return static
      */
     public function addToBuyerProposedSubstituteLineItem(
@@ -664,7 +664,7 @@ class OrderLineType
     }
 
     /**
-     * @param BuyerProposedSubstituteLineItem $buyerProposedSubstituteLineItem
+     * @param  BuyerProposedSubstituteLineItem $buyerProposedSubstituteLineItem
      * @return static
      */
     public function addOnceToBuyerProposedSubstituteLineItem(
@@ -696,7 +696,7 @@ class OrderLineType
     }
 
     /**
-     * @return CatalogueLineReference|null
+     * @return null|CatalogueLineReference
      */
     public function getCatalogueLineReference(): ?CatalogueLineReference
     {
@@ -714,7 +714,7 @@ class OrderLineType
     }
 
     /**
-     * @param CatalogueLineReference|null $catalogueLineReference
+     * @param  null|CatalogueLineReference $catalogueLineReference
      * @return static
      */
     public function setCatalogueLineReference(?CatalogueLineReference $catalogueLineReference = null): static
@@ -735,7 +735,7 @@ class OrderLineType
     }
 
     /**
-     * @return QuotationLineReference|null
+     * @return null|QuotationLineReference
      */
     public function getQuotationLineReference(): ?QuotationLineReference
     {
@@ -753,7 +753,7 @@ class OrderLineType
     }
 
     /**
-     * @param QuotationLineReference|null $quotationLineReference
+     * @param  null|QuotationLineReference $quotationLineReference
      * @return static
      */
     public function setQuotationLineReference(?QuotationLineReference $quotationLineReference = null): static
@@ -774,7 +774,7 @@ class OrderLineType
     }
 
     /**
-     * @return array<OrderLineReference>|null
+     * @return null|array<OrderLineReference>
      */
     public function getOrderLineReference(): ?array
     {
@@ -782,7 +782,7 @@ class OrderLineType
     }
 
     /**
-     * @param array<OrderLineReference>|null $orderLineReference
+     * @param  null|array<OrderLineReference> $orderLineReference
      * @return static
      */
     public function setOrderLineReference(?array $orderLineReference = null): static
@@ -813,7 +813,7 @@ class OrderLineType
     }
 
     /**
-     * @return OrderLineReference|null
+     * @return null|OrderLineReference
      */
     public function firstOrderLineReference(): ?OrderLineReference
     {
@@ -828,7 +828,7 @@ class OrderLineType
     }
 
     /**
-     * @return OrderLineReference|null
+     * @return null|OrderLineReference
      */
     public function lastOrderLineReference(): ?OrderLineReference
     {
@@ -843,7 +843,7 @@ class OrderLineType
     }
 
     /**
-     * @param OrderLineReference $orderLineReference
+     * @param  OrderLineReference $orderLineReference
      * @return static
      */
     public function addToOrderLineReference(OrderLineReference $orderLineReference): static
@@ -864,7 +864,7 @@ class OrderLineType
     }
 
     /**
-     * @param OrderLineReference $orderLineReference
+     * @param  OrderLineReference $orderLineReference
      * @return static
      */
     public function addOnceToOrderLineReference(OrderLineReference $orderLineReference): static
@@ -895,7 +895,7 @@ class OrderLineType
     }
 
     /**
-     * @return array<DocumentReference>|null
+     * @return null|array<DocumentReference>
      */
     public function getDocumentReference(): ?array
     {
@@ -903,7 +903,7 @@ class OrderLineType
     }
 
     /**
-     * @param array<DocumentReference>|null $documentReference
+     * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
     public function setDocumentReference(?array $documentReference = null): static
@@ -934,7 +934,7 @@ class OrderLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -949,7 +949,7 @@ class OrderLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -964,7 +964,7 @@ class OrderLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addToDocumentReference(DocumentReference $documentReference): static
@@ -985,7 +985,7 @@ class OrderLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): static

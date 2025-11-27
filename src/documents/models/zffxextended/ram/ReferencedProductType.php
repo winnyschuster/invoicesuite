@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class ReferencedProductType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class ReferencedProductType
     private $iD;
 
     /**
-     * @var array<IDType>|null
+     * @var null|array<IDType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType>")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class ReferencedProductType
     private $globalID;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class ReferencedProductType
     private $sellerAssignedID;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ReferencedProductType
     private $buyerAssignedID;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class ReferencedProductType
     private $industryAssignedID;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class ReferencedProductType
     private $name;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -93,7 +93,7 @@ class ReferencedProductType
     private $description;
 
     /**
-     * @var QuantityType|null
+     * @var null|QuantityType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType")
      * @JMS\Expose
@@ -104,7 +104,7 @@ class ReferencedProductType
     private $unitQuantity;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getID(): ?IDType
     {
@@ -122,7 +122,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param IDType|null $iD
+     * @param  null|IDType $iD
      * @return static
      */
     public function setID(?IDType $iD = null): static
@@ -143,7 +143,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return array<IDType>|null
+     * @return null|array<IDType>
      */
     public function getGlobalID(): ?array
     {
@@ -151,7 +151,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param array<IDType>|null $globalID
+     * @param  null|array<IDType> $globalID
      * @return static
      */
     public function setGlobalID(?array $globalID = null): static
@@ -182,7 +182,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param IDType $globalID
+     * @param  IDType $globalID
      * @return static
      */
     public function addToGlobalID(IDType $globalID): static
@@ -203,7 +203,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param IDType $globalID
+     * @param  IDType $globalID
      * @return static
      */
     public function addOnceToGlobalID(IDType $globalID): static
@@ -234,7 +234,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getSellerAssignedID(): ?IDType
     {
@@ -252,7 +252,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param IDType|null $sellerAssignedID
+     * @param  null|IDType $sellerAssignedID
      * @return static
      */
     public function setSellerAssignedID(?IDType $sellerAssignedID = null): static
@@ -273,7 +273,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getBuyerAssignedID(): ?IDType
     {
@@ -291,7 +291,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param IDType|null $buyerAssignedID
+     * @param  null|IDType $buyerAssignedID
      * @return static
      */
     public function setBuyerAssignedID(?IDType $buyerAssignedID = null): static
@@ -312,7 +312,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getIndustryAssignedID(): ?IDType
     {
@@ -330,7 +330,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param IDType|null $industryAssignedID
+     * @param  null|IDType $industryAssignedID
      * @return static
      */
     public function setIndustryAssignedID(?IDType $industryAssignedID = null): static
@@ -351,7 +351,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getName(): ?TextType
     {
@@ -369,7 +369,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param TextType|null $name
+     * @param  null|TextType $name
      * @return static
      */
     public function setName(?TextType $name = null): static
@@ -390,7 +390,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getDescription(): ?TextType
     {
@@ -408,7 +408,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param TextType|null $description
+     * @param  null|TextType $description
      * @return static
      */
     public function setDescription(?TextType $description = null): static
@@ -429,7 +429,7 @@ class ReferencedProductType
     }
 
     /**
-     * @return QuantityType|null
+     * @return null|QuantityType
      */
     public function getUnitQuantity(): ?QuantityType
     {
@@ -447,7 +447,7 @@ class ReferencedProductType
     }
 
     /**
-     * @param QuantityType|null $unitQuantity
+     * @param  null|QuantityType $unitQuantity
      * @return static
      */
     public function setUnitQuantity(?QuantityType $unitQuantity = null): static

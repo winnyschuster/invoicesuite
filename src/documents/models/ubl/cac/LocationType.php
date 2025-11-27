@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Conditions;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentity;
@@ -14,13 +13,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\InformationURI;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LocationTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
+use JMS\Serializer\Annotation as JMS;
 
 class LocationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -31,7 +31,7 @@ class LocationType
     private $iD;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class LocationType
     private $description;
 
     /**
-     * @var array<Conditions>|null
+     * @var null|array<Conditions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Conditions>")
      * @JMS\Expose
@@ -55,7 +55,7 @@ class LocationType
     private $conditions;
 
     /**
-     * @var CountrySubentity|null
+     * @var null|CountrySubentity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentity")
      * @JMS\Expose
@@ -66,7 +66,7 @@ class LocationType
     private $countrySubentity;
 
     /**
-     * @var CountrySubentityCode|null
+     * @var null|CountrySubentityCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CountrySubentityCode")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class LocationType
     private $countrySubentityCode;
 
     /**
-     * @var LocationTypeCode|null
+     * @var null|LocationTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LocationTypeCode")
      * @JMS\Expose
@@ -88,7 +88,7 @@ class LocationType
     private $locationTypeCode;
 
     /**
-     * @var InformationURI|null
+     * @var null|InformationURI
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InformationURI")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class LocationType
     private $informationURI;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -110,7 +110,7 @@ class LocationType
     private $name;
 
     /**
-     * @var array<ValidityPeriod>|null
+     * @var null|array<ValidityPeriod>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod>")
      * @JMS\Expose
@@ -122,7 +122,7 @@ class LocationType
     private $validityPeriod;
 
     /**
-     * @var Address|null
+     * @var null|Address
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Address")
      * @JMS\Expose
@@ -133,7 +133,7 @@ class LocationType
     private $address;
 
     /**
-     * @var array<SubsidiaryLocation>|null
+     * @var null|array<SubsidiaryLocation>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubsidiaryLocation>")
      * @JMS\Expose
@@ -145,7 +145,7 @@ class LocationType
     private $subsidiaryLocation;
 
     /**
-     * @var array<LocationCoordinate>|null
+     * @var null|array<LocationCoordinate>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\LocationCoordinate>")
      * @JMS\Expose
@@ -157,7 +157,7 @@ class LocationType
     private $locationCoordinate;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -175,7 +175,7 @@ class LocationType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -196,7 +196,7 @@ class LocationType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -204,7 +204,7 @@ class LocationType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -235,7 +235,7 @@ class LocationType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -250,7 +250,7 @@ class LocationType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -265,7 +265,7 @@ class LocationType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -286,7 +286,7 @@ class LocationType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -317,7 +317,7 @@ class LocationType
     }
 
     /**
-     * @return array<Conditions>|null
+     * @return null|array<Conditions>
      */
     public function getConditions(): ?array
     {
@@ -325,7 +325,7 @@ class LocationType
     }
 
     /**
-     * @param array<Conditions>|null $conditions
+     * @param  null|array<Conditions> $conditions
      * @return static
      */
     public function setConditions(?array $conditions = null): static
@@ -356,7 +356,7 @@ class LocationType
     }
 
     /**
-     * @return Conditions|null
+     * @return null|Conditions
      */
     public function firstConditions(): ?Conditions
     {
@@ -371,7 +371,7 @@ class LocationType
     }
 
     /**
-     * @return Conditions|null
+     * @return null|Conditions
      */
     public function lastConditions(): ?Conditions
     {
@@ -386,7 +386,7 @@ class LocationType
     }
 
     /**
-     * @param Conditions $conditions
+     * @param  Conditions $conditions
      * @return static
      */
     public function addToConditions(Conditions $conditions): static
@@ -407,7 +407,7 @@ class LocationType
     }
 
     /**
-     * @param Conditions $conditions
+     * @param  Conditions $conditions
      * @return static
      */
     public function addOnceToConditions(Conditions $conditions): static
@@ -438,7 +438,7 @@ class LocationType
     }
 
     /**
-     * @return CountrySubentity|null
+     * @return null|CountrySubentity
      */
     public function getCountrySubentity(): ?CountrySubentity
     {
@@ -456,7 +456,7 @@ class LocationType
     }
 
     /**
-     * @param CountrySubentity|null $countrySubentity
+     * @param  null|CountrySubentity $countrySubentity
      * @return static
      */
     public function setCountrySubentity(?CountrySubentity $countrySubentity = null): static
@@ -477,7 +477,7 @@ class LocationType
     }
 
     /**
-     * @return CountrySubentityCode|null
+     * @return null|CountrySubentityCode
      */
     public function getCountrySubentityCode(): ?CountrySubentityCode
     {
@@ -495,7 +495,7 @@ class LocationType
     }
 
     /**
-     * @param CountrySubentityCode|null $countrySubentityCode
+     * @param  null|CountrySubentityCode $countrySubentityCode
      * @return static
      */
     public function setCountrySubentityCode(?CountrySubentityCode $countrySubentityCode = null): static
@@ -516,7 +516,7 @@ class LocationType
     }
 
     /**
-     * @return LocationTypeCode|null
+     * @return null|LocationTypeCode
      */
     public function getLocationTypeCode(): ?LocationTypeCode
     {
@@ -534,7 +534,7 @@ class LocationType
     }
 
     /**
-     * @param LocationTypeCode|null $locationTypeCode
+     * @param  null|LocationTypeCode $locationTypeCode
      * @return static
      */
     public function setLocationTypeCode(?LocationTypeCode $locationTypeCode = null): static
@@ -555,7 +555,7 @@ class LocationType
     }
 
     /**
-     * @return InformationURI|null
+     * @return null|InformationURI
      */
     public function getInformationURI(): ?InformationURI
     {
@@ -573,7 +573,7 @@ class LocationType
     }
 
     /**
-     * @param InformationURI|null $informationURI
+     * @param  null|InformationURI $informationURI
      * @return static
      */
     public function setInformationURI(?InformationURI $informationURI = null): static
@@ -594,7 +594,7 @@ class LocationType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -612,7 +612,7 @@ class LocationType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -633,7 +633,7 @@ class LocationType
     }
 
     /**
-     * @return array<ValidityPeriod>|null
+     * @return null|array<ValidityPeriod>
      */
     public function getValidityPeriod(): ?array
     {
@@ -641,7 +641,7 @@ class LocationType
     }
 
     /**
-     * @param array<ValidityPeriod>|null $validityPeriod
+     * @param  null|array<ValidityPeriod> $validityPeriod
      * @return static
      */
     public function setValidityPeriod(?array $validityPeriod = null): static
@@ -672,7 +672,7 @@ class LocationType
     }
 
     /**
-     * @return ValidityPeriod|null
+     * @return null|ValidityPeriod
      */
     public function firstValidityPeriod(): ?ValidityPeriod
     {
@@ -687,7 +687,7 @@ class LocationType
     }
 
     /**
-     * @return ValidityPeriod|null
+     * @return null|ValidityPeriod
      */
     public function lastValidityPeriod(): ?ValidityPeriod
     {
@@ -702,7 +702,7 @@ class LocationType
     }
 
     /**
-     * @param ValidityPeriod $validityPeriod
+     * @param  ValidityPeriod $validityPeriod
      * @return static
      */
     public function addToValidityPeriod(ValidityPeriod $validityPeriod): static
@@ -723,7 +723,7 @@ class LocationType
     }
 
     /**
-     * @param ValidityPeriod $validityPeriod
+     * @param  ValidityPeriod $validityPeriod
      * @return static
      */
     public function addOnceToValidityPeriod(ValidityPeriod $validityPeriod): static
@@ -754,7 +754,7 @@ class LocationType
     }
 
     /**
-     * @return Address|null
+     * @return null|Address
      */
     public function getAddress(): ?Address
     {
@@ -772,7 +772,7 @@ class LocationType
     }
 
     /**
-     * @param Address|null $address
+     * @param  null|Address $address
      * @return static
      */
     public function setAddress(?Address $address = null): static
@@ -793,7 +793,7 @@ class LocationType
     }
 
     /**
-     * @return array<SubsidiaryLocation>|null
+     * @return null|array<SubsidiaryLocation>
      */
     public function getSubsidiaryLocation(): ?array
     {
@@ -801,7 +801,7 @@ class LocationType
     }
 
     /**
-     * @param array<SubsidiaryLocation>|null $subsidiaryLocation
+     * @param  null|array<SubsidiaryLocation> $subsidiaryLocation
      * @return static
      */
     public function setSubsidiaryLocation(?array $subsidiaryLocation = null): static
@@ -832,7 +832,7 @@ class LocationType
     }
 
     /**
-     * @return SubsidiaryLocation|null
+     * @return null|SubsidiaryLocation
      */
     public function firstSubsidiaryLocation(): ?SubsidiaryLocation
     {
@@ -847,7 +847,7 @@ class LocationType
     }
 
     /**
-     * @return SubsidiaryLocation|null
+     * @return null|SubsidiaryLocation
      */
     public function lastSubsidiaryLocation(): ?SubsidiaryLocation
     {
@@ -862,7 +862,7 @@ class LocationType
     }
 
     /**
-     * @param SubsidiaryLocation $subsidiaryLocation
+     * @param  SubsidiaryLocation $subsidiaryLocation
      * @return static
      */
     public function addToSubsidiaryLocation(SubsidiaryLocation $subsidiaryLocation): static
@@ -883,7 +883,7 @@ class LocationType
     }
 
     /**
-     * @param SubsidiaryLocation $subsidiaryLocation
+     * @param  SubsidiaryLocation $subsidiaryLocation
      * @return static
      */
     public function addOnceToSubsidiaryLocation(SubsidiaryLocation $subsidiaryLocation): static
@@ -914,7 +914,7 @@ class LocationType
     }
 
     /**
-     * @return array<LocationCoordinate>|null
+     * @return null|array<LocationCoordinate>
      */
     public function getLocationCoordinate(): ?array
     {
@@ -922,7 +922,7 @@ class LocationType
     }
 
     /**
-     * @param array<LocationCoordinate>|null $locationCoordinate
+     * @param  null|array<LocationCoordinate> $locationCoordinate
      * @return static
      */
     public function setLocationCoordinate(?array $locationCoordinate = null): static
@@ -953,7 +953,7 @@ class LocationType
     }
 
     /**
-     * @return LocationCoordinate|null
+     * @return null|LocationCoordinate
      */
     public function firstLocationCoordinate(): ?LocationCoordinate
     {
@@ -968,7 +968,7 @@ class LocationType
     }
 
     /**
-     * @return LocationCoordinate|null
+     * @return null|LocationCoordinate
      */
     public function lastLocationCoordinate(): ?LocationCoordinate
     {
@@ -983,7 +983,7 @@ class LocationType
     }
 
     /**
-     * @param LocationCoordinate $locationCoordinate
+     * @param  LocationCoordinate $locationCoordinate
      * @return static
      */
     public function addToLocationCoordinate(LocationCoordinate $locationCoordinate): static
@@ -1004,7 +1004,7 @@ class LocationType
     }
 
     /**
-     * @param LocationCoordinate $locationCoordinate
+     * @param  LocationCoordinate $locationCoordinate
      * @return static
      */
     public function addOnceToLocationCoordinate(LocationCoordinate $locationCoordinate): static

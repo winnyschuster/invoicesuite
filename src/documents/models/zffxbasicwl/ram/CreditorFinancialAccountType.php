@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasicwl\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\IDType;
+use JMS\Serializer\Annotation as JMS;
 
 class CreditorFinancialAccountType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\IDType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class CreditorFinancialAccountType
     private $iBANID;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\IDType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class CreditorFinancialAccountType
     private $proprietaryID;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getIBANID(): ?IDType
     {
@@ -53,7 +53,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @param IDType|null $iBANID
+     * @param  null|IDType $iBANID
      * @return static
      */
     public function setIBANID(?IDType $iBANID = null): static
@@ -74,7 +74,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getProprietaryID(): ?IDType
     {
@@ -92,7 +92,7 @@ class CreditorFinancialAccountType
     }
 
     /**
-     * @param IDType|null $proprietaryID
+     * @param  null|IDType $proprietaryID
      * @return static
      */
     public function setProprietaryID(?IDType $proprietaryID = null): static

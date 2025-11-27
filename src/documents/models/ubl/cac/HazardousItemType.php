@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AdditionalInformation;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CategoryName;
@@ -23,13 +22,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TechnicalName;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UNDGCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UpperOrangeHazardPlacardID;
+use JMS\Serializer\Annotation as JMS;
 
 class HazardousItemType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class HazardousItemType
     private $iD;
 
     /**
-     * @var PlacardNotation|null
+     * @var null|PlacardNotation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardNotation")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class HazardousItemType
     private $placardNotation;
 
     /**
-     * @var PlacardEndorsement|null
+     * @var null|PlacardEndorsement
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardEndorsement")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class HazardousItemType
     private $placardEndorsement;
 
     /**
-     * @var array<AdditionalInformation>|null
+     * @var null|array<AdditionalInformation>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\AdditionalInformation>")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class HazardousItemType
     private $additionalInformation;
 
     /**
-     * @var UNDGCode|null
+     * @var null|UNDGCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UNDGCode")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class HazardousItemType
     private $uNDGCode;
 
     /**
-     * @var EmergencyProceduresCode|null
+     * @var null|EmergencyProceduresCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EmergencyProceduresCode")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class HazardousItemType
     private $emergencyProceduresCode;
 
     /**
-     * @var MedicalFirstAidGuideCode|null
+     * @var null|MedicalFirstAidGuideCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MedicalFirstAidGuideCode")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class HazardousItemType
     private $medicalFirstAidGuideCode;
 
     /**
-     * @var TechnicalName|null
+     * @var null|TechnicalName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TechnicalName")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class HazardousItemType
     private $technicalName;
 
     /**
-     * @var CategoryName|null
+     * @var null|CategoryName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CategoryName")
      * @JMS\Expose
@@ -129,7 +129,7 @@ class HazardousItemType
     private $categoryName;
 
     /**
-     * @var HazardousCategoryCode|null
+     * @var null|HazardousCategoryCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HazardousCategoryCode")
      * @JMS\Expose
@@ -140,7 +140,7 @@ class HazardousItemType
     private $hazardousCategoryCode;
 
     /**
-     * @var UpperOrangeHazardPlacardID|null
+     * @var null|UpperOrangeHazardPlacardID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UpperOrangeHazardPlacardID")
      * @JMS\Expose
@@ -151,7 +151,7 @@ class HazardousItemType
     private $upperOrangeHazardPlacardID;
 
     /**
-     * @var LowerOrangeHazardPlacardID|null
+     * @var null|LowerOrangeHazardPlacardID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LowerOrangeHazardPlacardID")
      * @JMS\Expose
@@ -162,7 +162,7 @@ class HazardousItemType
     private $lowerOrangeHazardPlacardID;
 
     /**
-     * @var MarkingID|null
+     * @var null|MarkingID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MarkingID")
      * @JMS\Expose
@@ -173,7 +173,7 @@ class HazardousItemType
     private $markingID;
 
     /**
-     * @var HazardClassID|null
+     * @var null|HazardClassID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HazardClassID")
      * @JMS\Expose
@@ -184,7 +184,7 @@ class HazardousItemType
     private $hazardClassID;
 
     /**
-     * @var NetWeightMeasure|null
+     * @var null|NetWeightMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetWeightMeasure")
      * @JMS\Expose
@@ -195,7 +195,7 @@ class HazardousItemType
     private $netWeightMeasure;
 
     /**
-     * @var NetVolumeMeasure|null
+     * @var null|NetVolumeMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NetVolumeMeasure")
      * @JMS\Expose
@@ -206,7 +206,7 @@ class HazardousItemType
     private $netVolumeMeasure;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -217,7 +217,7 @@ class HazardousItemType
     private $quantity;
 
     /**
-     * @var ContactParty|null
+     * @var null|ContactParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContactParty")
      * @JMS\Expose
@@ -228,7 +228,7 @@ class HazardousItemType
     private $contactParty;
 
     /**
-     * @var array<SecondaryHazard>|null
+     * @var null|array<SecondaryHazard>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SecondaryHazard>")
      * @JMS\Expose
@@ -240,7 +240,7 @@ class HazardousItemType
     private $secondaryHazard;
 
     /**
-     * @var array<HazardousGoodsTransit>|null
+     * @var null|array<HazardousGoodsTransit>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\HazardousGoodsTransit>")
      * @JMS\Expose
@@ -252,7 +252,7 @@ class HazardousItemType
     private $hazardousGoodsTransit;
 
     /**
-     * @var EmergencyTemperature|null
+     * @var null|EmergencyTemperature
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EmergencyTemperature")
      * @JMS\Expose
@@ -263,7 +263,7 @@ class HazardousItemType
     private $emergencyTemperature;
 
     /**
-     * @var FlashpointTemperature|null
+     * @var null|FlashpointTemperature
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FlashpointTemperature")
      * @JMS\Expose
@@ -274,7 +274,7 @@ class HazardousItemType
     private $flashpointTemperature;
 
     /**
-     * @var array<AdditionalTemperature>|null
+     * @var null|array<AdditionalTemperature>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalTemperature>")
      * @JMS\Expose
@@ -286,7 +286,7 @@ class HazardousItemType
     private $additionalTemperature;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -304,7 +304,7 @@ class HazardousItemType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -325,7 +325,7 @@ class HazardousItemType
     }
 
     /**
-     * @return PlacardNotation|null
+     * @return null|PlacardNotation
      */
     public function getPlacardNotation(): ?PlacardNotation
     {
@@ -343,7 +343,7 @@ class HazardousItemType
     }
 
     /**
-     * @param PlacardNotation|null $placardNotation
+     * @param  null|PlacardNotation $placardNotation
      * @return static
      */
     public function setPlacardNotation(?PlacardNotation $placardNotation = null): static
@@ -364,7 +364,7 @@ class HazardousItemType
     }
 
     /**
-     * @return PlacardEndorsement|null
+     * @return null|PlacardEndorsement
      */
     public function getPlacardEndorsement(): ?PlacardEndorsement
     {
@@ -382,7 +382,7 @@ class HazardousItemType
     }
 
     /**
-     * @param PlacardEndorsement|null $placardEndorsement
+     * @param  null|PlacardEndorsement $placardEndorsement
      * @return static
      */
     public function setPlacardEndorsement(?PlacardEndorsement $placardEndorsement = null): static
@@ -403,7 +403,7 @@ class HazardousItemType
     }
 
     /**
-     * @return array<AdditionalInformation>|null
+     * @return null|array<AdditionalInformation>
      */
     public function getAdditionalInformation(): ?array
     {
@@ -411,7 +411,7 @@ class HazardousItemType
     }
 
     /**
-     * @param array<AdditionalInformation>|null $additionalInformation
+     * @param  null|array<AdditionalInformation> $additionalInformation
      * @return static
      */
     public function setAdditionalInformation(?array $additionalInformation = null): static
@@ -442,7 +442,7 @@ class HazardousItemType
     }
 
     /**
-     * @return AdditionalInformation|null
+     * @return null|AdditionalInformation
      */
     public function firstAdditionalInformation(): ?AdditionalInformation
     {
@@ -457,7 +457,7 @@ class HazardousItemType
     }
 
     /**
-     * @return AdditionalInformation|null
+     * @return null|AdditionalInformation
      */
     public function lastAdditionalInformation(): ?AdditionalInformation
     {
@@ -472,7 +472,7 @@ class HazardousItemType
     }
 
     /**
-     * @param AdditionalInformation $additionalInformation
+     * @param  AdditionalInformation $additionalInformation
      * @return static
      */
     public function addToAdditionalInformation(AdditionalInformation $additionalInformation): static
@@ -493,7 +493,7 @@ class HazardousItemType
     }
 
     /**
-     * @param AdditionalInformation $additionalInformation
+     * @param  AdditionalInformation $additionalInformation
      * @return static
      */
     public function addOnceToAdditionalInformation(AdditionalInformation $additionalInformation): static
@@ -524,7 +524,7 @@ class HazardousItemType
     }
 
     /**
-     * @return UNDGCode|null
+     * @return null|UNDGCode
      */
     public function getUNDGCode(): ?UNDGCode
     {
@@ -542,7 +542,7 @@ class HazardousItemType
     }
 
     /**
-     * @param UNDGCode|null $uNDGCode
+     * @param  null|UNDGCode $uNDGCode
      * @return static
      */
     public function setUNDGCode(?UNDGCode $uNDGCode = null): static
@@ -563,7 +563,7 @@ class HazardousItemType
     }
 
     /**
-     * @return EmergencyProceduresCode|null
+     * @return null|EmergencyProceduresCode
      */
     public function getEmergencyProceduresCode(): ?EmergencyProceduresCode
     {
@@ -581,7 +581,7 @@ class HazardousItemType
     }
 
     /**
-     * @param EmergencyProceduresCode|null $emergencyProceduresCode
+     * @param  null|EmergencyProceduresCode $emergencyProceduresCode
      * @return static
      */
     public function setEmergencyProceduresCode(?EmergencyProceduresCode $emergencyProceduresCode = null): static
@@ -602,7 +602,7 @@ class HazardousItemType
     }
 
     /**
-     * @return MedicalFirstAidGuideCode|null
+     * @return null|MedicalFirstAidGuideCode
      */
     public function getMedicalFirstAidGuideCode(): ?MedicalFirstAidGuideCode
     {
@@ -620,7 +620,7 @@ class HazardousItemType
     }
 
     /**
-     * @param MedicalFirstAidGuideCode|null $medicalFirstAidGuideCode
+     * @param  null|MedicalFirstAidGuideCode $medicalFirstAidGuideCode
      * @return static
      */
     public function setMedicalFirstAidGuideCode(?MedicalFirstAidGuideCode $medicalFirstAidGuideCode = null): static
@@ -641,7 +641,7 @@ class HazardousItemType
     }
 
     /**
-     * @return TechnicalName|null
+     * @return null|TechnicalName
      */
     public function getTechnicalName(): ?TechnicalName
     {
@@ -659,7 +659,7 @@ class HazardousItemType
     }
 
     /**
-     * @param TechnicalName|null $technicalName
+     * @param  null|TechnicalName $technicalName
      * @return static
      */
     public function setTechnicalName(?TechnicalName $technicalName = null): static
@@ -680,7 +680,7 @@ class HazardousItemType
     }
 
     /**
-     * @return CategoryName|null
+     * @return null|CategoryName
      */
     public function getCategoryName(): ?CategoryName
     {
@@ -698,7 +698,7 @@ class HazardousItemType
     }
 
     /**
-     * @param CategoryName|null $categoryName
+     * @param  null|CategoryName $categoryName
      * @return static
      */
     public function setCategoryName(?CategoryName $categoryName = null): static
@@ -719,7 +719,7 @@ class HazardousItemType
     }
 
     /**
-     * @return HazardousCategoryCode|null
+     * @return null|HazardousCategoryCode
      */
     public function getHazardousCategoryCode(): ?HazardousCategoryCode
     {
@@ -737,7 +737,7 @@ class HazardousItemType
     }
 
     /**
-     * @param HazardousCategoryCode|null $hazardousCategoryCode
+     * @param  null|HazardousCategoryCode $hazardousCategoryCode
      * @return static
      */
     public function setHazardousCategoryCode(?HazardousCategoryCode $hazardousCategoryCode = null): static
@@ -758,7 +758,7 @@ class HazardousItemType
     }
 
     /**
-     * @return UpperOrangeHazardPlacardID|null
+     * @return null|UpperOrangeHazardPlacardID
      */
     public function getUpperOrangeHazardPlacardID(): ?UpperOrangeHazardPlacardID
     {
@@ -776,7 +776,7 @@ class HazardousItemType
     }
 
     /**
-     * @param UpperOrangeHazardPlacardID|null $upperOrangeHazardPlacardID
+     * @param  null|UpperOrangeHazardPlacardID $upperOrangeHazardPlacardID
      * @return static
      */
     public function setUpperOrangeHazardPlacardID(
@@ -798,7 +798,7 @@ class HazardousItemType
     }
 
     /**
-     * @return LowerOrangeHazardPlacardID|null
+     * @return null|LowerOrangeHazardPlacardID
      */
     public function getLowerOrangeHazardPlacardID(): ?LowerOrangeHazardPlacardID
     {
@@ -816,7 +816,7 @@ class HazardousItemType
     }
 
     /**
-     * @param LowerOrangeHazardPlacardID|null $lowerOrangeHazardPlacardID
+     * @param  null|LowerOrangeHazardPlacardID $lowerOrangeHazardPlacardID
      * @return static
      */
     public function setLowerOrangeHazardPlacardID(
@@ -838,7 +838,7 @@ class HazardousItemType
     }
 
     /**
-     * @return MarkingID|null
+     * @return null|MarkingID
      */
     public function getMarkingID(): ?MarkingID
     {
@@ -856,7 +856,7 @@ class HazardousItemType
     }
 
     /**
-     * @param MarkingID|null $markingID
+     * @param  null|MarkingID $markingID
      * @return static
      */
     public function setMarkingID(?MarkingID $markingID = null): static
@@ -877,7 +877,7 @@ class HazardousItemType
     }
 
     /**
-     * @return HazardClassID|null
+     * @return null|HazardClassID
      */
     public function getHazardClassID(): ?HazardClassID
     {
@@ -895,7 +895,7 @@ class HazardousItemType
     }
 
     /**
-     * @param HazardClassID|null $hazardClassID
+     * @param  null|HazardClassID $hazardClassID
      * @return static
      */
     public function setHazardClassID(?HazardClassID $hazardClassID = null): static
@@ -916,7 +916,7 @@ class HazardousItemType
     }
 
     /**
-     * @return NetWeightMeasure|null
+     * @return null|NetWeightMeasure
      */
     public function getNetWeightMeasure(): ?NetWeightMeasure
     {
@@ -934,7 +934,7 @@ class HazardousItemType
     }
 
     /**
-     * @param NetWeightMeasure|null $netWeightMeasure
+     * @param  null|NetWeightMeasure $netWeightMeasure
      * @return static
      */
     public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): static
@@ -955,7 +955,7 @@ class HazardousItemType
     }
 
     /**
-     * @return NetVolumeMeasure|null
+     * @return null|NetVolumeMeasure
      */
     public function getNetVolumeMeasure(): ?NetVolumeMeasure
     {
@@ -973,7 +973,7 @@ class HazardousItemType
     }
 
     /**
-     * @param NetVolumeMeasure|null $netVolumeMeasure
+     * @param  null|NetVolumeMeasure $netVolumeMeasure
      * @return static
      */
     public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): static
@@ -994,7 +994,7 @@ class HazardousItemType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -1012,7 +1012,7 @@ class HazardousItemType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -1033,7 +1033,7 @@ class HazardousItemType
     }
 
     /**
-     * @return ContactParty|null
+     * @return null|ContactParty
      */
     public function getContactParty(): ?ContactParty
     {
@@ -1051,7 +1051,7 @@ class HazardousItemType
     }
 
     /**
-     * @param ContactParty|null $contactParty
+     * @param  null|ContactParty $contactParty
      * @return static
      */
     public function setContactParty(?ContactParty $contactParty = null): static
@@ -1072,7 +1072,7 @@ class HazardousItemType
     }
 
     /**
-     * @return array<SecondaryHazard>|null
+     * @return null|array<SecondaryHazard>
      */
     public function getSecondaryHazard(): ?array
     {
@@ -1080,7 +1080,7 @@ class HazardousItemType
     }
 
     /**
-     * @param array<SecondaryHazard>|null $secondaryHazard
+     * @param  null|array<SecondaryHazard> $secondaryHazard
      * @return static
      */
     public function setSecondaryHazard(?array $secondaryHazard = null): static
@@ -1111,7 +1111,7 @@ class HazardousItemType
     }
 
     /**
-     * @return SecondaryHazard|null
+     * @return null|SecondaryHazard
      */
     public function firstSecondaryHazard(): ?SecondaryHazard
     {
@@ -1126,7 +1126,7 @@ class HazardousItemType
     }
 
     /**
-     * @return SecondaryHazard|null
+     * @return null|SecondaryHazard
      */
     public function lastSecondaryHazard(): ?SecondaryHazard
     {
@@ -1141,7 +1141,7 @@ class HazardousItemType
     }
 
     /**
-     * @param SecondaryHazard $secondaryHazard
+     * @param  SecondaryHazard $secondaryHazard
      * @return static
      */
     public function addToSecondaryHazard(SecondaryHazard $secondaryHazard): static
@@ -1162,7 +1162,7 @@ class HazardousItemType
     }
 
     /**
-     * @param SecondaryHazard $secondaryHazard
+     * @param  SecondaryHazard $secondaryHazard
      * @return static
      */
     public function addOnceToSecondaryHazard(SecondaryHazard $secondaryHazard): static
@@ -1193,7 +1193,7 @@ class HazardousItemType
     }
 
     /**
-     * @return array<HazardousGoodsTransit>|null
+     * @return null|array<HazardousGoodsTransit>
      */
     public function getHazardousGoodsTransit(): ?array
     {
@@ -1201,7 +1201,7 @@ class HazardousItemType
     }
 
     /**
-     * @param array<HazardousGoodsTransit>|null $hazardousGoodsTransit
+     * @param  null|array<HazardousGoodsTransit> $hazardousGoodsTransit
      * @return static
      */
     public function setHazardousGoodsTransit(?array $hazardousGoodsTransit = null): static
@@ -1232,7 +1232,7 @@ class HazardousItemType
     }
 
     /**
-     * @return HazardousGoodsTransit|null
+     * @return null|HazardousGoodsTransit
      */
     public function firstHazardousGoodsTransit(): ?HazardousGoodsTransit
     {
@@ -1247,7 +1247,7 @@ class HazardousItemType
     }
 
     /**
-     * @return HazardousGoodsTransit|null
+     * @return null|HazardousGoodsTransit
      */
     public function lastHazardousGoodsTransit(): ?HazardousGoodsTransit
     {
@@ -1262,7 +1262,7 @@ class HazardousItemType
     }
 
     /**
-     * @param HazardousGoodsTransit $hazardousGoodsTransit
+     * @param  HazardousGoodsTransit $hazardousGoodsTransit
      * @return static
      */
     public function addToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): static
@@ -1283,7 +1283,7 @@ class HazardousItemType
     }
 
     /**
-     * @param HazardousGoodsTransit $hazardousGoodsTransit
+     * @param  HazardousGoodsTransit $hazardousGoodsTransit
      * @return static
      */
     public function addOnceToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): static
@@ -1314,7 +1314,7 @@ class HazardousItemType
     }
 
     /**
-     * @return EmergencyTemperature|null
+     * @return null|EmergencyTemperature
      */
     public function getEmergencyTemperature(): ?EmergencyTemperature
     {
@@ -1332,7 +1332,7 @@ class HazardousItemType
     }
 
     /**
-     * @param EmergencyTemperature|null $emergencyTemperature
+     * @param  null|EmergencyTemperature $emergencyTemperature
      * @return static
      */
     public function setEmergencyTemperature(?EmergencyTemperature $emergencyTemperature = null): static
@@ -1353,7 +1353,7 @@ class HazardousItemType
     }
 
     /**
-     * @return FlashpointTemperature|null
+     * @return null|FlashpointTemperature
      */
     public function getFlashpointTemperature(): ?FlashpointTemperature
     {
@@ -1371,7 +1371,7 @@ class HazardousItemType
     }
 
     /**
-     * @param FlashpointTemperature|null $flashpointTemperature
+     * @param  null|FlashpointTemperature $flashpointTemperature
      * @return static
      */
     public function setFlashpointTemperature(?FlashpointTemperature $flashpointTemperature = null): static
@@ -1392,7 +1392,7 @@ class HazardousItemType
     }
 
     /**
-     * @return array<AdditionalTemperature>|null
+     * @return null|array<AdditionalTemperature>
      */
     public function getAdditionalTemperature(): ?array
     {
@@ -1400,7 +1400,7 @@ class HazardousItemType
     }
 
     /**
-     * @param array<AdditionalTemperature>|null $additionalTemperature
+     * @param  null|array<AdditionalTemperature> $additionalTemperature
      * @return static
      */
     public function setAdditionalTemperature(?array $additionalTemperature = null): static
@@ -1431,7 +1431,7 @@ class HazardousItemType
     }
 
     /**
-     * @return AdditionalTemperature|null
+     * @return null|AdditionalTemperature
      */
     public function firstAdditionalTemperature(): ?AdditionalTemperature
     {
@@ -1446,7 +1446,7 @@ class HazardousItemType
     }
 
     /**
-     * @return AdditionalTemperature|null
+     * @return null|AdditionalTemperature
      */
     public function lastAdditionalTemperature(): ?AdditionalTemperature
     {
@@ -1461,7 +1461,7 @@ class HazardousItemType
     }
 
     /**
-     * @param AdditionalTemperature $additionalTemperature
+     * @param  AdditionalTemperature $additionalTemperature
      * @return static
      */
     public function addToAdditionalTemperature(AdditionalTemperature $additionalTemperature): static
@@ -1482,7 +1482,7 @@ class HazardousItemType
     }
 
     /**
-     * @param AdditionalTemperature $additionalTemperature
+     * @param  AdditionalTemperature $additionalTemperature
      * @return static
      */
     public function addOnceToAdditionalTemperature(AdditionalTemperature $additionalTemperature): static

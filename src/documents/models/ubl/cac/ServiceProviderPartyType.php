@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceType;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class ServiceProviderPartyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class ServiceProviderPartyType
     private $iD;
 
     /**
-     * @var ServiceTypeCode|null
+     * @var null|ServiceTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceTypeCode")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class ServiceProviderPartyType
     private $serviceTypeCode;
 
     /**
-     * @var array<ServiceType>|null
+     * @var null|array<ServiceType>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ServiceType>")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class ServiceProviderPartyType
     private $serviceType;
 
     /**
-     * @var Party|null
+     * @var null|Party
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Party")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ServiceProviderPartyType
     private $party;
 
     /**
-     * @var SellerContact|null
+     * @var null|SellerContact
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SellerContact")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class ServiceProviderPartyType
     private $sellerContact;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -89,7 +89,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -110,7 +110,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return ServiceTypeCode|null
+     * @return null|ServiceTypeCode
      */
     public function getServiceTypeCode(): ?ServiceTypeCode
     {
@@ -128,7 +128,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @param ServiceTypeCode|null $serviceTypeCode
+     * @param  null|ServiceTypeCode $serviceTypeCode
      * @return static
      */
     public function setServiceTypeCode(?ServiceTypeCode $serviceTypeCode = null): static
@@ -149,7 +149,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return array<ServiceType>|null
+     * @return null|array<ServiceType>
      */
     public function getServiceType(): ?array
     {
@@ -157,7 +157,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @param array<ServiceType>|null $serviceType
+     * @param  null|array<ServiceType> $serviceType
      * @return static
      */
     public function setServiceType(?array $serviceType = null): static
@@ -188,7 +188,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return ServiceType|null
+     * @return null|ServiceType
      */
     public function firstServiceType(): ?ServiceType
     {
@@ -203,7 +203,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return ServiceType|null
+     * @return null|ServiceType
      */
     public function lastServiceType(): ?ServiceType
     {
@@ -218,7 +218,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @param ServiceType $serviceType
+     * @param  ServiceType $serviceType
      * @return static
      */
     public function addToServiceType(ServiceType $serviceType): static
@@ -239,7 +239,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @param ServiceType $serviceType
+     * @param  ServiceType $serviceType
      * @return static
      */
     public function addOnceToServiceType(ServiceType $serviceType): static
@@ -270,7 +270,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return Party|null
+     * @return null|Party
      */
     public function getParty(): ?Party
     {
@@ -288,7 +288,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @param Party|null $party
+     * @param  null|Party $party
      * @return static
      */
     public function setParty(?Party $party = null): static
@@ -309,7 +309,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @return SellerContact|null
+     * @return null|SellerContact
      */
     public function getSellerContact(): ?SellerContact
     {
@@ -327,7 +327,7 @@ class ServiceProviderPartyType
     }
 
     /**
-     * @param SellerContact|null $sellerContact
+     * @param  null|SellerContact $sellerContact
      * @return static
      */
     public function setSellerContact(?SellerContact $sellerContact = null): static

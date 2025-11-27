@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ChangeConditions;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TransportServiceProviderSpecialTerms;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TransportUserSpecialTerms;
+use JMS\Serializer\Annotation as JMS;
 
 class TransportExecutionTermsType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var array<TransportUserSpecialTerms>|null
+     * @var null|array<TransportUserSpecialTerms>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\TransportUserSpecialTerms>")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class TransportExecutionTermsType
     private $transportUserSpecialTerms;
 
     /**
-     * @var array<TransportServiceProviderSpecialTerms>|null
+     * @var null|array<TransportServiceProviderSpecialTerms>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\TransportServiceProviderSpecialTerms>")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class TransportExecutionTermsType
     private $transportServiceProviderSpecialTerms;
 
     /**
-     * @var array<ChangeConditions>|null
+     * @var null|array<ChangeConditions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ChangeConditions>")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class TransportExecutionTermsType
     private $changeConditions;
 
     /**
-     * @var array<PaymentTerms>|null
+     * @var null|array<PaymentTerms>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class TransportExecutionTermsType
     private $paymentTerms;
 
     /**
-     * @var array<DeliveryTerms>|null
+     * @var null|array<DeliveryTerms>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms>")
      * @JMS\Expose
@@ -75,7 +75,7 @@ class TransportExecutionTermsType
     private $deliveryTerms;
 
     /**
-     * @var BonusPaymentTerms|null
+     * @var null|BonusPaymentTerms
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\BonusPaymentTerms")
      * @JMS\Expose
@@ -86,7 +86,7 @@ class TransportExecutionTermsType
     private $bonusPaymentTerms;
 
     /**
-     * @var CommissionPaymentTerms|null
+     * @var null|CommissionPaymentTerms
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CommissionPaymentTerms")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class TransportExecutionTermsType
     private $commissionPaymentTerms;
 
     /**
-     * @var PenaltyPaymentTerms|null
+     * @var null|PenaltyPaymentTerms
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PenaltyPaymentTerms")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class TransportExecutionTermsType
     private $penaltyPaymentTerms;
 
     /**
-     * @var array<EnvironmentalEmission>|null
+     * @var null|array<EnvironmentalEmission>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EnvironmentalEmission>")
      * @JMS\Expose
@@ -120,7 +120,7 @@ class TransportExecutionTermsType
     private $environmentalEmission;
 
     /**
-     * @var array<NotificationRequirement>|null
+     * @var null|array<NotificationRequirement>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\NotificationRequirement>")
      * @JMS\Expose
@@ -132,7 +132,7 @@ class TransportExecutionTermsType
     private $notificationRequirement;
 
     /**
-     * @var ServiceChargePaymentTerms|null
+     * @var null|ServiceChargePaymentTerms
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ServiceChargePaymentTerms")
      * @JMS\Expose
@@ -143,7 +143,7 @@ class TransportExecutionTermsType
     private $serviceChargePaymentTerms;
 
     /**
-     * @return array<TransportUserSpecialTerms>|null
+     * @return null|array<TransportUserSpecialTerms>
      */
     public function getTransportUserSpecialTerms(): ?array
     {
@@ -151,7 +151,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param array<TransportUserSpecialTerms>|null $transportUserSpecialTerms
+     * @param  null|array<TransportUserSpecialTerms> $transportUserSpecialTerms
      * @return static
      */
     public function setTransportUserSpecialTerms(?array $transportUserSpecialTerms = null): static
@@ -182,7 +182,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return TransportUserSpecialTerms|null
+     * @return null|TransportUserSpecialTerms
      */
     public function firstTransportUserSpecialTerms(): ?TransportUserSpecialTerms
     {
@@ -197,7 +197,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return TransportUserSpecialTerms|null
+     * @return null|TransportUserSpecialTerms
      */
     public function lastTransportUserSpecialTerms(): ?TransportUserSpecialTerms
     {
@@ -212,7 +212,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param TransportUserSpecialTerms $transportUserSpecialTerms
+     * @param  TransportUserSpecialTerms $transportUserSpecialTerms
      * @return static
      */
     public function addToTransportUserSpecialTerms(TransportUserSpecialTerms $transportUserSpecialTerms): static
@@ -233,7 +233,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param TransportUserSpecialTerms $transportUserSpecialTerms
+     * @param  TransportUserSpecialTerms $transportUserSpecialTerms
      * @return static
      */
     public function addOnceToTransportUserSpecialTerms(TransportUserSpecialTerms $transportUserSpecialTerms): static
@@ -264,7 +264,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return array<TransportServiceProviderSpecialTerms>|null
+     * @return null|array<TransportServiceProviderSpecialTerms>
      */
     public function getTransportServiceProviderSpecialTerms(): ?array
     {
@@ -272,7 +272,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param array<TransportServiceProviderSpecialTerms>|null $transportServiceProviderSpecialTerms
+     * @param  null|array<TransportServiceProviderSpecialTerms> $transportServiceProviderSpecialTerms
      * @return static
      */
     public function setTransportServiceProviderSpecialTerms(?array $transportServiceProviderSpecialTerms = null): static
@@ -303,7 +303,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return TransportServiceProviderSpecialTerms|null
+     * @return null|TransportServiceProviderSpecialTerms
      */
     public function firstTransportServiceProviderSpecialTerms(): ?TransportServiceProviderSpecialTerms
     {
@@ -318,7 +318,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return TransportServiceProviderSpecialTerms|null
+     * @return null|TransportServiceProviderSpecialTerms
      */
     public function lastTransportServiceProviderSpecialTerms(): ?TransportServiceProviderSpecialTerms
     {
@@ -333,7 +333,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param TransportServiceProviderSpecialTerms $transportServiceProviderSpecialTerms
+     * @param  TransportServiceProviderSpecialTerms $transportServiceProviderSpecialTerms
      * @return static
      */
     public function addToTransportServiceProviderSpecialTerms(
@@ -355,7 +355,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param TransportServiceProviderSpecialTerms $transportServiceProviderSpecialTerms
+     * @param  TransportServiceProviderSpecialTerms $transportServiceProviderSpecialTerms
      * @return static
      */
     public function addOnceToTransportServiceProviderSpecialTerms(
@@ -387,7 +387,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return array<ChangeConditions>|null
+     * @return null|array<ChangeConditions>
      */
     public function getChangeConditions(): ?array
     {
@@ -395,7 +395,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param array<ChangeConditions>|null $changeConditions
+     * @param  null|array<ChangeConditions> $changeConditions
      * @return static
      */
     public function setChangeConditions(?array $changeConditions = null): static
@@ -426,7 +426,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return ChangeConditions|null
+     * @return null|ChangeConditions
      */
     public function firstChangeConditions(): ?ChangeConditions
     {
@@ -441,7 +441,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return ChangeConditions|null
+     * @return null|ChangeConditions
      */
     public function lastChangeConditions(): ?ChangeConditions
     {
@@ -456,7 +456,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param ChangeConditions $changeConditions
+     * @param  ChangeConditions $changeConditions
      * @return static
      */
     public function addToChangeConditions(ChangeConditions $changeConditions): static
@@ -477,7 +477,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param ChangeConditions $changeConditions
+     * @param  ChangeConditions $changeConditions
      * @return static
      */
     public function addOnceToChangeConditions(ChangeConditions $changeConditions): static
@@ -508,7 +508,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return array<PaymentTerms>|null
+     * @return null|array<PaymentTerms>
      */
     public function getPaymentTerms(): ?array
     {
@@ -516,7 +516,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param array<PaymentTerms>|null $paymentTerms
+     * @param  null|array<PaymentTerms> $paymentTerms
      * @return static
      */
     public function setPaymentTerms(?array $paymentTerms = null): static
@@ -547,7 +547,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return PaymentTerms|null
+     * @return null|PaymentTerms
      */
     public function firstPaymentTerms(): ?PaymentTerms
     {
@@ -562,7 +562,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return PaymentTerms|null
+     * @return null|PaymentTerms
      */
     public function lastPaymentTerms(): ?PaymentTerms
     {
@@ -577,7 +577,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param PaymentTerms $paymentTerms
+     * @param  PaymentTerms $paymentTerms
      * @return static
      */
     public function addToPaymentTerms(PaymentTerms $paymentTerms): static
@@ -598,7 +598,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param PaymentTerms $paymentTerms
+     * @param  PaymentTerms $paymentTerms
      * @return static
      */
     public function addOnceToPaymentTerms(PaymentTerms $paymentTerms): static
@@ -629,7 +629,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return array<DeliveryTerms>|null
+     * @return null|array<DeliveryTerms>
      */
     public function getDeliveryTerms(): ?array
     {
@@ -637,7 +637,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param array<DeliveryTerms>|null $deliveryTerms
+     * @param  null|array<DeliveryTerms> $deliveryTerms
      * @return static
      */
     public function setDeliveryTerms(?array $deliveryTerms = null): static
@@ -668,7 +668,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return DeliveryTerms|null
+     * @return null|DeliveryTerms
      */
     public function firstDeliveryTerms(): ?DeliveryTerms
     {
@@ -683,7 +683,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return DeliveryTerms|null
+     * @return null|DeliveryTerms
      */
     public function lastDeliveryTerms(): ?DeliveryTerms
     {
@@ -698,7 +698,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param DeliveryTerms $deliveryTerms
+     * @param  DeliveryTerms $deliveryTerms
      * @return static
      */
     public function addToDeliveryTerms(DeliveryTerms $deliveryTerms): static
@@ -719,7 +719,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param DeliveryTerms $deliveryTerms
+     * @param  DeliveryTerms $deliveryTerms
      * @return static
      */
     public function addOnceToDeliveryTerms(DeliveryTerms $deliveryTerms): static
@@ -750,7 +750,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return BonusPaymentTerms|null
+     * @return null|BonusPaymentTerms
      */
     public function getBonusPaymentTerms(): ?BonusPaymentTerms
     {
@@ -768,7 +768,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param BonusPaymentTerms|null $bonusPaymentTerms
+     * @param  null|BonusPaymentTerms $bonusPaymentTerms
      * @return static
      */
     public function setBonusPaymentTerms(?BonusPaymentTerms $bonusPaymentTerms = null): static
@@ -789,7 +789,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return CommissionPaymentTerms|null
+     * @return null|CommissionPaymentTerms
      */
     public function getCommissionPaymentTerms(): ?CommissionPaymentTerms
     {
@@ -807,7 +807,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param CommissionPaymentTerms|null $commissionPaymentTerms
+     * @param  null|CommissionPaymentTerms $commissionPaymentTerms
      * @return static
      */
     public function setCommissionPaymentTerms(?CommissionPaymentTerms $commissionPaymentTerms = null): static
@@ -828,7 +828,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return PenaltyPaymentTerms|null
+     * @return null|PenaltyPaymentTerms
      */
     public function getPenaltyPaymentTerms(): ?PenaltyPaymentTerms
     {
@@ -846,7 +846,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param PenaltyPaymentTerms|null $penaltyPaymentTerms
+     * @param  null|PenaltyPaymentTerms $penaltyPaymentTerms
      * @return static
      */
     public function setPenaltyPaymentTerms(?PenaltyPaymentTerms $penaltyPaymentTerms = null): static
@@ -867,7 +867,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return array<EnvironmentalEmission>|null
+     * @return null|array<EnvironmentalEmission>
      */
     public function getEnvironmentalEmission(): ?array
     {
@@ -875,7 +875,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param array<EnvironmentalEmission>|null $environmentalEmission
+     * @param  null|array<EnvironmentalEmission> $environmentalEmission
      * @return static
      */
     public function setEnvironmentalEmission(?array $environmentalEmission = null): static
@@ -906,7 +906,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return EnvironmentalEmission|null
+     * @return null|EnvironmentalEmission
      */
     public function firstEnvironmentalEmission(): ?EnvironmentalEmission
     {
@@ -921,7 +921,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return EnvironmentalEmission|null
+     * @return null|EnvironmentalEmission
      */
     public function lastEnvironmentalEmission(): ?EnvironmentalEmission
     {
@@ -936,7 +936,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param EnvironmentalEmission $environmentalEmission
+     * @param  EnvironmentalEmission $environmentalEmission
      * @return static
      */
     public function addToEnvironmentalEmission(EnvironmentalEmission $environmentalEmission): static
@@ -957,7 +957,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param EnvironmentalEmission $environmentalEmission
+     * @param  EnvironmentalEmission $environmentalEmission
      * @return static
      */
     public function addOnceToEnvironmentalEmission(EnvironmentalEmission $environmentalEmission): static
@@ -988,7 +988,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return array<NotificationRequirement>|null
+     * @return null|array<NotificationRequirement>
      */
     public function getNotificationRequirement(): ?array
     {
@@ -996,7 +996,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param array<NotificationRequirement>|null $notificationRequirement
+     * @param  null|array<NotificationRequirement> $notificationRequirement
      * @return static
      */
     public function setNotificationRequirement(?array $notificationRequirement = null): static
@@ -1027,7 +1027,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return NotificationRequirement|null
+     * @return null|NotificationRequirement
      */
     public function firstNotificationRequirement(): ?NotificationRequirement
     {
@@ -1042,7 +1042,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return NotificationRequirement|null
+     * @return null|NotificationRequirement
      */
     public function lastNotificationRequirement(): ?NotificationRequirement
     {
@@ -1057,7 +1057,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param NotificationRequirement $notificationRequirement
+     * @param  NotificationRequirement $notificationRequirement
      * @return static
      */
     public function addToNotificationRequirement(NotificationRequirement $notificationRequirement): static
@@ -1078,7 +1078,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param NotificationRequirement $notificationRequirement
+     * @param  NotificationRequirement $notificationRequirement
      * @return static
      */
     public function addOnceToNotificationRequirement(NotificationRequirement $notificationRequirement): static
@@ -1109,7 +1109,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @return ServiceChargePaymentTerms|null
+     * @return null|ServiceChargePaymentTerms
      */
     public function getServiceChargePaymentTerms(): ?ServiceChargePaymentTerms
     {
@@ -1127,7 +1127,7 @@ class TransportExecutionTermsType
     }
 
     /**
-     * @param ServiceChargePaymentTerms|null $serviceChargePaymentTerms
+     * @param  null|ServiceChargePaymentTerms $serviceChargePaymentTerms
      * @return static
      */
     public function setServiceChargePaymentTerms(?ServiceChargePaymentTerms $serviceChargePaymentTerms = null): static

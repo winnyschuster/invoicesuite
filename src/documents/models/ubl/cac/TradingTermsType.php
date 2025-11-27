@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Information;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Reference;
+use JMS\Serializer\Annotation as JMS;
 
 class TradingTermsType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var array<Information>|null
+     * @var null|array<Information>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Information>")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class TradingTermsType
     private $information;
 
     /**
-     * @var Reference|null
+     * @var null|Reference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Reference")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class TradingTermsType
     private $reference;
 
     /**
-     * @var ApplicableAddress|null
+     * @var null|ApplicableAddress
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ApplicableAddress")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class TradingTermsType
     private $applicableAddress;
 
     /**
-     * @return array<Information>|null
+     * @return null|array<Information>
      */
     public function getInformation(): ?array
     {
@@ -56,7 +56,7 @@ class TradingTermsType
     }
 
     /**
-     * @param array<Information>|null $information
+     * @param  null|array<Information> $information
      * @return static
      */
     public function setInformation(?array $information = null): static
@@ -87,7 +87,7 @@ class TradingTermsType
     }
 
     /**
-     * @return Information|null
+     * @return null|Information
      */
     public function firstInformation(): ?Information
     {
@@ -102,7 +102,7 @@ class TradingTermsType
     }
 
     /**
-     * @return Information|null
+     * @return null|Information
      */
     public function lastInformation(): ?Information
     {
@@ -117,7 +117,7 @@ class TradingTermsType
     }
 
     /**
-     * @param Information $information
+     * @param  Information $information
      * @return static
      */
     public function addToInformation(Information $information): static
@@ -138,7 +138,7 @@ class TradingTermsType
     }
 
     /**
-     * @param Information $information
+     * @param  Information $information
      * @return static
      */
     public function addOnceToInformation(Information $information): static
@@ -169,7 +169,7 @@ class TradingTermsType
     }
 
     /**
-     * @return Reference|null
+     * @return null|Reference
      */
     public function getReference(): ?Reference
     {
@@ -187,7 +187,7 @@ class TradingTermsType
     }
 
     /**
-     * @param Reference|null $reference
+     * @param  null|Reference $reference
      * @return static
      */
     public function setReference(?Reference $reference = null): static
@@ -208,7 +208,7 @@ class TradingTermsType
     }
 
     /**
-     * @return ApplicableAddress|null
+     * @return null|ApplicableAddress
      */
     public function getApplicableAddress(): ?ApplicableAddress
     {
@@ -226,7 +226,7 @@ class TradingTermsType
     }
 
     /**
-     * @param ApplicableAddress|null $applicableAddress
+     * @param  null|ApplicableAddress $applicableAddress
      * @return static
      */
     public function setApplicableAddress(?ApplicableAddress $applicableAddress = null): static

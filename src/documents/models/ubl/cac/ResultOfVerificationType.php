@@ -5,20 +5,20 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateProcess;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateTool;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateToolVersion;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValidationResultCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValidatorID;
+use JMS\Serializer\Annotation as JMS;
 
 class ResultOfVerificationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ValidatorID|null
+     * @var null|ValidatorID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValidatorID")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class ResultOfVerificationType
     private $validatorID;
 
     /**
-     * @var ValidationResultCode|null
+     * @var null|ValidationResultCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValidationResultCode")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class ResultOfVerificationType
     private $validationResultCode;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class ResultOfVerificationType
     private $validationDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class ResultOfVerificationType
     private $validationTime;
 
     /**
-     * @var ValidateProcess|null
+     * @var null|ValidateProcess
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateProcess")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class ResultOfVerificationType
     private $validateProcess;
 
     /**
-     * @var ValidateTool|null
+     * @var null|ValidateTool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateTool")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class ResultOfVerificationType
     private $validateTool;
 
     /**
-     * @var ValidateToolVersion|null
+     * @var null|ValidateToolVersion
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValidateToolVersion")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class ResultOfVerificationType
     private $validateToolVersion;
 
     /**
-     * @var SignatoryParty|null
+     * @var null|SignatoryParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SignatoryParty")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class ResultOfVerificationType
     private $signatoryParty;
 
     /**
-     * @return ValidatorID|null
+     * @return null|ValidatorID
      */
     public function getValidatorID(): ?ValidatorID
     {
@@ -124,7 +124,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @param ValidatorID|null $validatorID
+     * @param  null|ValidatorID $validatorID
      * @return static
      */
     public function setValidatorID(?ValidatorID $validatorID = null): static
@@ -145,7 +145,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return ValidationResultCode|null
+     * @return null|ValidationResultCode
      */
     public function getValidationResultCode(): ?ValidationResultCode
     {
@@ -163,7 +163,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @param ValidationResultCode|null $validationResultCode
+     * @param  null|ValidationResultCode $validationResultCode
      * @return static
      */
     public function setValidationResultCode(?ValidationResultCode $validationResultCode = null): static
@@ -184,7 +184,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getValidationDate(): ?DateTimeInterface
     {
@@ -192,7 +192,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @param DateTimeInterface|null $validationDate
+     * @param  null|DateTimeInterface $validationDate
      * @return static
      */
     public function setValidationDate(?DateTimeInterface $validationDate = null): static
@@ -213,7 +213,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getValidationTime(): ?DateTimeInterface
     {
@@ -221,7 +221,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @param DateTimeInterface|null $validationTime
+     * @param  null|DateTimeInterface $validationTime
      * @return static
      */
     public function setValidationTime(?DateTimeInterface $validationTime = null): static
@@ -242,7 +242,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return ValidateProcess|null
+     * @return null|ValidateProcess
      */
     public function getValidateProcess(): ?ValidateProcess
     {
@@ -260,7 +260,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @param ValidateProcess|null $validateProcess
+     * @param  null|ValidateProcess $validateProcess
      * @return static
      */
     public function setValidateProcess(?ValidateProcess $validateProcess = null): static
@@ -281,7 +281,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return ValidateTool|null
+     * @return null|ValidateTool
      */
     public function getValidateTool(): ?ValidateTool
     {
@@ -299,7 +299,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @param ValidateTool|null $validateTool
+     * @param  null|ValidateTool $validateTool
      * @return static
      */
     public function setValidateTool(?ValidateTool $validateTool = null): static
@@ -320,7 +320,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return ValidateToolVersion|null
+     * @return null|ValidateToolVersion
      */
     public function getValidateToolVersion(): ?ValidateToolVersion
     {
@@ -338,7 +338,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @param ValidateToolVersion|null $validateToolVersion
+     * @param  null|ValidateToolVersion $validateToolVersion
      * @return static
      */
     public function setValidateToolVersion(?ValidateToolVersion $validateToolVersion = null): static
@@ -359,7 +359,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @return SignatoryParty|null
+     * @return null|SignatoryParty
      */
     public function getSignatoryParty(): ?SignatoryParty
     {
@@ -377,7 +377,7 @@ class ResultOfVerificationType
     }
 
     /**
-     * @param SignatoryParty|null $signatoryParty
+     * @param  null|SignatoryParty $signatoryParty
      * @return static
      */
     public function setSignatoryParty(?SignatoryParty $signatoryParty = null): static

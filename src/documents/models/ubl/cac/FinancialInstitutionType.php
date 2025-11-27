@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
+use JMS\Serializer\Annotation as JMS;
 
 class FinancialInstitutionType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class FinancialInstitutionType
     private $iD;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class FinancialInstitutionType
     private $name;
 
     /**
-     * @var Address|null
+     * @var null|Address
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Address")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class FinancialInstitutionType
     private $address;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -65,7 +65,7 @@ class FinancialInstitutionType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -86,7 +86,7 @@ class FinancialInstitutionType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -104,7 +104,7 @@ class FinancialInstitutionType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -125,7 +125,7 @@ class FinancialInstitutionType
     }
 
     /**
-     * @return Address|null
+     * @return null|Address
      */
     public function getAddress(): ?Address
     {
@@ -143,7 +143,7 @@ class FinancialInstitutionType
     }
 
     /**
-     * @param Address|null $address
+     * @param  null|Address $address
      * @return static
      */
     public function setAddress(?Address $address = null): static

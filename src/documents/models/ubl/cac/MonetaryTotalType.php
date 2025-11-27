@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceTotalAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ChargeTotalAmount;
@@ -15,13 +14,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\PayableRoundingAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PrepaidAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TaxExclusiveAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TaxInclusiveAmount;
+use JMS\Serializer\Annotation as JMS;
 
 class MonetaryTotalType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var LineExtensionAmount|null
+     * @var null|LineExtensionAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineExtensionAmount")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class MonetaryTotalType
     private $lineExtensionAmount;
 
     /**
-     * @var TaxExclusiveAmount|null
+     * @var null|TaxExclusiveAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxExclusiveAmount")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class MonetaryTotalType
     private $taxExclusiveAmount;
 
     /**
-     * @var TaxInclusiveAmount|null
+     * @var null|TaxInclusiveAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxInclusiveAmount")
      * @JMS\Expose
@@ -54,7 +54,7 @@ class MonetaryTotalType
     private $taxInclusiveAmount;
 
     /**
-     * @var AllowanceTotalAmount|null
+     * @var null|AllowanceTotalAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceTotalAmount")
      * @JMS\Expose
@@ -65,7 +65,7 @@ class MonetaryTotalType
     private $allowanceTotalAmount;
 
     /**
-     * @var ChargeTotalAmount|null
+     * @var null|ChargeTotalAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ChargeTotalAmount")
      * @JMS\Expose
@@ -76,7 +76,7 @@ class MonetaryTotalType
     private $chargeTotalAmount;
 
     /**
-     * @var PrepaidAmount|null
+     * @var null|PrepaidAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PrepaidAmount")
      * @JMS\Expose
@@ -87,7 +87,7 @@ class MonetaryTotalType
     private $prepaidAmount;
 
     /**
-     * @var PayableRoundingAmount|null
+     * @var null|PayableRoundingAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PayableRoundingAmount")
      * @JMS\Expose
@@ -98,7 +98,7 @@ class MonetaryTotalType
     private $payableRoundingAmount;
 
     /**
-     * @var PayableAmount|null
+     * @var null|PayableAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PayableAmount")
      * @JMS\Expose
@@ -109,7 +109,7 @@ class MonetaryTotalType
     private $payableAmount;
 
     /**
-     * @var PayableAlternativeAmount|null
+     * @var null|PayableAlternativeAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PayableAlternativeAmount")
      * @JMS\Expose
@@ -120,7 +120,7 @@ class MonetaryTotalType
     private $payableAlternativeAmount;
 
     /**
-     * @return LineExtensionAmount|null
+     * @return null|LineExtensionAmount
      */
     public function getLineExtensionAmount(): ?LineExtensionAmount
     {
@@ -138,7 +138,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param LineExtensionAmount|null $lineExtensionAmount
+     * @param  null|LineExtensionAmount $lineExtensionAmount
      * @return static
      */
     public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
@@ -159,7 +159,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return TaxExclusiveAmount|null
+     * @return null|TaxExclusiveAmount
      */
     public function getTaxExclusiveAmount(): ?TaxExclusiveAmount
     {
@@ -177,7 +177,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param TaxExclusiveAmount|null $taxExclusiveAmount
+     * @param  null|TaxExclusiveAmount $taxExclusiveAmount
      * @return static
      */
     public function setTaxExclusiveAmount(?TaxExclusiveAmount $taxExclusiveAmount = null): static
@@ -198,7 +198,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return TaxInclusiveAmount|null
+     * @return null|TaxInclusiveAmount
      */
     public function getTaxInclusiveAmount(): ?TaxInclusiveAmount
     {
@@ -216,7 +216,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param TaxInclusiveAmount|null $taxInclusiveAmount
+     * @param  null|TaxInclusiveAmount $taxInclusiveAmount
      * @return static
      */
     public function setTaxInclusiveAmount(?TaxInclusiveAmount $taxInclusiveAmount = null): static
@@ -237,7 +237,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return AllowanceTotalAmount|null
+     * @return null|AllowanceTotalAmount
      */
     public function getAllowanceTotalAmount(): ?AllowanceTotalAmount
     {
@@ -255,7 +255,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param AllowanceTotalAmount|null $allowanceTotalAmount
+     * @param  null|AllowanceTotalAmount $allowanceTotalAmount
      * @return static
      */
     public function setAllowanceTotalAmount(?AllowanceTotalAmount $allowanceTotalAmount = null): static
@@ -276,7 +276,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return ChargeTotalAmount|null
+     * @return null|ChargeTotalAmount
      */
     public function getChargeTotalAmount(): ?ChargeTotalAmount
     {
@@ -294,7 +294,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param ChargeTotalAmount|null $chargeTotalAmount
+     * @param  null|ChargeTotalAmount $chargeTotalAmount
      * @return static
      */
     public function setChargeTotalAmount(?ChargeTotalAmount $chargeTotalAmount = null): static
@@ -315,7 +315,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return PrepaidAmount|null
+     * @return null|PrepaidAmount
      */
     public function getPrepaidAmount(): ?PrepaidAmount
     {
@@ -333,7 +333,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param PrepaidAmount|null $prepaidAmount
+     * @param  null|PrepaidAmount $prepaidAmount
      * @return static
      */
     public function setPrepaidAmount(?PrepaidAmount $prepaidAmount = null): static
@@ -354,7 +354,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return PayableRoundingAmount|null
+     * @return null|PayableRoundingAmount
      */
     public function getPayableRoundingAmount(): ?PayableRoundingAmount
     {
@@ -372,7 +372,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param PayableRoundingAmount|null $payableRoundingAmount
+     * @param  null|PayableRoundingAmount $payableRoundingAmount
      * @return static
      */
     public function setPayableRoundingAmount(?PayableRoundingAmount $payableRoundingAmount = null): static
@@ -393,7 +393,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return PayableAmount|null
+     * @return null|PayableAmount
      */
     public function getPayableAmount(): ?PayableAmount
     {
@@ -411,7 +411,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param PayableAmount|null $payableAmount
+     * @param  null|PayableAmount $payableAmount
      * @return static
      */
     public function setPayableAmount(?PayableAmount $payableAmount = null): static
@@ -432,7 +432,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @return PayableAlternativeAmount|null
+     * @return null|PayableAlternativeAmount
      */
     public function getPayableAlternativeAmount(): ?PayableAlternativeAmount
     {
@@ -450,7 +450,7 @@ class MonetaryTotalType
     }
 
     /**
-     * @param PayableAlternativeAmount|null $payableAlternativeAmount
+     * @param  null|PayableAlternativeAmount $payableAlternativeAmount
      * @return static
      */
     public function setPayableAlternativeAmount(?PayableAlternativeAmount $payableAlternativeAmount = null): static

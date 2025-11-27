@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
+use JMS\Serializer\Annotation as JMS;
 
 class ProjectReferenceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class ProjectReferenceType
     private $iD;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class ProjectReferenceType
     private $uUID;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class ProjectReferenceType
     private $issueDate;
 
     /**
-     * @var array<WorkPhaseReference>|null
+     * @var null|array<WorkPhaseReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\WorkPhaseReference>")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ProjectReferenceType
     private $workPhaseReference;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -78,7 +78,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -99,7 +99,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -117,7 +117,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -138,7 +138,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueDate(): ?DateTimeInterface
     {
@@ -146,7 +146,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @param DateTimeInterface|null $issueDate
+     * @param  null|DateTimeInterface $issueDate
      * @return static
      */
     public function setIssueDate(?DateTimeInterface $issueDate = null): static
@@ -167,7 +167,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @return array<WorkPhaseReference>|null
+     * @return null|array<WorkPhaseReference>
      */
     public function getWorkPhaseReference(): ?array
     {
@@ -175,7 +175,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @param array<WorkPhaseReference>|null $workPhaseReference
+     * @param  null|array<WorkPhaseReference> $workPhaseReference
      * @return static
      */
     public function setWorkPhaseReference(?array $workPhaseReference = null): static
@@ -206,7 +206,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @return WorkPhaseReference|null
+     * @return null|WorkPhaseReference
      */
     public function firstWorkPhaseReference(): ?WorkPhaseReference
     {
@@ -221,7 +221,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @return WorkPhaseReference|null
+     * @return null|WorkPhaseReference
      */
     public function lastWorkPhaseReference(): ?WorkPhaseReference
     {
@@ -236,7 +236,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @param WorkPhaseReference $workPhaseReference
+     * @param  WorkPhaseReference $workPhaseReference
      * @return static
      */
     public function addToWorkPhaseReference(WorkPhaseReference $workPhaseReference): static
@@ -257,7 +257,7 @@ class ProjectReferenceType
     }
 
     /**
-     * @param WorkPhaseReference $workPhaseReference
+     * @param  WorkPhaseReference $workPhaseReference
      * @return static
      */
     public function addOnceToWorkPhaseReference(WorkPhaseReference $workPhaseReference): static

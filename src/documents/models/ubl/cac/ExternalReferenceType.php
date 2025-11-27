@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CharacterSetCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
@@ -16,13 +15,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\FormatCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\HashAlgorithmMethod;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MimeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\URI;
+use JMS\Serializer\Annotation as JMS;
 
 class ExternalReferenceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var URI|null
+     * @var null|URI
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\URI")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class ExternalReferenceType
     private $uRI;
 
     /**
-     * @var DocumentHash|null
+     * @var null|DocumentHash
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentHash")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class ExternalReferenceType
     private $documentHash;
 
     /**
-     * @var HashAlgorithmMethod|null
+     * @var null|HashAlgorithmMethod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\HashAlgorithmMethod")
      * @JMS\Expose
@@ -55,7 +55,7 @@ class ExternalReferenceType
     private $hashAlgorithmMethod;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -66,7 +66,7 @@ class ExternalReferenceType
     private $expiryDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class ExternalReferenceType
     private $expiryTime;
 
     /**
-     * @var MimeCode|null
+     * @var null|MimeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MimeCode")
      * @JMS\Expose
@@ -88,7 +88,7 @@ class ExternalReferenceType
     private $mimeCode;
 
     /**
-     * @var FormatCode|null
+     * @var null|FormatCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FormatCode")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class ExternalReferenceType
     private $formatCode;
 
     /**
-     * @var EncodingCode|null
+     * @var null|EncodingCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EncodingCode")
      * @JMS\Expose
@@ -110,7 +110,7 @@ class ExternalReferenceType
     private $encodingCode;
 
     /**
-     * @var CharacterSetCode|null
+     * @var null|CharacterSetCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CharacterSetCode")
      * @JMS\Expose
@@ -121,7 +121,7 @@ class ExternalReferenceType
     private $characterSetCode;
 
     /**
-     * @var FileName|null
+     * @var null|FileName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FileName")
      * @JMS\Expose
@@ -132,7 +132,7 @@ class ExternalReferenceType
     private $fileName;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -144,7 +144,7 @@ class ExternalReferenceType
     private $description;
 
     /**
-     * @return URI|null
+     * @return null|URI
      */
     public function getURI(): ?URI
     {
@@ -162,7 +162,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param URI|null $uRI
+     * @param  null|URI $uRI
      * @return static
      */
     public function setURI(?URI $uRI = null): static
@@ -183,7 +183,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return DocumentHash|null
+     * @return null|DocumentHash
      */
     public function getDocumentHash(): ?DocumentHash
     {
@@ -201,7 +201,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param DocumentHash|null $documentHash
+     * @param  null|DocumentHash $documentHash
      * @return static
      */
     public function setDocumentHash(?DocumentHash $documentHash = null): static
@@ -222,7 +222,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return HashAlgorithmMethod|null
+     * @return null|HashAlgorithmMethod
      */
     public function getHashAlgorithmMethod(): ?HashAlgorithmMethod
     {
@@ -240,7 +240,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param HashAlgorithmMethod|null $hashAlgorithmMethod
+     * @param  null|HashAlgorithmMethod $hashAlgorithmMethod
      * @return static
      */
     public function setHashAlgorithmMethod(?HashAlgorithmMethod $hashAlgorithmMethod = null): static
@@ -261,7 +261,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getExpiryDate(): ?DateTimeInterface
     {
@@ -269,7 +269,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param DateTimeInterface|null $expiryDate
+     * @param  null|DateTimeInterface $expiryDate
      * @return static
      */
     public function setExpiryDate(?DateTimeInterface $expiryDate = null): static
@@ -290,7 +290,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getExpiryTime(): ?DateTimeInterface
     {
@@ -298,7 +298,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param DateTimeInterface|null $expiryTime
+     * @param  null|DateTimeInterface $expiryTime
      * @return static
      */
     public function setExpiryTime(?DateTimeInterface $expiryTime = null): static
@@ -319,7 +319,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return MimeCode|null
+     * @return null|MimeCode
      */
     public function getMimeCode(): ?MimeCode
     {
@@ -337,7 +337,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param MimeCode|null $mimeCode
+     * @param  null|MimeCode $mimeCode
      * @return static
      */
     public function setMimeCode(?MimeCode $mimeCode = null): static
@@ -358,7 +358,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return FormatCode|null
+     * @return null|FormatCode
      */
     public function getFormatCode(): ?FormatCode
     {
@@ -376,7 +376,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param FormatCode|null $formatCode
+     * @param  null|FormatCode $formatCode
      * @return static
      */
     public function setFormatCode(?FormatCode $formatCode = null): static
@@ -397,7 +397,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return EncodingCode|null
+     * @return null|EncodingCode
      */
     public function getEncodingCode(): ?EncodingCode
     {
@@ -415,7 +415,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param EncodingCode|null $encodingCode
+     * @param  null|EncodingCode $encodingCode
      * @return static
      */
     public function setEncodingCode(?EncodingCode $encodingCode = null): static
@@ -436,7 +436,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return CharacterSetCode|null
+     * @return null|CharacterSetCode
      */
     public function getCharacterSetCode(): ?CharacterSetCode
     {
@@ -454,7 +454,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param CharacterSetCode|null $characterSetCode
+     * @param  null|CharacterSetCode $characterSetCode
      * @return static
      */
     public function setCharacterSetCode(?CharacterSetCode $characterSetCode = null): static
@@ -475,7 +475,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return FileName|null
+     * @return null|FileName
      */
     public function getFileName(): ?FileName
     {
@@ -493,7 +493,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param FileName|null $fileName
+     * @param  null|FileName $fileName
      * @return static
      */
     public function setFileName(?FileName $fileName = null): static
@@ -514,7 +514,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -522,7 +522,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -553,7 +553,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -568,7 +568,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -583,7 +583,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -604,7 +604,7 @@ class ExternalReferenceType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static

@@ -5,17 +5,17 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
+use JMS\Serializer\Annotation as JMS;
 
 class PowerOfAttorneyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class PowerOfAttorneyType
     private $iD;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class PowerOfAttorneyType
     private $issueDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class PowerOfAttorneyType
     private $issueTime;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class PowerOfAttorneyType
     private $description;
 
     /**
-     * @var NotaryParty|null
+     * @var null|NotaryParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\NotaryParty")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class PowerOfAttorneyType
     private $notaryParty;
 
     /**
-     * @var AgentParty|null
+     * @var null|AgentParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AgentParty")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class PowerOfAttorneyType
     private $agentParty;
 
     /**
-     * @var array<WitnessParty>|null
+     * @var null|array<WitnessParty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\WitnessParty>")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class PowerOfAttorneyType
     private $witnessParty;
 
     /**
-     * @var array<MandateDocumentReference>|null
+     * @var null|array<MandateDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MandateDocumentReference>")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class PowerOfAttorneyType
     private $mandateDocumentReference;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -124,7 +124,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -145,7 +145,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueDate(): ?DateTimeInterface
     {
@@ -153,7 +153,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param DateTimeInterface|null $issueDate
+     * @param  null|DateTimeInterface $issueDate
      * @return static
      */
     public function setIssueDate(?DateTimeInterface $issueDate = null): static
@@ -174,7 +174,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueTime(): ?DateTimeInterface
     {
@@ -182,7 +182,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param DateTimeInterface|null $issueTime
+     * @param  null|DateTimeInterface $issueTime
      * @return static
      */
     public function setIssueTime(?DateTimeInterface $issueTime = null): static
@@ -203,7 +203,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -211,7 +211,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -242,7 +242,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -257,7 +257,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -272,7 +272,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -293,7 +293,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -324,7 +324,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return NotaryParty|null
+     * @return null|NotaryParty
      */
     public function getNotaryParty(): ?NotaryParty
     {
@@ -342,7 +342,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param NotaryParty|null $notaryParty
+     * @param  null|NotaryParty $notaryParty
      * @return static
      */
     public function setNotaryParty(?NotaryParty $notaryParty = null): static
@@ -363,7 +363,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return AgentParty|null
+     * @return null|AgentParty
      */
     public function getAgentParty(): ?AgentParty
     {
@@ -381,7 +381,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param AgentParty|null $agentParty
+     * @param  null|AgentParty $agentParty
      * @return static
      */
     public function setAgentParty(?AgentParty $agentParty = null): static
@@ -402,7 +402,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return array<WitnessParty>|null
+     * @return null|array<WitnessParty>
      */
     public function getWitnessParty(): ?array
     {
@@ -410,7 +410,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param array<WitnessParty>|null $witnessParty
+     * @param  null|array<WitnessParty> $witnessParty
      * @return static
      */
     public function setWitnessParty(?array $witnessParty = null): static
@@ -441,7 +441,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return WitnessParty|null
+     * @return null|WitnessParty
      */
     public function firstWitnessParty(): ?WitnessParty
     {
@@ -456,7 +456,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return WitnessParty|null
+     * @return null|WitnessParty
      */
     public function lastWitnessParty(): ?WitnessParty
     {
@@ -471,7 +471,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param WitnessParty $witnessParty
+     * @param  WitnessParty $witnessParty
      * @return static
      */
     public function addToWitnessParty(WitnessParty $witnessParty): static
@@ -492,7 +492,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param WitnessParty $witnessParty
+     * @param  WitnessParty $witnessParty
      * @return static
      */
     public function addOnceToWitnessParty(WitnessParty $witnessParty): static
@@ -523,7 +523,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return array<MandateDocumentReference>|null
+     * @return null|array<MandateDocumentReference>
      */
     public function getMandateDocumentReference(): ?array
     {
@@ -531,7 +531,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param array<MandateDocumentReference>|null $mandateDocumentReference
+     * @param  null|array<MandateDocumentReference> $mandateDocumentReference
      * @return static
      */
     public function setMandateDocumentReference(?array $mandateDocumentReference = null): static
@@ -562,7 +562,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return MandateDocumentReference|null
+     * @return null|MandateDocumentReference
      */
     public function firstMandateDocumentReference(): ?MandateDocumentReference
     {
@@ -577,7 +577,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @return MandateDocumentReference|null
+     * @return null|MandateDocumentReference
      */
     public function lastMandateDocumentReference(): ?MandateDocumentReference
     {
@@ -592,7 +592,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param MandateDocumentReference $mandateDocumentReference
+     * @param  MandateDocumentReference $mandateDocumentReference
      * @return static
      */
     public function addToMandateDocumentReference(MandateDocumentReference $mandateDocumentReference): static
@@ -613,7 +613,7 @@ class PowerOfAttorneyType
     }
 
     /**
-     * @param MandateDocumentReference $mandateDocumentReference
+     * @param  MandateDocumentReference $mandateDocumentReference
      * @return static
      */
     public function addOnceToMandateDocumentReference(MandateDocumentReference $mandateDocumentReference): static

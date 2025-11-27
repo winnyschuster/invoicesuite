@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceValueQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class PerformanceDataLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class PerformanceDataLineType
     private $iD;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class PerformanceDataLineType
     private $note;
 
     /**
-     * @var PerformanceValueQuantity|null
+     * @var null|PerformanceValueQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceValueQuantity")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class PerformanceDataLineType
     private $performanceValueQuantity;
 
     /**
-     * @var PerformanceMetricTypeCode|null
+     * @var null|PerformanceMetricTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class PerformanceDataLineType
     private $performanceMetricTypeCode;
 
     /**
-     * @var Period|null
+     * @var null|Period
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Period")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class PerformanceDataLineType
     private $period;
 
     /**
-     * @var Item|null
+     * @var null|Item
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class PerformanceDataLineType
     private $item;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -101,7 +101,7 @@ class PerformanceDataLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -122,7 +122,7 @@ class PerformanceDataLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -130,7 +130,7 @@ class PerformanceDataLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -161,7 +161,7 @@ class PerformanceDataLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -176,7 +176,7 @@ class PerformanceDataLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -191,7 +191,7 @@ class PerformanceDataLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -212,7 +212,7 @@ class PerformanceDataLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -243,7 +243,7 @@ class PerformanceDataLineType
     }
 
     /**
-     * @return PerformanceValueQuantity|null
+     * @return null|PerformanceValueQuantity
      */
     public function getPerformanceValueQuantity(): ?PerformanceValueQuantity
     {
@@ -261,7 +261,7 @@ class PerformanceDataLineType
     }
 
     /**
-     * @param PerformanceValueQuantity|null $performanceValueQuantity
+     * @param  null|PerformanceValueQuantity $performanceValueQuantity
      * @return static
      */
     public function setPerformanceValueQuantity(?PerformanceValueQuantity $performanceValueQuantity = null): static
@@ -282,7 +282,7 @@ class PerformanceDataLineType
     }
 
     /**
-     * @return PerformanceMetricTypeCode|null
+     * @return null|PerformanceMetricTypeCode
      */
     public function getPerformanceMetricTypeCode(): ?PerformanceMetricTypeCode
     {
@@ -300,7 +300,7 @@ class PerformanceDataLineType
     }
 
     /**
-     * @param PerformanceMetricTypeCode|null $performanceMetricTypeCode
+     * @param  null|PerformanceMetricTypeCode $performanceMetricTypeCode
      * @return static
      */
     public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): static
@@ -321,7 +321,7 @@ class PerformanceDataLineType
     }
 
     /**
-     * @return Period|null
+     * @return null|Period
      */
     public function getPeriod(): ?Period
     {
@@ -339,7 +339,7 @@ class PerformanceDataLineType
     }
 
     /**
-     * @param Period|null $period
+     * @param  null|Period $period
      * @return static
      */
     public function setPeriod(?Period $period = null): static
@@ -360,7 +360,7 @@ class PerformanceDataLineType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function getItem(): ?Item
     {
@@ -378,7 +378,7 @@ class PerformanceDataLineType
     }
 
     /**
-     * @param Item|null $item
+     * @param  null|Item $item
      * @return static
      */
     public function setItem(?Item $item = null): static

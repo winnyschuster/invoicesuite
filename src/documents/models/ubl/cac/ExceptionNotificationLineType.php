@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CollaborationPriorityCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ComparedValueMeasure;
@@ -17,13 +16,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\ResolutionCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SourceValueMeasure;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\VarianceQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class ExceptionNotificationLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class ExceptionNotificationLineType
     private $iD;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class ExceptionNotificationLineType
     private $note;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class ExceptionNotificationLineType
     private $description;
 
     /**
-     * @var ExceptionStatusCode|null
+     * @var null|ExceptionStatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExceptionStatusCode")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class ExceptionNotificationLineType
     private $exceptionStatusCode;
 
     /**
-     * @var CollaborationPriorityCode|null
+     * @var null|CollaborationPriorityCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CollaborationPriorityCode")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class ExceptionNotificationLineType
     private $collaborationPriorityCode;
 
     /**
-     * @var ResolutionCode|null
+     * @var null|ResolutionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ResolutionCode")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class ExceptionNotificationLineType
     private $resolutionCode;
 
     /**
-     * @var ComparedValueMeasure|null
+     * @var null|ComparedValueMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ComparedValueMeasure")
      * @JMS\Expose
@@ -102,7 +102,7 @@ class ExceptionNotificationLineType
     private $comparedValueMeasure;
 
     /**
-     * @var SourceValueMeasure|null
+     * @var null|SourceValueMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SourceValueMeasure")
      * @JMS\Expose
@@ -113,7 +113,7 @@ class ExceptionNotificationLineType
     private $sourceValueMeasure;
 
     /**
-     * @var VarianceQuantity|null
+     * @var null|VarianceQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\VarianceQuantity")
      * @JMS\Expose
@@ -124,7 +124,7 @@ class ExceptionNotificationLineType
     private $varianceQuantity;
 
     /**
-     * @var SupplyChainActivityTypeCode|null
+     * @var null|SupplyChainActivityTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SupplyChainActivityTypeCode")
      * @JMS\Expose
@@ -135,7 +135,7 @@ class ExceptionNotificationLineType
     private $supplyChainActivityTypeCode;
 
     /**
-     * @var PerformanceMetricTypeCode|null
+     * @var null|PerformanceMetricTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PerformanceMetricTypeCode")
      * @JMS\Expose
@@ -146,7 +146,7 @@ class ExceptionNotificationLineType
     private $performanceMetricTypeCode;
 
     /**
-     * @var ExceptionObservationPeriod|null
+     * @var null|ExceptionObservationPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ExceptionObservationPeriod")
      * @JMS\Expose
@@ -157,7 +157,7 @@ class ExceptionNotificationLineType
     private $exceptionObservationPeriod;
 
     /**
-     * @var array<DocumentReference>|null
+     * @var null|array<DocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -169,7 +169,7 @@ class ExceptionNotificationLineType
     private $documentReference;
 
     /**
-     * @var ForecastException|null
+     * @var null|ForecastException
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ForecastException")
      * @JMS\Expose
@@ -180,7 +180,7 @@ class ExceptionNotificationLineType
     private $forecastException;
 
     /**
-     * @var SupplyItem|null
+     * @var null|SupplyItem
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SupplyItem")
      * @JMS\Expose
@@ -191,7 +191,7 @@ class ExceptionNotificationLineType
     private $supplyItem;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -209,7 +209,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -230,7 +230,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -238,7 +238,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -269,7 +269,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -284,7 +284,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -299,7 +299,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -320,7 +320,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -351,7 +351,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -359,7 +359,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -390,7 +390,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -405,7 +405,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -420,7 +420,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -441,7 +441,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -472,7 +472,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return ExceptionStatusCode|null
+     * @return null|ExceptionStatusCode
      */
     public function getExceptionStatusCode(): ?ExceptionStatusCode
     {
@@ -490,7 +490,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param ExceptionStatusCode|null $exceptionStatusCode
+     * @param  null|ExceptionStatusCode $exceptionStatusCode
      * @return static
      */
     public function setExceptionStatusCode(?ExceptionStatusCode $exceptionStatusCode = null): static
@@ -511,7 +511,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return CollaborationPriorityCode|null
+     * @return null|CollaborationPriorityCode
      */
     public function getCollaborationPriorityCode(): ?CollaborationPriorityCode
     {
@@ -529,7 +529,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param CollaborationPriorityCode|null $collaborationPriorityCode
+     * @param  null|CollaborationPriorityCode $collaborationPriorityCode
      * @return static
      */
     public function setCollaborationPriorityCode(?CollaborationPriorityCode $collaborationPriorityCode = null): static
@@ -550,7 +550,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return ResolutionCode|null
+     * @return null|ResolutionCode
      */
     public function getResolutionCode(): ?ResolutionCode
     {
@@ -568,7 +568,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param ResolutionCode|null $resolutionCode
+     * @param  null|ResolutionCode $resolutionCode
      * @return static
      */
     public function setResolutionCode(?ResolutionCode $resolutionCode = null): static
@@ -589,7 +589,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return ComparedValueMeasure|null
+     * @return null|ComparedValueMeasure
      */
     public function getComparedValueMeasure(): ?ComparedValueMeasure
     {
@@ -607,7 +607,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param ComparedValueMeasure|null $comparedValueMeasure
+     * @param  null|ComparedValueMeasure $comparedValueMeasure
      * @return static
      */
     public function setComparedValueMeasure(?ComparedValueMeasure $comparedValueMeasure = null): static
@@ -628,7 +628,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return SourceValueMeasure|null
+     * @return null|SourceValueMeasure
      */
     public function getSourceValueMeasure(): ?SourceValueMeasure
     {
@@ -646,7 +646,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param SourceValueMeasure|null $sourceValueMeasure
+     * @param  null|SourceValueMeasure $sourceValueMeasure
      * @return static
      */
     public function setSourceValueMeasure(?SourceValueMeasure $sourceValueMeasure = null): static
@@ -667,7 +667,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return VarianceQuantity|null
+     * @return null|VarianceQuantity
      */
     public function getVarianceQuantity(): ?VarianceQuantity
     {
@@ -685,7 +685,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param VarianceQuantity|null $varianceQuantity
+     * @param  null|VarianceQuantity $varianceQuantity
      * @return static
      */
     public function setVarianceQuantity(?VarianceQuantity $varianceQuantity = null): static
@@ -706,7 +706,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return SupplyChainActivityTypeCode|null
+     * @return null|SupplyChainActivityTypeCode
      */
     public function getSupplyChainActivityTypeCode(): ?SupplyChainActivityTypeCode
     {
@@ -724,7 +724,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param SupplyChainActivityTypeCode|null $supplyChainActivityTypeCode
+     * @param  null|SupplyChainActivityTypeCode $supplyChainActivityTypeCode
      * @return static
      */
     public function setSupplyChainActivityTypeCode(
@@ -746,7 +746,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return PerformanceMetricTypeCode|null
+     * @return null|PerformanceMetricTypeCode
      */
     public function getPerformanceMetricTypeCode(): ?PerformanceMetricTypeCode
     {
@@ -764,7 +764,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param PerformanceMetricTypeCode|null $performanceMetricTypeCode
+     * @param  null|PerformanceMetricTypeCode $performanceMetricTypeCode
      * @return static
      */
     public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): static
@@ -785,7 +785,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return ExceptionObservationPeriod|null
+     * @return null|ExceptionObservationPeriod
      */
     public function getExceptionObservationPeriod(): ?ExceptionObservationPeriod
     {
@@ -803,7 +803,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param ExceptionObservationPeriod|null $exceptionObservationPeriod
+     * @param  null|ExceptionObservationPeriod $exceptionObservationPeriod
      * @return static
      */
     public function setExceptionObservationPeriod(
@@ -825,7 +825,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return array<DocumentReference>|null
+     * @return null|array<DocumentReference>
      */
     public function getDocumentReference(): ?array
     {
@@ -833,7 +833,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param array<DocumentReference>|null $documentReference
+     * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
     public function setDocumentReference(?array $documentReference = null): static
@@ -864,7 +864,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -879,7 +879,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -894,7 +894,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addToDocumentReference(DocumentReference $documentReference): static
@@ -915,7 +915,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): static
@@ -946,7 +946,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return ForecastException|null
+     * @return null|ForecastException
      */
     public function getForecastException(): ?ForecastException
     {
@@ -964,7 +964,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param ForecastException|null $forecastException
+     * @param  null|ForecastException $forecastException
      * @return static
      */
     public function setForecastException(?ForecastException $forecastException = null): static
@@ -985,7 +985,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @return SupplyItem|null
+     * @return null|SupplyItem
      */
     public function getSupplyItem(): ?SupplyItem
     {
@@ -1003,7 +1003,7 @@ class ExceptionNotificationLineType
     }
 
     /**
-     * @param SupplyItem|null $supplyItem
+     * @param  null|SupplyItem $supplyItem
      * @return static
      */
     public function setSupplyItem(?SupplyItem $supplyItem = null): static

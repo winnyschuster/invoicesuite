@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CurrencyCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TaxTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class TaxSchemeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class TaxSchemeType
     private $iD;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class TaxSchemeType
     private $name;
 
     /**
-     * @var TaxTypeCode|null
+     * @var null|TaxTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxTypeCode")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class TaxSchemeType
     private $taxTypeCode;
 
     /**
-     * @var CurrencyCode|null
+     * @var null|CurrencyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CurrencyCode")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class TaxSchemeType
     private $currencyCode;
 
     /**
-     * @var array<JurisdictionRegionAddress>|null
+     * @var null|array<JurisdictionRegionAddress>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\JurisdictionRegionAddress>")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class TaxSchemeType
     private $jurisdictionRegionAddress;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -90,7 +90,7 @@ class TaxSchemeType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -111,7 +111,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -129,7 +129,7 @@ class TaxSchemeType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -150,7 +150,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return TaxTypeCode|null
+     * @return null|TaxTypeCode
      */
     public function getTaxTypeCode(): ?TaxTypeCode
     {
@@ -168,7 +168,7 @@ class TaxSchemeType
     }
 
     /**
-     * @param TaxTypeCode|null $taxTypeCode
+     * @param  null|TaxTypeCode $taxTypeCode
      * @return static
      */
     public function setTaxTypeCode(?TaxTypeCode $taxTypeCode = null): static
@@ -189,7 +189,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return CurrencyCode|null
+     * @return null|CurrencyCode
      */
     public function getCurrencyCode(): ?CurrencyCode
     {
@@ -207,7 +207,7 @@ class TaxSchemeType
     }
 
     /**
-     * @param CurrencyCode|null $currencyCode
+     * @param  null|CurrencyCode $currencyCode
      * @return static
      */
     public function setCurrencyCode(?CurrencyCode $currencyCode = null): static
@@ -228,7 +228,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return array<JurisdictionRegionAddress>|null
+     * @return null|array<JurisdictionRegionAddress>
      */
     public function getJurisdictionRegionAddress(): ?array
     {
@@ -236,7 +236,7 @@ class TaxSchemeType
     }
 
     /**
-     * @param array<JurisdictionRegionAddress>|null $jurisdictionRegionAddress
+     * @param  null|array<JurisdictionRegionAddress> $jurisdictionRegionAddress
      * @return static
      */
     public function setJurisdictionRegionAddress(?array $jurisdictionRegionAddress = null): static
@@ -267,7 +267,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return JurisdictionRegionAddress|null
+     * @return null|JurisdictionRegionAddress
      */
     public function firstJurisdictionRegionAddress(): ?JurisdictionRegionAddress
     {
@@ -282,7 +282,7 @@ class TaxSchemeType
     }
 
     /**
-     * @return JurisdictionRegionAddress|null
+     * @return null|JurisdictionRegionAddress
      */
     public function lastJurisdictionRegionAddress(): ?JurisdictionRegionAddress
     {
@@ -297,7 +297,7 @@ class TaxSchemeType
     }
 
     /**
-     * @param JurisdictionRegionAddress $jurisdictionRegionAddress
+     * @param  JurisdictionRegionAddress $jurisdictionRegionAddress
      * @return static
      */
     public function addToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): static
@@ -318,7 +318,7 @@ class TaxSchemeType
     }
 
     /**
-     * @param JurisdictionRegionAddress $jurisdictionRegionAddress
+     * @param  JurisdictionRegionAddress $jurisdictionRegionAddress
      * @return static
      */
     public function addOnceToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): static

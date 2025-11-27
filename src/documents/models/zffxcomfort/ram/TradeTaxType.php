@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxcomfort\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\TaxCategoryCodeType;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\TaxTypeCodeType;
@@ -14,13 +13,14 @@ use horstoeko\invoicesuite\documents\models\zffxcomfort\udt\CodeType;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateType;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\udt\PercentType;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeTaxType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\AmountType")
      * @JMS\Expose
@@ -31,7 +31,7 @@ class TradeTaxType
     private $calculatedAmount;
 
     /**
-     * @var TaxTypeCodeType|null
+     * @var null|TaxTypeCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\TaxTypeCodeType")
      * @JMS\Expose
@@ -42,7 +42,7 @@ class TradeTaxType
     private $typeCode;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -53,7 +53,7 @@ class TradeTaxType
     private $exemptionReason;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\AmountType")
      * @JMS\Expose
@@ -64,7 +64,7 @@ class TradeTaxType
     private $basisAmount;
 
     /**
-     * @var TaxCategoryCodeType|null
+     * @var null|TaxCategoryCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\TaxCategoryCodeType")
      * @JMS\Expose
@@ -75,7 +75,7 @@ class TradeTaxType
     private $categoryCode;
 
     /**
-     * @var CodeType|null
+     * @var null|CodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\CodeType")
      * @JMS\Expose
@@ -86,7 +86,7 @@ class TradeTaxType
     private $exemptionReasonCode;
 
     /**
-     * @var DateType|null
+     * @var null|DateType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\DateType")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class TradeTaxType
     private $taxPointDate;
 
     /**
-     * @var TimeReferenceCodeType|null
+     * @var null|TimeReferenceCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\qdt\TimeReferenceCodeType")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class TradeTaxType
     private $dueDateTypeCode;
 
     /**
-     * @var PercentType|null
+     * @var null|PercentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\PercentType")
      * @JMS\Expose
@@ -119,7 +119,7 @@ class TradeTaxType
     private $rateApplicablePercent;
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getCalculatedAmount(): ?AmountType
     {
@@ -137,7 +137,7 @@ class TradeTaxType
     }
 
     /**
-     * @param AmountType|null $calculatedAmount
+     * @param  null|AmountType $calculatedAmount
      * @return static
      */
     public function setCalculatedAmount(?AmountType $calculatedAmount = null): static
@@ -158,7 +158,7 @@ class TradeTaxType
     }
 
     /**
-     * @return TaxTypeCodeType|null
+     * @return null|TaxTypeCodeType
      */
     public function getTypeCode(): ?TaxTypeCodeType
     {
@@ -176,7 +176,7 @@ class TradeTaxType
     }
 
     /**
-     * @param TaxTypeCodeType|null $typeCode
+     * @param  null|TaxTypeCodeType $typeCode
      * @return static
      */
     public function setTypeCode(?TaxTypeCodeType $typeCode = null): static
@@ -197,7 +197,7 @@ class TradeTaxType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getExemptionReason(): ?TextType
     {
@@ -215,7 +215,7 @@ class TradeTaxType
     }
 
     /**
-     * @param TextType|null $exemptionReason
+     * @param  null|TextType $exemptionReason
      * @return static
      */
     public function setExemptionReason(?TextType $exemptionReason = null): static
@@ -236,7 +236,7 @@ class TradeTaxType
     }
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getBasisAmount(): ?AmountType
     {
@@ -254,7 +254,7 @@ class TradeTaxType
     }
 
     /**
-     * @param AmountType|null $basisAmount
+     * @param  null|AmountType $basisAmount
      * @return static
      */
     public function setBasisAmount(?AmountType $basisAmount = null): static
@@ -275,7 +275,7 @@ class TradeTaxType
     }
 
     /**
-     * @return TaxCategoryCodeType|null
+     * @return null|TaxCategoryCodeType
      */
     public function getCategoryCode(): ?TaxCategoryCodeType
     {
@@ -293,7 +293,7 @@ class TradeTaxType
     }
 
     /**
-     * @param TaxCategoryCodeType|null $categoryCode
+     * @param  null|TaxCategoryCodeType $categoryCode
      * @return static
      */
     public function setCategoryCode(?TaxCategoryCodeType $categoryCode = null): static
@@ -314,7 +314,7 @@ class TradeTaxType
     }
 
     /**
-     * @return CodeType|null
+     * @return null|CodeType
      */
     public function getExemptionReasonCode(): ?CodeType
     {
@@ -332,7 +332,7 @@ class TradeTaxType
     }
 
     /**
-     * @param CodeType|null $exemptionReasonCode
+     * @param  null|CodeType $exemptionReasonCode
      * @return static
      */
     public function setExemptionReasonCode(?CodeType $exemptionReasonCode = null): static
@@ -353,7 +353,7 @@ class TradeTaxType
     }
 
     /**
-     * @return DateType|null
+     * @return null|DateType
      */
     public function getTaxPointDate(): ?DateType
     {
@@ -371,7 +371,7 @@ class TradeTaxType
     }
 
     /**
-     * @param DateType|null $taxPointDate
+     * @param  null|DateType $taxPointDate
      * @return static
      */
     public function setTaxPointDate(?DateType $taxPointDate = null): static
@@ -392,7 +392,7 @@ class TradeTaxType
     }
 
     /**
-     * @return TimeReferenceCodeType|null
+     * @return null|TimeReferenceCodeType
      */
     public function getDueDateTypeCode(): ?TimeReferenceCodeType
     {
@@ -410,7 +410,7 @@ class TradeTaxType
     }
 
     /**
-     * @param TimeReferenceCodeType|null $dueDateTypeCode
+     * @param  null|TimeReferenceCodeType $dueDateTypeCode
      * @return static
      */
     public function setDueDateTypeCode(?TimeReferenceCodeType $dueDateTypeCode = null): static
@@ -431,7 +431,7 @@ class TradeTaxType
     }
 
     /**
-     * @return PercentType|null
+     * @return null|PercentType
      */
     public function getRateApplicablePercent(): ?PercentType
     {
@@ -449,7 +449,7 @@ class TradeTaxType
     }
 
     /**
-     * @param PercentType|null $rateApplicablePercent
+     * @param  null|PercentType $rateApplicablePercent
      * @return static
      */
     public function setRateApplicablePercent(?PercentType $rateApplicablePercent = null): static

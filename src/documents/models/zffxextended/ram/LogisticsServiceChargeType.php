@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class LogisticsServiceChargeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class LogisticsServiceChargeType
     private $description;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class LogisticsServiceChargeType
     private $appliedAmount;
 
     /**
-     * @var array<TradeTaxType>|null
+     * @var null|array<TradeTaxType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class LogisticsServiceChargeType
     private $appliedTradeTax;
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getDescription(): ?TextType
     {
@@ -66,7 +66,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @param TextType|null $description
+     * @param  null|TextType $description
      * @return static
      */
     public function setDescription(?TextType $description = null): static
@@ -87,7 +87,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getAppliedAmount(): ?AmountType
     {
@@ -105,7 +105,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @param AmountType|null $appliedAmount
+     * @param  null|AmountType $appliedAmount
      * @return static
      */
     public function setAppliedAmount(?AmountType $appliedAmount = null): static
@@ -126,7 +126,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @return array<TradeTaxType>|null
+     * @return null|array<TradeTaxType>
      */
     public function getAppliedTradeTax(): ?array
     {
@@ -134,7 +134,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @param array<TradeTaxType>|null $appliedTradeTax
+     * @param  null|array<TradeTaxType> $appliedTradeTax
      * @return static
      */
     public function setAppliedTradeTax(?array $appliedTradeTax = null): static
@@ -165,7 +165,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @param TradeTaxType $appliedTradeTax
+     * @param  TradeTaxType $appliedTradeTax
      * @return static
      */
     public function addToAppliedTradeTax(TradeTaxType $appliedTradeTax): static
@@ -186,7 +186,7 @@ class LogisticsServiceChargeType
     }
 
     /**
-     * @param TradeTaxType $appliedTradeTax
+     * @param  TradeTaxType $appliedTradeTax
      * @return static
      */
     public function addOnceToAppliedTradeTax(TradeTaxType $appliedTradeTax): static

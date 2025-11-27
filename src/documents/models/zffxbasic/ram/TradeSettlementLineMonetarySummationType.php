@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasic\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeSettlementLineMonetarySummationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\AmountType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class TradeSettlementLineMonetarySummationType
     private $lineTotalAmount;
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getLineTotalAmount(): ?AmountType
     {
@@ -42,7 +42,7 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @param AmountType|null $lineTotalAmount
+     * @param  null|AmountType $lineTotalAmount
      * @return static
      */
     public function setLineTotalAmount(?AmountType $lineTotalAmount = null): static

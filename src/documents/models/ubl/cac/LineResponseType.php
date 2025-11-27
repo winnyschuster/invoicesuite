@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class LineResponseType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var LineReference|null
+     * @var null|LineReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LineReference")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class LineResponseType
     private $lineReference;
 
     /**
-     * @var array<Response>|null
+     * @var null|array<Response>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Response>")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class LineResponseType
     private $response;
 
     /**
-     * @return LineReference|null
+     * @return null|LineReference
      */
     public function getLineReference(): ?LineReference
     {
@@ -53,7 +53,7 @@ class LineResponseType
     }
 
     /**
-     * @param LineReference|null $lineReference
+     * @param  null|LineReference $lineReference
      * @return static
      */
     public function setLineReference(?LineReference $lineReference = null): static
@@ -74,7 +74,7 @@ class LineResponseType
     }
 
     /**
-     * @return array<Response>|null
+     * @return null|array<Response>
      */
     public function getResponse(): ?array
     {
@@ -82,7 +82,7 @@ class LineResponseType
     }
 
     /**
-     * @param array<Response>|null $response
+     * @param  null|array<Response> $response
      * @return static
      */
     public function setResponse(?array $response = null): static
@@ -113,7 +113,7 @@ class LineResponseType
     }
 
     /**
-     * @return Response|null
+     * @return null|Response
      */
     public function firstResponse(): ?Response
     {
@@ -128,7 +128,7 @@ class LineResponseType
     }
 
     /**
-     * @return Response|null
+     * @return null|Response
      */
     public function lastResponse(): ?Response
     {
@@ -143,7 +143,7 @@ class LineResponseType
     }
 
     /**
-     * @param Response $response
+     * @param  Response $response
      * @return static
      */
     public function addToResponse(Response $response): static
@@ -164,7 +164,7 @@ class LineResponseType
     }
 
     /**
-     * @param Response $response
+     * @param  Response $response
      * @return static
      */
     public function addOnceToResponse(Response $response): static

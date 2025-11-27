@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasicwl\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxbasicwl\qdt\FormattedDateTimeType;
 use horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\IDType;
+use JMS\Serializer\Annotation as JMS;
 
 class ReferencedDocumentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\IDType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ReferencedDocumentType
     private $issuerAssignedID;
 
     /**
-     * @var FormattedDateTimeType|null
+     * @var null|FormattedDateTimeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\qdt\FormattedDateTimeType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ReferencedDocumentType
     private $formattedIssueDateTime;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getIssuerAssignedID(): ?IDType
     {
@@ -54,7 +54,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param IDType|null $issuerAssignedID
+     * @param  null|IDType $issuerAssignedID
      * @return static
      */
     public function setIssuerAssignedID(?IDType $issuerAssignedID = null): static
@@ -75,7 +75,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return FormattedDateTimeType|null
+     * @return null|FormattedDateTimeType
      */
     public function getFormattedIssueDateTime(): ?FormattedDateTimeType
     {
@@ -93,7 +93,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param FormattedDateTimeType|null $formattedIssueDateTime
+     * @param  null|FormattedDateTimeType $formattedIssueDateTime
      * @return static
      */
     public function setFormattedIssueDateTime(?FormattedDateTimeType $formattedIssueDateTime = null): static

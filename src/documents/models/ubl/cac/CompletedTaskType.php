@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AnnualAverageAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PartyCapacityAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaskAmount;
+use JMS\Serializer\Annotation as JMS;
 
 class CompletedTaskType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AnnualAverageAmount|null
+     * @var null|AnnualAverageAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AnnualAverageAmount")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class CompletedTaskType
     private $annualAverageAmount;
 
     /**
-     * @var TotalTaskAmount|null
+     * @var null|TotalTaskAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalTaskAmount")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class CompletedTaskType
     private $totalTaskAmount;
 
     /**
-     * @var PartyCapacityAmount|null
+     * @var null|PartyCapacityAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PartyCapacityAmount")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class CompletedTaskType
     private $partyCapacityAmount;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class CompletedTaskType
     private $description;
 
     /**
-     * @var array<EvidenceSupplied>|null
+     * @var null|array<EvidenceSupplied>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EvidenceSupplied>")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class CompletedTaskType
     private $evidenceSupplied;
 
     /**
-     * @var Period|null
+     * @var null|Period
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Period")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class CompletedTaskType
     private $period;
 
     /**
-     * @var RecipientCustomerParty|null
+     * @var null|RecipientCustomerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RecipientCustomerParty")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class CompletedTaskType
     private $recipientCustomerParty;
 
     /**
-     * @return AnnualAverageAmount|null
+     * @return null|AnnualAverageAmount
      */
     public function getAnnualAverageAmount(): ?AnnualAverageAmount
     {
@@ -113,7 +113,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param AnnualAverageAmount|null $annualAverageAmount
+     * @param  null|AnnualAverageAmount $annualAverageAmount
      * @return static
      */
     public function setAnnualAverageAmount(?AnnualAverageAmount $annualAverageAmount = null): static
@@ -134,7 +134,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return TotalTaskAmount|null
+     * @return null|TotalTaskAmount
      */
     public function getTotalTaskAmount(): ?TotalTaskAmount
     {
@@ -152,7 +152,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param TotalTaskAmount|null $totalTaskAmount
+     * @param  null|TotalTaskAmount $totalTaskAmount
      * @return static
      */
     public function setTotalTaskAmount(?TotalTaskAmount $totalTaskAmount = null): static
@@ -173,7 +173,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return PartyCapacityAmount|null
+     * @return null|PartyCapacityAmount
      */
     public function getPartyCapacityAmount(): ?PartyCapacityAmount
     {
@@ -191,7 +191,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param PartyCapacityAmount|null $partyCapacityAmount
+     * @param  null|PartyCapacityAmount $partyCapacityAmount
      * @return static
      */
     public function setPartyCapacityAmount(?PartyCapacityAmount $partyCapacityAmount = null): static
@@ -212,7 +212,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -220,7 +220,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -251,7 +251,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -266,7 +266,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -281,7 +281,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -302,7 +302,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -333,7 +333,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return array<EvidenceSupplied>|null
+     * @return null|array<EvidenceSupplied>
      */
     public function getEvidenceSupplied(): ?array
     {
@@ -341,7 +341,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param array<EvidenceSupplied>|null $evidenceSupplied
+     * @param  null|array<EvidenceSupplied> $evidenceSupplied
      * @return static
      */
     public function setEvidenceSupplied(?array $evidenceSupplied = null): static
@@ -372,7 +372,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return EvidenceSupplied|null
+     * @return null|EvidenceSupplied
      */
     public function firstEvidenceSupplied(): ?EvidenceSupplied
     {
@@ -387,7 +387,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return EvidenceSupplied|null
+     * @return null|EvidenceSupplied
      */
     public function lastEvidenceSupplied(): ?EvidenceSupplied
     {
@@ -402,7 +402,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param EvidenceSupplied $evidenceSupplied
+     * @param  EvidenceSupplied $evidenceSupplied
      * @return static
      */
     public function addToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
@@ -423,7 +423,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param EvidenceSupplied $evidenceSupplied
+     * @param  EvidenceSupplied $evidenceSupplied
      * @return static
      */
     public function addOnceToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
@@ -454,7 +454,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return Period|null
+     * @return null|Period
      */
     public function getPeriod(): ?Period
     {
@@ -472,7 +472,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param Period|null $period
+     * @param  null|Period $period
      * @return static
      */
     public function setPeriod(?Period $period = null): static
@@ -493,7 +493,7 @@ class CompletedTaskType
     }
 
     /**
-     * @return RecipientCustomerParty|null
+     * @return null|RecipientCustomerParty
      */
     public function getRecipientCustomerParty(): ?RecipientCustomerParty
     {
@@ -511,7 +511,7 @@ class CompletedTaskType
     }
 
     /**
-     * @param RecipientCustomerParty|null $recipientCustomerParty
+     * @param  null|RecipientCustomerParty $recipientCustomerParty
      * @return static
      */
     public function setRecipientCustomerParty(?RecipientCustomerParty $recipientCustomerParty = null): static

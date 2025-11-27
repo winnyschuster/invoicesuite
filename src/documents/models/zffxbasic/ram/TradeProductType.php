@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasic\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType;
 use horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeProductType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class TradeProductType
     private $globalID;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\TextType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TradeProductType
     private $name;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getGlobalID(): ?IDType
     {
@@ -54,7 +54,7 @@ class TradeProductType
     }
 
     /**
-     * @param IDType|null $globalID
+     * @param  null|IDType $globalID
      * @return static
      */
     public function setGlobalID(?IDType $globalID = null): static
@@ -75,7 +75,7 @@ class TradeProductType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getName(): ?TextType
     {
@@ -93,7 +93,7 @@ class TradeProductType
     }
 
     /**
-     * @param TextType|null $name
+     * @param  null|TextType $name
      * @return static
      */
     public function setName(?TextType $name = null): static

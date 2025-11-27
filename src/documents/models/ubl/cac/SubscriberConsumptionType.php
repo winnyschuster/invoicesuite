@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SpecificationTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalMeteredQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class SubscriberConsumptionType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ConsumptionID|null
+     * @var null|ConsumptionID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class SubscriberConsumptionType
     private $consumptionID;
 
     /**
-     * @var SpecificationTypeCode|null
+     * @var null|SpecificationTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SpecificationTypeCode")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class SubscriberConsumptionType
     private $specificationTypeCode;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class SubscriberConsumptionType
     private $note;
 
     /**
-     * @var TotalMeteredQuantity|null
+     * @var null|TotalMeteredQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalMeteredQuantity")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class SubscriberConsumptionType
     private $totalMeteredQuantity;
 
     /**
-     * @var SubscriberParty|null
+     * @var null|SubscriberParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SubscriberParty")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class SubscriberConsumptionType
     private $subscriberParty;
 
     /**
-     * @var UtilityConsumptionPoint|null
+     * @var null|UtilityConsumptionPoint
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\UtilityConsumptionPoint")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class SubscriberConsumptionType
     private $utilityConsumptionPoint;
 
     /**
-     * @var array<OnAccountPayment>|null
+     * @var null|array<OnAccountPayment>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\OnAccountPayment>")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class SubscriberConsumptionType
     private $onAccountPayment;
 
     /**
-     * @var Consumption|null
+     * @var null|Consumption
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Consumption")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class SubscriberConsumptionType
     private $consumption;
 
     /**
-     * @var array<SupplierConsumption>|null
+     * @var null|array<SupplierConsumption>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SupplierConsumption>")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class SubscriberConsumptionType
     private $supplierConsumption;
 
     /**
-     * @return ConsumptionID|null
+     * @return null|ConsumptionID
      */
     public function getConsumptionID(): ?ConsumptionID
     {
@@ -136,7 +136,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @param ConsumptionID|null $consumptionID
+     * @param  null|ConsumptionID $consumptionID
      * @return static
      */
     public function setConsumptionID(?ConsumptionID $consumptionID = null): static
@@ -157,7 +157,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return SpecificationTypeCode|null
+     * @return null|SpecificationTypeCode
      */
     public function getSpecificationTypeCode(): ?SpecificationTypeCode
     {
@@ -175,7 +175,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @param SpecificationTypeCode|null $specificationTypeCode
+     * @param  null|SpecificationTypeCode $specificationTypeCode
      * @return static
      */
     public function setSpecificationTypeCode(?SpecificationTypeCode $specificationTypeCode = null): static
@@ -196,7 +196,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -204,7 +204,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -235,7 +235,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -250,7 +250,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -265,7 +265,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -286,7 +286,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -317,7 +317,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return TotalMeteredQuantity|null
+     * @return null|TotalMeteredQuantity
      */
     public function getTotalMeteredQuantity(): ?TotalMeteredQuantity
     {
@@ -335,7 +335,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @param TotalMeteredQuantity|null $totalMeteredQuantity
+     * @param  null|TotalMeteredQuantity $totalMeteredQuantity
      * @return static
      */
     public function setTotalMeteredQuantity(?TotalMeteredQuantity $totalMeteredQuantity = null): static
@@ -356,7 +356,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return SubscriberParty|null
+     * @return null|SubscriberParty
      */
     public function getSubscriberParty(): ?SubscriberParty
     {
@@ -374,7 +374,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @param SubscriberParty|null $subscriberParty
+     * @param  null|SubscriberParty $subscriberParty
      * @return static
      */
     public function setSubscriberParty(?SubscriberParty $subscriberParty = null): static
@@ -395,7 +395,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return UtilityConsumptionPoint|null
+     * @return null|UtilityConsumptionPoint
      */
     public function getUtilityConsumptionPoint(): ?UtilityConsumptionPoint
     {
@@ -413,7 +413,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @param UtilityConsumptionPoint|null $utilityConsumptionPoint
+     * @param  null|UtilityConsumptionPoint $utilityConsumptionPoint
      * @return static
      */
     public function setUtilityConsumptionPoint(?UtilityConsumptionPoint $utilityConsumptionPoint = null): static
@@ -434,7 +434,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return array<OnAccountPayment>|null
+     * @return null|array<OnAccountPayment>
      */
     public function getOnAccountPayment(): ?array
     {
@@ -442,7 +442,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @param array<OnAccountPayment>|null $onAccountPayment
+     * @param  null|array<OnAccountPayment> $onAccountPayment
      * @return static
      */
     public function setOnAccountPayment(?array $onAccountPayment = null): static
@@ -473,7 +473,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return OnAccountPayment|null
+     * @return null|OnAccountPayment
      */
     public function firstOnAccountPayment(): ?OnAccountPayment
     {
@@ -488,7 +488,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return OnAccountPayment|null
+     * @return null|OnAccountPayment
      */
     public function lastOnAccountPayment(): ?OnAccountPayment
     {
@@ -503,7 +503,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @param OnAccountPayment $onAccountPayment
+     * @param  OnAccountPayment $onAccountPayment
      * @return static
      */
     public function addToOnAccountPayment(OnAccountPayment $onAccountPayment): static
@@ -524,7 +524,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @param OnAccountPayment $onAccountPayment
+     * @param  OnAccountPayment $onAccountPayment
      * @return static
      */
     public function addOnceToOnAccountPayment(OnAccountPayment $onAccountPayment): static
@@ -555,7 +555,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return Consumption|null
+     * @return null|Consumption
      */
     public function getConsumption(): ?Consumption
     {
@@ -573,7 +573,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @param Consumption|null $consumption
+     * @param  null|Consumption $consumption
      * @return static
      */
     public function setConsumption(?Consumption $consumption = null): static
@@ -594,7 +594,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return array<SupplierConsumption>|null
+     * @return null|array<SupplierConsumption>
      */
     public function getSupplierConsumption(): ?array
     {
@@ -602,7 +602,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @param array<SupplierConsumption>|null $supplierConsumption
+     * @param  null|array<SupplierConsumption> $supplierConsumption
      * @return static
      */
     public function setSupplierConsumption(?array $supplierConsumption = null): static
@@ -633,7 +633,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return SupplierConsumption|null
+     * @return null|SupplierConsumption
      */
     public function firstSupplierConsumption(): ?SupplierConsumption
     {
@@ -648,7 +648,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @return SupplierConsumption|null
+     * @return null|SupplierConsumption
      */
     public function lastSupplierConsumption(): ?SupplierConsumption
     {
@@ -663,7 +663,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @param SupplierConsumption $supplierConsumption
+     * @param  SupplierConsumption $supplierConsumption
      * @return static
      */
     public function addToSupplierConsumption(SupplierConsumption $supplierConsumption): static
@@ -684,7 +684,7 @@ class SubscriberConsumptionType
     }
 
     /**
-     * @param SupplierConsumption $supplierConsumption
+     * @param  SupplierConsumption $supplierConsumption
      * @return static
      */
     public function addOnceToSupplierConsumption(SupplierConsumption $supplierConsumption): static

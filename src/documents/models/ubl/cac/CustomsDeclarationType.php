@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
+use JMS\Serializer\Annotation as JMS;
 
 class CustomsDeclarationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class CustomsDeclarationType
     private $iD;
 
     /**
-     * @var IssuerParty|null
+     * @var null|IssuerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class CustomsDeclarationType
     private $issuerParty;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -53,7 +53,7 @@ class CustomsDeclarationType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -74,7 +74,7 @@ class CustomsDeclarationType
     }
 
     /**
-     * @return IssuerParty|null
+     * @return null|IssuerParty
      */
     public function getIssuerParty(): ?IssuerParty
     {
@@ -92,7 +92,7 @@ class CustomsDeclarationType
     }
 
     /**
-     * @param IssuerParty|null $issuerParty
+     * @param  null|IssuerParty $issuerParty
      * @return static
      */
     public function setIssuerParty(?IssuerParty $issuerParty = null): static

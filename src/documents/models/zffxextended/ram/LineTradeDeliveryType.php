@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType;
+use JMS\Serializer\Annotation as JMS;
 
 class LineTradeDeliveryType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var QuantityType|null
+     * @var null|QuantityType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class LineTradeDeliveryType
     private $billedQuantity;
 
     /**
-     * @var QuantityType|null
+     * @var null|QuantityType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class LineTradeDeliveryType
     private $chargeFreeQuantity;
 
     /**
-     * @var QuantityType|null
+     * @var null|QuantityType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class LineTradeDeliveryType
     private $packageQuantity;
 
     /**
-     * @var TradePartyType|null
+     * @var null|TradePartyType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class LineTradeDeliveryType
     private $shipToTradeParty;
 
     /**
-     * @var TradePartyType|null
+     * @var null|TradePartyType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradePartyType")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class LineTradeDeliveryType
     private $ultimateShipToTradeParty;
 
     /**
-     * @var SupplyChainEventType|null
+     * @var null|SupplyChainEventType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\SupplyChainEventType")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class LineTradeDeliveryType
     private $actualDeliverySupplyChainEvent;
 
     /**
-     * @var ReferencedDocumentType|null
+     * @var null|ReferencedDocumentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -90,7 +90,7 @@ class LineTradeDeliveryType
     private $despatchAdviceReferencedDocument;
 
     /**
-     * @var ReferencedDocumentType|null
+     * @var null|ReferencedDocumentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -101,7 +101,7 @@ class LineTradeDeliveryType
     private $receivingAdviceReferencedDocument;
 
     /**
-     * @var ReferencedDocumentType|null
+     * @var null|ReferencedDocumentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -112,7 +112,7 @@ class LineTradeDeliveryType
     private $deliveryNoteReferencedDocument;
 
     /**
-     * @return QuantityType|null
+     * @return null|QuantityType
      */
     public function getBilledQuantity(): ?QuantityType
     {
@@ -130,7 +130,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @param QuantityType|null $billedQuantity
+     * @param  null|QuantityType $billedQuantity
      * @return static
      */
     public function setBilledQuantity(?QuantityType $billedQuantity = null): static
@@ -151,7 +151,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @return QuantityType|null
+     * @return null|QuantityType
      */
     public function getChargeFreeQuantity(): ?QuantityType
     {
@@ -169,7 +169,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @param QuantityType|null $chargeFreeQuantity
+     * @param  null|QuantityType $chargeFreeQuantity
      * @return static
      */
     public function setChargeFreeQuantity(?QuantityType $chargeFreeQuantity = null): static
@@ -190,7 +190,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @return QuantityType|null
+     * @return null|QuantityType
      */
     public function getPackageQuantity(): ?QuantityType
     {
@@ -208,7 +208,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @param QuantityType|null $packageQuantity
+     * @param  null|QuantityType $packageQuantity
      * @return static
      */
     public function setPackageQuantity(?QuantityType $packageQuantity = null): static
@@ -229,7 +229,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @return TradePartyType|null
+     * @return null|TradePartyType
      */
     public function getShipToTradeParty(): ?TradePartyType
     {
@@ -247,7 +247,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @param TradePartyType|null $shipToTradeParty
+     * @param  null|TradePartyType $shipToTradeParty
      * @return static
      */
     public function setShipToTradeParty(?TradePartyType $shipToTradeParty = null): static
@@ -268,7 +268,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @return TradePartyType|null
+     * @return null|TradePartyType
      */
     public function getUltimateShipToTradeParty(): ?TradePartyType
     {
@@ -286,7 +286,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @param TradePartyType|null $ultimateShipToTradeParty
+     * @param  null|TradePartyType $ultimateShipToTradeParty
      * @return static
      */
     public function setUltimateShipToTradeParty(?TradePartyType $ultimateShipToTradeParty = null): static
@@ -307,7 +307,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @return SupplyChainEventType|null
+     * @return null|SupplyChainEventType
      */
     public function getActualDeliverySupplyChainEvent(): ?SupplyChainEventType
     {
@@ -325,7 +325,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @param SupplyChainEventType|null $actualDeliverySupplyChainEvent
+     * @param  null|SupplyChainEventType $actualDeliverySupplyChainEvent
      * @return static
      */
     public function setActualDeliverySupplyChainEvent(
@@ -347,7 +347,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @return ReferencedDocumentType|null
+     * @return null|ReferencedDocumentType
      */
     public function getDespatchAdviceReferencedDocument(): ?ReferencedDocumentType
     {
@@ -365,7 +365,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @param ReferencedDocumentType|null $despatchAdviceReferencedDocument
+     * @param  null|ReferencedDocumentType $despatchAdviceReferencedDocument
      * @return static
      */
     public function setDespatchAdviceReferencedDocument(
@@ -387,7 +387,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @return ReferencedDocumentType|null
+     * @return null|ReferencedDocumentType
      */
     public function getReceivingAdviceReferencedDocument(): ?ReferencedDocumentType
     {
@@ -405,7 +405,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @param ReferencedDocumentType|null $receivingAdviceReferencedDocument
+     * @param  null|ReferencedDocumentType $receivingAdviceReferencedDocument
      * @return static
      */
     public function setReceivingAdviceReferencedDocument(
@@ -427,7 +427,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @return ReferencedDocumentType|null
+     * @return null|ReferencedDocumentType
      */
     public function getDeliveryNoteReferencedDocument(): ?ReferencedDocumentType
     {
@@ -445,7 +445,7 @@ class LineTradeDeliveryType
     }
 
     /**
-     * @param ReferencedDocumentType|null $deliveryNoteReferencedDocument
+     * @param  null|ReferencedDocumentType $deliveryNoteReferencedDocument
      * @return static
      */
     public function setDeliveryNoteReferencedDocument(

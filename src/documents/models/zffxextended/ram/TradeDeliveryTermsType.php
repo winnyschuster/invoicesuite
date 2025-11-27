@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\qdt\DeliveryTermsCodeType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeDeliveryTermsType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var DeliveryTermsCodeType|null
+     * @var null|DeliveryTermsCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\DeliveryTermsCodeType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class TradeDeliveryTermsType
     private $deliveryTypeCode;
 
     /**
-     * @return DeliveryTermsCodeType|null
+     * @return null|DeliveryTermsCodeType
      */
     public function getDeliveryTypeCode(): ?DeliveryTermsCodeType
     {
@@ -42,7 +42,7 @@ class TradeDeliveryTermsType
     }
 
     /**
-     * @param DeliveryTermsCodeType|null $deliveryTypeCode
+     * @param  null|DeliveryTermsCodeType $deliveryTypeCode
      * @return static
      */
     public function setDeliveryTypeCode(?DeliveryTermsCodeType $deliveryTypeCode = null): static

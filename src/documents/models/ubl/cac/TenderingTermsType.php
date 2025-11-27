@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AcceptedVariantsDescription;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AdditionalConditions;
@@ -20,13 +19,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentFrequencyCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PriceEvaluationCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PriceRevisionFormulaDescription;
+use JMS\Serializer\Annotation as JMS;
 
 class TenderingTermsType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AwardingMethodTypeCode|null
+     * @var null|AwardingMethodTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AwardingMethodTypeCode")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class TenderingTermsType
     private $awardingMethodTypeCode;
 
     /**
-     * @var PriceEvaluationCode|null
+     * @var null|PriceEvaluationCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PriceEvaluationCode")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class TenderingTermsType
     private $priceEvaluationCode;
 
     /**
-     * @var MaximumVariantQuantity|null
+     * @var null|MaximumVariantQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumVariantQuantity")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class TenderingTermsType
     private $maximumVariantQuantity;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -70,7 +70,7 @@ class TenderingTermsType
     private $variantConstraintIndicator;
 
     /**
-     * @var array<AcceptedVariantsDescription>|null
+     * @var null|array<AcceptedVariantsDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\AcceptedVariantsDescription>")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class TenderingTermsType
     private $acceptedVariantsDescription;
 
     /**
-     * @var array<PriceRevisionFormulaDescription>|null
+     * @var null|array<PriceRevisionFormulaDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PriceRevisionFormulaDescription>")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class TenderingTermsType
     private $priceRevisionFormulaDescription;
 
     /**
-     * @var FundingProgramCode|null
+     * @var null|FundingProgramCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FundingProgramCode")
      * @JMS\Expose
@@ -105,7 +105,7 @@ class TenderingTermsType
     private $fundingProgramCode;
 
     /**
-     * @var array<FundingProgram>|null
+     * @var null|array<FundingProgram>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\FundingProgram>")
      * @JMS\Expose
@@ -117,7 +117,7 @@ class TenderingTermsType
     private $fundingProgram;
 
     /**
-     * @var MaximumAdvertisementAmount|null
+     * @var null|MaximumAdvertisementAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumAdvertisementAmount")
      * @JMS\Expose
@@ -128,7 +128,7 @@ class TenderingTermsType
     private $maximumAdvertisementAmount;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -140,7 +140,7 @@ class TenderingTermsType
     private $note;
 
     /**
-     * @var PaymentFrequencyCode|null
+     * @var null|PaymentFrequencyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentFrequencyCode")
      * @JMS\Expose
@@ -151,7 +151,7 @@ class TenderingTermsType
     private $paymentFrequencyCode;
 
     /**
-     * @var EconomicOperatorRegistryURI|null
+     * @var null|EconomicOperatorRegistryURI
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EconomicOperatorRegistryURI")
      * @JMS\Expose
@@ -162,7 +162,7 @@ class TenderingTermsType
     private $economicOperatorRegistryURI;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -173,7 +173,7 @@ class TenderingTermsType
     private $requiredCurriculaIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -184,7 +184,7 @@ class TenderingTermsType
     private $otherConditionsIndicator;
 
     /**
-     * @var array<AdditionalConditions>|null
+     * @var null|array<AdditionalConditions>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\AdditionalConditions>")
      * @JMS\Expose
@@ -196,7 +196,7 @@ class TenderingTermsType
     private $additionalConditions;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -207,7 +207,7 @@ class TenderingTermsType
     private $latestSecurityClearanceDate;
 
     /**
-     * @var DocumentationFeeAmount|null
+     * @var null|DocumentationFeeAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentationFeeAmount")
      * @JMS\Expose
@@ -218,7 +218,7 @@ class TenderingTermsType
     private $documentationFeeAmount;
 
     /**
-     * @var array<PenaltyClause>|null
+     * @var null|array<PenaltyClause>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PenaltyClause>")
      * @JMS\Expose
@@ -230,7 +230,7 @@ class TenderingTermsType
     private $penaltyClause;
 
     /**
-     * @var array<RequiredFinancialGuarantee>|null
+     * @var null|array<RequiredFinancialGuarantee>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RequiredFinancialGuarantee>")
      * @JMS\Expose
@@ -242,7 +242,7 @@ class TenderingTermsType
     private $requiredFinancialGuarantee;
 
     /**
-     * @var ProcurementLegislationDocumentReference|null
+     * @var null|ProcurementLegislationDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementLegislationDocumentReference")
      * @JMS\Expose
@@ -253,7 +253,7 @@ class TenderingTermsType
     private $procurementLegislationDocumentReference;
 
     /**
-     * @var FiscalLegislationDocumentReference|null
+     * @var null|FiscalLegislationDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FiscalLegislationDocumentReference")
      * @JMS\Expose
@@ -264,7 +264,7 @@ class TenderingTermsType
     private $fiscalLegislationDocumentReference;
 
     /**
-     * @var EnvironmentalLegislationDocumentReference|null
+     * @var null|EnvironmentalLegislationDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EnvironmentalLegislationDocumentReference")
      * @JMS\Expose
@@ -275,7 +275,7 @@ class TenderingTermsType
     private $environmentalLegislationDocumentReference;
 
     /**
-     * @var EmploymentLegislationDocumentReference|null
+     * @var null|EmploymentLegislationDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EmploymentLegislationDocumentReference")
      * @JMS\Expose
@@ -286,7 +286,7 @@ class TenderingTermsType
     private $employmentLegislationDocumentReference;
 
     /**
-     * @var array<ContractualDocumentReference>|null
+     * @var null|array<ContractualDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ContractualDocumentReference>")
      * @JMS\Expose
@@ -298,7 +298,7 @@ class TenderingTermsType
     private $contractualDocumentReference;
 
     /**
-     * @var CallForTendersDocumentReference|null
+     * @var null|CallForTendersDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CallForTendersDocumentReference")
      * @JMS\Expose
@@ -309,7 +309,7 @@ class TenderingTermsType
     private $callForTendersDocumentReference;
 
     /**
-     * @var WarrantyValidityPeriod|null
+     * @var null|WarrantyValidityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyValidityPeriod")
      * @JMS\Expose
@@ -320,7 +320,7 @@ class TenderingTermsType
     private $warrantyValidityPeriod;
 
     /**
-     * @var array<PaymentTerms>|null
+     * @var null|array<PaymentTerms>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>")
      * @JMS\Expose
@@ -332,7 +332,7 @@ class TenderingTermsType
     private $paymentTerms;
 
     /**
-     * @var array<TendererQualificationRequest>|null
+     * @var null|array<TendererQualificationRequest>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TendererQualificationRequest>")
      * @JMS\Expose
@@ -344,7 +344,7 @@ class TenderingTermsType
     private $tendererQualificationRequest;
 
     /**
-     * @var array<AllowedSubcontractTerms>|null
+     * @var null|array<AllowedSubcontractTerms>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowedSubcontractTerms>")
      * @JMS\Expose
@@ -356,7 +356,7 @@ class TenderingTermsType
     private $allowedSubcontractTerms;
 
     /**
-     * @var array<TenderPreparation>|null
+     * @var null|array<TenderPreparation>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TenderPreparation>")
      * @JMS\Expose
@@ -368,7 +368,7 @@ class TenderingTermsType
     private $tenderPreparation;
 
     /**
-     * @var array<ContractExecutionRequirement>|null
+     * @var null|array<ContractExecutionRequirement>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ContractExecutionRequirement>")
      * @JMS\Expose
@@ -380,7 +380,7 @@ class TenderingTermsType
     private $contractExecutionRequirement;
 
     /**
-     * @var AwardingTerms|null
+     * @var null|AwardingTerms
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AwardingTerms")
      * @JMS\Expose
@@ -391,7 +391,7 @@ class TenderingTermsType
     private $awardingTerms;
 
     /**
-     * @var AdditionalInformationParty|null
+     * @var null|AdditionalInformationParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalInformationParty")
      * @JMS\Expose
@@ -402,7 +402,7 @@ class TenderingTermsType
     private $additionalInformationParty;
 
     /**
-     * @var DocumentProviderParty|null
+     * @var null|DocumentProviderParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DocumentProviderParty")
      * @JMS\Expose
@@ -413,7 +413,7 @@ class TenderingTermsType
     private $documentProviderParty;
 
     /**
-     * @var TenderRecipientParty|null
+     * @var null|TenderRecipientParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TenderRecipientParty")
      * @JMS\Expose
@@ -424,7 +424,7 @@ class TenderingTermsType
     private $tenderRecipientParty;
 
     /**
-     * @var ContractResponsibleParty|null
+     * @var null|ContractResponsibleParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContractResponsibleParty")
      * @JMS\Expose
@@ -435,7 +435,7 @@ class TenderingTermsType
     private $contractResponsibleParty;
 
     /**
-     * @var array<TenderEvaluationParty>|null
+     * @var null|array<TenderEvaluationParty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TenderEvaluationParty>")
      * @JMS\Expose
@@ -447,7 +447,7 @@ class TenderingTermsType
     private $tenderEvaluationParty;
 
     /**
-     * @var TenderValidityPeriod|null
+     * @var null|TenderValidityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TenderValidityPeriod")
      * @JMS\Expose
@@ -458,7 +458,7 @@ class TenderingTermsType
     private $tenderValidityPeriod;
 
     /**
-     * @var ContractAcceptancePeriod|null
+     * @var null|ContractAcceptancePeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContractAcceptancePeriod")
      * @JMS\Expose
@@ -469,7 +469,7 @@ class TenderingTermsType
     private $contractAcceptancePeriod;
 
     /**
-     * @var AppealTerms|null
+     * @var null|AppealTerms
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AppealTerms")
      * @JMS\Expose
@@ -480,7 +480,7 @@ class TenderingTermsType
     private $appealTerms;
 
     /**
-     * @var array<Language>|null
+     * @var null|array<Language>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Language>")
      * @JMS\Expose
@@ -492,7 +492,7 @@ class TenderingTermsType
     private $language;
 
     /**
-     * @var array<BudgetAccountLine>|null
+     * @var null|array<BudgetAccountLine>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\BudgetAccountLine>")
      * @JMS\Expose
@@ -504,7 +504,7 @@ class TenderingTermsType
     private $budgetAccountLine;
 
     /**
-     * @var ReplacedNoticeDocumentReference|null
+     * @var null|ReplacedNoticeDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ReplacedNoticeDocumentReference")
      * @JMS\Expose
@@ -515,7 +515,7 @@ class TenderingTermsType
     private $replacedNoticeDocumentReference;
 
     /**
-     * @return AwardingMethodTypeCode|null
+     * @return null|AwardingMethodTypeCode
      */
     public function getAwardingMethodTypeCode(): ?AwardingMethodTypeCode
     {
@@ -533,7 +533,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param AwardingMethodTypeCode|null $awardingMethodTypeCode
+     * @param  null|AwardingMethodTypeCode $awardingMethodTypeCode
      * @return static
      */
     public function setAwardingMethodTypeCode(?AwardingMethodTypeCode $awardingMethodTypeCode = null): static
@@ -554,7 +554,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return PriceEvaluationCode|null
+     * @return null|PriceEvaluationCode
      */
     public function getPriceEvaluationCode(): ?PriceEvaluationCode
     {
@@ -572,7 +572,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param PriceEvaluationCode|null $priceEvaluationCode
+     * @param  null|PriceEvaluationCode $priceEvaluationCode
      * @return static
      */
     public function setPriceEvaluationCode(?PriceEvaluationCode $priceEvaluationCode = null): static
@@ -593,7 +593,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return MaximumVariantQuantity|null
+     * @return null|MaximumVariantQuantity
      */
     public function getMaximumVariantQuantity(): ?MaximumVariantQuantity
     {
@@ -611,7 +611,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param MaximumVariantQuantity|null $maximumVariantQuantity
+     * @param  null|MaximumVariantQuantity $maximumVariantQuantity
      * @return static
      */
     public function setMaximumVariantQuantity(?MaximumVariantQuantity $maximumVariantQuantity = null): static
@@ -632,7 +632,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getVariantConstraintIndicator(): ?bool
     {
@@ -640,7 +640,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param bool|null $variantConstraintIndicator
+     * @param  null|bool $variantConstraintIndicator
      * @return static
      */
     public function setVariantConstraintIndicator(?bool $variantConstraintIndicator = null): static
@@ -661,7 +661,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<AcceptedVariantsDescription>|null
+     * @return null|array<AcceptedVariantsDescription>
      */
     public function getAcceptedVariantsDescription(): ?array
     {
@@ -669,7 +669,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<AcceptedVariantsDescription>|null $acceptedVariantsDescription
+     * @param  null|array<AcceptedVariantsDescription> $acceptedVariantsDescription
      * @return static
      */
     public function setAcceptedVariantsDescription(?array $acceptedVariantsDescription = null): static
@@ -700,7 +700,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return AcceptedVariantsDescription|null
+     * @return null|AcceptedVariantsDescription
      */
     public function firstAcceptedVariantsDescription(): ?AcceptedVariantsDescription
     {
@@ -715,7 +715,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return AcceptedVariantsDescription|null
+     * @return null|AcceptedVariantsDescription
      */
     public function lastAcceptedVariantsDescription(): ?AcceptedVariantsDescription
     {
@@ -730,7 +730,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param AcceptedVariantsDescription $acceptedVariantsDescription
+     * @param  AcceptedVariantsDescription $acceptedVariantsDescription
      * @return static
      */
     public function addToAcceptedVariantsDescription(AcceptedVariantsDescription $acceptedVariantsDescription): static
@@ -751,7 +751,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param AcceptedVariantsDescription $acceptedVariantsDescription
+     * @param  AcceptedVariantsDescription $acceptedVariantsDescription
      * @return static
      */
     public function addOnceToAcceptedVariantsDescription(
@@ -783,7 +783,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<PriceRevisionFormulaDescription>|null
+     * @return null|array<PriceRevisionFormulaDescription>
      */
     public function getPriceRevisionFormulaDescription(): ?array
     {
@@ -791,7 +791,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<PriceRevisionFormulaDescription>|null $priceRevisionFormulaDescription
+     * @param  null|array<PriceRevisionFormulaDescription> $priceRevisionFormulaDescription
      * @return static
      */
     public function setPriceRevisionFormulaDescription(?array $priceRevisionFormulaDescription = null): static
@@ -822,7 +822,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return PriceRevisionFormulaDescription|null
+     * @return null|PriceRevisionFormulaDescription
      */
     public function firstPriceRevisionFormulaDescription(): ?PriceRevisionFormulaDescription
     {
@@ -837,7 +837,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return PriceRevisionFormulaDescription|null
+     * @return null|PriceRevisionFormulaDescription
      */
     public function lastPriceRevisionFormulaDescription(): ?PriceRevisionFormulaDescription
     {
@@ -852,7 +852,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param PriceRevisionFormulaDescription $priceRevisionFormulaDescription
+     * @param  PriceRevisionFormulaDescription $priceRevisionFormulaDescription
      * @return static
      */
     public function addToPriceRevisionFormulaDescription(
@@ -874,7 +874,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param PriceRevisionFormulaDescription $priceRevisionFormulaDescription
+     * @param  PriceRevisionFormulaDescription $priceRevisionFormulaDescription
      * @return static
      */
     public function addOnceToPriceRevisionFormulaDescription(
@@ -906,7 +906,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return FundingProgramCode|null
+     * @return null|FundingProgramCode
      */
     public function getFundingProgramCode(): ?FundingProgramCode
     {
@@ -924,7 +924,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param FundingProgramCode|null $fundingProgramCode
+     * @param  null|FundingProgramCode $fundingProgramCode
      * @return static
      */
     public function setFundingProgramCode(?FundingProgramCode $fundingProgramCode = null): static
@@ -945,7 +945,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<FundingProgram>|null
+     * @return null|array<FundingProgram>
      */
     public function getFundingProgram(): ?array
     {
@@ -953,7 +953,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<FundingProgram>|null $fundingProgram
+     * @param  null|array<FundingProgram> $fundingProgram
      * @return static
      */
     public function setFundingProgram(?array $fundingProgram = null): static
@@ -984,7 +984,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return FundingProgram|null
+     * @return null|FundingProgram
      */
     public function firstFundingProgram(): ?FundingProgram
     {
@@ -999,7 +999,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return FundingProgram|null
+     * @return null|FundingProgram
      */
     public function lastFundingProgram(): ?FundingProgram
     {
@@ -1014,7 +1014,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param FundingProgram $fundingProgram
+     * @param  FundingProgram $fundingProgram
      * @return static
      */
     public function addToFundingProgram(FundingProgram $fundingProgram): static
@@ -1035,7 +1035,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param FundingProgram $fundingProgram
+     * @param  FundingProgram $fundingProgram
      * @return static
      */
     public function addOnceToFundingProgram(FundingProgram $fundingProgram): static
@@ -1066,7 +1066,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return MaximumAdvertisementAmount|null
+     * @return null|MaximumAdvertisementAmount
      */
     public function getMaximumAdvertisementAmount(): ?MaximumAdvertisementAmount
     {
@@ -1084,7 +1084,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param MaximumAdvertisementAmount|null $maximumAdvertisementAmount
+     * @param  null|MaximumAdvertisementAmount $maximumAdvertisementAmount
      * @return static
      */
     public function setMaximumAdvertisementAmount(
@@ -1106,7 +1106,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -1114,7 +1114,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -1145,7 +1145,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -1160,7 +1160,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -1175,7 +1175,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -1196,7 +1196,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -1227,7 +1227,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return PaymentFrequencyCode|null
+     * @return null|PaymentFrequencyCode
      */
     public function getPaymentFrequencyCode(): ?PaymentFrequencyCode
     {
@@ -1245,7 +1245,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param PaymentFrequencyCode|null $paymentFrequencyCode
+     * @param  null|PaymentFrequencyCode $paymentFrequencyCode
      * @return static
      */
     public function setPaymentFrequencyCode(?PaymentFrequencyCode $paymentFrequencyCode = null): static
@@ -1266,7 +1266,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return EconomicOperatorRegistryURI|null
+     * @return null|EconomicOperatorRegistryURI
      */
     public function getEconomicOperatorRegistryURI(): ?EconomicOperatorRegistryURI
     {
@@ -1284,7 +1284,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param EconomicOperatorRegistryURI|null $economicOperatorRegistryURI
+     * @param  null|EconomicOperatorRegistryURI $economicOperatorRegistryURI
      * @return static
      */
     public function setEconomicOperatorRegistryURI(
@@ -1306,7 +1306,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getRequiredCurriculaIndicator(): ?bool
     {
@@ -1314,7 +1314,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param bool|null $requiredCurriculaIndicator
+     * @param  null|bool $requiredCurriculaIndicator
      * @return static
      */
     public function setRequiredCurriculaIndicator(?bool $requiredCurriculaIndicator = null): static
@@ -1335,7 +1335,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getOtherConditionsIndicator(): ?bool
     {
@@ -1343,7 +1343,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param bool|null $otherConditionsIndicator
+     * @param  null|bool $otherConditionsIndicator
      * @return static
      */
     public function setOtherConditionsIndicator(?bool $otherConditionsIndicator = null): static
@@ -1364,7 +1364,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<AdditionalConditions>|null
+     * @return null|array<AdditionalConditions>
      */
     public function getAdditionalConditions(): ?array
     {
@@ -1372,7 +1372,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<AdditionalConditions>|null $additionalConditions
+     * @param  null|array<AdditionalConditions> $additionalConditions
      * @return static
      */
     public function setAdditionalConditions(?array $additionalConditions = null): static
@@ -1403,7 +1403,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return AdditionalConditions|null
+     * @return null|AdditionalConditions
      */
     public function firstAdditionalConditions(): ?AdditionalConditions
     {
@@ -1418,7 +1418,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return AdditionalConditions|null
+     * @return null|AdditionalConditions
      */
     public function lastAdditionalConditions(): ?AdditionalConditions
     {
@@ -1433,7 +1433,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param AdditionalConditions $additionalConditions
+     * @param  AdditionalConditions $additionalConditions
      * @return static
      */
     public function addToAdditionalConditions(AdditionalConditions $additionalConditions): static
@@ -1454,7 +1454,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param AdditionalConditions $additionalConditions
+     * @param  AdditionalConditions $additionalConditions
      * @return static
      */
     public function addOnceToAdditionalConditions(AdditionalConditions $additionalConditions): static
@@ -1485,7 +1485,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getLatestSecurityClearanceDate(): ?DateTimeInterface
     {
@@ -1493,7 +1493,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param DateTimeInterface|null $latestSecurityClearanceDate
+     * @param  null|DateTimeInterface $latestSecurityClearanceDate
      * @return static
      */
     public function setLatestSecurityClearanceDate(?DateTimeInterface $latestSecurityClearanceDate = null): static
@@ -1514,7 +1514,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return DocumentationFeeAmount|null
+     * @return null|DocumentationFeeAmount
      */
     public function getDocumentationFeeAmount(): ?DocumentationFeeAmount
     {
@@ -1532,7 +1532,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param DocumentationFeeAmount|null $documentationFeeAmount
+     * @param  null|DocumentationFeeAmount $documentationFeeAmount
      * @return static
      */
     public function setDocumentationFeeAmount(?DocumentationFeeAmount $documentationFeeAmount = null): static
@@ -1553,7 +1553,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<PenaltyClause>|null
+     * @return null|array<PenaltyClause>
      */
     public function getPenaltyClause(): ?array
     {
@@ -1561,7 +1561,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<PenaltyClause>|null $penaltyClause
+     * @param  null|array<PenaltyClause> $penaltyClause
      * @return static
      */
     public function setPenaltyClause(?array $penaltyClause = null): static
@@ -1592,7 +1592,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return PenaltyClause|null
+     * @return null|PenaltyClause
      */
     public function firstPenaltyClause(): ?PenaltyClause
     {
@@ -1607,7 +1607,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return PenaltyClause|null
+     * @return null|PenaltyClause
      */
     public function lastPenaltyClause(): ?PenaltyClause
     {
@@ -1622,7 +1622,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param PenaltyClause $penaltyClause
+     * @param  PenaltyClause $penaltyClause
      * @return static
      */
     public function addToPenaltyClause(PenaltyClause $penaltyClause): static
@@ -1643,7 +1643,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param PenaltyClause $penaltyClause
+     * @param  PenaltyClause $penaltyClause
      * @return static
      */
     public function addOnceToPenaltyClause(PenaltyClause $penaltyClause): static
@@ -1674,7 +1674,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<RequiredFinancialGuarantee>|null
+     * @return null|array<RequiredFinancialGuarantee>
      */
     public function getRequiredFinancialGuarantee(): ?array
     {
@@ -1682,7 +1682,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<RequiredFinancialGuarantee>|null $requiredFinancialGuarantee
+     * @param  null|array<RequiredFinancialGuarantee> $requiredFinancialGuarantee
      * @return static
      */
     public function setRequiredFinancialGuarantee(?array $requiredFinancialGuarantee = null): static
@@ -1713,7 +1713,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return RequiredFinancialGuarantee|null
+     * @return null|RequiredFinancialGuarantee
      */
     public function firstRequiredFinancialGuarantee(): ?RequiredFinancialGuarantee
     {
@@ -1728,7 +1728,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return RequiredFinancialGuarantee|null
+     * @return null|RequiredFinancialGuarantee
      */
     public function lastRequiredFinancialGuarantee(): ?RequiredFinancialGuarantee
     {
@@ -1743,7 +1743,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param RequiredFinancialGuarantee $requiredFinancialGuarantee
+     * @param  RequiredFinancialGuarantee $requiredFinancialGuarantee
      * @return static
      */
     public function addToRequiredFinancialGuarantee(RequiredFinancialGuarantee $requiredFinancialGuarantee): static
@@ -1764,7 +1764,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param RequiredFinancialGuarantee $requiredFinancialGuarantee
+     * @param  RequiredFinancialGuarantee $requiredFinancialGuarantee
      * @return static
      */
     public function addOnceToRequiredFinancialGuarantee(RequiredFinancialGuarantee $requiredFinancialGuarantee): static
@@ -1795,7 +1795,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return ProcurementLegislationDocumentReference|null
+     * @return null|ProcurementLegislationDocumentReference
      */
     public function getProcurementLegislationDocumentReference(): ?ProcurementLegislationDocumentReference
     {
@@ -1813,7 +1813,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param ProcurementLegislationDocumentReference|null $procurementLegislationDocumentReference
+     * @param  null|ProcurementLegislationDocumentReference $procurementLegislationDocumentReference
      * @return static
      */
     public function setProcurementLegislationDocumentReference(
@@ -1835,7 +1835,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return FiscalLegislationDocumentReference|null
+     * @return null|FiscalLegislationDocumentReference
      */
     public function getFiscalLegislationDocumentReference(): ?FiscalLegislationDocumentReference
     {
@@ -1853,7 +1853,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param FiscalLegislationDocumentReference|null $fiscalLegislationDocumentReference
+     * @param  null|FiscalLegislationDocumentReference $fiscalLegislationDocumentReference
      * @return static
      */
     public function setFiscalLegislationDocumentReference(
@@ -1875,7 +1875,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return EnvironmentalLegislationDocumentReference|null
+     * @return null|EnvironmentalLegislationDocumentReference
      */
     public function getEnvironmentalLegislationDocumentReference(): ?EnvironmentalLegislationDocumentReference
     {
@@ -1893,7 +1893,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param EnvironmentalLegislationDocumentReference|null $environmentalLegislationDocumentReference
+     * @param  null|EnvironmentalLegislationDocumentReference $environmentalLegislationDocumentReference
      * @return static
      */
     public function setEnvironmentalLegislationDocumentReference(
@@ -1915,7 +1915,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return EmploymentLegislationDocumentReference|null
+     * @return null|EmploymentLegislationDocumentReference
      */
     public function getEmploymentLegislationDocumentReference(): ?EmploymentLegislationDocumentReference
     {
@@ -1933,7 +1933,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param EmploymentLegislationDocumentReference|null $employmentLegislationDocumentReference
+     * @param  null|EmploymentLegislationDocumentReference $employmentLegislationDocumentReference
      * @return static
      */
     public function setEmploymentLegislationDocumentReference(
@@ -1955,7 +1955,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<ContractualDocumentReference>|null
+     * @return null|array<ContractualDocumentReference>
      */
     public function getContractualDocumentReference(): ?array
     {
@@ -1963,7 +1963,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<ContractualDocumentReference>|null $contractualDocumentReference
+     * @param  null|array<ContractualDocumentReference> $contractualDocumentReference
      * @return static
      */
     public function setContractualDocumentReference(?array $contractualDocumentReference = null): static
@@ -1994,7 +1994,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return ContractualDocumentReference|null
+     * @return null|ContractualDocumentReference
      */
     public function firstContractualDocumentReference(): ?ContractualDocumentReference
     {
@@ -2009,7 +2009,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return ContractualDocumentReference|null
+     * @return null|ContractualDocumentReference
      */
     public function lastContractualDocumentReference(): ?ContractualDocumentReference
     {
@@ -2024,7 +2024,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param ContractualDocumentReference $contractualDocumentReference
+     * @param  ContractualDocumentReference $contractualDocumentReference
      * @return static
      */
     public function addToContractualDocumentReference(
@@ -2046,7 +2046,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param ContractualDocumentReference $contractualDocumentReference
+     * @param  ContractualDocumentReference $contractualDocumentReference
      * @return static
      */
     public function addOnceToContractualDocumentReference(
@@ -2078,7 +2078,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return CallForTendersDocumentReference|null
+     * @return null|CallForTendersDocumentReference
      */
     public function getCallForTendersDocumentReference(): ?CallForTendersDocumentReference
     {
@@ -2096,7 +2096,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param CallForTendersDocumentReference|null $callForTendersDocumentReference
+     * @param  null|CallForTendersDocumentReference $callForTendersDocumentReference
      * @return static
      */
     public function setCallForTendersDocumentReference(
@@ -2118,7 +2118,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return WarrantyValidityPeriod|null
+     * @return null|WarrantyValidityPeriod
      */
     public function getWarrantyValidityPeriod(): ?WarrantyValidityPeriod
     {
@@ -2136,7 +2136,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param WarrantyValidityPeriod|null $warrantyValidityPeriod
+     * @param  null|WarrantyValidityPeriod $warrantyValidityPeriod
      * @return static
      */
     public function setWarrantyValidityPeriod(?WarrantyValidityPeriod $warrantyValidityPeriod = null): static
@@ -2157,7 +2157,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<PaymentTerms>|null
+     * @return null|array<PaymentTerms>
      */
     public function getPaymentTerms(): ?array
     {
@@ -2165,7 +2165,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<PaymentTerms>|null $paymentTerms
+     * @param  null|array<PaymentTerms> $paymentTerms
      * @return static
      */
     public function setPaymentTerms(?array $paymentTerms = null): static
@@ -2196,7 +2196,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return PaymentTerms|null
+     * @return null|PaymentTerms
      */
     public function firstPaymentTerms(): ?PaymentTerms
     {
@@ -2211,7 +2211,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return PaymentTerms|null
+     * @return null|PaymentTerms
      */
     public function lastPaymentTerms(): ?PaymentTerms
     {
@@ -2226,7 +2226,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param PaymentTerms $paymentTerms
+     * @param  PaymentTerms $paymentTerms
      * @return static
      */
     public function addToPaymentTerms(PaymentTerms $paymentTerms): static
@@ -2247,7 +2247,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param PaymentTerms $paymentTerms
+     * @param  PaymentTerms $paymentTerms
      * @return static
      */
     public function addOnceToPaymentTerms(PaymentTerms $paymentTerms): static
@@ -2278,7 +2278,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<TendererQualificationRequest>|null
+     * @return null|array<TendererQualificationRequest>
      */
     public function getTendererQualificationRequest(): ?array
     {
@@ -2286,7 +2286,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<TendererQualificationRequest>|null $tendererQualificationRequest
+     * @param  null|array<TendererQualificationRequest> $tendererQualificationRequest
      * @return static
      */
     public function setTendererQualificationRequest(?array $tendererQualificationRequest = null): static
@@ -2317,7 +2317,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return TendererQualificationRequest|null
+     * @return null|TendererQualificationRequest
      */
     public function firstTendererQualificationRequest(): ?TendererQualificationRequest
     {
@@ -2332,7 +2332,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return TendererQualificationRequest|null
+     * @return null|TendererQualificationRequest
      */
     public function lastTendererQualificationRequest(): ?TendererQualificationRequest
     {
@@ -2347,7 +2347,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param TendererQualificationRequest $tendererQualificationRequest
+     * @param  TendererQualificationRequest $tendererQualificationRequest
      * @return static
      */
     public function addToTendererQualificationRequest(
@@ -2369,7 +2369,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param TendererQualificationRequest $tendererQualificationRequest
+     * @param  TendererQualificationRequest $tendererQualificationRequest
      * @return static
      */
     public function addOnceToTendererQualificationRequest(
@@ -2401,7 +2401,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<AllowedSubcontractTerms>|null
+     * @return null|array<AllowedSubcontractTerms>
      */
     public function getAllowedSubcontractTerms(): ?array
     {
@@ -2409,7 +2409,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<AllowedSubcontractTerms>|null $allowedSubcontractTerms
+     * @param  null|array<AllowedSubcontractTerms> $allowedSubcontractTerms
      * @return static
      */
     public function setAllowedSubcontractTerms(?array $allowedSubcontractTerms = null): static
@@ -2440,7 +2440,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return AllowedSubcontractTerms|null
+     * @return null|AllowedSubcontractTerms
      */
     public function firstAllowedSubcontractTerms(): ?AllowedSubcontractTerms
     {
@@ -2455,7 +2455,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return AllowedSubcontractTerms|null
+     * @return null|AllowedSubcontractTerms
      */
     public function lastAllowedSubcontractTerms(): ?AllowedSubcontractTerms
     {
@@ -2470,7 +2470,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param AllowedSubcontractTerms $allowedSubcontractTerms
+     * @param  AllowedSubcontractTerms $allowedSubcontractTerms
      * @return static
      */
     public function addToAllowedSubcontractTerms(AllowedSubcontractTerms $allowedSubcontractTerms): static
@@ -2491,7 +2491,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param AllowedSubcontractTerms $allowedSubcontractTerms
+     * @param  AllowedSubcontractTerms $allowedSubcontractTerms
      * @return static
      */
     public function addOnceToAllowedSubcontractTerms(AllowedSubcontractTerms $allowedSubcontractTerms): static
@@ -2522,7 +2522,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<TenderPreparation>|null
+     * @return null|array<TenderPreparation>
      */
     public function getTenderPreparation(): ?array
     {
@@ -2530,7 +2530,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<TenderPreparation>|null $tenderPreparation
+     * @param  null|array<TenderPreparation> $tenderPreparation
      * @return static
      */
     public function setTenderPreparation(?array $tenderPreparation = null): static
@@ -2561,7 +2561,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return TenderPreparation|null
+     * @return null|TenderPreparation
      */
     public function firstTenderPreparation(): ?TenderPreparation
     {
@@ -2576,7 +2576,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return TenderPreparation|null
+     * @return null|TenderPreparation
      */
     public function lastTenderPreparation(): ?TenderPreparation
     {
@@ -2591,7 +2591,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param TenderPreparation $tenderPreparation
+     * @param  TenderPreparation $tenderPreparation
      * @return static
      */
     public function addToTenderPreparation(TenderPreparation $tenderPreparation): static
@@ -2612,7 +2612,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param TenderPreparation $tenderPreparation
+     * @param  TenderPreparation $tenderPreparation
      * @return static
      */
     public function addOnceToTenderPreparation(TenderPreparation $tenderPreparation): static
@@ -2643,7 +2643,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<ContractExecutionRequirement>|null
+     * @return null|array<ContractExecutionRequirement>
      */
     public function getContractExecutionRequirement(): ?array
     {
@@ -2651,7 +2651,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<ContractExecutionRequirement>|null $contractExecutionRequirement
+     * @param  null|array<ContractExecutionRequirement> $contractExecutionRequirement
      * @return static
      */
     public function setContractExecutionRequirement(?array $contractExecutionRequirement = null): static
@@ -2682,7 +2682,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return ContractExecutionRequirement|null
+     * @return null|ContractExecutionRequirement
      */
     public function firstContractExecutionRequirement(): ?ContractExecutionRequirement
     {
@@ -2697,7 +2697,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return ContractExecutionRequirement|null
+     * @return null|ContractExecutionRequirement
      */
     public function lastContractExecutionRequirement(): ?ContractExecutionRequirement
     {
@@ -2712,7 +2712,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param ContractExecutionRequirement $contractExecutionRequirement
+     * @param  ContractExecutionRequirement $contractExecutionRequirement
      * @return static
      */
     public function addToContractExecutionRequirement(
@@ -2734,7 +2734,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param ContractExecutionRequirement $contractExecutionRequirement
+     * @param  ContractExecutionRequirement $contractExecutionRequirement
      * @return static
      */
     public function addOnceToContractExecutionRequirement(
@@ -2766,7 +2766,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return AwardingTerms|null
+     * @return null|AwardingTerms
      */
     public function getAwardingTerms(): ?AwardingTerms
     {
@@ -2784,7 +2784,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param AwardingTerms|null $awardingTerms
+     * @param  null|AwardingTerms $awardingTerms
      * @return static
      */
     public function setAwardingTerms(?AwardingTerms $awardingTerms = null): static
@@ -2805,7 +2805,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return AdditionalInformationParty|null
+     * @return null|AdditionalInformationParty
      */
     public function getAdditionalInformationParty(): ?AdditionalInformationParty
     {
@@ -2823,7 +2823,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param AdditionalInformationParty|null $additionalInformationParty
+     * @param  null|AdditionalInformationParty $additionalInformationParty
      * @return static
      */
     public function setAdditionalInformationParty(
@@ -2845,7 +2845,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return DocumentProviderParty|null
+     * @return null|DocumentProviderParty
      */
     public function getDocumentProviderParty(): ?DocumentProviderParty
     {
@@ -2863,7 +2863,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param DocumentProviderParty|null $documentProviderParty
+     * @param  null|DocumentProviderParty $documentProviderParty
      * @return static
      */
     public function setDocumentProviderParty(?DocumentProviderParty $documentProviderParty = null): static
@@ -2884,7 +2884,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return TenderRecipientParty|null
+     * @return null|TenderRecipientParty
      */
     public function getTenderRecipientParty(): ?TenderRecipientParty
     {
@@ -2902,7 +2902,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param TenderRecipientParty|null $tenderRecipientParty
+     * @param  null|TenderRecipientParty $tenderRecipientParty
      * @return static
      */
     public function setTenderRecipientParty(?TenderRecipientParty $tenderRecipientParty = null): static
@@ -2923,7 +2923,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return ContractResponsibleParty|null
+     * @return null|ContractResponsibleParty
      */
     public function getContractResponsibleParty(): ?ContractResponsibleParty
     {
@@ -2941,7 +2941,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param ContractResponsibleParty|null $contractResponsibleParty
+     * @param  null|ContractResponsibleParty $contractResponsibleParty
      * @return static
      */
     public function setContractResponsibleParty(?ContractResponsibleParty $contractResponsibleParty = null): static
@@ -2962,7 +2962,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<TenderEvaluationParty>|null
+     * @return null|array<TenderEvaluationParty>
      */
     public function getTenderEvaluationParty(): ?array
     {
@@ -2970,7 +2970,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<TenderEvaluationParty>|null $tenderEvaluationParty
+     * @param  null|array<TenderEvaluationParty> $tenderEvaluationParty
      * @return static
      */
     public function setTenderEvaluationParty(?array $tenderEvaluationParty = null): static
@@ -3001,7 +3001,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return TenderEvaluationParty|null
+     * @return null|TenderEvaluationParty
      */
     public function firstTenderEvaluationParty(): ?TenderEvaluationParty
     {
@@ -3016,7 +3016,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return TenderEvaluationParty|null
+     * @return null|TenderEvaluationParty
      */
     public function lastTenderEvaluationParty(): ?TenderEvaluationParty
     {
@@ -3031,7 +3031,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param TenderEvaluationParty $tenderEvaluationParty
+     * @param  TenderEvaluationParty $tenderEvaluationParty
      * @return static
      */
     public function addToTenderEvaluationParty(TenderEvaluationParty $tenderEvaluationParty): static
@@ -3052,7 +3052,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param TenderEvaluationParty $tenderEvaluationParty
+     * @param  TenderEvaluationParty $tenderEvaluationParty
      * @return static
      */
     public function addOnceToTenderEvaluationParty(TenderEvaluationParty $tenderEvaluationParty): static
@@ -3083,7 +3083,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return TenderValidityPeriod|null
+     * @return null|TenderValidityPeriod
      */
     public function getTenderValidityPeriod(): ?TenderValidityPeriod
     {
@@ -3101,7 +3101,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param TenderValidityPeriod|null $tenderValidityPeriod
+     * @param  null|TenderValidityPeriod $tenderValidityPeriod
      * @return static
      */
     public function setTenderValidityPeriod(?TenderValidityPeriod $tenderValidityPeriod = null): static
@@ -3122,7 +3122,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return ContractAcceptancePeriod|null
+     * @return null|ContractAcceptancePeriod
      */
     public function getContractAcceptancePeriod(): ?ContractAcceptancePeriod
     {
@@ -3140,7 +3140,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param ContractAcceptancePeriod|null $contractAcceptancePeriod
+     * @param  null|ContractAcceptancePeriod $contractAcceptancePeriod
      * @return static
      */
     public function setContractAcceptancePeriod(?ContractAcceptancePeriod $contractAcceptancePeriod = null): static
@@ -3161,7 +3161,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return AppealTerms|null
+     * @return null|AppealTerms
      */
     public function getAppealTerms(): ?AppealTerms
     {
@@ -3179,7 +3179,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param AppealTerms|null $appealTerms
+     * @param  null|AppealTerms $appealTerms
      * @return static
      */
     public function setAppealTerms(?AppealTerms $appealTerms = null): static
@@ -3200,7 +3200,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<Language>|null
+     * @return null|array<Language>
      */
     public function getLanguage(): ?array
     {
@@ -3208,7 +3208,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<Language>|null $language
+     * @param  null|array<Language> $language
      * @return static
      */
     public function setLanguage(?array $language = null): static
@@ -3239,7 +3239,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return Language|null
+     * @return null|Language
      */
     public function firstLanguage(): ?Language
     {
@@ -3254,7 +3254,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return Language|null
+     * @return null|Language
      */
     public function lastLanguage(): ?Language
     {
@@ -3269,7 +3269,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param Language $language
+     * @param  Language $language
      * @return static
      */
     public function addToLanguage(Language $language): static
@@ -3290,7 +3290,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param Language $language
+     * @param  Language $language
      * @return static
      */
     public function addOnceToLanguage(Language $language): static
@@ -3321,7 +3321,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return array<BudgetAccountLine>|null
+     * @return null|array<BudgetAccountLine>
      */
     public function getBudgetAccountLine(): ?array
     {
@@ -3329,7 +3329,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param array<BudgetAccountLine>|null $budgetAccountLine
+     * @param  null|array<BudgetAccountLine> $budgetAccountLine
      * @return static
      */
     public function setBudgetAccountLine(?array $budgetAccountLine = null): static
@@ -3360,7 +3360,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return BudgetAccountLine|null
+     * @return null|BudgetAccountLine
      */
     public function firstBudgetAccountLine(): ?BudgetAccountLine
     {
@@ -3375,7 +3375,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return BudgetAccountLine|null
+     * @return null|BudgetAccountLine
      */
     public function lastBudgetAccountLine(): ?BudgetAccountLine
     {
@@ -3390,7 +3390,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param BudgetAccountLine $budgetAccountLine
+     * @param  BudgetAccountLine $budgetAccountLine
      * @return static
      */
     public function addToBudgetAccountLine(BudgetAccountLine $budgetAccountLine): static
@@ -3411,7 +3411,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param BudgetAccountLine $budgetAccountLine
+     * @param  BudgetAccountLine $budgetAccountLine
      * @return static
      */
     public function addOnceToBudgetAccountLine(BudgetAccountLine $budgetAccountLine): static
@@ -3442,7 +3442,7 @@ class TenderingTermsType
     }
 
     /**
-     * @return ReplacedNoticeDocumentReference|null
+     * @return null|ReplacedNoticeDocumentReference
      */
     public function getReplacedNoticeDocumentReference(): ?ReplacedNoticeDocumentReference
     {
@@ -3460,7 +3460,7 @@ class TenderingTermsType
     }
 
     /**
-     * @param ReplacedNoticeDocumentReference|null $replacedNoticeDocumentReference
+     * @param  null|ReplacedNoticeDocumentReference $replacedNoticeDocumentReference
      * @return static
      */
     public function setReplacedNoticeDocumentReference(

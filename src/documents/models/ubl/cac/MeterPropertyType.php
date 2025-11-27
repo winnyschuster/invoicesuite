@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\NameCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Value;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class MeterPropertyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class MeterPropertyType
     private $name;
 
     /**
-     * @var NameCode|null
+     * @var null|NameCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\NameCode")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class MeterPropertyType
     private $nameCode;
 
     /**
-     * @var Value|null
+     * @var null|Value
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Value")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class MeterPropertyType
     private $value;
 
     /**
-     * @var ValueQuantity|null
+     * @var null|ValueQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQuantity")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class MeterPropertyType
     private $valueQuantity;
 
     /**
-     * @var array<ValueQualifier>|null
+     * @var null|array<ValueQualifier>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ValueQualifier>")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class MeterPropertyType
     private $valueQualifier;
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -91,7 +91,7 @@ class MeterPropertyType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -112,7 +112,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return NameCode|null
+     * @return null|NameCode
      */
     public function getNameCode(): ?NameCode
     {
@@ -130,7 +130,7 @@ class MeterPropertyType
     }
 
     /**
-     * @param NameCode|null $nameCode
+     * @param  null|NameCode $nameCode
      * @return static
      */
     public function setNameCode(?NameCode $nameCode = null): static
@@ -151,7 +151,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return Value|null
+     * @return null|Value
      */
     public function getValue(): ?Value
     {
@@ -169,7 +169,7 @@ class MeterPropertyType
     }
 
     /**
-     * @param Value|null $value
+     * @param  null|Value $value
      * @return static
      */
     public function setValue(?Value $value = null): static
@@ -190,7 +190,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return ValueQuantity|null
+     * @return null|ValueQuantity
      */
     public function getValueQuantity(): ?ValueQuantity
     {
@@ -208,7 +208,7 @@ class MeterPropertyType
     }
 
     /**
-     * @param ValueQuantity|null $valueQuantity
+     * @param  null|ValueQuantity $valueQuantity
      * @return static
      */
     public function setValueQuantity(?ValueQuantity $valueQuantity = null): static
@@ -229,7 +229,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return array<ValueQualifier>|null
+     * @return null|array<ValueQualifier>
      */
     public function getValueQualifier(): ?array
     {
@@ -237,7 +237,7 @@ class MeterPropertyType
     }
 
     /**
-     * @param array<ValueQualifier>|null $valueQualifier
+     * @param  null|array<ValueQualifier> $valueQualifier
      * @return static
      */
     public function setValueQualifier(?array $valueQualifier = null): static
@@ -268,7 +268,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return ValueQualifier|null
+     * @return null|ValueQualifier
      */
     public function firstValueQualifier(): ?ValueQualifier
     {
@@ -283,7 +283,7 @@ class MeterPropertyType
     }
 
     /**
-     * @return ValueQualifier|null
+     * @return null|ValueQualifier
      */
     public function lastValueQualifier(): ?ValueQualifier
     {
@@ -298,7 +298,7 @@ class MeterPropertyType
     }
 
     /**
-     * @param ValueQualifier $valueQualifier
+     * @param  ValueQualifier $valueQualifier
      * @return static
      */
     public function addToValueQualifier(ValueQualifier $valueQualifier): static
@@ -319,7 +319,7 @@ class MeterPropertyType
     }
 
     /**
-     * @param ValueQualifier $valueQualifier
+     * @param  ValueQualifier $valueQualifier
      * @return static
      */
     public function addOnceToValueQualifier(ValueQualifier $valueQualifier): static

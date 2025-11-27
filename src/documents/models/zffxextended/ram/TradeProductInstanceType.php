@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeProductInstanceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class TradeProductInstanceType
     private $batchID;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class TradeProductInstanceType
     private $supplierAssignedSerialID;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getBatchID(): ?IDType
     {
@@ -53,7 +53,7 @@ class TradeProductInstanceType
     }
 
     /**
-     * @param IDType|null $batchID
+     * @param  null|IDType $batchID
      * @return static
      */
     public function setBatchID(?IDType $batchID = null): static
@@ -74,7 +74,7 @@ class TradeProductInstanceType
     }
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getSupplierAssignedSerialID(): ?IDType
     {
@@ -92,7 +92,7 @@ class TradeProductInstanceType
     }
 
     /**
-     * @param IDType|null $supplierAssignedSerialID
+     * @param  null|IDType $supplierAssignedSerialID
      * @return static
      */
     public function setSupplierAssignedSerialID(?IDType $supplierAssignedSerialID = null): static

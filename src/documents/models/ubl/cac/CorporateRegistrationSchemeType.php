@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CorporateRegistrationTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
+use JMS\Serializer\Annotation as JMS;
 
 class CorporateRegistrationSchemeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class CorporateRegistrationSchemeType
     private $iD;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class CorporateRegistrationSchemeType
     private $name;
 
     /**
-     * @var CorporateRegistrationTypeCode|null
+     * @var null|CorporateRegistrationTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CorporateRegistrationTypeCode")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class CorporateRegistrationSchemeType
     private $corporateRegistrationTypeCode;
 
     /**
-     * @var array<JurisdictionRegionAddress>|null
+     * @var null|array<JurisdictionRegionAddress>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\JurisdictionRegionAddress>")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class CorporateRegistrationSchemeType
     private $jurisdictionRegionAddress;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -78,7 +78,7 @@ class CorporateRegistrationSchemeType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -99,7 +99,7 @@ class CorporateRegistrationSchemeType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -117,7 +117,7 @@ class CorporateRegistrationSchemeType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -138,7 +138,7 @@ class CorporateRegistrationSchemeType
     }
 
     /**
-     * @return CorporateRegistrationTypeCode|null
+     * @return null|CorporateRegistrationTypeCode
      */
     public function getCorporateRegistrationTypeCode(): ?CorporateRegistrationTypeCode
     {
@@ -156,7 +156,7 @@ class CorporateRegistrationSchemeType
     }
 
     /**
-     * @param CorporateRegistrationTypeCode|null $corporateRegistrationTypeCode
+     * @param  null|CorporateRegistrationTypeCode $corporateRegistrationTypeCode
      * @return static
      */
     public function setCorporateRegistrationTypeCode(
@@ -178,7 +178,7 @@ class CorporateRegistrationSchemeType
     }
 
     /**
-     * @return array<JurisdictionRegionAddress>|null
+     * @return null|array<JurisdictionRegionAddress>
      */
     public function getJurisdictionRegionAddress(): ?array
     {
@@ -186,7 +186,7 @@ class CorporateRegistrationSchemeType
     }
 
     /**
-     * @param array<JurisdictionRegionAddress>|null $jurisdictionRegionAddress
+     * @param  null|array<JurisdictionRegionAddress> $jurisdictionRegionAddress
      * @return static
      */
     public function setJurisdictionRegionAddress(?array $jurisdictionRegionAddress = null): static
@@ -217,7 +217,7 @@ class CorporateRegistrationSchemeType
     }
 
     /**
-     * @return JurisdictionRegionAddress|null
+     * @return null|JurisdictionRegionAddress
      */
     public function firstJurisdictionRegionAddress(): ?JurisdictionRegionAddress
     {
@@ -232,7 +232,7 @@ class CorporateRegistrationSchemeType
     }
 
     /**
-     * @return JurisdictionRegionAddress|null
+     * @return null|JurisdictionRegionAddress
      */
     public function lastJurisdictionRegionAddress(): ?JurisdictionRegionAddress
     {
@@ -247,7 +247,7 @@ class CorporateRegistrationSchemeType
     }
 
     /**
-     * @param JurisdictionRegionAddress $jurisdictionRegionAddress
+     * @param  JurisdictionRegionAddress $jurisdictionRegionAddress
      * @return static
      */
     public function addToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): static
@@ -268,7 +268,7 @@ class CorporateRegistrationSchemeType
     }
 
     /**
-     * @param JurisdictionRegionAddress $jurisdictionRegionAddress
+     * @param  JurisdictionRegionAddress $jurisdictionRegionAddress
      * @return static
      */
     public function addOnceToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): static

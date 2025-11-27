@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ApprovalStatus;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks;
+use JMS\Serializer\Annotation as JMS;
 
 class EndorsementType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var DocumentID|null
+     * @var null|DocumentID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class EndorsementType
     private $documentID;
 
     /**
-     * @var ApprovalStatus|null
+     * @var null|ApprovalStatus
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ApprovalStatus")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class EndorsementType
     private $approvalStatus;
 
     /**
-     * @var array<Remarks>|null
+     * @var null|array<Remarks>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class EndorsementType
     private $remarks;
 
     /**
-     * @var EndorserParty|null
+     * @var null|EndorserParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EndorserParty")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class EndorsementType
     private $endorserParty;
 
     /**
-     * @var array<Signature>|null
+     * @var null|array<Signature>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Signature>")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class EndorsementType
     private $signature;
 
     /**
-     * @return DocumentID|null
+     * @return null|DocumentID
      */
     public function getDocumentID(): ?DocumentID
     {
@@ -90,7 +90,7 @@ class EndorsementType
     }
 
     /**
-     * @param DocumentID|null $documentID
+     * @param  null|DocumentID $documentID
      * @return static
      */
     public function setDocumentID(?DocumentID $documentID = null): static
@@ -111,7 +111,7 @@ class EndorsementType
     }
 
     /**
-     * @return ApprovalStatus|null
+     * @return null|ApprovalStatus
      */
     public function getApprovalStatus(): ?ApprovalStatus
     {
@@ -129,7 +129,7 @@ class EndorsementType
     }
 
     /**
-     * @param ApprovalStatus|null $approvalStatus
+     * @param  null|ApprovalStatus $approvalStatus
      * @return static
      */
     public function setApprovalStatus(?ApprovalStatus $approvalStatus = null): static
@@ -150,7 +150,7 @@ class EndorsementType
     }
 
     /**
-     * @return array<Remarks>|null
+     * @return null|array<Remarks>
      */
     public function getRemarks(): ?array
     {
@@ -158,7 +158,7 @@ class EndorsementType
     }
 
     /**
-     * @param array<Remarks>|null $remarks
+     * @param  null|array<Remarks> $remarks
      * @return static
      */
     public function setRemarks(?array $remarks = null): static
@@ -189,7 +189,7 @@ class EndorsementType
     }
 
     /**
-     * @return Remarks|null
+     * @return null|Remarks
      */
     public function firstRemarks(): ?Remarks
     {
@@ -204,7 +204,7 @@ class EndorsementType
     }
 
     /**
-     * @return Remarks|null
+     * @return null|Remarks
      */
     public function lastRemarks(): ?Remarks
     {
@@ -219,7 +219,7 @@ class EndorsementType
     }
 
     /**
-     * @param Remarks $remarks
+     * @param  Remarks $remarks
      * @return static
      */
     public function addToRemarks(Remarks $remarks): static
@@ -240,7 +240,7 @@ class EndorsementType
     }
 
     /**
-     * @param Remarks $remarks
+     * @param  Remarks $remarks
      * @return static
      */
     public function addOnceToRemarks(Remarks $remarks): static
@@ -271,7 +271,7 @@ class EndorsementType
     }
 
     /**
-     * @return EndorserParty|null
+     * @return null|EndorserParty
      */
     public function getEndorserParty(): ?EndorserParty
     {
@@ -289,7 +289,7 @@ class EndorsementType
     }
 
     /**
-     * @param EndorserParty|null $endorserParty
+     * @param  null|EndorserParty $endorserParty
      * @return static
      */
     public function setEndorserParty(?EndorserParty $endorserParty = null): static
@@ -310,7 +310,7 @@ class EndorsementType
     }
 
     /**
-     * @return array<Signature>|null
+     * @return null|array<Signature>
      */
     public function getSignature(): ?array
     {
@@ -318,7 +318,7 @@ class EndorsementType
     }
 
     /**
-     * @param array<Signature>|null $signature
+     * @param  null|array<Signature> $signature
      * @return static
      */
     public function setSignature(?array $signature = null): static
@@ -349,7 +349,7 @@ class EndorsementType
     }
 
     /**
-     * @return Signature|null
+     * @return null|Signature
      */
     public function firstSignature(): ?Signature
     {
@@ -364,7 +364,7 @@ class EndorsementType
     }
 
     /**
-     * @return Signature|null
+     * @return null|Signature
      */
     public function lastSignature(): ?Signature
     {
@@ -379,7 +379,7 @@ class EndorsementType
     }
 
     /**
-     * @param Signature $signature
+     * @param  Signature $signature
      * @return static
      */
     public function addToSignature(Signature $signature): static
@@ -400,7 +400,7 @@ class EndorsementType
     }
 
     /**
-     * @param Signature $signature
+     * @param  Signature $signature
      * @return static
      */
     public function addOnceToSignature(Signature $signature): static

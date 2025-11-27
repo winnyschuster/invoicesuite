@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TransportExecutionPlanReferenceID;
+use JMS\Serializer\Annotation as JMS;
 
 class TransportationSegmentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var SequenceNumeric|null
+     * @var null|SequenceNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class TransportationSegmentType
     private $sequenceNumeric;
 
     /**
-     * @var TransportExecutionPlanReferenceID|null
+     * @var null|TransportExecutionPlanReferenceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TransportExecutionPlanReferenceID")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TransportationSegmentType
     private $transportExecutionPlanReferenceID;
 
     /**
-     * @var TransportationService|null
+     * @var null|TransportationService
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TransportationService")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class TransportationSegmentType
     private $transportationService;
 
     /**
-     * @var TransportServiceProviderParty|null
+     * @var null|TransportServiceProviderParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TransportServiceProviderParty")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class TransportationSegmentType
     private $transportServiceProviderParty;
 
     /**
-     * @var ReferencedConsignment|null
+     * @var null|ReferencedConsignment
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ReferencedConsignment")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class TransportationSegmentType
     private $referencedConsignment;
 
     /**
-     * @var array<ShipmentStage>|null
+     * @var null|array<ShipmentStage>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentStage>")
      * @JMS\Expose
@@ -81,7 +81,7 @@ class TransportationSegmentType
     private $shipmentStage;
 
     /**
-     * @return SequenceNumeric|null
+     * @return null|SequenceNumeric
      */
     public function getSequenceNumeric(): ?SequenceNumeric
     {
@@ -99,7 +99,7 @@ class TransportationSegmentType
     }
 
     /**
-     * @param SequenceNumeric|null $sequenceNumeric
+     * @param  null|SequenceNumeric $sequenceNumeric
      * @return static
      */
     public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): static
@@ -120,7 +120,7 @@ class TransportationSegmentType
     }
 
     /**
-     * @return TransportExecutionPlanReferenceID|null
+     * @return null|TransportExecutionPlanReferenceID
      */
     public function getTransportExecutionPlanReferenceID(): ?TransportExecutionPlanReferenceID
     {
@@ -138,7 +138,7 @@ class TransportationSegmentType
     }
 
     /**
-     * @param TransportExecutionPlanReferenceID|null $transportExecutionPlanReferenceID
+     * @param  null|TransportExecutionPlanReferenceID $transportExecutionPlanReferenceID
      * @return static
      */
     public function setTransportExecutionPlanReferenceID(
@@ -160,7 +160,7 @@ class TransportationSegmentType
     }
 
     /**
-     * @return TransportationService|null
+     * @return null|TransportationService
      */
     public function getTransportationService(): ?TransportationService
     {
@@ -178,7 +178,7 @@ class TransportationSegmentType
     }
 
     /**
-     * @param TransportationService|null $transportationService
+     * @param  null|TransportationService $transportationService
      * @return static
      */
     public function setTransportationService(?TransportationService $transportationService = null): static
@@ -199,7 +199,7 @@ class TransportationSegmentType
     }
 
     /**
-     * @return TransportServiceProviderParty|null
+     * @return null|TransportServiceProviderParty
      */
     public function getTransportServiceProviderParty(): ?TransportServiceProviderParty
     {
@@ -217,7 +217,7 @@ class TransportationSegmentType
     }
 
     /**
-     * @param TransportServiceProviderParty|null $transportServiceProviderParty
+     * @param  null|TransportServiceProviderParty $transportServiceProviderParty
      * @return static
      */
     public function setTransportServiceProviderParty(
@@ -239,7 +239,7 @@ class TransportationSegmentType
     }
 
     /**
-     * @return ReferencedConsignment|null
+     * @return null|ReferencedConsignment
      */
     public function getReferencedConsignment(): ?ReferencedConsignment
     {
@@ -257,7 +257,7 @@ class TransportationSegmentType
     }
 
     /**
-     * @param ReferencedConsignment|null $referencedConsignment
+     * @param  null|ReferencedConsignment $referencedConsignment
      * @return static
      */
     public function setReferencedConsignment(?ReferencedConsignment $referencedConsignment = null): static
@@ -278,7 +278,7 @@ class TransportationSegmentType
     }
 
     /**
-     * @return array<ShipmentStage>|null
+     * @return null|array<ShipmentStage>
      */
     public function getShipmentStage(): ?array
     {
@@ -286,7 +286,7 @@ class TransportationSegmentType
     }
 
     /**
-     * @param array<ShipmentStage>|null $shipmentStage
+     * @param  null|array<ShipmentStage> $shipmentStage
      * @return static
      */
     public function setShipmentStage(?array $shipmentStage = null): static
@@ -317,7 +317,7 @@ class TransportationSegmentType
     }
 
     /**
-     * @return ShipmentStage|null
+     * @return null|ShipmentStage
      */
     public function firstShipmentStage(): ?ShipmentStage
     {
@@ -332,7 +332,7 @@ class TransportationSegmentType
     }
 
     /**
-     * @return ShipmentStage|null
+     * @return null|ShipmentStage
      */
     public function lastShipmentStage(): ?ShipmentStage
     {
@@ -347,7 +347,7 @@ class TransportationSegmentType
     }
 
     /**
-     * @param ShipmentStage $shipmentStage
+     * @param  ShipmentStage $shipmentStage
      * @return static
      */
     public function addToShipmentStage(ShipmentStage $shipmentStage): static
@@ -368,7 +368,7 @@ class TransportationSegmentType
     }
 
     /**
-     * @param ShipmentStage $shipmentStage
+     * @param  ShipmentStage $shipmentStage
      * @return static
      */
     public function addOnceToShipmentStage(ShipmentStage $shipmentStage): static

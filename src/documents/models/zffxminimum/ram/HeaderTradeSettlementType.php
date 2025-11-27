@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxminimum\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxminimum\qdt\CurrencyCodeType;
+use JMS\Serializer\Annotation as JMS;
 
 class HeaderTradeSettlementType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var CurrencyCodeType|null
+     * @var null|CurrencyCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\qdt\CurrencyCodeType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class HeaderTradeSettlementType
     private $invoiceCurrencyCode;
 
     /**
-     * @var TradeSettlementHeaderMonetarySummationType|null
+     * @var null|TradeSettlementHeaderMonetarySummationType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxminimum\ram\TradeSettlementHeaderMonetarySummationType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class HeaderTradeSettlementType
     private $specifiedTradeSettlementHeaderMonetarySummation;
 
     /**
-     * @return CurrencyCodeType|null
+     * @return null|CurrencyCodeType
      */
     public function getInvoiceCurrencyCode(): ?CurrencyCodeType
     {
@@ -53,7 +53,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param CurrencyCodeType|null $invoiceCurrencyCode
+     * @param  null|CurrencyCodeType $invoiceCurrencyCode
      * @return static
      */
     public function setInvoiceCurrencyCode(?CurrencyCodeType $invoiceCurrencyCode = null): static
@@ -74,7 +74,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return TradeSettlementHeaderMonetarySummationType|null
+     * @return null|TradeSettlementHeaderMonetarySummationType
      */
     public function getSpecifiedTradeSettlementHeaderMonetarySummation(): ?TradeSettlementHeaderMonetarySummationType
     {
@@ -92,7 +92,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param TradeSettlementHeaderMonetarySummationType|null $specifiedTradeSettlementHeaderMonetarySummation
+     * @param  null|TradeSettlementHeaderMonetarySummationType $specifiedTradeSettlementHeaderMonetarySummation
      * @return static
      */
     public function setSpecifiedTradeSettlementHeaderMonetarySummation(

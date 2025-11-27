@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\InstructionID;
@@ -13,13 +12,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\InstructionNote;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentChannelCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentMeansCode;
+use JMS\Serializer\Annotation as JMS;
 
 class PaymentMeansType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -30,7 +30,7 @@ class PaymentMeansType
     private $iD;
 
     /**
-     * @var PaymentMeansCode|null
+     * @var null|PaymentMeansCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentMeansCode")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class PaymentMeansType
     private $paymentMeansCode;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class PaymentMeansType
     private $paymentDueDate;
 
     /**
-     * @var PaymentChannelCode|null
+     * @var null|PaymentChannelCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentChannelCode")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class PaymentMeansType
     private $paymentChannelCode;
 
     /**
-     * @var InstructionID|null
+     * @var null|InstructionID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InstructionID")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class PaymentMeansType
     private $instructionID;
 
     /**
-     * @var array<InstructionNote>|null
+     * @var null|array<InstructionNote>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\InstructionNote>")
      * @JMS\Expose
@@ -86,7 +86,7 @@ class PaymentMeansType
     private $instructionNote;
 
     /**
-     * @var array<PaymentID>|null
+     * @var null|array<PaymentID>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentID>")
      * @JMS\Expose
@@ -98,7 +98,7 @@ class PaymentMeansType
     private $paymentID;
 
     /**
-     * @var CardAccount|null
+     * @var null|CardAccount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CardAccount")
      * @JMS\Expose
@@ -109,7 +109,7 @@ class PaymentMeansType
     private $cardAccount;
 
     /**
-     * @var PayerFinancialAccount|null
+     * @var null|PayerFinancialAccount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PayerFinancialAccount")
      * @JMS\Expose
@@ -120,7 +120,7 @@ class PaymentMeansType
     private $payerFinancialAccount;
 
     /**
-     * @var PayeeFinancialAccount|null
+     * @var null|PayeeFinancialAccount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PayeeFinancialAccount")
      * @JMS\Expose
@@ -131,7 +131,7 @@ class PaymentMeansType
     private $payeeFinancialAccount;
 
     /**
-     * @var CreditAccount|null
+     * @var null|CreditAccount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CreditAccount")
      * @JMS\Expose
@@ -142,7 +142,7 @@ class PaymentMeansType
     private $creditAccount;
 
     /**
-     * @var PaymentMandate|null
+     * @var null|PaymentMandate
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMandate")
      * @JMS\Expose
@@ -153,7 +153,7 @@ class PaymentMeansType
     private $paymentMandate;
 
     /**
-     * @var TradeFinancing|null
+     * @var null|TradeFinancing
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TradeFinancing")
      * @JMS\Expose
@@ -164,7 +164,7 @@ class PaymentMeansType
     private $tradeFinancing;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -182,7 +182,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -203,7 +203,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return PaymentMeansCode|null
+     * @return null|PaymentMeansCode
      */
     public function getPaymentMeansCode(): ?PaymentMeansCode
     {
@@ -221,7 +221,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param PaymentMeansCode|null $paymentMeansCode
+     * @param  null|PaymentMeansCode $paymentMeansCode
      * @return static
      */
     public function setPaymentMeansCode(?PaymentMeansCode $paymentMeansCode = null): static
@@ -242,7 +242,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getPaymentDueDate(): ?DateTimeInterface
     {
@@ -250,7 +250,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param DateTimeInterface|null $paymentDueDate
+     * @param  null|DateTimeInterface $paymentDueDate
      * @return static
      */
     public function setPaymentDueDate(?DateTimeInterface $paymentDueDate = null): static
@@ -271,7 +271,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return PaymentChannelCode|null
+     * @return null|PaymentChannelCode
      */
     public function getPaymentChannelCode(): ?PaymentChannelCode
     {
@@ -289,7 +289,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param PaymentChannelCode|null $paymentChannelCode
+     * @param  null|PaymentChannelCode $paymentChannelCode
      * @return static
      */
     public function setPaymentChannelCode(?PaymentChannelCode $paymentChannelCode = null): static
@@ -310,7 +310,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return InstructionID|null
+     * @return null|InstructionID
      */
     public function getInstructionID(): ?InstructionID
     {
@@ -328,7 +328,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param InstructionID|null $instructionID
+     * @param  null|InstructionID $instructionID
      * @return static
      */
     public function setInstructionID(?InstructionID $instructionID = null): static
@@ -349,7 +349,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return array<InstructionNote>|null
+     * @return null|array<InstructionNote>
      */
     public function getInstructionNote(): ?array
     {
@@ -357,7 +357,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param array<InstructionNote>|null $instructionNote
+     * @param  null|array<InstructionNote> $instructionNote
      * @return static
      */
     public function setInstructionNote(?array $instructionNote = null): static
@@ -388,7 +388,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return InstructionNote|null
+     * @return null|InstructionNote
      */
     public function firstInstructionNote(): ?InstructionNote
     {
@@ -403,7 +403,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return InstructionNote|null
+     * @return null|InstructionNote
      */
     public function lastInstructionNote(): ?InstructionNote
     {
@@ -418,7 +418,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param InstructionNote $instructionNote
+     * @param  InstructionNote $instructionNote
      * @return static
      */
     public function addToInstructionNote(InstructionNote $instructionNote): static
@@ -439,7 +439,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param InstructionNote $instructionNote
+     * @param  InstructionNote $instructionNote
      * @return static
      */
     public function addOnceToInstructionNote(InstructionNote $instructionNote): static
@@ -470,7 +470,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return array<PaymentID>|null
+     * @return null|array<PaymentID>
      */
     public function getPaymentID(): ?array
     {
@@ -478,7 +478,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param array<PaymentID>|null $paymentID
+     * @param  null|array<PaymentID> $paymentID
      * @return static
      */
     public function setPaymentID(?array $paymentID = null): static
@@ -509,7 +509,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return PaymentID|null
+     * @return null|PaymentID
      */
     public function firstPaymentID(): ?PaymentID
     {
@@ -524,7 +524,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return PaymentID|null
+     * @return null|PaymentID
      */
     public function lastPaymentID(): ?PaymentID
     {
@@ -539,7 +539,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param PaymentID $paymentID
+     * @param  PaymentID $paymentID
      * @return static
      */
     public function addToPaymentID(PaymentID $paymentID): static
@@ -560,7 +560,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param PaymentID $paymentID
+     * @param  PaymentID $paymentID
      * @return static
      */
     public function addOnceToPaymentID(PaymentID $paymentID): static
@@ -591,7 +591,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return CardAccount|null
+     * @return null|CardAccount
      */
     public function getCardAccount(): ?CardAccount
     {
@@ -609,7 +609,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param CardAccount|null $cardAccount
+     * @param  null|CardAccount $cardAccount
      * @return static
      */
     public function setCardAccount(?CardAccount $cardAccount = null): static
@@ -630,7 +630,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return PayerFinancialAccount|null
+     * @return null|PayerFinancialAccount
      */
     public function getPayerFinancialAccount(): ?PayerFinancialAccount
     {
@@ -648,7 +648,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param PayerFinancialAccount|null $payerFinancialAccount
+     * @param  null|PayerFinancialAccount $payerFinancialAccount
      * @return static
      */
     public function setPayerFinancialAccount(?PayerFinancialAccount $payerFinancialAccount = null): static
@@ -669,7 +669,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return PayeeFinancialAccount|null
+     * @return null|PayeeFinancialAccount
      */
     public function getPayeeFinancialAccount(): ?PayeeFinancialAccount
     {
@@ -687,7 +687,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param PayeeFinancialAccount|null $payeeFinancialAccount
+     * @param  null|PayeeFinancialAccount $payeeFinancialAccount
      * @return static
      */
     public function setPayeeFinancialAccount(?PayeeFinancialAccount $payeeFinancialAccount = null): static
@@ -708,7 +708,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return CreditAccount|null
+     * @return null|CreditAccount
      */
     public function getCreditAccount(): ?CreditAccount
     {
@@ -726,7 +726,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param CreditAccount|null $creditAccount
+     * @param  null|CreditAccount $creditAccount
      * @return static
      */
     public function setCreditAccount(?CreditAccount $creditAccount = null): static
@@ -747,7 +747,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return PaymentMandate|null
+     * @return null|PaymentMandate
      */
     public function getPaymentMandate(): ?PaymentMandate
     {
@@ -765,7 +765,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param PaymentMandate|null $paymentMandate
+     * @param  null|PaymentMandate $paymentMandate
      * @return static
      */
     public function setPaymentMandate(?PaymentMandate $paymentMandate = null): static
@@ -786,7 +786,7 @@ class PaymentMeansType
     }
 
     /**
-     * @return TradeFinancing|null
+     * @return null|TradeFinancing
      */
     public function getTradeFinancing(): ?TradeFinancing
     {
@@ -804,7 +804,7 @@ class PaymentMeansType
     }
 
     /**
-     * @param TradeFinancing|null $tradeFinancing
+     * @param  null|TradeFinancing $tradeFinancing
      * @return static
      */
     public function setTradeFinancing(?TradeFinancing $tradeFinancing = null): static

@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cct;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
 
 class CodeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class CodeType
     private $value;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class CodeType
     private $listID;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class CodeType
     private $listAgencyID;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class CodeType
     private $listAgencyName;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class CodeType
     private $listName;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class CodeType
     private $listVersionID;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -90,7 +90,7 @@ class CodeType
     private $name;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -101,7 +101,7 @@ class CodeType
     private $languageID;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -112,7 +112,7 @@ class CodeType
     private $listURI;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -123,7 +123,7 @@ class CodeType
     private $listSchemeURI;
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getValue(): ?string
     {
@@ -131,7 +131,7 @@ class CodeType
     }
 
     /**
-     * @param string|null $value
+     * @param  null|string $value
      * @return static
      */
     public function setValue(?string $value = null): static
@@ -152,7 +152,7 @@ class CodeType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getListID(): ?string
     {
@@ -160,7 +160,7 @@ class CodeType
     }
 
     /**
-     * @param string|null $listID
+     * @param  null|string $listID
      * @return static
      */
     public function setListID(?string $listID = null): static
@@ -181,7 +181,7 @@ class CodeType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getListAgencyID(): ?string
     {
@@ -189,7 +189,7 @@ class CodeType
     }
 
     /**
-     * @param string|null $listAgencyID
+     * @param  null|string $listAgencyID
      * @return static
      */
     public function setListAgencyID(?string $listAgencyID = null): static
@@ -210,7 +210,7 @@ class CodeType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getListAgencyName(): ?string
     {
@@ -218,7 +218,7 @@ class CodeType
     }
 
     /**
-     * @param string|null $listAgencyName
+     * @param  null|string $listAgencyName
      * @return static
      */
     public function setListAgencyName(?string $listAgencyName = null): static
@@ -239,7 +239,7 @@ class CodeType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getListName(): ?string
     {
@@ -247,7 +247,7 @@ class CodeType
     }
 
     /**
-     * @param string|null $listName
+     * @param  null|string $listName
      * @return static
      */
     public function setListName(?string $listName = null): static
@@ -268,7 +268,7 @@ class CodeType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getListVersionID(): ?string
     {
@@ -276,7 +276,7 @@ class CodeType
     }
 
     /**
-     * @param string|null $listVersionID
+     * @param  null|string $listVersionID
      * @return static
      */
     public function setListVersionID(?string $listVersionID = null): static
@@ -297,7 +297,7 @@ class CodeType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getName(): ?string
     {
@@ -305,7 +305,7 @@ class CodeType
     }
 
     /**
-     * @param string|null $name
+     * @param  null|string $name
      * @return static
      */
     public function setName(?string $name = null): static
@@ -326,7 +326,7 @@ class CodeType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getLanguageID(): ?string
     {
@@ -334,7 +334,7 @@ class CodeType
     }
 
     /**
-     * @param string|null $languageID
+     * @param  null|string $languageID
      * @return static
      */
     public function setLanguageID(?string $languageID = null): static
@@ -355,7 +355,7 @@ class CodeType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getListURI(): ?string
     {
@@ -363,7 +363,7 @@ class CodeType
     }
 
     /**
-     * @param string|null $listURI
+     * @param  null|string $listURI
      * @return static
      */
     public function setListURI(?string $listURI = null): static
@@ -384,7 +384,7 @@ class CodeType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getListSchemeURI(): ?string
     {
@@ -392,7 +392,7 @@ class CodeType
     }
 
     /**
-     * @param string|null $listSchemeURI
+     * @param  null|string $listSchemeURI
      * @return static
      */
     public function setListSchemeURI(?string $listSchemeURI = null): static

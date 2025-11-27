@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
+use JMS\Serializer\Annotation as JMS;
 
 class TenderRequirementType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class TenderRequirementType
     private $name;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class TenderRequirementType
     private $description;
 
     /**
-     * @var TemplateDocumentReference|null
+     * @var null|TemplateDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TemplateDocumentReference")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class TenderRequirementType
     private $templateDocumentReference;
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -66,7 +66,7 @@ class TenderRequirementType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -87,7 +87,7 @@ class TenderRequirementType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -95,7 +95,7 @@ class TenderRequirementType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -126,7 +126,7 @@ class TenderRequirementType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -141,7 +141,7 @@ class TenderRequirementType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -156,7 +156,7 @@ class TenderRequirementType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -177,7 +177,7 @@ class TenderRequirementType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -208,7 +208,7 @@ class TenderRequirementType
     }
 
     /**
-     * @return TemplateDocumentReference|null
+     * @return null|TemplateDocumentReference
      */
     public function getTemplateDocumentReference(): ?TemplateDocumentReference
     {
@@ -226,7 +226,7 @@ class TenderRequirementType
     }
 
     /**
-     * @param TemplateDocumentReference|null $templateDocumentReference
+     * @param  null|TemplateDocumentReference $templateDocumentReference
      * @return static
      */
     public function setTemplateDocumentReference(?TemplateDocumentReference $templateDocumentReference = null): static

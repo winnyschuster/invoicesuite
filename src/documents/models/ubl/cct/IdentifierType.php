@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cct;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
 
 class IdentifierType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class IdentifierType
     private $value;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class IdentifierType
     private $schemeID;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class IdentifierType
     private $schemeName;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class IdentifierType
     private $schemeAgencyID;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class IdentifierType
     private $schemeAgencyName;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class IdentifierType
     private $schemeVersionID;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -90,7 +90,7 @@ class IdentifierType
     private $schemeDataURI;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -101,7 +101,7 @@ class IdentifierType
     private $schemeURI;
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getValue(): ?string
     {
@@ -109,7 +109,7 @@ class IdentifierType
     }
 
     /**
-     * @param string|null $value
+     * @param  null|string $value
      * @return static
      */
     public function setValue(?string $value = null): static
@@ -130,7 +130,7 @@ class IdentifierType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getSchemeID(): ?string
     {
@@ -138,7 +138,7 @@ class IdentifierType
     }
 
     /**
-     * @param string|null $schemeID
+     * @param  null|string $schemeID
      * @return static
      */
     public function setSchemeID(?string $schemeID = null): static
@@ -159,7 +159,7 @@ class IdentifierType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getSchemeName(): ?string
     {
@@ -167,7 +167,7 @@ class IdentifierType
     }
 
     /**
-     * @param string|null $schemeName
+     * @param  null|string $schemeName
      * @return static
      */
     public function setSchemeName(?string $schemeName = null): static
@@ -188,7 +188,7 @@ class IdentifierType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getSchemeAgencyID(): ?string
     {
@@ -196,7 +196,7 @@ class IdentifierType
     }
 
     /**
-     * @param string|null $schemeAgencyID
+     * @param  null|string $schemeAgencyID
      * @return static
      */
     public function setSchemeAgencyID(?string $schemeAgencyID = null): static
@@ -217,7 +217,7 @@ class IdentifierType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getSchemeAgencyName(): ?string
     {
@@ -225,7 +225,7 @@ class IdentifierType
     }
 
     /**
-     * @param string|null $schemeAgencyName
+     * @param  null|string $schemeAgencyName
      * @return static
      */
     public function setSchemeAgencyName(?string $schemeAgencyName = null): static
@@ -246,7 +246,7 @@ class IdentifierType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getSchemeVersionID(): ?string
     {
@@ -254,7 +254,7 @@ class IdentifierType
     }
 
     /**
-     * @param string|null $schemeVersionID
+     * @param  null|string $schemeVersionID
      * @return static
      */
     public function setSchemeVersionID(?string $schemeVersionID = null): static
@@ -275,7 +275,7 @@ class IdentifierType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getSchemeDataURI(): ?string
     {
@@ -283,7 +283,7 @@ class IdentifierType
     }
 
     /**
-     * @param string|null $schemeDataURI
+     * @param  null|string $schemeDataURI
      * @return static
      */
     public function setSchemeDataURI(?string $schemeDataURI = null): static
@@ -304,7 +304,7 @@ class IdentifierType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getSchemeURI(): ?string
     {
@@ -312,7 +312,7 @@ class IdentifierType
     }
 
     /**
-     * @param string|null $schemeURI
+     * @param  null|string $schemeURI
      * @return static
      */
     public function setSchemeURI(?string $schemeURI = null): static

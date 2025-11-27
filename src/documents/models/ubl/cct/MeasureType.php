@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cct;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
 
 class MeasureType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var float|null
+     * @var null|float
      * @JMS\Groups({"ubl"})
      * @JMS\Type("float")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class MeasureType
     private $value;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class MeasureType
     private $unitCode;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class MeasureType
     private $unitCodeListVersionID;
 
     /**
-     * @return float|null
+     * @return null|float
      */
     public function getValue(): ?float
     {
@@ -54,7 +54,7 @@ class MeasureType
     }
 
     /**
-     * @param float|null $value
+     * @param  null|float $value
      * @return static
      */
     public function setValue(?float $value = null): static
@@ -75,7 +75,7 @@ class MeasureType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getUnitCode(): ?string
     {
@@ -83,7 +83,7 @@ class MeasureType
     }
 
     /**
-     * @param string|null $unitCode
+     * @param  null|string $unitCode
      * @return static
      */
     public function setUnitCode(?string $unitCode = null): static
@@ -104,7 +104,7 @@ class MeasureType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getUnitCodeListVersionID(): ?string
     {
@@ -112,7 +112,7 @@ class MeasureType
     }
 
     /**
-     * @param string|null $unitCodeListVersionID
+     * @param  null|string $unitCodeListVersionID
      * @return static
      */
     public function setUnitCodeListVersionID(?string $unitCodeListVersionID = null): static

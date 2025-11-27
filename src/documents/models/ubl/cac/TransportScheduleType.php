@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ReliabilityPercent;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric;
+use JMS\Serializer\Annotation as JMS;
 
 class TransportScheduleType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var SequenceNumeric|null
+     * @var null|SequenceNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class TransportScheduleType
     private $sequenceNumeric;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class TransportScheduleType
     private $referenceDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class TransportScheduleType
     private $referenceTime;
 
     /**
-     * @var ReliabilityPercent|null
+     * @var null|ReliabilityPercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReliabilityPercent")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class TransportScheduleType
     private $reliabilityPercent;
 
     /**
-     * @var array<Remarks>|null
+     * @var null|array<Remarks>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Remarks>")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class TransportScheduleType
     private $remarks;
 
     /**
-     * @var StatusLocation|null
+     * @var null|StatusLocation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\StatusLocation")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class TransportScheduleType
     private $statusLocation;
 
     /**
-     * @var ActualArrivalTransportEvent|null
+     * @var null|ActualArrivalTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ActualArrivalTransportEvent")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class TransportScheduleType
     private $actualArrivalTransportEvent;
 
     /**
-     * @var ActualDepartureTransportEvent|null
+     * @var null|ActualDepartureTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ActualDepartureTransportEvent")
      * @JMS\Expose
@@ -105,7 +105,7 @@ class TransportScheduleType
     private $actualDepartureTransportEvent;
 
     /**
-     * @var EstimatedDepartureTransportEvent|null
+     * @var null|EstimatedDepartureTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EstimatedDepartureTransportEvent")
      * @JMS\Expose
@@ -116,7 +116,7 @@ class TransportScheduleType
     private $estimatedDepartureTransportEvent;
 
     /**
-     * @var EstimatedArrivalTransportEvent|null
+     * @var null|EstimatedArrivalTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EstimatedArrivalTransportEvent")
      * @JMS\Expose
@@ -127,7 +127,7 @@ class TransportScheduleType
     private $estimatedArrivalTransportEvent;
 
     /**
-     * @var PlannedDepartureTransportEvent|null
+     * @var null|PlannedDepartureTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PlannedDepartureTransportEvent")
      * @JMS\Expose
@@ -138,7 +138,7 @@ class TransportScheduleType
     private $plannedDepartureTransportEvent;
 
     /**
-     * @var PlannedArrivalTransportEvent|null
+     * @var null|PlannedArrivalTransportEvent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PlannedArrivalTransportEvent")
      * @JMS\Expose
@@ -149,7 +149,7 @@ class TransportScheduleType
     private $plannedArrivalTransportEvent;
 
     /**
-     * @return SequenceNumeric|null
+     * @return null|SequenceNumeric
      */
     public function getSequenceNumeric(): ?SequenceNumeric
     {
@@ -167,7 +167,7 @@ class TransportScheduleType
     }
 
     /**
-     * @param SequenceNumeric|null $sequenceNumeric
+     * @param  null|SequenceNumeric $sequenceNumeric
      * @return static
      */
     public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): static
@@ -188,7 +188,7 @@ class TransportScheduleType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getReferenceDate(): ?DateTimeInterface
     {
@@ -196,7 +196,7 @@ class TransportScheduleType
     }
 
     /**
-     * @param DateTimeInterface|null $referenceDate
+     * @param  null|DateTimeInterface $referenceDate
      * @return static
      */
     public function setReferenceDate(?DateTimeInterface $referenceDate = null): static
@@ -217,7 +217,7 @@ class TransportScheduleType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getReferenceTime(): ?DateTimeInterface
     {
@@ -225,7 +225,7 @@ class TransportScheduleType
     }
 
     /**
-     * @param DateTimeInterface|null $referenceTime
+     * @param  null|DateTimeInterface $referenceTime
      * @return static
      */
     public function setReferenceTime(?DateTimeInterface $referenceTime = null): static
@@ -246,7 +246,7 @@ class TransportScheduleType
     }
 
     /**
-     * @return ReliabilityPercent|null
+     * @return null|ReliabilityPercent
      */
     public function getReliabilityPercent(): ?ReliabilityPercent
     {
@@ -264,7 +264,7 @@ class TransportScheduleType
     }
 
     /**
-     * @param ReliabilityPercent|null $reliabilityPercent
+     * @param  null|ReliabilityPercent $reliabilityPercent
      * @return static
      */
     public function setReliabilityPercent(?ReliabilityPercent $reliabilityPercent = null): static
@@ -285,7 +285,7 @@ class TransportScheduleType
     }
 
     /**
-     * @return array<Remarks>|null
+     * @return null|array<Remarks>
      */
     public function getRemarks(): ?array
     {
@@ -293,7 +293,7 @@ class TransportScheduleType
     }
 
     /**
-     * @param array<Remarks>|null $remarks
+     * @param  null|array<Remarks> $remarks
      * @return static
      */
     public function setRemarks(?array $remarks = null): static
@@ -324,7 +324,7 @@ class TransportScheduleType
     }
 
     /**
-     * @return Remarks|null
+     * @return null|Remarks
      */
     public function firstRemarks(): ?Remarks
     {
@@ -339,7 +339,7 @@ class TransportScheduleType
     }
 
     /**
-     * @return Remarks|null
+     * @return null|Remarks
      */
     public function lastRemarks(): ?Remarks
     {
@@ -354,7 +354,7 @@ class TransportScheduleType
     }
 
     /**
-     * @param Remarks $remarks
+     * @param  Remarks $remarks
      * @return static
      */
     public function addToRemarks(Remarks $remarks): static
@@ -375,7 +375,7 @@ class TransportScheduleType
     }
 
     /**
-     * @param Remarks $remarks
+     * @param  Remarks $remarks
      * @return static
      */
     public function addOnceToRemarks(Remarks $remarks): static
@@ -406,7 +406,7 @@ class TransportScheduleType
     }
 
     /**
-     * @return StatusLocation|null
+     * @return null|StatusLocation
      */
     public function getStatusLocation(): ?StatusLocation
     {
@@ -424,7 +424,7 @@ class TransportScheduleType
     }
 
     /**
-     * @param StatusLocation|null $statusLocation
+     * @param  null|StatusLocation $statusLocation
      * @return static
      */
     public function setStatusLocation(?StatusLocation $statusLocation = null): static
@@ -445,7 +445,7 @@ class TransportScheduleType
     }
 
     /**
-     * @return ActualArrivalTransportEvent|null
+     * @return null|ActualArrivalTransportEvent
      */
     public function getActualArrivalTransportEvent(): ?ActualArrivalTransportEvent
     {
@@ -463,7 +463,7 @@ class TransportScheduleType
     }
 
     /**
-     * @param ActualArrivalTransportEvent|null $actualArrivalTransportEvent
+     * @param  null|ActualArrivalTransportEvent $actualArrivalTransportEvent
      * @return static
      */
     public function setActualArrivalTransportEvent(
@@ -485,7 +485,7 @@ class TransportScheduleType
     }
 
     /**
-     * @return ActualDepartureTransportEvent|null
+     * @return null|ActualDepartureTransportEvent
      */
     public function getActualDepartureTransportEvent(): ?ActualDepartureTransportEvent
     {
@@ -503,7 +503,7 @@ class TransportScheduleType
     }
 
     /**
-     * @param ActualDepartureTransportEvent|null $actualDepartureTransportEvent
+     * @param  null|ActualDepartureTransportEvent $actualDepartureTransportEvent
      * @return static
      */
     public function setActualDepartureTransportEvent(
@@ -525,7 +525,7 @@ class TransportScheduleType
     }
 
     /**
-     * @return EstimatedDepartureTransportEvent|null
+     * @return null|EstimatedDepartureTransportEvent
      */
     public function getEstimatedDepartureTransportEvent(): ?EstimatedDepartureTransportEvent
     {
@@ -543,7 +543,7 @@ class TransportScheduleType
     }
 
     /**
-     * @param EstimatedDepartureTransportEvent|null $estimatedDepartureTransportEvent
+     * @param  null|EstimatedDepartureTransportEvent $estimatedDepartureTransportEvent
      * @return static
      */
     public function setEstimatedDepartureTransportEvent(
@@ -565,7 +565,7 @@ class TransportScheduleType
     }
 
     /**
-     * @return EstimatedArrivalTransportEvent|null
+     * @return null|EstimatedArrivalTransportEvent
      */
     public function getEstimatedArrivalTransportEvent(): ?EstimatedArrivalTransportEvent
     {
@@ -583,7 +583,7 @@ class TransportScheduleType
     }
 
     /**
-     * @param EstimatedArrivalTransportEvent|null $estimatedArrivalTransportEvent
+     * @param  null|EstimatedArrivalTransportEvent $estimatedArrivalTransportEvent
      * @return static
      */
     public function setEstimatedArrivalTransportEvent(
@@ -605,7 +605,7 @@ class TransportScheduleType
     }
 
     /**
-     * @return PlannedDepartureTransportEvent|null
+     * @return null|PlannedDepartureTransportEvent
      */
     public function getPlannedDepartureTransportEvent(): ?PlannedDepartureTransportEvent
     {
@@ -623,7 +623,7 @@ class TransportScheduleType
     }
 
     /**
-     * @param PlannedDepartureTransportEvent|null $plannedDepartureTransportEvent
+     * @param  null|PlannedDepartureTransportEvent $plannedDepartureTransportEvent
      * @return static
      */
     public function setPlannedDepartureTransportEvent(
@@ -645,7 +645,7 @@ class TransportScheduleType
     }
 
     /**
-     * @return PlannedArrivalTransportEvent|null
+     * @return null|PlannedArrivalTransportEvent
      */
     public function getPlannedArrivalTransportEvent(): ?PlannedArrivalTransportEvent
     {
@@ -663,7 +663,7 @@ class TransportScheduleType
     }
 
     /**
-     * @param PlannedArrivalTransportEvent|null $plannedArrivalTransportEvent
+     * @param  null|PlannedArrivalTransportEvent $plannedArrivalTransportEvent
      * @return static
      */
     public function setPlannedArrivalTransportEvent(

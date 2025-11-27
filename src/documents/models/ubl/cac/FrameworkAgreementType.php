@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ExpectedOperatorQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Frequency;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Justification;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumOperatorQuantity;
+use JMS\Serializer\Annotation as JMS;
 
 class FrameworkAgreementType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ExpectedOperatorQuantity|null
+     * @var null|ExpectedOperatorQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExpectedOperatorQuantity")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class FrameworkAgreementType
     private $expectedOperatorQuantity;
 
     /**
-     * @var MaximumOperatorQuantity|null
+     * @var null|MaximumOperatorQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumOperatorQuantity")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class FrameworkAgreementType
     private $maximumOperatorQuantity;
 
     /**
-     * @var array<Justification>|null
+     * @var null|array<Justification>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Justification>")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class FrameworkAgreementType
     private $justification;
 
     /**
-     * @var array<Frequency>|null
+     * @var null|array<Frequency>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Frequency>")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class FrameworkAgreementType
     private $frequency;
 
     /**
-     * @var DurationPeriod|null
+     * @var null|DurationPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DurationPeriod")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class FrameworkAgreementType
     private $durationPeriod;
 
     /**
-     * @var array<SubsequentProcessTenderRequirement>|null
+     * @var null|array<SubsequentProcessTenderRequirement>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SubsequentProcessTenderRequirement>")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class FrameworkAgreementType
     private $subsequentProcessTenderRequirement;
 
     /**
-     * @return ExpectedOperatorQuantity|null
+     * @return null|ExpectedOperatorQuantity
      */
     public function getExpectedOperatorQuantity(): ?ExpectedOperatorQuantity
     {
@@ -103,7 +103,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param ExpectedOperatorQuantity|null $expectedOperatorQuantity
+     * @param  null|ExpectedOperatorQuantity $expectedOperatorQuantity
      * @return static
      */
     public function setExpectedOperatorQuantity(?ExpectedOperatorQuantity $expectedOperatorQuantity = null): static
@@ -124,7 +124,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return MaximumOperatorQuantity|null
+     * @return null|MaximumOperatorQuantity
      */
     public function getMaximumOperatorQuantity(): ?MaximumOperatorQuantity
     {
@@ -142,7 +142,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param MaximumOperatorQuantity|null $maximumOperatorQuantity
+     * @param  null|MaximumOperatorQuantity $maximumOperatorQuantity
      * @return static
      */
     public function setMaximumOperatorQuantity(?MaximumOperatorQuantity $maximumOperatorQuantity = null): static
@@ -163,7 +163,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return array<Justification>|null
+     * @return null|array<Justification>
      */
     public function getJustification(): ?array
     {
@@ -171,7 +171,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param array<Justification>|null $justification
+     * @param  null|array<Justification> $justification
      * @return static
      */
     public function setJustification(?array $justification = null): static
@@ -202,7 +202,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return Justification|null
+     * @return null|Justification
      */
     public function firstJustification(): ?Justification
     {
@@ -217,7 +217,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return Justification|null
+     * @return null|Justification
      */
     public function lastJustification(): ?Justification
     {
@@ -232,7 +232,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param Justification $justification
+     * @param  Justification $justification
      * @return static
      */
     public function addToJustification(Justification $justification): static
@@ -253,7 +253,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param Justification $justification
+     * @param  Justification $justification
      * @return static
      */
     public function addOnceToJustification(Justification $justification): static
@@ -284,7 +284,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return array<Frequency>|null
+     * @return null|array<Frequency>
      */
     public function getFrequency(): ?array
     {
@@ -292,7 +292,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param array<Frequency>|null $frequency
+     * @param  null|array<Frequency> $frequency
      * @return static
      */
     public function setFrequency(?array $frequency = null): static
@@ -323,7 +323,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return Frequency|null
+     * @return null|Frequency
      */
     public function firstFrequency(): ?Frequency
     {
@@ -338,7 +338,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return Frequency|null
+     * @return null|Frequency
      */
     public function lastFrequency(): ?Frequency
     {
@@ -353,7 +353,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param Frequency $frequency
+     * @param  Frequency $frequency
      * @return static
      */
     public function addToFrequency(Frequency $frequency): static
@@ -374,7 +374,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param Frequency $frequency
+     * @param  Frequency $frequency
      * @return static
      */
     public function addOnceToFrequency(Frequency $frequency): static
@@ -405,7 +405,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return DurationPeriod|null
+     * @return null|DurationPeriod
      */
     public function getDurationPeriod(): ?DurationPeriod
     {
@@ -423,7 +423,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param DurationPeriod|null $durationPeriod
+     * @param  null|DurationPeriod $durationPeriod
      * @return static
      */
     public function setDurationPeriod(?DurationPeriod $durationPeriod = null): static
@@ -444,7 +444,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return array<SubsequentProcessTenderRequirement>|null
+     * @return null|array<SubsequentProcessTenderRequirement>
      */
     public function getSubsequentProcessTenderRequirement(): ?array
     {
@@ -452,7 +452,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param array<SubsequentProcessTenderRequirement>|null $subsequentProcessTenderRequirement
+     * @param  null|array<SubsequentProcessTenderRequirement> $subsequentProcessTenderRequirement
      * @return static
      */
     public function setSubsequentProcessTenderRequirement(?array $subsequentProcessTenderRequirement = null): static
@@ -483,7 +483,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return SubsequentProcessTenderRequirement|null
+     * @return null|SubsequentProcessTenderRequirement
      */
     public function firstSubsequentProcessTenderRequirement(): ?SubsequentProcessTenderRequirement
     {
@@ -498,7 +498,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @return SubsequentProcessTenderRequirement|null
+     * @return null|SubsequentProcessTenderRequirement
      */
     public function lastSubsequentProcessTenderRequirement(): ?SubsequentProcessTenderRequirement
     {
@@ -513,7 +513,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param SubsequentProcessTenderRequirement $subsequentProcessTenderRequirement
+     * @param  SubsequentProcessTenderRequirement $subsequentProcessTenderRequirement
      * @return static
      */
     public function addToSubsequentProcessTenderRequirement(
@@ -535,7 +535,7 @@ class FrameworkAgreementType
     }
 
     /**
-     * @param SubsequentProcessTenderRequirement $subsequentProcessTenderRequirement
+     * @param  SubsequentProcessTenderRequirement $subsequentProcessTenderRequirement
      * @return static
      */
     public function addOnceToSubsequentProcessTenderRequirement(

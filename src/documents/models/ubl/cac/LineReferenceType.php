@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LineID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
+use JMS\Serializer\Annotation as JMS;
 
 class LineReferenceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var LineID|null
+     * @var null|LineID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class LineReferenceType
     private $lineID;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class LineReferenceType
     private $uUID;
 
     /**
-     * @var LineStatusCode|null
+     * @var null|LineStatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineStatusCode")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class LineReferenceType
     private $lineStatusCode;
 
     /**
-     * @var DocumentReference|null
+     * @var null|DocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class LineReferenceType
     private $documentReference;
 
     /**
-     * @return LineID|null
+     * @return null|LineID
      */
     public function getLineID(): ?LineID
     {
@@ -77,7 +77,7 @@ class LineReferenceType
     }
 
     /**
-     * @param LineID|null $lineID
+     * @param  null|LineID $lineID
      * @return static
      */
     public function setLineID(?LineID $lineID = null): static
@@ -98,7 +98,7 @@ class LineReferenceType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -116,7 +116,7 @@ class LineReferenceType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -137,7 +137,7 @@ class LineReferenceType
     }
 
     /**
-     * @return LineStatusCode|null
+     * @return null|LineStatusCode
      */
     public function getLineStatusCode(): ?LineStatusCode
     {
@@ -155,7 +155,7 @@ class LineReferenceType
     }
 
     /**
-     * @param LineStatusCode|null $lineStatusCode
+     * @param  null|LineStatusCode $lineStatusCode
      * @return static
      */
     public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): static
@@ -176,7 +176,7 @@ class LineReferenceType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function getDocumentReference(): ?DocumentReference
     {
@@ -194,7 +194,7 @@ class LineReferenceType
     }
 
     /**
-     * @param DocumentReference|null $documentReference
+     * @param  null|DocumentReference $documentReference
      * @return static
      */
     public function setDocumentReference(?DocumentReference $documentReference = null): static

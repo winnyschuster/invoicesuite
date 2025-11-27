@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\ext;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
+use JMS\Serializer\Annotation as JMS;
 
 class UBLExtensionType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class UBLExtensionType
     private $iD;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class UBLExtensionType
     private $name;
 
     /**
-     * @var ExtensionAgencyID|null
+     * @var null|ExtensionAgencyID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyID")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class UBLExtensionType
     private $extensionAgencyID;
 
     /**
-     * @var ExtensionAgencyName|null
+     * @var null|ExtensionAgencyName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyName")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class UBLExtensionType
     private $extensionAgencyName;
 
     /**
-     * @var ExtensionVersionID|null
+     * @var null|ExtensionVersionID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionVersionID")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class UBLExtensionType
     private $extensionVersionID;
 
     /**
-     * @var ExtensionAgencyURI|null
+     * @var null|ExtensionAgencyURI
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionAgencyURI")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class UBLExtensionType
     private $extensionAgencyURI;
 
     /**
-     * @var ExtensionURI|null
+     * @var null|ExtensionURI
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionURI")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class UBLExtensionType
     private $extensionURI;
 
     /**
-     * @var ExtensionReasonCode|null
+     * @var null|ExtensionReasonCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionReasonCode")
      * @JMS\Expose
@@ -102,7 +102,7 @@ class UBLExtensionType
     private $extensionReasonCode;
 
     /**
-     * @var ExtensionReason|null
+     * @var null|ExtensionReason
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionReason")
      * @JMS\Expose
@@ -113,7 +113,7 @@ class UBLExtensionType
     private $extensionReason;
 
     /**
-     * @var ExtensionContent|null
+     * @var null|ExtensionContent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\ext\ExtensionContent")
      * @JMS\Expose
@@ -124,7 +124,7 @@ class UBLExtensionType
     private $extensionContent;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -142,7 +142,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -163,7 +163,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -181,7 +181,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -202,7 +202,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return ExtensionAgencyID|null
+     * @return null|ExtensionAgencyID
      */
     public function getExtensionAgencyID(): ?ExtensionAgencyID
     {
@@ -220,7 +220,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param ExtensionAgencyID|null $extensionAgencyID
+     * @param  null|ExtensionAgencyID $extensionAgencyID
      * @return static
      */
     public function setExtensionAgencyID(?ExtensionAgencyID $extensionAgencyID = null): static
@@ -241,7 +241,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return ExtensionAgencyName|null
+     * @return null|ExtensionAgencyName
      */
     public function getExtensionAgencyName(): ?ExtensionAgencyName
     {
@@ -259,7 +259,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param ExtensionAgencyName|null $extensionAgencyName
+     * @param  null|ExtensionAgencyName $extensionAgencyName
      * @return static
      */
     public function setExtensionAgencyName(?ExtensionAgencyName $extensionAgencyName = null): static
@@ -280,7 +280,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return ExtensionVersionID|null
+     * @return null|ExtensionVersionID
      */
     public function getExtensionVersionID(): ?ExtensionVersionID
     {
@@ -298,7 +298,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param ExtensionVersionID|null $extensionVersionID
+     * @param  null|ExtensionVersionID $extensionVersionID
      * @return static
      */
     public function setExtensionVersionID(?ExtensionVersionID $extensionVersionID = null): static
@@ -319,7 +319,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return ExtensionAgencyURI|null
+     * @return null|ExtensionAgencyURI
      */
     public function getExtensionAgencyURI(): ?ExtensionAgencyURI
     {
@@ -337,7 +337,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param ExtensionAgencyURI|null $extensionAgencyURI
+     * @param  null|ExtensionAgencyURI $extensionAgencyURI
      * @return static
      */
     public function setExtensionAgencyURI(?ExtensionAgencyURI $extensionAgencyURI = null): static
@@ -358,7 +358,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return ExtensionURI|null
+     * @return null|ExtensionURI
      */
     public function getExtensionURI(): ?ExtensionURI
     {
@@ -376,7 +376,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param ExtensionURI|null $extensionURI
+     * @param  null|ExtensionURI $extensionURI
      * @return static
      */
     public function setExtensionURI(?ExtensionURI $extensionURI = null): static
@@ -397,7 +397,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return ExtensionReasonCode|null
+     * @return null|ExtensionReasonCode
      */
     public function getExtensionReasonCode(): ?ExtensionReasonCode
     {
@@ -415,7 +415,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param ExtensionReasonCode|null $extensionReasonCode
+     * @param  null|ExtensionReasonCode $extensionReasonCode
      * @return static
      */
     public function setExtensionReasonCode(?ExtensionReasonCode $extensionReasonCode = null): static
@@ -436,7 +436,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return ExtensionReason|null
+     * @return null|ExtensionReason
      */
     public function getExtensionReason(): ?ExtensionReason
     {
@@ -454,7 +454,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param ExtensionReason|null $extensionReason
+     * @param  null|ExtensionReason $extensionReason
      * @return static
      */
     public function setExtensionReason(?ExtensionReason $extensionReason = null): static
@@ -475,7 +475,7 @@ class UBLExtensionType
     }
 
     /**
-     * @return ExtensionContent|null
+     * @return null|ExtensionContent
      */
     public function getExtensionContent(): ?ExtensionContent
     {
@@ -493,7 +493,7 @@ class UBLExtensionType
     }
 
     /**
-     * @param ExtensionContent|null $extensionContent
+     * @param  null|ExtensionContent $extensionContent
      * @return static
      */
     public function setExtensionContent(?ExtensionContent $extensionContent = null): static

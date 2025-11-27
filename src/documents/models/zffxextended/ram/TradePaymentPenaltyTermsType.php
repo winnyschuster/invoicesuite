@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\MeasureType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\PercentType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradePaymentPenaltyTermsType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var DateTimeType|null
+     * @var null|DateTimeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class TradePaymentPenaltyTermsType
     private $basisDateTime;
 
     /**
-     * @var MeasureType|null
+     * @var null|MeasureType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\MeasureType")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class TradePaymentPenaltyTermsType
     private $basisPeriodMeasure;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class TradePaymentPenaltyTermsType
     private $basisAmount;
 
     /**
-     * @var PercentType|null
+     * @var null|PercentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\PercentType")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class TradePaymentPenaltyTermsType
     private $calculationPercent;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class TradePaymentPenaltyTermsType
     private $actualPenaltyAmount;
 
     /**
-     * @return DateTimeType|null
+     * @return null|DateTimeType
      */
     public function getBasisDateTime(): ?DateTimeType
     {
@@ -89,7 +89,7 @@ class TradePaymentPenaltyTermsType
     }
 
     /**
-     * @param DateTimeType|null $basisDateTime
+     * @param  null|DateTimeType $basisDateTime
      * @return static
      */
     public function setBasisDateTime(?DateTimeType $basisDateTime = null): static
@@ -110,7 +110,7 @@ class TradePaymentPenaltyTermsType
     }
 
     /**
-     * @return MeasureType|null
+     * @return null|MeasureType
      */
     public function getBasisPeriodMeasure(): ?MeasureType
     {
@@ -128,7 +128,7 @@ class TradePaymentPenaltyTermsType
     }
 
     /**
-     * @param MeasureType|null $basisPeriodMeasure
+     * @param  null|MeasureType $basisPeriodMeasure
      * @return static
      */
     public function setBasisPeriodMeasure(?MeasureType $basisPeriodMeasure = null): static
@@ -149,7 +149,7 @@ class TradePaymentPenaltyTermsType
     }
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getBasisAmount(): ?AmountType
     {
@@ -167,7 +167,7 @@ class TradePaymentPenaltyTermsType
     }
 
     /**
-     * @param AmountType|null $basisAmount
+     * @param  null|AmountType $basisAmount
      * @return static
      */
     public function setBasisAmount(?AmountType $basisAmount = null): static
@@ -188,7 +188,7 @@ class TradePaymentPenaltyTermsType
     }
 
     /**
-     * @return PercentType|null
+     * @return null|PercentType
      */
     public function getCalculationPercent(): ?PercentType
     {
@@ -206,7 +206,7 @@ class TradePaymentPenaltyTermsType
     }
 
     /**
-     * @param PercentType|null $calculationPercent
+     * @param  null|PercentType $calculationPercent
      * @return static
      */
     public function setCalculationPercent(?PercentType $calculationPercent = null): static
@@ -227,7 +227,7 @@ class TradePaymentPenaltyTermsType
     }
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getActualPenaltyAmount(): ?AmountType
     {
@@ -245,7 +245,7 @@ class TradePaymentPenaltyTermsType
     }
 
     /**
-     * @param AmountType|null $actualPenaltyAmount
+     * @param  null|AmountType $actualPenaltyAmount
      * @return static
      */
     public function setActualPenaltyAmount(?AmountType $actualPenaltyAmount = null): static

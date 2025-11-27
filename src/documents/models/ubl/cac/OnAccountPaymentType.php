@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedConsumedQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
+use JMS\Serializer\Annotation as JMS;
 
 class OnAccountPaymentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var EstimatedConsumedQuantity|null
+     * @var null|EstimatedConsumedQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EstimatedConsumedQuantity")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class OnAccountPaymentType
     private $estimatedConsumedQuantity;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class OnAccountPaymentType
     private $note;
 
     /**
-     * @var array<PaymentTerms>|null
+     * @var null|array<PaymentTerms>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class OnAccountPaymentType
     private $paymentTerms;
 
     /**
-     * @return EstimatedConsumedQuantity|null
+     * @return null|EstimatedConsumedQuantity
      */
     public function getEstimatedConsumedQuantity(): ?EstimatedConsumedQuantity
     {
@@ -67,7 +67,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @param EstimatedConsumedQuantity|null $estimatedConsumedQuantity
+     * @param  null|EstimatedConsumedQuantity $estimatedConsumedQuantity
      * @return static
      */
     public function setEstimatedConsumedQuantity(?EstimatedConsumedQuantity $estimatedConsumedQuantity = null): static
@@ -88,7 +88,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -96,7 +96,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -127,7 +127,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -142,7 +142,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -157,7 +157,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -178,7 +178,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -209,7 +209,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return array<PaymentTerms>|null
+     * @return null|array<PaymentTerms>
      */
     public function getPaymentTerms(): ?array
     {
@@ -217,7 +217,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @param array<PaymentTerms>|null $paymentTerms
+     * @param  null|array<PaymentTerms> $paymentTerms
      * @return static
      */
     public function setPaymentTerms(?array $paymentTerms = null): static
@@ -248,7 +248,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return PaymentTerms|null
+     * @return null|PaymentTerms
      */
     public function firstPaymentTerms(): ?PaymentTerms
     {
@@ -263,7 +263,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @return PaymentTerms|null
+     * @return null|PaymentTerms
      */
     public function lastPaymentTerms(): ?PaymentTerms
     {
@@ -278,7 +278,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @param PaymentTerms $paymentTerms
+     * @param  PaymentTerms $paymentTerms
      * @return static
      */
     public function addToPaymentTerms(PaymentTerms $paymentTerms): static
@@ -299,7 +299,7 @@ class OnAccountPaymentType
     }
 
     /**
-     * @param PaymentTerms $paymentTerms
+     * @param  PaymentTerms $paymentTerms
      * @return static
      */
     public function addOnceToPaymentTerms(PaymentTerms $paymentTerms): static

@@ -28,9 +28,11 @@ $finder = (new Finder())
             '.idea',
         ]
     )
+    /*
     ->notPath([
         'documents/models',
-    ]);
+    ])
+    */;
 
 return (new Config())
     ->setRiskyAllowed(true)
@@ -39,7 +41,6 @@ return (new Config())
     ->setFinder($finder)
     ->setIndent("    ")
     ->setLineEnding("\n")
-    ->setParallelConfig(new ParallelConfig(4, 20, 3000))
     ->setRules(
         [
             '@PSR12' => true,

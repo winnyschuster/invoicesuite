@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Percent;
+use JMS\Serializer\Annotation as JMS;
 
 class DependentPriceReferenceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Percent|null
+     * @var null|Percent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Percent")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class DependentPriceReferenceType
     private $percent;
 
     /**
-     * @var LocationAddress|null
+     * @var null|LocationAddress
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LocationAddress")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class DependentPriceReferenceType
     private $locationAddress;
 
     /**
-     * @var DependentLineReference|null
+     * @var null|DependentLineReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DependentLineReference")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class DependentPriceReferenceType
     private $dependentLineReference;
 
     /**
-     * @return Percent|null
+     * @return null|Percent
      */
     public function getPercent(): ?Percent
     {
@@ -64,7 +64,7 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @param Percent|null $percent
+     * @param  null|Percent $percent
      * @return static
      */
     public function setPercent(?Percent $percent = null): static
@@ -85,7 +85,7 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @return LocationAddress|null
+     * @return null|LocationAddress
      */
     public function getLocationAddress(): ?LocationAddress
     {
@@ -103,7 +103,7 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @param LocationAddress|null $locationAddress
+     * @param  null|LocationAddress $locationAddress
      * @return static
      */
     public function setLocationAddress(?LocationAddress $locationAddress = null): static
@@ -124,7 +124,7 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @return DependentLineReference|null
+     * @return null|DependentLineReference
      */
     public function getDependentLineReference(): ?DependentLineReference
     {
@@ -142,7 +142,7 @@ class DependentPriceReferenceType
     }
 
     /**
-     * @param DependentLineReference|null $dependentLineReference
+     * @param  null|DependentLineReference $dependentLineReference
      * @return static
      */
     public function setDependentLineReference(?DependentLineReference $dependentLineReference = null): static

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
@@ -15,13 +14,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReason;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReasonCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Text;
+use JMS\Serializer\Annotation as JMS;
 
 class StatusType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ConditionCode|null
+     * @var null|ConditionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConditionCode")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class StatusType
     private $conditionCode;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class StatusType
     private $referenceDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -54,7 +54,7 @@ class StatusType
     private $referenceTime;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -66,7 +66,7 @@ class StatusType
     private $description;
 
     /**
-     * @var StatusReasonCode|null
+     * @var null|StatusReasonCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReasonCode")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class StatusType
     private $statusReasonCode;
 
     /**
-     * @var array<StatusReason>|null
+     * @var null|array<StatusReason>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\StatusReason>")
      * @JMS\Expose
@@ -89,7 +89,7 @@ class StatusType
     private $statusReason;
 
     /**
-     * @var SequenceID|null
+     * @var null|SequenceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceID")
      * @JMS\Expose
@@ -100,7 +100,7 @@ class StatusType
     private $sequenceID;
 
     /**
-     * @var array<Text>|null
+     * @var null|array<Text>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Text>")
      * @JMS\Expose
@@ -112,7 +112,7 @@ class StatusType
     private $text;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -123,7 +123,7 @@ class StatusType
     private $indicationIndicator;
 
     /**
-     * @var Percent|null
+     * @var null|Percent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Percent")
      * @JMS\Expose
@@ -134,7 +134,7 @@ class StatusType
     private $percent;
 
     /**
-     * @var ReliabilityPercent|null
+     * @var null|ReliabilityPercent
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReliabilityPercent")
      * @JMS\Expose
@@ -145,7 +145,7 @@ class StatusType
     private $reliabilityPercent;
 
     /**
-     * @var array<Condition>|null
+     * @var null|array<Condition>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Condition>")
      * @JMS\Expose
@@ -157,7 +157,7 @@ class StatusType
     private $condition;
 
     /**
-     * @return ConditionCode|null
+     * @return null|ConditionCode
      */
     public function getConditionCode(): ?ConditionCode
     {
@@ -175,7 +175,7 @@ class StatusType
     }
 
     /**
-     * @param ConditionCode|null $conditionCode
+     * @param  null|ConditionCode $conditionCode
      * @return static
      */
     public function setConditionCode(?ConditionCode $conditionCode = null): static
@@ -196,7 +196,7 @@ class StatusType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getReferenceDate(): ?DateTimeInterface
     {
@@ -204,7 +204,7 @@ class StatusType
     }
 
     /**
-     * @param DateTimeInterface|null $referenceDate
+     * @param  null|DateTimeInterface $referenceDate
      * @return static
      */
     public function setReferenceDate(?DateTimeInterface $referenceDate = null): static
@@ -225,7 +225,7 @@ class StatusType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getReferenceTime(): ?DateTimeInterface
     {
@@ -233,7 +233,7 @@ class StatusType
     }
 
     /**
-     * @param DateTimeInterface|null $referenceTime
+     * @param  null|DateTimeInterface $referenceTime
      * @return static
      */
     public function setReferenceTime(?DateTimeInterface $referenceTime = null): static
@@ -254,7 +254,7 @@ class StatusType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -262,7 +262,7 @@ class StatusType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -293,7 +293,7 @@ class StatusType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -308,7 +308,7 @@ class StatusType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -323,7 +323,7 @@ class StatusType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -344,7 +344,7 @@ class StatusType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -375,7 +375,7 @@ class StatusType
     }
 
     /**
-     * @return StatusReasonCode|null
+     * @return null|StatusReasonCode
      */
     public function getStatusReasonCode(): ?StatusReasonCode
     {
@@ -393,7 +393,7 @@ class StatusType
     }
 
     /**
-     * @param StatusReasonCode|null $statusReasonCode
+     * @param  null|StatusReasonCode $statusReasonCode
      * @return static
      */
     public function setStatusReasonCode(?StatusReasonCode $statusReasonCode = null): static
@@ -414,7 +414,7 @@ class StatusType
     }
 
     /**
-     * @return array<StatusReason>|null
+     * @return null|array<StatusReason>
      */
     public function getStatusReason(): ?array
     {
@@ -422,7 +422,7 @@ class StatusType
     }
 
     /**
-     * @param array<StatusReason>|null $statusReason
+     * @param  null|array<StatusReason> $statusReason
      * @return static
      */
     public function setStatusReason(?array $statusReason = null): static
@@ -453,7 +453,7 @@ class StatusType
     }
 
     /**
-     * @return StatusReason|null
+     * @return null|StatusReason
      */
     public function firstStatusReason(): ?StatusReason
     {
@@ -468,7 +468,7 @@ class StatusType
     }
 
     /**
-     * @return StatusReason|null
+     * @return null|StatusReason
      */
     public function lastStatusReason(): ?StatusReason
     {
@@ -483,7 +483,7 @@ class StatusType
     }
 
     /**
-     * @param StatusReason $statusReason
+     * @param  StatusReason $statusReason
      * @return static
      */
     public function addToStatusReason(StatusReason $statusReason): static
@@ -504,7 +504,7 @@ class StatusType
     }
 
     /**
-     * @param StatusReason $statusReason
+     * @param  StatusReason $statusReason
      * @return static
      */
     public function addOnceToStatusReason(StatusReason $statusReason): static
@@ -535,7 +535,7 @@ class StatusType
     }
 
     /**
-     * @return SequenceID|null
+     * @return null|SequenceID
      */
     public function getSequenceID(): ?SequenceID
     {
@@ -553,7 +553,7 @@ class StatusType
     }
 
     /**
-     * @param SequenceID|null $sequenceID
+     * @param  null|SequenceID $sequenceID
      * @return static
      */
     public function setSequenceID(?SequenceID $sequenceID = null): static
@@ -574,7 +574,7 @@ class StatusType
     }
 
     /**
-     * @return array<Text>|null
+     * @return null|array<Text>
      */
     public function getText(): ?array
     {
@@ -582,7 +582,7 @@ class StatusType
     }
 
     /**
-     * @param array<Text>|null $text
+     * @param  null|array<Text> $text
      * @return static
      */
     public function setText(?array $text = null): static
@@ -613,7 +613,7 @@ class StatusType
     }
 
     /**
-     * @return Text|null
+     * @return null|Text
      */
     public function firstText(): ?Text
     {
@@ -628,7 +628,7 @@ class StatusType
     }
 
     /**
-     * @return Text|null
+     * @return null|Text
      */
     public function lastText(): ?Text
     {
@@ -643,7 +643,7 @@ class StatusType
     }
 
     /**
-     * @param Text $text
+     * @param  Text   $text
      * @return static
      */
     public function addToText(Text $text): static
@@ -664,7 +664,7 @@ class StatusType
     }
 
     /**
-     * @param Text $text
+     * @param  Text   $text
      * @return static
      */
     public function addOnceToText(Text $text): static
@@ -695,7 +695,7 @@ class StatusType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getIndicationIndicator(): ?bool
     {
@@ -703,7 +703,7 @@ class StatusType
     }
 
     /**
-     * @param bool|null $indicationIndicator
+     * @param  null|bool $indicationIndicator
      * @return static
      */
     public function setIndicationIndicator(?bool $indicationIndicator = null): static
@@ -724,7 +724,7 @@ class StatusType
     }
 
     /**
-     * @return Percent|null
+     * @return null|Percent
      */
     public function getPercent(): ?Percent
     {
@@ -742,7 +742,7 @@ class StatusType
     }
 
     /**
-     * @param Percent|null $percent
+     * @param  null|Percent $percent
      * @return static
      */
     public function setPercent(?Percent $percent = null): static
@@ -763,7 +763,7 @@ class StatusType
     }
 
     /**
-     * @return ReliabilityPercent|null
+     * @return null|ReliabilityPercent
      */
     public function getReliabilityPercent(): ?ReliabilityPercent
     {
@@ -781,7 +781,7 @@ class StatusType
     }
 
     /**
-     * @param ReliabilityPercent|null $reliabilityPercent
+     * @param  null|ReliabilityPercent $reliabilityPercent
      * @return static
      */
     public function setReliabilityPercent(?ReliabilityPercent $reliabilityPercent = null): static
@@ -802,7 +802,7 @@ class StatusType
     }
 
     /**
-     * @return array<Condition>|null
+     * @return null|array<Condition>
      */
     public function getCondition(): ?array
     {
@@ -810,7 +810,7 @@ class StatusType
     }
 
     /**
-     * @param array<Condition>|null $condition
+     * @param  null|array<Condition> $condition
      * @return static
      */
     public function setCondition(?array $condition = null): static
@@ -841,7 +841,7 @@ class StatusType
     }
 
     /**
-     * @return Condition|null
+     * @return null|Condition
      */
     public function firstCondition(): ?Condition
     {
@@ -856,7 +856,7 @@ class StatusType
     }
 
     /**
-     * @return Condition|null
+     * @return null|Condition
      */
     public function lastCondition(): ?Condition
     {
@@ -871,7 +871,7 @@ class StatusType
     }
 
     /**
-     * @param Condition $condition
+     * @param  Condition $condition
      * @return static
      */
     public function addToCondition(Condition $condition): static
@@ -892,7 +892,7 @@ class StatusType
     }
 
     /**
-     * @param Condition $condition
+     * @param  Condition $condition
      * @return static
      */
     public function addOnceToCondition(Condition $condition): static

@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\IndicatorType;
+use JMS\Serializer\Annotation as JMS;
 
 class ExchangedDocumentContextType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IndicatorType|null
+     * @var null|IndicatorType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IndicatorType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class ExchangedDocumentContextType
     private $testIndicator;
 
     /**
-     * @var DocumentContextParameterType|null
+     * @var null|DocumentContextParameterType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentContextParameterType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class ExchangedDocumentContextType
     private $businessProcessSpecifiedDocumentContextParameter;
 
     /**
-     * @var DocumentContextParameterType|null
+     * @var null|DocumentContextParameterType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\DocumentContextParameterType")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class ExchangedDocumentContextType
     private $guidelineSpecifiedDocumentContextParameter;
 
     /**
-     * @return IndicatorType|null
+     * @return null|IndicatorType
      */
     public function getTestIndicator(): ?IndicatorType
     {
@@ -64,7 +64,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @param IndicatorType|null $testIndicator
+     * @param  null|IndicatorType $testIndicator
      * @return static
      */
     public function setTestIndicator(?IndicatorType $testIndicator = null): static
@@ -85,7 +85,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @return DocumentContextParameterType|null
+     * @return null|DocumentContextParameterType
      */
     public function getBusinessProcessSpecifiedDocumentContextParameter(): ?DocumentContextParameterType
     {
@@ -103,7 +103,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @param DocumentContextParameterType|null $businessProcessSpecifiedDocumentContextParameter
+     * @param  null|DocumentContextParameterType $businessProcessSpecifiedDocumentContextParameter
      * @return static
      */
     public function setBusinessProcessSpecifiedDocumentContextParameter(
@@ -125,7 +125,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @return DocumentContextParameterType|null
+     * @return null|DocumentContextParameterType
      */
     public function getGuidelineSpecifiedDocumentContextParameter(): ?DocumentContextParameterType
     {
@@ -143,7 +143,7 @@ class ExchangedDocumentContextType
     }
 
     /**
-     * @param DocumentContextParameterType|null $guidelineSpecifiedDocumentContextParameter
+     * @param  null|DocumentContextParameterType $guidelineSpecifiedDocumentContextParameter
      * @return static
      */
     public function setGuidelineSpecifiedDocumentContextParameter(

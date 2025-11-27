@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasic\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType;
+use JMS\Serializer\Annotation as JMS;
 
 class SupplyChainEventType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var DateTimeType|null
+     * @var null|DateTimeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\DateTimeType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class SupplyChainEventType
     private $occurrenceDateTime;
 
     /**
-     * @return DateTimeType|null
+     * @return null|DateTimeType
      */
     public function getOccurrenceDateTime(): ?DateTimeType
     {
@@ -42,7 +42,7 @@ class SupplyChainEventType
     }
 
     /**
-     * @param DateTimeType|null $occurrenceDateTime
+     * @param  null|DateTimeType $occurrenceDateTime
      * @return static
      */
     public function setOccurrenceDateTime(?DateTimeType $occurrenceDateTime = null): static

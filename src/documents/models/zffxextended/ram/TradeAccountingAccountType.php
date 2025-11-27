@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\qdt\AccountingAccountTypeCodeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeAccountingAccountType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class TradeAccountingAccountType
     private $iD;
 
     /**
-     * @var AccountingAccountTypeCodeType|null
+     * @var null|AccountingAccountTypeCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\AccountingAccountTypeCodeType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TradeAccountingAccountType
     private $typeCode;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getID(): ?IDType
     {
@@ -54,7 +54,7 @@ class TradeAccountingAccountType
     }
 
     /**
-     * @param IDType|null $iD
+     * @param  null|IDType $iD
      * @return static
      */
     public function setID(?IDType $iD = null): static
@@ -75,7 +75,7 @@ class TradeAccountingAccountType
     }
 
     /**
-     * @return AccountingAccountTypeCodeType|null
+     * @return null|AccountingAccountTypeCodeType
      */
     public function getTypeCode(): ?AccountingAccountTypeCodeType
     {
@@ -93,7 +93,7 @@ class TradeAccountingAccountType
     }
 
     /**
-     * @param AccountingAccountTypeCodeType|null $typeCode
+     * @param  null|AccountingAccountTypeCodeType $typeCode
      * @return static
      */
     public function setTypeCode(?AccountingAccountTypeCodeType $typeCode = null): static

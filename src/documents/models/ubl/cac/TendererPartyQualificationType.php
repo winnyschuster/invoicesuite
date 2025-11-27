@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class TendererPartyQualificationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var array<InterestedProcurementProjectLot>|null
+     * @var null|array<InterestedProcurementProjectLot>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\InterestedProcurementProjectLot>")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class TendererPartyQualificationType
     private $interestedProcurementProjectLot;
 
     /**
-     * @var MainQualifyingParty|null
+     * @var null|MainQualifyingParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\MainQualifyingParty")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class TendererPartyQualificationType
     private $mainQualifyingParty;
 
     /**
-     * @var array<AdditionalQualifyingParty>|null
+     * @var null|array<AdditionalQualifyingParty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalQualifyingParty>")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class TendererPartyQualificationType
     private $additionalQualifyingParty;
 
     /**
-     * @return array<InterestedProcurementProjectLot>|null
+     * @return null|array<InterestedProcurementProjectLot>
      */
     public function getInterestedProcurementProjectLot(): ?array
     {
@@ -55,7 +55,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @param array<InterestedProcurementProjectLot>|null $interestedProcurementProjectLot
+     * @param  null|array<InterestedProcurementProjectLot> $interestedProcurementProjectLot
      * @return static
      */
     public function setInterestedProcurementProjectLot(?array $interestedProcurementProjectLot = null): static
@@ -86,7 +86,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return InterestedProcurementProjectLot|null
+     * @return null|InterestedProcurementProjectLot
      */
     public function firstInterestedProcurementProjectLot(): ?InterestedProcurementProjectLot
     {
@@ -101,7 +101,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return InterestedProcurementProjectLot|null
+     * @return null|InterestedProcurementProjectLot
      */
     public function lastInterestedProcurementProjectLot(): ?InterestedProcurementProjectLot
     {
@@ -116,7 +116,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @param InterestedProcurementProjectLot $interestedProcurementProjectLot
+     * @param  InterestedProcurementProjectLot $interestedProcurementProjectLot
      * @return static
      */
     public function addToInterestedProcurementProjectLot(
@@ -138,7 +138,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @param InterestedProcurementProjectLot $interestedProcurementProjectLot
+     * @param  InterestedProcurementProjectLot $interestedProcurementProjectLot
      * @return static
      */
     public function addOnceToInterestedProcurementProjectLot(
@@ -170,7 +170,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return MainQualifyingParty|null
+     * @return null|MainQualifyingParty
      */
     public function getMainQualifyingParty(): ?MainQualifyingParty
     {
@@ -188,7 +188,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @param MainQualifyingParty|null $mainQualifyingParty
+     * @param  null|MainQualifyingParty $mainQualifyingParty
      * @return static
      */
     public function setMainQualifyingParty(?MainQualifyingParty $mainQualifyingParty = null): static
@@ -209,7 +209,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return array<AdditionalQualifyingParty>|null
+     * @return null|array<AdditionalQualifyingParty>
      */
     public function getAdditionalQualifyingParty(): ?array
     {
@@ -217,7 +217,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @param array<AdditionalQualifyingParty>|null $additionalQualifyingParty
+     * @param  null|array<AdditionalQualifyingParty> $additionalQualifyingParty
      * @return static
      */
     public function setAdditionalQualifyingParty(?array $additionalQualifyingParty = null): static
@@ -248,7 +248,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return AdditionalQualifyingParty|null
+     * @return null|AdditionalQualifyingParty
      */
     public function firstAdditionalQualifyingParty(): ?AdditionalQualifyingParty
     {
@@ -263,7 +263,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @return AdditionalQualifyingParty|null
+     * @return null|AdditionalQualifyingParty
      */
     public function lastAdditionalQualifyingParty(): ?AdditionalQualifyingParty
     {
@@ -278,7 +278,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @param AdditionalQualifyingParty $additionalQualifyingParty
+     * @param  AdditionalQualifyingParty $additionalQualifyingParty
      * @return static
      */
     public function addToAdditionalQualifyingParty(AdditionalQualifyingParty $additionalQualifyingParty): static
@@ -299,7 +299,7 @@ class TendererPartyQualificationType
     }
 
     /**
-     * @param AdditionalQualifyingParty $additionalQualifyingParty
+     * @param  AdditionalQualifyingParty $additionalQualifyingParty
      * @return static
      */
     public function addOnceToAdditionalQualifyingParty(AdditionalQualifyingParty $additionalQualifyingParty): static

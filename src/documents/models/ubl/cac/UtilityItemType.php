@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode;
@@ -19,13 +18,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\PackSizeNumeric;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberType;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class UtilityItemType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class UtilityItemType
     private $iD;
 
     /**
-     * @var SubscriberID|null
+     * @var null|SubscriberID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberID")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class UtilityItemType
     private $subscriberID;
 
     /**
-     * @var SubscriberType|null
+     * @var null|SubscriberType
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberType")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class UtilityItemType
     private $subscriberType;
 
     /**
-     * @var SubscriberTypeCode|null
+     * @var null|SubscriberTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SubscriberTypeCode")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class UtilityItemType
     private $subscriberTypeCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -81,7 +81,7 @@ class UtilityItemType
     private $description;
 
     /**
-     * @var PackQuantity|null
+     * @var null|PackQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PackQuantity")
      * @JMS\Expose
@@ -92,7 +92,7 @@ class UtilityItemType
     private $packQuantity;
 
     /**
-     * @var PackSizeNumeric|null
+     * @var null|PackSizeNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PackSizeNumeric")
      * @JMS\Expose
@@ -103,7 +103,7 @@ class UtilityItemType
     private $packSizeNumeric;
 
     /**
-     * @var ConsumptionType|null
+     * @var null|ConsumptionType
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionType")
      * @JMS\Expose
@@ -114,7 +114,7 @@ class UtilityItemType
     private $consumptionType;
 
     /**
-     * @var ConsumptionTypeCode|null
+     * @var null|ConsumptionTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumptionTypeCode")
      * @JMS\Expose
@@ -125,7 +125,7 @@ class UtilityItemType
     private $consumptionTypeCode;
 
     /**
-     * @var CurrentChargeType|null
+     * @var null|CurrentChargeType
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CurrentChargeType")
      * @JMS\Expose
@@ -136,7 +136,7 @@ class UtilityItemType
     private $currentChargeType;
 
     /**
-     * @var CurrentChargeTypeCode|null
+     * @var null|CurrentChargeTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CurrentChargeTypeCode")
      * @JMS\Expose
@@ -147,7 +147,7 @@ class UtilityItemType
     private $currentChargeTypeCode;
 
     /**
-     * @var OneTimeChargeType|null
+     * @var null|OneTimeChargeType
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OneTimeChargeType")
      * @JMS\Expose
@@ -158,7 +158,7 @@ class UtilityItemType
     private $oneTimeChargeType;
 
     /**
-     * @var OneTimeChargeTypeCode|null
+     * @var null|OneTimeChargeTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OneTimeChargeTypeCode")
      * @JMS\Expose
@@ -169,7 +169,7 @@ class UtilityItemType
     private $oneTimeChargeTypeCode;
 
     /**
-     * @var TaxCategory|null
+     * @var null|TaxCategory
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory")
      * @JMS\Expose
@@ -180,7 +180,7 @@ class UtilityItemType
     private $taxCategory;
 
     /**
-     * @var Contract|null
+     * @var null|Contract
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Contract")
      * @JMS\Expose
@@ -191,7 +191,7 @@ class UtilityItemType
     private $contract;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -209,7 +209,7 @@ class UtilityItemType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -230,7 +230,7 @@ class UtilityItemType
     }
 
     /**
-     * @return SubscriberID|null
+     * @return null|SubscriberID
      */
     public function getSubscriberID(): ?SubscriberID
     {
@@ -248,7 +248,7 @@ class UtilityItemType
     }
 
     /**
-     * @param SubscriberID|null $subscriberID
+     * @param  null|SubscriberID $subscriberID
      * @return static
      */
     public function setSubscriberID(?SubscriberID $subscriberID = null): static
@@ -269,7 +269,7 @@ class UtilityItemType
     }
 
     /**
-     * @return SubscriberType|null
+     * @return null|SubscriberType
      */
     public function getSubscriberType(): ?SubscriberType
     {
@@ -287,7 +287,7 @@ class UtilityItemType
     }
 
     /**
-     * @param SubscriberType|null $subscriberType
+     * @param  null|SubscriberType $subscriberType
      * @return static
      */
     public function setSubscriberType(?SubscriberType $subscriberType = null): static
@@ -308,7 +308,7 @@ class UtilityItemType
     }
 
     /**
-     * @return SubscriberTypeCode|null
+     * @return null|SubscriberTypeCode
      */
     public function getSubscriberTypeCode(): ?SubscriberTypeCode
     {
@@ -326,7 +326,7 @@ class UtilityItemType
     }
 
     /**
-     * @param SubscriberTypeCode|null $subscriberTypeCode
+     * @param  null|SubscriberTypeCode $subscriberTypeCode
      * @return static
      */
     public function setSubscriberTypeCode(?SubscriberTypeCode $subscriberTypeCode = null): static
@@ -347,7 +347,7 @@ class UtilityItemType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -355,7 +355,7 @@ class UtilityItemType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -386,7 +386,7 @@ class UtilityItemType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -401,7 +401,7 @@ class UtilityItemType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -416,7 +416,7 @@ class UtilityItemType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -437,7 +437,7 @@ class UtilityItemType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -468,7 +468,7 @@ class UtilityItemType
     }
 
     /**
-     * @return PackQuantity|null
+     * @return null|PackQuantity
      */
     public function getPackQuantity(): ?PackQuantity
     {
@@ -486,7 +486,7 @@ class UtilityItemType
     }
 
     /**
-     * @param PackQuantity|null $packQuantity
+     * @param  null|PackQuantity $packQuantity
      * @return static
      */
     public function setPackQuantity(?PackQuantity $packQuantity = null): static
@@ -507,7 +507,7 @@ class UtilityItemType
     }
 
     /**
-     * @return PackSizeNumeric|null
+     * @return null|PackSizeNumeric
      */
     public function getPackSizeNumeric(): ?PackSizeNumeric
     {
@@ -525,7 +525,7 @@ class UtilityItemType
     }
 
     /**
-     * @param PackSizeNumeric|null $packSizeNumeric
+     * @param  null|PackSizeNumeric $packSizeNumeric
      * @return static
      */
     public function setPackSizeNumeric(?PackSizeNumeric $packSizeNumeric = null): static
@@ -546,7 +546,7 @@ class UtilityItemType
     }
 
     /**
-     * @return ConsumptionType|null
+     * @return null|ConsumptionType
      */
     public function getConsumptionType(): ?ConsumptionType
     {
@@ -564,7 +564,7 @@ class UtilityItemType
     }
 
     /**
-     * @param ConsumptionType|null $consumptionType
+     * @param  null|ConsumptionType $consumptionType
      * @return static
      */
     public function setConsumptionType(?ConsumptionType $consumptionType = null): static
@@ -585,7 +585,7 @@ class UtilityItemType
     }
 
     /**
-     * @return ConsumptionTypeCode|null
+     * @return null|ConsumptionTypeCode
      */
     public function getConsumptionTypeCode(): ?ConsumptionTypeCode
     {
@@ -603,7 +603,7 @@ class UtilityItemType
     }
 
     /**
-     * @param ConsumptionTypeCode|null $consumptionTypeCode
+     * @param  null|ConsumptionTypeCode $consumptionTypeCode
      * @return static
      */
     public function setConsumptionTypeCode(?ConsumptionTypeCode $consumptionTypeCode = null): static
@@ -624,7 +624,7 @@ class UtilityItemType
     }
 
     /**
-     * @return CurrentChargeType|null
+     * @return null|CurrentChargeType
      */
     public function getCurrentChargeType(): ?CurrentChargeType
     {
@@ -642,7 +642,7 @@ class UtilityItemType
     }
 
     /**
-     * @param CurrentChargeType|null $currentChargeType
+     * @param  null|CurrentChargeType $currentChargeType
      * @return static
      */
     public function setCurrentChargeType(?CurrentChargeType $currentChargeType = null): static
@@ -663,7 +663,7 @@ class UtilityItemType
     }
 
     /**
-     * @return CurrentChargeTypeCode|null
+     * @return null|CurrentChargeTypeCode
      */
     public function getCurrentChargeTypeCode(): ?CurrentChargeTypeCode
     {
@@ -681,7 +681,7 @@ class UtilityItemType
     }
 
     /**
-     * @param CurrentChargeTypeCode|null $currentChargeTypeCode
+     * @param  null|CurrentChargeTypeCode $currentChargeTypeCode
      * @return static
      */
     public function setCurrentChargeTypeCode(?CurrentChargeTypeCode $currentChargeTypeCode = null): static
@@ -702,7 +702,7 @@ class UtilityItemType
     }
 
     /**
-     * @return OneTimeChargeType|null
+     * @return null|OneTimeChargeType
      */
     public function getOneTimeChargeType(): ?OneTimeChargeType
     {
@@ -720,7 +720,7 @@ class UtilityItemType
     }
 
     /**
-     * @param OneTimeChargeType|null $oneTimeChargeType
+     * @param  null|OneTimeChargeType $oneTimeChargeType
      * @return static
      */
     public function setOneTimeChargeType(?OneTimeChargeType $oneTimeChargeType = null): static
@@ -741,7 +741,7 @@ class UtilityItemType
     }
 
     /**
-     * @return OneTimeChargeTypeCode|null
+     * @return null|OneTimeChargeTypeCode
      */
     public function getOneTimeChargeTypeCode(): ?OneTimeChargeTypeCode
     {
@@ -759,7 +759,7 @@ class UtilityItemType
     }
 
     /**
-     * @param OneTimeChargeTypeCode|null $oneTimeChargeTypeCode
+     * @param  null|OneTimeChargeTypeCode $oneTimeChargeTypeCode
      * @return static
      */
     public function setOneTimeChargeTypeCode(?OneTimeChargeTypeCode $oneTimeChargeTypeCode = null): static
@@ -780,7 +780,7 @@ class UtilityItemType
     }
 
     /**
-     * @return TaxCategory|null
+     * @return null|TaxCategory
      */
     public function getTaxCategory(): ?TaxCategory
     {
@@ -798,7 +798,7 @@ class UtilityItemType
     }
 
     /**
-     * @param TaxCategory|null $taxCategory
+     * @param  null|TaxCategory $taxCategory
      * @return static
      */
     public function setTaxCategory(?TaxCategory $taxCategory = null): static
@@ -819,7 +819,7 @@ class UtilityItemType
     }
 
     /**
-     * @return Contract|null
+     * @return null|Contract
      */
     public function getContract(): ?Contract
     {
@@ -837,7 +837,7 @@ class UtilityItemType
     }
 
     /**
-     * @param Contract|null $contract
+     * @param  null|Contract $contract
      * @return static
      */
     public function setContract(?Contract $contract = null): static

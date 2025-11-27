@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\main;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cac\AccountingCustomerParty;
 use horstoeko\invoicesuite\documents\models\ubl\cac\AccountingSupplierParty;
@@ -56,6 +55,7 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\TaxCurrencyCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UBLVersionID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
 use horstoeko\invoicesuite\documents\models\ubl\ext\UBLExtension;
+use JMS\Serializer\Annotation as JMS;
 
 /**
  * @JMS\XmlNamespace(uri="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2", prefix="cac")
@@ -67,7 +67,7 @@ class InvoiceType
     use HandlesObjectFlags;
 
     /**
-     * @var array<UBLExtension>|null
+     * @var null|array<UBLExtension>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\ext\UBLExtension>")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class InvoiceType
     private $uBLExtensions;
 
     /**
-     * @var UBLVersionID|null
+     * @var null|UBLVersionID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UBLVersionID")
      * @JMS\Expose
@@ -90,7 +90,7 @@ class InvoiceType
     private $uBLVersionID;
 
     /**
-     * @var CustomizationID|null
+     * @var null|CustomizationID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CustomizationID")
      * @JMS\Expose
@@ -101,7 +101,7 @@ class InvoiceType
     private $customizationID;
 
     /**
-     * @var ProfileID|null
+     * @var null|ProfileID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProfileID")
      * @JMS\Expose
@@ -112,7 +112,7 @@ class InvoiceType
     private $profileID;
 
     /**
-     * @var ProfileExecutionID|null
+     * @var null|ProfileExecutionID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProfileExecutionID")
      * @JMS\Expose
@@ -123,7 +123,7 @@ class InvoiceType
     private $profileExecutionID;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -134,7 +134,7 @@ class InvoiceType
     private $iD;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -145,7 +145,7 @@ class InvoiceType
     private $copyIndicator;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -156,7 +156,7 @@ class InvoiceType
     private $uUID;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -167,7 +167,7 @@ class InvoiceType
     private $issueDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -178,7 +178,7 @@ class InvoiceType
     private $issueTime;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -189,7 +189,7 @@ class InvoiceType
     private $dueDate;
 
     /**
-     * @var InvoiceTypeCode|null
+     * @var null|InvoiceTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InvoiceTypeCode")
      * @JMS\Expose
@@ -200,7 +200,7 @@ class InvoiceType
     private $invoiceTypeCode;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -212,7 +212,7 @@ class InvoiceType
     private $note;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -223,7 +223,7 @@ class InvoiceType
     private $taxPointDate;
 
     /**
-     * @var DocumentCurrencyCode|null
+     * @var null|DocumentCurrencyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentCurrencyCode")
      * @JMS\Expose
@@ -234,7 +234,7 @@ class InvoiceType
     private $documentCurrencyCode;
 
     /**
-     * @var TaxCurrencyCode|null
+     * @var null|TaxCurrencyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxCurrencyCode")
      * @JMS\Expose
@@ -245,7 +245,7 @@ class InvoiceType
     private $taxCurrencyCode;
 
     /**
-     * @var PricingCurrencyCode|null
+     * @var null|PricingCurrencyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PricingCurrencyCode")
      * @JMS\Expose
@@ -256,7 +256,7 @@ class InvoiceType
     private $pricingCurrencyCode;
 
     /**
-     * @var PaymentCurrencyCode|null
+     * @var null|PaymentCurrencyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentCurrencyCode")
      * @JMS\Expose
@@ -267,7 +267,7 @@ class InvoiceType
     private $paymentCurrencyCode;
 
     /**
-     * @var PaymentAlternativeCurrencyCode|null
+     * @var null|PaymentAlternativeCurrencyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentAlternativeCurrencyCode")
      * @JMS\Expose
@@ -278,7 +278,7 @@ class InvoiceType
     private $paymentAlternativeCurrencyCode;
 
     /**
-     * @var AccountingCostCode|null
+     * @var null|AccountingCostCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode")
      * @JMS\Expose
@@ -289,7 +289,7 @@ class InvoiceType
     private $accountingCostCode;
 
     /**
-     * @var AccountingCost|null
+     * @var null|AccountingCost
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost")
      * @JMS\Expose
@@ -300,7 +300,7 @@ class InvoiceType
     private $accountingCost;
 
     /**
-     * @var LineCountNumeric|null
+     * @var null|LineCountNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LineCountNumeric")
      * @JMS\Expose
@@ -311,7 +311,7 @@ class InvoiceType
     private $lineCountNumeric;
 
     /**
-     * @var BuyerReference|null
+     * @var null|BuyerReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BuyerReference")
      * @JMS\Expose
@@ -322,7 +322,7 @@ class InvoiceType
     private $buyerReference;
 
     /**
-     * @var array<InvoicePeriod>|null
+     * @var null|array<InvoicePeriod>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\InvoicePeriod>")
      * @JMS\Expose
@@ -334,7 +334,7 @@ class InvoiceType
     private $invoicePeriod;
 
     /**
-     * @var OrderReference|null
+     * @var null|OrderReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OrderReference")
      * @JMS\Expose
@@ -345,7 +345,7 @@ class InvoiceType
     private $orderReference;
 
     /**
-     * @var array<BillingReference>|null
+     * @var null|array<BillingReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\BillingReference>")
      * @JMS\Expose
@@ -357,7 +357,7 @@ class InvoiceType
     private $billingReference;
 
     /**
-     * @var array<DespatchDocumentReference>|null
+     * @var null|array<DespatchDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DespatchDocumentReference>")
      * @JMS\Expose
@@ -369,7 +369,7 @@ class InvoiceType
     private $despatchDocumentReference;
 
     /**
-     * @var array<ReceiptDocumentReference>|null
+     * @var null|array<ReceiptDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ReceiptDocumentReference>")
      * @JMS\Expose
@@ -381,7 +381,7 @@ class InvoiceType
     private $receiptDocumentReference;
 
     /**
-     * @var array<StatementDocumentReference>|null
+     * @var null|array<StatementDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\StatementDocumentReference>")
      * @JMS\Expose
@@ -393,7 +393,7 @@ class InvoiceType
     private $statementDocumentReference;
 
     /**
-     * @var array<OriginatorDocumentReference>|null
+     * @var null|array<OriginatorDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\OriginatorDocumentReference>")
      * @JMS\Expose
@@ -405,7 +405,7 @@ class InvoiceType
     private $originatorDocumentReference;
 
     /**
-     * @var array<ContractDocumentReference>|null
+     * @var null|array<ContractDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ContractDocumentReference>")
      * @JMS\Expose
@@ -417,7 +417,7 @@ class InvoiceType
     private $contractDocumentReference;
 
     /**
-     * @var array<AdditionalDocumentReference>|null
+     * @var null|array<AdditionalDocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalDocumentReference>")
      * @JMS\Expose
@@ -429,7 +429,7 @@ class InvoiceType
     private $additionalDocumentReference;
 
     /**
-     * @var array<ProjectReference>|null
+     * @var null|array<ProjectReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ProjectReference>")
      * @JMS\Expose
@@ -441,7 +441,7 @@ class InvoiceType
     private $projectReference;
 
     /**
-     * @var array<Signature>|null
+     * @var null|array<Signature>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Signature>")
      * @JMS\Expose
@@ -453,7 +453,7 @@ class InvoiceType
     private $signature;
 
     /**
-     * @var AccountingSupplierParty|null
+     * @var null|AccountingSupplierParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AccountingSupplierParty")
      * @JMS\Expose
@@ -464,7 +464,7 @@ class InvoiceType
     private $accountingSupplierParty;
 
     /**
-     * @var AccountingCustomerParty|null
+     * @var null|AccountingCustomerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\AccountingCustomerParty")
      * @JMS\Expose
@@ -475,7 +475,7 @@ class InvoiceType
     private $accountingCustomerParty;
 
     /**
-     * @var PayeeParty|null
+     * @var null|PayeeParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PayeeParty")
      * @JMS\Expose
@@ -486,7 +486,7 @@ class InvoiceType
     private $payeeParty;
 
     /**
-     * @var BuyerCustomerParty|null
+     * @var null|BuyerCustomerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\BuyerCustomerParty")
      * @JMS\Expose
@@ -497,7 +497,7 @@ class InvoiceType
     private $buyerCustomerParty;
 
     /**
-     * @var SellerSupplierParty|null
+     * @var null|SellerSupplierParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty")
      * @JMS\Expose
@@ -508,7 +508,7 @@ class InvoiceType
     private $sellerSupplierParty;
 
     /**
-     * @var TaxRepresentativeParty|null
+     * @var null|TaxRepresentativeParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TaxRepresentativeParty")
      * @JMS\Expose
@@ -519,7 +519,7 @@ class InvoiceType
     private $taxRepresentativeParty;
 
     /**
-     * @var array<Delivery>|null
+     * @var null|array<Delivery>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Delivery>")
      * @JMS\Expose
@@ -531,7 +531,7 @@ class InvoiceType
     private $delivery;
 
     /**
-     * @var DeliveryTerms|null
+     * @var null|DeliveryTerms
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\DeliveryTerms")
      * @JMS\Expose
@@ -542,7 +542,7 @@ class InvoiceType
     private $deliveryTerms;
 
     /**
-     * @var array<PaymentMeans>|null
+     * @var null|array<PaymentMeans>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans>")
      * @JMS\Expose
@@ -554,7 +554,7 @@ class InvoiceType
     private $paymentMeans;
 
     /**
-     * @var array<PaymentTerms>|null
+     * @var null|array<PaymentTerms>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PaymentTerms>")
      * @JMS\Expose
@@ -566,7 +566,7 @@ class InvoiceType
     private $paymentTerms;
 
     /**
-     * @var array<PrepaidPayment>|null
+     * @var null|array<PrepaidPayment>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PrepaidPayment>")
      * @JMS\Expose
@@ -578,7 +578,7 @@ class InvoiceType
     private $prepaidPayment;
 
     /**
-     * @var array<AllowanceCharge>|null
+     * @var null|array<AllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -590,7 +590,7 @@ class InvoiceType
     private $allowanceCharge;
 
     /**
-     * @var TaxExchangeRate|null
+     * @var null|TaxExchangeRate
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TaxExchangeRate")
      * @JMS\Expose
@@ -601,7 +601,7 @@ class InvoiceType
     private $taxExchangeRate;
 
     /**
-     * @var PricingExchangeRate|null
+     * @var null|PricingExchangeRate
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PricingExchangeRate")
      * @JMS\Expose
@@ -612,7 +612,7 @@ class InvoiceType
     private $pricingExchangeRate;
 
     /**
-     * @var PaymentExchangeRate|null
+     * @var null|PaymentExchangeRate
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PaymentExchangeRate")
      * @JMS\Expose
@@ -623,7 +623,7 @@ class InvoiceType
     private $paymentExchangeRate;
 
     /**
-     * @var PaymentAlternativeExchangeRate|null
+     * @var null|PaymentAlternativeExchangeRate
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PaymentAlternativeExchangeRate")
      * @JMS\Expose
@@ -634,7 +634,7 @@ class InvoiceType
     private $paymentAlternativeExchangeRate;
 
     /**
-     * @var array<TaxTotal>|null
+     * @var null|array<TaxTotal>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal>")
      * @JMS\Expose
@@ -646,7 +646,7 @@ class InvoiceType
     private $taxTotal;
 
     /**
-     * @var array<WithholdingTaxTotal>|null
+     * @var null|array<WithholdingTaxTotal>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\WithholdingTaxTotal>")
      * @JMS\Expose
@@ -658,7 +658,7 @@ class InvoiceType
     private $withholdingTaxTotal;
 
     /**
-     * @var LegalMonetaryTotal|null
+     * @var null|LegalMonetaryTotal
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LegalMonetaryTotal")
      * @JMS\Expose
@@ -669,7 +669,7 @@ class InvoiceType
     private $legalMonetaryTotal;
 
     /**
-     * @var array<InvoiceLine>|null
+     * @var null|array<InvoiceLine>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\InvoiceLine>")
      * @JMS\Expose
@@ -681,7 +681,7 @@ class InvoiceType
     private $invoiceLine;
 
     /**
-     * @return array<UBLExtension>|null
+     * @return null|array<UBLExtension>
      */
     public function getUBLExtensions(): ?array
     {
@@ -689,7 +689,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<UBLExtension>|null $uBLExtensions
+     * @param  null|array<UBLExtension> $uBLExtensions
      * @return static
      */
     public function setUBLExtensions(?array $uBLExtensions = null): static
@@ -720,7 +720,7 @@ class InvoiceType
     }
 
     /**
-     * @return UBLExtension|null
+     * @return null|UBLExtension
      */
     public function firstUBLExtensions(): ?UBLExtension
     {
@@ -735,7 +735,7 @@ class InvoiceType
     }
 
     /**
-     * @return UBLExtension|null
+     * @return null|UBLExtension
      */
     public function lastUBLExtensions(): ?UBLExtension
     {
@@ -750,7 +750,7 @@ class InvoiceType
     }
 
     /**
-     * @param UBLExtension $uBLExtensions
+     * @param  UBLExtension $uBLExtensions
      * @return static
      */
     public function addToUBLExtensions(UBLExtension $uBLExtensions): static
@@ -771,7 +771,7 @@ class InvoiceType
     }
 
     /**
-     * @param UBLExtension $uBLExtensions
+     * @param  UBLExtension $uBLExtensions
      * @return static
      */
     public function addOnceToUBLExtensions(UBLExtension $uBLExtensions): static
@@ -802,7 +802,7 @@ class InvoiceType
     }
 
     /**
-     * @return UBLVersionID|null
+     * @return null|UBLVersionID
      */
     public function getUBLVersionID(): ?UBLVersionID
     {
@@ -820,7 +820,7 @@ class InvoiceType
     }
 
     /**
-     * @param UBLVersionID|null $uBLVersionID
+     * @param  null|UBLVersionID $uBLVersionID
      * @return static
      */
     public function setUBLVersionID(?UBLVersionID $uBLVersionID = null): static
@@ -841,7 +841,7 @@ class InvoiceType
     }
 
     /**
-     * @return CustomizationID|null
+     * @return null|CustomizationID
      */
     public function getCustomizationID(): ?CustomizationID
     {
@@ -859,7 +859,7 @@ class InvoiceType
     }
 
     /**
-     * @param CustomizationID|null $customizationID
+     * @param  null|CustomizationID $customizationID
      * @return static
      */
     public function setCustomizationID(?CustomizationID $customizationID = null): static
@@ -880,7 +880,7 @@ class InvoiceType
     }
 
     /**
-     * @return ProfileID|null
+     * @return null|ProfileID
      */
     public function getProfileID(): ?ProfileID
     {
@@ -898,7 +898,7 @@ class InvoiceType
     }
 
     /**
-     * @param ProfileID|null $profileID
+     * @param  null|ProfileID $profileID
      * @return static
      */
     public function setProfileID(?ProfileID $profileID = null): static
@@ -919,7 +919,7 @@ class InvoiceType
     }
 
     /**
-     * @return ProfileExecutionID|null
+     * @return null|ProfileExecutionID
      */
     public function getProfileExecutionID(): ?ProfileExecutionID
     {
@@ -937,7 +937,7 @@ class InvoiceType
     }
 
     /**
-     * @param ProfileExecutionID|null $profileExecutionID
+     * @param  null|ProfileExecutionID $profileExecutionID
      * @return static
      */
     public function setProfileExecutionID(?ProfileExecutionID $profileExecutionID = null): static
@@ -958,7 +958,7 @@ class InvoiceType
     }
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -976,7 +976,7 @@ class InvoiceType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -997,7 +997,7 @@ class InvoiceType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getCopyIndicator(): ?bool
     {
@@ -1005,7 +1005,7 @@ class InvoiceType
     }
 
     /**
-     * @param bool|null $copyIndicator
+     * @param  null|bool $copyIndicator
      * @return static
      */
     public function setCopyIndicator(?bool $copyIndicator = null): static
@@ -1026,7 +1026,7 @@ class InvoiceType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -1044,7 +1044,7 @@ class InvoiceType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -1065,7 +1065,7 @@ class InvoiceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueDate(): ?DateTimeInterface
     {
@@ -1073,7 +1073,7 @@ class InvoiceType
     }
 
     /**
-     * @param DateTimeInterface|null $issueDate
+     * @param  null|DateTimeInterface $issueDate
      * @return static
      */
     public function setIssueDate(?DateTimeInterface $issueDate = null): static
@@ -1094,7 +1094,7 @@ class InvoiceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueTime(): ?DateTimeInterface
     {
@@ -1102,7 +1102,7 @@ class InvoiceType
     }
 
     /**
-     * @param DateTimeInterface|null $issueTime
+     * @param  null|DateTimeInterface $issueTime
      * @return static
      */
     public function setIssueTime(?DateTimeInterface $issueTime = null): static
@@ -1123,7 +1123,7 @@ class InvoiceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getDueDate(): ?DateTimeInterface
     {
@@ -1131,7 +1131,7 @@ class InvoiceType
     }
 
     /**
-     * @param DateTimeInterface|null $dueDate
+     * @param  null|DateTimeInterface $dueDate
      * @return static
      */
     public function setDueDate(?DateTimeInterface $dueDate = null): static
@@ -1152,7 +1152,7 @@ class InvoiceType
     }
 
     /**
-     * @return InvoiceTypeCode|null
+     * @return null|InvoiceTypeCode
      */
     public function getInvoiceTypeCode(): ?InvoiceTypeCode
     {
@@ -1170,7 +1170,7 @@ class InvoiceType
     }
 
     /**
-     * @param InvoiceTypeCode|null $invoiceTypeCode
+     * @param  null|InvoiceTypeCode $invoiceTypeCode
      * @return static
      */
     public function setInvoiceTypeCode(?InvoiceTypeCode $invoiceTypeCode = null): static
@@ -1191,7 +1191,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -1199,7 +1199,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -1230,7 +1230,7 @@ class InvoiceType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -1245,7 +1245,7 @@ class InvoiceType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -1260,7 +1260,7 @@ class InvoiceType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -1281,7 +1281,7 @@ class InvoiceType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -1312,7 +1312,7 @@ class InvoiceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getTaxPointDate(): ?DateTimeInterface
     {
@@ -1320,7 +1320,7 @@ class InvoiceType
     }
 
     /**
-     * @param DateTimeInterface|null $taxPointDate
+     * @param  null|DateTimeInterface $taxPointDate
      * @return static
      */
     public function setTaxPointDate(?DateTimeInterface $taxPointDate = null): static
@@ -1341,7 +1341,7 @@ class InvoiceType
     }
 
     /**
-     * @return DocumentCurrencyCode|null
+     * @return null|DocumentCurrencyCode
      */
     public function getDocumentCurrencyCode(): ?DocumentCurrencyCode
     {
@@ -1359,7 +1359,7 @@ class InvoiceType
     }
 
     /**
-     * @param DocumentCurrencyCode|null $documentCurrencyCode
+     * @param  null|DocumentCurrencyCode $documentCurrencyCode
      * @return static
      */
     public function setDocumentCurrencyCode(?DocumentCurrencyCode $documentCurrencyCode = null): static
@@ -1380,7 +1380,7 @@ class InvoiceType
     }
 
     /**
-     * @return TaxCurrencyCode|null
+     * @return null|TaxCurrencyCode
      */
     public function getTaxCurrencyCode(): ?TaxCurrencyCode
     {
@@ -1398,7 +1398,7 @@ class InvoiceType
     }
 
     /**
-     * @param TaxCurrencyCode|null $taxCurrencyCode
+     * @param  null|TaxCurrencyCode $taxCurrencyCode
      * @return static
      */
     public function setTaxCurrencyCode(?TaxCurrencyCode $taxCurrencyCode = null): static
@@ -1419,7 +1419,7 @@ class InvoiceType
     }
 
     /**
-     * @return PricingCurrencyCode|null
+     * @return null|PricingCurrencyCode
      */
     public function getPricingCurrencyCode(): ?PricingCurrencyCode
     {
@@ -1437,7 +1437,7 @@ class InvoiceType
     }
 
     /**
-     * @param PricingCurrencyCode|null $pricingCurrencyCode
+     * @param  null|PricingCurrencyCode $pricingCurrencyCode
      * @return static
      */
     public function setPricingCurrencyCode(?PricingCurrencyCode $pricingCurrencyCode = null): static
@@ -1458,7 +1458,7 @@ class InvoiceType
     }
 
     /**
-     * @return PaymentCurrencyCode|null
+     * @return null|PaymentCurrencyCode
      */
     public function getPaymentCurrencyCode(): ?PaymentCurrencyCode
     {
@@ -1476,7 +1476,7 @@ class InvoiceType
     }
 
     /**
-     * @param PaymentCurrencyCode|null $paymentCurrencyCode
+     * @param  null|PaymentCurrencyCode $paymentCurrencyCode
      * @return static
      */
     public function setPaymentCurrencyCode(?PaymentCurrencyCode $paymentCurrencyCode = null): static
@@ -1497,7 +1497,7 @@ class InvoiceType
     }
 
     /**
-     * @return PaymentAlternativeCurrencyCode|null
+     * @return null|PaymentAlternativeCurrencyCode
      */
     public function getPaymentAlternativeCurrencyCode(): ?PaymentAlternativeCurrencyCode
     {
@@ -1515,7 +1515,7 @@ class InvoiceType
     }
 
     /**
-     * @param PaymentAlternativeCurrencyCode|null $paymentAlternativeCurrencyCode
+     * @param  null|PaymentAlternativeCurrencyCode $paymentAlternativeCurrencyCode
      * @return static
      */
     public function setPaymentAlternativeCurrencyCode(
@@ -1537,7 +1537,7 @@ class InvoiceType
     }
 
     /**
-     * @return AccountingCostCode|null
+     * @return null|AccountingCostCode
      */
     public function getAccountingCostCode(): ?AccountingCostCode
     {
@@ -1555,7 +1555,7 @@ class InvoiceType
     }
 
     /**
-     * @param AccountingCostCode|null $accountingCostCode
+     * @param  null|AccountingCostCode $accountingCostCode
      * @return static
      */
     public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): static
@@ -1576,7 +1576,7 @@ class InvoiceType
     }
 
     /**
-     * @return AccountingCost|null
+     * @return null|AccountingCost
      */
     public function getAccountingCost(): ?AccountingCost
     {
@@ -1594,7 +1594,7 @@ class InvoiceType
     }
 
     /**
-     * @param AccountingCost|null $accountingCost
+     * @param  null|AccountingCost $accountingCost
      * @return static
      */
     public function setAccountingCost(?AccountingCost $accountingCost = null): static
@@ -1615,7 +1615,7 @@ class InvoiceType
     }
 
     /**
-     * @return LineCountNumeric|null
+     * @return null|LineCountNumeric
      */
     public function getLineCountNumeric(): ?LineCountNumeric
     {
@@ -1633,7 +1633,7 @@ class InvoiceType
     }
 
     /**
-     * @param LineCountNumeric|null $lineCountNumeric
+     * @param  null|LineCountNumeric $lineCountNumeric
      * @return static
      */
     public function setLineCountNumeric(?LineCountNumeric $lineCountNumeric = null): static
@@ -1654,7 +1654,7 @@ class InvoiceType
     }
 
     /**
-     * @return BuyerReference|null
+     * @return null|BuyerReference
      */
     public function getBuyerReference(): ?BuyerReference
     {
@@ -1672,7 +1672,7 @@ class InvoiceType
     }
 
     /**
-     * @param BuyerReference|null $buyerReference
+     * @param  null|BuyerReference $buyerReference
      * @return static
      */
     public function setBuyerReference(?BuyerReference $buyerReference = null): static
@@ -1693,7 +1693,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<InvoicePeriod>|null
+     * @return null|array<InvoicePeriod>
      */
     public function getInvoicePeriod(): ?array
     {
@@ -1701,7 +1701,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<InvoicePeriod>|null $invoicePeriod
+     * @param  null|array<InvoicePeriod> $invoicePeriod
      * @return static
      */
     public function setInvoicePeriod(?array $invoicePeriod = null): static
@@ -1732,7 +1732,7 @@ class InvoiceType
     }
 
     /**
-     * @return InvoicePeriod|null
+     * @return null|InvoicePeriod
      */
     public function firstInvoicePeriod(): ?InvoicePeriod
     {
@@ -1747,7 +1747,7 @@ class InvoiceType
     }
 
     /**
-     * @return InvoicePeriod|null
+     * @return null|InvoicePeriod
      */
     public function lastInvoicePeriod(): ?InvoicePeriod
     {
@@ -1762,7 +1762,7 @@ class InvoiceType
     }
 
     /**
-     * @param InvoicePeriod $invoicePeriod
+     * @param  InvoicePeriod $invoicePeriod
      * @return static
      */
     public function addToInvoicePeriod(InvoicePeriod $invoicePeriod): static
@@ -1783,7 +1783,7 @@ class InvoiceType
     }
 
     /**
-     * @param InvoicePeriod $invoicePeriod
+     * @param  InvoicePeriod $invoicePeriod
      * @return static
      */
     public function addOnceToInvoicePeriod(InvoicePeriod $invoicePeriod): static
@@ -1814,7 +1814,7 @@ class InvoiceType
     }
 
     /**
-     * @return OrderReference|null
+     * @return null|OrderReference
      */
     public function getOrderReference(): ?OrderReference
     {
@@ -1832,7 +1832,7 @@ class InvoiceType
     }
 
     /**
-     * @param OrderReference|null $orderReference
+     * @param  null|OrderReference $orderReference
      * @return static
      */
     public function setOrderReference(?OrderReference $orderReference = null): static
@@ -1853,7 +1853,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<BillingReference>|null
+     * @return null|array<BillingReference>
      */
     public function getBillingReference(): ?array
     {
@@ -1861,7 +1861,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<BillingReference>|null $billingReference
+     * @param  null|array<BillingReference> $billingReference
      * @return static
      */
     public function setBillingReference(?array $billingReference = null): static
@@ -1892,7 +1892,7 @@ class InvoiceType
     }
 
     /**
-     * @return BillingReference|null
+     * @return null|BillingReference
      */
     public function firstBillingReference(): ?BillingReference
     {
@@ -1907,7 +1907,7 @@ class InvoiceType
     }
 
     /**
-     * @return BillingReference|null
+     * @return null|BillingReference
      */
     public function lastBillingReference(): ?BillingReference
     {
@@ -1922,7 +1922,7 @@ class InvoiceType
     }
 
     /**
-     * @param BillingReference $billingReference
+     * @param  BillingReference $billingReference
      * @return static
      */
     public function addToBillingReference(BillingReference $billingReference): static
@@ -1943,7 +1943,7 @@ class InvoiceType
     }
 
     /**
-     * @param BillingReference $billingReference
+     * @param  BillingReference $billingReference
      * @return static
      */
     public function addOnceToBillingReference(BillingReference $billingReference): static
@@ -1974,7 +1974,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<DespatchDocumentReference>|null
+     * @return null|array<DespatchDocumentReference>
      */
     public function getDespatchDocumentReference(): ?array
     {
@@ -1982,7 +1982,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<DespatchDocumentReference>|null $despatchDocumentReference
+     * @param  null|array<DespatchDocumentReference> $despatchDocumentReference
      * @return static
      */
     public function setDespatchDocumentReference(?array $despatchDocumentReference = null): static
@@ -2013,7 +2013,7 @@ class InvoiceType
     }
 
     /**
-     * @return DespatchDocumentReference|null
+     * @return null|DespatchDocumentReference
      */
     public function firstDespatchDocumentReference(): ?DespatchDocumentReference
     {
@@ -2028,7 +2028,7 @@ class InvoiceType
     }
 
     /**
-     * @return DespatchDocumentReference|null
+     * @return null|DespatchDocumentReference
      */
     public function lastDespatchDocumentReference(): ?DespatchDocumentReference
     {
@@ -2043,7 +2043,7 @@ class InvoiceType
     }
 
     /**
-     * @param DespatchDocumentReference $despatchDocumentReference
+     * @param  DespatchDocumentReference $despatchDocumentReference
      * @return static
      */
     public function addToDespatchDocumentReference(DespatchDocumentReference $despatchDocumentReference): static
@@ -2064,7 +2064,7 @@ class InvoiceType
     }
 
     /**
-     * @param DespatchDocumentReference $despatchDocumentReference
+     * @param  DespatchDocumentReference $despatchDocumentReference
      * @return static
      */
     public function addOnceToDespatchDocumentReference(DespatchDocumentReference $despatchDocumentReference): static
@@ -2095,7 +2095,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<ReceiptDocumentReference>|null
+     * @return null|array<ReceiptDocumentReference>
      */
     public function getReceiptDocumentReference(): ?array
     {
@@ -2103,7 +2103,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<ReceiptDocumentReference>|null $receiptDocumentReference
+     * @param  null|array<ReceiptDocumentReference> $receiptDocumentReference
      * @return static
      */
     public function setReceiptDocumentReference(?array $receiptDocumentReference = null): static
@@ -2134,7 +2134,7 @@ class InvoiceType
     }
 
     /**
-     * @return ReceiptDocumentReference|null
+     * @return null|ReceiptDocumentReference
      */
     public function firstReceiptDocumentReference(): ?ReceiptDocumentReference
     {
@@ -2149,7 +2149,7 @@ class InvoiceType
     }
 
     /**
-     * @return ReceiptDocumentReference|null
+     * @return null|ReceiptDocumentReference
      */
     public function lastReceiptDocumentReference(): ?ReceiptDocumentReference
     {
@@ -2164,7 +2164,7 @@ class InvoiceType
     }
 
     /**
-     * @param ReceiptDocumentReference $receiptDocumentReference
+     * @param  ReceiptDocumentReference $receiptDocumentReference
      * @return static
      */
     public function addToReceiptDocumentReference(ReceiptDocumentReference $receiptDocumentReference): static
@@ -2185,7 +2185,7 @@ class InvoiceType
     }
 
     /**
-     * @param ReceiptDocumentReference $receiptDocumentReference
+     * @param  ReceiptDocumentReference $receiptDocumentReference
      * @return static
      */
     public function addOnceToReceiptDocumentReference(ReceiptDocumentReference $receiptDocumentReference): static
@@ -2216,7 +2216,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<StatementDocumentReference>|null
+     * @return null|array<StatementDocumentReference>
      */
     public function getStatementDocumentReference(): ?array
     {
@@ -2224,7 +2224,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<StatementDocumentReference>|null $statementDocumentReference
+     * @param  null|array<StatementDocumentReference> $statementDocumentReference
      * @return static
      */
     public function setStatementDocumentReference(?array $statementDocumentReference = null): static
@@ -2255,7 +2255,7 @@ class InvoiceType
     }
 
     /**
-     * @return StatementDocumentReference|null
+     * @return null|StatementDocumentReference
      */
     public function firstStatementDocumentReference(): ?StatementDocumentReference
     {
@@ -2270,7 +2270,7 @@ class InvoiceType
     }
 
     /**
-     * @return StatementDocumentReference|null
+     * @return null|StatementDocumentReference
      */
     public function lastStatementDocumentReference(): ?StatementDocumentReference
     {
@@ -2285,7 +2285,7 @@ class InvoiceType
     }
 
     /**
-     * @param StatementDocumentReference $statementDocumentReference
+     * @param  StatementDocumentReference $statementDocumentReference
      * @return static
      */
     public function addToStatementDocumentReference(StatementDocumentReference $statementDocumentReference): static
@@ -2306,7 +2306,7 @@ class InvoiceType
     }
 
     /**
-     * @param StatementDocumentReference $statementDocumentReference
+     * @param  StatementDocumentReference $statementDocumentReference
      * @return static
      */
     public function addOnceToStatementDocumentReference(StatementDocumentReference $statementDocumentReference): static
@@ -2337,7 +2337,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<OriginatorDocumentReference>|null
+     * @return null|array<OriginatorDocumentReference>
      */
     public function getOriginatorDocumentReference(): ?array
     {
@@ -2345,7 +2345,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<OriginatorDocumentReference>|null $originatorDocumentReference
+     * @param  null|array<OriginatorDocumentReference> $originatorDocumentReference
      * @return static
      */
     public function setOriginatorDocumentReference(?array $originatorDocumentReference = null): static
@@ -2376,7 +2376,7 @@ class InvoiceType
     }
 
     /**
-     * @return OriginatorDocumentReference|null
+     * @return null|OriginatorDocumentReference
      */
     public function firstOriginatorDocumentReference(): ?OriginatorDocumentReference
     {
@@ -2391,7 +2391,7 @@ class InvoiceType
     }
 
     /**
-     * @return OriginatorDocumentReference|null
+     * @return null|OriginatorDocumentReference
      */
     public function lastOriginatorDocumentReference(): ?OriginatorDocumentReference
     {
@@ -2406,7 +2406,7 @@ class InvoiceType
     }
 
     /**
-     * @param OriginatorDocumentReference $originatorDocumentReference
+     * @param  OriginatorDocumentReference $originatorDocumentReference
      * @return static
      */
     public function addToOriginatorDocumentReference(OriginatorDocumentReference $originatorDocumentReference): static
@@ -2427,7 +2427,7 @@ class InvoiceType
     }
 
     /**
-     * @param OriginatorDocumentReference $originatorDocumentReference
+     * @param  OriginatorDocumentReference $originatorDocumentReference
      * @return static
      */
     public function addOnceToOriginatorDocumentReference(
@@ -2459,7 +2459,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<ContractDocumentReference>|null
+     * @return null|array<ContractDocumentReference>
      */
     public function getContractDocumentReference(): ?array
     {
@@ -2467,7 +2467,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<ContractDocumentReference>|null $contractDocumentReference
+     * @param  null|array<ContractDocumentReference> $contractDocumentReference
      * @return static
      */
     public function setContractDocumentReference(?array $contractDocumentReference = null): static
@@ -2498,7 +2498,7 @@ class InvoiceType
     }
 
     /**
-     * @return ContractDocumentReference|null
+     * @return null|ContractDocumentReference
      */
     public function firstContractDocumentReference(): ?ContractDocumentReference
     {
@@ -2513,7 +2513,7 @@ class InvoiceType
     }
 
     /**
-     * @return ContractDocumentReference|null
+     * @return null|ContractDocumentReference
      */
     public function lastContractDocumentReference(): ?ContractDocumentReference
     {
@@ -2528,7 +2528,7 @@ class InvoiceType
     }
 
     /**
-     * @param ContractDocumentReference $contractDocumentReference
+     * @param  ContractDocumentReference $contractDocumentReference
      * @return static
      */
     public function addToContractDocumentReference(ContractDocumentReference $contractDocumentReference): static
@@ -2549,7 +2549,7 @@ class InvoiceType
     }
 
     /**
-     * @param ContractDocumentReference $contractDocumentReference
+     * @param  ContractDocumentReference $contractDocumentReference
      * @return static
      */
     public function addOnceToContractDocumentReference(ContractDocumentReference $contractDocumentReference): static
@@ -2580,7 +2580,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<AdditionalDocumentReference>|null
+     * @return null|array<AdditionalDocumentReference>
      */
     public function getAdditionalDocumentReference(): ?array
     {
@@ -2588,7 +2588,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<AdditionalDocumentReference>|null $additionalDocumentReference
+     * @param  null|array<AdditionalDocumentReference> $additionalDocumentReference
      * @return static
      */
     public function setAdditionalDocumentReference(?array $additionalDocumentReference = null): static
@@ -2619,7 +2619,7 @@ class InvoiceType
     }
 
     /**
-     * @return AdditionalDocumentReference|null
+     * @return null|AdditionalDocumentReference
      */
     public function firstAdditionalDocumentReference(): ?AdditionalDocumentReference
     {
@@ -2634,7 +2634,7 @@ class InvoiceType
     }
 
     /**
-     * @return AdditionalDocumentReference|null
+     * @return null|AdditionalDocumentReference
      */
     public function lastAdditionalDocumentReference(): ?AdditionalDocumentReference
     {
@@ -2649,7 +2649,7 @@ class InvoiceType
     }
 
     /**
-     * @param AdditionalDocumentReference $additionalDocumentReference
+     * @param  AdditionalDocumentReference $additionalDocumentReference
      * @return static
      */
     public function addToAdditionalDocumentReference(AdditionalDocumentReference $additionalDocumentReference): static
@@ -2670,7 +2670,7 @@ class InvoiceType
     }
 
     /**
-     * @param AdditionalDocumentReference $additionalDocumentReference
+     * @param  AdditionalDocumentReference $additionalDocumentReference
      * @return static
      */
     public function addOnceToAdditionalDocumentReference(
@@ -2702,7 +2702,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<ProjectReference>|null
+     * @return null|array<ProjectReference>
      */
     public function getProjectReference(): ?array
     {
@@ -2710,7 +2710,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<ProjectReference>|null $projectReference
+     * @param  null|array<ProjectReference> $projectReference
      * @return static
      */
     public function setProjectReference(?array $projectReference = null): static
@@ -2741,7 +2741,7 @@ class InvoiceType
     }
 
     /**
-     * @return ProjectReference|null
+     * @return null|ProjectReference
      */
     public function firstProjectReference(): ?ProjectReference
     {
@@ -2756,7 +2756,7 @@ class InvoiceType
     }
 
     /**
-     * @return ProjectReference|null
+     * @return null|ProjectReference
      */
     public function lastProjectReference(): ?ProjectReference
     {
@@ -2771,7 +2771,7 @@ class InvoiceType
     }
 
     /**
-     * @param ProjectReference $projectReference
+     * @param  ProjectReference $projectReference
      * @return static
      */
     public function addToProjectReference(ProjectReference $projectReference): static
@@ -2792,7 +2792,7 @@ class InvoiceType
     }
 
     /**
-     * @param ProjectReference $projectReference
+     * @param  ProjectReference $projectReference
      * @return static
      */
     public function addOnceToProjectReference(ProjectReference $projectReference): static
@@ -2823,7 +2823,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<Signature>|null
+     * @return null|array<Signature>
      */
     public function getSignature(): ?array
     {
@@ -2831,7 +2831,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<Signature>|null $signature
+     * @param  null|array<Signature> $signature
      * @return static
      */
     public function setSignature(?array $signature = null): static
@@ -2862,7 +2862,7 @@ class InvoiceType
     }
 
     /**
-     * @return Signature|null
+     * @return null|Signature
      */
     public function firstSignature(): ?Signature
     {
@@ -2877,7 +2877,7 @@ class InvoiceType
     }
 
     /**
-     * @return Signature|null
+     * @return null|Signature
      */
     public function lastSignature(): ?Signature
     {
@@ -2892,7 +2892,7 @@ class InvoiceType
     }
 
     /**
-     * @param Signature $signature
+     * @param  Signature $signature
      * @return static
      */
     public function addToSignature(Signature $signature): static
@@ -2913,7 +2913,7 @@ class InvoiceType
     }
 
     /**
-     * @param Signature $signature
+     * @param  Signature $signature
      * @return static
      */
     public function addOnceToSignature(Signature $signature): static
@@ -2944,7 +2944,7 @@ class InvoiceType
     }
 
     /**
-     * @return AccountingSupplierParty|null
+     * @return null|AccountingSupplierParty
      */
     public function getAccountingSupplierParty(): ?AccountingSupplierParty
     {
@@ -2962,7 +2962,7 @@ class InvoiceType
     }
 
     /**
-     * @param AccountingSupplierParty|null $accountingSupplierParty
+     * @param  null|AccountingSupplierParty $accountingSupplierParty
      * @return static
      */
     public function setAccountingSupplierParty(?AccountingSupplierParty $accountingSupplierParty = null): static
@@ -2983,7 +2983,7 @@ class InvoiceType
     }
 
     /**
-     * @return AccountingCustomerParty|null
+     * @return null|AccountingCustomerParty
      */
     public function getAccountingCustomerParty(): ?AccountingCustomerParty
     {
@@ -3001,7 +3001,7 @@ class InvoiceType
     }
 
     /**
-     * @param AccountingCustomerParty|null $accountingCustomerParty
+     * @param  null|AccountingCustomerParty $accountingCustomerParty
      * @return static
      */
     public function setAccountingCustomerParty(?AccountingCustomerParty $accountingCustomerParty = null): static
@@ -3022,7 +3022,7 @@ class InvoiceType
     }
 
     /**
-     * @return PayeeParty|null
+     * @return null|PayeeParty
      */
     public function getPayeeParty(): ?PayeeParty
     {
@@ -3040,7 +3040,7 @@ class InvoiceType
     }
 
     /**
-     * @param PayeeParty|null $payeeParty
+     * @param  null|PayeeParty $payeeParty
      * @return static
      */
     public function setPayeeParty(?PayeeParty $payeeParty = null): static
@@ -3061,7 +3061,7 @@ class InvoiceType
     }
 
     /**
-     * @return BuyerCustomerParty|null
+     * @return null|BuyerCustomerParty
      */
     public function getBuyerCustomerParty(): ?BuyerCustomerParty
     {
@@ -3079,7 +3079,7 @@ class InvoiceType
     }
 
     /**
-     * @param BuyerCustomerParty|null $buyerCustomerParty
+     * @param  null|BuyerCustomerParty $buyerCustomerParty
      * @return static
      */
     public function setBuyerCustomerParty(?BuyerCustomerParty $buyerCustomerParty = null): static
@@ -3100,7 +3100,7 @@ class InvoiceType
     }
 
     /**
-     * @return SellerSupplierParty|null
+     * @return null|SellerSupplierParty
      */
     public function getSellerSupplierParty(): ?SellerSupplierParty
     {
@@ -3118,7 +3118,7 @@ class InvoiceType
     }
 
     /**
-     * @param SellerSupplierParty|null $sellerSupplierParty
+     * @param  null|SellerSupplierParty $sellerSupplierParty
      * @return static
      */
     public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
@@ -3139,7 +3139,7 @@ class InvoiceType
     }
 
     /**
-     * @return TaxRepresentativeParty|null
+     * @return null|TaxRepresentativeParty
      */
     public function getTaxRepresentativeParty(): ?TaxRepresentativeParty
     {
@@ -3157,7 +3157,7 @@ class InvoiceType
     }
 
     /**
-     * @param TaxRepresentativeParty|null $taxRepresentativeParty
+     * @param  null|TaxRepresentativeParty $taxRepresentativeParty
      * @return static
      */
     public function setTaxRepresentativeParty(?TaxRepresentativeParty $taxRepresentativeParty = null): static
@@ -3178,7 +3178,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<Delivery>|null
+     * @return null|array<Delivery>
      */
     public function getDelivery(): ?array
     {
@@ -3186,7 +3186,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<Delivery>|null $delivery
+     * @param  null|array<Delivery> $delivery
      * @return static
      */
     public function setDelivery(?array $delivery = null): static
@@ -3217,7 +3217,7 @@ class InvoiceType
     }
 
     /**
-     * @return Delivery|null
+     * @return null|Delivery
      */
     public function firstDelivery(): ?Delivery
     {
@@ -3232,7 +3232,7 @@ class InvoiceType
     }
 
     /**
-     * @return Delivery|null
+     * @return null|Delivery
      */
     public function lastDelivery(): ?Delivery
     {
@@ -3247,7 +3247,7 @@ class InvoiceType
     }
 
     /**
-     * @param Delivery $delivery
+     * @param  Delivery $delivery
      * @return static
      */
     public function addToDelivery(Delivery $delivery): static
@@ -3268,7 +3268,7 @@ class InvoiceType
     }
 
     /**
-     * @param Delivery $delivery
+     * @param  Delivery $delivery
      * @return static
      */
     public function addOnceToDelivery(Delivery $delivery): static
@@ -3299,7 +3299,7 @@ class InvoiceType
     }
 
     /**
-     * @return DeliveryTerms|null
+     * @return null|DeliveryTerms
      */
     public function getDeliveryTerms(): ?DeliveryTerms
     {
@@ -3317,7 +3317,7 @@ class InvoiceType
     }
 
     /**
-     * @param DeliveryTerms|null $deliveryTerms
+     * @param  null|DeliveryTerms $deliveryTerms
      * @return static
      */
     public function setDeliveryTerms(?DeliveryTerms $deliveryTerms = null): static
@@ -3338,7 +3338,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<PaymentMeans>|null
+     * @return null|array<PaymentMeans>
      */
     public function getPaymentMeans(): ?array
     {
@@ -3346,7 +3346,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<PaymentMeans>|null $paymentMeans
+     * @param  null|array<PaymentMeans> $paymentMeans
      * @return static
      */
     public function setPaymentMeans(?array $paymentMeans = null): static
@@ -3377,7 +3377,7 @@ class InvoiceType
     }
 
     /**
-     * @return PaymentMeans|null
+     * @return null|PaymentMeans
      */
     public function firstPaymentMeans(): ?PaymentMeans
     {
@@ -3392,7 +3392,7 @@ class InvoiceType
     }
 
     /**
-     * @return PaymentMeans|null
+     * @return null|PaymentMeans
      */
     public function lastPaymentMeans(): ?PaymentMeans
     {
@@ -3407,7 +3407,7 @@ class InvoiceType
     }
 
     /**
-     * @param PaymentMeans $paymentMeans
+     * @param  PaymentMeans $paymentMeans
      * @return static
      */
     public function addToPaymentMeans(PaymentMeans $paymentMeans): static
@@ -3428,7 +3428,7 @@ class InvoiceType
     }
 
     /**
-     * @param PaymentMeans $paymentMeans
+     * @param  PaymentMeans $paymentMeans
      * @return static
      */
     public function addOnceToPaymentMeans(PaymentMeans $paymentMeans): static
@@ -3459,7 +3459,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<PaymentTerms>|null
+     * @return null|array<PaymentTerms>
      */
     public function getPaymentTerms(): ?array
     {
@@ -3467,7 +3467,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<PaymentTerms>|null $paymentTerms
+     * @param  null|array<PaymentTerms> $paymentTerms
      * @return static
      */
     public function setPaymentTerms(?array $paymentTerms = null): static
@@ -3498,7 +3498,7 @@ class InvoiceType
     }
 
     /**
-     * @return PaymentTerms|null
+     * @return null|PaymentTerms
      */
     public function firstPaymentTerms(): ?PaymentTerms
     {
@@ -3513,7 +3513,7 @@ class InvoiceType
     }
 
     /**
-     * @return PaymentTerms|null
+     * @return null|PaymentTerms
      */
     public function lastPaymentTerms(): ?PaymentTerms
     {
@@ -3528,7 +3528,7 @@ class InvoiceType
     }
 
     /**
-     * @param PaymentTerms $paymentTerms
+     * @param  PaymentTerms $paymentTerms
      * @return static
      */
     public function addToPaymentTerms(PaymentTerms $paymentTerms): static
@@ -3549,7 +3549,7 @@ class InvoiceType
     }
 
     /**
-     * @param PaymentTerms $paymentTerms
+     * @param  PaymentTerms $paymentTerms
      * @return static
      */
     public function addOnceToPaymentTerms(PaymentTerms $paymentTerms): static
@@ -3580,7 +3580,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<PrepaidPayment>|null
+     * @return null|array<PrepaidPayment>
      */
     public function getPrepaidPayment(): ?array
     {
@@ -3588,7 +3588,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<PrepaidPayment>|null $prepaidPayment
+     * @param  null|array<PrepaidPayment> $prepaidPayment
      * @return static
      */
     public function setPrepaidPayment(?array $prepaidPayment = null): static
@@ -3619,7 +3619,7 @@ class InvoiceType
     }
 
     /**
-     * @return PrepaidPayment|null
+     * @return null|PrepaidPayment
      */
     public function firstPrepaidPayment(): ?PrepaidPayment
     {
@@ -3634,7 +3634,7 @@ class InvoiceType
     }
 
     /**
-     * @return PrepaidPayment|null
+     * @return null|PrepaidPayment
      */
     public function lastPrepaidPayment(): ?PrepaidPayment
     {
@@ -3649,7 +3649,7 @@ class InvoiceType
     }
 
     /**
-     * @param PrepaidPayment $prepaidPayment
+     * @param  PrepaidPayment $prepaidPayment
      * @return static
      */
     public function addToPrepaidPayment(PrepaidPayment $prepaidPayment): static
@@ -3670,7 +3670,7 @@ class InvoiceType
     }
 
     /**
-     * @param PrepaidPayment $prepaidPayment
+     * @param  PrepaidPayment $prepaidPayment
      * @return static
      */
     public function addOnceToPrepaidPayment(PrepaidPayment $prepaidPayment): static
@@ -3701,7 +3701,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<AllowanceCharge>|null
+     * @return null|array<AllowanceCharge>
      */
     public function getAllowanceCharge(): ?array
     {
@@ -3709,7 +3709,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<AllowanceCharge>|null $allowanceCharge
+     * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): static
@@ -3740,7 +3740,7 @@ class InvoiceType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -3755,7 +3755,7 @@ class InvoiceType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -3770,7 +3770,7 @@ class InvoiceType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -3791,7 +3791,7 @@ class InvoiceType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -3822,7 +3822,7 @@ class InvoiceType
     }
 
     /**
-     * @return TaxExchangeRate|null
+     * @return null|TaxExchangeRate
      */
     public function getTaxExchangeRate(): ?TaxExchangeRate
     {
@@ -3840,7 +3840,7 @@ class InvoiceType
     }
 
     /**
-     * @param TaxExchangeRate|null $taxExchangeRate
+     * @param  null|TaxExchangeRate $taxExchangeRate
      * @return static
      */
     public function setTaxExchangeRate(?TaxExchangeRate $taxExchangeRate = null): static
@@ -3861,7 +3861,7 @@ class InvoiceType
     }
 
     /**
-     * @return PricingExchangeRate|null
+     * @return null|PricingExchangeRate
      */
     public function getPricingExchangeRate(): ?PricingExchangeRate
     {
@@ -3879,7 +3879,7 @@ class InvoiceType
     }
 
     /**
-     * @param PricingExchangeRate|null $pricingExchangeRate
+     * @param  null|PricingExchangeRate $pricingExchangeRate
      * @return static
      */
     public function setPricingExchangeRate(?PricingExchangeRate $pricingExchangeRate = null): static
@@ -3900,7 +3900,7 @@ class InvoiceType
     }
 
     /**
-     * @return PaymentExchangeRate|null
+     * @return null|PaymentExchangeRate
      */
     public function getPaymentExchangeRate(): ?PaymentExchangeRate
     {
@@ -3918,7 +3918,7 @@ class InvoiceType
     }
 
     /**
-     * @param PaymentExchangeRate|null $paymentExchangeRate
+     * @param  null|PaymentExchangeRate $paymentExchangeRate
      * @return static
      */
     public function setPaymentExchangeRate(?PaymentExchangeRate $paymentExchangeRate = null): static
@@ -3939,7 +3939,7 @@ class InvoiceType
     }
 
     /**
-     * @return PaymentAlternativeExchangeRate|null
+     * @return null|PaymentAlternativeExchangeRate
      */
     public function getPaymentAlternativeExchangeRate(): ?PaymentAlternativeExchangeRate
     {
@@ -3957,7 +3957,7 @@ class InvoiceType
     }
 
     /**
-     * @param PaymentAlternativeExchangeRate|null $paymentAlternativeExchangeRate
+     * @param  null|PaymentAlternativeExchangeRate $paymentAlternativeExchangeRate
      * @return static
      */
     public function setPaymentAlternativeExchangeRate(
@@ -3979,7 +3979,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<TaxTotal>|null
+     * @return null|array<TaxTotal>
      */
     public function getTaxTotal(): ?array
     {
@@ -3987,8 +3987,8 @@ class InvoiceType
     }
 
     /**
-     * @param int $index
-     * @return TaxTotal|null
+     * @param  int           $index
+     * @return null|TaxTotal
      */
     public function getTaxTotalAtIndex(int $index): ?TaxTotal
     {
@@ -4004,7 +4004,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<TaxTotal>|null $taxTotal
+     * @param  null|array<TaxTotal> $taxTotal
      * @return static
      */
     public function setTaxTotal(?array $taxTotal = null): static
@@ -4035,7 +4035,7 @@ class InvoiceType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function firstTaxTotal(): ?TaxTotal
     {
@@ -4050,7 +4050,7 @@ class InvoiceType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function lastTaxTotal(): ?TaxTotal
     {
@@ -4065,7 +4065,7 @@ class InvoiceType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addToTaxTotal(TaxTotal $taxTotal): static
@@ -4086,7 +4086,7 @@ class InvoiceType
     }
 
     /**
-     * @param int $index
+     * @param  int      $index
      * @return TaxTotal
      */
     public function addToTaxTotalWithCreateAtIndex(int $index): TaxTotal
@@ -4103,7 +4103,7 @@ class InvoiceType
     }
 
     /**
-     * @param TaxTotal $taxTotal
+     * @param  TaxTotal $taxTotal
      * @return static
      */
     public function addOnceToTaxTotal(TaxTotal $taxTotal): static
@@ -4134,7 +4134,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<WithholdingTaxTotal>|null
+     * @return null|array<WithholdingTaxTotal>
      */
     public function getWithholdingTaxTotal(): ?array
     {
@@ -4142,7 +4142,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<WithholdingTaxTotal>|null $withholdingTaxTotal
+     * @param  null|array<WithholdingTaxTotal> $withholdingTaxTotal
      * @return static
      */
     public function setWithholdingTaxTotal(?array $withholdingTaxTotal = null): static
@@ -4173,7 +4173,7 @@ class InvoiceType
     }
 
     /**
-     * @return WithholdingTaxTotal|null
+     * @return null|WithholdingTaxTotal
      */
     public function firstWithholdingTaxTotal(): ?WithholdingTaxTotal
     {
@@ -4188,7 +4188,7 @@ class InvoiceType
     }
 
     /**
-     * @return WithholdingTaxTotal|null
+     * @return null|WithholdingTaxTotal
      */
     public function lastWithholdingTaxTotal(): ?WithholdingTaxTotal
     {
@@ -4203,7 +4203,7 @@ class InvoiceType
     }
 
     /**
-     * @param WithholdingTaxTotal $withholdingTaxTotal
+     * @param  WithholdingTaxTotal $withholdingTaxTotal
      * @return static
      */
     public function addToWithholdingTaxTotal(WithholdingTaxTotal $withholdingTaxTotal): static
@@ -4224,7 +4224,7 @@ class InvoiceType
     }
 
     /**
-     * @param WithholdingTaxTotal $withholdingTaxTotal
+     * @param  WithholdingTaxTotal $withholdingTaxTotal
      * @return static
      */
     public function addOnceToWithholdingTaxTotal(WithholdingTaxTotal $withholdingTaxTotal): static
@@ -4255,7 +4255,7 @@ class InvoiceType
     }
 
     /**
-     * @return LegalMonetaryTotal|null
+     * @return null|LegalMonetaryTotal
      */
     public function getLegalMonetaryTotal(): ?LegalMonetaryTotal
     {
@@ -4273,7 +4273,7 @@ class InvoiceType
     }
 
     /**
-     * @param LegalMonetaryTotal|null $legalMonetaryTotal
+     * @param  null|LegalMonetaryTotal $legalMonetaryTotal
      * @return static
      */
     public function setLegalMonetaryTotal(?LegalMonetaryTotal $legalMonetaryTotal = null): static
@@ -4294,7 +4294,7 @@ class InvoiceType
     }
 
     /**
-     * @return array<InvoiceLine>|null
+     * @return null|array<InvoiceLine>
      */
     public function getInvoiceLine(): ?array
     {
@@ -4302,7 +4302,7 @@ class InvoiceType
     }
 
     /**
-     * @param array<InvoiceLine>|null $invoiceLine
+     * @param  null|array<InvoiceLine> $invoiceLine
      * @return static
      */
     public function setInvoiceLine(?array $invoiceLine = null): static
@@ -4333,7 +4333,7 @@ class InvoiceType
     }
 
     /**
-     * @return InvoiceLine|null
+     * @return null|InvoiceLine
      */
     public function firstInvoiceLine(): ?InvoiceLine
     {
@@ -4348,7 +4348,7 @@ class InvoiceType
     }
 
     /**
-     * @return InvoiceLine|null
+     * @return null|InvoiceLine
      */
     public function lastInvoiceLine(): ?InvoiceLine
     {
@@ -4363,7 +4363,7 @@ class InvoiceType
     }
 
     /**
-     * @param InvoiceLine $invoiceLine
+     * @param  InvoiceLine $invoiceLine
      * @return static
      */
     public function addToInvoiceLine(InvoiceLine $invoiceLine): static
@@ -4384,7 +4384,7 @@ class InvoiceType
     }
 
     /**
-     * @param InvoiceLine $invoiceLine
+     * @param  InvoiceLine $invoiceLine
      * @return static
      */
     public function addOnceToInvoiceLine(InvoiceLine $invoiceLine): static
@@ -4415,7 +4415,7 @@ class InvoiceType
     }
 
     /**
-     * @return InvoiceLine|null
+     * @return null|InvoiceLine
      */
     public function getLatestInvoiceLine(): ?InvoiceLine
     {
@@ -4430,7 +4430,7 @@ class InvoiceType
     }
 
     /**
-     * @return InvoiceLine|null
+     * @return null|InvoiceLine
      */
     public function getLatestInvoiceLineWithCreate(): ?InvoiceLine
     {

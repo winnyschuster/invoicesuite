@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LowTendersDescription;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentDescription;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PrizeDescription;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TechnicalCommitteeDescription;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\WeightingAlgorithmCode;
+use JMS\Serializer\Annotation as JMS;
 
 class AwardingTermsType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var WeightingAlgorithmCode|null
+     * @var null|WeightingAlgorithmCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\WeightingAlgorithmCode")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class AwardingTermsType
     private $weightingAlgorithmCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class AwardingTermsType
     private $description;
 
     /**
-     * @var array<TechnicalCommitteeDescription>|null
+     * @var null|array<TechnicalCommitteeDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\TechnicalCommitteeDescription>")
      * @JMS\Expose
@@ -53,7 +53,7 @@ class AwardingTermsType
     private $technicalCommitteeDescription;
 
     /**
-     * @var array<LowTendersDescription>|null
+     * @var null|array<LowTendersDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\LowTendersDescription>")
      * @JMS\Expose
@@ -65,7 +65,7 @@ class AwardingTermsType
     private $lowTendersDescription;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -76,7 +76,7 @@ class AwardingTermsType
     private $prizeIndicator;
 
     /**
-     * @var array<PrizeDescription>|null
+     * @var null|array<PrizeDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PrizeDescription>")
      * @JMS\Expose
@@ -88,7 +88,7 @@ class AwardingTermsType
     private $prizeDescription;
 
     /**
-     * @var array<PaymentDescription>|null
+     * @var null|array<PaymentDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PaymentDescription>")
      * @JMS\Expose
@@ -100,7 +100,7 @@ class AwardingTermsType
     private $paymentDescription;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -111,7 +111,7 @@ class AwardingTermsType
     private $followupContractIndicator;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -122,7 +122,7 @@ class AwardingTermsType
     private $bindingOnBuyerIndicator;
 
     /**
-     * @var array<AwardingCriterion>|null
+     * @var null|array<AwardingCriterion>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AwardingCriterion>")
      * @JMS\Expose
@@ -134,7 +134,7 @@ class AwardingTermsType
     private $awardingCriterion;
 
     /**
-     * @var array<TechnicalCommitteePerson>|null
+     * @var null|array<TechnicalCommitteePerson>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalCommitteePerson>")
      * @JMS\Expose
@@ -146,7 +146,7 @@ class AwardingTermsType
     private $technicalCommitteePerson;
 
     /**
-     * @return WeightingAlgorithmCode|null
+     * @return null|WeightingAlgorithmCode
      */
     public function getWeightingAlgorithmCode(): ?WeightingAlgorithmCode
     {
@@ -164,7 +164,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param WeightingAlgorithmCode|null $weightingAlgorithmCode
+     * @param  null|WeightingAlgorithmCode $weightingAlgorithmCode
      * @return static
      */
     public function setWeightingAlgorithmCode(?WeightingAlgorithmCode $weightingAlgorithmCode = null): static
@@ -185,7 +185,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -193,7 +193,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -224,7 +224,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -239,7 +239,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -254,7 +254,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -275,7 +275,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -306,7 +306,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return array<TechnicalCommitteeDescription>|null
+     * @return null|array<TechnicalCommitteeDescription>
      */
     public function getTechnicalCommitteeDescription(): ?array
     {
@@ -314,7 +314,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param array<TechnicalCommitteeDescription>|null $technicalCommitteeDescription
+     * @param  null|array<TechnicalCommitteeDescription> $technicalCommitteeDescription
      * @return static
      */
     public function setTechnicalCommitteeDescription(?array $technicalCommitteeDescription = null): static
@@ -345,7 +345,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return TechnicalCommitteeDescription|null
+     * @return null|TechnicalCommitteeDescription
      */
     public function firstTechnicalCommitteeDescription(): ?TechnicalCommitteeDescription
     {
@@ -360,7 +360,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return TechnicalCommitteeDescription|null
+     * @return null|TechnicalCommitteeDescription
      */
     public function lastTechnicalCommitteeDescription(): ?TechnicalCommitteeDescription
     {
@@ -375,7 +375,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param TechnicalCommitteeDescription $technicalCommitteeDescription
+     * @param  TechnicalCommitteeDescription $technicalCommitteeDescription
      * @return static
      */
     public function addToTechnicalCommitteeDescription(
@@ -397,7 +397,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param TechnicalCommitteeDescription $technicalCommitteeDescription
+     * @param  TechnicalCommitteeDescription $technicalCommitteeDescription
      * @return static
      */
     public function addOnceToTechnicalCommitteeDescription(
@@ -429,7 +429,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return array<LowTendersDescription>|null
+     * @return null|array<LowTendersDescription>
      */
     public function getLowTendersDescription(): ?array
     {
@@ -437,7 +437,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param array<LowTendersDescription>|null $lowTendersDescription
+     * @param  null|array<LowTendersDescription> $lowTendersDescription
      * @return static
      */
     public function setLowTendersDescription(?array $lowTendersDescription = null): static
@@ -468,7 +468,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return LowTendersDescription|null
+     * @return null|LowTendersDescription
      */
     public function firstLowTendersDescription(): ?LowTendersDescription
     {
@@ -483,7 +483,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return LowTendersDescription|null
+     * @return null|LowTendersDescription
      */
     public function lastLowTendersDescription(): ?LowTendersDescription
     {
@@ -498,7 +498,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param LowTendersDescription $lowTendersDescription
+     * @param  LowTendersDescription $lowTendersDescription
      * @return static
      */
     public function addToLowTendersDescription(LowTendersDescription $lowTendersDescription): static
@@ -519,7 +519,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param LowTendersDescription $lowTendersDescription
+     * @param  LowTendersDescription $lowTendersDescription
      * @return static
      */
     public function addOnceToLowTendersDescription(LowTendersDescription $lowTendersDescription): static
@@ -550,7 +550,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getPrizeIndicator(): ?bool
     {
@@ -558,7 +558,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param bool|null $prizeIndicator
+     * @param  null|bool $prizeIndicator
      * @return static
      */
     public function setPrizeIndicator(?bool $prizeIndicator = null): static
@@ -579,7 +579,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return array<PrizeDescription>|null
+     * @return null|array<PrizeDescription>
      */
     public function getPrizeDescription(): ?array
     {
@@ -587,7 +587,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param array<PrizeDescription>|null $prizeDescription
+     * @param  null|array<PrizeDescription> $prizeDescription
      * @return static
      */
     public function setPrizeDescription(?array $prizeDescription = null): static
@@ -618,7 +618,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return PrizeDescription|null
+     * @return null|PrizeDescription
      */
     public function firstPrizeDescription(): ?PrizeDescription
     {
@@ -633,7 +633,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return PrizeDescription|null
+     * @return null|PrizeDescription
      */
     public function lastPrizeDescription(): ?PrizeDescription
     {
@@ -648,7 +648,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param PrizeDescription $prizeDescription
+     * @param  PrizeDescription $prizeDescription
      * @return static
      */
     public function addToPrizeDescription(PrizeDescription $prizeDescription): static
@@ -669,7 +669,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param PrizeDescription $prizeDescription
+     * @param  PrizeDescription $prizeDescription
      * @return static
      */
     public function addOnceToPrizeDescription(PrizeDescription $prizeDescription): static
@@ -700,7 +700,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return array<PaymentDescription>|null
+     * @return null|array<PaymentDescription>
      */
     public function getPaymentDescription(): ?array
     {
@@ -708,7 +708,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param array<PaymentDescription>|null $paymentDescription
+     * @param  null|array<PaymentDescription> $paymentDescription
      * @return static
      */
     public function setPaymentDescription(?array $paymentDescription = null): static
@@ -739,7 +739,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return PaymentDescription|null
+     * @return null|PaymentDescription
      */
     public function firstPaymentDescription(): ?PaymentDescription
     {
@@ -754,7 +754,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return PaymentDescription|null
+     * @return null|PaymentDescription
      */
     public function lastPaymentDescription(): ?PaymentDescription
     {
@@ -769,7 +769,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param PaymentDescription $paymentDescription
+     * @param  PaymentDescription $paymentDescription
      * @return static
      */
     public function addToPaymentDescription(PaymentDescription $paymentDescription): static
@@ -790,7 +790,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param PaymentDescription $paymentDescription
+     * @param  PaymentDescription $paymentDescription
      * @return static
      */
     public function addOnceToPaymentDescription(PaymentDescription $paymentDescription): static
@@ -821,7 +821,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getFollowupContractIndicator(): ?bool
     {
@@ -829,7 +829,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param bool|null $followupContractIndicator
+     * @param  null|bool $followupContractIndicator
      * @return static
      */
     public function setFollowupContractIndicator(?bool $followupContractIndicator = null): static
@@ -850,7 +850,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getBindingOnBuyerIndicator(): ?bool
     {
@@ -858,7 +858,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param bool|null $bindingOnBuyerIndicator
+     * @param  null|bool $bindingOnBuyerIndicator
      * @return static
      */
     public function setBindingOnBuyerIndicator(?bool $bindingOnBuyerIndicator = null): static
@@ -879,7 +879,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return array<AwardingCriterion>|null
+     * @return null|array<AwardingCriterion>
      */
     public function getAwardingCriterion(): ?array
     {
@@ -887,7 +887,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param array<AwardingCriterion>|null $awardingCriterion
+     * @param  null|array<AwardingCriterion> $awardingCriterion
      * @return static
      */
     public function setAwardingCriterion(?array $awardingCriterion = null): static
@@ -918,7 +918,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return AwardingCriterion|null
+     * @return null|AwardingCriterion
      */
     public function firstAwardingCriterion(): ?AwardingCriterion
     {
@@ -933,7 +933,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return AwardingCriterion|null
+     * @return null|AwardingCriterion
      */
     public function lastAwardingCriterion(): ?AwardingCriterion
     {
@@ -948,7 +948,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param AwardingCriterion $awardingCriterion
+     * @param  AwardingCriterion $awardingCriterion
      * @return static
      */
     public function addToAwardingCriterion(AwardingCriterion $awardingCriterion): static
@@ -969,7 +969,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param AwardingCriterion $awardingCriterion
+     * @param  AwardingCriterion $awardingCriterion
      * @return static
      */
     public function addOnceToAwardingCriterion(AwardingCriterion $awardingCriterion): static
@@ -1000,7 +1000,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return array<TechnicalCommitteePerson>|null
+     * @return null|array<TechnicalCommitteePerson>
      */
     public function getTechnicalCommitteePerson(): ?array
     {
@@ -1008,7 +1008,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param array<TechnicalCommitteePerson>|null $technicalCommitteePerson
+     * @param  null|array<TechnicalCommitteePerson> $technicalCommitteePerson
      * @return static
      */
     public function setTechnicalCommitteePerson(?array $technicalCommitteePerson = null): static
@@ -1039,7 +1039,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return TechnicalCommitteePerson|null
+     * @return null|TechnicalCommitteePerson
      */
     public function firstTechnicalCommitteePerson(): ?TechnicalCommitteePerson
     {
@@ -1054,7 +1054,7 @@ class AwardingTermsType
     }
 
     /**
-     * @return TechnicalCommitteePerson|null
+     * @return null|TechnicalCommitteePerson
      */
     public function lastTechnicalCommitteePerson(): ?TechnicalCommitteePerson
     {
@@ -1069,7 +1069,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param TechnicalCommitteePerson $technicalCommitteePerson
+     * @param  TechnicalCommitteePerson $technicalCommitteePerson
      * @return static
      */
     public function addToTechnicalCommitteePerson(TechnicalCommitteePerson $technicalCommitteePerson): static
@@ -1090,7 +1090,7 @@ class AwardingTermsType
     }
 
     /**
-     * @param TechnicalCommitteePerson $technicalCommitteePerson
+     * @param  TechnicalCommitteePerson $technicalCommitteePerson
      * @return static
      */
     public function addOnceToTechnicalCommitteePerson(TechnicalCommitteePerson $technicalCommitteePerson): static

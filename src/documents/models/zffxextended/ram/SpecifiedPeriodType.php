@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class SpecifiedPeriodType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class SpecifiedPeriodType
     private $description;
 
     /**
-     * @var DateTimeType|null
+     * @var null|DateTimeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class SpecifiedPeriodType
     private $startDateTime;
 
     /**
-     * @var DateTimeType|null
+     * @var null|DateTimeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class SpecifiedPeriodType
     private $endDateTime;
 
     /**
-     * @var DateTimeType|null
+     * @var null|DateTimeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class SpecifiedPeriodType
     private $completeDateTime;
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getDescription(): ?TextType
     {
@@ -76,7 +76,7 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @param TextType|null $description
+     * @param  null|TextType $description
      * @return static
      */
     public function setDescription(?TextType $description = null): static
@@ -97,7 +97,7 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @return DateTimeType|null
+     * @return null|DateTimeType
      */
     public function getStartDateTime(): ?DateTimeType
     {
@@ -115,7 +115,7 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @param DateTimeType|null $startDateTime
+     * @param  null|DateTimeType $startDateTime
      * @return static
      */
     public function setStartDateTime(?DateTimeType $startDateTime = null): static
@@ -136,7 +136,7 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @return DateTimeType|null
+     * @return null|DateTimeType
      */
     public function getEndDateTime(): ?DateTimeType
     {
@@ -154,7 +154,7 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @param DateTimeType|null $endDateTime
+     * @param  null|DateTimeType $endDateTime
      * @return static
      */
     public function setEndDateTime(?DateTimeType $endDateTime = null): static
@@ -175,7 +175,7 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @return DateTimeType|null
+     * @return null|DateTimeType
      */
     public function getCompleteDateTime(): ?DateTimeType
     {
@@ -193,7 +193,7 @@ class SpecifiedPeriodType
     }
 
     /**
-     * @param DateTimeType|null $completeDateTime
+     * @param  null|DateTimeType $completeDateTime
      * @return static
      */
     public function setCompleteDateTime(?DateTimeType $completeDateTime = null): static

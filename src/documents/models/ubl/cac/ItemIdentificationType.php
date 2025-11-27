@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BarcodeSymbologyID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ExtendedID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
+use JMS\Serializer\Annotation as JMS;
 
 class ItemIdentificationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class ItemIdentificationType
     private $iD;
 
     /**
-     * @var ExtendedID|null
+     * @var null|ExtendedID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExtendedID")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class ItemIdentificationType
     private $extendedID;
 
     /**
-     * @var BarcodeSymbologyID|null
+     * @var null|BarcodeSymbologyID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BarcodeSymbologyID")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class ItemIdentificationType
     private $barcodeSymbologyID;
 
     /**
-     * @var array<PhysicalAttribute>|null
+     * @var null|array<PhysicalAttribute>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PhysicalAttribute>")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ItemIdentificationType
     private $physicalAttribute;
 
     /**
-     * @var array<MeasurementDimension>|null
+     * @var null|array<MeasurementDimension>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class ItemIdentificationType
     private $measurementDimension;
 
     /**
-     * @var IssuerParty|null
+     * @var null|IssuerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class ItemIdentificationType
     private $issuerParty;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -101,7 +101,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -122,7 +122,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return ExtendedID|null
+     * @return null|ExtendedID
      */
     public function getExtendedID(): ?ExtendedID
     {
@@ -140,7 +140,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param ExtendedID|null $extendedID
+     * @param  null|ExtendedID $extendedID
      * @return static
      */
     public function setExtendedID(?ExtendedID $extendedID = null): static
@@ -161,7 +161,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return BarcodeSymbologyID|null
+     * @return null|BarcodeSymbologyID
      */
     public function getBarcodeSymbologyID(): ?BarcodeSymbologyID
     {
@@ -179,7 +179,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param BarcodeSymbologyID|null $barcodeSymbologyID
+     * @param  null|BarcodeSymbologyID $barcodeSymbologyID
      * @return static
      */
     public function setBarcodeSymbologyID(?BarcodeSymbologyID $barcodeSymbologyID = null): static
@@ -200,7 +200,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return array<PhysicalAttribute>|null
+     * @return null|array<PhysicalAttribute>
      */
     public function getPhysicalAttribute(): ?array
     {
@@ -208,7 +208,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param array<PhysicalAttribute>|null $physicalAttribute
+     * @param  null|array<PhysicalAttribute> $physicalAttribute
      * @return static
      */
     public function setPhysicalAttribute(?array $physicalAttribute = null): static
@@ -239,7 +239,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return PhysicalAttribute|null
+     * @return null|PhysicalAttribute
      */
     public function firstPhysicalAttribute(): ?PhysicalAttribute
     {
@@ -254,7 +254,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return PhysicalAttribute|null
+     * @return null|PhysicalAttribute
      */
     public function lastPhysicalAttribute(): ?PhysicalAttribute
     {
@@ -269,7 +269,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param PhysicalAttribute $physicalAttribute
+     * @param  PhysicalAttribute $physicalAttribute
      * @return static
      */
     public function addToPhysicalAttribute(PhysicalAttribute $physicalAttribute): static
@@ -290,7 +290,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param PhysicalAttribute $physicalAttribute
+     * @param  PhysicalAttribute $physicalAttribute
      * @return static
      */
     public function addOnceToPhysicalAttribute(PhysicalAttribute $physicalAttribute): static
@@ -321,7 +321,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return array<MeasurementDimension>|null
+     * @return null|array<MeasurementDimension>
      */
     public function getMeasurementDimension(): ?array
     {
@@ -329,7 +329,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param array<MeasurementDimension>|null $measurementDimension
+     * @param  null|array<MeasurementDimension> $measurementDimension
      * @return static
      */
     public function setMeasurementDimension(?array $measurementDimension = null): static
@@ -360,7 +360,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return MeasurementDimension|null
+     * @return null|MeasurementDimension
      */
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
@@ -375,7 +375,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return MeasurementDimension|null
+     * @return null|MeasurementDimension
      */
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
@@ -390,7 +390,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param MeasurementDimension $measurementDimension
+     * @param  MeasurementDimension $measurementDimension
      * @return static
      */
     public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
@@ -411,7 +411,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param MeasurementDimension $measurementDimension
+     * @param  MeasurementDimension $measurementDimension
      * @return static
      */
     public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static
@@ -442,7 +442,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @return IssuerParty|null
+     * @return null|IssuerParty
      */
     public function getIssuerParty(): ?IssuerParty
     {
@@ -460,7 +460,7 @@ class ItemIdentificationType
     }
 
     /**
-     * @param IssuerParty|null $issuerParty
+     * @param  null|IssuerParty $issuerParty
      * @return static
      */
     public function setIssuerParty(?IssuerParty $issuerParty = null): static

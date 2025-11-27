@@ -5,23 +5,23 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\FreightRateClassCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Priority;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TariffClassCode;
-use horstoeko\invoicesuite\documents\models\ubl\cbc\TransportServiceCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TransportationServiceDescription;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TransportationServiceDetailsURI;
+use horstoeko\invoicesuite\documents\models\ubl\cbc\TransportServiceCode;
+use JMS\Serializer\Annotation as JMS;
 
 class TransportationServiceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TransportServiceCode|null
+     * @var null|TransportServiceCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TransportServiceCode")
      * @JMS\Expose
@@ -32,7 +32,7 @@ class TransportationServiceType
     private $transportServiceCode;
 
     /**
-     * @var TariffClassCode|null
+     * @var null|TariffClassCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TariffClassCode")
      * @JMS\Expose
@@ -43,7 +43,7 @@ class TransportationServiceType
     private $tariffClassCode;
 
     /**
-     * @var Priority|null
+     * @var null|Priority
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Priority")
      * @JMS\Expose
@@ -54,7 +54,7 @@ class TransportationServiceType
     private $priority;
 
     /**
-     * @var FreightRateClassCode|null
+     * @var null|FreightRateClassCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FreightRateClassCode")
      * @JMS\Expose
@@ -65,7 +65,7 @@ class TransportationServiceType
     private $freightRateClassCode;
 
     /**
-     * @var array<TransportationServiceDescription>|null
+     * @var null|array<TransportationServiceDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\TransportationServiceDescription>")
      * @JMS\Expose
@@ -77,7 +77,7 @@ class TransportationServiceType
     private $transportationServiceDescription;
 
     /**
-     * @var TransportationServiceDetailsURI|null
+     * @var null|TransportationServiceDetailsURI
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TransportationServiceDetailsURI")
      * @JMS\Expose
@@ -88,7 +88,7 @@ class TransportationServiceType
     private $transportationServiceDetailsURI;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -99,7 +99,7 @@ class TransportationServiceType
     private $nominationDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -110,7 +110,7 @@ class TransportationServiceType
     private $nominationTime;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -121,7 +121,7 @@ class TransportationServiceType
     private $name;
 
     /**
-     * @var SequenceNumeric|null
+     * @var null|SequenceNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric")
      * @JMS\Expose
@@ -132,7 +132,7 @@ class TransportationServiceType
     private $sequenceNumeric;
 
     /**
-     * @var array<TransportEquipment>|null
+     * @var null|array<TransportEquipment>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipment>")
      * @JMS\Expose
@@ -144,7 +144,7 @@ class TransportationServiceType
     private $transportEquipment;
 
     /**
-     * @var array<SupportedTransportEquipment>|null
+     * @var null|array<SupportedTransportEquipment>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SupportedTransportEquipment>")
      * @JMS\Expose
@@ -156,7 +156,7 @@ class TransportationServiceType
     private $supportedTransportEquipment;
 
     /**
-     * @var array<UnsupportedTransportEquipment>|null
+     * @var null|array<UnsupportedTransportEquipment>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\UnsupportedTransportEquipment>")
      * @JMS\Expose
@@ -168,7 +168,7 @@ class TransportationServiceType
     private $unsupportedTransportEquipment;
 
     /**
-     * @var array<CommodityClassification>|null
+     * @var null|array<CommodityClassification>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\CommodityClassification>")
      * @JMS\Expose
@@ -180,7 +180,7 @@ class TransportationServiceType
     private $commodityClassification;
 
     /**
-     * @var array<SupportedCommodityClassification>|null
+     * @var null|array<SupportedCommodityClassification>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SupportedCommodityClassification>")
      * @JMS\Expose
@@ -192,7 +192,7 @@ class TransportationServiceType
     private $supportedCommodityClassification;
 
     /**
-     * @var array<UnsupportedCommodityClassification>|null
+     * @var null|array<UnsupportedCommodityClassification>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\UnsupportedCommodityClassification>")
      * @JMS\Expose
@@ -204,7 +204,7 @@ class TransportationServiceType
     private $unsupportedCommodityClassification;
 
     /**
-     * @var TotalCapacityDimension|null
+     * @var null|TotalCapacityDimension
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TotalCapacityDimension")
      * @JMS\Expose
@@ -215,7 +215,7 @@ class TransportationServiceType
     private $totalCapacityDimension;
 
     /**
-     * @var array<ShipmentStage>|null
+     * @var null|array<ShipmentStage>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ShipmentStage>")
      * @JMS\Expose
@@ -227,7 +227,7 @@ class TransportationServiceType
     private $shipmentStage;
 
     /**
-     * @var array<TransportEvent>|null
+     * @var null|array<TransportEvent>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TransportEvent>")
      * @JMS\Expose
@@ -239,7 +239,7 @@ class TransportationServiceType
     private $transportEvent;
 
     /**
-     * @var ResponsibleTransportServiceProviderParty|null
+     * @var null|ResponsibleTransportServiceProviderParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ResponsibleTransportServiceProviderParty")
      * @JMS\Expose
@@ -250,7 +250,7 @@ class TransportationServiceType
     private $responsibleTransportServiceProviderParty;
 
     /**
-     * @var array<EnvironmentalEmission>|null
+     * @var null|array<EnvironmentalEmission>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EnvironmentalEmission>")
      * @JMS\Expose
@@ -262,7 +262,7 @@ class TransportationServiceType
     private $environmentalEmission;
 
     /**
-     * @var EstimatedDurationPeriod|null
+     * @var null|EstimatedDurationPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\EstimatedDurationPeriod")
      * @JMS\Expose
@@ -273,7 +273,7 @@ class TransportationServiceType
     private $estimatedDurationPeriod;
 
     /**
-     * @var array<ScheduledServiceFrequency>|null
+     * @var null|array<ScheduledServiceFrequency>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ScheduledServiceFrequency>")
      * @JMS\Expose
@@ -285,7 +285,7 @@ class TransportationServiceType
     private $scheduledServiceFrequency;
 
     /**
-     * @return TransportServiceCode|null
+     * @return null|TransportServiceCode
      */
     public function getTransportServiceCode(): ?TransportServiceCode
     {
@@ -303,7 +303,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param TransportServiceCode|null $transportServiceCode
+     * @param  null|TransportServiceCode $transportServiceCode
      * @return static
      */
     public function setTransportServiceCode(?TransportServiceCode $transportServiceCode = null): static
@@ -324,7 +324,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return TariffClassCode|null
+     * @return null|TariffClassCode
      */
     public function getTariffClassCode(): ?TariffClassCode
     {
@@ -342,7 +342,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param TariffClassCode|null $tariffClassCode
+     * @param  null|TariffClassCode $tariffClassCode
      * @return static
      */
     public function setTariffClassCode(?TariffClassCode $tariffClassCode = null): static
@@ -363,7 +363,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return Priority|null
+     * @return null|Priority
      */
     public function getPriority(): ?Priority
     {
@@ -381,7 +381,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param Priority|null $priority
+     * @param  null|Priority $priority
      * @return static
      */
     public function setPriority(?Priority $priority = null): static
@@ -402,7 +402,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return FreightRateClassCode|null
+     * @return null|FreightRateClassCode
      */
     public function getFreightRateClassCode(): ?FreightRateClassCode
     {
@@ -420,7 +420,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param FreightRateClassCode|null $freightRateClassCode
+     * @param  null|FreightRateClassCode $freightRateClassCode
      * @return static
      */
     public function setFreightRateClassCode(?FreightRateClassCode $freightRateClassCode = null): static
@@ -441,7 +441,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return array<TransportationServiceDescription>|null
+     * @return null|array<TransportationServiceDescription>
      */
     public function getTransportationServiceDescription(): ?array
     {
@@ -449,7 +449,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param array<TransportationServiceDescription>|null $transportationServiceDescription
+     * @param  null|array<TransportationServiceDescription> $transportationServiceDescription
      * @return static
      */
     public function setTransportationServiceDescription(?array $transportationServiceDescription = null): static
@@ -480,7 +480,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return TransportationServiceDescription|null
+     * @return null|TransportationServiceDescription
      */
     public function firstTransportationServiceDescription(): ?TransportationServiceDescription
     {
@@ -495,7 +495,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return TransportationServiceDescription|null
+     * @return null|TransportationServiceDescription
      */
     public function lastTransportationServiceDescription(): ?TransportationServiceDescription
     {
@@ -510,7 +510,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param TransportationServiceDescription $transportationServiceDescription
+     * @param  TransportationServiceDescription $transportationServiceDescription
      * @return static
      */
     public function addToTransportationServiceDescription(
@@ -532,7 +532,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param TransportationServiceDescription $transportationServiceDescription
+     * @param  TransportationServiceDescription $transportationServiceDescription
      * @return static
      */
     public function addOnceToTransportationServiceDescription(
@@ -564,7 +564,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return TransportationServiceDetailsURI|null
+     * @return null|TransportationServiceDetailsURI
      */
     public function getTransportationServiceDetailsURI(): ?TransportationServiceDetailsURI
     {
@@ -582,7 +582,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param TransportationServiceDetailsURI|null $transportationServiceDetailsURI
+     * @param  null|TransportationServiceDetailsURI $transportationServiceDetailsURI
      * @return static
      */
     public function setTransportationServiceDetailsURI(
@@ -604,7 +604,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getNominationDate(): ?DateTimeInterface
     {
@@ -612,7 +612,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param DateTimeInterface|null $nominationDate
+     * @param  null|DateTimeInterface $nominationDate
      * @return static
      */
     public function setNominationDate(?DateTimeInterface $nominationDate = null): static
@@ -633,7 +633,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getNominationTime(): ?DateTimeInterface
     {
@@ -641,7 +641,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param DateTimeInterface|null $nominationTime
+     * @param  null|DateTimeInterface $nominationTime
      * @return static
      */
     public function setNominationTime(?DateTimeInterface $nominationTime = null): static
@@ -662,7 +662,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -680,7 +680,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -701,7 +701,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return SequenceNumeric|null
+     * @return null|SequenceNumeric
      */
     public function getSequenceNumeric(): ?SequenceNumeric
     {
@@ -719,7 +719,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param SequenceNumeric|null $sequenceNumeric
+     * @param  null|SequenceNumeric $sequenceNumeric
      * @return static
      */
     public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): static
@@ -740,7 +740,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return array<TransportEquipment>|null
+     * @return null|array<TransportEquipment>
      */
     public function getTransportEquipment(): ?array
     {
@@ -748,7 +748,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param array<TransportEquipment>|null $transportEquipment
+     * @param  null|array<TransportEquipment> $transportEquipment
      * @return static
      */
     public function setTransportEquipment(?array $transportEquipment = null): static
@@ -779,7 +779,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return TransportEquipment|null
+     * @return null|TransportEquipment
      */
     public function firstTransportEquipment(): ?TransportEquipment
     {
@@ -794,7 +794,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return TransportEquipment|null
+     * @return null|TransportEquipment
      */
     public function lastTransportEquipment(): ?TransportEquipment
     {
@@ -809,7 +809,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param TransportEquipment $transportEquipment
+     * @param  TransportEquipment $transportEquipment
      * @return static
      */
     public function addToTransportEquipment(TransportEquipment $transportEquipment): static
@@ -830,7 +830,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param TransportEquipment $transportEquipment
+     * @param  TransportEquipment $transportEquipment
      * @return static
      */
     public function addOnceToTransportEquipment(TransportEquipment $transportEquipment): static
@@ -861,7 +861,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return array<SupportedTransportEquipment>|null
+     * @return null|array<SupportedTransportEquipment>
      */
     public function getSupportedTransportEquipment(): ?array
     {
@@ -869,7 +869,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param array<SupportedTransportEquipment>|null $supportedTransportEquipment
+     * @param  null|array<SupportedTransportEquipment> $supportedTransportEquipment
      * @return static
      */
     public function setSupportedTransportEquipment(?array $supportedTransportEquipment = null): static
@@ -900,7 +900,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return SupportedTransportEquipment|null
+     * @return null|SupportedTransportEquipment
      */
     public function firstSupportedTransportEquipment(): ?SupportedTransportEquipment
     {
@@ -915,7 +915,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return SupportedTransportEquipment|null
+     * @return null|SupportedTransportEquipment
      */
     public function lastSupportedTransportEquipment(): ?SupportedTransportEquipment
     {
@@ -930,7 +930,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param SupportedTransportEquipment $supportedTransportEquipment
+     * @param  SupportedTransportEquipment $supportedTransportEquipment
      * @return static
      */
     public function addToSupportedTransportEquipment(SupportedTransportEquipment $supportedTransportEquipment): static
@@ -951,7 +951,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param SupportedTransportEquipment $supportedTransportEquipment
+     * @param  SupportedTransportEquipment $supportedTransportEquipment
      * @return static
      */
     public function addOnceToSupportedTransportEquipment(
@@ -983,7 +983,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return array<UnsupportedTransportEquipment>|null
+     * @return null|array<UnsupportedTransportEquipment>
      */
     public function getUnsupportedTransportEquipment(): ?array
     {
@@ -991,7 +991,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param array<UnsupportedTransportEquipment>|null $unsupportedTransportEquipment
+     * @param  null|array<UnsupportedTransportEquipment> $unsupportedTransportEquipment
      * @return static
      */
     public function setUnsupportedTransportEquipment(?array $unsupportedTransportEquipment = null): static
@@ -1022,7 +1022,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return UnsupportedTransportEquipment|null
+     * @return null|UnsupportedTransportEquipment
      */
     public function firstUnsupportedTransportEquipment(): ?UnsupportedTransportEquipment
     {
@@ -1037,7 +1037,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return UnsupportedTransportEquipment|null
+     * @return null|UnsupportedTransportEquipment
      */
     public function lastUnsupportedTransportEquipment(): ?UnsupportedTransportEquipment
     {
@@ -1052,7 +1052,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param UnsupportedTransportEquipment $unsupportedTransportEquipment
+     * @param  UnsupportedTransportEquipment $unsupportedTransportEquipment
      * @return static
      */
     public function addToUnsupportedTransportEquipment(
@@ -1074,7 +1074,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param UnsupportedTransportEquipment $unsupportedTransportEquipment
+     * @param  UnsupportedTransportEquipment $unsupportedTransportEquipment
      * @return static
      */
     public function addOnceToUnsupportedTransportEquipment(
@@ -1106,7 +1106,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return array<CommodityClassification>|null
+     * @return null|array<CommodityClassification>
      */
     public function getCommodityClassification(): ?array
     {
@@ -1114,7 +1114,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param array<CommodityClassification>|null $commodityClassification
+     * @param  null|array<CommodityClassification> $commodityClassification
      * @return static
      */
     public function setCommodityClassification(?array $commodityClassification = null): static
@@ -1145,7 +1145,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return CommodityClassification|null
+     * @return null|CommodityClassification
      */
     public function firstCommodityClassification(): ?CommodityClassification
     {
@@ -1160,7 +1160,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return CommodityClassification|null
+     * @return null|CommodityClassification
      */
     public function lastCommodityClassification(): ?CommodityClassification
     {
@@ -1175,7 +1175,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param CommodityClassification $commodityClassification
+     * @param  CommodityClassification $commodityClassification
      * @return static
      */
     public function addToCommodityClassification(CommodityClassification $commodityClassification): static
@@ -1196,7 +1196,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param CommodityClassification $commodityClassification
+     * @param  CommodityClassification $commodityClassification
      * @return static
      */
     public function addOnceToCommodityClassification(CommodityClassification $commodityClassification): static
@@ -1227,7 +1227,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return array<SupportedCommodityClassification>|null
+     * @return null|array<SupportedCommodityClassification>
      */
     public function getSupportedCommodityClassification(): ?array
     {
@@ -1235,7 +1235,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param array<SupportedCommodityClassification>|null $supportedCommodityClassification
+     * @param  null|array<SupportedCommodityClassification> $supportedCommodityClassification
      * @return static
      */
     public function setSupportedCommodityClassification(?array $supportedCommodityClassification = null): static
@@ -1266,7 +1266,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return SupportedCommodityClassification|null
+     * @return null|SupportedCommodityClassification
      */
     public function firstSupportedCommodityClassification(): ?SupportedCommodityClassification
     {
@@ -1281,7 +1281,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return SupportedCommodityClassification|null
+     * @return null|SupportedCommodityClassification
      */
     public function lastSupportedCommodityClassification(): ?SupportedCommodityClassification
     {
@@ -1296,7 +1296,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param SupportedCommodityClassification $supportedCommodityClassification
+     * @param  SupportedCommodityClassification $supportedCommodityClassification
      * @return static
      */
     public function addToSupportedCommodityClassification(
@@ -1318,7 +1318,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param SupportedCommodityClassification $supportedCommodityClassification
+     * @param  SupportedCommodityClassification $supportedCommodityClassification
      * @return static
      */
     public function addOnceToSupportedCommodityClassification(
@@ -1350,7 +1350,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return array<UnsupportedCommodityClassification>|null
+     * @return null|array<UnsupportedCommodityClassification>
      */
     public function getUnsupportedCommodityClassification(): ?array
     {
@@ -1358,7 +1358,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param array<UnsupportedCommodityClassification>|null $unsupportedCommodityClassification
+     * @param  null|array<UnsupportedCommodityClassification> $unsupportedCommodityClassification
      * @return static
      */
     public function setUnsupportedCommodityClassification(?array $unsupportedCommodityClassification = null): static
@@ -1389,7 +1389,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return UnsupportedCommodityClassification|null
+     * @return null|UnsupportedCommodityClassification
      */
     public function firstUnsupportedCommodityClassification(): ?UnsupportedCommodityClassification
     {
@@ -1404,7 +1404,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return UnsupportedCommodityClassification|null
+     * @return null|UnsupportedCommodityClassification
      */
     public function lastUnsupportedCommodityClassification(): ?UnsupportedCommodityClassification
     {
@@ -1419,7 +1419,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param UnsupportedCommodityClassification $unsupportedCommodityClassification
+     * @param  UnsupportedCommodityClassification $unsupportedCommodityClassification
      * @return static
      */
     public function addToUnsupportedCommodityClassification(
@@ -1441,7 +1441,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param UnsupportedCommodityClassification $unsupportedCommodityClassification
+     * @param  UnsupportedCommodityClassification $unsupportedCommodityClassification
      * @return static
      */
     public function addOnceToUnsupportedCommodityClassification(
@@ -1473,7 +1473,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return TotalCapacityDimension|null
+     * @return null|TotalCapacityDimension
      */
     public function getTotalCapacityDimension(): ?TotalCapacityDimension
     {
@@ -1491,7 +1491,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param TotalCapacityDimension|null $totalCapacityDimension
+     * @param  null|TotalCapacityDimension $totalCapacityDimension
      * @return static
      */
     public function setTotalCapacityDimension(?TotalCapacityDimension $totalCapacityDimension = null): static
@@ -1512,7 +1512,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return array<ShipmentStage>|null
+     * @return null|array<ShipmentStage>
      */
     public function getShipmentStage(): ?array
     {
@@ -1520,7 +1520,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param array<ShipmentStage>|null $shipmentStage
+     * @param  null|array<ShipmentStage> $shipmentStage
      * @return static
      */
     public function setShipmentStage(?array $shipmentStage = null): static
@@ -1551,7 +1551,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return ShipmentStage|null
+     * @return null|ShipmentStage
      */
     public function firstShipmentStage(): ?ShipmentStage
     {
@@ -1566,7 +1566,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return ShipmentStage|null
+     * @return null|ShipmentStage
      */
     public function lastShipmentStage(): ?ShipmentStage
     {
@@ -1581,7 +1581,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param ShipmentStage $shipmentStage
+     * @param  ShipmentStage $shipmentStage
      * @return static
      */
     public function addToShipmentStage(ShipmentStage $shipmentStage): static
@@ -1602,7 +1602,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param ShipmentStage $shipmentStage
+     * @param  ShipmentStage $shipmentStage
      * @return static
      */
     public function addOnceToShipmentStage(ShipmentStage $shipmentStage): static
@@ -1633,7 +1633,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return array<TransportEvent>|null
+     * @return null|array<TransportEvent>
      */
     public function getTransportEvent(): ?array
     {
@@ -1641,7 +1641,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param array<TransportEvent>|null $transportEvent
+     * @param  null|array<TransportEvent> $transportEvent
      * @return static
      */
     public function setTransportEvent(?array $transportEvent = null): static
@@ -1672,7 +1672,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return TransportEvent|null
+     * @return null|TransportEvent
      */
     public function firstTransportEvent(): ?TransportEvent
     {
@@ -1687,7 +1687,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return TransportEvent|null
+     * @return null|TransportEvent
      */
     public function lastTransportEvent(): ?TransportEvent
     {
@@ -1702,7 +1702,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param TransportEvent $transportEvent
+     * @param  TransportEvent $transportEvent
      * @return static
      */
     public function addToTransportEvent(TransportEvent $transportEvent): static
@@ -1723,7 +1723,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param TransportEvent $transportEvent
+     * @param  TransportEvent $transportEvent
      * @return static
      */
     public function addOnceToTransportEvent(TransportEvent $transportEvent): static
@@ -1754,7 +1754,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return ResponsibleTransportServiceProviderParty|null
+     * @return null|ResponsibleTransportServiceProviderParty
      */
     public function getResponsibleTransportServiceProviderParty(): ?ResponsibleTransportServiceProviderParty
     {
@@ -1772,7 +1772,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param ResponsibleTransportServiceProviderParty|null $responsibleTransportServiceProviderParty
+     * @param  null|ResponsibleTransportServiceProviderParty $responsibleTransportServiceProviderParty
      * @return static
      */
     public function setResponsibleTransportServiceProviderParty(
@@ -1794,7 +1794,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return array<EnvironmentalEmission>|null
+     * @return null|array<EnvironmentalEmission>
      */
     public function getEnvironmentalEmission(): ?array
     {
@@ -1802,7 +1802,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param array<EnvironmentalEmission>|null $environmentalEmission
+     * @param  null|array<EnvironmentalEmission> $environmentalEmission
      * @return static
      */
     public function setEnvironmentalEmission(?array $environmentalEmission = null): static
@@ -1833,7 +1833,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return EnvironmentalEmission|null
+     * @return null|EnvironmentalEmission
      */
     public function firstEnvironmentalEmission(): ?EnvironmentalEmission
     {
@@ -1848,7 +1848,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return EnvironmentalEmission|null
+     * @return null|EnvironmentalEmission
      */
     public function lastEnvironmentalEmission(): ?EnvironmentalEmission
     {
@@ -1863,7 +1863,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param EnvironmentalEmission $environmentalEmission
+     * @param  EnvironmentalEmission $environmentalEmission
      * @return static
      */
     public function addToEnvironmentalEmission(EnvironmentalEmission $environmentalEmission): static
@@ -1884,7 +1884,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param EnvironmentalEmission $environmentalEmission
+     * @param  EnvironmentalEmission $environmentalEmission
      * @return static
      */
     public function addOnceToEnvironmentalEmission(EnvironmentalEmission $environmentalEmission): static
@@ -1915,7 +1915,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return EstimatedDurationPeriod|null
+     * @return null|EstimatedDurationPeriod
      */
     public function getEstimatedDurationPeriod(): ?EstimatedDurationPeriod
     {
@@ -1933,7 +1933,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param EstimatedDurationPeriod|null $estimatedDurationPeriod
+     * @param  null|EstimatedDurationPeriod $estimatedDurationPeriod
      * @return static
      */
     public function setEstimatedDurationPeriod(?EstimatedDurationPeriod $estimatedDurationPeriod = null): static
@@ -1954,7 +1954,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return array<ScheduledServiceFrequency>|null
+     * @return null|array<ScheduledServiceFrequency>
      */
     public function getScheduledServiceFrequency(): ?array
     {
@@ -1962,7 +1962,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param array<ScheduledServiceFrequency>|null $scheduledServiceFrequency
+     * @param  null|array<ScheduledServiceFrequency> $scheduledServiceFrequency
      * @return static
      */
     public function setScheduledServiceFrequency(?array $scheduledServiceFrequency = null): static
@@ -1993,7 +1993,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return ScheduledServiceFrequency|null
+     * @return null|ScheduledServiceFrequency
      */
     public function firstScheduledServiceFrequency(): ?ScheduledServiceFrequency
     {
@@ -2008,7 +2008,7 @@ class TransportationServiceType
     }
 
     /**
-     * @return ScheduledServiceFrequency|null
+     * @return null|ScheduledServiceFrequency
      */
     public function lastScheduledServiceFrequency(): ?ScheduledServiceFrequency
     {
@@ -2023,7 +2023,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param ScheduledServiceFrequency $scheduledServiceFrequency
+     * @param  ScheduledServiceFrequency $scheduledServiceFrequency
      * @return static
      */
     public function addToScheduledServiceFrequency(ScheduledServiceFrequency $scheduledServiceFrequency): static
@@ -2044,7 +2044,7 @@ class TransportationServiceType
     }
 
     /**
-     * @param ScheduledServiceFrequency $scheduledServiceFrequency
+     * @param  ScheduledServiceFrequency $scheduledServiceFrequency
      * @return static
      */
     public function addOnceToScheduledServiceFrequency(ScheduledServiceFrequency $scheduledServiceFrequency): static

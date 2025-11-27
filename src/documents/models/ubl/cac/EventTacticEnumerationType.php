@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumerIncentiveTacticTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DisplayTacticTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\FeatureTacticTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TradeItemPackingLabelingTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class EventTacticEnumerationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ConsumerIncentiveTacticTypeCode|null
+     * @var null|ConsumerIncentiveTacticTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ConsumerIncentiveTacticTypeCode")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class EventTacticEnumerationType
     private $consumerIncentiveTacticTypeCode;
 
     /**
-     * @var DisplayTacticTypeCode|null
+     * @var null|DisplayTacticTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DisplayTacticTypeCode")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class EventTacticEnumerationType
     private $displayTacticTypeCode;
 
     /**
-     * @var FeatureTacticTypeCode|null
+     * @var null|FeatureTacticTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\FeatureTacticTypeCode")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class EventTacticEnumerationType
     private $featureTacticTypeCode;
 
     /**
-     * @var TradeItemPackingLabelingTypeCode|null
+     * @var null|TradeItemPackingLabelingTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TradeItemPackingLabelingTypeCode")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class EventTacticEnumerationType
     private $tradeItemPackingLabelingTypeCode;
 
     /**
-     * @return ConsumerIncentiveTacticTypeCode|null
+     * @return null|ConsumerIncentiveTacticTypeCode
      */
     public function getConsumerIncentiveTacticTypeCode(): ?ConsumerIncentiveTacticTypeCode
     {
@@ -78,7 +78,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @param ConsumerIncentiveTacticTypeCode|null $consumerIncentiveTacticTypeCode
+     * @param  null|ConsumerIncentiveTacticTypeCode $consumerIncentiveTacticTypeCode
      * @return static
      */
     public function setConsumerIncentiveTacticTypeCode(
@@ -100,7 +100,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @return DisplayTacticTypeCode|null
+     * @return null|DisplayTacticTypeCode
      */
     public function getDisplayTacticTypeCode(): ?DisplayTacticTypeCode
     {
@@ -118,7 +118,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @param DisplayTacticTypeCode|null $displayTacticTypeCode
+     * @param  null|DisplayTacticTypeCode $displayTacticTypeCode
      * @return static
      */
     public function setDisplayTacticTypeCode(?DisplayTacticTypeCode $displayTacticTypeCode = null): static
@@ -139,7 +139,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @return FeatureTacticTypeCode|null
+     * @return null|FeatureTacticTypeCode
      */
     public function getFeatureTacticTypeCode(): ?FeatureTacticTypeCode
     {
@@ -157,7 +157,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @param FeatureTacticTypeCode|null $featureTacticTypeCode
+     * @param  null|FeatureTacticTypeCode $featureTacticTypeCode
      * @return static
      */
     public function setFeatureTacticTypeCode(?FeatureTacticTypeCode $featureTacticTypeCode = null): static
@@ -178,7 +178,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @return TradeItemPackingLabelingTypeCode|null
+     * @return null|TradeItemPackingLabelingTypeCode
      */
     public function getTradeItemPackingLabelingTypeCode(): ?TradeItemPackingLabelingTypeCode
     {
@@ -196,7 +196,7 @@ class EventTacticEnumerationType
     }
 
     /**
-     * @param TradeItemPackingLabelingTypeCode|null $tradeItemPackingLabelingTypeCode
+     * @param  null|TradeItemPackingLabelingTypeCode $tradeItemPackingLabelingTypeCode
      * @return static
      */
     public function setTradeItemPackingLabelingTypeCode(

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\qdt\DocumentCodeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\qdt\FormattedDateTimeType;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\zffxextended\qdt\ReferenceCodeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\BinaryObjectType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class ReferencedDocumentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class ReferencedDocumentType
     private $issuerAssignedID;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class ReferencedDocumentType
     private $uRIID;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -51,7 +51,7 @@ class ReferencedDocumentType
     private $lineID;
 
     /**
-     * @var DocumentCodeType|null
+     * @var null|DocumentCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\DocumentCodeType")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class ReferencedDocumentType
     private $typeCode;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class ReferencedDocumentType
     private $name;
 
     /**
-     * @var BinaryObjectType|null
+     * @var null|BinaryObjectType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\BinaryObjectType")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class ReferencedDocumentType
     private $attachmentBinaryObject;
 
     /**
-     * @var ReferenceCodeType|null
+     * @var null|ReferenceCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\ReferenceCodeType")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class ReferencedDocumentType
     private $referenceTypeCode;
 
     /**
-     * @var FormattedDateTimeType|null
+     * @var null|FormattedDateTimeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\FormattedDateTimeType")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class ReferencedDocumentType
     private $formattedIssueDateTime;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getIssuerAssignedID(): ?IDType
     {
@@ -124,7 +124,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param IDType|null $issuerAssignedID
+     * @param  null|IDType $issuerAssignedID
      * @return static
      */
     public function setIssuerAssignedID(?IDType $issuerAssignedID = null): static
@@ -145,7 +145,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getURIID(): ?IDType
     {
@@ -163,7 +163,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param IDType|null $uRIID
+     * @param  null|IDType $uRIID
      * @return static
      */
     public function setURIID(?IDType $uRIID = null): static
@@ -184,7 +184,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getLineID(): ?IDType
     {
@@ -202,7 +202,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param IDType|null $lineID
+     * @param  null|IDType $lineID
      * @return static
      */
     public function setLineID(?IDType $lineID = null): static
@@ -223,7 +223,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return DocumentCodeType|null
+     * @return null|DocumentCodeType
      */
     public function getTypeCode(): ?DocumentCodeType
     {
@@ -241,7 +241,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param DocumentCodeType|null $typeCode
+     * @param  null|DocumentCodeType $typeCode
      * @return static
      */
     public function setTypeCode(?DocumentCodeType $typeCode = null): static
@@ -262,7 +262,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getName(): ?TextType
     {
@@ -280,7 +280,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param TextType|null $name
+     * @param  null|TextType $name
      * @return static
      */
     public function setName(?TextType $name = null): static
@@ -301,7 +301,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return BinaryObjectType|null
+     * @return null|BinaryObjectType
      */
     public function getAttachmentBinaryObject(): ?BinaryObjectType
     {
@@ -319,7 +319,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param BinaryObjectType|null $attachmentBinaryObject
+     * @param  null|BinaryObjectType $attachmentBinaryObject
      * @return static
      */
     public function setAttachmentBinaryObject(?BinaryObjectType $attachmentBinaryObject = null): static
@@ -340,7 +340,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return ReferenceCodeType|null
+     * @return null|ReferenceCodeType
      */
     public function getReferenceTypeCode(): ?ReferenceCodeType
     {
@@ -358,7 +358,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param ReferenceCodeType|null $referenceTypeCode
+     * @param  null|ReferenceCodeType $referenceTypeCode
      * @return static
      */
     public function setReferenceTypeCode(?ReferenceCodeType $referenceTypeCode = null): static
@@ -379,7 +379,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @return FormattedDateTimeType|null
+     * @return null|FormattedDateTimeType
      */
     public function getFormattedIssueDateTime(): ?FormattedDateTimeType
     {
@@ -397,7 +397,7 @@ class ReferencedDocumentType
     }
 
     /**
-     * @param FormattedDateTimeType|null $formattedIssueDateTime
+     * @param  null|FormattedDateTimeType $formattedIssueDateTime
      * @return static
      */
     public function setFormattedIssueDateTime(?FormattedDateTimeType $formattedIssueDateTime = null): static

@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Measure;
+use JMS\Serializer\Annotation as JMS;
 
 class TemperatureType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AttributeID|null
+     * @var null|AttributeID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class TemperatureType
     private $attributeID;
 
     /**
-     * @var Measure|null
+     * @var null|Measure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Measure")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class TemperatureType
     private $measure;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class TemperatureType
     private $description;
 
     /**
-     * @return AttributeID|null
+     * @return null|AttributeID
      */
     public function getAttributeID(): ?AttributeID
     {
@@ -67,7 +67,7 @@ class TemperatureType
     }
 
     /**
-     * @param AttributeID|null $attributeID
+     * @param  null|AttributeID $attributeID
      * @return static
      */
     public function setAttributeID(?AttributeID $attributeID = null): static
@@ -88,7 +88,7 @@ class TemperatureType
     }
 
     /**
-     * @return Measure|null
+     * @return null|Measure
      */
     public function getMeasure(): ?Measure
     {
@@ -106,7 +106,7 @@ class TemperatureType
     }
 
     /**
-     * @param Measure|null $measure
+     * @param  null|Measure $measure
      * @return static
      */
     public function setMeasure(?Measure $measure = null): static
@@ -127,7 +127,7 @@ class TemperatureType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -135,7 +135,7 @@ class TemperatureType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -166,7 +166,7 @@ class TemperatureType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -181,7 +181,7 @@ class TemperatureType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -196,7 +196,7 @@ class TemperatureType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -217,7 +217,7 @@ class TemperatureType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentDescription;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentStatusCode;
@@ -17,13 +16,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\LocaleCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\XPath;
+use JMS\Serializer\Annotation as JMS;
 
 class DocumentReferenceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class DocumentReferenceType
     private $iD;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class DocumentReferenceType
     private $copyIndicator;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class DocumentReferenceType
     private $uUID;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class DocumentReferenceType
     private $issueDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -78,7 +78,7 @@ class DocumentReferenceType
     private $issueTime;
 
     /**
-     * @var DocumentTypeCode|null
+     * @var null|DocumentTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentTypeCode")
      * @JMS\Expose
@@ -89,7 +89,7 @@ class DocumentReferenceType
     private $documentTypeCode;
 
     /**
-     * @var DocumentType|null
+     * @var null|DocumentType
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentType")
      * @JMS\Expose
@@ -100,7 +100,7 @@ class DocumentReferenceType
     private $documentType;
 
     /**
-     * @var array<XPath>|null
+     * @var null|array<XPath>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\XPath>")
      * @JMS\Expose
@@ -112,7 +112,7 @@ class DocumentReferenceType
     private $xPath;
 
     /**
-     * @var LanguageID|null
+     * @var null|LanguageID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LanguageID")
      * @JMS\Expose
@@ -123,7 +123,7 @@ class DocumentReferenceType
     private $languageID;
 
     /**
-     * @var LocaleCode|null
+     * @var null|LocaleCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LocaleCode")
      * @JMS\Expose
@@ -134,7 +134,7 @@ class DocumentReferenceType
     private $localeCode;
 
     /**
-     * @var VersionID|null
+     * @var null|VersionID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID")
      * @JMS\Expose
@@ -145,7 +145,7 @@ class DocumentReferenceType
     private $versionID;
 
     /**
-     * @var DocumentStatusCode|null
+     * @var null|DocumentStatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentStatusCode")
      * @JMS\Expose
@@ -156,7 +156,7 @@ class DocumentReferenceType
     private $documentStatusCode;
 
     /**
-     * @var array<DocumentDescription>|null
+     * @var null|array<DocumentDescription>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\DocumentDescription>")
      * @JMS\Expose
@@ -168,7 +168,7 @@ class DocumentReferenceType
     private $documentDescription;
 
     /**
-     * @var Attachment|null
+     * @var null|Attachment
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Attachment")
      * @JMS\Expose
@@ -179,7 +179,7 @@ class DocumentReferenceType
     private $attachment;
 
     /**
-     * @var ValidityPeriod|null
+     * @var null|ValidityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod")
      * @JMS\Expose
@@ -190,7 +190,7 @@ class DocumentReferenceType
     private $validityPeriod;
 
     /**
-     * @var IssuerParty|null
+     * @var null|IssuerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\IssuerParty")
      * @JMS\Expose
@@ -201,7 +201,7 @@ class DocumentReferenceType
     private $issuerParty;
 
     /**
-     * @var ResultOfVerification|null
+     * @var null|ResultOfVerification
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ResultOfVerification")
      * @JMS\Expose
@@ -212,7 +212,7 @@ class DocumentReferenceType
     private $resultOfVerification;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -230,7 +230,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -251,7 +251,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getCopyIndicator(): ?bool
     {
@@ -259,7 +259,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param bool|null $copyIndicator
+     * @param  null|bool $copyIndicator
      * @return static
      */
     public function setCopyIndicator(?bool $copyIndicator = null): static
@@ -280,7 +280,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -298,7 +298,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -319,7 +319,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueDate(): ?DateTimeInterface
     {
@@ -327,7 +327,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param DateTimeInterface|null $issueDate
+     * @param  null|DateTimeInterface $issueDate
      * @return static
      */
     public function setIssueDate(?DateTimeInterface $issueDate = null): static
@@ -348,7 +348,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueTime(): ?DateTimeInterface
     {
@@ -356,7 +356,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param DateTimeInterface|null $issueTime
+     * @param  null|DateTimeInterface $issueTime
      * @return static
      */
     public function setIssueTime(?DateTimeInterface $issueTime = null): static
@@ -377,7 +377,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return DocumentTypeCode|null
+     * @return null|DocumentTypeCode
      */
     public function getDocumentTypeCode(): ?DocumentTypeCode
     {
@@ -395,7 +395,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param DocumentTypeCode|null $documentTypeCode
+     * @param  null|DocumentTypeCode $documentTypeCode
      * @return static
      */
     public function setDocumentTypeCode(?DocumentTypeCode $documentTypeCode = null): static
@@ -416,7 +416,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return DocumentType|null
+     * @return null|DocumentType
      */
     public function getDocumentType(): ?DocumentType
     {
@@ -434,7 +434,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param DocumentType|null $documentType
+     * @param  null|DocumentType $documentType
      * @return static
      */
     public function setDocumentType(?DocumentType $documentType = null): static
@@ -455,7 +455,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return array<XPath>|null
+     * @return null|array<XPath>
      */
     public function getXPath(): ?array
     {
@@ -463,7 +463,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param array<XPath>|null $xPath
+     * @param  null|array<XPath> $xPath
      * @return static
      */
     public function setXPath(?array $xPath = null): static
@@ -494,7 +494,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return XPath|null
+     * @return null|XPath
      */
     public function firstXPath(): ?XPath
     {
@@ -509,7 +509,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return XPath|null
+     * @return null|XPath
      */
     public function lastXPath(): ?XPath
     {
@@ -524,7 +524,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param XPath $xPath
+     * @param  XPath  $xPath
      * @return static
      */
     public function addToXPath(XPath $xPath): static
@@ -545,7 +545,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param XPath $xPath
+     * @param  XPath  $xPath
      * @return static
      */
     public function addOnceToXPath(XPath $xPath): static
@@ -576,7 +576,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return LanguageID|null
+     * @return null|LanguageID
      */
     public function getLanguageID(): ?LanguageID
     {
@@ -594,7 +594,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param LanguageID|null $languageID
+     * @param  null|LanguageID $languageID
      * @return static
      */
     public function setLanguageID(?LanguageID $languageID = null): static
@@ -615,7 +615,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return LocaleCode|null
+     * @return null|LocaleCode
      */
     public function getLocaleCode(): ?LocaleCode
     {
@@ -633,7 +633,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param LocaleCode|null $localeCode
+     * @param  null|LocaleCode $localeCode
      * @return static
      */
     public function setLocaleCode(?LocaleCode $localeCode = null): static
@@ -654,7 +654,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return VersionID|null
+     * @return null|VersionID
      */
     public function getVersionID(): ?VersionID
     {
@@ -672,7 +672,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param VersionID|null $versionID
+     * @param  null|VersionID $versionID
      * @return static
      */
     public function setVersionID(?VersionID $versionID = null): static
@@ -693,7 +693,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return DocumentStatusCode|null
+     * @return null|DocumentStatusCode
      */
     public function getDocumentStatusCode(): ?DocumentStatusCode
     {
@@ -711,7 +711,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param DocumentStatusCode|null $documentStatusCode
+     * @param  null|DocumentStatusCode $documentStatusCode
      * @return static
      */
     public function setDocumentStatusCode(?DocumentStatusCode $documentStatusCode = null): static
@@ -732,7 +732,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return array<DocumentDescription>|null
+     * @return null|array<DocumentDescription>
      */
     public function getDocumentDescription(): ?array
     {
@@ -740,7 +740,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param array<DocumentDescription>|null $documentDescription
+     * @param  null|array<DocumentDescription> $documentDescription
      * @return static
      */
     public function setDocumentDescription(?array $documentDescription = null): static
@@ -771,7 +771,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return DocumentDescription|null
+     * @return null|DocumentDescription
      */
     public function firstDocumentDescription(): ?DocumentDescription
     {
@@ -786,7 +786,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return DocumentDescription|null
+     * @return null|DocumentDescription
      */
     public function lastDocumentDescription(): ?DocumentDescription
     {
@@ -801,7 +801,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param DocumentDescription $documentDescription
+     * @param  DocumentDescription $documentDescription
      * @return static
      */
     public function addToDocumentDescription(DocumentDescription $documentDescription): static
@@ -822,7 +822,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param DocumentDescription $documentDescription
+     * @param  DocumentDescription $documentDescription
      * @return static
      */
     public function addOnceToDocumentDescription(DocumentDescription $documentDescription): static
@@ -853,7 +853,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return Attachment|null
+     * @return null|Attachment
      */
     public function getAttachment(): ?Attachment
     {
@@ -871,7 +871,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param Attachment|null $attachment
+     * @param  null|Attachment $attachment
      * @return static
      */
     public function setAttachment(?Attachment $attachment = null): static
@@ -892,7 +892,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return ValidityPeriod|null
+     * @return null|ValidityPeriod
      */
     public function getValidityPeriod(): ?ValidityPeriod
     {
@@ -910,7 +910,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param ValidityPeriod|null $validityPeriod
+     * @param  null|ValidityPeriod $validityPeriod
      * @return static
      */
     public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): static
@@ -931,7 +931,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return IssuerParty|null
+     * @return null|IssuerParty
      */
     public function getIssuerParty(): ?IssuerParty
     {
@@ -949,7 +949,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param IssuerParty|null $issuerParty
+     * @param  null|IssuerParty $issuerParty
      * @return static
      */
     public function setIssuerParty(?IssuerParty $issuerParty = null): static
@@ -970,7 +970,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @return ResultOfVerification|null
+     * @return null|ResultOfVerification
      */
     public function getResultOfVerification(): ?ResultOfVerification
     {
@@ -988,7 +988,7 @@ class DocumentReferenceType
     }
 
     /**
-     * @param ResultOfVerification|null $resultOfVerification
+     * @param  null|ResultOfVerification $resultOfVerification
      * @return static
      */
     public function setResultOfVerification(?ResultOfVerification $resultOfVerification = null): static

@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxcomfort\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class HeaderTradeDeliveryType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TradePartyType|null
+     * @var null|TradePartyType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\TradePartyType")
      * @JMS\Expose
@@ -23,7 +23,7 @@ class HeaderTradeDeliveryType
     private $shipToTradeParty;
 
     /**
-     * @var SupplyChainEventType|null
+     * @var null|SupplyChainEventType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\SupplyChainEventType")
      * @JMS\Expose
@@ -34,7 +34,7 @@ class HeaderTradeDeliveryType
     private $actualDeliverySupplyChainEvent;
 
     /**
-     * @var ReferencedDocumentType|null
+     * @var null|ReferencedDocumentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -45,7 +45,7 @@ class HeaderTradeDeliveryType
     private $despatchAdviceReferencedDocument;
 
     /**
-     * @var ReferencedDocumentType|null
+     * @var null|ReferencedDocumentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -56,7 +56,7 @@ class HeaderTradeDeliveryType
     private $receivingAdviceReferencedDocument;
 
     /**
-     * @return TradePartyType|null
+     * @return null|TradePartyType
      */
     public function getShipToTradeParty(): ?TradePartyType
     {
@@ -74,7 +74,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @param TradePartyType|null $shipToTradeParty
+     * @param  null|TradePartyType $shipToTradeParty
      * @return static
      */
     public function setShipToTradeParty(?TradePartyType $shipToTradeParty = null): static
@@ -95,7 +95,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return SupplyChainEventType|null
+     * @return null|SupplyChainEventType
      */
     public function getActualDeliverySupplyChainEvent(): ?SupplyChainEventType
     {
@@ -113,7 +113,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @param SupplyChainEventType|null $actualDeliverySupplyChainEvent
+     * @param  null|SupplyChainEventType $actualDeliverySupplyChainEvent
      * @return static
      */
     public function setActualDeliverySupplyChainEvent(
@@ -135,7 +135,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return ReferencedDocumentType|null
+     * @return null|ReferencedDocumentType
      */
     public function getDespatchAdviceReferencedDocument(): ?ReferencedDocumentType
     {
@@ -153,7 +153,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @param ReferencedDocumentType|null $despatchAdviceReferencedDocument
+     * @param  null|ReferencedDocumentType $despatchAdviceReferencedDocument
      * @return static
      */
     public function setDespatchAdviceReferencedDocument(
@@ -175,7 +175,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @return ReferencedDocumentType|null
+     * @return null|ReferencedDocumentType
      */
     public function getReceivingAdviceReferencedDocument(): ?ReferencedDocumentType
     {
@@ -193,7 +193,7 @@ class HeaderTradeDeliveryType
     }
 
     /**
-     * @param ReferencedDocumentType|null $receivingAdviceReferencedDocument
+     * @param  null|ReferencedDocumentType $receivingAdviceReferencedDocument
      * @return static
      */
     public function setReceivingAdviceReferencedDocument(

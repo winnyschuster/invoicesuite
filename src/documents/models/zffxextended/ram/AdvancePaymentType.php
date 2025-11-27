@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\qdt\FormattedDateTimeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType;
+use JMS\Serializer\Annotation as JMS;
 
 class AdvancePaymentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class AdvancePaymentType
     private $paidAmount;
 
     /**
-     * @var FormattedDateTimeType|null
+     * @var null|FormattedDateTimeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\FormattedDateTimeType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class AdvancePaymentType
     private $formattedReceivedDateTime;
 
     /**
-     * @var array<TradeTaxType>|null
+     * @var null|array<TradeTaxType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class AdvancePaymentType
     private $includedTradeTax;
 
     /**
-     * @var ReferencedDocumentType|null
+     * @var null|ReferencedDocumentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedDocumentType")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class AdvancePaymentType
     private $invoiceSpecifiedReferencedDocument;
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getPaidAmount(): ?AmountType
     {
@@ -77,7 +77,7 @@ class AdvancePaymentType
     }
 
     /**
-     * @param AmountType|null $paidAmount
+     * @param  null|AmountType $paidAmount
      * @return static
      */
     public function setPaidAmount(?AmountType $paidAmount = null): static
@@ -98,7 +98,7 @@ class AdvancePaymentType
     }
 
     /**
-     * @return FormattedDateTimeType|null
+     * @return null|FormattedDateTimeType
      */
     public function getFormattedReceivedDateTime(): ?FormattedDateTimeType
     {
@@ -116,7 +116,7 @@ class AdvancePaymentType
     }
 
     /**
-     * @param FormattedDateTimeType|null $formattedReceivedDateTime
+     * @param  null|FormattedDateTimeType $formattedReceivedDateTime
      * @return static
      */
     public function setFormattedReceivedDateTime(?FormattedDateTimeType $formattedReceivedDateTime = null): static
@@ -137,7 +137,7 @@ class AdvancePaymentType
     }
 
     /**
-     * @return array<TradeTaxType>|null
+     * @return null|array<TradeTaxType>
      */
     public function getIncludedTradeTax(): ?array
     {
@@ -145,7 +145,7 @@ class AdvancePaymentType
     }
 
     /**
-     * @param array<TradeTaxType>|null $includedTradeTax
+     * @param  null|array<TradeTaxType> $includedTradeTax
      * @return static
      */
     public function setIncludedTradeTax(?array $includedTradeTax = null): static
@@ -176,7 +176,7 @@ class AdvancePaymentType
     }
 
     /**
-     * @param TradeTaxType $includedTradeTax
+     * @param  TradeTaxType $includedTradeTax
      * @return static
      */
     public function addToIncludedTradeTax(TradeTaxType $includedTradeTax): static
@@ -197,7 +197,7 @@ class AdvancePaymentType
     }
 
     /**
-     * @param TradeTaxType $includedTradeTax
+     * @param  TradeTaxType $includedTradeTax
      * @return static
      */
     public function addOnceToIncludedTradeTax(TradeTaxType $includedTradeTax): static
@@ -228,7 +228,7 @@ class AdvancePaymentType
     }
 
     /**
-     * @return ReferencedDocumentType|null
+     * @return null|ReferencedDocumentType
      */
     public function getInvoiceSpecifiedReferencedDocument(): ?ReferencedDocumentType
     {
@@ -246,7 +246,7 @@ class AdvancePaymentType
     }
 
     /**
-     * @param ReferencedDocumentType|null $invoiceSpecifiedReferencedDocument
+     * @param  null|ReferencedDocumentType $invoiceSpecifiedReferencedDocument
      * @return static
      */
     public function setInvoiceSpecifiedReferencedDocument(

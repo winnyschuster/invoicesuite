@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\udt;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
 
 class IDType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"zffx"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class IDType
     private $value;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"zffx"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class IDType
     private $schemeID;
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getValue(): ?string
     {
@@ -43,7 +43,7 @@ class IDType
     }
 
     /**
-     * @param string|null $value
+     * @param  null|string $value
      * @return static
      */
     public function setValue(?string $value = null): static
@@ -64,7 +64,7 @@ class IDType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getSchemeID(): ?string
     {
@@ -72,7 +72,7 @@ class IDType
     }
 
     /**
-     * @param string|null $schemeID
+     * @param  null|string $schemeID
      * @return static
      */
     public function setSchemeID(?string $schemeID = null): static

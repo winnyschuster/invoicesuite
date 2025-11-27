@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class ProductClassificationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var CodeType|null
+     * @var null|CodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ProductClassificationType
     private $classCode;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class ProductClassificationType
     private $className;
 
     /**
-     * @return CodeType|null
+     * @return null|CodeType
      */
     public function getClassCode(): ?CodeType
     {
@@ -54,7 +54,7 @@ class ProductClassificationType
     }
 
     /**
-     * @param CodeType|null $classCode
+     * @param  null|CodeType $classCode
      * @return static
      */
     public function setClassCode(?CodeType $classCode = null): static
@@ -75,7 +75,7 @@ class ProductClassificationType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getClassName(): ?TextType
     {
@@ -93,7 +93,7 @@ class ProductClassificationType
     }
 
     /**
-     * @param TextType|null $className
+     * @param  null|TextType $className
      * @return static
      */
     public function setClassName(?TextType $className = null): static

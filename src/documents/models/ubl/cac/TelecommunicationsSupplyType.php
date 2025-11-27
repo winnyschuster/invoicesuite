@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PrivacyCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsSupplyType as TelecommunicationsSupplyType1;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsSupplyTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount;
+use JMS\Serializer\Annotation as JMS;
 
 class TelecommunicationsSupplyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsSupplyType|null
+     * @var null|TelecommunicationsSupplyType1
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsSupplyType")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class TelecommunicationsSupplyType
     private $telecommunicationsSupplyType;
 
     /**
-     * @var TelecommunicationsSupplyTypeCode|null
+     * @var null|TelecommunicationsSupplyTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsSupplyTypeCode")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class TelecommunicationsSupplyType
     private $telecommunicationsSupplyTypeCode;
 
     /**
-     * @var PrivacyCode|null
+     * @var null|PrivacyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PrivacyCode")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class TelecommunicationsSupplyType
     private $privacyCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -62,7 +62,7 @@ class TelecommunicationsSupplyType
     private $description;
 
     /**
-     * @var TotalAmount|null
+     * @var null|TotalAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class TelecommunicationsSupplyType
     private $totalAmount;
 
     /**
-     * @var array<TelecommunicationsSupplyLine>|null
+     * @var null|array<TelecommunicationsSupplyLine>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TelecommunicationsSupplyLine>")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class TelecommunicationsSupplyType
     private $telecommunicationsSupplyLine;
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsSupplyType|null
+     * @return null|TelecommunicationsSupplyType1
      */
     public function getTelecommunicationsSupplyType(): ?TelecommunicationsSupplyType1
     {
@@ -93,17 +93,17 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsSupplyType
+     * @return TelecommunicationsSupplyType1
      */
     public function getTelecommunicationsSupplyTypeWithCreate(): TelecommunicationsSupplyType1
     {
-        $this->telecommunicationsSupplyType = is_null($this->telecommunicationsSupplyType) ? new TelecommunicationsSupplyType() : $this->telecommunicationsSupplyType;
+        $this->telecommunicationsSupplyType = is_null($this->telecommunicationsSupplyType) ? new self() : $this->telecommunicationsSupplyType;
 
         return $this->telecommunicationsSupplyType;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\TelecommunicationsSupplyType|null $telecommunicationsSupplyType
+     * @param  null|TelecommunicationsSupplyType1 $telecommunicationsSupplyType
      * @return static
      */
     public function setTelecommunicationsSupplyType(
@@ -125,7 +125,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return TelecommunicationsSupplyTypeCode|null
+     * @return null|TelecommunicationsSupplyTypeCode
      */
     public function getTelecommunicationsSupplyTypeCode(): ?TelecommunicationsSupplyTypeCode
     {
@@ -143,7 +143,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @param TelecommunicationsSupplyTypeCode|null $telecommunicationsSupplyTypeCode
+     * @param  null|TelecommunicationsSupplyTypeCode $telecommunicationsSupplyTypeCode
      * @return static
      */
     public function setTelecommunicationsSupplyTypeCode(
@@ -165,7 +165,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return PrivacyCode|null
+     * @return null|PrivacyCode
      */
     public function getPrivacyCode(): ?PrivacyCode
     {
@@ -183,7 +183,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @param PrivacyCode|null $privacyCode
+     * @param  null|PrivacyCode $privacyCode
      * @return static
      */
     public function setPrivacyCode(?PrivacyCode $privacyCode = null): static
@@ -204,7 +204,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -212,7 +212,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -243,7 +243,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -258,7 +258,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -273,7 +273,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -294,7 +294,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -325,7 +325,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return TotalAmount|null
+     * @return null|TotalAmount
      */
     public function getTotalAmount(): ?TotalAmount
     {
@@ -343,7 +343,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @param TotalAmount|null $totalAmount
+     * @param  null|TotalAmount $totalAmount
      * @return static
      */
     public function setTotalAmount(?TotalAmount $totalAmount = null): static
@@ -364,7 +364,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return array<TelecommunicationsSupplyLine>|null
+     * @return null|array<TelecommunicationsSupplyLine>
      */
     public function getTelecommunicationsSupplyLine(): ?array
     {
@@ -372,7 +372,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @param array<TelecommunicationsSupplyLine>|null $telecommunicationsSupplyLine
+     * @param  null|array<TelecommunicationsSupplyLine> $telecommunicationsSupplyLine
      * @return static
      */
     public function setTelecommunicationsSupplyLine(?array $telecommunicationsSupplyLine = null): static
@@ -403,7 +403,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return TelecommunicationsSupplyLine|null
+     * @return null|TelecommunicationsSupplyLine
      */
     public function firstTelecommunicationsSupplyLine(): ?TelecommunicationsSupplyLine
     {
@@ -418,7 +418,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @return TelecommunicationsSupplyLine|null
+     * @return null|TelecommunicationsSupplyLine
      */
     public function lastTelecommunicationsSupplyLine(): ?TelecommunicationsSupplyLine
     {
@@ -433,7 +433,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @param TelecommunicationsSupplyLine $telecommunicationsSupplyLine
+     * @param  TelecommunicationsSupplyLine $telecommunicationsSupplyLine
      * @return static
      */
     public function addToTelecommunicationsSupplyLine(
@@ -455,7 +455,7 @@ class TelecommunicationsSupplyType
     }
 
     /**
-     * @param TelecommunicationsSupplyLine $telecommunicationsSupplyLine
+     * @param  TelecommunicationsSupplyLine $telecommunicationsSupplyLine
      * @return static
      */
     public function addOnceToTelecommunicationsSupplyLine(

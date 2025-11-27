@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount;
+use JMS\Serializer\Annotation as JMS;
 
 class BudgetAccountLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class BudgetAccountLineType
     private $iD;
 
     /**
-     * @var TotalAmount|null
+     * @var null|TotalAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TotalAmount")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class BudgetAccountLineType
     private $totalAmount;
 
     /**
-     * @var array<BudgetAccount>|null
+     * @var null|array<BudgetAccount>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\BudgetAccount>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class BudgetAccountLineType
     private $budgetAccount;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -66,7 +66,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -87,7 +87,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return TotalAmount|null
+     * @return null|TotalAmount
      */
     public function getTotalAmount(): ?TotalAmount
     {
@@ -105,7 +105,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @param TotalAmount|null $totalAmount
+     * @param  null|TotalAmount $totalAmount
      * @return static
      */
     public function setTotalAmount(?TotalAmount $totalAmount = null): static
@@ -126,7 +126,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return array<BudgetAccount>|null
+     * @return null|array<BudgetAccount>
      */
     public function getBudgetAccount(): ?array
     {
@@ -134,7 +134,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @param array<BudgetAccount>|null $budgetAccount
+     * @param  null|array<BudgetAccount> $budgetAccount
      * @return static
      */
     public function setBudgetAccount(?array $budgetAccount = null): static
@@ -165,7 +165,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return BudgetAccount|null
+     * @return null|BudgetAccount
      */
     public function firstBudgetAccount(): ?BudgetAccount
     {
@@ -180,7 +180,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @return BudgetAccount|null
+     * @return null|BudgetAccount
      */
     public function lastBudgetAccount(): ?BudgetAccount
     {
@@ -195,7 +195,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @param BudgetAccount $budgetAccount
+     * @param  BudgetAccount $budgetAccount
      * @return static
      */
     public function addToBudgetAccount(BudgetAccount $budgetAccount): static
@@ -216,7 +216,7 @@ class BudgetAccountLineType
     }
 
     /**
-     * @param BudgetAccount $budgetAccount
+     * @param  BudgetAccount $budgetAccount
      * @return static
      */
     public function addOnceToBudgetAccount(BudgetAccount $budgetAccount): static

@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity;
+use JMS\Serializer\Annotation as JMS;
 
 class GoodsItemContainerType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class GoodsItemContainerType
     private $iD;
 
     /**
-     * @var Quantity|null
+     * @var null|Quantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Quantity")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class GoodsItemContainerType
     private $quantity;
 
     /**
-     * @var array<TransportEquipment>|null
+     * @var null|array<TransportEquipment>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TransportEquipment>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class GoodsItemContainerType
     private $transportEquipment;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -66,7 +66,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -87,7 +87,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @return Quantity|null
+     * @return null|Quantity
      */
     public function getQuantity(): ?Quantity
     {
@@ -105,7 +105,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @param Quantity|null $quantity
+     * @param  null|Quantity $quantity
      * @return static
      */
     public function setQuantity(?Quantity $quantity = null): static
@@ -126,7 +126,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @return array<TransportEquipment>|null
+     * @return null|array<TransportEquipment>
      */
     public function getTransportEquipment(): ?array
     {
@@ -134,7 +134,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @param array<TransportEquipment>|null $transportEquipment
+     * @param  null|array<TransportEquipment> $transportEquipment
      * @return static
      */
     public function setTransportEquipment(?array $transportEquipment = null): static
@@ -165,7 +165,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @return TransportEquipment|null
+     * @return null|TransportEquipment
      */
     public function firstTransportEquipment(): ?TransportEquipment
     {
@@ -180,7 +180,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @return TransportEquipment|null
+     * @return null|TransportEquipment
      */
     public function lastTransportEquipment(): ?TransportEquipment
     {
@@ -195,7 +195,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @param TransportEquipment $transportEquipment
+     * @param  TransportEquipment $transportEquipment
      * @return static
      */
     public function addToTransportEquipment(TransportEquipment $transportEquipment): static
@@ -216,7 +216,7 @@ class GoodsItemContainerType
     }
 
     /**
-     * @param TransportEquipment $transportEquipment
+     * @param  TransportEquipment $transportEquipment
      * @return static
      */
     public function addOnceToTransportEquipment(TransportEquipment $transportEquipment): static

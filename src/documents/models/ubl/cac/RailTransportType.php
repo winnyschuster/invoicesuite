@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\RailCarID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TrainID;
+use JMS\Serializer\Annotation as JMS;
 
 class RailTransportType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TrainID|null
+     * @var null|TrainID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TrainID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class RailTransportType
     private $trainID;
 
     /**
-     * @var RailCarID|null
+     * @var null|RailCarID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RailCarID")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class RailTransportType
     private $railCarID;
 
     /**
-     * @return TrainID|null
+     * @return null|TrainID
      */
     public function getTrainID(): ?TrainID
     {
@@ -54,7 +54,7 @@ class RailTransportType
     }
 
     /**
-     * @param TrainID|null $trainID
+     * @param  null|TrainID $trainID
      * @return static
      */
     public function setTrainID(?TrainID $trainID = null): static
@@ -75,7 +75,7 @@ class RailTransportType
     }
 
     /**
-     * @return RailCarID|null
+     * @return null|RailCarID
      */
     public function getRailCarID(): ?RailCarID
     {
@@ -93,7 +93,7 @@ class RailTransportType
     }
 
     /**
-     * @param RailCarID|null $railCarID
+     * @param  null|RailCarID $railCarID
      * @return static
      */
     public function setRailCarID(?RailCarID $railCarID = null): static

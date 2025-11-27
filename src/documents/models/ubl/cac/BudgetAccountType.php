@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BudgetYearNumeric;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
+use JMS\Serializer\Annotation as JMS;
 
 class BudgetAccountType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class BudgetAccountType
     private $iD;
 
     /**
-     * @var BudgetYearNumeric|null
+     * @var null|BudgetYearNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BudgetYearNumeric")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class BudgetAccountType
     private $budgetYearNumeric;
 
     /**
-     * @var RequiredClassificationScheme|null
+     * @var null|RequiredClassificationScheme
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RequiredClassificationScheme")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class BudgetAccountType
     private $requiredClassificationScheme;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -65,7 +65,7 @@ class BudgetAccountType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -86,7 +86,7 @@ class BudgetAccountType
     }
 
     /**
-     * @return BudgetYearNumeric|null
+     * @return null|BudgetYearNumeric
      */
     public function getBudgetYearNumeric(): ?BudgetYearNumeric
     {
@@ -104,7 +104,7 @@ class BudgetAccountType
     }
 
     /**
-     * @param BudgetYearNumeric|null $budgetYearNumeric
+     * @param  null|BudgetYearNumeric $budgetYearNumeric
      * @return static
      */
     public function setBudgetYearNumeric(?BudgetYearNumeric $budgetYearNumeric = null): static
@@ -125,7 +125,7 @@ class BudgetAccountType
     }
 
     /**
-     * @return RequiredClassificationScheme|null
+     * @return null|RequiredClassificationScheme
      */
     public function getRequiredClassificationScheme(): ?RequiredClassificationScheme
     {
@@ -143,7 +143,7 @@ class BudgetAccountType
     }
 
     /**
-     * @param RequiredClassificationScheme|null $requiredClassificationScheme
+     * @param  null|RequiredClassificationScheme $requiredClassificationScheme
      * @return static
      */
     public function setRequiredClassificationScheme(

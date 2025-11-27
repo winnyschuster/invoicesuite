@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
+use JMS\Serializer\Annotation as JMS;
 
 class ProcurementProjectLotType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class ProcurementProjectLotType
     private $iD;
 
     /**
-     * @var TenderingTerms|null
+     * @var null|TenderingTerms
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TenderingTerms")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class ProcurementProjectLotType
     private $tenderingTerms;
 
     /**
-     * @var ProcurementProject|null
+     * @var null|ProcurementProject
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ProcurementProject")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class ProcurementProjectLotType
     private $procurementProject;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -64,7 +64,7 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -85,7 +85,7 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @return TenderingTerms|null
+     * @return null|TenderingTerms
      */
     public function getTenderingTerms(): ?TenderingTerms
     {
@@ -103,7 +103,7 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @param TenderingTerms|null $tenderingTerms
+     * @param  null|TenderingTerms $tenderingTerms
      * @return static
      */
     public function setTenderingTerms(?TenderingTerms $tenderingTerms = null): static
@@ -124,7 +124,7 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @return ProcurementProject|null
+     * @return null|ProcurementProject
      */
     public function getProcurementProject(): ?ProcurementProject
     {
@@ -142,7 +142,7 @@ class ProcurementProjectLotType
     }
 
     /**
-     * @param ProcurementProject|null $procurementProject
+     * @param  null|ProcurementProject $procurementProject
      * @return static
      */
     public function setProcurementProject(?ProcurementProject $procurementProject = null): static

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AltitudeMeasure;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CoordinateSystemCode;
@@ -14,13 +13,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\LatitudeMinutesMeasure;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LongitudeDegreesMeasure;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LongitudeDirectionCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LongitudeMinutesMeasure;
+use JMS\Serializer\Annotation as JMS;
 
 class LocationCoordinateType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var CoordinateSystemCode|null
+     * @var null|CoordinateSystemCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CoordinateSystemCode")
      * @JMS\Expose
@@ -31,7 +31,7 @@ class LocationCoordinateType
     private $coordinateSystemCode;
 
     /**
-     * @var LatitudeDegreesMeasure|null
+     * @var null|LatitudeDegreesMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LatitudeDegreesMeasure")
      * @JMS\Expose
@@ -42,7 +42,7 @@ class LocationCoordinateType
     private $latitudeDegreesMeasure;
 
     /**
-     * @var LatitudeMinutesMeasure|null
+     * @var null|LatitudeMinutesMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LatitudeMinutesMeasure")
      * @JMS\Expose
@@ -53,7 +53,7 @@ class LocationCoordinateType
     private $latitudeMinutesMeasure;
 
     /**
-     * @var LatitudeDirectionCode|null
+     * @var null|LatitudeDirectionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LatitudeDirectionCode")
      * @JMS\Expose
@@ -64,7 +64,7 @@ class LocationCoordinateType
     private $latitudeDirectionCode;
 
     /**
-     * @var LongitudeDegreesMeasure|null
+     * @var null|LongitudeDegreesMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LongitudeDegreesMeasure")
      * @JMS\Expose
@@ -75,7 +75,7 @@ class LocationCoordinateType
     private $longitudeDegreesMeasure;
 
     /**
-     * @var LongitudeMinutesMeasure|null
+     * @var null|LongitudeMinutesMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LongitudeMinutesMeasure")
      * @JMS\Expose
@@ -86,7 +86,7 @@ class LocationCoordinateType
     private $longitudeMinutesMeasure;
 
     /**
-     * @var LongitudeDirectionCode|null
+     * @var null|LongitudeDirectionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LongitudeDirectionCode")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class LocationCoordinateType
     private $longitudeDirectionCode;
 
     /**
-     * @var AltitudeMeasure|null
+     * @var null|AltitudeMeasure
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AltitudeMeasure")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class LocationCoordinateType
     private $altitudeMeasure;
 
     /**
-     * @return CoordinateSystemCode|null
+     * @return null|CoordinateSystemCode
      */
     public function getCoordinateSystemCode(): ?CoordinateSystemCode
     {
@@ -126,7 +126,7 @@ class LocationCoordinateType
     }
 
     /**
-     * @param CoordinateSystemCode|null $coordinateSystemCode
+     * @param  null|CoordinateSystemCode $coordinateSystemCode
      * @return static
      */
     public function setCoordinateSystemCode(?CoordinateSystemCode $coordinateSystemCode = null): static
@@ -147,7 +147,7 @@ class LocationCoordinateType
     }
 
     /**
-     * @return LatitudeDegreesMeasure|null
+     * @return null|LatitudeDegreesMeasure
      */
     public function getLatitudeDegreesMeasure(): ?LatitudeDegreesMeasure
     {
@@ -165,7 +165,7 @@ class LocationCoordinateType
     }
 
     /**
-     * @param LatitudeDegreesMeasure|null $latitudeDegreesMeasure
+     * @param  null|LatitudeDegreesMeasure $latitudeDegreesMeasure
      * @return static
      */
     public function setLatitudeDegreesMeasure(?LatitudeDegreesMeasure $latitudeDegreesMeasure = null): static
@@ -186,7 +186,7 @@ class LocationCoordinateType
     }
 
     /**
-     * @return LatitudeMinutesMeasure|null
+     * @return null|LatitudeMinutesMeasure
      */
     public function getLatitudeMinutesMeasure(): ?LatitudeMinutesMeasure
     {
@@ -204,7 +204,7 @@ class LocationCoordinateType
     }
 
     /**
-     * @param LatitudeMinutesMeasure|null $latitudeMinutesMeasure
+     * @param  null|LatitudeMinutesMeasure $latitudeMinutesMeasure
      * @return static
      */
     public function setLatitudeMinutesMeasure(?LatitudeMinutesMeasure $latitudeMinutesMeasure = null): static
@@ -225,7 +225,7 @@ class LocationCoordinateType
     }
 
     /**
-     * @return LatitudeDirectionCode|null
+     * @return null|LatitudeDirectionCode
      */
     public function getLatitudeDirectionCode(): ?LatitudeDirectionCode
     {
@@ -243,7 +243,7 @@ class LocationCoordinateType
     }
 
     /**
-     * @param LatitudeDirectionCode|null $latitudeDirectionCode
+     * @param  null|LatitudeDirectionCode $latitudeDirectionCode
      * @return static
      */
     public function setLatitudeDirectionCode(?LatitudeDirectionCode $latitudeDirectionCode = null): static
@@ -264,7 +264,7 @@ class LocationCoordinateType
     }
 
     /**
-     * @return LongitudeDegreesMeasure|null
+     * @return null|LongitudeDegreesMeasure
      */
     public function getLongitudeDegreesMeasure(): ?LongitudeDegreesMeasure
     {
@@ -282,7 +282,7 @@ class LocationCoordinateType
     }
 
     /**
-     * @param LongitudeDegreesMeasure|null $longitudeDegreesMeasure
+     * @param  null|LongitudeDegreesMeasure $longitudeDegreesMeasure
      * @return static
      */
     public function setLongitudeDegreesMeasure(?LongitudeDegreesMeasure $longitudeDegreesMeasure = null): static
@@ -303,7 +303,7 @@ class LocationCoordinateType
     }
 
     /**
-     * @return LongitudeMinutesMeasure|null
+     * @return null|LongitudeMinutesMeasure
      */
     public function getLongitudeMinutesMeasure(): ?LongitudeMinutesMeasure
     {
@@ -321,7 +321,7 @@ class LocationCoordinateType
     }
 
     /**
-     * @param LongitudeMinutesMeasure|null $longitudeMinutesMeasure
+     * @param  null|LongitudeMinutesMeasure $longitudeMinutesMeasure
      * @return static
      */
     public function setLongitudeMinutesMeasure(?LongitudeMinutesMeasure $longitudeMinutesMeasure = null): static
@@ -342,7 +342,7 @@ class LocationCoordinateType
     }
 
     /**
-     * @return LongitudeDirectionCode|null
+     * @return null|LongitudeDirectionCode
      */
     public function getLongitudeDirectionCode(): ?LongitudeDirectionCode
     {
@@ -360,7 +360,7 @@ class LocationCoordinateType
     }
 
     /**
-     * @param LongitudeDirectionCode|null $longitudeDirectionCode
+     * @param  null|LongitudeDirectionCode $longitudeDirectionCode
      * @return static
      */
     public function setLongitudeDirectionCode(?LongitudeDirectionCode $longitudeDirectionCode = null): static
@@ -381,7 +381,7 @@ class LocationCoordinateType
     }
 
     /**
-     * @return AltitudeMeasure|null
+     * @return null|AltitudeMeasure
      */
     public function getAltitudeMeasure(): ?AltitudeMeasure
     {
@@ -399,7 +399,7 @@ class LocationCoordinateType
     }
 
     /**
-     * @param AltitudeMeasure|null $altitudeMeasure
+     * @param  null|AltitudeMeasure $altitudeMeasure
      * @return static
      */
     public function setAltitudeMeasure(?AltitudeMeasure $altitudeMeasure = null): static

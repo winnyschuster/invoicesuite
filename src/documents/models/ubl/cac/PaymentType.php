@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\InstructionID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PaidAmount;
+use JMS\Serializer\Annotation as JMS;
 
 class PaymentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class PaymentType
     private $iD;
 
     /**
-     * @var PaidAmount|null
+     * @var null|PaidAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PaidAmount")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class PaymentType
     private $paidAmount;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class PaymentType
     private $receivedDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class PaymentType
     private $paidDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class PaymentType
     private $paidTime;
 
     /**
-     * @var InstructionID|null
+     * @var null|InstructionID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\InstructionID")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class PaymentType
     private $instructionID;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -100,7 +100,7 @@ class PaymentType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -121,7 +121,7 @@ class PaymentType
     }
 
     /**
-     * @return PaidAmount|null
+     * @return null|PaidAmount
      */
     public function getPaidAmount(): ?PaidAmount
     {
@@ -139,7 +139,7 @@ class PaymentType
     }
 
     /**
-     * @param PaidAmount|null $paidAmount
+     * @param  null|PaidAmount $paidAmount
      * @return static
      */
     public function setPaidAmount(?PaidAmount $paidAmount = null): static
@@ -160,7 +160,7 @@ class PaymentType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getReceivedDate(): ?DateTimeInterface
     {
@@ -168,7 +168,7 @@ class PaymentType
     }
 
     /**
-     * @param DateTimeInterface|null $receivedDate
+     * @param  null|DateTimeInterface $receivedDate
      * @return static
      */
     public function setReceivedDate(?DateTimeInterface $receivedDate = null): static
@@ -189,7 +189,7 @@ class PaymentType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getPaidDate(): ?DateTimeInterface
     {
@@ -197,7 +197,7 @@ class PaymentType
     }
 
     /**
-     * @param DateTimeInterface|null $paidDate
+     * @param  null|DateTimeInterface $paidDate
      * @return static
      */
     public function setPaidDate(?DateTimeInterface $paidDate = null): static
@@ -218,7 +218,7 @@ class PaymentType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getPaidTime(): ?DateTimeInterface
     {
@@ -226,7 +226,7 @@ class PaymentType
     }
 
     /**
-     * @param DateTimeInterface|null $paidTime
+     * @param  null|DateTimeInterface $paidTime
      * @return static
      */
     public function setPaidTime(?DateTimeInterface $paidTime = null): static
@@ -247,7 +247,7 @@ class PaymentType
     }
 
     /**
-     * @return InstructionID|null
+     * @return null|InstructionID
      */
     public function getInstructionID(): ?InstructionID
     {
@@ -265,7 +265,7 @@ class PaymentType
     }
 
     /**
-     * @param InstructionID|null $instructionID
+     * @param  null|InstructionID $instructionID
      * @return static
      */
     public function setInstructionID(?InstructionID $instructionID = null): static

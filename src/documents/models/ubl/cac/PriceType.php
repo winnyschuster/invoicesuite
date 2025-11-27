@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\BaseQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\OrderableUnitFactorRate;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PriceChangeReason;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PriceType as PriceType1;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PriceTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class PriceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var PriceAmount|null
+     * @var null|PriceAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PriceAmount")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class PriceType
     private $priceAmount;
 
     /**
-     * @var BaseQuantity|null
+     * @var null|BaseQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BaseQuantity")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class PriceType
     private $baseQuantity;
 
     /**
-     * @var array<PriceChangeReason>|null
+     * @var null|array<PriceChangeReason>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PriceChangeReason>")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class PriceType
     private $priceChangeReason;
 
     /**
-     * @var PriceTypeCode|null
+     * @var null|PriceTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PriceTypeCode")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class PriceType
     private $priceTypeCode;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceType|null
+     * @var null|PriceType1
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PriceType")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class PriceType
     private $priceType;
 
     /**
-     * @var OrderableUnitFactorRate|null
+     * @var null|OrderableUnitFactorRate
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OrderableUnitFactorRate")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class PriceType
     private $orderableUnitFactorRate;
 
     /**
-     * @var array<ValidityPeriod>|null
+     * @var null|array<ValidityPeriod>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ValidityPeriod>")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class PriceType
     private $validityPeriod;
 
     /**
-     * @var PriceList|null
+     * @var null|PriceList
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PriceList")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class PriceType
     private $priceList;
 
     /**
-     * @var array<AllowanceCharge>|null
+     * @var null|array<AllowanceCharge>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AllowanceCharge>")
      * @JMS\Expose
@@ -120,7 +120,7 @@ class PriceType
     private $allowanceCharge;
 
     /**
-     * @var PricingExchangeRate|null
+     * @var null|PricingExchangeRate
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\PricingExchangeRate")
      * @JMS\Expose
@@ -131,7 +131,7 @@ class PriceType
     private $pricingExchangeRate;
 
     /**
-     * @return PriceAmount|null
+     * @return null|PriceAmount
      */
     public function getPriceAmount(): ?PriceAmount
     {
@@ -149,7 +149,7 @@ class PriceType
     }
 
     /**
-     * @param PriceAmount|null $priceAmount
+     * @param  null|PriceAmount $priceAmount
      * @return static
      */
     public function setPriceAmount(?PriceAmount $priceAmount = null): static
@@ -170,7 +170,7 @@ class PriceType
     }
 
     /**
-     * @return BaseQuantity|null
+     * @return null|BaseQuantity
      */
     public function getBaseQuantity(): ?BaseQuantity
     {
@@ -188,7 +188,7 @@ class PriceType
     }
 
     /**
-     * @param BaseQuantity|null $baseQuantity
+     * @param  null|BaseQuantity $baseQuantity
      * @return static
      */
     public function setBaseQuantity(?BaseQuantity $baseQuantity = null): static
@@ -209,7 +209,7 @@ class PriceType
     }
 
     /**
-     * @return array<PriceChangeReason>|null
+     * @return null|array<PriceChangeReason>
      */
     public function getPriceChangeReason(): ?array
     {
@@ -217,7 +217,7 @@ class PriceType
     }
 
     /**
-     * @param array<PriceChangeReason>|null $priceChangeReason
+     * @param  null|array<PriceChangeReason> $priceChangeReason
      * @return static
      */
     public function setPriceChangeReason(?array $priceChangeReason = null): static
@@ -248,7 +248,7 @@ class PriceType
     }
 
     /**
-     * @return PriceChangeReason|null
+     * @return null|PriceChangeReason
      */
     public function firstPriceChangeReason(): ?PriceChangeReason
     {
@@ -263,7 +263,7 @@ class PriceType
     }
 
     /**
-     * @return PriceChangeReason|null
+     * @return null|PriceChangeReason
      */
     public function lastPriceChangeReason(): ?PriceChangeReason
     {
@@ -278,7 +278,7 @@ class PriceType
     }
 
     /**
-     * @param PriceChangeReason $priceChangeReason
+     * @param  PriceChangeReason $priceChangeReason
      * @return static
      */
     public function addToPriceChangeReason(PriceChangeReason $priceChangeReason): static
@@ -299,7 +299,7 @@ class PriceType
     }
 
     /**
-     * @param PriceChangeReason $priceChangeReason
+     * @param  PriceChangeReason $priceChangeReason
      * @return static
      */
     public function addOnceToPriceChangeReason(PriceChangeReason $priceChangeReason): static
@@ -330,7 +330,7 @@ class PriceType
     }
 
     /**
-     * @return PriceTypeCode|null
+     * @return null|PriceTypeCode
      */
     public function getPriceTypeCode(): ?PriceTypeCode
     {
@@ -348,7 +348,7 @@ class PriceType
     }
 
     /**
-     * @param PriceTypeCode|null $priceTypeCode
+     * @param  null|PriceTypeCode $priceTypeCode
      * @return static
      */
     public function setPriceTypeCode(?PriceTypeCode $priceTypeCode = null): static
@@ -369,7 +369,7 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceType|null
+     * @return null|PriceType1
      */
     public function getPriceType(): ?PriceType1
     {
@@ -377,17 +377,17 @@ class PriceType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceType
+     * @return PriceType1
      */
     public function getPriceTypeWithCreate(): PriceType1
     {
-        $this->priceType = is_null($this->priceType) ? new PriceType() : $this->priceType;
+        $this->priceType = is_null($this->priceType) ? new self() : $this->priceType;
 
         return $this->priceType;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\PriceType|null $priceType
+     * @param  null|PriceType1 $priceType
      * @return static
      */
     public function setPriceType(?PriceType1 $priceType = null): static
@@ -408,7 +408,7 @@ class PriceType
     }
 
     /**
-     * @return OrderableUnitFactorRate|null
+     * @return null|OrderableUnitFactorRate
      */
     public function getOrderableUnitFactorRate(): ?OrderableUnitFactorRate
     {
@@ -426,7 +426,7 @@ class PriceType
     }
 
     /**
-     * @param OrderableUnitFactorRate|null $orderableUnitFactorRate
+     * @param  null|OrderableUnitFactorRate $orderableUnitFactorRate
      * @return static
      */
     public function setOrderableUnitFactorRate(?OrderableUnitFactorRate $orderableUnitFactorRate = null): static
@@ -447,7 +447,7 @@ class PriceType
     }
 
     /**
-     * @return array<ValidityPeriod>|null
+     * @return null|array<ValidityPeriod>
      */
     public function getValidityPeriod(): ?array
     {
@@ -455,7 +455,7 @@ class PriceType
     }
 
     /**
-     * @param array<ValidityPeriod>|null $validityPeriod
+     * @param  null|array<ValidityPeriod> $validityPeriod
      * @return static
      */
     public function setValidityPeriod(?array $validityPeriod = null): static
@@ -486,7 +486,7 @@ class PriceType
     }
 
     /**
-     * @return ValidityPeriod|null
+     * @return null|ValidityPeriod
      */
     public function firstValidityPeriod(): ?ValidityPeriod
     {
@@ -501,7 +501,7 @@ class PriceType
     }
 
     /**
-     * @return ValidityPeriod|null
+     * @return null|ValidityPeriod
      */
     public function lastValidityPeriod(): ?ValidityPeriod
     {
@@ -516,7 +516,7 @@ class PriceType
     }
 
     /**
-     * @param ValidityPeriod $validityPeriod
+     * @param  ValidityPeriod $validityPeriod
      * @return static
      */
     public function addToValidityPeriod(ValidityPeriod $validityPeriod): static
@@ -537,7 +537,7 @@ class PriceType
     }
 
     /**
-     * @param ValidityPeriod $validityPeriod
+     * @param  ValidityPeriod $validityPeriod
      * @return static
      */
     public function addOnceToValidityPeriod(ValidityPeriod $validityPeriod): static
@@ -568,7 +568,7 @@ class PriceType
     }
 
     /**
-     * @return PriceList|null
+     * @return null|PriceList
      */
     public function getPriceList(): ?PriceList
     {
@@ -586,7 +586,7 @@ class PriceType
     }
 
     /**
-     * @param PriceList|null $priceList
+     * @param  null|PriceList $priceList
      * @return static
      */
     public function setPriceList(?PriceList $priceList = null): static
@@ -607,7 +607,7 @@ class PriceType
     }
 
     /**
-     * @return array<AllowanceCharge>|null
+     * @return null|array<AllowanceCharge>
      */
     public function getAllowanceCharge(): ?array
     {
@@ -615,7 +615,7 @@ class PriceType
     }
 
     /**
-     * @param array<AllowanceCharge>|null $allowanceCharge
+     * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
     public function setAllowanceCharge(?array $allowanceCharge = null): static
@@ -646,7 +646,7 @@ class PriceType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
@@ -661,7 +661,7 @@ class PriceType
     }
 
     /**
-     * @return AllowanceCharge|null
+     * @return null|AllowanceCharge
      */
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
@@ -676,7 +676,7 @@ class PriceType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -697,7 +697,7 @@ class PriceType
     }
 
     /**
-     * @param AllowanceCharge $allowanceCharge
+     * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
     public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
@@ -728,7 +728,7 @@ class PriceType
     }
 
     /**
-     * @return PricingExchangeRate|null
+     * @return null|PricingExchangeRate
      */
     public function getPricingExchangeRate(): ?PricingExchangeRate
     {
@@ -746,7 +746,7 @@ class PriceType
     }
 
     /**
-     * @param PricingExchangeRate|null $pricingExchangeRate
+     * @param  null|PricingExchangeRate $pricingExchangeRate
      * @return static
      */
     public function setPricingExchangeRate(?PricingExchangeRate $pricingExchangeRate = null): static

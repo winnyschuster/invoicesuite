@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\IdentificationID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TransportEventTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class TransportEventType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IdentificationID|null
+     * @var null|IdentificationID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\IdentificationID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class TransportEventType
     private $identificationID;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class TransportEventType
     private $occurrenceDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class TransportEventType
     private $occurrenceTime;
 
     /**
-     * @var TransportEventTypeCode|null
+     * @var null|TransportEventTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TransportEventTypeCode")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class TransportEventType
     private $transportEventTypeCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class TransportEventType
     private $description;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class TransportEventType
     private $completionIndicator;
 
     /**
-     * @var ReportedShipment|null
+     * @var null|ReportedShipment
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ReportedShipment")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class TransportEventType
     private $reportedShipment;
 
     /**
-     * @var array<CurrentStatus>|null
+     * @var null|array<CurrentStatus>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\CurrentStatus>")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class TransportEventType
     private $currentStatus;
 
     /**
-     * @var array<Contact>|null
+     * @var null|array<Contact>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Contact>")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class TransportEventType
     private $contact;
 
     /**
-     * @var Location|null
+     * @var null|Location
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Location")
      * @JMS\Expose
@@ -129,7 +129,7 @@ class TransportEventType
     private $location;
 
     /**
-     * @var Signature|null
+     * @var null|Signature
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Signature")
      * @JMS\Expose
@@ -140,7 +140,7 @@ class TransportEventType
     private $signature;
 
     /**
-     * @var array<Period>|null
+     * @var null|array<Period>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Period>")
      * @JMS\Expose
@@ -152,7 +152,7 @@ class TransportEventType
     private $period;
 
     /**
-     * @return IdentificationID|null
+     * @return null|IdentificationID
      */
     public function getIdentificationID(): ?IdentificationID
     {
@@ -170,7 +170,7 @@ class TransportEventType
     }
 
     /**
-     * @param IdentificationID|null $identificationID
+     * @param  null|IdentificationID $identificationID
      * @return static
      */
     public function setIdentificationID(?IdentificationID $identificationID = null): static
@@ -191,7 +191,7 @@ class TransportEventType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getOccurrenceDate(): ?DateTimeInterface
     {
@@ -199,7 +199,7 @@ class TransportEventType
     }
 
     /**
-     * @param DateTimeInterface|null $occurrenceDate
+     * @param  null|DateTimeInterface $occurrenceDate
      * @return static
      */
     public function setOccurrenceDate(?DateTimeInterface $occurrenceDate = null): static
@@ -220,7 +220,7 @@ class TransportEventType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getOccurrenceTime(): ?DateTimeInterface
     {
@@ -228,7 +228,7 @@ class TransportEventType
     }
 
     /**
-     * @param DateTimeInterface|null $occurrenceTime
+     * @param  null|DateTimeInterface $occurrenceTime
      * @return static
      */
     public function setOccurrenceTime(?DateTimeInterface $occurrenceTime = null): static
@@ -249,7 +249,7 @@ class TransportEventType
     }
 
     /**
-     * @return TransportEventTypeCode|null
+     * @return null|TransportEventTypeCode
      */
     public function getTransportEventTypeCode(): ?TransportEventTypeCode
     {
@@ -267,7 +267,7 @@ class TransportEventType
     }
 
     /**
-     * @param TransportEventTypeCode|null $transportEventTypeCode
+     * @param  null|TransportEventTypeCode $transportEventTypeCode
      * @return static
      */
     public function setTransportEventTypeCode(?TransportEventTypeCode $transportEventTypeCode = null): static
@@ -288,7 +288,7 @@ class TransportEventType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -296,7 +296,7 @@ class TransportEventType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -327,7 +327,7 @@ class TransportEventType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -342,7 +342,7 @@ class TransportEventType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -357,7 +357,7 @@ class TransportEventType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -378,7 +378,7 @@ class TransportEventType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -409,7 +409,7 @@ class TransportEventType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getCompletionIndicator(): ?bool
     {
@@ -417,7 +417,7 @@ class TransportEventType
     }
 
     /**
-     * @param bool|null $completionIndicator
+     * @param  null|bool $completionIndicator
      * @return static
      */
     public function setCompletionIndicator(?bool $completionIndicator = null): static
@@ -438,7 +438,7 @@ class TransportEventType
     }
 
     /**
-     * @return ReportedShipment|null
+     * @return null|ReportedShipment
      */
     public function getReportedShipment(): ?ReportedShipment
     {
@@ -456,7 +456,7 @@ class TransportEventType
     }
 
     /**
-     * @param ReportedShipment|null $reportedShipment
+     * @param  null|ReportedShipment $reportedShipment
      * @return static
      */
     public function setReportedShipment(?ReportedShipment $reportedShipment = null): static
@@ -477,7 +477,7 @@ class TransportEventType
     }
 
     /**
-     * @return array<CurrentStatus>|null
+     * @return null|array<CurrentStatus>
      */
     public function getCurrentStatus(): ?array
     {
@@ -485,7 +485,7 @@ class TransportEventType
     }
 
     /**
-     * @param array<CurrentStatus>|null $currentStatus
+     * @param  null|array<CurrentStatus> $currentStatus
      * @return static
      */
     public function setCurrentStatus(?array $currentStatus = null): static
@@ -516,7 +516,7 @@ class TransportEventType
     }
 
     /**
-     * @return CurrentStatus|null
+     * @return null|CurrentStatus
      */
     public function firstCurrentStatus(): ?CurrentStatus
     {
@@ -531,7 +531,7 @@ class TransportEventType
     }
 
     /**
-     * @return CurrentStatus|null
+     * @return null|CurrentStatus
      */
     public function lastCurrentStatus(): ?CurrentStatus
     {
@@ -546,7 +546,7 @@ class TransportEventType
     }
 
     /**
-     * @param CurrentStatus $currentStatus
+     * @param  CurrentStatus $currentStatus
      * @return static
      */
     public function addToCurrentStatus(CurrentStatus $currentStatus): static
@@ -567,7 +567,7 @@ class TransportEventType
     }
 
     /**
-     * @param CurrentStatus $currentStatus
+     * @param  CurrentStatus $currentStatus
      * @return static
      */
     public function addOnceToCurrentStatus(CurrentStatus $currentStatus): static
@@ -598,7 +598,7 @@ class TransportEventType
     }
 
     /**
-     * @return array<Contact>|null
+     * @return null|array<Contact>
      */
     public function getContact(): ?array
     {
@@ -606,7 +606,7 @@ class TransportEventType
     }
 
     /**
-     * @param array<Contact>|null $contact
+     * @param  null|array<Contact> $contact
      * @return static
      */
     public function setContact(?array $contact = null): static
@@ -637,7 +637,7 @@ class TransportEventType
     }
 
     /**
-     * @return Contact|null
+     * @return null|Contact
      */
     public function firstContact(): ?Contact
     {
@@ -652,7 +652,7 @@ class TransportEventType
     }
 
     /**
-     * @return Contact|null
+     * @return null|Contact
      */
     public function lastContact(): ?Contact
     {
@@ -667,7 +667,7 @@ class TransportEventType
     }
 
     /**
-     * @param Contact $contact
+     * @param  Contact $contact
      * @return static
      */
     public function addToContact(Contact $contact): static
@@ -688,7 +688,7 @@ class TransportEventType
     }
 
     /**
-     * @param Contact $contact
+     * @param  Contact $contact
      * @return static
      */
     public function addOnceToContact(Contact $contact): static
@@ -719,7 +719,7 @@ class TransportEventType
     }
 
     /**
-     * @return Location|null
+     * @return null|Location
      */
     public function getLocation(): ?Location
     {
@@ -737,7 +737,7 @@ class TransportEventType
     }
 
     /**
-     * @param Location|null $location
+     * @param  null|Location $location
      * @return static
      */
     public function setLocation(?Location $location = null): static
@@ -758,7 +758,7 @@ class TransportEventType
     }
 
     /**
-     * @return Signature|null
+     * @return null|Signature
      */
     public function getSignature(): ?Signature
     {
@@ -776,7 +776,7 @@ class TransportEventType
     }
 
     /**
-     * @param Signature|null $signature
+     * @param  null|Signature $signature
      * @return static
      */
     public function setSignature(?Signature $signature = null): static
@@ -797,7 +797,7 @@ class TransportEventType
     }
 
     /**
-     * @return array<Period>|null
+     * @return null|array<Period>
      */
     public function getPeriod(): ?array
     {
@@ -805,7 +805,7 @@ class TransportEventType
     }
 
     /**
-     * @param array<Period>|null $period
+     * @param  null|array<Period> $period
      * @return static
      */
     public function setPeriod(?array $period = null): static
@@ -836,7 +836,7 @@ class TransportEventType
     }
 
     /**
-     * @return Period|null
+     * @return null|Period
      */
     public function firstPeriod(): ?Period
     {
@@ -851,7 +851,7 @@ class TransportEventType
     }
 
     /**
-     * @return Period|null
+     * @return null|Period
      */
     public function lastPeriod(): ?Period
     {
@@ -866,7 +866,7 @@ class TransportEventType
     }
 
     /**
-     * @param Period $period
+     * @param  Period $period
      * @return static
      */
     public function addToPeriod(Period $period): static
@@ -887,7 +887,7 @@ class TransportEventType
     }
 
     /**
-     * @param Period $period
+     * @param  Period $period
      * @return static
      */
     public function addOnceToPeriod(Period $period): static

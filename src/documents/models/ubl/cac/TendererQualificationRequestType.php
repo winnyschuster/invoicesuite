@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalForm;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalFormCode;
@@ -12,13 +11,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\EmployeeQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\OperatingYearsQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PersonalSituation;
+use JMS\Serializer\Annotation as JMS;
 
 class TendererQualificationRequestType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var CompanyLegalFormCode|null
+     * @var null|CompanyLegalFormCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalFormCode")
      * @JMS\Expose
@@ -29,7 +29,7 @@ class TendererQualificationRequestType
     private $companyLegalFormCode;
 
     /**
-     * @var CompanyLegalForm|null
+     * @var null|CompanyLegalForm
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyLegalForm")
      * @JMS\Expose
@@ -40,7 +40,7 @@ class TendererQualificationRequestType
     private $companyLegalForm;
 
     /**
-     * @var array<PersonalSituation>|null
+     * @var null|array<PersonalSituation>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\PersonalSituation>")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class TendererQualificationRequestType
     private $personalSituation;
 
     /**
-     * @var OperatingYearsQuantity|null
+     * @var null|OperatingYearsQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OperatingYearsQuantity")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class TendererQualificationRequestType
     private $operatingYearsQuantity;
 
     /**
-     * @var EmployeeQuantity|null
+     * @var null|EmployeeQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EmployeeQuantity")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class TendererQualificationRequestType
     private $employeeQuantity;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -86,7 +86,7 @@ class TendererQualificationRequestType
     private $description;
 
     /**
-     * @var array<RequiredBusinessClassificationScheme>|null
+     * @var null|array<RequiredBusinessClassificationScheme>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RequiredBusinessClassificationScheme>")
      * @JMS\Expose
@@ -98,7 +98,7 @@ class TendererQualificationRequestType
     private $requiredBusinessClassificationScheme;
 
     /**
-     * @var array<TechnicalEvaluationCriterion>|null
+     * @var null|array<TechnicalEvaluationCriterion>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TechnicalEvaluationCriterion>")
      * @JMS\Expose
@@ -110,7 +110,7 @@ class TendererQualificationRequestType
     private $technicalEvaluationCriterion;
 
     /**
-     * @var array<FinancialEvaluationCriterion>|null
+     * @var null|array<FinancialEvaluationCriterion>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\FinancialEvaluationCriterion>")
      * @JMS\Expose
@@ -122,7 +122,7 @@ class TendererQualificationRequestType
     private $financialEvaluationCriterion;
 
     /**
-     * @var array<SpecificTendererRequirement>|null
+     * @var null|array<SpecificTendererRequirement>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\SpecificTendererRequirement>")
      * @JMS\Expose
@@ -134,7 +134,7 @@ class TendererQualificationRequestType
     private $specificTendererRequirement;
 
     /**
-     * @var array<EconomicOperatorRole>|null
+     * @var null|array<EconomicOperatorRole>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EconomicOperatorRole>")
      * @JMS\Expose
@@ -146,7 +146,7 @@ class TendererQualificationRequestType
     private $economicOperatorRole;
 
     /**
-     * @return CompanyLegalFormCode|null
+     * @return null|CompanyLegalFormCode
      */
     public function getCompanyLegalFormCode(): ?CompanyLegalFormCode
     {
@@ -164,7 +164,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param CompanyLegalFormCode|null $companyLegalFormCode
+     * @param  null|CompanyLegalFormCode $companyLegalFormCode
      * @return static
      */
     public function setCompanyLegalFormCode(?CompanyLegalFormCode $companyLegalFormCode = null): static
@@ -185,7 +185,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return CompanyLegalForm|null
+     * @return null|CompanyLegalForm
      */
     public function getCompanyLegalForm(): ?CompanyLegalForm
     {
@@ -203,7 +203,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param CompanyLegalForm|null $companyLegalForm
+     * @param  null|CompanyLegalForm $companyLegalForm
      * @return static
      */
     public function setCompanyLegalForm(?CompanyLegalForm $companyLegalForm = null): static
@@ -224,7 +224,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return array<PersonalSituation>|null
+     * @return null|array<PersonalSituation>
      */
     public function getPersonalSituation(): ?array
     {
@@ -232,7 +232,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param array<PersonalSituation>|null $personalSituation
+     * @param  null|array<PersonalSituation> $personalSituation
      * @return static
      */
     public function setPersonalSituation(?array $personalSituation = null): static
@@ -263,7 +263,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return PersonalSituation|null
+     * @return null|PersonalSituation
      */
     public function firstPersonalSituation(): ?PersonalSituation
     {
@@ -278,7 +278,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return PersonalSituation|null
+     * @return null|PersonalSituation
      */
     public function lastPersonalSituation(): ?PersonalSituation
     {
@@ -293,7 +293,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param PersonalSituation $personalSituation
+     * @param  PersonalSituation $personalSituation
      * @return static
      */
     public function addToPersonalSituation(PersonalSituation $personalSituation): static
@@ -314,7 +314,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param PersonalSituation $personalSituation
+     * @param  PersonalSituation $personalSituation
      * @return static
      */
     public function addOnceToPersonalSituation(PersonalSituation $personalSituation): static
@@ -345,7 +345,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return OperatingYearsQuantity|null
+     * @return null|OperatingYearsQuantity
      */
     public function getOperatingYearsQuantity(): ?OperatingYearsQuantity
     {
@@ -363,7 +363,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param OperatingYearsQuantity|null $operatingYearsQuantity
+     * @param  null|OperatingYearsQuantity $operatingYearsQuantity
      * @return static
      */
     public function setOperatingYearsQuantity(?OperatingYearsQuantity $operatingYearsQuantity = null): static
@@ -384,7 +384,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return EmployeeQuantity|null
+     * @return null|EmployeeQuantity
      */
     public function getEmployeeQuantity(): ?EmployeeQuantity
     {
@@ -402,7 +402,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param EmployeeQuantity|null $employeeQuantity
+     * @param  null|EmployeeQuantity $employeeQuantity
      * @return static
      */
     public function setEmployeeQuantity(?EmployeeQuantity $employeeQuantity = null): static
@@ -423,7 +423,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -431,7 +431,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -462,7 +462,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -477,7 +477,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -492,7 +492,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -513,7 +513,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -544,7 +544,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return array<RequiredBusinessClassificationScheme>|null
+     * @return null|array<RequiredBusinessClassificationScheme>
      */
     public function getRequiredBusinessClassificationScheme(): ?array
     {
@@ -552,7 +552,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param array<RequiredBusinessClassificationScheme>|null $requiredBusinessClassificationScheme
+     * @param  null|array<RequiredBusinessClassificationScheme> $requiredBusinessClassificationScheme
      * @return static
      */
     public function setRequiredBusinessClassificationScheme(?array $requiredBusinessClassificationScheme = null): static
@@ -583,7 +583,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return RequiredBusinessClassificationScheme|null
+     * @return null|RequiredBusinessClassificationScheme
      */
     public function firstRequiredBusinessClassificationScheme(): ?RequiredBusinessClassificationScheme
     {
@@ -598,7 +598,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return RequiredBusinessClassificationScheme|null
+     * @return null|RequiredBusinessClassificationScheme
      */
     public function lastRequiredBusinessClassificationScheme(): ?RequiredBusinessClassificationScheme
     {
@@ -613,7 +613,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param RequiredBusinessClassificationScheme $requiredBusinessClassificationScheme
+     * @param  RequiredBusinessClassificationScheme $requiredBusinessClassificationScheme
      * @return static
      */
     public function addToRequiredBusinessClassificationScheme(
@@ -635,7 +635,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param RequiredBusinessClassificationScheme $requiredBusinessClassificationScheme
+     * @param  RequiredBusinessClassificationScheme $requiredBusinessClassificationScheme
      * @return static
      */
     public function addOnceToRequiredBusinessClassificationScheme(
@@ -667,7 +667,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return array<TechnicalEvaluationCriterion>|null
+     * @return null|array<TechnicalEvaluationCriterion>
      */
     public function getTechnicalEvaluationCriterion(): ?array
     {
@@ -675,7 +675,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param array<TechnicalEvaluationCriterion>|null $technicalEvaluationCriterion
+     * @param  null|array<TechnicalEvaluationCriterion> $technicalEvaluationCriterion
      * @return static
      */
     public function setTechnicalEvaluationCriterion(?array $technicalEvaluationCriterion = null): static
@@ -706,7 +706,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return TechnicalEvaluationCriterion|null
+     * @return null|TechnicalEvaluationCriterion
      */
     public function firstTechnicalEvaluationCriterion(): ?TechnicalEvaluationCriterion
     {
@@ -721,7 +721,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return TechnicalEvaluationCriterion|null
+     * @return null|TechnicalEvaluationCriterion
      */
     public function lastTechnicalEvaluationCriterion(): ?TechnicalEvaluationCriterion
     {
@@ -736,7 +736,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param TechnicalEvaluationCriterion $technicalEvaluationCriterion
+     * @param  TechnicalEvaluationCriterion $technicalEvaluationCriterion
      * @return static
      */
     public function addToTechnicalEvaluationCriterion(
@@ -758,7 +758,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param TechnicalEvaluationCriterion $technicalEvaluationCriterion
+     * @param  TechnicalEvaluationCriterion $technicalEvaluationCriterion
      * @return static
      */
     public function addOnceToTechnicalEvaluationCriterion(
@@ -790,7 +790,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return array<FinancialEvaluationCriterion>|null
+     * @return null|array<FinancialEvaluationCriterion>
      */
     public function getFinancialEvaluationCriterion(): ?array
     {
@@ -798,7 +798,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param array<FinancialEvaluationCriterion>|null $financialEvaluationCriterion
+     * @param  null|array<FinancialEvaluationCriterion> $financialEvaluationCriterion
      * @return static
      */
     public function setFinancialEvaluationCriterion(?array $financialEvaluationCriterion = null): static
@@ -829,7 +829,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return FinancialEvaluationCriterion|null
+     * @return null|FinancialEvaluationCriterion
      */
     public function firstFinancialEvaluationCriterion(): ?FinancialEvaluationCriterion
     {
@@ -844,7 +844,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return FinancialEvaluationCriterion|null
+     * @return null|FinancialEvaluationCriterion
      */
     public function lastFinancialEvaluationCriterion(): ?FinancialEvaluationCriterion
     {
@@ -859,7 +859,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param FinancialEvaluationCriterion $financialEvaluationCriterion
+     * @param  FinancialEvaluationCriterion $financialEvaluationCriterion
      * @return static
      */
     public function addToFinancialEvaluationCriterion(
@@ -881,7 +881,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param FinancialEvaluationCriterion $financialEvaluationCriterion
+     * @param  FinancialEvaluationCriterion $financialEvaluationCriterion
      * @return static
      */
     public function addOnceToFinancialEvaluationCriterion(
@@ -913,7 +913,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return array<SpecificTendererRequirement>|null
+     * @return null|array<SpecificTendererRequirement>
      */
     public function getSpecificTendererRequirement(): ?array
     {
@@ -921,7 +921,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param array<SpecificTendererRequirement>|null $specificTendererRequirement
+     * @param  null|array<SpecificTendererRequirement> $specificTendererRequirement
      * @return static
      */
     public function setSpecificTendererRequirement(?array $specificTendererRequirement = null): static
@@ -952,7 +952,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return SpecificTendererRequirement|null
+     * @return null|SpecificTendererRequirement
      */
     public function firstSpecificTendererRequirement(): ?SpecificTendererRequirement
     {
@@ -967,7 +967,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return SpecificTendererRequirement|null
+     * @return null|SpecificTendererRequirement
      */
     public function lastSpecificTendererRequirement(): ?SpecificTendererRequirement
     {
@@ -982,7 +982,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param SpecificTendererRequirement $specificTendererRequirement
+     * @param  SpecificTendererRequirement $specificTendererRequirement
      * @return static
      */
     public function addToSpecificTendererRequirement(SpecificTendererRequirement $specificTendererRequirement): static
@@ -1003,7 +1003,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param SpecificTendererRequirement $specificTendererRequirement
+     * @param  SpecificTendererRequirement $specificTendererRequirement
      * @return static
      */
     public function addOnceToSpecificTendererRequirement(
@@ -1035,7 +1035,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return array<EconomicOperatorRole>|null
+     * @return null|array<EconomicOperatorRole>
      */
     public function getEconomicOperatorRole(): ?array
     {
@@ -1043,7 +1043,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param array<EconomicOperatorRole>|null $economicOperatorRole
+     * @param  null|array<EconomicOperatorRole> $economicOperatorRole
      * @return static
      */
     public function setEconomicOperatorRole(?array $economicOperatorRole = null): static
@@ -1074,7 +1074,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return EconomicOperatorRole|null
+     * @return null|EconomicOperatorRole
      */
     public function firstEconomicOperatorRole(): ?EconomicOperatorRole
     {
@@ -1089,7 +1089,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @return EconomicOperatorRole|null
+     * @return null|EconomicOperatorRole
      */
     public function lastEconomicOperatorRole(): ?EconomicOperatorRole
     {
@@ -1104,7 +1104,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param EconomicOperatorRole $economicOperatorRole
+     * @param  EconomicOperatorRole $economicOperatorRole
      * @return static
      */
     public function addToEconomicOperatorRole(EconomicOperatorRole $economicOperatorRole): static
@@ -1125,7 +1125,7 @@ class TendererQualificationRequestType
     }
 
     /**
-     * @param EconomicOperatorRole $economicOperatorRole
+     * @param  EconomicOperatorRole $economicOperatorRole
      * @return static
      */
     public function addOnceToEconomicOperatorRole(EconomicOperatorRole $economicOperatorRole): static

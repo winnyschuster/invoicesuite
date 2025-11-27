@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ProductTraceID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SerialID;
+use JMS\Serializer\Annotation as JMS;
 
 class ItemInstanceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ProductTraceID|null
+     * @var null|ProductTraceID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ProductTraceID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class ItemInstanceType
     private $productTraceID;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class ItemInstanceType
     private $manufactureDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class ItemInstanceType
     private $manufactureTime;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class ItemInstanceType
     private $bestBeforeDate;
 
     /**
-     * @var RegistrationID|null
+     * @var null|RegistrationID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationID")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class ItemInstanceType
     private $registrationID;
 
     /**
-     * @var SerialID|null
+     * @var null|SerialID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SerialID")
      * @JMS\Expose
@@ -82,7 +82,7 @@ class ItemInstanceType
     private $serialID;
 
     /**
-     * @var array<AdditionalItemProperty>|null
+     * @var null|array<AdditionalItemProperty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty>")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class ItemInstanceType
     private $additionalItemProperty;
 
     /**
-     * @var LotIdentification|null
+     * @var null|LotIdentification
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LotIdentification")
      * @JMS\Expose
@@ -105,7 +105,7 @@ class ItemInstanceType
     private $lotIdentification;
 
     /**
-     * @return ProductTraceID|null
+     * @return null|ProductTraceID
      */
     public function getProductTraceID(): ?ProductTraceID
     {
@@ -123,7 +123,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param ProductTraceID|null $productTraceID
+     * @param  null|ProductTraceID $productTraceID
      * @return static
      */
     public function setProductTraceID(?ProductTraceID $productTraceID = null): static
@@ -144,7 +144,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getManufactureDate(): ?DateTimeInterface
     {
@@ -152,7 +152,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param DateTimeInterface|null $manufactureDate
+     * @param  null|DateTimeInterface $manufactureDate
      * @return static
      */
     public function setManufactureDate(?DateTimeInterface $manufactureDate = null): static
@@ -173,7 +173,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getManufactureTime(): ?DateTimeInterface
     {
@@ -181,7 +181,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param DateTimeInterface|null $manufactureTime
+     * @param  null|DateTimeInterface $manufactureTime
      * @return static
      */
     public function setManufactureTime(?DateTimeInterface $manufactureTime = null): static
@@ -202,7 +202,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getBestBeforeDate(): ?DateTimeInterface
     {
@@ -210,7 +210,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param DateTimeInterface|null $bestBeforeDate
+     * @param  null|DateTimeInterface $bestBeforeDate
      * @return static
      */
     public function setBestBeforeDate(?DateTimeInterface $bestBeforeDate = null): static
@@ -231,7 +231,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return RegistrationID|null
+     * @return null|RegistrationID
      */
     public function getRegistrationID(): ?RegistrationID
     {
@@ -249,7 +249,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param RegistrationID|null $registrationID
+     * @param  null|RegistrationID $registrationID
      * @return static
      */
     public function setRegistrationID(?RegistrationID $registrationID = null): static
@@ -270,7 +270,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return SerialID|null
+     * @return null|SerialID
      */
     public function getSerialID(): ?SerialID
     {
@@ -288,7 +288,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param SerialID|null $serialID
+     * @param  null|SerialID $serialID
      * @return static
      */
     public function setSerialID(?SerialID $serialID = null): static
@@ -309,7 +309,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return array<AdditionalItemProperty>|null
+     * @return null|array<AdditionalItemProperty>
      */
     public function getAdditionalItemProperty(): ?array
     {
@@ -317,7 +317,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param array<AdditionalItemProperty>|null $additionalItemProperty
+     * @param  null|array<AdditionalItemProperty> $additionalItemProperty
      * @return static
      */
     public function setAdditionalItemProperty(?array $additionalItemProperty = null): static
@@ -348,7 +348,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return AdditionalItemProperty|null
+     * @return null|AdditionalItemProperty
      */
     public function firstAdditionalItemProperty(): ?AdditionalItemProperty
     {
@@ -363,7 +363,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return AdditionalItemProperty|null
+     * @return null|AdditionalItemProperty
      */
     public function lastAdditionalItemProperty(): ?AdditionalItemProperty
     {
@@ -378,7 +378,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param AdditionalItemProperty $additionalItemProperty
+     * @param  AdditionalItemProperty $additionalItemProperty
      * @return static
      */
     public function addToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static
@@ -399,7 +399,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param AdditionalItemProperty $additionalItemProperty
+     * @param  AdditionalItemProperty $additionalItemProperty
      * @return static
      */
     public function addOnceToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static
@@ -430,7 +430,7 @@ class ItemInstanceType
     }
 
     /**
-     * @return LotIdentification|null
+     * @return null|LotIdentification
      */
     public function getLotIdentification(): ?LotIdentification
     {
@@ -448,7 +448,7 @@ class ItemInstanceType
     }
 
     /**
-     * @param LotIdentification|null $lotIdentification
+     * @param  null|LotIdentification $lotIdentification
      * @return static
      */
     public function setLotIdentification(?LotIdentification $lotIdentification = null): static

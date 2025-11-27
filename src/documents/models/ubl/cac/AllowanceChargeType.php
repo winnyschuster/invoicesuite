@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode;
@@ -16,13 +15,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MultiplierFactorNumeric;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric;
+use JMS\Serializer\Annotation as JMS;
 
 class AllowanceChargeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -33,7 +33,7 @@ class AllowanceChargeType
     private $iD;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -44,7 +44,7 @@ class AllowanceChargeType
     private $chargeIndicator;
 
     /**
-     * @var AllowanceChargeReasonCode|null
+     * @var null|AllowanceChargeReasonCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReasonCode")
      * @JMS\Expose
@@ -55,7 +55,7 @@ class AllowanceChargeType
     private $allowanceChargeReasonCode;
 
     /**
-     * @var array<AllowanceChargeReason>|null
+     * @var null|array<AllowanceChargeReason>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\AllowanceChargeReason>")
      * @JMS\Expose
@@ -67,7 +67,7 @@ class AllowanceChargeType
     private $allowanceChargeReason;
 
     /**
-     * @var MultiplierFactorNumeric|null
+     * @var null|MultiplierFactorNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MultiplierFactorNumeric")
      * @JMS\Expose
@@ -78,7 +78,7 @@ class AllowanceChargeType
     private $multiplierFactorNumeric;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -89,7 +89,7 @@ class AllowanceChargeType
     private $prepaidIndicator;
 
     /**
-     * @var SequenceNumeric|null
+     * @var null|SequenceNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SequenceNumeric")
      * @JMS\Expose
@@ -100,7 +100,7 @@ class AllowanceChargeType
     private $sequenceNumeric;
 
     /**
-     * @var Amount|null
+     * @var null|Amount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Amount")
      * @JMS\Expose
@@ -111,7 +111,7 @@ class AllowanceChargeType
     private $amount;
 
     /**
-     * @var BaseAmount|null
+     * @var null|BaseAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\BaseAmount")
      * @JMS\Expose
@@ -122,7 +122,7 @@ class AllowanceChargeType
     private $baseAmount;
 
     /**
-     * @var AccountingCostCode|null
+     * @var null|AccountingCostCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCostCode")
      * @JMS\Expose
@@ -133,7 +133,7 @@ class AllowanceChargeType
     private $accountingCostCode;
 
     /**
-     * @var AccountingCost|null
+     * @var null|AccountingCost
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AccountingCost")
      * @JMS\Expose
@@ -144,7 +144,7 @@ class AllowanceChargeType
     private $accountingCost;
 
     /**
-     * @var PerUnitAmount|null
+     * @var null|PerUnitAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PerUnitAmount")
      * @JMS\Expose
@@ -155,7 +155,7 @@ class AllowanceChargeType
     private $perUnitAmount;
 
     /**
-     * @var array<TaxCategory>|null
+     * @var null|array<TaxCategory>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\TaxCategory>")
      * @JMS\Expose
@@ -167,7 +167,7 @@ class AllowanceChargeType
     private $taxCategory;
 
     /**
-     * @var TaxTotal|null
+     * @var null|TaxTotal
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TaxTotal")
      * @JMS\Expose
@@ -178,7 +178,7 @@ class AllowanceChargeType
     private $taxTotal;
 
     /**
-     * @var array<PaymentMeans>|null
+     * @var null|array<PaymentMeans>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\PaymentMeans>")
      * @JMS\Expose
@@ -190,7 +190,7 @@ class AllowanceChargeType
     private $paymentMeans;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -208,7 +208,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -229,7 +229,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getChargeIndicator(): ?bool
     {
@@ -237,7 +237,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param bool|null $chargeIndicator
+     * @param  null|bool $chargeIndicator
      * @return static
      */
     public function setChargeIndicator(?bool $chargeIndicator = null): static
@@ -258,7 +258,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return AllowanceChargeReasonCode|null
+     * @return null|AllowanceChargeReasonCode
      */
     public function getAllowanceChargeReasonCode(): ?AllowanceChargeReasonCode
     {
@@ -276,7 +276,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param AllowanceChargeReasonCode|null $allowanceChargeReasonCode
+     * @param  null|AllowanceChargeReasonCode $allowanceChargeReasonCode
      * @return static
      */
     public function setAllowanceChargeReasonCode(?AllowanceChargeReasonCode $allowanceChargeReasonCode = null): static
@@ -297,7 +297,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return array<AllowanceChargeReason>|null
+     * @return null|array<AllowanceChargeReason>
      */
     public function getAllowanceChargeReason(): ?array
     {
@@ -305,7 +305,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param array<AllowanceChargeReason>|null $allowanceChargeReason
+     * @param  null|array<AllowanceChargeReason> $allowanceChargeReason
      * @return static
      */
     public function setAllowanceChargeReason(?array $allowanceChargeReason = null): static
@@ -336,7 +336,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return AllowanceChargeReason|null
+     * @return null|AllowanceChargeReason
      */
     public function firstAllowanceChargeReason(): ?AllowanceChargeReason
     {
@@ -351,7 +351,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return AllowanceChargeReason|null
+     * @return null|AllowanceChargeReason
      */
     public function lastAllowanceChargeReason(): ?AllowanceChargeReason
     {
@@ -366,7 +366,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param AllowanceChargeReason $allowanceChargeReason
+     * @param  AllowanceChargeReason $allowanceChargeReason
      * @return static
      */
     public function addToAllowanceChargeReason(AllowanceChargeReason $allowanceChargeReason): static
@@ -387,7 +387,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param AllowanceChargeReason $allowanceChargeReason
+     * @param  AllowanceChargeReason $allowanceChargeReason
      * @return static
      */
     public function addOnceToAllowanceChargeReason(AllowanceChargeReason $allowanceChargeReason): static
@@ -418,7 +418,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return MultiplierFactorNumeric|null
+     * @return null|MultiplierFactorNumeric
      */
     public function getMultiplierFactorNumeric(): ?MultiplierFactorNumeric
     {
@@ -436,7 +436,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param MultiplierFactorNumeric|null $multiplierFactorNumeric
+     * @param  null|MultiplierFactorNumeric $multiplierFactorNumeric
      * @return static
      */
     public function setMultiplierFactorNumeric(?MultiplierFactorNumeric $multiplierFactorNumeric = null): static
@@ -457,7 +457,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getPrepaidIndicator(): ?bool
     {
@@ -465,7 +465,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param bool|null $prepaidIndicator
+     * @param  null|bool $prepaidIndicator
      * @return static
      */
     public function setPrepaidIndicator(?bool $prepaidIndicator = null): static
@@ -486,7 +486,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return SequenceNumeric|null
+     * @return null|SequenceNumeric
      */
     public function getSequenceNumeric(): ?SequenceNumeric
     {
@@ -504,7 +504,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param SequenceNumeric|null $sequenceNumeric
+     * @param  null|SequenceNumeric $sequenceNumeric
      * @return static
      */
     public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): static
@@ -525,7 +525,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return Amount|null
+     * @return null|Amount
      */
     public function getAmount(): ?Amount
     {
@@ -543,7 +543,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param Amount|null $amount
+     * @param  null|Amount $amount
      * @return static
      */
     public function setAmount(?Amount $amount = null): static
@@ -564,7 +564,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return BaseAmount|null
+     * @return null|BaseAmount
      */
     public function getBaseAmount(): ?BaseAmount
     {
@@ -582,7 +582,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param BaseAmount|null $baseAmount
+     * @param  null|BaseAmount $baseAmount
      * @return static
      */
     public function setBaseAmount(?BaseAmount $baseAmount = null): static
@@ -603,7 +603,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return AccountingCostCode|null
+     * @return null|AccountingCostCode
      */
     public function getAccountingCostCode(): ?AccountingCostCode
     {
@@ -621,7 +621,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param AccountingCostCode|null $accountingCostCode
+     * @param  null|AccountingCostCode $accountingCostCode
      * @return static
      */
     public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): static
@@ -642,7 +642,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return AccountingCost|null
+     * @return null|AccountingCost
      */
     public function getAccountingCost(): ?AccountingCost
     {
@@ -660,7 +660,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param AccountingCost|null $accountingCost
+     * @param  null|AccountingCost $accountingCost
      * @return static
      */
     public function setAccountingCost(?AccountingCost $accountingCost = null): static
@@ -681,7 +681,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return PerUnitAmount|null
+     * @return null|PerUnitAmount
      */
     public function getPerUnitAmount(): ?PerUnitAmount
     {
@@ -699,7 +699,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param PerUnitAmount|null $perUnitAmount
+     * @param  null|PerUnitAmount $perUnitAmount
      * @return static
      */
     public function setPerUnitAmount(?PerUnitAmount $perUnitAmount = null): static
@@ -720,7 +720,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return array<TaxCategory>|null
+     * @return null|array<TaxCategory>
      */
     public function getTaxCategory(): ?array
     {
@@ -728,7 +728,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param array<TaxCategory>|null $taxCategory
+     * @param  null|array<TaxCategory> $taxCategory
      * @return static
      */
     public function setTaxCategory(?array $taxCategory = null): static
@@ -759,7 +759,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return TaxCategory|null
+     * @return null|TaxCategory
      */
     public function firstTaxCategory(): ?TaxCategory
     {
@@ -774,7 +774,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return TaxCategory|null
+     * @return null|TaxCategory
      */
     public function lastTaxCategory(): ?TaxCategory
     {
@@ -789,7 +789,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param TaxCategory $taxCategory
+     * @param  TaxCategory $taxCategory
      * @return static
      */
     public function addToTaxCategory(TaxCategory $taxCategory): static
@@ -810,7 +810,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param TaxCategory $taxCategory
+     * @param  TaxCategory $taxCategory
      * @return static
      */
     public function addOnceToTaxCategory(TaxCategory $taxCategory): static
@@ -841,7 +841,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return TaxTotal|null
+     * @return null|TaxTotal
      */
     public function getTaxTotal(): ?TaxTotal
     {
@@ -859,7 +859,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param TaxTotal|null $taxTotal
+     * @param  null|TaxTotal $taxTotal
      * @return static
      */
     public function setTaxTotal(?TaxTotal $taxTotal = null): static
@@ -880,7 +880,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return array<PaymentMeans>|null
+     * @return null|array<PaymentMeans>
      */
     public function getPaymentMeans(): ?array
     {
@@ -888,7 +888,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param array<PaymentMeans>|null $paymentMeans
+     * @param  null|array<PaymentMeans> $paymentMeans
      * @return static
      */
     public function setPaymentMeans(?array $paymentMeans = null): static
@@ -919,7 +919,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return PaymentMeans|null
+     * @return null|PaymentMeans
      */
     public function firstPaymentMeans(): ?PaymentMeans
     {
@@ -934,7 +934,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @return PaymentMeans|null
+     * @return null|PaymentMeans
      */
     public function lastPaymentMeans(): ?PaymentMeans
     {
@@ -949,7 +949,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param PaymentMeans $paymentMeans
+     * @param  PaymentMeans $paymentMeans
      * @return static
      */
     public function addToPaymentMeans(PaymentMeans $paymentMeans): static
@@ -970,7 +970,7 @@ class AllowanceChargeType
     }
 
     /**
-     * @param PaymentMeans $paymentMeans
+     * @param  PaymentMeans $paymentMeans
      * @return static
      */
     public function addOnceToPaymentMeans(PaymentMeans $paymentMeans): static

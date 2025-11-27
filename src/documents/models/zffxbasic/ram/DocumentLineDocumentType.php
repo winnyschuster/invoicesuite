@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasic\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType;
+use JMS\Serializer\Annotation as JMS;
 
 class DocumentLineDocumentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\udt\IDType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class DocumentLineDocumentType
     private $lineID;
 
     /**
-     * @var NoteType|null
+     * @var null|NoteType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasic\ram\NoteType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class DocumentLineDocumentType
     private $includedNote;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getLineID(): ?IDType
     {
@@ -53,7 +53,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param IDType|null $lineID
+     * @param  null|IDType $lineID
      * @return static
      */
     public function setLineID(?IDType $lineID = null): static
@@ -74,7 +74,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @return NoteType|null
+     * @return null|NoteType
      */
     public function getIncludedNote(): ?NoteType
     {
@@ -92,7 +92,7 @@ class DocumentLineDocumentType
     }
 
     /**
-     * @param NoteType|null $includedNote
+     * @param  null|NoteType $includedNote
      * @return static
      */
     public function setIncludedNote(?NoteType $includedNote = null): static

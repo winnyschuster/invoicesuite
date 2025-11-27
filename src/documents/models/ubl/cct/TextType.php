@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cct;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
 
 class TextType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class TextType
     private $value;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class TextType
     private $languageID;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class TextType
     private $languageLocaleID;
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getValue(): ?string
     {
@@ -54,7 +54,7 @@ class TextType
     }
 
     /**
-     * @param string|null $value
+     * @param  null|string $value
      * @return static
      */
     public function setValue(?string $value = null): static
@@ -75,7 +75,7 @@ class TextType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getLanguageID(): ?string
     {
@@ -83,7 +83,7 @@ class TextType
     }
 
     /**
-     * @param string|null $languageID
+     * @param  null|string $languageID
      * @return static
      */
     public function setLanguageID(?string $languageID = null): static
@@ -104,7 +104,7 @@ class TextType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getLanguageLocaleID(): ?string
     {
@@ -112,7 +112,7 @@ class TextType
     }
 
     /**
-     * @param string|null $languageLocaleID
+     * @param  null|string $languageLocaleID
      * @return static
      */
     public function setLanguageLocaleID(?string $languageLocaleID = null): static

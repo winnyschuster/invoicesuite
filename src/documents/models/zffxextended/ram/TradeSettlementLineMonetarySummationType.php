@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeSettlementLineMonetarySummationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class TradeSettlementLineMonetarySummationType
     private $lineTotalAmount;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class TradeSettlementLineMonetarySummationType
     private $chargeTotalAmount;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class TradeSettlementLineMonetarySummationType
     private $allowanceTotalAmount;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class TradeSettlementLineMonetarySummationType
     private $taxTotalAmount;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class TradeSettlementLineMonetarySummationType
     private $grandTotalAmount;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class TradeSettlementLineMonetarySummationType
     private $totalAllowanceChargeAmount;
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getLineTotalAmount(): ?AmountType
     {
@@ -97,7 +97,7 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @param AmountType|null $lineTotalAmount
+     * @param  null|AmountType $lineTotalAmount
      * @return static
      */
     public function setLineTotalAmount(?AmountType $lineTotalAmount = null): static
@@ -118,7 +118,7 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getChargeTotalAmount(): ?AmountType
     {
@@ -136,7 +136,7 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @param AmountType|null $chargeTotalAmount
+     * @param  null|AmountType $chargeTotalAmount
      * @return static
      */
     public function setChargeTotalAmount(?AmountType $chargeTotalAmount = null): static
@@ -157,7 +157,7 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getAllowanceTotalAmount(): ?AmountType
     {
@@ -175,7 +175,7 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @param AmountType|null $allowanceTotalAmount
+     * @param  null|AmountType $allowanceTotalAmount
      * @return static
      */
     public function setAllowanceTotalAmount(?AmountType $allowanceTotalAmount = null): static
@@ -196,7 +196,7 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getTaxTotalAmount(): ?AmountType
     {
@@ -214,7 +214,7 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @param AmountType|null $taxTotalAmount
+     * @param  null|AmountType $taxTotalAmount
      * @return static
      */
     public function setTaxTotalAmount(?AmountType $taxTotalAmount = null): static
@@ -235,7 +235,7 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getGrandTotalAmount(): ?AmountType
     {
@@ -253,7 +253,7 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @param AmountType|null $grandTotalAmount
+     * @param  null|AmountType $grandTotalAmount
      * @return static
      */
     public function setGrandTotalAmount(?AmountType $grandTotalAmount = null): static
@@ -274,7 +274,7 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getTotalAllowanceChargeAmount(): ?AmountType
     {
@@ -292,7 +292,7 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @param AmountType|null $totalAllowanceChargeAmount
+     * @param  null|AmountType $totalAllowanceChargeAmount
      * @return static
      */
     public function setTotalAllowanceChargeAmount(?AmountType $totalAllowanceChargeAmount = null): static

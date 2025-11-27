@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Condition;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
+use horstoeko\invoicesuite\documents\models\ubl\cbc\SealingPartyType;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SealIssuerTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SealStatusCode;
-use horstoeko\invoicesuite\documents\models\ubl\cbc\SealingPartyType;
+use JMS\Serializer\Annotation as JMS;
 
 class TransportEquipmentSealType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class TransportEquipmentSealType
     private $iD;
 
     /**
-     * @var SealIssuerTypeCode|null
+     * @var null|SealIssuerTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SealIssuerTypeCode")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class TransportEquipmentSealType
     private $sealIssuerTypeCode;
 
     /**
-     * @var Condition|null
+     * @var null|Condition
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Condition")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class TransportEquipmentSealType
     private $condition;
 
     /**
-     * @var SealStatusCode|null
+     * @var null|SealStatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SealStatusCode")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class TransportEquipmentSealType
     private $sealStatusCode;
 
     /**
-     * @var SealingPartyType|null
+     * @var null|SealingPartyType
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SealingPartyType")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class TransportEquipmentSealType
     private $sealingPartyType;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -90,7 +90,7 @@ class TransportEquipmentSealType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -111,7 +111,7 @@ class TransportEquipmentSealType
     }
 
     /**
-     * @return SealIssuerTypeCode|null
+     * @return null|SealIssuerTypeCode
      */
     public function getSealIssuerTypeCode(): ?SealIssuerTypeCode
     {
@@ -129,7 +129,7 @@ class TransportEquipmentSealType
     }
 
     /**
-     * @param SealIssuerTypeCode|null $sealIssuerTypeCode
+     * @param  null|SealIssuerTypeCode $sealIssuerTypeCode
      * @return static
      */
     public function setSealIssuerTypeCode(?SealIssuerTypeCode $sealIssuerTypeCode = null): static
@@ -150,7 +150,7 @@ class TransportEquipmentSealType
     }
 
     /**
-     * @return Condition|null
+     * @return null|Condition
      */
     public function getCondition(): ?Condition
     {
@@ -168,7 +168,7 @@ class TransportEquipmentSealType
     }
 
     /**
-     * @param Condition|null $condition
+     * @param  null|Condition $condition
      * @return static
      */
     public function setCondition(?Condition $condition = null): static
@@ -189,7 +189,7 @@ class TransportEquipmentSealType
     }
 
     /**
-     * @return SealStatusCode|null
+     * @return null|SealStatusCode
      */
     public function getSealStatusCode(): ?SealStatusCode
     {
@@ -207,7 +207,7 @@ class TransportEquipmentSealType
     }
 
     /**
-     * @param SealStatusCode|null $sealStatusCode
+     * @param  null|SealStatusCode $sealStatusCode
      * @return static
      */
     public function setSealStatusCode(?SealStatusCode $sealStatusCode = null): static
@@ -228,7 +228,7 @@ class TransportEquipmentSealType
     }
 
     /**
-     * @return SealingPartyType|null
+     * @return null|SealingPartyType
      */
     public function getSealingPartyType(): ?SealingPartyType
     {
@@ -246,7 +246,7 @@ class TransportEquipmentSealType
     }
 
     /**
-     * @param SealingPartyType|null $sealingPartyType
+     * @param  null|SealingPartyType $sealingPartyType
      * @return static
      */
     public function setSealingPartyType(?SealingPartyType $sealingPartyType = null): static

@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxbasicwl\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxbasicwl\qdt\CurrencyCodeType;
 use horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\CodeType;
 use horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\IDType;
 use horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class HeaderTradeSettlementType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\IDType")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class HeaderTradeSettlementType
     private $creditorReferenceID;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\TextType")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class HeaderTradeSettlementType
     private $paymentReference;
 
     /**
-     * @var CodeType|null
+     * @var null|CodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\udt\CodeType")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class HeaderTradeSettlementType
     private $taxCurrencyCode;
 
     /**
-     * @var CurrencyCodeType|null
+     * @var null|CurrencyCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\qdt\CurrencyCodeType")
      * @JMS\Expose
@@ -60,7 +60,7 @@ class HeaderTradeSettlementType
     private $invoiceCurrencyCode;
 
     /**
-     * @var TradePartyType|null
+     * @var null|TradePartyType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\TradePartyType")
      * @JMS\Expose
@@ -71,7 +71,7 @@ class HeaderTradeSettlementType
     private $payeeTradeParty;
 
     /**
-     * @var array<TradeSettlementPaymentMeansType>|null
+     * @var null|array<TradeSettlementPaymentMeansType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\TradeSettlementPaymentMeansType>")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class HeaderTradeSettlementType
     private $specifiedTradeSettlementPaymentMeans;
 
     /**
-     * @var array<TradeTaxType>|null
+     * @var null|array<TradeTaxType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\TradeTaxType>")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class HeaderTradeSettlementType
     private $applicableTradeTax;
 
     /**
-     * @var SpecifiedPeriodType|null
+     * @var null|SpecifiedPeriodType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\SpecifiedPeriodType")
      * @JMS\Expose
@@ -106,7 +106,7 @@ class HeaderTradeSettlementType
     private $billingSpecifiedPeriod;
 
     /**
-     * @var array<TradeAllowanceChargeType>|null
+     * @var null|array<TradeAllowanceChargeType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\TradeAllowanceChargeType>")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class HeaderTradeSettlementType
     private $specifiedTradeAllowanceCharge;
 
     /**
-     * @var TradePaymentTermsType|null
+     * @var null|TradePaymentTermsType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\TradePaymentTermsType")
      * @JMS\Expose
@@ -129,7 +129,7 @@ class HeaderTradeSettlementType
     private $specifiedTradePaymentTerms;
 
     /**
-     * @var TradeSettlementHeaderMonetarySummationType|null
+     * @var null|TradeSettlementHeaderMonetarySummationType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\TradeSettlementHeaderMonetarySummationType")
      * @JMS\Expose
@@ -140,7 +140,7 @@ class HeaderTradeSettlementType
     private $specifiedTradeSettlementHeaderMonetarySummation;
 
     /**
-     * @var array<ReferencedDocumentType>|null
+     * @var null|array<ReferencedDocumentType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\ReferencedDocumentType>")
      * @JMS\Expose
@@ -152,7 +152,7 @@ class HeaderTradeSettlementType
     private $invoiceReferencedDocument;
 
     /**
-     * @var TradeAccountingAccountType|null
+     * @var null|TradeAccountingAccountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxbasicwl\ram\TradeAccountingAccountType")
      * @JMS\Expose
@@ -163,7 +163,7 @@ class HeaderTradeSettlementType
     private $receivableSpecifiedTradeAccountingAccount;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getCreditorReferenceID(): ?IDType
     {
@@ -181,7 +181,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param IDType|null $creditorReferenceID
+     * @param  null|IDType $creditorReferenceID
      * @return static
      */
     public function setCreditorReferenceID(?IDType $creditorReferenceID = null): static
@@ -202,7 +202,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getPaymentReference(): ?TextType
     {
@@ -220,7 +220,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param TextType|null $paymentReference
+     * @param  null|TextType $paymentReference
      * @return static
      */
     public function setPaymentReference(?TextType $paymentReference = null): static
@@ -241,7 +241,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return CodeType|null
+     * @return null|CodeType
      */
     public function getTaxCurrencyCode(): ?CodeType
     {
@@ -259,7 +259,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param CodeType|null $taxCurrencyCode
+     * @param  null|CodeType $taxCurrencyCode
      * @return static
      */
     public function setTaxCurrencyCode(?CodeType $taxCurrencyCode = null): static
@@ -280,7 +280,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return CurrencyCodeType|null
+     * @return null|CurrencyCodeType
      */
     public function getInvoiceCurrencyCode(): ?CurrencyCodeType
     {
@@ -298,7 +298,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param CurrencyCodeType|null $invoiceCurrencyCode
+     * @param  null|CurrencyCodeType $invoiceCurrencyCode
      * @return static
      */
     public function setInvoiceCurrencyCode(?CurrencyCodeType $invoiceCurrencyCode = null): static
@@ -319,7 +319,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return TradePartyType|null
+     * @return null|TradePartyType
      */
     public function getPayeeTradeParty(): ?TradePartyType
     {
@@ -337,7 +337,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param TradePartyType|null $payeeTradeParty
+     * @param  null|TradePartyType $payeeTradeParty
      * @return static
      */
     public function setPayeeTradeParty(?TradePartyType $payeeTradeParty = null): static
@@ -358,7 +358,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return array<TradeSettlementPaymentMeansType>|null
+     * @return null|array<TradeSettlementPaymentMeansType>
      */
     public function getSpecifiedTradeSettlementPaymentMeans(): ?array
     {
@@ -366,7 +366,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param array<TradeSettlementPaymentMeansType>|null $specifiedTradeSettlementPaymentMeans
+     * @param  null|array<TradeSettlementPaymentMeansType> $specifiedTradeSettlementPaymentMeans
      * @return static
      */
     public function setSpecifiedTradeSettlementPaymentMeans(?array $specifiedTradeSettlementPaymentMeans = null): static
@@ -397,7 +397,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param TradeSettlementPaymentMeansType $specifiedTradeSettlementPaymentMeans
+     * @param  TradeSettlementPaymentMeansType $specifiedTradeSettlementPaymentMeans
      * @return static
      */
     public function addToSpecifiedTradeSettlementPaymentMeans(
@@ -419,7 +419,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param TradeSettlementPaymentMeansType $specifiedTradeSettlementPaymentMeans
+     * @param  TradeSettlementPaymentMeansType $specifiedTradeSettlementPaymentMeans
      * @return static
      */
     public function addOnceToSpecifiedTradeSettlementPaymentMeans(
@@ -451,7 +451,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return array<TradeTaxType>|null
+     * @return null|array<TradeTaxType>
      */
     public function getApplicableTradeTax(): ?array
     {
@@ -459,7 +459,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param array<TradeTaxType>|null $applicableTradeTax
+     * @param  null|array<TradeTaxType> $applicableTradeTax
      * @return static
      */
     public function setApplicableTradeTax(?array $applicableTradeTax = null): static
@@ -490,7 +490,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param TradeTaxType $applicableTradeTax
+     * @param  TradeTaxType $applicableTradeTax
      * @return static
      */
     public function addToApplicableTradeTax(TradeTaxType $applicableTradeTax): static
@@ -511,7 +511,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param TradeTaxType $applicableTradeTax
+     * @param  TradeTaxType $applicableTradeTax
      * @return static
      */
     public function addOnceToApplicableTradeTax(TradeTaxType $applicableTradeTax): static
@@ -542,7 +542,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return SpecifiedPeriodType|null
+     * @return null|SpecifiedPeriodType
      */
     public function getBillingSpecifiedPeriod(): ?SpecifiedPeriodType
     {
@@ -560,7 +560,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param SpecifiedPeriodType|null $billingSpecifiedPeriod
+     * @param  null|SpecifiedPeriodType $billingSpecifiedPeriod
      * @return static
      */
     public function setBillingSpecifiedPeriod(?SpecifiedPeriodType $billingSpecifiedPeriod = null): static
@@ -581,7 +581,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return array<TradeAllowanceChargeType>|null
+     * @return null|array<TradeAllowanceChargeType>
      */
     public function getSpecifiedTradeAllowanceCharge(): ?array
     {
@@ -589,7 +589,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param array<TradeAllowanceChargeType>|null $specifiedTradeAllowanceCharge
+     * @param  null|array<TradeAllowanceChargeType> $specifiedTradeAllowanceCharge
      * @return static
      */
     public function setSpecifiedTradeAllowanceCharge(?array $specifiedTradeAllowanceCharge = null): static
@@ -620,7 +620,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param TradeAllowanceChargeType $specifiedTradeAllowanceCharge
+     * @param  TradeAllowanceChargeType $specifiedTradeAllowanceCharge
      * @return static
      */
     public function addToSpecifiedTradeAllowanceCharge(TradeAllowanceChargeType $specifiedTradeAllowanceCharge): static
@@ -641,7 +641,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param TradeAllowanceChargeType $specifiedTradeAllowanceCharge
+     * @param  TradeAllowanceChargeType $specifiedTradeAllowanceCharge
      * @return static
      */
     public function addOnceToSpecifiedTradeAllowanceCharge(
@@ -673,7 +673,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return TradePaymentTermsType|null
+     * @return null|TradePaymentTermsType
      */
     public function getSpecifiedTradePaymentTerms(): ?TradePaymentTermsType
     {
@@ -691,7 +691,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param TradePaymentTermsType|null $specifiedTradePaymentTerms
+     * @param  null|TradePaymentTermsType $specifiedTradePaymentTerms
      * @return static
      */
     public function setSpecifiedTradePaymentTerms(?TradePaymentTermsType $specifiedTradePaymentTerms = null): static
@@ -712,7 +712,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return TradeSettlementHeaderMonetarySummationType|null
+     * @return null|TradeSettlementHeaderMonetarySummationType
      */
     public function getSpecifiedTradeSettlementHeaderMonetarySummation(): ?TradeSettlementHeaderMonetarySummationType
     {
@@ -730,7 +730,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param TradeSettlementHeaderMonetarySummationType|null $specifiedTradeSettlementHeaderMonetarySummation
+     * @param  null|TradeSettlementHeaderMonetarySummationType $specifiedTradeSettlementHeaderMonetarySummation
      * @return static
      */
     public function setSpecifiedTradeSettlementHeaderMonetarySummation(
@@ -752,7 +752,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return array<ReferencedDocumentType>|null
+     * @return null|array<ReferencedDocumentType>
      */
     public function getInvoiceReferencedDocument(): ?array
     {
@@ -760,7 +760,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param array<ReferencedDocumentType>|null $invoiceReferencedDocument
+     * @param  null|array<ReferencedDocumentType> $invoiceReferencedDocument
      * @return static
      */
     public function setInvoiceReferencedDocument(?array $invoiceReferencedDocument = null): static
@@ -791,7 +791,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param ReferencedDocumentType $invoiceReferencedDocument
+     * @param  ReferencedDocumentType $invoiceReferencedDocument
      * @return static
      */
     public function addToInvoiceReferencedDocument(ReferencedDocumentType $invoiceReferencedDocument): static
@@ -812,7 +812,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param ReferencedDocumentType $invoiceReferencedDocument
+     * @param  ReferencedDocumentType $invoiceReferencedDocument
      * @return static
      */
     public function addOnceToInvoiceReferencedDocument(ReferencedDocumentType $invoiceReferencedDocument): static
@@ -843,7 +843,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @return TradeAccountingAccountType|null
+     * @return null|TradeAccountingAccountType
      */
     public function getReceivableSpecifiedTradeAccountingAccount(): ?TradeAccountingAccountType
     {
@@ -861,7 +861,7 @@ class HeaderTradeSettlementType
     }
 
     /**
-     * @param TradeAccountingAccountType|null $receivableSpecifiedTradeAccountingAccount
+     * @param  null|TradeAccountingAccountType $receivableSpecifiedTradeAccountingAccount
      * @return static
      */
     public function setReceivableSpecifiedTradeAccountingAccount(

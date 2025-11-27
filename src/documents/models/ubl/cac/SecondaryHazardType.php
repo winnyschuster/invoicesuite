@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\EmergencyProceduresCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Extension;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardEndorsement;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardNotation;
+use JMS\Serializer\Annotation as JMS;
 
 class SecondaryHazardType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class SecondaryHazardType
     private $iD;
 
     /**
-     * @var PlacardNotation|null
+     * @var null|PlacardNotation
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardNotation")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class SecondaryHazardType
     private $placardNotation;
 
     /**
-     * @var PlacardEndorsement|null
+     * @var null|PlacardEndorsement
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PlacardEndorsement")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class SecondaryHazardType
     private $placardEndorsement;
 
     /**
-     * @var EmergencyProceduresCode|null
+     * @var null|EmergencyProceduresCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\EmergencyProceduresCode")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class SecondaryHazardType
     private $emergencyProceduresCode;
 
     /**
-     * @var array<Extension>|null
+     * @var null|array<Extension>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Extension>")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class SecondaryHazardType
     private $extension;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -91,7 +91,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -112,7 +112,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return PlacardNotation|null
+     * @return null|PlacardNotation
      */
     public function getPlacardNotation(): ?PlacardNotation
     {
@@ -130,7 +130,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @param PlacardNotation|null $placardNotation
+     * @param  null|PlacardNotation $placardNotation
      * @return static
      */
     public function setPlacardNotation(?PlacardNotation $placardNotation = null): static
@@ -151,7 +151,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return PlacardEndorsement|null
+     * @return null|PlacardEndorsement
      */
     public function getPlacardEndorsement(): ?PlacardEndorsement
     {
@@ -169,7 +169,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @param PlacardEndorsement|null $placardEndorsement
+     * @param  null|PlacardEndorsement $placardEndorsement
      * @return static
      */
     public function setPlacardEndorsement(?PlacardEndorsement $placardEndorsement = null): static
@@ -190,7 +190,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return EmergencyProceduresCode|null
+     * @return null|EmergencyProceduresCode
      */
     public function getEmergencyProceduresCode(): ?EmergencyProceduresCode
     {
@@ -208,7 +208,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @param EmergencyProceduresCode|null $emergencyProceduresCode
+     * @param  null|EmergencyProceduresCode $emergencyProceduresCode
      * @return static
      */
     public function setEmergencyProceduresCode(?EmergencyProceduresCode $emergencyProceduresCode = null): static
@@ -229,7 +229,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return array<Extension>|null
+     * @return null|array<Extension>
      */
     public function getExtension(): ?array
     {
@@ -237,7 +237,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @param array<Extension>|null $extension
+     * @param  null|array<Extension> $extension
      * @return static
      */
     public function setExtension(?array $extension = null): static
@@ -268,7 +268,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return Extension|null
+     * @return null|Extension
      */
     public function firstExtension(): ?Extension
     {
@@ -283,7 +283,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @return Extension|null
+     * @return null|Extension
      */
     public function lastExtension(): ?Extension
     {
@@ -298,7 +298,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @param Extension $extension
+     * @param  Extension $extension
      * @return static
      */
     public function addToExtension(Extension $extension): static
@@ -319,7 +319,7 @@ class SecondaryHazardType
     }
 
     /**
-     * @param Extension $extension
+     * @param  Extension $extension
      * @return static
      */
     public function addOnceToExtension(Extension $extension): static

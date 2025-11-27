@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ActionCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ContentUnitQuantity;
@@ -14,17 +13,18 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\LifeCycleStatusCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumOrderQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumOrderQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
-use horstoeko\invoicesuite\documents\models\ubl\cbc\OrderQuantityIncrementNumeric;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\OrderableUnit;
+use horstoeko\invoicesuite\documents\models\ubl\cbc\OrderQuantityIncrementNumeric;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PackLevelCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\WarrantyInformation;
+use JMS\Serializer\Annotation as JMS;
 
 class CatalogueLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class CatalogueLineType
     private $iD;
 
     /**
-     * @var ActionCode|null
+     * @var null|ActionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ActionCode")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class CatalogueLineType
     private $actionCode;
 
     /**
-     * @var LifeCycleStatusCode|null
+     * @var null|LifeCycleStatusCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LifeCycleStatusCode")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class CatalogueLineType
     private $lifeCycleStatusCode;
 
     /**
-     * @var ContractSubdivision|null
+     * @var null|ContractSubdivision
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ContractSubdivision")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class CatalogueLineType
     private $contractSubdivision;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class CatalogueLineType
     private $note;
 
     /**
-     * @var bool|null
+     * @var null|bool
      * @JMS\Groups({"ubl"})
      * @JMS\Type("bool")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class CatalogueLineType
     private $orderableIndicator;
 
     /**
-     * @var OrderableUnit|null
+     * @var null|OrderableUnit
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OrderableUnit")
      * @JMS\Expose
@@ -102,7 +102,7 @@ class CatalogueLineType
     private $orderableUnit;
 
     /**
-     * @var ContentUnitQuantity|null
+     * @var null|ContentUnitQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ContentUnitQuantity")
      * @JMS\Expose
@@ -113,7 +113,7 @@ class CatalogueLineType
     private $contentUnitQuantity;
 
     /**
-     * @var OrderQuantityIncrementNumeric|null
+     * @var null|OrderQuantityIncrementNumeric
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OrderQuantityIncrementNumeric")
      * @JMS\Expose
@@ -124,7 +124,7 @@ class CatalogueLineType
     private $orderQuantityIncrementNumeric;
 
     /**
-     * @var MinimumOrderQuantity|null
+     * @var null|MinimumOrderQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MinimumOrderQuantity")
      * @JMS\Expose
@@ -135,7 +135,7 @@ class CatalogueLineType
     private $minimumOrderQuantity;
 
     /**
-     * @var MaximumOrderQuantity|null
+     * @var null|MaximumOrderQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MaximumOrderQuantity")
      * @JMS\Expose
@@ -146,7 +146,7 @@ class CatalogueLineType
     private $maximumOrderQuantity;
 
     /**
-     * @var array<WarrantyInformation>|null
+     * @var null|array<WarrantyInformation>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\WarrantyInformation>")
      * @JMS\Expose
@@ -158,7 +158,7 @@ class CatalogueLineType
     private $warrantyInformation;
 
     /**
-     * @var PackLevelCode|null
+     * @var null|PackLevelCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PackLevelCode")
      * @JMS\Expose
@@ -169,7 +169,7 @@ class CatalogueLineType
     private $packLevelCode;
 
     /**
-     * @var ContractorCustomerParty|null
+     * @var null|ContractorCustomerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContractorCustomerParty")
      * @JMS\Expose
@@ -180,7 +180,7 @@ class CatalogueLineType
     private $contractorCustomerParty;
 
     /**
-     * @var SellerSupplierParty|null
+     * @var null|SellerSupplierParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty")
      * @JMS\Expose
@@ -191,7 +191,7 @@ class CatalogueLineType
     private $sellerSupplierParty;
 
     /**
-     * @var WarrantyParty|null
+     * @var null|WarrantyParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyParty")
      * @JMS\Expose
@@ -202,7 +202,7 @@ class CatalogueLineType
     private $warrantyParty;
 
     /**
-     * @var WarrantyValidityPeriod|null
+     * @var null|WarrantyValidityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\WarrantyValidityPeriod")
      * @JMS\Expose
@@ -213,7 +213,7 @@ class CatalogueLineType
     private $warrantyValidityPeriod;
 
     /**
-     * @var LineValidityPeriod|null
+     * @var null|LineValidityPeriod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\LineValidityPeriod")
      * @JMS\Expose
@@ -224,7 +224,7 @@ class CatalogueLineType
     private $lineValidityPeriod;
 
     /**
-     * @var array<ItemComparison>|null
+     * @var null|array<ItemComparison>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ItemComparison>")
      * @JMS\Expose
@@ -236,7 +236,7 @@ class CatalogueLineType
     private $itemComparison;
 
     /**
-     * @var array<ComponentRelatedItem>|null
+     * @var null|array<ComponentRelatedItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ComponentRelatedItem>")
      * @JMS\Expose
@@ -248,7 +248,7 @@ class CatalogueLineType
     private $componentRelatedItem;
 
     /**
-     * @var array<AccessoryRelatedItem>|null
+     * @var null|array<AccessoryRelatedItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AccessoryRelatedItem>")
      * @JMS\Expose
@@ -260,7 +260,7 @@ class CatalogueLineType
     private $accessoryRelatedItem;
 
     /**
-     * @var array<RequiredRelatedItem>|null
+     * @var null|array<RequiredRelatedItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RequiredRelatedItem>")
      * @JMS\Expose
@@ -272,7 +272,7 @@ class CatalogueLineType
     private $requiredRelatedItem;
 
     /**
-     * @var array<ReplacementRelatedItem>|null
+     * @var null|array<ReplacementRelatedItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ReplacementRelatedItem>")
      * @JMS\Expose
@@ -284,7 +284,7 @@ class CatalogueLineType
     private $replacementRelatedItem;
 
     /**
-     * @var array<ComplementaryRelatedItem>|null
+     * @var null|array<ComplementaryRelatedItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ComplementaryRelatedItem>")
      * @JMS\Expose
@@ -296,7 +296,7 @@ class CatalogueLineType
     private $complementaryRelatedItem;
 
     /**
-     * @var array<ReplacedRelatedItem>|null
+     * @var null|array<ReplacedRelatedItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ReplacedRelatedItem>")
      * @JMS\Expose
@@ -308,7 +308,7 @@ class CatalogueLineType
     private $replacedRelatedItem;
 
     /**
-     * @var array<RequiredItemLocationQuantity>|null
+     * @var null|array<RequiredItemLocationQuantity>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\RequiredItemLocationQuantity>")
      * @JMS\Expose
@@ -320,7 +320,7 @@ class CatalogueLineType
     private $requiredItemLocationQuantity;
 
     /**
-     * @var array<DocumentReference>|null
+     * @var null|array<DocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -332,7 +332,7 @@ class CatalogueLineType
     private $documentReference;
 
     /**
-     * @var Item|null
+     * @var null|Item
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -343,7 +343,7 @@ class CatalogueLineType
     private $item;
 
     /**
-     * @var array<KeywordItemProperty>|null
+     * @var null|array<KeywordItemProperty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\KeywordItemProperty>")
      * @JMS\Expose
@@ -355,7 +355,7 @@ class CatalogueLineType
     private $keywordItemProperty;
 
     /**
-     * @var CallForTendersLineReference|null
+     * @var null|CallForTendersLineReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CallForTendersLineReference")
      * @JMS\Expose
@@ -366,7 +366,7 @@ class CatalogueLineType
     private $callForTendersLineReference;
 
     /**
-     * @var CallForTendersDocumentReference|null
+     * @var null|CallForTendersDocumentReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\CallForTendersDocumentReference")
      * @JMS\Expose
@@ -377,7 +377,7 @@ class CatalogueLineType
     private $callForTendersDocumentReference;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -395,7 +395,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -416,7 +416,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return ActionCode|null
+     * @return null|ActionCode
      */
     public function getActionCode(): ?ActionCode
     {
@@ -434,7 +434,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param ActionCode|null $actionCode
+     * @param  null|ActionCode $actionCode
      * @return static
      */
     public function setActionCode(?ActionCode $actionCode = null): static
@@ -455,7 +455,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return LifeCycleStatusCode|null
+     * @return null|LifeCycleStatusCode
      */
     public function getLifeCycleStatusCode(): ?LifeCycleStatusCode
     {
@@ -473,7 +473,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param LifeCycleStatusCode|null $lifeCycleStatusCode
+     * @param  null|LifeCycleStatusCode $lifeCycleStatusCode
      * @return static
      */
     public function setLifeCycleStatusCode(?LifeCycleStatusCode $lifeCycleStatusCode = null): static
@@ -494,7 +494,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return ContractSubdivision|null
+     * @return null|ContractSubdivision
      */
     public function getContractSubdivision(): ?ContractSubdivision
     {
@@ -512,7 +512,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param ContractSubdivision|null $contractSubdivision
+     * @param  null|ContractSubdivision $contractSubdivision
      * @return static
      */
     public function setContractSubdivision(?ContractSubdivision $contractSubdivision = null): static
@@ -533,7 +533,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -541,7 +541,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -572,7 +572,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -587,7 +587,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -602,7 +602,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -623,7 +623,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -654,7 +654,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return bool|null
+     * @return null|bool
      */
     public function getOrderableIndicator(): ?bool
     {
@@ -662,7 +662,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param bool|null $orderableIndicator
+     * @param  null|bool $orderableIndicator
      * @return static
      */
     public function setOrderableIndicator(?bool $orderableIndicator = null): static
@@ -683,7 +683,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return OrderableUnit|null
+     * @return null|OrderableUnit
      */
     public function getOrderableUnit(): ?OrderableUnit
     {
@@ -701,7 +701,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param OrderableUnit|null $orderableUnit
+     * @param  null|OrderableUnit $orderableUnit
      * @return static
      */
     public function setOrderableUnit(?OrderableUnit $orderableUnit = null): static
@@ -722,7 +722,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return ContentUnitQuantity|null
+     * @return null|ContentUnitQuantity
      */
     public function getContentUnitQuantity(): ?ContentUnitQuantity
     {
@@ -740,7 +740,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param ContentUnitQuantity|null $contentUnitQuantity
+     * @param  null|ContentUnitQuantity $contentUnitQuantity
      * @return static
      */
     public function setContentUnitQuantity(?ContentUnitQuantity $contentUnitQuantity = null): static
@@ -761,7 +761,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return OrderQuantityIncrementNumeric|null
+     * @return null|OrderQuantityIncrementNumeric
      */
     public function getOrderQuantityIncrementNumeric(): ?OrderQuantityIncrementNumeric
     {
@@ -779,7 +779,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param OrderQuantityIncrementNumeric|null $orderQuantityIncrementNumeric
+     * @param  null|OrderQuantityIncrementNumeric $orderQuantityIncrementNumeric
      * @return static
      */
     public function setOrderQuantityIncrementNumeric(
@@ -801,7 +801,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return MinimumOrderQuantity|null
+     * @return null|MinimumOrderQuantity
      */
     public function getMinimumOrderQuantity(): ?MinimumOrderQuantity
     {
@@ -819,7 +819,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param MinimumOrderQuantity|null $minimumOrderQuantity
+     * @param  null|MinimumOrderQuantity $minimumOrderQuantity
      * @return static
      */
     public function setMinimumOrderQuantity(?MinimumOrderQuantity $minimumOrderQuantity = null): static
@@ -840,7 +840,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return MaximumOrderQuantity|null
+     * @return null|MaximumOrderQuantity
      */
     public function getMaximumOrderQuantity(): ?MaximumOrderQuantity
     {
@@ -858,7 +858,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param MaximumOrderQuantity|null $maximumOrderQuantity
+     * @param  null|MaximumOrderQuantity $maximumOrderQuantity
      * @return static
      */
     public function setMaximumOrderQuantity(?MaximumOrderQuantity $maximumOrderQuantity = null): static
@@ -879,7 +879,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return array<WarrantyInformation>|null
+     * @return null|array<WarrantyInformation>
      */
     public function getWarrantyInformation(): ?array
     {
@@ -887,7 +887,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param array<WarrantyInformation>|null $warrantyInformation
+     * @param  null|array<WarrantyInformation> $warrantyInformation
      * @return static
      */
     public function setWarrantyInformation(?array $warrantyInformation = null): static
@@ -918,7 +918,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return WarrantyInformation|null
+     * @return null|WarrantyInformation
      */
     public function firstWarrantyInformation(): ?WarrantyInformation
     {
@@ -933,7 +933,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return WarrantyInformation|null
+     * @return null|WarrantyInformation
      */
     public function lastWarrantyInformation(): ?WarrantyInformation
     {
@@ -948,7 +948,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param WarrantyInformation $warrantyInformation
+     * @param  WarrantyInformation $warrantyInformation
      * @return static
      */
     public function addToWarrantyInformation(WarrantyInformation $warrantyInformation): static
@@ -969,7 +969,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param WarrantyInformation $warrantyInformation
+     * @param  WarrantyInformation $warrantyInformation
      * @return static
      */
     public function addOnceToWarrantyInformation(WarrantyInformation $warrantyInformation): static
@@ -1000,7 +1000,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return PackLevelCode|null
+     * @return null|PackLevelCode
      */
     public function getPackLevelCode(): ?PackLevelCode
     {
@@ -1018,7 +1018,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param PackLevelCode|null $packLevelCode
+     * @param  null|PackLevelCode $packLevelCode
      * @return static
      */
     public function setPackLevelCode(?PackLevelCode $packLevelCode = null): static
@@ -1039,7 +1039,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return ContractorCustomerParty|null
+     * @return null|ContractorCustomerParty
      */
     public function getContractorCustomerParty(): ?ContractorCustomerParty
     {
@@ -1057,7 +1057,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param ContractorCustomerParty|null $contractorCustomerParty
+     * @param  null|ContractorCustomerParty $contractorCustomerParty
      * @return static
      */
     public function setContractorCustomerParty(?ContractorCustomerParty $contractorCustomerParty = null): static
@@ -1078,7 +1078,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return SellerSupplierParty|null
+     * @return null|SellerSupplierParty
      */
     public function getSellerSupplierParty(): ?SellerSupplierParty
     {
@@ -1096,7 +1096,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param SellerSupplierParty|null $sellerSupplierParty
+     * @param  null|SellerSupplierParty $sellerSupplierParty
      * @return static
      */
     public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
@@ -1117,7 +1117,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return WarrantyParty|null
+     * @return null|WarrantyParty
      */
     public function getWarrantyParty(): ?WarrantyParty
     {
@@ -1135,7 +1135,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param WarrantyParty|null $warrantyParty
+     * @param  null|WarrantyParty $warrantyParty
      * @return static
      */
     public function setWarrantyParty(?WarrantyParty $warrantyParty = null): static
@@ -1156,7 +1156,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return WarrantyValidityPeriod|null
+     * @return null|WarrantyValidityPeriod
      */
     public function getWarrantyValidityPeriod(): ?WarrantyValidityPeriod
     {
@@ -1174,7 +1174,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param WarrantyValidityPeriod|null $warrantyValidityPeriod
+     * @param  null|WarrantyValidityPeriod $warrantyValidityPeriod
      * @return static
      */
     public function setWarrantyValidityPeriod(?WarrantyValidityPeriod $warrantyValidityPeriod = null): static
@@ -1195,7 +1195,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return LineValidityPeriod|null
+     * @return null|LineValidityPeriod
      */
     public function getLineValidityPeriod(): ?LineValidityPeriod
     {
@@ -1213,7 +1213,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param LineValidityPeriod|null $lineValidityPeriod
+     * @param  null|LineValidityPeriod $lineValidityPeriod
      * @return static
      */
     public function setLineValidityPeriod(?LineValidityPeriod $lineValidityPeriod = null): static
@@ -1234,7 +1234,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return array<ItemComparison>|null
+     * @return null|array<ItemComparison>
      */
     public function getItemComparison(): ?array
     {
@@ -1242,7 +1242,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param array<ItemComparison>|null $itemComparison
+     * @param  null|array<ItemComparison> $itemComparison
      * @return static
      */
     public function setItemComparison(?array $itemComparison = null): static
@@ -1273,7 +1273,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return ItemComparison|null
+     * @return null|ItemComparison
      */
     public function firstItemComparison(): ?ItemComparison
     {
@@ -1288,7 +1288,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return ItemComparison|null
+     * @return null|ItemComparison
      */
     public function lastItemComparison(): ?ItemComparison
     {
@@ -1303,7 +1303,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param ItemComparison $itemComparison
+     * @param  ItemComparison $itemComparison
      * @return static
      */
     public function addToItemComparison(ItemComparison $itemComparison): static
@@ -1324,7 +1324,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param ItemComparison $itemComparison
+     * @param  ItemComparison $itemComparison
      * @return static
      */
     public function addOnceToItemComparison(ItemComparison $itemComparison): static
@@ -1355,7 +1355,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return array<ComponentRelatedItem>|null
+     * @return null|array<ComponentRelatedItem>
      */
     public function getComponentRelatedItem(): ?array
     {
@@ -1363,7 +1363,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param array<ComponentRelatedItem>|null $componentRelatedItem
+     * @param  null|array<ComponentRelatedItem> $componentRelatedItem
      * @return static
      */
     public function setComponentRelatedItem(?array $componentRelatedItem = null): static
@@ -1394,7 +1394,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return ComponentRelatedItem|null
+     * @return null|ComponentRelatedItem
      */
     public function firstComponentRelatedItem(): ?ComponentRelatedItem
     {
@@ -1409,7 +1409,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return ComponentRelatedItem|null
+     * @return null|ComponentRelatedItem
      */
     public function lastComponentRelatedItem(): ?ComponentRelatedItem
     {
@@ -1424,7 +1424,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param ComponentRelatedItem $componentRelatedItem
+     * @param  ComponentRelatedItem $componentRelatedItem
      * @return static
      */
     public function addToComponentRelatedItem(ComponentRelatedItem $componentRelatedItem): static
@@ -1445,7 +1445,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param ComponentRelatedItem $componentRelatedItem
+     * @param  ComponentRelatedItem $componentRelatedItem
      * @return static
      */
     public function addOnceToComponentRelatedItem(ComponentRelatedItem $componentRelatedItem): static
@@ -1476,7 +1476,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return array<AccessoryRelatedItem>|null
+     * @return null|array<AccessoryRelatedItem>
      */
     public function getAccessoryRelatedItem(): ?array
     {
@@ -1484,7 +1484,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param array<AccessoryRelatedItem>|null $accessoryRelatedItem
+     * @param  null|array<AccessoryRelatedItem> $accessoryRelatedItem
      * @return static
      */
     public function setAccessoryRelatedItem(?array $accessoryRelatedItem = null): static
@@ -1515,7 +1515,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return AccessoryRelatedItem|null
+     * @return null|AccessoryRelatedItem
      */
     public function firstAccessoryRelatedItem(): ?AccessoryRelatedItem
     {
@@ -1530,7 +1530,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return AccessoryRelatedItem|null
+     * @return null|AccessoryRelatedItem
      */
     public function lastAccessoryRelatedItem(): ?AccessoryRelatedItem
     {
@@ -1545,7 +1545,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param AccessoryRelatedItem $accessoryRelatedItem
+     * @param  AccessoryRelatedItem $accessoryRelatedItem
      * @return static
      */
     public function addToAccessoryRelatedItem(AccessoryRelatedItem $accessoryRelatedItem): static
@@ -1566,7 +1566,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param AccessoryRelatedItem $accessoryRelatedItem
+     * @param  AccessoryRelatedItem $accessoryRelatedItem
      * @return static
      */
     public function addOnceToAccessoryRelatedItem(AccessoryRelatedItem $accessoryRelatedItem): static
@@ -1597,7 +1597,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return array<RequiredRelatedItem>|null
+     * @return null|array<RequiredRelatedItem>
      */
     public function getRequiredRelatedItem(): ?array
     {
@@ -1605,7 +1605,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param array<RequiredRelatedItem>|null $requiredRelatedItem
+     * @param  null|array<RequiredRelatedItem> $requiredRelatedItem
      * @return static
      */
     public function setRequiredRelatedItem(?array $requiredRelatedItem = null): static
@@ -1636,7 +1636,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return RequiredRelatedItem|null
+     * @return null|RequiredRelatedItem
      */
     public function firstRequiredRelatedItem(): ?RequiredRelatedItem
     {
@@ -1651,7 +1651,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return RequiredRelatedItem|null
+     * @return null|RequiredRelatedItem
      */
     public function lastRequiredRelatedItem(): ?RequiredRelatedItem
     {
@@ -1666,7 +1666,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param RequiredRelatedItem $requiredRelatedItem
+     * @param  RequiredRelatedItem $requiredRelatedItem
      * @return static
      */
     public function addToRequiredRelatedItem(RequiredRelatedItem $requiredRelatedItem): static
@@ -1687,7 +1687,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param RequiredRelatedItem $requiredRelatedItem
+     * @param  RequiredRelatedItem $requiredRelatedItem
      * @return static
      */
     public function addOnceToRequiredRelatedItem(RequiredRelatedItem $requiredRelatedItem): static
@@ -1718,7 +1718,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return array<ReplacementRelatedItem>|null
+     * @return null|array<ReplacementRelatedItem>
      */
     public function getReplacementRelatedItem(): ?array
     {
@@ -1726,7 +1726,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param array<ReplacementRelatedItem>|null $replacementRelatedItem
+     * @param  null|array<ReplacementRelatedItem> $replacementRelatedItem
      * @return static
      */
     public function setReplacementRelatedItem(?array $replacementRelatedItem = null): static
@@ -1757,7 +1757,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return ReplacementRelatedItem|null
+     * @return null|ReplacementRelatedItem
      */
     public function firstReplacementRelatedItem(): ?ReplacementRelatedItem
     {
@@ -1772,7 +1772,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return ReplacementRelatedItem|null
+     * @return null|ReplacementRelatedItem
      */
     public function lastReplacementRelatedItem(): ?ReplacementRelatedItem
     {
@@ -1787,7 +1787,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param ReplacementRelatedItem $replacementRelatedItem
+     * @param  ReplacementRelatedItem $replacementRelatedItem
      * @return static
      */
     public function addToReplacementRelatedItem(ReplacementRelatedItem $replacementRelatedItem): static
@@ -1808,7 +1808,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param ReplacementRelatedItem $replacementRelatedItem
+     * @param  ReplacementRelatedItem $replacementRelatedItem
      * @return static
      */
     public function addOnceToReplacementRelatedItem(ReplacementRelatedItem $replacementRelatedItem): static
@@ -1839,7 +1839,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return array<ComplementaryRelatedItem>|null
+     * @return null|array<ComplementaryRelatedItem>
      */
     public function getComplementaryRelatedItem(): ?array
     {
@@ -1847,7 +1847,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param array<ComplementaryRelatedItem>|null $complementaryRelatedItem
+     * @param  null|array<ComplementaryRelatedItem> $complementaryRelatedItem
      * @return static
      */
     public function setComplementaryRelatedItem(?array $complementaryRelatedItem = null): static
@@ -1878,7 +1878,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return ComplementaryRelatedItem|null
+     * @return null|ComplementaryRelatedItem
      */
     public function firstComplementaryRelatedItem(): ?ComplementaryRelatedItem
     {
@@ -1893,7 +1893,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return ComplementaryRelatedItem|null
+     * @return null|ComplementaryRelatedItem
      */
     public function lastComplementaryRelatedItem(): ?ComplementaryRelatedItem
     {
@@ -1908,7 +1908,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param ComplementaryRelatedItem $complementaryRelatedItem
+     * @param  ComplementaryRelatedItem $complementaryRelatedItem
      * @return static
      */
     public function addToComplementaryRelatedItem(ComplementaryRelatedItem $complementaryRelatedItem): static
@@ -1929,7 +1929,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param ComplementaryRelatedItem $complementaryRelatedItem
+     * @param  ComplementaryRelatedItem $complementaryRelatedItem
      * @return static
      */
     public function addOnceToComplementaryRelatedItem(ComplementaryRelatedItem $complementaryRelatedItem): static
@@ -1960,7 +1960,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return array<ReplacedRelatedItem>|null
+     * @return null|array<ReplacedRelatedItem>
      */
     public function getReplacedRelatedItem(): ?array
     {
@@ -1968,7 +1968,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param array<ReplacedRelatedItem>|null $replacedRelatedItem
+     * @param  null|array<ReplacedRelatedItem> $replacedRelatedItem
      * @return static
      */
     public function setReplacedRelatedItem(?array $replacedRelatedItem = null): static
@@ -1999,7 +1999,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return ReplacedRelatedItem|null
+     * @return null|ReplacedRelatedItem
      */
     public function firstReplacedRelatedItem(): ?ReplacedRelatedItem
     {
@@ -2014,7 +2014,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return ReplacedRelatedItem|null
+     * @return null|ReplacedRelatedItem
      */
     public function lastReplacedRelatedItem(): ?ReplacedRelatedItem
     {
@@ -2029,7 +2029,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param ReplacedRelatedItem $replacedRelatedItem
+     * @param  ReplacedRelatedItem $replacedRelatedItem
      * @return static
      */
     public function addToReplacedRelatedItem(ReplacedRelatedItem $replacedRelatedItem): static
@@ -2050,7 +2050,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param ReplacedRelatedItem $replacedRelatedItem
+     * @param  ReplacedRelatedItem $replacedRelatedItem
      * @return static
      */
     public function addOnceToReplacedRelatedItem(ReplacedRelatedItem $replacedRelatedItem): static
@@ -2081,7 +2081,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return array<RequiredItemLocationQuantity>|null
+     * @return null|array<RequiredItemLocationQuantity>
      */
     public function getRequiredItemLocationQuantity(): ?array
     {
@@ -2089,7 +2089,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param array<RequiredItemLocationQuantity>|null $requiredItemLocationQuantity
+     * @param  null|array<RequiredItemLocationQuantity> $requiredItemLocationQuantity
      * @return static
      */
     public function setRequiredItemLocationQuantity(?array $requiredItemLocationQuantity = null): static
@@ -2120,7 +2120,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return RequiredItemLocationQuantity|null
+     * @return null|RequiredItemLocationQuantity
      */
     public function firstRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
@@ -2135,7 +2135,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return RequiredItemLocationQuantity|null
+     * @return null|RequiredItemLocationQuantity
      */
     public function lastRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
@@ -2150,7 +2150,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param  RequiredItemLocationQuantity $requiredItemLocationQuantity
      * @return static
      */
     public function addToRequiredItemLocationQuantity(
@@ -2172,7 +2172,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param RequiredItemLocationQuantity $requiredItemLocationQuantity
+     * @param  RequiredItemLocationQuantity $requiredItemLocationQuantity
      * @return static
      */
     public function addOnceToRequiredItemLocationQuantity(
@@ -2204,7 +2204,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return array<DocumentReference>|null
+     * @return null|array<DocumentReference>
      */
     public function getDocumentReference(): ?array
     {
@@ -2212,7 +2212,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param array<DocumentReference>|null $documentReference
+     * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
     public function setDocumentReference(?array $documentReference = null): static
@@ -2243,7 +2243,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -2258,7 +2258,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -2273,7 +2273,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addToDocumentReference(DocumentReference $documentReference): static
@@ -2294,7 +2294,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): static
@@ -2325,7 +2325,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function getItem(): ?Item
     {
@@ -2343,7 +2343,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param Item|null $item
+     * @param  null|Item $item
      * @return static
      */
     public function setItem(?Item $item = null): static
@@ -2364,7 +2364,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return array<KeywordItemProperty>|null
+     * @return null|array<KeywordItemProperty>
      */
     public function getKeywordItemProperty(): ?array
     {
@@ -2372,7 +2372,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param array<KeywordItemProperty>|null $keywordItemProperty
+     * @param  null|array<KeywordItemProperty> $keywordItemProperty
      * @return static
      */
     public function setKeywordItemProperty(?array $keywordItemProperty = null): static
@@ -2403,7 +2403,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return KeywordItemProperty|null
+     * @return null|KeywordItemProperty
      */
     public function firstKeywordItemProperty(): ?KeywordItemProperty
     {
@@ -2418,7 +2418,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return KeywordItemProperty|null
+     * @return null|KeywordItemProperty
      */
     public function lastKeywordItemProperty(): ?KeywordItemProperty
     {
@@ -2433,7 +2433,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param KeywordItemProperty $keywordItemProperty
+     * @param  KeywordItemProperty $keywordItemProperty
      * @return static
      */
     public function addToKeywordItemProperty(KeywordItemProperty $keywordItemProperty): static
@@ -2454,7 +2454,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param KeywordItemProperty $keywordItemProperty
+     * @param  KeywordItemProperty $keywordItemProperty
      * @return static
      */
     public function addOnceToKeywordItemProperty(KeywordItemProperty $keywordItemProperty): static
@@ -2485,7 +2485,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return CallForTendersLineReference|null
+     * @return null|CallForTendersLineReference
      */
     public function getCallForTendersLineReference(): ?CallForTendersLineReference
     {
@@ -2503,7 +2503,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param CallForTendersLineReference|null $callForTendersLineReference
+     * @param  null|CallForTendersLineReference $callForTendersLineReference
      * @return static
      */
     public function setCallForTendersLineReference(
@@ -2525,7 +2525,7 @@ class CatalogueLineType
     }
 
     /**
-     * @return CallForTendersDocumentReference|null
+     * @return null|CallForTendersDocumentReference
      */
     public function getCallForTendersDocumentReference(): ?CallForTendersDocumentReference
     {
@@ -2543,7 +2543,7 @@ class CatalogueLineType
     }
 
     /**
-     * @param CallForTendersDocumentReference|null $callForTendersDocumentReference
+     * @param  null|CallForTendersDocumentReference $callForTendersDocumentReference
      * @return static
      */
     public function setCallForTendersDocumentReference(

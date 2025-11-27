@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AverageAmount;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
+use JMS\Serializer\Annotation as JMS;
 
 class ConsumptionAverageType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AverageAmount|null
+     * @var null|AverageAmount
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AverageAmount")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class ConsumptionAverageType
     private $averageAmount;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class ConsumptionAverageType
     private $description;
 
     /**
-     * @return AverageAmount|null
+     * @return null|AverageAmount
      */
     public function getAverageAmount(): ?AverageAmount
     {
@@ -55,7 +55,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @param AverageAmount|null $averageAmount
+     * @param  null|AverageAmount $averageAmount
      * @return static
      */
     public function setAverageAmount(?AverageAmount $averageAmount = null): static
@@ -76,7 +76,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -84,7 +84,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -115,7 +115,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -130,7 +130,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -145,7 +145,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -166,7 +166,7 @@ class ConsumptionAverageType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static

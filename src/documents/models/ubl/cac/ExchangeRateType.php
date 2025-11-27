@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationRate;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ExchangeMarketID;
@@ -14,13 +13,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\SourceCurrencyBaseRate;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\SourceCurrencyCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TargetCurrencyBaseRate;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TargetCurrencyCode;
+use JMS\Serializer\Annotation as JMS;
 
 class ExchangeRateType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var SourceCurrencyCode|null
+     * @var null|SourceCurrencyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SourceCurrencyCode")
      * @JMS\Expose
@@ -31,7 +31,7 @@ class ExchangeRateType
     private $sourceCurrencyCode;
 
     /**
-     * @var SourceCurrencyBaseRate|null
+     * @var null|SourceCurrencyBaseRate
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SourceCurrencyBaseRate")
      * @JMS\Expose
@@ -42,7 +42,7 @@ class ExchangeRateType
     private $sourceCurrencyBaseRate;
 
     /**
-     * @var TargetCurrencyCode|null
+     * @var null|TargetCurrencyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TargetCurrencyCode")
      * @JMS\Expose
@@ -53,7 +53,7 @@ class ExchangeRateType
     private $targetCurrencyCode;
 
     /**
-     * @var TargetCurrencyBaseRate|null
+     * @var null|TargetCurrencyBaseRate
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TargetCurrencyBaseRate")
      * @JMS\Expose
@@ -64,7 +64,7 @@ class ExchangeRateType
     private $targetCurrencyBaseRate;
 
     /**
-     * @var ExchangeMarketID|null
+     * @var null|ExchangeMarketID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExchangeMarketID")
      * @JMS\Expose
@@ -75,7 +75,7 @@ class ExchangeRateType
     private $exchangeMarketID;
 
     /**
-     * @var CalculationRate|null
+     * @var null|CalculationRate
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CalculationRate")
      * @JMS\Expose
@@ -86,7 +86,7 @@ class ExchangeRateType
     private $calculationRate;
 
     /**
-     * @var MathematicOperatorCode|null
+     * @var null|MathematicOperatorCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MathematicOperatorCode")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class ExchangeRateType
     private $mathematicOperatorCode;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -108,7 +108,7 @@ class ExchangeRateType
     private $date;
 
     /**
-     * @var ForeignExchangeContract|null
+     * @var null|ForeignExchangeContract
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ForeignExchangeContract")
      * @JMS\Expose
@@ -119,7 +119,7 @@ class ExchangeRateType
     private $foreignExchangeContract;
 
     /**
-     * @return SourceCurrencyCode|null
+     * @return null|SourceCurrencyCode
      */
     public function getSourceCurrencyCode(): ?SourceCurrencyCode
     {
@@ -137,7 +137,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param SourceCurrencyCode|null $sourceCurrencyCode
+     * @param  null|SourceCurrencyCode $sourceCurrencyCode
      * @return static
      */
     public function setSourceCurrencyCode(?SourceCurrencyCode $sourceCurrencyCode = null): static
@@ -158,7 +158,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return SourceCurrencyBaseRate|null
+     * @return null|SourceCurrencyBaseRate
      */
     public function getSourceCurrencyBaseRate(): ?SourceCurrencyBaseRate
     {
@@ -176,7 +176,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param SourceCurrencyBaseRate|null $sourceCurrencyBaseRate
+     * @param  null|SourceCurrencyBaseRate $sourceCurrencyBaseRate
      * @return static
      */
     public function setSourceCurrencyBaseRate(?SourceCurrencyBaseRate $sourceCurrencyBaseRate = null): static
@@ -197,7 +197,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return TargetCurrencyCode|null
+     * @return null|TargetCurrencyCode
      */
     public function getTargetCurrencyCode(): ?TargetCurrencyCode
     {
@@ -215,7 +215,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param TargetCurrencyCode|null $targetCurrencyCode
+     * @param  null|TargetCurrencyCode $targetCurrencyCode
      * @return static
      */
     public function setTargetCurrencyCode(?TargetCurrencyCode $targetCurrencyCode = null): static
@@ -236,7 +236,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return TargetCurrencyBaseRate|null
+     * @return null|TargetCurrencyBaseRate
      */
     public function getTargetCurrencyBaseRate(): ?TargetCurrencyBaseRate
     {
@@ -254,7 +254,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param TargetCurrencyBaseRate|null $targetCurrencyBaseRate
+     * @param  null|TargetCurrencyBaseRate $targetCurrencyBaseRate
      * @return static
      */
     public function setTargetCurrencyBaseRate(?TargetCurrencyBaseRate $targetCurrencyBaseRate = null): static
@@ -275,7 +275,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return ExchangeMarketID|null
+     * @return null|ExchangeMarketID
      */
     public function getExchangeMarketID(): ?ExchangeMarketID
     {
@@ -293,7 +293,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param ExchangeMarketID|null $exchangeMarketID
+     * @param  null|ExchangeMarketID $exchangeMarketID
      * @return static
      */
     public function setExchangeMarketID(?ExchangeMarketID $exchangeMarketID = null): static
@@ -314,7 +314,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return CalculationRate|null
+     * @return null|CalculationRate
      */
     public function getCalculationRate(): ?CalculationRate
     {
@@ -332,7 +332,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param CalculationRate|null $calculationRate
+     * @param  null|CalculationRate $calculationRate
      * @return static
      */
     public function setCalculationRate(?CalculationRate $calculationRate = null): static
@@ -353,7 +353,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return MathematicOperatorCode|null
+     * @return null|MathematicOperatorCode
      */
     public function getMathematicOperatorCode(): ?MathematicOperatorCode
     {
@@ -371,7 +371,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param MathematicOperatorCode|null $mathematicOperatorCode
+     * @param  null|MathematicOperatorCode $mathematicOperatorCode
      * @return static
      */
     public function setMathematicOperatorCode(?MathematicOperatorCode $mathematicOperatorCode = null): static
@@ -392,7 +392,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getDate(): ?DateTimeInterface
     {
@@ -400,7 +400,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param DateTimeInterface|null $date
+     * @param  null|DateTimeInterface $date
      * @return static
      */
     public function setDate(?DateTimeInterface $date = null): static
@@ -421,7 +421,7 @@ class ExchangeRateType
     }
 
     /**
-     * @return ForeignExchangeContract|null
+     * @return null|ForeignExchangeContract
      */
     public function getForeignExchangeContract(): ?ForeignExchangeContract
     {
@@ -439,7 +439,7 @@ class ExchangeRateType
     }
 
     /**
-     * @param ForeignExchangeContract|null $foreignExchangeContract
+     * @param  null|ForeignExchangeContract $foreignExchangeContract
      * @return static
      */
     public function setForeignExchangeContract(?ForeignExchangeContract $foreignExchangeContract = null): static

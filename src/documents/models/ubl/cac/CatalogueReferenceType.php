@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
@@ -13,13 +12,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousVersionID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID;
+use JMS\Serializer\Annotation as JMS;
 
 class CatalogueReferenceType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -30,7 +30,7 @@ class CatalogueReferenceType
     private $iD;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class CatalogueReferenceType
     private $uUID;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class CatalogueReferenceType
     private $issueDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class CatalogueReferenceType
     private $issueTime;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class CatalogueReferenceType
     private $revisionDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class CatalogueReferenceType
     private $revisionTime;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -97,7 +97,7 @@ class CatalogueReferenceType
     private $note;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -109,7 +109,7 @@ class CatalogueReferenceType
     private $description;
 
     /**
-     * @var VersionID|null
+     * @var null|VersionID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID")
      * @JMS\Expose
@@ -120,7 +120,7 @@ class CatalogueReferenceType
     private $versionID;
 
     /**
-     * @var PreviousVersionID|null
+     * @var null|PreviousVersionID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousVersionID")
      * @JMS\Expose
@@ -131,7 +131,7 @@ class CatalogueReferenceType
     private $previousVersionID;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -149,7 +149,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -170,7 +170,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -188,7 +188,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -209,7 +209,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueDate(): ?DateTimeInterface
     {
@@ -217,7 +217,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param DateTimeInterface|null $issueDate
+     * @param  null|DateTimeInterface $issueDate
      * @return static
      */
     public function setIssueDate(?DateTimeInterface $issueDate = null): static
@@ -238,7 +238,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getIssueTime(): ?DateTimeInterface
     {
@@ -246,7 +246,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param DateTimeInterface|null $issueTime
+     * @param  null|DateTimeInterface $issueTime
      * @return static
      */
     public function setIssueTime(?DateTimeInterface $issueTime = null): static
@@ -267,7 +267,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getRevisionDate(): ?DateTimeInterface
     {
@@ -275,7 +275,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param DateTimeInterface|null $revisionDate
+     * @param  null|DateTimeInterface $revisionDate
      * @return static
      */
     public function setRevisionDate(?DateTimeInterface $revisionDate = null): static
@@ -296,7 +296,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getRevisionTime(): ?DateTimeInterface
     {
@@ -304,7 +304,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param DateTimeInterface|null $revisionTime
+     * @param  null|DateTimeInterface $revisionTime
      * @return static
      */
     public function setRevisionTime(?DateTimeInterface $revisionTime = null): static
@@ -325,7 +325,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -333,7 +333,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -364,7 +364,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -379,7 +379,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -394,7 +394,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -415,7 +415,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -446,7 +446,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -454,7 +454,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -485,7 +485,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -500,7 +500,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -515,7 +515,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -536,7 +536,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -567,7 +567,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return VersionID|null
+     * @return null|VersionID
      */
     public function getVersionID(): ?VersionID
     {
@@ -585,7 +585,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param VersionID|null $versionID
+     * @param  null|VersionID $versionID
      * @return static
      */
     public function setVersionID(?VersionID $versionID = null): static
@@ -606,7 +606,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @return PreviousVersionID|null
+     * @return null|PreviousVersionID
      */
     public function getPreviousVersionID(): ?PreviousVersionID
     {
@@ -624,7 +624,7 @@ class CatalogueReferenceType
     }
 
     /**
-     * @param PreviousVersionID|null $previousVersionID
+     * @param  null|PreviousVersionID $previousVersionID
      * @return static
      */
     public function setPreviousVersionID(?PreviousVersionID $previousVersionID = null): static

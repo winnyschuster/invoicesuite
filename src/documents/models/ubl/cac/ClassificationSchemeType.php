@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AgencyID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AgencyName;
@@ -18,13 +17,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\SchemeURI;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\URI;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID;
+use JMS\Serializer\Annotation as JMS;
 
 class ClassificationSchemeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class ClassificationSchemeType
     private $iD;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class ClassificationSchemeType
     private $uUID;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class ClassificationSchemeType
     private $lastRevisionDate;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class ClassificationSchemeType
     private $lastRevisionTime;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class ClassificationSchemeType
     private $note;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class ClassificationSchemeType
     private $name;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -103,7 +103,7 @@ class ClassificationSchemeType
     private $description;
 
     /**
-     * @var AgencyID|null
+     * @var null|AgencyID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AgencyID")
      * @JMS\Expose
@@ -114,7 +114,7 @@ class ClassificationSchemeType
     private $agencyID;
 
     /**
-     * @var AgencyName|null
+     * @var null|AgencyName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AgencyName")
      * @JMS\Expose
@@ -125,7 +125,7 @@ class ClassificationSchemeType
     private $agencyName;
 
     /**
-     * @var VersionID|null
+     * @var null|VersionID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\VersionID")
      * @JMS\Expose
@@ -136,7 +136,7 @@ class ClassificationSchemeType
     private $versionID;
 
     /**
-     * @var URI|null
+     * @var null|URI
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\URI")
      * @JMS\Expose
@@ -147,7 +147,7 @@ class ClassificationSchemeType
     private $uRI;
 
     /**
-     * @var SchemeURI|null
+     * @var null|SchemeURI
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\SchemeURI")
      * @JMS\Expose
@@ -158,7 +158,7 @@ class ClassificationSchemeType
     private $schemeURI;
 
     /**
-     * @var LanguageID|null
+     * @var null|LanguageID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LanguageID")
      * @JMS\Expose
@@ -169,7 +169,7 @@ class ClassificationSchemeType
     private $languageID;
 
     /**
-     * @var array<ClassificationCategory>|null
+     * @var null|array<ClassificationCategory>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\ClassificationCategory>")
      * @JMS\Expose
@@ -181,7 +181,7 @@ class ClassificationSchemeType
     private $classificationCategory;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -199,7 +199,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -220,7 +220,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -238,7 +238,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -259,7 +259,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getLastRevisionDate(): ?DateTimeInterface
     {
@@ -267,7 +267,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param DateTimeInterface|null $lastRevisionDate
+     * @param  null|DateTimeInterface $lastRevisionDate
      * @return static
      */
     public function setLastRevisionDate(?DateTimeInterface $lastRevisionDate = null): static
@@ -288,7 +288,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getLastRevisionTime(): ?DateTimeInterface
     {
@@ -296,7 +296,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param DateTimeInterface|null $lastRevisionTime
+     * @param  null|DateTimeInterface $lastRevisionTime
      * @return static
      */
     public function setLastRevisionTime(?DateTimeInterface $lastRevisionTime = null): static
@@ -317,7 +317,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -325,7 +325,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -356,7 +356,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -371,7 +371,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -386,7 +386,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -407,7 +407,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -438,7 +438,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -456,7 +456,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -477,7 +477,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -485,7 +485,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -516,7 +516,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -531,7 +531,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -546,7 +546,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -567,7 +567,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static
@@ -598,7 +598,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return AgencyID|null
+     * @return null|AgencyID
      */
     public function getAgencyID(): ?AgencyID
     {
@@ -616,7 +616,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param AgencyID|null $agencyID
+     * @param  null|AgencyID $agencyID
      * @return static
      */
     public function setAgencyID(?AgencyID $agencyID = null): static
@@ -637,7 +637,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return AgencyName|null
+     * @return null|AgencyName
      */
     public function getAgencyName(): ?AgencyName
     {
@@ -655,7 +655,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param AgencyName|null $agencyName
+     * @param  null|AgencyName $agencyName
      * @return static
      */
     public function setAgencyName(?AgencyName $agencyName = null): static
@@ -676,7 +676,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return VersionID|null
+     * @return null|VersionID
      */
     public function getVersionID(): ?VersionID
     {
@@ -694,7 +694,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param VersionID|null $versionID
+     * @param  null|VersionID $versionID
      * @return static
      */
     public function setVersionID(?VersionID $versionID = null): static
@@ -715,7 +715,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return URI|null
+     * @return null|URI
      */
     public function getURI(): ?URI
     {
@@ -733,7 +733,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param URI|null $uRI
+     * @param  null|URI $uRI
      * @return static
      */
     public function setURI(?URI $uRI = null): static
@@ -754,7 +754,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return SchemeURI|null
+     * @return null|SchemeURI
      */
     public function getSchemeURI(): ?SchemeURI
     {
@@ -772,7 +772,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param SchemeURI|null $schemeURI
+     * @param  null|SchemeURI $schemeURI
      * @return static
      */
     public function setSchemeURI(?SchemeURI $schemeURI = null): static
@@ -793,7 +793,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return LanguageID|null
+     * @return null|LanguageID
      */
     public function getLanguageID(): ?LanguageID
     {
@@ -811,7 +811,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param LanguageID|null $languageID
+     * @param  null|LanguageID $languageID
      * @return static
      */
     public function setLanguageID(?LanguageID $languageID = null): static
@@ -832,7 +832,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return array<ClassificationCategory>|null
+     * @return null|array<ClassificationCategory>
      */
     public function getClassificationCategory(): ?array
     {
@@ -840,7 +840,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param array<ClassificationCategory>|null $classificationCategory
+     * @param  null|array<ClassificationCategory> $classificationCategory
      * @return static
      */
     public function setClassificationCategory(?array $classificationCategory = null): static
@@ -871,7 +871,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return ClassificationCategory|null
+     * @return null|ClassificationCategory
      */
     public function firstClassificationCategory(): ?ClassificationCategory
     {
@@ -886,7 +886,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @return ClassificationCategory|null
+     * @return null|ClassificationCategory
      */
     public function lastClassificationCategory(): ?ClassificationCategory
     {
@@ -901,7 +901,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param ClassificationCategory $classificationCategory
+     * @param  ClassificationCategory $classificationCategory
      * @return static
      */
     public function addToClassificationCategory(ClassificationCategory $classificationCategory): static
@@ -922,7 +922,7 @@ class ClassificationSchemeType
     }
 
     /**
-     * @param ClassificationCategory $classificationCategory
+     * @param  ClassificationCategory $classificationCategory
      * @return static
      */
     public function addOnceToClassificationCategory(ClassificationCategory $classificationCategory): static

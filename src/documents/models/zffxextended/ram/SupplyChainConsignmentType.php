@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use JMS\Serializer\Annotation as JMS;
 
 class SupplyChainConsignmentType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var array<LogisticsTransportMovementType>|null
+     * @var null|array<LogisticsTransportMovementType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\LogisticsTransportMovementType>")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class SupplyChainConsignmentType
     private $specifiedLogisticsTransportMovement;
 
     /**
-     * @return array<LogisticsTransportMovementType>|null
+     * @return null|array<LogisticsTransportMovementType>
      */
     public function getSpecifiedLogisticsTransportMovement(): ?array
     {
@@ -32,7 +32,7 @@ class SupplyChainConsignmentType
     }
 
     /**
-     * @param array<LogisticsTransportMovementType>|null $specifiedLogisticsTransportMovement
+     * @param  null|array<LogisticsTransportMovementType> $specifiedLogisticsTransportMovement
      * @return static
      */
     public function setSpecifiedLogisticsTransportMovement(?array $specifiedLogisticsTransportMovement = null): static
@@ -63,7 +63,7 @@ class SupplyChainConsignmentType
     }
 
     /**
-     * @param LogisticsTransportMovementType $specifiedLogisticsTransportMovement
+     * @param  LogisticsTransportMovementType $specifiedLogisticsTransportMovement
      * @return static
      */
     public function addToSpecifiedLogisticsTransportMovement(
@@ -85,7 +85,7 @@ class SupplyChainConsignmentType
     }
 
     /**
-     * @param LogisticsTransportMovementType $specifiedLogisticsTransportMovement
+     * @param  LogisticsTransportMovementType $specifiedLogisticsTransportMovement
      * @return static
      */
     public function addOnceToSpecifiedLogisticsTransportMovement(

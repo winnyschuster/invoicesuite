@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ImportanceCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
+use JMS\Serializer\Annotation as JMS;
 
 class ItemPropertyGroupType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class ItemPropertyGroupType
     private $iD;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class ItemPropertyGroupType
     private $name;
 
     /**
-     * @var ImportanceCode|null
+     * @var null|ImportanceCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ImportanceCode")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class ItemPropertyGroupType
     private $importanceCode;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -66,7 +66,7 @@ class ItemPropertyGroupType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -87,7 +87,7 @@ class ItemPropertyGroupType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -105,7 +105,7 @@ class ItemPropertyGroupType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -126,7 +126,7 @@ class ItemPropertyGroupType
     }
 
     /**
-     * @return ImportanceCode|null
+     * @return null|ImportanceCode
      */
     public function getImportanceCode(): ?ImportanceCode
     {
@@ -144,7 +144,7 @@ class ItemPropertyGroupType
     }
 
     /**
-     * @param ImportanceCode|null $importanceCode
+     * @param  null|ImportanceCode $importanceCode
      * @return static
      */
     public function setImportanceCode(?ImportanceCode $importanceCode = null): static

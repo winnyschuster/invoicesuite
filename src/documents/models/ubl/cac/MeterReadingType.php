@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DeliveredQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
@@ -18,13 +17,14 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\MeterReadingTypeCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousMeterQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousMeterReadingMethod;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousMeterReadingMethodCode;
+use JMS\Serializer\Annotation as JMS;
 
 class MeterReadingType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class MeterReadingType
     private $iD;
 
     /**
-     * @var \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterReadingType|null
+     * @var null|MeterReadingType1
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MeterReadingType")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class MeterReadingType
     private $meterReadingType;
 
     /**
-     * @var MeterReadingTypeCode|null
+     * @var null|MeterReadingTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MeterReadingTypeCode")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class MeterReadingType
     private $meterReadingTypeCode;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class MeterReadingType
     private $previousMeterReadingDate;
 
     /**
-     * @var PreviousMeterQuantity|null
+     * @var null|PreviousMeterQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousMeterQuantity")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class MeterReadingType
     private $previousMeterQuantity;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -90,7 +90,7 @@ class MeterReadingType
     private $latestMeterReadingDate;
 
     /**
-     * @var LatestMeterQuantity|null
+     * @var null|LatestMeterQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LatestMeterQuantity")
      * @JMS\Expose
@@ -101,7 +101,7 @@ class MeterReadingType
     private $latestMeterQuantity;
 
     /**
-     * @var PreviousMeterReadingMethod|null
+     * @var null|PreviousMeterReadingMethod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousMeterReadingMethod")
      * @JMS\Expose
@@ -112,7 +112,7 @@ class MeterReadingType
     private $previousMeterReadingMethod;
 
     /**
-     * @var PreviousMeterReadingMethodCode|null
+     * @var null|PreviousMeterReadingMethodCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PreviousMeterReadingMethodCode")
      * @JMS\Expose
@@ -123,7 +123,7 @@ class MeterReadingType
     private $previousMeterReadingMethodCode;
 
     /**
-     * @var LatestMeterReadingMethod|null
+     * @var null|LatestMeterReadingMethod
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LatestMeterReadingMethod")
      * @JMS\Expose
@@ -134,7 +134,7 @@ class MeterReadingType
     private $latestMeterReadingMethod;
 
     /**
-     * @var LatestMeterReadingMethodCode|null
+     * @var null|LatestMeterReadingMethodCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LatestMeterReadingMethodCode")
      * @JMS\Expose
@@ -145,7 +145,7 @@ class MeterReadingType
     private $latestMeterReadingMethodCode;
 
     /**
-     * @var array<MeterReadingComments>|null
+     * @var null|array<MeterReadingComments>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\MeterReadingComments>")
      * @JMS\Expose
@@ -157,7 +157,7 @@ class MeterReadingType
     private $meterReadingComments;
 
     /**
-     * @var DeliveredQuantity|null
+     * @var null|DeliveredQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DeliveredQuantity")
      * @JMS\Expose
@@ -168,7 +168,7 @@ class MeterReadingType
     private $deliveredQuantity;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -186,7 +186,7 @@ class MeterReadingType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -207,7 +207,7 @@ class MeterReadingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterReadingType|null
+     * @return null|MeterReadingType1
      */
     public function getMeterReadingType(): ?MeterReadingType1
     {
@@ -215,17 +215,17 @@ class MeterReadingType
     }
 
     /**
-     * @return \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterReadingType
+     * @return MeterReadingType1
      */
     public function getMeterReadingTypeWithCreate(): MeterReadingType1
     {
-        $this->meterReadingType = is_null($this->meterReadingType) ? new MeterReadingType() : $this->meterReadingType;
+        $this->meterReadingType = is_null($this->meterReadingType) ? new self() : $this->meterReadingType;
 
         return $this->meterReadingType;
     }
 
     /**
-     * @param \horstoeko\invoicesuite\documents\models\ubl\cbc\MeterReadingType|null $meterReadingType
+     * @param  null|MeterReadingType1 $meterReadingType
      * @return static
      */
     public function setMeterReadingType(?MeterReadingType1 $meterReadingType = null): static
@@ -246,7 +246,7 @@ class MeterReadingType
     }
 
     /**
-     * @return MeterReadingTypeCode|null
+     * @return null|MeterReadingTypeCode
      */
     public function getMeterReadingTypeCode(): ?MeterReadingTypeCode
     {
@@ -264,7 +264,7 @@ class MeterReadingType
     }
 
     /**
-     * @param MeterReadingTypeCode|null $meterReadingTypeCode
+     * @param  null|MeterReadingTypeCode $meterReadingTypeCode
      * @return static
      */
     public function setMeterReadingTypeCode(?MeterReadingTypeCode $meterReadingTypeCode = null): static
@@ -285,7 +285,7 @@ class MeterReadingType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getPreviousMeterReadingDate(): ?DateTimeInterface
     {
@@ -293,7 +293,7 @@ class MeterReadingType
     }
 
     /**
-     * @param DateTimeInterface|null $previousMeterReadingDate
+     * @param  null|DateTimeInterface $previousMeterReadingDate
      * @return static
      */
     public function setPreviousMeterReadingDate(?DateTimeInterface $previousMeterReadingDate = null): static
@@ -314,7 +314,7 @@ class MeterReadingType
     }
 
     /**
-     * @return PreviousMeterQuantity|null
+     * @return null|PreviousMeterQuantity
      */
     public function getPreviousMeterQuantity(): ?PreviousMeterQuantity
     {
@@ -332,7 +332,7 @@ class MeterReadingType
     }
 
     /**
-     * @param PreviousMeterQuantity|null $previousMeterQuantity
+     * @param  null|PreviousMeterQuantity $previousMeterQuantity
      * @return static
      */
     public function setPreviousMeterQuantity(?PreviousMeterQuantity $previousMeterQuantity = null): static
@@ -353,7 +353,7 @@ class MeterReadingType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getLatestMeterReadingDate(): ?DateTimeInterface
     {
@@ -361,7 +361,7 @@ class MeterReadingType
     }
 
     /**
-     * @param DateTimeInterface|null $latestMeterReadingDate
+     * @param  null|DateTimeInterface $latestMeterReadingDate
      * @return static
      */
     public function setLatestMeterReadingDate(?DateTimeInterface $latestMeterReadingDate = null): static
@@ -382,7 +382,7 @@ class MeterReadingType
     }
 
     /**
-     * @return LatestMeterQuantity|null
+     * @return null|LatestMeterQuantity
      */
     public function getLatestMeterQuantity(): ?LatestMeterQuantity
     {
@@ -400,7 +400,7 @@ class MeterReadingType
     }
 
     /**
-     * @param LatestMeterQuantity|null $latestMeterQuantity
+     * @param  null|LatestMeterQuantity $latestMeterQuantity
      * @return static
      */
     public function setLatestMeterQuantity(?LatestMeterQuantity $latestMeterQuantity = null): static
@@ -421,7 +421,7 @@ class MeterReadingType
     }
 
     /**
-     * @return PreviousMeterReadingMethod|null
+     * @return null|PreviousMeterReadingMethod
      */
     public function getPreviousMeterReadingMethod(): ?PreviousMeterReadingMethod
     {
@@ -439,7 +439,7 @@ class MeterReadingType
     }
 
     /**
-     * @param PreviousMeterReadingMethod|null $previousMeterReadingMethod
+     * @param  null|PreviousMeterReadingMethod $previousMeterReadingMethod
      * @return static
      */
     public function setPreviousMeterReadingMethod(
@@ -461,7 +461,7 @@ class MeterReadingType
     }
 
     /**
-     * @return PreviousMeterReadingMethodCode|null
+     * @return null|PreviousMeterReadingMethodCode
      */
     public function getPreviousMeterReadingMethodCode(): ?PreviousMeterReadingMethodCode
     {
@@ -479,7 +479,7 @@ class MeterReadingType
     }
 
     /**
-     * @param PreviousMeterReadingMethodCode|null $previousMeterReadingMethodCode
+     * @param  null|PreviousMeterReadingMethodCode $previousMeterReadingMethodCode
      * @return static
      */
     public function setPreviousMeterReadingMethodCode(
@@ -501,7 +501,7 @@ class MeterReadingType
     }
 
     /**
-     * @return LatestMeterReadingMethod|null
+     * @return null|LatestMeterReadingMethod
      */
     public function getLatestMeterReadingMethod(): ?LatestMeterReadingMethod
     {
@@ -519,7 +519,7 @@ class MeterReadingType
     }
 
     /**
-     * @param LatestMeterReadingMethod|null $latestMeterReadingMethod
+     * @param  null|LatestMeterReadingMethod $latestMeterReadingMethod
      * @return static
      */
     public function setLatestMeterReadingMethod(?LatestMeterReadingMethod $latestMeterReadingMethod = null): static
@@ -540,7 +540,7 @@ class MeterReadingType
     }
 
     /**
-     * @return LatestMeterReadingMethodCode|null
+     * @return null|LatestMeterReadingMethodCode
      */
     public function getLatestMeterReadingMethodCode(): ?LatestMeterReadingMethodCode
     {
@@ -558,7 +558,7 @@ class MeterReadingType
     }
 
     /**
-     * @param LatestMeterReadingMethodCode|null $latestMeterReadingMethodCode
+     * @param  null|LatestMeterReadingMethodCode $latestMeterReadingMethodCode
      * @return static
      */
     public function setLatestMeterReadingMethodCode(
@@ -580,7 +580,7 @@ class MeterReadingType
     }
 
     /**
-     * @return array<MeterReadingComments>|null
+     * @return null|array<MeterReadingComments>
      */
     public function getMeterReadingComments(): ?array
     {
@@ -588,7 +588,7 @@ class MeterReadingType
     }
 
     /**
-     * @param array<MeterReadingComments>|null $meterReadingComments
+     * @param  null|array<MeterReadingComments> $meterReadingComments
      * @return static
      */
     public function setMeterReadingComments(?array $meterReadingComments = null): static
@@ -619,7 +619,7 @@ class MeterReadingType
     }
 
     /**
-     * @return MeterReadingComments|null
+     * @return null|MeterReadingComments
      */
     public function firstMeterReadingComments(): ?MeterReadingComments
     {
@@ -634,7 +634,7 @@ class MeterReadingType
     }
 
     /**
-     * @return MeterReadingComments|null
+     * @return null|MeterReadingComments
      */
     public function lastMeterReadingComments(): ?MeterReadingComments
     {
@@ -649,7 +649,7 @@ class MeterReadingType
     }
 
     /**
-     * @param MeterReadingComments $meterReadingComments
+     * @param  MeterReadingComments $meterReadingComments
      * @return static
      */
     public function addToMeterReadingComments(MeterReadingComments $meterReadingComments): static
@@ -670,7 +670,7 @@ class MeterReadingType
     }
 
     /**
-     * @param MeterReadingComments $meterReadingComments
+     * @param  MeterReadingComments $meterReadingComments
      * @return static
      */
     public function addOnceToMeterReadingComments(MeterReadingComments $meterReadingComments): static
@@ -701,7 +701,7 @@ class MeterReadingType
     }
 
     /**
-     * @return DeliveredQuantity|null
+     * @return null|DeliveredQuantity
      */
     public function getDeliveredQuantity(): ?DeliveredQuantity
     {
@@ -719,7 +719,7 @@ class MeterReadingType
     }
 
     /**
-     * @param DeliveredQuantity|null $deliveredQuantity
+     * @param  null|DeliveredQuantity $deliveredQuantity
      * @return static
      */
     public function setDeliveredQuantity(?DeliveredQuantity $deliveredQuantity = null): static

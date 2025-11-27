@@ -4,20 +4,20 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ExemptionReason;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ExemptionReasonCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationName;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TaxLevelCode;
+use JMS\Serializer\Annotation as JMS;
 
 class PartyTaxSchemeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var RegistrationName|null
+     * @var null|RegistrationName
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RegistrationName")
      * @JMS\Expose
@@ -28,7 +28,7 @@ class PartyTaxSchemeType
     private $registrationName;
 
     /**
-     * @var CompanyID|null
+     * @var null|CompanyID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\CompanyID")
      * @JMS\Expose
@@ -39,7 +39,7 @@ class PartyTaxSchemeType
     private $companyID;
 
     /**
-     * @var TaxLevelCode|null
+     * @var null|TaxLevelCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TaxLevelCode")
      * @JMS\Expose
@@ -50,7 +50,7 @@ class PartyTaxSchemeType
     private $taxLevelCode;
 
     /**
-     * @var ExemptionReasonCode|null
+     * @var null|ExemptionReasonCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ExemptionReasonCode")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class PartyTaxSchemeType
     private $exemptionReasonCode;
 
     /**
-     * @var array<ExemptionReason>|null
+     * @var null|array<ExemptionReason>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\ExemptionReason>")
      * @JMS\Expose
@@ -73,7 +73,7 @@ class PartyTaxSchemeType
     private $exemptionReason;
 
     /**
-     * @var RegistrationAddress|null
+     * @var null|RegistrationAddress
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\RegistrationAddress")
      * @JMS\Expose
@@ -84,7 +84,7 @@ class PartyTaxSchemeType
     private $registrationAddress;
 
     /**
-     * @var TaxScheme|null
+     * @var null|TaxScheme
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\TaxScheme")
      * @JMS\Expose
@@ -95,7 +95,7 @@ class PartyTaxSchemeType
     private $taxScheme;
 
     /**
-     * @return RegistrationName|null
+     * @return null|RegistrationName
      */
     public function getRegistrationName(): ?RegistrationName
     {
@@ -113,7 +113,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @param RegistrationName|null $registrationName
+     * @param  null|RegistrationName $registrationName
      * @return static
      */
     public function setRegistrationName(?RegistrationName $registrationName = null): static
@@ -134,7 +134,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return CompanyID|null
+     * @return null|CompanyID
      */
     public function getCompanyID(): ?CompanyID
     {
@@ -152,7 +152,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @param CompanyID|null $companyID
+     * @param  null|CompanyID $companyID
      * @return static
      */
     public function setCompanyID(?CompanyID $companyID = null): static
@@ -173,7 +173,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return TaxLevelCode|null
+     * @return null|TaxLevelCode
      */
     public function getTaxLevelCode(): ?TaxLevelCode
     {
@@ -191,7 +191,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @param TaxLevelCode|null $taxLevelCode
+     * @param  null|TaxLevelCode $taxLevelCode
      * @return static
      */
     public function setTaxLevelCode(?TaxLevelCode $taxLevelCode = null): static
@@ -212,7 +212,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return ExemptionReasonCode|null
+     * @return null|ExemptionReasonCode
      */
     public function getExemptionReasonCode(): ?ExemptionReasonCode
     {
@@ -230,7 +230,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @param ExemptionReasonCode|null $exemptionReasonCode
+     * @param  null|ExemptionReasonCode $exemptionReasonCode
      * @return static
      */
     public function setExemptionReasonCode(?ExemptionReasonCode $exemptionReasonCode = null): static
@@ -251,7 +251,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return array<ExemptionReason>|null
+     * @return null|array<ExemptionReason>
      */
     public function getExemptionReason(): ?array
     {
@@ -259,7 +259,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @param array<ExemptionReason>|null $exemptionReason
+     * @param  null|array<ExemptionReason> $exemptionReason
      * @return static
      */
     public function setExemptionReason(?array $exemptionReason = null): static
@@ -290,7 +290,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return ExemptionReason|null
+     * @return null|ExemptionReason
      */
     public function firstExemptionReason(): ?ExemptionReason
     {
@@ -305,7 +305,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return ExemptionReason|null
+     * @return null|ExemptionReason
      */
     public function lastExemptionReason(): ?ExemptionReason
     {
@@ -320,7 +320,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @param ExemptionReason $exemptionReason
+     * @param  ExemptionReason $exemptionReason
      * @return static
      */
     public function addToExemptionReason(ExemptionReason $exemptionReason): static
@@ -341,7 +341,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @param ExemptionReason $exemptionReason
+     * @param  ExemptionReason $exemptionReason
      * @return static
      */
     public function addOnceToExemptionReason(ExemptionReason $exemptionReason): static
@@ -372,7 +372,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return RegistrationAddress|null
+     * @return null|RegistrationAddress
      */
     public function getRegistrationAddress(): ?RegistrationAddress
     {
@@ -390,7 +390,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @param RegistrationAddress|null $registrationAddress
+     * @param  null|RegistrationAddress $registrationAddress
      * @return static
      */
     public function setRegistrationAddress(?RegistrationAddress $registrationAddress = null): static
@@ -411,7 +411,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @return TaxScheme|null
+     * @return null|TaxScheme
      */
     public function getTaxScheme(): ?TaxScheme
     {
@@ -429,7 +429,7 @@ class PartyTaxSchemeType
     }
 
     /**
-     * @param TaxScheme|null $taxScheme
+     * @param  null|TaxScheme $taxScheme
      * @return static
      */
     public function setTaxScheme(?TaxScheme $taxScheme = null): static

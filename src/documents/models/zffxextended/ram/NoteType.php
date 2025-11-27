@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class NoteType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var CodeType|null
+     * @var null|CodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class NoteType
     private $contentCode;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class NoteType
     private $content;
 
     /**
-     * @var CodeType|null
+     * @var null|CodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\CodeType")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class NoteType
     private $subjectCode;
 
     /**
-     * @return CodeType|null
+     * @return null|CodeType
      */
     public function getContentCode(): ?CodeType
     {
@@ -65,7 +65,7 @@ class NoteType
     }
 
     /**
-     * @param CodeType|null $contentCode
+     * @param  null|CodeType $contentCode
      * @return static
      */
     public function setContentCode(?CodeType $contentCode = null): static
@@ -86,7 +86,7 @@ class NoteType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getContent(): ?TextType
     {
@@ -104,7 +104,7 @@ class NoteType
     }
 
     /**
-     * @param TextType|null $content
+     * @param  null|TextType $content
      * @return static
      */
     public function setContent(?TextType $content = null): static
@@ -125,7 +125,7 @@ class NoteType
     }
 
     /**
-     * @return CodeType|null
+     * @return null|CodeType
      */
     public function getSubjectCode(): ?CodeType
     {
@@ -143,7 +143,7 @@ class NoteType
     }
 
     /**
-     * @param CodeType|null $subjectCode
+     * @param  null|CodeType $subjectCode
      * @return static
      */
     public function setSubjectCode(?CodeType $subjectCode = null): static

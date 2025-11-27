@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\MiscellaneousEventTypeCode;
+use JMS\Serializer\Annotation as JMS;
 
 class MiscellaneousEventType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var MiscellaneousEventTypeCode|null
+     * @var null|MiscellaneousEventTypeCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\MiscellaneousEventTypeCode")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class MiscellaneousEventType
     private $miscellaneousEventTypeCode;
 
     /**
-     * @var array<EventLineItem>|null
+     * @var null|array<EventLineItem>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\EventLineItem>")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class MiscellaneousEventType
     private $eventLineItem;
 
     /**
-     * @return MiscellaneousEventTypeCode|null
+     * @return null|MiscellaneousEventTypeCode
      */
     public function getMiscellaneousEventTypeCode(): ?MiscellaneousEventTypeCode
     {
@@ -54,7 +54,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @param MiscellaneousEventTypeCode|null $miscellaneousEventTypeCode
+     * @param  null|MiscellaneousEventTypeCode $miscellaneousEventTypeCode
      * @return static
      */
     public function setMiscellaneousEventTypeCode(
@@ -76,7 +76,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @return array<EventLineItem>|null
+     * @return null|array<EventLineItem>
      */
     public function getEventLineItem(): ?array
     {
@@ -84,7 +84,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @param array<EventLineItem>|null $eventLineItem
+     * @param  null|array<EventLineItem> $eventLineItem
      * @return static
      */
     public function setEventLineItem(?array $eventLineItem = null): static
@@ -115,7 +115,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @return EventLineItem|null
+     * @return null|EventLineItem
      */
     public function firstEventLineItem(): ?EventLineItem
     {
@@ -130,7 +130,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @return EventLineItem|null
+     * @return null|EventLineItem
      */
     public function lastEventLineItem(): ?EventLineItem
     {
@@ -145,7 +145,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @param EventLineItem $eventLineItem
+     * @param  EventLineItem $eventLineItem
      * @return static
      */
     public function addToEventLineItem(EventLineItem $eventLineItem): static
@@ -166,7 +166,7 @@ class MiscellaneousEventType
     }
 
     /**
-     * @param EventLineItem $eventLineItem
+     * @param  EventLineItem $eventLineItem
      * @return static
      */
     public function addOnceToEventLineItem(EventLineItem $eventLineItem): static

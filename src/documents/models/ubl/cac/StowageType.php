@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Location;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LocationID;
+use JMS\Serializer\Annotation as JMS;
 
 class StowageType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var LocationID|null
+     * @var null|LocationID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LocationID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class StowageType
     private $locationID;
 
     /**
-     * @var array<Location>|null
+     * @var null|array<Location>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Location>")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class StowageType
     private $location;
 
     /**
-     * @var array<MeasurementDimension>|null
+     * @var null|array<MeasurementDimension>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\MeasurementDimension>")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class StowageType
     private $measurementDimension;
 
     /**
-     * @return LocationID|null
+     * @return null|LocationID
      */
     public function getLocationID(): ?LocationID
     {
@@ -67,7 +67,7 @@ class StowageType
     }
 
     /**
-     * @param LocationID|null $locationID
+     * @param  null|LocationID $locationID
      * @return static
      */
     public function setLocationID(?LocationID $locationID = null): static
@@ -88,7 +88,7 @@ class StowageType
     }
 
     /**
-     * @return array<Location>|null
+     * @return null|array<Location>
      */
     public function getLocation(): ?array
     {
@@ -96,7 +96,7 @@ class StowageType
     }
 
     /**
-     * @param array<Location>|null $location
+     * @param  null|array<Location> $location
      * @return static
      */
     public function setLocation(?array $location = null): static
@@ -127,7 +127,7 @@ class StowageType
     }
 
     /**
-     * @return Location|null
+     * @return null|Location
      */
     public function firstLocation(): ?Location
     {
@@ -142,7 +142,7 @@ class StowageType
     }
 
     /**
-     * @return Location|null
+     * @return null|Location
      */
     public function lastLocation(): ?Location
     {
@@ -157,7 +157,7 @@ class StowageType
     }
 
     /**
-     * @param Location $location
+     * @param  Location $location
      * @return static
      */
     public function addToLocation(Location $location): static
@@ -178,7 +178,7 @@ class StowageType
     }
 
     /**
-     * @param Location $location
+     * @param  Location $location
      * @return static
      */
     public function addOnceToLocation(Location $location): static
@@ -209,7 +209,7 @@ class StowageType
     }
 
     /**
-     * @return array<MeasurementDimension>|null
+     * @return null|array<MeasurementDimension>
      */
     public function getMeasurementDimension(): ?array
     {
@@ -217,7 +217,7 @@ class StowageType
     }
 
     /**
-     * @param array<MeasurementDimension>|null $measurementDimension
+     * @param  null|array<MeasurementDimension> $measurementDimension
      * @return static
      */
     public function setMeasurementDimension(?array $measurementDimension = null): static
@@ -248,7 +248,7 @@ class StowageType
     }
 
     /**
-     * @return MeasurementDimension|null
+     * @return null|MeasurementDimension
      */
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
@@ -263,7 +263,7 @@ class StowageType
     }
 
     /**
-     * @return MeasurementDimension|null
+     * @return null|MeasurementDimension
      */
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
@@ -278,7 +278,7 @@ class StowageType
     }
 
     /**
-     * @param MeasurementDimension $measurementDimension
+     * @param  MeasurementDimension $measurementDimension
      * @return static
      */
     public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
@@ -299,7 +299,7 @@ class StowageType
     }
 
     /**
-     * @param MeasurementDimension $measurementDimension
+     * @param  MeasurementDimension $measurementDimension
      * @return static
      */
     public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static

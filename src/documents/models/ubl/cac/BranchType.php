@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Name;
+use JMS\Serializer\Annotation as JMS;
 
 class BranchType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class BranchType
     private $iD;
 
     /**
-     * @var Name|null
+     * @var null|Name
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Name")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class BranchType
     private $name;
 
     /**
-     * @var FinancialInstitution|null
+     * @var null|FinancialInstitution
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\FinancialInstitution")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class BranchType
     private $financialInstitution;
 
     /**
-     * @var Address|null
+     * @var null|Address
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Address")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class BranchType
     private $address;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -76,7 +76,7 @@ class BranchType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -97,7 +97,7 @@ class BranchType
     }
 
     /**
-     * @return Name|null
+     * @return null|Name
      */
     public function getName(): ?Name
     {
@@ -115,7 +115,7 @@ class BranchType
     }
 
     /**
-     * @param Name|null $name
+     * @param  null|Name $name
      * @return static
      */
     public function setName(?Name $name = null): static
@@ -136,7 +136,7 @@ class BranchType
     }
 
     /**
-     * @return FinancialInstitution|null
+     * @return null|FinancialInstitution
      */
     public function getFinancialInstitution(): ?FinancialInstitution
     {
@@ -154,7 +154,7 @@ class BranchType
     }
 
     /**
-     * @param FinancialInstitution|null $financialInstitution
+     * @param  null|FinancialInstitution $financialInstitution
      * @return static
      */
     public function setFinancialInstitution(?FinancialInstitution $financialInstitution = null): static
@@ -175,7 +175,7 @@ class BranchType
     }
 
     /**
-     * @return Address|null
+     * @return null|Address
      */
     public function getAddress(): ?Address
     {
@@ -193,7 +193,7 @@ class BranchType
     }
 
     /**
-     * @param Address|null $address
+     * @param  null|Address $address
      * @return static
      */
     public function setAddress(?Address $address = null): static

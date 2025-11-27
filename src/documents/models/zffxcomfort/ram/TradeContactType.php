@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxcomfort\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeContactType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class TradeContactType
     private $personName;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\udt\TextType")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class TradeContactType
     private $departmentName;
 
     /**
-     * @var UniversalCommunicationType|null
+     * @var null|UniversalCommunicationType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class TradeContactType
     private $telephoneUniversalCommunication;
 
     /**
-     * @var UniversalCommunicationType|null
+     * @var null|UniversalCommunicationType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxcomfort\ram\UniversalCommunicationType")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class TradeContactType
     private $emailURIUniversalCommunication;
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getPersonName(): ?TextType
     {
@@ -75,7 +75,7 @@ class TradeContactType
     }
 
     /**
-     * @param TextType|null $personName
+     * @param  null|TextType $personName
      * @return static
      */
     public function setPersonName(?TextType $personName = null): static
@@ -96,7 +96,7 @@ class TradeContactType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getDepartmentName(): ?TextType
     {
@@ -114,7 +114,7 @@ class TradeContactType
     }
 
     /**
-     * @param TextType|null $departmentName
+     * @param  null|TextType $departmentName
      * @return static
      */
     public function setDepartmentName(?TextType $departmentName = null): static
@@ -135,7 +135,7 @@ class TradeContactType
     }
 
     /**
-     * @return UniversalCommunicationType|null
+     * @return null|UniversalCommunicationType
      */
     public function getTelephoneUniversalCommunication(): ?UniversalCommunicationType
     {
@@ -153,7 +153,7 @@ class TradeContactType
     }
 
     /**
-     * @param UniversalCommunicationType|null $telephoneUniversalCommunication
+     * @param  null|UniversalCommunicationType $telephoneUniversalCommunication
      * @return static
      */
     public function setTelephoneUniversalCommunication(
@@ -175,7 +175,7 @@ class TradeContactType
     }
 
     /**
-     * @return UniversalCommunicationType|null
+     * @return null|UniversalCommunicationType
      */
     public function getEmailURIUniversalCommunication(): ?UniversalCommunicationType
     {
@@ -193,7 +193,7 @@ class TradeContactType
     }
 
     /**
-     * @param UniversalCommunicationType|null $emailURIUniversalCommunication
+     * @param  null|UniversalCommunicationType $emailURIUniversalCommunication
      * @return static
      */
     public function setEmailURIUniversalCommunication(

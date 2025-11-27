@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\qdt\AllowanceChargeReasonCodeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType;
@@ -13,13 +12,14 @@ use horstoeko\invoicesuite\documents\models\zffxextended\udt\NumericType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\PercentType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeAllowanceChargeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IndicatorType|null
+     * @var null|IndicatorType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IndicatorType")
      * @JMS\Expose
@@ -30,7 +30,7 @@ class TradeAllowanceChargeType
     private $chargeIndicator;
 
     /**
-     * @var NumericType|null
+     * @var null|NumericType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\NumericType")
      * @JMS\Expose
@@ -41,7 +41,7 @@ class TradeAllowanceChargeType
     private $sequenceNumeric;
 
     /**
-     * @var PercentType|null
+     * @var null|PercentType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\PercentType")
      * @JMS\Expose
@@ -52,7 +52,7 @@ class TradeAllowanceChargeType
     private $calculationPercent;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -63,7 +63,7 @@ class TradeAllowanceChargeType
     private $basisAmount;
 
     /**
-     * @var QuantityType|null
+     * @var null|QuantityType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\QuantityType")
      * @JMS\Expose
@@ -74,7 +74,7 @@ class TradeAllowanceChargeType
     private $basisQuantity;
 
     /**
-     * @var AmountType|null
+     * @var null|AmountType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\AmountType")
      * @JMS\Expose
@@ -85,7 +85,7 @@ class TradeAllowanceChargeType
     private $actualAmount;
 
     /**
-     * @var AllowanceChargeReasonCodeType|null
+     * @var null|AllowanceChargeReasonCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\AllowanceChargeReasonCodeType")
      * @JMS\Expose
@@ -96,7 +96,7 @@ class TradeAllowanceChargeType
     private $reasonCode;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -107,7 +107,7 @@ class TradeAllowanceChargeType
     private $reason;
 
     /**
-     * @var TradeTaxType|null
+     * @var null|TradeTaxType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeTaxType")
      * @JMS\Expose
@@ -118,7 +118,7 @@ class TradeAllowanceChargeType
     private $categoryTradeTax;
 
     /**
-     * @return IndicatorType|null
+     * @return null|IndicatorType
      */
     public function getChargeIndicator(): ?IndicatorType
     {
@@ -136,7 +136,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param IndicatorType|null $chargeIndicator
+     * @param  null|IndicatorType $chargeIndicator
      * @return static
      */
     public function setChargeIndicator(?IndicatorType $chargeIndicator = null): static
@@ -157,7 +157,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return NumericType|null
+     * @return null|NumericType
      */
     public function getSequenceNumeric(): ?NumericType
     {
@@ -175,7 +175,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param NumericType|null $sequenceNumeric
+     * @param  null|NumericType $sequenceNumeric
      * @return static
      */
     public function setSequenceNumeric(?NumericType $sequenceNumeric = null): static
@@ -196,7 +196,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return PercentType|null
+     * @return null|PercentType
      */
     public function getCalculationPercent(): ?PercentType
     {
@@ -214,7 +214,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param PercentType|null $calculationPercent
+     * @param  null|PercentType $calculationPercent
      * @return static
      */
     public function setCalculationPercent(?PercentType $calculationPercent = null): static
@@ -235,7 +235,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getBasisAmount(): ?AmountType
     {
@@ -253,7 +253,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param AmountType|null $basisAmount
+     * @param  null|AmountType $basisAmount
      * @return static
      */
     public function setBasisAmount(?AmountType $basisAmount = null): static
@@ -274,7 +274,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return QuantityType|null
+     * @return null|QuantityType
      */
     public function getBasisQuantity(): ?QuantityType
     {
@@ -292,7 +292,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param QuantityType|null $basisQuantity
+     * @param  null|QuantityType $basisQuantity
      * @return static
      */
     public function setBasisQuantity(?QuantityType $basisQuantity = null): static
@@ -313,7 +313,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return AmountType|null
+     * @return null|AmountType
      */
     public function getActualAmount(): ?AmountType
     {
@@ -331,7 +331,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param AmountType|null $actualAmount
+     * @param  null|AmountType $actualAmount
      * @return static
      */
     public function setActualAmount(?AmountType $actualAmount = null): static
@@ -352,7 +352,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return AllowanceChargeReasonCodeType|null
+     * @return null|AllowanceChargeReasonCodeType
      */
     public function getReasonCode(): ?AllowanceChargeReasonCodeType
     {
@@ -370,7 +370,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param AllowanceChargeReasonCodeType|null $reasonCode
+     * @param  null|AllowanceChargeReasonCodeType $reasonCode
      * @return static
      */
     public function setReasonCode(?AllowanceChargeReasonCodeType $reasonCode = null): static
@@ -391,7 +391,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getReason(): ?TextType
     {
@@ -409,7 +409,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param TextType|null $reason
+     * @param  null|TextType $reason
      * @return static
      */
     public function setReason(?TextType $reason = null): static
@@ -430,7 +430,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @return TradeTaxType|null
+     * @return null|TradeTaxType
      */
     public function getCategoryTradeTax(): ?TradeTaxType
     {
@@ -448,7 +448,7 @@ class TradeAllowanceChargeType
     }
 
     /**
-     * @param TradeTaxType|null $categoryTradeTax
+     * @param  null|TradeTaxType $categoryTradeTax
      * @return static
      */
     public function setCategoryTradeTax(?TradeTaxType $categoryTradeTax = null): static

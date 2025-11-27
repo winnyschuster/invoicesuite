@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\WeekDayCode;
+use JMS\Serializer\Annotation as JMS;
 
 class ServiceFrequencyType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var WeekDayCode|null
+     * @var null|WeekDayCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\WeekDayCode")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class ServiceFrequencyType
     private $weekDayCode;
 
     /**
-     * @return WeekDayCode|null
+     * @return null|WeekDayCode
      */
     public function getWeekDayCode(): ?WeekDayCode
     {
@@ -42,7 +42,7 @@ class ServiceFrequencyType
     }
 
     /**
-     * @param WeekDayCode|null $weekDayCode
+     * @param  null|WeekDayCode $weekDayCode
      * @return static
      */
     public function setWeekDayCode(?WeekDayCode $weekDayCode = null): static

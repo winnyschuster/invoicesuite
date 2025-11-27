@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
+use JMS\Serializer\Annotation as JMS;
 
 class CatalogueItemSpecificationUpdateLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class CatalogueItemSpecificationUpdateLineType
     private $iD;
 
     /**
-     * @var ContractorCustomerParty|null
+     * @var null|ContractorCustomerParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\ContractorCustomerParty")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class CatalogueItemSpecificationUpdateLineType
     private $contractorCustomerParty;
 
     /**
-     * @var SellerSupplierParty|null
+     * @var null|SellerSupplierParty
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\SellerSupplierParty")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class CatalogueItemSpecificationUpdateLineType
     private $sellerSupplierParty;
 
     /**
-     * @var Item|null
+     * @var null|Item
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\Item")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class CatalogueItemSpecificationUpdateLineType
     private $item;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -75,7 +75,7 @@ class CatalogueItemSpecificationUpdateLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -96,7 +96,7 @@ class CatalogueItemSpecificationUpdateLineType
     }
 
     /**
-     * @return ContractorCustomerParty|null
+     * @return null|ContractorCustomerParty
      */
     public function getContractorCustomerParty(): ?ContractorCustomerParty
     {
@@ -114,7 +114,7 @@ class CatalogueItemSpecificationUpdateLineType
     }
 
     /**
-     * @param ContractorCustomerParty|null $contractorCustomerParty
+     * @param  null|ContractorCustomerParty $contractorCustomerParty
      * @return static
      */
     public function setContractorCustomerParty(?ContractorCustomerParty $contractorCustomerParty = null): static
@@ -135,7 +135,7 @@ class CatalogueItemSpecificationUpdateLineType
     }
 
     /**
-     * @return SellerSupplierParty|null
+     * @return null|SellerSupplierParty
      */
     public function getSellerSupplierParty(): ?SellerSupplierParty
     {
@@ -153,7 +153,7 @@ class CatalogueItemSpecificationUpdateLineType
     }
 
     /**
-     * @param SellerSupplierParty|null $sellerSupplierParty
+     * @param  null|SellerSupplierParty $sellerSupplierParty
      * @return static
      */
     public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
@@ -174,7 +174,7 @@ class CatalogueItemSpecificationUpdateLineType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function getItem(): ?Item
     {
@@ -192,7 +192,7 @@ class CatalogueItemSpecificationUpdateLineType
     }
 
     /**
-     * @param Item|null $item
+     * @param  null|Item $item
      * @return static
      */
     public function setItem(?Item $item = null): static

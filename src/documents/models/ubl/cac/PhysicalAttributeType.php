@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Description;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\PositionCode;
+use JMS\Serializer\Annotation as JMS;
 
 class PhysicalAttributeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var AttributeID|null
+     * @var null|AttributeID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\AttributeID")
      * @JMS\Expose
@@ -27,7 +27,7 @@ class PhysicalAttributeType
     private $attributeID;
 
     /**
-     * @var PositionCode|null
+     * @var null|PositionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\PositionCode")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class PhysicalAttributeType
     private $positionCode;
 
     /**
-     * @var DescriptionCode|null
+     * @var null|DescriptionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\DescriptionCode")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class PhysicalAttributeType
     private $descriptionCode;
 
     /**
-     * @var array<Description>|null
+     * @var null|array<Description>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Description>")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class PhysicalAttributeType
     private $description;
 
     /**
-     * @return AttributeID|null
+     * @return null|AttributeID
      */
     public function getAttributeID(): ?AttributeID
     {
@@ -79,7 +79,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @param AttributeID|null $attributeID
+     * @param  null|AttributeID $attributeID
      * @return static
      */
     public function setAttributeID(?AttributeID $attributeID = null): static
@@ -100,7 +100,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return PositionCode|null
+     * @return null|PositionCode
      */
     public function getPositionCode(): ?PositionCode
     {
@@ -118,7 +118,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @param PositionCode|null $positionCode
+     * @param  null|PositionCode $positionCode
      * @return static
      */
     public function setPositionCode(?PositionCode $positionCode = null): static
@@ -139,7 +139,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return DescriptionCode|null
+     * @return null|DescriptionCode
      */
     public function getDescriptionCode(): ?DescriptionCode
     {
@@ -157,7 +157,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @param DescriptionCode|null $descriptionCode
+     * @param  null|DescriptionCode $descriptionCode
      * @return static
      */
     public function setDescriptionCode(?DescriptionCode $descriptionCode = null): static
@@ -178,7 +178,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return array<Description>|null
+     * @return null|array<Description>
      */
     public function getDescription(): ?array
     {
@@ -186,7 +186,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @param array<Description>|null $description
+     * @param  null|array<Description> $description
      * @return static
      */
     public function setDescription(?array $description = null): static
@@ -217,7 +217,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function firstDescription(): ?Description
     {
@@ -232,7 +232,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @return Description|null
+     * @return null|Description
      */
     public function lastDescription(): ?Description
     {
@@ -247,7 +247,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addToDescription(Description $description): static
@@ -268,7 +268,7 @@ class PhysicalAttributeType
     }
 
     /**
-     * @param Description $description
+     * @param  Description $description
      * @return static
      */
     public function addOnceToDescription(Description $description): static

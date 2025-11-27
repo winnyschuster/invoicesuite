@@ -5,16 +5,16 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\LotNumberID;
+use JMS\Serializer\Annotation as JMS;
 
 class LotIdentificationType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var LotNumberID|null
+     * @var null|LotNumberID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\LotNumberID")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class LotIdentificationType
     private $lotNumberID;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class LotIdentificationType
     private $expiryDate;
 
     /**
-     * @var array<AdditionalItemProperty>|null
+     * @var null|array<AdditionalItemProperty>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\AdditionalItemProperty>")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class LotIdentificationType
     private $additionalItemProperty;
 
     /**
-     * @return LotNumberID|null
+     * @return null|LotNumberID
      */
     public function getLotNumberID(): ?LotNumberID
     {
@@ -66,7 +66,7 @@ class LotIdentificationType
     }
 
     /**
-     * @param LotNumberID|null $lotNumberID
+     * @param  null|LotNumberID $lotNumberID
      * @return static
      */
     public function setLotNumberID(?LotNumberID $lotNumberID = null): static
@@ -87,7 +87,7 @@ class LotIdentificationType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getExpiryDate(): ?DateTimeInterface
     {
@@ -95,7 +95,7 @@ class LotIdentificationType
     }
 
     /**
-     * @param DateTimeInterface|null $expiryDate
+     * @param  null|DateTimeInterface $expiryDate
      * @return static
      */
     public function setExpiryDate(?DateTimeInterface $expiryDate = null): static
@@ -116,7 +116,7 @@ class LotIdentificationType
     }
 
     /**
-     * @return array<AdditionalItemProperty>|null
+     * @return null|array<AdditionalItemProperty>
      */
     public function getAdditionalItemProperty(): ?array
     {
@@ -124,7 +124,7 @@ class LotIdentificationType
     }
 
     /**
-     * @param array<AdditionalItemProperty>|null $additionalItemProperty
+     * @param  null|array<AdditionalItemProperty> $additionalItemProperty
      * @return static
      */
     public function setAdditionalItemProperty(?array $additionalItemProperty = null): static
@@ -155,7 +155,7 @@ class LotIdentificationType
     }
 
     /**
-     * @return AdditionalItemProperty|null
+     * @return null|AdditionalItemProperty
      */
     public function firstAdditionalItemProperty(): ?AdditionalItemProperty
     {
@@ -170,7 +170,7 @@ class LotIdentificationType
     }
 
     /**
-     * @return AdditionalItemProperty|null
+     * @return null|AdditionalItemProperty
      */
     public function lastAdditionalItemProperty(): ?AdditionalItemProperty
     {
@@ -185,7 +185,7 @@ class LotIdentificationType
     }
 
     /**
-     * @param AdditionalItemProperty $additionalItemProperty
+     * @param  AdditionalItemProperty $additionalItemProperty
      * @return static
      */
     public function addToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static
@@ -206,7 +206,7 @@ class LotIdentificationType
     }
 
     /**
-     * @param AdditionalItemProperty $additionalItemProperty
+     * @param  AdditionalItemProperty $additionalItemProperty
      * @return static
      */
     public function addOnceToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static

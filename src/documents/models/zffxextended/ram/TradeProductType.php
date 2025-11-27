@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeProductType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -25,7 +25,7 @@ class TradeProductType
     private $iD;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -36,7 +36,7 @@ class TradeProductType
     private $globalID;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -47,7 +47,7 @@ class TradeProductType
     private $sellerAssignedID;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -58,7 +58,7 @@ class TradeProductType
     private $buyerAssignedID;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -69,7 +69,7 @@ class TradeProductType
     private $industryAssignedID;
 
     /**
-     * @var IDType|null
+     * @var null|IDType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType")
      * @JMS\Expose
@@ -80,7 +80,7 @@ class TradeProductType
     private $modelID;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -91,7 +91,7 @@ class TradeProductType
     private $name;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -102,7 +102,7 @@ class TradeProductType
     private $description;
 
     /**
-     * @var array<IDType>|null
+     * @var null|array<IDType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\udt\IDType>")
      * @JMS\Expose
@@ -114,7 +114,7 @@ class TradeProductType
     private $batchID;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -125,7 +125,7 @@ class TradeProductType
     private $brandName;
 
     /**
-     * @var TextType|null
+     * @var null|TextType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\TextType")
      * @JMS\Expose
@@ -136,7 +136,7 @@ class TradeProductType
     private $modelName;
 
     /**
-     * @var array<ProductCharacteristicType>|null
+     * @var null|array<ProductCharacteristicType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\ProductCharacteristicType>")
      * @JMS\Expose
@@ -148,7 +148,7 @@ class TradeProductType
     private $applicableProductCharacteristic;
 
     /**
-     * @var array<ProductClassificationType>|null
+     * @var null|array<ProductClassificationType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\ProductClassificationType>")
      * @JMS\Expose
@@ -160,7 +160,7 @@ class TradeProductType
     private $designatedProductClassification;
 
     /**
-     * @var array<TradeProductInstanceType>|null
+     * @var null|array<TradeProductInstanceType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeProductInstanceType>")
      * @JMS\Expose
@@ -172,7 +172,7 @@ class TradeProductType
     private $individualTradeProductInstance;
 
     /**
-     * @var TradeCountryType|null
+     * @var null|TradeCountryType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\ram\TradeCountryType")
      * @JMS\Expose
@@ -183,7 +183,7 @@ class TradeProductType
     private $originTradeCountry;
 
     /**
-     * @var array<ReferencedProductType>|null
+     * @var null|array<ReferencedProductType>
      * @JMS\Groups({"zffx"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\zffxextended\ram\ReferencedProductType>")
      * @JMS\Expose
@@ -195,7 +195,7 @@ class TradeProductType
     private $includedReferencedProduct;
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getID(): ?IDType
     {
@@ -213,7 +213,7 @@ class TradeProductType
     }
 
     /**
-     * @param IDType|null $iD
+     * @param  null|IDType $iD
      * @return static
      */
     public function setID(?IDType $iD = null): static
@@ -234,7 +234,7 @@ class TradeProductType
     }
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getGlobalID(): ?IDType
     {
@@ -252,7 +252,7 @@ class TradeProductType
     }
 
     /**
-     * @param IDType|null $globalID
+     * @param  null|IDType $globalID
      * @return static
      */
     public function setGlobalID(?IDType $globalID = null): static
@@ -273,7 +273,7 @@ class TradeProductType
     }
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getSellerAssignedID(): ?IDType
     {
@@ -291,7 +291,7 @@ class TradeProductType
     }
 
     /**
-     * @param IDType|null $sellerAssignedID
+     * @param  null|IDType $sellerAssignedID
      * @return static
      */
     public function setSellerAssignedID(?IDType $sellerAssignedID = null): static
@@ -312,7 +312,7 @@ class TradeProductType
     }
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getBuyerAssignedID(): ?IDType
     {
@@ -330,7 +330,7 @@ class TradeProductType
     }
 
     /**
-     * @param IDType|null $buyerAssignedID
+     * @param  null|IDType $buyerAssignedID
      * @return static
      */
     public function setBuyerAssignedID(?IDType $buyerAssignedID = null): static
@@ -351,7 +351,7 @@ class TradeProductType
     }
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getIndustryAssignedID(): ?IDType
     {
@@ -369,7 +369,7 @@ class TradeProductType
     }
 
     /**
-     * @param IDType|null $industryAssignedID
+     * @param  null|IDType $industryAssignedID
      * @return static
      */
     public function setIndustryAssignedID(?IDType $industryAssignedID = null): static
@@ -390,7 +390,7 @@ class TradeProductType
     }
 
     /**
-     * @return IDType|null
+     * @return null|IDType
      */
     public function getModelID(): ?IDType
     {
@@ -408,7 +408,7 @@ class TradeProductType
     }
 
     /**
-     * @param IDType|null $modelID
+     * @param  null|IDType $modelID
      * @return static
      */
     public function setModelID(?IDType $modelID = null): static
@@ -429,7 +429,7 @@ class TradeProductType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getName(): ?TextType
     {
@@ -447,7 +447,7 @@ class TradeProductType
     }
 
     /**
-     * @param TextType|null $name
+     * @param  null|TextType $name
      * @return static
      */
     public function setName(?TextType $name = null): static
@@ -468,7 +468,7 @@ class TradeProductType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getDescription(): ?TextType
     {
@@ -486,7 +486,7 @@ class TradeProductType
     }
 
     /**
-     * @param TextType|null $description
+     * @param  null|TextType $description
      * @return static
      */
     public function setDescription(?TextType $description = null): static
@@ -507,7 +507,7 @@ class TradeProductType
     }
 
     /**
-     * @return array<IDType>|null
+     * @return null|array<IDType>
      */
     public function getBatchID(): ?array
     {
@@ -515,7 +515,7 @@ class TradeProductType
     }
 
     /**
-     * @param array<IDType>|null $batchID
+     * @param  null|array<IDType> $batchID
      * @return static
      */
     public function setBatchID(?array $batchID = null): static
@@ -546,7 +546,7 @@ class TradeProductType
     }
 
     /**
-     * @param IDType $batchID
+     * @param  IDType $batchID
      * @return static
      */
     public function addToBatchID(IDType $batchID): static
@@ -567,7 +567,7 @@ class TradeProductType
     }
 
     /**
-     * @param IDType $batchID
+     * @param  IDType $batchID
      * @return static
      */
     public function addOnceToBatchID(IDType $batchID): static
@@ -598,7 +598,7 @@ class TradeProductType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getBrandName(): ?TextType
     {
@@ -616,7 +616,7 @@ class TradeProductType
     }
 
     /**
-     * @param TextType|null $brandName
+     * @param  null|TextType $brandName
      * @return static
      */
     public function setBrandName(?TextType $brandName = null): static
@@ -637,7 +637,7 @@ class TradeProductType
     }
 
     /**
-     * @return TextType|null
+     * @return null|TextType
      */
     public function getModelName(): ?TextType
     {
@@ -655,7 +655,7 @@ class TradeProductType
     }
 
     /**
-     * @param TextType|null $modelName
+     * @param  null|TextType $modelName
      * @return static
      */
     public function setModelName(?TextType $modelName = null): static
@@ -676,7 +676,7 @@ class TradeProductType
     }
 
     /**
-     * @return array<ProductCharacteristicType>|null
+     * @return null|array<ProductCharacteristicType>
      */
     public function getApplicableProductCharacteristic(): ?array
     {
@@ -684,7 +684,7 @@ class TradeProductType
     }
 
     /**
-     * @param array<ProductCharacteristicType>|null $applicableProductCharacteristic
+     * @param  null|array<ProductCharacteristicType> $applicableProductCharacteristic
      * @return static
      */
     public function setApplicableProductCharacteristic(?array $applicableProductCharacteristic = null): static
@@ -715,7 +715,7 @@ class TradeProductType
     }
 
     /**
-     * @param ProductCharacteristicType $applicableProductCharacteristic
+     * @param  ProductCharacteristicType $applicableProductCharacteristic
      * @return static
      */
     public function addToApplicableProductCharacteristic(
@@ -737,7 +737,7 @@ class TradeProductType
     }
 
     /**
-     * @param ProductCharacteristicType $applicableProductCharacteristic
+     * @param  ProductCharacteristicType $applicableProductCharacteristic
      * @return static
      */
     public function addOnceToApplicableProductCharacteristic(
@@ -769,7 +769,7 @@ class TradeProductType
     }
 
     /**
-     * @return array<ProductClassificationType>|null
+     * @return null|array<ProductClassificationType>
      */
     public function getDesignatedProductClassification(): ?array
     {
@@ -777,7 +777,7 @@ class TradeProductType
     }
 
     /**
-     * @param array<ProductClassificationType>|null $designatedProductClassification
+     * @param  null|array<ProductClassificationType> $designatedProductClassification
      * @return static
      */
     public function setDesignatedProductClassification(?array $designatedProductClassification = null): static
@@ -808,7 +808,7 @@ class TradeProductType
     }
 
     /**
-     * @param ProductClassificationType $designatedProductClassification
+     * @param  ProductClassificationType $designatedProductClassification
      * @return static
      */
     public function addToDesignatedProductClassification(
@@ -830,7 +830,7 @@ class TradeProductType
     }
 
     /**
-     * @param ProductClassificationType $designatedProductClassification
+     * @param  ProductClassificationType $designatedProductClassification
      * @return static
      */
     public function addOnceToDesignatedProductClassification(
@@ -862,7 +862,7 @@ class TradeProductType
     }
 
     /**
-     * @return array<TradeProductInstanceType>|null
+     * @return null|array<TradeProductInstanceType>
      */
     public function getIndividualTradeProductInstance(): ?array
     {
@@ -870,7 +870,7 @@ class TradeProductType
     }
 
     /**
-     * @param array<TradeProductInstanceType>|null $individualTradeProductInstance
+     * @param  null|array<TradeProductInstanceType> $individualTradeProductInstance
      * @return static
      */
     public function setIndividualTradeProductInstance(?array $individualTradeProductInstance = null): static
@@ -901,7 +901,7 @@ class TradeProductType
     }
 
     /**
-     * @param TradeProductInstanceType $individualTradeProductInstance
+     * @param  TradeProductInstanceType $individualTradeProductInstance
      * @return static
      */
     public function addToIndividualTradeProductInstance(
@@ -923,7 +923,7 @@ class TradeProductType
     }
 
     /**
-     * @param TradeProductInstanceType $individualTradeProductInstance
+     * @param  TradeProductInstanceType $individualTradeProductInstance
      * @return static
      */
     public function addOnceToIndividualTradeProductInstance(
@@ -955,7 +955,7 @@ class TradeProductType
     }
 
     /**
-     * @return TradeCountryType|null
+     * @return null|TradeCountryType
      */
     public function getOriginTradeCountry(): ?TradeCountryType
     {
@@ -973,7 +973,7 @@ class TradeProductType
     }
 
     /**
-     * @param TradeCountryType|null $originTradeCountry
+     * @param  null|TradeCountryType $originTradeCountry
      * @return static
      */
     public function setOriginTradeCountry(?TradeCountryType $originTradeCountry = null): static
@@ -994,7 +994,7 @@ class TradeProductType
     }
 
     /**
-     * @return array<ReferencedProductType>|null
+     * @return null|array<ReferencedProductType>
      */
     public function getIncludedReferencedProduct(): ?array
     {
@@ -1002,7 +1002,7 @@ class TradeProductType
     }
 
     /**
-     * @param array<ReferencedProductType>|null $includedReferencedProduct
+     * @param  null|array<ReferencedProductType> $includedReferencedProduct
      * @return static
      */
     public function setIncludedReferencedProduct(?array $includedReferencedProduct = null): static
@@ -1033,7 +1033,7 @@ class TradeProductType
     }
 
     /**
-     * @param ReferencedProductType $includedReferencedProduct
+     * @param  ReferencedProductType $includedReferencedProduct
      * @return static
      */
     public function addToIncludedReferencedProduct(ReferencedProductType $includedReferencedProduct): static
@@ -1054,7 +1054,7 @@ class TradeProductType
     }
 
     /**
-     * @param ReferencedProductType $includedReferencedProduct
+     * @param  ReferencedProductType $includedReferencedProduct
      * @return static
      */
     public function addOnceToIncludedReferencedProduct(ReferencedProductType $includedReferencedProduct): static

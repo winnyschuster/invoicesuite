@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\zffxextended\ram;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\zffxextended\qdt\CurrencyCodeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType;
 use horstoeko\invoicesuite\documents\models\zffxextended\udt\RateType;
+use JMS\Serializer\Annotation as JMS;
 
 class TradeCurrencyExchangeType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var CurrencyCodeType|null
+     * @var null|CurrencyCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\CurrencyCodeType")
      * @JMS\Expose
@@ -26,7 +26,7 @@ class TradeCurrencyExchangeType
     private $sourceCurrencyCode;
 
     /**
-     * @var CurrencyCodeType|null
+     * @var null|CurrencyCodeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\qdt\CurrencyCodeType")
      * @JMS\Expose
@@ -37,7 +37,7 @@ class TradeCurrencyExchangeType
     private $targetCurrencyCode;
 
     /**
-     * @var RateType|null
+     * @var null|RateType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\RateType")
      * @JMS\Expose
@@ -48,7 +48,7 @@ class TradeCurrencyExchangeType
     private $conversionRate;
 
     /**
-     * @var DateTimeType|null
+     * @var null|DateTimeType
      * @JMS\Groups({"zffx"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\zffxextended\udt\DateTimeType")
      * @JMS\Expose
@@ -59,7 +59,7 @@ class TradeCurrencyExchangeType
     private $conversionRateDateTime;
 
     /**
-     * @return CurrencyCodeType|null
+     * @return null|CurrencyCodeType
      */
     public function getSourceCurrencyCode(): ?CurrencyCodeType
     {
@@ -77,7 +77,7 @@ class TradeCurrencyExchangeType
     }
 
     /**
-     * @param CurrencyCodeType|null $sourceCurrencyCode
+     * @param  null|CurrencyCodeType $sourceCurrencyCode
      * @return static
      */
     public function setSourceCurrencyCode(?CurrencyCodeType $sourceCurrencyCode = null): static
@@ -98,7 +98,7 @@ class TradeCurrencyExchangeType
     }
 
     /**
-     * @return CurrencyCodeType|null
+     * @return null|CurrencyCodeType
      */
     public function getTargetCurrencyCode(): ?CurrencyCodeType
     {
@@ -116,7 +116,7 @@ class TradeCurrencyExchangeType
     }
 
     /**
-     * @param CurrencyCodeType|null $targetCurrencyCode
+     * @param  null|CurrencyCodeType $targetCurrencyCode
      * @return static
      */
     public function setTargetCurrencyCode(?CurrencyCodeType $targetCurrencyCode = null): static
@@ -137,7 +137,7 @@ class TradeCurrencyExchangeType
     }
 
     /**
-     * @return RateType|null
+     * @return null|RateType
      */
     public function getConversionRate(): ?RateType
     {
@@ -155,7 +155,7 @@ class TradeCurrencyExchangeType
     }
 
     /**
-     * @param RateType|null $conversionRate
+     * @param  null|RateType $conversionRate
      * @return static
      */
     public function setConversionRate(?RateType $conversionRate = null): static
@@ -176,7 +176,7 @@ class TradeCurrencyExchangeType
     }
 
     /**
-     * @return DateTimeType|null
+     * @return null|DateTimeType
      */
     public function getConversionRateDateTime(): ?DateTimeType
     {
@@ -194,7 +194,7 @@ class TradeCurrencyExchangeType
     }
 
     /**
-     * @param DateTimeType|null $conversionRateDateTime
+     * @param  null|DateTimeType $conversionRateDateTime
      * @return static
      */
     public function setConversionRateDateTime(?DateTimeType $conversionRateDateTime = null): static

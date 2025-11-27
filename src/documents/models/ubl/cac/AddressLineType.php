@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Line;
+use JMS\Serializer\Annotation as JMS;
 
 class AddressLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var Line|null
+     * @var null|Line
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\Line")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class AddressLineType
     private $line;
 
     /**
-     * @return Line|null
+     * @return null|Line
      */
     public function getLine(): ?Line
     {
@@ -42,7 +42,7 @@ class AddressLineType
     }
 
     /**
-     * @param Line|null $line
+     * @param  null|Line $line
      * @return static
      */
     public function setLine(?Line $line = null): static

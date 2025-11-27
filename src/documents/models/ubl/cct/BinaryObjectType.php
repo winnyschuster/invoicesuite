@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\models\ubl\cct;
 
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
 
 class BinaryObjectType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\Jms\Base64Encoded")
      * @JMS\Expose
@@ -24,7 +24,7 @@ class BinaryObjectType
     private $value;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -35,7 +35,7 @@ class BinaryObjectType
     private $format;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -46,7 +46,7 @@ class BinaryObjectType
     private $mimeCode;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -57,7 +57,7 @@ class BinaryObjectType
     private $encodingCode;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -68,7 +68,7 @@ class BinaryObjectType
     private $characterSetCode;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -79,7 +79,7 @@ class BinaryObjectType
     private $uri;
 
     /**
-     * @var string|null
+     * @var null|string
      * @JMS\Groups({"ubl"})
      * @JMS\Type("string")
      * @JMS\Expose
@@ -90,7 +90,7 @@ class BinaryObjectType
     private $filename;
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getValue(): ?string
     {
@@ -98,7 +98,7 @@ class BinaryObjectType
     }
 
     /**
-     * @param string|null $value
+     * @param  null|string $value
      * @return static
      */
     public function setValue(?string $value = null): static
@@ -119,7 +119,7 @@ class BinaryObjectType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getFormat(): ?string
     {
@@ -127,7 +127,7 @@ class BinaryObjectType
     }
 
     /**
-     * @param string|null $format
+     * @param  null|string $format
      * @return static
      */
     public function setFormat(?string $format = null): static
@@ -148,7 +148,7 @@ class BinaryObjectType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getMimeCode(): ?string
     {
@@ -156,7 +156,7 @@ class BinaryObjectType
     }
 
     /**
-     * @param string|null $mimeCode
+     * @param  null|string $mimeCode
      * @return static
      */
     public function setMimeCode(?string $mimeCode = null): static
@@ -177,7 +177,7 @@ class BinaryObjectType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getEncodingCode(): ?string
     {
@@ -185,7 +185,7 @@ class BinaryObjectType
     }
 
     /**
-     * @param string|null $encodingCode
+     * @param  null|string $encodingCode
      * @return static
      */
     public function setEncodingCode(?string $encodingCode = null): static
@@ -206,7 +206,7 @@ class BinaryObjectType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getCharacterSetCode(): ?string
     {
@@ -214,7 +214,7 @@ class BinaryObjectType
     }
 
     /**
-     * @param string|null $characterSetCode
+     * @param  null|string $characterSetCode
      * @return static
      */
     public function setCharacterSetCode(?string $characterSetCode = null): static
@@ -235,7 +235,7 @@ class BinaryObjectType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getUri(): ?string
     {
@@ -243,7 +243,7 @@ class BinaryObjectType
     }
 
     /**
-     * @param string|null $uri
+     * @param  null|string $uri
      * @return static
      */
     public function setUri(?string $uri = null): static
@@ -264,7 +264,7 @@ class BinaryObjectType
     }
 
     /**
-     * @return string|null
+     * @return null|string
      */
     public function getFilename(): ?string
     {
@@ -272,7 +272,7 @@ class BinaryObjectType
     }
 
     /**
-     * @param string|null $filename
+     * @param  null|string $filename
      * @return static
      */
     public function setFilename(?string $filename = null): static

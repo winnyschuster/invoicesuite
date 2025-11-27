@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\models\ubl\cac;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ID;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\Note;
@@ -13,21 +12,22 @@ use horstoeko\invoicesuite\documents\models\ubl\cbc\OversupplyQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\QuantityDiscrepancyCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\RejectActionCode;
+use horstoeko\invoicesuite\documents\models\ubl\cbc\RejectedQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReason;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReasonCode;
-use horstoeko\invoicesuite\documents\models\ubl\cbc\RejectedQuantity;
-use horstoeko\invoicesuite\documents\models\ubl\cbc\ShortQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\ShortageActionCode;
+use horstoeko\invoicesuite\documents\models\ubl\cbc\ShortQuantity;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TimingComplaint;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\TimingComplaintCode;
 use horstoeko\invoicesuite\documents\models\ubl\cbc\UUID;
+use JMS\Serializer\Annotation as JMS;
 
 class ReceiptLineType
 {
     use HandlesObjectFlags;
 
     /**
-     * @var ID|null
+     * @var null|ID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ID")
      * @JMS\Expose
@@ -38,7 +38,7 @@ class ReceiptLineType
     private $iD;
 
     /**
-     * @var UUID|null
+     * @var null|UUID
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\UUID")
      * @JMS\Expose
@@ -49,7 +49,7 @@ class ReceiptLineType
     private $uUID;
 
     /**
-     * @var array<Note>|null
+     * @var null|array<Note>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\Note>")
      * @JMS\Expose
@@ -61,7 +61,7 @@ class ReceiptLineType
     private $note;
 
     /**
-     * @var ReceivedQuantity|null
+     * @var null|ReceivedQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ReceivedQuantity")
      * @JMS\Expose
@@ -72,7 +72,7 @@ class ReceiptLineType
     private $receivedQuantity;
 
     /**
-     * @var ShortQuantity|null
+     * @var null|ShortQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ShortQuantity")
      * @JMS\Expose
@@ -83,7 +83,7 @@ class ReceiptLineType
     private $shortQuantity;
 
     /**
-     * @var ShortageActionCode|null
+     * @var null|ShortageActionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\ShortageActionCode")
      * @JMS\Expose
@@ -94,7 +94,7 @@ class ReceiptLineType
     private $shortageActionCode;
 
     /**
-     * @var RejectedQuantity|null
+     * @var null|RejectedQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RejectedQuantity")
      * @JMS\Expose
@@ -105,7 +105,7 @@ class ReceiptLineType
     private $rejectedQuantity;
 
     /**
-     * @var RejectReasonCode|null
+     * @var null|RejectReasonCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReasonCode")
      * @JMS\Expose
@@ -116,7 +116,7 @@ class ReceiptLineType
     private $rejectReasonCode;
 
     /**
-     * @var array<RejectReason>|null
+     * @var null|array<RejectReason>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cbc\RejectReason>")
      * @JMS\Expose
@@ -128,7 +128,7 @@ class ReceiptLineType
     private $rejectReason;
 
     /**
-     * @var RejectActionCode|null
+     * @var null|RejectActionCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\RejectActionCode")
      * @JMS\Expose
@@ -139,7 +139,7 @@ class ReceiptLineType
     private $rejectActionCode;
 
     /**
-     * @var QuantityDiscrepancyCode|null
+     * @var null|QuantityDiscrepancyCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\QuantityDiscrepancyCode")
      * @JMS\Expose
@@ -150,7 +150,7 @@ class ReceiptLineType
     private $quantityDiscrepancyCode;
 
     /**
-     * @var OversupplyQuantity|null
+     * @var null|OversupplyQuantity
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\OversupplyQuantity")
      * @JMS\Expose
@@ -161,7 +161,7 @@ class ReceiptLineType
     private $oversupplyQuantity;
 
     /**
-     * @var DateTimeInterface|null
+     * @var null|DateTimeInterface
      * @JMS\Groups({"ubl"})
      * @JMS\Type("GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date")
      * @JMS\Expose
@@ -172,7 +172,7 @@ class ReceiptLineType
     private $receivedDate;
 
     /**
-     * @var TimingComplaintCode|null
+     * @var null|TimingComplaintCode
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TimingComplaintCode")
      * @JMS\Expose
@@ -183,7 +183,7 @@ class ReceiptLineType
     private $timingComplaintCode;
 
     /**
-     * @var TimingComplaint|null
+     * @var null|TimingComplaint
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cbc\TimingComplaint")
      * @JMS\Expose
@@ -194,7 +194,7 @@ class ReceiptLineType
     private $timingComplaint;
 
     /**
-     * @var OrderLineReference|null
+     * @var null|OrderLineReference
      * @JMS\Groups({"ubl"})
      * @JMS\Type("horstoeko\invoicesuite\documents\models\ubl\cac\OrderLineReference")
      * @JMS\Expose
@@ -205,7 +205,7 @@ class ReceiptLineType
     private $orderLineReference;
 
     /**
-     * @var array<DespatchLineReference>|null
+     * @var null|array<DespatchLineReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DespatchLineReference>")
      * @JMS\Expose
@@ -217,7 +217,7 @@ class ReceiptLineType
     private $despatchLineReference;
 
     /**
-     * @var array<DocumentReference>|null
+     * @var null|array<DocumentReference>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\DocumentReference>")
      * @JMS\Expose
@@ -229,7 +229,7 @@ class ReceiptLineType
     private $documentReference;
 
     /**
-     * @var array<Item>|null
+     * @var null|array<Item>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Item>")
      * @JMS\Expose
@@ -241,7 +241,7 @@ class ReceiptLineType
     private $item;
 
     /**
-     * @var array<Shipment>|null
+     * @var null|array<Shipment>
      * @JMS\Groups({"ubl"})
      * @JMS\Type("array<horstoeko\invoicesuite\documents\models\ubl\cac\Shipment>")
      * @JMS\Expose
@@ -253,7 +253,7 @@ class ReceiptLineType
     private $shipment;
 
     /**
-     * @return ID|null
+     * @return null|ID
      */
     public function getID(): ?ID
     {
@@ -271,7 +271,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param ID|null $iD
+     * @param  null|ID $iD
      * @return static
      */
     public function setID(?ID $iD = null): static
@@ -292,7 +292,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return UUID|null
+     * @return null|UUID
      */
     public function getUUID(): ?UUID
     {
@@ -310,7 +310,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param UUID|null $uUID
+     * @param  null|UUID $uUID
      * @return static
      */
     public function setUUID(?UUID $uUID = null): static
@@ -331,7 +331,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return array<Note>|null
+     * @return null|array<Note>
      */
     public function getNote(): ?array
     {
@@ -339,7 +339,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param array<Note>|null $note
+     * @param  null|array<Note> $note
      * @return static
      */
     public function setNote(?array $note = null): static
@@ -370,7 +370,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function firstNote(): ?Note
     {
@@ -385,7 +385,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return Note|null
+     * @return null|Note
      */
     public function lastNote(): ?Note
     {
@@ -400,7 +400,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addToNote(Note $note): static
@@ -421,7 +421,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param Note $note
+     * @param  Note   $note
      * @return static
      */
     public function addOnceToNote(Note $note): static
@@ -452,7 +452,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return ReceivedQuantity|null
+     * @return null|ReceivedQuantity
      */
     public function getReceivedQuantity(): ?ReceivedQuantity
     {
@@ -470,7 +470,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param ReceivedQuantity|null $receivedQuantity
+     * @param  null|ReceivedQuantity $receivedQuantity
      * @return static
      */
     public function setReceivedQuantity(?ReceivedQuantity $receivedQuantity = null): static
@@ -491,7 +491,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return ShortQuantity|null
+     * @return null|ShortQuantity
      */
     public function getShortQuantity(): ?ShortQuantity
     {
@@ -509,7 +509,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param ShortQuantity|null $shortQuantity
+     * @param  null|ShortQuantity $shortQuantity
      * @return static
      */
     public function setShortQuantity(?ShortQuantity $shortQuantity = null): static
@@ -530,7 +530,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return ShortageActionCode|null
+     * @return null|ShortageActionCode
      */
     public function getShortageActionCode(): ?ShortageActionCode
     {
@@ -548,7 +548,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param ShortageActionCode|null $shortageActionCode
+     * @param  null|ShortageActionCode $shortageActionCode
      * @return static
      */
     public function setShortageActionCode(?ShortageActionCode $shortageActionCode = null): static
@@ -569,7 +569,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return RejectedQuantity|null
+     * @return null|RejectedQuantity
      */
     public function getRejectedQuantity(): ?RejectedQuantity
     {
@@ -587,7 +587,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param RejectedQuantity|null $rejectedQuantity
+     * @param  null|RejectedQuantity $rejectedQuantity
      * @return static
      */
     public function setRejectedQuantity(?RejectedQuantity $rejectedQuantity = null): static
@@ -608,7 +608,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return RejectReasonCode|null
+     * @return null|RejectReasonCode
      */
     public function getRejectReasonCode(): ?RejectReasonCode
     {
@@ -626,7 +626,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param RejectReasonCode|null $rejectReasonCode
+     * @param  null|RejectReasonCode $rejectReasonCode
      * @return static
      */
     public function setRejectReasonCode(?RejectReasonCode $rejectReasonCode = null): static
@@ -647,7 +647,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return array<RejectReason>|null
+     * @return null|array<RejectReason>
      */
     public function getRejectReason(): ?array
     {
@@ -655,7 +655,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param array<RejectReason>|null $rejectReason
+     * @param  null|array<RejectReason> $rejectReason
      * @return static
      */
     public function setRejectReason(?array $rejectReason = null): static
@@ -686,7 +686,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return RejectReason|null
+     * @return null|RejectReason
      */
     public function firstRejectReason(): ?RejectReason
     {
@@ -701,7 +701,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return RejectReason|null
+     * @return null|RejectReason
      */
     public function lastRejectReason(): ?RejectReason
     {
@@ -716,7 +716,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param RejectReason $rejectReason
+     * @param  RejectReason $rejectReason
      * @return static
      */
     public function addToRejectReason(RejectReason $rejectReason): static
@@ -737,7 +737,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param RejectReason $rejectReason
+     * @param  RejectReason $rejectReason
      * @return static
      */
     public function addOnceToRejectReason(RejectReason $rejectReason): static
@@ -768,7 +768,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return RejectActionCode|null
+     * @return null|RejectActionCode
      */
     public function getRejectActionCode(): ?RejectActionCode
     {
@@ -786,7 +786,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param RejectActionCode|null $rejectActionCode
+     * @param  null|RejectActionCode $rejectActionCode
      * @return static
      */
     public function setRejectActionCode(?RejectActionCode $rejectActionCode = null): static
@@ -807,7 +807,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return QuantityDiscrepancyCode|null
+     * @return null|QuantityDiscrepancyCode
      */
     public function getQuantityDiscrepancyCode(): ?QuantityDiscrepancyCode
     {
@@ -825,7 +825,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param QuantityDiscrepancyCode|null $quantityDiscrepancyCode
+     * @param  null|QuantityDiscrepancyCode $quantityDiscrepancyCode
      * @return static
      */
     public function setQuantityDiscrepancyCode(?QuantityDiscrepancyCode $quantityDiscrepancyCode = null): static
@@ -846,7 +846,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return OversupplyQuantity|null
+     * @return null|OversupplyQuantity
      */
     public function getOversupplyQuantity(): ?OversupplyQuantity
     {
@@ -864,7 +864,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param OversupplyQuantity|null $oversupplyQuantity
+     * @param  null|OversupplyQuantity $oversupplyQuantity
      * @return static
      */
     public function setOversupplyQuantity(?OversupplyQuantity $oversupplyQuantity = null): static
@@ -885,7 +885,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return DateTimeInterface|null
+     * @return null|DateTimeInterface
      */
     public function getReceivedDate(): ?DateTimeInterface
     {
@@ -893,7 +893,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param DateTimeInterface|null $receivedDate
+     * @param  null|DateTimeInterface $receivedDate
      * @return static
      */
     public function setReceivedDate(?DateTimeInterface $receivedDate = null): static
@@ -914,7 +914,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return TimingComplaintCode|null
+     * @return null|TimingComplaintCode
      */
     public function getTimingComplaintCode(): ?TimingComplaintCode
     {
@@ -932,7 +932,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param TimingComplaintCode|null $timingComplaintCode
+     * @param  null|TimingComplaintCode $timingComplaintCode
      * @return static
      */
     public function setTimingComplaintCode(?TimingComplaintCode $timingComplaintCode = null): static
@@ -953,7 +953,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return TimingComplaint|null
+     * @return null|TimingComplaint
      */
     public function getTimingComplaint(): ?TimingComplaint
     {
@@ -971,7 +971,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param TimingComplaint|null $timingComplaint
+     * @param  null|TimingComplaint $timingComplaint
      * @return static
      */
     public function setTimingComplaint(?TimingComplaint $timingComplaint = null): static
@@ -992,7 +992,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return OrderLineReference|null
+     * @return null|OrderLineReference
      */
     public function getOrderLineReference(): ?OrderLineReference
     {
@@ -1010,7 +1010,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param OrderLineReference|null $orderLineReference
+     * @param  null|OrderLineReference $orderLineReference
      * @return static
      */
     public function setOrderLineReference(?OrderLineReference $orderLineReference = null): static
@@ -1031,7 +1031,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return array<DespatchLineReference>|null
+     * @return null|array<DespatchLineReference>
      */
     public function getDespatchLineReference(): ?array
     {
@@ -1039,7 +1039,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param array<DespatchLineReference>|null $despatchLineReference
+     * @param  null|array<DespatchLineReference> $despatchLineReference
      * @return static
      */
     public function setDespatchLineReference(?array $despatchLineReference = null): static
@@ -1070,7 +1070,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return DespatchLineReference|null
+     * @return null|DespatchLineReference
      */
     public function firstDespatchLineReference(): ?DespatchLineReference
     {
@@ -1085,7 +1085,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return DespatchLineReference|null
+     * @return null|DespatchLineReference
      */
     public function lastDespatchLineReference(): ?DespatchLineReference
     {
@@ -1100,7 +1100,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param DespatchLineReference $despatchLineReference
+     * @param  DespatchLineReference $despatchLineReference
      * @return static
      */
     public function addToDespatchLineReference(DespatchLineReference $despatchLineReference): static
@@ -1121,7 +1121,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param DespatchLineReference $despatchLineReference
+     * @param  DespatchLineReference $despatchLineReference
      * @return static
      */
     public function addOnceToDespatchLineReference(DespatchLineReference $despatchLineReference): static
@@ -1152,7 +1152,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return array<DocumentReference>|null
+     * @return null|array<DocumentReference>
      */
     public function getDocumentReference(): ?array
     {
@@ -1160,7 +1160,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param array<DocumentReference>|null $documentReference
+     * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
     public function setDocumentReference(?array $documentReference = null): static
@@ -1191,7 +1191,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function firstDocumentReference(): ?DocumentReference
     {
@@ -1206,7 +1206,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return DocumentReference|null
+     * @return null|DocumentReference
      */
     public function lastDocumentReference(): ?DocumentReference
     {
@@ -1221,7 +1221,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addToDocumentReference(DocumentReference $documentReference): static
@@ -1242,7 +1242,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param DocumentReference $documentReference
+     * @param  DocumentReference $documentReference
      * @return static
      */
     public function addOnceToDocumentReference(DocumentReference $documentReference): static
@@ -1273,7 +1273,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return array<Item>|null
+     * @return null|array<Item>
      */
     public function getItem(): ?array
     {
@@ -1281,7 +1281,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param array<Item>|null $item
+     * @param  null|array<Item> $item
      * @return static
      */
     public function setItem(?array $item = null): static
@@ -1312,7 +1312,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function firstItem(): ?Item
     {
@@ -1327,7 +1327,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return Item|null
+     * @return null|Item
      */
     public function lastItem(): ?Item
     {
@@ -1342,7 +1342,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param Item $item
+     * @param  Item   $item
      * @return static
      */
     public function addToItem(Item $item): static
@@ -1363,7 +1363,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param Item $item
+     * @param  Item   $item
      * @return static
      */
     public function addOnceToItem(Item $item): static
@@ -1394,7 +1394,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return array<Shipment>|null
+     * @return null|array<Shipment>
      */
     public function getShipment(): ?array
     {
@@ -1402,7 +1402,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param array<Shipment>|null $shipment
+     * @param  null|array<Shipment> $shipment
      * @return static
      */
     public function setShipment(?array $shipment = null): static
@@ -1433,7 +1433,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return Shipment|null
+     * @return null|Shipment
      */
     public function firstShipment(): ?Shipment
     {
@@ -1448,7 +1448,7 @@ class ReceiptLineType
     }
 
     /**
-     * @return Shipment|null
+     * @return null|Shipment
      */
     public function lastShipment(): ?Shipment
     {
@@ -1463,7 +1463,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param Shipment $shipment
+     * @param  Shipment $shipment
      * @return static
      */
     public function addToShipment(Shipment $shipment): static
@@ -1484,7 +1484,7 @@ class ReceiptLineType
     }
 
     /**
-     * @param Shipment $shipment
+     * @param  Shipment $shipment
      * @return static
      */
     public function addOnceToShipment(Shipment $shipment): static
