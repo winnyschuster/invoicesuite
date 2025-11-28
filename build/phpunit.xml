@@ -107,6 +107,7 @@
             <file>../tests/testcases/documentreadbuild/XRechnungDocumentReaderTest.php</file>
         </testsuite>
         <testsuite name="documentcase">
+            <file>../tests/testcases/documentcases/InvoiceSuiteBuilderExtendedSimpleTest.php</file>
             <file>../tests/testcases/documentcases/InvoiceSuiteBuilderComfortSimpleTest.php</file>
             <file>../tests/testcases/documentcases/InvoiceSuiteBuilderComfortSimpleDTOTest.php</file>
         </testsuite>
