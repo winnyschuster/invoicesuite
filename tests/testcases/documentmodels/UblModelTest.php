@@ -2920,6 +2920,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSalesItemOnceItem = $model->addOnceToSalesItemWithCreate();
+
+        $this->assertInstanceOf(SalesItem::class, $testValueForSalesItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSalesItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSalesItem = $model->firstSalesItem();
 
         $this->assertInstanceOf(SalesItem::class, $firstSalesItem);
@@ -3644,6 +3652,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAddressLineOnceItem = $model->addOnceToAddressLineWithCreate();
+
+        $this->assertInstanceOf(AddressLine::class, $testValueForAddressLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAddressLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAddressLine = $model->firstAddressLine();
 
         $this->assertInstanceOf(AddressLine::class, $firstAddressLine);
@@ -3701,6 +3717,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getLocationCoordinate();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForLocationCoordinateOnceItem = $model->addOnceToLocationCoordinateWithCreate();
+
+        $this->assertInstanceOf(LocationCoordinate::class, $testValueForLocationCoordinateOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getLocationCoordinate();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstLocationCoordinate = $model->firstLocationCoordinate();
 
@@ -3855,6 +3879,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAllowanceChargeReason();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAllowanceChargeReasonOnceItem = $model->addOnceToAllowanceChargeReasonWithCreate();
+
+        $this->assertInstanceOf(AllowanceChargeReason::class, $testValueForAllowanceChargeReasonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowanceChargeReason();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAllowanceChargeReason = $model->firstAllowanceChargeReason();
 
@@ -4021,6 +4053,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTaxCategoryOnceItem = $model->addOnceToTaxCategoryWithCreate();
+
+        $this->assertInstanceOf(TaxCategory::class, $testValueForTaxCategoryOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxCategory();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTaxCategory = $model->firstTaxCategory();
 
         $this->assertInstanceOf(TaxCategory::class, $firstTaxCategory);
@@ -4078,6 +4118,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPaymentMeans();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPaymentMeansOnceItem = $model->addOnceToPaymentMeansWithCreate();
+
+        $this->assertInstanceOf(PaymentMeans::class, $testValueForPaymentMeansOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPaymentMeans();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPaymentMeans = $model->firstPaymentMeans();
 
@@ -4218,6 +4266,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -4498,6 +4554,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForJustificationDescriptionOnceItem = $model->addOnceToJustificationDescriptionWithCreate();
+
+        $this->assertInstanceOf(JustificationDescription::class, $testValueForJustificationDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getJustificationDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstJustificationDescription = $model->firstJustificationDescription();
 
         $this->assertInstanceOf(JustificationDescription::class, $firstJustificationDescription);
@@ -4539,6 +4603,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -4582,6 +4654,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForProcessDescriptionOnceItem = $model->addOnceToProcessDescriptionWithCreate();
+
+        $this->assertInstanceOf(ProcessDescription::class, $testValueForProcessDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getProcessDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstProcessDescription = $model->firstProcessDescription();
 
         $this->assertInstanceOf(ProcessDescription::class, $firstProcessDescription);
@@ -4624,6 +4704,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForConditionsDescriptionOnceItem = $model->addOnceToConditionsDescriptionWithCreate();
+
+        $this->assertInstanceOf(ConditionsDescription::class, $testValueForConditionsDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getConditionsDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstConditionsDescription = $model->firstConditionsDescription();
 
         $this->assertInstanceOf(ConditionsDescription::class, $firstConditionsDescription);
@@ -4665,6 +4753,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getElectronicDeviceDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForElectronicDeviceDescriptionOnceItem = $model->addOnceToElectronicDeviceDescriptionWithCreate();
+
+        $this->assertInstanceOf(ElectronicDeviceDescription::class, $testValueForElectronicDeviceDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getElectronicDeviceDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstElectronicDeviceDescription = $model->firstElectronicDeviceDescription();
 
@@ -4810,6 +4906,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAwardingCriterionDescriptionOnceItem = $model->addOnceToAwardingCriterionDescriptionWithCreate();
+
+        $this->assertInstanceOf(AwardingCriterionDescription::class, $testValueForAwardingCriterionDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAwardingCriterionDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAwardingCriterionDescription = $model->firstAwardingCriterionDescription();
 
         $this->assertInstanceOf(AwardingCriterionDescription::class, $firstAwardingCriterionDescription);
@@ -4851,6 +4955,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -4925,6 +5037,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSubordinateAwardingCriterionResponse();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSubordinateAwardingCriterionResponseOnceItem = $model->addOnceToSubordinateAwardingCriterionResponseWithCreate();
+
+        $this->assertInstanceOf(SubordinateAwardingCriterionResponse::class, $testValueForSubordinateAwardingCriterionResponseOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSubordinateAwardingCriterionResponse();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSubordinateAwardingCriterionResponse = $model->firstSubordinateAwardingCriterionResponse();
 
@@ -5010,6 +5130,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -5068,6 +5196,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForWeightOnceItem = $model->addOnceToWeightWithCreate();
+
+        $this->assertInstanceOf(Weight::class, $testValueForWeightOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getWeight();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstWeight = $model->firstWeight();
 
         $this->assertInstanceOf(Weight::class, $firstWeight);
@@ -5109,6 +5245,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getCalculationExpression();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForCalculationExpressionOnceItem = $model->addOnceToCalculationExpressionWithCreate();
+
+        $this->assertInstanceOf(CalculationExpression::class, $testValueForCalculationExpressionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCalculationExpression();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstCalculationExpression = $model->firstCalculationExpression();
 
@@ -5232,6 +5376,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForMinimumImprovementBidOnceItem = $model->addOnceToMinimumImprovementBidWithCreate();
+
+        $this->assertInstanceOf(MinimumImprovementBid::class, $testValueForMinimumImprovementBidOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getMinimumImprovementBid();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstMinimumImprovementBid = $model->firstMinimumImprovementBid();
 
         $this->assertInstanceOf(MinimumImprovementBid::class, $firstMinimumImprovementBid);
@@ -5273,6 +5425,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSubordinateAwardingCriterion();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSubordinateAwardingCriterionOnceItem = $model->addOnceToSubordinateAwardingCriterionWithCreate();
+
+        $this->assertInstanceOf(SubordinateAwardingCriterion::class, $testValueForSubordinateAwardingCriterionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSubordinateAwardingCriterion();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSubordinateAwardingCriterion = $model->firstSubordinateAwardingCriterion();
 
@@ -5353,6 +5513,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -5395,6 +5563,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTechnicalCommitteeDescriptionOnceItem = $model->addOnceToTechnicalCommitteeDescriptionWithCreate();
+
+        $this->assertInstanceOf(TechnicalCommitteeDescription::class, $testValueForTechnicalCommitteeDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTechnicalCommitteeDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTechnicalCommitteeDescription = $model->firstTechnicalCommitteeDescription();
 
         $this->assertInstanceOf(TechnicalCommitteeDescription::class, $firstTechnicalCommitteeDescription);
@@ -5436,6 +5612,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getLowTendersDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForLowTendersDescriptionOnceItem = $model->addOnceToLowTendersDescriptionWithCreate();
+
+        $this->assertInstanceOf(LowTendersDescription::class, $testValueForLowTendersDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getLowTendersDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstLowTendersDescription = $model->firstLowTendersDescription();
 
@@ -5490,6 +5674,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPrizeDescriptionOnceItem = $model->addOnceToPrizeDescriptionWithCreate();
+
+        $this->assertInstanceOf(PrizeDescription::class, $testValueForPrizeDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPrizeDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPrizeDescription = $model->firstPrizeDescription();
 
         $this->assertInstanceOf(PrizeDescription::class, $firstPrizeDescription);
@@ -5531,6 +5723,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPaymentDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPaymentDescriptionOnceItem = $model->addOnceToPaymentDescriptionWithCreate();
+
+        $this->assertInstanceOf(PaymentDescription::class, $testValueForPaymentDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPaymentDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPaymentDescription = $model->firstPaymentDescription();
 
@@ -5596,6 +5796,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAwardingCriterionOnceItem = $model->addOnceToAwardingCriterionWithCreate();
+
+        $this->assertInstanceOf(AwardingCriterion::class, $testValueForAwardingCriterionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAwardingCriterion();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAwardingCriterion = $model->firstAwardingCriterion();
 
         $this->assertInstanceOf(AwardingCriterion::class, $firstAwardingCriterion);
@@ -5637,6 +5845,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTechnicalCommitteePerson();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTechnicalCommitteePersonOnceItem = $model->addOnceToTechnicalCommitteePersonWithCreate();
+
+        $this->assertInstanceOf(TechnicalCommitteePerson::class, $testValueForTechnicalCommitteePersonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTechnicalCommitteePerson();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTechnicalCommitteePerson = $model->firstTechnicalCommitteePerson();
 
@@ -5754,6 +5970,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAllowanceCharge();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAllowanceChargeOnceItem = $model->addOnceToAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(AllowanceCharge::class, $testValueForAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAllowanceCharge = $model->firstAllowanceCharge();
 
@@ -5918,6 +6142,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getBillingReferenceLine();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForBillingReferenceLineOnceItem = $model->addOnceToBillingReferenceLineWithCreate();
+
+        $this->assertInstanceOf(BillingReferenceLine::class, $testValueForBillingReferenceLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getBillingReferenceLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstBillingReferenceLine = $model->firstBillingReferenceLine();
 
@@ -6142,6 +6374,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getBudgetAccount();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForBudgetAccountOnceItem = $model->addOnceToBudgetAccountWithCreate();
+
+        $this->assertInstanceOf(BudgetAccount::class, $testValueForBudgetAccountOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getBudgetAccount();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstBudgetAccount = $model->firstBudgetAccount();
 
@@ -6368,6 +6608,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -6441,6 +6689,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getEvidenceSupplied();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForEvidenceSuppliedOnceItem = $model->addOnceToEvidenceSuppliedWithCreate();
+
+        $this->assertInstanceOf(EvidenceSupplied::class, $testValueForEvidenceSuppliedOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getEvidenceSupplied();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstEvidenceSupplied = $model->firstEvidenceSupplied();
 
@@ -6901,6 +7157,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -7033,6 +7297,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getWarrantyInformation();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForWarrantyInformationOnceItem = $model->addOnceToWarrantyInformationWithCreate();
+
+        $this->assertInstanceOf(WarrantyInformation::class, $testValueForWarrantyInformationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getWarrantyInformation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstWarrantyInformation = $model->firstWarrantyInformation();
 
@@ -7172,6 +7444,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForItemComparisonOnceItem = $model->addOnceToItemComparisonWithCreate();
+
+        $this->assertInstanceOf(ItemComparison::class, $testValueForItemComparisonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getItemComparison();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstItemComparison = $model->firstItemComparison();
 
         $this->assertInstanceOf(ItemComparison::class, $firstItemComparison);
@@ -7213,6 +7493,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getComponentRelatedItem();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForComponentRelatedItemOnceItem = $model->addOnceToComponentRelatedItemWithCreate();
+
+        $this->assertInstanceOf(ComponentRelatedItem::class, $testValueForComponentRelatedItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getComponentRelatedItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstComponentRelatedItem = $model->firstComponentRelatedItem();
 
@@ -7256,6 +7544,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAccessoryRelatedItemOnceItem = $model->addOnceToAccessoryRelatedItemWithCreate();
+
+        $this->assertInstanceOf(AccessoryRelatedItem::class, $testValueForAccessoryRelatedItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAccessoryRelatedItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAccessoryRelatedItem = $model->firstAccessoryRelatedItem();
 
         $this->assertInstanceOf(AccessoryRelatedItem::class, $firstAccessoryRelatedItem);
@@ -7297,6 +7593,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getRequiredRelatedItem();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForRequiredRelatedItemOnceItem = $model->addOnceToRequiredRelatedItemWithCreate();
+
+        $this->assertInstanceOf(RequiredRelatedItem::class, $testValueForRequiredRelatedItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRequiredRelatedItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstRequiredRelatedItem = $model->firstRequiredRelatedItem();
 
@@ -7340,6 +7644,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForReplacementRelatedItemOnceItem = $model->addOnceToReplacementRelatedItemWithCreate();
+
+        $this->assertInstanceOf(ReplacementRelatedItem::class, $testValueForReplacementRelatedItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getReplacementRelatedItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstReplacementRelatedItem = $model->firstReplacementRelatedItem();
 
         $this->assertInstanceOf(ReplacementRelatedItem::class, $firstReplacementRelatedItem);
@@ -7381,6 +7693,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getComplementaryRelatedItem();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForComplementaryRelatedItemOnceItem = $model->addOnceToComplementaryRelatedItemWithCreate();
+
+        $this->assertInstanceOf(ComplementaryRelatedItem::class, $testValueForComplementaryRelatedItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getComplementaryRelatedItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstComplementaryRelatedItem = $model->firstComplementaryRelatedItem();
 
@@ -7424,6 +7744,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForReplacedRelatedItemOnceItem = $model->addOnceToReplacedRelatedItemWithCreate();
+
+        $this->assertInstanceOf(ReplacedRelatedItem::class, $testValueForReplacedRelatedItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getReplacedRelatedItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstReplacedRelatedItem = $model->firstReplacedRelatedItem();
 
         $this->assertInstanceOf(ReplacedRelatedItem::class, $firstReplacedRelatedItem);
@@ -7466,6 +7794,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForRequiredItemLocationQuantityOnceItem = $model->addOnceToRequiredItemLocationQuantityWithCreate();
+
+        $this->assertInstanceOf(RequiredItemLocationQuantity::class, $testValueForRequiredItemLocationQuantityOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRequiredItemLocationQuantity();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstRequiredItemLocationQuantity = $model->firstRequiredItemLocationQuantity();
 
         $this->assertInstanceOf(RequiredItemLocationQuantity::class, $firstRequiredItemLocationQuantity);
@@ -7507,6 +7843,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDocumentReference = $model->firstDocumentReference();
 
@@ -7565,6 +7909,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getKeywordItemProperty();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForKeywordItemPropertyOnceItem = $model->addOnceToKeywordItemPropertyWithCreate();
+
+        $this->assertInstanceOf(KeywordItemProperty::class, $testValueForKeywordItemPropertyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getKeywordItemProperty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstKeywordItemProperty = $model->firstKeywordItemProperty();
 
@@ -7709,6 +8061,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForRequiredItemLocationQuantityOnceItem = $model->addOnceToRequiredItemLocationQuantityWithCreate();
+
+        $this->assertInstanceOf(RequiredItemLocationQuantity::class, $testValueForRequiredItemLocationQuantityOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRequiredItemLocationQuantity();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstRequiredItemLocationQuantity = $model->firstRequiredItemLocationQuantity();
 
         $this->assertInstanceOf(RequiredItemLocationQuantity::class, $firstRequiredItemLocationQuantity);
@@ -7848,6 +8208,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -7889,6 +8257,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -8017,6 +8393,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -8074,6 +8458,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getRequiredItemLocationQuantity();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForRequiredItemLocationQuantityOnceItem = $model->addOnceToRequiredItemLocationQuantityWithCreate();
+
+        $this->assertInstanceOf(RequiredItemLocationQuantity::class, $testValueForRequiredItemLocationQuantityOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRequiredItemLocationQuantity();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstRequiredItemLocationQuantity = $model->firstRequiredItemLocationQuantity();
 
@@ -8256,6 +8648,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForRemarksOnceItem = $model->addOnceToRemarksWithCreate();
+
+        $this->assertInstanceOf(Remarks::class, $testValueForRemarksOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRemarks();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstRemarks = $model->firstRemarks();
 
         $this->assertInstanceOf(Remarks::class, $firstRemarks);
@@ -8313,6 +8713,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getEndorserParty();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForEndorserPartyOnceItem = $model->addOnceToEndorserPartyWithCreate();
+
+        $this->assertInstanceOf(EndorserParty::class, $testValueForEndorserPartyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getEndorserParty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstEndorserParty = $model->firstEndorserParty();
 
@@ -8436,6 +8844,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDocumentDistributionOnceItem = $model->addOnceToDocumentDistributionWithCreate();
+
+        $this->assertInstanceOf(DocumentDistribution::class, $testValueForDocumentDistributionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentDistribution();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDocumentDistribution = $model->firstDocumentDistribution();
 
         $this->assertInstanceOf(DocumentDistribution::class, $firstDocumentDistribution);
@@ -8478,6 +8894,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSupportingDocumentReferenceOnceItem = $model->addOnceToSupportingDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(SupportingDocumentReference::class, $testValueForSupportingDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSupportingDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSupportingDocumentReference = $model->firstSupportingDocumentReference();
 
         $this->assertInstanceOf(SupportingDocumentReference::class, $firstSupportingDocumentReference);
@@ -8519,6 +8943,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSignature();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSignatureOnceItem = $model->addOnceToSignatureWithCreate();
+
+        $this->assertInstanceOf(Signature::class, $testValueForSignatureOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSignature();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSignature = $model->firstSignature();
 
@@ -8620,6 +9052,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForRemarksOnceItem = $model->addOnceToRemarksWithCreate();
+
+        $this->assertInstanceOf(Remarks::class, $testValueForRemarksOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRemarks();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstRemarks = $model->firstRemarks();
 
         $this->assertInstanceOf(Remarks::class, $firstRemarks);
@@ -8678,6 +9118,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDocumentReference = $model->firstDocumentReference();
 
         $this->assertInstanceOf(DocumentReference::class, $firstDocumentReference);
@@ -8719,6 +9167,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSignature();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSignatureOnceItem = $model->addOnceToSignatureWithCreate();
+
+        $this->assertInstanceOf(Signature::class, $testValueForSignatureOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSignature();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSignature = $model->firstSignature();
 
@@ -8826,6 +9282,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -8867,6 +9331,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getCategorizesClassificationCategory();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForCategorizesClassificationCategoryOnceItem = $model->addOnceToCategorizesClassificationCategoryWithCreate();
+
+        $this->assertInstanceOf(CategorizesClassificationCategory::class, $testValueForCategorizesClassificationCategoryOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCategorizesClassificationCategory();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstCategorizesClassificationCategory = $model->firstCategorizesClassificationCategory();
 
@@ -8985,6 +9457,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -9042,6 +9522,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -9181,6 +9669,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForClassificationCategoryOnceItem = $model->addOnceToClassificationCategoryWithCreate();
+
+        $this->assertInstanceOf(ClassificationCategory::class, $testValueForClassificationCategoryOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getClassificationCategory();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstClassificationCategory = $model->firstClassificationCategory();
 
         $this->assertInstanceOf(ClassificationCategory::class, $firstClassificationCategory);
@@ -9270,6 +9766,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getContent();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForContentOnceItem = $model->addOnceToContentWithCreate();
+
+        $this->assertInstanceOf(Content::class, $testValueForContentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getContent();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstContent = $model->firstContent();
 
@@ -9580,6 +10084,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -9621,6 +10133,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getEvidenceSupplied();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForEvidenceSuppliedOnceItem = $model->addOnceToEvidenceSuppliedWithCreate();
+
+        $this->assertInstanceOf(EvidenceSupplied::class, $testValueForEvidenceSuppliedOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getEvidenceSupplied();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstEvidenceSupplied = $model->firstEvidenceSupplied();
 
@@ -9759,6 +10279,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -9994,6 +10522,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSummaryDescriptionOnceItem = $model->addOnceToSummaryDescriptionWithCreate();
+
+        $this->assertInstanceOf(SummaryDescription::class, $testValueForSummaryDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSummaryDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSummaryDescription = $model->firstSummaryDescription();
 
         $this->assertInstanceOf(SummaryDescription::class, $firstSummaryDescription);
@@ -10067,6 +10603,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTariffDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTariffDescriptionOnceItem = $model->addOnceToTariffDescriptionWithCreate();
+
+        $this->assertInstanceOf(TariffDescription::class, $testValueForTariffDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTariffDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTariffDescription = $model->firstTariffDescription();
 
@@ -10254,6 +10798,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForRemarksOnceItem = $model->addOnceToRemarksWithCreate();
+
+        $this->assertInstanceOf(Remarks::class, $testValueForRemarksOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRemarks();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstRemarks = $model->firstRemarks();
 
         $this->assertInstanceOf(Remarks::class, $firstRemarks);
@@ -10395,6 +10947,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForCarrierServiceInstructionsOnceItem = $model->addOnceToCarrierServiceInstructionsWithCreate();
+
+        $this->assertInstanceOf(CarrierServiceInstructions::class, $testValueForCarrierServiceInstructionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCarrierServiceInstructions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstCarrierServiceInstructions = $model->firstCarrierServiceInstructions();
 
         $this->assertInstanceOf(CarrierServiceInstructions::class, $firstCarrierServiceInstructions);
@@ -10436,6 +10996,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getCustomsClearanceServiceInstructions();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForCustomsClearanceServiceInstructionsOnceItem = $model->addOnceToCustomsClearanceServiceInstructionsWithCreate();
+
+        $this->assertInstanceOf(CustomsClearanceServiceInstructions::class, $testValueForCustomsClearanceServiceInstructionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCustomsClearanceServiceInstructions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstCustomsClearanceServiceInstructions = $model->firstCustomsClearanceServiceInstructions();
 
@@ -10479,6 +11047,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForForwarderServiceInstructionsOnceItem = $model->addOnceToForwarderServiceInstructionsWithCreate();
+
+        $this->assertInstanceOf(ForwarderServiceInstructions::class, $testValueForForwarderServiceInstructionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getForwarderServiceInstructions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstForwarderServiceInstructions = $model->firstForwarderServiceInstructions();
 
         $this->assertInstanceOf(ForwarderServiceInstructions::class, $firstForwarderServiceInstructions);
@@ -10520,6 +11096,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSpecialServiceInstructions();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSpecialServiceInstructionsOnceItem = $model->addOnceToSpecialServiceInstructionsWithCreate();
+
+        $this->assertInstanceOf(SpecialServiceInstructions::class, $testValueForSpecialServiceInstructionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSpecialServiceInstructions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSpecialServiceInstructions = $model->firstSpecialServiceInstructions();
 
@@ -10611,6 +11195,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForHandlingInstructionsOnceItem = $model->addOnceToHandlingInstructionsWithCreate();
+
+        $this->assertInstanceOf(HandlingInstructions::class, $testValueForHandlingInstructionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getHandlingInstructions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstHandlingInstructions = $model->firstHandlingInstructions();
 
         $this->assertInstanceOf(HandlingInstructions::class, $firstHandlingInstructions);
@@ -10652,6 +11244,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getInformation();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForInformationOnceItem = $model->addOnceToInformationWithCreate();
+
+        $this->assertInstanceOf(Information::class, $testValueForInformationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInformation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstInformation = $model->firstInformation();
 
@@ -10791,6 +11391,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSpecialInstructionsOnceItem = $model->addOnceToSpecialInstructionsWithCreate();
+
+        $this->assertInstanceOf(SpecialInstructions::class, $testValueForSpecialInstructionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSpecialInstructions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSpecialInstructions = $model->firstSpecialInstructions();
 
         $this->assertInstanceOf(SpecialInstructions::class, $firstSpecialInstructions);
@@ -10843,6 +11451,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDeliveryInstructions();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDeliveryInstructionsOnceItem = $model->addOnceToDeliveryInstructionsWithCreate();
+
+        $this->assertInstanceOf(DeliveryInstructions::class, $testValueForDeliveryInstructionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDeliveryInstructions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDeliveryInstructions = $model->firstDeliveryInstructions();
 
@@ -10912,6 +11528,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getHaulageInstructions();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForHaulageInstructionsOnceItem = $model->addOnceToHaulageInstructionsWithCreate();
+
+        $this->assertInstanceOf(HaulageInstructions::class, $testValueForHaulageInstructionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getHaulageInstructions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstHaulageInstructions = $model->firstHaulageInstructions();
 
@@ -11003,6 +11627,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForConsolidatedShipmentOnceItem = $model->addOnceToConsolidatedShipmentWithCreate();
+
+        $this->assertInstanceOf(ConsolidatedShipment::class, $testValueForConsolidatedShipmentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getConsolidatedShipment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstConsolidatedShipment = $model->firstConsolidatedShipment();
 
         $this->assertInstanceOf(ConsolidatedShipment::class, $firstConsolidatedShipment);
@@ -11044,6 +11676,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getCustomsDeclaration();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForCustomsDeclarationOnceItem = $model->addOnceToCustomsDeclarationWithCreate();
+
+        $this->assertInstanceOf(CustomsDeclaration::class, $testValueForCustomsDeclarationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCustomsDeclaration();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstCustomsDeclaration = $model->firstCustomsDeclaration();
 
@@ -11151,6 +11791,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForStatusOnceItem = $model->addOnceToStatusWithCreate();
+
+        $this->assertInstanceOf(Status::class, $testValueForStatusOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getStatus();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstStatus = $model->firstStatus();
 
         $this->assertInstanceOf(Status::class, $firstStatus);
@@ -11192,6 +11840,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getChildConsignment();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForChildConsignmentOnceItem = $model->addOnceToChildConsignmentWithCreate();
+
+        $this->assertInstanceOf(ChildConsignment::class, $testValueForChildConsignmentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getChildConsignment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstChildConsignment = $model->firstChildConsignment();
 
@@ -11539,6 +12195,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTransitCountryOnceItem = $model->addOnceToTransitCountryWithCreate();
+
+        $this->assertInstanceOf(TransitCountry::class, $testValueForTransitCountryOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransitCountry();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTransitCountry = $model->firstTransitCountry();
 
         $this->assertInstanceOf(TransitCountry::class, $firstTransitCountry);
@@ -11596,6 +12260,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTransportEvent();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTransportEventOnceItem = $model->addOnceToTransportEventWithCreate();
+
+        $this->assertInstanceOf(TransportEvent::class, $testValueForTransportEventOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransportEvent();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTransportEvent = $model->firstTransportEvent();
 
@@ -11751,6 +12423,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForFreightAllowanceChargeOnceItem = $model->addOnceToFreightAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(FreightAllowanceCharge::class, $testValueForFreightAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getFreightAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstFreightAllowanceCharge = $model->firstFreightAllowanceCharge();
 
         $this->assertInstanceOf(FreightAllowanceCharge::class, $firstFreightAllowanceCharge);
@@ -11792,6 +12472,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getExtraAllowanceCharge();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForExtraAllowanceChargeOnceItem = $model->addOnceToExtraAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(ExtraAllowanceCharge::class, $testValueForExtraAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getExtraAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstExtraAllowanceCharge = $model->firstExtraAllowanceCharge();
 
@@ -11835,6 +12523,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForMainCarriageShipmentStageOnceItem = $model->addOnceToMainCarriageShipmentStageWithCreate();
+
+        $this->assertInstanceOf(MainCarriageShipmentStage::class, $testValueForMainCarriageShipmentStageOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getMainCarriageShipmentStage();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstMainCarriageShipmentStage = $model->firstMainCarriageShipmentStage();
 
         $this->assertInstanceOf(MainCarriageShipmentStage::class, $firstMainCarriageShipmentStage);
@@ -11876,6 +12572,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPreCarriageShipmentStage();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPreCarriageShipmentStageOnceItem = $model->addOnceToPreCarriageShipmentStageWithCreate();
+
+        $this->assertInstanceOf(PreCarriageShipmentStage::class, $testValueForPreCarriageShipmentStageOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPreCarriageShipmentStage();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPreCarriageShipmentStage = $model->firstPreCarriageShipmentStage();
 
@@ -11919,6 +12623,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForOnCarriageShipmentStageOnceItem = $model->addOnceToOnCarriageShipmentStageWithCreate();
+
+        $this->assertInstanceOf(OnCarriageShipmentStage::class, $testValueForOnCarriageShipmentStageOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getOnCarriageShipmentStage();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstOnCarriageShipmentStage = $model->firstOnCarriageShipmentStage();
 
         $this->assertInstanceOf(OnCarriageShipmentStage::class, $firstOnCarriageShipmentStage);
@@ -11960,6 +12672,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTransportHandlingUnit();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTransportHandlingUnitOnceItem = $model->addOnceToTransportHandlingUnitWithCreate();
+
+        $this->assertInstanceOf(TransportHandlingUnit::class, $testValueForTransportHandlingUnitOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransportHandlingUnit();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTransportHandlingUnit = $model->firstTransportHandlingUnit();
 
@@ -12115,6 +12835,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -12290,6 +13018,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -12498,6 +13234,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -12657,6 +13401,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDeliveryOnceItem = $model->addOnceToDeliveryWithCreate();
+
+        $this->assertInstanceOf(Delivery::class, $testValueForDeliveryOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDelivery();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDelivery = $model->firstDelivery();
 
         $this->assertInstanceOf(Delivery::class, $firstDelivery);
@@ -12699,6 +13451,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAllowanceChargeOnceItem = $model->addOnceToAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(AllowanceCharge::class, $testValueForAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAllowanceCharge = $model->firstAllowanceCharge();
 
         $this->assertInstanceOf(AllowanceCharge::class, $firstAllowanceCharge);
@@ -12740,6 +13500,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTaxTotal();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTaxTotalOnceItem = $model->addOnceToTaxTotalWithCreate();
+
+        $this->assertInstanceOf(TaxTotal::class, $testValueForTaxTotalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxTotal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTaxTotal = $model->firstTaxTotal();
 
@@ -12867,6 +13635,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -13005,6 +13781,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getUtilityMeter();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForUtilityMeterOnceItem = $model->addOnceToUtilityMeterWithCreate();
+
+        $this->assertInstanceOf(UtilityMeter::class, $testValueForUtilityMeterOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getUtilityMeter();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstUtilityMeter = $model->firstUtilityMeter();
 
@@ -13217,6 +14001,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -13452,6 +14244,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForConsumptionReportReferenceOnceItem = $model->addOnceToConsumptionReportReferenceWithCreate();
+
+        $this->assertInstanceOf(ConsumptionReportReference::class, $testValueForConsumptionReportReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getConsumptionReportReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstConsumptionReportReference = $model->firstConsumptionReportReference();
 
         $this->assertInstanceOf(ConsumptionReportReference::class, $firstConsumptionReportReference);
@@ -13493,6 +14293,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getConsumptionHistory();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForConsumptionHistoryOnceItem = $model->addOnceToConsumptionHistoryWithCreate();
+
+        $this->assertInstanceOf(ConsumptionHistory::class, $testValueForConsumptionHistoryOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getConsumptionHistory();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstConsumptionHistory = $model->firstConsumptionHistory();
 
@@ -13578,6 +14386,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAllowanceChargeOnceItem = $model->addOnceToAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(AllowanceCharge::class, $testValueForAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAllowanceCharge = $model->firstAllowanceCharge();
 
         $this->assertInstanceOf(AllowanceCharge::class, $firstAllowanceCharge);
@@ -13619,6 +14435,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTaxTotal();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTaxTotalOnceItem = $model->addOnceToTaxTotalWithCreate();
+
+        $this->assertInstanceOf(TaxTotal::class, $testValueForTaxTotalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxTotal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTaxTotal = $model->firstTaxTotal();
 
@@ -13822,6 +14646,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -13863,6 +14695,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getOtherCommunication();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForOtherCommunicationOnceItem = $model->addOnceToOtherCommunicationWithCreate();
+
+        $this->assertInstanceOf(OtherCommunication::class, $testValueForOtherCommunicationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getOtherCommunication();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstOtherCommunication = $model->firstOtherCommunication();
 
@@ -14015,6 +14855,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNameOnceItem = $model->addOnceToNameWithCreate();
+
+        $this->assertInstanceOf(Name::class, $testValueForNameOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getName();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstName = $model->firstName();
 
         $this->assertInstanceOf(Name::class, $firstName);
@@ -14072,6 +14920,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -14135,6 +14991,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getOptionsDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForOptionsDescriptionOnceItem = $model->addOnceToOptionsDescriptionWithCreate();
+
+        $this->assertInstanceOf(OptionsDescription::class, $testValueForOptionsDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getOptionsDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstOptionsDescription = $model->firstOptionsDescription();
 
@@ -14225,6 +15089,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getRenewal();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForRenewalOnceItem = $model->addOnceToRenewalWithCreate();
+
+        $this->assertInstanceOf(Renewal::class, $testValueForRenewalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRenewal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstRenewal = $model->firstRenewal();
 
@@ -14369,6 +15241,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForContractingPartyTypeOnceItem = $model->addOnceToContractingPartyTypeWithCreate();
+
+        $this->assertInstanceOf(ContractingPartyType::class, $testValueForContractingPartyTypeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getContractingPartyType();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstContractingPartyType = $model->firstContractingPartyType();
 
         $this->assertInstanceOf(ContractingPartyType::class, $firstContractingPartyType);
@@ -14410,6 +15290,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getContractingActivity();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForContractingActivityOnceItem = $model->addOnceToContractingActivityWithCreate();
+
+        $this->assertInstanceOf(ContractingActivity::class, $testValueForContractingActivityOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getContractingActivity();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstContractingActivity = $model->firstContractingActivity();
 
@@ -14635,6 +15523,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -14693,6 +15589,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -14750,6 +15654,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getContractDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForContractDocumentReferenceOnceItem = $model->addOnceToContractDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(ContractDocumentReference::class, $testValueForContractDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getContractDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstContractDocumentReference = $model->firstContractDocumentReference();
 
@@ -14915,6 +15827,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getJurisdictionRegionAddress();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForJurisdictionRegionAddressOnceItem = $model->addOnceToJurisdictionRegionAddressWithCreate();
+
+        $this->assertInstanceOf(JurisdictionRegionAddress::class, $testValueForJurisdictionRegionAddressOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getJurisdictionRegionAddress();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstJurisdictionRegionAddress = $model->firstJurisdictionRegionAddress();
 
@@ -15112,6 +16032,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -15256,6 +16184,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForInvoicePeriodOnceItem = $model->addOnceToInvoicePeriodWithCreate();
+
+        $this->assertInstanceOf(InvoicePeriod::class, $testValueForInvoicePeriodOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInvoicePeriod();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstInvoicePeriod = $model->firstInvoicePeriod();
 
         $this->assertInstanceOf(InvoicePeriod::class, $firstInvoicePeriod);
@@ -15297,6 +16233,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getOrderLineReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForOrderLineReferenceOnceItem = $model->addOnceToOrderLineReferenceWithCreate();
+
+        $this->assertInstanceOf(OrderLineReference::class, $testValueForOrderLineReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getOrderLineReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstOrderLineReference = $model->firstOrderLineReference();
 
@@ -15340,6 +16284,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDiscrepancyResponseOnceItem = $model->addOnceToDiscrepancyResponseWithCreate();
+
+        $this->assertInstanceOf(DiscrepancyResponse::class, $testValueForDiscrepancyResponseOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDiscrepancyResponse();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDiscrepancyResponse = $model->firstDiscrepancyResponse();
 
         $this->assertInstanceOf(DiscrepancyResponse::class, $firstDiscrepancyResponse);
@@ -15381,6 +16333,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDespatchLineReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDespatchLineReferenceOnceItem = $model->addOnceToDespatchLineReferenceWithCreate();
+
+        $this->assertInstanceOf(DespatchLineReference::class, $testValueForDespatchLineReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDespatchLineReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDespatchLineReference = $model->firstDespatchLineReference();
 
@@ -15424,6 +16384,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForReceiptLineReferenceOnceItem = $model->addOnceToReceiptLineReferenceWithCreate();
+
+        $this->assertInstanceOf(ReceiptLineReference::class, $testValueForReceiptLineReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getReceiptLineReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstReceiptLineReference = $model->firstReceiptLineReference();
 
         $this->assertInstanceOf(ReceiptLineReference::class, $firstReceiptLineReference);
@@ -15466,6 +16434,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForBillingReferenceOnceItem = $model->addOnceToBillingReferenceWithCreate();
+
+        $this->assertInstanceOf(BillingReference::class, $testValueForBillingReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getBillingReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstBillingReference = $model->firstBillingReference();
 
         $this->assertInstanceOf(BillingReference::class, $firstBillingReference);
@@ -15507,6 +16483,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDocumentReference = $model->firstDocumentReference();
 
@@ -15582,6 +16566,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDeliveryOnceItem = $model->addOnceToDeliveryWithCreate();
+
+        $this->assertInstanceOf(Delivery::class, $testValueForDeliveryOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDelivery();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDelivery = $model->firstDelivery();
 
         $this->assertInstanceOf(Delivery::class, $firstDelivery);
@@ -15623,6 +16615,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPaymentTerms();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPaymentTermsOnceItem = $model->addOnceToPaymentTermsWithCreate();
+
+        $this->assertInstanceOf(PaymentTerms::class, $testValueForPaymentTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPaymentTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPaymentTerms = $model->firstPaymentTerms();
 
@@ -15666,6 +16666,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTaxTotalOnceItem = $model->addOnceToTaxTotalWithCreate();
+
+        $this->assertInstanceOf(TaxTotal::class, $testValueForTaxTotalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxTotal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTaxTotal = $model->firstTaxTotal();
 
         $this->assertInstanceOf(TaxTotal::class, $firstTaxTotal);
@@ -15707,6 +16715,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAllowanceCharge();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAllowanceChargeOnceItem = $model->addOnceToAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(AllowanceCharge::class, $testValueForAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAllowanceCharge = $model->firstAllowanceCharge();
 
@@ -15782,6 +16798,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDeliveryTermsOnceItem = $model->addOnceToDeliveryTermsWithCreate();
+
+        $this->assertInstanceOf(DeliveryTerms::class, $testValueForDeliveryTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDeliveryTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDeliveryTerms = $model->firstDeliveryTerms();
 
         $this->assertInstanceOf(DeliveryTerms::class, $firstDeliveryTerms);
@@ -15823,6 +16847,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSubCreditNoteLine();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSubCreditNoteLineOnceItem = $model->addOnceToSubCreditNoteLineWithCreate();
+
+        $this->assertInstanceOf(SubCreditNoteLine::class, $testValueForSubCreditNoteLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSubCreditNoteLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSubCreditNoteLine = $model->firstSubCreditNoteLine();
 
@@ -15956,6 +16988,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAdditionalAccountID();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAdditionalAccountIDOnceItem = $model->addOnceToAdditionalAccountIDWithCreate();
+
+        $this->assertInstanceOf(AdditionalAccountID::class, $testValueForAdditionalAccountIDOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalAccountID();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAdditionalAccountID = $model->firstAdditionalAccountID();
 
@@ -16191,6 +17231,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -16324,6 +17372,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDiscrepancyResponseOnceItem = $model->addOnceToDiscrepancyResponseWithCreate();
+
+        $this->assertInstanceOf(DiscrepancyResponse::class, $testValueForDiscrepancyResponseOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDiscrepancyResponse();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDiscrepancyResponse = $model->firstDiscrepancyResponse();
 
         $this->assertInstanceOf(DiscrepancyResponse::class, $firstDiscrepancyResponse);
@@ -16365,6 +17421,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDespatchLineReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDespatchLineReferenceOnceItem = $model->addOnceToDespatchLineReferenceWithCreate();
+
+        $this->assertInstanceOf(DespatchLineReference::class, $testValueForDespatchLineReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDespatchLineReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDespatchLineReference = $model->firstDespatchLineReference();
 
@@ -16408,6 +17472,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForReceiptLineReferenceOnceItem = $model->addOnceToReceiptLineReferenceWithCreate();
+
+        $this->assertInstanceOf(ReceiptLineReference::class, $testValueForReceiptLineReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getReceiptLineReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstReceiptLineReference = $model->firstReceiptLineReference();
 
         $this->assertInstanceOf(ReceiptLineReference::class, $firstReceiptLineReference);
@@ -16450,6 +17522,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForBillingReferenceOnceItem = $model->addOnceToBillingReferenceWithCreate();
+
+        $this->assertInstanceOf(BillingReference::class, $testValueForBillingReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getBillingReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstBillingReference = $model->firstBillingReference();
 
         $this->assertInstanceOf(BillingReference::class, $firstBillingReference);
@@ -16491,6 +17571,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDocumentReference = $model->firstDocumentReference();
 
@@ -16550,6 +17638,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDeliveryOnceItem = $model->addOnceToDeliveryWithCreate();
+
+        $this->assertInstanceOf(Delivery::class, $testValueForDeliveryOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDelivery();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDelivery = $model->firstDelivery();
 
         $this->assertInstanceOf(Delivery::class, $firstDelivery);
@@ -16592,6 +17688,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTaxTotalOnceItem = $model->addOnceToTaxTotalWithCreate();
+
+        $this->assertInstanceOf(TaxTotal::class, $testValueForTaxTotalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxTotal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTaxTotal = $model->firstTaxTotal();
 
         $this->assertInstanceOf(TaxTotal::class, $firstTaxTotal);
@@ -16633,6 +17737,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAllowanceCharge();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAllowanceChargeOnceItem = $model->addOnceToAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(AllowanceCharge::class, $testValueForAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAllowanceCharge = $model->firstAllowanceCharge();
 
@@ -16708,6 +17820,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSubDebitNoteLineOnceItem = $model->addOnceToSubDebitNoteLineWithCreate();
+
+        $this->assertInstanceOf(SubDebitNoteLine::class, $testValueForSubDebitNoteLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSubDebitNoteLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSubDebitNoteLine = $model->firstSubDebitNoteLine();
 
         $this->assertInstanceOf(SubDebitNoteLine::class, $firstSubDebitNoteLine);
@@ -16771,6 +17891,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNameOnceItem = $model->addOnceToNameWithCreate();
+
+        $this->assertInstanceOf(Name::class, $testValueForNameOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getName();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstName = $model->firstName();
 
         $this->assertInstanceOf(Name::class, $firstName);
@@ -16829,6 +17957,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -16870,6 +18006,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getEvidenceSupplied();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForEvidenceSuppliedOnceItem = $model->addOnceToEvidenceSuppliedWithCreate();
+
+        $this->assertInstanceOf(EvidenceSupplied::class, $testValueForEvidenceSuppliedOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getEvidenceSupplied();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstEvidenceSupplied = $model->firstEvidenceSupplied();
 
@@ -17049,6 +18193,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSpecialTermsOnceItem = $model->addOnceToSpecialTermsWithCreate();
+
+        $this->assertInstanceOf(SpecialTerms::class, $testValueForSpecialTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSpecialTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSpecialTerms = $model->firstSpecialTerms();
 
         $this->assertInstanceOf(SpecialTerms::class, $firstSpecialTerms);
@@ -17106,6 +18258,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getLossRisk();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForLossRiskOnceItem = $model->addOnceToLossRiskWithCreate();
+
+        $this->assertInstanceOf(LossRisk::class, $testValueForLossRiskOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getLossRisk();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstLossRisk = $model->firstLossRisk();
 
@@ -17490,6 +18650,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNotifyPartyOnceItem = $model->addOnceToNotifyPartyWithCreate();
+
+        $this->assertInstanceOf(NotifyParty::class, $testValueForNotifyPartyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNotifyParty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNotifyParty = $model->firstNotifyParty();
 
         $this->assertInstanceOf(NotifyParty::class, $firstNotifyParty);
@@ -17547,6 +18715,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDeliveryTerms();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDeliveryTermsOnceItem = $model->addOnceToDeliveryTermsWithCreate();
+
+        $this->assertInstanceOf(DeliveryTerms::class, $testValueForDeliveryTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDeliveryTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDeliveryTerms = $model->firstDeliveryTerms();
 
@@ -17890,6 +19066,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -17980,6 +19164,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForBackorderReasonOnceItem = $model->addOnceToBackorderReasonWithCreate();
+
+        $this->assertInstanceOf(BackorderReason::class, $testValueForBackorderReasonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getBackorderReason();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstBackorderReason = $model->firstBackorderReason();
 
         $this->assertInstanceOf(BackorderReason::class, $firstBackorderReason);
@@ -18037,6 +19229,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getOutstandingReason();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForOutstandingReasonOnceItem = $model->addOnceToOutstandingReasonWithCreate();
+
+        $this->assertInstanceOf(OutstandingReason::class, $testValueForOutstandingReasonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getOutstandingReason();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstOutstandingReason = $model->firstOutstandingReason();
 
@@ -18096,6 +19296,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForOrderLineReferenceOnceItem = $model->addOnceToOrderLineReferenceWithCreate();
+
+        $this->assertInstanceOf(OrderLineReference::class, $testValueForOrderLineReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getOrderLineReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstOrderLineReference = $model->firstOrderLineReference();
 
         $this->assertInstanceOf(OrderLineReference::class, $firstOrderLineReference);
@@ -18137,6 +19345,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDocumentReference = $model->firstDocumentReference();
 
@@ -18195,6 +19411,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getShipment();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForShipmentOnceItem = $model->addOnceToShipmentWithCreate();
+
+        $this->assertInstanceOf(Shipment::class, $testValueForShipmentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getShipment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstShipment = $model->firstShipment();
 
@@ -18401,6 +19625,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForInstructionsOnceItem = $model->addOnceToInstructionsWithCreate();
+
+        $this->assertInstanceOf(Instructions::class, $testValueForInstructionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInstructions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstInstructions = $model->firstInstructions();
 
         $this->assertInstanceOf(Instructions::class, $firstInstructions);
@@ -18506,6 +19738,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNotifyParty();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNotifyPartyOnceItem = $model->addOnceToNotifyPartyWithCreate();
+
+        $this->assertInstanceOf(NotifyParty::class, $testValueForNotifyPartyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNotifyParty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNotifyParty = $model->firstNotifyParty();
 
@@ -18682,6 +19922,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -18999,6 +20247,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForXPathOnceItem = $model->addOnceToXPathWithCreate();
+
+        $this->assertInstanceOf(XPath::class, $testValueForXPathOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getXPath();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstXPath = $model->firstXPath();
 
         $this->assertInstanceOf(XPath::class, $firstXPath);
@@ -19104,6 +20360,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDocumentDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDocumentDescriptionOnceItem = $model->addOnceToDocumentDescriptionWithCreate();
+
+        $this->assertInstanceOf(DocumentDescription::class, $testValueForDocumentDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDocumentDescription = $model->firstDocumentDescription();
 
@@ -19248,6 +20512,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDocumentReference = $model->firstDocumentReference();
 
         $this->assertInstanceOf(DocumentReference::class, $firstDocumentReference);
@@ -19321,6 +20593,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getLineResponse();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForLineResponseOnceItem = $model->addOnceToLineResponseWithCreate();
+
+        $this->assertInstanceOf(LineResponse::class, $testValueForLineResponseOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getLineResponse();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstLineResponse = $model->firstLineResponse();
 
@@ -19530,6 +20810,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForRoleDescriptionOnceItem = $model->addOnceToRoleDescriptionWithCreate();
+
+        $this->assertInstanceOf(RoleDescription::class, $testValueForRoleDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRoleDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstRoleDescription = $model->firstRoleDescription();
 
         $this->assertInstanceOf(RoleDescription::class, $firstRoleDescription);
@@ -19592,6 +20880,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getLimitationDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForLimitationDescriptionOnceItem = $model->addOnceToLimitationDescriptionWithCreate();
+
+        $this->assertInstanceOf(LimitationDescription::class, $testValueForLimitationDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getLimitationDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstLimitationDescription = $model->firstLimitationDescription();
 
@@ -19682,6 +20978,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPreSelectedParty();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPreSelectedPartyOnceItem = $model->addOnceToPreSelectedPartyWithCreate();
+
+        $this->assertInstanceOf(PreSelectedParty::class, $testValueForPreSelectedPartyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPreSelectedParty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPreSelectedParty = $model->firstPreSelectedParty();
 
@@ -19907,6 +21211,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForRemarksOnceItem = $model->addOnceToRemarksWithCreate();
+
+        $this->assertInstanceOf(Remarks::class, $testValueForRemarksOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRemarks();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstRemarks = $model->firstRemarks();
 
         $this->assertInstanceOf(Remarks::class, $firstRemarks);
@@ -19964,6 +21276,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSignature();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSignatureOnceItem = $model->addOnceToSignatureWithCreate();
+
+        $this->assertInstanceOf(Signature::class, $testValueForSignatureOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSignature();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSignature = $model->firstSignature();
 
@@ -20209,6 +21529,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForConsumptionReportOnceItem = $model->addOnceToConsumptionReportWithCreate();
+
+        $this->assertInstanceOf(ConsumptionReport::class, $testValueForConsumptionReportOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getConsumptionReport();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstConsumptionReport = $model->firstConsumptionReport();
 
         $this->assertInstanceOf(ConsumptionReport::class, $firstConsumptionReport);
@@ -20250,6 +21578,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getEnergyTaxReport();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForEnergyTaxReportOnceItem = $model->addOnceToEnergyTaxReportWithCreate();
+
+        $this->assertInstanceOf(EnergyTaxReport::class, $testValueForEnergyTaxReportOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getEnergyTaxReport();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstEnergyTaxReport = $model->firstEnergyTaxReport();
 
@@ -20293,6 +21629,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForConsumptionAverageOnceItem = $model->addOnceToConsumptionAverageWithCreate();
+
+        $this->assertInstanceOf(ConsumptionAverage::class, $testValueForConsumptionAverageOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getConsumptionAverage();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstConsumptionAverage = $model->firstConsumptionAverage();
 
         $this->assertInstanceOf(ConsumptionAverage::class, $firstConsumptionAverage);
@@ -20334,6 +21678,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getEnergyWaterConsumptionCorrection();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForEnergyWaterConsumptionCorrectionOnceItem = $model->addOnceToEnergyWaterConsumptionCorrectionWithCreate();
+
+        $this->assertInstanceOf(EnergyWaterConsumptionCorrection::class, $testValueForEnergyWaterConsumptionCorrectionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getEnergyWaterConsumptionCorrection();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstEnergyWaterConsumptionCorrection = $model->firstEnergyWaterConsumptionCorrection();
 
@@ -20430,6 +21782,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -20471,6 +21831,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getEmissionCalculationMethod();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForEmissionCalculationMethodOnceItem = $model->addOnceToEmissionCalculationMethodWithCreate();
+
+        $this->assertInstanceOf(EmissionCalculationMethod::class, $testValueForEmissionCalculationMethodOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getEmissionCalculationMethod();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstEmissionCalculationMethod = $model->firstEmissionCalculationMethod();
 
@@ -20628,6 +21996,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -20718,6 +22094,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForExpressionOnceItem = $model->addOnceToExpressionWithCreate();
+
+        $this->assertInstanceOf(Expression::class, $testValueForExpressionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getExpression();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstExpression = $model->firstExpression();
 
         $this->assertInstanceOf(Expression::class, $firstExpression);
@@ -20775,6 +22159,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSuggestedEvidence();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSuggestedEvidenceOnceItem = $model->addOnceToSuggestedEvidenceWithCreate();
+
+        $this->assertInstanceOf(SuggestedEvidence::class, $testValueForSuggestedEvidenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSuggestedEvidence();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSuggestedEvidence = $model->firstSuggestedEvidence();
 
@@ -20940,6 +22332,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getRetailPlannedImpact();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForRetailPlannedImpactOnceItem = $model->addOnceToRetailPlannedImpactWithCreate();
+
+        $this->assertInstanceOf(RetailPlannedImpact::class, $testValueForRetailPlannedImpactOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRetailPlannedImpact();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstRetailPlannedImpact = $model->firstRetailPlannedImpact();
 
@@ -21233,6 +22633,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -21286,6 +22694,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForCurrentStatusOnceItem = $model->addOnceToCurrentStatusWithCreate();
+
+        $this->assertInstanceOf(CurrentStatus::class, $testValueForCurrentStatusOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCurrentStatus();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstCurrentStatus = $model->firstCurrentStatus();
 
         $this->assertInstanceOf(CurrentStatus::class, $firstCurrentStatus);
@@ -21327,6 +22743,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getContact();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForContactOnceItem = $model->addOnceToContactWithCreate();
+
+        $this->assertInstanceOf(Contact::class, $testValueForContactOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getContact();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstContact = $model->firstContact();
 
@@ -21498,6 +22922,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -21539,6 +22971,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getCandidateStatement();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForCandidateStatementOnceItem = $model->addOnceToCandidateStatementWithCreate();
+
+        $this->assertInstanceOf(CandidateStatement::class, $testValueForCandidateStatementOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCandidateStatement();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstCandidateStatement = $model->firstCandidateStatement();
 
@@ -21677,6 +23117,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNote();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNote = $model->firstNote();
 
@@ -21848,6 +23296,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSupplyItemOnceItem = $model->addOnceToSupplyItemWithCreate();
+
+        $this->assertInstanceOf(SupplyItem::class, $testValueForSupplyItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSupplyItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSupplyItem = $model->firstSupplyItem();
 
         $this->assertInstanceOf(SupplyItem::class, $firstSupplyItem);
@@ -21943,6 +23399,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -21984,6 +23448,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -22170,6 +23642,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDocumentReference = $model->firstDocumentReference();
 
@@ -22620,6 +24100,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -22834,6 +24322,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPaymentNoteOnceItem = $model->addOnceToPaymentNoteWithCreate();
+
+        $this->assertInstanceOf(PaymentNote::class, $testValueForPaymentNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPaymentNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPaymentNote = $model->firstPaymentNote();
 
         $this->assertInstanceOf(PaymentNote::class, $firstPaymentNote);
@@ -22966,6 +24462,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -23470,6 +24974,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -23619,6 +25131,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -23660,6 +25180,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -23853,6 +25381,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForJustificationOnceItem = $model->addOnceToJustificationWithCreate();
+
+        $this->assertInstanceOf(Justification::class, $testValueForJustificationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getJustification();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstJustification = $model->firstJustification();
 
         $this->assertInstanceOf(Justification::class, $firstJustification);
@@ -23894,6 +25430,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getFrequency();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForFrequencyOnceItem = $model->addOnceToFrequencyWithCreate();
+
+        $this->assertInstanceOf(Frequency::class, $testValueForFrequencyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getFrequency();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstFrequency = $model->firstFrequency();
 
@@ -23952,6 +25496,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSubsequentProcessTenderRequirement();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSubsequentProcessTenderRequirementOnceItem = $model->addOnceToSubsequentProcessTenderRequirementWithCreate();
+
+        $this->assertInstanceOf(SubsequentProcessTenderRequirement::class, $testValueForSubsequentProcessTenderRequirementOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSubsequentProcessTenderRequirement();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSubsequentProcessTenderRequirement = $model->firstSubsequentProcessTenderRequirement();
 
@@ -24114,6 +25666,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTransportEquipmentOnceItem = $model->addOnceToTransportEquipmentWithCreate();
+
+        $this->assertInstanceOf(TransportEquipment::class, $testValueForTransportEquipmentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransportEquipment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTransportEquipment = $model->firstTransportEquipment();
 
         $this->assertInstanceOf(TransportEquipment::class, $firstTransportEquipment);
@@ -24197,6 +25757,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -24582,6 +26150,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForItemOnceItem = $model->addOnceToItemWithCreate();
+
+        $this->assertInstanceOf(Item::class, $testValueForItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstItem = $model->firstItem();
 
         $this->assertInstanceOf(Item::class, $firstItem);
@@ -24623,6 +26199,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getGoodsItemContainer();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForGoodsItemContainerOnceItem = $model->addOnceToGoodsItemContainerWithCreate();
+
+        $this->assertInstanceOf(GoodsItemContainer::class, $testValueForGoodsItemContainerOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getGoodsItemContainer();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstGoodsItemContainer = $model->firstGoodsItemContainer();
 
@@ -24666,6 +26250,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForFreightAllowanceChargeOnceItem = $model->addOnceToFreightAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(FreightAllowanceCharge::class, $testValueForFreightAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getFreightAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstFreightAllowanceCharge = $model->firstFreightAllowanceCharge();
 
         $this->assertInstanceOf(FreightAllowanceCharge::class, $firstFreightAllowanceCharge);
@@ -24707,6 +26299,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getInvoiceLine();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForInvoiceLineOnceItem = $model->addOnceToInvoiceLineWithCreate();
+
+        $this->assertInstanceOf(InvoiceLine::class, $testValueForInvoiceLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInvoiceLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstInvoiceLine = $model->firstInvoiceLine();
 
@@ -24750,6 +26350,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTemperatureOnceItem = $model->addOnceToTemperatureWithCreate();
+
+        $this->assertInstanceOf(Temperature::class, $testValueForTemperatureOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTemperature();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTemperature = $model->firstTemperature();
 
         $this->assertInstanceOf(Temperature::class, $firstTemperature);
@@ -24791,6 +26399,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getContainedGoodsItem();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForContainedGoodsItemOnceItem = $model->addOnceToContainedGoodsItemWithCreate();
+
+        $this->assertInstanceOf(ContainedGoodsItem::class, $testValueForContainedGoodsItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getContainedGoodsItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstContainedGoodsItem = $model->firstContainedGoodsItem();
 
@@ -24898,6 +26514,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForMeasurementDimensionOnceItem = $model->addOnceToMeasurementDimensionWithCreate();
+
+        $this->assertInstanceOf(MeasurementDimension::class, $testValueForMeasurementDimensionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getMeasurementDimension();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstMeasurementDimension = $model->firstMeasurementDimension();
 
         $this->assertInstanceOf(MeasurementDimension::class, $firstMeasurementDimension);
@@ -24939,6 +26563,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getContainingPackage();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForContainingPackageOnceItem = $model->addOnceToContainingPackageWithCreate();
+
+        $this->assertInstanceOf(ContainingPackage::class, $testValueForContainingPackageOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getContainingPackage();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstContainingPackage = $model->firstContainingPackage();
 
@@ -25309,6 +26941,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAdditionalInformationOnceItem = $model->addOnceToAdditionalInformationWithCreate();
+
+        $this->assertInstanceOf(AdditionalInformation::class, $testValueForAdditionalInformationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalInformation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAdditionalInformation = $model->firstAdditionalInformation();
 
         $this->assertInstanceOf(AdditionalInformation::class, $firstAdditionalInformation);
@@ -25575,6 +27215,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSecondaryHazardOnceItem = $model->addOnceToSecondaryHazardWithCreate();
+
+        $this->assertInstanceOf(SecondaryHazard::class, $testValueForSecondaryHazardOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSecondaryHazard();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSecondaryHazard = $model->firstSecondaryHazard();
 
         $this->assertInstanceOf(SecondaryHazard::class, $firstSecondaryHazard);
@@ -25616,6 +27264,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getHazardousGoodsTransit();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForHazardousGoodsTransitOnceItem = $model->addOnceToHazardousGoodsTransitWithCreate();
+
+        $this->assertInstanceOf(HazardousGoodsTransit::class, $testValueForHazardousGoodsTransitOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getHazardousGoodsTransit();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstHazardousGoodsTransit = $model->firstHazardousGoodsTransit();
 
@@ -25690,6 +27346,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAdditionalTemperature();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAdditionalTemperatureOnceItem = $model->addOnceToAdditionalTemperatureWithCreate();
+
+        $this->assertInstanceOf(AdditionalTemperature::class, $testValueForAdditionalTemperatureOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalTemperature();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAdditionalTemperature = $model->firstAdditionalTemperature();
 
@@ -25942,6 +27606,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -26145,6 +27817,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNote();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNote = $model->firstNote();
 
@@ -26354,6 +28034,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -26498,6 +28186,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForInvoicePeriodOnceItem = $model->addOnceToInvoicePeriodWithCreate();
+
+        $this->assertInstanceOf(InvoicePeriod::class, $testValueForInvoicePeriodOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInvoicePeriod();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstInvoicePeriod = $model->firstInvoicePeriod();
 
         $this->assertInstanceOf(InvoicePeriod::class, $firstInvoicePeriod);
@@ -26539,6 +28235,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getOrderLineReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForOrderLineReferenceOnceItem = $model->addOnceToOrderLineReferenceWithCreate();
+
+        $this->assertInstanceOf(OrderLineReference::class, $testValueForOrderLineReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getOrderLineReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstOrderLineReference = $model->firstOrderLineReference();
 
@@ -26582,6 +28286,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDespatchLineReferenceOnceItem = $model->addOnceToDespatchLineReferenceWithCreate();
+
+        $this->assertInstanceOf(DespatchLineReference::class, $testValueForDespatchLineReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDespatchLineReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDespatchLineReference = $model->firstDespatchLineReference();
 
         $this->assertInstanceOf(DespatchLineReference::class, $firstDespatchLineReference);
@@ -26623,6 +28335,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getReceiptLineReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForReceiptLineReferenceOnceItem = $model->addOnceToReceiptLineReferenceWithCreate();
+
+        $this->assertInstanceOf(ReceiptLineReference::class, $testValueForReceiptLineReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getReceiptLineReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstReceiptLineReference = $model->firstReceiptLineReference();
 
@@ -26666,6 +28386,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForBillingReferenceOnceItem = $model->addOnceToBillingReferenceWithCreate();
+
+        $this->assertInstanceOf(BillingReference::class, $testValueForBillingReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getBillingReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstBillingReference = $model->firstBillingReference();
 
         $this->assertInstanceOf(BillingReference::class, $firstBillingReference);
@@ -26707,6 +28435,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDocumentReference = $model->firstDocumentReference();
 
@@ -26782,6 +28518,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDeliveryOnceItem = $model->addOnceToDeliveryWithCreate();
+
+        $this->assertInstanceOf(Delivery::class, $testValueForDeliveryOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDelivery();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDelivery = $model->firstDelivery();
 
         $this->assertInstanceOf(Delivery::class, $firstDelivery);
@@ -26823,6 +28567,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPaymentTerms();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPaymentTermsOnceItem = $model->addOnceToPaymentTermsWithCreate();
+
+        $this->assertInstanceOf(PaymentTerms::class, $testValueForPaymentTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPaymentTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPaymentTerms = $model->firstPaymentTerms();
 
@@ -26866,6 +28618,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAllowanceChargeOnceItem = $model->addOnceToAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(AllowanceCharge::class, $testValueForAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAllowanceCharge = $model->firstAllowanceCharge();
 
         $this->assertInstanceOf(AllowanceCharge::class, $firstAllowanceCharge);
@@ -26908,6 +28668,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTaxTotalOnceItem = $model->addOnceToTaxTotalWithCreate();
+
+        $this->assertInstanceOf(TaxTotal::class, $testValueForTaxTotalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxTotal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTaxTotal = $model->firstTaxTotal();
 
         $this->assertInstanceOf(TaxTotal::class, $firstTaxTotal);
@@ -26949,6 +28717,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getWithholdingTaxTotal();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForWithholdingTaxTotalOnceItem = $model->addOnceToWithholdingTaxTotalWithCreate();
+
+        $this->assertInstanceOf(WithholdingTaxTotal::class, $testValueForWithholdingTaxTotalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getWithholdingTaxTotal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstWithholdingTaxTotal = $model->firstWithholdingTaxTotal();
 
@@ -27039,6 +28815,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSubInvoiceLine();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSubInvoiceLineOnceItem = $model->addOnceToSubInvoiceLineWithCreate();
+
+        $this->assertInstanceOf(SubInvoiceLine::class, $testValueForSubInvoiceLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSubInvoiceLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSubInvoiceLine = $model->firstSubInvoiceLine();
 
@@ -27275,6 +29059,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPhysicalAttributeOnceItem = $model->addOnceToPhysicalAttributeWithCreate();
+
+        $this->assertInstanceOf(PhysicalAttribute::class, $testValueForPhysicalAttributeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPhysicalAttribute();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPhysicalAttribute = $model->firstPhysicalAttribute();
 
         $this->assertInstanceOf(PhysicalAttribute::class, $firstPhysicalAttribute);
@@ -27316,6 +29108,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getMeasurementDimension();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForMeasurementDimensionOnceItem = $model->addOnceToMeasurementDimensionWithCreate();
+
+        $this->assertInstanceOf(MeasurementDimension::class, $testValueForMeasurementDimensionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getMeasurementDimension();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstMeasurementDimension = $model->firstMeasurementDimension();
 
@@ -27460,6 +29260,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPeriodOnceItem = $model->addOnceToPeriodWithCreate();
+
+        $this->assertInstanceOf(Period::class, $testValueForPeriodOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPeriod();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPeriod = $model->firstPeriod();
 
         $this->assertInstanceOf(Period::class, $firstPeriod);
@@ -27501,6 +29309,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSalesItem();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSalesItemOnceItem = $model->addOnceToSalesItemWithCreate();
+
+        $this->assertInstanceOf(SalesItem::class, $testValueForSalesItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSalesItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSalesItem = $model->firstSalesItem();
 
@@ -27646,6 +29462,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAdditionalItemPropertyOnceItem = $model->addOnceToAdditionalItemPropertyWithCreate();
+
+        $this->assertInstanceOf(AdditionalItemProperty::class, $testValueForAdditionalItemPropertyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalItemProperty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAdditionalItemProperty = $model->firstAdditionalItemProperty();
 
         $this->assertInstanceOf(AdditionalItemProperty::class, $firstAdditionalItemProperty);
@@ -27784,6 +29608,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTradingRestrictionsOnceItem = $model->addOnceToTradingRestrictionsWithCreate();
+
+        $this->assertInstanceOf(TradingRestrictions::class, $testValueForTradingRestrictionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTradingRestrictions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTradingRestrictions = $model->firstTradingRestrictions();
 
         $this->assertInstanceOf(TradingRestrictions::class, $firstTradingRestrictions);
@@ -27825,6 +29657,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getApplicableTerritoryAddress();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForApplicableTerritoryAddressOnceItem = $model->addOnceToApplicableTerritoryAddressWithCreate();
+
+        $this->assertInstanceOf(ApplicableTerritoryAddress::class, $testValueForApplicableTerritoryAddressOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getApplicableTerritoryAddress();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstApplicableTerritoryAddress = $model->firstApplicableTerritoryAddress();
 
@@ -27884,6 +29724,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDeliveryUnitOnceItem = $model->addOnceToDeliveryUnitWithCreate();
+
+        $this->assertInstanceOf(DeliveryUnit::class, $testValueForDeliveryUnitOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDeliveryUnit();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDeliveryUnit = $model->firstDeliveryUnit();
 
         $this->assertInstanceOf(DeliveryUnit::class, $firstDeliveryUnit);
@@ -27925,6 +29773,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getApplicableTaxCategory();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForApplicableTaxCategoryOnceItem = $model->addOnceToApplicableTaxCategoryWithCreate();
+
+        $this->assertInstanceOf(ApplicableTaxCategory::class, $testValueForApplicableTaxCategoryOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getApplicableTaxCategory();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstApplicableTaxCategory = $model->firstApplicableTaxCategory();
 
@@ -27983,6 +29839,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAllowanceCharge();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAllowanceChargeOnceItem = $model->addOnceToAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(AllowanceCharge::class, $testValueForAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAllowanceCharge = $model->firstAllowanceCharge();
 
@@ -28126,6 +29990,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getReplenishmentOwnerDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForReplenishmentOwnerDescriptionOnceItem = $model->addOnceToReplenishmentOwnerDescriptionWithCreate();
+
+        $this->assertInstanceOf(ReplenishmentOwnerDescription::class, $testValueForReplenishmentOwnerDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getReplenishmentOwnerDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstReplenishmentOwnerDescription = $model->firstReplenishmentOwnerDescription();
 
@@ -28499,6 +30371,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForValueQualifierOnceItem = $model->addOnceToValueQualifierWithCreate();
+
+        $this->assertInstanceOf(ValueQualifier::class, $testValueForValueQualifierOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getValueQualifier();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstValueQualifier = $model->firstValueQualifier();
 
         $this->assertInstanceOf(ValueQualifier::class, $firstValueQualifier);
@@ -28557,6 +30437,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForListValueOnceItem = $model->addOnceToListValueWithCreate();
+
+        $this->assertInstanceOf(ListValue::class, $testValueForListValueOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getListValue();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstListValue = $model->firstListValue();
 
         $this->assertInstanceOf(ListValue::class, $firstListValue);
@@ -28614,6 +30502,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getItemPropertyGroup();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForItemPropertyGroupOnceItem = $model->addOnceToItemPropertyGroupWithCreate();
+
+        $this->assertInstanceOf(ItemPropertyGroup::class, $testValueForItemPropertyGroupOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getItemPropertyGroup();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstItemPropertyGroup = $model->firstItemPropertyGroup();
 
@@ -28709,6 +30605,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -28822,6 +30726,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAdditionalInformationOnceItem = $model->addOnceToAdditionalInformationWithCreate();
+
+        $this->assertInstanceOf(AdditionalInformation::class, $testValueForAdditionalInformationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalInformation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAdditionalInformation = $model->firstAdditionalInformation();
 
         $this->assertInstanceOf(AdditionalInformation::class, $firstAdditionalInformation);
@@ -28863,6 +30775,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getKeyword();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForKeywordOnceItem = $model->addOnceToKeywordWithCreate();
+
+        $this->assertInstanceOf(Keyword::class, $testValueForKeywordOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getKeyword();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstKeyword = $model->firstKeyword();
 
@@ -28906,6 +30826,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForBrandNameOnceItem = $model->addOnceToBrandNameWithCreate();
+
+        $this->assertInstanceOf(BrandName::class, $testValueForBrandNameOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getBrandName();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstBrandName = $model->firstBrandName();
 
         $this->assertInstanceOf(BrandName::class, $firstBrandName);
@@ -28947,6 +30875,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getModelName();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForModelNameOnceItem = $model->addOnceToModelNameWithCreate();
+
+        $this->assertInstanceOf(ModelName::class, $testValueForModelNameOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getModelName();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstModelName = $model->firstModelName();
 
@@ -29022,6 +30958,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForManufacturersItemIdentificationOnceItem = $model->addOnceToManufacturersItemIdentificationWithCreate();
+
+        $this->assertInstanceOf(ManufacturersItemIdentification::class, $testValueForManufacturersItemIdentificationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getManufacturersItemIdentification();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstManufacturersItemIdentification = $model->firstManufacturersItemIdentification();
 
         $this->assertInstanceOf(ManufacturersItemIdentification::class, $firstManufacturersItemIdentification);
@@ -29096,6 +31040,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAdditionalItemIdentificationOnceItem = $model->addOnceToAdditionalItemIdentificationWithCreate();
+
+        $this->assertInstanceOf(AdditionalItemIdentification::class, $testValueForAdditionalItemIdentificationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalItemIdentification();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAdditionalItemIdentification = $model->firstAdditionalItemIdentification();
 
         $this->assertInstanceOf(AdditionalItemIdentification::class, $firstAdditionalItemIdentification);
@@ -29153,6 +31105,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getItemSpecificationDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForItemSpecificationDocumentReferenceOnceItem = $model->addOnceToItemSpecificationDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(ItemSpecificationDocumentReference::class, $testValueForItemSpecificationDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getItemSpecificationDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstItemSpecificationDocumentReference = $model->firstItemSpecificationDocumentReference();
 
@@ -29212,6 +31172,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForCommodityClassificationOnceItem = $model->addOnceToCommodityClassificationWithCreate();
+
+        $this->assertInstanceOf(CommodityClassification::class, $testValueForCommodityClassificationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCommodityClassification();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstCommodityClassification = $model->firstCommodityClassification();
 
         $this->assertInstanceOf(CommodityClassification::class, $firstCommodityClassification);
@@ -29253,6 +31221,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTransactionConditions();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTransactionConditionsOnceItem = $model->addOnceToTransactionConditionsWithCreate();
+
+        $this->assertInstanceOf(TransactionConditions::class, $testValueForTransactionConditionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransactionConditions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTransactionConditions = $model->firstTransactionConditions();
 
@@ -29296,6 +31272,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForHazardousItemOnceItem = $model->addOnceToHazardousItemWithCreate();
+
+        $this->assertInstanceOf(HazardousItem::class, $testValueForHazardousItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getHazardousItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstHazardousItem = $model->firstHazardousItem();
 
         $this->assertInstanceOf(HazardousItem::class, $firstHazardousItem);
@@ -29337,6 +31321,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getClassifiedTaxCategory();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForClassifiedTaxCategoryOnceItem = $model->addOnceToClassifiedTaxCategoryWithCreate();
+
+        $this->assertInstanceOf(ClassifiedTaxCategory::class, $testValueForClassifiedTaxCategoryOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getClassifiedTaxCategory();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstClassifiedTaxCategory = $model->firstClassifiedTaxCategory();
 
@@ -29380,6 +31372,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAdditionalItemPropertyOnceItem = $model->addOnceToAdditionalItemPropertyWithCreate();
+
+        $this->assertInstanceOf(AdditionalItemProperty::class, $testValueForAdditionalItemPropertyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalItemProperty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAdditionalItemProperty = $model->firstAdditionalItemProperty();
 
         $this->assertInstanceOf(AdditionalItemProperty::class, $firstAdditionalItemProperty);
@@ -29421,6 +31421,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getManufacturerParty();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForManufacturerPartyOnceItem = $model->addOnceToManufacturerPartyWithCreate();
+
+        $this->assertInstanceOf(ManufacturerParty::class, $testValueForManufacturerPartyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getManufacturerParty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstManufacturerParty = $model->firstManufacturerParty();
 
@@ -29480,6 +31488,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForOriginAddressOnceItem = $model->addOnceToOriginAddressWithCreate();
+
+        $this->assertInstanceOf(OriginAddress::class, $testValueForOriginAddressOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getOriginAddress();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstOriginAddress = $model->firstOriginAddress();
 
         $this->assertInstanceOf(OriginAddress::class, $firstOriginAddress);
@@ -29521,6 +31537,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getItemInstance();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForItemInstanceOnceItem = $model->addOnceToItemInstanceWithCreate();
+
+        $this->assertInstanceOf(ItemInstance::class, $testValueForItemInstanceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getItemInstance();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstItemInstance = $model->firstItemInstance();
 
@@ -29564,6 +31588,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForCertificateOnceItem = $model->addOnceToCertificateWithCreate();
+
+        $this->assertInstanceOf(Certificate::class, $testValueForCertificateOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCertificate();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstCertificate = $model->firstCertificate();
 
         $this->assertInstanceOf(Certificate::class, $firstCertificate);
@@ -29605,6 +31637,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDimension();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDimensionOnceItem = $model->addOnceToDimensionWithCreate();
+
+        $this->assertInstanceOf(Dimension::class, $testValueForDimensionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDimension();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDimension = $model->firstDimension();
 
@@ -29840,6 +31880,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNote();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNote = $model->firstNote();
 
@@ -30081,6 +32129,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForWarrantyInformationOnceItem = $model->addOnceToWarrantyInformationWithCreate();
+
+        $this->assertInstanceOf(WarrantyInformation::class, $testValueForWarrantyInformationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getWarrantyInformation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstWarrantyInformation = $model->firstWarrantyInformation();
 
         $this->assertInstanceOf(WarrantyInformation::class, $firstWarrantyInformation);
@@ -30122,6 +32178,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDelivery();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDeliveryOnceItem = $model->addOnceToDeliveryWithCreate();
+
+        $this->assertInstanceOf(Delivery::class, $testValueForDeliveryOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDelivery();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDelivery = $model->firstDelivery();
 
@@ -30197,6 +32261,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForOrderedShipmentOnceItem = $model->addOnceToOrderedShipmentWithCreate();
+
+        $this->assertInstanceOf(OrderedShipment::class, $testValueForOrderedShipmentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getOrderedShipment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstOrderedShipment = $model->firstOrderedShipment();
 
         $this->assertInstanceOf(OrderedShipment::class, $firstOrderedShipment);
@@ -30254,6 +32326,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAllowanceCharge();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAllowanceChargeOnceItem = $model->addOnceToAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(AllowanceCharge::class, $testValueForAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAllowanceCharge = $model->firstAllowanceCharge();
 
@@ -30329,6 +32409,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSubLineItemOnceItem = $model->addOnceToSubLineItemWithCreate();
+
+        $this->assertInstanceOf(SubLineItem::class, $testValueForSubLineItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSubLineItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSubLineItem = $model->firstSubLineItem();
 
         $this->assertInstanceOf(SubLineItem::class, $firstSubLineItem);
@@ -30403,6 +32491,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTaxTotalOnceItem = $model->addOnceToTaxTotalWithCreate();
+
+        $this->assertInstanceOf(TaxTotal::class, $testValueForTaxTotalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxTotal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTaxTotal = $model->firstTaxTotal();
 
         $this->assertInstanceOf(TaxTotal::class, $firstTaxTotal);
@@ -30460,6 +32556,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getLineReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForLineReferenceOnceItem = $model->addOnceToLineReferenceWithCreate();
+
+        $this->assertInstanceOf(LineReference::class, $testValueForLineReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getLineReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstLineReference = $model->firstLineReference();
 
@@ -30624,6 +32728,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getResponse();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForResponseOnceItem = $model->addOnceToResponseWithCreate();
+
+        $this->assertInstanceOf(Response::class, $testValueForResponseOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getResponse();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstResponse = $model->firstResponse();
 
@@ -30919,6 +33031,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -30960,6 +33080,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getConditions();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForConditionsOnceItem = $model->addOnceToConditionsWithCreate();
+
+        $this->assertInstanceOf(Conditions::class, $testValueForConditionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getConditions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstConditions = $model->firstConditions();
 
@@ -31083,6 +33211,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForValidityPeriodOnceItem = $model->addOnceToValidityPeriodWithCreate();
+
+        $this->assertInstanceOf(ValidityPeriod::class, $testValueForValidityPeriodOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getValidityPeriod();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstValidityPeriod = $model->firstValidityPeriod();
 
         $this->assertInstanceOf(ValidityPeriod::class, $firstValidityPeriod);
@@ -31141,6 +33277,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSubsidiaryLocationOnceItem = $model->addOnceToSubsidiaryLocationWithCreate();
+
+        $this->assertInstanceOf(SubsidiaryLocation::class, $testValueForSubsidiaryLocationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSubsidiaryLocation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSubsidiaryLocation = $model->firstSubsidiaryLocation();
 
         $this->assertInstanceOf(SubsidiaryLocation::class, $firstSubsidiaryLocation);
@@ -31182,6 +33326,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getLocationCoordinate();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForLocationCoordinateOnceItem = $model->addOnceToLocationCoordinateWithCreate();
+
+        $this->assertInstanceOf(LocationCoordinate::class, $testValueForLocationCoordinateOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getLocationCoordinate();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstLocationCoordinate = $model->firstLocationCoordinate();
 
@@ -31283,6 +33435,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAdditionalItemProperty();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAdditionalItemPropertyOnceItem = $model->addOnceToAdditionalItemPropertyWithCreate();
+
+        $this->assertInstanceOf(AdditionalItemProperty::class, $testValueForAdditionalItemPropertyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalItemProperty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAdditionalItemProperty = $model->firstAdditionalItemProperty();
 
@@ -31493,6 +33653,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getShipsRequirements();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForShipsRequirementsOnceItem = $model->addOnceToShipsRequirementsWithCreate();
+
+        $this->assertInstanceOf(ShipsRequirements::class, $testValueForShipsRequirementsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getShipsRequirements();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstShipsRequirements = $model->firstShipsRequirements();
 
@@ -31773,6 +33941,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForValueQualifierOnceItem = $model->addOnceToValueQualifierWithCreate();
+
+        $this->assertInstanceOf(ValueQualifier::class, $testValueForValueQualifierOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getValueQualifier();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstValueQualifier = $model->firstValueQualifier();
 
         $this->assertInstanceOf(ValueQualifier::class, $firstValueQualifier);
@@ -32016,6 +34192,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForMeterReadingCommentsOnceItem = $model->addOnceToMeterReadingCommentsWithCreate();
+
+        $this->assertInstanceOf(MeterReadingComments::class, $testValueForMeterReadingCommentsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getMeterReadingComments();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstMeterReadingComments = $model->firstMeterReadingComments();
 
         $this->assertInstanceOf(MeterReadingComments::class, $firstMeterReadingComments);
@@ -32164,6 +34348,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForMeterReadingOnceItem = $model->addOnceToMeterReadingWithCreate();
+
+        $this->assertInstanceOf(MeterReading::class, $testValueForMeterReadingOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getMeterReading();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstMeterReading = $model->firstMeterReading();
 
         $this->assertInstanceOf(MeterReading::class, $firstMeterReading);
@@ -32205,6 +34397,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getMeterProperty();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForMeterPropertyOnceItem = $model->addOnceToMeterPropertyWithCreate();
+
+        $this->assertInstanceOf(MeterProperty::class, $testValueForMeterPropertyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getMeterProperty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstMeterProperty = $model->firstMeterProperty();
 
@@ -32317,6 +34517,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getEventLineItem();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForEventLineItemOnceItem = $model->addOnceToEventLineItemWithCreate();
+
+        $this->assertInstanceOf(EventLineItem::class, $testValueForEventLineItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getEventLineItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstEventLineItem = $model->firstEventLineItem();
 
@@ -32660,6 +34868,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNotifyPartyOnceItem = $model->addOnceToNotifyPartyWithCreate();
+
+        $this->assertInstanceOf(NotifyParty::class, $testValueForNotifyPartyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNotifyParty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNotifyParty = $model->firstNotifyParty();
 
         $this->assertInstanceOf(NotifyParty::class, $firstNotifyParty);
@@ -32702,6 +34918,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNotificationPeriodOnceItem = $model->addOnceToNotificationPeriodWithCreate();
+
+        $this->assertInstanceOf(NotificationPeriod::class, $testValueForNotificationPeriodOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNotificationPeriod();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNotificationPeriod = $model->firstNotificationPeriod();
 
         $this->assertInstanceOf(NotificationPeriod::class, $firstNotificationPeriod);
@@ -32743,6 +34967,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNotificationLocation();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNotificationLocationOnceItem = $model->addOnceToNotificationLocationWithCreate();
+
+        $this->assertInstanceOf(NotificationLocation::class, $testValueForNotificationLocationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNotificationLocation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNotificationLocation = $model->firstNotificationLocation();
 
@@ -32856,6 +35088,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -32897,6 +35137,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPaymentTerms();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPaymentTermsOnceItem = $model->addOnceToPaymentTermsWithCreate();
+
+        $this->assertInstanceOf(PaymentTerms::class, $testValueForPaymentTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPaymentTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPaymentTerms = $model->firstPaymentTerms();
 
@@ -33042,6 +35290,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPackage();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPackageOnceItem = $model->addOnceToPackageWithCreate();
+
+        $this->assertInstanceOf(Package::class, $testValueForPackageOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPackage();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPackage = $model->firstPackage();
 
@@ -33223,6 +35479,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -33281,6 +35545,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSellerProposedSubstituteLineItemOnceItem = $model->addOnceToSellerProposedSubstituteLineItemWithCreate();
+
+        $this->assertInstanceOf(SellerProposedSubstituteLineItem::class, $testValueForSellerProposedSubstituteLineItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSellerProposedSubstituteLineItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSellerProposedSubstituteLineItem = $model->firstSellerProposedSubstituteLineItem();
 
         $this->assertInstanceOf(SellerProposedSubstituteLineItem::class, $firstSellerProposedSubstituteLineItem);
@@ -33323,6 +35595,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSellerSubstitutedLineItemOnceItem = $model->addOnceToSellerSubstitutedLineItemWithCreate();
+
+        $this->assertInstanceOf(SellerSubstitutedLineItem::class, $testValueForSellerSubstitutedLineItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSellerSubstitutedLineItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSellerSubstitutedLineItem = $model->firstSellerSubstitutedLineItem();
 
         $this->assertInstanceOf(SellerSubstitutedLineItem::class, $firstSellerSubstitutedLineItem);
@@ -33364,6 +35644,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getBuyerProposedSubstituteLineItem();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForBuyerProposedSubstituteLineItemOnceItem = $model->addOnceToBuyerProposedSubstituteLineItemWithCreate();
+
+        $this->assertInstanceOf(BuyerProposedSubstituteLineItem::class, $testValueForBuyerProposedSubstituteLineItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getBuyerProposedSubstituteLineItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstBuyerProposedSubstituteLineItem = $model->firstBuyerProposedSubstituteLineItem();
 
@@ -33439,6 +35727,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForOrderLineReferenceOnceItem = $model->addOnceToOrderLineReferenceWithCreate();
+
+        $this->assertInstanceOf(OrderLineReference::class, $testValueForOrderLineReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getOrderLineReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstOrderLineReference = $model->firstOrderLineReference();
 
         $this->assertInstanceOf(OrderLineReference::class, $firstOrderLineReference);
@@ -33480,6 +35776,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDocumentReference = $model->firstDocumentReference();
 
@@ -33912,6 +36216,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPackingMaterialOnceItem = $model->addOnceToPackingMaterialWithCreate();
+
+        $this->assertInstanceOf(PackingMaterial::class, $testValueForPackingMaterialOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPackingMaterial();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPackingMaterial = $model->firstPackingMaterial();
 
         $this->assertInstanceOf(PackingMaterial::class, $firstPackingMaterial);
@@ -33969,6 +36281,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getContainedPackage();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForContainedPackageOnceItem = $model->addOnceToContainedPackageWithCreate();
+
+        $this->assertInstanceOf(ContainedPackage::class, $testValueForContainedPackageOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getContainedPackage();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstContainedPackage = $model->firstContainedPackage();
 
@@ -34028,6 +36348,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForGoodsItemOnceItem = $model->addOnceToGoodsItemWithCreate();
+
+        $this->assertInstanceOf(GoodsItem::class, $testValueForGoodsItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getGoodsItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstGoodsItem = $model->firstGoodsItem();
 
         $this->assertInstanceOf(GoodsItem::class, $firstGoodsItem);
@@ -34070,6 +36398,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForMeasurementDimensionOnceItem = $model->addOnceToMeasurementDimensionWithCreate();
+
+        $this->assertInstanceOf(MeasurementDimension::class, $testValueForMeasurementDimensionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getMeasurementDimension();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstMeasurementDimension = $model->firstMeasurementDimension();
 
         $this->assertInstanceOf(MeasurementDimension::class, $firstMeasurementDimension);
@@ -34111,6 +36447,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDeliveryUnit();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDeliveryUnitOnceItem = $model->addOnceToDeliveryUnitWithCreate();
+
+        $this->assertInstanceOf(DeliveryUnit::class, $testValueForDeliveryUnitOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDeliveryUnit();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDeliveryUnit = $model->firstDeliveryUnit();
 
@@ -34514,6 +36858,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForShareholderPartyOnceItem = $model->addOnceToShareholderPartyWithCreate();
+
+        $this->assertInstanceOf(ShareholderParty::class, $testValueForShareholderPartyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getShareholderParty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstShareholderParty = $model->firstShareholderParty();
 
         $this->assertInstanceOf(ShareholderParty::class, $firstShareholderParty);
@@ -34677,6 +37029,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getExemptionReason();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForExemptionReasonOnceItem = $model->addOnceToExemptionReasonWithCreate();
+
+        $this->assertInstanceOf(ExemptionReason::class, $testValueForExemptionReasonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getExemptionReason();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstExemptionReason = $model->firstExemptionReason();
 
@@ -34848,6 +37208,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPartyIdentificationOnceItem = $model->addOnceToPartyIdentificationWithCreate();
+
+        $this->assertInstanceOf(PartyIdentification::class, $testValueForPartyIdentificationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPartyIdentification();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPartyIdentification = $model->firstPartyIdentification();
 
         $this->assertInstanceOf(PartyIdentification::class, $firstPartyIdentification);
@@ -34889,6 +37257,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPartyName();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPartyNameOnceItem = $model->addOnceToPartyNameWithCreate();
+
+        $this->assertInstanceOf(PartyName::class, $testValueForPartyNameOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPartyName();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPartyName = $model->firstPartyName();
 
@@ -34980,6 +37356,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPartyTaxSchemeOnceItem = $model->addOnceToPartyTaxSchemeWithCreate();
+
+        $this->assertInstanceOf(PartyTaxScheme::class, $testValueForPartyTaxSchemeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPartyTaxScheme();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPartyTaxScheme = $model->firstPartyTaxScheme();
 
         $this->assertInstanceOf(PartyTaxScheme::class, $firstPartyTaxScheme);
@@ -35021,6 +37405,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPartyLegalEntity();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPartyLegalEntityOnceItem = $model->addOnceToPartyLegalEntityWithCreate();
+
+        $this->assertInstanceOf(PartyLegalEntity::class, $testValueForPartyLegalEntityOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPartyLegalEntity();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPartyLegalEntity = $model->firstPartyLegalEntity();
 
@@ -35080,6 +37472,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPersonOnceItem = $model->addOnceToPersonWithCreate();
+
+        $this->assertInstanceOf(Person::class, $testValueForPersonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPerson();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPerson = $model->firstPerson();
 
         $this->assertInstanceOf(Person::class, $firstPerson);
@@ -35138,6 +37538,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForServiceProviderPartyOnceItem = $model->addOnceToServiceProviderPartyWithCreate();
+
+        $this->assertInstanceOf(ServiceProviderParty::class, $testValueForServiceProviderPartyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getServiceProviderParty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstServiceProviderParty = $model->firstServiceProviderParty();
 
         $this->assertInstanceOf(ServiceProviderParty::class, $firstServiceProviderParty);
@@ -35179,6 +37587,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPowerOfAttorney();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPowerOfAttorneyOnceItem = $model->addOnceToPowerOfAttorneyWithCreate();
+
+        $this->assertInstanceOf(PowerOfAttorney::class, $testValueForPowerOfAttorneyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPowerOfAttorney();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPowerOfAttorney = $model->firstPowerOfAttorney();
 
@@ -35491,6 +37907,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForClauseOnceItem = $model->addOnceToClauseWithCreate();
+
+        $this->assertInstanceOf(Clause::class, $testValueForClauseOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getClause();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstClause = $model->firstClause();
 
         $this->assertInstanceOf(Clause::class, $firstClause);
@@ -35629,6 +38053,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForInstructionNoteOnceItem = $model->addOnceToInstructionNoteWithCreate();
+
+        $this->assertInstanceOf(InstructionNote::class, $testValueForInstructionNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInstructionNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstInstructionNote = $model->firstInstructionNote();
 
         $this->assertInstanceOf(InstructionNote::class, $firstInstructionNote);
@@ -35670,6 +38102,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPaymentID();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPaymentIDOnceItem = $model->addOnceToPaymentIDWithCreate();
+
+        $this->assertInstanceOf(PaymentID::class, $testValueForPaymentIDOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPaymentID();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPaymentID = $model->firstPaymentID();
 
@@ -35857,6 +38297,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPaymentMeansIDOnceItem = $model->addOnceToPaymentMeansIDWithCreate();
+
+        $this->assertInstanceOf(PaymentMeansID::class, $testValueForPaymentMeansIDOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPaymentMeansID();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPaymentMeansID = $model->firstPaymentMeansID();
 
         $this->assertInstanceOf(PaymentMeansID::class, $firstPaymentMeansID);
@@ -35914,6 +38362,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNote();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNote = $model->firstNote();
 
@@ -36348,6 +38804,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -36546,6 +39010,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionCodeOnceItem = $model->addOnceToDescriptionCodeWithCreate();
+
+        $this->assertInstanceOf(DescriptionCode::class, $testValueForDescriptionCodeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescriptionCode();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescriptionCode = $model->firstDescriptionCode();
 
         $this->assertInstanceOf(DescriptionCode::class, $firstDescriptionCode);
@@ -36587,6 +39059,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -36886,6 +39366,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForIdentityDocumentReferenceOnceItem = $model->addOnceToIdentityDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(IdentityDocumentReference::class, $testValueForIdentityDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getIdentityDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstIdentityDocumentReference = $model->firstIdentityDocumentReference();
 
         $this->assertInstanceOf(IdentityDocumentReference::class, $firstIdentityDocumentReference);
@@ -37012,6 +39500,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -37385,6 +39881,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -37459,6 +39963,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForWitnessPartyOnceItem = $model->addOnceToWitnessPartyWithCreate();
+
+        $this->assertInstanceOf(WitnessParty::class, $testValueForWitnessPartyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getWitnessParty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstWitnessParty = $model->firstWitnessParty();
 
         $this->assertInstanceOf(WitnessParty::class, $firstWitnessParty);
@@ -37500,6 +40012,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getMandateDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForMandateDocumentReferenceOnceItem = $model->addOnceToMandateDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(MandateDocumentReference::class, $testValueForMandateDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getMandateDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstMandateDocumentReference = $model->firstMandateDocumentReference();
 
@@ -37679,6 +40199,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTaxTotalOnceItem = $model->addOnceToTaxTotalWithCreate();
+
+        $this->assertInstanceOf(TaxTotal::class, $testValueForTaxTotalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxTotal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTaxTotal = $model->firstTaxTotal();
 
         $this->assertInstanceOf(TaxTotal::class, $firstTaxTotal);
@@ -37773,6 +40301,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getValidityPeriod();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForValidityPeriodOnceItem = $model->addOnceToValidityPeriodWithCreate();
+
+        $this->assertInstanceOf(ValidityPeriod::class, $testValueForValidityPeriodOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getValidityPeriod();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstValidityPeriod = $model->firstValidityPeriod();
 
@@ -37874,6 +40410,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPriceChangeReasonOnceItem = $model->addOnceToPriceChangeReasonWithCreate();
+
+        $this->assertInstanceOf(PriceChangeReason::class, $testValueForPriceChangeReasonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPriceChangeReason();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPriceChangeReason = $model->firstPriceChangeReason();
 
         $this->assertInstanceOf(PriceChangeReason::class, $firstPriceChangeReason);
@@ -37964,6 +40508,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForValidityPeriodOnceItem = $model->addOnceToValidityPeriodWithCreate();
+
+        $this->assertInstanceOf(ValidityPeriod::class, $testValueForValidityPeriodOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getValidityPeriod();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstValidityPeriod = $model->firstValidityPeriod();
 
         $this->assertInstanceOf(ValidityPeriod::class, $firstValidityPeriod);
@@ -38021,6 +40573,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAllowanceCharge();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAllowanceChargeOnceItem = $model->addOnceToAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(AllowanceCharge::class, $testValueForAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAllowanceCharge = $model->firstAllowanceCharge();
 
@@ -38128,6 +40688,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAlternativeConditionPriceOnceItem = $model->addOnceToAlternativeConditionPriceWithCreate();
+
+        $this->assertInstanceOf(AlternativeConditionPrice::class, $testValueForAlternativeConditionPriceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAlternativeConditionPrice();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAlternativeConditionPrice = $model->firstAlternativeConditionPrice();
 
         $this->assertInstanceOf(AlternativeConditionPrice::class, $firstAlternativeConditionPrice);
@@ -38223,6 +40791,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForProcessReasonOnceItem = $model->addOnceToProcessReasonWithCreate();
+
+        $this->assertInstanceOf(ProcessReason::class, $testValueForProcessReasonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getProcessReason();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstProcessReason = $model->firstProcessReason();
 
         $this->assertInstanceOf(ProcessReason::class, $firstProcessReason);
@@ -38264,6 +40840,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -38424,6 +41008,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNameOnceItem = $model->addOnceToNameWithCreate();
+
+        $this->assertInstanceOf(Name::class, $testValueForNameOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getName();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstName = $model->firstName();
 
         $this->assertInstanceOf(Name::class, $firstName);
@@ -38465,6 +41057,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -38572,6 +41172,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForFeeDescriptionOnceItem = $model->addOnceToFeeDescriptionWithCreate();
+
+        $this->assertInstanceOf(FeeDescription::class, $testValueForFeeDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getFeeDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstFeeDescription = $model->firstFeeDescription();
 
         $this->assertInstanceOf(FeeDescription::class, $firstFeeDescription);
@@ -38640,6 +41248,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNote();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNote = $model->firstNote();
 
@@ -38715,6 +41331,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAdditionalCommodityClassificationOnceItem = $model->addOnceToAdditionalCommodityClassificationWithCreate();
+
+        $this->assertInstanceOf(AdditionalCommodityClassification::class, $testValueForAdditionalCommodityClassificationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalCommodityClassification();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAdditionalCommodityClassification = $model->firstAdditionalCommodityClassification();
 
         $this->assertInstanceOf(AdditionalCommodityClassification::class, $firstAdditionalCommodityClassification);
@@ -38756,6 +41380,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getRealizedLocation();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForRealizedLocationOnceItem = $model->addOnceToRealizedLocationWithCreate();
+
+        $this->assertInstanceOf(RealizedLocation::class, $testValueForRealizedLocationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRealizedLocation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstRealizedLocation = $model->firstRealizedLocation();
 
@@ -38830,6 +41462,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getRequestForTenderLine();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForRequestForTenderLineOnceItem = $model->addOnceToRequestForTenderLineWithCreate();
+
+        $this->assertInstanceOf(RequestForTenderLine::class, $testValueForRequestForTenderLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRequestForTenderLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstRequestForTenderLine = $model->firstRequestForTenderLine();
 
@@ -38936,6 +41576,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getWorkPhaseReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForWorkPhaseReferenceOnceItem = $model->addOnceToWorkPhaseReferenceWithCreate();
+
+        $this->assertInstanceOf(WorkPhaseReference::class, $testValueForWorkPhaseReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getWorkPhaseReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstWorkPhaseReference = $model->firstWorkPhaseReference();
 
@@ -39115,6 +41763,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPromotionalSpecificationOnceItem = $model->addOnceToPromotionalSpecificationWithCreate();
+
+        $this->assertInstanceOf(PromotionalSpecification::class, $testValueForPromotionalSpecificationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPromotionalSpecification();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPromotionalSpecification = $model->firstPromotionalSpecification();
 
         $this->assertInstanceOf(PromotionalSpecification::class, $firstPromotionalSpecification);
@@ -39194,6 +41850,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPromotionalEventLineItemOnceItem = $model->addOnceToPromotionalEventLineItemWithCreate();
+
+        $this->assertInstanceOf(PromotionalEventLineItem::class, $testValueForPromotionalEventLineItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPromotionalEventLineItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPromotionalEventLineItem = $model->firstPromotionalEventLineItem();
 
         $this->assertInstanceOf(PromotionalEventLineItem::class, $firstPromotionalEventLineItem);
@@ -39235,6 +41899,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getEventTactic();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForEventTacticOnceItem = $model->addOnceToEventTacticWithCreate();
+
+        $this->assertInstanceOf(EventTactic::class, $testValueForEventTacticOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getEventTactic();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstEventTactic = $model->firstEventTactic();
 
@@ -39326,6 +41998,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForExclusionReasonOnceItem = $model->addOnceToExclusionReasonWithCreate();
+
+        $this->assertInstanceOf(ExclusionReason::class, $testValueForExclusionReasonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getExclusionReason();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstExclusionReason = $model->firstExclusionReason();
 
         $this->assertInstanceOf(ExclusionReason::class, $firstExclusionReason);
@@ -39367,6 +42047,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getResolution();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForResolutionOnceItem = $model->addOnceToResolutionWithCreate();
+
+        $this->assertInstanceOf(Resolution::class, $testValueForResolutionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getResolution();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstResolution = $model->firstResolution();
 
@@ -39484,6 +42172,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPersonalSituation();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPersonalSituationOnceItem = $model->addOnceToPersonalSituationWithCreate();
+
+        $this->assertInstanceOf(PersonalSituation::class, $testValueForPersonalSituationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPersonalSituation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPersonalSituation = $model->firstPersonalSituation();
 
@@ -39623,6 +42319,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTechnicalCapabilityOnceItem = $model->addOnceToTechnicalCapabilityWithCreate();
+
+        $this->assertInstanceOf(TechnicalCapability::class, $testValueForTechnicalCapabilityOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTechnicalCapability();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTechnicalCapability = $model->firstTechnicalCapability();
 
         $this->assertInstanceOf(TechnicalCapability::class, $firstTechnicalCapability);
@@ -39664,6 +42368,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getFinancialCapability();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForFinancialCapabilityOnceItem = $model->addOnceToFinancialCapabilityWithCreate();
+
+        $this->assertInstanceOf(FinancialCapability::class, $testValueForFinancialCapabilityOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getFinancialCapability();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstFinancialCapability = $model->firstFinancialCapability();
 
@@ -39707,6 +42419,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForCompletedTaskOnceItem = $model->addOnceToCompletedTaskWithCreate();
+
+        $this->assertInstanceOf(CompletedTask::class, $testValueForCompletedTaskOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCompletedTask();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstCompletedTask = $model->firstCompletedTask();
 
         $this->assertInstanceOf(CompletedTask::class, $firstCompletedTask);
@@ -39748,6 +42468,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDeclaration();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDeclarationOnceItem = $model->addOnceToDeclarationWithCreate();
+
+        $this->assertInstanceOf(Declaration::class, $testValueForDeclarationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDeclaration();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDeclaration = $model->firstDeclaration();
 
@@ -39893,6 +42621,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -39999,6 +42735,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDocumentReference = $model->firstDocumentReference();
 
         $this->assertInstanceOf(DocumentReference::class, $firstDocumentReference);
@@ -40057,6 +42801,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSellerProposedSubstituteLineItemOnceItem = $model->addOnceToSellerProposedSubstituteLineItemWithCreate();
+
+        $this->assertInstanceOf(SellerProposedSubstituteLineItem::class, $testValueForSellerProposedSubstituteLineItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSellerProposedSubstituteLineItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSellerProposedSubstituteLineItem = $model->firstSellerProposedSubstituteLineItem();
 
         $this->assertInstanceOf(SellerProposedSubstituteLineItem::class, $firstSellerProposedSubstituteLineItem);
@@ -40098,6 +42850,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAlternativeLineItem();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAlternativeLineItemOnceItem = $model->addOnceToAlternativeLineItemWithCreate();
+
+        $this->assertInstanceOf(AlternativeLineItem::class, $testValueForAlternativeLineItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAlternativeLineItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAlternativeLineItem = $model->firstAlternativeLineItem();
 
@@ -40318,6 +43078,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -40439,6 +43207,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getRejectReason();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForRejectReasonOnceItem = $model->addOnceToRejectReasonWithCreate();
+
+        $this->assertInstanceOf(RejectReason::class, $testValueForRejectReasonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRejectReason();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstRejectReason = $model->firstRejectReason();
 
@@ -40589,6 +43365,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDespatchLineReferenceOnceItem = $model->addOnceToDespatchLineReferenceWithCreate();
+
+        $this->assertInstanceOf(DespatchLineReference::class, $testValueForDespatchLineReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDespatchLineReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDespatchLineReference = $model->firstDespatchLineReference();
 
         $this->assertInstanceOf(DespatchLineReference::class, $firstDespatchLineReference);
@@ -40630,6 +43414,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDocumentReference = $model->firstDocumentReference();
 
@@ -40673,6 +43465,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForItemOnceItem = $model->addOnceToItemWithCreate();
+
+        $this->assertInstanceOf(Item::class, $testValueForItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstItem = $model->firstItem();
 
         $this->assertInstanceOf(Item::class, $firstItem);
@@ -40714,6 +43514,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getShipment();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForShipmentOnceItem = $model->addOnceToShipmentWithCreate();
+
+        $this->assertInstanceOf(Shipment::class, $testValueForShipmentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getShipment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstShipment = $model->firstShipment();
 
@@ -41044,6 +43852,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -41133,6 +43949,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNote();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNote = $model->firstNote();
 
@@ -41315,6 +44139,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForReminderPeriodOnceItem = $model->addOnceToReminderPeriodWithCreate();
+
+        $this->assertInstanceOf(ReminderPeriod::class, $testValueForReminderPeriodOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getReminderPeriod();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstReminderPeriod = $model->firstReminderPeriod();
 
         $this->assertInstanceOf(ReminderPeriod::class, $firstReminderPeriod);
@@ -41356,6 +44188,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getBillingReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForBillingReferenceOnceItem = $model->addOnceToBillingReferenceWithCreate();
+
+        $this->assertInstanceOf(BillingReference::class, $testValueForBillingReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getBillingReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstBillingReference = $model->firstBillingReference();
 
@@ -41462,6 +44302,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNote();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNote = $model->firstNote();
 
@@ -41697,6 +44545,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForInvoicePeriodOnceItem = $model->addOnceToInvoicePeriodWithCreate();
+
+        $this->assertInstanceOf(InvoicePeriod::class, $testValueForInvoicePeriodOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInvoicePeriod();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstInvoicePeriod = $model->firstInvoicePeriod();
 
         $this->assertInstanceOf(InvoicePeriod::class, $firstInvoicePeriod);
@@ -41739,6 +44595,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForBillingReferenceOnceItem = $model->addOnceToBillingReferenceWithCreate();
+
+        $this->assertInstanceOf(BillingReference::class, $testValueForBillingReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getBillingReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstBillingReference = $model->firstBillingReference();
 
         $this->assertInstanceOf(BillingReference::class, $firstBillingReference);
@@ -41780,6 +44644,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDocumentReference = $model->firstDocumentReference();
 
@@ -42186,6 +45058,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForMonetaryScopeOnceItem = $model->addOnceToMonetaryScopeWithCreate();
+
+        $this->assertInstanceOf(MonetaryScope::class, $testValueForMonetaryScopeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getMonetaryScope();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstMonetaryScope = $model->firstMonetaryScope();
 
         $this->assertInstanceOf(MonetaryScope::class, $firstMonetaryScope);
@@ -42243,6 +45123,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getApplicableTaxCategory();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForApplicableTaxCategoryOnceItem = $model->addOnceToApplicableTaxCategoryWithCreate();
+
+        $this->assertInstanceOf(ApplicableTaxCategory::class, $testValueForApplicableTaxCategoryOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getApplicableTaxCategory();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstApplicableTaxCategory = $model->firstApplicableTaxCategory();
 
@@ -42372,6 +45260,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -42456,6 +45352,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDocumentReference = $model->firstDocumentReference();
 
@@ -42567,6 +45471,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNote();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNote = $model->firstNote();
 
@@ -42717,6 +45629,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDocumentReference = $model->firstDocumentReference();
 
         $this->assertInstanceOf(DocumentReference::class, $firstDocumentReference);
@@ -42759,6 +45679,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDeliveryPeriodOnceItem = $model->addOnceToDeliveryPeriodWithCreate();
+
+        $this->assertInstanceOf(DeliveryPeriod::class, $testValueForDeliveryPeriodOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDeliveryPeriod();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDeliveryPeriod = $model->firstDeliveryPeriod();
 
         $this->assertInstanceOf(DeliveryPeriod::class, $firstDeliveryPeriod);
@@ -42800,6 +45728,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getRequiredItemLocationQuantity();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForRequiredItemLocationQuantityOnceItem = $model->addOnceToRequiredItemLocationQuantityWithCreate();
+
+        $this->assertInstanceOf(RequiredItemLocationQuantity::class, $testValueForRequiredItemLocationQuantityOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRequiredItemLocationQuantity();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstRequiredItemLocationQuantity = $model->firstRequiredItemLocationQuantity();
 
@@ -42874,6 +45810,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSubRequestForTenderLine();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSubRequestForTenderLineOnceItem = $model->addOnceToSubRequestForTenderLineWithCreate();
+
+        $this->assertInstanceOf(SubRequestForTenderLine::class, $testValueForSubRequestForTenderLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSubRequestForTenderLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSubRequestForTenderLine = $model->firstSubRequestForTenderLine();
 
@@ -43058,6 +46002,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -43121,6 +46073,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getStatus();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForStatusOnceItem = $model->addOnceToStatusWithCreate();
+
+        $this->assertInstanceOf(Status::class, $testValueForStatusOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getStatus();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstStatus = $model->firstStatus();
 
@@ -43495,6 +46455,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForActivityPropertyOnceItem = $model->addOnceToActivityPropertyWithCreate();
+
+        $this->assertInstanceOf(ActivityProperty::class, $testValueForActivityPropertyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getActivityProperty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstActivityProperty = $model->firstActivityProperty();
 
         $this->assertInstanceOf(ActivityProperty::class, $firstActivityProperty);
@@ -43537,6 +46505,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTaxExclusivePriceOnceItem = $model->addOnceToTaxExclusivePriceWithCreate();
+
+        $this->assertInstanceOf(TaxExclusivePrice::class, $testValueForTaxExclusivePriceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxExclusivePrice();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTaxExclusivePrice = $model->firstTaxExclusivePrice();
 
         $this->assertInstanceOf(TaxExclusivePrice::class, $firstTaxExclusivePrice);
@@ -43578,6 +46554,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTaxInclusivePrice();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTaxInclusivePriceOnceItem = $model->addOnceToTaxInclusivePriceWithCreate();
+
+        $this->assertInstanceOf(TaxInclusivePrice::class, $testValueForTaxInclusivePriceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxInclusivePrice();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTaxInclusivePrice = $model->firstTaxInclusivePrice();
 
@@ -43732,6 +46716,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getExtension();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForExtensionOnceItem = $model->addOnceToExtensionWithCreate();
+
+        $this->assertInstanceOf(Extension::class, $testValueForExtensionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getExtension();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstExtension = $model->firstExtension();
 
@@ -43996,6 +46988,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getServiceType();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForServiceTypeOnceItem = $model->addOnceToServiceTypeWithCreate();
+
+        $this->assertInstanceOf(ServiceType::class, $testValueForServiceTypeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getServiceType();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstServiceType = $model->firstServiceType();
 
@@ -44351,6 +47351,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForInstructionsOnceItem = $model->addOnceToInstructionsWithCreate();
+
+        $this->assertInstanceOf(Instructions::class, $testValueForInstructionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInstructions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstInstructions = $model->firstInstructions();
 
         $this->assertInstanceOf(Instructions::class, $firstInstructions);
@@ -44392,6 +47400,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDemurrageInstructions();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDemurrageInstructionsOnceItem = $model->addOnceToDemurrageInstructionsWithCreate();
+
+        $this->assertInstanceOf(DemurrageInstructions::class, $testValueForDemurrageInstructionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDemurrageInstructions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDemurrageInstructions = $model->firstDemurrageInstructions();
 
@@ -44482,6 +47498,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getCarrierParty();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForCarrierPartyOnceItem = $model->addOnceToCarrierPartyWithCreate();
+
+        $this->assertInstanceOf(CarrierParty::class, $testValueForCarrierPartyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCarrierParty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstCarrierParty = $model->firstCarrierParty();
 
@@ -44861,6 +47885,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForFreightAllowanceChargeOnceItem = $model->addOnceToFreightAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(FreightAllowanceCharge::class, $testValueForFreightAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getFreightAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstFreightAllowanceCharge = $model->firstFreightAllowanceCharge();
 
         $this->assertInstanceOf(FreightAllowanceCharge::class, $firstFreightAllowanceCharge);
@@ -44918,6 +47950,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDetentionTransportEvent();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDetentionTransportEventOnceItem = $model->addOnceToDetentionTransportEventWithCreate();
+
+        $this->assertInstanceOf(DetentionTransportEvent::class, $testValueForDetentionTransportEventOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDetentionTransportEvent();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDetentionTransportEvent = $model->firstDetentionTransportEvent();
 
@@ -44993,6 +48033,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForRequestedWaypointTransportEventOnceItem = $model->addOnceToRequestedWaypointTransportEventWithCreate();
+
+        $this->assertInstanceOf(RequestedWaypointTransportEvent::class, $testValueForRequestedWaypointTransportEventOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRequestedWaypointTransportEvent();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstRequestedWaypointTransportEvent = $model->firstRequestedWaypointTransportEvent();
 
         $this->assertInstanceOf(RequestedWaypointTransportEvent::class, $firstRequestedWaypointTransportEvent);
@@ -45066,6 +48114,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPlannedWaypointTransportEvent();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPlannedWaypointTransportEventOnceItem = $model->addOnceToPlannedWaypointTransportEventWithCreate();
+
+        $this->assertInstanceOf(PlannedWaypointTransportEvent::class, $testValueForPlannedWaypointTransportEventOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPlannedWaypointTransportEvent();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPlannedWaypointTransportEvent = $model->firstPlannedWaypointTransportEvent();
 
@@ -45157,6 +48213,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTransportEventOnceItem = $model->addOnceToTransportEventWithCreate();
+
+        $this->assertInstanceOf(TransportEvent::class, $testValueForTransportEventOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransportEvent();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTransportEvent = $model->firstTransportEvent();
 
         $this->assertInstanceOf(TransportEvent::class, $firstTransportEvent);
@@ -45231,6 +48295,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPassengerPersonOnceItem = $model->addOnceToPassengerPersonWithCreate();
+
+        $this->assertInstanceOf(PassengerPerson::class, $testValueForPassengerPersonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPassengerPerson();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPassengerPerson = $model->firstPassengerPerson();
 
         $this->assertInstanceOf(PassengerPerson::class, $firstPassengerPerson);
@@ -45272,6 +48344,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDriverPerson();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDriverPersonOnceItem = $model->addOnceToDriverPersonWithCreate();
+
+        $this->assertInstanceOf(DriverPerson::class, $testValueForDriverPersonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDriverPerson();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDriverPerson = $model->firstDriverPerson();
 
@@ -45330,6 +48410,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getCrewMemberPerson();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForCrewMemberPersonOnceItem = $model->addOnceToCrewMemberPersonWithCreate();
+
+        $this->assertInstanceOf(CrewMemberPerson::class, $testValueForCrewMemberPersonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCrewMemberPerson();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstCrewMemberPerson = $model->firstCrewMemberPerson();
 
@@ -45479,6 +48567,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForHandlingInstructionsOnceItem = $model->addOnceToHandlingInstructionsWithCreate();
+
+        $this->assertInstanceOf(HandlingInstructions::class, $testValueForHandlingInstructionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getHandlingInstructions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstHandlingInstructions = $model->firstHandlingInstructions();
 
         $this->assertInstanceOf(HandlingInstructions::class, $firstHandlingInstructions);
@@ -45520,6 +48616,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getInformation();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForInformationOnceItem = $model->addOnceToInformationWithCreate();
+
+        $this->assertInstanceOf(Information::class, $testValueForInformationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInformation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstInformation = $model->firstInformation();
 
@@ -45755,6 +48859,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSpecialInstructionsOnceItem = $model->addOnceToSpecialInstructionsWithCreate();
+
+        $this->assertInstanceOf(SpecialInstructions::class, $testValueForSpecialInstructionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSpecialInstructions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSpecialInstructions = $model->firstSpecialInstructions();
 
         $this->assertInstanceOf(SpecialInstructions::class, $firstSpecialInstructions);
@@ -45796,6 +48908,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDeliveryInstructions();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDeliveryInstructionsOnceItem = $model->addOnceToDeliveryInstructionsWithCreate();
+
+        $this->assertInstanceOf(DeliveryInstructions::class, $testValueForDeliveryInstructionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDeliveryInstructions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDeliveryInstructions = $model->firstDeliveryInstructions();
 
@@ -45866,6 +48986,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForConsignmentOnceItem = $model->addOnceToConsignmentWithCreate();
+
+        $this->assertInstanceOf(Consignment::class, $testValueForConsignmentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getConsignment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstConsignment = $model->firstConsignment();
 
         $this->assertInstanceOf(Consignment::class, $firstConsignment);
@@ -45908,6 +49036,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForGoodsItemOnceItem = $model->addOnceToGoodsItemWithCreate();
+
+        $this->assertInstanceOf(GoodsItem::class, $testValueForGoodsItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getGoodsItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstGoodsItem = $model->firstGoodsItem();
 
         $this->assertInstanceOf(GoodsItem::class, $firstGoodsItem);
@@ -45949,6 +49085,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getShipmentStage();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForShipmentStageOnceItem = $model->addOnceToShipmentStageWithCreate();
+
+        $this->assertInstanceOf(ShipmentStage::class, $testValueForShipmentStageOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getShipmentStage();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstShipmentStage = $model->firstShipmentStage();
 
@@ -46007,6 +49151,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTransportHandlingUnit();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTransportHandlingUnitOnceItem = $model->addOnceToTransportHandlingUnitWithCreate();
+
+        $this->assertInstanceOf(TransportHandlingUnit::class, $testValueForTransportHandlingUnitOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransportHandlingUnit();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTransportHandlingUnit = $model->firstTransportHandlingUnit();
 
@@ -46130,6 +49282,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForFreightAllowanceChargeOnceItem = $model->addOnceToFreightAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(FreightAllowanceCharge::class, $testValueForFreightAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getFreightAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstFreightAllowanceCharge = $model->firstFreightAllowanceCharge();
 
         $this->assertInstanceOf(FreightAllowanceCharge::class, $firstFreightAllowanceCharge);
@@ -46241,6 +49401,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNote();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNote = $model->firstNote();
 
@@ -46494,6 +49662,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -46643,6 +49819,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPaymentTermsOnceItem = $model->addOnceToPaymentTermsWithCreate();
+
+        $this->assertInstanceOf(PaymentTerms::class, $testValueForPaymentTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPaymentTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPaymentTerms = $model->firstPaymentTerms();
 
         $this->assertInstanceOf(PaymentTerms::class, $firstPaymentTerms);
@@ -46781,6 +49965,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForInvoicePeriodOnceItem = $model->addOnceToInvoicePeriodWithCreate();
+
+        $this->assertInstanceOf(InvoicePeriod::class, $testValueForInvoicePeriodOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInvoicePeriod();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstInvoicePeriod = $model->firstInvoicePeriod();
 
         $this->assertInstanceOf(InvoicePeriod::class, $firstInvoicePeriod);
@@ -46823,6 +50015,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForBillingReferenceOnceItem = $model->addOnceToBillingReferenceWithCreate();
+
+        $this->assertInstanceOf(BillingReference::class, $testValueForBillingReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getBillingReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstBillingReference = $model->firstBillingReference();
 
         $this->assertInstanceOf(BillingReference::class, $firstBillingReference);
@@ -46864,6 +50064,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDocumentReference = $model->firstDocumentReference();
 
@@ -46923,6 +50131,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAllowanceChargeOnceItem = $model->addOnceToAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(AllowanceCharge::class, $testValueForAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAllowanceCharge = $model->firstAllowanceCharge();
 
         $this->assertInstanceOf(AllowanceCharge::class, $firstAllowanceCharge);
@@ -46964,6 +50180,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getCollectedPayment();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForCollectedPaymentOnceItem = $model->addOnceToCollectedPaymentWithCreate();
+
+        $this->assertInstanceOf(CollectedPayment::class, $testValueForCollectedPaymentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCollectedPayment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstCollectedPayment = $model->firstCollectedPayment();
 
@@ -47099,6 +50323,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -47157,6 +50389,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForStatusReasonOnceItem = $model->addOnceToStatusReasonWithCreate();
+
+        $this->assertInstanceOf(StatusReason::class, $testValueForStatusReasonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getStatusReason();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstStatusReason = $model->firstStatusReason();
 
         $this->assertInstanceOf(StatusReason::class, $firstStatusReason);
@@ -47214,6 +50454,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getText();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTextOnceItem = $model->addOnceToTextWithCreate();
+
+        $this->assertInstanceOf(Text::class, $testValueForTextOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getText();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstText = $model->firstText();
 
@@ -47300,6 +50548,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForConditionOnceItem = $model->addOnceToConditionWithCreate();
+
+        $this->assertInstanceOf(Condition::class, $testValueForConditionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCondition();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstCondition = $model->firstCondition();
 
         $this->assertInstanceOf(Condition::class, $firstCondition);
@@ -47378,6 +50634,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNote();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNote = $model->firstNote();
 
@@ -47555,6 +50819,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForLocationOnceItem = $model->addOnceToLocationWithCreate();
+
+        $this->assertInstanceOf(Location1::class, $testValueForLocationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getLocation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstLocation = $model->firstLocation();
 
         $this->assertInstanceOf(Location1::class, $firstLocation);
@@ -47596,6 +50868,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getMeasurementDimension();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForMeasurementDimensionOnceItem = $model->addOnceToMeasurementDimensionWithCreate();
+
+        $this->assertInstanceOf(MeasurementDimension::class, $testValueForMeasurementDimensionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getMeasurementDimension();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstMeasurementDimension = $model->firstMeasurementDimension();
 
@@ -47697,6 +50977,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -47934,6 +51222,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -48024,6 +51320,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForOnAccountPaymentOnceItem = $model->addOnceToOnAccountPaymentWithCreate();
+
+        $this->assertInstanceOf(OnAccountPayment::class, $testValueForOnAccountPaymentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getOnAccountPayment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstOnAccountPayment = $model->firstOnAccountPayment();
 
         $this->assertInstanceOf(OnAccountPayment::class, $firstOnAccountPayment);
@@ -48081,6 +51385,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSupplierConsumption();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSupplierConsumptionOnceItem = $model->addOnceToSupplierConsumptionWithCreate();
+
+        $this->assertInstanceOf(SupplierConsumption::class, $testValueForSupplierConsumptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSupplierConsumption();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSupplierConsumption = $model->firstSupplierConsumption();
 
@@ -48211,6 +51523,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -48317,6 +51637,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForConsumptionLineOnceItem = $model->addOnceToConsumptionLineWithCreate();
+
+        $this->assertInstanceOf(ConsumptionLine::class, $testValueForConsumptionLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getConsumptionLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstConsumptionLine = $model->firstConsumptionLine();
 
         $this->assertInstanceOf(ConsumptionLine::class, $firstConsumptionLine);
@@ -48395,6 +51723,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAdditionalAccountID();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAdditionalAccountIDOnceItem = $model->addOnceToAdditionalAccountIDWithCreate();
+
+        $this->assertInstanceOf(AdditionalAccountID::class, $testValueForAdditionalAccountIDOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalAccountID();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAdditionalAccountID = $model->firstAdditionalAccountID();
 
@@ -48701,6 +52037,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTaxExemptionReasonOnceItem = $model->addOnceToTaxExemptionReasonWithCreate();
+
+        $this->assertInstanceOf(TaxExemptionReason::class, $testValueForTaxExemptionReasonOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxExemptionReason();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTaxExemptionReason = $model->firstTaxExemptionReason();
 
         $this->assertInstanceOf(TaxExemptionReason::class, $firstTaxExemptionReason);
@@ -48919,6 +52263,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getJurisdictionRegionAddress();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForJurisdictionRegionAddressOnceItem = $model->addOnceToJurisdictionRegionAddressWithCreate();
+
+        $this->assertInstanceOf(JurisdictionRegionAddress::class, $testValueForJurisdictionRegionAddressOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getJurisdictionRegionAddress();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstJurisdictionRegionAddress = $model->firstJurisdictionRegionAddress();
 
@@ -49217,6 +52569,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTaxSubtotal();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTaxSubtotalOnceItem = $model->addOnceToTaxSubtotalWithCreate();
+
+        $this->assertInstanceOf(TaxSubtotal::class, $testValueForTaxSubtotalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxSubtotal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTaxSubtotal = $model->firstTaxSubtotal();
 
@@ -49571,6 +52931,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForExchangeRateOnceItem = $model->addOnceToExchangeRateWithCreate();
+
+        $this->assertInstanceOf(ExchangeRate::class, $testValueForExchangeRateOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getExchangeRate();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstExchangeRate = $model->firstExchangeRate();
 
         $this->assertInstanceOf(ExchangeRate::class, $firstExchangeRate);
@@ -49612,6 +52980,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAllowanceCharge();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAllowanceChargeOnceItem = $model->addOnceToAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(AllowanceCharge::class, $testValueForAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAllowanceCharge = $model->firstAllowanceCharge();
 
@@ -49655,6 +53031,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTaxTotalOnceItem = $model->addOnceToTaxTotalWithCreate();
+
+        $this->assertInstanceOf(TaxTotal::class, $testValueForTaxTotalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxTotal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTaxTotal = $model->firstTaxTotal();
 
         $this->assertInstanceOf(TaxTotal::class, $firstTaxTotal);
@@ -49697,6 +53081,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForCallDutyOnceItem = $model->addOnceToCallDutyWithCreate();
+
+        $this->assertInstanceOf(CallDuty::class, $testValueForCallDutyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCallDuty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstCallDuty = $model->firstCallDuty();
 
         $this->assertInstanceOf(CallDuty::class, $firstCallDuty);
@@ -49738,6 +53130,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTimeDuty();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTimeDutyOnceItem = $model->addOnceToTimeDutyWithCreate();
+
+        $this->assertInstanceOf(TimeDuty::class, $testValueForTimeDutyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTimeDuty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTimeDuty = $model->firstTimeDuty();
 
@@ -49845,6 +53245,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -49903,6 +53311,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForExchangeRateOnceItem = $model->addOnceToExchangeRateWithCreate();
+
+        $this->assertInstanceOf(ExchangeRate::class, $testValueForExchangeRateOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getExchangeRate();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstExchangeRate = $model->firstExchangeRate();
 
         $this->assertInstanceOf(ExchangeRate::class, $firstExchangeRate);
@@ -49944,6 +53360,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAllowanceCharge();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAllowanceChargeOnceItem = $model->addOnceToAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(AllowanceCharge::class, $testValueForAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAllowanceCharge = $model->firstAllowanceCharge();
 
@@ -49987,6 +53411,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTaxTotalOnceItem = $model->addOnceToTaxTotalWithCreate();
+
+        $this->assertInstanceOf(TaxTotal::class, $testValueForTaxTotalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxTotal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTaxTotal = $model->firstTaxTotal();
 
         $this->assertInstanceOf(TaxTotal::class, $firstTaxTotal);
@@ -50028,6 +53460,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTelecommunicationsService();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTelecommunicationsServiceOnceItem = $model->addOnceToTelecommunicationsServiceWithCreate();
+
+        $this->assertInstanceOf(TelecommunicationsService::class, $testValueForTelecommunicationsServiceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTelecommunicationsService();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTelecommunicationsService = $model->firstTelecommunicationsService();
 
@@ -50129,6 +53569,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -50186,6 +53634,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTelecommunicationsSupplyLine();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTelecommunicationsSupplyLineOnceItem = $model->addOnceToTelecommunicationsSupplyLineWithCreate();
+
+        $this->assertInstanceOf(TelecommunicationsSupplyLine::class, $testValueForTelecommunicationsSupplyLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTelecommunicationsSupplyLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTelecommunicationsSupplyLine = $model->firstTelecommunicationsSupplyLine();
 
@@ -50281,6 +53737,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -50399,6 +53863,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForFeeDescriptionOnceItem = $model->addOnceToFeeDescriptionWithCreate();
+
+        $this->assertInstanceOf(FeeDescription::class, $testValueForFeeDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getFeeDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstFeeDescription = $model->firstFeeDescription();
 
         $this->assertInstanceOf(FeeDescription::class, $firstFeeDescription);
@@ -50489,6 +53961,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForEvidenceDocumentReferenceOnceItem = $model->addOnceToEvidenceDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(EvidenceDocumentReference::class, $testValueForEvidenceDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getEvidenceDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstEvidenceDocumentReference = $model->firstEvidenceDocumentReference();
 
         $this->assertInstanceOf(EvidenceDocumentReference::class, $firstEvidenceDocumentReference);
@@ -50530,6 +54010,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTaxTotal();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTaxTotalOnceItem = $model->addOnceToTaxTotalWithCreate();
+
+        $this->assertInstanceOf(TaxTotal::class, $testValueForTaxTotalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxTotal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTaxTotal = $model->firstTaxTotal();
 
@@ -50589,6 +54077,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTenderLineOnceItem = $model->addOnceToTenderLineWithCreate();
+
+        $this->assertInstanceOf(TenderLine::class, $testValueForTenderLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTenderLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTenderLine = $model->firstTenderLine();
 
         $this->assertInstanceOf(TenderLine::class, $firstTenderLine);
@@ -50630,6 +54126,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAwardingCriterionResponse();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAwardingCriterionResponseOnceItem = $model->addOnceToAwardingCriterionResponseWithCreate();
+
+        $this->assertInstanceOf(AwardingCriterionResponse::class, $testValueForAwardingCriterionResponseOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAwardingCriterionResponse();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAwardingCriterionResponse = $model->firstAwardingCriterionResponse();
 
@@ -50705,6 +54209,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForInterestedProcurementProjectLotOnceItem = $model->addOnceToInterestedProcurementProjectLotWithCreate();
+
+        $this->assertInstanceOf(InterestedProcurementProjectLot::class, $testValueForInterestedProcurementProjectLotOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInterestedProcurementProjectLot();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstInterestedProcurementProjectLot = $model->firstInterestedProcurementProjectLot();
 
         $this->assertInstanceOf(InterestedProcurementProjectLot::class, $firstInterestedProcurementProjectLot);
@@ -50762,6 +54274,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAdditionalQualifyingParty();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAdditionalQualifyingPartyOnceItem = $model->addOnceToAdditionalQualifyingPartyWithCreate();
+
+        $this->assertInstanceOf(AdditionalQualifyingParty::class, $testValueForAdditionalQualifyingPartyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalQualifyingParty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAdditionalQualifyingParty = $model->firstAdditionalQualifyingParty();
 
@@ -50869,6 +54389,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPersonalSituationOnceItem = $model->addOnceToPersonalSituationWithCreate();
+
+        $this->assertInstanceOf(PersonalSituation::class, $testValueForPersonalSituationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPersonalSituation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPersonalSituation = $model->firstPersonalSituation();
 
         $this->assertInstanceOf(PersonalSituation::class, $firstPersonalSituation);
@@ -50943,6 +54471,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -50984,6 +54520,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getRequiredBusinessClassificationScheme();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForRequiredBusinessClassificationSchemeOnceItem = $model->addOnceToRequiredBusinessClassificationSchemeWithCreate();
+
+        $this->assertInstanceOf(RequiredBusinessClassificationScheme::class, $testValueForRequiredBusinessClassificationSchemeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRequiredBusinessClassificationScheme();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstRequiredBusinessClassificationScheme = $model->firstRequiredBusinessClassificationScheme();
 
@@ -51027,6 +54571,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTechnicalEvaluationCriterionOnceItem = $model->addOnceToTechnicalEvaluationCriterionWithCreate();
+
+        $this->assertInstanceOf(TechnicalEvaluationCriterion::class, $testValueForTechnicalEvaluationCriterionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTechnicalEvaluationCriterion();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTechnicalEvaluationCriterion = $model->firstTechnicalEvaluationCriterion();
 
         $this->assertInstanceOf(TechnicalEvaluationCriterion::class, $firstTechnicalEvaluationCriterion);
@@ -51068,6 +54620,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getFinancialEvaluationCriterion();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForFinancialEvaluationCriterionOnceItem = $model->addOnceToFinancialEvaluationCriterionWithCreate();
+
+        $this->assertInstanceOf(FinancialEvaluationCriterion::class, $testValueForFinancialEvaluationCriterionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getFinancialEvaluationCriterion();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstFinancialEvaluationCriterion = $model->firstFinancialEvaluationCriterion();
 
@@ -51111,6 +54671,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSpecificTendererRequirementOnceItem = $model->addOnceToSpecificTendererRequirementWithCreate();
+
+        $this->assertInstanceOf(SpecificTendererRequirement::class, $testValueForSpecificTendererRequirementOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSpecificTendererRequirement();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSpecificTendererRequirement = $model->firstSpecificTendererRequirement();
 
         $this->assertInstanceOf(SpecificTendererRequirement::class, $firstSpecificTendererRequirement);
@@ -51152,6 +54720,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getEconomicOperatorRole();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForEconomicOperatorRoleOnceItem = $model->addOnceToEconomicOperatorRoleWithCreate();
+
+        $this->assertInstanceOf(EconomicOperatorRole::class, $testValueForEconomicOperatorRoleOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getEconomicOperatorRole();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstEconomicOperatorRole = $model->firstEconomicOperatorRole();
 
@@ -51216,6 +54792,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNameOnceItem = $model->addOnceToNameWithCreate();
+
+        $this->assertInstanceOf(Name::class, $testValueForNameOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getName();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstName = $model->firstName();
 
         $this->assertInstanceOf(Name::class, $firstName);
@@ -51274,6 +54858,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -51331,6 +54923,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSuggestedEvidence();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSuggestedEvidenceOnceItem = $model->addOnceToSuggestedEvidenceWithCreate();
+
+        $this->assertInstanceOf(SuggestedEvidence::class, $testValueForSuggestedEvidenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSuggestedEvidence();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSuggestedEvidence = $model->firstSuggestedEvidence();
 
@@ -51438,6 +55038,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -51479,6 +55087,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNegotiationDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNegotiationDescriptionOnceItem = $model->addOnceToNegotiationDescriptionWithCreate();
+
+        $this->assertInstanceOf(NegotiationDescription::class, $testValueForNegotiationDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNegotiationDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNegotiationDescription = $model->firstNegotiationDescription();
 
@@ -51704,6 +55320,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoticeDocumentReferenceOnceItem = $model->addOnceToNoticeDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(NoticeDocumentReference::class, $testValueForNoticeDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNoticeDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNoticeDocumentReference = $model->firstNoticeDocumentReference();
 
         $this->assertInstanceOf(NoticeDocumentReference::class, $firstNoticeDocumentReference);
@@ -51746,6 +55370,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAdditionalDocumentReferenceOnceItem = $model->addOnceToAdditionalDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(AdditionalDocumentReference::class, $testValueForAdditionalDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAdditionalDocumentReference = $model->firstAdditionalDocumentReference();
 
         $this->assertInstanceOf(AdditionalDocumentReference::class, $firstAdditionalDocumentReference);
@@ -51787,6 +55419,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getProcessJustification();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForProcessJustificationOnceItem = $model->addOnceToProcessJustificationWithCreate();
+
+        $this->assertInstanceOf(ProcessJustification::class, $testValueForProcessJustificationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getProcessJustification();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstProcessJustification = $model->firstProcessJustification();
 
@@ -51845,6 +55485,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getOpenTenderEvent();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForOpenTenderEventOnceItem = $model->addOnceToOpenTenderEventWithCreate();
+
+        $this->assertInstanceOf(OpenTenderEvent::class, $testValueForOpenTenderEventOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getOpenTenderEvent();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstOpenTenderEvent = $model->firstOpenTenderEvent();
 
@@ -52000,6 +55648,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAcceptedVariantsDescriptionOnceItem = $model->addOnceToAcceptedVariantsDescriptionWithCreate();
+
+        $this->assertInstanceOf(AcceptedVariantsDescription::class, $testValueForAcceptedVariantsDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAcceptedVariantsDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAcceptedVariantsDescription = $model->firstAcceptedVariantsDescription();
 
         $this->assertInstanceOf(AcceptedVariantsDescription::class, $firstAcceptedVariantsDescription);
@@ -52041,6 +55697,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPriceRevisionFormulaDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPriceRevisionFormulaDescriptionOnceItem = $model->addOnceToPriceRevisionFormulaDescriptionWithCreate();
+
+        $this->assertInstanceOf(PriceRevisionFormulaDescription::class, $testValueForPriceRevisionFormulaDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPriceRevisionFormulaDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPriceRevisionFormulaDescription = $model->firstPriceRevisionFormulaDescription();
 
@@ -52100,6 +55764,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForFundingProgramOnceItem = $model->addOnceToFundingProgramWithCreate();
+
+        $this->assertInstanceOf(FundingProgram::class, $testValueForFundingProgramOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getFundingProgram();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstFundingProgram = $model->firstFundingProgram();
 
         $this->assertInstanceOf(FundingProgram::class, $firstFundingProgram);
@@ -52157,6 +55829,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNote();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNote = $model->firstNote();
 
@@ -52254,6 +55934,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAdditionalConditionsOnceItem = $model->addOnceToAdditionalConditionsWithCreate();
+
+        $this->assertInstanceOf(AdditionalConditions::class, $testValueForAdditionalConditionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalConditions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAdditionalConditions = $model->firstAdditionalConditions();
 
         $this->assertInstanceOf(AdditionalConditions::class, $firstAdditionalConditions);
@@ -52325,6 +56013,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPenaltyClauseOnceItem = $model->addOnceToPenaltyClauseWithCreate();
+
+        $this->assertInstanceOf(PenaltyClause::class, $testValueForPenaltyClauseOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPenaltyClause();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPenaltyClause = $model->firstPenaltyClause();
 
         $this->assertInstanceOf(PenaltyClause::class, $firstPenaltyClause);
@@ -52366,6 +56062,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getRequiredFinancialGuarantee();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForRequiredFinancialGuaranteeOnceItem = $model->addOnceToRequiredFinancialGuaranteeWithCreate();
+
+        $this->assertInstanceOf(RequiredFinancialGuarantee::class, $testValueForRequiredFinancialGuaranteeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRequiredFinancialGuarantee();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstRequiredFinancialGuarantee = $model->firstRequiredFinancialGuarantee();
 
@@ -52473,6 +56177,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForContractualDocumentReferenceOnceItem = $model->addOnceToContractualDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(ContractualDocumentReference::class, $testValueForContractualDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getContractualDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstContractualDocumentReference = $model->firstContractualDocumentReference();
 
         $this->assertInstanceOf(ContractualDocumentReference::class, $firstContractualDocumentReference);
@@ -52547,6 +56259,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPaymentTermsOnceItem = $model->addOnceToPaymentTermsWithCreate();
+
+        $this->assertInstanceOf(PaymentTerms::class, $testValueForPaymentTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPaymentTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPaymentTerms = $model->firstPaymentTerms();
 
         $this->assertInstanceOf(PaymentTerms::class, $firstPaymentTerms);
@@ -52588,6 +56308,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTendererQualificationRequest();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTendererQualificationRequestOnceItem = $model->addOnceToTendererQualificationRequestWithCreate();
+
+        $this->assertInstanceOf(TendererQualificationRequest::class, $testValueForTendererQualificationRequestOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTendererQualificationRequest();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTendererQualificationRequest = $model->firstTendererQualificationRequest();
 
@@ -52631,6 +56359,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAllowedSubcontractTermsOnceItem = $model->addOnceToAllowedSubcontractTermsWithCreate();
+
+        $this->assertInstanceOf(AllowedSubcontractTerms::class, $testValueForAllowedSubcontractTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowedSubcontractTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAllowedSubcontractTerms = $model->firstAllowedSubcontractTerms();
 
         $this->assertInstanceOf(AllowedSubcontractTerms::class, $firstAllowedSubcontractTerms);
@@ -52673,6 +56409,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTenderPreparationOnceItem = $model->addOnceToTenderPreparationWithCreate();
+
+        $this->assertInstanceOf(TenderPreparation::class, $testValueForTenderPreparationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTenderPreparation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTenderPreparation = $model->firstTenderPreparation();
 
         $this->assertInstanceOf(TenderPreparation::class, $firstTenderPreparation);
@@ -52714,6 +56458,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getContractExecutionRequirement();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForContractExecutionRequirementOnceItem = $model->addOnceToContractExecutionRequirementWithCreate();
+
+        $this->assertInstanceOf(ContractExecutionRequirement::class, $testValueForContractExecutionRequirementOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getContractExecutionRequirement();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstContractExecutionRequirement = $model->firstContractExecutionRequirement();
 
@@ -52837,6 +56589,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTenderEvaluationPartyOnceItem = $model->addOnceToTenderEvaluationPartyWithCreate();
+
+        $this->assertInstanceOf(TenderEvaluationParty::class, $testValueForTenderEvaluationPartyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTenderEvaluationParty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTenderEvaluationParty = $model->firstTenderEvaluationParty();
 
         $this->assertInstanceOf(TenderEvaluationParty::class, $firstTenderEvaluationParty);
@@ -52927,6 +56687,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForLanguageOnceItem = $model->addOnceToLanguageWithCreate();
+
+        $this->assertInstanceOf(Language::class, $testValueForLanguageOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getLanguage();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstLanguage = $model->firstLanguage();
 
         $this->assertInstanceOf(Language::class, $firstLanguage);
@@ -52968,6 +56736,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getBudgetAccountLine();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForBudgetAccountLineOnceItem = $model->addOnceToBudgetAccountLineWithCreate();
+
+        $this->assertInstanceOf(BudgetAccountLine::class, $testValueForBudgetAccountLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getBudgetAccountLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstBudgetAccountLine = $model->firstBudgetAccountLine();
 
@@ -53063,6 +56839,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNote();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNote = $model->firstNote();
 
@@ -53234,6 +57018,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForWarrantyInformationOnceItem = $model->addOnceToWarrantyInformationWithCreate();
+
+        $this->assertInstanceOf(WarrantyInformation::class, $testValueForWarrantyInformationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getWarrantyInformation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstWarrantyInformation = $model->firstWarrantyInformation();
 
         $this->assertInstanceOf(WarrantyInformation::class, $firstWarrantyInformation);
@@ -53291,6 +57083,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDocumentReference = $model->firstDocumentReference();
 
@@ -53350,6 +57150,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForOfferedItemLocationQuantityOnceItem = $model->addOnceToOfferedItemLocationQuantityWithCreate();
+
+        $this->assertInstanceOf(OfferedItemLocationQuantity::class, $testValueForOfferedItemLocationQuantityOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getOfferedItemLocationQuantity();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstOfferedItemLocationQuantity = $model->firstOfferedItemLocationQuantity();
 
         $this->assertInstanceOf(OfferedItemLocationQuantity::class, $firstOfferedItemLocationQuantity);
@@ -53391,6 +57199,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getReplacementRelatedItem();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForReplacementRelatedItemOnceItem = $model->addOnceToReplacementRelatedItemWithCreate();
+
+        $this->assertInstanceOf(ReplacementRelatedItem::class, $testValueForReplacementRelatedItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getReplacementRelatedItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstReplacementRelatedItem = $model->firstReplacementRelatedItem();
 
@@ -53465,6 +57281,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSubTenderLine();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSubTenderLineOnceItem = $model->addOnceToSubTenderLineWithCreate();
+
+        $this->assertInstanceOf(SubTenderLine::class, $testValueForSubTenderLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSubTenderLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSubTenderLine = $model->firstSubTenderLine();
 
@@ -53593,6 +57417,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -53651,6 +57483,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForProcurementProjectLotOnceItem = $model->addOnceToProcurementProjectLotWithCreate();
+
+        $this->assertInstanceOf(ProcurementProjectLot::class, $testValueForProcurementProjectLotOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getProcurementProjectLot();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstProcurementProjectLot = $model->firstProcurementProjectLot();
 
         $this->assertInstanceOf(ProcurementProjectLot::class, $firstProcurementProjectLot);
@@ -53692,6 +57532,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDocumentTenderRequirement();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDocumentTenderRequirementOnceItem = $model->addOnceToDocumentTenderRequirementWithCreate();
+
+        $this->assertInstanceOf(DocumentTenderRequirement::class, $testValueForDocumentTenderRequirementOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentTenderRequirement();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDocumentTenderRequirement = $model->firstDocumentTenderRequirement();
 
@@ -53782,6 +57630,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -53877,6 +57733,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDescription();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDescription = $model->firstDescription();
 
@@ -54097,6 +57961,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSubcontractTermsOnceItem = $model->addOnceToSubcontractTermsWithCreate();
+
+        $this->assertInstanceOf(SubcontractTerms::class, $testValueForSubcontractTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSubcontractTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSubcontractTerms = $model->firstSubcontractTerms();
 
         $this->assertInstanceOf(SubcontractTerms::class, $firstSubcontractTerms);
@@ -54138,6 +58010,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getWinningParty();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForWinningPartyOnceItem = $model->addOnceToWinningPartyWithCreate();
+
+        $this->assertInstanceOf(WinningParty::class, $testValueForWinningPartyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getWinningParty();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstWinningParty = $model->firstWinningParty();
 
@@ -54316,6 +58196,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDocumentReference = $model->firstDocumentReference();
 
         $this->assertInstanceOf(DocumentReference::class, $firstDocumentReference);
@@ -54390,6 +58278,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForClauseOnceItem = $model->addOnceToClauseWithCreate();
+
+        $this->assertInstanceOf(Clause::class, $testValueForClauseOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getClause();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstClause = $model->firstClause();
 
         $this->assertInstanceOf(Clause::class, $firstClause);
@@ -54452,6 +58348,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getInformation();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForInformationOnceItem = $model->addOnceToInformationWithCreate();
+
+        $this->assertInstanceOf(Information::class, $testValueForInformationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInformation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstInformation = $model->firstInformation();
 
@@ -54580,6 +58484,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -54621,6 +58533,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDocumentReferenceOnceItem = $model->addOnceToDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DocumentReference::class, $testValueForDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDocumentReference = $model->firstDocumentReference();
 
@@ -54798,6 +58718,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForShipmentStageOnceItem = $model->addOnceToShipmentStageWithCreate();
+
+        $this->assertInstanceOf(ShipmentStage::class, $testValueForShipmentStageOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getShipmentStage();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstShipmentStage = $model->firstShipmentStage();
 
         $this->assertInstanceOf(ShipmentStage::class, $firstShipmentStage);
@@ -54925,6 +58853,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTransportationServiceDescriptionOnceItem = $model->addOnceToTransportationServiceDescriptionWithCreate();
+
+        $this->assertInstanceOf(TransportationServiceDescription::class, $testValueForTransportationServiceDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransportationServiceDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTransportationServiceDescription = $model->firstTransportationServiceDescription();
 
         $this->assertInstanceOf(TransportationServiceDescription::class, $firstTransportationServiceDescription);
@@ -55037,6 +58973,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTransportEquipmentOnceItem = $model->addOnceToTransportEquipmentWithCreate();
+
+        $this->assertInstanceOf(TransportEquipment::class, $testValueForTransportEquipmentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransportEquipment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTransportEquipment = $model->firstTransportEquipment();
 
         $this->assertInstanceOf(TransportEquipment::class, $firstTransportEquipment);
@@ -55078,6 +59022,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSupportedTransportEquipment();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSupportedTransportEquipmentOnceItem = $model->addOnceToSupportedTransportEquipmentWithCreate();
+
+        $this->assertInstanceOf(SupportedTransportEquipment::class, $testValueForSupportedTransportEquipmentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSupportedTransportEquipment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSupportedTransportEquipment = $model->firstSupportedTransportEquipment();
 
@@ -55121,6 +59073,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForUnsupportedTransportEquipmentOnceItem = $model->addOnceToUnsupportedTransportEquipmentWithCreate();
+
+        $this->assertInstanceOf(UnsupportedTransportEquipment::class, $testValueForUnsupportedTransportEquipmentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getUnsupportedTransportEquipment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstUnsupportedTransportEquipment = $model->firstUnsupportedTransportEquipment();
 
         $this->assertInstanceOf(UnsupportedTransportEquipment::class, $firstUnsupportedTransportEquipment);
@@ -55162,6 +59122,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getCommodityClassification();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForCommodityClassificationOnceItem = $model->addOnceToCommodityClassificationWithCreate();
+
+        $this->assertInstanceOf(CommodityClassification::class, $testValueForCommodityClassificationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCommodityClassification();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstCommodityClassification = $model->firstCommodityClassification();
 
@@ -55205,6 +59173,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSupportedCommodityClassificationOnceItem = $model->addOnceToSupportedCommodityClassificationWithCreate();
+
+        $this->assertInstanceOf(SupportedCommodityClassification::class, $testValueForSupportedCommodityClassificationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSupportedCommodityClassification();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstSupportedCommodityClassification = $model->firstSupportedCommodityClassification();
 
         $this->assertInstanceOf(SupportedCommodityClassification::class, $firstSupportedCommodityClassification);
@@ -55246,6 +59222,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getUnsupportedCommodityClassification();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForUnsupportedCommodityClassificationOnceItem = $model->addOnceToUnsupportedCommodityClassificationWithCreate();
+
+        $this->assertInstanceOf(UnsupportedCommodityClassification::class, $testValueForUnsupportedCommodityClassificationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getUnsupportedCommodityClassification();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstUnsupportedCommodityClassification = $model->firstUnsupportedCommodityClassification();
 
@@ -55305,6 +59289,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForShipmentStageOnceItem = $model->addOnceToShipmentStageWithCreate();
+
+        $this->assertInstanceOf(ShipmentStage::class, $testValueForShipmentStageOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getShipmentStage();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstShipmentStage = $model->firstShipmentStage();
 
         $this->assertInstanceOf(ShipmentStage::class, $firstShipmentStage);
@@ -55346,6 +59338,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTransportEvent();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTransportEventOnceItem = $model->addOnceToTransportEventWithCreate();
+
+        $this->assertInstanceOf(TransportEvent::class, $testValueForTransportEventOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransportEvent();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTransportEvent = $model->firstTransportEvent();
 
@@ -55405,6 +59405,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForEnvironmentalEmissionOnceItem = $model->addOnceToEnvironmentalEmissionWithCreate();
+
+        $this->assertInstanceOf(EnvironmentalEmission::class, $testValueForEnvironmentalEmissionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getEnvironmentalEmission();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstEnvironmentalEmission = $model->firstEnvironmentalEmission();
 
         $this->assertInstanceOf(EnvironmentalEmission::class, $firstEnvironmentalEmission);
@@ -55462,6 +59470,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getScheduledServiceFrequency();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForScheduledServiceFrequencyOnceItem = $model->addOnceToScheduledServiceFrequencyWithCreate();
+
+        $this->assertInstanceOf(ScheduledServiceFrequency::class, $testValueForScheduledServiceFrequencyOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getScheduledServiceFrequency();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstScheduledServiceFrequency = $model->firstScheduledServiceFrequency();
 
@@ -55665,6 +59681,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForReferencedConsignmentIDOnceItem = $model->addOnceToReferencedConsignmentIDWithCreate();
+
+        $this->assertInstanceOf(ReferencedConsignmentID::class, $testValueForReferencedConsignmentIDOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getReferencedConsignmentID();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstReferencedConsignmentID = $model->firstReferencedConsignmentID();
 
         $this->assertInstanceOf(ReferencedConsignmentID::class, $firstReferencedConsignmentID);
@@ -55813,6 +59837,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getInformation();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForInformationOnceItem = $model->addOnceToInformationWithCreate();
+
+        $this->assertInstanceOf(Information::class, $testValueForInformationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInformation();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstInformation = $model->firstInformation();
 
@@ -55970,6 +60002,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDamageRemarksOnceItem = $model->addOnceToDamageRemarksWithCreate();
+
+        $this->assertInstanceOf(DamageRemarks::class, $testValueForDamageRemarksOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDamageRemarks();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDamageRemarks = $model->firstDamageRemarks();
 
         $this->assertInstanceOf(DamageRemarks::class, $firstDamageRemarks);
@@ -56012,6 +60052,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -56053,6 +60101,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSpecialTransportRequirements();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSpecialTransportRequirementsOnceItem = $model->addOnceToSpecialTransportRequirementsWithCreate();
+
+        $this->assertInstanceOf(SpecialTransportRequirements::class, $testValueForSpecialTransportRequirementsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSpecialTransportRequirements();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSpecialTransportRequirements = $model->firstSpecialTransportRequirements();
 
@@ -56187,6 +60243,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForMeasurementDimensionOnceItem = $model->addOnceToMeasurementDimensionWithCreate();
+
+        $this->assertInstanceOf(MeasurementDimension::class, $testValueForMeasurementDimensionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getMeasurementDimension();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstMeasurementDimension = $model->firstMeasurementDimension();
 
         $this->assertInstanceOf(MeasurementDimension::class, $firstMeasurementDimension);
@@ -56228,6 +60292,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTransportEquipmentSeal();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTransportEquipmentSealOnceItem = $model->addOnceToTransportEquipmentSealWithCreate();
+
+        $this->assertInstanceOf(TransportEquipmentSeal::class, $testValueForTransportEquipmentSealOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransportEquipmentSeal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTransportEquipmentSeal = $model->firstTransportEquipmentSeal();
 
@@ -56431,6 +60503,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPositioningTransportEventOnceItem = $model->addOnceToPositioningTransportEventWithCreate();
+
+        $this->assertInstanceOf(PositioningTransportEvent::class, $testValueForPositioningTransportEventOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPositioningTransportEvent();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPositioningTransportEvent = $model->firstPositioningTransportEvent();
 
         $this->assertInstanceOf(PositioningTransportEvent::class, $firstPositioningTransportEvent);
@@ -56472,6 +60552,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getQuarantineTransportEvent();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForQuarantineTransportEventOnceItem = $model->addOnceToQuarantineTransportEventWithCreate();
+
+        $this->assertInstanceOf(QuarantineTransportEvent::class, $testValueForQuarantineTransportEventOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getQuarantineTransportEvent();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstQuarantineTransportEvent = $model->firstQuarantineTransportEvent();
 
@@ -56515,6 +60603,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDeliveryTransportEventOnceItem = $model->addOnceToDeliveryTransportEventWithCreate();
+
+        $this->assertInstanceOf(DeliveryTransportEvent::class, $testValueForDeliveryTransportEventOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDeliveryTransportEvent();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDeliveryTransportEvent = $model->firstDeliveryTransportEvent();
 
         $this->assertInstanceOf(DeliveryTransportEvent::class, $firstDeliveryTransportEvent);
@@ -56556,6 +60652,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPickupTransportEvent();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPickupTransportEventOnceItem = $model->addOnceToPickupTransportEventWithCreate();
+
+        $this->assertInstanceOf(PickupTransportEvent::class, $testValueForPickupTransportEventOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPickupTransportEvent();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPickupTransportEvent = $model->firstPickupTransportEvent();
 
@@ -56599,6 +60703,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForHandlingTransportEventOnceItem = $model->addOnceToHandlingTransportEventWithCreate();
+
+        $this->assertInstanceOf(HandlingTransportEvent::class, $testValueForHandlingTransportEventOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getHandlingTransportEvent();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstHandlingTransportEvent = $model->firstHandlingTransportEvent();
 
         $this->assertInstanceOf(HandlingTransportEvent::class, $firstHandlingTransportEvent);
@@ -56641,6 +60753,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForLoadingTransportEventOnceItem = $model->addOnceToLoadingTransportEventWithCreate();
+
+        $this->assertInstanceOf(LoadingTransportEvent::class, $testValueForLoadingTransportEventOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getLoadingTransportEvent();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstLoadingTransportEvent = $model->firstLoadingTransportEvent();
 
         $this->assertInstanceOf(LoadingTransportEvent::class, $firstLoadingTransportEvent);
@@ -56682,6 +60802,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTransportEvent();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTransportEventOnceItem = $model->addOnceToTransportEventWithCreate();
+
+        $this->assertInstanceOf(TransportEvent::class, $testValueForTransportEventOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransportEvent();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTransportEvent = $model->firstTransportEvent();
 
@@ -56741,6 +60869,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForHaulageTradingTermsOnceItem = $model->addOnceToHaulageTradingTermsWithCreate();
+
+        $this->assertInstanceOf(HaulageTradingTerms::class, $testValueForHaulageTradingTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getHaulageTradingTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstHaulageTradingTerms = $model->firstHaulageTradingTerms();
 
         $this->assertInstanceOf(HaulageTradingTerms::class, $firstHaulageTradingTerms);
@@ -56782,6 +60918,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getHazardousGoodsTransit();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForHazardousGoodsTransitOnceItem = $model->addOnceToHazardousGoodsTransitWithCreate();
+
+        $this->assertInstanceOf(HazardousGoodsTransit::class, $testValueForHazardousGoodsTransitOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getHazardousGoodsTransit();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstHazardousGoodsTransit = $model->firstHazardousGoodsTransit();
 
@@ -56825,6 +60969,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPackagedTransportHandlingUnitOnceItem = $model->addOnceToPackagedTransportHandlingUnitWithCreate();
+
+        $this->assertInstanceOf(PackagedTransportHandlingUnit::class, $testValueForPackagedTransportHandlingUnitOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPackagedTransportHandlingUnit();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPackagedTransportHandlingUnit = $model->firstPackagedTransportHandlingUnit();
 
         $this->assertInstanceOf(PackagedTransportHandlingUnit::class, $firstPackagedTransportHandlingUnit);
@@ -56866,6 +61018,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getServiceAllowanceCharge();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForServiceAllowanceChargeOnceItem = $model->addOnceToServiceAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(ServiceAllowanceCharge::class, $testValueForServiceAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getServiceAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstServiceAllowanceCharge = $model->firstServiceAllowanceCharge();
 
@@ -56909,6 +61069,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForFreightAllowanceChargeOnceItem = $model->addOnceToFreightAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(FreightAllowanceCharge::class, $testValueForFreightAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getFreightAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstFreightAllowanceCharge = $model->firstFreightAllowanceCharge();
 
         $this->assertInstanceOf(FreightAllowanceCharge::class, $firstFreightAllowanceCharge);
@@ -56950,6 +61118,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAttachedTransportEquipment();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAttachedTransportEquipmentOnceItem = $model->addOnceToAttachedTransportEquipmentWithCreate();
+
+        $this->assertInstanceOf(AttachedTransportEquipment::class, $testValueForAttachedTransportEquipmentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAttachedTransportEquipment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAttachedTransportEquipment = $model->firstAttachedTransportEquipment();
 
@@ -57041,6 +61217,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForShipmentDocumentReferenceOnceItem = $model->addOnceToShipmentDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(ShipmentDocumentReference::class, $testValueForShipmentDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getShipmentDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstShipmentDocumentReference = $model->firstShipmentDocumentReference();
 
         $this->assertInstanceOf(ShipmentDocumentReference::class, $firstShipmentDocumentReference);
@@ -57082,6 +61266,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getContainedInTransportEquipment();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForContainedInTransportEquipmentOnceItem = $model->addOnceToContainedInTransportEquipmentWithCreate();
+
+        $this->assertInstanceOf(ContainedInTransportEquipment::class, $testValueForContainedInTransportEquipmentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getContainedInTransportEquipment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstContainedInTransportEquipment = $model->firstContainedInTransportEquipment();
 
@@ -57125,6 +61317,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPackageOnceItem = $model->addOnceToPackageWithCreate();
+
+        $this->assertInstanceOf(Package::class, $testValueForPackageOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPackage();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPackage = $model->firstPackage();
 
         $this->assertInstanceOf(Package::class, $firstPackage);
@@ -57166,6 +61366,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getGoodsItem();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForGoodsItemOnceItem = $model->addOnceToGoodsItemWithCreate();
+
+        $this->assertInstanceOf(GoodsItem::class, $testValueForGoodsItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getGoodsItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstGoodsItem = $model->firstGoodsItem();
 
@@ -57284,6 +61492,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -57353,6 +61569,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForCurrentStatusOnceItem = $model->addOnceToCurrentStatusWithCreate();
+
+        $this->assertInstanceOf(CurrentStatus::class, $testValueForCurrentStatusOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCurrentStatus();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstCurrentStatus = $model->firstCurrentStatus();
 
         $this->assertInstanceOf(CurrentStatus::class, $firstCurrentStatus);
@@ -57394,6 +61618,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getContact();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForContactOnceItem = $model->addOnceToContactWithCreate();
+
+        $this->assertInstanceOf(Contact::class, $testValueForContactOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getContact();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstContact = $model->firstContact();
 
@@ -57468,6 +61700,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPeriod();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPeriodOnceItem = $model->addOnceToPeriodWithCreate();
+
+        $this->assertInstanceOf(Period::class, $testValueForPeriodOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPeriod();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPeriod = $model->firstPeriod();
 
@@ -57554,6 +61794,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTransportUserSpecialTermsOnceItem = $model->addOnceToTransportUserSpecialTermsWithCreate();
+
+        $this->assertInstanceOf(TransportUserSpecialTerms::class, $testValueForTransportUserSpecialTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransportUserSpecialTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTransportUserSpecialTerms = $model->firstTransportUserSpecialTerms();
 
         $this->assertInstanceOf(TransportUserSpecialTerms::class, $firstTransportUserSpecialTerms);
@@ -57595,6 +61843,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTransportServiceProviderSpecialTerms();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTransportServiceProviderSpecialTermsOnceItem = $model->addOnceToTransportServiceProviderSpecialTermsWithCreate();
+
+        $this->assertInstanceOf(TransportServiceProviderSpecialTerms::class, $testValueForTransportServiceProviderSpecialTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransportServiceProviderSpecialTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTransportServiceProviderSpecialTerms = $model->firstTransportServiceProviderSpecialTerms();
 
@@ -57638,6 +61894,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForChangeConditionsOnceItem = $model->addOnceToChangeConditionsWithCreate();
+
+        $this->assertInstanceOf(ChangeConditions::class, $testValueForChangeConditionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getChangeConditions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstChangeConditions = $model->firstChangeConditions();
 
         $this->assertInstanceOf(ChangeConditions::class, $firstChangeConditions);
@@ -57680,6 +61944,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPaymentTermsOnceItem = $model->addOnceToPaymentTermsWithCreate();
+
+        $this->assertInstanceOf(PaymentTerms::class, $testValueForPaymentTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPaymentTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPaymentTerms = $model->firstPaymentTerms();
 
         $this->assertInstanceOf(PaymentTerms::class, $firstPaymentTerms);
@@ -57721,6 +61993,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDeliveryTerms();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDeliveryTermsOnceItem = $model->addOnceToDeliveryTermsWithCreate();
+
+        $this->assertInstanceOf(DeliveryTerms::class, $testValueForDeliveryTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDeliveryTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDeliveryTerms = $model->firstDeliveryTerms();
 
@@ -57812,6 +62092,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForEnvironmentalEmissionOnceItem = $model->addOnceToEnvironmentalEmissionWithCreate();
+
+        $this->assertInstanceOf(EnvironmentalEmission::class, $testValueForEnvironmentalEmissionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getEnvironmentalEmission();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstEnvironmentalEmission = $model->firstEnvironmentalEmission();
 
         $this->assertInstanceOf(EnvironmentalEmission::class, $firstEnvironmentalEmission);
@@ -57853,6 +62141,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getNotificationRequirement();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForNotificationRequirementOnceItem = $model->addOnceToNotificationRequirementWithCreate();
+
+        $this->assertInstanceOf(NotificationRequirement::class, $testValueForNotificationRequirementOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNotificationRequirement();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstNotificationRequirement = $model->firstNotificationRequirement();
 
@@ -57981,6 +62277,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForHandlingInstructionsOnceItem = $model->addOnceToHandlingInstructionsWithCreate();
+
+        $this->assertInstanceOf(HandlingInstructions::class, $testValueForHandlingInstructionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getHandlingInstructions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstHandlingInstructions = $model->firstHandlingInstructions();
 
         $this->assertInstanceOf(HandlingInstructions::class, $firstHandlingInstructions);
@@ -58066,6 +62370,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDamageRemarksOnceItem = $model->addOnceToDamageRemarksWithCreate();
+
+        $this->assertInstanceOf(DamageRemarks::class, $testValueForDamageRemarksOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDamageRemarks();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDamageRemarks = $model->firstDamageRemarks();
 
         $this->assertInstanceOf(DamageRemarks::class, $firstDamageRemarks);
@@ -58107,6 +62419,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getShippingMarks();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForShippingMarksOnceItem = $model->addOnceToShippingMarksWithCreate();
+
+        $this->assertInstanceOf(ShippingMarks::class, $testValueForShippingMarksOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getShippingMarks();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstShippingMarks = $model->firstShippingMarks();
 
@@ -58166,6 +62486,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForHandlingUnitDespatchLineOnceItem = $model->addOnceToHandlingUnitDespatchLineWithCreate();
+
+        $this->assertInstanceOf(HandlingUnitDespatchLine::class, $testValueForHandlingUnitDespatchLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getHandlingUnitDespatchLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstHandlingUnitDespatchLine = $model->firstHandlingUnitDespatchLine();
 
         $this->assertInstanceOf(HandlingUnitDespatchLine::class, $firstHandlingUnitDespatchLine);
@@ -58207,6 +62535,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getActualPackage();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForActualPackageOnceItem = $model->addOnceToActualPackageWithCreate();
+
+        $this->assertInstanceOf(ActualPackage::class, $testValueForActualPackageOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getActualPackage();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstActualPackage = $model->firstActualPackage();
 
@@ -58250,6 +62586,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForReceivedHandlingUnitReceiptLineOnceItem = $model->addOnceToReceivedHandlingUnitReceiptLineWithCreate();
+
+        $this->assertInstanceOf(ReceivedHandlingUnitReceiptLine::class, $testValueForReceivedHandlingUnitReceiptLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getReceivedHandlingUnitReceiptLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstReceivedHandlingUnitReceiptLine = $model->firstReceivedHandlingUnitReceiptLine();
 
         $this->assertInstanceOf(ReceivedHandlingUnitReceiptLine::class, $firstReceivedHandlingUnitReceiptLine);
@@ -58291,6 +62635,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTransportEquipment();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTransportEquipmentOnceItem = $model->addOnceToTransportEquipmentWithCreate();
+
+        $this->assertInstanceOf(TransportEquipment::class, $testValueForTransportEquipmentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransportEquipment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTransportEquipment = $model->firstTransportEquipment();
 
@@ -58334,6 +62686,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTransportMeansOnceItem = $model->addOnceToTransportMeansWithCreate();
+
+        $this->assertInstanceOf(TransportMeans::class, $testValueForTransportMeansOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTransportMeans();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTransportMeans = $model->firstTransportMeans();
 
         $this->assertInstanceOf(TransportMeans::class, $firstTransportMeans);
@@ -58376,6 +62736,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForHazardousGoodsTransitOnceItem = $model->addOnceToHazardousGoodsTransitWithCreate();
+
+        $this->assertInstanceOf(HazardousGoodsTransit::class, $testValueForHazardousGoodsTransitOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getHazardousGoodsTransit();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstHazardousGoodsTransit = $model->firstHazardousGoodsTransit();
 
         $this->assertInstanceOf(HazardousGoodsTransit::class, $firstHazardousGoodsTransit);
@@ -58417,6 +62785,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getMeasurementDimension();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForMeasurementDimensionOnceItem = $model->addOnceToMeasurementDimensionWithCreate();
+
+        $this->assertInstanceOf(MeasurementDimension::class, $testValueForMeasurementDimensionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getMeasurementDimension();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstMeasurementDimension = $model->firstMeasurementDimension();
 
@@ -58492,6 +62868,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForGoodsItemOnceItem = $model->addOnceToGoodsItemWithCreate();
+
+        $this->assertInstanceOf(GoodsItem::class, $testValueForGoodsItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getGoodsItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstGoodsItem = $model->firstGoodsItem();
 
         $this->assertInstanceOf(GoodsItem::class, $firstGoodsItem);
@@ -58566,6 +62950,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForShipmentDocumentReferenceOnceItem = $model->addOnceToShipmentDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(ShipmentDocumentReference::class, $testValueForShipmentDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getShipmentDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstShipmentDocumentReference = $model->firstShipmentDocumentReference();
 
         $this->assertInstanceOf(ShipmentDocumentReference::class, $firstShipmentDocumentReference);
@@ -58607,6 +62999,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getStatus();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForStatusOnceItem = $model->addOnceToStatusWithCreate();
+
+        $this->assertInstanceOf(Status::class, $testValueForStatusOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getStatus();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstStatus = $model->firstStatus();
 
@@ -58650,6 +63050,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForCustomsDeclarationOnceItem = $model->addOnceToCustomsDeclarationWithCreate();
+
+        $this->assertInstanceOf(CustomsDeclaration::class, $testValueForCustomsDeclarationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCustomsDeclaration();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstCustomsDeclaration = $model->firstCustomsDeclaration();
 
         $this->assertInstanceOf(CustomsDeclaration::class, $firstCustomsDeclaration);
@@ -58692,6 +63100,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForReferencedShipmentOnceItem = $model->addOnceToReferencedShipmentWithCreate();
+
+        $this->assertInstanceOf(ReferencedShipment::class, $testValueForReferencedShipmentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getReferencedShipment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstReferencedShipment = $model->firstReferencedShipment();
 
         $this->assertInstanceOf(ReferencedShipment::class, $firstReferencedShipment);
@@ -58733,6 +63149,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPackage();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPackageOnceItem = $model->addOnceToPackageWithCreate();
+
+        $this->assertInstanceOf(Package::class, $testValueForPackageOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPackage();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPackage = $model->firstPackage();
 
@@ -58828,6 +63252,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getRegistrationNationality();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForRegistrationNationalityOnceItem = $model->addOnceToRegistrationNationalityWithCreate();
+
+        $this->assertInstanceOf(RegistrationNationality::class, $testValueForRegistrationNationalityOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRegistrationNationality();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstRegistrationNationality = $model->firstRegistrationNationality();
 
@@ -59015,6 +63447,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForMeasurementDimensionOnceItem = $model->addOnceToMeasurementDimensionWithCreate();
+
+        $this->assertInstanceOf(MeasurementDimension::class, $testValueForMeasurementDimensionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getMeasurementDimension();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstMeasurementDimension = $model->firstMeasurementDimension();
 
         $this->assertInstanceOf(MeasurementDimension::class, $firstMeasurementDimension);
@@ -59142,6 +63582,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getRemarks();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForRemarksOnceItem = $model->addOnceToRemarksWithCreate();
+
+        $this->assertInstanceOf(Remarks::class, $testValueForRemarksOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRemarks();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstRemarks = $model->firstRemarks();
 
@@ -59622,6 +64070,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDescriptionOnceItem = $model->addOnceToDescriptionWithCreate();
+
+        $this->assertInstanceOf(Description::class, $testValueForDescriptionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDescription();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDescription = $model->firstDescription();
 
         $this->assertInstanceOf(Description::class, $firstDescription);
@@ -60098,6 +64554,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForWorkPhaseOnceItem = $model->addOnceToWorkPhaseWithCreate();
+
+        $this->assertInstanceOf(WorkPhase::class, $testValueForWorkPhaseOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getWorkPhase();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstWorkPhase = $model->firstWorkPhase();
 
         $this->assertInstanceOf(WorkPhase::class, $firstWorkPhase);
@@ -60177,6 +64641,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getWorkOrderDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForWorkOrderDocumentReferenceOnceItem = $model->addOnceToWorkOrderDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(WorkOrderDocumentReference::class, $testValueForWorkOrderDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getWorkOrderDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstWorkOrderDocumentReference = $model->firstWorkOrderDocumentReference();
 
@@ -83128,6 +87600,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForUBLExtensionOnceItem = $model->addOnceToUBLExtensionWithCreate();
+
+        $this->assertInstanceOf(UBLExtension::class, $testValueForUBLExtensionOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getUBLExtension();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstUBLExtension = $model->firstUBLExtension();
 
         $this->assertInstanceOf(UBLExtension::class, $firstUBLExtension);
@@ -83361,6 +87841,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForUBLExtensionsOnceItem = $model->addOnceToUBLExtensionsWithCreate();
+
+        $this->assertInstanceOf(UBLExtension::class, $testValueForUBLExtensionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getUBLExtensions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstUBLExtensions = $model->firstUBLExtensions();
 
         $this->assertInstanceOf(UBLExtension::class, $firstUBLExtensions);
@@ -83559,6 +88047,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -83745,6 +88241,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForInvoicePeriodOnceItem = $model->addOnceToInvoicePeriodWithCreate();
+
+        $this->assertInstanceOf(InvoicePeriod::class, $testValueForInvoicePeriodOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInvoicePeriod();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstInvoicePeriod = $model->firstInvoicePeriod();
 
         $this->assertInstanceOf(InvoicePeriod::class, $firstInvoicePeriod);
@@ -83786,6 +88290,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDiscrepancyResponse();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDiscrepancyResponseOnceItem = $model->addOnceToDiscrepancyResponseWithCreate();
+
+        $this->assertInstanceOf(DiscrepancyResponse::class, $testValueForDiscrepancyResponseOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDiscrepancyResponse();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDiscrepancyResponse = $model->firstDiscrepancyResponse();
 
@@ -83845,6 +88357,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForBillingReferenceOnceItem = $model->addOnceToBillingReferenceWithCreate();
+
+        $this->assertInstanceOf(BillingReference::class, $testValueForBillingReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getBillingReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstBillingReference = $model->firstBillingReference();
 
         $this->assertInstanceOf(BillingReference::class, $firstBillingReference);
@@ -83886,6 +88406,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDespatchDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDespatchDocumentReferenceOnceItem = $model->addOnceToDespatchDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DespatchDocumentReference::class, $testValueForDespatchDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDespatchDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDespatchDocumentReference = $model->firstDespatchDocumentReference();
 
@@ -83929,6 +88457,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForReceiptDocumentReferenceOnceItem = $model->addOnceToReceiptDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(ReceiptDocumentReference::class, $testValueForReceiptDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getReceiptDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstReceiptDocumentReference = $model->firstReceiptDocumentReference();
 
         $this->assertInstanceOf(ReceiptDocumentReference::class, $firstReceiptDocumentReference);
@@ -83970,6 +88506,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getContractDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForContractDocumentReferenceOnceItem = $model->addOnceToContractDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(ContractDocumentReference::class, $testValueForContractDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getContractDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstContractDocumentReference = $model->firstContractDocumentReference();
 
@@ -84013,6 +88557,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAdditionalDocumentReferenceOnceItem = $model->addOnceToAdditionalDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(AdditionalDocumentReference::class, $testValueForAdditionalDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAdditionalDocumentReference = $model->firstAdditionalDocumentReference();
 
         $this->assertInstanceOf(AdditionalDocumentReference::class, $firstAdditionalDocumentReference);
@@ -84054,6 +88606,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getStatementDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForStatementDocumentReferenceOnceItem = $model->addOnceToStatementDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(StatementDocumentReference::class, $testValueForStatementDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getStatementDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstStatementDocumentReference = $model->firstStatementDocumentReference();
 
@@ -84097,6 +88657,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForOriginatorDocumentReferenceOnceItem = $model->addOnceToOriginatorDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(OriginatorDocumentReference::class, $testValueForOriginatorDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getOriginatorDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstOriginatorDocumentReference = $model->firstOriginatorDocumentReference();
 
         $this->assertInstanceOf(OriginatorDocumentReference::class, $firstOriginatorDocumentReference);
@@ -84138,6 +88706,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSignature();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSignatureOnceItem = $model->addOnceToSignatureWithCreate();
+
+        $this->assertInstanceOf(Signature::class, $testValueForSignatureOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSignature();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSignature = $model->firstSignature();
 
@@ -84277,6 +88853,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDeliveryOnceItem = $model->addOnceToDeliveryWithCreate();
+
+        $this->assertInstanceOf(Delivery::class, $testValueForDeliveryOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDelivery();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDelivery = $model->firstDelivery();
 
         $this->assertInstanceOf(Delivery::class, $firstDelivery);
@@ -84318,6 +88902,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDeliveryTerms();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDeliveryTermsOnceItem = $model->addOnceToDeliveryTermsWithCreate();
+
+        $this->assertInstanceOf(DeliveryTerms::class, $testValueForDeliveryTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDeliveryTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDeliveryTerms = $model->firstDeliveryTerms();
 
@@ -84361,6 +88953,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPaymentMeansOnceItem = $model->addOnceToPaymentMeansWithCreate();
+
+        $this->assertInstanceOf(PaymentMeans::class, $testValueForPaymentMeansOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPaymentMeans();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPaymentMeans = $model->firstPaymentMeans();
 
         $this->assertInstanceOf(PaymentMeans::class, $firstPaymentMeans);
@@ -84402,6 +89002,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPaymentTerms();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPaymentTermsOnceItem = $model->addOnceToPaymentTermsWithCreate();
+
+        $this->assertInstanceOf(PaymentTerms::class, $testValueForPaymentTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPaymentTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPaymentTerms = $model->firstPaymentTerms();
 
@@ -84509,6 +89117,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAllowanceChargeOnceItem = $model->addOnceToAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(AllowanceCharge::class, $testValueForAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAllowanceCharge = $model->firstAllowanceCharge();
 
         $this->assertInstanceOf(AllowanceCharge::class, $firstAllowanceCharge);
@@ -84550,6 +89166,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getTaxTotal();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTaxTotalOnceItem = $model->addOnceToTaxTotalWithCreate();
+
+        $this->assertInstanceOf(TaxTotal::class, $testValueForTaxTotalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxTotal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstTaxTotal = $model->firstTaxTotal();
 
@@ -84608,6 +89232,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getCreditNoteLine();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForCreditNoteLineOnceItem = $model->addOnceToCreditNoteLineWithCreate();
+
+        $this->assertInstanceOf(CreditNoteLine::class, $testValueForCreditNoteLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getCreditNoteLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstCreditNoteLine = $model->firstCreditNoteLine();
 
@@ -84671,6 +89303,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getUBLExtensions();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForUBLExtensionsOnceItem = $model->addOnceToUBLExtensionsWithCreate();
+
+        $this->assertInstanceOf(UBLExtension::class, $testValueForUBLExtensionsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getUBLExtensions();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstUBLExtensions = $model->firstUBLExtensions();
 
@@ -84870,6 +89510,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForNoteOnceItem = $model->addOnceToNoteWithCreate();
+
+        $this->assertInstanceOf(Note::class, $testValueForNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstNote = $model->firstNote();
 
         $this->assertInstanceOf(Note::class, $firstNote);
@@ -85067,6 +89715,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForInvoicePeriodOnceItem = $model->addOnceToInvoicePeriodWithCreate();
+
+        $this->assertInstanceOf(InvoicePeriod::class, $testValueForInvoicePeriodOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInvoicePeriod();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstInvoicePeriod = $model->firstInvoicePeriod();
 
         $this->assertInstanceOf(InvoicePeriod::class, $firstInvoicePeriod);
@@ -85125,6 +89781,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForBillingReferenceOnceItem = $model->addOnceToBillingReferenceWithCreate();
+
+        $this->assertInstanceOf(BillingReference::class, $testValueForBillingReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getBillingReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstBillingReference = $model->firstBillingReference();
 
         $this->assertInstanceOf(BillingReference::class, $firstBillingReference);
@@ -85166,6 +89830,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getDespatchDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForDespatchDocumentReferenceOnceItem = $model->addOnceToDespatchDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(DespatchDocumentReference::class, $testValueForDespatchDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDespatchDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstDespatchDocumentReference = $model->firstDespatchDocumentReference();
 
@@ -85209,6 +89881,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForReceiptDocumentReferenceOnceItem = $model->addOnceToReceiptDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(ReceiptDocumentReference::class, $testValueForReceiptDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getReceiptDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstReceiptDocumentReference = $model->firstReceiptDocumentReference();
 
         $this->assertInstanceOf(ReceiptDocumentReference::class, $firstReceiptDocumentReference);
@@ -85250,6 +89930,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getStatementDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForStatementDocumentReferenceOnceItem = $model->addOnceToStatementDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(StatementDocumentReference::class, $testValueForStatementDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getStatementDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstStatementDocumentReference = $model->firstStatementDocumentReference();
 
@@ -85293,6 +89981,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForOriginatorDocumentReferenceOnceItem = $model->addOnceToOriginatorDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(OriginatorDocumentReference::class, $testValueForOriginatorDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getOriginatorDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstOriginatorDocumentReference = $model->firstOriginatorDocumentReference();
 
         $this->assertInstanceOf(OriginatorDocumentReference::class, $firstOriginatorDocumentReference);
@@ -85334,6 +90030,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getContractDocumentReference();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForContractDocumentReferenceOnceItem = $model->addOnceToContractDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(ContractDocumentReference::class, $testValueForContractDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getContractDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstContractDocumentReference = $model->firstContractDocumentReference();
 
@@ -85377,6 +90081,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAdditionalDocumentReferenceOnceItem = $model->addOnceToAdditionalDocumentReferenceWithCreate();
+
+        $this->assertInstanceOf(AdditionalDocumentReference::class, $testValueForAdditionalDocumentReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstAdditionalDocumentReference = $model->firstAdditionalDocumentReference();
 
         $this->assertInstanceOf(AdditionalDocumentReference::class, $firstAdditionalDocumentReference);
@@ -85419,6 +90131,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForProjectReferenceOnceItem = $model->addOnceToProjectReferenceWithCreate();
+
+        $this->assertInstanceOf(ProjectReference::class, $testValueForProjectReferenceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getProjectReference();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstProjectReference = $model->firstProjectReference();
 
         $this->assertInstanceOf(ProjectReference::class, $firstProjectReference);
@@ -85460,6 +90180,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getSignature();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSignatureOnceItem = $model->addOnceToSignatureWithCreate();
+
+        $this->assertInstanceOf(Signature::class, $testValueForSignatureOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSignature();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstSignature = $model->firstSignature();
 
@@ -85599,6 +90327,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDeliveryOnceItem = $model->addOnceToDeliveryWithCreate();
+
+        $this->assertInstanceOf(Delivery::class, $testValueForDeliveryOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDelivery();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstDelivery = $model->firstDelivery();
 
         $this->assertInstanceOf(Delivery::class, $firstDelivery);
@@ -85657,6 +90393,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPaymentMeansOnceItem = $model->addOnceToPaymentMeansWithCreate();
+
+        $this->assertInstanceOf(PaymentMeans::class, $testValueForPaymentMeansOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPaymentMeans();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPaymentMeans = $model->firstPaymentMeans();
 
         $this->assertInstanceOf(PaymentMeans::class, $firstPaymentMeans);
@@ -85698,6 +90442,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getPaymentTerms();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForPaymentTermsOnceItem = $model->addOnceToPaymentTermsWithCreate();
+
+        $this->assertInstanceOf(PaymentTerms::class, $testValueForPaymentTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPaymentTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstPaymentTerms = $model->firstPaymentTerms();
 
@@ -85741,6 +90493,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForPrepaidPaymentOnceItem = $model->addOnceToPrepaidPaymentWithCreate();
+
+        $this->assertInstanceOf(PrepaidPayment::class, $testValueForPrepaidPaymentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getPrepaidPayment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstPrepaidPayment = $model->firstPrepaidPayment();
 
         $this->assertInstanceOf(PrepaidPayment::class, $firstPrepaidPayment);
@@ -85782,6 +90542,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getAllowanceCharge();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAllowanceChargeOnceItem = $model->addOnceToAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(AllowanceCharge::class, $testValueForAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstAllowanceCharge = $model->firstAllowanceCharge();
 
@@ -85889,6 +90657,14 @@ final class UblModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForTaxTotalOnceItem = $model->addOnceToTaxTotalWithCreate();
+
+        $this->assertInstanceOf(TaxTotal::class, $testValueForTaxTotalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxTotal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $firstTaxTotal = $model->firstTaxTotal();
 
         $this->assertInstanceOf(TaxTotal::class, $firstTaxTotal);
@@ -85932,6 +90708,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getWithholdingTaxTotal();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForWithholdingTaxTotalOnceItem = $model->addOnceToWithholdingTaxTotalWithCreate();
+
+        $this->assertInstanceOf(WithholdingTaxTotal::class, $testValueForWithholdingTaxTotalOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getWithholdingTaxTotal();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstWithholdingTaxTotal = $model->firstWithholdingTaxTotal();
 
@@ -85990,6 +90774,14 @@ final class UblModelTest extends TestCase
         $itemsAfterOnce = $model->getInvoiceLine();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForInvoiceLineOnceItem = $model->addOnceToInvoiceLineWithCreate();
+
+        $this->assertInstanceOf(InvoiceLine::class, $testValueForInvoiceLineOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInvoiceLine();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $firstInvoiceLine = $model->firstInvoiceLine();
 

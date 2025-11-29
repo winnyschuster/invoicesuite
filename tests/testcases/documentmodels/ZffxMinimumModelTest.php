@@ -592,6 +592,14 @@ final class ZffxMinimumModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSpecifiedTaxRegistrationOnceItem = $model->addOnceToSpecifiedTaxRegistrationWithCreate();
+
+        $this->assertInstanceOf(TaxRegistrationType::class, $testValueForSpecifiedTaxRegistrationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSpecifiedTaxRegistration();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearSpecifiedTaxRegistration();
 
         $itemsAfterClear = $model->getSpecifiedTaxRegistration();
@@ -651,6 +659,14 @@ final class ZffxMinimumModelTest extends TestCase
         $itemsAfterOnce = $model->getTaxTotalAmount();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTaxTotalAmountOnceItem = $model->addOnceToTaxTotalAmountWithCreate();
+
+        $this->assertInstanceOf(AmountType::class, $testValueForTaxTotalAmountOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxTotalAmount();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $model->clearTaxTotalAmount();
 

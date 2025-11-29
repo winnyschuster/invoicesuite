@@ -532,6 +532,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForIncludedTradeTaxOnceItem = $model->addOnceToIncludedTradeTaxWithCreate();
+
+        $this->assertInstanceOf(TradeTaxType::class, $testValueForIncludedTradeTaxOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getIncludedTradeTax();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearIncludedTradeTax();
 
         $itemsAfterClear = $model->getIncludedTradeTax();
@@ -792,6 +800,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForIncludedNoteOnceItem = $model->addOnceToIncludedNoteWithCreate();
+
+        $this->assertInstanceOf(NoteType::class, $testValueForIncludedNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getIncludedNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearIncludedNote();
 
         $itemsAfterClear = $model->getIncludedNote();
@@ -989,6 +1005,14 @@ final class ZffxExtendedModelTest extends TestCase
         $itemsAfterOnce = $model->getIncludedNote();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForIncludedNoteOnceItem = $model->addOnceToIncludedNoteWithCreate();
+
+        $this->assertInstanceOf(NoteType::class, $testValueForIncludedNoteOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getIncludedNote();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $model->clearIncludedNote();
 
@@ -1242,6 +1266,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAdditionalReferencedDocumentOnceItem = $model->addOnceToAdditionalReferencedDocumentWithCreate();
+
+        $this->assertInstanceOf(ReferencedDocumentType::class, $testValueForAdditionalReferencedDocumentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalReferencedDocument();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearAdditionalReferencedDocument();
 
         $itemsAfterClear = $model->getAdditionalReferencedDocument();
@@ -1308,6 +1340,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForUltimateCustomerOrderReferencedDocumentOnceItem = $model->addOnceToUltimateCustomerOrderReferencedDocumentWithCreate();
+
+        $this->assertInstanceOf(ReferencedDocumentType::class, $testValueForUltimateCustomerOrderReferencedDocumentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getUltimateCustomerOrderReferencedDocument();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearUltimateCustomerOrderReferencedDocument();
 
         $itemsAfterClear = $model->getUltimateCustomerOrderReferencedDocument();
@@ -1351,6 +1391,14 @@ final class ZffxExtendedModelTest extends TestCase
         $itemsAfterOnce = $model->getRelatedSupplyChainConsignment();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForRelatedSupplyChainConsignmentOnceItem = $model->addOnceToRelatedSupplyChainConsignmentWithCreate();
+
+        $this->assertInstanceOf(LogisticsTransportMovementType::class, $testValueForRelatedSupplyChainConsignmentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getRelatedSupplyChainConsignment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $model->clearRelatedSupplyChainConsignment();
 
@@ -1668,6 +1716,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSpecifiedTradeSettlementPaymentMeansOnceItem = $model->addOnceToSpecifiedTradeSettlementPaymentMeansWithCreate();
+
+        $this->assertInstanceOf(TradeSettlementPaymentMeansType::class, $testValueForSpecifiedTradeSettlementPaymentMeansOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSpecifiedTradeSettlementPaymentMeans();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearSpecifiedTradeSettlementPaymentMeans();
 
         $itemsAfterClear = $model->getSpecifiedTradeSettlementPaymentMeans();
@@ -1701,6 +1757,14 @@ final class ZffxExtendedModelTest extends TestCase
         $itemsAfterOnce = $model->getApplicableTradeTax();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForApplicableTradeTaxOnceItem = $model->addOnceToApplicableTradeTaxWithCreate();
+
+        $this->assertInstanceOf(TradeTaxType::class, $testValueForApplicableTradeTaxOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getApplicableTradeTax();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $model->clearApplicableTradeTax();
 
@@ -1752,6 +1816,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSpecifiedTradeAllowanceChargeOnceItem = $model->addOnceToSpecifiedTradeAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(TradeAllowanceChargeType::class, $testValueForSpecifiedTradeAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSpecifiedTradeAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearSpecifiedTradeAllowanceCharge();
 
         $itemsAfterClear = $model->getSpecifiedTradeAllowanceCharge();
@@ -1786,6 +1858,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSpecifiedLogisticsServiceChargeOnceItem = $model->addOnceToSpecifiedLogisticsServiceChargeWithCreate();
+
+        $this->assertInstanceOf(LogisticsServiceChargeType::class, $testValueForSpecifiedLogisticsServiceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSpecifiedLogisticsServiceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearSpecifiedLogisticsServiceCharge();
 
         $itemsAfterClear = $model->getSpecifiedLogisticsServiceCharge();
@@ -1819,6 +1899,14 @@ final class ZffxExtendedModelTest extends TestCase
         $itemsAfterOnce = $model->getSpecifiedTradePaymentTerms();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSpecifiedTradePaymentTermsOnceItem = $model->addOnceToSpecifiedTradePaymentTermsWithCreate();
+
+        $this->assertInstanceOf(TradePaymentTermsType::class, $testValueForSpecifiedTradePaymentTermsOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSpecifiedTradePaymentTerms();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $model->clearSpecifiedTradePaymentTerms();
 
@@ -1870,6 +1958,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForInvoiceReferencedDocumentOnceItem = $model->addOnceToInvoiceReferencedDocumentWithCreate();
+
+        $this->assertInstanceOf(ReferencedDocumentType::class, $testValueForInvoiceReferencedDocumentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getInvoiceReferencedDocument();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearInvoiceReferencedDocument();
 
         $itemsAfterClear = $model->getInvoiceReferencedDocument();
@@ -1904,6 +2000,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForReceivableSpecifiedTradeAccountingAccountOnceItem = $model->addOnceToReceivableSpecifiedTradeAccountingAccountWithCreate();
+
+        $this->assertInstanceOf(TradeAccountingAccountType::class, $testValueForReceivableSpecifiedTradeAccountingAccountOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getReceivableSpecifiedTradeAccountingAccount();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearReceivableSpecifiedTradeAccountingAccount();
 
         $itemsAfterClear = $model->getReceivableSpecifiedTradeAccountingAccount();
@@ -1937,6 +2041,14 @@ final class ZffxExtendedModelTest extends TestCase
         $itemsAfterOnce = $model->getSpecifiedAdvancePayment();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSpecifiedAdvancePaymentOnceItem = $model->addOnceToSpecifiedAdvancePaymentWithCreate();
+
+        $this->assertInstanceOf(AdvancePaymentType::class, $testValueForSpecifiedAdvancePaymentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSpecifiedAdvancePayment();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $model->clearSpecifiedAdvancePayment();
 
@@ -2104,6 +2216,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAdditionalReferencedDocumentOnceItem = $model->addOnceToAdditionalReferencedDocumentWithCreate();
+
+        $this->assertInstanceOf(ReferencedDocumentType::class, $testValueForAdditionalReferencedDocumentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalReferencedDocument();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearAdditionalReferencedDocument();
 
         $itemsAfterClear = $model->getAdditionalReferencedDocument();
@@ -2169,6 +2289,14 @@ final class ZffxExtendedModelTest extends TestCase
         $itemsAfterOnce = $model->getUltimateCustomerOrderReferencedDocument();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForUltimateCustomerOrderReferencedDocumentOnceItem = $model->addOnceToUltimateCustomerOrderReferencedDocumentWithCreate();
+
+        $this->assertInstanceOf(ReferencedDocumentType::class, $testValueForUltimateCustomerOrderReferencedDocumentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getUltimateCustomerOrderReferencedDocument();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $model->clearUltimateCustomerOrderReferencedDocument();
 
@@ -2368,6 +2496,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForApplicableTradeTaxOnceItem = $model->addOnceToApplicableTradeTaxWithCreate();
+
+        $this->assertInstanceOf(TradeTaxType::class, $testValueForApplicableTradeTaxOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getApplicableTradeTax();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearApplicableTradeTax();
 
         $itemsAfterClear = $model->getApplicableTradeTax();
@@ -2417,6 +2553,14 @@ final class ZffxExtendedModelTest extends TestCase
         $itemsAfterOnce = $model->getSpecifiedTradeAllowanceCharge();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSpecifiedTradeAllowanceChargeOnceItem = $model->addOnceToSpecifiedTradeAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(TradeAllowanceChargeType::class, $testValueForSpecifiedTradeAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSpecifiedTradeAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $model->clearSpecifiedTradeAllowanceCharge();
 
@@ -2483,6 +2627,14 @@ final class ZffxExtendedModelTest extends TestCase
         $itemsAfterOnce = $model->getAdditionalReferencedDocument();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAdditionalReferencedDocumentOnceItem = $model->addOnceToAdditionalReferencedDocumentWithCreate();
+
+        $this->assertInstanceOf(ReferencedDocumentType::class, $testValueForAdditionalReferencedDocumentOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAdditionalReferencedDocument();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $model->clearAdditionalReferencedDocument();
 
@@ -2575,6 +2727,14 @@ final class ZffxExtendedModelTest extends TestCase
         $itemsAfterOnce = $model->getAppliedTradeTax();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForAppliedTradeTaxOnceItem = $model->addOnceToAppliedTradeTaxWithCreate();
+
+        $this->assertInstanceOf(TradeTaxType::class, $testValueForAppliedTradeTaxOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAppliedTradeTax();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $model->clearAppliedTradeTax();
 
@@ -3016,6 +3176,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForGlobalIDOnceItem = $model->addOnceToGlobalIDWithCreate();
+
+        $this->assertInstanceOf(IDType::class, $testValueForGlobalIDOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getGlobalID();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearGlobalID();
 
         $itemsAfterClear = $model->getGlobalID();
@@ -3230,6 +3398,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForSpecifiedLogisticsTransportMovementOnceItem = $model->addOnceToSpecifiedLogisticsTransportMovementWithCreate();
+
+        $this->assertInstanceOf(LogisticsTransportMovementType::class, $testValueForSpecifiedLogisticsTransportMovementOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSpecifiedLogisticsTransportMovement();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearSpecifiedLogisticsTransportMovement();
 
         $itemsAfterClear = $model->getSpecifiedLogisticsTransportMovement();
@@ -3389,6 +3565,14 @@ final class ZffxExtendedModelTest extends TestCase
         $itemsAfterOnce = $model->getIncludedSupplyChainTradeLineItem();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForIncludedSupplyChainTradeLineItemOnceItem = $model->addOnceToIncludedSupplyChainTradeLineItemWithCreate();
+
+        $this->assertInstanceOf(SupplyChainTradeLineItemType::class, $testValueForIncludedSupplyChainTradeLineItemOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getIncludedSupplyChainTradeLineItem();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $latestIncludedSupplyChainTradeLineItem = $model->getLatestIncludedSupplyChainTradeLineItem();
 
@@ -4076,6 +4260,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForIDOnceItem = $model->addOnceToIDWithCreate();
+
+        $this->assertInstanceOf(IDType::class, $testValueForIDOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getID();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearID();
 
         $itemsAfterClear = $model->getID();
@@ -4109,6 +4301,14 @@ final class ZffxExtendedModelTest extends TestCase
         $itemsAfterOnce = $model->getGlobalID();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForGlobalIDOnceItem = $model->addOnceToGlobalIDWithCreate();
+
+        $this->assertInstanceOf(IDType::class, $testValueForGlobalIDOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getGlobalID();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $model->clearGlobalID();
 
@@ -4203,6 +4403,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDefinedTradeContactOnceItem = $model->addOnceToDefinedTradeContactWithCreate();
+
+        $this->assertInstanceOf(TradeContactType::class, $testValueForDefinedTradeContactOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDefinedTradeContact();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearDefinedTradeContact();
 
         $itemsAfterClear = $model->getDefinedTradeContact();
@@ -4268,6 +4476,14 @@ final class ZffxExtendedModelTest extends TestCase
         $itemsAfterOnce = $model->getSpecifiedTaxRegistration();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForSpecifiedTaxRegistrationOnceItem = $model->addOnceToSpecifiedTaxRegistrationWithCreate();
+
+        $this->assertInstanceOf(TaxRegistrationType::class, $testValueForSpecifiedTaxRegistrationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getSpecifiedTaxRegistration();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $model->clearSpecifiedTaxRegistration();
 
@@ -4647,6 +4863,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForAppliedTradeAllowanceChargeOnceItem = $model->addOnceToAppliedTradeAllowanceChargeWithCreate();
+
+        $this->assertInstanceOf(TradeAllowanceChargeType::class, $testValueForAppliedTradeAllowanceChargeOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getAppliedTradeAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearAppliedTradeAllowanceCharge();
 
         $itemsAfterClear = $model->getAppliedTradeAllowanceCharge();
@@ -4877,6 +5101,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForBatchIDOnceItem = $model->addOnceToBatchIDWithCreate();
+
+        $this->assertInstanceOf(IDType::class, $testValueForBatchIDOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getBatchID();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearBatchID();
 
         $itemsAfterClear = $model->getBatchID();
@@ -4943,6 +5175,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForApplicableProductCharacteristicOnceItem = $model->addOnceToApplicableProductCharacteristicWithCreate();
+
+        $this->assertInstanceOf(ProductCharacteristicType::class, $testValueForApplicableProductCharacteristicOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getApplicableProductCharacteristic();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearApplicableProductCharacteristic();
 
         $itemsAfterClear = $model->getApplicableProductCharacteristic();
@@ -4977,6 +5217,14 @@ final class ZffxExtendedModelTest extends TestCase
 
         $this->assertIsArray($itemsAfterOnce);
 
+        $testValueForDesignatedProductClassificationOnceItem = $model->addOnceToDesignatedProductClassificationWithCreate();
+
+        $this->assertInstanceOf(ProductClassificationType::class, $testValueForDesignatedProductClassificationOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getDesignatedProductClassification();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
+
         $model->clearDesignatedProductClassification();
 
         $itemsAfterClear = $model->getDesignatedProductClassification();
@@ -5010,6 +5258,14 @@ final class ZffxExtendedModelTest extends TestCase
         $itemsAfterOnce = $model->getIndividualTradeProductInstance();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForIndividualTradeProductInstanceOnceItem = $model->addOnceToIndividualTradeProductInstanceWithCreate();
+
+        $this->assertInstanceOf(TradeProductInstanceType::class, $testValueForIndividualTradeProductInstanceOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getIndividualTradeProductInstance();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $model->clearIndividualTradeProductInstance();
 
@@ -5060,6 +5316,14 @@ final class ZffxExtendedModelTest extends TestCase
         $itemsAfterOnce = $model->getIncludedReferencedProduct();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForIncludedReferencedProductOnceItem = $model->addOnceToIncludedReferencedProductWithCreate();
+
+        $this->assertInstanceOf(ReferencedProductType::class, $testValueForIncludedReferencedProductOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getIncludedReferencedProduct();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $model->clearIncludedReferencedProduct();
 
@@ -5210,6 +5474,14 @@ final class ZffxExtendedModelTest extends TestCase
         $itemsAfterOnce = $model->getTaxTotalAmount();
 
         $this->assertIsArray($itemsAfterOnce);
+
+        $testValueForTaxTotalAmountOnceItem = $model->addOnceToTaxTotalAmountWithCreate();
+
+        $this->assertInstanceOf(AmountType::class, $testValueForTaxTotalAmountOnceItem);
+
+        $itemsAfterOnceWithCreate = $model->getTaxTotalAmount();
+
+        $this->assertIsArray($itemsAfterOnceWithCreate);
 
         $model->clearTaxTotalAmount();
 
