@@ -508,6 +508,11 @@ final class ZffxComfortModelTest extends TestCase
 
         // Property BusinessProcessSpecifiedDocumentContextParameter
 
+        $testValue = new DocumentContextParameterType();
+        $model->setBusinessProcessSpecifiedDocumentContextParameter($testValue);
+
+        $this->assertEquals($testValue, $model->getBusinessProcessSpecifiedDocumentContextParameter());
+
         $model->unsetBusinessProcessSpecifiedDocumentContextParameter();
 
         $this->assertNull($model->getBusinessProcessSpecifiedDocumentContextParameter());
@@ -518,6 +523,11 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertSame($createdBusinessProcessSpecifiedDocumentContextParameter, $model->getBusinessProcessSpecifiedDocumentContextParameter());
 
         // Property GuidelineSpecifiedDocumentContextParameter
+
+        $testValue = new DocumentContextParameterType();
+        $model->setGuidelineSpecifiedDocumentContextParameter($testValue);
+
+        $this->assertEquals($testValue, $model->getGuidelineSpecifiedDocumentContextParameter());
 
         $model->unsetGuidelineSpecifiedDocumentContextParameter();
 
@@ -680,6 +690,11 @@ final class ZffxComfortModelTest extends TestCase
 
         // Property SellerTaxRepresentativeTradeParty
 
+        $testValue = new TradePartyType();
+        $model->setSellerTaxRepresentativeTradeParty($testValue);
+
+        $this->assertEquals($testValue, $model->getSellerTaxRepresentativeTradeParty());
+
         $model->unsetSellerTaxRepresentativeTradeParty();
 
         $this->assertNull($model->getSellerTaxRepresentativeTradeParty());
@@ -691,6 +706,11 @@ final class ZffxComfortModelTest extends TestCase
 
         // Property SellerOrderReferencedDocument
 
+        $testValue = new ReferencedDocumentType();
+        $model->setSellerOrderReferencedDocument($testValue);
+
+        $this->assertEquals($testValue, $model->getSellerOrderReferencedDocument());
+
         $model->unsetSellerOrderReferencedDocument();
 
         $this->assertNull($model->getSellerOrderReferencedDocument());
@@ -701,6 +721,11 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertSame($createdSellerOrderReferencedDocument, $model->getSellerOrderReferencedDocument());
 
         // Property BuyerOrderReferencedDocument
+
+        $testValue = new ReferencedDocumentType();
+        $model->setBuyerOrderReferencedDocument($testValue);
+
+        $this->assertEquals($testValue, $model->getBuyerOrderReferencedDocument());
 
         $model->unsetBuyerOrderReferencedDocument();
 
@@ -805,6 +830,11 @@ final class ZffxComfortModelTest extends TestCase
 
         // Property ActualDeliverySupplyChainEvent
 
+        $testValue = new SupplyChainEventType();
+        $model->setActualDeliverySupplyChainEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getActualDeliverySupplyChainEvent());
+
         $model->unsetActualDeliverySupplyChainEvent();
 
         $this->assertNull($model->getActualDeliverySupplyChainEvent());
@@ -816,6 +846,11 @@ final class ZffxComfortModelTest extends TestCase
 
         // Property DespatchAdviceReferencedDocument
 
+        $testValue = new ReferencedDocumentType();
+        $model->setDespatchAdviceReferencedDocument($testValue);
+
+        $this->assertEquals($testValue, $model->getDespatchAdviceReferencedDocument());
+
         $model->unsetDespatchAdviceReferencedDocument();
 
         $this->assertNull($model->getDespatchAdviceReferencedDocument());
@@ -826,6 +861,11 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertSame($createdDespatchAdviceReferencedDocument, $model->getDespatchAdviceReferencedDocument());
 
         // Property ReceivingAdviceReferencedDocument
+
+        $testValue = new ReferencedDocumentType();
+        $model->setReceivingAdviceReferencedDocument($testValue);
+
+        $this->assertEquals($testValue, $model->getReceivingAdviceReferencedDocument());
 
         $model->unsetReceivingAdviceReferencedDocument();
 
@@ -934,9 +974,24 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertIsArray($model->getSpecifiedTradeSettlementPaymentMeans());
         $this->assertCount(0, $model->getSpecifiedTradeSettlementPaymentMeans());
 
+        $specifiedTradeSettlementPaymentMeansItem = new TradeSettlementPaymentMeansType();
+        $model->addToSpecifiedTradeSettlementPaymentMeans($specifiedTradeSettlementPaymentMeansItem);
+
+        $this->assertIsArray($model->getSpecifiedTradeSettlementPaymentMeans());
+        $this->assertGreaterThanOrEqual(1, count($model->getSpecifiedTradeSettlementPaymentMeans()));
+
         $createdSpecifiedTradeSettlementPaymentMeansItem = $model->addToSpecifiedTradeSettlementPaymentMeansWithCreate();
 
         $this->assertInstanceOf(TradeSettlementPaymentMeansType::class, $createdSpecifiedTradeSettlementPaymentMeansItem);
+
+        $specifiedTradeSettlementPaymentMeansOnceItem = new TradeSettlementPaymentMeansType();
+
+        $model->addOnceToSpecifiedTradeSettlementPaymentMeans($specifiedTradeSettlementPaymentMeansOnceItem);
+        $model->addOnceToSpecifiedTradeSettlementPaymentMeans($specifiedTradeSettlementPaymentMeansOnceItem);
+
+        $itemsAfterOnce = $model->getSpecifiedTradeSettlementPaymentMeans();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $model->clearSpecifiedTradeSettlementPaymentMeans();
 
@@ -1013,6 +1068,15 @@ final class ZffxComfortModelTest extends TestCase
 
         $this->assertInstanceOf(TradeAllowanceChargeType::class, $createdSpecifiedTradeAllowanceChargeItem);
 
+        $specifiedTradeAllowanceChargeOnceItem = new TradeAllowanceChargeType();
+
+        $model->addOnceToSpecifiedTradeAllowanceCharge($specifiedTradeAllowanceChargeOnceItem);
+        $model->addOnceToSpecifiedTradeAllowanceCharge($specifiedTradeAllowanceChargeOnceItem);
+
+        $itemsAfterOnce = $model->getSpecifiedTradeAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnce);
+
         $model->clearSpecifiedTradeAllowanceCharge();
 
         $itemsAfterClear = $model->getSpecifiedTradeAllowanceCharge();
@@ -1037,6 +1101,11 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertSame($createdSpecifiedTradePaymentTerms, $model->getSpecifiedTradePaymentTerms());
 
         // Property SpecifiedTradeSettlementHeaderMonetarySummation
+
+        $testValue = new TradeSettlementHeaderMonetarySummationType();
+        $model->setSpecifiedTradeSettlementHeaderMonetarySummation($testValue);
+
+        $this->assertEquals($testValue, $model->getSpecifiedTradeSettlementHeaderMonetarySummation());
 
         $model->unsetSpecifiedTradeSettlementHeaderMonetarySummation();
 
@@ -1082,6 +1151,11 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertCount(0, $itemsAfterClear);
 
         // Property ReceivableSpecifiedTradeAccountingAccount
+
+        $testValue = new TradeAccountingAccountType();
+        $model->setReceivableSpecifiedTradeAccountingAccount($testValue);
+
+        $this->assertEquals($testValue, $model->getReceivableSpecifiedTradeAccountingAccount());
 
         $model->unsetReceivableSpecifiedTradeAccountingAccount();
 
@@ -1145,6 +1219,11 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertInstanceOf(LineTradeAgreementType::class, $model);
 
         // Property BuyerOrderReferencedDocument
+
+        $testValue = new ReferencedDocumentType();
+        $model->setBuyerOrderReferencedDocument($testValue);
+
+        $this->assertEquals($testValue, $model->getBuyerOrderReferencedDocument());
 
         $model->unsetBuyerOrderReferencedDocument();
 
@@ -1273,6 +1352,15 @@ final class ZffxComfortModelTest extends TestCase
 
         $this->assertInstanceOf(TradeAllowanceChargeType::class, $createdSpecifiedTradeAllowanceChargeItem);
 
+        $specifiedTradeAllowanceChargeOnceItem = new TradeAllowanceChargeType();
+
+        $model->addOnceToSpecifiedTradeAllowanceCharge($specifiedTradeAllowanceChargeOnceItem);
+        $model->addOnceToSpecifiedTradeAllowanceCharge($specifiedTradeAllowanceChargeOnceItem);
+
+        $itemsAfterOnce = $model->getSpecifiedTradeAllowanceCharge();
+
+        $this->assertIsArray($itemsAfterOnce);
+
         $model->clearSpecifiedTradeAllowanceCharge();
 
         $itemsAfterClear = $model->getSpecifiedTradeAllowanceCharge();
@@ -1281,6 +1369,11 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertCount(0, $itemsAfterClear);
 
         // Property SpecifiedTradeSettlementLineMonetarySummation
+
+        $testValue = new TradeSettlementLineMonetarySummationType();
+        $model->setSpecifiedTradeSettlementLineMonetarySummation($testValue);
+
+        $this->assertEquals($testValue, $model->getSpecifiedTradeSettlementLineMonetarySummation());
 
         $model->unsetSpecifiedTradeSettlementLineMonetarySummation();
 
@@ -1293,6 +1386,11 @@ final class ZffxComfortModelTest extends TestCase
 
         // Property AdditionalReferencedDocument
 
+        $testValue = new ReferencedDocumentType();
+        $model->setAdditionalReferencedDocument($testValue);
+
+        $this->assertEquals($testValue, $model->getAdditionalReferencedDocument());
+
         $model->unsetAdditionalReferencedDocument();
 
         $this->assertNull($model->getAdditionalReferencedDocument());
@@ -1303,6 +1401,11 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertSame($createdAdditionalReferencedDocument, $model->getAdditionalReferencedDocument());
 
         // Property ReceivableSpecifiedTradeAccountingAccount
+
+        $testValue = new TradeAccountingAccountType();
+        $model->setReceivableSpecifiedTradeAccountingAccount($testValue);
+
+        $this->assertEquals($testValue, $model->getReceivableSpecifiedTradeAccountingAccount());
 
         $model->unsetReceivableSpecifiedTradeAccountingAccount();
 
@@ -1683,6 +1786,11 @@ final class ZffxComfortModelTest extends TestCase
 
         // Property AssociatedDocumentLineDocument
 
+        $testValue = new DocumentLineDocumentType();
+        $model->setAssociatedDocumentLineDocument($testValue);
+
+        $this->assertEquals($testValue, $model->getAssociatedDocumentLineDocument());
+
         $model->unsetAssociatedDocumentLineDocument();
 
         $this->assertNull($model->getAssociatedDocumentLineDocument());
@@ -1742,6 +1850,11 @@ final class ZffxComfortModelTest extends TestCase
 
         // Property SpecifiedLineTradeSettlement
 
+        $testValue = new LineTradeSettlementType();
+        $model->setSpecifiedLineTradeSettlement($testValue);
+
+        $this->assertEquals($testValue, $model->getSpecifiedLineTradeSettlement());
+
         $model->unsetSpecifiedLineTradeSettlement();
 
         $this->assertNull($model->getSpecifiedLineTradeSettlement());
@@ -1769,9 +1882,24 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertIsArray($model->getIncludedSupplyChainTradeLineItem());
         $this->assertCount(0, $model->getIncludedSupplyChainTradeLineItem());
 
+        $includedSupplyChainTradeLineItemItem = new SupplyChainTradeLineItemType();
+        $model->addToIncludedSupplyChainTradeLineItem($includedSupplyChainTradeLineItemItem);
+
+        $this->assertIsArray($model->getIncludedSupplyChainTradeLineItem());
+        $this->assertGreaterThanOrEqual(1, count($model->getIncludedSupplyChainTradeLineItem()));
+
         $createdIncludedSupplyChainTradeLineItemItem = $model->addToIncludedSupplyChainTradeLineItemWithCreate();
 
         $this->assertInstanceOf(SupplyChainTradeLineItemType::class, $createdIncludedSupplyChainTradeLineItemItem);
+
+        $includedSupplyChainTradeLineItemOnceItem = new SupplyChainTradeLineItemType();
+
+        $model->addOnceToIncludedSupplyChainTradeLineItem($includedSupplyChainTradeLineItemOnceItem);
+        $model->addOnceToIncludedSupplyChainTradeLineItem($includedSupplyChainTradeLineItemOnceItem);
+
+        $itemsAfterOnce = $model->getIncludedSupplyChainTradeLineItem();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $latestIncludedSupplyChainTradeLineItem = $model->getLatestIncludedSupplyChainTradeLineItem();
 
@@ -1789,6 +1917,11 @@ final class ZffxComfortModelTest extends TestCase
 
         // Property ApplicableHeaderTradeAgreement
 
+        $testValue = new HeaderTradeAgreementType();
+        $model->setApplicableHeaderTradeAgreement($testValue);
+
+        $this->assertEquals($testValue, $model->getApplicableHeaderTradeAgreement());
+
         $model->unsetApplicableHeaderTradeAgreement();
 
         $this->assertNull($model->getApplicableHeaderTradeAgreement());
@@ -1800,6 +1933,11 @@ final class ZffxComfortModelTest extends TestCase
 
         // Property ApplicableHeaderTradeDelivery
 
+        $testValue = new HeaderTradeDeliveryType();
+        $model->setApplicableHeaderTradeDelivery($testValue);
+
+        $this->assertEquals($testValue, $model->getApplicableHeaderTradeDelivery());
+
         $model->unsetApplicableHeaderTradeDelivery();
 
         $this->assertNull($model->getApplicableHeaderTradeDelivery());
@@ -1810,6 +1948,11 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertSame($createdApplicableHeaderTradeDelivery, $model->getApplicableHeaderTradeDelivery());
 
         // Property ApplicableHeaderTradeSettlement
+
+        $testValue = new HeaderTradeSettlementType();
+        $model->setApplicableHeaderTradeSettlement($testValue);
+
+        $this->assertEquals($testValue, $model->getApplicableHeaderTradeSettlement());
 
         $model->unsetApplicableHeaderTradeSettlement();
 
@@ -2171,6 +2314,11 @@ final class ZffxComfortModelTest extends TestCase
 
         // Property TelephoneUniversalCommunication
 
+        $testValue = new UniversalCommunicationType();
+        $model->setTelephoneUniversalCommunication($testValue);
+
+        $this->assertEquals($testValue, $model->getTelephoneUniversalCommunication());
+
         $model->unsetTelephoneUniversalCommunication();
 
         $this->assertNull($model->getTelephoneUniversalCommunication());
@@ -2181,6 +2329,11 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertSame($createdTelephoneUniversalCommunication, $model->getTelephoneUniversalCommunication());
 
         // Property EmailURIUniversalCommunication
+
+        $testValue = new UniversalCommunicationType();
+        $model->setEmailURIUniversalCommunication($testValue);
+
+        $this->assertEquals($testValue, $model->getEmailURIUniversalCommunication());
 
         $model->unsetEmailURIUniversalCommunication();
 
@@ -2527,6 +2680,11 @@ final class ZffxComfortModelTest extends TestCase
 
         // Property AppliedTradeAllowanceCharge
 
+        $testValue = new TradeAllowanceChargeType();
+        $model->setAppliedTradeAllowanceCharge($testValue);
+
+        $this->assertEquals($testValue, $model->getAppliedTradeAllowanceCharge());
+
         $model->unsetAppliedTradeAllowanceCharge();
 
         $this->assertNull($model->getAppliedTradeAllowanceCharge());
@@ -2634,9 +2792,24 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertIsArray($model->getApplicableProductCharacteristic());
         $this->assertCount(0, $model->getApplicableProductCharacteristic());
 
+        $applicableProductCharacteristicItem = new ProductCharacteristicType();
+        $model->addToApplicableProductCharacteristic($applicableProductCharacteristicItem);
+
+        $this->assertIsArray($model->getApplicableProductCharacteristic());
+        $this->assertGreaterThanOrEqual(1, count($model->getApplicableProductCharacteristic()));
+
         $createdApplicableProductCharacteristicItem = $model->addToApplicableProductCharacteristicWithCreate();
 
         $this->assertInstanceOf(ProductCharacteristicType::class, $createdApplicableProductCharacteristicItem);
+
+        $applicableProductCharacteristicOnceItem = new ProductCharacteristicType();
+
+        $model->addOnceToApplicableProductCharacteristic($applicableProductCharacteristicOnceItem);
+        $model->addOnceToApplicableProductCharacteristic($applicableProductCharacteristicOnceItem);
+
+        $itemsAfterOnce = $model->getApplicableProductCharacteristic();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $model->clearApplicableProductCharacteristic();
 
@@ -2653,9 +2826,24 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertIsArray($model->getDesignatedProductClassification());
         $this->assertCount(0, $model->getDesignatedProductClassification());
 
+        $designatedProductClassificationItem = new ProductClassificationType();
+        $model->addToDesignatedProductClassification($designatedProductClassificationItem);
+
+        $this->assertIsArray($model->getDesignatedProductClassification());
+        $this->assertGreaterThanOrEqual(1, count($model->getDesignatedProductClassification()));
+
         $createdDesignatedProductClassificationItem = $model->addToDesignatedProductClassificationWithCreate();
 
         $this->assertInstanceOf(ProductClassificationType::class, $createdDesignatedProductClassificationItem);
+
+        $designatedProductClassificationOnceItem = new ProductClassificationType();
+
+        $model->addOnceToDesignatedProductClassification($designatedProductClassificationOnceItem);
+        $model->addOnceToDesignatedProductClassification($designatedProductClassificationOnceItem);
+
+        $itemsAfterOnce = $model->getDesignatedProductClassification();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $model->clearDesignatedProductClassification();
 
@@ -2964,6 +3152,11 @@ final class ZffxComfortModelTest extends TestCase
 
         // Property ApplicableTradeSettlementFinancialCard
 
+        $testValue = new TradeSettlementFinancialCardType();
+        $model->setApplicableTradeSettlementFinancialCard($testValue);
+
+        $this->assertEquals($testValue, $model->getApplicableTradeSettlementFinancialCard());
+
         $model->unsetApplicableTradeSettlementFinancialCard();
 
         $this->assertNull($model->getApplicableTradeSettlementFinancialCard());
@@ -2974,6 +3167,11 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertSame($createdApplicableTradeSettlementFinancialCard, $model->getApplicableTradeSettlementFinancialCard());
 
         // Property PayerPartyDebtorFinancialAccount
+
+        $testValue = new DebtorFinancialAccountType();
+        $model->setPayerPartyDebtorFinancialAccount($testValue);
+
+        $this->assertEquals($testValue, $model->getPayerPartyDebtorFinancialAccount());
 
         $model->unsetPayerPartyDebtorFinancialAccount();
 
@@ -2986,6 +3184,11 @@ final class ZffxComfortModelTest extends TestCase
 
         // Property PayeePartyCreditorFinancialAccount
 
+        $testValue = new CreditorFinancialAccountType();
+        $model->setPayeePartyCreditorFinancialAccount($testValue);
+
+        $this->assertEquals($testValue, $model->getPayeePartyCreditorFinancialAccount());
+
         $model->unsetPayeePartyCreditorFinancialAccount();
 
         $this->assertNull($model->getPayeePartyCreditorFinancialAccount());
@@ -2996,6 +3199,11 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertSame($createdPayeePartyCreditorFinancialAccount, $model->getPayeePartyCreditorFinancialAccount());
 
         // Property PayeeSpecifiedCreditorFinancialInstitution
+
+        $testValue = new CreditorFinancialInstitutionType();
+        $model->setPayeeSpecifiedCreditorFinancialInstitution($testValue);
+
+        $this->assertEquals($testValue, $model->getPayeeSpecifiedCreditorFinancialInstitution());
 
         $model->unsetPayeeSpecifiedCreditorFinancialInstitution();
 
@@ -3256,6 +3464,11 @@ final class ZffxComfortModelTest extends TestCase
         $this->assertSame($createdExchangedDocument, $model->getExchangedDocument());
 
         // Property SupplyChainTradeTransaction
+
+        $testValue = new SupplyChainTradeTransactionType();
+        $model->setSupplyChainTradeTransaction($testValue);
+
+        $this->assertEquals($testValue, $model->getSupplyChainTradeTransaction());
 
         $model->unsetSupplyChainTradeTransaction();
 

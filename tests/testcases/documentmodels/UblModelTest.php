@@ -2799,6 +2799,11 @@ final class UblModelTest extends TestCase
 
         // Property SupplyChainActivityTypeCode
 
+        $testValue = new SupplyChainActivityTypeCode();
+        $model->setSupplyChainActivityTypeCode($testValue);
+
+        $this->assertEquals($testValue, $model->getSupplyChainActivityTypeCode());
+
         $model->unsetSupplyChainActivityTypeCode();
 
         $this->assertNull($model->getSupplyChainActivityTypeCode());
@@ -4404,6 +4409,11 @@ final class UblModelTest extends TestCase
 
         // Property EmbeddedDocumentBinaryObject
 
+        $testValue = new EmbeddedDocumentBinaryObject();
+        $model->setEmbeddedDocumentBinaryObject($testValue);
+
+        $this->assertEquals($testValue, $model->getEmbeddedDocumentBinaryObject());
+
         $model->unsetEmbeddedDocumentBinaryObject();
 
         $this->assertNull($model->getEmbeddedDocumentBinaryObject());
@@ -4647,6 +4657,15 @@ final class UblModelTest extends TestCase
 
         $this->assertInstanceOf(ElectronicDeviceDescription::class, $createdElectronicDeviceDescriptionItem);
 
+        $electronicDeviceDescriptionOnceItem = new ElectronicDeviceDescription();
+
+        $model->addOnceToElectronicDeviceDescription($electronicDeviceDescriptionOnceItem);
+        $model->addOnceToElectronicDeviceDescription($electronicDeviceDescriptionOnceItem);
+
+        $itemsAfterOnce = $model->getElectronicDeviceDescription();
+
+        $this->assertIsArray($itemsAfterOnce);
+
         $firstElectronicDeviceDescription = $model->firstElectronicDeviceDescription();
 
         $this->assertInstanceOf(ElectronicDeviceDescription::class, $firstElectronicDeviceDescription);
@@ -4772,9 +4791,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getAwardingCriterionDescription());
         $this->assertCount(0, $model->getAwardingCriterionDescription());
 
+        $awardingCriterionDescriptionItem = new AwardingCriterionDescription();
+        $model->addToAwardingCriterionDescription($awardingCriterionDescriptionItem);
+
+        $this->assertIsArray($model->getAwardingCriterionDescription());
+        $this->assertGreaterThanOrEqual(1, count($model->getAwardingCriterionDescription()));
+
         $createdAwardingCriterionDescriptionItem = $model->addToAwardingCriterionDescriptionWithCreate();
 
         $this->assertInstanceOf(AwardingCriterionDescription::class, $createdAwardingCriterionDescriptionItem);
+
+        $awardingCriterionDescriptionOnceItem = new AwardingCriterionDescription();
+
+        $model->addOnceToAwardingCriterionDescription($awardingCriterionDescriptionOnceItem);
+        $model->addOnceToAwardingCriterionDescription($awardingCriterionDescriptionOnceItem);
+
+        $itemsAfterOnce = $model->getAwardingCriterionDescription();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstAwardingCriterionDescription = $model->firstAwardingCriterionDescription();
 
@@ -4873,9 +4907,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getSubordinateAwardingCriterionResponse());
         $this->assertCount(0, $model->getSubordinateAwardingCriterionResponse());
 
+        $subordinateAwardingCriterionResponseItem = new SubordinateAwardingCriterionResponse();
+        $model->addToSubordinateAwardingCriterionResponse($subordinateAwardingCriterionResponseItem);
+
+        $this->assertIsArray($model->getSubordinateAwardingCriterionResponse());
+        $this->assertGreaterThanOrEqual(1, count($model->getSubordinateAwardingCriterionResponse()));
+
         $createdSubordinateAwardingCriterionResponseItem = $model->addToSubordinateAwardingCriterionResponseWithCreate();
 
         $this->assertInstanceOf(SubordinateAwardingCriterionResponse::class, $createdSubordinateAwardingCriterionResponseItem);
+
+        $subordinateAwardingCriterionResponseOnceItem = new SubordinateAwardingCriterionResponse();
+
+        $model->addOnceToSubordinateAwardingCriterionResponse($subordinateAwardingCriterionResponseOnceItem);
+        $model->addOnceToSubordinateAwardingCriterionResponse($subordinateAwardingCriterionResponseOnceItem);
+
+        $itemsAfterOnce = $model->getSubordinateAwardingCriterionResponse();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstSubordinateAwardingCriterionResponse = $model->firstSubordinateAwardingCriterionResponse();
 
@@ -5206,9 +5255,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getSubordinateAwardingCriterion());
         $this->assertCount(0, $model->getSubordinateAwardingCriterion());
 
+        $subordinateAwardingCriterionItem = new SubordinateAwardingCriterion();
+        $model->addToSubordinateAwardingCriterion($subordinateAwardingCriterionItem);
+
+        $this->assertIsArray($model->getSubordinateAwardingCriterion());
+        $this->assertGreaterThanOrEqual(1, count($model->getSubordinateAwardingCriterion()));
+
         $createdSubordinateAwardingCriterionItem = $model->addToSubordinateAwardingCriterionWithCreate();
 
         $this->assertInstanceOf(SubordinateAwardingCriterion::class, $createdSubordinateAwardingCriterionItem);
+
+        $subordinateAwardingCriterionOnceItem = new SubordinateAwardingCriterion();
+
+        $model->addOnceToSubordinateAwardingCriterion($subordinateAwardingCriterionOnceItem);
+        $model->addOnceToSubordinateAwardingCriterion($subordinateAwardingCriterionOnceItem);
+
+        $itemsAfterOnce = $model->getSubordinateAwardingCriterion();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstSubordinateAwardingCriterion = $model->firstSubordinateAwardingCriterion();
 
@@ -5312,9 +5376,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getTechnicalCommitteeDescription());
         $this->assertCount(0, $model->getTechnicalCommitteeDescription());
 
+        $technicalCommitteeDescriptionItem = new TechnicalCommitteeDescription();
+        $model->addToTechnicalCommitteeDescription($technicalCommitteeDescriptionItem);
+
+        $this->assertIsArray($model->getTechnicalCommitteeDescription());
+        $this->assertGreaterThanOrEqual(1, count($model->getTechnicalCommitteeDescription()));
+
         $createdTechnicalCommitteeDescriptionItem = $model->addToTechnicalCommitteeDescriptionWithCreate();
 
         $this->assertInstanceOf(TechnicalCommitteeDescription::class, $createdTechnicalCommitteeDescriptionItem);
+
+        $technicalCommitteeDescriptionOnceItem = new TechnicalCommitteeDescription();
+
+        $model->addOnceToTechnicalCommitteeDescription($technicalCommitteeDescriptionOnceItem);
+        $model->addOnceToTechnicalCommitteeDescription($technicalCommitteeDescriptionOnceItem);
+
+        $itemsAfterOnce = $model->getTechnicalCommitteeDescription();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstTechnicalCommitteeDescription = $model->firstTechnicalCommitteeDescription();
 
@@ -5719,6 +5798,11 @@ final class UblModelTest extends TestCase
 
         // Property SelfBilledInvoiceDocumentReference
 
+        $testValue = new SelfBilledInvoiceDocumentReference();
+        $model->setSelfBilledInvoiceDocumentReference($testValue);
+
+        $this->assertEquals($testValue, $model->getSelfBilledInvoiceDocumentReference());
+
         $model->unsetSelfBilledInvoiceDocumentReference();
 
         $this->assertNull($model->getSelfBilledInvoiceDocumentReference());
@@ -5729,6 +5813,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdSelfBilledInvoiceDocumentReference, $model->getSelfBilledInvoiceDocumentReference());
 
         // Property CreditNoteDocumentReference
+
+        $testValue = new CreditNoteDocumentReference();
+        $model->setCreditNoteDocumentReference($testValue);
+
+        $this->assertEquals($testValue, $model->getCreditNoteDocumentReference());
 
         $model->unsetCreditNoteDocumentReference();
 
@@ -5741,6 +5830,11 @@ final class UblModelTest extends TestCase
 
         // Property SelfBilledCreditNoteDocumentReference
 
+        $testValue = new SelfBilledCreditNoteDocumentReference();
+        $model->setSelfBilledCreditNoteDocumentReference($testValue);
+
+        $this->assertEquals($testValue, $model->getSelfBilledCreditNoteDocumentReference());
+
         $model->unsetSelfBilledCreditNoteDocumentReference();
 
         $this->assertNull($model->getSelfBilledCreditNoteDocumentReference());
@@ -5751,6 +5845,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdSelfBilledCreditNoteDocumentReference, $model->getSelfBilledCreditNoteDocumentReference());
 
         // Property DebitNoteDocumentReference
+
+        $testValue = new DebitNoteDocumentReference();
+        $model->setDebitNoteDocumentReference($testValue);
+
+        $this->assertEquals($testValue, $model->getDebitNoteDocumentReference());
 
         $model->unsetDebitNoteDocumentReference();
 
@@ -5778,6 +5877,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdReminderDocumentReference, $model->getReminderDocumentReference());
 
         // Property AdditionalDocumentReference
+
+        $testValue = new AdditionalDocumentReference();
+        $model->setAdditionalDocumentReference($testValue);
+
+        $this->assertEquals($testValue, $model->getAdditionalDocumentReference());
 
         $model->unsetAdditionalDocumentReference();
 
@@ -6097,6 +6201,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdBudgetYearNumeric, $model->getBudgetYearNumeric());
 
         // Property RequiredClassificationScheme
+
+        $testValue = new RequiredClassificationScheme();
+        $model->setRequiredClassificationScheme($testValue);
+
+        $this->assertEquals($testValue, $model->getRequiredClassificationScheme());
 
         $model->unsetRequiredClassificationScheme();
 
@@ -6852,6 +6961,11 @@ final class UblModelTest extends TestCase
 
         // Property OrderQuantityIncrementNumeric
 
+        $testValue = new OrderQuantityIncrementNumeric();
+        $model->setOrderQuantityIncrementNumeric($testValue);
+
+        $this->assertEquals($testValue, $model->getOrderQuantityIncrementNumeric());
+
         $model->unsetOrderQuantityIncrementNumeric();
 
         $this->assertNull($model->getOrderQuantityIncrementNumeric());
@@ -7333,9 +7447,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getRequiredItemLocationQuantity());
         $this->assertCount(0, $model->getRequiredItemLocationQuantity());
 
+        $requiredItemLocationQuantityItem = new RequiredItemLocationQuantity();
+        $model->addToRequiredItemLocationQuantity($requiredItemLocationQuantityItem);
+
+        $this->assertIsArray($model->getRequiredItemLocationQuantity());
+        $this->assertGreaterThanOrEqual(1, count($model->getRequiredItemLocationQuantity()));
+
         $createdRequiredItemLocationQuantityItem = $model->addToRequiredItemLocationQuantityWithCreate();
 
         $this->assertInstanceOf(RequiredItemLocationQuantity::class, $createdRequiredItemLocationQuantityItem);
+
+        $requiredItemLocationQuantityOnceItem = new RequiredItemLocationQuantity();
+
+        $model->addOnceToRequiredItemLocationQuantity($requiredItemLocationQuantityOnceItem);
+        $model->addOnceToRequiredItemLocationQuantity($requiredItemLocationQuantityOnceItem);
+
+        $itemsAfterOnce = $model->getRequiredItemLocationQuantity();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstRequiredItemLocationQuantity = $model->firstRequiredItemLocationQuantity();
 
@@ -7454,6 +7583,11 @@ final class UblModelTest extends TestCase
 
         // Property CallForTendersLineReference
 
+        $testValue = new CallForTendersLineReference();
+        $model->setCallForTendersLineReference($testValue);
+
+        $this->assertEquals($testValue, $model->getCallForTendersLineReference());
+
         $model->unsetCallForTendersLineReference();
 
         $this->assertNull($model->getCallForTendersLineReference());
@@ -7464,6 +7598,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdCallForTendersLineReference, $model->getCallForTendersLineReference());
 
         // Property CallForTendersDocumentReference
+
+        $testValue = new CallForTendersDocumentReference();
+        $model->setCallForTendersDocumentReference($testValue);
+
+        $this->assertEquals($testValue, $model->getCallForTendersDocumentReference());
 
         $model->unsetCallForTendersDocumentReference();
 
@@ -7551,9 +7690,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getRequiredItemLocationQuantity());
         $this->assertCount(0, $model->getRequiredItemLocationQuantity());
 
+        $requiredItemLocationQuantityItem = new RequiredItemLocationQuantity();
+        $model->addToRequiredItemLocationQuantity($requiredItemLocationQuantityItem);
+
+        $this->assertIsArray($model->getRequiredItemLocationQuantity());
+        $this->assertGreaterThanOrEqual(1, count($model->getRequiredItemLocationQuantity()));
+
         $createdRequiredItemLocationQuantityItem = $model->addToRequiredItemLocationQuantityWithCreate();
 
         $this->assertInstanceOf(RequiredItemLocationQuantity::class, $createdRequiredItemLocationQuantityItem);
+
+        $requiredItemLocationQuantityOnceItem = new RequiredItemLocationQuantity();
+
+        $model->addOnceToRequiredItemLocationQuantity($requiredItemLocationQuantityOnceItem);
+        $model->addOnceToRequiredItemLocationQuantity($requiredItemLocationQuantityOnceItem);
+
+        $itemsAfterOnce = $model->getRequiredItemLocationQuantity();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstRequiredItemLocationQuantity = $model->firstRequiredItemLocationQuantity();
 
@@ -7902,9 +8056,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getRequiredItemLocationQuantity());
         $this->assertCount(0, $model->getRequiredItemLocationQuantity());
 
+        $requiredItemLocationQuantityItem = new RequiredItemLocationQuantity();
+        $model->addToRequiredItemLocationQuantity($requiredItemLocationQuantityItem);
+
+        $this->assertIsArray($model->getRequiredItemLocationQuantity());
+        $this->assertGreaterThanOrEqual(1, count($model->getRequiredItemLocationQuantity()));
+
         $createdRequiredItemLocationQuantityItem = $model->addToRequiredItemLocationQuantityWithCreate();
 
         $this->assertInstanceOf(RequiredItemLocationQuantity::class, $createdRequiredItemLocationQuantityItem);
+
+        $requiredItemLocationQuantityOnceItem = new RequiredItemLocationQuantity();
+
+        $model->addOnceToRequiredItemLocationQuantity($requiredItemLocationQuantityOnceItem);
+        $model->addOnceToRequiredItemLocationQuantity($requiredItemLocationQuantityOnceItem);
+
+        $itemsAfterOnce = $model->getRequiredItemLocationQuantity();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstRequiredItemLocationQuantity = $model->firstRequiredItemLocationQuantity();
 
@@ -8300,6 +8469,15 @@ final class UblModelTest extends TestCase
 
         $this->assertInstanceOf(SupportingDocumentReference::class, $createdSupportingDocumentReferenceItem);
 
+        $supportingDocumentReferenceOnceItem = new SupportingDocumentReference();
+
+        $model->addOnceToSupportingDocumentReference($supportingDocumentReferenceOnceItem);
+        $model->addOnceToSupportingDocumentReference($supportingDocumentReferenceOnceItem);
+
+        $itemsAfterOnce = $model->getSupportingDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnce);
+
         $firstSupportingDocumentReference = $model->firstSupportingDocumentReference();
 
         $this->assertInstanceOf(SupportingDocumentReference::class, $firstSupportingDocumentReference);
@@ -8671,9 +8849,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getCategorizesClassificationCategory());
         $this->assertCount(0, $model->getCategorizesClassificationCategory());
 
+        $categorizesClassificationCategoryItem = new CategorizesClassificationCategory();
+        $model->addToCategorizesClassificationCategory($categorizesClassificationCategoryItem);
+
+        $this->assertIsArray($model->getCategorizesClassificationCategory());
+        $this->assertGreaterThanOrEqual(1, count($model->getCategorizesClassificationCategory()));
+
         $createdCategorizesClassificationCategoryItem = $model->addToCategorizesClassificationCategoryWithCreate();
 
         $this->assertInstanceOf(CategorizesClassificationCategory::class, $createdCategorizesClassificationCategoryItem);
+
+        $categorizesClassificationCategoryOnceItem = new CategorizesClassificationCategory();
+
+        $model->addOnceToCategorizesClassificationCategory($categorizesClassificationCategoryOnceItem);
+        $model->addOnceToCategorizesClassificationCategory($categorizesClassificationCategoryOnceItem);
+
+        $itemsAfterOnce = $model->getCategorizesClassificationCategory();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstCategorizesClassificationCategory = $model->firstCategorizesClassificationCategory();
 
@@ -9712,6 +9905,11 @@ final class UblModelTest extends TestCase
 
         // Property FreightForwarderAssignedID
 
+        $testValue = new FreightForwarderAssignedID();
+        $model->setFreightForwarderAssignedID($testValue);
+
+        $this->assertEquals($testValue, $model->getFreightForwarderAssignedID());
+
         $model->unsetFreightForwarderAssignedID();
 
         $this->assertNull($model->getFreightForwarderAssignedID());
@@ -9739,6 +9937,11 @@ final class UblModelTest extends TestCase
 
         // Property ContractedCarrierAssignedID
 
+        $testValue = new ContractedCarrierAssignedID();
+        $model->setContractedCarrierAssignedID($testValue);
+
+        $this->assertEquals($testValue, $model->getContractedCarrierAssignedID());
+
         $model->unsetContractedCarrierAssignedID();
 
         $this->assertNull($model->getContractedCarrierAssignedID());
@@ -9749,6 +9952,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdContractedCarrierAssignedID, $model->getContractedCarrierAssignedID());
 
         // Property PerformingCarrierAssignedID
+
+        $testValue = new PerformingCarrierAssignedID();
+        $model->setPerformingCarrierAssignedID($testValue);
+
+        $this->assertEquals($testValue, $model->getPerformingCarrierAssignedID());
 
         $model->unsetPerformingCarrierAssignedID();
 
@@ -9818,6 +10026,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdTotalInvoiceAmount, $model->getTotalInvoiceAmount());
 
         // Property DeclaredCustomsValueAmount
+
+        $testValue = new DeclaredCustomsValueAmount();
+        $model->setDeclaredCustomsValueAmount($testValue);
+
+        $this->assertEquals($testValue, $model->getDeclaredCustomsValueAmount());
 
         $model->unsetDeclaredCustomsValueAmount();
 
@@ -10205,9 +10418,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getCustomsClearanceServiceInstructions());
         $this->assertCount(0, $model->getCustomsClearanceServiceInstructions());
 
+        $customsClearanceServiceInstructionsItem = new CustomsClearanceServiceInstructions();
+        $model->addToCustomsClearanceServiceInstructions($customsClearanceServiceInstructionsItem);
+
+        $this->assertIsArray($model->getCustomsClearanceServiceInstructions());
+        $this->assertGreaterThanOrEqual(1, count($model->getCustomsClearanceServiceInstructions()));
+
         $createdCustomsClearanceServiceInstructionsItem = $model->addToCustomsClearanceServiceInstructionsWithCreate();
 
         $this->assertInstanceOf(CustomsClearanceServiceInstructions::class, $createdCustomsClearanceServiceInstructionsItem);
+
+        $customsClearanceServiceInstructionsOnceItem = new CustomsClearanceServiceInstructions();
+
+        $model->addOnceToCustomsClearanceServiceInstructions($customsClearanceServiceInstructionsOnceItem);
+        $model->addOnceToCustomsClearanceServiceInstructions($customsClearanceServiceInstructionsOnceItem);
+
+        $itemsAfterOnce = $model->getCustomsClearanceServiceInstructions();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstCustomsClearanceServiceInstructions = $model->firstCustomsClearanceServiceInstructions();
 
@@ -10232,9 +10460,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getForwarderServiceInstructions());
         $this->assertCount(0, $model->getForwarderServiceInstructions());
 
+        $forwarderServiceInstructionsItem = new ForwarderServiceInstructions();
+        $model->addToForwarderServiceInstructions($forwarderServiceInstructionsItem);
+
+        $this->assertIsArray($model->getForwarderServiceInstructions());
+        $this->assertGreaterThanOrEqual(1, count($model->getForwarderServiceInstructions()));
+
         $createdForwarderServiceInstructionsItem = $model->addToForwarderServiceInstructionsWithCreate();
 
         $this->assertInstanceOf(ForwarderServiceInstructions::class, $createdForwarderServiceInstructionsItem);
+
+        $forwarderServiceInstructionsOnceItem = new ForwarderServiceInstructions();
+
+        $model->addOnceToForwarderServiceInstructions($forwarderServiceInstructionsOnceItem);
+        $model->addOnceToForwarderServiceInstructions($forwarderServiceInstructionsOnceItem);
+
+        $itemsAfterOnce = $model->getForwarderServiceInstructions();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstForwarderServiceInstructions = $model->firstForwarderServiceInstructions();
 
@@ -10443,6 +10686,11 @@ final class UblModelTest extends TestCase
 
         // Property TotalTransportHandlingUnitQuantity
 
+        $testValue = new TotalTransportHandlingUnitQuantity();
+        $model->setTotalTransportHandlingUnitQuantity($testValue);
+
+        $this->assertEquals($testValue, $model->getTotalTransportHandlingUnitQuantity());
+
         $model->unsetTotalTransportHandlingUnitQuantity();
 
         $this->assertNull($model->getTotalTransportHandlingUnitQuantity());
@@ -10470,6 +10718,11 @@ final class UblModelTest extends TestCase
 
         // Property DeclaredForCarriageValueAmount
 
+        $testValue = new DeclaredForCarriageValueAmount();
+        $model->setDeclaredForCarriageValueAmount($testValue);
+
+        $this->assertEquals($testValue, $model->getDeclaredForCarriageValueAmount());
+
         $model->unsetDeclaredForCarriageValueAmount();
 
         $this->assertNull($model->getDeclaredForCarriageValueAmount());
@@ -10480,6 +10733,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdDeclaredForCarriageValueAmount, $model->getDeclaredForCarriageValueAmount());
 
         // Property DeclaredStatisticsValueAmount
+
+        $testValue = new DeclaredStatisticsValueAmount();
+        $model->setDeclaredStatisticsValueAmount($testValue);
+
+        $this->assertEquals($testValue, $model->getDeclaredStatisticsValueAmount());
 
         $model->unsetDeclaredStatisticsValueAmount();
 
@@ -10804,6 +11062,11 @@ final class UblModelTest extends TestCase
 
         // Property RequestedPickupTransportEvent
 
+        $testValue = new RequestedPickupTransportEvent();
+        $model->setRequestedPickupTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getRequestedPickupTransportEvent());
+
         $model->unsetRequestedPickupTransportEvent();
 
         $this->assertNull($model->getRequestedPickupTransportEvent());
@@ -10814,6 +11077,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdRequestedPickupTransportEvent, $model->getRequestedPickupTransportEvent());
 
         // Property RequestedDeliveryTransportEvent
+
+        $testValue = new RequestedDeliveryTransportEvent();
+        $model->setRequestedDeliveryTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getRequestedDeliveryTransportEvent());
 
         $model->unsetRequestedDeliveryTransportEvent();
 
@@ -10826,6 +11094,11 @@ final class UblModelTest extends TestCase
 
         // Property PlannedPickupTransportEvent
 
+        $testValue = new PlannedPickupTransportEvent();
+        $model->setPlannedPickupTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getPlannedPickupTransportEvent());
+
         $model->unsetPlannedPickupTransportEvent();
 
         $this->assertNull($model->getPlannedPickupTransportEvent());
@@ -10836,6 +11109,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdPlannedPickupTransportEvent, $model->getPlannedPickupTransportEvent());
 
         // Property PlannedDeliveryTransportEvent
+
+        $testValue = new PlannedDeliveryTransportEvent();
+        $model->setPlannedDeliveryTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getPlannedDeliveryTransportEvent());
 
         $model->unsetPlannedDeliveryTransportEvent();
 
@@ -11140,6 +11418,11 @@ final class UblModelTest extends TestCase
 
         // Property HazardousItemNotificationParty
 
+        $testValue = new HazardousItemNotificationParty();
+        $model->setHazardousItemNotificationParty($testValue);
+
+        $this->assertEquals($testValue, $model->getHazardousItemNotificationParty());
+
         $model->unsetHazardousItemNotificationParty();
 
         $this->assertNull($model->getHazardousItemNotificationParty());
@@ -11331,6 +11614,11 @@ final class UblModelTest extends TestCase
 
         // Property OriginalDespatchTransportationService
 
+        $testValue = new OriginalDespatchTransportationService();
+        $model->setOriginalDespatchTransportationService($testValue);
+
+        $this->assertEquals($testValue, $model->getOriginalDespatchTransportationService());
+
         $model->unsetOriginalDespatchTransportationService();
 
         $this->assertNull($model->getOriginalDespatchTransportationService());
@@ -11341,6 +11629,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdOriginalDespatchTransportationService, $model->getOriginalDespatchTransportationService());
 
         // Property FinalDeliveryTransportationService
+
+        $testValue = new FinalDeliveryTransportationService();
+        $model->setFinalDeliveryTransportationService($testValue);
+
+        $this->assertEquals($testValue, $model->getFinalDeliveryTransportationService());
 
         $model->unsetFinalDeliveryTransportationService();
 
@@ -11925,6 +12218,11 @@ final class UblModelTest extends TestCase
 
         // Property ActualTemperatureReductionQuantity
 
+        $testValue = new ActualTemperatureReductionQuantity();
+        $model->setActualTemperatureReductionQuantity($testValue);
+
+        $this->assertEquals($testValue, $model->getActualTemperatureReductionQuantity());
+
         $model->unsetActualTemperatureReductionQuantity();
 
         $this->assertNull($model->getActualTemperatureReductionQuantity());
@@ -11936,6 +12234,11 @@ final class UblModelTest extends TestCase
 
         // Property NormalTemperatureReductionQuantity
 
+        $testValue = new NormalTemperatureReductionQuantity();
+        $model->setNormalTemperatureReductionQuantity($testValue);
+
+        $this->assertEquals($testValue, $model->getNormalTemperatureReductionQuantity());
+
         $model->unsetNormalTemperatureReductionQuantity();
 
         $this->assertNull($model->getNormalTemperatureReductionQuantity());
@@ -11946,6 +12249,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdNormalTemperatureReductionQuantity, $model->getNormalTemperatureReductionQuantity());
 
         // Property DifferenceTemperatureReductionQuantity
+
+        $testValue = new DifferenceTemperatureReductionQuantity();
+        $model->setDifferenceTemperatureReductionQuantity($testValue);
+
+        $this->assertEquals($testValue, $model->getDifferenceTemperatureReductionQuantity());
 
         $model->unsetDifferenceTemperatureReductionQuantity();
 
@@ -12259,6 +12567,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdID, $model->getID());
 
         // Property ParentDocumentLineReferenceID
+
+        $testValue = new ParentDocumentLineReferenceID();
+        $model->setParentDocumentLineReferenceID($testValue);
+
+        $this->assertEquals($testValue, $model->getParentDocumentLineReferenceID());
 
         $model->unsetParentDocumentLineReferenceID();
 
@@ -14562,6 +14875,11 @@ final class UblModelTest extends TestCase
 
         // Property CorporateRegistrationTypeCode
 
+        $testValue = new CorporateRegistrationTypeCode();
+        $model->setCorporateRegistrationTypeCode($testValue);
+
+        $this->assertEquals($testValue, $model->getCorporateRegistrationTypeCode());
+
         $model->unsetCorporateRegistrationTypeCode();
 
         $this->assertNull($model->getCorporateRegistrationTypeCode());
@@ -16748,6 +17066,11 @@ final class UblModelTest extends TestCase
 
         // Property LossRiskResponsibilityCode
 
+        $testValue = new LossRiskResponsibilityCode();
+        $model->setLossRiskResponsibilityCode($testValue);
+
+        $this->assertEquals($testValue, $model->getLossRiskResponsibilityCode());
+
         $model->unsetLossRiskResponsibilityCode();
 
         $this->assertNull($model->getLossRiskResponsibilityCode());
@@ -17045,6 +17368,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdDeliveryLocation, $model->getDeliveryLocation());
 
         // Property AlternativeDeliveryLocation
+
+        $testValue = new AlternativeDeliveryLocation();
+        $model->setAlternativeDeliveryLocation($testValue);
+
+        $this->assertEquals($testValue, $model->getAlternativeDeliveryLocation());
 
         $model->unsetAlternativeDeliveryLocation();
 
@@ -19988,9 +20316,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getEnergyWaterConsumptionCorrection());
         $this->assertCount(0, $model->getEnergyWaterConsumptionCorrection());
 
+        $energyWaterConsumptionCorrectionItem = new EnergyWaterConsumptionCorrection();
+        $model->addToEnergyWaterConsumptionCorrection($energyWaterConsumptionCorrectionItem);
+
+        $this->assertIsArray($model->getEnergyWaterConsumptionCorrection());
+        $this->assertGreaterThanOrEqual(1, count($model->getEnergyWaterConsumptionCorrection()));
+
         $createdEnergyWaterConsumptionCorrectionItem = $model->addToEnergyWaterConsumptionCorrectionWithCreate();
 
         $this->assertInstanceOf(EnergyWaterConsumptionCorrection::class, $createdEnergyWaterConsumptionCorrectionItem);
+
+        $energyWaterConsumptionCorrectionOnceItem = new EnergyWaterConsumptionCorrection();
+
+        $model->addOnceToEnergyWaterConsumptionCorrection($energyWaterConsumptionCorrectionOnceItem);
+        $model->addOnceToEnergyWaterConsumptionCorrection($energyWaterConsumptionCorrectionOnceItem);
+
+        $itemsAfterOnce = $model->getEnergyWaterConsumptionCorrection();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstEnergyWaterConsumptionCorrection = $model->firstEnergyWaterConsumptionCorrection();
 
@@ -20029,6 +20372,11 @@ final class UblModelTest extends TestCase
         $this->assertInstanceOf(EnvironmentalEmissionType::class, $model);
 
         // Property EnvironmentalEmissionTypeCode
+
+        $testValue = new EnvironmentalEmissionTypeCode();
+        $model->setEnvironmentalEmissionTypeCode($testValue);
+
+        $this->assertEquals($testValue, $model->getEnvironmentalEmissionTypeCode());
 
         $model->unsetEnvironmentalEmissionTypeCode();
 
@@ -20238,6 +20586,11 @@ final class UblModelTest extends TestCase
         $this->assertInstanceOf(EvaluationCriterionType::class, $model);
 
         // Property EvaluationCriterionTypeCode
+
+        $testValue = new EvaluationCriterionTypeCode();
+        $model->setEvaluationCriterionTypeCode($testValue);
+
+        $this->assertEquals($testValue, $model->getEvaluationCriterionTypeCode());
 
         $model->unsetEvaluationCriterionTypeCode();
 
@@ -20547,6 +20900,11 @@ final class UblModelTest extends TestCase
 
         // Property ParticipatingLocationsLocation
 
+        $testValue = new ParticipatingLocationsLocation();
+        $model->setParticipatingLocationsLocation($testValue);
+
+        $this->assertEquals($testValue, $model->getParticipatingLocationsLocation());
+
         $model->unsetParticipatingLocationsLocation();
 
         $this->assertNull($model->getParticipatingLocationsLocation());
@@ -20648,6 +21006,11 @@ final class UblModelTest extends TestCase
 
         // Property ConsumerIncentiveTacticTypeCode
 
+        $testValue = new ConsumerIncentiveTacticTypeCode();
+        $model->setConsumerIncentiveTacticTypeCode($testValue);
+
+        $this->assertEquals($testValue, $model->getConsumerIncentiveTacticTypeCode());
+
         $model->unsetConsumerIncentiveTacticTypeCode();
 
         $this->assertNull($model->getConsumerIncentiveTacticTypeCode());
@@ -20690,6 +21053,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdFeatureTacticTypeCode, $model->getFeatureTacticTypeCode());
 
         // Property TradeItemPackingLabelingTypeCode
+
+        $testValue = new TradeItemPackingLabelingTypeCode();
+        $model->setTradeItemPackingLabelingTypeCode($testValue);
+
+        $this->assertEquals($testValue, $model->getTradeItemPackingLabelingTypeCode());
 
         $model->unsetTradeItemPackingLabelingTypeCode();
 
@@ -21327,6 +21695,11 @@ final class UblModelTest extends TestCase
 
         // Property ThresholdValueComparisonCode
 
+        $testValue = new ThresholdValueComparisonCode();
+        $model->setThresholdValueComparisonCode($testValue);
+
+        $this->assertEquals($testValue, $model->getThresholdValueComparisonCode());
+
         $model->unsetThresholdValueComparisonCode();
 
         $this->assertNull($model->getThresholdValueComparisonCode());
@@ -21401,6 +21774,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdExceptionResolutionCode, $model->getExceptionResolutionCode());
 
         // Property SupplyChainActivityTypeCode
+
+        $testValue = new SupplyChainActivityTypeCode();
+        $model->setSupplyChainActivityTypeCode($testValue);
+
+        $this->assertEquals($testValue, $model->getSupplyChainActivityTypeCode());
 
         $model->unsetSupplyChainActivityTypeCode();
 
@@ -21486,6 +21864,11 @@ final class UblModelTest extends TestCase
         $this->assertCount(0, $itemsAfterClear);
 
         // Property ForecastExceptionCriterionLine
+
+        $testValue = new ForecastExceptionCriterionLine();
+        $model->setForecastExceptionCriterionLine($testValue);
+
+        $this->assertEquals($testValue, $model->getForecastExceptionCriterionLine());
 
         $model->unsetForecastExceptionCriterionLine();
 
@@ -21715,6 +22098,11 @@ final class UblModelTest extends TestCase
 
         // Property SupplyChainActivityTypeCode
 
+        $testValue = new SupplyChainActivityTypeCode();
+        $model->setSupplyChainActivityTypeCode($testValue);
+
+        $this->assertEquals($testValue, $model->getSupplyChainActivityTypeCode());
+
         $model->unsetSupplyChainActivityTypeCode();
 
         $this->assertNull($model->getSupplyChainActivityTypeCode());
@@ -21741,6 +22129,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdPerformanceMetricTypeCode, $model->getPerformanceMetricTypeCode());
 
         // Property ExceptionObservationPeriod
+
+        $testValue = new ExceptionObservationPeriod();
+        $model->setExceptionObservationPeriod($testValue);
+
+        $this->assertEquals($testValue, $model->getExceptionObservationPeriod());
 
         $model->unsetExceptionObservationPeriod();
 
@@ -22457,6 +22850,11 @@ final class UblModelTest extends TestCase
         $this->assertCount(0, $itemsAfterClear);
 
         // Property FinancialInstitutionBranch
+
+        $testValue = new FinancialInstitutionBranch();
+        $model->setFinancialInstitutionBranch($testValue);
+
+        $this->assertEquals($testValue, $model->getFinancialInstitutionBranch());
 
         $model->unsetFinancialInstitutionBranch();
 
@@ -23536,9 +23934,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getSubsequentProcessTenderRequirement());
         $this->assertCount(0, $model->getSubsequentProcessTenderRequirement());
 
+        $subsequentProcessTenderRequirementItem = new SubsequentProcessTenderRequirement();
+        $model->addToSubsequentProcessTenderRequirement($subsequentProcessTenderRequirementItem);
+
+        $this->assertIsArray($model->getSubsequentProcessTenderRequirement());
+        $this->assertGreaterThanOrEqual(1, count($model->getSubsequentProcessTenderRequirement()));
+
         $createdSubsequentProcessTenderRequirementItem = $model->addToSubsequentProcessTenderRequirementWithCreate();
 
         $this->assertInstanceOf(SubsequentProcessTenderRequirement::class, $createdSubsequentProcessTenderRequirementItem);
+
+        $subsequentProcessTenderRequirementOnceItem = new SubsequentProcessTenderRequirement();
+
+        $model->addOnceToSubsequentProcessTenderRequirement($subsequentProcessTenderRequirementOnceItem);
+        $model->addOnceToSubsequentProcessTenderRequirement($subsequentProcessTenderRequirementOnceItem);
+
+        $itemsAfterOnce = $model->getSubsequentProcessTenderRequirement();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstSubsequentProcessTenderRequirement = $model->firstSubsequentProcessTenderRequirement();
 
@@ -23813,6 +24226,11 @@ final class UblModelTest extends TestCase
 
         // Property DeclaredCustomsValueAmount
 
+        $testValue = new DeclaredCustomsValueAmount();
+        $model->setDeclaredCustomsValueAmount($testValue);
+
+        $this->assertEquals($testValue, $model->getDeclaredCustomsValueAmount());
+
         $model->unsetDeclaredCustomsValueAmount();
 
         $this->assertNull($model->getDeclaredCustomsValueAmount());
@@ -23824,6 +24242,11 @@ final class UblModelTest extends TestCase
 
         // Property DeclaredForCarriageValueAmount
 
+        $testValue = new DeclaredForCarriageValueAmount();
+        $model->setDeclaredForCarriageValueAmount($testValue);
+
+        $this->assertEquals($testValue, $model->getDeclaredForCarriageValueAmount());
+
         $model->unsetDeclaredForCarriageValueAmount();
 
         $this->assertNull($model->getDeclaredForCarriageValueAmount());
@@ -23834,6 +24257,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdDeclaredForCarriageValueAmount, $model->getDeclaredForCarriageValueAmount());
 
         // Property DeclaredStatisticsValueAmount
+
+        $testValue = new DeclaredStatisticsValueAmount();
+        $model->setDeclaredStatisticsValueAmount($testValue);
+
+        $this->assertEquals($testValue, $model->getDeclaredStatisticsValueAmount());
 
         $model->unsetDeclaredStatisticsValueAmount();
 
@@ -24664,6 +25092,11 @@ final class UblModelTest extends TestCase
 
         // Property TransportEmergencyCardCode
 
+        $testValue = new TransportEmergencyCardCode();
+        $model->setTransportEmergencyCardCode($testValue);
+
+        $this->assertEquals($testValue, $model->getTransportEmergencyCardCode());
+
         $model->unsetTransportEmergencyCardCode();
 
         $this->assertNull($model->getTransportEmergencyCardCode());
@@ -24707,6 +25140,11 @@ final class UblModelTest extends TestCase
 
         // Property InhalationToxicityZoneCode
 
+        $testValue = new InhalationToxicityZoneCode();
+        $model->setInhalationToxicityZoneCode($testValue);
+
+        $this->assertEquals($testValue, $model->getInhalationToxicityZoneCode());
+
         $model->unsetInhalationToxicityZoneCode();
 
         $this->assertNull($model->getInhalationToxicityZoneCode());
@@ -24717,6 +25155,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdInhalationToxicityZoneCode, $model->getInhalationToxicityZoneCode());
 
         // Property TransportAuthorizationCode
+
+        $testValue = new TransportAuthorizationCode();
+        $model->setTransportAuthorizationCode($testValue);
+
+        $this->assertEquals($testValue, $model->getTransportAuthorizationCode());
 
         $model->unsetTransportAuthorizationCode();
 
@@ -24979,6 +25422,11 @@ final class UblModelTest extends TestCase
 
         // Property UpperOrangeHazardPlacardID
 
+        $testValue = new UpperOrangeHazardPlacardID();
+        $model->setUpperOrangeHazardPlacardID($testValue);
+
+        $this->assertEquals($testValue, $model->getUpperOrangeHazardPlacardID());
+
         $model->unsetUpperOrangeHazardPlacardID();
 
         $this->assertNull($model->getUpperOrangeHazardPlacardID());
@@ -24989,6 +25437,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdUpperOrangeHazardPlacardID, $model->getUpperOrangeHazardPlacardID());
 
         // Property LowerOrangeHazardPlacardID
+
+        $testValue = new LowerOrangeHazardPlacardID();
+        $model->setLowerOrangeHazardPlacardID($testValue);
+
+        $this->assertEquals($testValue, $model->getLowerOrangeHazardPlacardID());
 
         $model->unsetLowerOrangeHazardPlacardID();
 
@@ -25297,6 +25750,11 @@ final class UblModelTest extends TestCase
         $this->assertInstanceOf(ImmobilizedSecurityType::class, $model);
 
         // Property ImmobilizationCertificateID
+
+        $testValue = new ImmobilizationCertificateID();
+        $model->setImmobilizationCertificateID($testValue);
+
+        $this->assertEquals($testValue, $model->getImmobilizationCertificateID());
 
         $model->unsetImmobilizationCertificateID();
 
@@ -26929,6 +27387,11 @@ final class UblModelTest extends TestCase
 
         // Property SupplyChainActivityTypeCode
 
+        $testValue = new SupplyChainActivityTypeCode();
+        $model->setSupplyChainActivityTypeCode($testValue);
+
+        $this->assertEquals($testValue, $model->getSupplyChainActivityTypeCode());
+
         $model->unsetSupplyChainActivityTypeCode();
 
         $this->assertNull($model->getSupplyChainActivityTypeCode());
@@ -27645,9 +28108,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getReplenishmentOwnerDescription());
         $this->assertCount(0, $model->getReplenishmentOwnerDescription());
 
+        $replenishmentOwnerDescriptionItem = new ReplenishmentOwnerDescription();
+        $model->addToReplenishmentOwnerDescription($replenishmentOwnerDescriptionItem);
+
+        $this->assertIsArray($model->getReplenishmentOwnerDescription());
+        $this->assertGreaterThanOrEqual(1, count($model->getReplenishmentOwnerDescription()));
+
         $createdReplenishmentOwnerDescriptionItem = $model->addToReplenishmentOwnerDescriptionWithCreate();
 
         $this->assertInstanceOf(ReplenishmentOwnerDescription::class, $createdReplenishmentOwnerDescriptionItem);
+
+        $replenishmentOwnerDescriptionOnceItem = new ReplenishmentOwnerDescription();
+
+        $model->addOnceToReplenishmentOwnerDescription($replenishmentOwnerDescriptionOnceItem);
+        $model->addOnceToReplenishmentOwnerDescription($replenishmentOwnerDescriptionOnceItem);
+
+        $itemsAfterOnce = $model->getReplenishmentOwnerDescription();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstReplenishmentOwnerDescription = $model->firstReplenishmentOwnerDescription();
 
@@ -28525,9 +29003,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getManufacturersItemIdentification());
         $this->assertCount(0, $model->getManufacturersItemIdentification());
 
+        $manufacturersItemIdentificationItem = new ManufacturersItemIdentification();
+        $model->addToManufacturersItemIdentification($manufacturersItemIdentificationItem);
+
+        $this->assertIsArray($model->getManufacturersItemIdentification());
+        $this->assertGreaterThanOrEqual(1, count($model->getManufacturersItemIdentification()));
+
         $createdManufacturersItemIdentificationItem = $model->addToManufacturersItemIdentificationWithCreate();
 
         $this->assertInstanceOf(ManufacturersItemIdentification::class, $createdManufacturersItemIdentificationItem);
+
+        $manufacturersItemIdentificationOnceItem = new ManufacturersItemIdentification();
+
+        $model->addOnceToManufacturersItemIdentification($manufacturersItemIdentificationOnceItem);
+        $model->addOnceToManufacturersItemIdentification($manufacturersItemIdentificationOnceItem);
+
+        $itemsAfterOnce = $model->getManufacturersItemIdentification();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstManufacturersItemIdentification = $model->firstManufacturersItemIdentification();
 
@@ -28546,6 +29039,11 @@ final class UblModelTest extends TestCase
 
         // Property StandardItemIdentification
 
+        $testValue = new StandardItemIdentification();
+        $model->setStandardItemIdentification($testValue);
+
+        $this->assertEquals($testValue, $model->getStandardItemIdentification());
+
         $model->unsetStandardItemIdentification();
 
         $this->assertNull($model->getStandardItemIdentification());
@@ -28556,6 +29054,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdStandardItemIdentification, $model->getStandardItemIdentification());
 
         // Property CatalogueItemIdentification
+
+        $testValue = new CatalogueItemIdentification();
+        $model->setCatalogueItemIdentification($testValue);
+
+        $this->assertEquals($testValue, $model->getCatalogueItemIdentification());
 
         $model->unsetCatalogueItemIdentification();
 
@@ -28574,9 +29077,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getAdditionalItemIdentification());
         $this->assertCount(0, $model->getAdditionalItemIdentification());
 
+        $additionalItemIdentificationItem = new AdditionalItemIdentification();
+        $model->addToAdditionalItemIdentification($additionalItemIdentificationItem);
+
+        $this->assertIsArray($model->getAdditionalItemIdentification());
+        $this->assertGreaterThanOrEqual(1, count($model->getAdditionalItemIdentification()));
+
         $createdAdditionalItemIdentificationItem = $model->addToAdditionalItemIdentificationWithCreate();
 
         $this->assertInstanceOf(AdditionalItemIdentification::class, $createdAdditionalItemIdentificationItem);
+
+        $additionalItemIdentificationOnceItem = new AdditionalItemIdentification();
+
+        $model->addOnceToAdditionalItemIdentification($additionalItemIdentificationOnceItem);
+        $model->addOnceToAdditionalItemIdentification($additionalItemIdentificationOnceItem);
+
+        $itemsAfterOnce = $model->getAdditionalItemIdentification();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstAdditionalItemIdentification = $model->firstAdditionalItemIdentification();
 
@@ -28595,6 +29113,11 @@ final class UblModelTest extends TestCase
 
         // Property CatalogueDocumentReference
 
+        $testValue = new CatalogueDocumentReference();
+        $model->setCatalogueDocumentReference($testValue);
+
+        $this->assertEquals($testValue, $model->getCatalogueDocumentReference());
+
         $model->unsetCatalogueDocumentReference();
 
         $this->assertNull($model->getCatalogueDocumentReference());
@@ -28612,9 +29135,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getItemSpecificationDocumentReference());
         $this->assertCount(0, $model->getItemSpecificationDocumentReference());
 
+        $itemSpecificationDocumentReferenceItem = new ItemSpecificationDocumentReference();
+        $model->addToItemSpecificationDocumentReference($itemSpecificationDocumentReferenceItem);
+
+        $this->assertIsArray($model->getItemSpecificationDocumentReference());
+        $this->assertGreaterThanOrEqual(1, count($model->getItemSpecificationDocumentReference()));
+
         $createdItemSpecificationDocumentReferenceItem = $model->addToItemSpecificationDocumentReferenceWithCreate();
 
         $this->assertInstanceOf(ItemSpecificationDocumentReference::class, $createdItemSpecificationDocumentReferenceItem);
+
+        $itemSpecificationDocumentReferenceOnceItem = new ItemSpecificationDocumentReference();
+
+        $model->addOnceToItemSpecificationDocumentReference($itemSpecificationDocumentReferenceOnceItem);
+        $model->addOnceToItemSpecificationDocumentReference($itemSpecificationDocumentReferenceOnceItem);
+
+        $itemsAfterOnce = $model->getItemSpecificationDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstItemSpecificationDocumentReference = $model->firstItemSpecificationDocumentReference();
 
@@ -28900,6 +29438,11 @@ final class UblModelTest extends TestCase
         $this->assertCount(0, $itemsAfterClear);
 
         // Property InformationContentProviderParty
+
+        $testValue = new InformationContentProviderParty();
+        $model->setInformationContentProviderParty($testValue);
+
+        $this->assertEquals($testValue, $model->getInformationContentProviderParty());
 
         $model->unsetInformationContentProviderParty();
 
@@ -31000,6 +31543,11 @@ final class UblModelTest extends TestCase
 
         // Property RegistryCertificateDocumentReference
 
+        $testValue = new RegistryCertificateDocumentReference();
+        $model->setRegistryCertificateDocumentReference($testValue);
+
+        $this->assertEquals($testValue, $model->getRegistryCertificateDocumentReference());
+
         $model->unsetRegistryCertificateDocumentReference();
 
         $this->assertNull($model->getRegistryCertificateDocumentReference());
@@ -31371,6 +31919,11 @@ final class UblModelTest extends TestCase
 
         // Property PreviousMeterReadingMethod
 
+        $testValue = new PreviousMeterReadingMethod();
+        $model->setPreviousMeterReadingMethod($testValue);
+
+        $this->assertEquals($testValue, $model->getPreviousMeterReadingMethod());
+
         $model->unsetPreviousMeterReadingMethod();
 
         $this->assertNull($model->getPreviousMeterReadingMethod());
@@ -31381,6 +31934,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdPreviousMeterReadingMethod, $model->getPreviousMeterReadingMethod());
 
         // Property PreviousMeterReadingMethodCode
+
+        $testValue = new PreviousMeterReadingMethodCode();
+        $model->setPreviousMeterReadingMethodCode($testValue);
+
+        $this->assertEquals($testValue, $model->getPreviousMeterReadingMethodCode());
 
         $model->unsetPreviousMeterReadingMethodCode();
 
@@ -31412,6 +31970,11 @@ final class UblModelTest extends TestCase
         // Property MeterReadingMethodWithCreate
 
         // Property LatestMeterReadingMethodCode
+
+        $testValue = new LatestMeterReadingMethodCode();
+        $model->setLatestMeterReadingMethodCode($testValue);
+
+        $this->assertEquals($testValue, $model->getLatestMeterReadingMethodCode());
 
         $model->unsetLatestMeterReadingMethodCode();
 
@@ -31713,6 +32276,11 @@ final class UblModelTest extends TestCase
         $this->assertInstanceOf(MiscellaneousEventType::class, $model);
 
         // Property MiscellaneousEventTypeCode
+
+        $testValue = new MiscellaneousEventTypeCode();
+        $model->setMiscellaneousEventTypeCode($testValue);
+
+        $this->assertEquals($testValue, $model->getMiscellaneousEventTypeCode());
 
         $model->unsetMiscellaneousEventTypeCode();
 
@@ -32035,6 +32603,11 @@ final class UblModelTest extends TestCase
 
         // Property PostEventNotificationDurationMeasure
 
+        $testValue = new PostEventNotificationDurationMeasure();
+        $model->setPostEventNotificationDurationMeasure($testValue);
+
+        $this->assertEquals($testValue, $model->getPostEventNotificationDurationMeasure());
+
         $model->unsetPostEventNotificationDurationMeasure();
 
         $this->assertNull($model->getPostEventNotificationDurationMeasure());
@@ -32045,6 +32618,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdPostEventNotificationDurationMeasure, $model->getPostEventNotificationDurationMeasure());
 
         // Property PreEventNotificationDurationMeasure
+
+        $testValue = new PreEventNotificationDurationMeasure();
+        $model->setPreEventNotificationDurationMeasure($testValue);
+
+        $this->assertEquals($testValue, $model->getPreEventNotificationDurationMeasure());
 
         $model->unsetPreEventNotificationDurationMeasure();
 
@@ -32684,9 +33262,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getSellerProposedSubstituteLineItem());
         $this->assertCount(0, $model->getSellerProposedSubstituteLineItem());
 
+        $sellerProposedSubstituteLineItemItem = new SellerProposedSubstituteLineItem();
+        $model->addToSellerProposedSubstituteLineItem($sellerProposedSubstituteLineItemItem);
+
+        $this->assertIsArray($model->getSellerProposedSubstituteLineItem());
+        $this->assertGreaterThanOrEqual(1, count($model->getSellerProposedSubstituteLineItem()));
+
         $createdSellerProposedSubstituteLineItemItem = $model->addToSellerProposedSubstituteLineItemWithCreate();
 
         $this->assertInstanceOf(SellerProposedSubstituteLineItem::class, $createdSellerProposedSubstituteLineItemItem);
+
+        $sellerProposedSubstituteLineItemOnceItem = new SellerProposedSubstituteLineItem();
+
+        $model->addOnceToSellerProposedSubstituteLineItem($sellerProposedSubstituteLineItemOnceItem);
+        $model->addOnceToSellerProposedSubstituteLineItem($sellerProposedSubstituteLineItemOnceItem);
+
+        $itemsAfterOnce = $model->getSellerProposedSubstituteLineItem();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstSellerProposedSubstituteLineItem = $model->firstSellerProposedSubstituteLineItem();
 
@@ -32753,9 +33346,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getBuyerProposedSubstituteLineItem());
         $this->assertCount(0, $model->getBuyerProposedSubstituteLineItem());
 
+        $buyerProposedSubstituteLineItemItem = new BuyerProposedSubstituteLineItem();
+        $model->addToBuyerProposedSubstituteLineItem($buyerProposedSubstituteLineItemItem);
+
+        $this->assertIsArray($model->getBuyerProposedSubstituteLineItem());
+        $this->assertGreaterThanOrEqual(1, count($model->getBuyerProposedSubstituteLineItem()));
+
         $createdBuyerProposedSubstituteLineItemItem = $model->addToBuyerProposedSubstituteLineItemWithCreate();
 
         $this->assertInstanceOf(BuyerProposedSubstituteLineItem::class, $createdBuyerProposedSubstituteLineItemItem);
+
+        $buyerProposedSubstituteLineItemOnceItem = new BuyerProposedSubstituteLineItem();
+
+        $model->addOnceToBuyerProposedSubstituteLineItem($buyerProposedSubstituteLineItemOnceItem);
+        $model->addOnceToBuyerProposedSubstituteLineItem($buyerProposedSubstituteLineItemOnceItem);
+
+        $itemsAfterOnce = $model->getBuyerProposedSubstituteLineItem();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstBuyerProposedSubstituteLineItem = $model->firstBuyerProposedSubstituteLineItem();
 
@@ -33379,6 +33987,11 @@ final class UblModelTest extends TestCase
 
         // Property ContainingTransportEquipment
 
+        $testValue = new ContainingTransportEquipment();
+        $model->setContainingTransportEquipment($testValue);
+
+        $this->assertEquals($testValue, $model->getContainingTransportEquipment());
+
         $model->unsetContainingTransportEquipment();
 
         $this->assertNull($model->getContainingTransportEquipment());
@@ -33785,6 +34398,11 @@ final class UblModelTest extends TestCase
 
         // Property CompanyLiquidationStatusCode
 
+        $testValue = new CompanyLiquidationStatusCode();
+        $model->setCompanyLiquidationStatusCode($testValue);
+
+        $this->assertEquals($testValue, $model->getCompanyLiquidationStatusCode());
+
         $model->unsetCompanyLiquidationStatusCode();
 
         $this->assertNull($model->getCompanyLiquidationStatusCode());
@@ -33838,6 +34456,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdRegistrationAddress, $model->getRegistrationAddress());
 
         // Property CorporateRegistrationScheme
+
+        $testValue = new CorporateRegistrationScheme();
+        $model->setCorporateRegistrationScheme($testValue);
+
+        $this->assertEquals($testValue, $model->getCorporateRegistrationScheme());
 
         $model->unsetCorporateRegistrationScheme();
 
@@ -34183,6 +34806,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdEndpointID, $model->getEndpointID());
 
         // Property IndustryClassificationCode
+
+        $testValue = new IndustryClassificationCode();
+        $model->setIndustryClassificationCode($testValue);
+
+        $this->assertEquals($testValue, $model->getIndustryClassificationCode());
 
         $model->unsetIndustryClassificationCode();
 
@@ -34725,6 +35353,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdMandateTypeCode, $model->getMandateTypeCode());
 
         // Property MaximumPaymentInstructionsNumeric
+
+        $testValue = new MaximumPaymentInstructionsNumeric();
+        $model->setMaximumPaymentInstructionsNumeric($testValue);
+
+        $this->assertEquals($testValue, $model->getMaximumPaymentInstructionsNumeric());
 
         $model->unsetMaximumPaymentInstructionsNumeric();
 
@@ -37454,6 +38087,11 @@ final class UblModelTest extends TestCase
 
         // Property OriginalItemLocationQuantity
 
+        $testValue = new OriginalItemLocationQuantity();
+        $model->setOriginalItemLocationQuantity($testValue);
+
+        $this->assertEquals($testValue, $model->getOriginalItemLocationQuantity());
+
         $model->unsetOriginalItemLocationQuantity();
 
         $this->assertNull($model->getOriginalItemLocationQuantity());
@@ -37527,6 +38165,11 @@ final class UblModelTest extends TestCase
         $this->assertInstanceOf(ProcessJustificationType::class, $model);
 
         // Property PreviousCancellationReasonCode
+
+        $testValue = new PreviousCancellationReasonCode();
+        $model->setPreviousCancellationReasonCode($testValue);
+
+        $this->assertEquals($testValue, $model->getPreviousCancellationReasonCode());
 
         $model->unsetPreviousCancellationReasonCode();
 
@@ -37957,6 +38600,11 @@ final class UblModelTest extends TestCase
 
         // Property EstimatedOverallContractQuantity
 
+        $testValue = new EstimatedOverallContractQuantity();
+        $model->setEstimatedOverallContractQuantity($testValue);
+
+        $this->assertEquals($testValue, $model->getEstimatedOverallContractQuantity());
+
         $model->unsetEstimatedOverallContractQuantity();
 
         $this->assertNull($model->getEstimatedOverallContractQuantity());
@@ -38026,6 +38674,11 @@ final class UblModelTest extends TestCase
 
         // Property MainCommodityClassification
 
+        $testValue = new MainCommodityClassification();
+        $model->setMainCommodityClassification($testValue);
+
+        $this->assertEquals($testValue, $model->getMainCommodityClassification());
+
         $model->unsetMainCommodityClassification();
 
         $this->assertNull($model->getMainCommodityClassification());
@@ -38043,9 +38696,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getAdditionalCommodityClassification());
         $this->assertCount(0, $model->getAdditionalCommodityClassification());
 
+        $additionalCommodityClassificationItem = new AdditionalCommodityClassification();
+        $model->addToAdditionalCommodityClassification($additionalCommodityClassificationItem);
+
+        $this->assertIsArray($model->getAdditionalCommodityClassification());
+        $this->assertGreaterThanOrEqual(1, count($model->getAdditionalCommodityClassification()));
+
         $createdAdditionalCommodityClassificationItem = $model->addToAdditionalCommodityClassificationWithCreate();
 
         $this->assertInstanceOf(AdditionalCommodityClassification::class, $createdAdditionalCommodityClassificationItem);
+
+        $additionalCommodityClassificationOnceItem = new AdditionalCommodityClassification();
+
+        $model->addOnceToAdditionalCommodityClassification($additionalCommodityClassificationOnceItem);
+        $model->addOnceToAdditionalCommodityClassification($additionalCommodityClassificationOnceItem);
+
+        $itemsAfterOnce = $model->getAdditionalCommodityClassification();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstAdditionalCommodityClassification = $model->firstAdditionalCommodityClassification();
 
@@ -38866,6 +39534,11 @@ final class UblModelTest extends TestCase
 
         // Property BusinessClassificationEvidenceID
 
+        $testValue = new BusinessClassificationEvidenceID();
+        $model->setBusinessClassificationEvidenceID($testValue);
+
+        $this->assertEquals($testValue, $model->getBusinessClassificationEvidenceID());
+
         $model->unsetBusinessClassificationEvidenceID();
 
         $this->assertNull($model->getBusinessClassificationEvidenceID());
@@ -38876,6 +39549,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdBusinessClassificationEvidenceID, $model->getBusinessClassificationEvidenceID());
 
         // Property BusinessIdentityEvidenceID
+
+        $testValue = new BusinessIdentityEvidenceID();
+        $model->setBusinessIdentityEvidenceID($testValue);
+
+        $this->assertEquals($testValue, $model->getBusinessIdentityEvidenceID());
 
         $model->unsetBusinessIdentityEvidenceID();
 
@@ -38903,6 +39581,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdTendererRoleCode, $model->getTendererRoleCode());
 
         // Property BusinessClassificationScheme
+
+        $testValue = new BusinessClassificationScheme();
+        $model->setBusinessClassificationScheme($testValue);
+
+        $this->assertEquals($testValue, $model->getBusinessClassificationScheme());
 
         $model->unsetBusinessClassificationScheme();
 
@@ -39355,9 +40038,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getSellerProposedSubstituteLineItem());
         $this->assertCount(0, $model->getSellerProposedSubstituteLineItem());
 
+        $sellerProposedSubstituteLineItemItem = new SellerProposedSubstituteLineItem();
+        $model->addToSellerProposedSubstituteLineItem($sellerProposedSubstituteLineItemItem);
+
+        $this->assertIsArray($model->getSellerProposedSubstituteLineItem());
+        $this->assertGreaterThanOrEqual(1, count($model->getSellerProposedSubstituteLineItem()));
+
         $createdSellerProposedSubstituteLineItemItem = $model->addToSellerProposedSubstituteLineItemWithCreate();
 
         $this->assertInstanceOf(SellerProposedSubstituteLineItem::class, $createdSellerProposedSubstituteLineItemItem);
+
+        $sellerProposedSubstituteLineItemOnceItem = new SellerProposedSubstituteLineItem();
+
+        $model->addOnceToSellerProposedSubstituteLineItem($sellerProposedSubstituteLineItemOnceItem);
+        $model->addOnceToSellerProposedSubstituteLineItem($sellerProposedSubstituteLineItemOnceItem);
+
+        $itemsAfterOnce = $model->getSellerProposedSubstituteLineItem();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstSellerProposedSubstituteLineItem = $model->firstSellerProposedSubstituteLineItem();
 
@@ -41388,6 +42086,11 @@ final class UblModelTest extends TestCase
 
         // Property EstimatedOverallContractAmount
 
+        $testValue = new EstimatedOverallContractAmount();
+        $model->setEstimatedOverallContractAmount($testValue);
+
+        $this->assertEquals($testValue, $model->getEstimatedOverallContractAmount());
+
         $model->unsetEstimatedOverallContractAmount();
 
         $this->assertNull($model->getEstimatedOverallContractAmount());
@@ -41499,6 +42202,11 @@ final class UblModelTest extends TestCase
         $this->assertCount(0, $itemsAfterClear);
 
         // Property AverageSubsequentContractAmount
+
+        $testValue = new AverageSubsequentContractAmount();
+        $model->setAverageSubsequentContractAmount($testValue);
+
+        $this->assertEquals($testValue, $model->getAverageSubsequentContractAmount());
 
         $model->unsetAverageSubsequentContractAmount();
 
@@ -41707,6 +42415,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdPrivacyCode, $model->getPrivacyCode());
 
         // Property SecurityClassificationCode
+
+        $testValue = new SecurityClassificationCode();
+        $model->setSecurityClassificationCode($testValue);
+
+        $this->assertEquals($testValue, $model->getSecurityClassificationCode());
 
         $model->unsetSecurityClassificationCode();
 
@@ -42069,9 +42782,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getRequiredItemLocationQuantity());
         $this->assertCount(0, $model->getRequiredItemLocationQuantity());
 
+        $requiredItemLocationQuantityItem = new RequiredItemLocationQuantity();
+        $model->addToRequiredItemLocationQuantity($requiredItemLocationQuantityItem);
+
+        $this->assertIsArray($model->getRequiredItemLocationQuantity());
+        $this->assertGreaterThanOrEqual(1, count($model->getRequiredItemLocationQuantity()));
+
         $createdRequiredItemLocationQuantityItem = $model->addToRequiredItemLocationQuantityWithCreate();
 
         $this->assertInstanceOf(RequiredItemLocationQuantity::class, $createdRequiredItemLocationQuantityItem);
+
+        $requiredItemLocationQuantityOnceItem = new RequiredItemLocationQuantity();
+
+        $model->addOnceToRequiredItemLocationQuantity($requiredItemLocationQuantityOnceItem);
+        $model->addOnceToRequiredItemLocationQuantity($requiredItemLocationQuantityOnceItem);
+
+        $itemsAfterOnce = $model->getRequiredItemLocationQuantity();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstRequiredItemLocationQuantity = $model->firstRequiredItemLocationQuantity();
 
@@ -43868,6 +44596,11 @@ final class UblModelTest extends TestCase
 
         // Property AvailabilityTransportEvent
 
+        $testValue = new AvailabilityTransportEvent();
+        $model->setAvailabilityTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getAvailabilityTransportEvent());
+
         $model->unsetAvailabilityTransportEvent();
 
         $this->assertNull($model->getAvailabilityTransportEvent());
@@ -43943,6 +44676,11 @@ final class UblModelTest extends TestCase
 
         // Property OptionalTakeoverTransportEvent
 
+        $testValue = new OptionalTakeoverTransportEvent();
+        $model->setOptionalTakeoverTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getOptionalTakeoverTransportEvent());
+
         $model->unsetOptionalTakeoverTransportEvent();
 
         $this->assertNull($model->getOptionalTakeoverTransportEvent());
@@ -43969,6 +44707,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdDropoffTransportEvent, $model->getDropoffTransportEvent());
 
         // Property ActualPickupTransportEvent
+
+        $testValue = new ActualPickupTransportEvent();
+        $model->setActualPickupTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getActualPickupTransportEvent());
 
         $model->unsetActualPickupTransportEvent();
 
@@ -44193,6 +44936,11 @@ final class UblModelTest extends TestCase
 
         // Property RequestedDepartureTransportEvent
 
+        $testValue = new RequestedDepartureTransportEvent();
+        $model->setRequestedDepartureTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getRequestedDepartureTransportEvent());
+
         $model->unsetRequestedDepartureTransportEvent();
 
         $this->assertNull($model->getRequestedDepartureTransportEvent());
@@ -44203,6 +44951,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdRequestedDepartureTransportEvent, $model->getRequestedDepartureTransportEvent());
 
         // Property RequestedArrivalTransportEvent
+
+        $testValue = new RequestedArrivalTransportEvent();
+        $model->setRequestedArrivalTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getRequestedArrivalTransportEvent());
 
         $model->unsetRequestedArrivalTransportEvent();
 
@@ -44221,9 +44974,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getRequestedWaypointTransportEvent());
         $this->assertCount(0, $model->getRequestedWaypointTransportEvent());
 
+        $requestedWaypointTransportEventItem = new RequestedWaypointTransportEvent();
+        $model->addToRequestedWaypointTransportEvent($requestedWaypointTransportEventItem);
+
+        $this->assertIsArray($model->getRequestedWaypointTransportEvent());
+        $this->assertGreaterThanOrEqual(1, count($model->getRequestedWaypointTransportEvent()));
+
         $createdRequestedWaypointTransportEventItem = $model->addToRequestedWaypointTransportEventWithCreate();
 
         $this->assertInstanceOf(RequestedWaypointTransportEvent::class, $createdRequestedWaypointTransportEventItem);
+
+        $requestedWaypointTransportEventOnceItem = new RequestedWaypointTransportEvent();
+
+        $model->addOnceToRequestedWaypointTransportEvent($requestedWaypointTransportEventOnceItem);
+        $model->addOnceToRequestedWaypointTransportEvent($requestedWaypointTransportEventOnceItem);
+
+        $itemsAfterOnce = $model->getRequestedWaypointTransportEvent();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstRequestedWaypointTransportEvent = $model->firstRequestedWaypointTransportEvent();
 
@@ -44242,6 +45010,11 @@ final class UblModelTest extends TestCase
 
         // Property PlannedDepartureTransportEvent
 
+        $testValue = new PlannedDepartureTransportEvent();
+        $model->setPlannedDepartureTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getPlannedDepartureTransportEvent());
+
         $model->unsetPlannedDepartureTransportEvent();
 
         $this->assertNull($model->getPlannedDepartureTransportEvent());
@@ -44252,6 +45025,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdPlannedDepartureTransportEvent, $model->getPlannedDepartureTransportEvent());
 
         // Property PlannedArrivalTransportEvent
+
+        $testValue = new PlannedArrivalTransportEvent();
+        $model->setPlannedArrivalTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getPlannedArrivalTransportEvent());
 
         $model->unsetPlannedArrivalTransportEvent();
 
@@ -44270,9 +45048,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getPlannedWaypointTransportEvent());
         $this->assertCount(0, $model->getPlannedWaypointTransportEvent());
 
+        $plannedWaypointTransportEventItem = new PlannedWaypointTransportEvent();
+        $model->addToPlannedWaypointTransportEvent($plannedWaypointTransportEventItem);
+
+        $this->assertIsArray($model->getPlannedWaypointTransportEvent());
+        $this->assertGreaterThanOrEqual(1, count($model->getPlannedWaypointTransportEvent()));
+
         $createdPlannedWaypointTransportEventItem = $model->addToPlannedWaypointTransportEventWithCreate();
 
         $this->assertInstanceOf(PlannedWaypointTransportEvent::class, $createdPlannedWaypointTransportEventItem);
+
+        $plannedWaypointTransportEventOnceItem = new PlannedWaypointTransportEvent();
+
+        $model->addOnceToPlannedWaypointTransportEvent($plannedWaypointTransportEventOnceItem);
+        $model->addOnceToPlannedWaypointTransportEvent($plannedWaypointTransportEventOnceItem);
+
+        $itemsAfterOnce = $model->getPlannedWaypointTransportEvent();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstPlannedWaypointTransportEvent = $model->firstPlannedWaypointTransportEvent();
 
@@ -44291,6 +45084,11 @@ final class UblModelTest extends TestCase
 
         // Property ActualDepartureTransportEvent
 
+        $testValue = new ActualDepartureTransportEvent();
+        $model->setActualDepartureTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getActualDepartureTransportEvent());
+
         $model->unsetActualDepartureTransportEvent();
 
         $this->assertNull($model->getActualDepartureTransportEvent());
@@ -44302,6 +45100,11 @@ final class UblModelTest extends TestCase
 
         // Property ActualWaypointTransportEvent
 
+        $testValue = new ActualWaypointTransportEvent();
+        $model->setActualWaypointTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getActualWaypointTransportEvent());
+
         $model->unsetActualWaypointTransportEvent();
 
         $this->assertNull($model->getActualWaypointTransportEvent());
@@ -44312,6 +45115,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdActualWaypointTransportEvent, $model->getActualWaypointTransportEvent());
 
         // Property ActualArrivalTransportEvent
+
+        $testValue = new ActualArrivalTransportEvent();
+        $model->setActualArrivalTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getActualArrivalTransportEvent());
 
         $model->unsetActualArrivalTransportEvent();
 
@@ -44366,6 +45174,11 @@ final class UblModelTest extends TestCase
 
         // Property EstimatedDepartureTransportEvent
 
+        $testValue = new EstimatedDepartureTransportEvent();
+        $model->setEstimatedDepartureTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getEstimatedDepartureTransportEvent());
+
         $model->unsetEstimatedDepartureTransportEvent();
 
         $this->assertNull($model->getEstimatedDepartureTransportEvent());
@@ -44376,6 +45189,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdEstimatedDepartureTransportEvent, $model->getEstimatedDepartureTransportEvent());
 
         // Property EstimatedArrivalTransportEvent
+
+        $testValue = new EstimatedArrivalTransportEvent();
+        $model->setEstimatedArrivalTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getEstimatedArrivalTransportEvent());
 
         $model->unsetEstimatedArrivalTransportEvent();
 
@@ -44816,6 +45634,11 @@ final class UblModelTest extends TestCase
 
         // Property TotalTransportHandlingUnitQuantity
 
+        $testValue = new TotalTransportHandlingUnitQuantity();
+        $model->setTotalTransportHandlingUnitQuantity($testValue);
+
+        $this->assertEquals($testValue, $model->getTotalTransportHandlingUnitQuantity());
+
         $model->unsetTotalTransportHandlingUnitQuantity();
 
         $this->assertNull($model->getTotalTransportHandlingUnitQuantity());
@@ -44843,6 +45666,11 @@ final class UblModelTest extends TestCase
 
         // Property DeclaredCustomsValueAmount
 
+        $testValue = new DeclaredCustomsValueAmount();
+        $model->setDeclaredCustomsValueAmount($testValue);
+
+        $this->assertEquals($testValue, $model->getDeclaredCustomsValueAmount());
+
         $model->unsetDeclaredCustomsValueAmount();
 
         $this->assertNull($model->getDeclaredCustomsValueAmount());
@@ -44854,6 +45682,11 @@ final class UblModelTest extends TestCase
 
         // Property DeclaredForCarriageValueAmount
 
+        $testValue = new DeclaredForCarriageValueAmount();
+        $model->setDeclaredForCarriageValueAmount($testValue);
+
+        $this->assertEquals($testValue, $model->getDeclaredForCarriageValueAmount());
+
         $model->unsetDeclaredForCarriageValueAmount();
 
         $this->assertNull($model->getDeclaredForCarriageValueAmount());
@@ -44864,6 +45697,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdDeclaredForCarriageValueAmount, $model->getDeclaredForCarriageValueAmount());
 
         // Property DeclaredStatisticsValueAmount
+
+        $testValue = new DeclaredStatisticsValueAmount();
+        $model->setDeclaredStatisticsValueAmount($testValue);
+
+        $this->assertEquals($testValue, $model->getDeclaredStatisticsValueAmount());
 
         $model->unsetDeclaredStatisticsValueAmount();
 
@@ -45506,6 +46344,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdSignatoryParty, $model->getSignatoryParty());
 
         // Property DigitalSignatureAttachment
+
+        $testValue = new DigitalSignatureAttachment();
+        $model->setDigitalSignatureAttachment($testValue);
+
+        $this->assertEquals($testValue, $model->getDigitalSignatureAttachment());
 
         $model->unsetDigitalSignatureAttachment();
 
@@ -46888,6 +47731,11 @@ final class UblModelTest extends TestCase
 
         // Property SubcontractingConditionsCode
 
+        $testValue = new SubcontractingConditionsCode();
+        $model->setSubcontractingConditionsCode($testValue);
+
+        $this->assertEquals($testValue, $model->getSubcontractingConditionsCode());
+
         $model->unsetSubcontractingConditionsCode();
 
         $this->assertNull($model->getSubcontractingConditionsCode());
@@ -48142,6 +48990,11 @@ final class UblModelTest extends TestCase
 
         // Property CalculationSequenceNumeric
 
+        $testValue = new CalculationSequenceNumeric();
+        $model->setCalculationSequenceNumeric($testValue);
+
+        $this->assertEquals($testValue, $model->getCalculationSequenceNumeric());
+
         $model->unsetCalculationSequenceNumeric();
 
         $this->assertNull($model->getCalculationSequenceNumeric());
@@ -48152,6 +49005,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdCalculationSequenceNumeric, $model->getCalculationSequenceNumeric());
 
         // Property TransactionCurrencyTaxAmount
+
+        $testValue = new TransactionCurrencyTaxAmount();
+        $model->setTransactionCurrencyTaxAmount($testValue);
+
+        $this->assertEquals($testValue, $model->getTransactionCurrencyTaxAmount());
 
         $model->unsetTransactionCurrencyTaxAmount();
 
@@ -48496,6 +49354,11 @@ final class UblModelTest extends TestCase
 
         // Property TelecommunicationsServiceCategory
 
+        $testValue = new TelecommunicationsServiceCategory();
+        $model->setTelecommunicationsServiceCategory($testValue);
+
+        $this->assertEquals($testValue, $model->getTelecommunicationsServiceCategory());
+
         $model->unsetTelecommunicationsServiceCategory();
 
         $this->assertNull($model->getTelecommunicationsServiceCategory());
@@ -48506,6 +49369,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdTelecommunicationsServiceCategory, $model->getTelecommunicationsServiceCategory());
 
         // Property TelecommunicationsServiceCategoryCode
+
+        $testValue = new TelecommunicationsServiceCategoryCode();
+        $model->setTelecommunicationsServiceCategoryCode($testValue);
+
+        $this->assertEquals($testValue, $model->getTelecommunicationsServiceCategoryCode());
 
         $model->unsetTelecommunicationsServiceCategoryCode();
 
@@ -48582,6 +49450,11 @@ final class UblModelTest extends TestCase
 
         // Property TelecommunicationsServiceCall
 
+        $testValue = new TelecommunicationsServiceCall();
+        $model->setTelecommunicationsServiceCall($testValue);
+
+        $this->assertEquals($testValue, $model->getTelecommunicationsServiceCall());
+
         $model->unsetTelecommunicationsServiceCall();
 
         $this->assertNull($model->getTelecommunicationsServiceCall());
@@ -48592,6 +49465,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdTelecommunicationsServiceCall, $model->getTelecommunicationsServiceCall());
 
         // Property TelecommunicationsServiceCallCode
+
+        $testValue = new TelecommunicationsServiceCallCode();
+        $model->setTelecommunicationsServiceCallCode($testValue);
+
+        $this->assertEquals($testValue, $model->getTelecommunicationsServiceCallCode());
 
         $model->unsetTelecommunicationsServiceCallCode();
 
@@ -49178,6 +50056,11 @@ final class UblModelTest extends TestCase
 
         // Property TelecommunicationsSupplyType
 
+        $testValue = new TelecommunicationsSupplyType1();
+        $model->setTelecommunicationsSupplyType($testValue);
+
+        $this->assertEquals($testValue, $model->getTelecommunicationsSupplyType());
+
         $model->unsetTelecommunicationsSupplyType();
 
         $this->assertNull($model->getTelecommunicationsSupplyType());
@@ -49188,6 +50071,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdTelecommunicationsSupplyType, $model->getTelecommunicationsSupplyType());
 
         // Property TelecommunicationsSupplyTypeCode
+
+        $testValue = new TelecommunicationsSupplyTypeCode();
+        $model->setTelecommunicationsSupplyTypeCode($testValue);
+
+        $this->assertEquals($testValue, $model->getTelecommunicationsSupplyTypeCode());
 
         $model->unsetTelecommunicationsSupplyTypeCode();
 
@@ -49280,9 +50168,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getTelecommunicationsSupplyLine());
         $this->assertCount(0, $model->getTelecommunicationsSupplyLine());
 
+        $telecommunicationsSupplyLineItem = new TelecommunicationsSupplyLine();
+        $model->addToTelecommunicationsSupplyLine($telecommunicationsSupplyLineItem);
+
+        $this->assertIsArray($model->getTelecommunicationsSupplyLine());
+        $this->assertGreaterThanOrEqual(1, count($model->getTelecommunicationsSupplyLine()));
+
         $createdTelecommunicationsSupplyLineItem = $model->addToTelecommunicationsSupplyLineWithCreate();
 
         $this->assertInstanceOf(TelecommunicationsSupplyLine::class, $createdTelecommunicationsSupplyLineItem);
+
+        $telecommunicationsSupplyLineOnceItem = new TelecommunicationsSupplyLine();
+
+        $model->addOnceToTelecommunicationsSupplyLine($telecommunicationsSupplyLineOnceItem);
+        $model->addOnceToTelecommunicationsSupplyLine($telecommunicationsSupplyLineOnceItem);
+
+        $itemsAfterOnce = $model->getTelecommunicationsSupplyLine();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstTelecommunicationsSupplyLine = $model->firstTelecommunicationsSupplyLine();
 
@@ -49783,9 +50686,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getInterestedProcurementProjectLot());
         $this->assertCount(0, $model->getInterestedProcurementProjectLot());
 
+        $interestedProcurementProjectLotItem = new InterestedProcurementProjectLot();
+        $model->addToInterestedProcurementProjectLot($interestedProcurementProjectLotItem);
+
+        $this->assertIsArray($model->getInterestedProcurementProjectLot());
+        $this->assertGreaterThanOrEqual(1, count($model->getInterestedProcurementProjectLot()));
+
         $createdInterestedProcurementProjectLotItem = $model->addToInterestedProcurementProjectLotWithCreate();
 
         $this->assertInstanceOf(InterestedProcurementProjectLot::class, $createdInterestedProcurementProjectLotItem);
+
+        $interestedProcurementProjectLotOnceItem = new InterestedProcurementProjectLot();
+
+        $model->addOnceToInterestedProcurementProjectLot($interestedProcurementProjectLotOnceItem);
+        $model->addOnceToInterestedProcurementProjectLot($interestedProcurementProjectLotOnceItem);
+
+        $itemsAfterOnce = $model->getInterestedProcurementProjectLot();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstInterestedProcurementProjectLot = $model->firstInterestedProcurementProjectLot();
 
@@ -50048,9 +50966,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getRequiredBusinessClassificationScheme());
         $this->assertCount(0, $model->getRequiredBusinessClassificationScheme());
 
+        $requiredBusinessClassificationSchemeItem = new RequiredBusinessClassificationScheme();
+        $model->addToRequiredBusinessClassificationScheme($requiredBusinessClassificationSchemeItem);
+
+        $this->assertIsArray($model->getRequiredBusinessClassificationScheme());
+        $this->assertGreaterThanOrEqual(1, count($model->getRequiredBusinessClassificationScheme()));
+
         $createdRequiredBusinessClassificationSchemeItem = $model->addToRequiredBusinessClassificationSchemeWithCreate();
 
         $this->assertInstanceOf(RequiredBusinessClassificationScheme::class, $createdRequiredBusinessClassificationSchemeItem);
+
+        $requiredBusinessClassificationSchemeOnceItem = new RequiredBusinessClassificationScheme();
+
+        $model->addOnceToRequiredBusinessClassificationScheme($requiredBusinessClassificationSchemeOnceItem);
+        $model->addOnceToRequiredBusinessClassificationScheme($requiredBusinessClassificationSchemeOnceItem);
+
+        $itemsAfterOnce = $model->getRequiredBusinessClassificationScheme();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstRequiredBusinessClassificationScheme = $model->firstRequiredBusinessClassificationScheme();
 
@@ -50075,9 +51008,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getTechnicalEvaluationCriterion());
         $this->assertCount(0, $model->getTechnicalEvaluationCriterion());
 
+        $technicalEvaluationCriterionItem = new TechnicalEvaluationCriterion();
+        $model->addToTechnicalEvaluationCriterion($technicalEvaluationCriterionItem);
+
+        $this->assertIsArray($model->getTechnicalEvaluationCriterion());
+        $this->assertGreaterThanOrEqual(1, count($model->getTechnicalEvaluationCriterion()));
+
         $createdTechnicalEvaluationCriterionItem = $model->addToTechnicalEvaluationCriterionWithCreate();
 
         $this->assertInstanceOf(TechnicalEvaluationCriterion::class, $createdTechnicalEvaluationCriterionItem);
+
+        $technicalEvaluationCriterionOnceItem = new TechnicalEvaluationCriterion();
+
+        $model->addOnceToTechnicalEvaluationCriterion($technicalEvaluationCriterionOnceItem);
+        $model->addOnceToTechnicalEvaluationCriterion($technicalEvaluationCriterionOnceItem);
+
+        $itemsAfterOnce = $model->getTechnicalEvaluationCriterion();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstTechnicalEvaluationCriterion = $model->firstTechnicalEvaluationCriterion();
 
@@ -50102,9 +51050,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getFinancialEvaluationCriterion());
         $this->assertCount(0, $model->getFinancialEvaluationCriterion());
 
+        $financialEvaluationCriterionItem = new FinancialEvaluationCriterion();
+        $model->addToFinancialEvaluationCriterion($financialEvaluationCriterionItem);
+
+        $this->assertIsArray($model->getFinancialEvaluationCriterion());
+        $this->assertGreaterThanOrEqual(1, count($model->getFinancialEvaluationCriterion()));
+
         $createdFinancialEvaluationCriterionItem = $model->addToFinancialEvaluationCriterionWithCreate();
 
         $this->assertInstanceOf(FinancialEvaluationCriterion::class, $createdFinancialEvaluationCriterionItem);
+
+        $financialEvaluationCriterionOnceItem = new FinancialEvaluationCriterion();
+
+        $model->addOnceToFinancialEvaluationCriterion($financialEvaluationCriterionOnceItem);
+        $model->addOnceToFinancialEvaluationCriterion($financialEvaluationCriterionOnceItem);
+
+        $itemsAfterOnce = $model->getFinancialEvaluationCriterion();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstFinancialEvaluationCriterion = $model->firstFinancialEvaluationCriterion();
 
@@ -50138,6 +51101,15 @@ final class UblModelTest extends TestCase
         $createdSpecificTendererRequirementItem = $model->addToSpecificTendererRequirementWithCreate();
 
         $this->assertInstanceOf(SpecificTendererRequirement::class, $createdSpecificTendererRequirementItem);
+
+        $specificTendererRequirementOnceItem = new SpecificTendererRequirement();
+
+        $model->addOnceToSpecificTendererRequirement($specificTendererRequirementOnceItem);
+        $model->addOnceToSpecificTendererRequirement($specificTendererRequirementOnceItem);
+
+        $itemsAfterOnce = $model->getSpecificTendererRequirement();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstSpecificTendererRequirement = $model->firstSpecificTendererRequirement();
 
@@ -50260,6 +51232,11 @@ final class UblModelTest extends TestCase
         $this->assertCount(0, $itemsAfterClear);
 
         // Property TendererRequirementTypeCode
+
+        $testValue = new TendererRequirementTypeCode();
+        $model->setTendererRequirementTypeCode($testValue);
+
+        $this->assertEquals($testValue, $model->getTendererRequirementTypeCode());
 
         $model->unsetTendererRequirementTypeCode();
 
@@ -50419,6 +51396,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdID, $model->getID());
 
         // Property OriginalContractingSystemID
+
+        $testValue = new OriginalContractingSystemID();
+        $model->setOriginalContractingSystemID($testValue);
+
+        $this->assertEquals($testValue, $model->getOriginalContractingSystemID());
 
         $model->unsetOriginalContractingSystemID();
 
@@ -50611,17 +51593,32 @@ final class UblModelTest extends TestCase
 
         // Property CandidateReductionConstraintIndicator
 
+        $testValue = true;
+        $model->setCandidateReductionConstraintIndicator($testValue);
+
+        $this->assertEquals($testValue, $model->getCandidateReductionConstraintIndicator());
+
         $model->unsetCandidateReductionConstraintIndicator();
 
         $this->assertNull($model->getCandidateReductionConstraintIndicator());
 
         // Property GovernmentAgreementConstraintIndicator
 
+        $testValue = true;
+        $model->setGovernmentAgreementConstraintIndicator($testValue);
+
+        $this->assertEquals($testValue, $model->getGovernmentAgreementConstraintIndicator());
+
         $model->unsetGovernmentAgreementConstraintIndicator();
 
         $this->assertNull($model->getGovernmentAgreementConstraintIndicator());
 
         // Property DocumentAvailabilityPeriod
+
+        $testValue = new DocumentAvailabilityPeriod();
+        $model->setDocumentAvailabilityPeriod($testValue);
+
+        $this->assertEquals($testValue, $model->getDocumentAvailabilityPeriod());
 
         $model->unsetDocumentAvailabilityPeriod();
 
@@ -50634,6 +51631,11 @@ final class UblModelTest extends TestCase
 
         // Property TenderSubmissionDeadlinePeriod
 
+        $testValue = new TenderSubmissionDeadlinePeriod();
+        $model->setTenderSubmissionDeadlinePeriod($testValue);
+
+        $this->assertEquals($testValue, $model->getTenderSubmissionDeadlinePeriod());
+
         $model->unsetTenderSubmissionDeadlinePeriod();
 
         $this->assertNull($model->getTenderSubmissionDeadlinePeriod());
@@ -50645,6 +51647,11 @@ final class UblModelTest extends TestCase
 
         // Property InvitationSubmissionPeriod
 
+        $testValue = new InvitationSubmissionPeriod();
+        $model->setInvitationSubmissionPeriod($testValue);
+
+        $this->assertEquals($testValue, $model->getInvitationSubmissionPeriod());
+
         $model->unsetInvitationSubmissionPeriod();
 
         $this->assertNull($model->getInvitationSubmissionPeriod());
@@ -50655,6 +51662,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdInvitationSubmissionPeriod, $model->getInvitationSubmissionPeriod());
 
         // Property ParticipationRequestReceptionPeriod
+
+        $testValue = new ParticipationRequestReceptionPeriod();
+        $model->setParticipationRequestReceptionPeriod($testValue);
+
+        $this->assertEquals($testValue, $model->getParticipationRequestReceptionPeriod());
 
         $model->unsetParticipationRequestReceptionPeriod();
 
@@ -50724,6 +51736,15 @@ final class UblModelTest extends TestCase
         $createdAdditionalDocumentReferenceItem = $model->addToAdditionalDocumentReferenceWithCreate();
 
         $this->assertInstanceOf(AdditionalDocumentReference::class, $createdAdditionalDocumentReferenceItem);
+
+        $additionalDocumentReferenceOnceItem = new AdditionalDocumentReference();
+
+        $model->addOnceToAdditionalDocumentReference($additionalDocumentReferenceOnceItem);
+        $model->addOnceToAdditionalDocumentReference($additionalDocumentReferenceOnceItem);
+
+        $itemsAfterOnce = $model->getAdditionalDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstAdditionalDocumentReference = $model->firstAdditionalDocumentReference();
 
@@ -50970,6 +51991,15 @@ final class UblModelTest extends TestCase
 
         $this->assertInstanceOf(AcceptedVariantsDescription::class, $createdAcceptedVariantsDescriptionItem);
 
+        $acceptedVariantsDescriptionOnceItem = new AcceptedVariantsDescription();
+
+        $model->addOnceToAcceptedVariantsDescription($acceptedVariantsDescriptionOnceItem);
+        $model->addOnceToAcceptedVariantsDescription($acceptedVariantsDescriptionOnceItem);
+
+        $itemsAfterOnce = $model->getAcceptedVariantsDescription();
+
+        $this->assertIsArray($itemsAfterOnce);
+
         $firstAcceptedVariantsDescription = $model->firstAcceptedVariantsDescription();
 
         $this->assertInstanceOf(AcceptedVariantsDescription::class, $firstAcceptedVariantsDescription);
@@ -50993,9 +52023,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getPriceRevisionFormulaDescription());
         $this->assertCount(0, $model->getPriceRevisionFormulaDescription());
 
+        $priceRevisionFormulaDescriptionItem = new PriceRevisionFormulaDescription();
+        $model->addToPriceRevisionFormulaDescription($priceRevisionFormulaDescriptionItem);
+
+        $this->assertIsArray($model->getPriceRevisionFormulaDescription());
+        $this->assertGreaterThanOrEqual(1, count($model->getPriceRevisionFormulaDescription()));
+
         $createdPriceRevisionFormulaDescriptionItem = $model->addToPriceRevisionFormulaDescriptionWithCreate();
 
         $this->assertInstanceOf(PriceRevisionFormulaDescription::class, $createdPriceRevisionFormulaDescriptionItem);
+
+        $priceRevisionFormulaDescriptionOnceItem = new PriceRevisionFormulaDescription();
+
+        $model->addOnceToPriceRevisionFormulaDescription($priceRevisionFormulaDescriptionOnceItem);
+        $model->addOnceToPriceRevisionFormulaDescription($priceRevisionFormulaDescriptionOnceItem);
+
+        $itemsAfterOnce = $model->getPriceRevisionFormulaDescription();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstPriceRevisionFormulaDescription = $model->firstPriceRevisionFormulaDescription();
 
@@ -51072,6 +52117,11 @@ final class UblModelTest extends TestCase
 
         // Property MaximumAdvertisementAmount
 
+        $testValue = new MaximumAdvertisementAmount();
+        $model->setMaximumAdvertisementAmount($testValue);
+
+        $this->assertEquals($testValue, $model->getMaximumAdvertisementAmount());
+
         $model->unsetMaximumAdvertisementAmount();
 
         $this->assertNull($model->getMaximumAdvertisementAmount());
@@ -51140,6 +52190,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdPaymentFrequencyCode, $model->getPaymentFrequencyCode());
 
         // Property EconomicOperatorRegistryURI
+
+        $testValue = new EconomicOperatorRegistryURI();
+        $model->setEconomicOperatorRegistryURI($testValue);
+
+        $this->assertEquals($testValue, $model->getEconomicOperatorRegistryURI());
 
         $model->unsetEconomicOperatorRegistryURI();
 
@@ -51329,6 +52384,11 @@ final class UblModelTest extends TestCase
 
         // Property ProcurementLegislationDocumentReference
 
+        $testValue = new ProcurementLegislationDocumentReference();
+        $model->setProcurementLegislationDocumentReference($testValue);
+
+        $this->assertEquals($testValue, $model->getProcurementLegislationDocumentReference());
+
         $model->unsetProcurementLegislationDocumentReference();
 
         $this->assertNull($model->getProcurementLegislationDocumentReference());
@@ -51339,6 +52399,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdProcurementLegislationDocumentReference, $model->getProcurementLegislationDocumentReference());
 
         // Property FiscalLegislationDocumentReference
+
+        $testValue = new FiscalLegislationDocumentReference();
+        $model->setFiscalLegislationDocumentReference($testValue);
+
+        $this->assertEquals($testValue, $model->getFiscalLegislationDocumentReference());
 
         $model->unsetFiscalLegislationDocumentReference();
 
@@ -51351,6 +52416,11 @@ final class UblModelTest extends TestCase
 
         // Property EnvironmentalLegislationDocumentReference
 
+        $testValue = new EnvironmentalLegislationDocumentReference();
+        $model->setEnvironmentalLegislationDocumentReference($testValue);
+
+        $this->assertEquals($testValue, $model->getEnvironmentalLegislationDocumentReference());
+
         $model->unsetEnvironmentalLegislationDocumentReference();
 
         $this->assertNull($model->getEnvironmentalLegislationDocumentReference());
@@ -51361,6 +52431,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdEnvironmentalLegislationDocumentReference, $model->getEnvironmentalLegislationDocumentReference());
 
         // Property EmploymentLegislationDocumentReference
+
+        $testValue = new EmploymentLegislationDocumentReference();
+        $model->setEmploymentLegislationDocumentReference($testValue);
+
+        $this->assertEquals($testValue, $model->getEmploymentLegislationDocumentReference());
 
         $model->unsetEmploymentLegislationDocumentReference();
 
@@ -51379,9 +52454,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getContractualDocumentReference());
         $this->assertCount(0, $model->getContractualDocumentReference());
 
+        $contractualDocumentReferenceItem = new ContractualDocumentReference();
+        $model->addToContractualDocumentReference($contractualDocumentReferenceItem);
+
+        $this->assertIsArray($model->getContractualDocumentReference());
+        $this->assertGreaterThanOrEqual(1, count($model->getContractualDocumentReference()));
+
         $createdContractualDocumentReferenceItem = $model->addToContractualDocumentReferenceWithCreate();
 
         $this->assertInstanceOf(ContractualDocumentReference::class, $createdContractualDocumentReferenceItem);
+
+        $contractualDocumentReferenceOnceItem = new ContractualDocumentReference();
+
+        $model->addOnceToContractualDocumentReference($contractualDocumentReferenceOnceItem);
+        $model->addOnceToContractualDocumentReference($contractualDocumentReferenceOnceItem);
+
+        $itemsAfterOnce = $model->getContractualDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstContractualDocumentReference = $model->firstContractualDocumentReference();
 
@@ -51399,6 +52489,11 @@ final class UblModelTest extends TestCase
         $this->assertCount(0, $itemsAfterClear);
 
         // Property CallForTendersDocumentReference
+
+        $testValue = new CallForTendersDocumentReference();
+        $model->setCallForTendersDocumentReference($testValue);
+
+        $this->assertEquals($testValue, $model->getCallForTendersDocumentReference());
 
         $model->unsetCallForTendersDocumentReference();
 
@@ -51475,9 +52570,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getTendererQualificationRequest());
         $this->assertCount(0, $model->getTendererQualificationRequest());
 
+        $tendererQualificationRequestItem = new TendererQualificationRequest();
+        $model->addToTendererQualificationRequest($tendererQualificationRequestItem);
+
+        $this->assertIsArray($model->getTendererQualificationRequest());
+        $this->assertGreaterThanOrEqual(1, count($model->getTendererQualificationRequest()));
+
         $createdTendererQualificationRequestItem = $model->addToTendererQualificationRequestWithCreate();
 
         $this->assertInstanceOf(TendererQualificationRequest::class, $createdTendererQualificationRequestItem);
+
+        $tendererQualificationRequestOnceItem = new TendererQualificationRequest();
+
+        $model->addOnceToTendererQualificationRequest($tendererQualificationRequestOnceItem);
+        $model->addOnceToTendererQualificationRequest($tendererQualificationRequestOnceItem);
+
+        $itemsAfterOnce = $model->getTendererQualificationRequest();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstTendererQualificationRequest = $model->firstTendererQualificationRequest();
 
@@ -51586,9 +52696,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getContractExecutionRequirement());
         $this->assertCount(0, $model->getContractExecutionRequirement());
 
+        $contractExecutionRequirementItem = new ContractExecutionRequirement();
+        $model->addToContractExecutionRequirement($contractExecutionRequirementItem);
+
+        $this->assertIsArray($model->getContractExecutionRequirement());
+        $this->assertGreaterThanOrEqual(1, count($model->getContractExecutionRequirement()));
+
         $createdContractExecutionRequirementItem = $model->addToContractExecutionRequirementWithCreate();
 
         $this->assertInstanceOf(ContractExecutionRequirement::class, $createdContractExecutionRequirementItem);
+
+        $contractExecutionRequirementOnceItem = new ContractExecutionRequirement();
+
+        $model->addOnceToContractExecutionRequirement($contractExecutionRequirementOnceItem);
+        $model->addOnceToContractExecutionRequirement($contractExecutionRequirementOnceItem);
+
+        $itemsAfterOnce = $model->getContractExecutionRequirement();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstContractExecutionRequirement = $model->firstContractExecutionRequirement();
 
@@ -51622,6 +52747,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdAwardingTerms, $model->getAwardingTerms());
 
         // Property AdditionalInformationParty
+
+        $testValue = new AdditionalInformationParty();
+        $model->setAdditionalInformationParty($testValue);
+
+        $this->assertEquals($testValue, $model->getAdditionalInformationParty());
 
         $model->unsetAdditionalInformationParty();
 
@@ -51856,6 +52986,11 @@ final class UblModelTest extends TestCase
 
         // Property ReplacedNoticeDocumentReference
 
+        $testValue = new ReplacedNoticeDocumentReference();
+        $model->setReplacedNoticeDocumentReference($testValue);
+
+        $this->assertEquals($testValue, $model->getReplacedNoticeDocumentReference());
+
         $model->unsetReplacedNoticeDocumentReference();
 
         $this->assertNull($model->getReplacedNoticeDocumentReference());
@@ -52025,6 +53160,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdContentUnitQuantity, $model->getContentUnitQuantity());
 
         // Property OrderQuantityIncrementNumeric
+
+        $testValue = new OrderQuantityIncrementNumeric();
+        $model->setOrderQuantityIncrementNumeric($testValue);
+
+        $this->assertEquals($testValue, $model->getOrderQuantityIncrementNumeric());
 
         $model->unsetOrderQuantityIncrementNumeric();
 
@@ -52201,6 +53341,15 @@ final class UblModelTest extends TestCase
 
         $this->assertInstanceOf(OfferedItemLocationQuantity::class, $createdOfferedItemLocationQuantityItem);
 
+        $offeredItemLocationQuantityOnceItem = new OfferedItemLocationQuantity();
+
+        $model->addOnceToOfferedItemLocationQuantity($offeredItemLocationQuantityOnceItem);
+        $model->addOnceToOfferedItemLocationQuantity($offeredItemLocationQuantityOnceItem);
+
+        $itemsAfterOnce = $model->getOfferedItemLocationQuantity();
+
+        $this->assertIsArray($itemsAfterOnce);
+
         $firstOfferedItemLocationQuantity = $model->firstOfferedItemLocationQuantity();
 
         $this->assertInstanceOf(OfferedItemLocationQuantity::class, $firstOfferedItemLocationQuantity);
@@ -52334,6 +53483,11 @@ final class UblModelTest extends TestCase
 
         // Property CallForTendersLineReference
 
+        $testValue = new CallForTendersLineReference();
+        $model->setCallForTendersLineReference($testValue);
+
+        $this->assertEquals($testValue, $model->getCallForTendersLineReference());
+
         $model->unsetCallForTendersLineReference();
 
         $this->assertNull($model->getCallForTendersLineReference());
@@ -52344,6 +53498,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdCallForTendersLineReference, $model->getCallForTendersLineReference());
 
         // Property CallForTendersDocumentReference
+
+        $testValue = new CallForTendersDocumentReference();
+        $model->setCallForTendersDocumentReference($testValue);
+
+        $this->assertEquals($testValue, $model->getCallForTendersDocumentReference());
 
         $model->unsetCallForTendersDocumentReference();
 
@@ -52833,6 +53992,11 @@ final class UblModelTest extends TestCase
 
         // Property ReceivedElectronicTenderQuantity
 
+        $testValue = new ReceivedElectronicTenderQuantity();
+        $model->setReceivedElectronicTenderQuantity($testValue);
+
+        $this->assertEquals($testValue, $model->getReceivedElectronicTenderQuantity());
+
         $model->unsetReceivedElectronicTenderQuantity();
 
         $this->assertNull($model->getReceivedElectronicTenderQuantity());
@@ -52843,6 +54007,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdReceivedElectronicTenderQuantity, $model->getReceivedElectronicTenderQuantity());
 
         // Property ReceivedForeignTenderQuantity
+
+        $testValue = new ReceivedForeignTenderQuantity();
+        $model->setReceivedForeignTenderQuantity($testValue);
+
+        $this->assertEquals($testValue, $model->getReceivedForeignTenderQuantity());
 
         $model->unsetReceivedForeignTenderQuantity();
 
@@ -52886,6 +54055,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdAwardedTenderedProject, $model->getAwardedTenderedProject());
 
         // Property ContractFormalizationPeriod
+
+        $testValue = new ContractFormalizationPeriod();
+        $model->setContractFormalizationPeriod($testValue);
+
+        $this->assertEquals($testValue, $model->getContractFormalizationPeriod());
 
         $model->unsetContractFormalizationPeriod();
 
@@ -53535,6 +54709,11 @@ final class UblModelTest extends TestCase
 
         // Property TransportExecutionPlanReferenceID
 
+        $testValue = new TransportExecutionPlanReferenceID();
+        $model->setTransportExecutionPlanReferenceID($testValue);
+
+        $this->assertEquals($testValue, $model->getTransportExecutionPlanReferenceID());
+
         $model->unsetTransportExecutionPlanReferenceID();
 
         $this->assertNull($model->getTransportExecutionPlanReferenceID());
@@ -53561,6 +54740,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdTransportationService, $model->getTransportationService());
 
         // Property TransportServiceProviderParty
+
+        $testValue = new TransportServiceProviderParty();
+        $model->setTransportServiceProviderParty($testValue);
+
+        $this->assertEquals($testValue, $model->getTransportServiceProviderParty());
 
         $model->unsetTransportServiceProviderParty();
 
@@ -53722,9 +54906,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getTransportationServiceDescription());
         $this->assertCount(0, $model->getTransportationServiceDescription());
 
+        $transportationServiceDescriptionItem = new TransportationServiceDescription();
+        $model->addToTransportationServiceDescription($transportationServiceDescriptionItem);
+
+        $this->assertIsArray($model->getTransportationServiceDescription());
+        $this->assertGreaterThanOrEqual(1, count($model->getTransportationServiceDescription()));
+
         $createdTransportationServiceDescriptionItem = $model->addToTransportationServiceDescriptionWithCreate();
 
         $this->assertInstanceOf(TransportationServiceDescription::class, $createdTransportationServiceDescriptionItem);
+
+        $transportationServiceDescriptionOnceItem = new TransportationServiceDescription();
+
+        $model->addOnceToTransportationServiceDescription($transportationServiceDescriptionOnceItem);
+        $model->addOnceToTransportationServiceDescription($transportationServiceDescriptionOnceItem);
+
+        $itemsAfterOnce = $model->getTransportationServiceDescription();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstTransportationServiceDescription = $model->firstTransportationServiceDescription();
 
@@ -53742,6 +54941,11 @@ final class UblModelTest extends TestCase
         $this->assertCount(0, $itemsAfterClear);
 
         // Property TransportationServiceDetailsURI
+
+        $testValue = new TransportationServiceDetailsURI();
+        $model->setTransportationServiceDetailsURI($testValue);
+
+        $this->assertEquals($testValue, $model->getTransportationServiceDetailsURI());
 
         $model->unsetTransportationServiceDetailsURI();
 
@@ -53866,6 +55070,15 @@ final class UblModelTest extends TestCase
 
         $this->assertInstanceOf(SupportedTransportEquipment::class, $createdSupportedTransportEquipmentItem);
 
+        $supportedTransportEquipmentOnceItem = new SupportedTransportEquipment();
+
+        $model->addOnceToSupportedTransportEquipment($supportedTransportEquipmentOnceItem);
+        $model->addOnceToSupportedTransportEquipment($supportedTransportEquipmentOnceItem);
+
+        $itemsAfterOnce = $model->getSupportedTransportEquipment();
+
+        $this->assertIsArray($itemsAfterOnce);
+
         $firstSupportedTransportEquipment = $model->firstSupportedTransportEquipment();
 
         $this->assertInstanceOf(SupportedTransportEquipment::class, $firstSupportedTransportEquipment);
@@ -53889,9 +55102,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getUnsupportedTransportEquipment());
         $this->assertCount(0, $model->getUnsupportedTransportEquipment());
 
+        $unsupportedTransportEquipmentItem = new UnsupportedTransportEquipment();
+        $model->addToUnsupportedTransportEquipment($unsupportedTransportEquipmentItem);
+
+        $this->assertIsArray($model->getUnsupportedTransportEquipment());
+        $this->assertGreaterThanOrEqual(1, count($model->getUnsupportedTransportEquipment()));
+
         $createdUnsupportedTransportEquipmentItem = $model->addToUnsupportedTransportEquipmentWithCreate();
 
         $this->assertInstanceOf(UnsupportedTransportEquipment::class, $createdUnsupportedTransportEquipmentItem);
+
+        $unsupportedTransportEquipmentOnceItem = new UnsupportedTransportEquipment();
+
+        $model->addOnceToUnsupportedTransportEquipment($unsupportedTransportEquipmentOnceItem);
+        $model->addOnceToUnsupportedTransportEquipment($unsupportedTransportEquipmentOnceItem);
+
+        $itemsAfterOnce = $model->getUnsupportedTransportEquipment();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstUnsupportedTransportEquipment = $model->firstUnsupportedTransportEquipment();
 
@@ -53958,9 +55186,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getSupportedCommodityClassification());
         $this->assertCount(0, $model->getSupportedCommodityClassification());
 
+        $supportedCommodityClassificationItem = new SupportedCommodityClassification();
+        $model->addToSupportedCommodityClassification($supportedCommodityClassificationItem);
+
+        $this->assertIsArray($model->getSupportedCommodityClassification());
+        $this->assertGreaterThanOrEqual(1, count($model->getSupportedCommodityClassification()));
+
         $createdSupportedCommodityClassificationItem = $model->addToSupportedCommodityClassificationWithCreate();
 
         $this->assertInstanceOf(SupportedCommodityClassification::class, $createdSupportedCommodityClassificationItem);
+
+        $supportedCommodityClassificationOnceItem = new SupportedCommodityClassification();
+
+        $model->addOnceToSupportedCommodityClassification($supportedCommodityClassificationOnceItem);
+        $model->addOnceToSupportedCommodityClassification($supportedCommodityClassificationOnceItem);
+
+        $itemsAfterOnce = $model->getSupportedCommodityClassification();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstSupportedCommodityClassification = $model->firstSupportedCommodityClassification();
 
@@ -53985,9 +55228,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getUnsupportedCommodityClassification());
         $this->assertCount(0, $model->getUnsupportedCommodityClassification());
 
+        $unsupportedCommodityClassificationItem = new UnsupportedCommodityClassification();
+        $model->addToUnsupportedCommodityClassification($unsupportedCommodityClassificationItem);
+
+        $this->assertIsArray($model->getUnsupportedCommodityClassification());
+        $this->assertGreaterThanOrEqual(1, count($model->getUnsupportedCommodityClassification()));
+
         $createdUnsupportedCommodityClassificationItem = $model->addToUnsupportedCommodityClassificationWithCreate();
 
         $this->assertInstanceOf(UnsupportedCommodityClassification::class, $createdUnsupportedCommodityClassificationItem);
+
+        $unsupportedCommodityClassificationOnceItem = new UnsupportedCommodityClassification();
+
+        $model->addOnceToUnsupportedCommodityClassification($unsupportedCommodityClassificationOnceItem);
+        $model->addOnceToUnsupportedCommodityClassification($unsupportedCommodityClassificationOnceItem);
+
+        $itemsAfterOnce = $model->getUnsupportedCommodityClassification();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstUnsupportedCommodityClassification = $model->firstUnsupportedCommodityClassification();
 
@@ -54105,6 +55363,11 @@ final class UblModelTest extends TestCase
         $this->assertCount(0, $itemsAfterClear);
 
         // Property ResponsibleTransportServiceProviderParty
+
+        $testValue = new ResponsibleTransportServiceProviderParty();
+        $model->setResponsibleTransportServiceProviderParty($testValue);
+
+        $this->assertEquals($testValue, $model->getResponsibleTransportServiceProviderParty());
 
         $model->unsetResponsibleTransportServiceProviderParty();
 
@@ -54418,6 +55681,11 @@ final class UblModelTest extends TestCase
         $this->assertCount(0, $itemsAfterClear);
 
         // Property TransportEquipmentTypeCode
+
+        $testValue = new TransportEquipmentTypeCode();
+        $model->setTransportEquipmentTypeCode($testValue);
+
+        $this->assertEquals($testValue, $model->getTransportEquipmentTypeCode());
 
         $model->unsetTransportEquipmentTypeCode();
 
@@ -54767,9 +56035,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getSpecialTransportRequirements());
         $this->assertCount(0, $model->getSpecialTransportRequirements());
 
+        $specialTransportRequirementsItem = new SpecialTransportRequirements();
+        $model->addToSpecialTransportRequirements($specialTransportRequirementsItem);
+
+        $this->assertIsArray($model->getSpecialTransportRequirements());
+        $this->assertGreaterThanOrEqual(1, count($model->getSpecialTransportRequirements()));
+
         $createdSpecialTransportRequirementsItem = $model->addToSpecialTransportRequirementsWithCreate();
 
         $this->assertInstanceOf(SpecialTransportRequirements::class, $createdSpecialTransportRequirementsItem);
+
+        $specialTransportRequirementsOnceItem = new SpecialTransportRequirements();
+
+        $model->addOnceToSpecialTransportRequirements($specialTransportRequirementsOnceItem);
+        $model->addOnceToSpecialTransportRequirements($specialTransportRequirementsOnceItem);
+
+        $itemsAfterOnce = $model->getSpecialTransportRequirements();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstSpecialTransportRequirements = $model->firstSpecialTransportRequirements();
 
@@ -55523,9 +56806,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getPackagedTransportHandlingUnit());
         $this->assertCount(0, $model->getPackagedTransportHandlingUnit());
 
+        $packagedTransportHandlingUnitItem = new PackagedTransportHandlingUnit();
+        $model->addToPackagedTransportHandlingUnit($packagedTransportHandlingUnitItem);
+
+        $this->assertIsArray($model->getPackagedTransportHandlingUnit());
+        $this->assertGreaterThanOrEqual(1, count($model->getPackagedTransportHandlingUnit()));
+
         $createdPackagedTransportHandlingUnitItem = $model->addToPackagedTransportHandlingUnitWithCreate();
 
         $this->assertInstanceOf(PackagedTransportHandlingUnit::class, $createdPackagedTransportHandlingUnitItem);
+
+        $packagedTransportHandlingUnitOnceItem = new PackagedTransportHandlingUnit();
+
+        $model->addOnceToPackagedTransportHandlingUnit($packagedTransportHandlingUnitOnceItem);
+        $model->addOnceToPackagedTransportHandlingUnit($packagedTransportHandlingUnitOnceItem);
+
+        $itemsAfterOnce = $model->getPackagedTransportHandlingUnit();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstPackagedTransportHandlingUnit = $model->firstPackagedTransportHandlingUnit();
 
@@ -55766,9 +57064,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getContainedInTransportEquipment());
         $this->assertCount(0, $model->getContainedInTransportEquipment());
 
+        $containedInTransportEquipmentItem = new ContainedInTransportEquipment();
+        $model->addToContainedInTransportEquipment($containedInTransportEquipmentItem);
+
+        $this->assertIsArray($model->getContainedInTransportEquipment());
+        $this->assertGreaterThanOrEqual(1, count($model->getContainedInTransportEquipment()));
+
         $createdContainedInTransportEquipmentItem = $model->addToContainedInTransportEquipmentWithCreate();
 
         $this->assertInstanceOf(ContainedInTransportEquipment::class, $createdContainedInTransportEquipmentItem);
+
+        $containedInTransportEquipmentOnceItem = new ContainedInTransportEquipment();
+
+        $model->addOnceToContainedInTransportEquipment($containedInTransportEquipmentOnceItem);
+        $model->addOnceToContainedInTransportEquipment($containedInTransportEquipmentOnceItem);
+
+        $itemsAfterOnce = $model->getContainedInTransportEquipment();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstContainedInTransportEquipment = $model->firstContainedInTransportEquipment();
 
@@ -56264,9 +57577,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getTransportServiceProviderSpecialTerms());
         $this->assertCount(0, $model->getTransportServiceProviderSpecialTerms());
 
+        $transportServiceProviderSpecialTermsItem = new TransportServiceProviderSpecialTerms();
+        $model->addToTransportServiceProviderSpecialTerms($transportServiceProviderSpecialTermsItem);
+
+        $this->assertIsArray($model->getTransportServiceProviderSpecialTerms());
+        $this->assertGreaterThanOrEqual(1, count($model->getTransportServiceProviderSpecialTerms()));
+
         $createdTransportServiceProviderSpecialTermsItem = $model->addToTransportServiceProviderSpecialTermsWithCreate();
 
         $this->assertInstanceOf(TransportServiceProviderSpecialTerms::class, $createdTransportServiceProviderSpecialTermsItem);
+
+        $transportServiceProviderSpecialTermsOnceItem = new TransportServiceProviderSpecialTerms();
+
+        $model->addOnceToTransportServiceProviderSpecialTerms($transportServiceProviderSpecialTermsOnceItem);
+        $model->addOnceToTransportServiceProviderSpecialTerms($transportServiceProviderSpecialTermsOnceItem);
+
+        $itemsAfterOnce = $model->getTransportServiceProviderSpecialTerms();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstTransportServiceProviderSpecialTerms = $model->firstTransportServiceProviderSpecialTerms();
 
@@ -56596,6 +57924,11 @@ final class UblModelTest extends TestCase
 
         // Property TransportHandlingUnitTypeCode
 
+        $testValue = new TransportHandlingUnitTypeCode();
+        $model->setTransportHandlingUnitTypeCode($testValue);
+
+        $this->assertEquals($testValue, $model->getTransportHandlingUnitTypeCode());
+
         $model->unsetTransportHandlingUnitTypeCode();
 
         $this->assertNull($model->getTransportHandlingUnitTypeCode());
@@ -56898,9 +58231,24 @@ final class UblModelTest extends TestCase
         $this->assertIsArray($model->getReceivedHandlingUnitReceiptLine());
         $this->assertCount(0, $model->getReceivedHandlingUnitReceiptLine());
 
+        $receivedHandlingUnitReceiptLineItem = new ReceivedHandlingUnitReceiptLine();
+        $model->addToReceivedHandlingUnitReceiptLine($receivedHandlingUnitReceiptLineItem);
+
+        $this->assertIsArray($model->getReceivedHandlingUnitReceiptLine());
+        $this->assertGreaterThanOrEqual(1, count($model->getReceivedHandlingUnitReceiptLine()));
+
         $createdReceivedHandlingUnitReceiptLineItem = $model->addToReceivedHandlingUnitReceiptLineWithCreate();
 
         $this->assertInstanceOf(ReceivedHandlingUnitReceiptLine::class, $createdReceivedHandlingUnitReceiptLineItem);
+
+        $receivedHandlingUnitReceiptLineOnceItem = new ReceivedHandlingUnitReceiptLine();
+
+        $model->addOnceToReceivedHandlingUnitReceiptLine($receivedHandlingUnitReceiptLineOnceItem);
+        $model->addOnceToReceivedHandlingUnitReceiptLine($receivedHandlingUnitReceiptLineOnceItem);
+
+        $itemsAfterOnce = $model->getReceivedHandlingUnitReceiptLine();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstReceivedHandlingUnitReceiptLine = $model->firstReceivedHandlingUnitReceiptLine();
 
@@ -57161,6 +58509,11 @@ final class UblModelTest extends TestCase
 
         // Property FloorSpaceMeasurementDimension
 
+        $testValue = new FloorSpaceMeasurementDimension();
+        $model->setFloorSpaceMeasurementDimension($testValue);
+
+        $this->assertEquals($testValue, $model->getFloorSpaceMeasurementDimension());
+
         $model->unsetFloorSpaceMeasurementDimension();
 
         $this->assertNull($model->getFloorSpaceMeasurementDimension());
@@ -57171,6 +58524,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdFloorSpaceMeasurementDimension, $model->getFloorSpaceMeasurementDimension());
 
         // Property PalletSpaceMeasurementDimension
+
+        $testValue = new PalletSpaceMeasurementDimension();
+        $model->setPalletSpaceMeasurementDimension($testValue);
+
+        $this->assertEquals($testValue, $model->getPalletSpaceMeasurementDimension());
 
         $model->unsetPalletSpaceMeasurementDimension();
 
@@ -57818,6 +59176,11 @@ final class UblModelTest extends TestCase
 
         // Property ActualArrivalTransportEvent
 
+        $testValue = new ActualArrivalTransportEvent();
+        $model->setActualArrivalTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getActualArrivalTransportEvent());
+
         $model->unsetActualArrivalTransportEvent();
 
         $this->assertNull($model->getActualArrivalTransportEvent());
@@ -57828,6 +59191,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdActualArrivalTransportEvent, $model->getActualArrivalTransportEvent());
 
         // Property ActualDepartureTransportEvent
+
+        $testValue = new ActualDepartureTransportEvent();
+        $model->setActualDepartureTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getActualDepartureTransportEvent());
 
         $model->unsetActualDepartureTransportEvent();
 
@@ -57840,6 +59208,11 @@ final class UblModelTest extends TestCase
 
         // Property EstimatedDepartureTransportEvent
 
+        $testValue = new EstimatedDepartureTransportEvent();
+        $model->setEstimatedDepartureTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getEstimatedDepartureTransportEvent());
+
         $model->unsetEstimatedDepartureTransportEvent();
 
         $this->assertNull($model->getEstimatedDepartureTransportEvent());
@@ -57850,6 +59223,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdEstimatedDepartureTransportEvent, $model->getEstimatedDepartureTransportEvent());
 
         // Property EstimatedArrivalTransportEvent
+
+        $testValue = new EstimatedArrivalTransportEvent();
+        $model->setEstimatedArrivalTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getEstimatedArrivalTransportEvent());
 
         $model->unsetEstimatedArrivalTransportEvent();
 
@@ -57862,6 +59240,11 @@ final class UblModelTest extends TestCase
 
         // Property PlannedDepartureTransportEvent
 
+        $testValue = new PlannedDepartureTransportEvent();
+        $model->setPlannedDepartureTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getPlannedDepartureTransportEvent());
+
         $model->unsetPlannedDepartureTransportEvent();
 
         $this->assertNull($model->getPlannedDepartureTransportEvent());
@@ -57872,6 +59255,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdPlannedDepartureTransportEvent, $model->getPlannedDepartureTransportEvent());
 
         // Property PlannedArrivalTransportEvent
+
+        $testValue = new PlannedArrivalTransportEvent();
+        $model->setPlannedArrivalTransportEvent($testValue);
+
+        $this->assertEquals($testValue, $model->getPlannedArrivalTransportEvent());
 
         $model->unsetPlannedArrivalTransportEvent();
 
@@ -82252,6 +83640,11 @@ final class UblModelTest extends TestCase
 
         // Property PaymentAlternativeCurrencyCode
 
+        $testValue = new PaymentAlternativeCurrencyCode();
+        $model->setPaymentAlternativeCurrencyCode($testValue);
+
+        $this->assertEquals($testValue, $model->getPaymentAlternativeCurrencyCode());
+
         $model->unsetPaymentAlternativeCurrencyCode();
 
         $this->assertNull($model->getPaymentAlternativeCurrencyCode());
@@ -82611,6 +84004,15 @@ final class UblModelTest extends TestCase
 
         $this->assertInstanceOf(AdditionalDocumentReference::class, $createdAdditionalDocumentReferenceItem);
 
+        $additionalDocumentReferenceOnceItem = new AdditionalDocumentReference();
+
+        $model->addOnceToAdditionalDocumentReference($additionalDocumentReferenceOnceItem);
+        $model->addOnceToAdditionalDocumentReference($additionalDocumentReferenceOnceItem);
+
+        $itemsAfterOnce = $model->getAdditionalDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnce);
+
         $firstAdditionalDocumentReference = $model->firstAdditionalDocumentReference();
 
         $this->assertInstanceOf(AdditionalDocumentReference::class, $firstAdditionalDocumentReference);
@@ -82685,6 +84087,15 @@ final class UblModelTest extends TestCase
         $createdOriginatorDocumentReferenceItem = $model->addToOriginatorDocumentReferenceWithCreate();
 
         $this->assertInstanceOf(OriginatorDocumentReference::class, $createdOriginatorDocumentReferenceItem);
+
+        $originatorDocumentReferenceOnceItem = new OriginatorDocumentReference();
+
+        $model->addOnceToOriginatorDocumentReference($originatorDocumentReferenceOnceItem);
+        $model->addOnceToOriginatorDocumentReference($originatorDocumentReferenceOnceItem);
+
+        $itemsAfterOnce = $model->getOriginatorDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstOriginatorDocumentReference = $model->firstOriginatorDocumentReference();
 
@@ -83056,6 +84467,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdPaymentExchangeRate, $model->getPaymentExchangeRate());
 
         // Property PaymentAlternativeExchangeRate
+
+        $testValue = new PaymentAlternativeExchangeRate();
+        $model->setPaymentAlternativeExchangeRate($testValue);
+
+        $this->assertEquals($testValue, $model->getPaymentAlternativeExchangeRate());
 
         $model->unsetPaymentAlternativeExchangeRate();
 
@@ -83546,6 +84962,11 @@ final class UblModelTest extends TestCase
 
         // Property PaymentAlternativeCurrencyCode
 
+        $testValue = new PaymentAlternativeCurrencyCode();
+        $model->setPaymentAlternativeCurrencyCode($testValue);
+
+        $this->assertEquals($testValue, $model->getPaymentAlternativeCurrencyCode());
+
         $model->unsetPaymentAlternativeCurrencyCode();
 
         $this->assertNull($model->getPaymentAlternativeCurrencyCode());
@@ -83863,6 +85284,15 @@ final class UblModelTest extends TestCase
 
         $this->assertInstanceOf(OriginatorDocumentReference::class, $createdOriginatorDocumentReferenceItem);
 
+        $originatorDocumentReferenceOnceItem = new OriginatorDocumentReference();
+
+        $model->addOnceToOriginatorDocumentReference($originatorDocumentReferenceOnceItem);
+        $model->addOnceToOriginatorDocumentReference($originatorDocumentReferenceOnceItem);
+
+        $itemsAfterOnce = $model->getOriginatorDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnce);
+
         $firstOriginatorDocumentReference = $model->firstOriginatorDocumentReference();
 
         $this->assertInstanceOf(OriginatorDocumentReference::class, $firstOriginatorDocumentReference);
@@ -83937,6 +85367,15 @@ final class UblModelTest extends TestCase
         $createdAdditionalDocumentReferenceItem = $model->addToAdditionalDocumentReferenceWithCreate();
 
         $this->assertInstanceOf(AdditionalDocumentReference::class, $createdAdditionalDocumentReferenceItem);
+
+        $additionalDocumentReferenceOnceItem = new AdditionalDocumentReference();
+
+        $model->addOnceToAdditionalDocumentReference($additionalDocumentReferenceOnceItem);
+        $model->addOnceToAdditionalDocumentReference($additionalDocumentReferenceOnceItem);
+
+        $itemsAfterOnce = $model->getAdditionalDocumentReference();
+
+        $this->assertIsArray($itemsAfterOnce);
 
         $firstAdditionalDocumentReference = $model->firstAdditionalDocumentReference();
 
@@ -84408,6 +85847,11 @@ final class UblModelTest extends TestCase
         $this->assertSame($createdPaymentExchangeRate, $model->getPaymentExchangeRate());
 
         // Property PaymentAlternativeExchangeRate
+
+        $testValue = new PaymentAlternativeExchangeRate();
+        $model->setPaymentAlternativeExchangeRate($testValue);
+
+        $this->assertEquals($testValue, $model->getPaymentAlternativeExchangeRate());
 
         $model->unsetPaymentAlternativeExchangeRate();
 

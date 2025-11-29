@@ -131,6 +131,11 @@ final class ZffxMinimumModelTest extends TestCase
 
         // Property BusinessProcessSpecifiedDocumentContextParameter
 
+        $testValue = new DocumentContextParameterType();
+        $model->setBusinessProcessSpecifiedDocumentContextParameter($testValue);
+
+        $this->assertEquals($testValue, $model->getBusinessProcessSpecifiedDocumentContextParameter());
+
         $model->unsetBusinessProcessSpecifiedDocumentContextParameter();
 
         $this->assertNull($model->getBusinessProcessSpecifiedDocumentContextParameter());
@@ -141,6 +146,11 @@ final class ZffxMinimumModelTest extends TestCase
         $this->assertSame($createdBusinessProcessSpecifiedDocumentContextParameter, $model->getBusinessProcessSpecifiedDocumentContextParameter());
 
         // Property GuidelineSpecifiedDocumentContextParameter
+
+        $testValue = new DocumentContextParameterType();
+        $model->setGuidelineSpecifiedDocumentContextParameter($testValue);
+
+        $this->assertEquals($testValue, $model->getGuidelineSpecifiedDocumentContextParameter());
 
         $model->unsetGuidelineSpecifiedDocumentContextParameter();
 
@@ -269,6 +279,11 @@ final class ZffxMinimumModelTest extends TestCase
 
         // Property BuyerOrderReferencedDocument
 
+        $testValue = new ReferencedDocumentType();
+        $model->setBuyerOrderReferencedDocument($testValue);
+
+        $this->assertEquals($testValue, $model->getBuyerOrderReferencedDocument());
+
         $model->unsetBuyerOrderReferencedDocument();
 
         $this->assertNull($model->getBuyerOrderReferencedDocument());
@@ -315,6 +330,11 @@ final class ZffxMinimumModelTest extends TestCase
         $this->assertSame($createdInvoiceCurrencyCode, $model->getInvoiceCurrencyCode());
 
         // Property SpecifiedTradeSettlementHeaderMonetarySummation
+
+        $testValue = new TradeSettlementHeaderMonetarySummationType();
+        $model->setSpecifiedTradeSettlementHeaderMonetarySummation($testValue);
+
+        $this->assertEquals($testValue, $model->getSpecifiedTradeSettlementHeaderMonetarySummation());
 
         $model->unsetSpecifiedTradeSettlementHeaderMonetarySummation();
 
@@ -389,6 +409,11 @@ final class ZffxMinimumModelTest extends TestCase
 
         // Property ApplicableHeaderTradeAgreement
 
+        $testValue = new HeaderTradeAgreementType();
+        $model->setApplicableHeaderTradeAgreement($testValue);
+
+        $this->assertEquals($testValue, $model->getApplicableHeaderTradeAgreement());
+
         $model->unsetApplicableHeaderTradeAgreement();
 
         $this->assertNull($model->getApplicableHeaderTradeAgreement());
@@ -400,6 +425,11 @@ final class ZffxMinimumModelTest extends TestCase
 
         // Property ApplicableHeaderTradeDelivery
 
+        $testValue = new HeaderTradeDeliveryType();
+        $model->setApplicableHeaderTradeDelivery($testValue);
+
+        $this->assertEquals($testValue, $model->getApplicableHeaderTradeDelivery());
+
         $model->unsetApplicableHeaderTradeDelivery();
 
         $this->assertNull($model->getApplicableHeaderTradeDelivery());
@@ -410,6 +440,11 @@ final class ZffxMinimumModelTest extends TestCase
         $this->assertSame($createdApplicableHeaderTradeDelivery, $model->getApplicableHeaderTradeDelivery());
 
         // Property ApplicableHeaderTradeSettlement
+
+        $testValue = new HeaderTradeSettlementType();
+        $model->setApplicableHeaderTradeSettlement($testValue);
+
+        $this->assertEquals($testValue, $model->getApplicableHeaderTradeSettlement());
 
         $model->unsetApplicableHeaderTradeSettlement();
 
@@ -710,6 +745,11 @@ final class ZffxMinimumModelTest extends TestCase
         $this->assertSame($createdExchangedDocument, $model->getExchangedDocument());
 
         // Property SupplyChainTradeTransaction
+
+        $testValue = new SupplyChainTradeTransactionType();
+        $model->setSupplyChainTradeTransaction($testValue);
+
+        $this->assertEquals($testValue, $model->getSupplyChainTradeTransaction());
 
         $model->unsetSupplyChainTradeTransaction();
 
