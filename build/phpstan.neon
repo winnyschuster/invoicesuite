@@ -2,9 +2,9 @@ parameters:
     paths:
         - ../src
         - ../tests/testcases
+    excludePaths:
+        - ../build/*
     level: 6
     treatPhpDocTypesAsCertain: false
-    excludePaths:
-        - ../src/entities/*
     parallel:
         maximumNumberOfProcesses: 1
