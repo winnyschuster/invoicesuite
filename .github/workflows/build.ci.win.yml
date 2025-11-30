@@ -105,24 +105,12 @@ jobs:
       - name: Run PHP-CS-Fixer (dry-run)
         shell: pwsh
         run: |
-          php vendor/bin/php-cs-fixer fix `
-            --config=build/phpcsfixer.php `
-            --dry-run `
-            --diff `
-            --verbose `
-            --using-cache=no `
-            --no-interaction
+          php vendor/bin/php-cs-fixer fix --config=build/phpcsfixer.php --dry-run --diff --verbose --using-cache=no --no-interaction
 
       - name: Run PHPStan
         shell: pwsh
         run: |
-          php vendor/bin/phpstan analyze `
-            -c build/phpstan.neon `
-            --autoload-file=vendor/autoload.php `
-            --no-interaction `
-            --no-progress `
-            --error-format=checkstyle `
-            > build/logs/checkstyle_phpstan_windows.xml
+          php vendor/bin/phpstan analyze -c build/phpstan.neon --autoload-file=vendor/autoload.php --no-interaction --no-progress --error-format=checkstyle > build/logs/checkstyle_phpstan.xml
 
       - name: Run Tests (PHPUnit)
         shell: pwsh
