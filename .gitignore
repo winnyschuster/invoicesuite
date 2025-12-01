@@ -104,3 +104,6 @@ genmodeltests*.php
 myfile_dbg.xml
 
 /tests/assets/00_case*.*
+
+!/tests/assets/*.jpg
+
