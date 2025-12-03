@@ -111,7 +111,7 @@ class InvoiceSuiteZfFxBasicSerializerHandler implements SubscribingHandlerInterf
 
     /**
      * Serialize a percantage value
-     * The valze will be serialized (by default) with a precission of 2 digits
+     * The value will be serialized (by default) with a precission of 2 digits
      *
      * @param XmlSerializationVisitor $visitor
      * @param mixed                   $data
