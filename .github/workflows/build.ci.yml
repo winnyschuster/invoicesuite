@@ -36,7 +36,7 @@ jobs:
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
-        operating-system: ["ubuntu-22.04", "ubuntu-24.04"]
+        operating-system: ["ubuntu-24.04"]
         phpversion: ["8.1", "8.2", "8.3", "8.4", "8.5"]
 
     steps:
@@ -134,13 +134,25 @@ jobs:
           java -jar $VALIDATORPATH/$VALIDATORJARFILENAME -r $VALIDATORPATH -s $VALIDATORPATH/$VALIDATORSCENARIOFILENAME tests/assets/00_case_comfort_simple.xml
           java -jar $VALIDATORPATH/$VALIDATORJARFILENAME -r $VALIDATORPATH -s $VALIDATORPATH/$VALIDATORSCENARIOFILENAME tests/assets/00_case_comfort_simple_dto.xml
 
+      - name: Cache Key (VeraPDF)
+        id: hash-verapdf
+        run: |
+          echo "hash=$(echo '${{ env.VERAPDFURL }}' | sha256sum | cut -c1-16)" >> $GITHUB_OUTPUT
+
+      - name: Cache Application (VeraPDF)
+        id: cache-verapdf
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.VERAPDFPATH }}
+          key: ${{ runner.os }}-${{ matrix.phpversion }}-verapdf-${{ steps.hash-verapdf.outputs.hash }}
+
       - name: Download Application (VeraPDF)
+        if: steps.cache-verapdf.outputs.cache-hit != 'true'
         run: |
           rm -rf $VERAPDFPATH
           mkdir -p $VERAPDFPATH
           wget $VERAPDFURL -O $VERAPDFPATH/$VERAPDFZIPFILENAME
           unzip -j $VERAPDFPATH/$VERAPDFZIPFILENAME -d $VERAPDFPATH
-          rm -f $VERAPDFPATH/$VERAPDFZIPFILENAME
 
       - name: Run Tests (VeraPDF)
         run: |
