@@ -70,6 +70,24 @@ class ZugferdDocumentBuilder implements Stringable
     }
 
     /**
+     * Returns the selected profile id
+     *
+     * @return int
+     */
+    public function getProfileId(): int
+    {
+        $providerId = $this->documentBuilder->getCurrentDocumentFormatProvider()->getUniqueId();
+
+        foreach (ZugferdProfiles::PROFILEDEF as $profileId => $profileDef) {
+            if ($profileDef['invoicesuiteproviderid'] == $providerId) {
+                return $profileId;
+            }
+        }
+
+        return -1;
+    }
+
+    /**
      * Creates a new builder instance with profile $profile
      *
      * @param  int    $profileId
@@ -312,6 +330,12 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
+        $this->tryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeAgreement.setSellerTradeParty',
+            null
+        );
+
         $this->documentBuilder->setDocumentSellerName($name);
         $this->documentBuilder->setDocumentSellerId($id);
 
@@ -546,6 +570,12 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
+        $this->tryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeAgreement.setBuyerTradeParty',
+            null
+        );
+
         $this->documentBuilder->setDocumentBuyerName($name);
         $this->documentBuilder->setDocumentBuyerId($id);
 
@@ -780,6 +810,12 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
+        $this->tryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeAgreement.setSellerTaxRepresentativeTradeParty',
+            null
+        );
+
         $this->documentBuilder->setDocumentTaxRepresentativeName($name);
         $this->documentBuilder->setDocumentTaxRepresentativeId($id);
 
@@ -949,6 +985,12 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
+        $this->tryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeAgreement.setProductEndUserTradeParty',
+            null
+        );
+
         $this->documentBuilder->setDocumentProductEndUserName($name);
         $this->documentBuilder->setDocumentProductEndUserId($id);
 
@@ -1118,6 +1160,12 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
+        $this->tryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeDelivery.setShipToTradeParty',
+            null
+        );
+
         $this->documentBuilder->setDocumentShipToName($name);
         $this->documentBuilder->setDocumentShipToId($id);
 
@@ -1133,7 +1181,7 @@ class ZugferdDocumentBuilder implements Stringable
     public function addDocumentShipTolId(
         string $id
     ): static {
-        $this->documentBuilder->setDocumentShipToId(
+        $this->documentBuilder->addDocumentShipToId(
             $id
         );
 
@@ -1151,7 +1199,7 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $globalID = null,
         ?string $globalIDType = null
     ): static {
-        $this->documentBuilder->setDocumentShipToGlobalId(
+        $this->documentBuilder->addDocumentShipToGlobalId(
             $globalID,
             $globalIDType
         );
@@ -1170,7 +1218,7 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $taxRegType = null,
         ?string $taxRegId = null
     ): static {
-        $this->documentBuilder->setDocumentShipToTaxRegistration(
+        $this->documentBuilder->addDocumentShipToTaxRegistration(
             $taxRegType,
             $taxRegId
         );
@@ -1303,6 +1351,12 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
+        $this->tryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeDelivery.setUltimateShipToTradeParty',
+            null
+        );
+
         $this->documentBuilder->setDocumentUltimateShipToName($name);
         $this->documentBuilder->setDocumentUltimateShipToId($id);
 
@@ -1488,6 +1542,12 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
+        $this->tryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeDelivery.setShipFromTradeParty',
+            null
+        );
+
         $this->documentBuilder->setDocumentShipFromName($name);
         $this->documentBuilder->setDocumentShipFromId($id);
 
@@ -1673,6 +1733,12 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
+        $this->tryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeSettlement.setInvoicerTradeParty',
+            null
+        );
+
         $this->documentBuilder->setDocumentInvoicerName($name);
         $this->documentBuilder->setDocumentInvoicerId($id);
 
@@ -1858,6 +1924,12 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
+        $this->tryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeSettlement.setInvoiceeTradeParty',
+            null
+        );
+
         $this->documentBuilder->setDocumentInvoiceeName($name);
         $this->documentBuilder->setDocumentInvoiceeId($id);
 
@@ -2044,6 +2116,12 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
+        $this->tryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeSettlement.setPayeeTradeParty',
+            null
+        );
+
         $this->documentBuilder->setDocumentPayeeName($name);
         $this->documentBuilder->setDocumentPayeeId($id);
 
@@ -2223,7 +2301,7 @@ class ZugferdDocumentBuilder implements Stringable
     public function setDocumentDeliveryTerms(?string $code): static
     {
         // Currently not supported
-        // TODO: Add support for ApplicableTradeDeliveryTerms
+        // TODO: Add support for setDocumentDeliveryTerms
 
         return $this;
     }
@@ -3262,7 +3340,8 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $modelID = null,
         ?string $batchID = null,
         ?string $brandName = null,
-        ?string $modelName = null
+        ?string $modelName = null,
+        ?string $country = null
     ): static {
         $this->documentBuilder->setDocumentPositionProductDetails(
             newProductName: $name,
@@ -3275,7 +3354,8 @@ class ZugferdDocumentBuilder implements Stringable
             newProductModelId: $modelID,
             newProductBatchId: $batchID,
             newProductBrandName: $brandName,
-            newProductModelName: $modelName
+            newProductModelName: $modelName,
+            newProductOriginTradeCountry: $country
         );
 
         return $this;
@@ -3369,7 +3449,7 @@ class ZugferdDocumentBuilder implements Stringable
             newProductGlobalIdType: $globalIDType,
             newProductUnitQuantity: $unitQuantity,
             newProductUnitQuantityUnit: $unitCode,
-            newProductIndustryId: $industryAssignedID
+            newProductIndustryId: $industryAssignedID,
         );
 
         return $this;
@@ -4298,6 +4378,7 @@ class ZugferdDocumentBuilder implements Stringable
     ): static {
         $this->documentBuilder->addDocumentPositionAdditionalReference(
             newReferenceNumber: $issuerAssignedId,
+            newReferenceLineNumber: '0',
             newTypeCode: $typeCode,
             newReferenceTypeCode: $refTypeCode
         );
@@ -4308,8 +4389,8 @@ class ZugferdDocumentBuilder implements Stringable
     /**
      * Add an AccountingAccount on position level.
      *
-     * @param  string|null $id       __BT-133, From EN 16931__ Posting reference of the byuer. If required, this reference shall be provided by the Buyer to the Seller prior to the issuing of the Invoice.
-     * @param  string|null $typeCode __BT-X-99, From EXTENDED__ Type of the posting reference. Allowed values: 1 = Financial, 2 = Subsidiary, 3 = Budget, 4 = Cost Accounting, 5 = Payable, 6 = Job Cost Accounting
+     * @param  null|string $id       __BT-133, From EN 16931__ Posting reference of the byuer. If required, this reference shall be provided by the Buyer to the Seller prior to the issuing of the Invoice.
+     * @param  null|string $typeCode __BT-X-99, From EXTENDED__ Type of the posting reference. Allowed values: 1 = Financial, 2 = Subsidiary, 3 = Budget, 4 = Cost Accounting, 5 = Payable, 6 = Job Cost Accounting
      * @return static
      */
     public function addDocumentPositionReceivableSpecifiedTradeAccountingAccount(
@@ -4325,6 +4406,103 @@ class ZugferdDocumentBuilder implements Stringable
     }
 
     /**
+     * Tries to call a method
+     *
+     * @param  object $instance
+     * @param  string $method
+     * @param  mixed  $value
+     * @return static
+     */
+    public function tryCall($instance, string $method, $value): static
+    {
+        if (!$instance) {
+            return $this;
+        }
+
+        if ($method === '') {
+            return $this;
+        }
+
+        /*
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($value)) {
+            return $this;
+        }
+        */
+
+        if ($this->methodExists($instance, $method)) {
+            $instance->{$method}($value);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Tries to call a method and return the returnvalue from call to $method
+     * in object $instance
+     *
+     * @param  object $instance
+     * @param  string $method
+     * @return mixed
+     */
+    public function tryCallAndReturn($instance, string $method)
+    {
+        if (!$instance) {
+            return null;
+        }
+
+        if ($method === '') {
+            return null;
+        }
+
+        if ($this->methodExists($instance, $method)) {
+            return $instance->{$method}();
+        }
+
+        return null;
+    }
+
+    /**
+     * Try call methods in a form .object.method1.method2.method3
+     *
+     * @param  object $instance
+     * @param  string $methods
+     * @param  mixed  $value
+     * @return void
+     */
+    public function tryCallByPath($instance, string $methods, $value)
+    {
+        $methods = explode('.', $methods);
+
+        foreach ($methods as $index => $method) {
+            if ($index == count($methods) - 1) {
+                $this->tryCall($instance, $method, $value);
+            } else {
+                $instance = $this->tryCallAndReturn($instance, $method);
+            }
+        }
+    }
+
+    /**
+     * Wrapper for method_exists for use in PHP8
+     *
+     * @param  object|string $instance
+     * @param  string        $method
+     * @return bool
+     */
+    public function methodExists($instance, $method): bool
+    {
+        if ($instance == null) {
+            return false;
+        }
+
+        if (!is_object($instance) && !is_string($instance)) {
+            return false;
+        }
+
+        return method_exists($instance, $method);
+    }
+
+    /**
      * This method can be overridden in derived class
      * It is called before a XML is written
      *
@@ -4333,5 +4511,15 @@ class ZugferdDocumentBuilder implements Stringable
     protected function onBeforeGetContent(): void
     {
         // Do nothing
+    }
+
+    /**
+     * Returns the internal root object from document builder
+     *
+     * @return object
+     */
+    private function getRootObjectFromDocumentBuilder()
+    {
+        return $this->documentBuilder->getCurrentDocumentFormatProvider()->getBuilder()->getDocumentRootObject();
     }
 }
