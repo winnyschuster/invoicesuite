@@ -583,14 +583,14 @@ class ZugferdDocumentBuilderExtendedTest extends TestCase
         self::$document->setDocumentShipTo();
 
         $this->disableRenderXmlContent();
-        //TODO: $this->assertXPathExists('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty');
+        // TODO: $this->assertXPathExists('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty');
         $this->assertXPathNotExists('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty/ram:ID');
         $this->assertXPathNotExists('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty/ram:Name');
     }
 
     public function testAddDocumentShipTolAllEmptyId(): void
     {
-        //TODO: $this->assertXPathExists('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty');
+        // TODO: $this->assertXPathExists('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty');
         $this->assertXPathNotExists('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty/ram:ID');
         $this->assertXPathNotExists('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ShipToTradeParty/ram:Name');
 
@@ -1355,7 +1355,7 @@ class ZugferdDocumentBuilderExtendedTest extends TestCase
 
     public function testAddDocumentAdditionalReferencedDocumentWithAttachment(): void
     {
-        self::$document->addDocumentAdditionalReferencedDocument('A-1011', 'type', 'http://lieferant.de/docs/a1011.pdf', 'Leistungsnachweis', 'reftype', new DateTime(), __DIR__ . '/../../assets/pdf_plain.pdf');
+        self::$document->addDocumentAdditionalReferencedDocument('A-1011', 'type', 'http://lieferant.de/docs/a1011.pdf', 'Leistungsnachweis', 'reftype', new DateTime(), __DIR__.'/../../assets/pdf_plain.pdf');
 
         $this->disableRenderXmlContent();
         $this->assertXPathValueWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:AdditionalReferencedDocument/ram:IssuerAssignedID', 2, 'A-1011');
@@ -2179,9 +2179,9 @@ class ZugferdDocumentBuilderExtendedTest extends TestCase
 
     public function testWriteFile(): void
     {
-        self::$document->writeFile(getcwd() . '/myfile.xml');
-        $this->assertFileExists(getcwd() . '/myfile.xml');
-        @unlink(getcwd() . '/myfile.xml');
+        self::$document->writeFile(getcwd().'/myfile.xml');
+        $this->assertFileExists(getcwd().'/myfile.xml');
+        @unlink(getcwd().'/myfile.xml');
     }
 
     public function testToString(): void
