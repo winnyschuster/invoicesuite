@@ -246,7 +246,7 @@ class ZugferdDocumentBuilder implements Stringable
     public function setDocumentBusinessProcess(
         ?string $id = null
     ): static {
-        // TODO: Make this possible
+        $this->documentBuilder->setContextParameter('', $id);
 
         return $this;
     }

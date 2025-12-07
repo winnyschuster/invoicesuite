@@ -60,7 +60,7 @@ class ZugferdDocumentBuilderExtendedTest extends TestCase
 
         self::$document->setDocumentBusinessProcess('GENERAL INVOICE');
         $this->disableRenderXmlContent();
-        $this->assertXPathValue('/rsm:CrossIndustryInvoice/rsm:ExchangedDocumentContext/ram:BusinessProcessSpecifiedDocumentContextParameter/ram:ID', 'urn:fdc:peppol.eu:2017:poacc:billing:01:1.0');
+        $this->assertXPathValue('/rsm:CrossIndustryInvoice/rsm:ExchangedDocumentContext/ram:BusinessProcessSpecifiedDocumentContextParameter/ram:ID', 'GENERAL INVOICE');
     }
 
     public function testSetDocumentGeneralPaymentInformation(): void
