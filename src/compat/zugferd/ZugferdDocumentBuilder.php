@@ -4317,7 +4317,8 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $typeCode = null
     ): static {
         $this->documentBuilder->addDocumentPositionPostingReference(
-            $typeCode,$id
+            $typeCode,
+            $id
         );
 
         return $this;
