@@ -11,18 +11,19 @@ declare(strict_types=1);
 
 namespace horstoeko\zugferd;
 
-use DateTimeInterface;
-use DOMDocument;
 use DOMXpath;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistReferenceCodeQualifiers;
-use horstoeko\invoicesuite\concerns\HandlesSafeInvoking;
-use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
+use Stringable;
+use DOMDocument;
+use DateTimeInterface;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
+use horstoeko\invoicesuite\concerns\HandlesSafeInvoking;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
-use Stringable;
+use horstoeko\invoicesuite\concerns\HandlesCallForwarding;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistReferenceCodeQualifiers;
 
 /**
  * Legacy-class representing the ZUGFeRD document builder for outgoing documents
@@ -34,6 +35,7 @@ use Stringable;
  */
 class ZugferdDocumentBuilder implements Stringable
 {
+    use HandlesCallForwarding;
     use HandlesSafeInvoking;
 
     /**
@@ -60,6 +62,18 @@ class ZugferdDocumentBuilder implements Stringable
         $profileDef = ZugferdProfiles::PROFILEDEF[$profile];
 
         $this->documentBuilder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId($profileDef['invoicesuiteproviderid']);
+    }
+
+    /**
+     * Dynamically pass missing methods to the internal builder
+     *
+     * @param  string       $method
+     * @param  array<mixed> $parameters
+     * @return mixed
+     */
+    public function __call($method, $parameters)
+    {
+        return $this->forwardCallWithCheckTo($this->documentBuilder, $method, $parameters);
     }
 
     /**
