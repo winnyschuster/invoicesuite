@@ -11,18 +11,19 @@ declare(strict_types=1);
 
 namespace horstoeko\zugferd;
 
-use DateTimeInterface;
-use DOMDocument;
 use DOMXpath;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistReferenceCodeQualifiers;
-use horstoeko\invoicesuite\concerns\HandlesSafeInvoking;
-use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
+use Stringable;
+use DOMDocument;
+use DateTimeInterface;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
+use horstoeko\invoicesuite\concerns\HandlesSafeInvoking;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
-use Stringable;
+use horstoeko\invoicesuite\concerns\HandlesCallForwarding;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistReferenceCodeQualifiers;
 
 /**
  * Legacy-class representing the ZUGFeRD document builder for outgoing documents
@@ -34,6 +35,7 @@ use Stringable;
  */
 class ZugferdDocumentBuilder implements Stringable
 {
+    use HandlesCallForwarding;
     use HandlesSafeInvoking;
 
     /**
@@ -57,9 +59,21 @@ class ZugferdDocumentBuilder implements Stringable
             throw new InvoiceSuiteInvalidArgumentException(sprintf('Unknown profile id %s', $profile));
         }
 
-        $profileDef = ZugferdProfiles::PROFILEDEF[$profile];
+        $this->documentBuilder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId(
+            ZugferdProfiles::PROFILEDEF[$profile]['invoicesuiteproviderid']
+        );
+    }
 
-        $this->documentBuilder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId($profileDef['invoicesuiteproviderid']);
+    /**
+     * Dynamically pass missing methods to the internal builder
+     *
+     * @param  string       $method
+     * @param  array<mixed> $parameters
+     * @return mixed
+     */
+    public function __call($method, $parameters)
+    {
+        return $this->forwardCallWithCheckTo($this->documentBuilder, $method, $parameters);
     }
 
     /**
@@ -173,6 +187,7 @@ class ZugferdDocumentBuilder implements Stringable
      * @param  null|string            $documentName             __BT-X-2, From EXTENDED__ Document Type. The documenttype (free text)
      * @param  null|string            $documentLanguage         __BT-X-4, From EXTENDED__ Language indicator. The language code in which the document was written
      * @param  null|DateTimeInterface $effectiveSpecifiedPeriod __BT-X-6-000, From EXTENDED__ The contractual due date of the invoice
+     * @param  null|string            $taxCurrency              __BT-6, From BASIC WL__ Code for the tax currency
      * @return static
      */
     public function setDocumentInformation(
@@ -182,7 +197,8 @@ class ZugferdDocumentBuilder implements Stringable
         string $invoiceCurrency,
         ?string $documentName = null,
         ?string $documentLanguage = null,
-        ?DateTimeInterface $effectiveSpecifiedPeriod = null
+        ?DateTimeInterface $effectiveSpecifiedPeriod = null,
+        ?string $taxCurrency = null
     ): static {
         $this->documentBuilder->setDocumentNo($documentNo);
         $this->documentBuilder->setDocumentType($documentTypeCode);
@@ -191,6 +207,7 @@ class ZugferdDocumentBuilder implements Stringable
         $this->documentBuilder->setDocumentDescription($documentName);
         $this->documentBuilder->setDocumentLanguage($documentLanguage);
         $this->documentBuilder->setDocumentCompleteDate($effectiveSpecifiedPeriod);
+        $this->documentBuilder->setDocumentTaxCurrency($taxCurrency);
 
         return $this;
     }
