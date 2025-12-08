@@ -11,17 +11,18 @@ declare(strict_types=1);
 
 namespace horstoeko\zugferd;
 
-use DateTimeInterface;
-use DOMDocument;
 use DOMXpath;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistReferenceCodeQualifiers;
-use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
+use Stringable;
+use DOMDocument;
+use DateTimeInterface;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
+use horstoeko\invoicesuite\concerns\HandlesSafeInvoking;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
-use Stringable;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistReferenceCodeQualifiers;
 
 /**
  * Legacy-class representing the ZUGFeRD document builder for outgoing documents
@@ -33,6 +34,8 @@ use Stringable;
  */
 class ZugferdDocumentBuilder implements Stringable
 {
+    use HandlesSafeInvoking;
+
     /**
      * Internal document builder
      *
@@ -329,12 +332,7 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
-        $this->tryCallByPath(
-            $this->getRootObjectFromDocumentBuilder(),
-            'getSupplyChainTradeTransaction.getApplicableHeaderTradeAgreement.setSellerTradeParty',
-            null
-        );
-
+        $this->unsetSeller();
         $this->documentBuilder->setDocumentSellerName($name);
         $this->documentBuilder->setDocumentSellerId($id);
 
@@ -569,12 +567,7 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
-        $this->tryCallByPath(
-            $this->getRootObjectFromDocumentBuilder(),
-            'getSupplyChainTradeTransaction.getApplicableHeaderTradeAgreement.setBuyerTradeParty',
-            null
-        );
-
+        $this->unsetBuyer();
         $this->documentBuilder->setDocumentBuyerName($name);
         $this->documentBuilder->setDocumentBuyerId($id);
 
@@ -809,12 +802,7 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
-        $this->tryCallByPath(
-            $this->getRootObjectFromDocumentBuilder(),
-            'getSupplyChainTradeTransaction.getApplicableHeaderTradeAgreement.setSellerTaxRepresentativeTradeParty',
-            null
-        );
-
+        $this->unsetSellerTaxRepresentative();
         $this->documentBuilder->setDocumentTaxRepresentativeName($name);
         $this->documentBuilder->setDocumentTaxRepresentativeId($id);
 
@@ -984,12 +972,7 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
-        $this->tryCallByPath(
-            $this->getRootObjectFromDocumentBuilder(),
-            'getSupplyChainTradeTransaction.getApplicableHeaderTradeAgreement.setProductEndUserTradeParty',
-            null
-        );
-
+        $this->unsetProductEndUser();
         $this->documentBuilder->setDocumentProductEndUserName($name);
         $this->documentBuilder->setDocumentProductEndUserId($id);
 
@@ -1159,12 +1142,7 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
-        $this->tryCallByPath(
-            $this->getRootObjectFromDocumentBuilder(),
-            'getSupplyChainTradeTransaction.getApplicableHeaderTradeDelivery.setShipToTradeParty',
-            null
-        );
-
+        $this->unsetShipTo();
         $this->documentBuilder->setDocumentShipToName($name);
         $this->documentBuilder->setDocumentShipToId($id);
 
@@ -1350,12 +1328,7 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
-        $this->tryCallByPath(
-            $this->getRootObjectFromDocumentBuilder(),
-            'getSupplyChainTradeTransaction.getApplicableHeaderTradeDelivery.setUltimateShipToTradeParty',
-            null
-        );
-
+        $this->unsetUltimateShipTo();
         $this->documentBuilder->setDocumentUltimateShipToName($name);
         $this->documentBuilder->setDocumentUltimateShipToId($id);
 
@@ -1541,12 +1514,7 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
-        $this->tryCallByPath(
-            $this->getRootObjectFromDocumentBuilder(),
-            'getSupplyChainTradeTransaction.getApplicableHeaderTradeDelivery.setShipFromTradeParty',
-            null
-        );
-
+        $this->unsetShipFrom();
         $this->documentBuilder->setDocumentShipFromName($name);
         $this->documentBuilder->setDocumentShipFromId($id);
 
@@ -1732,12 +1700,7 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
-        $this->tryCallByPath(
-            $this->getRootObjectFromDocumentBuilder(),
-            'getSupplyChainTradeTransaction.getApplicableHeaderTradeSettlement.setInvoicerTradeParty',
-            null
-        );
-
+        $this->unsetInvoicer();
         $this->documentBuilder->setDocumentInvoicerName($name);
         $this->documentBuilder->setDocumentInvoicerId($id);
 
@@ -1923,12 +1886,7 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
-        $this->tryCallByPath(
-            $this->getRootObjectFromDocumentBuilder(),
-            'getSupplyChainTradeTransaction.getApplicableHeaderTradeSettlement.setInvoiceeTradeParty',
-            null
-        );
-
+        $this->unsetInvoicee();
         $this->documentBuilder->setDocumentInvoiceeName($name);
         $this->documentBuilder->setDocumentInvoiceeId($id);
 
@@ -2115,12 +2073,7 @@ class ZugferdDocumentBuilder implements Stringable
         ?string $id = null,
         ?string $description = null
     ): static {
-        $this->tryCallByPath(
-            $this->getRootObjectFromDocumentBuilder(),
-            'getSupplyChainTradeTransaction.getApplicableHeaderTradeSettlement.setPayeeTradeParty',
-            null
-        );
-
+        $this->unsetPayee();
         $this->documentBuilder->setDocumentPayeeName($name);
         $this->documentBuilder->setDocumentPayeeId($id);
 
@@ -4403,100 +4356,143 @@ class ZugferdDocumentBuilder implements Stringable
     }
 
     /**
-     * Tries to call a method
+     * Remove the seller trade party
      *
-     * @param  object $instance
-     * @param  string $method
-     * @param  mixed  $value
-     * @return static
-     */
-    public function tryCall($instance, string $method, $value): static
-    {
-        if (!$instance) {
-            return $this;
-        }
-
-        if ($method === '') {
-            return $this;
-        }
-
-        /*
-        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($value)) {
-            return $this;
-        }
-        */
-
-        if ($this->methodExists($instance, $method)) {
-            $instance->{$method}($value);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Tries to call a method and return the returnvalue from call to $method
-     * in object $instance
-     *
-     * @param  object $instance
-     * @param  string $method
-     * @return mixed
-     */
-    public function tryCallAndReturn($instance, string $method)
-    {
-        if (!$instance) {
-            return null;
-        }
-
-        if ($method === '') {
-            return null;
-        }
-
-        if ($this->methodExists($instance, $method)) {
-            return $instance->{$method}();
-        }
-
-        return null;
-    }
-
-    /**
-     * Try call methods in a form .object.method1.method2.method3
-     *
-     * @param  object $instance
-     * @param  string $methods
-     * @param  mixed  $value
      * @return void
      */
-    public function tryCallByPath($instance, string $methods, $value)
+    protected function unsetSeller(): void
     {
-        $methods = explode('.', $methods);
-
-        foreach ($methods as $index => $method) {
-            if ($index == count($methods) - 1) {
-                $this->tryCall($instance, $method, $value);
-            } else {
-                $instance = $this->tryCallAndReturn($instance, $method);
-            }
-        }
+        $this->safeInvokeTryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeAgreement.setSellerTradeParty',
+            null
+        );
     }
 
     /**
-     * Wrapper for method_exists for use in PHP8
+     * Remove the buyer trade party
      *
-     * @param  object|string $instance
-     * @param  string        $method
-     * @return bool
+     * @return void
      */
-    public function methodExists($instance, $method): bool
+    protected function unsetBuyer(): void
     {
-        if ($instance == null) {
-            return false;
-        }
+        $this->safeInvokeTryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeAgreement.setBuyerTradeParty',
+            null
+        );
+    }
 
-        if (!is_object($instance) && !is_string($instance)) {
-            return false;
-        }
+    /**
+     * Remove the seller's tax representativ party
+     *
+     * @return void
+     */
+    protected function unsetSellerTaxRepresentative(): void
+    {
+        $this->safeInvokeTryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeAgreement.setSellerTaxRepresentativeTradeParty',
+            null
+        );
+    }
 
-        return method_exists($instance, $method);
+    /**
+     * Remove the product end-user party
+     *
+     * @return void
+     */
+    protected function unsetProductEndUser(): void
+    {
+        $this->safeInvokeTryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeAgreement.setProductEndUserTradeParty',
+            null
+        );
+    }
+
+    /**
+     * Remove the ship-to party
+     *
+     * @return void
+     */
+    protected function unsetShipTo(): void
+    {
+        $this->safeInvokeTryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeDelivery.setShipToTradeParty',
+            null
+        );
+    }
+
+    /**
+     * Remove the ultimate ship-to party
+     *
+     * @return void
+     */
+    protected function unsetUltimateShipTo(): void
+    {
+        $this->safeInvokeTryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeDelivery.setUltimateShipToTradeParty',
+            null
+        );
+    }
+
+    /**
+     * Remove the ship-from party
+     *
+     * @return void
+     */
+    protected function unsetShipFrom(): void
+    {
+        $this->safeInvokeTryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeDelivery.setShipFromTradeParty',
+            null
+        );
+    }
+
+    /**
+     * Remove the invoicer party
+     *
+     * @return void
+     */
+    protected function unsetInvoicer(): void
+    {
+        $this->safeInvokeTryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeSettlement.setInvoicerTradeParty',
+            null
+        );
+    }
+
+    /**
+     * Remove the invoicee party
+     *
+     * @return void
+     */
+    protected function unsetInvoicee(): void
+    {
+        $this->safeInvokeTryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeSettlement.setInvoiceeTradeParty',
+            null
+        );
+    }
+
+    /**
+     * Remove the payee party
+     *
+     * @return void
+     */
+    protected function unsetPayee(): void
+    {
+        $this->safeInvokeTryCallByPath(
+            $this->getRootObjectFromDocumentBuilder(),
+            'getSupplyChainTradeTransaction.getApplicableHeaderTradeSettlement.setPayeeTradeParty',
+            null
+        );
     }
 
     /**
