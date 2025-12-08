@@ -11,18 +11,18 @@ declare(strict_types=1);
 
 namespace horstoeko\zugferd;
 
-use DOMXpath;
-use Stringable;
-use DOMDocument;
 use DateTimeInterface;
-use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
+use DOMDocument;
+use DOMXpath;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
+use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistReferenceCodeQualifiers;
 use horstoeko\invoicesuite\concerns\HandlesSafeInvoking;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
+use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
-use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistReferenceCodeQualifiers;
+use Stringable;
 
 /**
  * Legacy-class representing the ZUGFeRD document builder for outgoing documents
