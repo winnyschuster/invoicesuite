@@ -10822,7 +10822,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractDocume
             ?->getSpecifiedLineTradeSettlement()
             ?->unsetAdditionalReferencedDocument();
 
-        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newReferenceNumber, $newTypeCode])) {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newTypeCode])) {
             return $this;
         }
 
@@ -10856,7 +10856,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractDocume
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
             ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
-            ->getSpecifiedLineTradeSettlement()
+            ->getSpecifiedLineTradeSettlementWithCreate()
             ->addToAdditionalReferencedDocumentWithCreate();
 
         $additionalObjectReference->getIssuerAssignedIDWithCreate()->setValue($newReferenceNumber);

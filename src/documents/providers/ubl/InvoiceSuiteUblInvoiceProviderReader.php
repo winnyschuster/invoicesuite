@@ -2113,8 +2113,8 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
 
                 $newDocumentPositionDTO->addAdditionalObjectReference(
                     new InvoiceSuiteReferenceDocumentExtDTO(
-                        referenceNumber: $newDocumentPositionInvoiceReferenceNumber,
-                        typeCode: $newDocumentPositionInvoiceReferenceTypeCode,
+                        referenceNumber: $newDocumentPositionAdditionalObjectReferenceNumber,
+                        typeCode: $newDocumentPositionAdditionalObjectReferenceTypeCode,
                         referenceTypeCode: $newDocumentPositionAdditionalObjectReferenceReferenceTypeCode
                     )
                 );

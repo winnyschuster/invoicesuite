@@ -7897,7 +7897,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractDocumen
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransactionWithCreate()
             ->getLatestIncludedSupplyChainTradeLineItemWithCreate()
-            ->getSpecifiedLineTradeSettlement()
+            ->getSpecifiedLineTradeSettlementWithCreate()
             ->getAdditionalReferencedDocumentWithCreate();
 
         $additionalObjectReference->getIssuerAssignedIDWithCreate()->setValue($newReferenceNumber);

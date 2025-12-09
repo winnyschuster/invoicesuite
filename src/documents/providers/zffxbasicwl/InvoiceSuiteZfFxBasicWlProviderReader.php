@@ -2092,8 +2092,8 @@ class InvoiceSuiteZfFxBasicWlProviderReader extends InvoiceSuiteAbstractDocument
 
                 $newDocumentPositionDTO->addAdditionalObjectReference(
                     new InvoiceSuiteReferenceDocumentExtDTO(
-                        referenceNumber: $newDocumentPositionInvoiceReferenceNumber,
-                        typeCode: $newDocumentPositionInvoiceReferenceTypeCode,
+                        referenceNumber: $newDocumentPositionAdditionalObjectReferenceNumber,
+                        typeCode: $newDocumentPositionAdditionalObjectReferenceTypeCode,
                         referenceTypeCode: $newDocumentPositionAdditionalObjectReferenceReferenceTypeCode
                     )
                 );

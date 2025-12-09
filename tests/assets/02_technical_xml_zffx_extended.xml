@@ -372,6 +372,16 @@
             <qdt:DateTimeString format="102">19700101</qdt:DateTimeString>
           </ram:FormattedIssueDateTime>
         </ram:InvoiceReferencedDocument>
+        <ram:AdditionalReferencedDocument>
+          <ram:IssuerAssignedID>ZZZZZZZZZ</ram:IssuerAssignedID>
+          <ram:TypeCode>916</ram:TypeCode>
+          <ram:ReferenceTypeCode>130</ram:ReferenceTypeCode>
+        </ram:AdditionalReferencedDocument>
+        <ram:AdditionalReferencedDocument>
+          <ram:IssuerAssignedID>ABCDEF123</ram:IssuerAssignedID>
+          <ram:TypeCode>50</ram:TypeCode>
+          <ram:ReferenceTypeCode>130</ram:ReferenceTypeCode>
+        </ram:AdditionalReferencedDocument>
         <ram:ReceivableSpecifiedTradeAccountingAccount>
           <ram:ID>PREF-1</ram:ID>
           <ram:TypeCode>PREF-1-TYPE</ram:TypeCode>

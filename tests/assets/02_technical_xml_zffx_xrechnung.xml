@@ -132,6 +132,28 @@
         <ram:ReceivableSpecifiedTradeAccountingAccount>
           <ram:ID>PREF-1</ram:ID>
         </ram:ReceivableSpecifiedTradeAccountingAccount>
+        <ram:InvoiceReferencedDocument>
+          <ram:IssuerAssignedID>INV1</ram:IssuerAssignedID>
+          <ram:LineID>1</ram:LineID>
+          <ram:TypeCode>71</ram:TypeCode>
+          <ram:FormattedIssueDateTime>
+            <qdt:DateTimeString format="102">20251209</qdt:DateTimeString>
+          </ram:FormattedIssueDateTime>
+        </ram:InvoiceReferencedDocument>
+        <ram:AdditionalReferencedDocument>
+          <ram:IssuerAssignedID>ZZZZZZZZZ</ram:IssuerAssignedID>
+          <ram:TypeCode>916</ram:TypeCode>
+          <ram:ReferenceTypeCode>130</ram:ReferenceTypeCode>
+        </ram:AdditionalReferencedDocument>
+        <ram:AdditionalReferencedDocument>
+          <ram:IssuerAssignedID>ABCDEF123</ram:IssuerAssignedID>
+          <ram:TypeCode>50</ram:TypeCode>
+          <ram:ReferenceTypeCode>130</ram:ReferenceTypeCode>
+        </ram:AdditionalReferencedDocument>
+        <ram:ReceivableSpecifiedTradeAccountingAccount>
+          <ram:ID>accid</ram:ID>
+          <ram:TypeCode>acctypecode</ram:TypeCode>
+        </ram:ReceivableSpecifiedTradeAccountingAccount>
       </ram:SpecifiedLineTradeSettlement>
     </ram:IncludedSupplyChainTradeLineItem>
     <ram:ApplicableHeaderTradeAgreement>

@@ -2134,6 +2134,31 @@ final class ZfFxMinimumProviderReaderTest extends TestCase
         $this->assertFalse(static::$document->nextDocumentPosition());
     }
 
+    public function testFirstNextGetDocumentPositionAdditionalObjectReference(): void
+    {
+        // First position
+
+        $this->assertFalse(static::$document->firstDocumentPosition());
+
+        $this->assertFalse(static::$document->firstDocumentPositionAdditionalObjectReference());
+
+        static::$document->getDocumentPositionAdditionalObjectReference(
+            $newReferenceNumber,
+            $newTypeCode,
+            $newReferenceTypeCode
+        );
+
+        $this->assertSame('', $newReferenceNumber);
+        $this->assertSame('', $newTypeCode);
+        $this->assertSame('', $newReferenceTypeCode);
+
+        $this->assertFalse(static::$document->nextDocumentPositionAdditionalObjectReference());
+
+        // Second position
+
+        $this->assertFalse(static::$document->nextDocumentPosition());
+    }
+
     public function testFirstGetDcumentPositionGrossPrice(): void
     {
         // First position
