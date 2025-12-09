@@ -415,6 +415,13 @@ final class ZfFxExtendedProviderReaderTest extends TestCase
         $this->assertSame('LEITWEGID', $newBuyerReference);
     }
 
+    public function testGetDocumentDeliveryTerms(): void
+    {
+        static::$document->getDocumentDeliveryTerms($newCode);
+
+        $this->assertSame('devliveryterm', $newCode);
+    }
+
     public function testDocumentSeller(): void
     {
         // Name

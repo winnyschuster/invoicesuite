@@ -380,6 +380,9 @@
     </ram:IncludedSupplyChainTradeLineItem>
     <ram:ApplicableHeaderTradeAgreement>
       <ram:BuyerReference>LEITWEGID</ram:BuyerReference>
+      <ram:ApplicableTradeDeliveryTerms>
+        <ram:DeliveryTypeCode>devliveryterm</ram:DeliveryTypeCode>
+      </ram:ApplicableTradeDeliveryTerms>
       <ram:SellerTradeParty>
         <ram:ID>0815-4711</ram:ID>
         <ram:ID>0815-4712</ram:ID>

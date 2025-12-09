@@ -117,6 +117,14 @@ class ZugferdDocumentBuilderExtendedTest extends TestCase
         $this->assertXPathValue('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerReference', 'buyerref');
     }
 
+    public function testSetDocumentDeliveryTerm(): void
+    {
+        self::$document->setDocumentDeliveryTerms('devliveryterm');
+
+        $this->disableRenderXmlContent();
+        $this->assertXPathValue('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:ApplicableTradeDeliveryTerms/ram:DeliveryTypeCode', 'devliveryterm');
+    }
+
     public function testSetDocumentSeller(): void
     {
         self::$document->setDocumentSeller('Lieferant GmbH', '549910');

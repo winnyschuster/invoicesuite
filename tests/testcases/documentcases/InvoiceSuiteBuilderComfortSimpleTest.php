@@ -31,6 +31,7 @@ final class InvoiceSuiteBuilderComfortSimpleTest extends TestCase
         static::$document->addDocumentNote("Lieferant GmbH\nLieferantenstraße 20\n80333 München\nDeutschland\nGeschäftsführer: Hans Muster\nHandelsregisternummer: H A 123\n", newSubjectCode: 'REG');
         static::$document->setDocumentCurrency(InvoiceSuiteCodelistCurrencyCodes::EURO->value);
         static::$document->setDocumentBuyerReference('SomeRef');
+        static::$document->setDocumentDeliveryTerms('devtem');
 
         static::$document->addDocumentPosition('1');
         static::$document->setDocumentPositionProductDetails(
@@ -183,6 +184,8 @@ final class InvoiceSuiteBuilderComfortSimpleTest extends TestCase
         // Header
 
         $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerReference', 0, 'SomeRef');
+
+        $this->assertXPathNotExistsWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:ApplicableTradeDeliveryTerms/ram:DeliveryTypeCode', 0);
 
         $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:ID', 0, '549910');
         $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:ID', 1);

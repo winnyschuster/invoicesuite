@@ -355,6 +355,13 @@ final class ZfFxBasicDocumentReaderTest extends TestCase
         $this->assertSame('LEITWEGID', $newBuyerReference);
     }
 
+    public function testGetDocumentDeliveryTerms(): void
+    {
+        static::$document->getDocumentDeliveryTerms($newCode);
+
+        $this->assertSame('', $newCode);
+    }
+
     public function testDocumentSeller(): void
     {
         // Name
