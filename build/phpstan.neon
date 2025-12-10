@@ -1,8 +1,9 @@
 includes:
-    - phar://phpstan.phar/conf/bleedingEdge.neon
+    - ../vendor/phpstan/phpstan/conf/bleedingEdge.neon
 parameters:
     paths:
         - ../src
+        - ../tests/testcases
     excludePaths:
         - ../src/codelists
     level: 6
@@ -10,8 +11,8 @@ parameters:
     phpVersion: 80400
     parallel:
         jobSize: 20
-        maximumNumberOfProcesses: 32
-        minimumNumberOfJobsPerProcess: 2
+        maximumNumberOfProcesses: 1
+        minimumNumberOfJobsPerProcess: 1
     ignoreErrors:
         -
             identifier: classConstant.internalClass
