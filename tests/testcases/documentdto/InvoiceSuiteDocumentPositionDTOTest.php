@@ -5,22 +5,22 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\tests\testcases\documentdto;
 
 use DateTimeImmutable;
-use horstoeko\invoicesuite\tests\TestCase;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAllowanceChargeDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDateRangeDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentPositionDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteNoteDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceNetDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDateRangeDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceGrossDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuitesummationLineDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAllowanceChargeDTO;
-use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentPositionDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceNetDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentExtDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineExtDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitesummationLineDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
+use horstoeko\invoicesuite\tests\TestCase;
 
 final class InvoiceSuiteDocumentPositionDTOTest extends TestCase
 {
