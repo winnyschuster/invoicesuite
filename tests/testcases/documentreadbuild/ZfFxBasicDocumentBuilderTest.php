@@ -17234,6 +17234,8 @@ final class ZfFxBasicDocumentBuilderTest extends TestCase
                 ->addDeliveryNoteReference(new InvoiceSuiteReferenceDocumentLineDTO('DEVNOTE-1', '20', (new DateTime())->createFromFormat('d.m.Y', '02.01.1970')))
                 ->addInvoiceReference(new InvoiceSuiteReferenceDocumentLineExtDTO('INVREF-1', '100', (new DateTime())->createFromFormat('d.m.Y', '01.01.1970'), 'TYPECODE-1', 'REFTYPECODE-1', 'DESC-1'))
                 ->addInvoiceReference(new InvoiceSuiteReferenceDocumentLineExtDTO('INVREF-1', '200', (new DateTime())->createFromFormat('d.m.Y', '02.01.1970'), 'TYPECODE-2', 'REFTYPECODE-2', 'DESC-2'))
+                ->addAdditionalObjectReference(new InvoiceSuiteReferenceDocumentExtDTO(referenceNumber: 'OBJ-1', typeCode: '916', referenceTypeCode: '130'))
+                ->addAdditionalObjectReference(new InvoiceSuiteReferenceDocumentExtDTO(referenceNumber: 'OBJ-2', typeCode: '917', referenceTypeCode: '131'))
                 ->setGrossPrice(new InvoiceSuitePriceGrossDTO(100.0, new InvoiceSuiteQuantityDTO(1.0, 'C62'), [new InvoiceSuiteAllowanceChargeDTO(false, 1.0, 2.0, 3.0, 'S', 'VAT', 19.0, 'REASON-1', 'REASONCODE-1')]))
                 ->setNetPrice(new InvoiceSuitePriceNetDTO(1.0, new InvoiceSuiteQuantityDTO(2.0, 'C62')))
                 ->setQuantityBilled(new InvoiceSuiteQuantityDTO(1.0, 'C62'))
@@ -18307,6 +18309,15 @@ final class ZfFxBasicDocumentBuilderTest extends TestCase
         $this->assertXPathNotExistsWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:InvoiceReferencedDocument/ram:LineID', 1);
         $this->assertXPathNotExistsWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:InvoiceReferencedDocument/ram:FormattedIssueDateTime/qdt:DateTimeString', 1);
         $this->assertXPathNotExistsWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:InvoiceReferencedDocument/ram:TypeCode', 1);
+
+        // Position Object Reference
+
+        $this->assertXPathNotExistsWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:AdditionalReferencedDocument/ram:IssuerAssignedID', 0);
+        $this->assertXPathNotExistsWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:AdditionalReferencedDocument/ram:TypeCode', 0);
+        $this->assertXPathNotExistsWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:AdditionalReferencedDocument/ram:ReferenceTypeCode', 0);
+        $this->assertXPathNotExistsWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:AdditionalReferencedDocument/ram:IssuerAssignedID', 1);
+        $this->assertXPathNotExistsWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:AdditionalReferencedDocument/ram:TypeCode', 1);
+        $this->assertXPathNotExistsWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeSettlement/ram:AdditionalReferencedDocument/ram:ReferenceTypeCode', 1);
 
         // Position Gross Price
 
