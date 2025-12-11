@@ -3,7 +3,6 @@ includes:
 parameters:
     paths:
         - ../src
-        - ../tests/testcases
     excludePaths:
         - ../src/codelists
     level: 6
