@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace horstoeko\zugferd\tests\testcases;
 
-use DateTimeInterface;
 use DateTime;
+use DateTimeInterface;
 use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\zugferd\ZugferdDocumentReader;
 use horstoeko\zugferd\ZugferdProfiles;
