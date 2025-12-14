@@ -105,22 +105,6 @@ class ZugferdDocumentReaderExtendedTest extends TestCase
         $this->assertTrue($istest);
     }
 
-    /*
-    public function testDocumentSummation(): void
-    {
-        self::$document->getDocumentSummation($grandTotalAmount, $duePayableAmount, $lineTotalAmount, $chargeTotalAmount, $allowanceTotalAmount, $taxBasisTotalAmount, $taxTotalAmount, $roundingAmount, $totalPrepaidAmount);
-        $this->assertEqualsWithDelta(480.22, $grandTotalAmount, PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(480.22, $duePayableAmount, PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(410.10, $lineTotalAmount, PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(15.00, $chargeTotalAmount, PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(21.55, $allowanceTotalAmount, PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(403.55, $taxBasisTotalAmount, PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(76.67, $taxTotalAmount, PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(0.00, $roundingAmount, PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(0.00, $totalPrepaidAmount, PHP_FLOAT_EPSILON);
-    }
-    */
-
     public function testGetDocumentBuyerReference(): void
     {
         self::$document->getDocumentBuyerReference($buyerReference);
@@ -479,588 +463,617 @@ class ZugferdDocumentReaderExtendedTest extends TestCase
         $this->assertSame('', $ultimateshiptolegalorgname);
     }
 
+    public function testDocumentUltimateShipToContact(): void
+    {
+        $this->assertFalse(self::$document->firstDocumentUltimateShipToContact());
+        $this->expectNoticeOrWarningExt(
+            static function () {
+                self::$document->getDocumentUltimateShipToContact($ultimateshiptocontactpersonname, $ultimateshiptocontactdepartmentname, $ultimateshiptocontactphoneno, $ultimateshiptocontactfaxno, $ultimateshiptocontactemailaddr);
+            }
+        );
+        $this->assertFalse(self::$document->nextDocumentUltimateShipToContact());
+        $this->expectNoticeOrWarningExt(
+            static function () {
+                self::$document->getDocumentUltimateShipToContact($ultimateshiptocontactpersonname, $ultimateshiptocontactdepartmentname, $ultimateshiptocontactphoneno, $ultimateshiptocontactfaxno, $ultimateshiptocontactemailaddr);
+            }
+        );
+    }
+
+    public function testDocumentShipFromGeneral(): void
+    {
+        self::$document->getDocumentShipFrom($shipfromname, $shipfromids, $shipfromdescription);
+        $this->assertSame('', $shipfromname);
+        $this->assertIsArray($shipfromids);
+        $this->assertEmpty($shipfromids);
+        $this->assertSame('', $shipfromdescription);
+    }
+
+    public function testDocumentShipFromGlobalId(): void
+    {
+        self::$document->getDocumentShipFromGlobalId($shipfromglobalids);
+        $this->assertIsArray($shipfromglobalids);
+        $this->assertEmpty($shipfromglobalids);
+    }
+
+    public function testDocumentShipFromTaxRegistration(): void
+    {
+        self::$document->getDocumentShipFromTaxRegistration($shipfromtaxreg);
+        $this->assertIsArray($shipfromtaxreg);
+        $this->assertEmpty($shipfromtaxreg);
+    }
+
+    public function testDocumentShipFromAddress(): void
+    {
+        self::$document->getDocumentShipFromAddress($shipfromlineone, $shipfromlinetwo, $shipfromlinethree, $shipfrompostcode, $shipfromcity, $shipfromcountry, $shipfromsubdivision);
+        $this->assertSame('', $shipfromlineone);
+        $this->assertSame('', $shipfromlinetwo);
+        $this->assertSame('', $shipfromlinethree);
+        $this->assertSame('', $shipfrompostcode);
+        $this->assertSame('', $shipfromcity);
+        $this->assertSame('', $shipfromcountry);
+        $this->assertIsArray($shipfromsubdivision);
+        $this->assertEmpty($shipfromsubdivision);
+    }
+
+    public function testDocumentShipFromLegalOrganization(): void
+    {
+        self::$document->getDocumentShipFromLegalOrganisation($shipfromlegalorgid, $shipfromlegalorgtype, $shipfromlegalorgname);
+        $this->assertSame('', $shipfromlegalorgid);
+        $this->assertSame('', $shipfromlegalorgtype);
+        $this->assertSame('', $shipfromlegalorgname);
+    }
+
+    public function testDocumentShipFromContact(): void
+    {
+        $this->assertFalse(self::$document->firstDocumentShipFromContact());
+        $this->expectNoticeOrWarningExt(
+            static function () {
+                self::$document->getDocumentShipFromContact($shipfromcontactpersonname, $shipfromcontactdepartmentname, $shipfromcontactphoneno, $shipfromcontactfaxno, $shipfromcontactemailaddr);
+            }
+        );
+        $this->assertFalse(self::$document->nextDocumentShipFromContact());
+        $this->expectNoticeOrWarningExt(
+            static function () {
+                self::$document->getDocumentShipFromContact($shipfromcontactpersonname, $shipfromcontactdepartmentname, $shipfromcontactphoneno, $shipfromcontactfaxno, $shipfromcontactemailaddr);
+            }
+        );
+    }
+
+    public function testDocumentInvoicerGeneral(): void
+    {
+        self::$document->getDocumentInvoicer($invoicername, $invoicerids, $invoicerdescription);
+        $this->assertSame('', $invoicername);
+        $this->assertIsArray($invoicerids);
+        $this->assertEmpty($invoicerids);
+        $this->assertSame('', $invoicerdescription);
+    }
+
+    public function testDocumentInvoicerGlobalId(): void
+    {
+        self::$document->getDocumentInvoicerGlobalId($invoicerglobalids);
+        $this->assertIsArray($invoicerglobalids);
+        $this->assertEmpty($invoicerglobalids);
+    }
+
+    public function testDocumentInvoicerTaxRegistration(): void
+    {
+        self::$document->getDocumentInvoicerTaxRegistration($invoicertaxreg);
+        $this->assertIsArray($invoicertaxreg);
+        $this->assertEmpty($invoicertaxreg);
+    }
+
+    public function testDocumentInvoicerAddress(): void
+    {
+        self::$document->getDocumentInvoicerAddress($invoicerlineone, $invoicerlinetwo, $invoicerlinethree, $invoicerpostcode, $invoicercity, $invoicercountry, $invoicersubdivision);
+        $this->assertSame('', $invoicerlineone);
+        $this->assertSame('', $invoicerlinetwo);
+        $this->assertSame('', $invoicerlinethree);
+        $this->assertSame('', $invoicerpostcode);
+        $this->assertSame('', $invoicercity);
+        $this->assertSame('', $invoicercountry);
+        $this->assertIsArray($invoicersubdivision);
+        $this->assertEmpty($invoicersubdivision);
+    }
+
+    public function testDocumentInvoicerLegalOrganization(): void
+    {
+        self::$document->getDocumentInvoicerLegalOrganisation($invoicerlegalorgid, $invoicerlegalorgtype, $invoicerlegalorgname);
+        $this->assertSame('', $invoicerlegalorgid);
+        $this->assertSame('', $invoicerlegalorgtype);
+        $this->assertSame('', $invoicerlegalorgname);
+    }
+
+    public function testDocumentInvoicerContact(): void
+    {
+        $this->assertFalse(self::$document->firstDocumentInvoicerContact());
+        $this->expectNoticeOrWarningExt(
+            static function () {
+                self::$document->getDocumentInvoicerContact($invoicercontactpersonname, $invoicercontactdepartmentname, $invoicercontactphoneno, $invoicercontactfaxno, $invoicercontactemailaddr);
+            }
+        );
+        $this->assertFalse(self::$document->nextDocumentInvoicerContact());
+        $this->expectNoticeOrWarningExt(
+            static function () {
+                self::$document->getDocumentInvoicerContact($invoicercontactpersonname, $invoicercontactdepartmentname, $invoicercontactphoneno, $invoicercontactfaxno, $invoicercontactemailaddr);
+            }
+        );
+    }
+
+    public function testDocumentInvoiceeGeneral(): void
+    {
+        self::$document->getDocumentInvoicee($invoiceename, $invoiceeids, $invoiceedescription);
+        $this->assertSame('MUSTER-KUNDE GMBH', $invoiceename);
+        $this->assertIsArray($invoiceeids);
+        $this->assertNotEmpty($invoiceeids);
+        $this->assertArrayHasKey(0, $invoiceeids);
+        $this->assertSame('', $invoiceedescription);
+    }
+
+    public function testDocumentInvoiceeGlobalId(): void
+    {
+        self::$document->getDocumentInvoiceeGlobalId($invoiceeglobalids);
+        $this->assertIsArray($invoiceeglobalids);
+        $this->assertNotEmpty($invoiceeglobalids);
+        $this->assertArrayHasKey('0088', $invoiceeglobalids);
+        $this->assertEquals('4304171000002', $invoiceeglobalids['0088']);
+    }
+
+    public function testDocumentInvoiceeTaxRegistration(): void
+    {
+        self::$document->getDocumentInvoiceeTaxRegistration($invoiceetaxreg);
+        $this->assertIsArray($invoiceetaxreg);
+        $this->assertEmpty($invoiceetaxreg);
+    }
+
+    public function testDocumentInvoiceeAddress(): void
+    {
+        self::$document->getDocumentInvoiceeAddress($invoiceelineone, $invoiceelinetwo, $invoiceelinethree, $invoiceepostcode, $invoiceecity, $invoiceecountry, $invoiceesubdivision);
+        $this->assertSame('KUNDENWEG 88', $invoiceelineone);
+        $this->assertSame('', $invoiceelinetwo);
+        $this->assertSame('', $invoiceelinethree);
+        $this->assertSame('40235', $invoiceepostcode);
+        $this->assertSame('DUESSELDORF', $invoiceecity);
+        $this->assertSame('DE', $invoiceecountry);
+        $this->assertIsArray($invoiceesubdivision);
+        $this->assertEmpty($invoiceesubdivision);
+    }
+
+    public function testDocumentInvoiceeLegalOrganization(): void
+    {
+        self::$document->getDocumentInvoiceeLegalOrganisation($invoiceelegalorgid, $invoiceelegalorgtype, $invoiceelegalorgname);
+        $this->assertSame('', $invoiceelegalorgid);
+        $this->assertSame('', $invoiceelegalorgtype);
+        $this->assertSame('', $invoiceelegalorgname);
+    }
+
+    public function testDocumentInvoiceeContact(): void
+    {
+        $this->assertFalse(self::$document->firstDocumentInvoiceeContact());
+        $this->expectNoticeOrWarningExt(
+            static function () {
+                self::$document->getDocumentInvoiceeContact($invoiceecontactpersonname, $invoiceecontactdepartmentname, $invoiceecontactphoneno, $invoiceecontactfaxno, $invoiceecontactemailaddr);
+            }
+        );
+        $this->assertFalse(self::$document->nextDocumentInvoiceeContact());
+        $this->expectNoticeOrWarningExt(
+            static function () {
+                self::$document->getDocumentInvoiceeContact($invoiceecontactpersonname, $invoiceecontactdepartmentname, $invoiceecontactphoneno, $invoiceecontactfaxno, $invoiceecontactemailaddr);
+            }
+        );
+    }
+
+    public function testDocumentPayeeGeneral(): void
+    {
+        self::$document->getDocumentPayee($payeename, $payeeids, $payeedescription);
+        $this->assertSame('', $payeename);
+        $this->assertIsArray($payeeids);
+        $this->assertEmpty($payeeids);
+        $this->assertSame('', $payeedescription);
+    }
+
+    public function testDocumentPayeeGlobalId(): void
+    {
+        self::$document->getDocumentPayeeGlobalId($payeeglobalids);
+        $this->assertIsArray($payeeglobalids);
+        $this->assertEmpty($payeeglobalids);
+    }
+
+    public function testDocumentPayeeTaxRegistration(): void
+    {
+        self::$document->getDocumentPayeeTaxRegistration($payeetaxreg);
+        $this->assertIsArray($payeetaxreg);
+        $this->assertEmpty($payeetaxreg);
+    }
+
+    public function testDocumentPayeeAddress(): void
+    {
+        self::$document->getDocumentPayeeAddress($payeelineone, $payeelinetwo, $payeelinethree, $payeepostcode, $payeecity, $payeecountry, $payeesubdivision);
+        $this->assertSame('', $payeelineone);
+        $this->assertSame('', $payeelinetwo);
+        $this->assertSame('', $payeelinethree);
+        $this->assertSame('', $payeepostcode);
+        $this->assertSame('', $payeecity);
+        $this->assertSame('', $payeecountry);
+        $this->assertIsArray($payeesubdivision);
+        $this->assertEmpty($payeesubdivision);
+    }
+
+    public function testDocumentPayeeLegalOrganization(): void
+    {
+        self::$document->getDocumentPayeeLegalOrganisation($payeelegalorgid, $payeelegalorgtype, $payeelegalorgname);
+        $this->assertSame('', $payeelegalorgid);
+        $this->assertSame('', $payeelegalorgtype);
+        $this->assertSame('', $payeelegalorgname);
+    }
+
+    public function testDocumentPayeeContact(): void
+    {
+        $this->assertFalse(self::$document->firstDocumentPayeeContact());
+        $this->expectNoticeOrWarningExt(
+            static function () {
+                self::$document->getDocumentPayeeContact($payeecontactpersonname, $payeecontactdepartmentname, $payeecontactphoneno, $payeecontactfaxno, $payeecontactemailaddr);
+            }
+        );
+        $this->assertFalse(self::$document->nextDocumentPayeeContact());
+        $this->expectNoticeOrWarningExt(
+            static function () {
+                self::$document->getDocumentPayeeContact($payeecontactpersonname, $payeecontactdepartmentname, $payeecontactphoneno, $payeecontactfaxno, $payeecontactemailaddr);
+            }
+        );
+    }
+
+    public function testDocumentDeliveryTerms(): void
+    {
+        self::$document->getDocumentDeliveryTerms($devtermcode);
+        $this->assertSame('', $devtermcode);
+    }
+
+    public function testDocumentSellerOrderReferencedDocument(): void
+    {
+        self::$document->getDocumentSellerOrderReferencedDocument($sellerorderrefdocid, $sellerorderrefdocdate);
+        $this->assertSame('', $sellerorderrefdocid);
+        $this->assertNotInstanceOf(DateTime::class, $sellerorderrefdocdate);
+    }
+
+    public function testDocumentBuyerOrderReferencedDocument(): void
+    {
+        self::$document->getDocumentBuyerOrderReferencedDocument($buyerorderrefdocid, $buyerorderrefdocdate);
+        $this->assertSame('', $buyerorderrefdocid);
+        $this->assertNotInstanceOf(DateTime::class, $buyerorderrefdocdate);
+    }
+
+    public function testDocumentQuotationReferencedDocument(): void
+    {
+        self::$document->getDocumentQuotationReferencedDocument($quotationrefdocid, $quotationrefdocdate);
+        $this->assertSame('', $quotationrefdocid);
+        $this->assertNotInstanceOf(DateTime::class, $quotationrefdocdate);
+    }
+
+    public function testDocumentContractReferencedDocument(): void
+    {
+        self::$document->getDocumentContractReferencedDocument($contractrefdocid, $contractrefdocdate);
+        $this->assertSame('', $contractrefdocid);
+        $this->assertNotInstanceOf(DateTime::class, $contractrefdocdate);
+    }
+
+    public function testDocumentAdditionalReferencedDocumentLoop(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentAdditionalReferencedDocument());
+        $this->assertFalse(self::$document->nextDocumentAdditionalReferencedDocument());
+    }
+
+    public function testGetDocumentAdditionalReferencedDocument(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentAdditionalReferencedDocument());
+        self::$document->getDocumentAdditionalReferencedDocument($issuerassignedid, $typecode, $uriid, $name, $reftypecode, $issueddate, $binarydatafilename);
+        $this->assertSame('A777123', $issuerassignedid);
+        $this->assertSame('130', $typecode);
+        $this->assertSame('', $uriid);
+        $this->assertIsArray($name);
+        $this->assertEmpty($name);
+        $this->assertSame('', $reftypecode);
+        $this->assertNotInstanceOf(DateTime::class, $issueddate);
+        $this->assertSame('', $binarydatafilename);
+    }
+
+    public function testDocumentAdditionalReferencedDocuments(): void
+    {
+        self::$document->getDocumentAdditionalReferencedDocuments($additionalrefdocs);
+        $this->assertIsArray($additionalrefdocs);
+        $this->assertNotEmpty($additionalrefdocs);
+        $this->assertArrayHasKey(0, $additionalrefdocs);
+        $this->assertIsArray($additionalrefdocs[0]);
+        $this->assertArrayHasKey('IssuerAssignedID', $additionalrefdocs[0]);
+        $this->assertArrayHasKey('TypeCode', $additionalrefdocs[0]);
+        $this->assertEquals('A777123', $additionalrefdocs[0]['IssuerAssignedID']);
+        $this->assertEquals('130', $additionalrefdocs[0]['TypeCode']);
+    }
+
+    public function testDocumentInvoiceReferencedDocumentLoop(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentInvoiceReferencedDocument());
+        $this->assertTrue(self::$document->nextDocumentInvoiceReferencedDocument());
+        $this->assertFalse(self::$document->nextDocumentInvoiceReferencedDocument());
+    }
+
+    public function testGetDocumentInvoiceReferencedDocument(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentInvoiceReferencedDocument());
+        self::$document->getDocumentInvoiceReferencedDocument($issuerassignedid, $typecode, $issueddate);
+        $this->assertSame('S-INV1', $issuerassignedid);
+        $this->assertSame('83', $typecode);
+        $this->assertTrue(self::$document->nextDocumentInvoiceReferencedDocument());
+        self::$document->getDocumentInvoiceReferencedDocument($issuerassignedid, $typecode, $issueddate);
+        $this->assertSame('S-INV2', $issuerassignedid);
+        $this->assertSame('84', $typecode);
+        $this->assertFalse(self::$document->nextDocumentInvoiceReferencedDocument());
+    }
+
+    public function testDocumentInvoiceReferencedDocuments(): void
+    {
+        self::$document->getDocumentInvoiceReferencedDocuments($invoicerefdocs);
+        $this->assertIsArray($invoicerefdocs);
+        $this->assertNotEmpty($invoicerefdocs);
+        $this->assertArrayHasKey(0, $invoicerefdocs);
+        $this->assertIsArray($invoicerefdocs[0]);
+        $this->assertArrayHasKey('IssuerAssignedID', $invoicerefdocs[0]);
+        $this->assertArrayHasKey('TypeCode', $invoicerefdocs[0]);
+        $this->assertArrayHasKey('FormattedIssueDateTime', $invoicerefdocs[0]);
+        $this->assertEquals('S-INV1', $invoicerefdocs[0]['IssuerAssignedID']);
+        $this->assertEquals('83', $invoicerefdocs[0]['TypeCode']);
+        $this->assertArrayHasKey(1, $invoicerefdocs);
+        $this->assertIsArray($invoicerefdocs[1]);
+        $this->assertArrayHasKey('IssuerAssignedID', $invoicerefdocs[1]);
+        $this->assertArrayHasKey('TypeCode', $invoicerefdocs[1]);
+        $this->assertArrayHasKey('FormattedIssueDateTime', $invoicerefdocs[1]);
+        $this->assertEquals('S-INV2', $invoicerefdocs[1]['IssuerAssignedID']);
+        $this->assertEquals('84', $invoicerefdocs[1]['TypeCode']);
+    }
+
+    public function testDocumentUltimateCustomerOrderReferencedDocumentLoop(): void
+    {
+        $this->assertFalse(self::$document->firstDocumentUltimateCustomerOrderReferencedDocument());
+        $this->assertFalse(self::$document->nextDocumentUltimateCustomerOrderReferencedDocument());
+    }
+
+    public function testGetDocumentUltimateCustomerOrderReferencedDocument(): void
+    {
+        $this->assertFalse(self::$document->firstDocumentUltimateCustomerOrderReferencedDocument());
+        $this->expectNoticeOrWarningExt(
+            static function () {
+                self::$document->getDocumentUltimateCustomerOrderReferencedDocument($issuerassignedid, $issueddate);
+            }
+        );
+        $this->assertFalse(self::$document->nextDocumentUltimateCustomerOrderReferencedDocument());
+        $this->expectNoticeOrWarningExt(
+            static function () {
+                self::$document->getDocumentUltimateCustomerOrderReferencedDocument($issuerassignedid, $issueddate);
+            }
+        );
+    }
+
+    public function testDocumentProcuringProject(): void
+    {
+        self::$document->getDocumentProcuringProject($projectid, $projectname);
+        $this->assertSame('', $projectid);
+        $this->assertSame('', $projectname);
+    }
+
+    public function testDocumentSupplyChainEvent(): void
+    {
+        self::$document->getDocumentSupplyChainEvent($supplychainevent);
+        $this->assertInstanceOf(DateTime::class, $supplychainevent);
+        $this->assertInstanceOf('DateTime', $supplychainevent);
+        $this->assertEquals(DateTime::createFromFormat('Ymd', '20180930')->format('Ymd'), $supplychainevent?->format('Ymd'));
+    }
+
+    public function testDocumentDespatchAdviceReferencedDocument(): void
+    {
+        self::$document->getDocumentDespatchAdviceReferencedDocument($despatchdocid, $despatchdocdate);
+        $this->assertSame('', $despatchdocid);
+        $this->assertNotInstanceOf(DateTime::class, $despatchdocdate);
+    }
+
+    public function testDocumentReceivingAdviceReferencedDocument(): void
+    {
+        self::$document->getDocumentReceivingAdviceReferencedDocument($recadvid, $recadvdate);
+        $this->assertSame('', $recadvid);
+        $this->assertNotInstanceOf(DateTime::class, $recadvdate);
+    }
+
+    public function testDocumentDeliveryNoteReferencedDocument(): void
+    {
+        self::$document->getDocumentDeliveryNoteReferencedDocument($deliverynoterefdocid, $deliverynoterefdocdate);
+        $this->assertSame('L87654321012', $deliverynoterefdocid);
+        $this->assertNotInstanceOf(DateTime::class, $deliverynoterefdocdate);
+    }
+
+    public function testDocumentPaymentMeansLoop(): void
+    {
+        $this->assertTrue(self::$document->firstGetDocumentPaymentMeans());
+        $this->assertFalse(self::$document->nextGetDocumentPaymentMeans());
+    }
+
+    public function testGetDocumentPaymentMeans(): void
+    {
+        $this->assertTrue(self::$document->firstGetDocumentPaymentMeans());
+        self::$document->getDocumentPaymentMeans($typeCode, $information, $cardType, $cardId, $cardHolderName, $buyerIban, $payeeIban, $payeeAccountName, $payeePropId, $payeeBic);
+        $this->assertSame('58', $typeCode);
+        $this->assertSame('', $information);
+        $this->assertSame('', $cardType);
+        $this->assertSame('', $cardId);
+        $this->assertSame('', $cardHolderName);
+        $this->assertSame('', $buyerIban);
+        $this->assertSame('DE5467894567876500', $payeeIban);
+        $this->assertSame('', $payeeAccountName);
+        $this->assertSame('', $payeePropId);
+        $this->assertSame('', $payeeBic);
+    }
+
+    public function testDocumentTaxLoop(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentTax());
+        $this->assertFalse(self::$document->nextDocumentTax());
+    }
+
+    public function testDocumentTax(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentTax());
+        self::$document->getDocumentTax($categoryCode, $typeCode, $basisAmount, $calculatedAmount, $rateApplicablePercent, $exemptionReason, $exemptionReasonCode, $lineTotalBasisAmount, $allowanceChargeBasisAmount, $taxPointDate, $dueDateTypeCode);
+        $this->assertSame('S', $categoryCode);
+        $this->assertSame('VAT', $typeCode);
+        $this->assertEqualsWithDelta(403.55, $basisAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(76.67, $calculatedAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(19.0, $rateApplicablePercent, PHP_FLOAT_EPSILON);
+        // $this->assertSame(-6.55, $allowanceChargeBasisAmount);
+    }
+
+    public function testDocumentBillingPeriod(): void
+    {
+        self::$document->getDocumentBillingPeriod($docbillingperiodstart, $docbillingperiodend);
+        $this->assertNotInstanceOf(DateTime::class, $docbillingperiodstart);
+        $this->assertNotInstanceOf(DateTime::class, $docbillingperiodend);
+    }
+
+    public function testDocumentAllowanceCharges(): void
+    {
+        self::$document->getDocumentAllowanceCharges($docallowancecharge);
+        $this->assertIsArray($docallowancecharge);
+        $this->assertNotEmpty($docallowancecharge);
+        $this->assertCount(1, $docallowancecharge);
+    }
+
+    public function testtDocumentAllowanceChargeLoop(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentAllowanceCharge());
+        $this->assertFalse(self::$document->nextDocumentAllowanceCharge());
+    }
+
+    public function testtDocumentAllowanceCharge(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentAllowanceCharge());
+        self::$document->getDocumentAllowanceCharge($actualAmount, $isCharge, $taxCategoryCode, $taxTypeCode, $rateApplicablePercent, $sequence, $calculationPercent, $basisAmount, $basisQuantity, $basisQuantityUnitCode, $reasonCode, $reason);
+        $this->assertEqualsWithDelta(21.55, $actualAmount, PHP_FLOAT_EPSILON);
+        $this->assertFalse($isCharge);
+        $this->assertSame('S', $taxCategoryCode);
+        $this->assertSame('VAT', $taxTypeCode);
+        $this->assertEqualsWithDelta(19.00, $rateApplicablePercent, PHP_FLOAT_EPSILON);
+        $this->assertEquals(0, $sequence);
+        $this->assertEquals(0, $calculationPercent);
+        $this->assertEqualsWithDelta(410.10, $basisAmount, PHP_FLOAT_EPSILON);
+        $this->assertEquals(0, $basisQuantity);
+        $this->assertSame('', $basisQuantityUnitCode);
+        $this->assertSame('', $reasonCode);
+        $this->assertSame('Sonderrabatt', $reason);
+        $this->assertFalse(self::$document->nextDocumentAllowanceCharge());
+    }
+
+    public function testtDocumentLogisticsServiceChargeLoop(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentLogisticsServiceCharge());
+        $this->assertFalse(self::$document->nextDocumentLogisticsServiceCharge());
+    }
+
+    public function testGetDocumentLogisticsServiceCharge(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentLogisticsServiceCharge());
+        self::$document->getDocumentLogisticsServiceCharge($description, $appliedAmount, $taxTypeCodes, $taxCategoryCodes, $rateApplicablePercents);
+        $this->assertSame('Transportkosten: Frachbetrag', $description);
+        $this->assertEqualsWithDelta(15.00, $appliedAmount, PHP_FLOAT_EPSILON);
+        $this->assertIsArray($taxTypeCodes);
+        $this->assertCount(1, $taxTypeCodes);
+        $this->assertArrayHasKey(0, $taxTypeCodes);
+        $this->assertEquals('VAT', $taxTypeCodes[0]);
+        $this->assertIsArray($taxCategoryCodes);
+        $this->assertCount(1, $taxCategoryCodes);
+        $this->assertArrayHasKey(0, $taxCategoryCodes);
+        $this->assertEquals('S', $taxCategoryCodes[0]);
+        $this->assertIsArray($rateApplicablePercents);
+        $this->assertCount(1, $rateApplicablePercents);
+        $this->assertArrayHasKey(0, $rateApplicablePercents);
+        $this->assertEqualsWithDelta(19.0, $rateApplicablePercents[0], PHP_FLOAT_EPSILON);
+    }
+
+    public function testtDocumentPaymentTermsLoop(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentPaymentTerms());
+        $this->assertFalse(self::$document->nextDocumentPaymentTerms());
+    }
+
+    public function testDocumentPaymentTerms(): void
+    {
+        self::$document->getDocumentPaymentTerms($docpaymentterms);
+        $this->assertIsArray($docpaymentterms);
+        $this->assertNotEmpty($docpaymentterms);
+        $this->assertArrayHasKey(0, $docpaymentterms);
+        $this->assertIsArray($docpaymentterms[0]);
+        $this->assertArrayHasKey('description', $docpaymentterms[0]);
+        $this->assertArrayHasKey('duedate', $docpaymentterms[0]);
+        $this->assertArrayHasKey('directdebitmandateid', $docpaymentterms[0]);
+        $this->assertArrayHasKey('partialpaymentamount', $docpaymentterms[0]);
+        $this->assertEquals('Skontovereinbarung: 2% bei Zahlung innerhalb 10 Tagen nach Rechnungsdatum', $docpaymentterms[0]['description']);
+        $this->assertNull($docpaymentterms[0]['duedate']);
+        $this->assertNotInstanceOf('DateTime', $docpaymentterms[0]['duedate']);
+        $this->assertEquals('', $docpaymentterms[0]['directdebitmandateid']);
+        $this->assertEqualsWithDelta(0.0, $docpaymentterms[0]['partialpaymentamount'], PHP_FLOAT_EPSILON);
+    }
+
+    public function testtDocumentPaymentTerms(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentPaymentTerms());
+        self::$document->getDocumentPaymentTerm($termdescription, $termduedate, $termmandate);
+        self::$document->getDiscountTermsFromPaymentTerm($dispercent, $discbasedatetime, $discmeasureval, $discmeasureunit, $discbaseamount, $discamount);
+        self::$document->getPenaltyTermsFromPaymentTerm($penaltypercent, $penaltybasedatetime, $penaltymeasureval, $penaltymeasureunit, $penaltybaseamount, $penaltyamount);
+
+        $this->assertSame('Skontovereinbarung: 2% bei Zahlung innerhalb 10 Tagen nach Rechnungsdatum', $termdescription);
+        $this->assertNotInstanceOf(DateTime::class, $termduedate);
+        $this->assertSame('', $termmandate);
+        $this->assertEqualsWithDelta(2.0, $dispercent, PHP_FLOAT_EPSILON);
+        $this->assertNotInstanceOf(DateTime::class, $discbasedatetime);
+        $this->assertEquals(10, $discmeasureval);
+        $this->assertSame('DAY', $discmeasureunit);
+        $this->assertEqualsWithDelta(480.22, $discbaseamount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(9.60, $discamount, PHP_FLOAT_EPSILON);
+        $this->assertNotInstanceOf(DateTime::class, $penaltybasedatetime);
+        $this->assertEquals(30, $penaltymeasureval);
+        $this->assertSame('DAY', $penaltymeasureunit);
+        $this->assertEqualsWithDelta(480.22, $penaltybaseamount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(24.01, $penaltyamount, PHP_FLOAT_EPSILON);
+
+        $this->assertFalse(self::$document->nextDocumentPaymentTerms());
+    }
+
+    public function testDocumentReceivableSpecifiedTradeAccountingAccount(): void
+    {
+        $this->assertFalse(self::$document->firstDocumentReceivableSpecifiedTradeAccountingAccount());
+        $this->assertFalse(self::$document->nextDocumentReceivableSpecifiedTradeAccountingAccount());
+    }
+
+    public function testDocumentSummation(): void
+    {
+        self::$document->getDocumentSummation($grandTotalAmount, $duePayableAmount, $lineTotalAmount, $chargeTotalAmount, $allowanceTotalAmount, $taxBasisTotalAmount, $taxTotalAmount, $roundingAmount, $totalPrepaidAmount);
+        $this->assertEqualsWithDelta(480.22, $grandTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(480.22, $duePayableAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(410.10, $lineTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(15.00, $chargeTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(21.55, $allowanceTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(403.55, $taxBasisTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(76.67, $taxTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.00, $roundingAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.00, $totalPrepaidAmount, PHP_FLOAT_EPSILON);
+    }
+
+    public function testDocumentPositionLoop(): void
+    {
+        $this->assertTrue(self::$document->firstDocumentPosition());
+        $this->assertTrue(self::$document->nextDocumentPosition());
+        $this->assertTrue(self::$document->nextDocumentPosition());
+        $this->assertTrue(self::$document->nextDocumentPosition());
+        $this->assertTrue(self::$document->nextDocumentPosition());
+        $this->assertFalse(self::$document->nextDocumentPosition());
+    }
+
     /*
-
-        public function testDocumentUltimateShipToContact(): void
-        {
-            $this->assertFalse(self::$document->firstDocumentUltimateShipToContact());
-            $this->expectNoticeOrWarningExt(
-                function () {
-                    self::$document->getDocumentUltimateShipToContact($ultimateshiptocontactpersonname, $ultimateshiptocontactdepartmentname, $ultimateshiptocontactphoneno, $ultimateshiptocontactfaxno, $ultimateshiptocontactemailaddr);
-                }
-            );
-            $this->assertFalse(self::$document->nextDocumentUltimateShipToContact());
-            $this->expectNoticeOrWarningExt(
-                function () {
-                    self::$document->getDocumentUltimateShipToContact($ultimateshiptocontactpersonname, $ultimateshiptocontactdepartmentname, $ultimateshiptocontactphoneno, $ultimateshiptocontactfaxno, $ultimateshiptocontactemailaddr);
-                }
-            );
-        }
-
-        public function testDocumentShipFromGeneral(): void
-        {
-            self::$document->getDocumentShipFrom($shipfromname, $shipfromids, $shipfromdescription);
-            $this->assertSame("", $shipfromname);
-            $this->assertIsArray($shipfromids);
-            $this->assertEmpty($shipfromids);
-            $this->assertSame("", $shipfromdescription);
-        }
-
-        public function testDocumentShipFromGlobalId(): void
-        {
-            self::$document->getDocumentShipFromGlobalId($shipfromglobalids);
-            $this->assertIsArray($shipfromglobalids);
-            $this->assertEmpty($shipfromglobalids);
-        }
-
-        public function testDocumentShipFromTaxRegistration(): void
-        {
-            self::$document->getDocumentShipFromTaxRegistration($shipfromtaxreg);
-            $this->assertIsArray($shipfromtaxreg);
-            $this->assertEmpty($shipfromtaxreg);
-        }
-
-        public function testDocumentShipFromAddress(): void
-        {
-            self::$document->getDocumentShipFromAddress($shipfromlineone, $shipfromlinetwo, $shipfromlinethree, $shipfrompostcode, $shipfromcity, $shipfromcountry, $shipfromsubdivision);
-            $this->assertSame("", $shipfromlineone);
-            $this->assertSame("", $shipfromlinetwo);
-            $this->assertSame("", $shipfromlinethree);
-            $this->assertSame("", $shipfrompostcode);
-            $this->assertSame("", $shipfromcity);
-            $this->assertSame("", $shipfromcountry);
-            $this->assertIsArray($shipfromsubdivision);
-            $this->assertEmpty($shipfromsubdivision);
-        }
-
-        public function testDocumentShipFromLegalOrganization(): void
-        {
-            self::$document->getDocumentShipFromLegalOrganisation($shipfromlegalorgid, $shipfromlegalorgtype, $shipfromlegalorgname);
-            $this->assertSame("", $shipfromlegalorgid);
-            $this->assertSame("", $shipfromlegalorgtype);
-            $this->assertSame("", $shipfromlegalorgname);
-        }
-
-        public function testDocumentShipFromContact(): void
-        {
-            $this->assertFalse(self::$document->firstDocumentShipFromContact());
-            $this->expectNoticeOrWarningExt(
-                function () {
-                    self::$document->getDocumentShipFromContact($shipfromcontactpersonname, $shipfromcontactdepartmentname, $shipfromcontactphoneno, $shipfromcontactfaxno, $shipfromcontactemailaddr);
-                }
-            );
-            $this->assertFalse(self::$document->nextDocumentShipFromContact());
-            $this->expectNoticeOrWarningExt(
-                function () {
-                    self::$document->getDocumentShipFromContact($shipfromcontactpersonname, $shipfromcontactdepartmentname, $shipfromcontactphoneno, $shipfromcontactfaxno, $shipfromcontactemailaddr);
-                }
-            );
-        }
-
-        public function testDocumentInvoicerGeneral(): void
-        {
-            self::$document->getDocumentInvoicer($invoicername, $invoicerids, $invoicerdescription);
-            $this->assertSame("", $invoicername);
-            $this->assertIsArray($invoicerids);
-            $this->assertEmpty($invoicerids);
-            $this->assertSame("", $invoicerdescription);
-        }
-
-        public function testDocumentInvoicerGlobalId(): void
-        {
-            self::$document->getDocumentInvoicerGlobalId($invoicerglobalids);
-            $this->assertIsArray($invoicerglobalids);
-            $this->assertEmpty($invoicerglobalids);
-        }
-
-        public function testDocumentInvoicerTaxRegistration(): void
-        {
-            self::$document->getDocumentInvoicerTaxRegistration($invoicertaxreg);
-            $this->assertIsArray($invoicertaxreg);
-            $this->assertEmpty($invoicertaxreg);
-        }
-
-        public function testDocumentInvoicerAddress(): void
-        {
-            self::$document->getDocumentInvoicerAddress($invoicerlineone, $invoicerlinetwo, $invoicerlinethree, $invoicerpostcode, $invoicercity, $invoicercountry, $invoicersubdivision);
-            $this->assertSame("", $invoicerlineone);
-            $this->assertSame("", $invoicerlinetwo);
-            $this->assertSame("", $invoicerlinethree);
-            $this->assertSame("", $invoicerpostcode);
-            $this->assertSame("", $invoicercity);
-            $this->assertSame("", $invoicercountry);
-            $this->assertIsArray($invoicersubdivision);
-            $this->assertEmpty($invoicersubdivision);
-        }
-
-        public function testDocumentInvoicerLegalOrganization(): void
-        {
-            self::$document->getDocumentInvoicerLegalOrganisation($invoicerlegalorgid, $invoicerlegalorgtype, $invoicerlegalorgname);
-            $this->assertSame("", $invoicerlegalorgid);
-            $this->assertSame("", $invoicerlegalorgtype);
-            $this->assertSame("", $invoicerlegalorgname);
-        }
-
-        public function testDocumentInvoicerContact(): void
-        {
-            $this->assertFalse(self::$document->firstDocumentInvoicerContact());
-            $this->expectNoticeOrWarningExt(
-                function () {
-                    self::$document->getDocumentInvoicerContact($invoicercontactpersonname, $invoicercontactdepartmentname, $invoicercontactphoneno, $invoicercontactfaxno, $invoicercontactemailaddr);
-                }
-            );
-            $this->assertFalse(self::$document->nextDocumentInvoicerContact());
-            $this->expectNoticeOrWarningExt(
-                function () {
-                    self::$document->getDocumentInvoicerContact($invoicercontactpersonname, $invoicercontactdepartmentname, $invoicercontactphoneno, $invoicercontactfaxno, $invoicercontactemailaddr);
-                }
-            );
-        }
-
-        public function testDocumentInvoiceeGeneral(): void
-        {
-            self::$document->getDocumentInvoicee($invoiceename, $invoiceeids, $invoiceedescription);
-            $this->assertSame("MUSTER-KUNDE GMBH", $invoiceename);
-            $this->assertIsArray($invoiceeids);
-            $this->assertNotEmpty($invoiceeids);
-            $this->assertArrayHasKey(0, $invoiceeids);
-            $this->assertSame("", $invoiceedescription);
-        }
-
-        public function testDocumentInvoiceeGlobalId(): void
-        {
-            self::$document->getDocumentInvoiceeGlobalId($invoiceeglobalids);
-            $this->assertIsArray($invoiceeglobalids);
-            $this->assertNotEmpty($invoiceeglobalids);
-            $this->assertArrayHasKey("0088", $invoiceeglobalids);
-            $this->assertEquals("4304171000002", $invoiceeglobalids["0088"]);
-        }
-
-        public function testDocumentInvoiceeTaxRegistration(): void
-        {
-            self::$document->getDocumentInvoiceeTaxRegistration($invoiceetaxreg);
-            $this->assertIsArray($invoiceetaxreg);
-            $this->assertEmpty($invoiceetaxreg);
-        }
-
-        public function testDocumentInvoiceeAddress(): void
-        {
-            self::$document->getDocumentInvoiceeAddress($invoiceelineone, $invoiceelinetwo, $invoiceelinethree, $invoiceepostcode, $invoiceecity, $invoiceecountry, $invoiceesubdivision);
-            $this->assertSame("KUNDENWEG 88", $invoiceelineone);
-            $this->assertSame("", $invoiceelinetwo);
-            $this->assertSame("", $invoiceelinethree);
-            $this->assertSame("40235", $invoiceepostcode);
-            $this->assertSame("DUESSELDORF", $invoiceecity);
-            $this->assertSame("DE", $invoiceecountry);
-            $this->assertIsArray($invoiceesubdivision);
-            $this->assertEmpty($invoiceesubdivision);
-        }
-
-        public function testDocumentInvoiceeLegalOrganization(): void
-        {
-            self::$document->getDocumentInvoiceeLegalOrganisation($invoiceelegalorgid, $invoiceelegalorgtype, $invoiceelegalorgname);
-            $this->assertSame("", $invoiceelegalorgid);
-            $this->assertSame("", $invoiceelegalorgtype);
-            $this->assertSame("", $invoiceelegalorgname);
-        }
-
-        public function testDocumentInvoiceeContact(): void
-        {
-            $this->assertFalse(self::$document->firstDocumentInvoiceeContact());
-            $this->expectNoticeOrWarningExt(
-                function () {
-                    self::$document->getDocumentInvoiceeContact($invoiceecontactpersonname, $invoiceecontactdepartmentname, $invoiceecontactphoneno, $invoiceecontactfaxno, $invoiceecontactemailaddr);
-                }
-            );
-            $this->assertFalse(self::$document->nextDocumentInvoiceeContact());
-            $this->expectNoticeOrWarningExt(
-                function () {
-                    self::$document->getDocumentInvoiceeContact($invoiceecontactpersonname, $invoiceecontactdepartmentname, $invoiceecontactphoneno, $invoiceecontactfaxno, $invoiceecontactemailaddr);
-                }
-            );
-        }
-
-        public function testDocumentPayeeGeneral(): void
-        {
-            self::$document->getDocumentPayee($payeename, $payeeids, $payeedescription);
-            $this->assertSame("", $payeename);
-            $this->assertIsArray($payeeids);
-            $this->assertEmpty($payeeids);
-            $this->assertSame("", $payeedescription);
-        }
-
-        public function testDocumentPayeeGlobalId(): void
-        {
-            self::$document->getDocumentPayeeGlobalId($payeeglobalids);
-            $this->assertIsArray($payeeglobalids);
-            $this->assertEmpty($payeeglobalids);
-        }
-
-        public function testDocumentPayeeTaxRegistration(): void
-        {
-            self::$document->getDocumentPayeeTaxRegistration($payeetaxreg);
-            $this->assertIsArray($payeetaxreg);
-            $this->assertEmpty($payeetaxreg);
-        }
-
-        public function testDocumentPayeeAddress(): void
-        {
-            self::$document->getDocumentPayeeAddress($payeelineone, $payeelinetwo, $payeelinethree, $payeepostcode, $payeecity, $payeecountry, $payeesubdivision);
-            $this->assertSame("", $payeelineone);
-            $this->assertSame("", $payeelinetwo);
-            $this->assertSame("", $payeelinethree);
-            $this->assertSame("", $payeepostcode);
-            $this->assertSame("", $payeecity);
-            $this->assertSame("", $payeecountry);
-            $this->assertIsArray($payeesubdivision);
-            $this->assertEmpty($payeesubdivision);
-        }
-
-        public function testDocumentPayeeLegalOrganization(): void
-        {
-            self::$document->getDocumentPayeeLegalOrganisation($payeelegalorgid, $payeelegalorgtype, $payeelegalorgname);
-            $this->assertSame("", $payeelegalorgid);
-            $this->assertSame("", $payeelegalorgtype);
-            $this->assertSame("", $payeelegalorgname);
-        }
-
-        public function testDocumentPayeeContact(): void
-        {
-            $this->assertFalse(self::$document->firstDocumentPayeeContact());
-            $this->expectNoticeOrWarningExt(
-                function () {
-                    self::$document->getDocumentPayeeContact($payeecontactpersonname, $payeecontactdepartmentname, $payeecontactphoneno, $payeecontactfaxno, $payeecontactemailaddr);
-                }
-            );
-            $this->assertFalse(self::$document->nextDocumentPayeeContact());
-            $this->expectNoticeOrWarningExt(
-                function () {
-                    self::$document->getDocumentPayeeContact($payeecontactpersonname, $payeecontactdepartmentname, $payeecontactphoneno, $payeecontactfaxno, $payeecontactemailaddr);
-                }
-            );
-        }
-
-        public function testDocumentSellerOrderReferencedDocument(): void
-        {
-            self::$document->getDocumentSellerOrderReferencedDocument($sellerorderrefdocid, $sellerorderrefdocdate);
-            $this->assertSame("", $sellerorderrefdocid);
-            $this->assertNotInstanceOf(\DateTime::class, $sellerorderrefdocdate);
-        }
-
-        public function testDocumentBuyerOrderReferencedDocument(): void
-        {
-            self::$document->getDocumentBuyerOrderReferencedDocument($buyerorderrefdocid, $buyerorderrefdocdate);
-            $this->assertSame("", $buyerorderrefdocid);
-            $this->assertNotInstanceOf(\DateTime::class, $buyerorderrefdocdate);
-        }
-
-        public function testDocumentQuotationReferencedDocument(): void
-        {
-            self::$document->getDocumentQuotationReferencedDocument($quotationrefdocid, $quotationrefdocdate);
-            $this->assertSame("", $quotationrefdocid);
-            $this->assertNotInstanceOf(\DateTime::class, $quotationrefdocdate);
-        }
-
-        public function testDocumentContractReferencedDocument(): void
-        {
-            self::$document->getDocumentContractReferencedDocument($contractrefdocid, $contractrefdocdate);
-            $this->assertSame("", $contractrefdocid);
-            $this->assertNotInstanceOf(\DateTime::class, $contractrefdocdate);
-        }
-
-        public function testDocumentAdditionalReferencedDocuments(): void
-        {
-            self::$document->getDocumentAdditionalReferencedDocuments($additionalrefdocs);
-            $this->assertIsArray($additionalrefdocs);
-            $this->assertNotEmpty($additionalrefdocs);
-            $this->assertArrayHasKey(0, $additionalrefdocs);
-            $this->assertIsArray($additionalrefdocs[0]);
-            $this->assertArrayHasKey("IssuerAssignedID", $additionalrefdocs[0]);
-            $this->assertArrayHasKey("TypeCode", $additionalrefdocs[0]);
-            $this->assertEquals("A777123", $additionalrefdocs[0]["IssuerAssignedID"]);
-            $this->assertEquals("130", $additionalrefdocs[0]["TypeCode"]);
-        }
-
-        public function testDocumentInvoiceReferencedDocuments(): void
-        {
-            self::$document->getDocumentInvoiceReferencedDocuments($invoicerefdocs);
-            $this->assertIsArray($invoicerefdocs);
-            $this->assertNotEmpty($invoicerefdocs);
-            $this->assertArrayHasKey(0, $invoicerefdocs);
-            $this->assertIsArray($invoicerefdocs[0]);
-            $this->assertArrayHasKey("IssuerAssignedID", $invoicerefdocs[0]);
-            $this->assertArrayHasKey("TypeCode", $invoicerefdocs[0]);
-            $this->assertArrayHasKey("FormattedIssueDateTime", $invoicerefdocs[0]);
-            $this->assertEquals("S-INV1", $invoicerefdocs[0]["IssuerAssignedID"]);
-            $this->assertEquals("83", $invoicerefdocs[0]["TypeCode"]);
-            $this->assertArrayHasKey(1, $invoicerefdocs);
-            $this->assertIsArray($invoicerefdocs[1]);
-            $this->assertArrayHasKey("IssuerAssignedID", $invoicerefdocs[1]);
-            $this->assertArrayHasKey("TypeCode", $invoicerefdocs[1]);
-            $this->assertArrayHasKey("FormattedIssueDateTime", $invoicerefdocs[1]);
-            $this->assertEquals("S-INV2", $invoicerefdocs[1]["IssuerAssignedID"]);
-            $this->assertEquals("84", $invoicerefdocs[1]["TypeCode"]);
-        }
-
-        public function testDocumentProcuringProject(): void
-        {
-            self::$document->getDocumentProcuringProject($projectid, $projectname);
-            $this->assertSame("", $projectid);
-            $this->assertSame("", $projectname);
-        }
-
-        public function testDocumentSupplyChainEvent(): void
-        {
-            self::$document->getDocumentSupplyChainEvent($supplychainevent);
-            $this->assertInstanceOf(\DateTime::class, $supplychainevent);
-            $this->assertInstanceOf("DateTime", $supplychainevent);
-            $this->assertEquals((\DateTime::createFromFormat('Ymd', '20180930'))->format('Ymd'), $supplychainevent->format('Ymd'));
-        }
-
-        public function testDocumentDespatchAdviceReferencedDocument(): void
-        {
-            self::$document->getDocumentDespatchAdviceReferencedDocument($despatchdocid, $despatchdocdate);
-            $this->assertSame("", $despatchdocid);
-            $this->assertNotInstanceOf(\DateTime::class, $despatchdocdate);
-        }
-
-        public function testDocumentReceivingAdviceReferencedDocument(): void
-        {
-            self::$document->getDocumentReceivingAdviceReferencedDocument($recadvid, $recadvdate);
-            $this->assertSame("", $recadvid);
-            $this->assertNotInstanceOf(\DateTime::class, $recadvdate);
-        }
-
-        public function testDocumentDeliveryNoteReferencedDocument(): void
-        {
-            self::$document->getDocumentDeliveryNoteReferencedDocument($deliverynoterefdocid, $deliverynoterefdocdate);
-            $this->assertSame("L87654321012", $deliverynoterefdocid);
-            $this->assertNotInstanceOf(\DateTime::class, $deliverynoterefdocdate);
-        }
-
-        public function testDocumentBillingPeriod(): void
-        {
-            self::$document->getDocumentBillingPeriod($docbillingperiodstart, $docbillingperiodend);
-            $this->assertNotInstanceOf(\DateTime::class, $docbillingperiodstart);
-            $this->assertNotInstanceOf(\DateTime::class, $docbillingperiodend);
-        }
-
-        public function testDocumentAllowanceCharges(): void
-        {
-            self::$document->getDocumentAllowanceCharges($docallowancecharge);
-            $this->assertIsArray($docallowancecharge);
-            $this->assertNotEmpty($docallowancecharge);
-            $this->assertCount(1, $docallowancecharge);
-        }
-
-        public function testDocumentPaymentTerms(): void
-        {
-            self::$document->getDocumentPaymentTerms($docpaymentterms);
-            $this->assertIsArray($docpaymentterms);
-            $this->assertNotEmpty($docpaymentterms);
-            $this->assertArrayHasKey(0, $docpaymentterms);
-            $this->assertIsArray($docpaymentterms[0]);
-            $this->assertArrayHasKey("description", $docpaymentterms[0]);
-            $this->assertArrayHasKey("duedate", $docpaymentterms[0]);
-            $this->assertArrayHasKey("directdebitmandateid", $docpaymentterms[0]);
-            $this->assertArrayHasKey("partialpaymentamount", $docpaymentterms[0]);
-            $this->assertEquals("Skontovereinbarung: 2% bei Zahlung innerhalb 10 Tagen nach Rechnungsdatum", $docpaymentterms[0]["description"]);
-            $this->assertNull($docpaymentterms[0]["duedate"]);
-            $this->assertNotInstanceOf("DateTime", $docpaymentterms[0]["duedate"]);
-            $this->assertEquals("", $docpaymentterms[0]["directdebitmandateid"]);
-            $this->assertEqualsWithDelta(0.0, $docpaymentterms[0]["partialpaymentamount"], PHP_FLOAT_EPSILON);
-        }
-
-        public function testDocumentDeliveryTerms(): void
-        {
-            self::$document->getDocumentDeliveryTerms($devtermcode);
-            $this->assertSame("", $devtermcode);
-        }
-
-        public function testDocumentAdditionalReferencedDocumentLoop(): void
-        {
-            $this->assertTrue(self::$document->firstDocumentAdditionalReferencedDocument());
-            $this->assertFalse(self::$document->nextDocumentAdditionalReferencedDocument());
-        }
-
-        public function testGetDocumentAdditionalReferencedDocument(): void
-        {
-            $this->assertTrue(self::$document->firstDocumentAdditionalReferencedDocument());
-            self::$document->getDocumentAdditionalReferencedDocument($issuerassignedid, $typecode, $uriid, $name, $reftypecode, $issueddate, $binarydatafilename);
-            $this->assertSame("A777123", $issuerassignedid);
-            $this->assertSame("130", $typecode);
-            $this->assertSame("", $uriid);
-            $this->assertIsArray($name);
-            $this->assertEmpty($name);
-            $this->assertSame("", $reftypecode);
-            $this->assertNotInstanceOf(\DateTime::class, $issueddate);
-            $this->assertSame("", $binarydatafilename);
-        }
-
-        public function testDocumentInvoiceReferencedDocumentLoop(): void
-        {
-            $this->assertTrue(self::$document->firstDocumentInvoiceReferencedDocument());
-            $this->assertTrue(self::$document->nextDocumentInvoiceReferencedDocument());
-            $this->assertFalse(self::$document->nextDocumentInvoiceReferencedDocument());
-        }
-
-        public function testGetDocumentInvoiceReferencedDocument(): void
-        {
-            $this->assertTrue(self::$document->firstDocumentInvoiceReferencedDocument());
-            self::$document->getDocumentInvoiceReferencedDocument($issuerassignedid, $typecode, $issueddate);
-            $this->assertSame("S-INV1", $issuerassignedid);
-            $this->assertSame("83", $typecode);
-            $this->assertTrue(self::$document->nextDocumentInvoiceReferencedDocument());
-            self::$document->getDocumentInvoiceReferencedDocument($issuerassignedid, $typecode, $issueddate);
-            $this->assertSame("S-INV2", $issuerassignedid);
-            $this->assertSame("84", $typecode);
-            $this->assertFalse(self::$document->nextDocumentInvoiceReferencedDocument());
-        }
-
-        public function testDocumentUltimateCustomerOrderReferencedDocumentLoop(): void
-        {
-            $this->assertFalse(self::$document->firstDocumentUltimateCustomerOrderReferencedDocument());
-            $this->assertFalse(self::$document->nextDocumentUltimateCustomerOrderReferencedDocument());
-        }
-
-        public function testDocumentPaymentMeansLoop(): void
-        {
-            $this->assertTrue(self::$document->firstGetDocumentPaymentMeans());
-            $this->assertFalse(self::$document->nextGetDocumentPaymentMeans());
-        }
-
-        public function testGetDocumentPaymentMeans(): void
-        {
-            $this->assertTrue(self::$document->firstGetDocumentPaymentMeans());
-            self::$document->getDocumentPaymentMeans($typeCode, $information, $cardType, $cardId, $cardHolderName, $buyerIban, $payeeIban, $payeeAccountName, $payeePropId, $payeeBic);
-            $this->assertSame("58", $typeCode);
-            $this->assertSame("", $information);
-            $this->assertSame("", $cardType);
-            $this->assertSame("", $cardId);
-            $this->assertSame("", $cardHolderName);
-            $this->assertSame("", $buyerIban);
-            $this->assertSame("DE5467894567876500", $payeeIban);
-            $this->assertSame("", $payeeAccountName);
-            $this->assertSame("", $payeePropId);
-            $this->assertSame("", $payeeBic);
-        }
-
-        public function testDocumentTaxLoop(): void
-        {
-            $this->assertTrue(self::$document->firstDocumentTax());
-            $this->assertFalse(self::$document->nextDocumentTax());
-        }
-
-        public function testDocumentTax(): void
-        {
-            $this->assertTrue(self::$document->firstDocumentTax());
-            self::$document->getDocumentTax($categoryCode, $typeCode, $basisAmount, $calculatedAmount, $rateApplicablePercent, $exemptionReason, $exemptionReasonCode, $lineTotalBasisAmount, $allowanceChargeBasisAmount, $taxPointDate, $dueDateTypeCode);
-            $this->assertSame("S", $categoryCode);
-            $this->assertSame("VAT", $typeCode);
-            $this->assertEqualsWithDelta(403.55, $basisAmount, PHP_FLOAT_EPSILON);
-            $this->assertEqualsWithDelta(76.67, $calculatedAmount, PHP_FLOAT_EPSILON);
-            $this->assertEqualsWithDelta(19.0, $rateApplicablePercent, PHP_FLOAT_EPSILON);
-            $this->assertSame(-6.55, $allowanceChargeBasisAmount);
-        }
-
-        public function testtDocumentAllowanceChargeLoop(): void
-        {
-            $this->assertTrue(self::$document->firstDocumentAllowanceCharge());
-            $this->assertFalse(self::$document->nextDocumentAllowanceCharge());
-        }
-
-
-        public function testtDocumentAllowanceCharge(): void
-        {
-            $this->assertTrue(self::$document->firstDocumentAllowanceCharge());
-            self::$document->getDocumentAllowanceCharge($actualAmount, $isCharge, $taxCategoryCode, $taxTypeCode, $rateApplicablePercent, $sequence, $calculationPercent, $basisAmount, $basisQuantity, $basisQuantityUnitCode, $reasonCode, $reason);
-            $this->assertEqualsWithDelta(21.55, $actualAmount, PHP_FLOAT_EPSILON);
-            $this->assertFalse($isCharge);
-            $this->assertSame("S", $taxCategoryCode);
-            $this->assertSame("VAT", $taxTypeCode);
-            $this->assertEqualsWithDelta(19.00, $rateApplicablePercent, PHP_FLOAT_EPSILON);
-            $this->assertEquals(0, $sequence);
-            $this->assertEquals(0, $calculationPercent);
-            $this->assertEqualsWithDelta(410.10, $basisAmount, PHP_FLOAT_EPSILON);
-            $this->assertEquals(0, $basisQuantity);
-            $this->assertSame("", $basisQuantityUnitCode);
-            $this->assertSame("", $reasonCode);
-            $this->assertSame("Sonderrabatt", $reason);
-        }
-
-        public function testtDocumentLogisticsServiceChargeLoop(): void
-        {
-            $this->assertTrue(self::$document->firstDocumentLogisticsServiceCharge());
-            $this->assertFalse(self::$document->nextDocumentLogisticsServiceCharge());
-        }
-
-        public function testGetDocumentLogisticsServiceCharge(): void
-        {
-            $this->assertTrue(self::$document->firstDocumentLogisticsServiceCharge());
-            self::$document->getDocumentLogisticsServiceCharge($description, $appliedAmount, $taxTypeCodes, $taxCategoryCodes, $rateApplicablePercents);
-            $this->assertSame("Transportkosten: Frachbetrag", $description);
-            $this->assertEqualsWithDelta(15.00, $appliedAmount, PHP_FLOAT_EPSILON);
-            $this->assertIsArray($taxTypeCodes);
-            $this->assertCount(1, $taxTypeCodes);
-            $this->assertArrayHasKey(0, $taxTypeCodes);
-            $this->assertEquals("VAT", $taxTypeCodes[0]);
-            $this->assertIsArray($taxCategoryCodes);
-            $this->assertCount(1, $taxCategoryCodes);
-            $this->assertArrayHasKey(0, $taxCategoryCodes);
-            $this->assertEquals("S", $taxCategoryCodes[0]);
-            $this->assertIsArray($rateApplicablePercents);
-            $this->assertCount(1, $rateApplicablePercents);
-            $this->assertArrayHasKey(0, $rateApplicablePercents);
-            $this->assertEqualsWithDelta(19.0, $rateApplicablePercents[0], PHP_FLOAT_EPSILON);
-        }
-
-        public function testtDocumentPaymentTermsLoop(): void
-        {
-            $this->assertTrue(self::$document->firstDocumentPaymentTerms());
-            $this->assertFalse(self::$document->nextDocumentPaymentTerms());
-        }
-
-        public function testtDocumentPaymentTerms(): void
-        {
-            $this->assertTrue(self::$document->firstDocumentPaymentTerms());
-            self::$document->getDocumentPaymentTerm($termdescription, $termduedate, $termmandate);
-            self::$document->getDiscountTermsFromPaymentTerm($dispercent, $discbasedatetime, $discmeasureval, $discmeasureunit, $discbaseamount, $discamount);
-            self::$document->getPenaltyTermsFromPaymentTerm($penaltypercent, $penaltybasedatetime, $penaltymeasureval, $penaltymeasureunit, $penaltybaseamount, $penaltyamount);
-
-            $this->assertSame("Skontovereinbarung: 2% bei Zahlung innerhalb 10 Tagen nach Rechnungsdatum", $termdescription);
-            $this->assertNotInstanceOf(\DateTime::class, $termduedate);
-            $this->assertSame("", $termmandate);
-            $this->assertEqualsWithDelta(2.0, $dispercent, PHP_FLOAT_EPSILON);
-            $this->assertNotInstanceOf(\DateTime::class, $discbasedatetime);
-            $this->assertEquals(10, $discmeasureval);
-            $this->assertSame("DAY", $discmeasureunit);
-            $this->assertEqualsWithDelta(480.22, $discbaseamount, PHP_FLOAT_EPSILON);
-            $this->assertEqualsWithDelta(9.60, $discamount, PHP_FLOAT_EPSILON);
-            $this->assertNotInstanceOf(\DateTime::class, $penaltybasedatetime);
-            $this->assertEquals(30, $penaltymeasureval);
-            $this->assertSame("DAY", $penaltymeasureunit);
-            $this->assertEqualsWithDelta(480.22, $penaltybaseamount, PHP_FLOAT_EPSILON);
-            $this->assertEqualsWithDelta(24.01, $penaltyamount, PHP_FLOAT_EPSILON);
-
-            $this->assertFalse(self::$document->nextDocumentPaymentTerms());
-        }
-
-        public function testDocumentReceivableSpecifiedTradeAccountingAccount(): void
-        {
-            $this->assertFalse(self::$document->firstDocumentReceivableSpecifiedTradeAccountingAccount());
-            $this->assertFalse(self::$document->nextDocumentReceivableSpecifiedTradeAccountingAccount());
-        }
-
-        public function testDocumentPositionLoop(): void
-        {
-            $this->assertTrue(self::$document->firstDocumentPosition());
-            $this->assertTrue(self::$document->nextDocumentPosition());
-            $this->assertTrue(self::$document->nextDocumentPosition());
-            $this->assertTrue(self::$document->nextDocumentPosition());
-            $this->assertTrue(self::$document->nextDocumentPosition());
-            $this->assertFalse(self::$document->nextDocumentPosition());
-        }
-
         public function testDocumentPositionFirst(): void
         {
             $this->assertTrue(self::$document->firstDocumentPosition());

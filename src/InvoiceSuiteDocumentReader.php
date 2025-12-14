@@ -4425,6 +4425,7 @@ class InvoiceSuiteDocumentReader
      *
      * @param  null|string            $newDescription Text description of the payment terms
      * @param  null|DateTimeInterface $newDueDate     Date by which payment is due
+     * @param  null|string            $newMandate     Mandate
      * @return static
      *
      * @phpstan-param-out string $newDescription

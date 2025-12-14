@@ -13,6 +13,7 @@ namespace horstoeko\zugferd;
 
 use DateTimeInterface;
 use horstoeko\invoicesuite\concerns\HandlesCallForwarding;
+use horstoeko\invoicesuite\concerns\HandlesSafeInvoking;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 
@@ -27,6 +28,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 class ZugferdDocumentReader
 {
     use HandlesCallForwarding;
+    use HandlesSafeInvoking;
 
     /**
      * Internal document reader
@@ -41,14 +43,13 @@ class ZugferdDocumentReader
      * @param  InvoiceSuiteDocumentReader $documentReader
      * @return void
      */
-    final protected function __construct(
-        InvoiceSuiteDocumentReader $documentReader
-    ) {
+    final protected function __construct(InvoiceSuiteDocumentReader $documentReader)
+    {
         $this->documentReader = $documentReader;
     }
 
     /**
-     * Dynamically pass missing methods to the internal builder
+     * Dynamically pass missing methods to the internal reader
      *
      * @param  string       $method
      * @param  array<mixed> $parameters
@@ -115,13 +116,13 @@ class ZugferdDocumentReader
      * @phpstan-param-out string $documentNo
      * @phpstan-param-out string $documentTypeCode
      * @param-out null|DateTimeInterface $documentDate
-     * @phpstan-param-out DateTimeInterface|null $documentDate
+     * @phpstan-param-out null|DateTimeInterface $documentDate
      * @phpstan-param-out string $invoiceCurrency
      * @phpstan-param-out string $taxCurrency
      * @phpstan-param-out string $documentName
      * @phpstan-param-out string $documentLanguage
      * @param-out null|DateTimeInterface $effectiveSpecifiedPeriod
-     * @phpstan-param-out DateTimeInterface|null $effectiveSpecifiedPeriod
+     * @phpstan-param-out null|DateTimeInterface $effectiveSpecifiedPeriod
      */
     public function getDocumentInformation(
         ?string &$documentNo,
@@ -1640,6 +1641,2531 @@ class ZugferdDocumentReader
             $contactFaxNo,
             $contactEmailAddress
         );
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information of the deviating consignor party.
+     *
+     * @param  null|string            $name        __BT-X-183, From EXTENDED__ The name of the party
+     * @param  null|array<int,string> $id          __BT-X-181, From EXTENDED__ An array of identifiers
+     * @param  null|string            $description __BT-, From __ Further legal information that is relevant for the party
+     * @return static
+     *
+     * @phpstan-param-out string $name
+     * @phpstan-param-out array<int,string> $id
+     * @phpstan-param-out string $description
+     */
+    public function getDocumentShipFrom(
+        ?string &$name,
+        ?array &$id,
+        ?string &$description
+    ): static {
+        $id = [];
+        $name = '';
+        $description = '';
+
+        $this->documentReader->getDocumentShipFromName($name);
+
+        if ($this->documentReader->firstDocumentShipFromId()) {
+            do {
+                $this->documentReader->getDocumentShipFromId($newId);
+                InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($id, $newId);
+            } while ($this->documentReader->nextDocumentShipFromId());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get global identifier of the deviating consignor party.
+     *
+     * @param  null|array<string,string> $globalID __BT-X-182/BT-X-182-0, From EXTENDED__ Array of global ids indexed by the identification scheme
+     * @return static
+     *
+     * @phpstan-param-out array<string,string> $globalID
+     */
+    public function getDocumentShipFromGlobalId(
+        ?array &$globalID
+    ): static {
+        $globalID = [];
+
+        if ($this->documentReader->firstDocumentShipFromGlobalId()) {
+            do {
+                $this->documentReader->getDocumentShipFromGlobalId($newGlobalId, $newGlobalIdType);
+                InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($globalID, $newGlobalIdType, $newGlobalId);
+            } while ($this->documentReader->nextDocumentShipFromGlobalId());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information on tax details of the deviating consignor party.
+     *
+     * @param  null|array<string,string> $taxReg __BT-, From __ Array of tax numbers indexed by the schemeid (VA, FC, etc.)
+     * @return static
+     *
+     * @phpstan-param-out array<string,string> $taxReg
+     */
+    public function getDocumentShipFromTaxRegistration(
+        ?array &$taxReg
+    ): static {
+        $taxReg = [];
+
+        if ($this->documentReader->firstDocumentShipFromTaxRegistration()) {
+            do {
+                $this->documentReader->getDocumentShipFromTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+                InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($taxReg, $newTaxRegistrationType, $newTaxRegistrationId);
+            } while ($this->documentReader->nextDocumentShipFromTaxRegistration());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get Detailed information on the address of the deviating consignor party.
+     *
+     * @param  null|string            $lineOne     __BT-X-192, From EXTENDED__ The main line in the party's address. This is usually the street name and house number or the post office box
+     * @param  null|string            $lineTwo     __BT-X-193, From EXTENDED__ Line 2 of the party's address. This is an additional address line in an address that can be used to provide additional details in addition to the main line
+     * @param  null|string            $lineThree   __BT-X-194, From EXTENDED__ Line 3 of the party's address. This is an additional address line in an address that can be used to provide additional details in addition to the main line
+     * @param  null|string            $postCode    __BT-X-191, From EXTENDED__ Identifier for a group of properties, such as a zip code
+     * @param  null|string            $city        __BT-X-195, From EXTENDED__ Usual name of the city or municipality in which the party's address is located
+     * @param  null|string            $country     __BT-X-196, From EXTENDED__ Code used to identify the country. If no tax agent is specified, this is the country in which the sales tax is due. The lists of approved countries are maintained by the EN ISO 3166-1 Maintenance Agency “Codes for the representation of names of countries and their subdivisions”
+     * @param  null|array<int,string> $subDivision __BT-X-197, From EXTENDED__ The party's state
+     * @return static
+     *
+     * @phpstan-param-out string $lineOne
+     * @phpstan-param-out string $lineTwo
+     * @phpstan-param-out string $lineThree
+     * @phpstan-param-out string $postCode
+     * @phpstan-param-out string $city
+     * @phpstan-param-out string $country
+     * @phpstan-param-out array<int,string> $subDivision
+     */
+    public function getDocumentShipFromAddress(
+        ?string &$lineOne,
+        ?string &$lineTwo,
+        ?string &$lineThree,
+        ?string &$postCode,
+        ?string &$city,
+        ?string &$country,
+        ?array &$subDivision
+    ): static {
+        $lineOne = '';
+        $lineTwo = '';
+        $lineThree = '';
+        $postCode = '';
+        $city = '';
+        $country = '';
+        $subDivision = [];
+
+        if ($this->documentReader->firstDocumentShipFromAddress()) {
+            $this->documentReader->getDocumentShipFromAddress(
+                $lineOne,
+                $lineTwo,
+                $lineThree,
+                $postCode,
+                $city,
+                $country,
+                $newSubDivision
+            );
+
+            InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($subDivision, $newSubDivision);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get information about the legal organisation of the deviating consignor party.
+     *
+     * @param  null|string $legalOrgId   __BT-X-184, From EXTENDED__ An identifier issued by an official registrar that identifies the party as a legal entity or legal person. If no identification scheme ($legalorgtype) is provided, it should be known to the buyer or seller party
+     * @param  null|string $legalOrgType __BT-X-184-0, From EXTENDED__ The identifier for the identification scheme of the legal registration of the party. In particular, the following scheme codes are used: 0021 : SWIFT, 0088 : EAN, 0060 : DUNS, 0177 : ODETTE
+     * @param  null|string $legalOrgName __BT-X-185, From EXTENDED__ A name by which the party is known, if different from the party's name (also known as the company name)
+     * @return static
+     *
+     * @phpstan-param-out string $legalOrgId
+     * @phpstan-param-out string $legalOrgType
+     * @phpstan-param-out string $legalOrgName
+     */
+    public function getDocumentShipFromLegalOrganisation(
+        ?string &$legalOrgId,
+        ?string &$legalOrgType,
+        ?string &$legalOrgName
+    ): static {
+        $legalOrgId = '';
+        $legalOrgType = '';
+        $legalOrgName = '';
+
+        if ($this->documentReader->firstDocumentShipFromLegalOrganisation()) {
+            $this->documentReader->getDocumentShipFromLegalOrganisation(
+                $legalOrgType,
+                $legalOrgId,
+                $legalOrgName
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first contact information of the deviating consignor party of the document. Returns true if a first contact information of the deviating consignor party is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentShipFromContact.
+     *
+     * @return bool
+     */
+    public function firstDocumentShipFromContact(): bool
+    {
+        return $this->documentReader->firstDocumentShipFromContact();
+    }
+
+    /**
+     * Seek to the next available contact information of the deviating consignor party of the document. Returns true if another contact information of the deviating consignor party is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentShipFromContact.
+     *
+     * @return bool
+     */
+    public function nextDocumentShipFromContact(): bool
+    {
+        return $this->documentReader->nextDocumentShipFromContact();
+    }
+
+    /**
+     * Get contact information of the deviating consignor party.
+     *
+     * @param  null|string $contactPersonName     __BT-X-186, From EXTENDED__ Contact point for a legal entity, such as a personal name of the contact person
+     * @param  null|string $contactDepartmentName __BT-X-187, From EXTENDED__ Contact point for a legal entity, such as a name of the department or office
+     * @param  null|string $contactPhoneNo        __BT-X-188, From EXTENDED__ A telephone number for the contact point
+     * @param  null|string $contactFaxNo          __BT-X-189, From EXTENDED__ A fax number of the contact point
+     * @param  null|string $contactEmailAddress   __BT-X-190, From EXTENDED__ An e-mail address of the contact point
+     * @return static
+     *
+     * @phpstan-param-out string $contactPersonName
+     * @phpstan-param-out string $contactDepartmentName
+     * @phpstan-param-out string $contactPhoneNo
+     * @phpstan-param-out string $contactFaxNo
+     * @phpstan-param-out string $contactEmailAddress
+     */
+    public function getDocumentShipFromContact(
+        ?string &$contactPersonName,
+        ?string &$contactDepartmentName,
+        ?string &$contactPhoneNo,
+        ?string &$contactFaxNo,
+        ?string &$contactEmailAddress
+    ): static {
+        $this->documentReader->getDocumentShipFromContact(
+            $contactPersonName,
+            $contactDepartmentName,
+            $contactPhoneNo,
+            $contactFaxNo,
+            $contactEmailAddress
+        );
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information of the invoicer party.
+     *
+     * @param  null|string            $name        __BT-X-207, From EXTENDED__ The name of the party
+     * @param  null|array<int,string> $id          __BT-X-205, From EXTENDED__ An array of identifiers
+     * @param  null|string            $description __BT-, From __ Further legal information that is relevant for the party
+     * @return static
+     *
+     * @phpstan-param-out string $name
+     * @phpstan-param-out array<int,string> $id
+     * @phpstan-param-out string $description
+     */
+    public function getDocumentInvoicer(
+        ?string &$name,
+        ?array &$id,
+        ?string &$description
+    ): static {
+        $id = [];
+        $name = '';
+        $description = '';
+
+        $this->documentReader->getDocumentInvoicerName($name);
+
+        if ($this->documentReader->firstDocumentInvoicerId()) {
+            do {
+                $this->documentReader->getDocumentInvoicerId($newId);
+                InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($id, $newId);
+            } while ($this->documentReader->nextDocumentInvoicerId());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get global identifier of the invoicer party.
+     *
+     * @param  null|array<string,string> $globalID __BT-X-206/BT-X-206-0, From EXTENDED__ Array of global ids indexed by the identification scheme
+     * @return static
+     *
+     * @phpstan-param-out array<string,string> $globalID
+     */
+    public function getDocumentInvoicerGlobalId(
+        ?array &$globalID
+    ): static {
+        $globalID = [];
+
+        if ($this->documentReader->firstDocumentInvoicerGlobalId()) {
+            do {
+                $this->documentReader->getDocumentInvoicerGlobalId($newGlobalId, $newGlobalIdType);
+                InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($globalID, $newGlobalIdType, $newGlobalId);
+            } while ($this->documentReader->nextDocumentInvoicerGlobalId());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information on tax details of the invoicer party.
+     *
+     * @param  null|array<string,string> $taxReg __BT-, From __ Array of tax numbers indexed by the schemeid (VA, FC, etc.)
+     * @return static
+     *
+     * @phpstan-param-out array<string,string> $taxReg
+     */
+    public function getDocumentInvoicerTaxRegistration(
+        ?array &$taxReg
+    ): static {
+        $taxReg = [];
+
+        if ($this->documentReader->firstDocumentInvoicerTaxRegistration()) {
+            do {
+                $this->documentReader->getDocumentInvoicerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+                InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($taxReg, $newTaxRegistrationType, $newTaxRegistrationId);
+            } while ($this->documentReader->nextDocumentInvoicerTaxRegistration());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get Detailed information on the address of the invoicer party.
+     *
+     * @param  null|string            $lineOne     __BT-X-216, From EXTENDED__ The main line in the party's address. This is usually the street name and house number or the post office box
+     * @param  null|string            $lineTwo     __BT-X-217, From EXTENDED__ Line 2 of the party's address. This is an additional address line in an address that can be used to provide additional details in addition to the main line
+     * @param  null|string            $lineThree   __BT-X-218, From EXTENDED__ Line 3 of the party's address. This is an additional address line in an address that can be used to provide additional details in addition to the main line
+     * @param  null|string            $postCode    __BT-X-215, From EXTENDED__ Identifier for a group of properties, such as a zip code
+     * @param  null|string            $city        __BT-X-219, From EXTENDED__ Usual name of the city or municipality in which the party's address is located
+     * @param  null|string            $country     __BT-X-220, From EXTENDED__ Code used to identify the country. If no tax agent is specified, this is the country in which the sales tax is due. The lists of approved countries are maintained by the EN ISO 3166-1 Maintenance Agency “Codes for the representation of names of countries and their subdivisions”
+     * @param  null|array<int,string> $subDivision __BT-X-221, From EXTENDED__ The party's state
+     * @return static
+     *
+     * @phpstan-param-out string $lineOne
+     * @phpstan-param-out string $lineTwo
+     * @phpstan-param-out string $lineThree
+     * @phpstan-param-out string $postCode
+     * @phpstan-param-out string $city
+     * @phpstan-param-out string $country
+     * @phpstan-param-out array<int,string> $subDivision
+     */
+    public function getDocumentInvoicerAddress(
+        ?string &$lineOne,
+        ?string &$lineTwo,
+        ?string &$lineThree,
+        ?string &$postCode,
+        ?string &$city,
+        ?string &$country,
+        ?array &$subDivision
+    ): static {
+        $lineOne = '';
+        $lineTwo = '';
+        $lineThree = '';
+        $postCode = '';
+        $city = '';
+        $country = '';
+        $subDivision = [];
+
+        if ($this->documentReader->firstDocumentInvoicerAddress()) {
+            $this->documentReader->getDocumentInvoicerAddress(
+                $lineOne,
+                $lineTwo,
+                $lineThree,
+                $postCode,
+                $city,
+                $country,
+                $newSubDivision
+            );
+
+            InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($subDivision, $newSubDivision);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get information about the legal organisation of the invoicer party.
+     *
+     * @param  null|string $legalOrgId   __BT-X-208, From EXTENDED__ An identifier issued by an official registrar that identifies the party as a legal entity or legal person. If no identification scheme ($legalorgtype) is provided, it should be known to the buyer or seller party
+     * @param  null|string $legalOrgType __BT-X-208-0, From EXTENDED__ The identifier for the identification scheme of the legal registration of the party. In particular, the following scheme codes are used: 0021 : SWIFT, 0088 : EAN,* 0060 : DUNS, 0177 : ODETTE
+     * @param  null|string $legalOrgName __BT-X-209, From EXTENDED__ A name by which the party is known, if different from the party's name (also known as the company name)
+     * @return static
+     *
+     * @phpstan-param-out string $legalOrgId
+     * @phpstan-param-out string $legalOrgType
+     * @phpstan-param-out string $legalOrgName
+     */
+    public function getDocumentInvoicerLegalOrganisation(
+        ?string &$legalOrgId,
+        ?string &$legalOrgType,
+        ?string &$legalOrgName
+    ): static {
+        $legalOrgId = '';
+        $legalOrgType = '';
+        $legalOrgName = '';
+
+        if ($this->documentReader->firstDocumentInvoicerLegalOrganisation()) {
+            $this->documentReader->getDocumentInvoicerLegalOrganisation(
+                $legalOrgType,
+                $legalOrgId,
+                $legalOrgName
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first contact information of the invoicer party of the document. Returns true if a first contact information of the invoicer party is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentInvoicerContact.
+     *
+     * @return bool
+     */
+    public function firstDocumentInvoicerContact(): bool
+    {
+        return $this->documentReader->firstDocumentInvoicerContact();
+    }
+
+    /**
+     * Seek to the next available contact information of the invoicer party of the document. Returns true if another contact information of the invoicer party is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentInvoicerContact.
+     *
+     * @return bool
+     */
+    public function nextDocumentInvoicerContact(): bool
+    {
+        return $this->documentReader->nextDocumentInvoicerContact();
+    }
+
+    /**
+     * Get contact information of the invoicer party.
+     *
+     * @param  null|string $contactPersonName     __BT-X-210, From EXTENDED__ Contact point for a legal entity, such as a personal name of the contact person
+     * @param  null|string $contactDepartmentName __BT-X-211, From EXTENDED__ Contact point for a legal entity, such as a name of the department or office
+     * @param  null|string $contactPhoneNo        __BT-X-212, From EXTENDED__ A telephone number for the contact point
+     * @param  null|string $contactFaxNo          __BT-X-213, From EXTENDED__ A fax number of the contact point
+     * @param  null|string $contactEmailAddress   __BT-X-214, From EXTENDED__ An e-mail address of the contact point
+     * @return static
+     *
+     * @phpstan-param-out string $contactPersonName
+     * @phpstan-param-out string $contactDepartmentName
+     * @phpstan-param-out string $contactPhoneNo
+     * @phpstan-param-out string $contactFaxNo
+     * @phpstan-param-out string $contactEmailAddress
+     */
+    public function getDocumentInvoicerContact(
+        ?string &$contactPersonName,
+        ?string &$contactDepartmentName,
+        ?string &$contactPhoneNo,
+        ?string &$contactFaxNo,
+        ?string &$contactEmailAddress
+    ): static {
+        $this->documentReader->getDocumentInvoicerContact(
+            $contactPersonName,
+            $contactDepartmentName,
+            $contactPhoneNo,
+            $contactFaxNo,
+            $contactEmailAddress
+        );
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information on the different invoice recipient party.
+     *
+     * @param  null|string            $name        __BT-X-226, From EXTENDED__ The name of the party
+     * @param  null|array<int,string> $id          __BT-X-224, From EXTENDED__ An array of identifiers
+     * @param  null|string            $description __BT-, From __ Further legal information that is relevant for the party
+     * @return static
+     *
+     * @phpstan-param-out string $name
+     * @phpstan-param-out array<int,string> $id
+     * @phpstan-param-out string $description
+     */
+    public function getDocumentInvoicee(
+        ?string &$name,
+        ?array &$id,
+        ?string &$description
+    ): static {
+        $id = [];
+        $name = '';
+        $description = '';
+
+        $this->documentReader->getDocumentInvoiceeName($name);
+
+        if ($this->documentReader->firstDocumentInvoiceeId()) {
+            do {
+                $this->documentReader->getDocumentInvoiceeId($newId);
+                InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($id, $newId);
+            } while ($this->documentReader->nextDocumentInvoiceeId());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get global identifier of the different invoice recipient party.
+     *
+     * @param  null|null|array<string,string> $globalID __BT-X-225/BT-X-225-0, From EXTENDED__ Array of global ids indexed by the identification scheme
+     * @return static
+     *
+     * @phpstan-param-out array<string,string> $globalID
+     */
+    public function getDocumentInvoiceeGlobalId(
+        ?array &$globalID
+    ): static {
+        $globalID = [];
+
+        if ($this->documentReader->firstDocumentInvoiceeGlobalId()) {
+            do {
+                $this->documentReader->getDocumentInvoiceeGlobalId($newGlobalId, $newGlobalIdType);
+                InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($globalID, $newGlobalIdType, $newGlobalId);
+            } while ($this->documentReader->nextDocumentInvoiceeGlobalId());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information on tax details of the different invoice recipient party.
+     *
+     * @param  null|array<string,string> $taxReg __BT-X-242/BT-X-242-0, From EXTENDED__ Array of tax numbers indexed by the schemeid (VA, FC, etc.)
+     * @return static
+     *
+     * @phpstan-param-out array<string,string> $taxReg
+     */
+    public function getDocumentInvoiceeTaxRegistration(
+        ?array &$taxReg
+    ): static {
+        $taxReg = [];
+
+        if ($this->documentReader->firstDocumentInvoiceeTaxRegistration()) {
+            do {
+                $this->documentReader->getDocumentInvoiceeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+                InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($taxReg, $newTaxRegistrationType, $newTaxRegistrationId);
+            } while ($this->documentReader->nextDocumentInvoiceeTaxRegistration());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get Detailed information on the address of the different invoice recipient party.
+     *
+     * @param  null|string            $lineOne     __BT-X-235, From EXTENDED__ The main line in the party's address. This is usually the street name and house number or the post office box
+     * @param  null|string            $lineTwo     __BT-X-236, From EXTENDED__ Line 2 of the party's address. This is an additional address line in an address that can be used to provide additional details in addition to the main line
+     * @param  null|string            $lineThree   __BT-X-237, From EXTENDED__ Line 3 of the party's address. This is an additional address line in an address that can be used to provide additional details in addition to the main line
+     * @param  null|string            $postCode    __BT-X-234, From EXTENDED__ Identifier for a group of properties, such as a zip code
+     * @param  null|string            $city        __BT-X-238, From EXTENDED__ Usual name of the city or municipality in which the party's address is located
+     * @param  null|string            $country     __BT-X-239, From EXTENDED__ Code used to identify the country. If no tax agent is specified, this is the country in which the sales tax is due. The lists of approved countries are maintained by the EN ISO 3166-1 Maintenance Agency “Codes for the representation of names of countries and their subdivisions”
+     * @param  null|array<int,string> $subDivision __BT-X-240, From EXTENDED__ The party's state
+     * @return static
+     *
+     * @phpstan-param-out string $lineOne
+     * @phpstan-param-out string $lineTwo
+     * @phpstan-param-out string $lineThree
+     * @phpstan-param-out string $postCode
+     * @phpstan-param-out string $city
+     * @phpstan-param-out string $country
+     * @phpstan-param-out array<int,string> $subDivision
+     */
+    public function getDocumentInvoiceeAddress(
+        ?string &$lineOne,
+        ?string &$lineTwo,
+        ?string &$lineThree,
+        ?string &$postCode,
+        ?string &$city,
+        ?string &$country,
+        ?array &$subDivision
+    ): static {
+        $lineOne = '';
+        $lineTwo = '';
+        $lineThree = '';
+        $postCode = '';
+        $city = '';
+        $country = '';
+        $subDivision = [];
+
+        if ($this->documentReader->firstDocumentInvoiceeAddress()) {
+            $this->documentReader->getDocumentInvoiceeAddress(
+                $lineOne,
+                $lineTwo,
+                $lineThree,
+                $postCode,
+                $city,
+                $country,
+                $newSubDivision
+            );
+
+            InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($subDivision, $newSubDivision);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get information about the legal organisation of the different invoice recipient party.
+     *
+     * @param  null|string $legalOrgId   __BT-X-227, From EXTENDED__ An identifier issued by an official registrar that identifies the party as a legal entity or legal person. If no identification scheme ($legalorgtype) is provided, it should be known to the buyer or seller party
+     * @param  null|string $legalOrgType __BT-X-227-0, From EXTENDED__ The identifier for the identification scheme of the legal registration of the party. In particular, the following scheme codes are used: 0021 : SWIFT, 0088 : EAN, 0060 : DUNS, 0177 : ODETTE
+     * @param  null|string $legalOrgName __BT-X-228, From EXTENDED__ A name by which the party is known, if different from the party's name (also known as the company name)
+     * @return static
+     *
+     * @phpstan-param-out string $legalOrgId
+     * @phpstan-param-out string $legalOrgType
+     * @phpstan-param-out string $legalOrgName
+     */
+    public function getDocumentInvoiceeLegalOrganisation(
+        ?string &$legalOrgId,
+        ?string &$legalOrgType,
+        ?string &$legalOrgName
+    ): static {
+        $legalOrgId = '';
+        $legalOrgType = '';
+        $legalOrgName = '';
+
+        if ($this->documentReader->firstDocumentInvoiceeLegalOrganisation()) {
+            $this->documentReader->getDocumentInvoiceeLegalOrganisation(
+                $legalOrgType,
+                $legalOrgId,
+                $legalOrgName
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first contact information of the different invoice recipient party of the document. Returns true if a first contact information of the different invoice recipient party is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentInvoiceeContact.
+     *
+     * @return bool
+     */
+    public function firstDocumentInvoiceeContact(): bool
+    {
+        return $this->documentReader->firstDocumentInvoiceeContact();
+    }
+
+    /**
+     * Seek to the next available contact information of the different invoice recipient party of the document. Returns true if another contact information of the different invoice recipient party is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentInvoiceeContact.
+     *
+     * @return bool
+     */
+    public function nextDocumentInvoiceeContact(): bool
+    {
+        return $this->documentReader->nextDocumentInvoiceeContact();
+    }
+
+    /**
+     * Get contact information of the different invoice recipient party.
+     *
+     * @param  null|string $contactPersonName     __BT-X-229, From EXTENDED__ Contact point for a legal entity, such as a personal name of the contact person
+     * @param  null|string $contactDepartmentName __BT-X-230, From EXTENDED__ Contact point for a legal entity, such as a name of the department or office
+     * @param  null|string $contactPhoneNo        __BT-X-231, From EXTENDED__ A telephone number for the contact point
+     * @param  null|string $contactFaxNo          __BT-X-232, From EXTENDED__ A fax number of the contact point
+     * @param  null|string $contactEmailAddress   __BT-X-233, From EXTENDED__ An e-mail address of the contact point
+     * @return static
+     *
+     * @phpstan-param-out string $contactPersonName
+     * @phpstan-param-out string $contactDepartmentName
+     * @phpstan-param-out string $contactPhoneNo
+     * @phpstan-param-out string $contactFaxNo
+     * @phpstan-param-out string $contactEmailAddress
+     */
+    public function getDocumentInvoiceeContact(
+        ?string &$contactPersonName,
+        ?string &$contactDepartmentName,
+        ?string &$contactPhoneNo,
+        ?string &$contactFaxNo,
+        ?string &$contactEmailAddress
+    ): static {
+        $this->documentReader->getDocumentInvoiceeContact(
+            $contactPersonName,
+            $contactDepartmentName,
+            $contactPhoneNo,
+            $contactFaxNo,
+            $contactEmailAddress
+        );
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information about the payee, i.e. about the place that receives the payment.
+     * The role of the payee may also be performed by a party other than the seller, e.g. by a factoring service.
+     *
+     * @param  null|string            $name        __BT-59, From BASIC WL__ The name of the party. Must be used if the payee is not the same as the seller. However, the name of the payee may match the name of the seller.
+     * @param  null|array<int,string> $id          __BT-60, From BASIC WL__ An array of identifiers
+     * @param  null|string            $description __BT-, From __ Further legal information that is relevant for the party
+     * @return static
+     *
+     * @phpstan-param-out string $name
+     * @phpstan-param-out array<int,string> $id
+     * @phpstan-param-out string $description
+     */
+    public function getDocumentPayee(
+        ?string &$name,
+        ?array &$id,
+        ?string &$description
+    ): static {
+        $id = [];
+        $name = '';
+        $description = '';
+
+        $this->documentReader->getDocumentPayeeName($name);
+
+        if ($this->documentReader->firstDocumentPayeeId()) {
+            do {
+                $this->documentReader->getDocumentPayeeId($newId);
+                InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($id, $newId);
+            } while ($this->documentReader->nextDocumentPayeeId());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get global identifier of the payee party.
+     *
+     * @param  null|array<string,string> $globalID __BT-60-0/BT-60-1, From BASIC WL__ Array of global ids indexed by the identification scheme
+     * @return static
+     *
+     * @phpstan-param-out array<string,string> $globalID
+     */
+    public function getDocumentPayeeGlobalId(
+        ?array &$globalID
+    ): static {
+        $globalID = [];
+
+        if ($this->documentReader->firstDocumentPayeeGlobalId()) {
+            do {
+                $this->documentReader->getDocumentPayeeGlobalId($newGlobalId, $newGlobalIdType);
+                InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($globalID, $newGlobalIdType, $newGlobalId);
+            } while ($this->documentReader->nextDocumentPayeeGlobalId());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information on tax details of the payee party.
+     *
+     * @param  null|array<string,string> $taxReg __BT-X-257/BT-X-257-0, From EXTENDED__ Array of tax numbers indexed by the schemeid (VA, FC, etc.)
+     * @return static
+     *
+     * @phpstan-param-out array<string,string> $taxReg
+     */
+    public function getDocumentPayeeTaxRegistration(
+        ?array &$taxReg
+    ): static {
+        $taxReg = [];
+
+        if ($this->documentReader->firstDocumentPayeeTaxRegistration()) {
+            do {
+                $this->documentReader->getDocumentPayeeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+                InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($taxReg, $newTaxRegistrationType, $newTaxRegistrationId);
+            } while ($this->documentReader->nextDocumentPayeeTaxRegistration());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get Detailed information on the address of the payee party.
+     *
+     * @param  null|string            $lineOne     __BT-X-250, From EXTENDED__ The main line in the party's address. This is usually the street name and house number or the post office box
+     * @param  null|string            $lineTwo     __BT-X-251, From EXTENDED__ Line 2 of the party's address. This is an additional address line in an address that can be used to provide additional details in addition to the main line
+     * @param  null|string            $lineThree   __BT-X-252, From EXTENDED__ Line 3 of the party's address. This is an additional address line in an address that can be used to provide additional details in addition to the main line
+     * @param  null|string            $postCode    __BT-X-249, From EXTENDED__ Identifier for a group of properties, such as a zip code
+     * @param  null|string            $city        __BT-X-253, From EXTENDED__ Usual name of the city or municipality in which the party's address is located
+     * @param  null|string            $country     __BT-X-254, From EXTENDED__ Code used to identify the country. If no tax agent is specified, this is the country in which the sales tax is due. The lists of approved countries are maintained by the EN ISO 3166-1 Maintenance Agency “Codes for the representation of names of countries and their subdivisions”
+     * @param  null|array<int,string> $subDivision __BT-X-255, From EXTENDED__ The party's state
+     * @return static
+     *
+     * @phpstan-param-out string $lineOne
+     * @phpstan-param-out string $lineTwo
+     * @phpstan-param-out string $lineThree
+     * @phpstan-param-out string $postCode
+     * @phpstan-param-out string $city
+     * @phpstan-param-out string $country
+     * @phpstan-param-out array<int,string> $subDivision
+     */
+    public function getDocumentPayeeAddress(
+        ?string &$lineOne,
+        ?string &$lineTwo,
+        ?string &$lineThree,
+        ?string &$postCode,
+        ?string &$city,
+        ?string &$country,
+        ?array &$subDivision
+    ): static {
+        $lineOne = '';
+        $lineTwo = '';
+        $lineThree = '';
+        $postCode = '';
+        $city = '';
+        $country = '';
+        $subDivision = [];
+
+        if ($this->documentReader->firstDocumentPayeeAddress()) {
+            $this->documentReader->getDocumentPayeeAddress(
+                $lineOne,
+                $lineTwo,
+                $lineThree,
+                $postCode,
+                $city,
+                $country,
+                $newSubDivision
+            );
+
+            InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($subDivision, $newSubDivision);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get information about the legal organisation of the payee party.
+     *
+     * @param  null|string $legalOrgId   __BT-61, From BASIC WL__ An identifier issued by an official registrar that identifies the party as a legal entity or legal person. If no identification scheme ($legalorgtype) is provided, it should be known to the buyer or seller party
+     * @param  null|string $legalOrgType __BT-61-1, From BASIC WL__ The identifier for the identification scheme of the legal registration of the party. In particular, the following scheme codes are used: 0021 : SWIFT, 0088 : EAN, 0060 : DUNS, 0177 : ODETTE
+     * @param  null|string $legalOrgName __BT-X-243, From EXTENDED__ A name by which the party is known, if different from the party's name (also known as the company name)
+     * @return static
+     *
+     * @phpstan-param-out string $legalOrgId
+     * @phpstan-param-out string $legalOrgType
+     * @phpstan-param-out string $legalOrgName
+     */
+    public function getDocumentPayeeLegalOrganisation(
+        ?string &$legalOrgId,
+        ?string &$legalOrgType,
+        ?string &$legalOrgName
+    ): static {
+        $legalOrgId = '';
+        $legalOrgType = '';
+        $legalOrgName = '';
+
+        if ($this->documentReader->firstDocumentPayeeLegalOrganisation()) {
+            $this->documentReader->getDocumentPayeeLegalOrganisation(
+                $legalOrgType,
+                $legalOrgId,
+                $legalOrgName
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first contact information of the payee party of the document. Returns true if a first contact information of the payee party is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentPayeeContact.
+     *
+     * @return bool
+     */
+    public function firstDocumentPayeeContact(): bool
+    {
+        return $this->documentReader->firstDocumentPayeeContact();
+    }
+
+    /**
+     * Seek to the next available contact information of the payee party of the document. Returns true if another contact information of the payee party is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentPayeeContact.
+     *
+     * @return bool
+     */
+    public function nextDocumentPayeeContact(): bool
+    {
+        return $this->documentReader->nextDocumentPayeeContact();
+    }
+
+    /**
+     * Get contact information of the payee party.
+     *
+     * @param  null|string $contactPersonName     __BT-X-244, From EXTENDED__ Contact point for a legal entity, such as a personal name of the contact person
+     * @param  null|string $contactDepartmentName __BT-X-245, From EXTENDED__ Contact point for a legal entity, such as a name of the department or office
+     * @param  null|string $contactPhoneNo        __BT-X-246, From EXTENDED__ A telephone number for the contact point
+     * @param  null|string $contactFaxNo          __BT-X-247, From EXTENDED__ A fax number of the contact point
+     * @param  null|string $contactEmailAddress   __BT-X-248, From EXTENDED__ An e-mail address of the contact point
+     * @return static
+     *
+     * @phpstan-param-out string $contactPersonName
+     * @phpstan-param-out string $contactDepartmentName
+     * @phpstan-param-out string $contactPhoneNo
+     * @phpstan-param-out string $contactFaxNo
+     * @phpstan-param-out string $contactEmailAddress
+     */
+    public function getDocumentPayeeContact(
+        ?string &$contactPersonName,
+        ?string &$contactDepartmentName,
+        ?string &$contactPhoneNo,
+        ?string &$contactFaxNo,
+        ?string &$contactEmailAddress
+    ): static {
+        $this->documentReader->getDocumentPayeeContact(
+            $contactPersonName,
+            $contactDepartmentName,
+            $contactPhoneNo,
+            $contactFaxNo,
+            $contactEmailAddress
+        );
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information on the delivery conditions.
+     *
+     * @param  null|string $code __BT-X-145, From EXTENDED__ The code indicating the type of delivery for these commercial delivery terms. To be selected from the entries in the list UNTDID 4053 + INCOTERMS
+     * @return static
+     *
+     * @phpstan-param-out string $code
+     */
+    public function getDocumentDeliveryTerms(
+        ?string &$code
+    ): static {
+        $this->documentReader->getDocumentDeliveryTerms($code);
+
+        return $this;
+    }
+
+    /**
+     * Get details of the associated order confirmation.
+     *
+     * @param  null|string            $issuerAssignedId __BT-14, From EN 16931__ An identifier issued by the seller for a referenced sales order (Order confirmation number)
+     * @param  null|DateTimeInterface $issueDate        __BT-X-146, From EXTENDED__ Order confirmation date
+     * @return static
+     *
+     * @phpstan-param-out string $issuerAssignedId
+     * @phpstan-param-out null|DateTimeInterface $issueDate
+     */
+    public function getDocumentSellerOrderReferencedDocument(
+        ?string &$issuerAssignedId,
+        ?DateTimeInterface &$issueDate
+    ): static {
+        $issuerAssignedId = '';
+        $issueDate = null;
+
+        if ($this->documentReader->firstDocumentSellerOrderReference()) {
+            $this->documentReader->getDocumentSellerOrderReference(
+                $issuerAssignedId,
+                $issueDate
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get details of the related buyer order.
+     *
+     * @param  null|string            $issuerAssignedId __BT-13, From MINIMUM__ An identifier issued by the buyer for a referenced order (order number)
+     * @param  null|DateTimeInterface $issueDate        __BT-X-147, From EXTENDED__ Date of order
+     * @return static
+     *
+     * @phpstan-param-out string $issuerAssignedId
+     * @phpstan-param-out null|DateTimeInterface $issueDate
+     */
+    public function getDocumentBuyerOrderReferencedDocument(
+        ?string &$issuerAssignedId,
+        ?DateTimeInterface &$issueDate
+    ): static {
+        $issuerAssignedId = '';
+        $issueDate = null;
+
+        if ($this->documentReader->firstDocumentBuyerOrderReference()) {
+            $this->documentReader->getDocumentBuyerOrderReference(
+                $issuerAssignedId,
+                $issueDate
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get details of the associated offer.
+     *
+     * @param  null|string            $issuerAssignedId __BT-X-403, From EXTENDED__ Offer number
+     * @param  null|DateTimeInterface $issueDate        __BT-X-404, From EXTENDED__ Date of offer
+     * @return static
+     *
+     * @phpstan-param-out string $issuerAssignedId
+     * @phpstan-param-out null|DateTimeInterface $issueDate
+     */
+    public function getDocumentQuotationReferencedDocument(
+        ?string &$issuerAssignedId,
+        ?DateTimeInterface &$issueDate
+    ): static {
+        $issuerAssignedId = '';
+        $issueDate = null;
+
+        if ($this->documentReader->firstDocumentQuotationReference()) {
+            $this->documentReader->getDocumentQuotationReference(
+                $issuerAssignedId,
+                $issueDate
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get details of the associated contract.
+     *
+     * @param  null|string            $issuerAssignedId __BT-12, From BASIC WL__ The contract reference should be assigned once in the context of the specific trade relationship and for a defined period of time (contract number)
+     * @param  null|DateTimeInterface $issueDate        __BT-X-26, From EXTENDED__ Contract date
+     * @return static
+     *
+     * @phpstan-param-out string $issuerAssignedId
+     * @phpstan-param-out null|DateTimeInterface $issueDate
+     */
+    public function getDocumentContractReferencedDocument(
+        ?string &$issuerAssignedId,
+        ?DateTimeInterface &$issueDate
+    ): static {
+        $issuerAssignedId = '';
+        $issueDate = null;
+
+        if ($this->documentReader->firstDocumentContractReference()) {
+            $this->documentReader->getDocumentContractReference(
+                $issuerAssignedId,
+                $issueDate
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get first additional referenced document for the document. Returns true if an additional referenced document is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentAdditionalReferencedDocument.
+     *
+     * @return bool
+     */
+    public function firstDocumentAdditionalReferencedDocument(): bool
+    {
+        return $this->documentReader->firstDocumentAdditionalReference();
+    }
+
+    /**
+     * Get next additional referenced document for the document. Returns true when another additional referenced document is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentAdditionalReferencedDocument.
+     *
+     * @return bool
+     */
+    public function nextDocumentAdditionalReferencedDocument(): bool
+    {
+        return $this->documentReader->nextDocumentAdditionalReference();
+    }
+
+    /**
+     * Get information about billing documents that provide evidence of claims made in the bill.
+     *
+     * __Notes__
+     *  - The documents justifying the invoice can be used to reference a document number, which should be
+     *    known to the recipient, as well as an external document (referenced by a URL) or an embedded document (such
+     *    as a timesheet as a PDF file). The option of linking to an external document is e.g. required when it comes
+     *    to large attachments and / or sensitive information, e.g. for personal services, which must be separated
+     *    from the bill
+     *  - Use ZugferdDocumentReader::firstDocumentAdditionalReferencedDocument and
+     *    ZugferdDocumentReader::nextDocumentAdditionalReferencedDocument to seek between multiple additional referenced
+     *    documents
+     *
+     * @param  string                 $issuerAssignedId   __BT-122, From EN 16931__ The identifier of the tender or lot to which the invoice relates, or an identifier specified by the seller for an object on which the invoice is based, or an identifier of the document on which the invoice is based
+     * @param  string                 $typeCode           __BT-122-0, From EN 16931__ Type of referenced document (See codelist UNTDID 1001)
+     *                                                    - Code 916 "reference paper" is used to reference the identification of the
+     *                                                    document on which the invoice is based - Code 50 "Price / sales catalog response"
+     *                                                    is used to reference the tender or the lot - Code 130 "invoice data sheet" is used
+     *                                                    to reference an identifier for an object specified by the seller
+     * @param  null|string            $uriId              __BT-124, From EN 16931__ A means of locating the resource, including the primary access method intended for it, e.g. http:// or ftp://. The storage location of the external document must be used if the buyer requires further information as
+     *                                                    supporting documents for the invoiced amounts. External documents are not part of the invoice. Invoice processing should be possible without access to external documents. Access to external documents can entail certain risks.
+     * @param  null|array<int,string> $name               __BT-123, From EN 16931__ A description of the document, e.g. Hourly billing, usage or consumption report, etc.
+     * @param  null|string            $refTypeCode        __BT-, From __ The identifier for the identification scheme of the identifier of the item invoiced. If it is not clear to the recipient which scheme is used for the identifier, an identifier of the scheme should be used, which must be selected from UNTDID 1153 in accordance with the code list entries.
+     * @param  null|DateTimeInterface $issueDate          __BT-X-149, From EXTENDED__ Document date
+     * @param  null|string            $binaryDataFilename __BT-125, From EN 16931__ Contains a file name of an attachment document embedded as a binary object
+     * @return static
+     *
+     * @phpstan-param-out string $issuerAssignedId
+     * @phpstan-param-out string $typeCode
+     * @phpstan-param-out string $uriId
+     * @phpstan-param-out array<int,string> $name
+     * @phpstan-param-out string $refTypeCode
+     * @phpstan-param-out null|DateTimeInterface $issueDate
+     * @phpstan-param-out string $binaryDataFilename
+     */
+    public function getDocumentAdditionalReferencedDocument(
+        ?string &$issuerAssignedId,
+        ?string &$typeCode,
+        ?string &$uriId,
+        ?array &$name,
+        ?string &$refTypeCode,
+        ?DateTimeInterface &$issueDate,
+        ?string &$binaryDataFilename
+    ): static {
+        $name = [];
+
+        $this->documentReader->getDocumentAdditionalReference(
+            $issuerAssignedId,
+            $issueDate,
+            $typeCode,
+            $refTypeCode,
+            $newDescription,
+            $attachment
+        );
+
+        InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($name, $newDescription);
+
+        // TODO Handle attachment in ZugerdDocumentReader::getDocumentAdditionalReferencedDocument
+        $binaryDataFilename = '';
+        $uriId = '';
+
+        return $this;
+    }
+
+    /**
+     * Get all additional referenced documents.
+     *
+     * @param  null|array<int, array{IssuerAssignedID: string, URIID: string, LineID: string, TypeCode: string, ReferenceTypeCode: string, FormattedIssueDateTime: null|DateTimeInterface}> $refDocs Array contains all additional referenced documents, but without extracting attached binary objects. If you want to access attached binary objects you have to use ZugferdDocumentReader::getDocumentAdditionalReferencedDocument
+     * @return static
+     *
+     * @phpstan-param-out array<int, array{IssuerAssignedID: string, URIID: string, LineID: string, TypeCode: string, ReferenceTypeCode: string, FormattedIssueDateTime: DateTimeInterface|null}> $refDocs
+     */
+    public function getDocumentAdditionalReferencedDocuments(
+        ?array &$refDocs
+    ): static {
+        $refDocs = [];
+
+        if ($this->documentReader->firstDocumentAdditionalReference()) {
+            do {
+                $name = [];
+
+                $this->documentReader->getDocumentAdditionalReference(
+                    $issuerAssignedId,
+                    $issueDate,
+                    $typeCode,
+                    $refTypeCode,
+                    $newDescription,
+                    $attachment
+                );
+
+                InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($name, $newDescription);
+
+                InvoiceSuiteArrayUtils::pushArrayToIntIndexedArray($refDocs, [
+                    'IssuerAssignedID' => $issuerAssignedId,
+                    'URIID' => '',
+                    'LineID' => '',
+                    'TypeCode' => $typeCode,
+                    'ReferenceTypeCode' => $refTypeCode,
+                    'FormattedIssueDateTime' => $issueDate,
+                ]);
+            } while ($this->documentReader->nextDocumentAdditionalReference());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get first reference to the previous invoice. Returns true if an invoice reference document is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentInvoiceReferencedDocument.
+     *
+     * @return bool
+     */
+    public function firstDocumentInvoiceReferencedDocument(): bool
+    {
+        return $this->documentReader->firstDocumentInvoiceReference();
+    }
+
+    /**
+     * Get next reference to the previous invoice Returns true when another invoice reference document is available, otherwise false
+     * You may use this together with ZugferdDocumentReader::getDocumentInvoiceReferencedDocument.
+     *
+     * @return bool
+     */
+    public function nextDocumentInvoiceReferencedDocument(): bool
+    {
+        return $this->documentReader->nextDocumentInvoiceReference();
+    }
+
+    /**
+     * Get reference to the previous invoice.
+     *
+     * @param  string                 $issuerAssignedId __BT-25, From BASIC WL__ The identification of an invoice previously sent by the seller
+     * @param  null|string            $typeCode         __BT-X-555, From EXTENDED__ Type of previous invoice (code)
+     * @param  null|DateTimeInterface $issueDate        __BT-26, From BASIC WL__ Date of the previous invoice
+     * @return static
+     *
+     * @phpstan-param-out string $issuerAssignedId
+     * @phpstan-param-out string $typeCode
+     * @phpstan-param-out null|DateTimeInterface $issueDate
+     */
+    public function getDocumentInvoiceReferencedDocument(
+        ?string &$issuerAssignedId,
+        ?string &$typeCode,
+        ?DateTimeInterface &$issueDate
+    ): static {
+        $this->documentReader->getDocumentInvoiceReference(
+            $issuerAssignedId,
+            $issueDate,
+            $typeCode
+        );
+
+        return $this;
+    }
+
+    /**
+     * Get all references to the previous invoice.
+     *
+     * @param  null|array<int, array{IssuerAssignedID: string, TypeCode: string, FormattedIssueDateTime: null|DateTimeInterface}> $invoiceRefDocs Array contains all invoice referenced documents
+     * @return static
+     *
+     * @phpstan-param-out array<int, array{IssuerAssignedID: string, TypeCode: string, FormattedIssueDateTime: DateTimeInterface|null}> $invoiceRefDocs
+     */
+    public function getDocumentInvoiceReferencedDocuments(
+        ?array &$invoiceRefDocs
+    ): static {
+        $invoiceRefDocs = [];
+
+        if ($this->documentReader->firstDocumentInvoiceReference()) {
+            do {
+                $this->documentReader->getDocumentInvoiceReference(
+                    $newReferenceNumber,
+                    $newReferenceDate,
+                    $newTypeCode
+                );
+
+                InvoiceSuiteArrayUtils::pushArrayToIntIndexedArray($invoiceRefDocs, [
+                    'IssuerAssignedID' => $newReferenceNumber,
+                    'TypeCode' => $newTypeCode,
+                    'FormattedIssueDateTime' => $newReferenceDate,
+                ]);
+            } while ($this->documentReader->nextDocumentInvoiceReference());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get first additional referenced document for the document. Returns true if the first position is available, otherwise false.
+     * Use wuth getDocumentUltimateCustomerOrderReferencedDocument.
+     *
+     * @return bool
+     */
+    public function firstDocumentUltimateCustomerOrderReferencedDocument(): bool
+    {
+        return $this->documentReader->firstDocumentUltimateCustomerOrderReference();
+    }
+
+    /**
+     * Get next additional referenced document for the document. Returns true if the first position is available, otherwise false
+     * Use wuth getDocumentUltimateCustomerOrderReferencedDocument.
+     *
+     * @return bool
+     */
+    public function nextDocumentUltimateCustomerOrderReferencedDocument(): bool
+    {
+        return $this->documentReader->nextDocumentUltimateCustomerOrderReference();
+    }
+
+    /**
+     * Get details of the ultimate customer order.
+     *
+     * @param  null|string            $issuerAssignedId __BT-X-150, From EXTENDED__ Order number of the end customer
+     * @param  null|DateTimeInterface $issueDate        __BT-X-151, From EXTENDED__ Date of the order issued by the end customer
+     * @return static
+     *
+     * @phpstan-param-out string $issuerAssignedId
+     * @phpstan-param-out null|DateTimeInterface $issueDate
+     */
+    public function getDocumentUltimateCustomerOrderReferencedDocument(
+        ?string &$issuerAssignedId,
+        ?DateTimeInterface &$issueDate
+    ): static {
+        $this->documentReader->getDocumentUltimateCustomerOrderReference(
+            $issuerAssignedId,
+            $issueDate
+        );
+
+        return $this;
+    }
+
+    /**
+     * Get Details of a project reference.
+     *
+     * @param  null|string $id   __BT-11, From EN 16931__ The identifier of the project to which the invoice relates
+     * @param  null|string $name __BT-11-0, From EN 16931__  The name of the project to which the invoice relates
+     * @return static
+     *
+     * @phpstan-param-out string $id
+     * @phpstan-param-out string $name
+     */
+    public function getDocumentProcuringProject(
+        ?string &$id,
+        ?string &$name
+    ): static {
+        $id = '';
+        $name = '';
+
+        if ($this->documentReader->firstDocumentProjectReference()) {
+            $this->documentReader->getDocumentProjectReference($id, $name);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information on the actual delivery.
+     *
+     * @param  null|DateTimeInterface $date __BT-72, From BASIC WL__ Actual delivery time
+     * @return static
+     *
+     * @phpstan-param-out DateTimeInterface|null $date
+     */
+    public function getDocumentSupplyChainEvent(
+        ?DateTimeInterface &$date
+    ): static {
+        $this->documentReader->getDocumentSupplyChainEvent($date);
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information on the associated shipping notification.
+     *
+     * @param  null|string            $issuerAssignedId __BT-16, From BASIC WL__ Shipping notification reference
+     * @param  null|DateTimeInterface $issueDate        __BT-X-200, From EXTENDED__ Shipping notification date
+     * @return static
+     *
+     * @phpstan-param-out string $issuerAssignedId
+     * @phpstan-param-out null|DateTimeInterface $issueDate
+     */
+    public function getDocumentDespatchAdviceReferencedDocument(
+        ?string &$issuerAssignedId,
+        ?DateTimeInterface &$issueDate
+    ): static {
+        $issuerAssignedId = '';
+        $issueDate = null;
+
+        if ($this->documentReader->firstDocumentDespatchAdviceReference()) {
+            $this->documentReader->getDocumentDespatchAdviceReference(
+                $issuerAssignedId,
+                $issueDate
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information on the associated goods receipt notification.
+     *
+     * @param  null|string            $issuerAssignedId __BT-15, From EN 16931__ An identifier for a referenced goods receipt notification (Goods receipt number)
+     * @param  null|DateTimeInterface $issueDate        __BT-X-201, From EXTENDED__ Goods receipt date
+     * @return static
+     *
+     * @phpstan-param-out string $issuerAssignedId
+     * @phpstan-param-out null|DateTimeInterface $issueDate
+     */
+    public function getDocumentReceivingAdviceReferencedDocument(
+        ?string &$issuerAssignedId,
+        ?DateTimeInterface &$issueDate
+    ): static {
+        $issuerAssignedId = '';
+        $issueDate = null;
+
+        if ($this->documentReader->firstDocumentReceivingAdviceReference()) {
+            $this->documentReader->getDocumentReceivingAdviceReference(
+                $issuerAssignedId,
+                $issueDate
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information on the associated delivery note.
+     *
+     * @param  string                 $issuerAssignedId __BT-X-202, From EXTENDED__ Delivery slip number
+     * @param  null|DateTimeInterface $issueDate        __BT-X-203, From EXTENDED__ Delivery slip date
+     * @return static
+     *
+     * @phpstan-param-out string $issuerAssignedId
+     * @phpstan-param-out null|DateTimeInterface $issueDate
+     */
+    public function getDocumentDeliveryNoteReferencedDocument(
+        ?string &$issuerAssignedId,
+        ?DateTimeInterface &$issueDate
+    ): static {
+        $issuerAssignedId = '';
+        $issueDate = null;
+
+        if ($this->documentReader->firstDocumentDeliveryNoteReference()) {
+            $this->documentReader->getDocumentDeliveryNoteReference(
+                $issuerAssignedId,
+                $issueDate
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first payment means of the document. Returns true if a first payment mean is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentPaymentMeans.
+     *
+     * @return bool
+     */
+    public function firstGetDocumentPaymentMeans(): bool
+    {
+        return $this->documentReader->firstDocumentPaymentMean();
+    }
+
+    /**
+     * Seek to the next payment means of the document. Returns true if another payment mean is available, otherwise false
+     * You may use this together with ZugferdDocumentReader::getDocumentPaymentMeans
+     *
+     * @return bool
+     */
+    public function nextGetDocumentPaymentMeans(): bool
+    {
+        return $this->documentReader->nextDocumentPaymentMean();
+    }
+
+    /**
+     * Get detailed information on the payment method.
+     *
+     * @param  null|string $typeCode         __BT-81, From BASIC WL__ The expected or used means of payment, expressed as a code. The entries from the UNTDID 4461 code list must be used. A distinction should be made between SEPA and non-SEPA payments as well as between credit payments, direct debits, card payments and other means of payment In particular, the following codes can be used:
+     * @param  null|string $information      __BT-82, From EN 16931__ The expected or used means of payment expressed in text form, e.g. cash, bank transfer, direct debit, credit card, etc.
+     * @param  null|string $cardType         __BT-, From __ The type of the card
+     * @param  null|string $cardId           __BT-87, From EN 16931__ The primary account number (PAN) to which the card used for payment belongs. In accordance with card payment security standards, an invoice should never contain a full payment card master account number. The following specification of the PCI Security Standards Council currently applies: The first 6 and last 4 digits at most are to be displayed
+     * @param  null|string $cardHolderName   __BT-88, From EN 16931__ Name of the payment card holder
+     * @param  null|string $buyerIban        __BT-91, From BASIC WL__ The account to be debited by the direct debit
+     * @param  null|string $payeeIban        __BT-84, From BASIC WL__ A unique identifier for the financial account held with a payment service provider to which the payment should be made
+     * @param  null|string $payeeAccountName __BT-85, From BASIC WL__ The name of the payment account held with a payment service provider to which the payment should be made
+     * @param  null|string $payeePropId      __BT-84-0, From BASIC WL__ National account number (not for SEPA)
+     * @param  null|string $payeeBic         __BT-86, From EN 16931__ An identifier for the payment service provider with which the payment account is held
+     * @return static
+     *
+     * @phpstan-param-out string $typeCode
+     * @phpstan-param-out string $information
+     * @phpstan-param-out string $cardType
+     * @phpstan-param-out string $cardId
+     * @phpstan-param-out string $cardHolderName
+     * @phpstan-param-out string $buyerIban
+     * @phpstan-param-out string $payeeIban
+     * @phpstan-param-out string $payeeAccountName
+     * @phpstan-param-out string $payeePropId
+     * @phpstan-param-out string $payeeBic
+     */
+    public function getDocumentPaymentMeans(
+        ?string &$typeCode,
+        ?string &$information,
+        ?string &$cardType,
+        ?string &$cardId,
+        ?string &$cardHolderName,
+        ?string &$buyerIban,
+        ?string &$payeeIban,
+        ?string &$payeeAccountName,
+        ?string &$payeePropId,
+        ?string &$payeeBic
+    ): static {
+        $cardType = '';
+
+        $this->documentReader->getDocumentPaymentMean(
+            $typeCode,
+            $information,
+            $cardId,
+            $cardHolderName,
+            $buyerIban,
+            $payeeIban,
+            $payeeAccountName,
+            $payeePropId,
+            $payeeBic,
+            $newPaymentReference,
+            $newMandate
+        );
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first document tax. Returns true if a first tax (at document level) is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentTax.
+     *
+     * @return bool
+     */
+    public function firstDocumentTax(): bool
+    {
+        return $this->documentReader->firstDocumentTax();
+    }
+
+    /**
+     * Seek to the next document tax. Returns true if another tax (at document level) is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentTax.
+     *
+     * @return bool
+     */
+    public function nextDocumentTax(): bool
+    {
+        return $this->documentReader->nextDocumentTax();
+    }
+
+    /**
+     * Get current VAT breakdown (at document level).
+     *
+     * @param  null|string            $categoryCode               __BT-118, From BASIC WL__ Coded description of a sales tax category
+     * @param  null|string            $typeCode                   __BT-118-0, From BASIC WL__ Coded description of a sales tax category. Note: Fixed value = "VAT"
+     * @param  null|float             $basisAmount                __BT-116, From BASIC WL__ Tax base amount, Each sales tax breakdown must show a category-specific tax base amount
+     * @param  null|float             $calculatedAmount           __BT-117, From BASIC WL__ The total amount to be paid for the relevant VAT category. Note: Calculated by multiplying the amount to be taxed according to the sales tax category by the sales tax rate applicable for the sales tax category concerned
+     * @param  null|float             $rateApplicablePercent      __BT-119, From BASIC WL__ The sales tax rate, expressed as the percentage applicable to the sales tax category in question. Note: The code of the sales tax category and the category-specific sales tax rate must correspond to one another. The value to be given is the percentage. For example, the value 20 is given for 20% (and not 0.2)
+     * @param  null|string            $exemptionReason            __BT-120, From BASIC WL__ Reason for tax exemption (free text)
+     * @param  null|string            $exemptionReasonCode        __BT-121, From BASIC WL__ Reason given in code form for the exemption of the amount from VAT. Note: Code list issued and maintained by the Connecting Europe Facility.
+     * @param  null|float             $lineTotalBasisAmount       __BT-X-262, From EXTENDED__ An amount used as the basis for calculating sales tax, duty or customs duty
+     * @param  null|float             $allowanceChargeBasisAmount __BT-X-263, From EXTENDED__ Total amount Additions and deductions to the tax rate at document level
+     * @param  null|DateTimeInterface $taxPointDate               __BT-7-00, From EN 16931__ Date on which tax is due. This is not used in Germany. Instead, the delivery and service date must be specified.
+     * @param  null|string            $dueDateTypeCode            __BT-8, From BASIC WL__ The code for the date on which the VAT becomes relevant for settlement for the seller and for the buyer
+     * @return static
+     *
+     * @phpstan-param-out string $categoryCode
+     * @phpstan-param-out string $typeCode
+     * @phpstan-param-out float $basisAmount
+     * @phpstan-param-out float $calculatedAmount
+     * @phpstan-param-out float $rateApplicablePercent
+     * @phpstan-param-out string $exemptionReason
+     * @phpstan-param-out string $exemptionReasonCode
+     * @phpstan-param-out float $lineTotalBasisAmount
+     * @phpstan-param-out float $allowanceChargeBasisAmount
+     * @phpstan-param-out DateTimeInterface|null $taxPointDate
+     * @phpstan-param-out string $dueDateTypeCode
+     */
+    public function getDocumentTax(
+        ?string &$categoryCode,
+        ?string &$typeCode,
+        ?float &$basisAmount,
+        ?float &$calculatedAmount,
+        ?float &$rateApplicablePercent,
+        ?string &$exemptionReason,
+        ?string &$exemptionReasonCode,
+        ?float &$lineTotalBasisAmount,
+        ?float &$allowanceChargeBasisAmount,
+        ?DateTimeInterface &$taxPointDate,
+        ?string &$dueDateTypeCode
+    ): static {
+        $lineTotalBasisAmount = 0.0;
+        $allowanceChargeBasisAmount = 0.0;
+
+        $this->documentReader->getDocumentTax(
+            $categoryCode,
+            $typeCode,
+            $basisAmount,
+            $calculatedAmount,
+            $rateApplicablePercent,
+            $exemptionReason,
+            $exemptionReasonCode,
+            $taxPointDate,
+            $dueDateTypeCode
+        );
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information on the billing period.
+     *
+     * @param  null|DateTimeInterface $startDate __BT-73, From BASIC WL__ Start of the billing period
+     * @param  null|DateTimeInterface $endDate   __BT-74, From BASIC WL__ End of the billing period
+     * @return static
+     *
+     * @phpstan-param-out DateTimeInterface|null $startDate
+     * @phpstan-param-out DateTimeInterface|null $endDate
+     */
+    public function getDocumentBillingPeriod(
+        ?DateTimeInterface &$startDate,
+        ?DateTimeInterface &$endDate
+    ): static {
+        $startDate = null;
+        $endDate = null;
+
+        if ($this->documentReader->firstDocumentBillingPeriod()) {
+            $this->documentReader->getDocumentBillingPeriod(
+                $startDate,
+                $endDate,
+                $newDescription
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get information about surcharges and charges applicable to the bill as a whole, Deductions,
+     * such as for withheld taxes may also be specified in this group.
+     *
+     * @param  null|array<int,array<string,mixed>> $allowanceCharge
+     * @return static
+     *
+     * @phpstan-param-out array<int,array<string,mixed>> $allowanceCharge
+     */
+    public function getDocumentAllowanceCharges(
+        ?array &$allowanceCharge
+    ): static {
+        $allowanceCharge = [];
+
+        if ($this->documentReader->firstDocumentAllowanceCharge()) {
+            do {
+                $this->documentReader->getDocumentAllowanceCharge(
+                    $newChargeIndicator,
+                    $newAllowanceChargeAmount,
+                    $newAllowanceChargeBaseAmount,
+                    $newTaxCategory,
+                    $newTaxType,
+                    $newTaxPercent,
+                    $newAllowanceChargeReason,
+                    $newAllowanceChargeReasonCode,
+                    $newAllowanceChargePercent
+                );
+
+                InvoiceSuiteArrayUtils::pushArrayToIntIndexedArray($allowanceCharge, [
+                    'chargeindicator' => $newChargeIndicator,
+                    'sequencenumeric' => 0,
+                    'calculationpercent' => $newAllowanceChargePercent,
+                    'basisamount' => $newAllowanceChargeBaseAmount,
+                    'basisquantity' => 0.0,
+                    'actualAmount' => $newAllowanceChargeAmount,
+                    'reasoncode' => $newAllowanceChargeReasonCode,
+                    'reason' => $newAllowanceChargeReason,
+                    'taxcalculatedamount' => 0.0,
+                    'taxtypecode' => $newTaxType,
+                    'taxexemptionreason' => '',
+                    'taxbasisamount' => 0.0,
+                    'taxlinetotalbasisamount' => 0.0,
+                    'taxallowancechargebasisamount' => 0.0,
+                    'taxcategorycode' => $newTaxCategory,
+                    'taxexemptionreasoncode' => '',
+                    'taxpointdate' => null,
+                    'taxduedatetypecode' => '',
+                    'taxrateapplicablepercent' => $newTaxPercent,
+                ]);
+            } while ($this->documentReader->nextDocumentAllowanceCharge());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first documents allowance charge. Returns true if the first position is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentAllowanceCharge.
+     *
+     * @return bool
+     */
+    public function firstDocumentAllowanceCharge(): bool
+    {
+        return $this->documentReader->firstDocumentAllowanceCharge();
+    }
+
+    /**
+     * Seek to the next documents allowance charge. Returns true if a other position is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentAllowanceCharge.
+     *
+     * @return bool
+     */
+    public function nextDocumentAllowanceCharge(): bool
+    {
+        return $this->documentReader->nextDocumentAllowanceCharge();
+    }
+
+    /**
+     * Get information about the currently seeked surcharges and charges applicable to the bill as a whole, Deductions,
+     * such as for withheld taxes may also be specified in this group.
+     *
+     * @param  null|float  $actualAmount          __BT-92/BT-99, From BASIC WL__ Amount of the surcharge or discount at document level
+     * @param  null|bool   $isCharge              __BT-20-1/BT-21-1, From BASIC WL__ Switch that indicates whether the following data refer to an surcharge or a discount, true means that this an charge
+     * @param  null|string $taxCategoryCode       __BT-95/BT-102, From BASIC WL__ A coded indication of which sales tax category applies to the surcharge or deduction at document level
+     * @param  null|string $taxTypeCode           __BT-95-0/BT-102-0, From BASIC WL__ Code for the VAT category of the surcharge or charge at document level. Note: Fixed value = "VAT"
+     * @param  null|float  $rateApplicablePercent __BT-96/BT-103, From BASIC WL__ VAT rate for the surcharge or discount on document level. Note: The code of the sales tax category and the category-specific sales tax rate must correspond to one another. The value to be given is the percentage. For example, the value 20 is given for 20% (and not 0.2)
+     * @param  null|float  $sequence              __BT-X-265, From EXTENDED__ Calculation order
+     * @param  null|float  $calculationPercent    __BT-94/BT-101, From BASIC WL__ Percentage surcharge or discount at document level
+     * @param  null|float  $basisAmount           __BT-93/BT-100, From BASIC WL__ The base amount that may be used in conjunction with the percentage of the surcharge or discount at document level to calculate the amount of the discount at document level
+     * @param  null|float  $basisQuantity         __BT-X-266, From EXTENDED__ Base quantity of the discount
+     * @param  null|string $basisQuantityUnitCode __BT-X-267, From EXTENDED__ Unit of the price base quantity
+     * @param  null|string $reasonCode            __BT-98/BT-105, From BASIC WL__ The reason given as a code for the surcharge or discount at document level. Note: Use entries from the UNTDID 5189 code list. The code of the reason for the surcharge or discount at document level and the reason for the surcharge or discount at document level must correspond to each other
+     * @param  null|string $reason                __BT-97/BT-104, From BASIC WL__ The reason given in text form for the surcharge or discount at document level
+     * @return static
+     *
+     * @phpstan-param-out float $actualAmount
+     * @phpstan-param-out bool $isCharge
+     * @phpstan-param-out string $taxCategoryCode
+     * @phpstan-param-out string $taxTypeCode
+     * @phpstan-param-out float $rateApplicablePercent
+     * @phpstan-param-out float $sequence
+     * @phpstan-param-out float $calculationPercent
+     * @phpstan-param-out float $basisAmount
+     * @phpstan-param-out float $basisQuantity
+     * @phpstan-param-out string $basisQuantityUnitCode
+     * @phpstan-param-out string $reasonCode
+     * @phpstan-param-out string $reason
+     */
+    public function getDocumentAllowanceCharge(
+        ?float &$actualAmount,
+        ?bool &$isCharge,
+        ?string &$taxCategoryCode,
+        ?string &$taxTypeCode,
+        ?float &$rateApplicablePercent,
+        ?float &$sequence,
+        ?float &$calculationPercent,
+        ?float &$basisAmount,
+        ?float &$basisQuantity,
+        ?string &$basisQuantityUnitCode,
+        ?string &$reasonCode,
+        ?string &$reason
+    ): static {
+        $sequence = 0.0;
+        $basisQuantity = 0.0;
+        $basisQuantityUnitCode = '';
+
+        $this->documentReader->getDocumentAllowanceCharge(
+            $isCharge,
+            $actualAmount,
+            $basisAmount,
+            $taxCategoryCode,
+            $taxTypeCode,
+            $rateApplicablePercent,
+            $reason,
+            $reasonCode,
+            $calculationPercent
+        );
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first documents service charge position. Returns true if the first position is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentLogisticsServiceCharge.
+     *
+     * @return bool
+     */
+    public function firstDocumentLogisticsServiceCharge(): bool
+    {
+        return $this->documentReader->firstDocumentLogisticServiceCharge();
+    }
+
+    /**
+     * Seek to the next documents service charge position. Returns true if a other position is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentLogisticsServiceCharge.
+     *
+     * @return bool
+     */
+    public function nextDocumentLogisticsServiceCharge(): bool
+    {
+        return $this->documentReader->nextDocumentLogisticServiceCharge();
+    }
+
+    /**
+     * Get currently seeked logistical service fees (On document level).
+     *
+     * @param  null|string            $description            __BT-X-271, From EXTENDED__ Identification of the service fee
+     * @param  null|float             $appliedAmount          __BT-X-272, From EXTENDED__ Amount of the service fee
+     * @param  null|array<int,string> $taxTypeCodes           __BT-X-273-0, From EXTENDED__ Code of the Tax type. Note: Fixed value = "VAT"
+     * @param  null|array<int,string> $taxCategoryCodes       __BT-X-273, From EXTENDED__ Code of the VAT category
+     * @param  null|array<int,float>  $rateApplicablePercents __BT-X-274, From EXTENDED__ The sales tax rate, expressed as the percentage applicable to the sales tax category in question. Note: The code of the sales tax category and the category-specific sales tax rate must correspond to one another. The value to be given is the percentage. For example, the value 20 is given for 20% (and not 0.2)
+     * @return static
+     *
+     * @phpstan-param-out string $description
+     * @phpstan-param-out float $appliedAmount
+     * @phpstan-param-out array<int,string> $taxTypeCodes
+     * @phpstan-param-out array<int,string> $taxCategoryCodes
+     * @phpstan-param-out array<int,float> $rateApplicablePercents
+     */
+    public function getDocumentLogisticsServiceCharge(
+        ?string &$description,
+        ?float &$appliedAmount,
+        ?array &$taxTypeCodes,
+        ?array &$taxCategoryCodes,
+        ?array &$rateApplicablePercents
+    ): static {
+        $this->documentReader->getDocumentLogisticServiceCharge(
+            $appliedAmount,
+            $description,
+            $newTaxCategory,
+            $newTaxType,
+            $newTaxPercent
+        );
+
+        $taxCategoryCodes = [];
+        $taxTypeCodes = [];
+        $rateApplicablePercents = [];
+
+        InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($taxCategoryCodes, $newTaxCategory);
+        InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($taxTypeCodes, $newTaxType);
+        InvoiceSuiteArrayUtils::pushFloatToIntIndexedArray($rateApplicablePercents, $newTaxPercent);
+
+        return $this;
+    }
+
+    /**
+     * Get all documents payment terms.
+     *
+     * @param  null|array<int, array{description: string, duedate: null|DateTimeInterface, directdebitmandateid: string, partialpaymentamount: float}> $paymentTerms
+     * @return static
+     *
+     * @phpstan-param-out array<int, array{description: string, duedate: DateTimeInterface|null, directdebitmandateid: string, partialpaymentamount: float}> $paymentTerms
+     */
+    public function getDocumentPaymentTerms(
+        ?array &$paymentTerms
+    ): static {
+        $paymentTerms = [];
+
+        if ($this->documentReader->firstDocumentPaymentTerm()) {
+            do {
+                $this->documentReader->getDocumentPaymentTerm(
+                    $newDescription,
+                    $newDueDate,
+                    $newMandate
+                );
+
+                InvoiceSuiteArrayUtils::pushArrayToIntIndexedArray($paymentTerms, [
+                    'description' => $newDescription,
+                    'duedate' => $newDueDate,
+                    'directdebitmandateid' => $newMandate,
+                    'partialpaymentamount' => 0.0, // TODO support for PartialPaymentAmount (EXTENDED only)
+                ]);
+            } while ($this->documentReader->nextDocumentPaymentTerm());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first documents payment terms position. Returns true if the first position is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentPaymentTerm.
+     *
+     * @return bool
+     */
+    public function firstDocumentPaymentTerms(): bool
+    {
+        return $this->documentReader->firstDocumentPaymentTerm();
+    }
+
+    /**
+     * Seek to the next documents payment terms position. Returns true if a other position is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentPaymentTerm.
+     *
+     * @return bool
+     */
+    public function nextDocumentPaymentTerms(): bool
+    {
+        return $this->documentReader->nextDocumentPaymentTerm();
+    }
+
+    /**
+     * Get currently seeked payment term.
+     *
+     * @param  null|string            $description          __BT-20, From _BASIC WL__ A text description of the payment terms that apply to the payment amount due (including a description of possible penalties). Note: This element can contain multiple lines and multiple conditions.
+     * @param  null|DateTimeInterface $dueDate              __BT-9, From BASIC WL__ The date by which payment is due Note: The payment due date reflects the net payment due date. In the case of partial payments, this indicates the first due date of a net payment. The corresponding description of more complex payment terms can be given in BT-20.
+     * @param  null|string            $directDebitMandateID __BT-89, From BASIC WL__ Unique identifier assigned by the payee to reference the direct debit authorization
+     * @return static
+     *
+     * @phpstan-param-out string $description
+     * @phpstan-param-out DateTimeInterface|null $dueDate
+     * @phpstan-param-out string $directDebitMandateID
+     */
+    public function getDocumentPaymentTerm(
+        ?string &$description,
+        ?DateTimeInterface &$dueDate,
+        ?string &$directDebitMandateID
+    ): static {
+        $this->documentReader->getDocumentPaymentTerm(
+            $description,
+            $dueDate,
+            $directDebitMandateID
+        );
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information on payment discounts.
+     *
+     * @param  null|float             $calculationPercent         __BT-X-286, From EXTENDED__ Percentage of the down payment
+     * @param  null|DateTimeInterface $basisDateTime              __BT-X-282, From EXTENDED__ Due date reference date
+     * @param  null|float             $basisPeriodMeasureValue    __BT-X-284, From EXTENDED__ Maturity period (basis)
+     * @param  null|string            $basisPeriodMeasureUnitCode __BT-X-284, From EXTENDED__ Maturity period (unit)
+     * @param  null|float             $basisAmount                __BT-X-284, From EXTENDED__ Base amount of the payment discount
+     * @param  null|float             $actualDiscountAmount       __BT-X-287, From EXTENDED__ Amount of the payment discount
+     * @return static
+     *
+     * @phpstan-param-out float $calculationPercent
+     * @phpstan-param-out null|DateTimeInterface $basisDateTime
+     * @phpstan-param-out float $basisPeriodMeasureValue
+     * @phpstan-param-out string $basisPeriodMeasureUnitCode
+     * @phpstan-param-out float $basisAmount
+     * @phpstan-param-out float $actualDiscountAmount
+     */
+    public function getDiscountTermsFromPaymentTerm(
+        ?float &$calculationPercent,
+        ?DateTimeInterface &$basisDateTime,
+        ?float &$basisPeriodMeasureValue,
+        ?string &$basisPeriodMeasureUnitCode,
+        ?float &$basisAmount,
+        ?float &$actualDiscountAmount
+    ): static {
+        $calculationPercent = 0.0;
+        $basisDateTime = null;
+        $basisPeriodMeasureValue = 0.0;
+        $basisPeriodMeasureUnitCode = '';
+        $basisAmount = 0.0;
+        $actualDiscountAmount = 0.0;
+
+        if ($this->documentReader->firstDocumentPaymentDiscountTermsInLastPaymentTerm()) {
+            $this->documentReader->getDocumentPaymentDiscountTermsInLastPaymentTerm(
+                $basisAmount,
+                $actualDiscountAmount,
+                $calculationPercent,
+                $basisDateTime,
+                $basisPeriodMeasureValue,
+                $basisPeriodMeasureUnitCode
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information on payment penalties.
+     *
+     * @param  null|float             $calculationPercent         __BT-X-280, From EXTENDED__ Percentage of the payment surcharge
+     * @param  null|DateTimeInterface $basisDateTime              __BT-X-276, From EXTENDED__ Due date reference date
+     * @param  null|float             $basisPeriodMeasureValue    __BT-X-277, From EXTENDED__ Maturity period (basis)
+     * @param  null|string            $basisPeriodMeasureUnitCode __BT-X-277, From EXTENDED__ Maturity period (unit)
+     * @param  null|float             $basisAmount                __BT-X-279, From EXTENDED__ Basic amount of the payment surcharge
+     * @param  null|float             $actualPenaltyAmount        __BT-X-281, From EXTENDED__ Amount of the payment surcharge
+     * @return static
+     *
+     * @phpstan-param-out float $calculationPercent
+     * @phpstan-param-out null|DateTimeInterface $basisDateTime
+     * @phpstan-param-out float $basisPeriodMeasureValue
+     * @phpstan-param-out string $basisPeriodMeasureUnitCode
+     * @phpstan-param-out float $basisAmount
+     * @phpstan-param-out float $actualPenaltyAmount
+     */
+    public function getPenaltyTermsFromPaymentTerm(
+        ?float &$calculationPercent,
+        ?DateTimeInterface &$basisDateTime,
+        ?float &$basisPeriodMeasureValue,
+        ?string &$basisPeriodMeasureUnitCode,
+        ?float &$basisAmount,
+        ?float &$actualPenaltyAmount
+    ): static {
+        $calculationPercent = 0.0;
+        $basisDateTime = null;
+        $basisPeriodMeasureValue = 0.0;
+        $basisPeriodMeasureUnitCode = '';
+        $basisAmount = 0.0;
+        $actualPenaltyAmount = 0.0;
+
+        if ($this->documentReader->firstDocumentPaymentPenaltyTermsInLastPaymentTerm()) {
+            $this->documentReader->getDocumentPaymentPenaltyTermsInLastPaymentTerm(
+                $basisAmount,
+                $actualPenaltyAmount,
+                $calculationPercent,
+                $basisDateTime,
+                $basisPeriodMeasureValue,
+                $basisPeriodMeasureUnitCode
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first trade accounting account of the document. Returns true if a first account is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentSellerContact.
+     *
+     * @return bool
+     */
+    public function firstDocumentReceivableSpecifiedTradeAccountingAccount(): bool
+    {
+        return $this->documentReader->firstDocumentPostingReference();
+    }
+
+    /**
+     * Seek to the next trade accounting account of the document. Returns true if another account is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentSellerContact.
+     *
+     * @return bool
+     */
+    public function nextDocumentReceivableSpecifiedTradeAccountingAccount(): bool
+    {
+        return $this->documentReader->nextDocumentPostingReference();
+    }
+
+    /**
+     * Get information on the booking reference (on document level).
+     *
+     * @param  null|string &$id       __BT-19, From BASIC WL__ Posting reference of the byuer. If required, this reference shall be provided by the Buyer to the Seller prior to the issuing of the Invoice.
+     * @param  null|string &$typeCode __BT-X-290, From EXTENDED__ Type of the posting reference
+     * @return static
+     *
+     * @phpstan-param-out string $id
+     * @phpstan-param-out string $typeCode
+     */
+    public function getDocumentReceivableSpecifiedTradeAccountingAccount(
+        ?string &$id,
+        ?string &$typeCode
+    ): static {
+        $this->documentReader->getDocumentPostingReference(
+            $typeCode,
+            $id
+        );
+
+        return $this;
+    }
+
+    /**
+     * Read Document money summation.
+     *
+     * @param  null|float $grandTotalAmount     __BT-112, From MINIMUM__ Total invoice amount including sales tax
+     * @param  null|float $duePayableAmount     __BT-115, From MINIMUM__ Payment amount due
+     * @param  null|float $lineTotalAmount      __BT-106, From BASIC WL__ Sum of the net amounts of all invoice items
+     * @param  null|float $chargeTotalAmount    __BT-108, From BASIC WL__ Sum of the surcharges at document level
+     * @param  null|float $allowanceTotalAmount __BT-107, From BASIC WL__ Sum of the discounts at document level
+     * @param  null|float $taxBasisTotalAmount  __BT-109, From MINIMUM__ Total invoice amount excluding sales tax
+     * @param  null|float $taxTotalAmount       __BT-110/111, From MINIMUM/BASIC WL__ if BT-6 is not null $taxTotalAmount = BT-111. Total amount of the invoice sales tax, Total tax amount in the booking currency
+     * @param  null|float $roundingAmount       __BT-114, From EN 16931__ Rounding amount
+     * @param  null|float $totalPrepaidAmount   __BT-113, From BASIC WL__ Prepayment amount
+     * @return static
+     *
+     * @phpstan-param-out float $grandTotalAmount
+     * @phpstan-param-out float $duePayableAmount
+     * @phpstan-param-out float $lineTotalAmount
+     * @phpstan-param-out float $chargeTotalAmount
+     * @phpstan-param-out float $allowanceTotalAmount
+     * @phpstan-param-out float $taxBasisTotalAmount
+     * @phpstan-param-out float $taxTotalAmount
+     * @phpstan-param-out float $roundingAmount
+     * @phpstan-param-out float $totalPrepaidAmount
+     */
+    public function getDocumentSummation(
+        ?float &$grandTotalAmount,
+        ?float &$duePayableAmount,
+        ?float &$lineTotalAmount,
+        ?float &$chargeTotalAmount,
+        ?float &$allowanceTotalAmount,
+        ?float &$taxBasisTotalAmount,
+        ?float &$taxTotalAmount,
+        ?float &$roundingAmount,
+        ?float &$totalPrepaidAmount
+    ): static {
+        $this->documentReader->getDocumentSummation(
+            $lineTotalAmount,
+            $chargeTotalAmount,
+            $allowanceTotalAmount,
+            $taxBasisTotalAmount,
+            $taxTotalAmount,
+            $taxTotalAmount2,
+            $grandTotalAmount,
+            $duePayableAmount,
+            $totalPrepaidAmount,
+            $roundingAmount
+        );
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first document position. Returns true if the first position is available, otherwise false.
+     * You may use it together with ZugferdDocumentReader::getDocumentPositionGenerals.
+     *
+     * @return bool
+     */
+    public function firstDocumentPosition(): bool
+    {
+        return $this->documentReader->firstDocumentPosition();
+    }
+
+    /**
+     * Seek to the next document position. Returns true if another position is available, otherwise false.
+     * You may use it together with ZugferdDocumentReader::getDocumentPositionGenerals.
+     *
+     * @return bool
+     */
+    public function nextDocumentPosition(): bool
+    {
+        return $this->documentReader->nextDocumentPosition();
+    }
+
+    /**
+     * Get general information of the current position.
+     *
+     * @param  null|string $lineId               __BT-126, From BASIC__ Identification of the invoice item
+     * @param  null|string $lineStatusCode       __BT-X-7, From EXTENDED__ Indicates whether the invoice item contains prices that must be taken into account when calculating the invoice amount or whether only information is included
+     * @param  null|string $lineStatusReasonCode __BT-X-8, From EXTENDED__ Adds the type to specify whether the invoice line is:
+     * @return static
+     *
+     * @phpstan-param-out string $lineId
+     * @phpstan-param-out string $lineStatusCode
+     * @phpstan-param-out string $lineStatusReasonCode
+     */
+    public function getDocumentPositionGenerals(
+        ?string &$lineId,
+        ?string &$lineStatusCode,
+        ?string &$lineStatusReasonCode
+    ): static {
+        $this->documentReader->getDocumentPosition(
+            $lineId,
+            $newParentPositionId,
+            $lineStatusCode,
+            $lineStatusReasonCode
+        );
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first document position. Returns true if the first position is available, otherwise false.
+     * You may use it together with ZugferdDocumentReader::getDocumentPositionNote.
+     *
+     * @return bool
+     */
+    public function firstDocumentPositionNote(): bool
+    {
+        return $this->documentReader->firstDocumentPositionNote();
+    }
+
+    /**
+     * Seek to the next document position. Returns true if the first position is available, otherwise false.
+     * You may use it together with ZugferdDocumentReader::getDocumentPositionNote.
+     *
+     * @return bool
+     */
+    public function nextDocumentPositionNote(): bool
+    {
+        return $this->documentReader->nextDocumentPositionNote();
+    }
+
+    /**
+     * Get detailed information on the free text on the position.
+     *
+     * @param  string      $content     __BT-127, From BASIC__ A free text that contains unstructured information that is relevant to the invoice item
+     * @param  null|string $contentCode __BT-X-9, From EXTENDED__ A code to classify the content of the free text of the invoice. The code is agreed bilaterally and must have the same meaning as BT-127.
+     * @param  null|string $subjectCode __BT-X-10, From EXTENDED__ Code for qualifying the free text for the invoice item (Codelist UNTDID 4451)
+     * @return static
+     *
+     * @phpstan-param-out string $content
+     * @phpstan-param-out string $contentCode
+     * @phpstan-param-out string $subjectCode
+     */
+    public function getDocumentPositionNote(
+        ?string &$content,
+        ?string &$contentCode,
+        ?string &$subjectCode
+    ): static {
+        $this->documentReader->getDocumentPositionNote(
+            $content,
+            $contentCode,
+            $subjectCode
+        );
+
+        return $this;
+    }
+
+    /**
+     * Get information about the goods and services billed.
+     *
+     * @param  null|string $name             __BT-153, From BASIC__ A name of the item (item name)
+     * @param  null|string $description      __BT-154, From EN 16931__ A description of the item, the item description makes it possible to describe the item and its properties in more detail than is possible with the item name
+     * @param  null|string $sellerAssignedID __BT-155, From EN 16931__ An identifier assigned to the item by the seller
+     * @param  null|string $buyerAssignedID  __BT-156, From EN 16931__ An identifier assigned to the item by the buyer. The article number of the buyer is a clear, bilaterally agreed identification of the product. It can, for example, be the customer article number or the article number assigned by the manufacturer.
+     * @param  null|string $globalIDType     __BT-157-1, From BASIC__ The scheme for $globalID
+     * @param  null|string $globalID         __BT-157, From BASIC__ Identification of an article according to the registered scheme (Global identifier of the product, GTIN, ...)
+     * @return static
+     *
+     * @phpstan-param-out string $name
+     * @phpstan-param-out string $description
+     * @phpstan-param-out string $sellerAssignedID
+     * @phpstan-param-out string $buyerAssignedID
+     * @phpstan-param-out string $globalIDType
+     * @phpstan-param-out string $globalID
+     */
+    public function getDocumentPositionProductDetails(
+        ?string &$name,
+        ?string &$description,
+        ?string &$sellerAssignedID,
+        ?string &$buyerAssignedID,
+        ?string &$globalIDType,
+        ?string &$globalID
+    ): static {
+        $this->documentReader->getDocumentPositionProductDetails(
+            $newProductId,
+            $name,
+            $description,
+            $sellerAssignedID,
+            $buyerAssignedID,
+            $globalID,
+            $globalIDType,
+            $newProductIndustryId,
+            $newProductModelId,
+            $newProductBatchId,
+            $newProductBrandName,
+            $newProductModelName,
+            $newProductOriginTradeCountry
+        );
+
+        return $this;
+    }
+
+    /**
+     * Get information about the goods and services billed (Enhanced, with Model, Brand, etc.).
+     *
+     * @param  null|string $name               __BT-153, From BASIC__ A name of the item (item name)
+     * @param  null|string $description        __BT-154, From EN 16931__ A description of the item, the item description makes it possible to describe the item and its properties in more detail than is possible with the item name
+     * @param  null|string $sellerAssignedID   __BT-155, From EN 16931__ An identifier assigned to the item by the seller
+     * @param  null|string $buyerAssignedID    __BT-156, From EN 16931__ An identifier assigned to the item by the buyer. The article number of the buyer is a clear, bilaterally agreed identification of the product. It can, for example, be the customer article number or the article number assigned by the manufacturer.
+     * @param  null|string $globalIDType       __BT-157-1, From BASIC__ The scheme for $globalID
+     * @param  null|string $globalID           __BT-157, From BASIC__ Identification of an article according to the registered scheme (Global identifier of the product, GTIN, ...)
+     * @param  null|string $industryAssignedID __BT-X-309, From EXTENDED__ ID assigned by the industry to the contained referenced product
+     * @param  null|string $modelID            __BT-X-533, From EXTENDED__ A unique model identifier for this product
+     * @param  null|string $batchID            __BT-X-534. From EXTENDED__ Identification of the batch (lot) of the product
+     * @param  null|string $brandName          __BT-X-535. From EXTENDED__ The brand name, expressed as text, for this product
+     * @param  null|string $modelName          __BT-X-536. From EXTENDED__ Model designation of the product
+     * @return static
+     *
+     * @phpstan-param-out string $name
+     * @phpstan-param-out string $description
+     * @phpstan-param-out string $sellerAssignedID
+     * @phpstan-param-out string $buyerAssignedID
+     * @phpstan-param-out string $globalIDType
+     * @phpstan-param-out string $globalID
+     * @phpstan-param-out string $industryAssignedID
+     * @phpstan-param-out string $modelID
+     * @phpstan-param-out string $batchID
+     * @phpstan-param-out string $brandName
+     * @phpstan-param-out string $modelName
+     */
+    public function getDocumentPositionProductDetailsExt(
+        ?string &$name,
+        ?string &$description,
+        ?string &$sellerAssignedID,
+        ?string &$buyerAssignedID,
+        ?string &$globalIDType,
+        ?string &$globalID,
+        ?string &$industryAssignedID,
+        ?string &$modelID,
+        ?string &$batchID,
+        ?string &$brandName,
+        ?string &$modelName
+    ): static {
+        $this->documentReader->getDocumentPositionProductDetails(
+            $newProductId,
+            $name,
+            $description,
+            $sellerAssignedID,
+            $buyerAssignedID,
+            $globalID,
+            $globalIDType,
+            $industryAssignedID,
+            $modelID,
+            $batchID,
+            $brandName,
+            $modelName,
+            $newProductOriginTradeCountry
+        );
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first document position's product characteristic. Returns true if the first position propduct characteristic is available, otherwise false.
+     * You may use it together with ZugferdDocumentReader::getDocumentPositionProductCharacteristic.
+     *
+     * @return bool
+     */
+    public function firstDocumentPositionProductCharacteristic(): bool
+    {
+        return $this->documentReader->firstDocumentPositionProductCharacteristic();
+    }
+
+    /**
+     * Seek to the next document position's product characteristic. Returns true if more position propduct characteristics are available, otherwise false.
+     * You may use it together with ZugferdDocumentReader::getDocumentPositionProductCharacteristic.
+     *
+     * @return bool
+     */
+    public function nextDocumentPositionProductCharacteristic(): bool
+    {
+        return $this->documentReader->nextDocumentPositionProductCharacteristic();
+    }
+
+    /**
+     * Get extra characteristics to the formerly added product. Contains information about the characteristics of the goods and services invoiced.
+     *
+     * @param  null|string $description          __BT-160, From EN 16931__ The name of the attribute or property of the product such as "Colour"
+     * @param  null|string $value                __BT-161, From EN 16931__ The value of the attribute or property of the product such as "Red"
+     * @param  null|string $typeCode             __BT-X-11, From EXTENDED__ Type of product characteristic (code). The codes must be taken from the UNTDID 6313 codelist.
+     * @param  null|float  $valueMeasure         __BT-X-12, From EXTENDED__ Value of the product property (numerical measured variable)
+     * @param  null|string $valueMeasureUnitCode __BT-X-12-0, From EXTENDED__ Unit of measurement code
+     * @return static
+     *
+     * @phpstan-param-out string $description
+     * @phpstan-param-out string $value
+     * @phpstan-param-out string $typeCode
+     * @phpstan-param-out float $valueMeasure
+     * @phpstan-param-out string $valueMeasureUnitCode
+     */
+    public function getDocumentPositionProductCharacteristic(
+        ?string &$description,
+        ?string &$value,
+        ?string &$typeCode,
+        ?float &$valueMeasure,
+        ?string &$valueMeasureUnitCode
+    ): static {
+        $this->documentReader->getDocumentPositionProductCharacteristic(
+            $description,
+            $value,
+            $typeCode,
+            $valueMeasure,
+            $valueMeasureUnitCode
+        );
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first document position's product classification. Returns true if the first position propduct classification is available, otherwise false.
+     * You may use it together with ZugferdDocumentReader::getDocumentPositionProductClassification.
+     *
+     * @return bool
+     */
+    public function firstDocumentPositionProductClassification(): bool
+    {
+        return $this->documentReader->firstDocumentPositionProductClassification();
+    }
+
+    /**
+     * Seek to the next document position's product classification. Returns true if more position propduct classifications are available, otherwise false.
+     * You may use it together with ZugferdDocumentReader::getDocumentPositionProductClassification.
+     *
+     * @return bool
+     */
+    public function nextDocumentPositionProductClassification(): bool
+    {
+        return $this->documentReader->nextDocumentPositionProductClassification();
+    }
+
+    /**
+     * Get detailed information on product classification.
+     *
+     * @param  null|string $classCode     __BT-158, From EN 16931__ Item classification identifier. Classification codes are used for grouping similar items that can serve different purposes, such as public procurement (according to the Common Procurement Vocabulary ([CPV]), e-commerce (UNSPSC), etc.
+     * @param  null|string $className     __BT-X-138, From EXTENDED__ Name with which an article can be classified according to type or quality
+     * @param  null|string $listID        __BT-158-1, From EN 16931__ The identifier for the identification scheme of the item classification identifier. The identification scheme must be selected from the entries in UNTDID 7143 [6].
+     * @param  null|string $listVersionID __BT-158-2, From EN 16931__ The version of the identification scheme
+     * @return static
+     *
+     * @phpstan-param-out string $classCode
+     * @phpstan-param-out string $className
+     * @phpstan-param-out string $listID
+     * @phpstan-param-out string $listVersionID
+     */
+    public function getDocumentPositionProductClassification(
+        ?string &$classCode,
+        ?string &$className,
+        ?string &$listID,
+        ?string &$listVersionID
+    ): static {
+        $this->documentReader->getDocumentPositionProductClassification(
+            $classCode,
+            $listID,
+            $listVersionID,
+            $className
+        );
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first document position's referenced product. Returns true if the first position referenced product is available, otherwise false.
+     * You may use it together with ZugferdDocumentReader::getDocumentPositionReferencedProduct.
+     *
+     * @return bool
+     */
+    public function firstDocumentPositionReferencedProduct(): bool
+    {
+        return $this->documentReader->firstDocumentPositionReferencedProduct();
+    }
+
+    /**
+     * Seek to the next document position's referenced product. Returns true if more position referenced products are available, otherwise false.
+     * You may use it together with ZugferdDocumentReader::getDocumentPositionReferencedProduct.
+     *
+     * @return bool
+     */
+    public function nextDocumentPositionReferencedProduct(): bool
+    {
+        return $this->documentReader->nextDocumentPositionReferencedProduct();
+    }
+
+    /**
+     * Get detailed information on included products. This information relates to the product that has just been added.
+     *
+     * @param  null|string            $name               __BT-X-18, From EXTENDED__ Name of the referenced product contained
+     * @param  null|string            $description        __BT-X-19, From EXTENDED__ Description of the included referenced product
+     * @param  null|string            $sellerAssignedID   __BT-X-16, From EXTENDED__ ID assigned by the seller of the contained referenced product
+     * @param  null|string            $buyerAssignedID    __BT-X-17, From EXTENDED__ ID of the referenced product assigned by the buyer
+     * @param  null|array<int,string> $globalID           __BT-X-15, From EXTENDED__ Array of global ids of the referenced product indexed by the identification scheme
+     * @param  null|float             $unitQuantity       __BT-X-20, From EXTENDED__ Quantity of the referenced product contained
+     * @param  null|string            $unitCode           __BT-X-20-1, From EXTENDED__ Unit code of Quantity of the referenced product contained
+     * @param  null|string            $industryAssignedID __BT-X-309, From EXTENDED__ ID of the referenced product contained assigned by the industry
+     * @return static
+     *
+     * @phpstan-param-out string $name
+     * @phpstan-param-out string $description
+     * @phpstan-param-out string $sellerAssignedID
+     * @phpstan-param-out string $buyerAssignedID
+     * @phpstan-param-out array<int,string> $globalID
+     * @phpstan-param-out float $unitQuantity
+     * @phpstan-param-out string $unitCode
+     * @phpstan-param-out string $industryAssignedID
+     */
+    public function getDocumentPositionReferencedProduct(
+        ?string &$name,
+        ?string &$description,
+        ?string &$sellerAssignedID,
+        ?string &$buyerAssignedID,
+        ?array &$globalID,
+        ?float &$unitQuantity,
+        ?string &$unitCode,
+        ?string &$industryAssignedID
+    ): static {
+        $globalID = [];
+
+        $this->documentReader->getDocumentPositionReferencedProduct(
+            $newProductId,
+            $name,
+            $description,
+            $sellerAssignedID,
+            $buyerAssignedID,
+            $newProductGlobalId,
+            $newProductGlobalIdType,
+            $industryAssignedID,
+            $unitQuantity,
+            $unitCode
+        );
+
+        InvoiceSuiteArrayUtils::pushArrayToIntIndexedArray($globalID, [
+            $newProductGlobalIdType => $newProductGlobalId,
+        ]);
+
+        return $this;
+    }
+
+    /**
+     * Sets the detailed information on the product origin.
+     *
+     * @param  null|string $country __BT-159, From EN 16931__ The code indicating the country the goods came from. The lists of approved countries are maintained by the EN ISO 3166-1 Maintenance Agency “Codes for the representation of names of countries and their subdivisions”.
+     * @return static
+     *
+     * @phpstan-param-out string $country
+     */
+    public function getDocumentPositionProductOriginTradeCountry(
+        ?string &$country
+    ): static {
+        $this->documentReader->getDocumentPositionProductDetails(
+            $newProductId,
+            $newProductName,
+            $newProductDescription,
+            $newProductSellerId,
+            $newProductBuyerId,
+            $newProductGlobalId,
+            $newProductGlobalIdType,
+            $newProductIndustryId,
+            $newProductModelId,
+            $newProductBatchId,
+            $newProductBrandName,
+            $newProductModelName,
+            $country
+        );
+
+        return $this;
+    }
+
+    /**
+     * Get details of a related sales order reference.
+     *
+     * @param  null|string            $issuerAssignedId __BT-X-537, From EXTENDED__ Document number of a sales order reference
+     * @param  null|string            $lineId           __BT-X-538, From EXTENDED__ An identifier for a position within a sales order
+     * @param  null|DateTimeInterface $issueDate        __BT-X-539, From EXTENDED__ Date of sales order
+     * @return static
+     *
+     * @phpstan-param-out string $issuerAssignedId
+     * @phpstan-param-out string $lineId
+     * @phpstan-param-out DateTimeInterface|null $newReferenceDate
+     */
+    public function getDocumentPositionSellerOrderReferencedDocument(
+        ?string &$issuerAssignedId,
+        ?string &$lineId,
+        ?DateTimeInterface &$issueDate
+    ): static {
+        $issuerAssignedId = '';
+        $lineId = '';
+        $issueDate = null;
+
+        if ($this->documentReader->firstDocumentPositionSellerOrderReference()) {
+            $this->documentReader->getDocumentPositionSellerOrderReference(
+                $issuerAssignedId,
+                $lineId,
+                $issueDate
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get details of the related buyer order position.
+     *
+     * @param  null|string            $issuerAssignedId __BT-X-21, From EXTENDED__ An identifier issued by the buyer for a referenced order (order number)
+     * @param  null|string            $lineId           __BT-132, From EN 16931__ An identifier for a position within an order placed by the buyer. Note: Reference is made to the order reference at the document level.
+     * @param  null|DateTimeInterface $issueDate        __BT-X-22, From EXTENDED__ Date of order
+     * @return static
+     *
+     * @phpstan-param-out string $issuerAssignedId
+     * @phpstan-param-out string $lineId
+     * @phpstan-param-out DateTimeInterface|null $newReferenceDate
+     */
+    public function getDocumentPositionBuyerOrderReferencedDocument(
+        ?string &$issuerAssignedId,
+        ?string &$lineId,
+        ?DateTimeInterface &$issueDate
+    ): self {
+        $issuerAssignedId = '';
+        $lineId = '';
+        $issueDate = null;
+
+        if ($this->documentReader->firstDocumentPositionBuyerOrderReference()) {
+            $this->documentReader->getDocumentPositionBuyerOrderReference(
+                $issuerAssignedId,
+                $lineId,
+                $issueDate
+            );
+        }
 
         return $this;
     }

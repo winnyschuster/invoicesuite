@@ -71,6 +71,39 @@ class InvoiceSuiteArrayUtils
     }
 
     /**
+     * Push a nullable string to an int-indexed array. The string ($value) is only pushed when it is not null or an empty one
+     *
+     * @param  array<int,float> $array
+     * @param  null|float       $value
+     * @return void
+     *
+     * @phpstan-param-out array<int,float> $array
+     */
+    public static function pushFloatToIntIndexedArray(array &$array, ?float $value): void
+    {
+        if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($value)) {
+            $array[] = (float) $value;
+        }
+    }
+
+    /**
+     * Push a nullable string to an string-indexed ($key) array. The string ($value) is only pushed when it is not null or an empty one
+     *
+     * @param  array<string,float> $array
+     * @param  null|string         $key
+     * @param  null|float          $value
+     * @return void
+     *
+     * @phpstan-param-out array<string,float> $array
+     */
+    public static function pushFloatToStringIndexedArray(array &$array, ?string $key, ?float $value): void
+    {
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($key) && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($value)) {
+            $array[(string) $key] = (float) $value;
+        }
+    }
+
+    /**
      * Push a nullable array to an int-indexed array. The string ($value) is only pushed when it is not null or an empty one
      *
      * @template T of array<array-key, mixed>
