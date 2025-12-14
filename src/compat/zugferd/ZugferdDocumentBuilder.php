@@ -105,6 +105,16 @@ class ZugferdDocumentBuilder implements Stringable
     }
 
     /**
+     * Returns the internal InvoiceSuiteDocumentBuilder instance
+     *
+     * @return InvoiceSuiteDocumentBuilder
+     */
+    public function getDocumentBuilderInstance(): InvoiceSuiteDocumentBuilder
+    {
+        return $this->documentBuilder;
+    }
+
+    /**
      * Creates a new builder instance with profile $profile
      *
      * @param  int    $profileId
