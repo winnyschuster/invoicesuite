@@ -60,6 +60,7 @@ class ZugferdDocumentPdfBuilder extends ZugferdDocumentPdfBuilderAbstract
             throw new InvoiceSuiteFileNotReadableException($pdfFileName);
         }
 
+        // @phpstan-ignore new.static
         return new static($documentBuilder, $pdfContent);
     }
 
@@ -72,6 +73,7 @@ class ZugferdDocumentPdfBuilder extends ZugferdDocumentPdfBuilderAbstract
      */
     public static function fromPdfString(ZugferdDocumentBuilder $documentBuilder, string $pdfContent): static
     {
+        // @phpstan-ignore new.static
         return new static($documentBuilder, $pdfContent);
     }
 

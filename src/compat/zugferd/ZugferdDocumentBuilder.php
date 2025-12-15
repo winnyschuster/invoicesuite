@@ -107,7 +107,7 @@ class ZugferdDocumentBuilder implements Stringable
     /**
      * Returns the profile definition
      *
-     * @return array
+     * @return array<string, null|list<string>|string>
      */
     public function getProfileDefinition(): array
     {
