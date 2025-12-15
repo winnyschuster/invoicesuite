@@ -19,7 +19,6 @@ use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
-use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 
 /**
@@ -39,7 +38,7 @@ class InvoiceSuiteDocumentReader
     /**
      * Constructor (hidden)
      *
-     * @param string $fromContent
+     * @param  string $fromContent
      * @return void
      */
     final protected function __construct(string $fromContent)
@@ -78,7 +77,7 @@ class InvoiceSuiteDocumentReader
     /**
      * Create reader by file
      *
-     * @param string $fromFile
+     * @param  string $fromFile
      * @return static
      */
     public static function createFromFile(string $fromFile): static

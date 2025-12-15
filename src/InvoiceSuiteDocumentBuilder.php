@@ -16,11 +16,7 @@ use horstoeko\invoicesuite\concerns\HandlesCallForwarding;
 use horstoeko\invoicesuite\concerns\HandlesCurrentDocumentFormatProvider;
 use horstoeko\invoicesuite\concerns\HandlesDocumentFormatProviders;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
-use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
-use JMS\Serializer\Exception\InvalidArgumentException;
-use JMS\Serializer\Exception\LogicException;
-use JMS\Serializer\Exception\RuntimeException;
 
 /**
  * Class representing the document builder
@@ -39,7 +35,7 @@ class InvoiceSuiteDocumentBuilder
     /**
      * Constructor (hidden)
      *
-     * @param string $formatProviderUniqueId
+     * @param  string                      $formatProviderUniqueId
      * @return InvoiceSuiteDocumentBuilder
      */
     final protected function __construct(

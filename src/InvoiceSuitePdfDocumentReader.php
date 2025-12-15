@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite;
 
-use Exception;
 use horstoeko\invoicesuite\concerns\HandlesCallForwarding;
 use horstoeko\invoicesuite\concerns\HandlesCurrentDocumentFormatProvider;
 use horstoeko\invoicesuite\concerns\HandlesDocumentFormatProviders;
@@ -19,7 +18,6 @@ use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentForma
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
-use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\pdfs\extractor\InvoiceSuitePdfExtractor;
 use horstoeko\invoicesuite\pdfs\extractor\InvoiceSuitePdfExtractorAttachment;
 
@@ -54,7 +52,7 @@ class InvoiceSuitePdfDocumentReader
     /**
      * Constructor (hidden)
      *
-     * @param string $fromContent
+     * @param  string $fromContent
      * @return void
      */
     final protected function __construct(string $fromContent)
@@ -97,7 +95,7 @@ class InvoiceSuitePdfDocumentReader
     /**
      * Create PDF reader by file
      *
-     * @param string $fromFile
+     * @param  string $fromFile
      * @return static
      */
     public static function createFromFile(string $fromFile): static

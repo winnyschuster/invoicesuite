@@ -48,7 +48,7 @@ class ZugferdDocumentBuilder implements Stringable
     /**
      * Constructor
      *
-     * @param int $profile The ID of the profile of the document
+     * @param  int  $profile The ID of the profile of the document
      * @return void
      */
     final protected function __construct(

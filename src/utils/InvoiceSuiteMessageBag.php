@@ -67,7 +67,7 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
      * Add multiple message items to the bag (append).
      * Internally uses add() to keep behaviour in one place.
      *
-     * @param array<int, InvoiceSuiteMessageBagItem> $newMessageBagItems The message items to add
+     * @param  array<int, InvoiceSuiteMessageBagItem> $newMessageBagItems The message items to add
      * @return static
      */
     public function addMessages(array $newMessageBagItems): static
@@ -275,8 +275,8 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
     /**
      * Whether a message index exists.
      *
-     * @param mixed $offset the index to check
-     * @return bool true if the index exists, otherwise false
+     * @param  mixed $offset the index to check
+     * @return bool  true if the index exists, otherwise false
      */
     public function offsetExists(mixed $offset): bool
     {
@@ -290,7 +290,7 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
     /**
      * Get message at offset.
      *
-     * @param mixed $offset the index to read
+     * @param  mixed                           $offset the index to read
      * @return null|InvoiceSuiteMessageBagItem the stored message or null if not found
      */
     public function offsetGet(mixed $offset): ?InvoiceSuiteMessageBagItem
@@ -305,8 +305,8 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
     /**
      * Set a message at offset. Disallow external modification
      *
-     * @param mixed $offset The index to write (ignored)
-     * @param mixed $value  The value to set (ignored)
+     * @param  mixed $offset The index to write (ignored)
+     * @param  mixed $value  The value to set (ignored)
      * @return void
      */
     public function offsetSet(mixed $offset, mixed $value): void
@@ -317,7 +317,7 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
     /**
      * Unset a message at offset. Disallow external modification
      *
-     * @param mixed $offset The index to remove (ignored)
+     * @param  mixed $offset The index to remove (ignored)
      * @return void
      */
     public function offsetUnset(mixed $offset): void

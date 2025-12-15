@@ -11,23 +11,15 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\pdfs\zffx;
 
-use BadMethodCallException;
 use DateTime;
 use DOMDocument;
 use DOMXPath;
-use Exception;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\pdfs\abstracts\InvoiceSuiteAbstractPdfConstructor;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
-use Random\RandomException;
-use setasign\Fpdi\PdfParser\CrossReference\CrossReferenceException;
-use setasign\Fpdi\PdfParser\Filter\FilterException;
-use setasign\Fpdi\PdfParser\PdfParserException;
 use setasign\Fpdi\PdfParser\StreamReader as PdfStreamReader;
-use setasign\Fpdi\PdfParser\Type\PdfTypeException;
-use setasign\Fpdi\PdfReader\PdfReaderException;
 
 /**
  * Class representing the basics for a ZUGFeRD/Factor-X PDF document constructor
@@ -137,7 +129,7 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
     /**
      * Save the content of the generated PDF to a file
      *
-     * @param string $toFilename
+     * @param  string $toFilename
      * @return static
      */
     protected function saveGeneratedPdfDocumentToFile(string $toFilename): static

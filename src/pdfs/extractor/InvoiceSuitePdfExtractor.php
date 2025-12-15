@@ -18,9 +18,6 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use IteratorAggregate;
 use LogicException;
-use PrinsFrank\PdfParser\Exception\InvalidArgumentException;
-use PrinsFrank\PdfParser\Exception\ParseFailureException;
-use PrinsFrank\PdfParser\Exception\PdfParserException;
 use PrinsFrank\PdfParser\PdfParser;
 use Traversable;
 
@@ -52,7 +49,7 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
     /**
      * Start getting attached files from a PDF file
      *
-     * @param string $pdfFilename
+     * @param  string $pdfFilename
      * @return static
      */
     public static function fromFile(string $pdfFilename): static
@@ -73,7 +70,7 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
     /**
      * Start getting attached files from a PDF content
      *
-     * @param string $pdfContent
+     * @param  string $pdfContent
      * @return static
      */
     public static function fromContent(string $pdfContent): static
@@ -128,8 +125,8 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
     /**
      * Set an attachment at index. Disallow external modification
      *
-     * @param mixed $offset
-     * @param mixed $value
+     * @param  mixed $offset
+     * @param  mixed $value
      * @return void
      */
     public function offsetSet(mixed $offset, mixed $value): void
@@ -140,7 +137,7 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
     /**
      * Remove an attachment at index. Disallow external modification
      *
-     * @param mixed $offset
+     * @param  mixed $offset
      * @return void
      */
     public function offsetUnset(mixed $offset): void
@@ -181,7 +178,7 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
     /**
      * Get a list of all the attachments.
      *
-     * @param string $pdfContent
+     * @param  string $pdfContent
      * @return static
      */
     protected function collectAttachmentsFromPdfContent(string $pdfContent): static

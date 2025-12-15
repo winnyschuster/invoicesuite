@@ -256,7 +256,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      * Returns the parameter value for the requested parameter. If the parameter does not exist an
      * InvoiceSuiteUnknownProviderParameterException is thrown
      *
-     * @param string $parameterName
+     * @param  string $parameterName
      * @return mixed
      */
     public function getFormatProviderRequiredParameterValue(string $parameterName)
