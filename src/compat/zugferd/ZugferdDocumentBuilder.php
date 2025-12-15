@@ -105,6 +105,42 @@ class ZugferdDocumentBuilder implements Stringable
     }
 
     /**
+     * Returns the profile definition
+     *
+     * @return array
+     */
+    public function getProfileDefinition(): array
+    {
+        $providerId = $this->documentBuilder->getCurrentDocumentFormatProvider()->getUniqueId();
+
+        foreach (ZugferdProfiles::PROFILEDEF as $profileId => $profileDef) {
+            if ($profileDef['invoicesuiteproviderid'] == $providerId) {
+                return $profileDef;
+            }
+        }
+
+        return [];
+    }
+
+    /**
+     * Get a parameter from profile definition
+     *
+     * @param  string                                  $parameterName
+     * @throws ZugferdUnknownProfileParameterException
+     * @return mixed
+     */
+    public function getProfileDefinitionParameter(string $parameterName)
+    {
+        $profileDefinition = $this->getProfileDefinition();
+
+        if (isset($profileDefinition[$parameterName])) {
+            return $profileDefinition[$parameterName];
+        }
+
+        throw new InvoiceSuiteInvalidArgumentException(sprintf('Unknown parameter %s', $parameterName));
+    }
+
+    /**
      * Returns the internal InvoiceSuiteDocumentBuilder instance
      *
      * @return InvoiceSuiteDocumentBuilder

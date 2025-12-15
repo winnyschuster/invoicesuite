@@ -14,6 +14,7 @@ namespace horstoeko\zugferd;
 use DateTimeInterface;
 use horstoeko\invoicesuite\concerns\HandlesCallForwarding;
 use horstoeko\invoicesuite\concerns\HandlesSafeInvoking;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
@@ -106,6 +107,42 @@ class ZugferdDocumentReader
         }
 
         return -1;
+    }
+
+    /**
+     * Returns the profile definition
+     *
+     * @return array
+     */
+    public function getProfileDefinition(): array
+    {
+        $providerId = $this->documentReader->getCurrentDocumentFormatProvider()->getUniqueId();
+
+        foreach (ZugferdProfiles::PROFILEDEF as $profileId => $profileDef) {
+            if ($profileDef['invoicesuiteproviderid'] == $providerId) {
+                return $profileDef;
+            }
+        }
+
+        return [];
+    }
+
+    /**
+     * Get a parameter from profile definition
+     *
+     * @param  string                                  $parameterName
+     * @throws ZugferdUnknownProfileParameterException
+     * @return mixed
+     */
+    public function getProfileDefinitionParameter(string $parameterName)
+    {
+        $profileDefinition = $this->getProfileDefinition();
+
+        if (isset($profileDefinition[$parameterName])) {
+            return $profileDefinition[$parameterName];
+        }
+
+        throw new InvoiceSuiteInvalidArgumentException(sprintf('Unknown parameter %s', $parameterName));
     }
 
     /**
