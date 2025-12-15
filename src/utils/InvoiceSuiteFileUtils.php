@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\utils;
 
+use Throwable;
 use horstoeko\stringmanagement\FileUtils;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 
 /**
  * Class representing some string utilities for files
@@ -14,4 +16,50 @@ use horstoeko\stringmanagement\FileUtils;
  * @license  https://opensource.org/licenses/MIT MIT
  * @see      https://github.com/horstoeko/invoicesuite
  */
-class InvoiceSuiteFileUtils extends FileUtils {}
+class InvoiceSuiteFileUtils extends FileUtils
+{
+    /**
+     * Returns true if $filenameOrContent is a file, otherwise false
+     *
+     * @param  string $filenameOrContent
+     * @return bool
+     */
+    public static function isReadableFilePath(string $filenameOrContent): bool
+    {
+        if ($filenameOrContent === '' || str_contains($filenameOrContent, "\0")) {
+            return false;
+        }
+
+        if (preg_match('~^[a-z][a-z0-9+.-]*://~i', $filenameOrContent)) {
+            return false;
+        }
+
+        try {
+            return is_file($filenameOrContent) && is_readable($filenameOrContent);
+        } catch (Throwable) {
+            return false;
+        }
+    }
+
+    /**
+     * Returns the content of the file or the content itself
+     *
+     * @param  string                               $filenameOrContent
+     * @throws InvoiceSuiteFileNotReadableException
+     * @return string
+     */
+    public static function getContentFromFileOrString(string $filenameOrContent): string
+    {
+        if (!static::isReadableFilePath($filenameOrContent)) {
+            return $filenameOrContent;
+        }
+
+        $fileContent = file_get_contents($filenameOrContent);
+
+        if ($fileContent === false) {
+            throw new InvoiceSuiteFileNotReadableException($filenameOrContent);
+        }
+
+        return $fileContent;
+    }
+}
