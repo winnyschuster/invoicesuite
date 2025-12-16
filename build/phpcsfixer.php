@@ -95,13 +95,26 @@ return (new Config())
                     '@phpstan-param-out',
                 ],
             ],
-            'phpdoc_order' => true,
+            'phpdoc_order' => [
+                'order' => ['param', 'return', 'throws'],
+            ],
+            'phpdoc_order_by_value' => [
+                'annotations' => ['throws'],
+            ],
             'phpdoc_scalar' => true,
             'phpdoc_trim' => true,
             'phpdoc_trim_consecutive_blank_line_separation' => true,
             'phpdoc_summary' => false,
             'phpdoc_no_empty_return' => false,
-            'phpdoc_separation' => false,
+            'phpdoc_separation' => [
+                'groups' => [
+                    ['category', 'package', 'author', 'license', 'subpackage', 'copyright'],
+                    ['param', 'return'],
+                    ['throws'],
+                    ['deprecated', 'link', 'see', 'since'],
+                ],
+                'skip_unlisted_annotations' => false,
+            ],
             'elseif' => true,
             'blank_line_before_statement' => [
                 'statements' => [
