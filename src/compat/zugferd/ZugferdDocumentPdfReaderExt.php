@@ -32,6 +32,37 @@ use PrinsFrank\PdfParser\Exception\PdfParserException;
 class ZugferdDocumentPdfReaderExt
 {
     /**
+     * Key of the type element in the internal attachment list
+     */
+    public const ATTACHMENT_KEY_TYPE = 'type';
+
+    /**
+     * Key of the content element in the internal attachment list
+     */
+    public const ATTACHMENT_KEY_CONTENT = 'content';
+
+    /**
+     * Key of the filename element in the internal attachment list
+     */
+    public const ATTACHMENT_KEY_FILENAME = 'filename';
+
+    /**
+     * Key of the filename element in the internal attachment list
+     */
+    public const ATTACHMENT_KEY_MIMETYPE = 'mimetype';
+    /**
+     * Identifier for a XML-Invoice-Docuemnt
+     *
+     * @phpstan-ignore classConstant.unused
+     */
+    private const ATTACHMENT_TYPE_XMLINVOICE = 0;
+
+    /**
+     * Identifier for an additional document
+     */
+    private const ATTACHMENT_TYPE_ADDITIONAL = 1;
+
+    /**
      * Internal PDF document reader
      *
      * @var InvoiceSuitePdfDocumentReader
@@ -79,5 +110,156 @@ class ZugferdDocumentPdfReaderExt
     public static function fromContent(string $pdfContent): static
     {
         return new static(InvoiceSuitePdfDocumentReader::createFromContent($pdfContent));
+    }
+
+    /**
+     * Load a PDF file and return a ZugferDocumentReader-Instance
+     *
+     * @param  string                $pdfFilename
+     * @return ZugferdDocumentReader
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws InvoiceSuiteFormatProviderNotFoundException
+     * @throws InvoiceSuiteUnknownContentException
+     * @throws PdfParserException
+     * @throws RuntimeException
+     */
+    public static function readAndGuessFromFile(string $pdfFilename): ZugferdDocumentReader
+    {
+        return static::fromFile($pdfFilename)->resolveInvoiceDocumentReader();
+    }
+
+    /**
+     * Load a PDF content and return a ZugferDocumentReader-Instance
+     *
+     * @param  string                $pdfContent Contains the raw data of a PDF
+     * @return ZugferdDocumentReader
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws InvoiceSuiteFormatProviderNotFoundException
+     * @throws InvoiceSuiteUnknownContentException
+     * @throws PdfParserException
+     * @throws RuntimeException
+     */
+    public static function readAndGuessFromContent(string $pdfContent): ZugferdDocumentReader
+    {
+        return static::fromContent($pdfContent)->resolveInvoiceDocumentReader();
+    }
+
+    /**
+     * Returns a invoice document XML content from a PDF file
+     *
+     * @param  string $pdfFilename Contains a full-qualified filename which must exist and must be readable
+     * @return string
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws InvoiceSuiteFormatProviderNotFoundException
+     * @throws InvoiceSuiteUnknownContentException
+     * @throws PdfParserException
+     * @throws RuntimeException
+     */
+    public static function getInvoiceDocumentContentFromFile(string $pdfFilename): string
+    {
+        return static::fromFile($pdfFilename)->resolveInvoiceDocumentContent();
+    }
+
+    /**
+     * Returns a invoice document XML content from a PDF content string
+     *
+     * @param  string $pdfContent Contains the raw data of a PDF
+     * @return string
+     *
+     * @throws InvoiceSuiteFormatProviderNotFoundException
+     * @throws InvoiceSuiteUnknownContentException
+     * @throws PdfParserException
+     * @throws RuntimeException
+     */
+    public static function getInvoiceDocumentContentFromContent(string $pdfContent): string
+    {
+        return static::fromContent($pdfContent)->resolveInvoiceDocumentContent();
+    }
+
+    /**
+     * Returns all additional documents (except the invoice document) from a PDF file
+     *
+     * @param  string                                                                            $pdfFilename Contains a full-qualified filename which must exist and must be readable
+     * @return array<int, array{type: int, content: string, filename: string, mimetype: string}>
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws InvoiceSuiteFormatProviderNotFoundException
+     * @throws InvoiceSuiteUnknownContentException
+     * @throws PdfParserException
+     * @throws RuntimeException
+     */
+    public static function getAdditionalDocumentContentsFromFile(string $pdfFilename): array
+    {
+        return static::fromFile($pdfFilename)->resolveAdditionalDocumentContents();
+    }
+
+    /**
+     * Returns all additional documents (except the invoice document) from a PDF content string
+     *
+     * @param  string                                                                            $pdfContent Contains the raw data of a PDF
+     * @return array<int, array{type: int, content: string, filename: string, mimetype: string}>
+     *
+     * @throws InvoiceSuiteFormatProviderNotFoundException
+     * @throws InvoiceSuiteUnknownContentException
+     * @throws PdfParserException
+     * @throws RuntimeException
+     */
+    public static function getAdditionalDocumentContentsFromContent(string $pdfContent): array
+    {
+        return static::fromContent($pdfContent)->resolveAdditionalDocumentContents();
+    }
+
+    /**
+     * Returns an instance of ZugferdDocumentReader by a valid invoice attachment
+     *
+     * @return ZugferdDocumentReader
+     *
+     * @throws InvoiceSuiteFormatProviderNotFoundException
+     * @throws InvoiceSuiteUnknownContentException
+     * @throws RuntimeException
+     */
+    public function resolveInvoiceDocumentReader(): ZugferdDocumentReader
+    {
+        return ZugferdDocumentReader::readAndGuessFromContent($this->resolveInvoiceDocumentContent());
+    }
+
+    /**
+     * Returns the content as string if a valid invoice attachment was found, otherwise
+     * an exception will be raised
+     *
+     * @return string
+     */
+    public function resolveInvoiceDocumentContent(): string
+    {
+        return $this->pdfDocumentReader->getInvoiceDocumentAttachment()?->getAttachmentContent() ?? '';
+    }
+
+    /**
+     * Returns a list of all additional attached documents except the invoice document
+     *
+     * @return array<int, array{type: int, content: string, filename: string, mimetype: string}>
+     */
+    public function resolveAdditionalDocumentContents(): array
+    {
+        $result = [];
+        $attachmentContentList = $this->pdfDocumentReader->getAdditionalDocumentAttachments();
+
+        foreach ($attachmentContentList as $attachmentContentItem) {
+            $result[] = [
+                self::ATTACHMENT_KEY_TYPE => self::ATTACHMENT_TYPE_ADDITIONAL,
+                self::ATTACHMENT_KEY_CONTENT => $attachmentContentItem->getAttachmentContent(),
+                self::ATTACHMENT_KEY_FILENAME => $attachmentContentItem->getAttachmentFilename(),
+                self::ATTACHMENT_KEY_MIMETYPE => $attachmentContentItem->getAttachmentMimeType(),
+            ];
+        }
+
+        return $result;
     }
 }
