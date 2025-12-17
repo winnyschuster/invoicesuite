@@ -21,6 +21,12 @@ class ZugferdSettingsTest extends TestCase
         ZugferdSettings::setDecimalSeparator('.');
         ZugferdSettings::setThousandsSeparator('');
         ZugferdSettings::setIccProfileFilename('sRGB2014.icc');
+        ZugferdSettings::setSpecialDecimalPlacesMaps(
+            [
+                '/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:GrossPriceProductTradePrice/ram:ChargeAmount' => 2,
+                '/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:NetPriceProductTradePrice/ram:ChargeAmount' => 2,
+            ]
+        );
     }
 
     public function testAmountDecimals(): void
