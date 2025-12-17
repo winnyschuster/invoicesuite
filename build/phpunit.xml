@@ -122,9 +122,13 @@
             <file>../tests/testcases/pdf/InvoiceSuitePdfMergerTest.php</file>
         </testsuite>
         <testsuite name="compat">
+            <!-- DOcument Builder -->
             <file>../tests/testcases/compat/ZugferdDocumentBuilderExtendedTest.php</file>
+            <!-- DOcument Reader -->
+            <file>../tests/testcases/compat/ZugferdDocumentReaderComfortTest.php</file>
             <file>../tests/testcases/compat/ZugferdDocumentReaderExtendedTest.php</file>
             <file>../tests/testcases/compat/ZugferdDocumentReaderExtended2Test.php</file>
+            <!-- DOcument PDF Reader -->
             <file>../tests/testcases/compat/ZugferdPdfDocumentReaderGeneralTest.php</file>
             <file>../tests/testcases/compat/ZugferdPdfDocumentReaderGeneral2Test.php</file>
             <file>../tests/testcases/compat/ZugferdPdfDocumentReaderMinimumTest.php</file>
