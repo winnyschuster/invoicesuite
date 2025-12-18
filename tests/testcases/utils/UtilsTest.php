@@ -24,8 +24,6 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 final class UtilsTest extends TestCase
 {
-    // region InvoiceSuiteArrayUtils
-
     public function testInvoiceSuiteArrayUtilsEnsureGivenString(): void
     {
         $variable = 'X';
@@ -66,10 +64,6 @@ final class UtilsTest extends TestCase
         $this->assertFalse(InvoiceSuiteArrayUtils::inArrayNoCase($variable, 'c'));
         $this->assertFalse(InvoiceSuiteArrayUtils::inArrayNoCase($variable, 'C'));
     }
-
-    // endregion
-
-    // region InvoiceSuiteDateTimeUtils
 
     public function testInvoiceSuiteDateTimeUtilsIsNullOrEmpty(): void
     {
@@ -224,10 +218,6 @@ final class UtilsTest extends TestCase
         $this->assertNotInstanceOf(DateTimeInterface::class, $dateTimeValue);
     }
 
-    // endregion
-
-    // region InvoiceSuiteFloatUtils
-
     public function testInvoiceSuiteFloatUtilsIsNullOrEmpty(): void
     {
         $floatValue = null;
@@ -275,10 +265,6 @@ final class UtilsTest extends TestCase
 
         $this->assertNotNull(InvoiceSuiteFloatUtils::asNullWhenEmpty($floatValue));
     }
-
-    // endregion
-
-    // region InvoiceSuiteStringUtils
 
     public function testInvoiceSuiteStringUtilsIsNullOrEmpty(): void
     {
@@ -335,10 +321,6 @@ final class UtilsTest extends TestCase
         $this->assertMatchesRegularExpression($guid_regex, InvoiceSuiteStringUtils::createGuid());
         $this->assertMatchesRegularExpression($guid_regex, InvoiceSuiteStringUtils::createGuid(false));
     }
-
-    // endregion
-
-    // region InvoiceSuitePointerUtils
 
     public function testInvoiceSuitePointerUtilsFirst(): void
     {
@@ -451,10 +433,6 @@ final class UtilsTest extends TestCase
         $this->assertFalse(InvoiceSuitePointerUtils::hasNext([], 'ptr1'));
     }
 
-    // endregion
-
-    // region InvoiceSuiteContentTypeResolver
-
     public function testInvoiceSuiteContentTypeResolverResolveContentType(): void
     {
         $this->assertNull(InvoiceSuiteContentTypeResolver::resolveContentType(''));
@@ -469,10 +447,6 @@ final class UtilsTest extends TestCase
 
         $this->assertNull(InvoiceSuiteContentTypeResolver::resolveContentType('<xml><dummy></dummy>'));
     }
-
-    // endregion
-
-    // region InvoiceSuiteAttachment
 
     public function testInvoiceSuiteAttachmentFromFile(): void
     {
@@ -570,10 +544,6 @@ final class UtilsTest extends TestCase
         // InvoiceSuiteAttachment::fromUrl('Dummy');
     }
 
-    // endregion
-
-    // region InvoiceSuiteClassFinder
-
     public function testInvoiceSuiteClassFinderFactory(): void
     {
         $cacheFilename = md5((string) preg_replace('/[^a-zA-Z0-9]/', '', sprintf('invoicesuite-cf-%s', InvoiceSuiteAbstractDocumentFormatProvider::class))).'.cache';
@@ -657,10 +627,6 @@ final class UtilsTest extends TestCase
         $this->assertFileDoesNotExist(InvoiceSuitePathUtils::combinePathWithFile(InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', '..', '..', 'src', 'cache'), 'fb2c9c3d46a7d2650a8813477106ebca.cache'));
     }
 
-    // endregion
-
-    // region InvoiceSuiteFileUtils
-
     public function testInvoiceSuiteFileUtils(): void
     {
         $this->assertTrue(InvoiceSuiteFileUtils::fileExists(__FILE__, true));
@@ -737,10 +703,6 @@ final class UtilsTest extends TestCase
         $this->assertSame(0, InvoiceSuiteFileUtils::getFileSizeFromBase64String(''));
     }
 
-    // endregion
-
-    // region InvoiceSuitePathUtils
-
     public function testInvoiceSuitePathUtils(): void
     {
         $ds = DIRECTORY_SEPARATOR;
@@ -785,6 +747,4 @@ final class UtilsTest extends TestCase
         $this->assertDirectoryDoesNotExist($createdDirectory);
         $this->assertFileDoesNotExist($createdDirectory);
     }
-
-    // endregion
 }

@@ -35,8 +35,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
     use HandlesDocumentSerializer;
     use HandlesDocumentRootObject;
 
-    // region General
-
     /**
      * Constructor
      *
@@ -99,10 +97,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         file_put_contents($tofile, $this->getContentAsJson());
     }
 
-    // endregion
-
-    // region Document DTO
-
     /**
      * Create a document by a DTO
      *
@@ -112,10 +106,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
     abstract public function createFromDTO(
         InvoiceSuiteDocumentHeaderDTO $newDocumentDTO
     ): static;
-
-    // endregion
-
-    // region Document Generals
 
     /**
      * Sets the new document number (e.g. invoice number)
@@ -296,10 +286,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?string $newType = null,
         ?string $newAccountId = null
     ): static;
-
-    // endregion
-
-    // region Document References
 
     /**
      * Set the associated seller's order confirmation.
@@ -615,10 +601,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?string $newCode = null
     ): static;
 
-    // endregion
-
-    // region Document Seller/Supplier
-
     /**
      * Set the name of the seller/supplier party
      *
@@ -838,10 +820,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?string $newType = null,
         ?string $newUri = null
     ): static;
-
-    // endregion
-
-    // region Document Buyer/Customer
 
     /**
      * Set the name of the buyer/customer party
@@ -1063,10 +1041,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?string $newUri = null
     ): static;
 
-    // endregion
-
-    // region Document Tax Representativ party
-
     /**
      * Set the name of the tax representative party
      *
@@ -1286,10 +1260,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?string $newType = null,
         ?string $newUri = null
     ): static;
-
-    // endregion
-
-    // region Document Product Enduser
 
     /**
      * Set the name of the product end-user party
@@ -1511,10 +1481,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?string $newUri = null
     ): static;
 
-    // endregion
-
-    // region Document Ship-To
-
     /**
      * Set the name of the Ship-To party
      *
@@ -1734,10 +1700,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?string $newType = null,
         ?string $newUri = null
     ): static;
-
-    // endregion
-
-    // region Document Ultimate Ship-To
 
     /**
      * Set the name of the ultimate Ship-To party
@@ -1959,10 +1921,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?string $newUri = null
     ): static;
 
-    // endregion
-
-    // region Document Ship-From
-
     /**
      * Set the name of the Ship-From party
      *
@@ -2182,10 +2140,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?string $newType = null,
         ?string $newUri = null
     ): static;
-
-    // endregion
-
-    // region Document Invoicer
 
     /**
      * Set the name of the Invoicer party
@@ -2407,10 +2361,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?string $newUri = null
     ): static;
 
-    // endregion
-
-    // region Document Invoicee
-
     /**
      * Set the name of the Invoicee party
      *
@@ -2631,10 +2581,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?string $newUri = null
     ): static;
 
-    // endregion
-
-    // region Document Payee
-
     /**
      * Set the name of the Payee party
      *
@@ -2854,10 +2800,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?string $newType = null,
         ?string $newUri = null
     ): static;
-
-    // endregion
-
-    // region Document Payment
 
     /**
      * Set Payment mean
@@ -3211,10 +3153,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?string $newBasePeriodUnit = null
     ): static;
 
-    // endregion
-
-    // region Document Tax
-
     /**
      * Set Document Tax Breakdown
      *
@@ -3266,10 +3204,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?DateTimeInterface $newTaxDueDate = null,
         ?string $newTaxDueCode = null
     ): static;
-
-    // endregion
-
-    // region Document Allowances/Charges
 
     /**
      * Set Document Allowance/Charge
@@ -3359,10 +3293,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?float $newTaxPercent = null
     ): static;
 
-    // endregion
-
-    // region Document Amounts
-
     /**
      * Prepare the document-level summation (Sets all values to zero)
      *
@@ -3396,10 +3326,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?float $newPrepaidAmount = null,
         ?float $newRoungingAmount = null
     ): static;
-
-    // endregion
-
-    // region Document Positions
 
     /**
      * Add a new position to document
@@ -4654,6 +4580,4 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
             SerializationContext::create()->setGroups($this->getCurrentDocumentFormatProvider()->getSerializerGroups())
         );
     }
-
-    // endregion
 }

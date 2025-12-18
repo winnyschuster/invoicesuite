@@ -25,8 +25,6 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
  */
 abstract class InvoiceSuiteAbstractDocumentFormatProvider
 {
-    // region Document
-
     /**
      * The instance of the internal reader class
      *
@@ -126,10 +124,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      */
     abstract public function getBuilderClassName(): string;
 
-    // endregion
-
-    // region PDF
-
     /**
      * Returns true if PDF support is available
      *
@@ -157,10 +151,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      * @return string
      */
     abstract public function getPdfConstructorClassName(): string;
-
-    // endregion
-
-    // region General
 
     /**
      * Create a new reader instance
@@ -280,6 +270,4 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
     {
         return InvoiceSuiteArrayUtils::inArrayNoCase($this->getAllowedPdfAttachmentFilenames(), $filename);
     }
-
-    // endregion
 }

@@ -85,8 +85,6 @@ class InvoiceSuiteDocumentReader
         return $this->forwardCallWithCheckTo($this->getCurrentDocumentFormatProvider()->getReader(), $method, $parameters);
     }
 
-    // region Reader
-
     /**
      * Create reader by file
      *
@@ -145,10 +143,6 @@ class InvoiceSuiteDocumentReader
         )->createFromDTO($dto);
     }
 
-    // endregion
-
-    // region Document DTO
-
     /**
      * Create a DTO from this document
      *
@@ -166,10 +160,6 @@ class InvoiceSuiteDocumentReader
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Generals
 
     /**
      * Gets the document number (e.g. invoice number)
@@ -453,10 +443,6 @@ class InvoiceSuiteDocumentReader
 
         return $this;
     }
-
-    // endregion
-
-    // region Document References
 
     /**
      * Go to the first associated seller's order confirmation
@@ -957,10 +943,6 @@ class InvoiceSuiteDocumentReader
         return $this;
     }
 
-    // endregion
-
-    // region Document Seller/Supplier
-
     /**
      * Get the name of the buyer/customer party
      *
@@ -1287,10 +1269,6 @@ class InvoiceSuiteDocumentReader
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Buyer/Customer
 
     /**
      * Get the name of the buyer/customer party
@@ -1619,10 +1597,6 @@ class InvoiceSuiteDocumentReader
         return $this;
     }
 
-    // endregion
-
-    // region Document Tax Representativ party
-
     /**
      * Get the name of the tax representative party
      *
@@ -1949,10 +1923,6 @@ class InvoiceSuiteDocumentReader
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Product Enduser
 
     /**
      * Get the name of the product end-user party
@@ -2281,10 +2251,6 @@ class InvoiceSuiteDocumentReader
         return $this;
     }
 
-    // endregion
-
-    // region Document Ship-To
-
     /**
      * Get the name of the Ship-To party
      *
@@ -2611,10 +2577,6 @@ class InvoiceSuiteDocumentReader
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Ultimate Ship-To
 
     /**
      * Get the name of the ultimate Ship-To party
@@ -2943,10 +2905,6 @@ class InvoiceSuiteDocumentReader
         return $this;
     }
 
-    // endregion
-
-    // region Document Ship-From
-
     /**
      * Get the name of the Ship-From party
      *
@@ -3273,10 +3231,6 @@ class InvoiceSuiteDocumentReader
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Invoicer
 
     /**
      * Get the name of the Invoicer party
@@ -3605,10 +3559,6 @@ class InvoiceSuiteDocumentReader
         return $this;
     }
 
-    // endregion
-
-    // region Document Invoicee
-
     /**
      * Get the name of the Invoicee party
      *
@@ -3935,10 +3885,6 @@ class InvoiceSuiteDocumentReader
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Payee
 
     /**
      * Get the name of the Payee party
@@ -4267,10 +4213,6 @@ class InvoiceSuiteDocumentReader
         return $this;
     }
 
-    // endregion
-
-    // region Document Payment
-
     /**
      * Go to the first Payment mean
      *
@@ -4577,10 +4519,6 @@ class InvoiceSuiteDocumentReader
         return $this;
     }
 
-    // endregion
-
-    // region Document Tax
-
     /**
      * Go to the first Document Tax Breakdown
      *
@@ -4650,10 +4588,6 @@ class InvoiceSuiteDocumentReader
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Allowances/Charges
 
     /**
      * Go to the first Document Allowance/Charge
@@ -4779,10 +4713,6 @@ class InvoiceSuiteDocumentReader
         return $this;
     }
 
-    // endregion
-
-    // region Document Amounts
-
     /**
      * Get the document summation
      *
@@ -4835,10 +4765,6 @@ class InvoiceSuiteDocumentReader
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Positions
 
     /**
      * Go to the first document position
@@ -6845,6 +6771,4 @@ class InvoiceSuiteDocumentReader
 
         return $this;
     }
-
-    // endregion
 }

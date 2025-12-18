@@ -36,8 +36,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
     use HandlesDocumentSerializer;
     use HandlesDocumentRootObject;
 
-    // region General
-
     /**
      * Constructor
      *
@@ -71,10 +69,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         throw new InvoiceSuiteUnknownContentException();
     }
 
-    // endregion
-
-    // region Document DTO
-
     /**
      * Create a DTO from this document
      *
@@ -86,10 +80,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
     abstract public function convertToDTO(
         ?InvoiceSuiteDocumentHeaderDTO &$newDocumentDTO
     ): static;
-
-    // endregion
-
-    // region Document Generals
 
     /**
      * Gets the document number (e.g. invoice number)
@@ -303,10 +293,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newType,
         ?string &$newAccountId
     ): static;
-
-    // endregion
-
-    // region Document References
 
     /**
      * Go to the first associated seller's order confirmation
@@ -678,10 +664,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newCode = null
     ): static;
 
-    // endregion
-
-    // region Document Seller/Supplier
-
     /**
      * Get the name of the seller/supplier party
      *
@@ -920,10 +902,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newType,
         ?string &$newUri
     ): static;
-
-    // endregion
-
-    // region Document Buyer/Customer
 
     /**
      * Get the name of the buyer/customer party
@@ -1164,10 +1142,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newUri
     ): static;
 
-    // endregion
-
-    // region Document Tax Representativ party
-
     /**
      * Get the name of the tax representative party
      *
@@ -1406,10 +1380,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newType,
         ?string &$newUri
     ): static;
-
-    // endregion
-
-    // region Document Product Enduser
 
     /**
      * Get the name of the product end-user party
@@ -1650,10 +1620,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newUri
     ): static;
 
-    // endregion
-
-    // region Document Ship-To
-
     /**
      * Get the name of the Ship-To party
      *
@@ -1892,10 +1858,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newType,
         ?string &$newUri
     ): static;
-
-    // endregion
-
-    // region Document Ultimate Ship-To
 
     /**
      * Get the name of the ultimate Ship-To party
@@ -2136,10 +2098,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newUri
     ): static;
 
-    // endregion
-
-    // region Document Ship-From
-
     /**
      * Get the name of the Ship-From party
      *
@@ -2378,10 +2336,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newType,
         ?string &$newUri
     ): static;
-
-    // endregion
-
-    // region Document Invoicer
 
     /**
      * Get the name of the Invoicer party
@@ -2622,10 +2576,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newUri
     ): static;
 
-    // endregion
-
-    // region Document Invoicee
-
     /**
      * Get the name of the Invoicee party
      *
@@ -2864,10 +2814,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newType,
         ?string &$newUri
     ): static;
-
-    // endregion
-
-    // region Document Payee
 
     /**
      * Get the name of the Payee party
@@ -3108,10 +3054,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newUri
     ): static;
 
-    // endregion
-
-    // region Document Payment
-
     /**
      * Go to the first Payment mean
      *
@@ -3331,10 +3273,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newBasePeriodUnit
     ): static;
 
-    // endregion
-
-    // region Document Tax
-
     /**
      * Go to the first Document Tax Breakdown
      *
@@ -3384,10 +3322,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?DateTimeInterface &$newTaxDueDate,
         ?string &$newTaxDueCode
     ): static;
-
-    // endregion
-
-    // region Document Allowances/Charges
 
     /**
      * Go to the first Document Allowance/Charge
@@ -3477,10 +3411,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?float &$newTaxPercent
     ): static;
 
-    // endregion
-
-    // region Document Amounts
-
     /**
      * Get the document summation
      *
@@ -3518,10 +3448,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?float &$newPrepaidAmount,
         ?float &$newRoungingAmount
     ): static;
-
-    // endregion
-
-    // region Document Positions
 
     /**
      * Go to the first document position
@@ -4992,6 +4918,4 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
 
         return $this;
     }
-
-    // endregion
 }

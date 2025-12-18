@@ -88,8 +88,6 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocumentFormatReader
 {
-    // region Document DTO
-
     /**
      * Create a DTO from this document
      *
@@ -2933,10 +2931,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         return $this;
     }
 
-    // endregion
-
-    // region Document References
-
     /**
      * Go to the first associated seller's order confirmation
      *
@@ -3648,10 +3642,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         return $this;
     }
 
-    // endregion
-
-    // region Document Seller/Supplier
-
     /**
      * Get the name of the seller/supplier party
      *
@@ -4124,10 +4114,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Buyer/Customer
 
     /**
      * Get the name of the buyer/customer party
@@ -4602,10 +4588,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         return $this;
     }
 
-    // endregion
-
-    // region Document Tax Representativ party
-
     /**
      * Get the name of the tax representative party
      *
@@ -5077,10 +5059,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Product Enduser
 
     /**
      * Get the name of the product end-user party
@@ -5819,10 +5797,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         return $this;
     }
 
-    // endregion
-
-    // region Document Ultimate Ship-To
-
     /**
      * Get the name of the ultimate Ship-To party
      *
@@ -6150,10 +6124,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Ship-From
 
     /**
      * Get the name of the Ship-From party
@@ -6483,10 +6453,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         return $this;
     }
 
-    // endregion
-
-    // region Document Invoicer
-
     /**
      * Get the name of the Invoicer party
      *
@@ -6815,10 +6781,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         return $this;
     }
 
-    // endregion
-
-    // region Document Invoicee
-
     /**
      * Get the name of the Invoicee party
      *
@@ -7146,10 +7108,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Payee
 
     /**
      * Get the name of the Payee party
@@ -7620,10 +7578,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         return $this;
     }
 
-    // endregion
-
-    // region Document Payment
-
     /**
      * Go to the first Payment mean
      *
@@ -8080,10 +8034,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         return $this;
     }
 
-    // endregion
-
-    // region Document Allowances/Charges
-
     /**
      * Go to the first Document Allowance/Charge
      *
@@ -8230,10 +8180,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         return $this;
     }
 
-    // endregion
-
-    // region Document Amounts
-
     /**
      * Get the document summation
      *
@@ -8290,10 +8236,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Positions
 
     /**
      * Go to the first document position
@@ -10431,10 +10373,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         return $this->getDocumentRootObject();
     }
 
-    // endregion
-
-    // region Document Generals
-
     /**
      * Reset all document-header-level internal pointers
      *
@@ -10748,10 +10686,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
             );
     }
 
-    // endregion
-
-    // region Document Ship-To
-
     /**
      * Resolve the first delivery node
      *
@@ -10855,8 +10789,6 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         );
     }
 
-    // endregion
-    // region Document Tax
     /**
      * Resolve tax total
      *
@@ -10873,6 +10805,4 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         return $taxTotal;
     }
-
-    // endregion
 }

@@ -75,8 +75,6 @@ use ValueError;
 
 class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocumentFormatReader
 {
-    // region Document DTO
-
     /**
      * Create a DTO from this document
      *
@@ -2940,10 +2938,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         return $this;
     }
 
-    // endregion
-
-    // region Document References
-
     /**
      * Go to the first associated seller's order confirmation
      *
@@ -3666,10 +3660,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         return $this;
     }
 
-    // endregion
-
-    // region Document Seller/Supplier
-
     /**
      * Get the name of the seller/supplier party
      *
@@ -4137,10 +4127,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Buyer/Customer
 
     /**
      * Get the name of the buyer/customer party
@@ -4610,10 +4596,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         return $this;
     }
 
-    // endregion
-
-    // region Document Tax Representativ party
-
     /**
      * Get the name of the tax representative party
      *
@@ -5082,10 +5064,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         return $this;
     }
 
-    // endregion
-
-    // region Document Product Enduser
-
     /**
      * Get the name of the product end-user party
      *
@@ -5413,10 +5391,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Ship-To
 
     /**
      * Get the name of the Ship-To party
@@ -5886,10 +5860,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         return $this;
     }
 
-    // endregion
-
-    // region Document Ultimate Ship-To
-
     /**
      * Get the name of the ultimate Ship-To party
      *
@@ -6217,10 +6187,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Ship-From
 
     /**
      * Get the name of the Ship-From party
@@ -6550,10 +6516,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         return $this;
     }
 
-    // endregion
-
-    // region Document Invoicer
-
     /**
      * Get the name of the Invoicer party
      *
@@ -6882,10 +6844,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         return $this;
     }
 
-    // endregion
-
-    // region Document Invoicee
-
     /**
      * Get the name of the Invoicee party
      *
@@ -7213,10 +7171,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Payee
 
     /**
      * Get the name of the Payee party
@@ -7686,10 +7640,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         return $this;
     }
 
-    // endregion
-
-    // region Document Payment
-
     /**
      * Go to the first Payment mean
      *
@@ -8093,10 +8043,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         return $this;
     }
 
-    // endregion
-
-    // region Document Tax
-
     /**
      * Go to the first Document Tax Breakdown
      *
@@ -8189,10 +8135,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Allowances/Charges
 
     /**
      * Go to the first Document Allowance/Charge
@@ -8334,10 +8276,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         return $this;
     }
 
-    // endregion
-
-    // region Document Amounts
-
     /**
      * Get the document summation
      *
@@ -8394,10 +8332,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
 
         return $this;
     }
-
-    // endregion
-
-    // region Document Positions
 
     /**
      * Go to the first document position
@@ -10563,10 +10497,6 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         return $this->getDocumentRootObject();
     }
 
-    // endregion
-
-    // region Document Generals
-
     /**
      * Reset all document-header-level internal pointers
      *
@@ -10731,6 +10661,4 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         InvoiceSuitePointerUtils::resetSingle('documentpositionallowancecharge');
         InvoiceSuitePointerUtils::resetSingle('documentpositionpostingreference');
     }
-
-    // endregion
 }

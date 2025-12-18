@@ -864,11 +864,17 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
             return $this;
         }
 
-        $this->addDocumentBillingPeriod(
-            $newStartDate,
-            $newEndDate,
-            $newDescription
-        );
+        $invoicePeriod = $this
+            ->getUblInvoiceRootObject()
+            ->addToInvoicePeriodWithCreate();
+
+        if (!is_null($newStartDate)) {
+            $invoicePeriod->setStartDate($newStartDate);
+        }
+
+        if (!is_null($newEndDate)) {
+            $invoicePeriod->setEndDate($newEndDate);
+        }
 
         return $this;
     }
@@ -890,17 +896,11 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
             return $this;
         }
 
-        $invoicePeriod = $this
-            ->getUblInvoiceRootObject()
-            ->addToInvoicePeriodWithCreate();
-
-        if (!is_null($newStartDate)) {
-            $invoicePeriod->setStartDate($newStartDate);
-        }
-
-        if (!is_null($newEndDate)) {
-            $invoicePeriod->setEndDate($newEndDate);
-        }
+        $this->setDocumentBillingPeriod(
+            $newStartDate,
+            $newEndDate,
+            $newDescription
+        );
 
         return $this;
     }
@@ -1194,7 +1194,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
             ->addToAdditionalDocumentReferenceWithCreate();
 
         $additionalReference->getIDWithCreate()->setValue($newReferenceNumber);
-        $additionalReference->getDocumentTypeCodeWithCreate()->setValue($newTypeCode === '130' ? $newTypeCode : null);
+
+        if ($newTypeCode === '130') {
+            $additionalReference->getDocumentTypeCodeWithCreate()->setValue($newTypeCode);
+        }
 
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newDescription)) {
             $additionalReference
@@ -6965,7 +6968,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
             ->addOnceToDocumentReferenceWithCreate();
 
         $documentReference->getIDWithCreate()->setValue($newReferenceNumber);
-        $documentReference->getDocumentTypeCodeWithCreate()->setValue($newTypeCode === '130' ? $newTypeCode : null);
+
+        if ($newTypeCode === '130') {
+            $documentReference->getDocumentTypeCodeWithCreate()->setValue($newTypeCode);
+        }
 
         return $this;
     }
@@ -7779,7 +7785,7 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
         $this
             ->getUblInvoiceRootObject()
             ->getLatestInvoiceLineWithCreate()
-            ->addToInvoicePeriodWithCreate()
+            ->addOnceToInvoicePeriodWithCreate()
             ->setStartDate($newStartDate)
             ->setEndDate($newEndDate);
 
