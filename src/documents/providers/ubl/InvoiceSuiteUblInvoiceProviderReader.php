@@ -2626,7 +2626,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentDescription(
         ?string &$newDocumentDescription
     ): static {
-        $newDocumentDescription = $this->getUblInvoiceRootObject()->getInvoiceTypeCode()?->getName() ?? '';
+        $newDocumentDescription = '';
 
         return $this;
     }
@@ -2642,7 +2642,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentLanguage(
         ?string &$newDocumentLanguage
     ): static {
-        $newDocumentLanguage = $this->getUblInvoiceRootObject()->getInvoiceTypeCode()?->getLanguageID() ?? '';
+        $newDocumentLanguage = '';
 
         return $this;
     }
@@ -2722,7 +2722,7 @@ class InvoiceSuiteUblInvoiceProviderReader extends InvoiceSuiteAbstractDocumentF
     public function getDocumentIsCopy(
         ?bool &$newDocumentIsCopy = null
     ): static {
-        $newDocumentIsCopy = $this->getUblInvoiceRootObject()->getCopyIndicator() ?? false;
+        $newDocumentIsCopy = false;
 
         return $this;
     }
