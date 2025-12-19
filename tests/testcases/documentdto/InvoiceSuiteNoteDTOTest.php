@@ -44,4 +44,31 @@ final class InvoiceSuiteNoteDTOTest extends TestCase
 
         $this->assertSame($subjectCodeValue, $invoiceSuiteNoteDTO->getSubjectCode());
     }
+
+    public function testNullOnEmptyContentGetterAndSetter(): void
+    {
+        $invoiceSuiteNoteDTO = new InvoiceSuiteNoteDTO();
+        $contentValue = '';
+        $invoiceSuiteNoteDTO->setContent($contentValue);
+
+        $this->assertNull($invoiceSuiteNoteDTO->getContent());
+    }
+
+    public function testNullOnEmptyContentCodeGetterAndSetter(): void
+    {
+        $invoiceSuiteNoteDTO = new InvoiceSuiteNoteDTO();
+        $contentCodeValue = '';
+        $invoiceSuiteNoteDTO->setContentCode($contentCodeValue);
+
+        $this->assertNull($invoiceSuiteNoteDTO->getContentCode());
+    }
+
+    public function testNullOnEmptySubjectCodeGetterAndSetter(): void
+    {
+        $invoiceSuiteNoteDTO = new InvoiceSuiteNoteDTO();
+        $subjectCodeValue = '';
+        $invoiceSuiteNoteDTO->setSubjectCode($subjectCodeValue);
+
+        $this->assertNull($invoiceSuiteNoteDTO->getSubjectCode());
+    }
 }

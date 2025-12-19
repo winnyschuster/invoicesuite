@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+
 /**
  * Class representing a DTO for ...
  *
@@ -88,7 +90,7 @@ class InvoiceSuiteMeasureDTO
      */
     public function setUnit(?string $unit): static
     {
-        $this->unit = $unit;
+        $this->unit = InvoiceSuiteStringUtils::asNullWhenEmpty($unit);
 
         return $this;
     }

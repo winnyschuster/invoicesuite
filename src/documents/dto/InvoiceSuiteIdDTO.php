@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+
 /**
  * Class representing a DTO for ...
  *
@@ -65,7 +67,7 @@ class InvoiceSuiteIdDTO
      */
     public function setId(?string $id): static
     {
-        $this->id = $id;
+        $this->id = InvoiceSuiteStringUtils::asNullWhenEmpty($id);
 
         return $this;
     }
@@ -88,7 +90,7 @@ class InvoiceSuiteIdDTO
      */
     public function setIdType(?string $idType): static
     {
-        $this->idType = $idType;
+        $this->idType = InvoiceSuiteStringUtils::asNullWhenEmpty($idType);
 
         return $this;
     }

@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+
 /**
  * Class representing a DTO for ...
  *
@@ -74,7 +76,7 @@ class InvoiceSuiteNoteDTO
      */
     public function setContent(?string $content): static
     {
-        $this->content = $content;
+        $this->content = InvoiceSuiteStringUtils::asNullWhenEmpty($content);
 
         return $this;
     }
@@ -97,7 +99,7 @@ class InvoiceSuiteNoteDTO
      */
     public function setContentCode(?string $contentCode): static
     {
-        $this->contentCode = $contentCode;
+        $this->contentCode = InvoiceSuiteStringUtils::asNullWhenEmpty($contentCode);
 
         return $this;
     }
@@ -120,7 +122,7 @@ class InvoiceSuiteNoteDTO
      */
     public function setSubjectCode(?string $subjectCode): static
     {
-        $this->subjectCode = $subjectCode;
+        $this->subjectCode = InvoiceSuiteStringUtils::asNullWhenEmpty($subjectCode);
 
         return $this;
     }

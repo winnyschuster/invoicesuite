@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+
 /**
  * Class representing a DTO for ...
  *
@@ -117,7 +119,7 @@ class InvoiceSuiteAddressDTO
      */
     public function setAddressLine1(?string $addressLine1): static
     {
-        $this->addressLine1 = $addressLine1;
+        $this->addressLine1 = InvoiceSuiteStringUtils::asNullWhenEmpty($addressLine1);
 
         return $this;
     }
@@ -140,7 +142,7 @@ class InvoiceSuiteAddressDTO
      */
     public function setAddressLine2(?string $addressLine2): static
     {
-        $this->addressLine2 = $addressLine2;
+        $this->addressLine2 = InvoiceSuiteStringUtils::asNullWhenEmpty($addressLine2);
 
         return $this;
     }
@@ -163,7 +165,7 @@ class InvoiceSuiteAddressDTO
      */
     public function setAddressLine3(?string $addressLine3): static
     {
-        $this->addressLine3 = $addressLine3;
+        $this->addressLine3 = InvoiceSuiteStringUtils::asNullWhenEmpty($addressLine3);
 
         return $this;
     }
@@ -186,7 +188,7 @@ class InvoiceSuiteAddressDTO
      */
     public function setPostcode(?string $postcode): static
     {
-        $this->postcode = $postcode;
+        $this->postcode = InvoiceSuiteStringUtils::asNullWhenEmpty($postcode);
 
         return $this;
     }
@@ -209,7 +211,7 @@ class InvoiceSuiteAddressDTO
      */
     public function setCity(?string $city): static
     {
-        $this->city = $city;
+        $this->city = InvoiceSuiteStringUtils::asNullWhenEmpty($city);
 
         return $this;
     }
@@ -232,7 +234,7 @@ class InvoiceSuiteAddressDTO
      */
     public function setCountry(?string $country): static
     {
-        $this->country = $country;
+        $this->country = InvoiceSuiteStringUtils::asNullWhenEmpty($country);
 
         return $this;
     }
@@ -255,7 +257,7 @@ class InvoiceSuiteAddressDTO
      */
     public function setSubDivision(?string $subDivision): static
     {
-        $this->subDivision = $subDivision;
+        $this->subDivision = InvoiceSuiteStringUtils::asNullWhenEmpty($subDivision);
 
         return $this;
     }

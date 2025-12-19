@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\dto;
 
 use DateTimeInterface;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 /**
  * Class representing a DTO for ...
@@ -79,7 +80,7 @@ class InvoiceSuiteReferenceDocumentLineDTO
      */
     public function setReferenceNumber(?string $referenceNumber): static
     {
-        $this->referenceNumber = $referenceNumber;
+        $this->referenceNumber = InvoiceSuiteStringUtils::asNullWhenEmpty($referenceNumber);
 
         return $this;
     }
@@ -102,7 +103,7 @@ class InvoiceSuiteReferenceDocumentLineDTO
      */
     public function setReferenceLineNumber(?string $referenceLineNumber): static
     {
-        $this->referenceLineNumber = $referenceLineNumber;
+        $this->referenceLineNumber = InvoiceSuiteStringUtils::asNullWhenEmpty($referenceLineNumber);
 
         return $this;
     }

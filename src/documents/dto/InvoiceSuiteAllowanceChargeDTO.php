@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+
 /**
  * Class representing a DTO for ...
  *
@@ -229,7 +231,7 @@ class InvoiceSuiteAllowanceChargeDTO
      */
     public function setTaxCategory(?string $taxCategory): static
     {
-        $this->taxCategory = $taxCategory;
+        $this->taxCategory = InvoiceSuiteStringUtils::asNullWhenEmpty($taxCategory);
 
         return $this;
     }
@@ -252,7 +254,7 @@ class InvoiceSuiteAllowanceChargeDTO
      */
     public function setTaxType(?string $taxType): static
     {
-        $this->taxType = $taxType;
+        $this->taxType = InvoiceSuiteStringUtils::asNullWhenEmpty($taxType);
 
         return $this;
     }
@@ -298,7 +300,7 @@ class InvoiceSuiteAllowanceChargeDTO
      */
     public function setReason(?string $reason): static
     {
-        $this->reason = $reason;
+        $this->reason = InvoiceSuiteStringUtils::asNullWhenEmpty($reason);
 
         return $this;
     }
@@ -321,7 +323,7 @@ class InvoiceSuiteAllowanceChargeDTO
      */
     public function setReasonCode(?string $reasonCode): static
     {
-        $this->reasonCode = $reasonCode;
+        $this->reasonCode = InvoiceSuiteStringUtils::asNullWhenEmpty($reasonCode);
 
         return $this;
     }

@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+
 /**
  * Class representing a DTO for ...
  *
@@ -120,7 +122,7 @@ class InvoiceSuiteServiceChargeDTO
      */
     public function setDescription(?string $description): static
     {
-        $this->description = $description;
+        $this->description = InvoiceSuiteStringUtils::asNullWhenEmpty($description);
 
         return $this;
     }
@@ -143,7 +145,7 @@ class InvoiceSuiteServiceChargeDTO
      */
     public function setTaxCategory(?string $taxCategory): static
     {
-        $this->taxCategory = $taxCategory;
+        $this->taxCategory = InvoiceSuiteStringUtils::asNullWhenEmpty($taxCategory);
 
         return $this;
     }
@@ -166,7 +168,7 @@ class InvoiceSuiteServiceChargeDTO
      */
     public function setTaxType(?string $taxType): static
     {
-        $this->taxType = $taxType;
+        $this->taxType = InvoiceSuiteStringUtils::asNullWhenEmpty($taxType);
 
         return $this;
     }

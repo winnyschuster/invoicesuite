@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\dto;
 
 use DateTimeInterface;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 /**
  * Class representing a DTO for ...
@@ -99,7 +100,7 @@ class InvoiceSuitePaymentTermDTO
      */
     public function setDescription(?string $description): static
     {
-        $this->description = $description;
+        $this->description = InvoiceSuiteStringUtils::asNullWhenEmpty($description);
 
         return $this;
     }
@@ -422,7 +423,7 @@ class InvoiceSuitePaymentTermDTO
      */
     public function setMandate(?string $mandate): static
     {
-        $this->mandate = $mandate;
+        $this->mandate = InvoiceSuiteStringUtils::asNullWhenEmpty($mandate);
 
         return $this;
     }

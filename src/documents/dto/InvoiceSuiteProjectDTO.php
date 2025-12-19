@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+
 /**
  * Class representing a DTO for ...
  *
@@ -65,7 +67,7 @@ class InvoiceSuiteProjectDTO
      */
     public function setProjectNumber(?string $projectNumber): static
     {
-        $this->projectNumber = $projectNumber;
+        $this->projectNumber = InvoiceSuiteStringUtils::asNullWhenEmpty($projectNumber);
 
         return $this;
     }
@@ -88,7 +90,7 @@ class InvoiceSuiteProjectDTO
      */
     public function setProjectName(?string $projectName): static
     {
-        $this->projectName = $projectName;
+        $this->projectName = InvoiceSuiteStringUtils::asNullWhenEmpty($projectName);
 
         return $this;
     }

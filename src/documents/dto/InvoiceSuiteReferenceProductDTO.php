@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+
 /**
  * Class representing a DTO for ...
  *
@@ -127,7 +129,7 @@ class InvoiceSuiteReferenceProductDTO
      */
     public function setId(?string $id): static
     {
-        $this->id = $id;
+        $this->id = InvoiceSuiteStringUtils::asNullWhenEmpty($id);
 
         return $this;
     }
@@ -150,7 +152,7 @@ class InvoiceSuiteReferenceProductDTO
      */
     public function setName(?string $name): static
     {
-        $this->name = $name;
+        $this->name = InvoiceSuiteStringUtils::asNullWhenEmpty($name);
 
         return $this;
     }
@@ -173,7 +175,7 @@ class InvoiceSuiteReferenceProductDTO
      */
     public function setDescription(?string $description): static
     {
-        $this->description = $description;
+        $this->description = InvoiceSuiteStringUtils::asNullWhenEmpty($description);
 
         return $this;
     }
@@ -196,7 +198,7 @@ class InvoiceSuiteReferenceProductDTO
      */
     public function setSellerId(?string $sellerId): static
     {
-        $this->sellerId = $sellerId;
+        $this->sellerId = InvoiceSuiteStringUtils::asNullWhenEmpty($sellerId);
 
         return $this;
     }
@@ -219,7 +221,7 @@ class InvoiceSuiteReferenceProductDTO
      */
     public function setBuyerId(?string $buyerId): static
     {
-        $this->buyerId = $buyerId;
+        $this->buyerId = InvoiceSuiteStringUtils::asNullWhenEmpty($buyerId);
 
         return $this;
     }
@@ -265,7 +267,7 @@ class InvoiceSuiteReferenceProductDTO
      */
     public function setIndustryId(?string $industryId): static
     {
-        $this->industryId = $industryId;
+        $this->industryId = InvoiceSuiteStringUtils::asNullWhenEmpty($industryId);
 
         return $this;
     }

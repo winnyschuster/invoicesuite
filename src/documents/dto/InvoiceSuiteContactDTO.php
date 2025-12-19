@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+
 /**
  * Class representing a DTO for ...
  *
@@ -97,7 +99,7 @@ class InvoiceSuiteContactDTO
      */
     public function setPersonName(?string $personName): static
     {
-        $this->personName = $personName;
+        $this->personName = InvoiceSuiteStringUtils::asNullWhenEmpty($personName);
 
         return $this;
     }
@@ -120,7 +122,7 @@ class InvoiceSuiteContactDTO
      */
     public function setDepartmentName(?string $departmentName): static
     {
-        $this->departmentName = $departmentName;
+        $this->departmentName = InvoiceSuiteStringUtils::asNullWhenEmpty($departmentName);
 
         return $this;
     }
@@ -143,7 +145,7 @@ class InvoiceSuiteContactDTO
      */
     public function setPhoneNumber(?string $phoneNumber): static
     {
-        $this->phoneNumber = $phoneNumber;
+        $this->phoneNumber = InvoiceSuiteStringUtils::asNullWhenEmpty($phoneNumber);
 
         return $this;
     }
@@ -166,7 +168,7 @@ class InvoiceSuiteContactDTO
      */
     public function setFaxNumber(?string $faxNumber): static
     {
-        $this->faxNumber = $faxNumber;
+        $this->faxNumber = InvoiceSuiteStringUtils::asNullWhenEmpty($faxNumber);
 
         return $this;
     }
@@ -189,7 +191,7 @@ class InvoiceSuiteContactDTO
      */
     public function setEmailAddress(?string $emailAddress): static
     {
-        $this->emailAddress = $emailAddress;
+        $this->emailAddress = InvoiceSuiteStringUtils::asNullWhenEmpty($emailAddress);
 
         return $this;
     }

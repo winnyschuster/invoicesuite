@@ -13,6 +13,7 @@ namespace horstoeko\invoicesuite\documents\dto;
 
 use DateTimeInterface;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 /**
  * Class representing a DTO for ...
@@ -96,7 +97,7 @@ class InvoiceSuiteReferenceDocumentExtDTO extends InvoiceSuiteReferenceDocumentD
      */
     public function setTypeCode(?string $typeCode): static
     {
-        $this->typeCode = $typeCode;
+        $this->typeCode = InvoiceSuiteStringUtils::asNullWhenEmpty($typeCode);
 
         return $this;
     }
@@ -119,7 +120,7 @@ class InvoiceSuiteReferenceDocumentExtDTO extends InvoiceSuiteReferenceDocumentD
      */
     public function setReferenceTypeCode(?string $referenceTypeCode): static
     {
-        $this->referenceTypeCode = $referenceTypeCode;
+        $this->referenceTypeCode = InvoiceSuiteStringUtils::asNullWhenEmpty($referenceTypeCode);
 
         return $this;
     }
@@ -142,7 +143,7 @@ class InvoiceSuiteReferenceDocumentExtDTO extends InvoiceSuiteReferenceDocumentD
      */
     public function setDescription(?string $description): static
     {
-        $this->description = $description;
+        $this->description = InvoiceSuiteStringUtils::asNullWhenEmpty($description);
 
         return $this;
     }

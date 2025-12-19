@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\dto;
 
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 /**
  * Class representing a DTO for ...
@@ -159,7 +160,7 @@ class InvoiceSuitePaymentMeanDTO
      */
     public function setTypeCode(?string $typeCode): static
     {
-        $this->typeCode = $typeCode;
+        $this->typeCode = InvoiceSuiteStringUtils::asNullWhenEmpty($typeCode);
 
         return $this;
     }
@@ -182,7 +183,7 @@ class InvoiceSuitePaymentMeanDTO
      */
     public function setName(?string $name): static
     {
-        $this->name = $name;
+        $this->name = InvoiceSuiteStringUtils::asNullWhenEmpty($name);
 
         return $this;
     }
@@ -205,7 +206,7 @@ class InvoiceSuitePaymentMeanDTO
      */
     public function setFinancialCardId(?string $financialCardId): static
     {
-        $this->financialCardId = $financialCardId;
+        $this->financialCardId = InvoiceSuiteStringUtils::asNullWhenEmpty($financialCardId);
 
         return $this;
     }
@@ -228,7 +229,7 @@ class InvoiceSuitePaymentMeanDTO
      */
     public function setFinancialCardHolder(?string $financialCardHolder): static
     {
-        $this->financialCardHolder = $financialCardHolder;
+        $this->financialCardHolder = InvoiceSuiteStringUtils::asNullWhenEmpty($financialCardHolder);
 
         return $this;
     }
@@ -251,7 +252,7 @@ class InvoiceSuitePaymentMeanDTO
      */
     public function setBuyerIban(?string $buyerIban): static
     {
-        $this->buyerIban = $buyerIban;
+        $this->buyerIban = InvoiceSuiteStringUtils::asNullWhenEmpty($buyerIban);
 
         return $this;
     }
@@ -274,7 +275,7 @@ class InvoiceSuitePaymentMeanDTO
      */
     public function setPayeeIban(?string $payeeIban): static
     {
-        $this->payeeIban = $payeeIban;
+        $this->payeeIban = InvoiceSuiteStringUtils::asNullWhenEmpty($payeeIban);
 
         return $this;
     }
@@ -297,7 +298,7 @@ class InvoiceSuitePaymentMeanDTO
      */
     public function setPayeeAccountName(?string $payeeAccountName): static
     {
-        $this->payeeAccountName = $payeeAccountName;
+        $this->payeeAccountName = InvoiceSuiteStringUtils::asNullWhenEmpty($payeeAccountName);
 
         return $this;
     }
@@ -320,7 +321,7 @@ class InvoiceSuitePaymentMeanDTO
      */
     public function setPayeeProprietaryId(?string $payeeProprietaryId): static
     {
-        $this->payeeProprietaryId = $payeeProprietaryId;
+        $this->payeeProprietaryId = InvoiceSuiteStringUtils::asNullWhenEmpty($payeeProprietaryId);
 
         return $this;
     }
@@ -343,7 +344,7 @@ class InvoiceSuitePaymentMeanDTO
      */
     public function setPayeeBic(?string $payeeBic): static
     {
-        $this->payeeBic = $payeeBic;
+        $this->payeeBic = InvoiceSuiteStringUtils::asNullWhenEmpty($payeeBic);
 
         return $this;
     }
@@ -366,7 +367,7 @@ class InvoiceSuitePaymentMeanDTO
      */
     public function setPaymentReference(?string $paymentReference): static
     {
-        $this->paymentReference = $paymentReference;
+        $this->paymentReference = InvoiceSuiteStringUtils::asNullWhenEmpty($paymentReference);
 
         return $this;
     }
@@ -389,7 +390,7 @@ class InvoiceSuitePaymentMeanDTO
      */
     public function setMandate(?string $mandate): static
     {
-        $this->mandate = $mandate;
+        $this->mandate = InvoiceSuiteStringUtils::asNullWhenEmpty($mandate);
 
         return $this;
     }

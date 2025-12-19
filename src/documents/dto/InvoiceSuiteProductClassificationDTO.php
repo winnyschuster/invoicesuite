@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+
 /**
  * Class representing a DTO for ...
  *
@@ -87,7 +89,7 @@ class InvoiceSuiteProductClassificationDTO
      */
     public function setCode(?string $code): static
     {
-        $this->code = $code;
+        $this->code = InvoiceSuiteStringUtils::asNullWhenEmpty($code);
 
         return $this;
     }
@@ -110,7 +112,7 @@ class InvoiceSuiteProductClassificationDTO
      */
     public function setName(?string $name): static
     {
-        $this->name = $name;
+        $this->name = InvoiceSuiteStringUtils::asNullWhenEmpty($name);
 
         return $this;
     }
@@ -133,7 +135,7 @@ class InvoiceSuiteProductClassificationDTO
      */
     public function setListId(?string $listId): static
     {
-        $this->listId = $listId;
+        $this->listId = InvoiceSuiteStringUtils::asNullWhenEmpty($listId);
 
         return $this;
     }
@@ -156,7 +158,7 @@ class InvoiceSuiteProductClassificationDTO
      */
     public function setListVersionId(?string $listVersionId): static
     {
-        $this->listVersionId = $listVersionId;
+        $this->listVersionId = InvoiceSuiteStringUtils::asNullWhenEmpty($listVersionId);
 
         return $this;
     }

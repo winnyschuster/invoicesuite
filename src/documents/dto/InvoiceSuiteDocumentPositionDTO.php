@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\dto;
 
 use DateTimeInterface;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 /**
  * Class representing a DTO for ...
@@ -349,7 +350,7 @@ class InvoiceSuiteDocumentPositionDTO
      */
     public function setLineId(?string $lineId): static
     {
-        $this->lineId = $lineId;
+        $this->lineId = InvoiceSuiteStringUtils::asNullWhenEmpty($lineId);
 
         return $this;
     }
@@ -372,7 +373,7 @@ class InvoiceSuiteDocumentPositionDTO
      */
     public function setParentLineId(?string $parentLineId): static
     {
-        $this->parentLineId = $parentLineId;
+        $this->parentLineId = InvoiceSuiteStringUtils::asNullWhenEmpty($parentLineId);
 
         return $this;
     }
@@ -395,7 +396,7 @@ class InvoiceSuiteDocumentPositionDTO
      */
     public function setLineStatus(?string $lineStatus): static
     {
-        $this->lineStatus = $lineStatus;
+        $this->lineStatus = InvoiceSuiteStringUtils::asNullWhenEmpty($lineStatus);
 
         return $this;
     }
@@ -418,7 +419,7 @@ class InvoiceSuiteDocumentPositionDTO
      */
     public function setLineStatusReason(?string $lineStatusReason): static
     {
-        $this->lineStatusReason = $lineStatusReason;
+        $this->lineStatusReason = InvoiceSuiteStringUtils::asNullWhenEmpty($lineStatusReason);
 
         return $this;
     }

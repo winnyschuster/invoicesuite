@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\dto;
 
 use DateTimeInterface;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 /**
  * Class representing a DTO for ...
@@ -509,7 +510,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function setNumber(?string $number): static
     {
-        $this->number = $number;
+        $this->number = InvoiceSuiteStringUtils::asNullWhenEmpty($number);
 
         return $this;
     }
@@ -532,7 +533,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function setType(?string $type): static
     {
-        $this->type = $type;
+        $this->type = InvoiceSuiteStringUtils::asNullWhenEmpty($type);
 
         return $this;
     }
@@ -555,7 +556,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function setDescription(?string $description): static
     {
-        $this->description = $description;
+        $this->description = InvoiceSuiteStringUtils::asNullWhenEmpty($description);
 
         return $this;
     }
@@ -578,7 +579,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function setLanguage(?string $language): static
     {
-        $this->language = $language;
+        $this->language = InvoiceSuiteStringUtils::asNullWhenEmpty($language);
 
         return $this;
     }
@@ -791,7 +792,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function setCurrency(?string $currency): static
     {
-        $this->currency = $currency;
+        $this->currency = InvoiceSuiteStringUtils::asNullWhenEmpty($currency);
 
         return $this;
     }
@@ -814,7 +815,7 @@ class InvoiceSuiteDocumentHeaderDTO
      */
     public function setTaxCurrency(?string $taxCurrency): static
     {
-        $this->taxCurrency = $taxCurrency;
+        $this->taxCurrency = InvoiceSuiteStringUtils::asNullWhenEmpty($taxCurrency);
 
         return $this;
     }

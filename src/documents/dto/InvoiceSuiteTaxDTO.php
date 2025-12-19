@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\dto;
 
 use DateTimeInterface;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 /**
  * Class representing a DTO for ...
@@ -139,7 +140,7 @@ class InvoiceSuiteTaxDTO
      */
     public function setCategory(?string $category): static
     {
-        $this->category = $category;
+        $this->category = InvoiceSuiteStringUtils::asNullWhenEmpty($category);
 
         return $this;
     }
@@ -162,7 +163,7 @@ class InvoiceSuiteTaxDTO
      */
     public function setType(?string $type): static
     {
-        $this->type = $type;
+        $this->type = InvoiceSuiteStringUtils::asNullWhenEmpty($type);
 
         return $this;
     }
@@ -254,7 +255,7 @@ class InvoiceSuiteTaxDTO
      */
     public function setExemptionReason(?string $exemptionReason): static
     {
-        $this->exemptionReason = $exemptionReason;
+        $this->exemptionReason = InvoiceSuiteStringUtils::asNullWhenEmpty($exemptionReason);
 
         return $this;
     }
@@ -277,7 +278,7 @@ class InvoiceSuiteTaxDTO
      */
     public function setExemptionReasonCode(?string $exemptionReasonCode): static
     {
-        $this->exemptionReasonCode = $exemptionReasonCode;
+        $this->exemptionReasonCode = InvoiceSuiteStringUtils::asNullWhenEmpty($exemptionReasonCode);
 
         return $this;
     }
@@ -323,7 +324,7 @@ class InvoiceSuiteTaxDTO
      */
     public function setDueCode(?string $dueCode): static
     {
-        $this->dueCode = $dueCode;
+        $this->dueCode = InvoiceSuiteStringUtils::asNullWhenEmpty($dueCode);
 
         return $this;
     }
