@@ -32,7 +32,9 @@ class InvoiceSuiteXRechnungUBLProvider extends InvoiceSuiteAbstractDocumentForma
      */
     public function getDescription(): string
     {
-        return 'Common Invoice in UBL syntax';
+        return 'The reference profile is based on the CIUS XRechnung, which is maintained by KoSIT. It represents an '
+            .'extension of EN 16931-1 with its own business rules, the national German laws and regulations. This provider '
+            .'used the UBL Syntax.';
     }
 
     /**

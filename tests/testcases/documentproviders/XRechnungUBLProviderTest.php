@@ -42,7 +42,7 @@ final class XRechnungUBLProviderTest extends TestCase
         $this->assertIsString($provider->getParameters()['QuotationDocDescription']);
         $this->assertSame('Quotation', $provider->getParameters()['QuotationDocDescription']);
         $this->assertIsString($provider->getParameters()['CustomizationId']);
-        $this->assertSame('urn:cen.eu:en16931:2017', $provider->getParameters()['CustomizationId']);
+        $this->assertSame('urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0', $provider->getParameters()['CustomizationId']);
         $this->assertIsString($provider->getParameters()['ProfileId']);
         $this->assertSame('urn:fdc:peppol.eu:2017:poacc:billing:01:1.0', $provider->getParameters()['ProfileId']);
 
@@ -104,7 +104,7 @@ final class XRechnungUBLProviderTest extends TestCase
         $xml = <<<'XML'
     <?xml version="1.0" encoding="UTF-8"?>
     <Invoice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
-        <cbc:CustomizationID>urn:cen.eu:en16931:2017</cbc:CustomizationID>
+        <cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0</cbc:CustomizationID>
         <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
         <cbc:ID>Snippet1</cbc:ID>
         <cbc:IssueDate>2017-11-13</cbc:IssueDate>

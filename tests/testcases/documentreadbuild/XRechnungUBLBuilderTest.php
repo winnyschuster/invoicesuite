@@ -77,7 +77,7 @@ final class XRechnungUBLBuilderTest extends TestCase
     {
         $this->assertXPathValueWithIndex('/ns:Invoice/cbc:ProfileID', 0, 'urn:fdc:peppol.eu:2017:poacc:billing:01:1.0');
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cbc:ProfileID', 1);
-        $this->assertXPathValueWithIndex('/ns:Invoice/cbc:CustomizationID', 0, 'urn:cen.eu:en16931:2017');
+        $this->assertXPathValueWithIndex('/ns:Invoice/cbc:CustomizationID', 0, 'urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0');
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cbc:CustomizationID', 1);
     }
 
