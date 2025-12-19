@@ -1,13 +1,13 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  * This file is a part of horstoeko/invoicesuite.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
+declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
@@ -252,7 +252,7 @@ class InvoiceSuiteDocumentPositionDTO
      * @param array<InvoiceSuiteReferenceDocumentLineDTO>    $receivingAdviceReferences       The receiving advice reference (line reference)
      * @param array<InvoiceSuiteReferenceDocumentLineDTO>    $deliveryNoteReferences          The delivery note reference (line reference)
      * @param array<InvoiceSuiteReferenceDocumentLineExtDTO> $invoiceReferences               The additional invoice document (line reference)
-     * @param array<InvoiceSuiteReferenceDocumentExtDTO>     $additionalObjectReferences      The additional object references
+     * @param array<InvoiceSuiteReferenceDocumentExtDTO>     $additionalObjectReferences      The additional object references (line reference)
      * @param null|InvoiceSuitePriceGrossDTO                 $grossPrice                      The gross price
      * @param null|InvoiceSuitePriceNetDTO                   $netPrice                        The net price
      * @param null|InvoiceSuiteQuantityDTO                   $quantityBilled                  The billed quantity
@@ -1593,8 +1593,9 @@ class InvoiceSuiteDocumentPositionDTO
      * @param  InvoiceSuiteReferenceDocumentLineDTO $receivingAdviceReference The receiving advice reference (line reference)
      * @return static
      */
-    public function addReceivingAdviceReference(InvoiceSuiteReferenceDocumentLineDTO $receivingAdviceReference): static
-    {
+    public function addReceivingAdviceReference(
+        InvoiceSuiteReferenceDocumentLineDTO $receivingAdviceReference,
+    ): static {
         $this->receivingAdviceReferences[] = $receivingAdviceReference;
 
         return $this;
@@ -1985,7 +1986,7 @@ class InvoiceSuiteDocumentPositionDTO
     }
 
     /**
-     * Returns the additional invoice document (line reference)
+     * Returns the additional object references (line reference)
      *
      * @return array<InvoiceSuiteReferenceDocumentExtDTO>
      */
@@ -1995,9 +1996,9 @@ class InvoiceSuiteDocumentPositionDTO
     }
 
     /**
-     * Sets the additional invoice document (line reference)
+     * Sets the additional object references (line reference)
      *
-     * @param  array<InvoiceSuiteReferenceDocumentExtDTO> $additionalObjectReferences The additional invoice document (line reference)
+     * @param  array<InvoiceSuiteReferenceDocumentExtDTO> $additionalObjectReferences The additional object references (line reference)
      * @return static
      */
     public function setAdditionalObjectReferences(array $additionalObjectReferences): static
@@ -2008,20 +2009,21 @@ class InvoiceSuiteDocumentPositionDTO
     }
 
     /**
-     * Add single The additional invoice document (line reference)
+     * Add single The additional object references (line reference)
      *
-     * @param  InvoiceSuiteReferenceDocumentExtDTO $additionalObjectReference The additional invoice document (line reference)
+     * @param  InvoiceSuiteReferenceDocumentExtDTO $additionalObjectReference The additional object references (line reference)
      * @return static
      */
-    public function addAdditionalObjectReference(InvoiceSuiteReferenceDocumentExtDTO $additionalObjectReference): static
-    {
+    public function addAdditionalObjectReference(
+        InvoiceSuiteReferenceDocumentExtDTO $additionalObjectReference,
+    ): static {
         $this->additionalObjectReferences[] = $additionalObjectReference;
 
         return $this;
     }
 
     /**
-     * Get first The additional invoice document (line reference)
+     * Get first The additional object references (line reference)
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
@@ -2039,7 +2041,7 @@ class InvoiceSuiteDocumentPositionDTO
     }
 
     /**
-     * Get next The additional invoice document (line reference)
+     * Get next The additional object references (line reference)
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
@@ -2057,7 +2059,7 @@ class InvoiceSuiteDocumentPositionDTO
     }
 
     /**
-     * Get previous The additional invoice document (line reference)
+     * Get previous The additional object references (line reference)
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
@@ -2075,7 +2077,7 @@ class InvoiceSuiteDocumentPositionDTO
     }
 
     /**
-     * Get last The additional invoice document (line reference)
+     * Get last The additional object references (line reference)
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
@@ -2093,7 +2095,7 @@ class InvoiceSuiteDocumentPositionDTO
     }
 
     /**
-     * Loop over The additional invoice document (line reference) and execute callback
+     * Loop over The additional object references (line reference) and execute callback
      *
      * @param  callable      $callback     Callback to execute for each item
      * @param  null|callable $callbackElse Callback to execute if no item was found
@@ -2545,8 +2547,11 @@ class InvoiceSuiteDocumentPositionDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachBillingPeriod(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachBillingPeriod(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null,
+    ): static {
         $count = 0;
 
         foreach ($this->billingPeriods as $billingPeriod) {

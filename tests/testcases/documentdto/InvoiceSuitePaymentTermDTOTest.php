@@ -85,7 +85,7 @@ final class InvoiceSuitePaymentTermDTOTest extends TestCase
         $invoiceSuitePaymentTermDTO->previousDiscountTerm($cb, $cbElse);
         $invoiceSuitePaymentTermDTO->previousDiscountTerm($cb, $cbElse);
 
-        $invoiceSuitePaymentTermDTO->lastDiscountTerms($cb, $cbElse);
+        $invoiceSuitePaymentTermDTO->lastDiscountTerm($cb, $cbElse);
 
         $invoiceSuitePaymentTermDTO->forEachDiscountTerm($cb, $cbElse);
         $invoiceSuitePaymentTermDTO->forEachDiscountTerm($cb, $cbElse, 1);
@@ -111,7 +111,7 @@ final class InvoiceSuitePaymentTermDTOTest extends TestCase
         $invoiceSuitePaymentTermDTO->nextDiscountTerm($cb, $cbElse);
         $invoiceSuitePaymentTermDTO->previousDiscountTerm($cb, $cbElse);
         $invoiceSuitePaymentTermDTO->previousDiscountTerm($cb, $cbElse);
-        $invoiceSuitePaymentTermDTO->lastDiscountTerms($cb, $cbElse);
+        $invoiceSuitePaymentTermDTO->lastDiscountTerm($cb, $cbElse);
         $invoiceSuitePaymentTermDTO->forEachDiscountTerm($cb, $cbElse);
 
         $this->assertSame(0, $hitCount);

@@ -1,13 +1,13 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  * This file is a part of horstoeko/invoicesuite.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
+declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
@@ -411,8 +411,7 @@ class InvoiceSuitePaymentMeanDTO
         ?string $payeeBic = null,
         ?string $paymentReference = null,
     ): static {
-        // @phpstan-ignore new.static
-        return new static(
+        return new self(
             typeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_58->value,
             payeeIban: $payeeIban,
             payeeAccountName: $payeeAccountName,
@@ -439,8 +438,7 @@ class InvoiceSuitePaymentMeanDTO
         ?string $payeeBic = null,
         ?string $paymentReference = null,
     ): static {
-        // @phpstan-ignore new.static
-        return new static(
+        return new self(
             typeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_30->value,
             payeeIban: $payeeIban,
             payeeAccountName: $payeeAccountName,
@@ -459,8 +457,7 @@ class InvoiceSuitePaymentMeanDTO
      */
     public static function createAsDirectDebitSepa(?string $buyerIban = null, ?string $mandate = null): static
     {
-        // @phpstan-ignore new.static
-        return new static(
+        return new self(
             typeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_59->value,
             buyerIban: $buyerIban,
             mandate: $mandate,
@@ -476,8 +473,7 @@ class InvoiceSuitePaymentMeanDTO
      */
     public static function createAsDirectDebitNoSepa(?string $buyerIban = null, ?string $mandate = null): static
     {
-        // @phpstan-ignore new.static
-        return new static(
+        return new self(
             typeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_49->value,
             buyerIban: $buyerIban,
             mandate: $mandate,
@@ -495,8 +491,7 @@ class InvoiceSuitePaymentMeanDTO
         ?string $financialCardId = null,
         ?string $financialCardHolder = null,
     ): static {
-        // @phpstan-ignore new.static
-        return new static(
+        return new self(
             typeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_48->value,
             financialCardId: $financialCardId,
             financialCardHolder: $financialCardHolder,

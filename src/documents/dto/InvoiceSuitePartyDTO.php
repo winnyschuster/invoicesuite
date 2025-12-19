@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  * This file is a part of horstoeko/invoicesuite.
  *
@@ -9,9 +7,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace horstoeko\invoicesuite\documents\dto;
+declare(strict_types=1);
 
-use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+namespace horstoeko\invoicesuite\documents\dto;
 
 /**
  * Class representing a DTO for...
@@ -140,12 +138,8 @@ class InvoiceSuitePartyDTO
      * @param  string $name Party names
      * @return static
      */
-    public function addName(?string $name): static
+    public function addName(string $name): static
     {
-        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($name)) {
-            return $this;
-        }
-
         $this->names[] = $name;
 
         return $this;
@@ -1196,8 +1190,11 @@ class InvoiceSuitePartyDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachCommunication(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachCommunication(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null,
+    ): static {
         $count = 0;
 
         foreach ($this->communications as $communication) {

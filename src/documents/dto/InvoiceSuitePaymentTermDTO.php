@@ -1,13 +1,13 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  * This file is a part of horstoeko/invoicesuite.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
+declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
@@ -65,7 +65,7 @@ class InvoiceSuitePaymentTermDTO
      * @param null|DateTimeInterface                    $dueDate       The date by which payment is due
      * @param array<InvoiceSuitePaymentTermDiscountDTO> $discountTerms The payment discounts
      * @param array<InvoiceSuitePaymentTermPenaltyDTO>  $penaltyTerms  The payment penalties
-     * @param null|string                               $description   The mandate reference
+     * @param null|string                               $mandate       The mandate reference
      */
     public function __construct(
         ?string $description = null,
@@ -100,29 +100,6 @@ class InvoiceSuitePaymentTermDTO
     public function setDescription(?string $description): static
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Returns the mandate reference
-     *
-     * @return null|string
-     */
-    public function getMandate(): ?string
-    {
-        return $this->mandate;
-    }
-
-    /**
-     * Sets the mandate reference
-     *
-     * @param  null|string $mandate The mandate reference
-     * @return static
-     */
-    public function setMandate(?string $mandate): static
-    {
-        $this->mandate = $mandate;
 
         return $this;
     }
@@ -176,12 +153,12 @@ class InvoiceSuitePaymentTermDTO
     /**
      * Add single The payment discounts
      *
-     * @param  InvoiceSuitePaymentTermDiscountDTO $discountTerms The payment discounts
+     * @param  InvoiceSuitePaymentTermDiscountDTO $discountTerm The payment discounts
      * @return static
      */
-    public function addDiscountTerm(InvoiceSuitePaymentTermDiscountDTO $discountTerms): static
+    public function addDiscountTerm(InvoiceSuitePaymentTermDiscountDTO $discountTerm): static
     {
-        $this->discountTerms[] = $discountTerms;
+        $this->discountTerms[] = $discountTerm;
 
         return $this;
     }
@@ -195,8 +172,8 @@ class InvoiceSuitePaymentTermDTO
      */
     public function firstDiscountTerm(callable $callback, ?callable $callbackElse = null): static
     {
-        if (($discountTerms = reset($this->discountTerms)) !== false) {
-            $callback($discountTerms);
+        if (($discountTerm = reset($this->discountTerms)) !== false) {
+            $callback($discountTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
         }
@@ -213,8 +190,8 @@ class InvoiceSuitePaymentTermDTO
      */
     public function nextDiscountTerm(callable $callback, ?callable $callbackElse = null): static
     {
-        if (($discountTerms = next($this->discountTerms)) !== false) {
-            $callback($discountTerms);
+        if (($discountTerm = next($this->discountTerms)) !== false) {
+            $callback($discountTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
         }
@@ -231,8 +208,8 @@ class InvoiceSuitePaymentTermDTO
      */
     public function previousDiscountTerm(callable $callback, ?callable $callbackElse = null): static
     {
-        if (($discountTerms = prev($this->discountTerms)) !== false) {
-            $callback($discountTerms);
+        if (($discountTerm = prev($this->discountTerms)) !== false) {
+            $callback($discountTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
         }
@@ -247,10 +224,10 @@ class InvoiceSuitePaymentTermDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastDiscountTerms(callable $callback, ?callable $callbackElse = null): static
+    public function lastDiscountTerm(callable $callback, ?callable $callbackElse = null): static
     {
-        if (($discountTerms = end($this->discountTerms)) !== false) {
-            $callback($discountTerms);
+        if (($discountTerm = end($this->discountTerms)) !== false) {
+            $callback($discountTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
         }
@@ -266,18 +243,21 @@ class InvoiceSuitePaymentTermDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachDiscountTerm(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachDiscountTerm(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null,
+    ): static {
         $count = 0;
 
-        foreach ($this->discountTerms as $discountTerms) {
+        foreach ($this->discountTerms as $discountTerm) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
 
             ++$count;
 
-            $callback($discountTerms);
+            $callback($discountTerm);
         }
 
         if ($count === 0 && !is_null($callbackElse)) {
@@ -313,12 +293,12 @@ class InvoiceSuitePaymentTermDTO
     /**
      * Add single The payment penalties
      *
-     * @param  InvoiceSuitePaymentTermPenaltyDTO $penaltyTerms The payment penalties
+     * @param  InvoiceSuitePaymentTermPenaltyDTO $penaltyTerm The payment penalties
      * @return static
      */
-    public function addPenaltyTerm(InvoiceSuitePaymentTermPenaltyDTO $penaltyTerms): static
+    public function addPenaltyTerm(InvoiceSuitePaymentTermPenaltyDTO $penaltyTerm): static
     {
-        $this->penaltyTerms[] = $penaltyTerms;
+        $this->penaltyTerms[] = $penaltyTerm;
 
         return $this;
     }
@@ -332,8 +312,8 @@ class InvoiceSuitePaymentTermDTO
      */
     public function firstPenaltyTerm(callable $callback, ?callable $callbackElse = null): static
     {
-        if (($penaltyTerms = reset($this->penaltyTerms)) !== false) {
-            $callback($penaltyTerms);
+        if (($penaltyTerm = reset($this->penaltyTerms)) !== false) {
+            $callback($penaltyTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
         }
@@ -350,8 +330,8 @@ class InvoiceSuitePaymentTermDTO
      */
     public function nextPenaltyTerm(callable $callback, ?callable $callbackElse = null): static
     {
-        if (($penaltyTerms = next($this->penaltyTerms)) !== false) {
-            $callback($penaltyTerms);
+        if (($penaltyTerm = next($this->penaltyTerms)) !== false) {
+            $callback($penaltyTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
         }
@@ -368,8 +348,8 @@ class InvoiceSuitePaymentTermDTO
      */
     public function previousPenaltyTerm(callable $callback, ?callable $callbackElse = null): static
     {
-        if (($penaltyTerms = prev($this->penaltyTerms)) !== false) {
-            $callback($penaltyTerms);
+        if (($penaltyTerm = prev($this->penaltyTerms)) !== false) {
+            $callback($penaltyTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
         }
@@ -386,8 +366,8 @@ class InvoiceSuitePaymentTermDTO
      */
     public function lastPenaltyTerm(callable $callback, ?callable $callbackElse = null): static
     {
-        if (($penaltyTerms = end($this->penaltyTerms)) !== false) {
-            $callback($penaltyTerms);
+        if (($penaltyTerm = end($this->penaltyTerms)) !== false) {
+            $callback($penaltyTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
         }
@@ -407,19 +387,42 @@ class InvoiceSuitePaymentTermDTO
     {
         $count = 0;
 
-        foreach ($this->penaltyTerms as $penaltyTerms) {
+        foreach ($this->penaltyTerms as $penaltyTerm) {
             if ($limit !== null && $count >= $limit) {
                 break;
             }
 
             ++$count;
 
-            $callback($penaltyTerms);
+            $callback($penaltyTerm);
         }
 
         if ($count === 0 && !is_null($callbackElse)) {
             $callbackElse();
         }
+
+        return $this;
+    }
+
+    /**
+     * Returns the mandate reference
+     *
+     * @return null|string
+     */
+    public function getMandate(): ?string
+    {
+        return $this->mandate;
+    }
+
+    /**
+     * Sets the mandate reference
+     *
+     * @param  null|string $mandate The mandate reference
+     * @return static
+     */
+    public function setMandate(?string $mandate): static
+    {
+        $this->mandate = $mandate;
 
         return $this;
     }

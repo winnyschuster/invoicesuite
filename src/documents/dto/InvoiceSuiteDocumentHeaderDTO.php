@@ -1,13 +1,13 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  * This file is a part of horstoeko/invoicesuite.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
+declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
@@ -304,7 +304,14 @@ class InvoiceSuiteDocumentHeaderDTO
     protected array $buyerReferences = [];
 
     /**
-     * The delivery terms
+     * The Document positions
+     *
+     * @var array<InvoiceSuiteDocumentPositionDTO>
+     */
+    protected array $positions = [];
+
+    /**
+     * delivery term
      *
      * @var array<InvoiceSuiteIdDTO>
      */
@@ -337,13 +344,6 @@ class InvoiceSuiteDocumentHeaderDTO
      * @var array<InvoiceSuiteSummationDTO>
      */
     protected array $summations = [];
-
-    /**
-     * The Document positions
-     *
-     * @var array<InvoiceSuiteDocumentPositionDTO>
-     */
-    protected array $positions = [];
 
     /**
      * Constructor
@@ -388,12 +388,12 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param array<InvoiceSuiteIdDTO>                   $creditorReferences              The creditor identifier
      * @param array<InvoiceSuiteIdDTO>                   $paymentReferences               The payment reference
      * @param array<InvoiceSuiteIdDTO>                   $buyerReferences                 The ID for internal routing (Leitweg ID)
+     * @param array<InvoiceSuiteDocumentPositionDTO>     $positions                       The Document positions
+     * @param array<InvoiceSuiteIdDTO>                   $deliveryTerms                   delivery term
      * @param array<InvoiceSuiteTaxDTO>                  $taxes                           The VAT breakdown
      * @param array<InvoiceSuiteAllowanceChargeDTO>      $allowanceCharges                The allowances/charges
      * @param array<InvoiceSuiteServiceChargeDTO>        $serviceCharges                  The allowances/charges
      * @param array<InvoiceSuiteSummationDTO>            $summations                      The summation
-     * @param array<InvoiceSuiteDocumentPositionDTO>     $positions                       The Document positions
-     * @param array<InvoiceSuiteIdDTO>                   $deliveryTerms                   The delivery terms
      */
     public function __construct(
         ?string $number = null,
@@ -436,12 +436,12 @@ class InvoiceSuiteDocumentHeaderDTO
         array $creditorReferences = [],
         array $paymentReferences = [],
         array $buyerReferences = [],
+        array $positions = [],
+        array $deliveryTerms = [],
         array $taxes = [],
         array $allowanceCharges = [],
         array $serviceCharges = [],
         array $summations = [],
-        array $positions = [],
-        array $deliveryTerms = []
     ) {
         $this->setNumber($number);
         $this->setType($type);
@@ -483,12 +483,12 @@ class InvoiceSuiteDocumentHeaderDTO
         $this->setCreditorReferences($creditorReferences);
         $this->setPaymentReferences($paymentReferences);
         $this->setBuyerReferences($buyerReferences);
+        $this->setPositions($positions);
+        $this->setDeliveryTerms($deliveryTerms);
         $this->setTaxes($taxes);
         $this->setAllowanceCharges($allowanceCharges);
         $this->setServiceCharges($serviceCharges);
         $this->setSummations($summations);
-        $this->setPositions($positions);
-        $this->setDeliveryTerms($deliveryTerms);
     }
 
     /**
@@ -1118,8 +1118,11 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachBillingPeriod(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachBillingPeriod(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null,
+    ): static {
         $count = 0;
 
         foreach ($this->billingPeriods as $billingPeriod) {
@@ -3745,7 +3748,144 @@ class InvoiceSuiteDocumentHeaderDTO
     }
 
     /**
-     * Returns the delivery terms
+     * Returns the Document positions
+     *
+     * @return array<InvoiceSuiteDocumentPositionDTO>
+     */
+    public function getPositions(): array
+    {
+        return $this->positions;
+    }
+
+    /**
+     * Sets the Document positions
+     *
+     * @param  array<InvoiceSuiteDocumentPositionDTO> $positions The Document positions
+     * @return static
+     */
+    public function setPositions(array $positions): static
+    {
+        $this->positions = $positions;
+
+        return $this;
+    }
+
+    /**
+     * Add single The Document positions
+     *
+     * @param  InvoiceSuiteDocumentPositionDTO $position The Document positions
+     * @return static
+     */
+    public function addPosition(InvoiceSuiteDocumentPositionDTO $position): static
+    {
+        $this->positions[] = $position;
+
+        return $this;
+    }
+
+    /**
+     * Get first The Document positions
+     *
+     * @param  callable      $callback     Callback to execute if an item was found
+     * @param  null|callable $callbackElse Callback to execute if no item was found
+     * @return static
+     */
+    public function firstPosition(callable $callback, ?callable $callbackElse = null): static
+    {
+        if (($position = reset($this->positions)) !== false) {
+            $callback($position);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get next The Document positions
+     *
+     * @param  callable      $callback     Callback to execute if an item was found
+     * @param  null|callable $callbackElse Callback to execute if no item was found
+     * @return static
+     */
+    public function nextPosition(callable $callback, ?callable $callbackElse = null): static
+    {
+        if (($position = next($this->positions)) !== false) {
+            $callback($position);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get previous The Document positions
+     *
+     * @param  callable      $callback     Callback to execute if an item was found
+     * @param  null|callable $callbackElse Callback to execute if no item was found
+     * @return static
+     */
+    public function previousPosition(callable $callback, ?callable $callbackElse = null): static
+    {
+        if (($position = prev($this->positions)) !== false) {
+            $callback($position);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get last The Document positions
+     *
+     * @param  callable      $callback     Callback to execute if an item was found
+     * @param  null|callable $callbackElse Callback to execute if no item was found
+     * @return static
+     */
+    public function lastPosition(callable $callback, ?callable $callbackElse = null): static
+    {
+        if (($position = end($this->positions)) !== false) {
+            $callback($position);
+        } elseif (!is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Loop over The Document positions and execute callback
+     *
+     * @param  callable      $callback     Callback to execute for each item
+     * @param  null|callable $callbackElse Callback to execute if no item was found
+     * @param  null|int      $limit        Maximum number of loops
+     * @return static
+     */
+    public function forEachPosition(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
+    {
+        $count = 0;
+
+        foreach ($this->positions as $position) {
+            if ($limit !== null && $count >= $limit) {
+                break;
+            }
+
+            ++$count;
+
+            $callback($position);
+        }
+
+        if ($count === 0 && !is_null($callbackElse)) {
+            $callbackElse();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Returns delivery term
      *
      * @return array<InvoiceSuiteIdDTO>
      */
@@ -3755,9 +3895,9 @@ class InvoiceSuiteDocumentHeaderDTO
     }
 
     /**
-     * Sets delivery terms
+     * Sets delivery term
      *
-     * @param  array<InvoiceSuiteIdDTO> $deliveryTerms The ID for internal routing (Leitweg ID)
+     * @param  array<InvoiceSuiteIdDTO> $deliveryTerms delivery term
      * @return static
      */
     public function setDeliveryTerms(array $deliveryTerms): static
@@ -3770,7 +3910,7 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Add single delivery term
      *
-     * @param  InvoiceSuiteIdDTO $deliveryTerm The ID for internal routing (Leitweg ID)
+     * @param  InvoiceSuiteIdDTO $deliveryTerm delivery term
      * @return static
      */
     public function addDeliveryTerm(InvoiceSuiteIdDTO $deliveryTerm): static
@@ -3781,7 +3921,7 @@ class InvoiceSuiteDocumentHeaderDTO
     }
 
     /**
-     * Get the first delivery term
+     * Get first delivery term
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
@@ -3799,7 +3939,7 @@ class InvoiceSuiteDocumentHeaderDTO
     }
 
     /**
-     * Get the next delivery term
+     * Get next delivery term
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
@@ -3817,7 +3957,7 @@ class InvoiceSuiteDocumentHeaderDTO
     }
 
     /**
-     * Get the previous delivery term
+     * Get previous delivery term
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
@@ -3835,7 +3975,7 @@ class InvoiceSuiteDocumentHeaderDTO
     }
 
     /**
-     * Get the last delivery term
+     * Get last delivery term
      *
      * @param  callable      $callback     Callback to execute if an item was found
      * @param  null|callable $callbackElse Callback to execute if no item was found
@@ -3853,7 +3993,7 @@ class InvoiceSuiteDocumentHeaderDTO
     }
 
     /**
-     * Loop over delivery terms
+     * Loop over delivery term and execute callback
      *
      * @param  callable      $callback     Callback to execute for each item
      * @param  null|callable $callbackElse Callback to execute if no item was found
@@ -4277,8 +4417,11 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachServiceCharge(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachServiceCharge(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null,
+    ): static {
         $count = 0;
 
         foreach ($this->serviceCharges as $serviceCharge) {
@@ -4426,143 +4569,6 @@ class InvoiceSuiteDocumentHeaderDTO
             ++$count;
 
             $callback($summation);
-        }
-
-        if ($count === 0 && !is_null($callbackElse)) {
-            $callbackElse();
-        }
-
-        return $this;
-    }
-
-    /**
-     * Returns the Document positions
-     *
-     * @return array<InvoiceSuiteDocumentPositionDTO>
-     */
-    public function getPositions(): array
-    {
-        return $this->positions;
-    }
-
-    /**
-     * Sets the Document positions
-     *
-     * @param  array<InvoiceSuiteDocumentPositionDTO> $positions The Document positions
-     * @return static
-     */
-    public function setPositions(array $positions): static
-    {
-        $this->positions = $positions;
-
-        return $this;
-    }
-
-    /**
-     * Add single The Document positions
-     *
-     * @param  InvoiceSuiteDocumentPositionDTO $position The Document positions
-     * @return static
-     */
-    public function addPosition(InvoiceSuiteDocumentPositionDTO $position): static
-    {
-        $this->positions[] = $position;
-
-        return $this;
-    }
-
-    /**
-     * Get first The Document positions
-     *
-     * @param  callable      $callback     Callback to execute if an item was found
-     * @param  null|callable $callbackElse Callback to execute if no item was found
-     * @return static
-     */
-    public function firstPosition(callable $callback, ?callable $callbackElse = null): static
-    {
-        if (($position = reset($this->positions)) !== false) {
-            $callback($position);
-        } elseif (!is_null($callbackElse)) {
-            $callbackElse();
-        }
-
-        return $this;
-    }
-
-    /**
-     * Get next The Document positions
-     *
-     * @param  callable      $callback     Callback to execute if an item was found
-     * @param  null|callable $callbackElse Callback to execute if no item was found
-     * @return static
-     */
-    public function nextPosition(callable $callback, ?callable $callbackElse = null): static
-    {
-        if (($position = next($this->positions)) !== false) {
-            $callback($position);
-        } elseif (!is_null($callbackElse)) {
-            $callbackElse();
-        }
-
-        return $this;
-    }
-
-    /**
-     * Get previous The Document positions
-     *
-     * @param  callable      $callback     Callback to execute if an item was found
-     * @param  null|callable $callbackElse Callback to execute if no item was found
-     * @return static
-     */
-    public function previousPosition(callable $callback, ?callable $callbackElse = null): static
-    {
-        if (($position = prev($this->positions)) !== false) {
-            $callback($position);
-        } elseif (!is_null($callbackElse)) {
-            $callbackElse();
-        }
-
-        return $this;
-    }
-
-    /**
-     * Get last The Document positions
-     *
-     * @param  callable      $callback     Callback to execute if an item was found
-     * @param  null|callable $callbackElse Callback to execute if no item was found
-     * @return static
-     */
-    public function lastPosition(callable $callback, ?callable $callbackElse = null): static
-    {
-        if (($position = end($this->positions)) !== false) {
-            $callback($position);
-        } elseif (!is_null($callbackElse)) {
-            $callbackElse();
-        }
-
-        return $this;
-    }
-
-    /**
-     * Loop over The Document positions and execute callback
-     *
-     * @param  callable      $callback     Callback to execute for each item
-     * @param  null|callable $callbackElse Callback to execute if no item was found
-     * @param  null|int      $limit        Maximum number of loops
-     * @return static
-     */
-    public function forEachPosition(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
-        $count = 0;
-
-        foreach ($this->positions as $position) {
-            if ($limit !== null && $count >= $limit) {
-                break;
-            }
-
-            ++$count;
-
-            $callback($position);
         }
 
         if ($count === 0 && !is_null($callbackElse)) {
