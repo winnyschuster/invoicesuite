@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace horstoeko\invoicesuite\documents\providers\xrechnung;
+namespace horstoeko\invoicesuite\documents\providers\xrechnungcii;
 
 use DOMDocument;
 use DOMXPath;
@@ -19,14 +19,14 @@ use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use Throwable;
 
-class InvoiceSuiteXRechnungProvider extends InvoiceSuiteAbstractDocumentFormatProvider
+class InvoiceSuiteXRechnungCIIProvider extends InvoiceSuiteAbstractDocumentFormatProvider
 {
     /**
      * {@inheritDoc}
      */
     public function getUniqueId(): string
     {
-        return 'xrechnung';
+        return 'xrechnungcii';
     }
 
     /**
@@ -73,7 +73,7 @@ class InvoiceSuiteXRechnungProvider extends InvoiceSuiteAbstractDocumentFormatPr
     public function getSerializerHandlers(): array
     {
         return [
-            InvoiceSuiteXRechnungSerializerHandler::class,
+            InvoiceSuiteXRechnungCIISerializerHandler::class,
         ];
     }
 
@@ -160,7 +160,7 @@ class InvoiceSuiteXRechnungProvider extends InvoiceSuiteAbstractDocumentFormatPr
      */
     public function getReaderClassName(): string
     {
-        return InvoiceSuiteXRechnungProviderReader::class;
+        return InvoiceSuiteXRechnungCIIProviderReader::class;
     }
 
     /**
@@ -168,7 +168,7 @@ class InvoiceSuiteXRechnungProvider extends InvoiceSuiteAbstractDocumentFormatPr
      */
     public function getBuilderClassName(): string
     {
-        return InvoiceSuiteXRechnungProviderBuilder::class;
+        return InvoiceSuiteXRechnungCIIProviderBuilder::class;
     }
 
     /**

@@ -5,30 +5,30 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use horstoeko\invoicesuite\documents\models\zffxcomfort\rsm\CrossIndustryInvoice;
-use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungProvider;
-use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungProviderBuilder;
-use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungProviderReader;
-use horstoeko\invoicesuite\documents\providers\xrechnung\InvoiceSuiteXRechnungSerializerHandler;
+use horstoeko\invoicesuite\documents\providers\xrechnungcii\InvoiceSuiteXRechnungCIIProvider;
+use horstoeko\invoicesuite\documents\providers\xrechnungcii\InvoiceSuiteXRechnungCIIProviderBuilder;
+use horstoeko\invoicesuite\documents\providers\xrechnungcii\InvoiceSuiteXRechnungCIIProviderReader;
+use horstoeko\invoicesuite\documents\providers\xrechnungcii\InvoiceSuiteXRechnungCIISerializerHandler;
 use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\tests\TestCase;
 
-final class XRechnungProviderTest extends TestCase
+final class XRechnungCIIProviderTest extends TestCase
 {
     public function testGetUniqueId(): void
     {
-        $provider = new InvoiceSuiteXRechnungProvider();
-        $this->assertSame('xrechnung', $provider->getUniqueId());
+        $provider = new InvoiceSuiteXRechnungCIIProvider();
+        $this->assertSame('xrechnungcii', $provider->getUniqueId());
     }
 
     public function testGetDescription(): void
     {
-        $provider = new InvoiceSuiteXRechnungProvider();
+        $provider = new InvoiceSuiteXRechnungCIIProvider();
         $this->assertNotEmpty($provider->getDescription());
     }
 
     public function testGetParameters(): void
     {
-        $provider = new InvoiceSuiteXRechnungProvider();
+        $provider = new InvoiceSuiteXRechnungCIIProvider();
 
         $this->assertArrayHasKey('ContextParameter', $provider->getParameters());
         $this->assertArrayHasKey('AlternativeContextParameters', $provider->getParameters());
@@ -56,7 +56,7 @@ final class XRechnungProviderTest extends TestCase
 
     public function testPdfParameters(): void
     {
-        $provider = new InvoiceSuiteXRechnungProvider();
+        $provider = new InvoiceSuiteXRechnungCIIProvider();
 
         $this->assertTrue($provider->isPdfSupportAvailable());
         $this->assertCount(1, $provider->getAllowedPdfAttachmentFilenames());
@@ -67,36 +67,36 @@ final class XRechnungProviderTest extends TestCase
 
     public function testGetSerializerMetadataDirectories(): void
     {
-        $provider = new InvoiceSuiteXRechnungProvider();
+        $provider = new InvoiceSuiteXRechnungCIIProvider();
 
         $this->assertEmpty($provider->getSerializerMetadataDirectories());
     }
 
     public function testGetSerializerHandlers(): void
     {
-        $provider = new InvoiceSuiteXRechnungProvider();
+        $provider = new InvoiceSuiteXRechnungCIIProvider();
 
         $this->assertCount(1, $provider->getSerializerHandlers());
-        $this->assertContains(InvoiceSuiteXRechnungSerializerHandler::class, $provider->getSerializerHandlers());
+        $this->assertContains(InvoiceSuiteXRechnungCIISerializerHandler::class, $provider->getSerializerHandlers());
     }
 
     public function testGetSerializerListeners(): void
     {
-        $provider = new InvoiceSuiteXRechnungProvider();
+        $provider = new InvoiceSuiteXRechnungCIIProvider();
 
         $this->assertEmpty($provider->getSerializerListeners());
     }
 
     public function testGetSerializerSubscribers(): void
     {
-        $provider = new InvoiceSuiteXRechnungProvider();
+        $provider = new InvoiceSuiteXRechnungCIIProvider();
 
         $this->assertEmpty($provider->getSerializerSubscribers());
     }
 
     public function testGetSerializerGroups(): void
     {
-        $provider = new InvoiceSuiteXRechnungProvider();
+        $provider = new InvoiceSuiteXRechnungCIIProvider();
 
         $this->assertCount(1, $provider->getSerializerGroups());
         $this->assertContains('zffx', $provider->getSerializerGroups());
@@ -104,7 +104,7 @@ final class XRechnungProviderTest extends TestCase
 
     public function testIsSatisfiableBy(): void
     {
-        $provider = new InvoiceSuiteXRechnungProvider();
+        $provider = new InvoiceSuiteXRechnungCIIProvider();
 
         $xml = <<<'XML'
     <?xml version="1.0" encoding="UTF-8"?>
@@ -153,22 +153,22 @@ final class XRechnungProviderTest extends TestCase
 
     public function testGetRootClassName(): void
     {
-        $provider = new InvoiceSuiteXRechnungProvider();
+        $provider = new InvoiceSuiteXRechnungCIIProvider();
 
         $this->assertsame(CrossIndustryInvoice::class, $provider->getRootClassName());
     }
 
     public function testGetReaderClassName(): void
     {
-        $provider = new InvoiceSuiteXRechnungProvider();
+        $provider = new InvoiceSuiteXRechnungCIIProvider();
 
-        $this->assertsame(InvoiceSuiteXRechnungProviderReader::class, $provider->getReaderClassName());
+        $this->assertsame(InvoiceSuiteXRechnungCIIProviderReader::class, $provider->getReaderClassName());
     }
 
     public function testGetBuilderClassName(): void
     {
-        $provider = new InvoiceSuiteXRechnungProvider();
+        $provider = new InvoiceSuiteXRechnungCIIProvider();
 
-        $this->assertsame(InvoiceSuiteXRechnungProviderBuilder::class, $provider->getBuilderClassName());
+        $this->assertsame(InvoiceSuiteXRechnungCIIProviderBuilder::class, $provider->getBuilderClassName());
     }
 }

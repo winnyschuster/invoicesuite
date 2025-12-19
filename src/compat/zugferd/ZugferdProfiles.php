@@ -160,7 +160,7 @@ class ZugferdProfiles
             'xsdfilename' => 'FACTUR-X_EN16931.xsd',
             'schematronfilename' => 'FACTUR-X_EN16931.sch',
             'xsltfilename' => 'FACTUR-X_EN16931.xslt',
-            'invoicesuiteproviderid' => 'xrechnung',
+            'invoicesuiteproviderid' => 'xrechnungcii',
         ],
         self::PROFILE_XRECHNUNG_2 => [
             'name' => 'en16931',
@@ -177,7 +177,7 @@ class ZugferdProfiles
             'xsdfilename' => 'FACTUR-X_EN16931.xsd',
             'schematronfilename' => 'FACTUR-X_EN16931.sch',
             'xsltfilename' => 'FACTUR-X_EN16931.xslt',
-            'invoicesuiteproviderid' => 'xrechnung',
+            'invoicesuiteproviderid' => 'xrechnungcii',
         ],
         self::PROFILE_XRECHNUNG_2_1 => [
             'name' => 'en16931',
@@ -194,7 +194,7 @@ class ZugferdProfiles
             'xsdfilename' => 'FACTUR-X_EN16931.xsd',
             'schematronfilename' => 'FACTUR-X_EN16931.sch',
             'xsltfilename' => 'FACTUR-X_EN16931.xslt',
-            'invoicesuiteproviderid' => 'xrechnung',
+            'invoicesuiteproviderid' => 'xrechnungcii',
         ],
         self::PROFILE_XRECHNUNG_2_2 => [
             'name' => 'en16931',
@@ -211,7 +211,7 @@ class ZugferdProfiles
             'xsdfilename' => 'FACTUR-X_EN16931.xsd',
             'schematronfilename' => 'FACTUR-X_EN16931.sch',
             'xsltfilename' => 'FACTUR-X_EN16931.xslt',
-            'invoicesuiteproviderid' => 'xrechnung',
+            'invoicesuiteproviderid' => 'xrechnungcii',
         ],
         self::PROFILE_MINIMUM => [
             'name' => 'minimum',
@@ -244,7 +244,7 @@ class ZugferdProfiles
             'xsdfilename' => 'FACTUR-X_EN16931.xsd',
             'schematronfilename' => 'FACTUR-X_EN16931.sch',
             'xsltfilename' => 'FACTUR-X_EN16931.xslt',
-            'invoicesuiteproviderid' => 'xrechnung',
+            'invoicesuiteproviderid' => 'xrechnungcii',
         ],
         self::PROFILE_XRECHNUNG_3 => [
             'name' => 'en16931',
@@ -261,7 +261,7 @@ class ZugferdProfiles
             'xsdfilename' => 'FACTUR-X_EN16931.xsd',
             'schematronfilename' => 'FACTUR-X_EN16931.sch',
             'xsltfilename' => 'FACTUR-X_EN16931.xslt',
-            'invoicesuiteproviderid' => 'xrechnung',
+            'invoicesuiteproviderid' => 'xrechnungcii',
         ],
     ];
 }
