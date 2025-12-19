@@ -622,6 +622,8 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
             }
         );
 
+        $this->updateCurrencies();
+
         return $this;
     }
 
@@ -6006,6 +6008,8 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
             $taxCategory->getPercentWithCreate()->setValue($newTaxPercent);
         }
 
+        $this->updateCurrencies();
+
         return $this;
     }
 
@@ -7973,6 +7977,8 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
             $allowanceCharge->getAllowanceChargeReasonCodeWithCreate()->setValue($newAllowanceChargeReasonCode);
         }
 
+        $this->updateCurrencies();
+
         return $this;
     }
 
@@ -8100,11 +8106,23 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
         $summation?->getPrepaidAmount()?->setCurrencyID($invoiceCurrencyCode);
         $summation?->getPayableRoundingAmount()?->setCurrencyID($invoiceCurrencyCode);
 
+        // Update Header
+
+        foreach ($this->getUblInvoiceRootObject()->getAllowanceCharge() ?? [] as $allowanceCharge) {
+            $allowanceCharge->getAmount()?->setCurrencyID($invoiceCurrencyCode);
+            $allowanceCharge->getBaseAmount()?->setCurrencyID($invoiceCurrencyCode);
+        }
+
         // Update Lines
 
         foreach ($this->getUblInvoiceRootObject()->getInvoiceLine() ?? [] as $invoiceLine) {
             $invoiceLine->getPrice()?->getPriceAmount()?->setCurrencyID($invoiceCurrencyCode);
             $invoiceLine->getLineExtensionAmount()?->setCurrencyID($invoiceCurrencyCode);
+
+            foreach ($invoiceLine->getAllowanceCharge() ?? [] as $allowanceCharge) {
+                $allowanceCharge->getAmount()?->setCurrencyID($invoiceCurrencyCode);
+                $allowanceCharge->getBaseAmount()?->setCurrencyID($invoiceCurrencyCode);
+            }
         }
 
         // Update Tax
@@ -8124,6 +8142,12 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
         foreach ($taxTotal2?->getTaxSubtotal() ?? [] as $taxSubTotal) {
             $taxSubTotal->getTaxableAmount()?->setCurrencyID($taxCurrencyCode);
             $taxSubTotal->getTaxAmount()?->setCurrencyID($taxCurrencyCode);
+        }
+
+        // Remove TaxTotal at index 1 if no tax currency was provided
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($taxCurrencyCode)) {
+            $this->getUblInvoiceRootObject()->unsetTaxTotalAtIndex(1);
         }
 
         return $this;

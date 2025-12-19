@@ -4103,6 +4103,25 @@ class InvoiceType
     }
 
     /**
+     * @param  int    $index
+     * @return static
+     */
+    public function unsetTaxTotalAtIndex(int $index): static
+    {
+        if (!is_array($this->taxTotal)) {
+            return $this;
+        }
+
+        if (!array_key_exists($index, $this->taxTotal)) {
+            return $this;
+        }
+
+        unset($this->taxTotal[$index]);
+
+        return $this;
+    }
+
+    /**
      * @param  TaxTotal $taxTotal
      * @return static
      */
