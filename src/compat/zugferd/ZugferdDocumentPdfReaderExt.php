@@ -50,12 +50,7 @@ class ZugferdDocumentPdfReaderExt
      * Key of the filename element in the internal attachment list
      */
     public const ATTACHMENT_KEY_MIMETYPE = 'mimetype';
-    /**
-     * Identifier for a XML-Invoice-Docuemnt
-     *
-     * @phpstan-ignore classConstant.unused
-     */
-    private const ATTACHMENT_TYPE_XMLINVOICE = 0;
+
 
     /**
      * Identifier for an additional document
