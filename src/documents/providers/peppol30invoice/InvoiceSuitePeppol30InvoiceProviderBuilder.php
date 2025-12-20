@@ -1506,7 +1506,7 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
             ->firstDelivery()
             ?->unsetActualDeliveryDate();
 
-        if (is_null($newDate)) {
+        if (InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDate)) {
             return $this;
         }
 
@@ -5238,7 +5238,7 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
                 ->getNetworkIDWithCreate()
                 ->setValue('mapped-from-cii');
 
-            if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newFinancialCardId, $newFinancialCardHolder])) {
+            if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newFinancialCardHolder])) {
                 $paymentMean
                     ->getCardAccountWithCreate()
                     ->getHolderNameWithCreate()
