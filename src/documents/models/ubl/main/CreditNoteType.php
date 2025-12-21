@@ -4154,4 +4154,31 @@ class CreditNoteType
 
         return $this->creditNoteLine[0];
     }
+
+    /**
+     * @return null|CreditNoteLine
+     */
+    public function getLatestCreditNoteLine(): ?CreditNoteLine
+    {
+        $creditNoteLines = $this->getCreditNoteLine() ?? [];
+        $creditNoteLine = end($creditNoteLines);
+
+        if ($creditNoteLine === false) {
+            return null;
+        }
+
+        return $creditNoteLine;
+    }
+
+    /**
+     * @return null|CreditNoteLine
+     */
+    public function getLatestCreditNoteLineWithCreate(): ?CreditNoteLine
+    {
+        if (is_null($creditNoteLine = $this->getLatestCreditNoteLine())) {
+            $creditNoteLine = $this->addToCreditNoteLineWithCreate();
+        }
+
+        return $creditNoteLine;
+    }
 }

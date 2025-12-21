@@ -18,6 +18,9 @@ return RectorConfig::configure()
         __DIR__ . '/../src',
         __DIR__ . '/../tests/testcases',
     ])
+    ->withSkipPath(
+        __DIR__ . '/../src/pdfs/zffx/InvoiceSuiteZffxPdfWriter.php',
+    )
     ->withPhpVersion(PhpVersion::PHP_81)
     ->withPhpSets(php81: true)
     ->withPreparedSets(
