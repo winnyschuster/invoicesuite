@@ -65,8 +65,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setContextParameter(string $newCustomizationId, string $newProfileId): static
     {
-        $this->getUblCreditNoteRootObject()->getCustomizationIDWithCreate()->setValue($newCustomizationId);
-        $this->getUblCreditNoteRootObject()->getProfileIDWithCreate()->setValue($newProfileId);
+        $this->getUblRootObject()->getCustomizationIDWithCreate()->setValue($newCustomizationId);
+        $this->getUblRootObject()->getProfileIDWithCreate()->setValue($newProfileId);
 
         return $this;
     }
@@ -636,13 +636,13 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentNo(
         ?string $newDocumentNo = null
     ): static {
-        $this->getUblCreditNoteRootObject()->unsetID();
+        $this->getUblRootObject()->unsetID();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentNo])) {
             return $this;
         }
 
-        $this->getUblCreditNoteRootObject()->getIDWithCreate()->setValue($newDocumentNo);
+        $this->getUblRootObject()->getIDWithCreate()->setValue($newDocumentNo);
 
         return $this;
     }
@@ -656,13 +656,13 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentType(
         ?string $newDocumentType = null
     ): static {
-        $this->getUblCreditNoteRootObject()->unsetCreditNoteTypeCode();
+        $this->getUblRootObject()->unsetCreditNoteTypeCode();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentType])) {
             return $this;
         }
 
-        $this->getUblCreditNoteRootObject()->getCreditNoteTypeCodeWithCreate()->setValue($newDocumentType);
+        $this->getUblRootObject()->getCreditNoteTypeCodeWithCreate()->setValue($newDocumentType);
 
         return $this;
     }
@@ -704,13 +704,13 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentDate(
         ?DateTimeInterface $newDocumentDate = null
     ): static {
-        $this->getUblCreditNoteRootObject()->unsetIssueDate();
+        $this->getUblRootObject()->unsetIssueDate();
 
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDocumentDate])) {
             return $this;
         }
 
-        $this->getUblCreditNoteRootObject()->setIssueDate($newDocumentDate);
+        $this->getUblRootObject()->setIssueDate($newDocumentDate);
 
         return $this;
     }
@@ -738,14 +738,14 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentCurrency(
         ?string $newDocumentCurrency = null
     ): static {
-        $this->getUblCreditNoteRootObject()->unsetDocumentCurrencyCode();
+        $this->getUblRootObject()->unsetDocumentCurrencyCode();
         $this->updateCurrencies();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentCurrency])) {
             return $this;
         }
 
-        $this->getUblCreditNoteRootObject()->getDocumentCurrencyCodeWithCreate()->setValue($newDocumentCurrency);
+        $this->getUblRootObject()->getDocumentCurrencyCodeWithCreate()->setValue($newDocumentCurrency);
         $this->updateCurrencies();
 
         return $this;
@@ -760,14 +760,14 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentTaxCurrency(
         ?string $newDocumentTaxCurrency = null
     ): static {
-        $this->getUblCreditNoteRootObject()->unsetTaxCurrencyCode();
+        $this->getUblRootObject()->unsetTaxCurrencyCode();
         $this->updateCurrencies();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentTaxCurrency])) {
             return $this;
         }
 
-        $this->getUblCreditNoteRootObject()->getTaxCurrencyCodeWithCreate()->setValue($newDocumentTaxCurrency);
+        $this->getUblRootObject()->getTaxCurrencyCodeWithCreate()->setValue($newDocumentTaxCurrency);
         $this->updateCurrencies();
 
         return $this;
@@ -814,13 +814,13 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
     ): static {
-        $this->getUblCreditNoteRootObject()->unsetNote();
+        $this->getUblRootObject()->unsetNote();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])) {
             return $this;
         }
 
-        $this->getUblCreditNoteRootObject()->addOnceToNoteWithCreate()->setValue($newContent);
+        $this->getUblRootObject()->addOnceToNoteWithCreate()->setValue($newContent);
 
         return $this;
     }
@@ -860,14 +860,14 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
     ): static {
-        $this->getUblCreditNoteRootObject()->unsetInvoicePeriod();
+        $this->getUblRootObject()->unsetInvoicePeriod();
 
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])) {
             return $this;
         }
 
         $invoicePeriod = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->addToInvoicePeriodWithCreate();
 
         if (!is_null($newStartDate)) {
@@ -917,7 +917,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->unsetAccountingCost();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])) {
@@ -925,7 +925,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCostWithCreate()
             ->setValue($newAccountId);
 
@@ -962,7 +962,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getOrderReference()
             ?->unsetSalesOrderID();
 
@@ -971,7 +971,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getOrderReferenceWithCreate()
             ->getSalesOrderIDWithCreate()
             ->setValue($newReferenceNumber);
@@ -1011,7 +1011,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getOrderReference()
             ?->unsetID()
             ?->unsetIssueDate();
@@ -1021,7 +1021,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getOrderReferenceWithCreate()
             ->getIDWithCreate()
             ->setValue($newReferenceNumber);
@@ -1093,7 +1093,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->unsetContractDocumentReference();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
@@ -1101,7 +1101,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->addToContractDocumentReferenceWithCreate()
             ->getIDWithCreate()
             ->setValue($newReferenceNumber);
@@ -1149,7 +1149,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->unsetAdditionalDocumentReference();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newTypeCode])) {
@@ -1192,7 +1192,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $additionalReference = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->addToAdditionalDocumentReferenceWithCreate();
 
         $additionalReference->getIDWithCreate()->setValue($newReferenceNumber);
@@ -1244,7 +1244,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTypeCode = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->unsetBillingReference();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
@@ -1252,7 +1252,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $invoiceReference = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->addToBillingReferenceWithCreate()
             ->getInvoiceDocumentReferenceWithCreate();
 
@@ -1360,7 +1360,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->unsetDespatchDocumentReference();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
@@ -1368,7 +1368,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->addToDespatchDocumentReferenceWithCreate()
             ->getIDWithCreate()
             ->setValue($newReferenceNumber);
@@ -1408,7 +1408,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->unsetReceiptDocumentReference();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
@@ -1416,7 +1416,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->addOnceToReceiptDocumentReferenceWithCreate()
             ->getIDWithCreate()
             ->setValue($newReferenceNumber);
@@ -1486,7 +1486,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newDate = null
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->firstDelivery()
             ?->unsetActualDeliveryDate();
 
@@ -1495,7 +1495,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->addOnceToDeliveryWithCreate()
             ->setActualDeliveryDate($newDate);
 
@@ -1512,7 +1512,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newBuyerReference = null
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->unsetBuyerReference();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newBuyerReference])) {
@@ -1520,7 +1520,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getBuyerReferenceWithCreate()
             ->setValue($newBuyerReference);
 
@@ -1551,7 +1551,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newName = null
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierParty()
             ?->getParty()
             ?->firstPartyLegalEntity()
@@ -1562,7 +1562,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierPartyWithCreate()
             ->getPartyWithCreate()
             ->addOnceToPartyLegalEntityWithCreate()
@@ -1601,7 +1601,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     ): static {
         $ids = array_filter(
             $this
-                ->getUblCreditNoteRootObject()
+                ->getUblRootObject()
                 ->getAccountingSupplierParty()
                 ?->getParty()
                 ?->getPartyIdentification() ?? [],
@@ -1609,7 +1609,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         );
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierParty()
             ?->getParty()
             ?->setPartyIdentification($ids);
@@ -1637,7 +1637,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierPartyWithCreate()
             ->getPartyWithCreate()
             ->addToPartyIdentificationWithCreate()
@@ -1659,7 +1659,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     {
         $ids = array_filter(
             $this
-                ->getUblCreditNoteRootObject()
+                ->getUblRootObject()
                 ->getAccountingSupplierParty()
                 ?->getParty()
                 ?->getPartyIdentification() ?? [],
@@ -1667,7 +1667,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         );
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierParty()
             ?->getParty()
             ?->setPartyIdentification($ids);
@@ -1695,7 +1695,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierPartyWithCreate()
             ->getPartyWithCreate()
             ->addToPartyIdentificationWithCreate()
@@ -1719,7 +1719,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationId = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierParty()
             ?->getParty()
             ?->unsetPartyTaxScheme();
@@ -1749,7 +1749,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $partyTaxScheme = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierPartyWithCreate()
             ->getPartyWithCreate()
             ->addToPartyTaxSchemeWithCreate();
@@ -1788,7 +1788,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newSubDivision = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierParty()
             ?->getParty()
             ?->unsetPostalAddress();
@@ -1798,7 +1798,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $postalAddress = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierPartyWithCreate()
             ->getPartyWithCreate()
             ->getPostalAddressWithCreate();
@@ -1884,14 +1884,14 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newName = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierParty()
             ?->getParty()
             ?->firstPartyLegalEntity()
             ?->unsetCompanyID();
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierParty()
             ?->getParty()
             ?->unsetPartyName();
@@ -1902,7 +1902,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
 
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newId)) {
             $this
-                ->getUblCreditNoteRootObject()
+                ->getUblRootObject()
                 ->getAccountingSupplierPartyWithCreate()
                 ->getPartyWithCreate()
                 ->addOnceToPartyLegalEntityWithCreate()
@@ -1913,7 +1913,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
 
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
             $this
-                ->getUblCreditNoteRootObject()
+                ->getUblRootObject()
                 ->getAccountingSupplierPartyWithCreate()
                 ->getPartyWithCreate()
                 ->addOnceToPartyNameWithCreate()
@@ -1964,7 +1964,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newEmailAddress = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierParty()
             ?->getParty()
             ?->unsetContact();
@@ -1980,7 +1980,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $contact = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierPartyWithCreate()
             ->getPartyWithCreate()
             ->getContactWithCreate();
@@ -2042,7 +2042,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierParty()
             ?->getParty()
             ?->unsetEndpointID();
@@ -2052,7 +2052,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierPartyWithCreate()
             ->getPartyWithCreate()
             ->getEndpointIDWithCreate()
@@ -2090,7 +2090,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newName = null
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerParty()
             ?->getParty()
             ?->firstPartyLegalEntity()
@@ -2101,7 +2101,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerPartyWithCreate()
             ->getPartyWithCreate()
             ->addOnceToPartyLegalEntityWithCreate()
@@ -2139,7 +2139,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerParty()
             ?->getParty()
             ?->unsetPartyIdentification();
@@ -2149,7 +2149,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerPartyWithCreate()
             ->getPartyWithCreate()
             ->addOnceToPartyIdentificationWithCreate()
@@ -2187,7 +2187,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerParty()
             ?->getParty()
             ?->unsetPartyIdentification();
@@ -2197,7 +2197,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerPartyWithCreate()
             ->getPartyWithCreate()
             ->addOnceToPartyIdentificationWithCreate()
@@ -2238,7 +2238,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationId = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerParty()
             ?->getParty()
             ?->unsetPartyTaxScheme();
@@ -2248,7 +2248,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $partyTaxScheme = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerPartyWithCreate()
             ->getPartyWithCreate()
             ->addToPartyTaxSchemeWithCreate();
@@ -2307,7 +2307,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newSubDivision = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerParty()
             ?->getParty()
             ?->unsetPostalAddress();
@@ -2317,7 +2317,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $postalAddress = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerPartyWithCreate()
             ->getPartyWithCreate()
             ->getPostalAddressWithCreate();
@@ -2403,14 +2403,14 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newName = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerParty()
             ?->getParty()
             ?->firstPartyLegalEntity()
             ?->unsetCompanyID();
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerParty()
             ?->getParty()
             ?->unsetPartyName();
@@ -2421,7 +2421,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
 
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newId)) {
             $this
-                ->getUblCreditNoteRootObject()
+                ->getUblRootObject()
                 ->getAccountingCustomerPartyWithCreate()
                 ->getPartyWithCreate()
                 ->addOnceToPartyLegalEntityWithCreate()
@@ -2432,7 +2432,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
 
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
             $this
-                ->getUblCreditNoteRootObject()
+                ->getUblRootObject()
                 ->getAccountingCustomerPartyWithCreate()
                 ->getPartyWithCreate()
                 ->addOnceToPartyNameWithCreate()
@@ -2483,7 +2483,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newEmailAddress = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerParty()
             ?->getParty()
             ?->unsetContact();
@@ -2499,7 +2499,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $contact = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerPartyWithCreate()
             ->getPartyWithCreate()
             ->getContactWithCreate();
@@ -2561,7 +2561,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): static
     {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerParty()
             ?->getParty()
             ?->unsetEndpointID();
@@ -2571,7 +2571,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerPartyWithCreate()
             ->getPartyWithCreate()
             ->getEndpointIDWithCreate()
@@ -2609,7 +2609,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newName = null
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getTaxRepresentativeParty()
             ?->unsetPartyName();
 
@@ -2618,7 +2618,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getTaxRepresentativePartyWithCreate()
             ->addOnceToPartyNameWithCreate()
             ->getNameWithCreate()
@@ -2717,7 +2717,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationId = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getTaxRepresentativeParty()
             ?->unsetPartyTaxScheme();
 
@@ -2726,7 +2726,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $partyTaxScheme = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getTaxRepresentativePartyWithCreate()
             ->addOnceToPartyTaxSchemeWithCreate();
 
@@ -2787,7 +2787,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newSubDivision = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getTaxRepresentativeParty()
             ?->unsetPostalAddress();
 
@@ -2796,7 +2796,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $postalAddress = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getTaxRepresentativePartyWithCreate()
             ->getPostalAddressWithCreate();
 
@@ -3299,7 +3299,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->firstDelivery()
             ?->getDeliveryLocation()
             ?->unsetID();
@@ -3309,7 +3309,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->addOnceToDeliveryWithCreate()
             ->getDeliveryLocationWithCreate()
             ->getIDWithCreate()
@@ -3346,7 +3346,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->firstDelivery()
             ?->getDeliveryLocation()
             ?->unsetID();
@@ -3356,7 +3356,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->addOnceToDeliveryWithCreate()
             ->getDeliveryLocationWithCreate()
             ->getIDWithCreate()
@@ -3438,7 +3438,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newSubDivision = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->firstDelivery()
             ?->getDeliveryLocation()
             ?->unsetAddress();
@@ -3448,7 +3448,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $postalAddress = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->addOnceToDeliveryWithCreate()
             ->getDeliveryLocationWithCreate()
             ->getAddressWithCreate();
@@ -4756,7 +4756,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newName = null
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getPayeeParty()
             ?->firstPartyName()
             ?->unsetName();
@@ -4766,7 +4766,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getPayeePartyWithCreate()
             ->addOnceToPartyNameWithCreate()
             ->getNameWithCreate()
@@ -4803,7 +4803,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getPayeeParty()
             ?->unsetPartyIdentification();
 
@@ -4812,7 +4812,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getPayeePartyWithCreate()
             ->addOnceToPartyIdentificationWithCreate()
             ->getIDWithCreate()
@@ -4849,7 +4849,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getPayeeParty()
             ?->unsetPartyIdentification();
 
@@ -4858,7 +4858,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getPayeePartyWithCreate()
             ->addOnceToPartyIdentificationWithCreate()
             ->getIDWithCreate()
@@ -4984,7 +4984,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newName = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getPayeeParty()
             ?->firstPartyLegalEntity()
             ?->unsetCompanyID()
@@ -4996,7 +4996,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
 
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newId)) {
             $this
-                ->getUblCreditNoteRootObject()
+                ->getUblRootObject()
                 ->getPayeePartyWithCreate()
                 ->addOnceToPartyLegalEntityWithCreate()
                 ->getCompanyIDWithCreate()
@@ -5006,7 +5006,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
 
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
             $this
-                ->getUblCreditNoteRootObject()
+                ->getUblRootObject()
                 ->getPayeePartyWithCreate()
                 ->addOnceToPartyLegalEntityWithCreate()
                 ->getRegistrationNameWithCreate()
@@ -5144,7 +5144,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newMandate = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->unsetPaymentMeans();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTypeCode])) {
@@ -5202,7 +5202,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $paymentMean = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->addToPaymentMeansWithCreate();
 
         $paymentMean->getPaymentMeansCodeWithCreate()->setValue($newTypeCode);
@@ -5513,7 +5513,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null
     ): static {
         $ids = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierParty()
             ?->getParty()
             ?->getPartyIdentification() ?? [];
@@ -5524,7 +5524,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         );
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierParty()
             ?->getParty()
             ?->setPartyIdentification($ids);
@@ -5534,7 +5534,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierPartyWithCreate()
             ->getPartyWithCreate()
             ->addToPartyIdentificationWithCreate()
@@ -5606,7 +5606,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newMandate = null
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->unsetPaymentTerms();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDescription])) {
@@ -5614,7 +5614,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->addOnceToPaymentTermsWithCreate()
             ->addToNoteWithCreate()
             ->setValue($newDescription);
@@ -5770,7 +5770,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxDueCode = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->firstTaxTotal()
             ?->unsetTaxSubtotal();
 
@@ -5829,7 +5829,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $taxSubTotal = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->addOnceToTaxTotalWithCreate()
             ->addToTaxSubtotalWithCreate();
 
@@ -5853,7 +5853,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         if (!is_null($newTaxDueDate)) {
-            $this->getUblCreditNoteRootObject()->setTaxPointDate($newTaxDueDate);
+            $this->getUblRootObject()->setTaxPointDate($newTaxDueDate);
         }
 
         $this->updateCurrencies();
@@ -5887,7 +5887,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newAllowanceChargePercent = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->unsetAllowanceCharge();
 
         if (
@@ -5945,7 +5945,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $allowanceCharge = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->addToAllowanceChargeWithCreate();
 
         $allowanceCharge
@@ -6076,16 +6076,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newRoungingAmount = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->unsetLegalMonetaryTotal();
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getTaxTotalAtIndex(0)
             ?->unsetTaxAmount();
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getTaxTotalAtIndex(1)
             ?->unsetTaxAmount();
 
@@ -6096,7 +6096,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $summation = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLegalMonetaryTotalWithCreate();
 
         $summation->getLineExtensionAmountWithCreate()->setValue($newNetAmount);
@@ -6120,10 +6120,10 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $summation->getPayableRoundingAmountWithCreate()->setValue($newRoungingAmount);
         }
 
-        $this->getUblCreditNoteRootObject()->addToTaxTotalWithCreateAtIndex(0)->getTaxAmountWithCreate()->setValue($newTaxTotalAmount);
+        $this->getUblRootObject()->addToTaxTotalWithCreateAtIndex(0)->getTaxAmountWithCreate()->setValue($newTaxTotalAmount);
 
         if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxTotalAmount2)) {
-            $this->getUblCreditNoteRootObject()->addToTaxTotalWithCreateAtIndex(1)->getTaxAmountWithCreate()->setValue($newTaxTotalAmount2);
+            $this->getUblRootObject()->addToTaxTotalWithCreateAtIndex(1)->getTaxAmountWithCreate()->setValue($newTaxTotalAmount2);
         }
 
         $this->updateCurrencies();
@@ -6151,7 +6151,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->addToCreditNoteLineWithCreate()
             ->getIDWithCreate()
             ->setValue($newPositionId);
@@ -6173,7 +6173,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newSubjectCode = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLine()
             ?->unsetNote();
 
@@ -6182,7 +6182,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLineWithCreate()
             ->addToNoteWithCreate()
             ->setValue($newContent);
@@ -6250,7 +6250,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newProductOriginTradeCountry = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLine()
             ?->unsetItem();
 
@@ -6259,7 +6259,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $positionProduct = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLineWithCreate()
             ->getItemWithCreate();
 
@@ -6306,7 +6306,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newProductCharacteristicMeasureUnit = null,
     ): static {
         $positionProduct = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLine()
             ?->getItem();
 
@@ -6349,7 +6349,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newProductCharacteristicMeasureUnit = null,
     ): static {
         $positionProduct = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLine()
             ?->getItem();
 
@@ -6384,7 +6384,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newProductClassificationCodeClassname = null,
     ): static {
         $positionProduct = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLine()
             ?->getItem();
 
@@ -6424,7 +6424,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newProductClassificationCodeClassname = null,
     ): static {
         $positionProduct = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLine()
             ?->getItem();
 
@@ -6564,7 +6564,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLine()
             ?->unsetOrderLineReference();
 
@@ -6573,7 +6573,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLineWithCreate()
             ->addToOrderLineReferenceWithCreate()
             ->getLineIDWithCreate()
@@ -6930,7 +6930,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceTypeCode = null
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLine()
             ?->unsetDocumentReference();
 
@@ -6939,7 +6939,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $documentReference = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLineWithCreate()
             ->addOnceToDocumentReferenceWithCreate();
 
@@ -7058,7 +7058,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newNetPriceBasisQuantityUnit = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLine()
             ?->unsetPrice();
 
@@ -7067,7 +7067,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $netPrice = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLineWithCreate()
             ->getPriceWithCreate();
 
@@ -7133,7 +7133,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newPackageQuantityUnit = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLine()
             ?->unsetCreditedQuantity();
 
@@ -7145,7 +7145,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLineWithCreate()
             ->getCreditedQuantityWithCreate()
             ->setValue($newQuantity)
@@ -7750,7 +7750,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newDescription = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLine()
             ?->unsetInvoicePeriod();
 
@@ -7759,7 +7759,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLineWithCreate()
             ->addOnceToInvoicePeriodWithCreate()
             ->setStartDate($newStartDate)
@@ -7810,7 +7810,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newExemptionReasonCode = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLine()
             ?->getItem()
             ?->unsetClassifiedTaxCategory();
@@ -7820,7 +7820,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $tradeTax = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLineWithCreate()
             ->getItemWithCreate()
             ->addToClassifiedTaxCategoryWithCreate();
@@ -7890,7 +7890,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newAllowanceChargePercent = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLine()
             ?->unsetAllowanceCharge();
 
@@ -7934,7 +7934,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $allowanceCharge = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLineWithCreate()
             ->addToAllowanceChargeWithCreate();
 
@@ -7980,7 +7980,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newGrossAmount = null,
     ): static {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLine()
             ?->unsetLineExtensionAmount();
 
@@ -7989,7 +7989,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLineWithCreate()
             ->getLineExtensionAmountWithCreate()
             ->setValue($newNetAmount);
@@ -8009,7 +8009,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLine()
             ?->unsetAccountingCost();
 
@@ -8018,7 +8018,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         }
 
         $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLatestCreditNoteLineWithCreate()
             ->getAccountingCostCodeWithCreate()
             ->setValue($newAccountId);
@@ -8049,7 +8049,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      *
      * @return CreditNote
      */
-    protected function getUblCreditNoteRootObject(): CreditNote
+    protected function getUblRootObject(): CreditNote
     {
         return $this->getDocumentRootObject();
     }
@@ -8062,19 +8062,19 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     protected function updateCurrencies(): static
     {
         $invoiceCurrencyCode = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getDocumentCurrencyCode()
             ?->getValue();
 
         $taxCurrencyCode = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getTaxCurrencyCode()
             ?->getValue();
 
         // Update summation
 
         $summation = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getLegalMonetaryTotal();
 
         $summation?->getLineExtensionAmount()?->setCurrencyID($invoiceCurrencyCode);
@@ -8088,14 +8088,14 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
 
         // Update Header
 
-        foreach ($this->getUblCreditNoteRootObject()->getAllowanceCharge() ?? [] as $allowanceCharge) {
+        foreach ($this->getUblRootObject()->getAllowanceCharge() ?? [] as $allowanceCharge) {
             $allowanceCharge->getAmount()?->setCurrencyID($invoiceCurrencyCode);
             $allowanceCharge->getBaseAmount()?->setCurrencyID($invoiceCurrencyCode);
         }
 
         // Update Lines
 
-        foreach ($this->getUblCreditNoteRootObject()->getCreditNoteLine() ?? [] as $invoiceLine) {
+        foreach ($this->getUblRootObject()->getCreditNoteLine() ?? [] as $invoiceLine) {
             $invoiceLine->getPrice()?->getPriceAmount()?->setCurrencyID($invoiceCurrencyCode);
             $invoiceLine->getLineExtensionAmount()?->setCurrencyID($invoiceCurrencyCode);
 
@@ -8107,7 +8107,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
 
         // Update Tax
 
-        $taxTotal = $this->getUblCreditNoteRootObject()->getTaxTotal();
+        $taxTotal = $this->getUblRootObject()->getTaxTotal();
         $taxTotal1 = array_key_exists(0, $taxTotal ?? []) ? $taxTotal[0] : null;
         $taxTotal2 = array_key_exists(1, $taxTotal ?? []) ? $taxTotal[1] : null;
 
@@ -8127,7 +8127,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         // Remove TaxTotal at index 1 if no tax currency was provided
 
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($taxCurrencyCode)) {
-            $this->getUblCreditNoteRootObject()->unsetTaxTotalAtIndex(1);
+            $this->getUblRootObject()->unsetTaxTotalAtIndex(1);
         }
 
         return $this;

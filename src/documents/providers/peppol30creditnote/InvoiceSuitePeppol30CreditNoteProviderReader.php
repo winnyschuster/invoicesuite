@@ -2588,7 +2588,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     public function getDocumentNo(
         ?string &$newDocumentNo
     ): static {
-        $newDocumentNo = $this->getUblCreditNoteRootObject()->getID()?->getValue() ?? '';
+        $newDocumentNo = $this->getUblRootObject()->getID()?->getValue() ?? '';
 
         return $this;
     }
@@ -2604,7 +2604,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     public function getDocumentType(
         ?string &$newDocumentType
     ): static {
-        $newDocumentType = $this->getUblCreditNoteRootObject()->getCreditNoteTypeCode()?->getValue() ?? '';
+        $newDocumentType = $this->getUblRootObject()->getCreditNoteTypeCode()?->getValue() ?? '';
 
         return $this;
     }
@@ -2652,7 +2652,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     public function getDocumentDate(
         ?DateTimeInterface &$newDocumentDate
     ): static {
-        $newDocumentDate = $this->getUblCreditNoteRootObject()->getIssueDate() ?? new DateTime();
+        $newDocumentDate = $this->getUblRootObject()->getIssueDate() ?? new DateTime();
 
         return $this;
     }
@@ -2684,7 +2684,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     public function getDocumentCurrency(
         ?string &$newDocumentCurrency
     ): static {
-        $newDocumentCurrency = $this->getUblCreditNoteRootObject()->getDocumentCurrencyCode()?->getValue() ?? '';
+        $newDocumentCurrency = $this->getUblRootObject()->getDocumentCurrencyCode()?->getValue() ?? '';
 
         return $this;
     }
@@ -2700,7 +2700,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     public function getDocumentTaxCurrency(
         ?string &$newDocumentTaxCurrency
     ): static {
-        $newDocumentTaxCurrency = $this->getUblCreditNoteRootObject()->getTaxCurrencyCode()?->getValue() ?? '';
+        $newDocumentTaxCurrency = $this->getUblRootObject()->getTaxCurrencyCode()?->getValue() ?? '';
 
         return $this;
     }
@@ -2746,7 +2746,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getNote() ?? []
+                $this->getUblRootObject()->getNote() ?? []
             ),
             'documentnote'
         );
@@ -2761,7 +2761,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getNote() ?? []
+                $this->getUblRootObject()->getNote() ?? []
             ),
             'documentnote'
         );
@@ -2787,7 +2787,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<Note>
          */
-        $documentNotes = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getNote() ?? []);
+        $documentNotes = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getNote() ?? []);
 
         /**
          * @var Note
@@ -2810,7 +2810,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getInvoicePeriod() ?? []
+                $this->getUblRootObject()->getInvoicePeriod() ?? []
             ),
             'documentbillingperiod'
         );
@@ -2825,7 +2825,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getInvoicePeriod() ?? []
+                $this->getUblRootObject()->getInvoicePeriod() ?? []
             ),
             'documentbillingperiod'
         );
@@ -2851,7 +2851,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<InvoicePeriod>
          */
-        $billingPeriods = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getInvoicePeriod() ?? []);
+        $billingPeriods = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getInvoicePeriod() ?? []);
 
         /**
          * @var InvoicePeriod
@@ -2860,7 +2860,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
 
         $newStartDate = $billingPeriod->getStartDate();
         $newEndDate = $billingPeriod->getEndDate();
-        $newDescription = $billingPeriod->firstDescription()?->getValue() ?? '';
+        $newDescription = '';
 
         return $this;
     }
@@ -2874,7 +2874,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingCost() ?? []
+                $this->getUblRootObject()->getAccountingCost() ?? []
             ),
             'documentpostingreference'
         );
@@ -2889,7 +2889,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingCost() ?? []
+                $this->getUblRootObject()->getAccountingCost() ?? []
             ),
             'documentpostingreference'
         );
@@ -2912,7 +2912,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<AccountingCost>
          */
-        $postingReferences = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getAccountingCost() ?? []);
+        $postingReferences = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getAccountingCost() ?? []);
 
         /**
          * @var AccountingCost
@@ -2934,7 +2934,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getOrderReference()?->getSalesOrderID() ?? []
+                $this->getUblRootObject()->getOrderReference()?->getSalesOrderID() ?? []
             ),
             'documentsellerorderreference'
         );
@@ -2949,7 +2949,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getOrderReference()?->getSalesOrderID() ?? []
+                $this->getUblRootObject()->getOrderReference()?->getSalesOrderID() ?? []
             ),
             'documentsellerorderreference'
         );
@@ -2972,7 +2972,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<SalesOrderID>
          */
-        $documentSellerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getOrderReference()?->getSalesOrderID() ?? []);
+        $documentSellerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getOrderReference()?->getSalesOrderID() ?? []);
 
         /**
          * @var SalesOrderID
@@ -2994,7 +2994,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getOrderReference() ?? []
+                $this->getUblRootObject()->getOrderReference() ?? []
             ),
             'documentbuyerorderreference'
         );
@@ -3009,7 +3009,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getOrderReference() ?? []
+                $this->getUblRootObject()->getOrderReference() ?? []
             ),
             'documentbuyerorderreference'
         );
@@ -3032,7 +3032,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<OrderReference>
          */
-        $documentBuyerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getOrderReference() ?? []);
+        $documentBuyerOrderReferences = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getOrderReference() ?? []);
 
         /**
          * @var OrderReference
@@ -3040,7 +3040,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $documentBuyerOrderReference = $documentBuyerOrderReferences[InvoiceSuitePointerUtils::getValue('documentbuyerorderreference')];
 
         $newReferenceNumber = $documentBuyerOrderReference->getID()?->getValue() ?? '';
-        $newReferenceDate = $documentBuyerOrderReference->getIssueDate();
+        $newReferenceDate = null;
 
         return $this;
     }
@@ -3094,7 +3094,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getContractDocumentReference() ?? []
+                $this->getUblRootObject()->getContractDocumentReference() ?? []
             ),
             'documentcontractreference'
         );
@@ -3109,7 +3109,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getContractDocumentReference() ?? []
+                $this->getUblRootObject()->getContractDocumentReference() ?? []
             ),
             'documentcontractreference'
         );
@@ -3132,7 +3132,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<ContractDocumentReference>
          */
-        $documentContractReferences = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getContractDocumentReference() ?? []);
+        $documentContractReferences = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getContractDocumentReference() ?? []);
 
         /**
          * @var ContractDocumentReference
@@ -3140,7 +3140,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $documentContractReference = $documentContractReferences[InvoiceSuitePointerUtils::getValue('documentcontractreference')];
 
         $newReferenceNumber = $documentContractReference->getID()?->getValue() ?? '';
-        $newReferenceDate = $documentContractReference->getIssueDate();
+        $newReferenceDate = null;
 
         return $this;
     }
@@ -3154,7 +3154,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAdditionalDocumentReference() ?? []
+                $this->getUblRootObject()->getAdditionalDocumentReference() ?? []
             ),
             'documentadditionalreference'
         );
@@ -3169,7 +3169,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAdditionalDocumentReference() ?? []
+                $this->getUblRootObject()->getAdditionalDocumentReference() ?? []
             ),
             'documentadditionalreference'
         );
@@ -3204,7 +3204,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<AdditionalDocumentReference>
          */
-        $documentAdditionalReferences = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getAdditionalDocumentReference() ?? []);
+        $documentAdditionalReferences = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getAdditionalDocumentReference() ?? []);
 
         /**
          * @var AdditionalDocumentReference
@@ -3212,7 +3212,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $documentAdditionalReference = $documentAdditionalReferences[InvoiceSuitePointerUtils::getValue('documentadditionalreference')];
 
         $newReferenceNumber = $documentAdditionalReference->getID()?->getValue() ?? '';
-        $newReferenceDate = $documentAdditionalReference->getIssueDate();
+        $newReferenceDate = null;
         $newTypeCode = $documentAdditionalReference->getDocumentTypeCode()?->getValue() ?? '';
         $newReferenceTypeCode = '';
         $newDescription = $documentAdditionalReference->firstDocumentDescription()?->getValue() ?? '';
@@ -3244,7 +3244,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getBillingReference() ?? []
+                $this->getUblRootObject()->getBillingReference() ?? []
             ),
             'documentinvoicereference'
         );
@@ -3259,7 +3259,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getBillingReference() ?? []
+                $this->getUblRootObject()->getBillingReference() ?? []
             ),
             'documentinvoicereference'
         );
@@ -3285,7 +3285,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<BillingReference>
          */
-        $documentInvoiceReferences = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getBillingReference() ?? []);
+        $documentInvoiceReferences = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getBillingReference() ?? []);
 
         /**
          * @var BillingReference
@@ -3388,7 +3388,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getDespatchDocumentReference() ?? []
+                $this->getUblRootObject()->getDespatchDocumentReference() ?? []
             ),
             'documentdespatchadvicereference'
         );
@@ -3403,7 +3403,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getDespatchDocumentReference() ?? []
+                $this->getUblRootObject()->getDespatchDocumentReference() ?? []
             ),
             'documentdespatchadvicereference'
         );
@@ -3426,7 +3426,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<DespatchDocumentReference>
          */
-        $documentDespatchAdviceReferences = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getDespatchDocumentReference() ?? []);
+        $documentDespatchAdviceReferences = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getDespatchDocumentReference() ?? []);
 
         /**
          * @var DespatchDocumentReference
@@ -3434,7 +3434,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $documentDespatchAdviceReference = $documentDespatchAdviceReferences[InvoiceSuitePointerUtils::getValue('documentdespatchadvicereference')];
 
         $newReferenceNumber = $documentDespatchAdviceReference->getID()?->getValue() ?? '';
-        $newReferenceDate = $documentDespatchAdviceReference->getIssueDate();
+        $newReferenceDate = null;
 
         return $this;
     }
@@ -3448,7 +3448,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getReceiptDocumentReference() ?? []
+                $this->getUblRootObject()->getReceiptDocumentReference() ?? []
             ),
             'documentreceivingadvicereference'
         );
@@ -3463,7 +3463,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getReceiptDocumentReference() ?? []
+                $this->getUblRootObject()->getReceiptDocumentReference() ?? []
             ),
             'documentreceivingadvicereference'
         );
@@ -3486,7 +3486,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<ReceiptDocumentReference>
          */
-        $documentReceivingAdviceReferences = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getReceiptDocumentReference() ?? []);
+        $documentReceivingAdviceReferences = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getReceiptDocumentReference() ?? []);
 
         /**
          * @var ReceiptDocumentReference
@@ -3494,7 +3494,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $documentReceivingAdviceReference = $documentReceivingAdviceReferences[InvoiceSuitePointerUtils::getValue('documentreceivingadvicereference')];
 
         $newReferenceNumber = $documentReceivingAdviceReference->getID()?->getValue() ?? '';
-        $newReferenceDate = $documentReceivingAdviceReference->getIssueDate();
+        $newReferenceDate = null;
 
         return $this;
     }
@@ -3550,7 +3550,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     public function getDocumentSupplyChainEvent(
         ?DateTimeInterface &$newDate
     ): static {
-        $newDate = $this->getUblCreditNoteRootObject()->firstDelivery()?->getActualDeliveryDate();
+        $newDate = $this->getUblRootObject()->firstDelivery()?->getActualDeliveryDate();
 
         return $this;
     }
@@ -3566,7 +3566,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     public function getDocumentBuyerReference(
         ?string &$newBuyerReference
     ): static {
-        $newBuyerReference = $this->getUblCreditNoteRootObject()->getBuyerReference()?->getValue() ?? '';
+        $newBuyerReference = $this->getUblRootObject()->getBuyerReference()?->getValue() ?? '';
 
         return $this;
     }
@@ -3599,7 +3599,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newName
     ): static {
         $newName = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierParty()
             ?->getParty()
             ?->firstPartyLegalEntity()
@@ -3726,7 +3726,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyTaxScheme() ?? []
+                $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyTaxScheme() ?? []
             ),
             'documentsellertaxregistration'
         );
@@ -3741,7 +3741,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyTaxScheme() ?? []
+                $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyTaxScheme() ?? []
             ),
             'documentsellertaxregistration'
         );
@@ -3764,7 +3764,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<PartyTaxScheme>
          */
-        $documentSellerTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyTaxScheme() ?? []);
+        $documentSellerTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyTaxScheme() ?? []);
 
         /**
          * @var PartyTaxScheme
@@ -3786,7 +3786,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getPostalAddress() ?? []
+                $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getPostalAddress() ?? []
             ),
             'documentselleraddress'
         );
@@ -3801,7 +3801,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getPostalAddress() ?? []
+                $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getPostalAddress() ?? []
             ),
             'documentselleraddress'
         );
@@ -3839,7 +3839,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<PostalAddress>
          */
-        $documentSellerAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getPostalAddress() ?? []);
+        $documentSellerAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getPostalAddress() ?? []);
 
         /**
          * @var PostalAddress
@@ -3866,7 +3866,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyLegalEntity() ?? []
+                $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyLegalEntity() ?? []
             ),
             'documentsellerlegalorganisation'
         );
@@ -3881,7 +3881,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyLegalEntity() ?? []
+                $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyLegalEntity() ?? []
             ),
             'documentsellerlegalorganisation'
         );
@@ -3907,7 +3907,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<PartyLegalEntity>
          */
-        $documentSellerLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyLegalEntity() ?? []);
+        $documentSellerLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyLegalEntity() ?? []);
 
         /**
          * @var PartyLegalEntity
@@ -3917,7 +3917,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         // Trading name and Party name are swapped in UBL
         $newType = $documentSellerLegalOrganisation->getCompanyID()?->getSchemeID() ?? '';
         $newId = $documentSellerLegalOrganisation->getCompanyID()?->getValue() ?? '';
-        $newName = $this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->firstPartyName()?->getName()?->getValue() ?? '';
+        $newName = $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->firstPartyName()?->getName()?->getValue() ?? '';
 
         return $this;
     }
@@ -3931,7 +3931,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getContact() ?? []
+                $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getContact() ?? []
             ),
             'documentsellercontact'
         );
@@ -3946,7 +3946,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getContact() ?? []
+                $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getContact() ?? []
             ),
             'documentsellercontact'
         );
@@ -3978,7 +3978,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<Contact>
          */
-        $documentSellerContacts = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getContact() ?? []);
+        $documentSellerContacts = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getContact() ?? []);
 
         /**
          * @var Contact
@@ -3988,7 +3988,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $newPersonName = $documentSellerContact->getName()?->getValue() ?? '';
         $newDepartmentName = '';
         $newPhoneNumber = $documentSellerContact->getTelephone()?->getValue() ?? '';
-        $newFaxNumber = $documentSellerContact->getTelefax()?->getValue() ?? '';
+        $newFaxNumber = '';
         $newEmailAddress = $documentSellerContact->getElectronicMail()?->getValue() ?? '';
 
         return $this;
@@ -4003,7 +4003,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getEndpointID() ?? []
+                $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getEndpointID() ?? []
             ),
             'documentsellerecommunication'
         );
@@ -4018,7 +4018,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getEndpointID() ?? []
+                $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getEndpointID() ?? []
             ),
             'documentsellerecommunication'
         );
@@ -4041,7 +4041,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<EndpointID>
          */
-        $documentSellerElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getEndpointID() ?? []);
+        $documentSellerElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getEndpointID() ?? []);
 
         /**
          * @var EndpointID
@@ -4066,7 +4066,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newName
     ): static {
         $newName = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingCustomerParty()
             ?->getParty()
             ?->firstPartyLegalEntity()
@@ -4193,7 +4193,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyTaxScheme() ?? []
+                $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyTaxScheme() ?? []
             ),
             'documentbuyertaxregistration'
         );
@@ -4208,7 +4208,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyTaxScheme() ?? []
+                $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyTaxScheme() ?? []
             ),
             'documentbuyertaxregistration'
         );
@@ -4231,7 +4231,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<PartyTaxScheme>
          */
-        $documentBuyerTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyTaxScheme() ?? []);
+        $documentBuyerTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyTaxScheme() ?? []);
 
         /**
          * @var PartyTaxScheme
@@ -4253,7 +4253,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getPostalAddress() ?? []
+                $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getPostalAddress() ?? []
             ),
             'documentbuyeraddress'
         );
@@ -4268,7 +4268,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getPostalAddress() ?? []
+                $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getPostalAddress() ?? []
             ),
             'documentbuyeraddress'
         );
@@ -4306,7 +4306,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<PostalAddress>
          */
-        $documentBuyerAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getPostalAddress() ?? []);
+        $documentBuyerAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getPostalAddress() ?? []);
 
         /**
          * @var PostalAddress
@@ -4333,7 +4333,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyLegalEntity() ?? []
+                $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyLegalEntity() ?? []
             ),
             'documentbuyerlegalorganisation'
         );
@@ -4348,7 +4348,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyLegalEntity() ?? []
+                $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyLegalEntity() ?? []
             ),
             'documentbuyerlegalorganisation'
         );
@@ -4374,7 +4374,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<PartyLegalEntity>
          */
-        $documentBuyerLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyLegalEntity() ?? []);
+        $documentBuyerLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyLegalEntity() ?? []);
 
         /**
          * @var PartyLegalEntity
@@ -4384,7 +4384,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         // Trading name and Party name are swapped in UBL
         $newType = $documentBuyerLegalOrganisation->getCompanyID()?->getSchemeID() ?? '';
         $newId = $documentBuyerLegalOrganisation->getCompanyID()?->getValue() ?? '';
-        $newName = $this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->firstPartyName()?->getName()?->getValue() ?? '';
+        $newName = $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->firstPartyName()?->getName()?->getValue() ?? '';
 
         return $this;
     }
@@ -4398,7 +4398,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getContact() ?? []
+                $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getContact() ?? []
             ),
             'documentbuyercontact'
         );
@@ -4413,7 +4413,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getContact() ?? []
+                $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getContact() ?? []
             ),
             'documentbuyercontact'
         );
@@ -4445,7 +4445,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<Contact>
          */
-        $documentBuyerContacts = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getContact() ?? []);
+        $documentBuyerContacts = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getContact() ?? []);
 
         /**
          * @var Contact
@@ -4455,7 +4455,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $newPersonName = $documentBuyerContact->getName()?->getValue() ?? '';
         $newDepartmentName = '';
         $newPhoneNumber = $documentBuyerContact->getTelephone()?->getValue() ?? '';
-        $newFaxNumber = $documentBuyerContact->getTelefax()?->getValue() ?? '';
+        $newFaxNumber = '';
         $newEmailAddress = $documentBuyerContact->getElectronicMail()?->getValue() ?? '';
 
         return $this;
@@ -4470,7 +4470,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getEndpointID() ?? []
+                $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getEndpointID() ?? []
             ),
             'documentbuyerecommunication'
         );
@@ -4485,7 +4485,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getEndpointID() ?? []
+                $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getEndpointID() ?? []
             ),
             'documentbuyerecommunication'
         );
@@ -4508,7 +4508,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<EndpointID>
          */
-        $documentBuyerElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getEndpointID() ?? []);
+        $documentBuyerElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getEndpointID() ?? []);
 
         /**
          * @var EndpointID
@@ -4533,7 +4533,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newName
     ): static {
         $newName = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getTaxRepresentativeParty()
             ?->firstPartyName()
             ?->getName()
@@ -4549,10 +4549,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentTaxRepresentativeId(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            $this->resolveDocumentTaxRepresentativeIds(),
-            'documenttaxrepresentativeid'
-        );
+        return false;
     }
 
     /**
@@ -4562,10 +4559,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentTaxRepresentativeId(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            $this->resolveDocumentTaxRepresentativeIds(),
-            'documenttaxrepresentativeid'
-        );
+        return false;
     }
 
     /**
@@ -4579,17 +4573,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     public function getDocumentTaxRepresentativeId(
         ?string &$newId
     ): static {
-        /**
-         * @var array<PartyIdentification>
-         */
-        $documentTaxRepresentativeIds = $this->resolveDocumentTaxRepresentativeIds();
-
-        /**
-         * @var PartyIdentification
-         */
-        $documentTaxRepresentativeId = $documentTaxRepresentativeIds[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeid')];
-
-        $newId = $documentTaxRepresentativeId->getID()?->getValue() ?? '';
+        $newId = '';
 
         return $this;
     }
@@ -4601,10 +4585,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentTaxRepresentativeGlobalId(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            $this->resolveDocumentTaxRepresentativeGlobalIds(),
-            'documenttaxrepresentativeglobalid'
-        );
+        return false;
     }
 
     /**
@@ -4614,10 +4595,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentTaxRepresentativeGlobalId(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            $this->resolveDocumentTaxRepresentativeGlobalIds(),
-            'documenttaxrepresentativeglobalid'
-        );
+        return false;
     }
 
     /**
@@ -4634,18 +4612,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
-        /**
-         * @var array<PartyIdentification>
-         */
-        $documentTaxRepresentativeGlobalIds = $this->resolveDocumentTaxRepresentativeGlobalIds();
-
-        /**
-         * @var PartyIdentification
-         */
-        $documentTaxRepresentativeGlobalId = $documentTaxRepresentativeGlobalIds[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeglobalid')];
-
-        $newGlobalId = $documentTaxRepresentativeGlobalId->getID()?->getValue() ?? '';
-        $newGlobalIdType = $documentTaxRepresentativeGlobalId->getID()?->getSchemeID() ?? '';
+        $newGlobalId = '';
+        $newGlobalIdType = '';
 
         return $this;
     }
@@ -4659,7 +4627,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getPartyTaxScheme() ?? []
+                $this->getUblRootObject()->getTaxRepresentativeParty()?->getPartyTaxScheme() ?? []
             ),
             'documenttaxrepresentativetaxregistration'
         );
@@ -4674,7 +4642,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getPartyTaxScheme() ?? []
+                $this->getUblRootObject()->getTaxRepresentativeParty()?->getPartyTaxScheme() ?? []
             ),
             'documenttaxrepresentativetaxregistration'
         );
@@ -4697,7 +4665,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<PartyTaxScheme>
          */
-        $documentTaxRepresentativeTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getPartyTaxScheme() ?? []);
+        $documentTaxRepresentativeTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getTaxRepresentativeParty()?->getPartyTaxScheme() ?? []);
 
         /**
          * @var PartyTaxScheme
@@ -4719,7 +4687,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getPostalAddress() ?? []
+                $this->getUblRootObject()->getTaxRepresentativeParty()?->getPostalAddress() ?? []
             ),
             'documenttaxrepresentativeaddress'
         );
@@ -4734,7 +4702,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getPostalAddress() ?? []
+                $this->getUblRootObject()->getTaxRepresentativeParty()?->getPostalAddress() ?? []
             ),
             'documenttaxrepresentativeaddress'
         );
@@ -4772,7 +4740,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<PostalAddress>
          */
-        $documentTaxRepresentativeAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getPostalAddress() ?? []);
+        $documentTaxRepresentativeAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getTaxRepresentativeParty()?->getPostalAddress() ?? []);
 
         /**
          * @var PostalAddress
@@ -4797,12 +4765,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentTaxRepresentativeLegalOrganisation(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getPartyLegalEntity() ?? []
-            ),
-            'documenttaxrepresentativelegalorganisation'
-        );
+        return false;
     }
 
     /**
@@ -4812,12 +4775,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentTaxRepresentativeLegalOrganisation(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getPartyLegalEntity() ?? []
-            ),
-            'documenttaxrepresentativelegalorganisation'
-        );
+        return false;
     }
 
     /**
@@ -4837,19 +4795,9 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newId,
         ?string &$newName
     ): static {
-        /**
-         * @var array<PartyLegalEntity>
-         */
-        $documentTaxRepresentativeLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getPartyLegalEntity() ?? []);
-
-        /**
-         * @var PartyLegalEntity
-         */
-        $documentTaxRepresentativeLegalOrganisation = $documentTaxRepresentativeLegalOrganisations[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativelegalorganisation')];
-
-        $newType = $documentTaxRepresentativeLegalOrganisation->getCompanyID()?->getSchemeID() ?? '';
-        $newId = $documentTaxRepresentativeLegalOrganisation->getCompanyID()?->getValue() ?? '';
-        $newName = $this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->firstPartyName()?->getName()?->getValue() ?? '';
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         return $this;
     }
@@ -4861,12 +4809,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentTaxRepresentativeContact(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getContact() ?? []
-            ),
-            'documenttaxrepresentativecontact'
-        );
+        return false;
     }
 
     /**
@@ -4876,12 +4819,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentTaxRepresentativeContact(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getContact() ?? []
-            ),
-            'documenttaxrepresentativecontact'
-        );
+        return false;
     }
 
     /**
@@ -4907,21 +4845,11 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
-        /**
-         * @var array<Contact>
-         */
-        $documentTaxRepresentativeContacts = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getContact() ?? []);
-
-        /**
-         * @var Contact
-         */
-        $documentTaxRepresentativeContact = $documentTaxRepresentativeContacts[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativecontact')];
-
-        $newPersonName = $documentTaxRepresentativeContact->getName()?->getValue() ?? '';
+        $newPersonName = '';
         $newDepartmentName = '';
-        $newPhoneNumber = $documentTaxRepresentativeContact->getTelephone()?->getValue() ?? '';
-        $newFaxNumber = $documentTaxRepresentativeContact->getTelefax()?->getValue() ?? '';
-        $newEmailAddress = $documentTaxRepresentativeContact->getElectronicMail()?->getValue() ?? '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
 
         return $this;
     }
@@ -4933,12 +4861,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentTaxRepresentativeCommunication(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getEndpointID() ?? []
-            ),
-            'documenttaxrepresentativeecommunication'
-        );
+        return false;
     }
 
     /**
@@ -4948,12 +4871,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentTaxRepresentativeCommunication(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getEndpointID() ?? []
-            ),
-            'documenttaxrepresentativeecommunication'
-        );
+        return false;
     }
 
     /**
@@ -4970,18 +4888,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newType,
         ?string &$newUri
     ): static {
-        /**
-         * @var array<EndpointID>
-         */
-        $documentTaxRepresentativeElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getEndpointID() ?? []);
-
-        /**
-         * @var EndpointID
-         */
-        $documentTaxRepresentativeElectronicCommunication = $documentTaxRepresentativeElectronicCommunications[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeecommunication')];
-
-        $newType = $documentTaxRepresentativeElectronicCommunication->getSchemeID() ?? '';
-        $newUri = $documentTaxRepresentativeElectronicCommunication->getValue() ?? '';
+        $newType = '';
+        $newUri = '';
 
         return $this;
     }
@@ -5325,13 +5233,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     public function getDocumentShipToName(
         ?string &$newName
     ): static {
-        $newName = $this
-            ->getUblCreditNoteRootObject()
-            ->firstDelivery()
-            ?->getDeliveryParty()
-            ?->firstPartyName()
-            ?->getName()
-            ?->getValue() ?? '';
+        $newName = '';
 
         return $this;
     }
@@ -5451,12 +5353,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentShipToTaxRegistration(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->firstDelivery()?->getDeliveryParty()?->getPartyTaxScheme() ?? []
-            ),
-            'documentshiptotaxregistration'
-        );
+        return false;
     }
 
     /**
@@ -5466,12 +5363,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentShipToTaxRegistration(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->firstDelivery()?->getDeliveryParty()?->getPartyTaxScheme() ?? []
-            ),
-            'documentshiptotaxregistration'
-        );
+        return false;
     }
 
     /**
@@ -5488,18 +5380,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
-        /**
-         * @var array<PartyTaxScheme>
-         */
-        $documentShipToTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->firstDelivery()?->getDeliveryParty()?->getPartyTaxScheme() ?? []);
-
-        /**
-         * @var PartyTaxScheme
-         */
-        $documentShipToTaxRegistration = $documentShipToTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentshiptotaxregistration')];
-
-        $newTaxRegistrationType = $documentShipToTaxRegistration->getTaxScheme()?->getID()?->getValue() ?? '';
-        $newTaxRegistrationId = $documentShipToTaxRegistration->getCompanyID()?->getValue() ?? '';
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         return $this;
     }
@@ -5513,7 +5395,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->firstDelivery()?->getDeliveryLocation()?->getAddress() ?? []
+                $this->getUblRootObject()->firstDelivery()?->getDeliveryLocation()?->getAddress() ?? []
             ),
             'documentshiptoaddress'
         );
@@ -5528,7 +5410,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->firstDelivery()?->getDeliveryLocation()?->getAddress() ?? []
+                $this->getUblRootObject()->firstDelivery()?->getDeliveryLocation()?->getAddress() ?? []
             ),
             'documentshiptoaddress'
         );
@@ -5566,7 +5448,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<PostalAddress>
          */
-        $documentShipToAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->firstDelivery()?->getDeliveryLocation()?->getAddress() ?? []);
+        $documentShipToAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->firstDelivery()?->getDeliveryLocation()?->getAddress() ?? []);
 
         /**
          * @var PostalAddress
@@ -7044,7 +6926,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newName
     ): static {
         $newName = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getPayeeParty()
             ?->firstPartyName()
             ?->getName()
@@ -7168,12 +7050,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentPayeeTaxRegistration(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getPayeeParty()?->getPartyTaxScheme() ?? []
-            ),
-            'documentpayeetaxregistration'
-        );
+        return false;
     }
 
     /**
@@ -7183,12 +7060,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentPayeeTaxRegistration(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getPayeeParty()?->getPartyTaxScheme() ?? []
-            ),
-            'documentpayeetaxregistration'
-        );
+        return false;
     }
 
     /**
@@ -7205,18 +7077,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
-        /**
-         * @var array<PartyTaxScheme>
-         */
-        $documentPayeeTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getPayeeParty()?->getPartyTaxScheme() ?? []);
-
-        /**
-         * @var PartyTaxScheme
-         */
-        $documentPayeeTaxRegistration = $documentPayeeTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentpayeetaxregistration')];
-
-        $newTaxRegistrationType = $documentPayeeTaxRegistration->getTaxScheme()?->getID()?->getValue() ?? '';
-        $newTaxRegistrationId = $documentPayeeTaxRegistration->getCompanyID()?->getValue() ?? '';
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         return $this;
     }
@@ -7228,12 +7090,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentPayeeAddress(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getPayeeParty()?->getPostalAddress() ?? []
-            ),
-            'documentpayeeaddress'
-        );
+        return false;
     }
 
     /**
@@ -7243,12 +7100,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentPayeeAddress(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getPayeeParty()?->getPostalAddress() ?? []
-            ),
-            'documentpayeeaddress'
-        );
+        return false;
     }
 
     /**
@@ -7280,23 +7132,13 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
-        /**
-         * @var array<PostalAddress>
-         */
-        $documentPayeeAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getPayeeParty()?->getPostalAddress() ?? []);
-
-        /**
-         * @var PostalAddress
-         */
-        $documentPayeeAddress = $documentPayeeAddresses[InvoiceSuitePointerUtils::getValue('documentpayeeaddress')];
-
-        $newAddressLine1 = $documentPayeeAddress->getStreetName()?->getValue() ?? '';
-        $newAddressLine2 = $documentPayeeAddress->getAdditionalStreetName()?->getValue() ?? '';
-        $newAddressLine3 = $documentPayeeAddress->firstAddressLine()?->getLine()?->getValue() ?? '';
-        $newPostcode = $documentPayeeAddress->getPostalZone()?->getValue() ?? '';
-        $newCity = $documentPayeeAddress->getCityName()?->getValue() ?? '';
-        $newCountryId = $documentPayeeAddress->getCountry()?->getIdentificationCode()?->getValue() ?? '';
-        $newSubDivision = $documentPayeeAddress->getCountrySubentity()?->getValue() ?? '';
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
 
         return $this;
     }
@@ -7310,7 +7152,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getPayeeParty()?->getPartyLegalEntity() ?? []
+                $this->getUblRootObject()->getPayeeParty()?->getPartyLegalEntity() ?? []
             ),
             'documentpayeelegalorganisation'
         );
@@ -7325,7 +7167,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getPayeeParty()?->getPartyLegalEntity() ?? []
+                $this->getUblRootObject()->getPayeeParty()?->getPartyLegalEntity() ?? []
             ),
             'documentpayeelegalorganisation'
         );
@@ -7351,7 +7193,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<PartyLegalEntity>
          */
-        $documentPayeeLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getPayeeParty()?->getPartyLegalEntity() ?? []);
+        $documentPayeeLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getPayeeParty()?->getPartyLegalEntity() ?? []);
 
         /**
          * @var PartyLegalEntity
@@ -7372,12 +7214,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentPayeeContact(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getPayeeParty()?->getContact() ?? []
-            ),
-            'documentpayeecontact'
-        );
+        return false;
     }
 
     /**
@@ -7387,12 +7224,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentPayeeContact(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getPayeeParty()?->getContact() ?? []
-            ),
-            'documentpayeecontact'
-        );
+        return false;
     }
 
     /**
@@ -7418,21 +7250,11 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
-        /**
-         * @var array<Contact>
-         */
-        $documentPayeeContacts = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getPayeeParty()?->getContact() ?? []);
-
-        /**
-         * @var Contact
-         */
-        $documentPayeeContact = $documentPayeeContacts[InvoiceSuitePointerUtils::getValue('documentpayeecontact')];
-
-        $newPersonName = $documentPayeeContact->getName()?->getValue() ?? '';
+        $newPersonName = '';
         $newDepartmentName = '';
-        $newPhoneNumber = $documentPayeeContact->getTelephone()?->getValue() ?? '';
-        $newFaxNumber = $documentPayeeContact->getTelefax()?->getValue() ?? '';
-        $newEmailAddress = $documentPayeeContact->getElectronicMail()?->getValue() ?? '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
 
         return $this;
     }
@@ -7444,12 +7266,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentPayeeCommunication(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getPayeeParty()?->getEndpointID() ?? []
-            ),
-            'documentpayeeecommunication'
-        );
+        return false;
     }
 
     /**
@@ -7459,12 +7276,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentPayeeCommunication(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getPayeeParty()?->getEndpointID() ?? []
-            ),
-            'documentpayeeecommunication'
-        );
+        return false;
     }
 
     /**
@@ -7481,18 +7293,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newType,
         ?string &$newUri
     ): static {
-        /**
-         * @var array<EndpointID>
-         */
-        $documentPayeeElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getPayeeParty()?->getEndpointID() ?? []);
-
-        /**
-         * @var EndpointID
-         */
-        $documentPayeeElectronicCommunication = $documentPayeeElectronicCommunications[InvoiceSuitePointerUtils::getValue('documentpayeeecommunication')];
-
-        $newType = $documentPayeeElectronicCommunication->getSchemeID() ?? '';
-        $newUri = $documentPayeeElectronicCommunication->getValue() ?? '';
+        $newType = '';
+        $newUri = '';
 
         return $this;
     }
@@ -7506,7 +7308,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getPaymentMeans() ?? []
+                $this->getUblRootObject()->getPaymentMeans() ?? []
             ),
             'documentpaymentmean'
         );
@@ -7521,7 +7323,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getPaymentMeans() ?? []
+                $this->getUblRootObject()->getPaymentMeans() ?? []
             ),
             'documentpaymentmean'
         );
@@ -7571,7 +7373,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<PaymentMeans>
          */
-        $documentPaymentMeans = $this->getUblCreditNoteRootObject()->getPaymentMeans() ?? [];
+        $documentPaymentMeans = $this->getUblRootObject()->getPaymentMeans() ?? [];
 
         /**
          * @var PaymentMeans
@@ -7587,7 +7389,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $newPayeeAccountName = $documentPaymentMean->getPayeeFinancialAccount()?->getName()?->getValue() ?? '';
         $newPayeeProprietaryId = '';
         $newPayeeBic = $documentPaymentMean->getPayeeFinancialAccount()?->getFinancialInstitutionBranch()?->getID()?->getValue() ?? '';
-        $newPaymentReference = $documentPaymentMean->firstPaymentID()?->getValue() ?? '';
+        $newPaymentReference = '';
         $newMandate = $documentPaymentMean->getPaymentMandate()?->getID()?->getValue() ?? '';
 
         return $this;
@@ -7690,7 +7492,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getPaymentTerms() ?? []
+                $this->getUblRootObject()->getPaymentTerms() ?? []
             ),
             'documentpaymentterm'
         );
@@ -7705,7 +7507,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getPaymentTerms() ?? []
+                $this->getUblRootObject()->getPaymentTerms() ?? []
             ),
             'documentpaymentterm'
         );
@@ -7730,7 +7532,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<PaymentTerms>
          */
-        $documentPaymentTerms = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getPaymentTerms() ?? []);
+        $documentPaymentTerms = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getPaymentTerms() ?? []);
 
         /**
          * @var PaymentTerms
@@ -7865,7 +7667,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->firstTaxTotal()?->getTaxSubtotal() ?? []
+                $this->getUblRootObject()->firstTaxTotal()?->getTaxSubtotal() ?? []
             ),
             'documenttax'
         );
@@ -7880,7 +7682,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->firstTaxTotal()?->getTaxSubtotal() ?? []
+                $this->getUblRootObject()->firstTaxTotal()?->getTaxSubtotal() ?? []
             ),
             'documenttax'
         );
@@ -7924,7 +7726,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<TaxSubtotal>
          */
-        $documentTaxes = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->firstTaxTotal()?->getTaxSubtotal() ?? []);
+        $documentTaxes = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->firstTaxTotal()?->getTaxSubtotal() ?? []);
 
         /**
          * @var TaxSubtotal
@@ -7938,7 +7740,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $newTaxPercent = $documentTax->getTaxCategory()?->getPercent()?->getValue() ?? 0.0;
         $newExemptionReason = $documentTax->getTaxCategory()?->firstTaxExemptionReason()?->getValue() ?? '';
         $newExemptionReasonCode = $documentTax->getTaxCategory()?->getTaxExemptionReasonCode()?->getValue() ?? '';
-        $newTaxDueDate = $this->getUblCreditNoteRootObject()->getTaxPointDate();
+        $newTaxDueDate = $this->getUblRootObject()->getTaxPointDate();
         $newTaxDueCode = '';
 
         return $this;
@@ -7953,7 +7755,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAllowanceCharge() ?? []
+                $this->getUblRootObject()->getAllowanceCharge() ?? []
             ),
             'documentallowancecharge'
         );
@@ -7968,7 +7770,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     {
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getAllowanceCharge() ?? []
+                $this->getUblRootObject()->getAllowanceCharge() ?? []
             ),
             'documentallowancecharge'
         );
@@ -8012,7 +7814,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<AllowanceCharge>
          */
-        $documentAllowanceCharges = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getAllowanceCharge() ?? []);
+        $documentAllowanceCharges = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getAllowanceCharge() ?? []);
 
         /**
          * @var AllowanceCharge
@@ -8121,10 +7923,10 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?float &$newPrepaidAmount,
         ?float &$newRoungingAmount
     ): static {
-        $documentSummation = $this->getUblCreditNoteRootObject()->getLegalMonetaryTotal();
+        $documentSummation = $this->getUblRootObject()->getLegalMonetaryTotal();
 
-        $taxTotalAmount = $this->getUblCreditNoteRootObject()->getTaxTotalAtIndex(0);
-        $taxTotalAmount2 = $this->getUblCreditNoteRootObject()->getTaxTotalAtIndex(1);
+        $taxTotalAmount = $this->getUblRootObject()->getTaxTotalAtIndex(0);
+        $taxTotalAmount2 = $this->getUblRootObject()->getTaxTotalAtIndex(1);
 
         $newNetAmount = $documentSummation?->getLineExtensionAmount()?->getValue() ?? 0.0;
         $newChargeTotalAmount = $documentSummation?->getChargeTotalAmount()?->getValue() ?? 0.0;
@@ -8151,7 +7953,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
 
         return InvoiceSuitePointerUtils::hasFirst(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getCreditNoteLine() ?? []
+                $this->getUblRootObject()->getCreditNoteLine() ?? []
             ),
             'documentposition'
         );
@@ -8168,7 +7970,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
 
         return InvoiceSuitePointerUtils::hasNext(
             InvoiceSuiteArrayUtils::ensure(
-                $this->getUblCreditNoteRootObject()->getCreditNoteLine() ?? []
+                $this->getUblRootObject()->getCreditNoteLine() ?? []
             ),
             'documentposition'
         );
@@ -8395,8 +8197,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $newProductCharacteristicDescription = $documentPositionProductCharacteristic->getName()?->getValue() ?? '';
         $newProductCharacteristicValue = $documentPositionProductCharacteristic->getValue()?->getValue() ?? '';
         $newProductCharacteristicType = '';
-        $newProductCharacteristicMeasureValue = $documentPositionProductCharacteristic->getValueQuantity()?->getValue() ?? 0.0;
-        $newProductCharacteristicMeasureUnit = $documentPositionProductCharacteristic->getValueQuantity()?->getUnitCode() ?? '';
+        $newProductCharacteristicMeasureValue = 0.0;
+        $newProductCharacteristicMeasureUnit = '';
 
         return $this;
     }
@@ -10004,7 +9806,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
 
         $newStartDate = $positionBillingPeriod->getStartDate();
         $newEndDate = $positionBillingPeriod->getEndDate();
-        $newDescription = $positionBillingPeriod->firstDescription()?->getValue() ?? '';
+        $newDescription = '';
 
         return $this;
     }
@@ -10079,8 +9881,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $newTaxType = $positionTax->getTaxScheme()->getID()?->getValue() ?? '';
         $newTaxAmount = 0.0;
         $newTaxPercent = $positionTax->getPercent()?->getValue() ?? 0.0;
-        $newExemptionReason = $positionTax->firstTaxExemptionReason()?->getValue() ?? '';
-        $newExemptionReasonCode = $positionTax->getTaxExemptionReasonCode()?->getValue() ?? '';
+        $newExemptionReason = '';
+        $newExemptionReasonCode = '';
 
         return $this;
     }
@@ -10268,7 +10070,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      *
      * @return CreditNote
      */
-    protected function getUblCreditNoteRootObject(): CreditNote
+    protected function getUblRootObject(): CreditNote
     {
         return $this->getDocumentRootObject();
     }
@@ -10387,7 +10189,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         /**
          * @var array<CreditNoteLine>
          */
-        $documentPositions = InvoiceSuiteArrayUtils::ensure($this->getUblCreditNoteRootObject()->getCreditNoteLine() ?? []);
+        $documentPositions = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getCreditNoteLine() ?? []);
 
         return $documentPositions[InvoiceSuitePointerUtils::getValue('documentposition')];
     }
@@ -10446,7 +10248,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
             array_values(
                 array_filter(
                     InvoiceSuiteArrayUtils::ensure(
-                        $this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyIdentification() ?? []
+                        $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyIdentification() ?? []
                     ),
                     static fn (PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? '') === ''
                 )
@@ -10464,7 +10266,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
             array_values(
                 array_filter(
                     InvoiceSuiteArrayUtils::ensure(
-                        $this->getUblCreditNoteRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyIdentification() ?? []
+                        $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyIdentification() ?? []
                     ),
                     static fn (PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? '') !== ''
                 )
@@ -10482,7 +10284,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
             array_values(
                 array_filter(
                     InvoiceSuiteArrayUtils::ensure(
-                        $this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyIdentification() ?? []
+                        $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyIdentification() ?? []
                     ),
                     static fn (PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? '') === ''
                 )
@@ -10500,7 +10302,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
             array_values(
                 array_filter(
                     InvoiceSuiteArrayUtils::ensure(
-                        $this->getUblCreditNoteRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyIdentification() ?? []
+                        $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyIdentification() ?? []
                     ),
                     static fn (PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? '') !== ''
                 )
@@ -10518,7 +10320,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
             array_values(
                 array_filter(
                     InvoiceSuiteArrayUtils::ensure(
-                        $this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getPartyIdentification() ?? []
+                        $this->getUblRootObject()->getTaxRepresentativeParty()?->getPartyIdentification() ?? []
                     ),
                     static fn (PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? '') === ''
                 )
@@ -10536,7 +10338,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
             array_values(
                 array_filter(
                     InvoiceSuiteArrayUtils::ensure(
-                        $this->getUblCreditNoteRootObject()->getTaxRepresentativeParty()?->getPartyIdentification() ?? []
+                        $this->getUblRootObject()->getTaxRepresentativeParty()?->getPartyIdentification() ?? []
                     ),
                     static fn (PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? '') !== ''
                 )
@@ -10554,7 +10356,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
             array_values(
                 array_filter(
                     InvoiceSuiteArrayUtils::ensure(
-                        $this->getUblCreditNoteRootObject()->firstDelivery()?->getDeliveryLocation()?->getID() ?? []
+                        $this->getUblRootObject()->firstDelivery()?->getDeliveryLocation()?->getID() ?? []
                     ),
                     static fn (ID $partyIdentification) => ($partyIdentification->getSchemeID() ?? '') === ''
                 )
@@ -10572,7 +10374,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
             array_values(
                 array_filter(
                     InvoiceSuiteArrayUtils::ensure(
-                        $this->getUblCreditNoteRootObject()->firstDelivery()?->getDeliveryLocation()?->getID() ?? []
+                        $this->getUblRootObject()->firstDelivery()?->getDeliveryLocation()?->getID() ?? []
                     ),
                     static fn (ID $partyIdentification) => ($partyIdentification->getSchemeID() ?? '') !== ''
                 )
@@ -10590,7 +10392,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
             array_values(
                 array_filter(
                     InvoiceSuiteArrayUtils::ensure(
-                        $this->getUblCreditNoteRootObject()->getPayeeParty()?->getPartyIdentification() ?? []
+                        $this->getUblRootObject()->getPayeeParty()?->getPartyIdentification() ?? []
                     ),
                     static fn (PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? '') === ''
                 )
@@ -10608,7 +10410,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
             array_values(
                 array_filter(
                     InvoiceSuiteArrayUtils::ensure(
-                        $this->getUblCreditNoteRootObject()->getPayeeParty()?->getPartyIdentification() ?? []
+                        $this->getUblRootObject()->getPayeeParty()?->getPartyIdentification() ?? []
                     ),
                     static fn (PartyIdentificationType $partyIdentification) => ($partyIdentification->getID()?->getSchemeID() ?? '') !== ''
                 )
@@ -10623,7 +10425,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     private function resolveDocumentPaymentCreditorReferenceIDs(): array
     {
         $partyIdentifications = $this
-            ->getUblCreditNoteRootObject()
+            ->getUblRootObject()
             ->getAccountingSupplierParty()
             ?->getPartyWithCreate()
             ?->getPartyIdentification();
