@@ -86,11 +86,11 @@
             <file>../tests/testcases/documentproviders/ZfFxMinimumProviderTest.php</file>
             <file>../tests/testcases/documentproviders/ZfFxMinimumProviderBuilderTest.php</file>
             <file>../tests/testcases/documentproviders/ZfFxMinimumProviderReaderTest.php</file>
-            <file>../tests/testcases/documentproviders/XRechnungCIIProviderTest.php</file>
-            <file>../tests/testcases/documentproviders/XRechnungCIIProviderBuilderTest.php</file>
-            <file>../tests/testcases/documentproviders/XRechnungCIIProviderReaderTest.php</file>
-            <file>../tests/testcases/documentproviders/XRechnungUBLProviderTest.php</file>
-            <file>../tests/testcases/documentproviders/XRechnungUBLProviderBuilderTest.php</file>
+            <file>../tests/testcases/documentproviders/XRechnungCIIInvoiceProviderTest.php</file>
+            <file>../tests/testcases/documentproviders/XRechnungCIIInvoiceProviderBuilderTest.php</file>
+            <file>../tests/testcases/documentproviders/XRechnungCIIInvoiceProviderReaderTest.php</file>
+            <file>../tests/testcases/documentproviders/XRechnungUBLInvoiceProviderTest.php</file>
+            <file>../tests/testcases/documentproviders/XRechnungUBLInvoiceProviderBuilderTest.php</file>
         </testsuite>
         <testsuite name="documentreadbuild">
             <!-- Builder -->
@@ -99,15 +99,15 @@
             <file>../tests/testcases/documentreadbuild/ZfFxBasicDocumentBuilderTest.php</file>
             <file>../tests/testcases/documentreadbuild/ZfFxBasicWlDocumentBuilderTest.php</file>
             <file>../tests/testcases/documentreadbuild/ZfFxMinimumDocumentBuilderTest.php</file>
-            <file>../tests/testcases/documentreadbuild/XRechnungCIIDocumentBuilderTest.php</file>
-            <file>../tests/testcases/documentreadbuild/XRechnungUBLBuilderTest.php</file>
+            <file>../tests/testcases/documentreadbuild/XRechnungCIIInvoiceBuilderTest.php</file>
+            <file>../tests/testcases/documentreadbuild/XRechnungUBLInvoiceBuilderTest.php</file>
             <!-- Reader -->
             <file>../tests/testcases/documentreadbuild/ZfFxExtendedDocumentReaderTest.php</file>
             <file>../tests/testcases/documentreadbuild/ZfFxComfortDocumentReaderTest.php</file>
             <file>../tests/testcases/documentreadbuild/ZfFxBasicDocumentReaderTest.php</file>
             <file>../tests/testcases/documentreadbuild/ZfFxBasicWlDocumentReaderTest.php</file>
             <file>../tests/testcases/documentreadbuild/ZfFxMinimumDocumentReaderTest.php</file>
-            <file>../tests/testcases/documentreadbuild/XRechnungCIIDocumentReaderTest.php</file>
+            <file>../tests/testcases/documentreadbuild/XRechnungCIIInvoiceReaderTest.php</file>
         </testsuite>
         <testsuite name="documentcase">
             <file>../tests/testcases/documentcases/InvoiceSuiteBuilderComfortSimpleTest.php</file>

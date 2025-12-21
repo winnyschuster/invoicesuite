@@ -11,12 +11,12 @@ use horstoeko\invoicesuite\documents\providers\xrechnungublinvoice\InvoiceSuiteX
 use horstoeko\invoicesuite\documents\providers\xrechnungublinvoice\InvoiceSuiteXRechnungUBLInvoiceSerializerHandler;
 use horstoeko\invoicesuite\tests\TestCase;
 
-final class XRechnungUBLProviderTest extends TestCase
+final class XRechnungUBLInvoiceProviderTest extends TestCase
 {
     public function testGetUniqueId(): void
     {
         $provider = new InvoiceSuiteXRechnungUBLInvoiceProvider();
-        $this->assertSame('xrechnungubl', $provider->getUniqueId());
+        $this->assertSame('xrechnungublinvoice', $provider->getUniqueId());
     }
 
     public function testGetDescription(): void

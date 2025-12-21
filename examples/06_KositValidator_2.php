@@ -12,7 +12,7 @@ require __DIR__ . "/../vendor/autoload.php";
 $reader = InvoiceSuiteDocumentReader::createFromFile(InvoiceSuitePathUtils::combinePathWithFile(__DIR__, "/../tests/assets/00_case_comfort_simple.xml"));
 $reader->convertToDTO($dto);
 
-$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('xrechnungubl');
+$builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('xrechnungublinvoice');
 $builder->createFromDTO($dto);
 $builder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice_UBL2.xml");
 

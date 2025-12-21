@@ -53,19 +53,19 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 
-final class XRechnungUBLBuilderTest extends TestCase
+final class XRechnungUBLInvoiceBuilderTest extends TestCase
 {
     use HandlesXmlTests;
 
     public static function setUpBeforeClass(): void
     {
-        static::$document = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('xrechnungubl');
+        static::$document = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('xrechnungublinvoice');
     }
 
     public function testHasCurrentDocumentProvider(): void
     {
         $this->assertTrue(static::$document->hasCurrentDocumentFormatProvider());
-        $this->assertSame('xrechnungubl', static::$document->getCurrentDocumentFormatProvider()->getUniqueId());
+        $this->assertSame('xrechnungublinvoice', static::$document->getCurrentDocumentFormatProvider()->getUniqueId());
         $this->assertNotNull(static::$document->getCurrentDocumentFormatProvider()->getBuilder());
         $this->assertInstanceOf(InvoiceSuiteXRechnungUBLInvoiceProviderBuilder::class, static::$document->getCurrentDocumentFormatProvider()->getBuilder());
         $this->assertInstanceOf(InvoiceSuiteAbstractDocumentFormatBuilder::class, static::$document->getCurrentDocumentFormatProvider()->getBuilder());
@@ -7852,13 +7852,13 @@ final class XRechnungUBLBuilderTest extends TestCase
         $documentReader = static::$document->copyToReader();
 
         $this->assertInstanceOf(InvoiceSuiteDocumentReader::class, $documentReader);
-        $this->assertSame('xrechnungubl', $documentReader->getCurrentDocumentFormatProvider()->getUniqueId());
+        $this->assertSame('xrechnungublinvoice', $documentReader->getCurrentDocumentFormatProvider()->getUniqueId());
         $this->assertInstanceOf(InvoiceSuiteXRechnungUBLInvoiceProviderReader::class, $documentReader->getCurrentDocumentFormatProvider()->getReader());
     }
 
     public function testCreateFromDTO(): void
     {
-        static::$document = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('xrechnungubl');
+        static::$document = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('xrechnungublinvoice');
 
         $documentDTO = new InvoiceSuiteDocumentHeaderDTO();
         $documentDTO

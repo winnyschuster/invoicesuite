@@ -12,7 +12,7 @@ use horstoeko\invoicesuite\documents\providers\xrechnungciiinvoice\InvoiceSuiteX
 use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\tests\TestCase;
 
-final class XRechnungCIIProviderTest extends TestCase
+final class XRechnungCIIInvoiceProviderTest extends TestCase
 {
     public function testGetUniqueId(): void
     {

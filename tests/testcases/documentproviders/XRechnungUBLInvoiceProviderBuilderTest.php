@@ -15,7 +15,7 @@ use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\tests\traits\HandlesXmlTests;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 
-final class XRechnungUBLProviderBuilderTest extends TestCase
+final class XRechnungUBLInvoiceProviderBuilderTest extends TestCase
 {
     use HandlesXmlTests;
 

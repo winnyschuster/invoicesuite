@@ -2,39 +2,38 @@
 
 declare(strict_types=1);
 
-namespace horstoeko\invoicesuite\tests\testcases\documentreadbuild;
+namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use DateTimeInterface;
+use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatReader;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
-use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
-use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
+use horstoeko\invoicesuite\documents\providers\xrechnungciiinvoice\InvoiceSuiteXRechnungCIIInvoiceProvider;
+use horstoeko\invoicesuite\documents\providers\xrechnungciiinvoice\InvoiceSuiteXRechnungCIIInvoiceProviderReader;
 use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 
-final class XRechnungCIIDocumentReaderTest extends TestCase
+final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
 {
     /**
      * The reader
      *
-     * @var InvoiceSuiteDocumentReader
+     * @var InvoiceSuiteAbstractDocumentFormatReader
      */
     private static $document;
 
     public static function setUpBeforeClass(): void
     {
-        static::$document = InvoiceSuiteDocumentReader::createFromFile(
-            InvoiceSuitePathUtils::combinePathWithFile(
-                InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', '..', 'assets'),
-                '02_technical_xml_zffx_xrechnung.xml'
+        static::$document = new InvoiceSuiteXRechnungCIIInvoiceProviderReader(new InvoiceSuiteXRechnungCIIInvoiceProvider());
+
+        static::$document->deserializeFromContent(
+            file_get_contents(
+                InvoiceSuitePathUtils::combinePathWithFile(
+                    InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', '..', 'assets'),
+                    '02_technical_xml_zffx_xrechnung.xml'
+                )
             )
         );
-    }
-
-    public function testDocumentCurrentFormatProvider(): void
-    {
-        $this->assertInstanceOf(InvoiceSuiteDocumentReader::class, static::$document);
-        $this->assertSame('xrechnungcii', static::$document->getCurrentDocumentFormatProvider()->getUniqueId());
     }
 
     public function testGetDocumentNo(): void
@@ -301,31 +300,6 @@ final class XRechnungCIIDocumentReaderTest extends TestCase
         $this->expectNoticeOrWarningExt(static function (): void {
             static::$document->getDocumentInvoiceReference($newReferenceNumber, $newReferenceDate, $newTypeCode);
         }, '/Undefined (array key|index)/');
-    }
-
-    public function testFirstNextGetDocumentPositionAdditionalObjectReference(): void
-    {
-        // First position
-
-        $this->assertTrue(static::$document->firstDocumentPosition());
-
-        $this->assertTrue(static::$document->firstDocumentPositionAdditionalObjectReference());
-
-        static::$document->getDocumentPositionAdditionalObjectReference(
-            $newReferenceNumber,
-            $newTypeCode,
-            $newReferenceTypeCode
-        );
-
-        $this->assertSame('ZZZZZZZZZ', $newReferenceNumber);
-        $this->assertSame('916', $newTypeCode);
-        $this->assertSame('130', $newReferenceTypeCode);
-
-        $this->assertFalse(static::$document->nextDocumentPositionAdditionalObjectReference());
-
-        // Second position
-
-        $this->assertFalse(static::$document->nextDocumentPosition());
     }
 
     public function testFirstNextGetDocumentProjectReference(): void
@@ -2633,6 +2607,31 @@ final class XRechnungCIIDocumentReaderTest extends TestCase
         $this->assertFalse(static::$document->nextDocumentPosition());
     }
 
+    public function testFirstNextGetDocumentPositionAdditionalObjectReference(): void
+    {
+        // First position
+
+        $this->assertTrue(static::$document->firstDocumentPosition());
+
+        $this->assertTrue(static::$document->firstDocumentPositionAdditionalObjectReference());
+
+        static::$document->getDocumentPositionAdditionalObjectReference(
+            $newReferenceNumber,
+            $newTypeCode,
+            $newReferenceTypeCode
+        );
+
+        $this->assertSame('ZZZZZZZZZ', $newReferenceNumber);
+        $this->assertSame('916', $newTypeCode);
+        $this->assertSame('130', $newReferenceTypeCode);
+
+        $this->assertFalse(static::$document->nextDocumentPositionAdditionalObjectReference());
+
+        // Second position
+
+        $this->assertFalse(static::$document->nextDocumentPosition());
+    }
+
     public function testFirstGetDcumentPositionGrossPrice(): void
     {
         // First position
@@ -3162,13 +3161,5 @@ final class XRechnungCIIDocumentReaderTest extends TestCase
         $this->assertInstanceOf(InvoiceSuiteDocumentHeaderDTO::class, $newDocmentDTO);
 
         $this->assertSame('2025-04-000001', $newDocmentDTO?->getNumber());
-    }
-
-    public function testCopyToBuilder(): void
-    {
-        $builder = static::$document->copyToBuilder();
-
-        $this->assertInstanceOf(InvoiceSuiteDocumentBuilder::class, $builder);
-        $this->assertSame('xrechnungcii', $builder->getCurrentDocumentFormatProvider()->getUniqueId());
     }
 }
