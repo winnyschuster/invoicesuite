@@ -48,12 +48,6 @@
     <cbc:IssueDate>1970-01-01</cbc:IssueDate>
   </cac:ContractDocumentReference>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>QU-1</cbc:ID>
-    <cbc:IssueDate>1970-01-01</cbc:IssueDate>
-    <cbc:DocumentTypeCode>325</cbc:DocumentTypeCode>
-    <cbc:DocumentDescription>Quotation</cbc:DocumentDescription>
-  </cac:AdditionalDocumentReference>
-  <cac:AdditionalDocumentReference>
     <cbc:ID>ADD-1</cbc:ID>
     <cbc:IssueDate>1970-01-01</cbc:IssueDate>
     <cbc:DocumentTypeCode>typecode</cbc:DocumentTypeCode>
@@ -387,15 +381,6 @@
         <cbc:Percent>7.00</cbc:Percent>
         <cbc:TaxExemptionReasonCode>ReasonCode</cbc:TaxExemptionReasonCode>
         <cbc:TaxExemptionReason>Reason</cbc:TaxExemptionReason>
-        <cac:TaxScheme>
-          <cbc:ID>VAT</cbc:ID>
-        </cac:TaxScheme>
-      </cac:ClassifiedTaxCategory>
-      <cac:ClassifiedTaxCategory>
-        <cbc:ID>S</cbc:ID>
-        <cbc:Percent>7.00</cbc:Percent>
-        <cbc:TaxExemptionReasonCode>ReasonCode2</cbc:TaxExemptionReasonCode>
-        <cbc:TaxExemptionReason>Reason2</cbc:TaxExemptionReason>
         <cac:TaxScheme>
           <cbc:ID>VAT</cbc:ID>
         </cac:TaxScheme>

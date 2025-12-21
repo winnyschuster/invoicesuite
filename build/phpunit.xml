@@ -91,6 +91,7 @@
             <file>../tests/testcases/documentproviders/XRechnungCIIInvoiceProviderReaderTest.php</file>
             <file>../tests/testcases/documentproviders/XRechnungUBLInvoiceProviderTest.php</file>
             <file>../tests/testcases/documentproviders/XRechnungUBLInvoiceProviderBuilderTest.php</file>
+            <file>../tests/testcases/documentproviders/XRechnungUBLInvoiceProviderReaderTest.php</file>
         </testsuite>
         <testsuite name="documentreadbuild">
             <!-- Builder -->
