@@ -10131,8 +10131,11 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractDocume
             ->getSpecifiedLineTradeAgreementWithCreate()
             ->getBuyerOrderReferencedDocumentWithCreate();
 
-        $buyerOrderReference->getIssuerAssignedIDWithCreate()->setValue($newReferenceNumber);
         $buyerOrderReference->getLineIDWithCreate()->setValue($newReferenceLineNumber);
+
+        if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            $buyerOrderReference->getIssuerAssignedIDWithCreate()->setValue($newReferenceNumber);
+        }
 
         if (!InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newReferenceDate])) {
             $buyerOrderReference
