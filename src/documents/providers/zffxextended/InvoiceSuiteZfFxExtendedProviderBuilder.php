@@ -9835,7 +9835,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractDocume
 
         $positionProduct->unsetDesignatedProductClassification();
 
-        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId, $newProductClassificationListVersionId])) {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId])) {
             return $this;
         }
 
@@ -9874,7 +9874,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractDocume
             return $this;
         }
 
-        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId, $newProductClassificationListVersionId])) {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId])) {
             return $this;
         }
 
@@ -10120,7 +10120,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractDocume
             ?->getSpecifiedLineTradeAgreement()
             ?->unsetBuyerOrderReferencedDocument();
 
-        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceLineNumber])) {
             return $this;
         }
 
@@ -10148,9 +10148,9 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractDocume
     /**
      * Add an associated buyer's order confirmation (line reference).
      *
-     * @param  null|string            $newReferenceNumber     __BT-X-537, From EXTENDED__ Buyer's order confirmation number
-     * @param  null|string            $newReferenceLineNumber __BT-X-538, From EXTENDED__ Buyer's order confirmation line number
-     * @param  null|DateTimeInterface $newReferenceDate       __BT-X-539, From EXTENDED__ Buyer's order confirmation date
+     * @param  null|string            $newReferenceNumber     __BT-X-21, From EXTENDED__ Buyer's order confirmation number
+     * @param  null|string            $newReferenceLineNumber __BT-132, From EN 16931__ Buyer's order confirmation line number
+     * @param  null|DateTimeInterface $newReferenceDate       __BT-X-22, From EXTENDED__ Buyer's order confirmation date
      * @return static
      */
     public function addDocumentPositionBuyerOrderReference(
@@ -10158,7 +10158,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractDocume
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
-        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceLineNumber])) {
             return $this;
         }
 
