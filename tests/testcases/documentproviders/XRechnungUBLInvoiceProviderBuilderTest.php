@@ -4749,8 +4749,8 @@ final class XRechnungUBLInvoiceProviderBuilderTest extends TestCase
         $this->disableRenderXmlContent();
 
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:PostalZone', 0);
-        $this->assertXPathValueWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:StreetName', 0, 'Line A');
-        $this->assertXPathValueWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:AdditionalStreetName', 0, 'Line B');
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:StreetName', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:AdditionalStreetName', 0);
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:CityName', 0);
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode', 0);
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:CountrySubentity', 0);
@@ -4766,8 +4766,8 @@ final class XRechnungUBLInvoiceProviderBuilderTest extends TestCase
         $this->disableRenderXmlContent();
 
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:PostalZone', 0);
-        $this->assertXPathValueWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:StreetName', 0, 'Line A');
-        $this->assertXPathValueWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:AdditionalStreetName', 0, 'Line B');
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:StreetName', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:AdditionalStreetName', 0);
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:CityName', 0);
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode', 0);
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:PayeeParty/cac:PostalAddress/cbc:CountrySubentity', 0);
