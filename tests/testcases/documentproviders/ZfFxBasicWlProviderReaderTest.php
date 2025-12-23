@@ -184,7 +184,7 @@ final class ZfFxBasicWlProviderReaderTest extends TestCase
         static::$document->getDocumentBuyerOrderReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('BO-1', $newReferenceNumber);
-        $this->assertSame('19700101', $newReferenceDate?->format('Ymd'));
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(static::$document->nextDocumentBuyerOrderReference());
 
@@ -212,7 +212,7 @@ final class ZfFxBasicWlProviderReaderTest extends TestCase
         static::$document->getDocumentContractReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('CON-1', $newReferenceNumber);
-        $this->assertSame('19700101', $newReferenceDate?->format('Ymd'));
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(static::$document->nextDocumentContractReference());
 
@@ -307,7 +307,7 @@ final class ZfFxBasicWlProviderReaderTest extends TestCase
         static::$document->getDocumentDespatchAdviceReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('DESPADV-1', $newReferenceNumber);
-        $this->assertSame('19700101', $newReferenceDate?->format('Ymd'));
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(static::$document->nextDocumentDespatchAdviceReference());
 
@@ -709,29 +709,29 @@ final class ZfFxBasicWlProviderReaderTest extends TestCase
 
         // ID
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeId());
+        $this->assertFalse(static::$document->firstDocumentTaxRepresentativeId());
 
         static::$document->getDocumentTaxRepresentativeId($newId);
 
-        $this->assertSame('0815-1147', $newId);
+        $this->assertSame('', $newId);
 
         $this->assertFalse(static::$document->nextDocumentTaxRepresentativeId());
 
         // Global ID
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeGlobalId());
+        $this->assertFalse(static::$document->firstDocumentTaxRepresentativeGlobalId());
 
         static::$document->getDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
 
-        $this->assertSame('11111-TR', $newGlobalId);
-        $this->assertSame('0088', $newGlobalIdType);
+        $this->assertSame('', $newGlobalId);
+        $this->assertSame('', $newGlobalIdType);
 
-        $this->assertTrue(static::$document->nextDocumentTaxRepresentativeGlobalId());
+        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeGlobalId());
 
         static::$document->getDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
 
-        $this->assertSame('22222-TR', $newGlobalId);
-        $this->assertSame('0088', $newGlobalIdType);
+        $this->assertSame('', $newGlobalId);
+        $this->assertSame('', $newGlobalIdType);
 
         $this->assertFalse(static::$document->nextDocumentTaxRepresentativeGlobalId());
 
@@ -772,13 +772,13 @@ final class ZfFxBasicWlProviderReaderTest extends TestCase
 
         // Legal Organisation
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeLegalOrganisation());
+        $this->assertFalse(static::$document->firstDocumentTaxRepresentativeLegalOrganisation());
 
         static::$document->getDocumentTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
 
-        $this->assertSame('8884', $newType);
-        $this->assertSame('3874837489237', $newId);
-        $this->assertSame('Tax AG', $newName);
+        $this->assertSame('', $newType);
+        $this->assertSame('', $newId);
+        $this->assertSame('', $newName);
 
         $this->assertFalse(static::$document->nextDocumentTaxRepresentativeLegalOrganisation());
 
@@ -804,58 +804,14 @@ final class ZfFxBasicWlProviderReaderTest extends TestCase
 
         // Communication
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeCommunication());
+        $this->assertFalse(static::$document->firstDocumentTaxRepresentativeCommunication());
 
         static::$document->getDocumentTaxRepresentativeCommunication($newType, $newUri);
 
-        $this->assertSame('EM', $newType);
-        $this->assertSame('info@tax.de', $newUri);
+        $this->assertSame('', $newType);
+        $this->assertSame('', $newUri);
 
         $this->assertFalse(static::$document->nextDocumentTaxRepresentativeCommunication());
-
-        // Finals
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeId($newId);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeAddress(
-                $newAddressLine1,
-                $newAddressLine2,
-                $newAddressLine3,
-                $newPostcode,
-                $newCity,
-                $newCountryId,
-                $newSubDivision
-            );
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeContact(
-                $newPersonName,
-                $newDepartmentName,
-                $newPhoneNumber,
-                $newFaxNumber,
-                $newEmailAddress
-            );
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeCommunication($newType, $newUri);
-        }, '/Undefined (array key|index)/');
     }
 
     public function testDocumentProductEndUser(): void
@@ -1011,12 +967,12 @@ final class ZfFxBasicWlProviderReaderTest extends TestCase
 
         // Tax Registration
 
-        $this->assertTrue(static::$document->firstDocumentShipToTaxRegistration());
+        $this->assertFalse(static::$document->firstDocumentShipToTaxRegistration());
 
         static::$document->getDocumentShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
-        $this->assertSame('7368366239786-SH', $newTaxRegistrationId);
-        $this->assertSame('VA', $newTaxRegistrationType);
+        $this->assertSame('', $newTaxRegistrationId);
+        $this->assertSame('', $newTaxRegistrationType);
 
         $this->assertFalse(static::$document->nextDocumentShipToTaxRegistration());
 
@@ -1046,13 +1002,13 @@ final class ZfFxBasicWlProviderReaderTest extends TestCase
 
         // Legal Organisation
 
-        $this->assertTrue(static::$document->firstDocumentShipToLegalOrganisation());
+        $this->assertFalse(static::$document->firstDocumentShipToLegalOrganisation());
 
         static::$document->getDocumentShipToLegalOrganisation($newType, $newId, $newName);
 
-        $this->assertSame('8884', $newType);
-        $this->assertSame('7368366239786-SH', $newId);
-        $this->assertSame('Ship To AG', $newName);
+        $this->assertSame('', $newType);
+        $this->assertSame('', $newId);
+        $this->assertSame('', $newName);
 
         $this->assertFalse(static::$document->nextDocumentShipToLegalOrganisation());
 
@@ -1078,58 +1034,14 @@ final class ZfFxBasicWlProviderReaderTest extends TestCase
 
         // Communication
 
-        $this->assertTrue(static::$document->firstDocumentShipToCommunication());
+        $this->assertFalse(static::$document->firstDocumentShipToCommunication());
 
         static::$document->getDocumentShipToCommunication($newType, $newUri);
 
-        $this->assertSame('EM', $newType);
-        $this->assertSame('info@shipto.de', $newUri);
+        $this->assertSame('', $newType);
+        $this->assertSame('', $newUri);
 
         $this->assertFalse(static::$document->nextDocumentShipToCommunication());
-
-        // Finals
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentShipToId($newId);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentShipToGlobalId($newGlobalId, $newGlobalIdType);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentShipToAddress(
-                $newAddressLine1,
-                $newAddressLine2,
-                $newAddressLine3,
-                $newPostcode,
-                $newCity,
-                $newCountryId,
-                $newSubDivision
-            );
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentShipToLegalOrganisation($newType, $newId, $newName);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentShipToContact(
-                $newPersonName,
-                $newDepartmentName,
-                $newPhoneNumber,
-                $newFaxNumber,
-                $newEmailAddress
-            );
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentShipToCommunication($newType, $newUri);
-        }, '/Undefined (array key|index)/');
     }
 
     public function testDocumentUltimateShipTo(): void
@@ -1630,18 +1542,18 @@ final class ZfFxBasicWlProviderReaderTest extends TestCase
 
         // Tax Registration
 
-        $this->assertTrue(static::$document->firstDocumentPayeeTaxRegistration());
+        $this->assertFalse(static::$document->firstDocumentPayeeTaxRegistration());
 
         static::$document->getDocumentPayeeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
-        $this->assertSame('893489787987', $newTaxRegistrationId);
-        $this->assertSame('VA', $newTaxRegistrationType);
+        $this->assertSame('', $newTaxRegistrationId);
+        $this->assertSame('', $newTaxRegistrationType);
 
         $this->assertFalse(static::$document->nextDocumentPayeeTaxRegistration());
 
         // Address
 
-        $this->assertTrue(static::$document->firstDocumentPayeeAddress());
+        $this->assertFalse(static::$document->firstDocumentPayeeAddress());
 
         static::$document->getDocumentPayeeAddress(
             $newAddressLine1,
@@ -1653,13 +1565,13 @@ final class ZfFxBasicWlProviderReaderTest extends TestCase
             $newSubDivision
         );
 
-        $this->assertSame('Line 1', $newAddressLine1);
-        $this->assertSame('Line 2', $newAddressLine2);
-        $this->assertSame('Line 3', $newAddressLine3);
-        $this->assertSame('06108', $newPostcode);
-        $this->assertSame('City', $newCity);
-        $this->assertSame('DE', $newCountryId);
-        $this->assertSame('Bavaria', $newSubDivision);
+        $this->assertSame('', $newAddressLine1);
+        $this->assertSame('', $newAddressLine2);
+        $this->assertSame('', $newAddressLine3);
+        $this->assertSame('', $newPostcode);
+        $this->assertSame('', $newCity);
+        $this->assertSame('', $newCountryId);
+        $this->assertSame('', $newSubDivision);
 
         $this->assertFalse(static::$document->nextDocumentPayeeAddress());
 
@@ -1671,7 +1583,7 @@ final class ZfFxBasicWlProviderReaderTest extends TestCase
 
         $this->assertSame('8884', $newType);
         $this->assertSame('3874837489237', $newId);
-        $this->assertSame('Payee AG', $newName);
+        $this->assertSame('', $newName);
 
         $this->assertFalse(static::$document->nextDocumentPayeeLegalOrganisation());
 
@@ -1697,58 +1609,14 @@ final class ZfFxBasicWlProviderReaderTest extends TestCase
 
         // Communication
 
-        $this->assertTrue(static::$document->firstDocumentPayeeCommunication());
+        $this->assertFalse(static::$document->firstDocumentPayeeCommunication());
 
         static::$document->getDocumentPayeeCommunication($newType, $newUri);
 
-        $this->assertSame('EM', $newType);
-        $this->assertSame('info@payee.de', $newUri);
+        $this->assertSame('', $newType);
+        $this->assertSame('', $newUri);
 
         $this->assertFalse(static::$document->nextDocumentPayeeCommunication());
-
-        // Finals
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentPayeeId($newId);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentPayeeGlobalId($newGlobalId, $newGlobalIdType);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentPayeeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentPayeeAddress(
-                $newAddressLine1,
-                $newAddressLine2,
-                $newAddressLine3,
-                $newPostcode,
-                $newCity,
-                $newCountryId,
-                $newSubDivision
-            );
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentPayeeLegalOrganisation($newType, $newId, $newName);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentPayeeContact(
-                $newPersonName,
-                $newDepartmentName,
-                $newPhoneNumber,
-                $newFaxNumber,
-                $newEmailAddress
-            );
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentPayeeCommunication($newType, $newUri);
-        }, '/Undefined (array key|index)/');
     }
 
     public function testFirstNextGetDocumentPaymentMean(): void
