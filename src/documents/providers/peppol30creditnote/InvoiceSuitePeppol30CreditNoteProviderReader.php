@@ -8120,7 +8120,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
 
         $newProductId = '';
         $newProductName = $documentPositionProduct?->getName()?->getValue() ?? '';
-        $newProductDescription = $documentPositionProduct?->firstDescription()->getValue() ?? '';
+        $newProductDescription = $documentPositionProduct?->firstDescription()?->getValue() ?? '';
         $newProductSellerId = $documentPositionProduct?->getSellersItemIdentification()?->getID()?->getValue() ?? '';
         $newProductBuyerId = $documentPositionProduct?->getBuyersItemIdentification()?->getID()?->getValue() ?? '';
         $newProductGlobalId = $documentPositionProduct?->getStandardItemIdentification()?->getID()?->getValue() ?? '';
