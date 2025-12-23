@@ -310,11 +310,6 @@ final class ZugferdDocumentReaderComfortTest extends TestCase
     {
         $this->assertFalse(self::$document->firstDocumentSellerTaxRepresentativeContact());
         $this->assertFalse(self::$document->nextDocumentSellerTaxRepresentativeContact());
-        $this->expectNoticeOrWarningExt(
-            static function (): void {
-                self::$document->getDocumentSellerTaxRepresentativeContact($sellertaxreprcontactpersonname, $sellertaxreprcontactdepartmentname, $sellertaxreprcontactphoneno, $sellertaxreprcontactfaxno, $sellertaxreprcontactemailaddr);
-            }
-        );
     }
 
     public function testDocumentShipToGeneral(): void
@@ -367,11 +362,6 @@ final class ZugferdDocumentReaderComfortTest extends TestCase
     {
         $this->assertFalse(self::$document->firstDocumentShipToContact());
         $this->assertFalse(self::$document->nextDocumentShipToContact());
-        $this->expectNoticeOrWarningExt(
-            static function (): void {
-                self::$document->getDocumentShipToContact($shiptocontactpersonname, $shiptocontactdepartmentname, $shiptocontactphoneno, $shiptocontactfaxno, $shiptocontactemailaddr);
-            }
-        );
     }
 
     public function testDocumentUltimateShipToGeneral(): void
@@ -689,17 +679,7 @@ final class ZugferdDocumentReaderComfortTest extends TestCase
     public function testDocumentPayeeContact(): void
     {
         $this->assertFalse(self::$document->firstDocumentPayeeContact());
-        $this->expectNoticeOrWarningExt(
-            static function (): void {
-                self::$document->getDocumentPayeeContact($payeecontactpersonname, $payeecontactdepartmentname, $payeecontactphoneno, $payeecontactfaxno, $payeecontactemailaddr);
-            }
-        );
         $this->assertFalse(self::$document->nextDocumentPayeeContact());
-        $this->expectNoticeOrWarningExt(
-            static function (): void {
-                self::$document->getDocumentPayeeContact($payeecontactpersonname, $payeecontactdepartmentname, $payeecontactphoneno, $payeecontactfaxno, $payeecontactemailaddr);
-            }
-        );
     }
 
     public function testDocumentProductEndUserGeneral(): void

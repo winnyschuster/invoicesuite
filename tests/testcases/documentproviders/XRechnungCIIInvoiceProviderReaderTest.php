@@ -172,7 +172,7 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
         static::$document->getDocumentSellerOrderReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('SO-1', $newReferenceNumber);
-        $this->assertSame('19700101', $newReferenceDate?->format('Ymd'));
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(static::$document->nextDocumentSellerOrderReference());
 
@@ -188,7 +188,7 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
         static::$document->getDocumentBuyerOrderReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('BO-1', $newReferenceNumber);
-        $this->assertSame('19700101', $newReferenceDate?->format('Ymd'));
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(static::$document->nextDocumentBuyerOrderReference());
 
@@ -216,7 +216,7 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
         static::$document->getDocumentContractReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('CON-1', $newReferenceNumber);
-        $this->assertSame('19700101', $newReferenceDate?->format('Ymd'));
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(static::$document->nextDocumentContractReference());
 
@@ -239,7 +239,7 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
         );
 
         $this->assertSame('ADD-1', $newReferenceNumber);
-        $this->assertSame('19700101', $newReferenceDate?->format('Ymd'));
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
         $this->assertSame('typecode', $newTypeCode);
         $this->assertSame('reftypecode', $newReferenceTypeCode);
         $this->assertSame('description', $newDescription);
@@ -257,7 +257,7 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
         );
 
         $this->assertSame('ADD-2', $newReferenceNumber);
-        $this->assertSame('19700102', $newReferenceDate?->format('Ymd'));
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
         $this->assertSame('typecode2', $newTypeCode);
         $this->assertSame('reftypecode2', $newReferenceTypeCode);
         $this->assertSame('description2', $newDescription);
@@ -285,7 +285,7 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
 
         $this->assertSame('INVREF-1', $newReferenceNumber);
         $this->assertSame('19700101', $newReferenceDate?->format('Ymd'));
-        $this->assertSame('typecode', $newTypeCode);
+        $this->assertSame('', $newTypeCode);
 
         $this->assertTrue(static::$document->nextDocumentInvoiceReference());
 
@@ -293,7 +293,7 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
 
         $this->assertSame('INVREF-2', $newReferenceNumber);
         $this->assertSame('19700102', $newReferenceDate?->format('Ymd'));
-        $this->assertSame('typecode2', $newTypeCode);
+        $this->assertSame('', $newTypeCode);
 
         $this->assertFalse(static::$document->nextDocumentInvoiceReference());
 
@@ -344,7 +344,7 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
         static::$document->getDocumentDespatchAdviceReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('DESPADV-1', $newReferenceNumber);
-        $this->assertSame('19700101', $newReferenceDate?->format('Ymd'));
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(static::$document->nextDocumentDespatchAdviceReference());
 
@@ -360,7 +360,7 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
         static::$document->getDocumentReceivingAdviceReference($newReferenceNumber, $newReferenceDate);
 
         $this->assertSame('RECADV-1', $newReferenceNumber);
-        $this->assertSame('19700101', $newReferenceDate?->format('Ymd'));
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(static::$document->nextDocumentReceivingAdviceReference());
 
@@ -750,29 +750,29 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
 
         // ID
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeId());
+        $this->assertFalse(static::$document->firstDocumentTaxRepresentativeId());
 
         static::$document->getDocumentTaxRepresentativeId($newId);
 
-        $this->assertSame('0815-1147', $newId);
+        $this->assertSame('', $newId);
 
         $this->assertFalse(static::$document->nextDocumentTaxRepresentativeId());
 
         // Global ID
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeGlobalId());
+        $this->assertFalse(static::$document->firstDocumentTaxRepresentativeGlobalId());
 
         static::$document->getDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
 
-        $this->assertSame('11111-TR', $newGlobalId);
-        $this->assertSame('0088', $newGlobalIdType);
+        $this->assertSame('', $newGlobalId);
+        $this->assertSame('', $newGlobalIdType);
 
-        $this->assertTrue(static::$document->nextDocumentTaxRepresentativeGlobalId());
+        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeGlobalId());
 
         static::$document->getDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
 
-        $this->assertSame('22222-TR', $newGlobalId);
-        $this->assertSame('0088', $newGlobalIdType);
+        $this->assertSame('', $newGlobalId);
+        $this->assertSame('', $newGlobalIdType);
 
         $this->assertFalse(static::$document->nextDocumentTaxRepresentativeGlobalId());
 
@@ -813,19 +813,19 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
 
         // Legal Organisation
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeLegalOrganisation());
+        $this->assertFalse(static::$document->firstDocumentTaxRepresentativeLegalOrganisation());
 
         static::$document->getDocumentTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
 
-        $this->assertSame('8884', $newType);
-        $this->assertSame('3874837489237', $newId);
-        $this->assertSame('Tax AG', $newName);
+        $this->assertSame('', $newType);
+        $this->assertSame('', $newId);
+        $this->assertSame('', $newName);
 
         $this->assertFalse(static::$document->nextDocumentTaxRepresentativeLegalOrganisation());
 
         // Contact
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeContact());
+        $this->assertFalse(static::$document->firstDocumentTaxRepresentativeContact());
 
         static::$document->getDocumentTaxRepresentativeContact(
             $newPersonName,
@@ -835,68 +835,24 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
             $newEmailAddress
         );
 
-        $this->assertSame('Horst Meier', $newPersonName);
-        $this->assertSame('Finance', $newDepartmentName);
-        $this->assertSame('0815-4711-0', $newPhoneNumber);
+        $this->assertSame('', $newPersonName);
+        $this->assertSame('', $newDepartmentName);
+        $this->assertSame('', $newPhoneNumber);
         $this->assertSame('', $newFaxNumber);
-        $this->assertSame('horst.meier@tax.de', $newEmailAddress);
+        $this->assertSame('', $newEmailAddress);
 
         $this->assertFalse(static::$document->nextDocumentTaxRepresentativeContact());
 
         // Communication
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeCommunication());
+        $this->assertFalse(static::$document->firstDocumentTaxRepresentativeCommunication());
 
         static::$document->getDocumentTaxRepresentativeCommunication($newType, $newUri);
 
-        $this->assertSame('EM', $newType);
-        $this->assertSame('info@tax.de', $newUri);
+        $this->assertSame('', $newType);
+        $this->assertSame('', $newUri);
 
         $this->assertFalse(static::$document->nextDocumentTaxRepresentativeCommunication());
-
-        // Finals
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeId($newId);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeAddress(
-                $newAddressLine1,
-                $newAddressLine2,
-                $newAddressLine3,
-                $newPostcode,
-                $newCity,
-                $newCountryId,
-                $newSubDivision
-            );
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeContact(
-                $newPersonName,
-                $newDepartmentName,
-                $newPhoneNumber,
-                $newFaxNumber,
-                $newEmailAddress
-            );
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeCommunication($newType, $newUri);
-        }, '/Undefined (array key|index)/');
     }
 
     public function testDocumentProductEndUser(): void
@@ -1052,12 +1008,12 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
 
         // Tax Registration
 
-        $this->assertTrue(static::$document->firstDocumentShipToTaxRegistration());
+        $this->assertFalse(static::$document->firstDocumentShipToTaxRegistration());
 
         static::$document->getDocumentShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
-        $this->assertSame('7368366239786-SH', $newTaxRegistrationId);
-        $this->assertSame('VA', $newTaxRegistrationType);
+        $this->assertSame('', $newTaxRegistrationId);
+        $this->assertSame('', $newTaxRegistrationType);
 
         $this->assertFalse(static::$document->nextDocumentShipToTaxRegistration());
 
@@ -1087,19 +1043,19 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
 
         // Legal Organisation
 
-        $this->assertTrue(static::$document->firstDocumentShipToLegalOrganisation());
+        $this->assertFalse(static::$document->firstDocumentShipToLegalOrganisation());
 
         static::$document->getDocumentShipToLegalOrganisation($newType, $newId, $newName);
 
-        $this->assertSame('8884', $newType);
-        $this->assertSame('7368366239786-SH', $newId);
-        $this->assertSame('Ship To AG', $newName);
+        $this->assertSame('', $newType);
+        $this->assertSame('', $newId);
+        $this->assertSame('', $newName);
 
         $this->assertFalse(static::$document->nextDocumentShipToLegalOrganisation());
 
         // Contact
 
-        $this->assertTrue(static::$document->firstDocumentShipToContact());
+        $this->assertFalse(static::$document->firstDocumentShipToContact());
 
         static::$document->getDocumentShipToContact(
             $newPersonName,
@@ -1109,68 +1065,24 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
             $newEmailAddress
         );
 
-        $this->assertSame('Horst Meier', $newPersonName);
-        $this->assertSame('Buchhaltung', $newDepartmentName);
-        $this->assertSame('0815-4711', $newPhoneNumber);
+        $this->assertSame('', $newPersonName);
+        $this->assertSame('', $newDepartmentName);
+        $this->assertSame('', $newPhoneNumber);
         $this->assertSame('', $newFaxNumber);
-        $this->assertSame('horst.meier@shipto.de', $newEmailAddress);
+        $this->assertSame('', $newEmailAddress);
 
         $this->assertFalse(static::$document->nextDocumentShipToContact());
 
         // Communication
 
-        $this->assertTrue(static::$document->firstDocumentShipToCommunication());
+        $this->assertFalse(static::$document->firstDocumentShipToCommunication());
 
         static::$document->getDocumentShipToCommunication($newType, $newUri);
 
-        $this->assertSame('EM', $newType);
-        $this->assertSame('info@shipto.de', $newUri);
+        $this->assertSame('', $newType);
+        $this->assertSame('', $newUri);
 
         $this->assertFalse(static::$document->nextDocumentShipToCommunication());
-
-        // Finals
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentShipToId($newId);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentShipToGlobalId($newGlobalId, $newGlobalIdType);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentShipToTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentShipToAddress(
-                $newAddressLine1,
-                $newAddressLine2,
-                $newAddressLine3,
-                $newPostcode,
-                $newCity,
-                $newCountryId,
-                $newSubDivision
-            );
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentShipToLegalOrganisation($newType, $newId, $newName);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentShipToContact(
-                $newPersonName,
-                $newDepartmentName,
-                $newPhoneNumber,
-                $newFaxNumber,
-                $newEmailAddress
-            );
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentShipToCommunication($newType, $newUri);
-        }, '/Undefined (array key|index)/');
     }
 
     public function testDocumentUltimateShipTo(): void
@@ -1671,18 +1583,18 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
 
         // Tax Registration
 
-        $this->assertTrue(static::$document->firstDocumentPayeeTaxRegistration());
+        $this->assertFalse(static::$document->firstDocumentPayeeTaxRegistration());
 
         static::$document->getDocumentPayeeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
-        $this->assertSame('893489787987', $newTaxRegistrationId);
-        $this->assertSame('VA', $newTaxRegistrationType);
+        $this->assertSame('', $newTaxRegistrationId);
+        $this->assertSame('', $newTaxRegistrationType);
 
         $this->assertFalse(static::$document->nextDocumentPayeeTaxRegistration());
 
         // Address
 
-        $this->assertTrue(static::$document->firstDocumentPayeeAddress());
+        $this->assertFalse(static::$document->firstDocumentPayeeAddress());
 
         static::$document->getDocumentPayeeAddress(
             $newAddressLine1,
@@ -1694,13 +1606,13 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
             $newSubDivision
         );
 
-        $this->assertSame('Line 1', $newAddressLine1);
-        $this->assertSame('Line 2', $newAddressLine2);
-        $this->assertSame('Line 3', $newAddressLine3);
-        $this->assertSame('06108', $newPostcode);
-        $this->assertSame('City', $newCity);
-        $this->assertSame('DE', $newCountryId);
-        $this->assertSame('Bavaria', $newSubDivision);
+        $this->assertSame('', $newAddressLine1);
+        $this->assertSame('', $newAddressLine2);
+        $this->assertSame('', $newAddressLine3);
+        $this->assertSame('', $newPostcode);
+        $this->assertSame('', $newCity);
+        $this->assertSame('', $newCountryId);
+        $this->assertSame('', $newSubDivision);
 
         $this->assertFalse(static::$document->nextDocumentPayeeAddress());
 
@@ -1712,13 +1624,13 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
 
         $this->assertSame('8884', $newType);
         $this->assertSame('3874837489237', $newId);
-        $this->assertSame('Payee AG', $newName);
+        $this->assertSame('', $newName);
 
         $this->assertFalse(static::$document->nextDocumentPayeeLegalOrganisation());
 
         // Contact
 
-        $this->assertTrue(static::$document->firstDocumentPayeeContact());
+        $this->assertFalse(static::$document->firstDocumentPayeeContact());
 
         static::$document->getDocumentPayeeContact(
             $newPersonName,
@@ -1728,68 +1640,24 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
             $newEmailAddress
         );
 
-        $this->assertSame('Horst Mayer', $newPersonName);
-        $this->assertSame('Buchhaltung', $newDepartmentName);
-        $this->assertSame('0711-4711', $newPhoneNumber);
+        $this->assertSame('', $newPersonName);
+        $this->assertSame('', $newDepartmentName);
+        $this->assertSame('', $newPhoneNumber);
         $this->assertSame('', $newFaxNumber);
-        $this->assertSame('horst.mayer@payee.de', $newEmailAddress);
+        $this->assertSame('', $newEmailAddress);
 
         $this->assertFalse(static::$document->nextDocumentPayeeContact());
 
         // Communication
 
-        $this->assertTrue(static::$document->firstDocumentPayeeCommunication());
+        $this->assertFalse(static::$document->firstDocumentPayeeCommunication());
 
         static::$document->getDocumentPayeeCommunication($newType, $newUri);
 
-        $this->assertSame('EM', $newType);
-        $this->assertSame('info@payee.de', $newUri);
+        $this->assertSame('', $newType);
+        $this->assertSame('', $newUri);
 
         $this->assertFalse(static::$document->nextDocumentPayeeCommunication());
-
-        // Finals
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentPayeeId($newId);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentPayeeGlobalId($newGlobalId, $newGlobalIdType);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentPayeeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentPayeeAddress(
-                $newAddressLine1,
-                $newAddressLine2,
-                $newAddressLine3,
-                $newPostcode,
-                $newCity,
-                $newCountryId,
-                $newSubDivision
-            );
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentPayeeLegalOrganisation($newType, $newId, $newName);
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentPayeeContact(
-                $newPersonName,
-                $newDepartmentName,
-                $newPhoneNumber,
-                $newFaxNumber,
-                $newEmailAddress
-            );
-        }, '/Undefined (array key|index)/');
-
-        $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentPayeeCommunication($newType, $newUri);
-        }, '/Undefined (array key|index)/');
     }
 
     public function testFirstNextGetDocumentPaymentMean(): void
@@ -2146,7 +2014,7 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
 
         $this->assertSame('CONTENT-1', $newContent);
         $this->assertSame('', $newContentCode);
-        $this->assertSame('SUBJECTCODE-1', $newSubjectCode);
+        $this->assertSame('', $newSubjectCode);
 
         $this->assertFalse(static::$document->nextDocumentPositionNote());
 
@@ -2386,9 +2254,9 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
             $newReferenceDate
         );
 
-        $this->assertSame('BO-1', $newReferenceNumber);
+        $this->assertSame('', $newReferenceNumber);
         $this->assertSame('10', $newReferenceLineNumber);
-        $this->assertSame('19700102', $newReferenceDate?->format('Ymd'));
+        $this->assertNotInstanceOf(DateTimeInterface::class, $newReferenceDate);
 
         $this->assertFalse(static::$document->nextDocumentPositionBuyerOrderReference());
 
@@ -2663,10 +2531,10 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
 
         $this->assertEqualsWithDelta(1.0, $newGrossPriceAllowanceChargeAmount, PHP_FLOAT_EPSILON);
         $this->assertFalse($newIsCharge);
-        $this->assertEqualsWithDelta(3.0, $newGrossPriceAllowanceChargePercent, PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(2.0, $newGrossPriceAllowanceChargeBasisAmount, PHP_FLOAT_EPSILON);
-        $this->assertSame('REASON-1', $newGrossPriceAllowanceChargeReason);
-        $this->assertSame('REASONCODE-1', $newGrossPriceAllowanceChargeReasonCode);
+        $this->assertEqualsWithDelta(0.0, $newGrossPriceAllowanceChargePercent, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newGrossPriceAllowanceChargeBasisAmount, PHP_FLOAT_EPSILON);
+        $this->assertSame('', $newGrossPriceAllowanceChargeReason);
+        $this->assertSame('', $newGrossPriceAllowanceChargeReasonCode);
 
         $this->assertFalse(static::$document->nextDocumentPositionGrossPriceAllowanceCharge());
 
@@ -3046,10 +2914,10 @@ final class XRechnungCIIInvoiceProviderReaderTest extends TestCase
 
         $this->assertSame('S', $newTaxCategory);
         $this->assertSame('VAT', $newTaxType);
-        $this->assertEqualsWithDelta(7.0, $newTaxAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.0, $newTaxAmount, PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(7.0, $newTaxPercent, PHP_FLOAT_EPSILON);
-        $this->assertSame('Reason', $newExemptionReason);
-        $this->assertSame('ReasonCode', $newExemptionReasonCode);
+        $this->assertSame('', $newExemptionReason);
+        $this->assertSame('', $newExemptionReasonCode);
 
         $this->assertFalse(static::$document->nextDocumentPositionTax());
 

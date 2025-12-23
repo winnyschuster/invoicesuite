@@ -2995,10 +2995,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         $documentSellerOrderReference = $documentSellerOrderReferences[InvoiceSuitePointerUtils::getValue('documentsellerorderreference')];
 
         $newReferenceNumber = $documentSellerOrderReference->getIssuerAssignedID()?->getValue() ?? '';
-        $newReferenceDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
-            $documentSellerOrderReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue() ?? '',
-            $documentSellerOrderReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat() ?? '',
-        );
+        $newReferenceDate = null;
 
         return $this;
     }
@@ -3060,10 +3057,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         $documentBuyerOrderReference = $documentBuyerOrderReferences[InvoiceSuitePointerUtils::getValue('documentbuyerorderreference')];
 
         $newReferenceNumber = $documentBuyerOrderReference->getIssuerAssignedID()?->getValue() ?? '';
-        $newReferenceDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
-            $documentBuyerOrderReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue() ?? '',
-            $documentBuyerOrderReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat() ?? '',
-        );
+        $newReferenceDate = null;
 
         return $this;
     }
@@ -3165,10 +3159,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         $documentContractReference = $documentContractReferences[InvoiceSuitePointerUtils::getValue('documentcontractreference')];
 
         $newReferenceNumber = $documentContractReference->getIssuerAssignedID()?->getValue() ?? '';
-        $newReferenceDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
-            $documentContractReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue() ?? '',
-            $documentContractReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat() ?? '',
-        );
+        $newReferenceDate = null;
 
         return $this;
     }
@@ -3243,10 +3234,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         $documentAdditionalReference = $documentAdditionalReferences[InvoiceSuitePointerUtils::getValue('documentadditionalreference')];
 
         $newReferenceNumber = $documentAdditionalReference->getIssuerAssignedID()?->getValue() ?? '';
-        $newReferenceDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
-            $documentAdditionalReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue() ?? '',
-            $documentAdditionalReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat() ?? '',
-        );
+        $newReferenceDate = null;
         $newTypeCode = $documentAdditionalReference->getTypeCode()?->getValue() ?? '';
         $newReferenceTypeCode = $documentAdditionalReference->getReferenceTypeCode()?->getValue() ?? '';
         $newDescription = $documentAdditionalReference->getName()?->getValue() ?? '';
@@ -3330,7 +3318,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
             $documentInvoiceReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue() ?? '',
             $documentInvoiceReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat() ?? '',
         );
-        $newTypeCode = $documentInvoiceReference->getTypeCode()?->getValue() ?? '';
+        $newTypeCode = '';
 
         return $this;
     }
@@ -3492,10 +3480,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         $documentDespatchAdviceReference = $documentDespatchAdviceReferences[InvoiceSuitePointerUtils::getValue('documentdespatchadvicereference')];
 
         $newReferenceNumber = $documentDespatchAdviceReference->getIssuerAssignedID()?->getValue() ?? '';
-        $newReferenceDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
-            $documentDespatchAdviceReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue(),
-            $documentDespatchAdviceReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat()
-        );
+        $newReferenceDate = null;
 
         return $this;
     }
@@ -3557,10 +3542,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         $documentReceivingAdviceReference = $documentReceivingAdviceReferences[InvoiceSuitePointerUtils::getValue('documentreceivingadvicereference')];
 
         $newReferenceNumber = $documentReceivingAdviceReference->getIssuerAssignedID()?->getValue() ?? '';
-        $newReferenceDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
-            $documentReceivingAdviceReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue(),
-            $documentReceivingAdviceReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat()
-        );
+        $newReferenceDate = null;
 
         return $this;
     }
@@ -4619,12 +4601,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function firstDocumentTaxRepresentativeId(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getID() ?? []
-            ),
-            'documenttaxrepresentativeid'
-        );
+        return false;
     }
 
     /**
@@ -4634,12 +4611,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function nextDocumentTaxRepresentativeId(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getID() ?? []
-            ),
-            'documenttaxrepresentativeid'
-        );
+        return false;
     }
 
     /**
@@ -4653,17 +4625,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
     public function getDocumentTaxRepresentativeId(
         ?string &$newId
     ): static {
-        /**
-         * @var array<IDType>
-         */
-        $documentTaxRepresentativeIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getID() ?? []);
-
-        /**
-         * @var IDType
-         */
-        $documentTaxRepresentativeId = $documentTaxRepresentativeIds[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeid')];
-
-        $newId = $documentTaxRepresentativeId->getValue() ?? '';
+        $newId = '';
 
         return $this;
     }
@@ -4675,12 +4637,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function firstDocumentTaxRepresentativeGlobalId(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getGlobalID() ?? []
-            ),
-            'documenttaxrepresentativeglobalid'
-        );
+        return false;
     }
 
     /**
@@ -4690,12 +4647,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function nextDocumentTaxRepresentativeGlobalId(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getGlobalID() ?? []
-            ),
-            'documenttaxrepresentativeglobalid'
-        );
+        return false;
     }
 
     /**
@@ -4712,18 +4664,8 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
-        /**
-         * @var array<IDType>
-         */
-        $documentTaxRepresentativeGlobalIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getGlobalID() ?? []);
-
-        /**
-         * @var IDType
-         */
-        $documentTaxRepresentativeGlobalId = $documentTaxRepresentativeGlobalIds[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeglobalid')];
-
-        $newGlobalId = $documentTaxRepresentativeGlobalId->getValue() ?? '';
-        $newGlobalIdType = $documentTaxRepresentativeGlobalId->getSchemeID() ?? '';
+        $newGlobalId = '';
+        $newGlobalIdType = '';
 
         return $this;
     }
@@ -4875,12 +4817,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function firstDocumentTaxRepresentativeLegalOrganisation(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getSpecifiedLegalOrganization() ?? []
-            ),
-            'documenttaxrepresentativelegalorganisation'
-        );
+        return false;
     }
 
     /**
@@ -4890,12 +4827,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function nextDocumentTaxRepresentativeLegalOrganisation(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getSpecifiedLegalOrganization() ?? []
-            ),
-            'documenttaxrepresentativelegalorganisation'
-        );
+        return false;
     }
 
     /**
@@ -4915,19 +4847,9 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newId,
         ?string &$newName
     ): static {
-        /**
-         * @var array<LegalOrganizationType>
-         */
-        $documentTaxRepresentativeLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getSpecifiedLegalOrganization() ?? []);
-
-        /**
-         * @var LegalOrganizationType
-         */
-        $documentTaxRepresentativeLegalOrganisation = $documentTaxRepresentativeLegalOrganisations[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativelegalorganisation')];
-
-        $newType = $documentTaxRepresentativeLegalOrganisation->getID()?->getSchemeID() ?? '';
-        $newId = $documentTaxRepresentativeLegalOrganisation->getID()?->getValue() ?? '';
-        $newName = $documentTaxRepresentativeLegalOrganisation->getTradingBusinessName()?->getValue() ?? '';
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         return $this;
     }
@@ -4939,12 +4861,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function firstDocumentTaxRepresentativeContact(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getDefinedTradeContact() ?? []
-            ),
-            'documenttaxrepresentativecontact'
-        );
+        return false;
     }
 
     /**
@@ -4954,12 +4871,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function nextDocumentTaxRepresentativeContact(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getDefinedTradeContact() ?? []
-            ),
-            'documenttaxrepresentativecontact'
-        );
+        return false;
     }
 
     /**
@@ -4985,21 +4897,11 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
-        /**
-         * @var array<TradeContactType>
-         */
-        $documentTaxRepresentativeContacts = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getDefinedTradeContact() ?? []);
-
-        /**
-         * @var TradeContactType
-         */
-        $documentTaxRepresentativeContact = $documentTaxRepresentativeContacts[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativecontact')];
-
-        $newPersonName = $documentTaxRepresentativeContact->getPersonName()?->getValue() ?? '';
-        $newDepartmentName = $documentTaxRepresentativeContact->getDepartmentName()?->getValue() ?? '';
-        $newPhoneNumber = $documentTaxRepresentativeContact->getTelephoneUniversalCommunication()?->getCompleteNumber()?->getValue() ?? '';
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
         $newFaxNumber = '';
-        $newEmailAddress = $documentTaxRepresentativeContact->getEmailURIUniversalCommunication()?->getURIID()?->getValue() ?? '';
+        $newEmailAddress = '';
 
         return $this;
     }
@@ -5011,12 +4913,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function firstDocumentTaxRepresentativeCommunication(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getURIUniversalCommunication() ?? []
-            ),
-            'documenttaxrepresentativeecommunication'
-        );
+        return false;
     }
 
     /**
@@ -5026,12 +4923,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function nextDocumentTaxRepresentativeCommunication(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getURIUniversalCommunication() ?? []
-            ),
-            'documenttaxrepresentativeecommunication'
-        );
+        return false;
     }
 
     /**
@@ -5048,18 +4940,8 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newType,
         ?string &$newUri
     ): static {
-        /**
-         * @var array<UniversalCommunicationType>
-         */
-        $documentTaxRepresentativeElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getSellerTaxRepresentativeTradeParty()?->getURIUniversalCommunication() ?? []);
-
-        /**
-         * @var UniversalCommunicationType
-         */
-        $documentTaxRepresentativeElectronicCommunication = $documentTaxRepresentativeElectronicCommunications[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeecommunication')];
-
-        $newType = $documentTaxRepresentativeElectronicCommunication->getURIID()?->getSchemeID() ?? '';
-        $newUri = $documentTaxRepresentativeElectronicCommunication->getURIID()?->getValue() ?? '';
+        $newType = '';
+        $newUri = '';
 
         return $this;
     }
@@ -5531,12 +5413,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function firstDocumentShipToTaxRegistration(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getSpecifiedTaxRegistration() ?? []
-            ),
-            'documentshiptotaxregistration'
-        );
+        return false;
     }
 
     /**
@@ -5546,12 +5423,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function nextDocumentShipToTaxRegistration(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getSpecifiedTaxRegistration() ?? []
-            ),
-            'documentshiptotaxregistration'
-        );
+        return false;
     }
 
     /**
@@ -5568,18 +5440,8 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
-        /**
-         * @var array<TaxRegistrationType>
-         */
-        $documentShipToTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getSpecifiedTaxRegistration() ?? []);
-
-        /**
-         * @var TaxRegistrationType
-         */
-        $documentShipToTaxRegistration = $documentShipToTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentshiptotaxregistration')];
-
-        $newTaxRegistrationType = $documentShipToTaxRegistration->getID()?->getSchemeID() ?? '';
-        $newTaxRegistrationId = $documentShipToTaxRegistration->getID()?->getValue() ?? '';
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         return $this;
     }
@@ -5671,12 +5533,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function firstDocumentShipToLegalOrganisation(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getSpecifiedLegalOrganization() ?? []
-            ),
-            'documentshiptolegalorganisation'
-        );
+        return false;
     }
 
     /**
@@ -5686,12 +5543,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function nextDocumentShipToLegalOrganisation(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getSpecifiedLegalOrganization() ?? []
-            ),
-            'documentshiptolegalorganisation'
-        );
+        return false;
     }
 
     /**
@@ -5711,19 +5563,9 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newId,
         ?string &$newName
     ): static {
-        /**
-         * @var array<LegalOrganizationType>
-         */
-        $documentShipToLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getSpecifiedLegalOrganization() ?? []);
-
-        /**
-         * @var LegalOrganizationType
-         */
-        $documentShipToLegalOrganisation = $documentShipToLegalOrganisations[InvoiceSuitePointerUtils::getValue('documentshiptolegalorganisation')];
-
-        $newType = $documentShipToLegalOrganisation->getID()?->getSchemeID() ?? '';
-        $newId = $documentShipToLegalOrganisation->getID()?->getValue() ?? '';
-        $newName = $documentShipToLegalOrganisation->getTradingBusinessName()?->getValue() ?? '';
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         return $this;
     }
@@ -5735,12 +5577,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function firstDocumentShipToContact(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getDefinedTradeContact() ?? []
-            ),
-            'documentshiptocontact'
-        );
+        return false;
     }
 
     /**
@@ -5750,12 +5587,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function nextDocumentShipToContact(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getDefinedTradeContact() ?? []
-            ),
-            'documentshiptocontact'
-        );
+        return false;
     }
 
     /**
@@ -5781,21 +5613,11 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
-        /**
-         * @var array<TradeContactType>
-         */
-        $documentShipToContacts = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getDefinedTradeContact() ?? []);
-
-        /**
-         * @var TradeContactType
-         */
-        $documentShipToContact = $documentShipToContacts[InvoiceSuitePointerUtils::getValue('documentshiptocontact')];
-
-        $newPersonName = $documentShipToContact->getPersonName()?->getValue() ?? '';
-        $newDepartmentName = $documentShipToContact->getDepartmentName()?->getValue() ?? '';
-        $newPhoneNumber = $documentShipToContact->getTelephoneUniversalCommunication()?->getCompleteNumber()?->getValue() ?? '';
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
         $newFaxNumber = '';
-        $newEmailAddress = $documentShipToContact->getEmailURIUniversalCommunication()?->getURIID()?->getValue() ?? '';
+        $newEmailAddress = '';
 
         return $this;
     }
@@ -5807,12 +5629,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function firstDocumentShipToCommunication(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getURIUniversalCommunication() ?? []
-            ),
-            'documentshiptoecommunication'
-        );
+        return false;
     }
 
     /**
@@ -5822,12 +5639,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function nextDocumentShipToCommunication(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getURIUniversalCommunication() ?? []
-            ),
-            'documentshiptoecommunication'
-        );
+        return false;
     }
 
     /**
@@ -5844,18 +5656,8 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newType,
         ?string &$newUri
     ): static {
-        /**
-         * @var array<UniversalCommunicationType>
-         */
-        $documentShipToElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeDelivery()?->getShipToTradeParty()?->getURIUniversalCommunication() ?? []);
-
-        /**
-         * @var UniversalCommunicationType
-         */
-        $documentShipToElectronicCommunication = $documentShipToElectronicCommunications[InvoiceSuitePointerUtils::getValue('documentshiptoecommunication')];
-
-        $newType = $documentShipToElectronicCommunication->getURIID()?->getSchemeID() ?? '';
-        $newUri = $documentShipToElectronicCommunication->getURIID()?->getValue() ?? '';
+        $newType = '';
+        $newUri = '';
 
         return $this;
     }
@@ -7311,12 +7113,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function firstDocumentPayeeTaxRegistration(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getSpecifiedTaxRegistration() ?? []
-            ),
-            'documentpayeetaxregistration'
-        );
+        return false;
     }
 
     /**
@@ -7326,12 +7123,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function nextDocumentPayeeTaxRegistration(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getSpecifiedTaxRegistration() ?? []
-            ),
-            'documentpayeetaxregistration'
-        );
+        return false;
     }
 
     /**
@@ -7348,18 +7140,8 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
-        /**
-         * @var array<TaxRegistrationType>
-         */
-        $documentPayeeTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getSpecifiedTaxRegistration() ?? []);
-
-        /**
-         * @var TaxRegistrationType
-         */
-        $documentPayeeTaxRegistration = $documentPayeeTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentpayeetaxregistration')];
-
-        $newTaxRegistrationType = $documentPayeeTaxRegistration->getID()?->getSchemeID() ?? '';
-        $newTaxRegistrationId = $documentPayeeTaxRegistration->getID()?->getValue() ?? '';
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         return $this;
     }
@@ -7371,12 +7153,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function firstDocumentPayeeAddress(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getPostalTradeAddress() ?? []
-            ),
-            'documentpayeeaddress'
-        );
+        return false;
     }
 
     /**
@@ -7386,12 +7163,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function nextDocumentPayeeAddress(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getPostalTradeAddress() ?? []
-            ),
-            'documentpayeeaddress'
-        );
+        return false;
     }
 
     /**
@@ -7423,23 +7195,13 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
-        /**
-         * @var array<TradeAddressType>
-         */
-        $documentPayeeAddresses = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getPostalTradeAddress() ?? []);
-
-        /**
-         * @var TradeAddressType
-         */
-        $documentPayeeAddress = $documentPayeeAddresses[InvoiceSuitePointerUtils::getValue('documentpayeeaddress')];
-
-        $newAddressLine1 = $documentPayeeAddress->getLineOne()?->getValue() ?? '';
-        $newAddressLine2 = $documentPayeeAddress->getLineTwo()?->getValue() ?? '';
-        $newAddressLine3 = $documentPayeeAddress->getLineThree()?->getValue() ?? '';
-        $newPostcode = $documentPayeeAddress->getPostcodeCode()?->getValue() ?? '';
-        $newCity = $documentPayeeAddress->getCityName()?->getValue() ?? '';
-        $newCountryId = $documentPayeeAddress->getCountryID()?->getValue() ?? '';
-        $newSubDivision = $documentPayeeAddress->getCountrySubDivisionName()?->getValue() ?? '';
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
 
         return $this;
     }
@@ -7503,7 +7265,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
 
         $newType = $documentPayeeLegalOrganisation->getID()?->getSchemeID() ?? '';
         $newId = $documentPayeeLegalOrganisation->getID()?->getValue() ?? '';
-        $newName = $documentPayeeLegalOrganisation->getTradingBusinessName()?->getValue() ?? '';
+        $newName = '';
 
         return $this;
     }
@@ -7515,12 +7277,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function firstDocumentPayeeContact(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getDefinedTradeContact() ?? []
-            ),
-            'documentpayeecontact'
-        );
+        return false;
     }
 
     /**
@@ -7530,12 +7287,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function nextDocumentPayeeContact(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getDefinedTradeContact() ?? []
-            ),
-            'documentpayeecontact'
-        );
+        return false;
     }
 
     /**
@@ -7561,21 +7313,11 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
-        /**
-         * @var array<TradeContactType>
-         */
-        $documentPayeeContacts = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getDefinedTradeContact() ?? []);
-
-        /**
-         * @var TradeContactType
-         */
-        $documentPayeeContact = $documentPayeeContacts[InvoiceSuitePointerUtils::getValue('documentpayeecontact')];
-
-        $newPersonName = $documentPayeeContact->getPersonName()?->getValue() ?? '';
-        $newDepartmentName = $documentPayeeContact->getDepartmentName()?->getValue() ?? '';
-        $newPhoneNumber = $documentPayeeContact->getTelephoneUniversalCommunication()?->getCompleteNumber()?->getValue() ?? '';
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
         $newFaxNumber = '';
-        $newEmailAddress = $documentPayeeContact->getEmailURIUniversalCommunication()?->getURIID()?->getValue() ?? '';
+        $newEmailAddress = '';
 
         return $this;
     }
@@ -7587,12 +7329,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function firstDocumentPayeeCommunication(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getURIUniversalCommunication() ?? []
-            ),
-            'documentpayeecommunication'
-        );
+        return false;
     }
 
     /**
@@ -7602,12 +7339,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function nextDocumentPayeeCommunication(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getURIUniversalCommunication() ?? []
-            ),
-            'documentpayeecommunication'
-        );
+        return false;
     }
 
     /**
@@ -7624,18 +7356,8 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
         ?string &$newType,
         ?string &$newUri
     ): static {
-        /**
-         * @var array<UniversalCommunicationType>
-         */
-        $documentPayeeElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPayeeTradeParty()?->getURIUniversalCommunication() ?? []);
-
-        /**
-         * @var UniversalCommunicationType
-         */
-        $documentPayeeElectronicCommunication = $documentPayeeElectronicCommunications[InvoiceSuitePointerUtils::getValue('documentpayeecommunication')];
-
-        $newType = $documentPayeeElectronicCommunication->getURIID()?->getSchemeID() ?? '';
-        $newUri = $documentPayeeElectronicCommunication->getURIID()?->getValue() ?? '';
+        $newType = '';
+        $newUri = '';
 
         return $this;
     }
@@ -8452,7 +8174,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
 
         $newContent = $documentPositionNote->getContent()?->getValue() ?? '';
         $newContentCode = '';
-        $newSubjectCode = $documentPositionNote->getSubjectCode()?->getValue() ?? '';
+        $newSubjectCode = '';
 
         return $this;
     }
@@ -8829,12 +8551,9 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
          */
         $documentPositionBuyerOrderReference = $documentPositionBuyerOrderReferences[InvoiceSuitePointerUtils::getValue('documentpositionbuyerorderreference')];
 
-        $newReferenceNumber = $documentPositionBuyerOrderReference->getIssuerAssignedID()?->getValue() ?? '';
+        $newReferenceNumber = '';
         $newReferenceLineNumber = $documentPositionBuyerOrderReference->getLineID()?->getValue() ?? '';
-        $newReferenceDate = InvoiceSuiteDateTimeUtils::convertZfFxDateStringToDateTime(
-            $documentPositionBuyerOrderReference->getFormattedIssueDateTime()?->getDateTimeString()?->getValue(),
-            $documentPositionBuyerOrderReference->getFormattedIssueDateTime()?->getDateTimeString()?->getFormat()
-        );
+        $newReferenceDate = null;
 
         return $this;
     }
@@ -9369,10 +9088,10 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
 
         $newGrossPriceAllowanceChargeAmount = $positionGrossPriceAllowanceCharge->getActualAmount()?->getValue() ?? 0.0;
         $newIsCharge = $positionGrossPriceAllowanceCharge->getChargeIndicator()?->getIndicator() ?? false;
-        $newGrossPriceAllowanceChargePercent = $positionGrossPriceAllowanceCharge->getCalculationPercent()?->getValue() ?? 0.0;
-        $newGrossPriceAllowanceChargeBasisAmount = $positionGrossPriceAllowanceCharge->getBasisAmount()?->getValue() ?? 0.0;
-        $newGrossPriceAllowanceChargeReason = $positionGrossPriceAllowanceCharge->getReason()?->getValue() ?? '';
-        $newGrossPriceAllowanceChargeReasonCode = $positionGrossPriceAllowanceCharge->getReasonCode()?->getValue() ?? '';
+        $newGrossPriceAllowanceChargePercent = 0.0;
+        $newGrossPriceAllowanceChargeBasisAmount = 0.0;
+        $newGrossPriceAllowanceChargeReason = '';
+        $newGrossPriceAllowanceChargeReasonCode = '';
 
         return $this;
     }
@@ -10299,10 +10018,10 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
 
         $newTaxCategory = $positionTax->getCategoryCode()?->getValue() ?? '';
         $newTaxType = $positionTax->getTypeCode()?->getValue() ?? '';
-        $newTaxAmount = $positionTax->getCalculatedAmount()?->getValue() ?? 0.0;
+        $newTaxAmount = 0.0;
         $newTaxPercent = $positionTax->getRateApplicablePercent()?->getValue() ?? 0.0;
-        $newExemptionReason = $positionTax->getExemptionReason()?->getValue() ?? '';
-        $newExemptionReasonCode = $positionTax->getExemptionReasonCode()?->getValue() ?? '';
+        $newExemptionReason = '';
+        $newExemptionReasonCode = '';
 
         return $this;
     }
