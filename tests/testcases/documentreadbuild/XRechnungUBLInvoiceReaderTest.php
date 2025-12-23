@@ -2,38 +2,39 @@
 
 declare(strict_types=1);
 
-namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
+namespace horstoeko\invoicesuite\tests\testcases\documentreadbuild;
 
 use DateTimeInterface;
-use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatReader;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
-use horstoeko\invoicesuite\documents\providers\xrechnungublinvoice\InvoiceSuiteXRechnungUBLInvoiceProvider;
-use horstoeko\invoicesuite\documents\providers\xrechnungublinvoice\InvoiceSuiteXRechnungUBLInvoiceProviderReader;
+use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
+use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 
-final class XRechnungUBLInvoiceProviderReaderTest extends TestCase
+final class XRechnungUBLInvoiceReaderTest extends TestCase
 {
     /**
      * The reader
      *
-     * @var InvoiceSuiteAbstractDocumentFormatReader
+     * @var InvoiceSuiteDocumentReader
      */
     private static $document;
 
     public static function setUpBeforeClass(): void
     {
-        static::$document = new InvoiceSuiteXRechnungUBLInvoiceProviderReader(new InvoiceSuiteXRechnungUBLInvoiceProvider());
-
-        static::$document->deserializeFromContent(
-            file_get_contents(
-                InvoiceSuitePathUtils::combinePathWithFile(
-                    InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', '..', 'assets'),
-                    '02_technical_xml_ubl_invoice.xml'
-                )
+        static::$document = InvoiceSuiteDocumentReader::createFromFile(
+            InvoiceSuitePathUtils::combinePathWithFile(
+                InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', '..', 'assets'),
+                '02_technical_xml_ubl_invoice.xml'
             )
         );
+    }
+
+    public function testDocumentCurrentFormatProvider(): void
+    {
+        $this->assertInstanceOf(InvoiceSuiteDocumentReader::class, static::$document);
+        $this->assertSame('xrechnungublinvoice', static::$document->getCurrentDocumentFormatProvider()->getUniqueId());
     }
 
     public function testGetDocumentNo(): void
@@ -3015,5 +3016,13 @@ final class XRechnungUBLInvoiceProviderReaderTest extends TestCase
         $this->assertInstanceOf(InvoiceSuiteDocumentHeaderDTO::class, $newDocmentDTO);
 
         $this->assertSame('2025-04-000001', $newDocmentDTO?->getNumber());
+    }
+
+    public function testCopyToBuilder(): void
+    {
+        $builder = static::$document->copyToBuilder();
+
+        $this->assertInstanceOf(InvoiceSuiteDocumentBuilder::class, $builder);
+        $this->assertSame('xrechnungublinvoice', $builder->getCurrentDocumentFormatProvider()->getUniqueId());
     }
 }

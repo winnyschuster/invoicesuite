@@ -2860,7 +2860,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
 
         $newStartDate = $billingPeriod->getStartDate();
         $newEndDate = $billingPeriod->getEndDate();
-        $newDescription = $billingPeriod->firstDescription()?->getValue() ?? '';
+        $newDescription = '';
 
         return $this;
     }
@@ -3040,7 +3040,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $documentBuyerOrderReference = $documentBuyerOrderReferences[InvoiceSuitePointerUtils::getValue('documentbuyerorderreference')];
 
         $newReferenceNumber = $documentBuyerOrderReference->getID()?->getValue() ?? '';
-        $newReferenceDate = $documentBuyerOrderReference->getIssueDate();
+        $newReferenceDate = null;
 
         return $this;
     }
@@ -3140,7 +3140,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $documentContractReference = $documentContractReferences[InvoiceSuitePointerUtils::getValue('documentcontractreference')];
 
         $newReferenceNumber = $documentContractReference->getID()?->getValue() ?? '';
-        $newReferenceDate = $documentContractReference->getIssueDate();
+        $newReferenceDate = null;
 
         return $this;
     }
@@ -3212,7 +3212,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $documentAdditionalReference = $documentAdditionalReferences[InvoiceSuitePointerUtils::getValue('documentadditionalreference')];
 
         $newReferenceNumber = $documentAdditionalReference->getID()?->getValue() ?? '';
-        $newReferenceDate = $documentAdditionalReference->getIssueDate();
+        $newReferenceDate = null;
         $newTypeCode = $documentAdditionalReference->getDocumentTypeCode()?->getValue() ?? '';
         $newReferenceTypeCode = '';
         $newDescription = $documentAdditionalReference->firstDocumentDescription()?->getValue() ?? '';
@@ -3434,7 +3434,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $documentDespatchAdviceReference = $documentDespatchAdviceReferences[InvoiceSuitePointerUtils::getValue('documentdespatchadvicereference')];
 
         $newReferenceNumber = $documentDespatchAdviceReference->getID()?->getValue() ?? '';
-        $newReferenceDate = $documentDespatchAdviceReference->getIssueDate();
+        $newReferenceDate = null;
 
         return $this;
     }
@@ -3494,7 +3494,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $documentReceivingAdviceReference = $documentReceivingAdviceReferences[InvoiceSuitePointerUtils::getValue('documentreceivingadvicereference')];
 
         $newReferenceNumber = $documentReceivingAdviceReference->getID()?->getValue() ?? '';
-        $newReferenceDate = $documentReceivingAdviceReference->getIssueDate();
+        $newReferenceDate = null;
 
         return $this;
     }
@@ -3988,7 +3988,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $newPersonName = $documentSellerContact->getName()?->getValue() ?? '';
         $newDepartmentName = '';
         $newPhoneNumber = $documentSellerContact->getTelephone()?->getValue() ?? '';
-        $newFaxNumber = $documentSellerContact->getTelefax()?->getValue() ?? '';
+        $newFaxNumber = '';
         $newEmailAddress = $documentSellerContact->getElectronicMail()?->getValue() ?? '';
 
         return $this;
@@ -4455,7 +4455,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $newPersonName = $documentBuyerContact->getName()?->getValue() ?? '';
         $newDepartmentName = '';
         $newPhoneNumber = $documentBuyerContact->getTelephone()?->getValue() ?? '';
-        $newFaxNumber = $documentBuyerContact->getTelefax()?->getValue() ?? '';
+        $newFaxNumber = '';
         $newEmailAddress = $documentBuyerContact->getElectronicMail()?->getValue() ?? '';
 
         return $this;
@@ -4549,10 +4549,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentTaxRepresentativeId(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            $this->resolveDocumentTaxRepresentativeIds(),
-            'documenttaxrepresentativeid'
-        );
+        return false;
     }
 
     /**
@@ -4562,10 +4559,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentTaxRepresentativeId(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            $this->resolveDocumentTaxRepresentativeIds(),
-            'documenttaxrepresentativeid'
-        );
+        return false;
     }
 
     /**
@@ -4579,17 +4573,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     public function getDocumentTaxRepresentativeId(
         ?string &$newId
     ): static {
-        /**
-         * @var array<PartyIdentification>
-         */
-        $documentTaxRepresentativeIds = $this->resolveDocumentTaxRepresentativeIds();
-
-        /**
-         * @var PartyIdentification
-         */
-        $documentTaxRepresentativeId = $documentTaxRepresentativeIds[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeid')];
-
-        $newId = $documentTaxRepresentativeId->getID()?->getValue() ?? '';
+        $newId = '';
 
         return $this;
     }
@@ -4601,10 +4585,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentTaxRepresentativeGlobalId(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            $this->resolveDocumentTaxRepresentativeGlobalIds(),
-            'documenttaxrepresentativeglobalid'
-        );
+        return false;
     }
 
     /**
@@ -4614,10 +4595,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentTaxRepresentativeGlobalId(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            $this->resolveDocumentTaxRepresentativeGlobalIds(),
-            'documenttaxrepresentativeglobalid'
-        );
+        return false;
     }
 
     /**
@@ -4634,18 +4612,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
-        /**
-         * @var array<PartyIdentification>
-         */
-        $documentTaxRepresentativeGlobalIds = $this->resolveDocumentTaxRepresentativeGlobalIds();
-
-        /**
-         * @var PartyIdentification
-         */
-        $documentTaxRepresentativeGlobalId = $documentTaxRepresentativeGlobalIds[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeglobalid')];
-
-        $newGlobalId = $documentTaxRepresentativeGlobalId->getID()?->getValue() ?? '';
-        $newGlobalIdType = $documentTaxRepresentativeGlobalId->getID()?->getSchemeID() ?? '';
+        $newGlobalId = '';
+        $newGlobalIdType = '';
 
         return $this;
     }
@@ -4797,12 +4765,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentTaxRepresentativeLegalOrganisation(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->getTaxRepresentativeParty()?->getPartyLegalEntity() ?? []
-            ),
-            'documenttaxrepresentativelegalorganisation'
-        );
+        return false;
     }
 
     /**
@@ -4812,12 +4775,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentTaxRepresentativeLegalOrganisation(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->getTaxRepresentativeParty()?->getPartyLegalEntity() ?? []
-            ),
-            'documenttaxrepresentativelegalorganisation'
-        );
+        return false;
     }
 
     /**
@@ -4837,19 +4795,9 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newId,
         ?string &$newName
     ): static {
-        /**
-         * @var array<PartyLegalEntity>
-         */
-        $documentTaxRepresentativeLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getTaxRepresentativeParty()?->getPartyLegalEntity() ?? []);
-
-        /**
-         * @var PartyLegalEntity
-         */
-        $documentTaxRepresentativeLegalOrganisation = $documentTaxRepresentativeLegalOrganisations[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativelegalorganisation')];
-
-        $newType = $documentTaxRepresentativeLegalOrganisation->getCompanyID()?->getSchemeID() ?? '';
-        $newId = $documentTaxRepresentativeLegalOrganisation->getCompanyID()?->getValue() ?? '';
-        $newName = $this->getUblRootObject()->getTaxRepresentativeParty()?->firstPartyName()?->getName()?->getValue() ?? '';
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         return $this;
     }
@@ -4861,12 +4809,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentTaxRepresentativeContact(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->getTaxRepresentativeParty()?->getContact() ?? []
-            ),
-            'documenttaxrepresentativecontact'
-        );
+        return false;
     }
 
     /**
@@ -4876,12 +4819,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentTaxRepresentativeContact(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->getTaxRepresentativeParty()?->getContact() ?? []
-            ),
-            'documenttaxrepresentativecontact'
-        );
+        return false;
     }
 
     /**
@@ -4907,21 +4845,11 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
-        /**
-         * @var array<Contact>
-         */
-        $documentTaxRepresentativeContacts = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getTaxRepresentativeParty()?->getContact() ?? []);
-
-        /**
-         * @var Contact
-         */
-        $documentTaxRepresentativeContact = $documentTaxRepresentativeContacts[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativecontact')];
-
-        $newPersonName = $documentTaxRepresentativeContact->getName()?->getValue() ?? '';
+        $newPersonName = '';
         $newDepartmentName = '';
-        $newPhoneNumber = $documentTaxRepresentativeContact->getTelephone()?->getValue() ?? '';
-        $newFaxNumber = $documentTaxRepresentativeContact->getTelefax()?->getValue() ?? '';
-        $newEmailAddress = $documentTaxRepresentativeContact->getElectronicMail()?->getValue() ?? '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
 
         return $this;
     }
@@ -4933,12 +4861,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentTaxRepresentativeCommunication(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->getTaxRepresentativeParty()?->getEndpointID() ?? []
-            ),
-            'documenttaxrepresentativeecommunication'
-        );
+        return false;
     }
 
     /**
@@ -4948,12 +4871,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentTaxRepresentativeCommunication(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->getTaxRepresentativeParty()?->getEndpointID() ?? []
-            ),
-            'documenttaxrepresentativeecommunication'
-        );
+        return false;
     }
 
     /**
@@ -4970,18 +4888,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newType,
         ?string &$newUri
     ): static {
-        /**
-         * @var array<EndpointID>
-         */
-        $documentTaxRepresentativeElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getTaxRepresentativeParty()?->getEndpointID() ?? []);
-
-        /**
-         * @var EndpointID
-         */
-        $documentTaxRepresentativeElectronicCommunication = $documentTaxRepresentativeElectronicCommunications[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativeecommunication')];
-
-        $newType = $documentTaxRepresentativeElectronicCommunication->getSchemeID() ?? '';
-        $newUri = $documentTaxRepresentativeElectronicCommunication->getValue() ?? '';
+        $newType = '';
+        $newUri = '';
 
         return $this;
     }
@@ -5325,13 +5233,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     public function getDocumentShipToName(
         ?string &$newName
     ): static {
-        $newName = $this
-            ->getUblRootObject()
-            ->firstDelivery()
-            ?->getDeliveryParty()
-            ?->firstPartyName()
-            ?->getName()
-            ?->getValue() ?? '';
+        $newName = '';
 
         return $this;
     }
@@ -5451,12 +5353,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentShipToTaxRegistration(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->firstDelivery()?->getDeliveryParty()?->getPartyTaxScheme() ?? []
-            ),
-            'documentshiptotaxregistration'
-        );
+        return false;
     }
 
     /**
@@ -5466,12 +5363,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentShipToTaxRegistration(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->firstDelivery()?->getDeliveryParty()?->getPartyTaxScheme() ?? []
-            ),
-            'documentshiptotaxregistration'
-        );
+        return false;
     }
 
     /**
@@ -5488,18 +5380,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
-        /**
-         * @var array<PartyTaxScheme>
-         */
-        $documentShipToTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->firstDelivery()?->getDeliveryParty()?->getPartyTaxScheme() ?? []);
-
-        /**
-         * @var PartyTaxScheme
-         */
-        $documentShipToTaxRegistration = $documentShipToTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentshiptotaxregistration')];
-
-        $newTaxRegistrationType = $documentShipToTaxRegistration->getTaxScheme()?->getID()?->getValue() ?? '';
-        $newTaxRegistrationId = $documentShipToTaxRegistration->getCompanyID()?->getValue() ?? '';
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         return $this;
     }
@@ -7168,12 +7050,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentPayeeTaxRegistration(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->getPayeeParty()?->getPartyTaxScheme() ?? []
-            ),
-            'documentpayeetaxregistration'
-        );
+        return false;
     }
 
     /**
@@ -7183,12 +7060,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentPayeeTaxRegistration(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->getPayeeParty()?->getPartyTaxScheme() ?? []
-            ),
-            'documentpayeetaxregistration'
-        );
+        return false;
     }
 
     /**
@@ -7205,18 +7077,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
-        /**
-         * @var array<PartyTaxScheme>
-         */
-        $documentPayeeTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getPayeeParty()?->getPartyTaxScheme() ?? []);
-
-        /**
-         * @var PartyTaxScheme
-         */
-        $documentPayeeTaxRegistration = $documentPayeeTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentpayeetaxregistration')];
-
-        $newTaxRegistrationType = $documentPayeeTaxRegistration->getTaxScheme()?->getID()?->getValue() ?? '';
-        $newTaxRegistrationId = $documentPayeeTaxRegistration->getCompanyID()?->getValue() ?? '';
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         return $this;
     }
@@ -7228,12 +7090,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentPayeeAddress(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->getPayeeParty()?->getPostalAddress() ?? []
-            ),
-            'documentpayeeaddress'
-        );
+        return false;
     }
 
     /**
@@ -7243,12 +7100,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentPayeeAddress(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->getPayeeParty()?->getPostalAddress() ?? []
-            ),
-            'documentpayeeaddress'
-        );
+        return false;
     }
 
     /**
@@ -7280,23 +7132,13 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
-        /**
-         * @var array<PostalAddress>
-         */
-        $documentPayeeAddresses = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getPayeeParty()?->getPostalAddress() ?? []);
-
-        /**
-         * @var PostalAddress
-         */
-        $documentPayeeAddress = $documentPayeeAddresses[InvoiceSuitePointerUtils::getValue('documentpayeeaddress')];
-
-        $newAddressLine1 = $documentPayeeAddress->getStreetName()?->getValue() ?? '';
-        $newAddressLine2 = $documentPayeeAddress->getAdditionalStreetName()?->getValue() ?? '';
-        $newAddressLine3 = $documentPayeeAddress->firstAddressLine()?->getLine()?->getValue() ?? '';
-        $newPostcode = $documentPayeeAddress->getPostalZone()?->getValue() ?? '';
-        $newCity = $documentPayeeAddress->getCityName()?->getValue() ?? '';
-        $newCountryId = $documentPayeeAddress->getCountry()?->getIdentificationCode()?->getValue() ?? '';
-        $newSubDivision = $documentPayeeAddress->getCountrySubentity()?->getValue() ?? '';
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
 
         return $this;
     }
@@ -7360,7 +7202,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
 
         $newType = $documentPayeeLegalOrganisation->getCompanyID()?->getSchemeID() ?? '';
         $newId = $documentPayeeLegalOrganisation->getCompanyID()?->getValue() ?? '';
-        $newName = $documentPayeeLegalOrganisation->getRegistrationName()?->getValue() ?? '';
+        $newName = '';
 
         return $this;
     }
@@ -7372,12 +7214,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentPayeeContact(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->getPayeeParty()?->getContact() ?? []
-            ),
-            'documentpayeecontact'
-        );
+        return false;
     }
 
     /**
@@ -7387,12 +7224,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentPayeeContact(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->getPayeeParty()?->getContact() ?? []
-            ),
-            'documentpayeecontact'
-        );
+        return false;
     }
 
     /**
@@ -7418,21 +7250,11 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
-        /**
-         * @var array<Contact>
-         */
-        $documentPayeeContacts = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getPayeeParty()?->getContact() ?? []);
-
-        /**
-         * @var Contact
-         */
-        $documentPayeeContact = $documentPayeeContacts[InvoiceSuitePointerUtils::getValue('documentpayeecontact')];
-
-        $newPersonName = $documentPayeeContact->getName()?->getValue() ?? '';
+        $newPersonName = '';
         $newDepartmentName = '';
-        $newPhoneNumber = $documentPayeeContact->getTelephone()?->getValue() ?? '';
-        $newFaxNumber = $documentPayeeContact->getTelefax()?->getValue() ?? '';
-        $newEmailAddress = $documentPayeeContact->getElectronicMail()?->getValue() ?? '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
 
         return $this;
     }
@@ -7444,12 +7266,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function firstDocumentPayeeCommunication(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->getPayeeParty()?->getEndpointID() ?? []
-            ),
-            'documentpayeeecommunication'
-        );
+        return false;
     }
 
     /**
@@ -7459,12 +7276,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
      */
     public function nextDocumentPayeeCommunication(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getUblRootObject()->getPayeeParty()?->getEndpointID() ?? []
-            ),
-            'documentpayeeecommunication'
-        );
+        return false;
     }
 
     /**
@@ -7481,18 +7293,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         ?string &$newType,
         ?string &$newUri
     ): static {
-        /**
-         * @var array<EndpointID>
-         */
-        $documentPayeeElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getUblRootObject()->getPayeeParty()?->getEndpointID() ?? []);
-
-        /**
-         * @var EndpointID
-         */
-        $documentPayeeElectronicCommunication = $documentPayeeElectronicCommunications[InvoiceSuitePointerUtils::getValue('documentpayeeecommunication')];
-
-        $newType = $documentPayeeElectronicCommunication->getSchemeID() ?? '';
-        $newUri = $documentPayeeElectronicCommunication->getValue() ?? '';
+        $newType = '';
+        $newUri = '';
 
         return $this;
     }
@@ -7587,7 +7389,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $newPayeeAccountName = $documentPaymentMean->getPayeeFinancialAccount()?->getName()?->getValue() ?? '';
         $newPayeeProprietaryId = '';
         $newPayeeBic = $documentPaymentMean->getPayeeFinancialAccount()?->getFinancialInstitutionBranch()?->getID()?->getValue() ?? '';
-        $newPaymentReference = $documentPaymentMean->firstPaymentID()?->getValue() ?? '';
+        $newPaymentReference = '';
         $newMandate = $documentPaymentMean->getPaymentMandate()?->getID()?->getValue() ?? '';
 
         return $this;
@@ -8395,8 +8197,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $newProductCharacteristicDescription = $documentPositionProductCharacteristic->getName()?->getValue() ?? '';
         $newProductCharacteristicValue = $documentPositionProductCharacteristic->getValue()?->getValue() ?? '';
         $newProductCharacteristicType = '';
-        $newProductCharacteristicMeasureValue = $documentPositionProductCharacteristic->getValueQuantity()?->getValue() ?? 0.0;
-        $newProductCharacteristicMeasureUnit = $documentPositionProductCharacteristic->getValueQuantity()?->getUnitCode() ?? '';
+        $newProductCharacteristicMeasureValue = 0.0;
+        $newProductCharacteristicMeasureUnit = '';
 
         return $this;
     }
@@ -10004,7 +9806,7 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
 
         $newStartDate = $positionBillingPeriod->getStartDate();
         $newEndDate = $positionBillingPeriod->getEndDate();
-        $newDescription = $positionBillingPeriod->firstDescription()?->getValue() ?? '';
+        $newDescription = '';
 
         return $this;
     }
@@ -10079,8 +9881,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
         $newTaxType = $positionTax->getTaxScheme()->getID()?->getValue() ?? '';
         $newTaxAmount = 0.0;
         $newTaxPercent = $positionTax->getPercent()?->getValue() ?? 0.0;
-        $newExemptionReason = $positionTax->firstTaxExemptionReason()?->getValue() ?? '';
-        $newExemptionReasonCode = $positionTax->getTaxExemptionReasonCode()?->getValue() ?? '';
+        $newExemptionReason = '';
+        $newExemptionReasonCode = '';
 
         return $this;
     }

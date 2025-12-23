@@ -112,6 +112,23 @@ final class XRechnungUBLInvoiceProviderTest extends TestCase
 
         $this->assertTrue($provider->isSatisfiableBySerializedContent($xml));
 
+        $xml = <<<'XML'
+    <?xml version="1.0" encoding="UTF-8"?>
+    <Invoice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+        <cbc:CustomizationID>urn:cen.eu:en16931:2017</cbc:CustomizationID>
+        <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
+        <cbc:ID>Snippet1</cbc:ID>
+        <cbc:IssueDate>2017-11-13</cbc:IssueDate>
+        <cbc:DueDate>2017-12-01</cbc:DueDate>
+        <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+        <cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+        <cbc:AccountingCost>4025:123:4343</cbc:AccountingCost>
+        <cbc:BuyerReference>0150abc</cbc:BuyerReference>
+    </Invoice>
+    XML;
+
+        $this->assertTrue($provider->isSatisfiableBySerializedContent($xml));
+
         $xml = <<<'XML_WRAP'
         <?xml version="1.0" encoding="UTF-8"?>
         <rsm:CrossIndustryInvoice xmlns:rsm="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100" xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:100" xmlns:ram="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">

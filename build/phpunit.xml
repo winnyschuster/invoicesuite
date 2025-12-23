@@ -109,6 +109,7 @@
             <file>../tests/testcases/documentreadbuild/ZfFxBasicWlDocumentReaderTest.php</file>
             <file>../tests/testcases/documentreadbuild/ZfFxMinimumDocumentReaderTest.php</file>
             <file>../tests/testcases/documentreadbuild/XRechnungCIIInvoiceReaderTest.php</file>
+            <file>../tests/testcases/documentreadbuild/XRechnungUBLInvoiceReaderTest.php</file>
         </testsuite>
         <testsuite name="documentcase">
             <file>../tests/testcases/documentcases/InvoiceSuiteBuilderComfortSimpleTest.php</file>

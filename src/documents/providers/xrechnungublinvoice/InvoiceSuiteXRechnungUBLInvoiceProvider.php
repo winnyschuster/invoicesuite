@@ -15,6 +15,7 @@ use DOMDocument;
 use DOMXPath;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\documents\models\ubl\main\Invoice;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use Throwable;
 
 class InvoiceSuiteXRechnungUBLInvoiceProvider extends InvoiceSuiteAbstractDocumentFormatProvider
@@ -45,6 +46,7 @@ class InvoiceSuiteXRechnungUBLInvoiceProvider extends InvoiceSuiteAbstractDocume
         return [
             'CustomizationId' => 'urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0',
             'ProfileId' => 'urn:fdc:peppol.eu:2017:poacc:billing:01:1.0',
+            'AlternativeCustomizationIds' => ['urn:cen.eu:en16931:2017'],
         ];
     }
 
@@ -105,15 +107,32 @@ class InvoiceSuiteXRechnungUBLInvoiceProvider extends InvoiceSuiteAbstractDocume
             $contentDomXPath->registerNamespace('inv', 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2');
             $contentDomXPath->registerNamespace('cbc', 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2');
 
-            $contentQuery = sprintf("//inv:Invoice/cbc:CustomizationID[text()='%s']", $this->getFormatProviderParameterValue('CustomizationId', ''));
+            $contextParameters = array_merge(
+                InvoiceSuiteArrayUtils::ensure($this->getFormatProviderParameterValue('CustomizationId', '')),
+                InvoiceSuiteArrayUtils::ensure($this->getFormatProviderParameterValue('AlternativeCustomizationIds', ''))
+            );
 
-            $contentEntries = $contentDomXPath->query($contentQuery);
+            $contextParameterFound = false;
 
-            if ($contentEntries === false) {
-                return false;
+            foreach ($contextParameters as $contextParameter) {
+                $contentQuery = sprintf("//inv:Invoice/cbc:CustomizationID[text()='%s']", $contextParameter);
+
+                $contentEntries = $contentDomXPath->query($contentQuery);
+
+                if ($contentEntries === false) {
+                    continue;
+                }
+
+                if ($contentEntries->length !== 1) {
+                    continue;
+                }
+
+                $contextParameterFound = true;
+
+                break;
             }
 
-            if ($contentEntries->length !== 1) {
+            if ($contextParameterFound === false) {
                 return false;
             }
 

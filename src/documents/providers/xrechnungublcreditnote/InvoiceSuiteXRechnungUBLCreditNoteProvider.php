@@ -15,6 +15,7 @@ use DOMDocument;
 use DOMXPath;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\documents\models\ubl\main\CreditNote;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use Throwable;
 
 class InvoiceSuiteXRechnungUBLCreditNoteProvider extends InvoiceSuiteAbstractDocumentFormatProvider
@@ -105,15 +106,32 @@ class InvoiceSuiteXRechnungUBLCreditNoteProvider extends InvoiceSuiteAbstractDoc
             $contentDomXPath->registerNamespace('inv', 'urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2');
             $contentDomXPath->registerNamespace('cbc', 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2');
 
-            $contentQuery = sprintf("//inv:CreditNote/cbc:CustomizationID[text()='%s']", $this->getFormatProviderParameterValue('CustomizationId', ''));
+            $contextParameters = array_merge(
+                InvoiceSuiteArrayUtils::ensure($this->getFormatProviderParameterValue('CustomizationId', '')),
+                InvoiceSuiteArrayUtils::ensure($this->getFormatProviderParameterValue('AlternativeCustomizationIds', ''))
+            );
 
-            $contentEntries = $contentDomXPath->query($contentQuery);
+            $contextParameterFound = false;
 
-            if ($contentEntries === false) {
-                return false;
+            foreach ($contextParameters as $contextParameter) {
+                $contentQuery = sprintf("//inv:CreditNote/cbc:CustomizationID[text()='%s']", $contextParameter);
+
+                $contentEntries = $contentDomXPath->query($contentQuery);
+
+                if ($contentEntries === false) {
+                    continue;
+                }
+
+                if ($contentEntries->length !== 1) {
+                    continue;
+                }
+
+                $contextParameterFound = true;
+
+                break;
             }
 
-            if ($contentEntries->length !== 1) {
+            if ($contextParameterFound === false) {
                 return false;
             }
 

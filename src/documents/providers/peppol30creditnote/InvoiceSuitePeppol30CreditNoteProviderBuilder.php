@@ -1152,7 +1152,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getUblRootObject()
             ->unsetAdditionalDocumentReference();
 
-        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newTypeCode])) {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
 
@@ -1187,7 +1187,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
     ): static {
-        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newTypeCode])) {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
             return $this;
         }
 
@@ -5002,15 +5002,6 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
                 ->getCompanyIDWithCreate()
                 ->setValue($newId)
                 ->setSchemeID($newType);
-        }
-
-        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
-            $this
-                ->getUblRootObject()
-                ->getPayeePartyWithCreate()
-                ->addOnceToPartyLegalEntityWithCreate()
-                ->getRegistrationNameWithCreate()
-                ->setValue($newName);
         }
 
         return $this;
