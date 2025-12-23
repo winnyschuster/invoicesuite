@@ -2,7 +2,6 @@
 
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistCurrencyCodes;
-use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
 use horstoeko\invoicesuite\validators\kosit\InvoiceSuiteKositDocumentValidator;
 
 require __DIR__ . "/../vendor/autoload.php";
@@ -11,7 +10,6 @@ require __DIR__ . "/../vendor/autoload.php";
 
 $documentBuilder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('xrechnungublinvoice');
 $documentBuilder->setDocumentNo('471102');
-//$documentBuilder->setDocumentType(InvoiceSuiteCodelistDocumentTypes::COMMERCIAL_INVOICE->value);
 $documentBuilder->setDocumentType('381');
 $documentBuilder->setDocumentDate(DateTime::createFromFormat('Ymd', '20241115'));
 $documentBuilder->addDocumentNote('Rechnung gemäß Bestellung vom 01.11.2024.');
