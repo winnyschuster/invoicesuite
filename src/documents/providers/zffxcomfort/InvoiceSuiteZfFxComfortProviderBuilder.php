@@ -3805,7 +3805,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractDocumen
      */
     public function setDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): static
     {
-        // Nothing here....
+        // Nothing here...
 
         return $this;
     }

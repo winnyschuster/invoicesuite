@@ -4205,11 +4205,7 @@ class InvoiceSuiteZfFxBasicWlProviderBuilder extends InvoiceSuiteAbstractDocumen
         ?string $newId = null,
         ?string $newName = null,
     ): static {
-        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
-            return $this;
-        }
-
-        $this->setDocumentShipToLegalOrganisation($newType, $newId, $newName);
+        // Nothing here...
 
         return $this;
     }
@@ -5625,29 +5621,7 @@ class InvoiceSuiteZfFxBasicWlProviderBuilder extends InvoiceSuiteAbstractDocumen
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
-        if (
-            InvoiceSuiteStringUtils::allIsNullOrEmpty([
-                $newAddressLine1,
-                $newAddressLine2,
-                $newAddressLine3,
-                $newPostcode,
-                $newCity,
-                $newCountryId,
-                $newSubDivision,
-            ])
-        ) {
-            return $this;
-        }
-
-        $this->setDocumentPayeeAddress(
-            $newAddressLine1,
-            $newAddressLine2,
-            $newAddressLine3,
-            $newPostcode,
-            $newCity,
-            $newCountryId,
-            $newSubDivision
-        );
+        // Nothing here...
 
         return $this;
     }

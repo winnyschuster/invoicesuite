@@ -4205,11 +4205,7 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
-        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
-            return $this;
-        }
-
-        $this->setDocumentShipToLegalOrganisation($newType, $newId, $newName);
+        // Nothing here...
 
         return $this;
     }
