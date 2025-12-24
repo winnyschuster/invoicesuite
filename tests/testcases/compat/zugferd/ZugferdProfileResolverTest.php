@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\tests\testcases\compat\zugferd;
 
 use Exception;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteExceptionCodes;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\zugferd\ZugferdProfileResolver;
@@ -311,6 +312,15 @@ final class ZugferdProfileResolverTest extends TestCase
         $this->assertEquals(ZugferdProfiles::PROFILEDEF[ZugferdProfiles::PROFILE_EN16931]['schematronfilename'], $resolved['schematronfilename']);
     }
 
+    public function testXmlButProfileNotFound(): void
+    {
+        $this->expectException(InvoiceSuiteFormatProviderNotFoundException::class);
+        $this->expectExceptionMessage('The format provider with unique id unknown was not found');
+        $this->expectExceptionCode(InvoiceSuiteExceptionCodes::FORMATPROVIDER_NOTFOUND);
+
+        ZugferdProfileResolver::resolveProfileDef($this->deliverUnknownXml());
+    }
+
     /**
      * Internal helper - returns the EN16931 Header
      *
@@ -464,5 +474,10 @@ HDR;
     private function deliverStringWhichIsNotXml(): string
     {
         return 'This is not a XML';
+    }
+
+    private function deliverUnknownXml(): string
+    {
+        return '<xml><someelement>Test</someelement></xml>';
     }
 }

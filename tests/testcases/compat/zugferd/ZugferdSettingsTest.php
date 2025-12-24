@@ -23,6 +23,7 @@ final class ZugferdSettingsTest extends TestCase
         ZugferdSettings::setDecimalSeparator('.');
         ZugferdSettings::setThousandsSeparator('');
         ZugferdSettings::setIccProfileFilename('sRGB2014.icc');
+        ZugferdSettings::setXmpMetaDataFilename('facturx_extension_schema.xmp');
         ZugferdSettings::setSpecialDecimalPlacesMaps(
             [
                 '/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:GrossPriceProductTradePrice/ram:ChargeAmount' => 2,
@@ -83,15 +84,6 @@ final class ZugferdSettingsTest extends TestCase
         ZugferdSettings::setThousandsSeparator(',');
 
         $this->assertSame(',', ZugferdSettings::getThousandsSeparator());
-    }
-
-    public function testIccProfileFilename(): void
-    {
-        $this->assertSame('sRGB2014.icc', ZugferdSettings::getIccProfileFilename());
-
-        ZugferdSettings::setIccProfileFilename('sRGB_v5_ICC.icc');
-
-        $this->assertSame('sRGB_v5_ICC.icc', ZugferdSettings::getIccProfileFilename());
     }
 
     public function testGetRootDirectory(): void
@@ -159,6 +151,15 @@ final class ZugferdSettingsTest extends TestCase
         );
     }
 
+    public function testIccProfileFilename(): void
+    {
+        $this->assertSame('sRGB2014.icc', ZugferdSettings::getIccProfileFilename());
+
+        ZugferdSettings::setIccProfileFilename('sRGB_v5_ICC.icc');
+
+        $this->assertSame('sRGB_v5_ICC.icc', ZugferdSettings::getIccProfileFilename());
+    }
+
     public function testGetFullIccProfileFilename(): void
     {
         $expected = InvoiceSuitePathUtils::combinePathWithFile(
@@ -166,8 +167,8 @@ final class ZugferdSettingsTest extends TestCase
             'sRGB_v5_ICC.icc'
         );
         $actual = InvoiceSuitePathUtils::combinePathWithFile(
-            realpath(InvoiceSuiteFileUtils::getFileDirectory(ZugferdSettings::getFullIccProfileFilename())),
-            'sRGB_v5_ICC.icc'
+            realpath(ZugferdSettings::getAssetDirectory()),
+            ZugferdSettings::getIccProfileFilename()
         );
 
         $this->assertSame(
@@ -178,6 +179,8 @@ final class ZugferdSettingsTest extends TestCase
 
     public function testSpecialDecimalPlacesMaps(): void
     {
+        $this->assertCount(4, ZugferdSettings::getSpecialDecimalPlacesMaps());
+
         $this->assertSame(2, ZugferdSettings::getSpecialDecimalPlacesMap('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:GrossPriceProductTradePrice/ram:ChargeAmount', 2));
         $this->assertSame(2, ZugferdSettings::getSpecialDecimalPlacesMap('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:NetPriceProductTradePrice/ram:ChargeAmount', 2));
 
@@ -195,6 +198,8 @@ final class ZugferdSettingsTest extends TestCase
 
         $this->assertSame(6, ZugferdSettings::getSpecialDecimalPlacesMap('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:GrossPriceProductTradePrice/ram:ChargeAmount', 2));
         $this->assertSame(6, ZugferdSettings::getSpecialDecimalPlacesMap('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:NetPriceProductTradePrice/ram:ChargeAmount', 2));
+
+        $this->assertCount(2, ZugferdSettings::getSpecialDecimalPlacesMaps());
     }
 
     public function testSerializerCacheDirectory(): void
@@ -211,5 +216,70 @@ final class ZugferdSettingsTest extends TestCase
 
         $this->assertSame('', ZugferdSettings::getSerializerCacheDirectory());
         $this->assertFalse(ZugferdSettings::hasSerializerCacheDirectory());
+    }
+
+    public function testXmpMetaDataFilename(): void
+    {
+        $this->assertSame('facturx_extension_schema.xmp', ZugferdSettings::getXmpMetaDataFilename());
+
+        ZugferdSettings::setXmpMetaDataFilename('facturx_extension_schema_2.xmp');
+
+        $this->assertSame('facturx_extension_schema_2.xmp', ZugferdSettings::getXmpMetaDataFilename());
+    }
+
+    public function testGetFullXmpMetaDataFilename(): void
+    {
+        $expected = InvoiceSuitePathUtils::combinePathWithFile(
+            realpath(__DIR__.'/../../../../src/compat/zugferd/assets/'),
+            'facturx_extension_schema_2.xmp'
+        );
+        $actual = InvoiceSuitePathUtils::combinePathWithFile(
+            realpath(ZugferdSettings::getAssetDirectory()),
+            ZugferdSettings::getXmpMetaDataFilename()
+        );
+
+        $this->assertSame(
+            $expected,
+            $actual
+        );
+    }
+
+    public function testGetSchemaDirectory(): void
+    {
+        $expected = realpath(__DIR__.'/../../../../src/compat/zugferd/schema');
+        $actual = realpath(ZugferdSettings::getSchemaDirectory());
+
+        $this->assertNotFalse($expected);
+        $this->assertNotFalse($actual);
+        $this->assertSame(
+            $expected,
+            $actual
+        );
+    }
+
+    public function testGetSchematronDirectory(): void
+    {
+        $expected = realpath(__DIR__.'/../../../../src/compat/zugferd/schema/schematron');
+        $actual = realpath(ZugferdSettings::getSchematronDirectory());
+
+        $this->assertNotFalse($expected);
+        $this->assertNotFalse($actual);
+        $this->assertSame(
+            $expected,
+            $actual
+        );
+    }
+
+    public function testGetXsltDirectory(): void
+    {
+        $expected = realpath(__DIR__.'/../../../../src/compat/zugferd/schema/xslt');
+        $actual = realpath(ZugferdSettings::getXsltDirectory());
+
+        $this->assertNotFalse($expected);
+        $this->assertNotFalse($actual);
+        $this->assertSame(
+            $expected,
+            $actual
+        );
     }
 }
