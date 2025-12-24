@@ -101,7 +101,11 @@ final class ZugferdPdfDocumentReaderGeneral2Test extends TestCase
 
     public function testAdditionalAttachments(): void
     {
-        //$this->markTestSkipped('Error from another library');
+        // TODO: Remove this if PrinsFrank/pdfparser bug 295 is solved (https://github.com/PrinsFrank/pdfparser/issues/295#issuecomment-3689609315))
+        if (!class_exists('Smalot\PdfParser\Parser')) {
+            $this->markTestSkipped('Error from another library');
+            return;
+        }
 
         $filename = __DIR__.'/../../../assets/03_zugferdpdfdocumentreader_4.pdf';
 
@@ -121,7 +125,11 @@ final class ZugferdPdfDocumentReaderGeneral2Test extends TestCase
 
     public function testInvoiceDocumentAndAttachmentsNoStatic(): void
     {
-        //$this->markTestSkipped('Error from another library');
+        // TODO: Remove this if PrinsFrank/pdfparser bug 295 is solved (https://github.com/PrinsFrank/pdfparser/issues/295#issuecomment-3689609315))
+        if (!class_exists('Smalot\PdfParser\Parser')) {
+            $this->markTestSkipped('Error from another library');
+            return;
+        }
 
         $pdfReaderExt = ZugferdDocumentPdfReaderExt::fromFile(__DIR__.'/../../../assets/03_zugferdpdfdocumentreader_4.pdf');
 
