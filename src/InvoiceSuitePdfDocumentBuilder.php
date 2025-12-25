@@ -181,6 +181,16 @@ class InvoiceSuitePdfDocumentBuilder
     }
 
     /**
+     * Get the creator tool name
+     *
+     * @return string
+     */
+    public function getCreatorToolName(): string
+    {
+        return $this->getCurrentPdfConstructor()->getCreatorToolName();
+    }
+
+    /**
      * Get the relationship type of the attached invoice document
      *
      * @return string

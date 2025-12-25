@@ -17,6 +17,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundExceptio
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\InvoiceSuitePdfDocumentBuilder;
+use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 
 /**
  * Legacy-class representing the abstract ZUGFeRD PDF document builder for outgoing documents
@@ -28,6 +29,20 @@ use horstoeko\invoicesuite\InvoiceSuitePdfDocumentBuilder;
  */
 abstract class ZugferdDocumentPdfBuilderAbstract
 {
+    /**
+     * Constants for Relationship types
+     * 'Data', 'Alternative', 'Source', 'Supplement', 'Unspecified'
+     */
+    public const AF_RELATIONSHIP_DATA = 'Data';
+
+    public const AF_RELATIONSHIP_ALTERNATIVE = 'Alternative';
+
+    public const AF_RELATIONSHIP_SOURCE = 'Source';
+
+    public const AF_RELATIONSHIP_SUPPLEMENT = 'Supplement';
+
+    public const AF_RELATIONSHIP_UNSPECIFIED = 'Unspecified';
+
     /**
      * Internal PDF builder instance
      *
@@ -83,7 +98,18 @@ abstract class ZugferdDocumentPdfBuilderAbstract
      */
     public function saveDocumentInline(string $toFilename): string
     {
-        return ''; // TODO: Check this
+        $pdfContent = $this->downloadString();
+
+        if (PHP_SAPI != 'cli') {
+            header('Content-Type: application/pdf');
+            header(sprintf('Content-Disposition: inline; filename=$s', rawurlencode(InvoiceSuiteFileUtils::getFilenameWithExtension($toFilename))));
+            header('Cache-Control: private, max-age=0, must-revalidate');
+            header('Pragma: public');
+        }
+
+        echo $pdfContent;
+
+        return $pdfContent;
     }
 
     /**
@@ -116,7 +142,7 @@ abstract class ZugferdDocumentPdfBuilderAbstract
      */
     public function getCreatorToolName(): string
     {
-        return $this->pdfDocumentBuilder->getAdditionalCreatorTool();
+        return $this->pdfDocumentBuilder->getCreatorToolName();
     }
 
     /**

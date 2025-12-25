@@ -15,6 +15,7 @@ use horstoeko\invoicesuite\concerns\HandlesRawContents;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
+use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use JMS\Serializer\Exception\RuntimeException;
 
 /**
@@ -41,9 +42,9 @@ class ZugferdDocumentPdfBuilder extends ZugferdDocumentPdfBuilderAbstract
     public function __construct(ZugferdDocumentBuilder $documentBuilder, string $pdfContent)
     {
         $this->setRawDocumentContent($documentBuilder->getContent());
-        $this->setRawPdfContent($pdfContent);
+        $this->setRawPdfContent(InvoiceSuiteFileUtils::getContentFromFileOrString($pdfContent));
 
-        parent::__construct($pdfContent);
+        parent::__construct($this->getRawPdfContent());
     }
 
     /**
