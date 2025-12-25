@@ -146,6 +146,9 @@
             <file>../tests/testcases/compat/zugferd/ZugferdPdfDocumentReaderComfortTest.php</file>
             <file>../tests/testcases/compat/zugferd/ZugferdPdfDocumentReaderExtendedTest.php</file>
             <file>../tests/testcases/compat/zugferd/ZugferdPdfDocumentReaderExtended2Test.php</file>
+            <!-- Document PDF Builder -->
+            <file>../tests/testcases/compat/zugferd/ZugferdDocumentPdfBuilderTest.php</file>
+            <file>../tests/testcases/compat/zugferd/ZugferdDocumentPdfMergerTest.php</file>
         </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">
