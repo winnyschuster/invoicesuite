@@ -100,7 +100,7 @@ abstract class ZugferdDocumentPdfBuilderAbstract
     {
         $pdfContent = $this->downloadString();
 
-        if (PHP_SAPI != 'cli') {
+        if (PHP_SAPI !== 'cli') {
             header('Content-Type: application/pdf');
             header(sprintf('Content-Disposition: inline; filename=$s', rawurlencode(InvoiceSuiteFileUtils::getFilenameWithExtension($toFilename))));
             header('Cache-Control: private, max-age=0, must-revalidate');

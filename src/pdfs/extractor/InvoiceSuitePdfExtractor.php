@@ -257,12 +257,7 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
     {
         usort(
             $this->attachmentList,
-            static function (
-                InvoiceSuitePdfExtractorAttachment $a,
-                InvoiceSuitePdfExtractorAttachment $b
-            ): int {
-                return strcasecmp($a->getAttachmentFilename(), $b->getAttachmentFilename());
-            }
+            static fn(InvoiceSuitePdfExtractorAttachment $a, InvoiceSuitePdfExtractorAttachment $b): int => strcasecmp($a->getAttachmentFilename(), $b->getAttachmentFilename())
         );
 
         return $this;

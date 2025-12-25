@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\testcases\compat\zugferd;
 
 use horstoeko\invoicesuite\tests\TestCase;
@@ -7,7 +9,7 @@ use horstoeko\zugferd\ZugferdDocumentPdfBuilder;
 use horstoeko\zugferd\ZugferdDocumentPdfMerger;
 use Smalot\PdfParser\Parser as PdfParser;
 
-class ZugferdDocumentPdfMergerTest extends TestCase
+final class ZugferdDocumentPdfMergerTest extends TestCase
 {
     public function testConstructByXmlFileAndPdfFile(): void
     {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\testcases\compat\zugferd;
 
 use DateTime;
@@ -15,7 +17,7 @@ use horstoeko\zugferd\ZugferdProfiles;
 use setasign\Fpdi\PdfParser\PdfParserException;
 use Smalot\PdfParser\Parser as PdfParser;
 
-class ZugferdDocumentPdfBuilderTest extends TestCase
+final class ZugferdDocumentPdfBuilderTest extends TestCase
 {
     use HandlesCompatXmlTests;
 
@@ -43,7 +45,7 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
             ->addDocumentNote('Rechnung gemäß Bestellung vom 01.03.2018.')
             ->addDocumentNote('Lieferant GmbH'.PHP_EOL.'Lieferantenstraße 20'.PHP_EOL.'80333 München'.PHP_EOL.'Deutschland'.PHP_EOL.'Geschäftsführer: Hans Muster'.PHP_EOL.'Handelsregisternummer: H A 123'.PHP_EOL.PHP_EOL, null, 'REG')
             ->setDocumentSupplyChainEvent(DateTime::createFromFormat('Ymd', '20180305'))
-            ->addDocumentPaymentMean('58', null, null, null, null, null, 'DE12500105170648489890', null, null, null)
+            ->addDocumentPaymentMean('58', null, null, null, null, null, 'DE12500105170648489890')
             ->setDocumentSeller('Lieferant GmbH', '549910')
             ->addDocumentSellerGlobalId('4000001123452', '0088')
             ->addDocumentSellerTaxRegistration('FC', '201/113/40209')
@@ -200,8 +202,8 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertArrayHasKey('xmp:creatortool', $pdfDetails);
         $this->assertArrayHasKey('xmp:createdate', $pdfDetails);
         $this->assertArrayHasKey('xmp:modifydate', $pdfDetails);
-        $this->assertStringContainsString('FPDF', $pdfDetails['Producer']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['CreationDate']);
+        $this->assertStringContainsString('FPDF', (string) $pdfDetails['Producer']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['CreationDate']);
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['Title']);
         $this->assertEquals('FacturX/ZUGFeRD Invoice 471102 dated 2018-03-05 issued by Lieferant GmbH', $pdfDetails['Subject']);
         $this->assertEquals('Lieferant GmbH', $pdfDetails['Author']);
@@ -215,9 +217,9 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['dc:title']);
         $this->assertEquals('Lieferant GmbH', $pdfDetails['dc:creator']);
         $this->assertEquals('FacturX/ZUGFeRD Invoice 471102 dated 2018-03-05 issued by Lieferant GmbH', $pdfDetails['dc:description']);
-        $this->assertStringContainsString('InvoiceSuite PHP library', $pdfDetails['xmp:creatortool']);
-        $this->assertStringContainsString('2018-03-05', $pdfDetails['xmp:createdate']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['xmp:modifydate']);
+        $this->assertStringContainsString('InvoiceSuite PHP library', (string) $pdfDetails['xmp:creatortool']);
+        $this->assertStringContainsString('2018-03-05', (string) $pdfDetails['xmp:createdate']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['xmp:modifydate']);
     }
 
     public function testSetAdditionalCreatorTool(): void
@@ -521,8 +523,8 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertArrayHasKey('xmp:creatortool', $pdfDetails);
         $this->assertArrayHasKey('xmp:createdate', $pdfDetails);
         $this->assertArrayHasKey('xmp:modifydate', $pdfDetails);
-        $this->assertStringContainsString('FPDF', $pdfDetails['Producer']);
-        $this->assertStringContainsString('2000-01-01', $pdfDetails['CreationDate']);
+        $this->assertStringContainsString('FPDF', (string) $pdfDetails['Producer']);
+        $this->assertStringContainsString('2000-01-01', (string) $pdfDetails['CreationDate']);
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['Title']);
         $this->assertEquals('FacturX/ZUGFeRD Invoice 471102 dated 2018-03-05 issued by Lieferant GmbH', $pdfDetails['Subject']);
         $this->assertEquals('Lieferant GmbH', $pdfDetails['Author']);
@@ -536,9 +538,9 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['dc:title']);
         $this->assertEquals('Lieferant GmbH', $pdfDetails['dc:creator']);
         $this->assertEquals('FacturX/ZUGFeRD Invoice 471102 dated 2018-03-05 issued by Lieferant GmbH', $pdfDetails['dc:description']);
-        $this->assertStringContainsString('InvoiceSuite PHP library', $pdfDetails['xmp:creatortool']);
-        $this->assertStringContainsString('2000-01-01', $pdfDetails['xmp:createdate']);
-        $this->assertStringContainsString('2000-01-01', $pdfDetails['xmp:modifydate']);
+        $this->assertStringContainsString('InvoiceSuite PHP library', (string) $pdfDetails['xmp:creatortool']);
+        $this->assertStringContainsString('2000-01-01', (string) $pdfDetails['xmp:createdate']);
+        $this->assertStringContainsString('2000-01-01', (string) $pdfDetails['xmp:modifydate']);
     }
 
     public function testCustomMetaInformation(): void
@@ -571,8 +573,8 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertArrayHasKey('xmp:creatortool', $pdfDetails);
         $this->assertArrayHasKey('xmp:createdate', $pdfDetails);
         $this->assertArrayHasKey('xmp:modifydate', $pdfDetails);
-        $this->assertStringContainsString('FPDF', $pdfDetails['Producer']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['CreationDate']);
+        $this->assertStringContainsString('FPDF', (string) $pdfDetails['Producer']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['CreationDate']);
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['Title']);
         $this->assertEquals('FacturX/ZUGFeRD Invoice 471102 dated 2018-03-05 issued by Lieferant GmbH', $pdfDetails['Subject']);
         $this->assertEquals('Lieferant GmbH', $pdfDetails['Author']);
@@ -586,9 +588,9 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['dc:title']);
         $this->assertEquals('Lieferant GmbH', $pdfDetails['dc:creator']);
         $this->assertEquals('FacturX/ZUGFeRD Invoice 471102 dated 2018-03-05 issued by Lieferant GmbH', $pdfDetails['dc:description']);
-        $this->assertStringContainsString('InvoiceSuite PHP library', $pdfDetails['xmp:creatortool']);
-        $this->assertStringContainsString('2018-03-05', $pdfDetails['xmp:createdate']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['xmp:modifydate']);
+        $this->assertStringContainsString('InvoiceSuite PHP library', (string) $pdfDetails['xmp:creatortool']);
+        $this->assertStringContainsString('2018-03-05', (string) $pdfDetails['xmp:createdate']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['xmp:modifydate']);
 
         $pdfBuilder = new ZugferdDocumentPdfBuilder(self::$document, self::$sourcePdfFilename);
         $pdfBuilder->setTitleTemplate('%3$s : %2$s %1$s');
@@ -619,8 +621,8 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertArrayHasKey('xmp:creatortool', $pdfDetails);
         $this->assertArrayHasKey('xmp:createdate', $pdfDetails);
         $this->assertArrayHasKey('xmp:modifydate', $pdfDetails);
-        $this->assertStringContainsString('FPDF', $pdfDetails['Producer']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['CreationDate']);
+        $this->assertStringContainsString('FPDF', (string) $pdfDetails['Producer']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['CreationDate']);
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['Title']);
         $this->assertEquals('FacturX/ZUGFeRD Invoice 471102 dated 2018-03-05 issued by Lieferant GmbH', $pdfDetails['Subject']);
         $this->assertEquals('Lieferant GmbH', $pdfDetails['Author']);
@@ -634,9 +636,9 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['dc:title']);
         $this->assertEquals('Lieferant GmbH', $pdfDetails['dc:creator']);
         $this->assertEquals('FacturX/ZUGFeRD Invoice 471102 dated 2018-03-05 issued by Lieferant GmbH', $pdfDetails['dc:description']);
-        $this->assertStringContainsString('InvoiceSuite PHP library', $pdfDetails['xmp:creatortool']);
-        $this->assertStringContainsString('2018-03-05', $pdfDetails['xmp:createdate']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['xmp:modifydate']);
+        $this->assertStringContainsString('InvoiceSuite PHP library', (string) $pdfDetails['xmp:creatortool']);
+        $this->assertStringContainsString('2018-03-05', (string) $pdfDetails['xmp:createdate']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['xmp:modifydate']);
 
         $pdfBuilder = new ZugferdDocumentPdfBuilder(self::$document, self::$sourcePdfFilename);
         $pdfBuilder->setTitleTemplate('%3$s : %2$s %1$s');
@@ -668,8 +670,8 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertArrayHasKey('xmp:creatortool', $pdfDetails);
         $this->assertArrayHasKey('xmp:createdate', $pdfDetails);
         $this->assertArrayHasKey('xmp:modifydate', $pdfDetails);
-        $this->assertStringContainsString('FPDF', $pdfDetails['Producer']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['CreationDate']);
+        $this->assertStringContainsString('FPDF', (string) $pdfDetails['Producer']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['CreationDate']);
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['Title']);
         $this->assertEquals('FacturX/ZUGFeRD Invoice 471102 dated 2018-03-05 issued by Lieferant GmbH', $pdfDetails['Subject']);
         $this->assertEquals('Issued by seller with name Lieferant GmbH', $pdfDetails['Author']);
@@ -683,9 +685,9 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['dc:title']);
         $this->assertEquals('Issued by seller with name Lieferant GmbH', $pdfDetails['dc:creator']);
         $this->assertEquals('FacturX/ZUGFeRD Invoice 471102 dated 2018-03-05 issued by Lieferant GmbH', $pdfDetails['dc:description']);
-        $this->assertStringContainsString('InvoiceSuite PHP library', $pdfDetails['xmp:creatortool']);
-        $this->assertStringContainsString('2018-03-05', $pdfDetails['xmp:createdate']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['xmp:modifydate']);
+        $this->assertStringContainsString('InvoiceSuite PHP library', (string) $pdfDetails['xmp:creatortool']);
+        $this->assertStringContainsString('2018-03-05', (string) $pdfDetails['xmp:createdate']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['xmp:modifydate']);
 
         $pdfBuilder = new ZugferdDocumentPdfBuilder(self::$document, self::$sourcePdfFilename);
         $pdfBuilder->setTitleTemplate('%3$s : %2$s %1$s');
@@ -718,8 +720,8 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertArrayHasKey('xmp:creatortool', $pdfDetails);
         $this->assertArrayHasKey('xmp:createdate', $pdfDetails);
         $this->assertArrayHasKey('xmp:modifydate', $pdfDetails);
-        $this->assertStringContainsString('FPDF', $pdfDetails['Producer']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['CreationDate']);
+        $this->assertStringContainsString('FPDF', (string) $pdfDetails['Producer']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['CreationDate']);
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['Title']);
         $this->assertEquals('Invoice-Document, Issued by Lieferant GmbH', $pdfDetails['Subject']);
         $this->assertEquals('Issued by seller with name Lieferant GmbH', $pdfDetails['Author']);
@@ -733,9 +735,9 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['dc:title']);
         $this->assertEquals('Issued by seller with name Lieferant GmbH', $pdfDetails['dc:creator']);
         $this->assertEquals('Invoice-Document, Issued by Lieferant GmbH', $pdfDetails['dc:description']);
-        $this->assertStringContainsString('InvoiceSuite PHP library', $pdfDetails['xmp:creatortool']);
-        $this->assertStringContainsString('2018-03-05', $pdfDetails['xmp:createdate']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['xmp:modifydate']);
+        $this->assertStringContainsString('InvoiceSuite PHP library', (string) $pdfDetails['xmp:creatortool']);
+        $this->assertStringContainsString('2018-03-05', (string) $pdfDetails['xmp:createdate']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['xmp:modifydate']);
 
         $whichArray = [];
 
@@ -793,8 +795,8 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertArrayHasKey('xmp:creatortool', $pdfDetails);
         $this->assertArrayHasKey('xmp:createdate', $pdfDetails);
         $this->assertArrayHasKey('xmp:modifydate', $pdfDetails);
-        $this->assertStringContainsString('FPDF', $pdfDetails['Producer']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['CreationDate']);
+        $this->assertStringContainsString('FPDF', (string) $pdfDetails['Producer']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['CreationDate']);
         $this->assertEquals('DummyTitle', $pdfDetails['Title']);
         $this->assertEquals('DummySubject', $pdfDetails['Subject']);
         $this->assertEquals('DummyAuthor', $pdfDetails['Author']);
@@ -808,9 +810,9 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertEquals('DummyTitle', $pdfDetails['dc:title']);
         $this->assertEquals('DummyAuthor', $pdfDetails['dc:creator']);
         $this->assertEquals('DummySubject', $pdfDetails['dc:description']);
-        $this->assertStringContainsString('InvoiceSuite PHP library', $pdfDetails['xmp:creatortool']);
-        $this->assertStringContainsString('2018-03-05', $pdfDetails['xmp:createdate']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['xmp:modifydate']);
+        $this->assertStringContainsString('InvoiceSuite PHP library', (string) $pdfDetails['xmp:creatortool']);
+        $this->assertStringContainsString('2018-03-05', (string) $pdfDetails['xmp:createdate']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['xmp:modifydate']);
 
         $pdfBuilder = new ZugferdDocumentPdfBuilder(self::$document, self::$sourcePdfFilename);
         $pdfBuilder->setMetaInformationCallback(
@@ -858,8 +860,8 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertArrayHasKey('xmp:creatortool', $pdfDetails);
         $this->assertArrayHasKey('xmp:createdate', $pdfDetails);
         $this->assertArrayHasKey('xmp:modifydate', $pdfDetails);
-        $this->assertStringContainsString('FPDF', $pdfDetails['Producer']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['CreationDate']);
+        $this->assertStringContainsString('FPDF', (string) $pdfDetails['Producer']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['CreationDate']);
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['Title']);
         $this->assertEquals('Invoice-Document, Issued by Lieferant GmbH', $pdfDetails['Subject']);
         $this->assertEquals('Issued by seller with name Lieferant GmbH', $pdfDetails['Author']);
@@ -873,12 +875,12 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['dc:title']);
         $this->assertEquals('Issued by seller with name Lieferant GmbH', $pdfDetails['dc:creator']);
         $this->assertEquals('Invoice-Document, Issued by Lieferant GmbH', $pdfDetails['dc:description']);
-        $this->assertStringContainsString('InvoiceSuite PHP library', $pdfDetails['xmp:creatortool']);
-        $this->assertStringContainsString('2018-03-05', $pdfDetails['xmp:createdate']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['xmp:modifydate']);
+        $this->assertStringContainsString('InvoiceSuite PHP library', (string) $pdfDetails['xmp:creatortool']);
+        $this->assertStringContainsString('2018-03-05', (string) $pdfDetails['xmp:createdate']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['xmp:modifydate']);
 
         $pdfBuilder = new ZugferdDocumentPdfBuilder(self::$document, self::$sourcePdfFilename);
-        $pdfBuilder->setMetaInformationCallback(null);
+        $pdfBuilder->setMetaInformationCallback();
         $pdfBuilder->setTitleTemplate('%3$s : %2$s %1$s');
         $pdfBuilder->setKeywordTemplate('%1$s, %2$s, %3$s, %4$s');
         $pdfBuilder->setAuthorTemplate('Issued by seller with name %3$s');
@@ -909,8 +911,8 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertArrayHasKey('xmp:creatortool', $pdfDetails);
         $this->assertArrayHasKey('xmp:createdate', $pdfDetails);
         $this->assertArrayHasKey('xmp:modifydate', $pdfDetails);
-        $this->assertStringContainsString('FPDF', $pdfDetails['Producer']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['CreationDate']);
+        $this->assertStringContainsString('FPDF', (string) $pdfDetails['Producer']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['CreationDate']);
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['Title']);
         $this->assertEquals('Invoice-Document, Issued by Lieferant GmbH', $pdfDetails['Subject']);
         $this->assertEquals('Issued by seller with name Lieferant GmbH', $pdfDetails['Author']);
@@ -924,8 +926,8 @@ class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertEquals('Lieferant GmbH : Invoice 471102', $pdfDetails['dc:title']);
         $this->assertEquals('Issued by seller with name Lieferant GmbH', $pdfDetails['dc:creator']);
         $this->assertEquals('Invoice-Document, Issued by Lieferant GmbH', $pdfDetails['dc:description']);
-        $this->assertStringContainsString('InvoiceSuite PHP library', $pdfDetails['xmp:creatortool']);
-        $this->assertStringContainsString('2018-03-05', $pdfDetails['xmp:createdate']);
-        $this->assertStringContainsString(date('Y-m-d'), $pdfDetails['xmp:modifydate']);
+        $this->assertStringContainsString('InvoiceSuite PHP library', (string) $pdfDetails['xmp:creatortool']);
+        $this->assertStringContainsString('2018-03-05', (string) $pdfDetails['xmp:createdate']);
+        $this->assertStringContainsString(date('Y-m-d'), (string) $pdfDetails['xmp:modifydate']);
     }
 }
