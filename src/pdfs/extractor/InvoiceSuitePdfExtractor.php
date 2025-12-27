@@ -19,7 +19,8 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use IteratorAggregate;
 use LogicException;
 use PrinsFrank\PdfParser\Exception\PdfParserException;
-use PrinsFrank\PdfParser\PdfParser;
+use PrinsFrank\PdfParser\PdfParser as PrinsFrankPdfParser;
+use Smalot\PdfParser\Parser as SmalotPdfParser;
 use Traversable;
 
 /**
@@ -167,26 +168,6 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
     }
 
     /**
-     * Returns the classname of the LGPL-licensed PDF Parser smalot\pdfparser
-     *
-     * @return string
-     */
-    protected function getSmalotPdfParserClassname(): string
-    {
-        return '\Smalot\PdfParser\Parser';
-    }
-
-    /**
-     * Returns true if the LGPL-licensed PDF Parser smalot\pdfparser is available
-     *
-     * @return bool
-     */
-    protected function isSmalotPdfParserAvailable(): bool
-    {
-        return class_exists($this->getSmalotPdfParserClassname());
-    }
-
-    /**
      * Get a list of all the attachments.
      *
      * @param  string $pdfContent
@@ -198,8 +179,9 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
     {
         $this->attachmentList = [];
 
-        if ($this->isSmalotPdfParserAvailable()) {
-            $pdfParser = new ($this->getSmalotPdfParserClassname())();
+        if (class_exists(SmalotPdfParser::class)) {
+            $pdfParser = new SmalotPdfParser();
+            // @phpstan-ignore missingType.checkedException
             $pdfParsed = $pdfParser->parseContent($pdfContent);
             $fileSpecs = $pdfParsed->getObjectsByType('Filespec');
 
@@ -226,7 +208,7 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
             return $this;
         }
 
-        $pdfParser = new PdfParser();
+        $pdfParser = new PrinsFrankPdfParser();
         $pdfParsed = $pdfParser->parseString($pdfContent);
         $fileSpecs = $pdfParsed->getCatalog()->getFileSpecifications();
 
