@@ -30,6 +30,14 @@ class InvoiceSuiteXRechnungUBLInvoiceProvider extends InvoiceSuiteAbstractDocume
     /**
      * {@inheritDoc}
      */
+    public function getContentType(): string
+    {
+        return 'xml';
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getDescription(): string
     {
         return 'The reference profile is based on the CIUS XRechnung, which is maintained by KoSIT. It represents an '

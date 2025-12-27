@@ -91,21 +91,9 @@ class InvoiceSuiteDocumentBuilder
      *
      * @throws RuntimeException
      */
-    public function getContentAsXml(): string
+    public function getContent(): string
     {
-        return $this->getCurrentDocumentFormatProvider()->getBuilder()->getContentAsXml();
-    }
-
-    /**
-     * Get the content as JSON string
-     *
-     * @return string
-     *
-     * @throws RuntimeException
-     */
-    public function getContentAsJson(): string
-    {
-        return $this->getCurrentDocumentFormatProvider()->getBuilder()->getContentAsJson();
+        return $this->getCurrentDocumentFormatProvider()->getBuilder()->getContent();
     }
 
     /**
@@ -116,24 +104,10 @@ class InvoiceSuiteDocumentBuilder
      *
      * @throws RuntimeException
      */
-    public function saveAsXmlFile(
+    public function saveContentToFile(
         string $tofile
     ): void {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->saveAsXmlFile($tofile);
-    }
-
-    /**
-     * Save the JSON content to a file
-     *
-     * @param  string $tofile
-     * @return void
-     *
-     * @throws RuntimeException
-     */
-    public function saveAsJsonFile(
-        string $tofile
-    ): void {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->saveAsJsonFile($tofile);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->saveContentToFile($tofile);
     }
 
     /**
@@ -147,7 +121,7 @@ class InvoiceSuiteDocumentBuilder
      */
     public function copyToReader(): InvoiceSuiteDocumentReader
     {
-        return InvoiceSuiteDocumentReader::createFromContent($this->getContentAsXml());
+        return InvoiceSuiteDocumentReader::createFromContent($this->getContent());
     }
 
     /**

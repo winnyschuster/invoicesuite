@@ -266,14 +266,14 @@ final class XRechnungCIIDocumentBuilderTest extends TestCase
 
     public function testContentType(): void
     {
-        $contentType = InvoiceSuiteContentTypeResolver::resolveContentType(static::$document->getContentAsXml());
+        $contentType = InvoiceSuiteContentTypeResolver::resolveContentType(static::$document->getContent());
 
         $this->assertSame(InvoiceSuiteContentTypeResolver::XML, $contentType);
     }
 
     public function testWriteFile(): void
     {
-        static::$document->saveAsXmlFile($this->getStoreFilename());
+        static::$document->saveContentToFile($this->getStoreFilename());
 
         $this->assertFileExists($this->getStoreFilename());
     }

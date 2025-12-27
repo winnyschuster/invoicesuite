@@ -432,32 +432,32 @@ $documentDTO->addPosition($position);
 $builder->createFromDTO($documentDTO);
 
 if ($creationMode === 0) {
-    $builder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice_UBL.xml");
+    $builder->saveContentToFile(__DIR__ . "/01_SimpleInvoice_UBL.xml");
 }
 if ($creationMode === 1) {
-    $builder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice.xml");
+    $builder->saveContentToFile(__DIR__ . "/01_SimpleInvoice.xml");
 }
 if ($creationMode === 2) {
-    $builder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice.xml");
+    $builder->saveContentToFile(__DIR__ . "/01_SimpleInvoice.xml");
 }
 if ($creationMode === 3) {
-    $builder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice.xml");
+    $builder->saveContentToFile(__DIR__ . "/01_SimpleInvoice.xml");
 }
 if ($creationMode === 4) {
-    $builder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice.xml");
+    $builder->saveContentToFile(__DIR__ . "/01_SimpleInvoice.xml");
 }
 if ($creationMode === 5) {
-    $builder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice.xml");
+    $builder->saveContentToFile(__DIR__ . "/01_SimpleInvoice.xml");
 }
 if ($creationMode === 6) {
-    $builder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice.xml");
+    $builder->saveContentToFile(__DIR__ . "/01_SimpleInvoice.xml");
 }
 if ($creationMode === 7) {
-    $builder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice_UBL.xml");
+    $builder->saveContentToFile(__DIR__ . "/01_SimpleInvoice_UBL.xml");
 }
 if ($creationMode === 8) {
-    $builder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice_UBL.xml");
+    $builder->saveContentToFile(__DIR__ . "/01_SimpleInvoice_UBL.xml");
 }
 if ($creationMode === 9) {
-    $builder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice_UBL.xml");
+    $builder->saveContentToFile(__DIR__ . "/01_SimpleInvoice_UBL.xml");
 }

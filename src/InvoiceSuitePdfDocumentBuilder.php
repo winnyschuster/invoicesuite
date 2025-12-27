@@ -504,7 +504,7 @@ class InvoiceSuitePdfDocumentBuilder
         }
 
         $this->setCurrentDocumentFormatProvider($fromDocumentBuilder->getCurrentDocumentFormatProvider());
-        $this->setRawDocumentContent($fromDocumentBuilder->getContentAsXml());
+        $this->setRawDocumentContent($fromDocumentBuilder->getContent());
 
         return $this;
     }

@@ -17,7 +17,6 @@ use horstoeko\invoicesuite\concerns\HandlesDocumentRootObject;
 use horstoeko\invoicesuite\concerns\HandlesDocumentSerializer;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
-use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
 use JMS\Serializer\Exception\RuntimeException;
 use JMS\Serializer\SerializationContext;
 
@@ -54,21 +53,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
      *
      * @throws RuntimeException
      */
-    public function getContentAsXml(): string
+    public function getContent(): string
     {
-        return $this->getContentByType(InvoiceSuiteContentTypeResolver::XML);
-    }
-
-    /**
-     * Get the content as JSON string
-     *
-     * @return string
-     *
-     * @throws RuntimeException
-     */
-    public function getContentAsJson(): string
-    {
-        return $this->getContentByType(InvoiceSuiteContentTypeResolver::JSON);
+        return $this->documentSerializer->serialize(
+            $this->getDocumentRootObject(),
+            $this->getCurrentDocumentFormatProvider()->getContentType(),
+            SerializationContext::create()->setGroups($this->getCurrentDocumentFormatProvider()->getSerializerGroups())
+        );
     }
 
     /**
@@ -79,22 +70,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
      *
      * @throws RuntimeException
      */
-    public function saveAsXmlFile(string $tofile): void
+    public function saveContentToFile(string $tofile): void
     {
-        file_put_contents($tofile, $this->getContentAsXml());
-    }
-
-    /**
-     * Save the JSON content to a file
-     *
-     * @param  string $tofile
-     * @return void
-     *
-     * @throws RuntimeException
-     */
-    public function saveAsJsonFile(string $tofile): void
-    {
-        file_put_contents($tofile, $this->getContentAsJson());
+        file_put_contents($tofile, $this->getContent());
     }
 
     /**
@@ -4564,20 +4542,4 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
         ?string $newType = null,
         ?string $newAccountId = null
     ): static;
-
-    /**
-     * Get the content by type
-     *
-     * @return string
-     *
-     * @throws RuntimeException
-     */
-    protected function getContentByType(string $contentType): string
-    {
-        return $this->documentSerializer->serialize(
-            $this->getDocumentRootObject(),
-            $contentType,
-            SerializationContext::create()->setGroups($this->getCurrentDocumentFormatProvider()->getSerializerGroups())
-        );
-    }
 }

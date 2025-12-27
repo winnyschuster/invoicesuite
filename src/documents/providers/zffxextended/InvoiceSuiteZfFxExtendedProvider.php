@@ -31,6 +31,14 @@ class InvoiceSuiteZfFxExtendedProvider extends InvoiceSuiteAbstractDocumentForma
     /**
      * {@inheritDoc}
      */
+    public function getContentType(): string
+    {
+        return 'xml';
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getDescription(): string
     {
         return 'The EXTENDED profile is an extension of EN 16931-1 to support more complex business processes (invoices '

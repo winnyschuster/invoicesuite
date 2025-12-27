@@ -16776,16 +16776,9 @@ final class ZfFxMinimumDocumentBuilderTest extends TestCase
 
     public function testGetContentAsXml(): void
     {
-        $resolvedContentType = InvoiceSuiteContentTypeResolver::resolveContentType(static::$document->getContentAsXml());
+        $resolvedContentType = InvoiceSuiteContentTypeResolver::resolveContentType(static::$document->getContent());
 
         $this->assertSame(InvoiceSuiteContentTypeResolver::XML, $resolvedContentType);
-    }
-
-    public function testGetContentAsJson(): void
-    {
-        $resolvedContentType = InvoiceSuiteContentTypeResolver::resolveContentType(static::$document->getContentAsJson());
-
-        $this->assertSame(InvoiceSuiteContentTypeResolver::JSON, $resolvedContentType);
     }
 
     public function testSaveAsXmlFile(): void
@@ -16794,7 +16787,7 @@ final class ZfFxMinimumDocumentBuilderTest extends TestCase
 
         $this->registerFileForTestCaseTeardown($xmlFilename);
 
-        static::$document->saveAsXmlFile($xmlFilename);
+        static::$document->saveContentToFile($xmlFilename);
 
         $this->assertFileExists($xmlFilename);
 
@@ -16807,27 +16800,6 @@ final class ZfFxMinimumDocumentBuilderTest extends TestCase
         $resolvedContentType = InvoiceSuiteContentTypeResolver::resolveContentType($xmlFileContent);
 
         $this->assertSame(InvoiceSuiteContentTypeResolver::XML, $resolvedContentType);
-    }
-
-    public function testSaveAsJsonFile(): void
-    {
-        $jsonFilename = InvoiceSuitePathUtils::combinePathWithFile(__DIR__, 'invoice.json');
-
-        $this->registerFileForTestCaseTeardown($jsonFilename);
-
-        static::$document->saveAsJsonFile($jsonFilename);
-
-        $this->assertFileExists($jsonFilename);
-
-        $jsonFileContent = file_get_contents($jsonFilename);
-
-        $this->assertNotFalse($jsonFileContent);
-        // @phpstan-ignore method.alreadyNarrowedType
-        $this->assertIsString($jsonFileContent);
-
-        $resolvedContentType = InvoiceSuiteContentTypeResolver::resolveContentType($jsonFileContent);
-
-        $this->assertSame(InvoiceSuiteContentTypeResolver::JSON, $resolvedContentType);
     }
 
     public function testCopyToReader(): void

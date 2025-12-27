@@ -240,7 +240,7 @@ class ZugferdDocumentProfileConverter
      */
     protected function convertToString(): string
     {
-        return $this->performConversion()->documentBuilder->getContentAsXml();
+        return $this->performConversion()->documentBuilder->getContent();
     }
 
     /**

@@ -7850,7 +7850,7 @@ final class XRechnungUBLInvoiceBuilderTest extends TestCase
 
     public function testGetContentAsXml(): void
     {
-        $resolvedContentType = InvoiceSuiteContentTypeResolver::resolveContentType(static::$document->getContentAsXml());
+        $resolvedContentType = InvoiceSuiteContentTypeResolver::resolveContentType(static::$document->getContent());
 
         $this->assertSame(InvoiceSuiteContentTypeResolver::XML, $resolvedContentType);
     }
@@ -7861,7 +7861,7 @@ final class XRechnungUBLInvoiceBuilderTest extends TestCase
 
         $this->registerFileForTestCaseTeardown($xmlFilename);
 
-        static::$document->saveAsXmlFile($xmlFilename);
+        static::$document->saveContentToFile($xmlFilename);
 
         $this->assertFileExists($xmlFilename);
 

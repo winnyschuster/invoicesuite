@@ -29,6 +29,14 @@ class InvoiceSuitePeppol30CreditNoteProvider extends InvoiceSuiteAbstractDocumen
     /**
      * {@inheritDoc}
      */
+    public function getContentType(): string
+    {
+        return 'xml';
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getDescription(): string
     {
         return 'Peppol BIS Billing 3.0 - May 2025 Release (Credit Note)';

@@ -52,7 +52,7 @@ trait HandlesXmlTests
     {
         file_put_contents(
             PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, '..', '..'), 'myfile_dbg.xml'),
-            static::$document->getContentAsXml()
+            static::$document->getContent()
         );
     }
 
@@ -64,7 +64,7 @@ trait HandlesXmlTests
     protected function getXml(): SimpleXMLElement
     {
         if (false === $this->renderingOfXmlDisabled || null === $this->latestXml) {
-            $this->latestXml = new SimpleXMLElement(static::$document->getContentAsXml());
+            $this->latestXml = new SimpleXMLElement(static::$document->getContent());
             $this->registerAllNamespaces($this->latestXml);
         }
 
@@ -78,7 +78,7 @@ trait HandlesXmlTests
      */
     protected function disableRenderXmlContent()
     {
-        $this->latestXml = new SimpleXMLElement(static::$document->getContentAsXml());
+        $this->latestXml = new SimpleXMLElement(static::$document->getContent());
         $this->registerAllNamespaces($this->latestXml);
         $this->renderingOfXmlDisabled = true;
     }
@@ -309,11 +309,11 @@ trait HandlesXmlTests
      */
     private function assertXmlWasNotChanged($code): void
     {
-        $previousXml = static::$document->getContentAsXml();
+        $previousXml = static::$document->getContent();
 
         call_user_func($code);
 
-        $currentXml = static::$document->getContentAsXml();
+        $currentXml = static::$document->getContent();
 
         $this->assertEquals($previousXml, $currentXml, 'Nothing should be added to XML');
     }

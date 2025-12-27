@@ -204,7 +204,7 @@ class ZugferdDocumentBuilder implements Stringable
     {
         $this->onBeforeGetContent();
 
-        return $this->documentBuilder->getContentAsXml();
+        return $this->documentBuilder->getContent();
     }
 
     /**
@@ -245,7 +245,7 @@ class ZugferdDocumentBuilder implements Stringable
     public function writeFile(
         string $xmlfilename
     ): static {
-        $this->documentBuilder->saveAsXmlFile($xmlfilename);
+        $this->documentBuilder->saveContentToFile($xmlfilename);
 
         return $this;
     }

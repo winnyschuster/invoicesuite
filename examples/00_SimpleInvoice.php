@@ -409,4 +409,4 @@ $builder->addDocumentPositionInvoiceReference("INVREF-001", "4000", new DateTime
 
 $builder->setDocumentPositionPostingReference('1', 'FINACC');
 
-echo $builder->saveAsXmlFile(__DIR__ . "/00_SimpleInvoice.xml");
+echo $builder->saveContentToFile(__DIR__ . "/00_SimpleInvoice.xml");

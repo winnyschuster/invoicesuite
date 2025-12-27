@@ -18,7 +18,6 @@ use horstoeko\invoicesuite\concerns\HandlesDocumentSerializer;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
-use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
 use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\Exception\RuntimeException;
 
@@ -58,15 +57,16 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      */
     public function deserializeFromContent(string $fromContent): static
     {
-        if (InvoiceSuiteContentTypeResolver::JSON === InvoiceSuiteContentTypeResolver::resolveContentType($fromContent)) {
-            return $this->deserializeFromJsonContent($fromContent);
-        }
+        $this->setDocumentRootObject(
+            $this->documentSerializer->deserialize(
+                $fromContent,
+                $this->getCurrentDocumentFormatProvider()->getRootClassName(),
+                $this->getCurrentDocumentFormatProvider()->getContentType(),
+                DeserializationContext::create()->setGroups($this->getCurrentDocumentFormatProvider()->getSerializerGroups())
+            )
+        );
 
-        if (InvoiceSuiteContentTypeResolver::XML === InvoiceSuiteContentTypeResolver::resolveContentType($fromContent)) {
-            return $this->deserializeFromXmlContent($fromContent);
-        }
-
-        throw new InvoiceSuiteUnknownContentException();
+        return $this;
     }
 
     /**
@@ -4865,57 +4865,4 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
         ?string &$newType,
         ?string &$newAccountId
     ): static;
-
-    /**
-     * Read from XML content
-     *
-     * @param  string $fromContent
-     * @return static
-     *
-     * @throws RuntimeException
-     */
-    protected function deserializeFromXmlContent(string $fromContent): static
-    {
-        $this->deserializeFromContentByContentType($fromContent, InvoiceSuiteContentTypeResolver::XML);
-
-        return $this;
-    }
-
-    /**
-     * Read from JSON content
-     *
-     * @param  string $fromContent
-     * @return static
-     *
-     * @throws RuntimeException
-     */
-    protected function deserializeFromJsonContent(string $fromContent): static
-    {
-        $this->deserializeFromContentByContentType($fromContent, InvoiceSuiteContentTypeResolver::JSON);
-
-        return $this;
-    }
-
-    /**
-     * Read from content by type
-     *
-     * @param  string $fromContent
-     * @param  string $contentType
-     * @return static
-     *
-     * @throws RuntimeException
-     */
-    protected function deserializeFromContentByContentType(string $fromContent, string $contentType): static
-    {
-        $this->setDocumentRootObject(
-            $this->documentSerializer->deserialize(
-                $fromContent,
-                $this->getCurrentDocumentFormatProvider()->getRootClassName(),
-                $contentType,
-                DeserializationContext::create()
-            )
-        );
-
-        return $this;
-    }
 }

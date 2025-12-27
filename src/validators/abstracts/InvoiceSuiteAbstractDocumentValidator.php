@@ -77,20 +77,7 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      */
     public static function createFromDocumentBuilderAsXml(InvoiceSuiteDocumentBuilder $fromDocumentBuilder): static
     {
-        return static::createFromContent($fromDocumentBuilder->getContentAsXml());
-    }
-
-    /**
-     * Create a validator instance by the JSON content of a given InvoiceSuiteDocumentBuilder
-     *
-     * @param  InvoiceSuiteDocumentBuilder $fromDocumentBuilder
-     * @return static
-     *
-     * @throws RuntimeException
-     */
-    public static function createFromDocumentBuilderAsJson(InvoiceSuiteDocumentBuilder $fromDocumentBuilder): static
-    {
-        return static::createFromContent($fromDocumentBuilder->getContentAsJson());
+        return static::createFromContent($fromDocumentBuilder->getContent());
     }
 
     /**

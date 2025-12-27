@@ -31,6 +31,14 @@ class InvoiceSuiteZfFxBasicWlProvider extends InvoiceSuiteAbstractDocumentFormat
     /**
      * {@inheritDoc}
      */
+    public function getContentType(): string
+    {
+        return 'xml';
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getDescription(): string
     {
         return 'The BASIC WL profile does not contain any invoice items and therefore cannot display any VAT-compliant '

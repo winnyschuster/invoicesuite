@@ -14,7 +14,7 @@ $reader->convertToDTO($dto);
 
 $builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('xrechnungublinvoice');
 $builder->createFromDTO($dto);
-$builder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice_UBL2.xml");
+$builder->saveContentToFile(__DIR__ . "/01_SimpleInvoice_UBL2.xml");
 
 $validator = InvoiceSuiteKositDocumentValidator::createFromDocumentBuilderAsXml($builder);
 $validator->enableRemoteMode();

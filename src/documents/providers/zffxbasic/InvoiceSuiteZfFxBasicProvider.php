@@ -31,6 +31,14 @@ class InvoiceSuiteZfFxBasicProvider extends InvoiceSuiteAbstractDocumentFormatPr
     /**
      * {@inheritDoc}
      */
+    public function getContentType(): string
+    {
+        return 'xml';
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getDescription(): string
     {
         return 'The BASIC profile is a subset of EN 16931-1 and can be used for simple VAT-compliant invoices.';

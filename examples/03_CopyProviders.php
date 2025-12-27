@@ -10,4 +10,4 @@ InvoiceSuiteSettings::setUnitAmountDecimals(5);
 
 $reader = InvoiceSuiteDocumentReader::createFromFile(InvoiceSuitePathUtils::combinePathWithFile(__DIR__, "01_SimpleInvoice.xml"));
 $builder = $reader->copyToBuilder();
-$builder->saveAsXmlFile(InvoiceSuitePathUtils::combinePathWithFile(__DIR__, "01_SimpleInvoice_Copy.xml"));
+$builder->saveContentToFile(InvoiceSuitePathUtils::combinePathWithFile(__DIR__, "01_SimpleInvoice_Copy.xml"));

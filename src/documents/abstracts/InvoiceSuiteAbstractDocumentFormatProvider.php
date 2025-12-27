@@ -47,6 +47,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
     abstract public function getUniqueId(): string;
 
     /**
+     * Returns the content type of the (invoice) document, currently only XML and JSON are supported
+     *
+     * @return string
+     */
+    abstract public function getContentType(): string;
+
+    /**
      * Get a short description for the provider
      *
      * @return string

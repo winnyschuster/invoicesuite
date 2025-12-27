@@ -103,7 +103,7 @@ $documentBuilder->setDocumentSummation(
     newDueAmount: 529.87
 );
 
-$documentBuilder->saveAsXmlFile(__DIR__ . "/01_SimpleInvoice_UBL.xml");
+$documentBuilder->saveContentToFile(__DIR__ . "/01_SimpleInvoice_UBL.xml");
 
 // Create (Remote-) Validator
 
