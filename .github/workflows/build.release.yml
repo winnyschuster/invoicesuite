@@ -40,7 +40,7 @@ jobs:
       - name: Setup PHP with PECL extension
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.4"
+          php-version: "8.5"
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, bcmath, intl, gd, exif, iconv, imagick, json, xdebug
           coverage: xdebug
 
@@ -58,10 +58,10 @@ jobs:
       - uses: actions/cache@v5
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-8.4-composer-${{ hashFiles('**/composer.json') }}
+          key: ${{ runner.os }}-8.5-composer-${{ hashFiles('**/composer.json') }}
           restore-keys: |
-            ${{ runner.os }}-8.4-composer-${{ hashFiles('**/composer.json') }}
-            ${{ runner.os }}-8.4-composer-
+            ${{ runner.os }}-8.5-composer-${{ hashFiles('**/composer.json') }}
+            ${{ runner.os }}-8.5-composer-
 
       - name: Install composer dependencies
         run: |
@@ -107,7 +107,7 @@ jobs:
         uses: actions/cache@v5
         with:
           path: ${{ env.VALIDATORPATH }}
-          key: ${{ runner.os }}-8.4-validator-${{ steps.hash-validator.outputs.hash }}
+          key: ${{ runner.os }}-8.5-validator-${{ steps.hash-validator.outputs.hash }}
 
       - name: Download Application (Schematron)
         if: steps.cache-validator.outputs.cache-hit != 'true'
@@ -137,7 +137,7 @@ jobs:
         uses: actions/cache@v5
         with:
           path: ${{ env.VERAPDFPATH }}
-          key: ${{ runner.os }}-8.4-verapdf-${{ steps.hash-verapdf.outputs.hash }}
+          key: ${{ runner.os }}-8.5-verapdf-${{ steps.hash-verapdf.outputs.hash }}
 
       - name: Download Application (VeraPDF)
         if: steps.cache-verapdf.outputs.cache-hit != 'true'
@@ -207,7 +207,7 @@ jobs:
       - name: Publish Build Logs
         uses: actions/upload-artifact@v6
         with:
-          name: Build log artifacts for ubuntu-24.04 PHP 8.4 (Release)
+          name: Build log artifacts for ubuntu-24.04 PHP 8.5 (Release)
           path: build/logs
 
       - name: Generate Release Notes
