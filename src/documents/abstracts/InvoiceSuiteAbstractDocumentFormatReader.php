@@ -47,7 +47,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
     }
 
     /**
-     * Deserialize from content (will guess)
+     * Deserialize from content
      *
      * @param  string $fromContent
      * @return static
@@ -61,7 +61,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
             $this->documentSerializer->deserialize(
                 $fromContent,
                 $this->getCurrentDocumentFormatProvider()->getRootClassName(),
-                $this->getCurrentDocumentFormatProvider()->getContentType(),
+                $this->getCurrentDocumentFormatProvider()->getContentType()->value,
                 DeserializationContext::create()->setGroups($this->getCurrentDocumentFormatProvider()->getSerializerGroups())
             )
         );

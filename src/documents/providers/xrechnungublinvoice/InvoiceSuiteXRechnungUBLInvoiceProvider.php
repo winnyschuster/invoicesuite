@@ -16,6 +16,7 @@ use DOMXPath;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\documents\models\ubl\main\Invoice;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolverType;
 
 class InvoiceSuiteXRechnungUBLInvoiceProvider extends InvoiceSuiteAbstractDocumentFormatProvider
 {
@@ -30,9 +31,9 @@ class InvoiceSuiteXRechnungUBLInvoiceProvider extends InvoiceSuiteAbstractDocume
     /**
      * {@inheritDoc}
      */
-    public function getContentType(): string
+    public function getContentType(): InvoiceSuiteContentTypeResolverType
     {
-        return 'xml';
+        return InvoiceSuiteContentTypeResolverType::XML;
     }
 
     /**

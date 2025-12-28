@@ -35,6 +35,7 @@ use horstoeko\invoicesuite\InvoiceSuiteSettings;
 use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\tests\traits\HandlesXmlTests;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
+use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolverType;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 
 final class ZfFxExtendedDocumentBuilderDTOTest extends TestCase
@@ -791,7 +792,7 @@ final class ZfFxExtendedDocumentBuilderDTOTest extends TestCase
     {
         $contentType = InvoiceSuiteContentTypeResolver::resolveContentType(static::$document->getContent());
 
-        $this->assertSame(InvoiceSuiteContentTypeResolver::XML, $contentType);
+        $this->assertSame(InvoiceSuiteContentTypeResolverType::XML, $contentType);
     }
 
     public function testWriteFile(): void

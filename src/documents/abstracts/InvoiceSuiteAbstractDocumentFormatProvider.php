@@ -14,6 +14,7 @@ namespace horstoeko\invoicesuite\documents\abstracts;
 use Closure;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownProviderParameterException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolverType;
 
 /**
  * Class representing methods for a document format provider definition
@@ -47,11 +48,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
     abstract public function getUniqueId(): string;
 
     /**
-     * Returns the content type of the (invoice) document, currently only XML and JSON are supported
+     * Returns the content type of the (invoice) document
      *
-     * @return string
+     * @return InvoiceSuiteContentTypeResolverType
      */
-    abstract public function getContentType(): string;
+    abstract public function getContentType(): InvoiceSuiteContentTypeResolverType;
 
     /**
      * Get a short description for the provider

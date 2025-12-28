@@ -17,6 +17,7 @@ use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentForma
 use horstoeko\invoicesuite\documents\models\zffxcomfort\rsm\CrossIndustryInvoice;
 use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolverType;
 
 class InvoiceSuiteZfFxComfortProvider extends InvoiceSuiteAbstractDocumentFormatProvider
 {
@@ -31,9 +32,9 @@ class InvoiceSuiteZfFxComfortProvider extends InvoiceSuiteAbstractDocumentFormat
     /**
      * {@inheritDoc}
      */
-    public function getContentType(): string
+    public function getContentType(): InvoiceSuiteContentTypeResolverType
     {
-        return 'xml';
+        return InvoiceSuiteContentTypeResolverType::XML;
     }
 
     /**

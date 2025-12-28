@@ -15,6 +15,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteClassFinder;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
+use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolverType;
 use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFloatUtils;
@@ -438,10 +439,10 @@ final class UtilsTest extends TestCase
         $this->assertNull(InvoiceSuiteContentTypeResolver::resolveContentType(''));
 
         $this->assertNotNull(InvoiceSuiteContentTypeResolver::resolveContentType('{"a":1,"b":"x"}'));
-        $this->assertSame(InvoiceSuiteContentTypeResolver::JSON, InvoiceSuiteContentTypeResolver::resolveContentType('{"a":1,"b":"x"}'));
+        $this->assertSame(InvoiceSuiteContentTypeResolverType::JSON, InvoiceSuiteContentTypeResolver::resolveContentType('{"a":1,"b":"x"}'));
 
         $this->assertNotNull(InvoiceSuiteContentTypeResolver::resolveContentType('<xml><dummy></dummy></xml>'));
-        $this->assertSame(InvoiceSuiteContentTypeResolver::XML, InvoiceSuiteContentTypeResolver::resolveContentType('<xml><dummy></dummy></xml>'));
+        $this->assertSame(InvoiceSuiteContentTypeResolverType::XML, InvoiceSuiteContentTypeResolver::resolveContentType('<xml><dummy></dummy></xml>'));
 
         $this->assertNull(InvoiceSuiteContentTypeResolver::resolveContentType('{"a":1,"b":"x"'));
 

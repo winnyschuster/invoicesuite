@@ -18,29 +18,19 @@ use Throwable;
 class InvoiceSuiteContentTypeResolver
 {
     /**
-     * Result type for JSON
-     */
-    public const JSON = 'json';
-
-    /**
-     * Result type for XML
-     */
-    public const XML = 'xml';
-
-    /**
-     * Get content type. Returns "xml" or "json" or null
+     * Get content type of a given content
      *
-     * @param  string      $fromContent
-     * @return null|string
+     * @param  string                                   $fromContent
+     * @return null|InvoiceSuiteContentTypeResolverType
      */
-    public static function resolveContentType(string $fromContent): ?string
+    public static function resolveContentType(string $fromContent): ?InvoiceSuiteContentTypeResolverType
     {
         if (static::isValidJson($fromContent)) {
-            return static::JSON;
+            return InvoiceSuiteContentTypeResolverType::JSON;
         }
 
         if (static::isValidXml($fromContent)) {
-            return static::XML;
+            return InvoiceSuiteContentTypeResolverType::XML;
         }
 
         return null;

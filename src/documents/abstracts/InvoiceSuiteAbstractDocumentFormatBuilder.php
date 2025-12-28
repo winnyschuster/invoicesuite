@@ -47,7 +47,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
     }
 
     /**
-     * Get the content as XML string
+     * Get the serialized content
      *
      * @return string
      *
@@ -57,13 +57,13 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
     {
         return $this->documentSerializer->serialize(
             $this->getDocumentRootObject(),
-            $this->getCurrentDocumentFormatProvider()->getContentType(),
+            $this->getCurrentDocumentFormatProvider()->getContentType()->value,
             SerializationContext::create()->setGroups($this->getCurrentDocumentFormatProvider()->getSerializerGroups())
         );
     }
 
     /**
-     * Save the XML content to a file
+     * Save the serialized content to a file
      *
      * @param  string $tofile
      * @return void
