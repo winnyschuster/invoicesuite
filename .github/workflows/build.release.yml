@@ -11,12 +11,12 @@ on:
       - "make/**"
 
 env:
-  VALIDATORURL: https://github.com/itplr-kosit/validator/releases/download/v1.5.0/validator-1.5.0-distribution.zip
-  VALIDATORSCENARIOURL: https://github.com/itplr-kosit/validator-configuration-xrechnung/releases/download/release-2025-03-21/validator-configuration-xrechnung_3.0.2_2025-03-21.zip
+  VALIDATORURL: https://github.com/itplr-kosit/validator/releases/download/v1.6.0/validator-1.6.0.zip
+  VALIDATORSCENARIOURL: https://github.com/itplr-kosit/validator-configuration-xrechnung/releases/download/release-2025-07-10/validator-configuration-xrechnung_3.0.2_2025-07-10.zip
   VALIDATORPATH: build/validator
   VALIDATORZIPFILENAME: validator.zip
   VALIDATORSCENARIOZIPFILENAME: validator-configuration.zip
-  VALIDATORJARFILENAME: validationtool-1.5.0-standalone.jar
+  VALIDATORJARFILENAME: validationtool-1.6.0-standalone.jar
   VALIDATORSCENARIOFILENAME: scenarios.xml
   PHPDOCUMENTORURL: https://phpdoc.org/phpDocumentor.phar
   PHPDOCUMENTORFILENAME: phpDocumentor.phar
@@ -89,7 +89,7 @@ jobs:
 
       - name: Run PHPStan
         run: |
-          vendor/bin/phpstan analyze -c build/phpstan.neon --autoload-file=vendor/autoload.php --no-interaction --memory-limit 4G --error-format=checkstyle > build/logs/checkstyle_phpstan.xml
+          vendor/bin/phpstan analyze -c build/phpstan.neon --autoload-file=vendor/autoload.php --no-interaction --memory-limit 4G --error-format=github
 
       - name: Run Tests (PHPUnit)
         run: |
