@@ -8,11 +8,14 @@ use DateTime;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistCurrencyCodes;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAddressDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteCommunicationDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteContactDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentPositionDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteNoteDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentMeanDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceGrossDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceNetDTO;
@@ -66,7 +69,14 @@ final class XRechnungCIIDocumentBuilderDTOTest extends TestCase
                     ->setIdType('FC'))
                 ->addTaxRegistration((new InvoiceSuiteIdDTO())
                     ->setId('DE123456789')
-                    ->setIdType('VA')))
+                    ->setIdType('VA'))
+                ->addCommunication((new InvoiceSuiteCommunicationDTO())
+                    ->setId('user@lieferant.de')
+                    ->setIdType('EM'))
+                ->addContact((new InvoiceSuiteContactDTO())
+                    ->setPersonName('Hans Meyer')
+                    ->setPhoneNumber('0800-12345678')
+                    ->setEmailAddress('hm@lieferant.de')))
             ->setBuyerParty((new InvoiceSuitePartyDTO())
                 ->addId((new InvoiceSuiteIdDTO())
                     ->setId('GE2020211'))
@@ -75,7 +85,10 @@ final class XRechnungCIIDocumentBuilderDTOTest extends TestCase
                     ->setPostcode('69876')
                     ->setAddressLine1('Kundenstraße 15')
                     ->setCity('Frankfurt')
-                    ->setCountry('DE')))
+                    ->setCountry('DE'))
+                ->addCommunication((new InvoiceSuiteCommunicationDTO())
+                    ->setId('user@kunde.de')
+                    ->setIdType('EM')))
             ->addSupplyChainEvent(DateTime::createFromFormat('Ymd', '20241114'))
             ->addTax((new InvoiceSuiteTaxDTO())
                 ->setAmount(19.25)
@@ -90,7 +103,13 @@ final class XRechnungCIIDocumentBuilderDTOTest extends TestCase
                 ->setCategory('S')
                 ->setPercent(19.00))
             ->addPaymentTerm((new InvoiceSuitePaymentTermDTO())
-                ->setDescription('Zahlbar innerhalb 30 Tagen netto bis 15.12.2024, 3% Skonto innerhalb 10 Tagen bis 25.11.2024'))
+                ->setDescription('Zahlbar innerhalb 30 Tagen netto bis 15.12.2024, 3% Skonto innerhalb 10 Tagen bis 25.11.2024')
+                ->setMandate('z3237167126'))
+            ->addPaymentMean((new InvoiceSuitePaymentMeanDTO())
+                ->setTypeCode('59')
+                ->setBuyerIban('DE02120300000000202051'))
+            ->addCreditorReference((new InvoiceSuiteIdDTO())
+                ->setId('94467863782647362'))
             ->addSummation((new InvoiceSuiteSummationDTO())
                 ->setNetAmount(473.00)
                 ->setChargeTotalAmount(0.00)
@@ -238,6 +257,14 @@ final class XRechnungCIIDocumentBuilderDTOTest extends TestCase
         $this->assertXPathValueWithIndexAndAttribute('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:SpecifiedTaxRegistration/ram:ID', 0, '201/113/40209', 'schemeID', 'FC');
         $this->assertXPathValueWithIndexAndAttribute('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:SpecifiedTaxRegistration/ram:ID', 1, 'DE123456789', 'schemeID', 'VA');
         $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:SpecifiedTaxRegistration/ram:ID', 2);
+        $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:DefinedTradeContact/ram:PersonName', 0, 'Hans Meyer');
+        $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:DefinedTradeContact/ram:TelephoneUniversalCommunication/ram:CompleteNumber', 0, '0800-12345678');
+        $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:DefinedTradeContact/ram:EmailURIUniversalCommunication/ram:URIID', 0, 'hm@lieferant.de');
+        $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:DefinedTradeContact/ram:PersonName', 1);
+        $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:DefinedTradeContact/ram:TelephoneUniversalCommunication/ram:CompleteNumber', 1);
+        $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:DefinedTradeContact/ram:EmailURIUniversalCommunication/ram:URIID', 1);
+        $this->assertXPathValueWithIndexAndAttribute('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:URIUniversalCommunication/ram:URIID', 0, 'user@lieferant.de', 'schemeID', 'EM');
+        $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:URIUniversalCommunication/ram:URIID', 1);
 
         $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:ID', 0, 'GE2020211');
         $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:ID', 1);
@@ -257,6 +284,8 @@ final class XRechnungCIIDocumentBuilderDTOTest extends TestCase
         $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:SpecifiedTaxRegistration/ram:ID', 0);
         $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:SpecifiedTaxRegistration/ram:ID', 1);
         $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:SpecifiedTaxRegistration/ram:ID', 2);
+        $this->assertXPathValueWithIndexAndAttribute('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:URIUniversalCommunication/ram:URIID', 0, 'user@kunde.de', 'schemeID', 'EM');
+        $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerTradeParty/ram:URIUniversalCommunication/ram:URIID', 1);
 
         $this->assertXPathValueWithIndexAndAttribute('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ActualDeliverySupplyChainEvent/ram:OccurrenceDateTime/udt:DateTimeString', 0, '20241114', 'format', '102');
         $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeDelivery/ram:ActualDeliverySupplyChainEvent/ram:OccurrenceDateTime/udt:DateTimeString', 1);
@@ -286,6 +315,16 @@ final class XRechnungCIIDocumentBuilderDTOTest extends TestCase
 
         $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradePaymentTerms/ram:Description', 0, 'Zahlbar innerhalb 30 Tagen netto bis 15.12.2024, 3% Skonto innerhalb 10 Tagen bis 25.11.2024');
         $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradePaymentTerms/ram:Description', 1);
+        $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradePaymentTerms/ram:DirectDebitMandateID', 0, 'z3237167126');
+        $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradePaymentTerms/ram:DirectDebitMandateID', 1);
+
+        $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans/ram:TypeCode', 0, '59');
+        $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans/ram:PayerPartyDebtorFinancialAccount/ram:IBANID', 0, 'DE02120300000000202051');
+        $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans/ram:TypeCode', 1);
+        $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementPaymentMeans/ram:PayerPartyDebtorFinancialAccount/ram:IBANID', 1);
+
+        $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:CreditorReferenceID', 0, '94467863782647362');
+        $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:CreditorReferenceID', 1);
 
         $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:LineTotalAmount', 0, '473.00');
         $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeSettlement/ram:SpecifiedTradeSettlementHeaderMonetarySummation/ram:ChargeTotalAmount', 0, '0.00');
