@@ -18,8 +18,8 @@ parameters:
         uncheckedExceptionRegexes: []
     parallel:
         jobSize: 20
-        maximumNumberOfProcesses: 1
-        minimumNumberOfJobsPerProcess: 1
+        maximumNumberOfProcesses: 32
+        minimumNumberOfJobsPerProcess: 2
     ignoreErrors:
         -
             identifier: classConstant.internalClass
