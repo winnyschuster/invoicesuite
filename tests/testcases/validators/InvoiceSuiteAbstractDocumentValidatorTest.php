@@ -36,6 +36,8 @@ final class InvoiceSuiteAbstractDocumentValidatorTest extends TestCase
                     {
                         ++$this->initializeCallCount;
 
+                        parent::intializeAfterConstruct();
+
                         return $this;
                     }
 
