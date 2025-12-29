@@ -24,7 +24,7 @@ env:
   VALIDATORPATH: build/validator
   VALIDATORZIPFILENAME: validator.zip
   VALIDATORSCENARIOZIPFILENAME: validator-configuration.zip
-  VALIDATORJARFILENAME: validationtool-1.6.0-standalone.jar
+  VALIDATORJARFILENAME: validator-1.6.0-standalone.jar
   VALIDATORSCENARIOFILENAME: scenarios.xml
   PHPDOCUMENTORURL: https://phpdoc.org/phpDocumentor.phar
   PHPDOCUMENTORFILENAME: phpDocumentor.phar
