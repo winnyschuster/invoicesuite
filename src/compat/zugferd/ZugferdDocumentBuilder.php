@@ -40,7 +40,7 @@ use Stringable;
  * @license  https://opensource.org/licenses/MIT MIT
  * @see      https://github.com/horstoeko/invoicesuite
  */
-class ZugferdDocumentBuilder implements Stringable
+class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
 {
     use HandlesCallForwarding;
     use HandlesSafeInvoking;

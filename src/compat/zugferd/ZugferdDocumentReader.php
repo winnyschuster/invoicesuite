@@ -37,7 +37,7 @@ use JMS\Serializer\Exception\RuntimeException;
  * @license  https://opensource.org/licenses/MIT MIT
  * @see      https://github.com/horstoeko/invoicesuite
  */
-class ZugferdDocumentReader
+class ZugferdDocumentReader extends ZugferdDocument
 {
     use HandlesCallForwarding;
     use HandlesSafeInvoking;
