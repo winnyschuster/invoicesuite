@@ -75,7 +75,6 @@ jobs:
           mkdir build/coverage
           mkdir build/coverage-html
           mkdir build/logs
-          mkdir build/pdepend
           mkdir build/dist
           mkdir build/phpdoc
 
@@ -198,7 +197,7 @@ jobs:
       - name: Deploy
         run: |
           zip -r build/dist/doc.zip build/doc
-          zip -r build/dist/builddoc.zip build/builddoc build/coverage build/coverage-html build/logs build/pdepend build/phpdoc
+          zip -r build/dist/builddoc.zip build/builddoc build/coverage build/coverage-html build/logs build/phpdoc
 
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
