@@ -2464,7 +2464,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractDocumen
      * Set the Tax Registration of the seller/supplier party
      *
      * @param  null|string $newTaxRegistrationType __BT-31-0/BT-32-0, From MINIMUM/EN 16931__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
-     * @param  null|string $newTaxRegistrationId   __BT-31/32, From MINIMUM/EN 16931__ Tax identification number
+     * @param  null|string $newTaxRegistrationId   __BT-31/BT-32, From MINIMUM/EN 16931__ Tax identification number
      * @return static
      */
     public function setDocumentSellerTaxRegistration(
@@ -2491,7 +2491,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractDocumen
      * Add an Tax Registration to the seller/supplier party
      *
      * @param  null|string $newTaxRegistrationType __BT-31-0/BT-32-0, From MINIMUM/EN 16931__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
-     * @param  null|string $newTaxRegistrationId   __BT-31/32, From MINIMUM/EN 16931__ Tax identification number
+     * @param  null|string $newTaxRegistrationId   __BT-31/BT-32, From MINIMUM/EN 16931__ Tax identification number
      * @return static
      */
     public function addDocumentSellerTaxRegistration(
@@ -3721,9 +3721,9 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractDocumen
     /**
      * Set the legal information of the tax representative party
      *
-     * @param  null|string $newType __BT-, From __ Type of the identification number of the legal registration of the party
-     * @param  null|string $newId   __BT-, From __ Identification number of the legal registration of the party
-     * @param  null|string $newName __BT-, From __ Name by which the party is known, if different from the party's name
+     * @param  null|string $newType __BT-X-118-0, From EXTENDED__ Type of the identification number of the legal registration of the party
+     * @param  null|string $newId   __BT-X-118, From EXTENDED__ Identification number of the legal registration of the party
+     * @param  null|string $newName __BT-X-119, From EXTENDED__ Name by which the party is known, if different from the party's name
      * @return static
      */
     public function setDocumentTaxRepresentativeLegalOrganisation(
@@ -3739,9 +3739,9 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractDocumen
     /**
      * Set the legal information of the tax representative party
      *
-     * @param  null|string $newType __BT-, From __ Type of the identification number of the legal registration of the party
-     * @param  null|string $newId   __BT-, From __ Identification number of the legal registration of the party
-     * @param  null|string $newName __BT-, From __ Name by which the party is known, if different from the party's name
+     * @param  null|string $newType __BT-X-118-0, From EXTENDED__ Type of the identification number of the legal registration of the party
+     * @param  null|string $newId   __BT-X-118, From EXTENDED__ Identification number of the legal registration of the party
+     * @param  null|string $newName __BT-X-119, From EXTENDED__ Name by which the party is known, if different from the party's name
      * @return static
      */
     public function addDocumentTaxRepresentativeLegalOrganisation(

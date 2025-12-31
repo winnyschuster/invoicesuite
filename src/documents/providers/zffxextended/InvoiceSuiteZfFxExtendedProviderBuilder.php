@@ -2708,7 +2708,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractDocume
      * Set the Tax Registration of the seller/supplier party
      *
      * @param  null|string $newTaxRegistrationType __BT-31-0/BT-32-0, From MINIMUM/EN 16931__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
-     * @param  null|string $newTaxRegistrationId   __BT-31/32, From MINIMUM/EN 16931__ Tax identification number
+     * @param  null|string $newTaxRegistrationId   __BT-31/BT-32, From MINIMUM/EN 16931__ Tax identification number
      * @return static
      */
     public function setDocumentSellerTaxRegistration(
@@ -2735,7 +2735,7 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractDocume
      * Add an Tax Registration to the seller/supplier party
      *
      * @param  null|string $newTaxRegistrationType __BT-31-0/BT-32-0, From MINIMUM/EN 16931__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
-     * @param  null|string $newTaxRegistrationId   __BT-31/32, From MINIMUM/EN 16931__ Tax identification number
+     * @param  null|string $newTaxRegistrationId   __BT-31/BT-32, From MINIMUM/EN 16931__ Tax identification number
      * @return static
      */
     public function addDocumentSellerTaxRegistration(
@@ -4024,9 +4024,9 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractDocume
     /**
      * Set the legal information of the tax representative party
      *
-     * @param  null|string $newType __BT-, From __ Type of the identification number of the legal registration of the party
-     * @param  null|string $newId   __BT-, From __ Identification number of the legal registration of the party
-     * @param  null|string $newName __BT-, From __ Name by which the party is known, if different from the party's name
+     * @param  null|string $newType __BT-X-118-0, From EXTENDED__ Type of the identification number of the legal registration of the party
+     * @param  null|string $newId   __BT-X-118, From EXTENDED__ Identification number of the legal registration of the party
+     * @param  null|string $newName __BT-X-119, From EXTENDED__ Name by which the party is known, if different from the party's name
      * @return static
      */
     public function setDocumentTaxRepresentativeLegalOrganisation(
@@ -4069,9 +4069,9 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractDocume
     /**
      * Set the legal information of the tax representative party
      *
-     * @param  null|string $newType __BT-, From __ Type of the identification number of the legal registration of the party
-     * @param  null|string $newId   __BT-, From __ Identification number of the legal registration of the party
-     * @param  null|string $newName __BT-, From __ Name by which the party is known, if different from the party's name
+     * @param  null|string $newType __BT-X-118-0, From EXTENDED__ Type of the identification number of the legal registration of the party
+     * @param  null|string $newId   __BT-X-118, From EXTENDED__ Identification number of the legal registration of the party
+     * @param  null|string $newName __BT-X-119, From EXTENDED__ Name by which the party is known, if different from the party's name
      * @return static
      */
     public function addDocumentTaxRepresentativeLegalOrganisation(
@@ -9159,9 +9159,9 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractDocume
      * @param  null|bool   $newChargeIndicator           __BT-20-1/BT-21-1, From BASIC WL__ Switch that indicates whether the following data refer to an surcharge or a discount, true means that this an charge
      * @param  null|float  $newAllowanceChargeAmount     __BT-92/BT-99, From BASIC WL__ Amount of the surcharge or discount
      * @param  null|float  $newAllowanceChargeBaseAmount __BT-93/BT-100, From BASIC WL__ The base amount that may be used in conjunction with the percentage of the surcharge or discount
-     * @param  null|string $newTaxCategory               __BT-95/BT-102, From BASIC WL__ Coded description of the tax category
-     * @param  null|string $newTaxType                   __BT-95-0/BT-102-0, From BASIC WL__ Coded description of the tax type
-     * @param  null|float  $newTaxPercent                __BT-96/BT-103, From BASIC WL__ Tax Rate (Percentage)
+     * @param  null|string $newTaxCategory               __BT-95, From BASIC WL__ Coded description of the tax category
+     * @param  null|string $newTaxType                   __BT-95-0, From BASIC WL__ Coded description of the tax type
+     * @param  null|float  $newTaxPercent                __BT-96, From BASIC WL__ Tax Rate (Percentage)
      * @param  null|string $newAllowanceChargeReason     __BT-98/BT-105, From BASIC WL__ Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode __BT-97/BT-104, From BASIC WL__ Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    __BT-94/BT-101, From BASIC WL__ Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
@@ -9212,9 +9212,9 @@ class InvoiceSuiteZfFxExtendedProviderBuilder extends InvoiceSuiteAbstractDocume
      * @param  null|bool   $newChargeIndicator           __BT-20-1/BT-21-1, From BASIC WL__ Switch that indicates whether the following data refer to an surcharge or a discount, true means that this an charge
      * @param  null|float  $newAllowanceChargeAmount     __BT-92/BT-99, From BASIC WL__ Amount of the surcharge or discount
      * @param  null|float  $newAllowanceChargeBaseAmount __BT-93/BT-100, From BASIC WL__ The base amount that may be used in conjunction with the percentage of the surcharge or discount
-     * @param  null|string $newTaxCategory               __BT-95/BT-102, From BASIC WL__ Coded description of the tax category
-     * @param  null|string $newTaxType                   __BT-95-0/BT-102-0, From BASIC WL__ Coded description of the tax type
-     * @param  null|float  $newTaxPercent                __BT-96/BT-103, From BASIC WL__ Tax Rate (Percentage)
+     * @param  null|string $newTaxCategory               __BT-95, From BASIC WL__ Coded description of the tax category
+     * @param  null|string $newTaxType                   __BT-95-0, From BASIC WL__ Coded description of the tax type
+     * @param  null|float  $newTaxPercent                __BT-96, From BASIC WL__ Tax Rate (Percentage)
      * @param  null|string $newAllowanceChargeReason     __BT-98/BT-105, From BASIC WL__ Reason given in text form for the surcharge or discount
      * @param  null|string $newAllowanceChargeReasonCode __BT-97/BT-104, From BASIC WL__ Reason given as a code for the surcharge or discount
      * @param  null|float  $newAllowanceChargePercent    __BT-94/BT-101, From BASIC WL__ Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
