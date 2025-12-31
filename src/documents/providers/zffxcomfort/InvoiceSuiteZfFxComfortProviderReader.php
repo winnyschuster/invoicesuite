@@ -8181,7 +8181,7 @@ class InvoiceSuiteZfFxComfortProviderReader extends InvoiceSuiteAbstractDocument
      * @param  null|string $newProductGlobalIdType       __BT-157-1, From BASIC__ Type of the product global id
      * @param  null|string $newProductIndustryId         __BT-X-309, From EXTENDED__ Id assigned by the industry
      * @param  null|string $newProductModelId            __BT-X-533, From EXTENDED__ Unique model identifier of the product
-     * @param  null|string $newProductBatchId            __BT-X-534. From EXTENDED__ Batch (lot) identifier of the product
+     * @param  null|string $newProductBatchId            __BT-X-534, From EXTENDED__ Batch (lot) identifier of the product
      * @param  null|string $newProductBrandName          __BT-X-535. From EXTENDED__ Brand name of the product
      * @param  null|string $newProductModelName          __BT-X-536. From EXTENDED__ Model name of the product
      * @param  null|string $newProductOriginTradeCountry __BT-159, From EN 16931__ Code indicating the country the goods came from
