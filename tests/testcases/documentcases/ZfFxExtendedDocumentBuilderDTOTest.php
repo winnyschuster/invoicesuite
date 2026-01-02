@@ -63,7 +63,7 @@ final class ZfFxExtendedDocumentBuilderDTOTest extends TestCase
             ->addBuyerReference((new InvoiceSuiteIdDTO())
                 ->setId('SomeRef'))
             ->addDeliveryTerm((new InvoiceSuiteIdDTO())
-                ->setId('devterm'))
+                ->setId('1'))
             ->setIsTest(true)
             ->setSellerParty((new InvoiceSuitePartyDTO())
                 ->addId((new InvoiceSuiteIdDTO())
@@ -615,7 +615,7 @@ final class ZfFxExtendedDocumentBuilderDTOTest extends TestCase
 
         $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerReference', 0, 'SomeRef');
 
-        $this->assertXPathValueWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:ApplicableTradeDeliveryTerms/ram:DeliveryTypeCode', 0, 'devterm');
+        $this->assertXPathValueWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:ApplicableTradeDeliveryTerms/ram:DeliveryTypeCode', 0, '1');
 
         $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:ID', 0, '549910');
         $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:ID', 1);

@@ -38,7 +38,7 @@ final class ZfFxExtendedDocumentBuilderTest extends TestCase
         static::$document->addDocumentNote('Wichtige Information: Bei Bestellungen bis zum 19.12. ist die Auslieferung bis spätestens 23.12. garantiert.');
         static::$document->setDocumentCurrency(InvoiceSuiteCodelistCurrencyCodes::EURO->value);
         static::$document->setDocumentBuyerReference('SomeRef');
-        static::$document->setDocumentDeliveryTerms('devterm');
+        static::$document->setDocumentDeliveryTerms('1');
         static::$document->setDocumentIsTest(true);
 
         static::$document->addDocumentPosition('1');
@@ -568,7 +568,7 @@ final class ZfFxExtendedDocumentBuilderTest extends TestCase
 
         $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:BuyerReference', 0, 'SomeRef');
 
-        $this->assertXPathValueWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:ApplicableTradeDeliveryTerms/ram:DeliveryTypeCode', 0, 'devterm');
+        $this->assertXPathValueWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:ApplicableTradeDeliveryTerms/ram:DeliveryTypeCode', 0, '1');
 
         $this->assertXPathValueWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:ID', 0, '549910');
         $this->assertXPathNotExistsWithIndex('//rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:SellerTradeParty/ram:ID', 1);

@@ -1494,7 +1494,7 @@ final class ZfFxMinimumProviderBuilderTest extends TestCase
         $this->assertXPathNotExistsWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:ApplicableTradeDeliveryTerms/ram:DeliveryTypeCode', 0);
         $this->assertXPathNotExistsWithIndex('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:ApplicableHeaderTradeAgreement/ram:ApplicableTradeDeliveryTerms/ram:DeliveryTypeCode', 1);
 
-        static::$document->setDocumentDeliveryTerms('DEVTERM');
+        static::$document->setDocumentDeliveryTerms('1');
 
         $this->disableRenderXmlContent();
 

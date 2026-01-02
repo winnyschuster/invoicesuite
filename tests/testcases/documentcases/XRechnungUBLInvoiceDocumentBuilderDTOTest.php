@@ -52,7 +52,7 @@ final class XRechnungUBLInvoiceDocumentBuilderDTOTest extends TestCase
             ->addBuyerReference((new InvoiceSuiteIdDTO())
                 ->setId('SomeRef'))
             ->addDeliveryTerm((new InvoiceSuiteIdDTO())
-                ->setId('devterm'))
+                ->setId('1'))
             ->setSellerParty((new InvoiceSuitePartyDTO())
                 ->addId((new InvoiceSuiteIdDTO())
                     ->setId('549910'))
