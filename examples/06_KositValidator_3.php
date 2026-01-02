@@ -7,20 +7,34 @@ require __DIR__ . "/../vendor/autoload.php";
 
 // Create (Remote-) Validator
 
-$contents = file_get_contents(InvoiceSuitePathUtils::combinePathWithFile(__DIR__, "/../tests/assets/00_case_xrechnung_cii_simple_dto.xml"));
+$filesToValidate = [
+    InvoiceSuitePathUtils::combinePathWithFile(__DIR__, "/../tests/assets/00_case_comfort_simple.xml"),
+    InvoiceSuitePathUtils::combinePathWithFile(__DIR__, "/../tests/assets/00_case_comfort_simple_dto.xml"),
+    InvoiceSuitePathUtils::combinePathWithFile(__DIR__, "/../tests/assets/00_case_extended_simple.xml"),
+    InvoiceSuitePathUtils::combinePathWithFile(__DIR__, "/../tests/assets/00_case_extended_simple_dto.xml"),
+    InvoiceSuitePathUtils::combinePathWithFile(__DIR__, "/../tests/assets/00_case_xrechnung_cii_simple.xml"),
+    InvoiceSuitePathUtils::combinePathWithFile(__DIR__, "/../tests/assets/00_case_xrechnung_cii_simple_dto.xml"),
+    InvoiceSuitePathUtils::combinePathWithFile(__DIR__, "/../tests/assets/00_case_xrechnung_ublinvoice_simple.xml"),
+    InvoiceSuitePathUtils::combinePathWithFile(__DIR__, "/../tests/assets/00_case_xrechnung_ublinvoice_simple_dto.xml"),
+];
 
-$validator = InvoiceSuiteKositDocumentValidator::createFromContent($contents);
-$validator->enableRemoteMode();
-$validator->setRemoteModeHost('192.168.1.83');
-$validator->setRemoteModePort(8081);
-$validator->validate();
+foreach ($filesToValidate as $fileIndex => $fileToValidate) {
+    $contents = file_get_contents($fileToValidate);
 
-echo "Finished\n";
-echo sprintf("HasErrorMessages .......... %s\n", $validator->hasErrorMessagesInMessageBag());
-echo sprintf("HasWarningMessages ........ %s\n", $validator->hasWarningMessagesInMessageBag());
-echo sprintf("HasLogMessages ............ %s\n", $validator->hasInfoMessagesInMessageBag());
+    $validator = InvoiceSuiteKositDocumentValidator::createFromContent($contents);
+    $validator->enableRemoteMode();
+    $validator->setRemoteModeHost('192.168.1.83');
+    $validator->setRemoteModePort(8081);
+    $validator->validate();
 
-foreach ($validator->getErrorMessagesInMessageBag() as $message)
-{
-    echo sprintf("  ....... %s\n", $message->getMessageContent());
+    echo sprintf("Validated file %s: %s\n", $fileIndex + 1, realpath($fileToValidate));
+    echo sprintf("HasErrorMessages .......... %s\n", $validator->hasErrorMessagesInMessageBag() === true ? "Yes": "No");
+    echo sprintf("HasWarningMessages ........ %s\n", $validator->hasWarningMessagesInMessageBag() === true ? "Yes": "No");
+    echo sprintf("HasLogMessages ............ %s\n", $validator->hasInfoMessagesInMessageBag() === true ? "Yes": "No");
+
+    foreach ($validator->getErrorMessagesInMessageBag() as $message) {
+        echo sprintf("  %s\n", $message->getMessageContent());
+    }
+
+    echo "\n\n";
 }
