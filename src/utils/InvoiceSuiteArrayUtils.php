@@ -71,7 +71,7 @@ class InvoiceSuiteArrayUtils
     }
 
     /**
-     * Push a nullable string to an int-indexed array. The string ($value) is only pushed when it is not null or an empty one
+     * Push a nullable float to an int-indexed array. The string ($value) is only pushed when it is not null or an empty one
      *
      * @param  array<int,float> $array
      * @param  null|float       $value
@@ -87,7 +87,7 @@ class InvoiceSuiteArrayUtils
     }
 
     /**
-     * Push a nullable string to an string-indexed ($key) array. The string ($value) is only pushed when it is not null or an empty one
+     * Push a nullable float to an string-indexed ($key) array. The string ($value) is only pushed when it is not null or an empty one
      *
      * @param  array<string,float> $array
      * @param  null|string         $key
@@ -100,6 +100,39 @@ class InvoiceSuiteArrayUtils
     {
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($key) && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($value)) {
             $array[(string) $key] = (float) $value;
+        }
+    }
+
+    /**
+     * Push a nullable boolean to an int-indexed array. The string ($value) is only pushed when it is not null or an empty one
+     *
+     * @param  array<int,bool> $array
+     * @param  null|bool       $value
+     * @return void
+     *
+     * @phpstan-param-out array<int,bool> $array
+     */
+    public static function pushBooleanToIntIndexedArray(array &$array, ?bool $value): void
+    {
+        if (!is_null($value)) {
+            $array[] = (bool) $value;
+        }
+    }
+
+    /**
+     * Push a nullable boolean to an string-indexed ($key) array. The string ($value) is only pushed when it is not null or an empty one
+     *
+     * @param  array<string,bool> $array
+     * @param  null|string        $key
+     * @param  null|bool          $value
+     * @return void
+     *
+     * @phpstan-param-out array<string,bool> $array
+     */
+    public static function pushBooleanToStringIndexedArray(array &$array, ?string $key, ?bool $value): void
+    {
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($key) && !is_null($value)) {
+            $array[(string) $key] = (bool) $value;
         }
     }
 

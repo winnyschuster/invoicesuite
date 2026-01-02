@@ -147,7 +147,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      */
     public function doSetPaymentMeansForDebitTransfer(bool $isSEPA, string $buyerIban): self
     {
-        $this->addDocumentPaymentMean(false === $isSEPA ? InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_31->value : InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_59->value, null, null, null, null, $buyerIban, null, null, null, null);
+        $this->addDocumentPaymentMean(false === $isSEPA ? InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_31->value : InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_59->value, null, null, null, null, $buyerIban);
 
         return $this;
     }
@@ -182,7 +182,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      */
     public function doSetPaymentMeansForBankCard(string $cardType, string $cardId, string $cardHolderName): self
     {
-        $this->addDocumentPaymentMean(InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_48->value, null, $cardType, $cardId, $cardHolderName, null, null, null, null, null);
+        $this->addDocumentPaymentMean(InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_48->value, null, $cardType, $cardId, $cardHolderName);
 
         return $this;
     }
@@ -197,7 +197,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      */
     public function doSetPaymentMeansForCreditCard(string $cardType, string $cardId, string $cardHolderName): self
     {
-        $this->addDocumentPaymentMean(InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_54->value, null, $cardType, $cardId, $cardHolderName, null, null, null, null, null);
+        $this->addDocumentPaymentMean(InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_54->value, null, $cardType, $cardId, $cardHolderName);
 
         return $this;
     }
@@ -212,7 +212,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      */
     public function doSetPaymentMeansForDebitCard(string $cardType, string $cardId, string $cardHolderName): self
     {
-        $this->addDocumentPaymentMean(InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_55->value, null, $cardType, $cardId, $cardHolderName, null, null, null, null, null);
+        $this->addDocumentPaymentMean(InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_55->value, null, $cardType, $cardId, $cardHolderName);
 
         return $this;
     }
@@ -356,7 +356,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
     public function doSetBuyer(string $name, string $postcode, string $city, string $street, string $country, ?string $buyerReference = null, ?string $id = null, ?string $globalID = null, ?string $globalIDscheme = null): self
     {
         $this->setDocumentBuyer($name, $id);
-        $this->setDocumentBuyerAddress($street, null, null, $postcode, $city, $country, null);
+        $this->setDocumentBuyerAddress($street, null, null, $postcode, $city, $country);
         $this->addDocumentBuyerGlobalId($globalID, $globalIDscheme);
 
         if (null != $buyerReference) {
@@ -435,7 +435,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
     public function doSetSeller(string $name, string $postcode, string $city, string $street, string $country, ?string $id = null, ?string $globalID = null, ?string $globalIDscheme = null): self
     {
         $this->setDocumentSeller($name, $id);
-        $this->setDocumentSellerAddress($street, null, null, $postcode, $city, $country, null);
+        $this->setDocumentSellerAddress($street, null, null, $postcode, $city, $country);
         $this->addDocumentSellerGlobalId($globalID, $globalIDscheme);
 
         return $this;
@@ -528,7 +528,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      */
     public function doAddTradeLineItem(string $lineId, string $productName, float $unitPrice, float $quantity, string $unitCode, float $allowanceChargeAmount, string $allowanceChargeReason, string $taxCategoryCode, string $taxTypeCode, float $taxPercent): self
     {
-        $hasChargeAmountIsAllowance = 0.0 != $allowanceChargeAmount;
+        $hasChargeAmountIsAllowance = 0.0 !== $allowanceChargeAmount;
         $allowanceChargeAmountIsAllowance = $allowanceChargeAmount < 0.0;
         $allowanceAmount = $allowanceChargeAmountIsAllowance ? abs($allowanceChargeAmount) : 0.0;
         $chargeAmount = false === $allowanceChargeAmountIsAllowance ? abs($allowanceChargeAmount) : 0.0;
@@ -542,7 +542,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
         $this->addDocumentPositionTax($taxCategoryCode, $taxTypeCode, $taxPercent);
         $this->setDocumentPositionLineSummation($lineTotalAmount);
 
-        if (true == $hasChargeAmountIsAllowance) {
+        if ($hasChargeAmountIsAllowance) {
             $this->addDocumentPositionAllowanceCharge($allowanceChargeAmount, false === $allowanceChargeAmountIsAllowance, null, null, null, $allowanceChargeReason);
         }
 
@@ -658,7 +658,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      */
     public function doAddTradeAllowanceCharge(float $actualAmount, string $reason, string $taxCategoryCode, string $taxTypeCode, float $taxPercent): self
     {
-        if (0.0 == $actualAmount) {
+        if (0.0 === $actualAmount) {
             return $this;
         }
 
@@ -666,7 +666,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
         $allowanceAmount = $allowanceChargeAmountIsAllowance ? abs($actualAmount) : 0.0;
         $chargeAmount = false === $allowanceChargeAmountIsAllowance ? abs($actualAmount) : 0.0;
 
-        $this->addDocumentAllowanceCharge(abs($actualAmount), false == $allowanceChargeAmountIsAllowance, $taxCategoryCode, $taxTypeCode, $taxPercent, null, null, null, null, null, null, $reason);
+        $this->addDocumentAllowanceCharge(abs($actualAmount), false === $allowanceChargeAmountIsAllowance, $taxCategoryCode, $taxTypeCode, $taxPercent, null, null, null, null, null, null, $reason);
 
         $this->addToInternalVatBuffer(
             $taxCategoryCode,

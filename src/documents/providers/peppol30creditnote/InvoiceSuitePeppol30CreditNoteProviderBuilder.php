@@ -65,8 +65,12 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setContextParameter(string $newCustomizationId, string $newProfileId): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->getUblRootObject()->getCustomizationIDWithCreate()->setValue($newCustomizationId);
         $this->getUblRootObject()->getProfileIDWithCreate()->setValue($newProfileId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -80,6 +84,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function createFromDTO(
         InvoiceSuiteDocumentHeaderDTO $newDocumentDTO
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Document-Level General information
 
         $this->setDocumentNo($newDocumentDTO->getNumber());
@@ -626,6 +632,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
 
         $this->updateCurrencies();
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -638,13 +646,19 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentNo(
         ?string $newDocumentNo = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->getUblRootObject()->unsetID();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentNo])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentNo])');
+
             return $this;
         }
 
         $this->getUblRootObject()->getIDWithCreate()->setValue($newDocumentNo);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -658,13 +672,19 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentType(
         ?string $newDocumentType = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->getUblRootObject()->unsetCreditNoteTypeCode();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentType])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentType])');
+
             return $this;
         }
 
         $this->getUblRootObject()->getCreditNoteTypeCodeWithCreate()->setValue($newDocumentType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -678,7 +698,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentDescription(
         ?string $newDocumentDescription = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -692,7 +716,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentLanguage(
         ?string $newDocumentLanguage = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -706,13 +734,19 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentDate(
         ?DateTimeInterface $newDocumentDate = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->getUblRootObject()->unsetIssueDate();
 
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDocumentDate])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDocumentDate])');
+
             return $this;
         }
 
         $this->getUblRootObject()->setIssueDate($newDocumentDate);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -726,7 +760,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentCompleteDate(
         ?DateTimeInterface $newCompleteDate = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -740,15 +778,21 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentCurrency(
         ?string $newDocumentCurrency = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->getUblRootObject()->unsetDocumentCurrencyCode();
         $this->updateCurrencies();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentCurrency])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentCurrency])');
+
             return $this;
         }
 
         $this->getUblRootObject()->getDocumentCurrencyCodeWithCreate()->setValue($newDocumentCurrency);
         $this->updateCurrencies();
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -762,15 +806,21 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentTaxCurrency(
         ?string $newDocumentTaxCurrency = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->getUblRootObject()->unsetTaxCurrencyCode();
         $this->updateCurrencies();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentTaxCurrency])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentTaxCurrency])');
+
             return $this;
         }
 
         $this->getUblRootObject()->getTaxCurrencyCodeWithCreate()->setValue($newDocumentTaxCurrency);
         $this->updateCurrencies();
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -784,7 +834,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentIsCopy(
         ?bool $newDocumentIsCopy = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -798,7 +852,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentIsTest(
         ?bool $newDocumentIsTest = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -816,13 +874,19 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->getUblRootObject()->unsetNote();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])');
+
             return $this;
         }
 
         $this->getUblRootObject()->addOnceToNoteWithCreate()->setValue($newContent);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -840,11 +904,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])');
+
             return $this;
         }
 
         $this->setDocumentNote($newContent, $newContentCode, $newSubjectCode);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -862,9 +932,13 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->getUblRootObject()->unsetInvoicePeriod();
 
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])');
+
             return $this;
         }
 
@@ -879,6 +953,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         if (!is_null($newEndDate)) {
             $invoicePeriod->setEndDate($newEndDate);
         }
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -896,7 +972,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])');
+
             return $this;
         }
 
@@ -905,6 +985,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newEndDate,
             $newDescription
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -918,11 +1000,15 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->unsetAccountingCost();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])');
+
             return $this;
         }
 
@@ -930,6 +1016,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getUblRootObject()
             ->getAccountingCostWithCreate()
             ->setValue($newAccountId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -943,11 +1031,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])');
+
             return $this;
         }
 
         $this->setDocumentPostingReference($newType, $newAccountId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -963,12 +1057,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getOrderReference()
             ?->unsetSalesOrderID();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
@@ -977,6 +1075,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getOrderReferenceWithCreate()
             ->getSalesOrderIDWithCreate()
             ->setValue($newReferenceNumber);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -992,11 +1092,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
         $this->setDocumentSellerOrderReference($newReferenceNumber, $newReferenceDate);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1012,6 +1118,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getOrderReference()
@@ -1019,6 +1127,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetIssueDate();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
@@ -1027,6 +1137,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getOrderReferenceWithCreate()
             ->getIDWithCreate()
             ->setValue($newReferenceNumber);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1042,11 +1154,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
         $this->setDocumentBuyerOrderReference($newReferenceNumber, $newReferenceDate);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1062,7 +1180,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1078,7 +1200,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1094,11 +1220,15 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->unsetContractDocumentReference();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
@@ -1107,6 +1237,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->addToContractDocumentReferenceWithCreate()
             ->getIDWithCreate()
             ->setValue($newReferenceNumber);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1122,11 +1254,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
         $this->setDocumentContractReference($newReferenceNumber, $newReferenceDate);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1150,11 +1288,15 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->unsetAdditionalDocumentReference();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
@@ -1166,6 +1308,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newDescription,
             $newInvoiceSuiteAttachment
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1189,7 +1333,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
@@ -1229,6 +1377,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             }
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -1245,11 +1395,15 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->unsetBillingReference();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
@@ -1260,6 +1414,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
 
         $invoiceReference->getIDWithCreate()->setValue($newReferenceNumber);
         $invoiceReference->setIssueDate($newReferenceDate);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1277,7 +1433,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
@@ -1286,6 +1446,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newReferenceDate,
             $newTypeCode
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1299,7 +1461,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1313,7 +1479,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1329,7 +1499,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1345,7 +1519,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1361,11 +1539,15 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->unsetDespatchDocumentReference();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
@@ -1374,6 +1556,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->addToDespatchDocumentReferenceWithCreate()
             ->getIDWithCreate()
             ->setValue($newReferenceNumber);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1389,11 +1573,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
         $this->setDocumentDespatchAdviceReference($newReferenceNumber, $newReferenceDate);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1409,11 +1599,15 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->unsetReceiptDocumentReference();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
@@ -1422,6 +1616,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->addOnceToReceiptDocumentReferenceWithCreate()
             ->getIDWithCreate()
             ->setValue($newReferenceNumber);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1437,11 +1633,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
         $this->setDocumentReceivingAdviceReference($newReferenceNumber, $newReferenceDate);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1457,7 +1659,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1473,7 +1679,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1487,12 +1697,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentSupplyChainEvent(
         ?DateTimeInterface $newDate = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->firstDelivery()
             ?->unsetActualDeliveryDate();
 
         if (InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDate)) {
+            $this->traceMethodEarlyExit(__METHOD__, 'datetimeIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDate)');
+
             return $this;
         }
 
@@ -1500,6 +1714,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getUblRootObject()
             ->addOnceToDeliveryWithCreate()
             ->setActualDeliveryDate($newDate);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1513,11 +1729,15 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentBuyerReference(
         ?string $newBuyerReference = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->unsetBuyerReference();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newBuyerReference])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newBuyerReference])');
+
             return $this;
         }
 
@@ -1525,6 +1745,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getUblRootObject()
             ->getBuyerReferenceWithCreate()
             ->setValue($newBuyerReference);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1538,7 +1760,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentDeliveryTerms(
         ?string $newCode = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1552,6 +1778,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentSellerName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getAccountingSupplierParty()
@@ -1560,6 +1788,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetRegistrationName();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
@@ -1570,6 +1800,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->addOnceToPartyLegalEntityWithCreate()
             ->getRegistrationNameWithCreate()
             ->setValue($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1583,11 +1815,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentSellerName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
         $this->setDocumentSellerName($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1601,6 +1839,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentSellerId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $ids = array_filter(
             $this
                 ->getUblRootObject()
@@ -1617,10 +1857,14 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->setPartyIdentification($ids);
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
         $this->addDocumentSellerId($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1634,7 +1878,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentSellerId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
@@ -1646,6 +1894,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->addToObjectFlags('id')
             ->getIDWithCreate()
             ->setValue($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1659,6 +1909,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $ids = array_filter(
             $this
                 ->getUblRootObject()
@@ -1675,10 +1927,14 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->setPartyIdentification($ids);
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
         $this->addDocumentSellerGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1692,7 +1948,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
@@ -1705,6 +1965,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getIDWithCreate()
             ->setValue($newGlobalId)
             ->setSchemeID($newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1720,6 +1982,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getAccountingSupplierParty()
@@ -1727,10 +1991,14 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetPartyTaxScheme();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
+
             return $this;
         }
 
         $this->addDocumentSellerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1746,7 +2014,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
+
             return $this;
         }
 
@@ -1764,6 +2036,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getTaxSchemeWithCreate()
             ->getIDWithCreate()
             ->setValue($this->convertTaxRegistrationType($newTaxRegistrationType));
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1789,6 +2063,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getAccountingSupplierParty()
@@ -1796,6 +2072,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetPostalAddress();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])');
+
             return $this;
         }
 
@@ -1830,6 +2108,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newSubDivision])) {
             $postalAddress->getCountrySubentityWithCreate()->setValue($newSubDivision);
         }
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1855,7 +2135,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])');
+
             return $this;
         }
 
@@ -1868,6 +2152,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newCountryId,
             $newSubDivision
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1885,6 +2171,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getAccountingSupplierParty()
@@ -1899,6 +2187,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetPartyName();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])');
+
             return $this;
         }
 
@@ -1923,6 +2213,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
                 ->setValue($newName);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -1939,11 +2231,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])');
+
             return $this;
         }
 
         $this->setDocumentSellerLegalOrganisation($newType, $newId, $newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1965,6 +2263,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getAccountingSupplierParty()
@@ -1978,6 +2278,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
                 $newEmailAddress,
             ])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([ $newPersonName, $newPhoneNumber, $newEmailAddress, ])');
+
             return $this;
         }
 
@@ -1999,6 +2301,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $contact->getElectronicMailWithCreate()->setValue($newEmailAddress);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -2019,6 +2323,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -2026,10 +2332,14 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
                 $newEmailAddress,
             ])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([ $newPersonName, $newPhoneNumber, $newEmailAddress, ])');
+
             return $this;
         }
 
         $this->setDocumentSellerContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2043,6 +2353,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getAccountingSupplierParty()
@@ -2050,6 +2362,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetEndpointID();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])');
+
             return $this;
         }
 
@@ -2060,6 +2374,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getEndpointIDWithCreate()
             ->setSchemeID($newType)
             ->setValue($newUri);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2073,11 +2389,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])');
+
             return $this;
         }
 
         $this->setDocumentSellerCommunication($newType, $newUri);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2091,6 +2413,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentBuyerName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getAccountingCustomerParty()
@@ -2099,6 +2423,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetRegistrationName();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
@@ -2109,6 +2435,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->addOnceToPartyLegalEntityWithCreate()
             ->getRegistrationNameWithCreate()
             ->setValue($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2122,11 +2450,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentBuyerName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
         $this->setDocumentBuyerName($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2140,6 +2474,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentBuyerId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getAccountingCustomerParty()
@@ -2147,6 +2483,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetPartyIdentification();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
@@ -2157,6 +2495,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->addOnceToPartyIdentificationWithCreate()
             ->getIDWithCreate()
             ->setValue($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2170,11 +2510,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentBuyerId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
         $this->setDocumentBuyerId($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2188,6 +2534,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getAccountingCustomerParty()
@@ -2195,6 +2543,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetPartyIdentification();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
@@ -2206,6 +2556,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getIDWithCreate()
             ->setValue($newGlobalId)
             ->setSchemeID($newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2219,11 +2571,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
         $this->setDocumentBuyerGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2239,6 +2597,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getAccountingCustomerParty()
@@ -2246,6 +2606,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetPartyTaxScheme();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
+
             return $this;
         }
 
@@ -2264,6 +2626,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getIDWithCreate()
             ->setValue($this->convertTaxRegistrationType($newTaxRegistrationType));
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -2278,11 +2642,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
+
             return $this;
         }
 
         $this->setDocumentBuyerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2308,6 +2678,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getAccountingCustomerParty()
@@ -2315,6 +2687,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetPostalAddress();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])');
+
             return $this;
         }
 
@@ -2349,6 +2723,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newSubDivision])) {
             $postalAddress->getCountrySubentityWithCreate()->setValue($newSubDivision);
         }
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2374,7 +2750,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])');
+
             return $this;
         }
 
@@ -2387,6 +2767,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newCountryId,
             $newSubDivision
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2404,6 +2786,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getAccountingCustomerParty()
@@ -2418,6 +2802,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetPartyName();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])');
+
             return $this;
         }
 
@@ -2442,6 +2828,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
                 ->setValue($newName);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -2458,11 +2846,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])');
+
             return $this;
         }
 
         $this->setDocumentBuyerLegalOrganisation($newType, $newId, $newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2484,6 +2878,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getAccountingCustomerParty()
@@ -2497,6 +2893,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
                 $newEmailAddress,
             ])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([ $newPersonName, $newPhoneNumber, $newEmailAddress, ])');
+
             return $this;
         }
 
@@ -2518,6 +2916,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $contact->getElectronicMailWithCreate()->setValue($newEmailAddress);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -2538,6 +2938,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newPersonName,
@@ -2545,10 +2947,14 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
                 $newEmailAddress,
             ])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([ $newPersonName, $newPhoneNumber, $newEmailAddress, ])');
+
             return $this;
         }
 
         $this->setDocumentBuyerContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2562,6 +2968,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getAccountingCustomerParty()
@@ -2569,6 +2977,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetEndpointID();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])');
+
             return $this;
         }
 
@@ -2579,6 +2989,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getEndpointIDWithCreate()
             ->setSchemeID($newType)
             ->setValue($newUri);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2592,11 +3004,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])');
+
             return $this;
         }
 
         $this->setDocumentBuyerCommunication($newType, $newUri);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2610,12 +3028,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentTaxRepresentativeName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getTaxRepresentativeParty()
             ?->unsetPartyName();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
@@ -2625,6 +3047,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->addOnceToPartyNameWithCreate()
             ->getNameWithCreate()
             ->setValue($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2638,11 +3062,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentTaxRepresentativeName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
         $this->setDocumentTaxRepresentativeName($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2656,7 +3086,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentTaxRepresentativeId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2670,7 +3104,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentTaxRepresentativeId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2686,7 +3124,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2702,7 +3144,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2718,12 +3164,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getTaxRepresentativeParty()
             ?->unsetPartyTaxScheme();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
+
             return $this;
         }
 
@@ -2741,6 +3191,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getIDWithCreate()
             ->setValue($this->convertTaxRegistrationType($newTaxRegistrationType));
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -2755,7 +3207,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
+
             return $this;
         }
 
@@ -2763,6 +3219,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newTaxRegistrationType,
             $newTaxRegistrationId
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2788,12 +3246,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getTaxRepresentativeParty()
             ?->unsetPostalAddress();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])');
+
             return $this;
         }
 
@@ -2828,6 +3290,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $postalAddress->getCountrySubentityWithCreate()->setValue($newSubDivision);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -2852,7 +3316,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])');
+
             return $this;
         }
 
@@ -2865,6 +3333,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newCountryId,
             $newSubDivision
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2882,7 +3352,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2900,7 +3374,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2922,7 +3400,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2944,7 +3426,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2960,7 +3446,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newType = null,
         ?string $newUri = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2976,7 +3466,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newType = null,
         ?string $newUri = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2990,7 +3484,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentProductEndUserName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3004,7 +3502,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentProductEndUserName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3018,7 +3520,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentProductEndUserId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3032,7 +3538,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentProductEndUserId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3048,7 +3558,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3064,7 +3578,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3080,7 +3598,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3096,7 +3618,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3122,7 +3648,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3148,7 +3678,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3166,7 +3700,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3184,7 +3722,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3206,7 +3748,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3228,7 +3774,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3242,7 +3792,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3258,7 +3812,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newType = null,
         ?string $newUri = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3272,7 +3830,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3286,7 +3848,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3300,6 +3866,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->firstDelivery()
@@ -3307,6 +3875,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetID();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
@@ -3316,6 +3886,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getDeliveryLocationWithCreate()
             ->getIDWithCreate()
             ->setValue($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3329,11 +3901,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
         $this->setDocumentShipToId($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3347,6 +3925,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->firstDelivery()
@@ -3354,6 +3934,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetID();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
@@ -3364,6 +3946,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getIDWithCreate()
             ->setValue($newGlobalId)
             ->setSchemeID($newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3377,11 +3961,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
         $this->setDocumentShipToGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3397,7 +3987,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3413,7 +4007,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3439,6 +4037,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->firstDelivery()
@@ -3446,6 +4046,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetAddress();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])');
+
             return $this;
         }
 
@@ -3481,6 +4083,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $postalAddress->getCountrySubentityWithCreate()->setValue($newSubDivision);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -3505,6 +4109,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -3516,6 +4122,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
                 $newSubDivision,
             ])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([ $newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision, ])');
+
             return $this;
         }
 
@@ -3528,6 +4136,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newCountryId,
             $newSubDivision
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3545,7 +4155,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3563,7 +4177,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3585,7 +4203,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3607,7 +4229,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3621,7 +4247,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3635,7 +4265,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3649,7 +4283,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentUltimateShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3663,7 +4301,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentUltimateShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3677,7 +4319,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentUltimateShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3691,7 +4337,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentUltimateShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3707,7 +4357,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3723,7 +4377,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3739,7 +4397,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3755,7 +4417,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3781,7 +4447,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3807,7 +4477,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3825,7 +4499,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3843,7 +4521,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3865,7 +4547,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3887,7 +4573,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3901,7 +4591,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3915,7 +4609,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3929,7 +4627,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentShipFromName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3943,7 +4645,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentShipFromName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3957,7 +4663,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentShipFromId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3971,7 +4681,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentShipFromId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3985,7 +4699,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3999,7 +4717,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4015,7 +4737,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4031,7 +4757,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4057,7 +4787,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4083,7 +4817,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4101,7 +4839,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4119,7 +4861,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4141,7 +4887,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4163,7 +4913,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4177,7 +4931,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4191,7 +4949,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4205,7 +4967,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentInvoicerName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4219,7 +4985,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentInvoicerName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4233,7 +5003,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentInvoicerId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4247,7 +5021,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentInvoicerId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4261,7 +5039,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4275,7 +5057,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4291,7 +5077,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4307,7 +5097,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4333,7 +5127,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4359,7 +5157,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4377,7 +5179,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4395,7 +5201,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4417,7 +5227,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4439,7 +5253,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4453,7 +5271,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4467,7 +5289,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4481,7 +5307,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentInvoiceeName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4495,7 +5325,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentInvoiceeName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4509,7 +5343,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentInvoiceeId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4523,7 +5361,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentInvoiceeId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4537,7 +5379,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4551,7 +5397,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4567,7 +5417,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4583,7 +5437,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4609,7 +5467,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4635,7 +5497,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4653,7 +5519,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4671,7 +5541,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4693,7 +5567,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4715,7 +5593,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4729,7 +5611,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4743,7 +5629,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4757,6 +5647,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentPayeeName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getPayeeParty()
@@ -4764,6 +5656,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetName();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
@@ -4773,6 +5667,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->addOnceToPartyNameWithCreate()
             ->getNameWithCreate()
             ->setValue($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4786,11 +5682,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentPayeeName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
         $this->setDocumentPayeeName($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4804,12 +5706,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentPayeeId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getPayeeParty()
             ?->unsetPartyIdentification();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
@@ -4819,6 +5725,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->addOnceToPartyIdentificationWithCreate()
             ->getIDWithCreate()
             ->setValue($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4832,11 +5740,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentPayeeId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
         $this->setDocumentPayeeId($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4850,12 +5764,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getPayeeParty()
             ?->unsetPartyIdentification();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
@@ -4866,6 +5784,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getIDWithCreate()
             ->setValue($newGlobalId)
             ->setSchemeID($newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4879,11 +5799,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
         $this->setDocumentPayeeGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4899,7 +5825,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4915,7 +5845,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4941,7 +5875,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4967,7 +5905,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4985,6 +5927,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getPayeeParty()
@@ -4993,6 +5937,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetRegistrationName();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])');
+
             return $this;
         }
 
@@ -5005,6 +5951,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
                 ->setValue($newId)
                 ->setSchemeID($newType);
         }
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5022,11 +5970,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])');
+
             return $this;
         }
 
         $this->setDocumentPayeeLegalOrganisation($newType, $newId, $newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5048,7 +6002,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5070,7 +6028,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5086,7 +6048,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newType = null,
         ?string $newUri = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5102,7 +6068,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newType = null,
         ?string $newUri = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5136,11 +6106,15 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newPaymentReference = null,
         ?string $newMandate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->unsetPaymentMeans();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTypeCode])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTypeCode])');
+
             return $this;
         }
 
@@ -5157,6 +6131,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newPaymentReference,
             $newMandate
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5190,7 +6166,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newPaymentReference = null,
         ?string $newMandate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTypeCode])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTypeCode])');
+
             return $this;
         }
 
@@ -5257,6 +6237,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $paymentMean->getPaymentMandateWithCreate()->getIDWithCreate()->setValue($newMandate);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -5277,6 +6259,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->setDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_58->value,
             newPayeeIban: $newPayeeIban,
@@ -5285,6 +6269,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             newPayeeBic: $newPayeeBic,
             newPaymentReference: $newPaymentReference,
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5306,6 +6292,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->addDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_58->value,
             newPayeeIban: $newPayeeIban,
@@ -5314,6 +6302,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             newPayeeBic: $newPayeeBic,
             newPaymentReference: $newPaymentReference,
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5335,6 +6325,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->setDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_30->value,
             newPayeeIban: $newPayeeIban,
@@ -5343,6 +6335,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             newPayeeBic: $newPayeeBic,
             newPaymentReference: $newPaymentReference,
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5364,6 +6358,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->addDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_30->value,
             newPayeeIban: $newPayeeIban,
@@ -5372,6 +6368,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             newPayeeBic: $newPayeeBic,
             newPaymentReference: $newPaymentReference,
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5387,11 +6385,15 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->setDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_59->value,
             newBuyerIban: $newBuyerIban,
             newMandate: $newMandate
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5407,11 +6409,15 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->addDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_59->value,
             newBuyerIban: $newBuyerIban,
             newMandate: $newMandate
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5427,11 +6433,15 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->setDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_49->value,
             newBuyerIban: $newBuyerIban,
             newMandate: $newMandate
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5447,11 +6457,15 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->addDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_49->value,
             newBuyerIban: $newBuyerIban,
             newMandate: $newMandate
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5467,11 +6481,15 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFinancialCardId = null,
         ?string $newFinancialCardHolder = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->setDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_48->value,
             newFinancialCardId: $newFinancialCardId,
             newFinancialCardHolder: $newFinancialCardHolder
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5487,11 +6505,15 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFinancialCardId = null,
         ?string $newFinancialCardHolder = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->addDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_48->value,
             newFinancialCardId: $newFinancialCardId,
             newFinancialCardHolder: $newFinancialCardHolder
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5505,6 +6527,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentPaymentCreditorReferenceID(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $ids = $this
             ->getUblRootObject()
             ->getAccountingSupplierParty()
@@ -5523,6 +6547,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->setPartyIdentification($ids);
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
@@ -5536,6 +6562,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->setValue($newId)
             ->setSchemeID('SEPA');
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -5548,11 +6576,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentPaymentCreditorReferenceID(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
         $this->setDocumentPaymentCreditorReferenceID($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5566,7 +6600,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentPaymentReference(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5580,7 +6618,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentPaymentReference(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5598,11 +6640,15 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newDueDate = null,
         ?string $newMandate = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->unsetPaymentTerms();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDescription])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDescription])');
+
             return $this;
         }
 
@@ -5611,6 +6657,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->addOnceToPaymentTermsWithCreate()
             ->addToNoteWithCreate()
             ->setValue($newDescription);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5628,7 +6676,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newDueDate = null,
         ?string $newMandate = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDescription])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDescription])');
+
             return $this;
         }
 
@@ -5637,6 +6689,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newDueDate,
             $newMandate
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5660,7 +6714,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5684,7 +6742,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5708,7 +6770,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5732,7 +6798,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5762,6 +6832,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newTaxDueDate = null,
         ?string $newTaxDueCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->firstTaxTotal()
@@ -5771,6 +6843,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
             || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType]) || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])');
+
             return $this;
         }
 
@@ -5785,6 +6859,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newTaxDueDate,
             $newTaxDueCode
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5814,10 +6890,14 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newTaxDueDate = null,
         ?string $newTaxDueCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
             || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType]) || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])');
+
             return $this;
         }
 
@@ -5851,6 +6931,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
 
         $this->updateCurrencies();
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -5879,6 +6961,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->unsetAllowanceCharge();
@@ -5887,6 +6971,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
             || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType]) || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])');
+
             return $this;
         }
 
@@ -5901,6 +6987,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newAllowanceChargeReasonCode,
             $newAllowanceChargePercent
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5930,10 +7018,14 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
             || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType]) || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])');
+
             return $this;
         }
 
@@ -5983,6 +7075,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
 
         $this->updateCurrencies();
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -6003,7 +7097,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxType = null,
         ?float $newTaxPercent = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6025,7 +7123,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxType = null,
         ?float $newTaxPercent = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6068,6 +7170,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newPrepaidAmount = null,
         ?float $newRoungingAmount = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->unsetLegalMonetaryTotal();
@@ -6085,6 +7189,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([
             $newNetAmount, $newTaxBasisAmount, $newTaxTotalAmount, $newGrossAmount, $newDueAmount,
         ])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([ $newNetAmount, $newTaxBasisAmount, $newTaxTotalAmount, $newGrossAmount, $newDueAmount, ])');
+
             return $this;
         }
 
@@ -6121,6 +7227,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
 
         $this->updateCurrencies();
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -6139,7 +7247,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newLineStatusCode = null,
         ?string $newLineStatusReasonCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newPositionId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newPositionId])');
+
             return $this;
         }
 
@@ -6148,6 +7260,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->addToCreditNoteLineWithCreate()
             ->getIDWithCreate()
             ->setValue($newPositionId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6165,12 +7279,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getLatestDocumentLine()
             ?->unsetNote();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])');
+
             return $this;
         }
 
@@ -6179,6 +7297,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getLatestDocumentLineWithCreate()
             ->addToNoteWithCreate()
             ->setValue($newContent);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6196,7 +7316,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])');
+
             return $this;
         }
 
@@ -6205,6 +7329,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newContentCode,
             $newSubjectCode
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6242,12 +7368,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newProductModelName = null,
         ?string $newProductOriginTradeCountry = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getLatestDocumentLine()
             ?->unsetItem();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductName])');
+
             return $this;
         }
 
@@ -6278,6 +7408,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $positionProduct->getOriginCountryWithCreate()->getIdentificationCodeWithCreate()->setValue($newProductOriginTradeCountry);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -6298,18 +7430,24 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newProductCharacteristicMeasureValue = null,
         ?string $newProductCharacteristicMeasureUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $positionProduct = $this
             ->getUblRootObject()
             ->getLatestDocumentLine()
             ?->getItem();
 
         if (is_null($positionProduct)) {
+            $this->traceMethodEarlyExit(__METHOD__, 'null', 'is_null($positionProduct)');
+
             return $this;
         }
 
         $positionProduct->unsetAdditionalItemProperty();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductCharacteristicDescription, $newProductCharacteristicValue])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductCharacteristicDescription, $newProductCharacteristicValue])');
+
             return $this;
         }
 
@@ -6320,6 +7458,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newProductCharacteristicMeasureValue,
             $newProductCharacteristicMeasureUnit,
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6341,22 +7481,30 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newProductCharacteristicMeasureValue = null,
         ?string $newProductCharacteristicMeasureUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $positionProduct = $this
             ->getUblRootObject()
             ->getLatestDocumentLine()
             ?->getItem();
 
         if (is_null($positionProduct)) {
+            $this->traceMethodEarlyExit(__METHOD__, 'null', 'is_null($positionProduct)');
+
             return $this;
         }
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductCharacteristicDescription, $newProductCharacteristicValue])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductCharacteristicDescription, $newProductCharacteristicValue])');
+
             return $this;
         }
 
         $positionProductCharacteristic = $positionProduct->addToAdditionalItemPropertyWithCreate();
         $positionProductCharacteristic->getNameWithCreate()->setValue($newProductCharacteristicDescription);
         $positionProductCharacteristic->getValueWithCreate()->setValue($newProductCharacteristicValue);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6376,18 +7524,24 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newProductClassificationListVersionId = null,
         ?string $newProductClassificationCodeClassname = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $positionProduct = $this
             ->getUblRootObject()
             ->getLatestDocumentLine()
             ?->getItem();
 
         if (is_null($positionProduct)) {
+            $this->traceMethodEarlyExit(__METHOD__, 'null', 'is_null($positionProduct)');
+
             return $this;
         }
 
         $positionProduct->unsetCommodityClassification();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId])');
+
             return $this;
         }
 
@@ -6397,6 +7551,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newProductClassificationListVersionId,
             $newProductClassificationCodeClassname
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6416,16 +7572,22 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newProductClassificationListVersionId = null,
         ?string $newProductClassificationCodeClassname = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $positionProduct = $this
             ->getUblRootObject()
             ->getLatestDocumentLine()
             ?->getItem();
 
         if (is_null($positionProduct)) {
+            $this->traceMethodEarlyExit(__METHOD__, 'null', 'is_null($positionProduct)');
+
             return $this;
         }
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductClassificationCode, $newProductClassificationListId])');
+
             return $this;
         }
 
@@ -6439,6 +7601,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newProductClassificationListVersionId)) {
             $positionProductClassificationCode->setListVersionID($newProductClassificationListVersionId);
         }
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6470,7 +7634,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newProductUnitQuantity = null,
         ?string $newProductUnitQuantityUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6502,7 +7670,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newProductUnitQuantity = null,
         ?string $newProductUnitQuantityUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6520,7 +7692,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6538,7 +7714,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6556,12 +7736,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getLatestDocumentLine()
             ?->unsetOrderLineReference();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])');
+
             return $this;
         }
 
@@ -6571,6 +7755,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->addToOrderLineReferenceWithCreate()
             ->getLineIDWithCreate()
             ->setValue($newReferenceLineNumber);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6588,7 +7774,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newReferenceLineNumber])');
+
             return $this;
         }
 
@@ -6597,6 +7787,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newReferenceLineNumber,
             $newReferenceDate
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6614,7 +7806,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6632,7 +7828,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6650,7 +7850,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6668,7 +7872,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6694,7 +7902,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6720,7 +7932,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6738,7 +7954,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6756,7 +7976,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6774,7 +7998,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6792,7 +8020,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6810,7 +8042,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6828,7 +8064,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6846,7 +8086,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6864,7 +8108,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6884,7 +8132,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6904,7 +8156,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6922,12 +8178,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTypeCode = null,
         ?string $newReferenceTypeCode = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getLatestDocumentLine()
             ?->unsetDocumentReference();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
@@ -6941,6 +8201,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         if ('130' === $newTypeCode) {
             $documentReference->getDocumentTypeCodeWithCreate()->setValue($newTypeCode);
         }
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6958,7 +8220,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTypeCode = null,
         ?string $newReferenceTypeCode = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newTypeCode])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber, $newTypeCode])');
+
             return $this;
         }
 
@@ -6967,6 +8233,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newTypeCode,
             $newReferenceTypeCode
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6984,7 +8252,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newGrossPriceBasisQuantity = null,
         ?string $newGrossPriceBasisQuantityUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7008,7 +8280,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newGrossPriceAllowanceChargeReason = null,
         ?string $newGrossPriceAllowanceChargeReasonCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7032,7 +8308,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newGrossPriceAllowanceChargeReason = null,
         ?string $newGrossPriceAllowanceChargeReasonCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7050,12 +8330,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newNetPriceBasisQuantity = null,
         ?string $newNetPriceBasisQuantityUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getLatestDocumentLine()
             ?->unsetPrice();
 
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetPrice])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetPrice])');
+
             return $this;
         }
 
@@ -7079,6 +8363,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
 
         $this->updateCurrencies();
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -7101,7 +8387,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newExemptionReason = null,
         ?string $newExemptionReasonCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7129,6 +8419,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newPerPackageUnitQuantity = null,
         ?string $newPerPackageUnitQuantityUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getLatestDocumentLine()
@@ -7138,6 +8430,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newQuantity])
             || InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newQuantityUnit])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newQuantity]) || InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newQuantityUnit])');
+
             return $this;
         }
 
@@ -7147,6 +8441,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getCreditedQuantityWithCreate()
             ->setValue($newQuantity)
             ->setUnitCode($newQuantityUnit);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7160,7 +8456,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentPositionShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7174,7 +8474,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentPositionShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7188,7 +8492,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentPositionShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7202,7 +8510,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentPositionShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7218,7 +8530,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7234,7 +8550,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7250,7 +8570,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7266,7 +8590,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7292,7 +8620,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7318,7 +8650,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7336,7 +8672,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7354,7 +8694,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7376,7 +8720,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7398,7 +8746,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7414,7 +8766,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newType = null,
         ?string $newUri = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7430,7 +8786,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newType = null,
         ?string $newUri = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7444,7 +8804,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentPositionUltimateShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7458,7 +8822,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentPositionUltimateShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7472,7 +8840,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentPositionUltimateShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7486,7 +8858,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function addDocumentPositionUltimateShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7502,7 +8878,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7518,7 +8898,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7534,7 +8918,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7550,7 +8938,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7576,7 +8968,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7602,7 +8998,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newCountryId = null,
         ?string $newSubDivision = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7620,7 +9020,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7638,7 +9042,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newId = null,
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7660,7 +9068,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7682,7 +9094,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7698,7 +9114,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newType = null,
         ?string $newUri = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7714,7 +9134,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newType = null,
         ?string $newUri = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7728,7 +9152,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
     public function setDocumentPositionSupplyChainEvent(
         ?DateTimeInterface $newDate = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7746,12 +9174,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getLatestDocumentLine()
             ?->unsetInvoicePeriod();
 
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])');
+
             return $this;
         }
 
@@ -7761,6 +9193,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->addOnceToInvoicePeriodWithCreate()
             ->setStartDate($newStartDate)
             ->setEndDate($newEndDate);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7778,11 +9212,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])');
+
             return $this;
         }
 
         $this->setDocumentPositionBillingPeriod($newStartDate, $newEndDate, $newDescription);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7806,6 +9246,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newExemptionReason = null,
         ?string $newExemptionReasonCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getLatestDocumentLine()
@@ -7813,6 +9255,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ?->unsetClassifiedTaxCategory();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])');
+
             return $this;
         }
 
@@ -7828,6 +9272,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         if (!InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent])) {
             $tradeTax->getPercentWithCreate()->setValue($newTaxPercent);
         }
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7851,7 +9297,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newExemptionReason = null,
         ?string $newExemptionReasonCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])');
+
             return $this;
         }
 
@@ -7863,6 +9313,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newExemptionReason,
             $newExemptionReasonCode
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7886,12 +9338,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getLatestDocumentLine()
             ?->unsetAllowanceCharge();
 
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])');
+
             return $this;
         }
 
@@ -7903,6 +9359,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             $newAllowanceChargeReasonCode,
             $newAllowanceChargePercent
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7926,7 +9384,11 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])');
+
             return $this;
         }
 
@@ -7956,6 +9418,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
 
         $this->updateCurrencies();
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -7976,12 +9440,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         ?float $newTaxTotalAmount = null,
         ?float $newGrossAmount = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getLatestDocumentLine()
             ?->unsetLineExtensionAmount();
 
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetAmount])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetAmount])');
+
             return $this;
         }
 
@@ -7992,6 +9460,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->setValue($newNetAmount);
 
         $this->updateCurrencies();
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8005,12 +9475,16 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function setDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getUblRootObject()
             ->getLatestDocumentLine()
             ?->unsetAccountingCost();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])');
+
             return $this;
         }
 
@@ -8019,6 +9493,8 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             ->getLatestDocumentLineWithCreate()
             ->getAccountingCostCodeWithCreate()
             ->setValue($newAccountId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8032,11 +9508,17 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      */
     public function addDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])');
+
             return $this;
         }
 
         $this->setDocumentPositionPostingReference($newType, $newAccountId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }

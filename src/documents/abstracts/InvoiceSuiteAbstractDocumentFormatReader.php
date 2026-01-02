@@ -15,6 +15,8 @@ use DateTimeInterface;
 use horstoeko\invoicesuite\concerns\HandlesCurrentDocumentFormatProvider;
 use horstoeko\invoicesuite\concerns\HandlesDocumentRootObject;
 use horstoeko\invoicesuite\concerns\HandlesDocumentSerializer;
+use horstoeko\invoicesuite\concerns\HandlesMessageBag;
+use horstoeko\invoicesuite\concerns\HandlesMethodTracing;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
@@ -34,6 +36,8 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
     use HandlesCurrentDocumentFormatProvider;
     use HandlesDocumentSerializer;
     use HandlesDocumentRootObject;
+    use HandlesMessageBag;
+    use HandlesMethodTracing;
 
     /**
      * Constructor

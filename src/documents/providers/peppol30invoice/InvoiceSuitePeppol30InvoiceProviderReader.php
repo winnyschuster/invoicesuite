@@ -96,6 +96,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function convertToDTO(
         ?InvoiceSuiteDocumentHeaderDTO &$newDocumentDTO
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Initialize
 
         $this->resetCurrentDocumentSubPointers();
@@ -2578,6 +2580,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $this->resetCurrentDocumentSubPointers();
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -2592,7 +2596,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentNo(
         ?string &$newDocumentNo
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newDocumentNo = $this->getUblRootObject()->getID()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2608,7 +2616,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentType(
         ?string &$newDocumentType
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newDocumentType = $this->getUblRootObject()->getInvoiceTypeCode()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2624,7 +2636,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentDescription(
         ?string &$newDocumentDescription
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newDocumentDescription = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2640,7 +2656,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentLanguage(
         ?string &$newDocumentLanguage
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newDocumentLanguage = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2656,7 +2676,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentDate(
         ?DateTimeInterface &$newDocumentDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newDocumentDate = $this->getUblRootObject()->getIssueDate() ?? new DateTime();
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2672,7 +2696,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentCompleteDate(
         ?DateTimeInterface &$newCompleteDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newCompleteDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2688,7 +2716,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentCurrency(
         ?string &$newDocumentCurrency
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newDocumentCurrency = $this->getUblRootObject()->getDocumentCurrencyCode()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2704,7 +2736,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentTaxCurrency(
         ?string &$newDocumentTaxCurrency
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newDocumentTaxCurrency = $this->getUblRootObject()->getTaxCurrencyCode()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2720,7 +2756,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentIsCopy(
         ?bool &$newDocumentIsCopy = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newDocumentIsCopy = false;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2736,7 +2776,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentIsTest(
         ?bool &$newDocumentIsTest
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newDocumentIsTest = false;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2788,6 +2832,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newContentCode,
         ?string &$newSubjectCode
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<Note>
          */
@@ -2801,6 +2847,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newContent = $documentNote->getValue() ?? '';
         $newContentCode = '';
         $newSubjectCode = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2852,6 +2900,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?DateTimeInterface &$newEndDate,
         ?string &$newDescription,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<InvoicePeriod>
          */
@@ -2865,6 +2915,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newStartDate = $billingPeriod->getStartDate();
         $newEndDate = $billingPeriod->getEndDate();
         $newDescription = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2913,6 +2965,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newType,
         ?string &$newAccountId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<AccountingCost>
          */
@@ -2925,6 +2979,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newType = '';
         $newAccountId = $postingReference->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2973,6 +3029,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<SalesOrderID>
          */
@@ -2985,6 +3043,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newReferenceNumber = $documentSellerOrderReference->getValue() ?? '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3033,6 +3093,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<OrderReference>
          */
@@ -3045,6 +3107,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newReferenceNumber = $documentBuyerOrderReference->getID()?->getValue() ?? '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3083,8 +3147,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newReferenceNumber = '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3133,6 +3201,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<ContractDocumentReference>
          */
@@ -3145,6 +3215,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newReferenceNumber = $documentContractReference->getID()?->getValue() ?? '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3205,6 +3277,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newDescription,
         ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<AdditionalDocumentReference>
          */
@@ -3235,6 +3309,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
                 $documentAdditionalReference->getAttachment()->getExternalReference()->getURI()->getValue() ?? ''
             );
         }
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3286,6 +3362,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?DateTimeInterface &$newReferenceDate,
         ?string &$newTypeCode
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<BillingReference>
          */
@@ -3299,6 +3377,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newReferenceNumber = $documentInvoiceReference->getInvoiceDocumentReference()?->getID()?->getValue() ?? '';
         $newReferenceDate = $documentInvoiceReference->getInvoiceDocumentReference()?->getIssueDate();
         $newTypeCode = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3347,6 +3427,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceNumber,
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<ProjectReference>
          */
@@ -3359,6 +3441,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newReferenceNumber = $documentProjectReference->getID()?->getValue() ?? '';
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3397,8 +3481,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newReferenceNumber = '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3447,6 +3535,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<DespatchDocumentReference>
          */
@@ -3459,6 +3549,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newReferenceNumber = $documentDespatchAdviceReference->getID()?->getValue() ?? '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3507,6 +3599,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<ReceiptDocumentReference>
          */
@@ -3519,6 +3613,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newReferenceNumber = $documentReceivingAdviceReference->getID()?->getValue() ?? '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3557,8 +3653,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceNumber,
         ?DateTimeInterface &$newReferenceDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newReferenceNumber = '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3574,7 +3674,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentSupplyChainEvent(
         ?DateTimeInterface &$newDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newDate = $this->getUblRootObject()->firstDelivery()?->getActualDeliveryDate();
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3590,7 +3694,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentBuyerReference(
         ?string &$newBuyerReference
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newBuyerReference = $this->getUblRootObject()->getBuyerReference()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3606,7 +3714,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentDeliveryTerms(
         ?string &$newCode = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newCode = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3622,6 +3734,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentSellerName(
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newName = $this
             ->getUblRootObject()
             ->getAccountingSupplierParty()
@@ -3629,6 +3743,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
             ?->firstPartyLegalEntity()
             ?->getRegistrationName()
             ?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3670,6 +3786,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentSellerId(
         ?string &$newId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PartyIdentification>
          */
@@ -3681,6 +3799,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $documentSellerId = $documentSellerIds[InvoiceSuitePointerUtils::getValue('documentsellerid')];
 
         $newId = $documentSellerId->getID()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3725,6 +3845,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PartyIdentification>
          */
@@ -3737,6 +3859,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newGlobalId = $documentSellerGlobalId->getID()?->getValue() ?? '';
         $newGlobalIdType = $documentSellerGlobalId->getID()?->getSchemeID() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3785,6 +3909,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PartyTaxScheme>
          */
@@ -3797,6 +3923,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newTaxRegistrationType = $documentSellerTaxRegistration->getTaxScheme()?->getID()?->getValue() ?? '';
         $newTaxRegistrationId = $documentSellerTaxRegistration->getCompanyID()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3860,6 +3988,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PostalAddress>
          */
@@ -3877,6 +4007,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newCity = $documentSellerAddress->getCityName()?->getValue() ?? '';
         $newCountryId = $documentSellerAddress->getCountry()?->getIdentificationCode()?->getValue() ?? '';
         $newSubDivision = $documentSellerAddress->getCountrySubentity()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3928,6 +4060,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newId,
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PartyLegalEntity>
          */
@@ -3942,6 +4076,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newType = $documentSellerLegalOrganisation->getCompanyID()?->getSchemeID() ?? '';
         $newId = $documentSellerLegalOrganisation->getCompanyID()?->getValue() ?? '';
         $newName = $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->firstPartyName()?->getName()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3999,6 +4135,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<Contact>
          */
@@ -4014,6 +4152,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newPhoneNumber = $documentSellerContact->getTelephone()?->getValue() ?? '';
         $newFaxNumber = '';
         $newEmailAddress = $documentSellerContact->getElectronicMail()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4062,6 +4202,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newType,
         ?string &$newUri
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<EndpointID>
          */
@@ -4074,6 +4216,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newType = $documentSellerElectronicCommunication->getSchemeID() ?? '';
         $newUri = $documentSellerElectronicCommunication->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4089,6 +4233,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentBuyerName(
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newName = $this
             ->getUblRootObject()
             ->getAccountingCustomerParty()
@@ -4096,6 +4242,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
             ?->firstPartyLegalEntity()
             ?->getRegistrationName()
             ?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4137,6 +4285,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentBuyerId(
         ?string &$newId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PartyIdentification>
          */
@@ -4148,6 +4298,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $documentBuyerId = $documentBuyerIds[InvoiceSuitePointerUtils::getValue('documentbuyerid')];
 
         $newId = $documentBuyerId->getID()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4192,6 +4344,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PartyIdentification>
          */
@@ -4204,6 +4358,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newGlobalId = $documentBuyerGlobalId->getID()?->getValue() ?? '';
         $newGlobalIdType = $documentBuyerGlobalId->getID()?->getSchemeID() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4252,6 +4408,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PartyTaxScheme>
          */
@@ -4264,6 +4422,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newTaxRegistrationType = $documentBuyerTaxRegistration->getTaxScheme()?->getID()?->getValue() ?? '';
         $newTaxRegistrationId = $documentBuyerTaxRegistration->getCompanyID()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4327,6 +4487,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PostalAddress>
          */
@@ -4344,6 +4506,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newCity = $documentBuyerAddress->getCityName()?->getValue() ?? '';
         $newCountryId = $documentBuyerAddress->getCountry()?->getIdentificationCode()?->getValue() ?? '';
         $newSubDivision = $documentBuyerAddress->getCountrySubentity()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4395,6 +4559,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newId,
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PartyLegalEntity>
          */
@@ -4409,6 +4575,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newType = $documentBuyerLegalOrganisation->getCompanyID()?->getSchemeID() ?? '';
         $newId = $documentBuyerLegalOrganisation->getCompanyID()?->getValue() ?? '';
         $newName = $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->firstPartyName()?->getName()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4466,6 +4634,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<Contact>
          */
@@ -4481,6 +4651,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newPhoneNumber = $documentBuyerContact->getTelephone()?->getValue() ?? '';
         $newFaxNumber = '';
         $newEmailAddress = $documentBuyerContact->getElectronicMail()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4529,6 +4701,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newType,
         ?string &$newUri
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<EndpointID>
          */
@@ -4541,6 +4715,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newType = $documentBuyerElectronicCommunication->getSchemeID() ?? '';
         $newUri = $documentBuyerElectronicCommunication->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4556,12 +4732,16 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentTaxRepresentativeName(
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newName = $this
             ->getUblRootObject()
             ->getTaxRepresentativeParty()
             ?->firstPartyName()
             ?->getName()
             ?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4597,7 +4777,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentTaxRepresentativeId(
         ?string &$newId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4636,8 +4820,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newGlobalId = '';
         $newGlobalIdType = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4686,6 +4874,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PartyTaxScheme>
          */
@@ -4698,6 +4888,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newTaxRegistrationType = $documentTaxRepresentativeTaxRegistration->getTaxScheme()?->getID()?->getValue() ?? '';
         $newTaxRegistrationId = $documentTaxRepresentativeTaxRegistration->getCompanyID()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4761,6 +4953,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PostalAddress>
          */
@@ -4778,6 +4972,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newCity = $documentTaxRepresentativeAddress->getCityName()?->getValue() ?? '';
         $newCountryId = $documentTaxRepresentativeAddress->getCountry()?->getIdentificationCode()?->getValue() ?? '';
         $newSubDivision = $documentTaxRepresentativeAddress->getCountrySubentity()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4819,9 +5015,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newId,
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newId = '';
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4869,11 +5069,15 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
         $newFaxNumber = '';
         $newEmailAddress = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4912,8 +5116,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newType,
         ?string &$newUri
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newUri = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4929,7 +5137,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentProductEndUserName(
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4965,7 +5177,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentProductEndUserId(
         ?string &$newId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5004,8 +5220,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newGlobalId = '';
         $newGlobalIdType = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5044,8 +5264,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5099,6 +5323,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -5106,6 +5332,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newCity = '';
         $newCountryId = '';
         $newSubDivision = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5147,9 +5375,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newId,
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newId = '';
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5197,11 +5429,15 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
         $newFaxNumber = '';
         $newEmailAddress = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5240,8 +5476,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newType,
         ?string &$newUri
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newUri = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5257,7 +5497,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentShipToName(
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5299,6 +5543,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentShipToId(
         ?string &$newId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<ID>
          */
@@ -5310,6 +5556,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $documentShipToId = $documentShipToIds[InvoiceSuitePointerUtils::getValue('documentshiptoid')];
 
         $newId = $documentShipToId->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5354,6 +5602,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<ID>
          */
@@ -5366,6 +5616,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newGlobalId = $documentShipToGlobalId->getValue() ?? '';
         $newGlobalIdType = $documentShipToGlobalId->getSchemeID() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5404,8 +5656,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5469,6 +5725,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PostalAddress>
          */
@@ -5486,6 +5744,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newCity = $documentShipToAddress->getCityName()?->getValue() ?? '';
         $newCountryId = $documentShipToAddress->getCountry()?->getIdentificationCode()?->getValue() ?? '';
         $newSubDivision = $documentShipToAddress->getCountrySubentity()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5527,9 +5787,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newId,
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newId = '';
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5577,11 +5841,15 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
         $newFaxNumber = '';
         $newEmailAddress = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5620,8 +5888,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newType,
         ?string &$newUri
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newUri = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5637,7 +5909,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentUltimateShipToName(
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5673,7 +5949,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentUltimateShipToId(
         ?string &$newId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5712,8 +5992,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newGlobalId = '';
         $newGlobalIdType = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5752,8 +6036,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5807,6 +6095,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -5814,6 +6104,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newCity = '';
         $newCountryId = '';
         $newSubDivision = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5855,9 +6147,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newId,
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newId = '';
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5905,11 +6201,15 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
         $newFaxNumber = '';
         $newEmailAddress = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5948,8 +6248,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newType,
         ?string &$newUri
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newUri = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5965,7 +6269,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentShipFromName(
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6001,7 +6309,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentShipFromId(
         ?string &$newId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6040,8 +6352,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newGlobalId = '';
         $newGlobalIdType = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6080,8 +6396,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6135,6 +6455,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -6142,6 +6464,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newCity = '';
         $newCountryId = '';
         $newSubDivision = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6183,9 +6507,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newId,
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newId = '';
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6233,11 +6561,15 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
         $newFaxNumber = '';
         $newEmailAddress = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6276,8 +6608,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newType,
         ?string &$newUri
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newUri = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6293,7 +6629,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentInvoicerName(
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6329,7 +6669,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentInvoicerId(
         ?string &$newId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6368,8 +6712,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newGlobalId = '';
         $newGlobalIdType = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6408,8 +6756,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6463,6 +6815,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -6470,6 +6824,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newCity = '';
         $newCountryId = '';
         $newSubDivision = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6511,9 +6867,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newId,
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newId = '';
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6561,11 +6921,15 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
         $newFaxNumber = '';
         $newEmailAddress = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6604,8 +6968,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newType,
         ?string &$newUri
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newUri = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6621,7 +6989,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentInvoiceeName(
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6657,7 +7029,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentInvoiceeId(
         ?string &$newId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6696,8 +7072,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newGlobalId = '';
         $newGlobalIdType = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6736,8 +7116,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6791,6 +7175,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -6798,6 +7184,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newCity = '';
         $newCountryId = '';
         $newSubDivision = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6839,9 +7227,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newId,
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newId = '';
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6889,11 +7281,15 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
         $newFaxNumber = '';
         $newEmailAddress = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6932,8 +7328,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newType,
         ?string &$newUri
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newUri = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6949,12 +7349,16 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentPayeeName(
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newName = $this
             ->getUblRootObject()
             ->getPayeeParty()
             ?->firstPartyName()
             ?->getName()
             ?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6996,6 +7400,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentPayeeId(
         ?string &$newId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PartyIdentification>
          */
@@ -7007,6 +7413,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $documentPayeeId = $documentPayeeIds[InvoiceSuitePointerUtils::getValue('documentpayeeid')];
 
         $newId = $documentPayeeId->getID()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7051,6 +7459,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PartyIdentification>
          */
@@ -7063,6 +7473,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newGlobalId = $documentPayeeGlobalId->getID()?->getValue() ?? '';
         $newGlobalIdType = $documentPayeeGlobalId->getID()?->getSchemeID() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7101,8 +7513,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7156,6 +7572,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -7163,6 +7581,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newCity = '';
         $newCountryId = '';
         $newSubDivision = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7214,6 +7634,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newId,
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PartyLegalEntity>
          */
@@ -7227,6 +7649,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newType = $documentPayeeLegalOrganisation->getCompanyID()?->getSchemeID() ?? '';
         $newId = $documentPayeeLegalOrganisation->getCompanyID()?->getValue() ?? '';
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7274,11 +7698,15 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
         $newFaxNumber = '';
         $newEmailAddress = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7317,8 +7745,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newType,
         ?string &$newUri
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newUri = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7394,6 +7826,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newPaymentReference,
         ?string &$newMandate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PaymentMeans>
          */
@@ -7415,6 +7849,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newPayeeBic = $documentPaymentMean->getPayeeFinancialAccount()?->getFinancialInstitutionBranch()?->getID()?->getValue() ?? '';
         $newPaymentReference = '';
         $newMandate = $documentPaymentMean->getPaymentMandate()?->getID()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7456,6 +7892,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentPaymentCreditorReferenceID(
         ?string &$newId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PartyIdentification>
          */
@@ -7467,6 +7905,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $documentCreditorReference = $documentCreditorReferences[InvoiceSuitePointerUtils::getValue('documentpaymentcreditorreferences')];
 
         $newId = $documentCreditorReference->getID()->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7502,7 +7942,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentPaymentReference(
         ?string &$newId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7553,6 +7997,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?DateTimeInterface &$newDueDate,
         ?string &$newMandate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<PaymentTerms>
          */
@@ -7566,6 +8012,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newDescription = $documentPaymentTerm->firstNote()?->getValue() ?? '';
         $newDueDate = $this->getUblRootObject()->getDueDate();
         $newMandate = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7616,12 +8064,16 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?float &$newBasePeriod,
         ?string &$newBasePeriodUnit
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newBaseAmount = 0.0;
         $newDiscountAmount = 0.0;
         $newDiscountPercent = 0.0;
         $newBaseDate = null;
         $newBasePeriod = 0.0;
         $newBasePeriodUnit = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7672,12 +8124,16 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?float &$newBasePeriod,
         ?string &$newBasePeriodUnit
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newBaseAmount = 0.0;
         $newPenaltyAmount = 0.0;
         $newPenaltyPercent = 0.0;
         $newBaseDate = null;
         $newBasePeriod = 0.0;
         $newBasePeriodUnit = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7747,6 +8203,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?DateTimeInterface &$newTaxDueDate,
         ?string &$newTaxDueCode
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<TaxSubtotal>
          */
@@ -7766,6 +8224,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newExemptionReasonCode = $documentTax->getTaxCategory()?->getTaxExemptionReasonCode()?->getValue() ?? '';
         $newTaxDueDate = $this->getUblRootObject()->getTaxPointDate();
         $newTaxDueCode = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7835,6 +8295,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newAllowanceChargeReasonCode,
         ?float &$newAllowanceChargePercent
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<AllowanceCharge>
          */
@@ -7854,6 +8316,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newAllowanceChargeReason = $documentAllowanceCharge->firstAllowanceChargeReason()->getValue() ?? '';
         $newAllowanceChargeReasonCode = $documentAllowanceCharge->getAllowanceChargeReasonCode()?->getValue() ?? '';
         $newAllowanceChargePercent = $documentAllowanceCharge->getMultiplierFactorNumeric()?->getValue() ?? 0.0;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7901,11 +8365,15 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newTaxType,
         ?float &$newTaxPercent
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newChargeAmount = 0.0;
         $newDescription = '';
         $newTaxCategory = '';
         $newTaxType = '';
         $newTaxPercent = 0.0;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7947,6 +8415,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?float &$newPrepaidAmount,
         ?float &$newRoungingAmount
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $documentSummation = $this->getUblRootObject()->getLegalMonetaryTotal();
 
         $taxTotalAmount = $this->getUblRootObject()->getTaxTotalAtIndex(0);
@@ -7962,6 +8432,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newDueAmount = $documentSummation?->getPayableAmount()?->getValue() ?? 0.0;
         $newPrepaidAmount = $documentSummation?->getPrepaidAmount()?->getValue() ?? 0.0;
         $newRoungingAmount = $documentSummation?->getPayableRoundingAmount()?->getValue() ?? 0.0;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8020,12 +8492,16 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newLineStatusCode,
         ?string &$newLineStatusReasonCode
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $documentPosition = $this->resolveCurrentDocumentPosition();
 
         $newPositionId = $documentPosition->getID()?->getValue() ?? '';
         $newParentPositionId = '';
         $newLineStatusCode = '';
         $newLineStatusReasonCode = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8073,6 +8549,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newContentCode,
         ?string &$newSubjectCode
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<Note>
          */
@@ -8086,6 +8564,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newContent = $documentPositionNote->getValue() ?? '';
         $newContentCode = '';
         $newSubjectCode = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8137,6 +8617,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newProductModelName,
         ?string &$newProductOriginTradeCountry
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var null|Item
          */
@@ -8155,6 +8637,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newProductBrandName = '';
         $newProductModelName = '';
         $newProductOriginTradeCountry = $documentPositionProduct?->getOriginCountry()?->getIdentificationCode()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8208,6 +8692,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?float &$newProductCharacteristicMeasureValue,
         ?string &$newProductCharacteristicMeasureUnit
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<AdditionalItemProperty>
          */
@@ -8223,6 +8709,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newProductCharacteristicType = '';
         $newProductCharacteristicMeasureValue = 0.0;
         $newProductCharacteristicMeasureUnit = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8273,6 +8761,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newProductClassificationListVersionId,
         ?string &$newProductClassificationCodeClassname
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<CommodityClassification>
          */
@@ -8287,6 +8777,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newProductClassificationListId = $documentPositionProductClassification->getItemClassificationCode()?->getListID() ?? '';
         $newProductClassificationListVersionId = $documentPositionProductClassification->getItemClassificationCode()?->getListVersionID() ?? '';
         $newProductClassificationCodeClassname = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8349,6 +8841,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?float &$newProductUnitQuantity,
         ?string &$newProductUnitQuantityUnit
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newProductId = '';
         $newProductName = '';
         $newProductDescription = '';
@@ -8359,6 +8853,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newProductIndustryId = '';
         $newProductUnitQuantity = 0.0;
         $newProductUnitQuantityUnit = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8400,9 +8896,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8450,6 +8950,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceLineNumber = null,
         ?DateTimeInterface &$newReferenceDate = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<OrderLineReference>
          */
@@ -8463,6 +8965,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newReferenceNumber = '';
         $newReferenceLineNumber = $documentPositionBuyerOrderReference->getLineID()?->getValue() ?? '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8504,9 +9008,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8548,9 +9056,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8604,6 +9116,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newDescription,
         ?InvoiceSuiteAttachment &$newInvoiceSuiteAttachment
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
@@ -8611,6 +9125,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newReferenceTypeCode = '';
         $newDescription = '';
         $newInvoiceSuiteAttachment = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8652,9 +9168,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8696,9 +9216,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8740,9 +9264,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8784,9 +9312,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newReferenceLineNumber,
         ?DateTimeInterface &$newReferenceDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8831,10 +9363,14 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?DateTimeInterface &$newReferenceDate,
         ?string &$newTypeCode
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newReferenceNumber = '';
         $newReferenceLineNumber = '';
         $newReferenceDate = null;
         $newTypeCode = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8882,6 +9418,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newTypeCode = null,
         ?string &$newReferenceTypeCode = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<DocumentReference>
          */
@@ -8895,6 +9433,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newReferenceNumber = $documentPositionAdditionalObjectReferences->getID()?->getValue() ?? '';
         $newTypeCode = $documentPositionAdditionalObjectReferences->getDocumentTypeCode()?->getValue() ?? '';
         $newReferenceTypeCode = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8926,9 +9466,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?float &$newGrossPriceBasisQuantity,
         ?string &$newGrossPriceBasisQuantityUnit
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newGrossPrice = 0.0;
         $newGrossPriceBasisQuantity = 0.0;
         $newGrossPriceBasisQuantityUnit = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8979,12 +9523,16 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newGrossPriceAllowanceChargeReason,
         ?string &$newGrossPriceAllowanceChargeReasonCode
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newGrossPriceAllowanceChargeAmount = 0.0;
         $newIsCharge = false;
         $newGrossPriceAllowanceChargePercent = 0.0;
         $newGrossPriceAllowanceChargeBasisAmount = 0.0;
         $newGrossPriceAllowanceChargeReason = '';
         $newGrossPriceAllowanceChargeReasonCode = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9016,11 +9564,15 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?float &$newNetPriceBasisQuantity,
         ?string &$newNetPriceBasisQuantityUnit
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $documentPosition = $this->resolveCurrentDocumentPosition();
 
         $newNetPrice = $documentPosition->getPrice()?->getPriceAmount()?->getValue() ?? 0.0;
         $newNetPriceBasisQuantity = $documentPosition->getPrice()?->getBaseQuantity()?->getValue() ?? 0.0;
         $newNetPriceBasisQuantityUnit = $documentPosition->getPrice()?->getBaseQuantity()?->getUnitCode() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9051,12 +9603,16 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newExemptionReason,
         ?string &$newExemptionReasonCode
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newTaxCategory = '';
         $newTaxType = '';
         $newTaxAmount = 0.0;
         $newTaxPercent = 0.0;
         $newExemptionReason = '';
         $newExemptionReasonCode = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9093,6 +9649,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?float &$newPerPackageUnitQuantity,
         ?string &$newPerPackageUnitQuantityUnit,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $documentPosition = $this->resolveCurrentDocumentPosition();
 
         $newQuantity = $documentPosition->getInvoicedQuantity()?->getValue() ?? 0.0;
@@ -9103,6 +9661,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newPackageQuantityUnit = '';
         $newPerPackageUnitQuantity = 0.0;
         $newPerPackageUnitQuantityUnit = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9118,7 +9678,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentPositionShipToName(
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9154,7 +9718,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentPositionShipToId(
         ?string &$newId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9193,8 +9761,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newGlobalId = '';
         $newGlobalIdType = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9233,8 +9805,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9288,6 +9864,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -9295,6 +9873,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newCity = '';
         $newCountryId = '';
         $newSubDivision = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9336,9 +9916,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newId,
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newId = '';
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9386,11 +9970,15 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
         $newFaxNumber = '';
         $newEmailAddress = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9429,8 +10017,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newType,
         ?string &$newUri
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newUri = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9446,7 +10038,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentPositionUltimateShipToName(
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9482,7 +10078,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentPositionUltimateShipToId(
         ?string &$newId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9521,8 +10121,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newGlobalId = '';
         $newGlobalIdType = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9561,8 +10165,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newTaxRegistrationType = '';
         $newTaxRegistrationId = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9616,6 +10224,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
@@ -9623,6 +10233,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newCity = '';
         $newCountryId = '';
         $newSubDivision = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9664,9 +10276,13 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newId,
         ?string &$newName
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newId = '';
         $newName = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9714,11 +10330,15 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newPersonName = '';
         $newDepartmentName = '';
         $newPhoneNumber = '';
         $newFaxNumber = '';
         $newEmailAddress = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9757,8 +10377,12 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newType,
         ?string &$newUri
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newType = '';
         $newUri = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9774,7 +10398,11 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
     public function getDocumentPositionSupplyChainEvent(
         ?DateTimeInterface &$newDate
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newDate = null;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9826,6 +10454,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?DateTimeInterface &$newEndDate,
         ?string &$newDescription,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<InvoicePeriod>
          */
@@ -9839,6 +10469,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newStartDate = $positionBillingPeriod->getStartDate();
         $newEndDate = $positionBillingPeriod->getEndDate();
         $newDescription = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9899,6 +10531,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newExemptionReason,
         ?string &$newExemptionReasonCode,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<ClassifiedTaxCategory>
          */
@@ -9915,6 +10549,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newTaxPercent = $positionTax->getPercent()?->getValue() ?? 0.0;
         $newExemptionReason = '';
         $newExemptionReasonCode = '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -9975,6 +10611,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newAllowanceChargeReasonCode,
         ?float &$newAllowanceChargePercent
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<AllowanceCharge>
          */
@@ -9991,6 +10629,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $newAllowanceChargeReason = $positionAllowanceCharge->firstAllowanceChargeReason()->getValue() ?? '';
         $newAllowanceChargeReasonCode = $positionAllowanceCharge->getAllowanceChargeReasonCode()?->getValue() ?? '';
         $newAllowanceChargePercent = $positionAllowanceCharge->getMultiplierFactorNumeric()?->getValue() ?? 0.0;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -10028,11 +10668,15 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?float &$newTaxTotalAmount,
         ?float &$newGrossAmount
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $newNetAmount = $this->resolveCurrentDocumentPosition()->getLineExtensionAmount()?->getValue() ?? 0.0;
         $newChargeTotalAmount = 0.0;
         $newDiscountTotalAmount = 0.0;
         $newTaxTotalAmount = 0.0;
         $newGrossAmount = 0.0;
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -10081,6 +10725,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         ?string &$newType,
         ?string &$newAccountId
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         /**
          * @var array<AccountingCostCode>
          */
@@ -10093,6 +10739,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
 
         $newType = '';
         $newAccountId = $positionPostingReference->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }

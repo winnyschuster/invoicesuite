@@ -23,8 +23,11 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteBadMethodCallException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
+use horstoeko\invoicesuite\utils\InvoiceSuiteMessageBagItem;
+use horstoeko\invoicesuite\utils\InvoiceSuiteMessageSeverity;
 use JMS\Serializer\Exception\RuntimeException;
 
 /**
@@ -155,6 +158,165 @@ class InvoiceSuiteDocumentReader
     public function getOriginalDocumentContent(): string
     {
         return $this->getRawDocumentContent();
+    }
+
+    /**
+     * Check if any messages exist in the internal message bag.
+     *
+     * @return bool
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function hasMessagesInMessageBag(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->hasMessagesInMessageBag();
+    }
+
+    /**
+     * Check if any messages with the given severity exist in internal message bag.
+     *
+     * @param  InvoiceSuiteMessageSeverity $filterSeverity
+     * @return bool
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function hasMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->hasMessagesInMessageBagBySeverity($filterSeverity);
+    }
+
+    /**
+     * Check if any INFO messages exist in internal message bag.
+     *
+     * @return bool
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function hasInfoMessagesInMessageBag(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->hasInfoMessagesInMessageBag();
+    }
+
+    /**
+     * Check if any WARNING messages exist in internal message bag.
+     *
+     * @return bool
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function hasWarningMessagesInMessageBag(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->hasWarningMessagesInMessageBag();
+    }
+
+    /**
+     * Check if any ERROR messages exist in internal message bag.
+     *
+     * @return bool
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function hasErrorMessagesInMessageBag(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->hasErrorMessagesInMessageBag();
+    }
+
+    /**
+     * Count messages by severity in internal message bag.
+     *
+     * @param  InvoiceSuiteMessageSeverity $filterSeverity
+     * @return int
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function countMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): int
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->countMessagesInMessageBagBySeverity($filterSeverity);
+    }
+
+    /**
+     * Count INFO messages in internal message bag.
+     *
+     * @return int
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function countInfoMessagesInMessageBag(): int
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->countInfoMessagesInMessageBag();
+    }
+
+    /**
+     * Count WARNING messages in internal message bag.
+     *
+     * @return int
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function countWarningMessagesInMessageBag(): int
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->countWarningMessagesInMessageBag();
+    }
+
+    /**
+     * Count ERROR messages in internal message bag.
+     *
+     * @return int
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function countErrorMessagesInMessageBag(): int
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->countErrorMessagesInMessageBag();
+    }
+
+    /**
+     * Get messages by severity from internal message bag.
+     *
+     * @param  InvoiceSuiteMessageSeverity            $filterSeverity
+     * @return array<int, InvoiceSuiteMessageBagItem>
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function getMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): array
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->getMessagesInMessageBagBySeverity($filterSeverity);
+    }
+
+    /**
+     * Get INFO messages from internal message bag.
+     *
+     * @return array<int, InvoiceSuiteMessageBagItem>
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function getInfoMessagesInMessageBag(): array
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->getInfoMessagesInMessageBag();
+    }
+
+    /**
+     * Get WARNING messages from internal message bag.
+     *
+     * @return array<int, InvoiceSuiteMessageBagItem>
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function getWarningMessagesInMessageBag(): array
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->getWarningMessagesInMessageBag();
+    }
+
+    /**
+     * Get ERROR messages from internal message bag.
+     *
+     * @return array<int, InvoiceSuiteMessageBagItem>
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function getErrorMessagesInMessageBag(): array
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->getErrorMessagesInMessageBag();
     }
 
     /**

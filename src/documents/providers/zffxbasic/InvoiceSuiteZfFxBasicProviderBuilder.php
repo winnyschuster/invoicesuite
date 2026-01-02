@@ -71,6 +71,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         string $newContextParameter,
         string $newBusinessProcessContextParameter = '',
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newContextParameter)) {
             $this
                 ->getCrossIndustryRootObject()
@@ -89,6 +91,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
                 ->setValue($newBusinessProcessContextParameter);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -101,6 +105,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function createFromDTO(
         InvoiceSuiteDocumentHeaderDTO $newDocumentDTO
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Document-Level General information
 
         $this->setDocumentNo($newDocumentDTO->getNumber());
@@ -1270,6 +1276,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             }
         );
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -1282,9 +1290,13 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentNo(
         ?string $newDocumentNo = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetID();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentNo])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentNo])');
+
             return $this;
         }
 
@@ -1293,6 +1305,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getExchangedDocumentWithCreate()
             ->getIDWithCreate()
             ->setValue($newDocumentNo);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1306,9 +1320,13 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentType(
         ?string $newDocumentType = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetTypeCode();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentType])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentType])');
+
             return $this;
         }
 
@@ -1317,6 +1335,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getExchangedDocumentWithCreate()
             ->getTypeCodeWithCreate()
             ->setValue($newDocumentType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1330,7 +1350,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentDescription(
         ?string $newDocumentDescription = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1344,7 +1368,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentLanguage(
         ?string $newDocumentLanguage = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1358,9 +1386,13 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentDate(
         ?DateTimeInterface $newDocumentDate = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetIssueDateTime();
 
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDocumentDate])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDocumentDate])');
+
             return $this;
         }
 
@@ -1371,6 +1403,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getDateTimeStringWithCreate()
             ->setValue($newDocumentDate->format('Ymd'))
             ->setFormat('102');
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1384,7 +1418,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentCompleteDate(
         ?DateTimeInterface $newCompleteDate = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1398,10 +1436,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentCurrency(
         ?string $newDocumentCurrency = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->unsetInvoiceCurrencyCode();
         $this->updateCurrencies();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentCurrency])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentCurrency])');
+
             return $this;
         }
 
@@ -1413,6 +1455,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->setValue($newDocumentCurrency);
 
         $this->updateCurrencies();
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1426,10 +1470,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentTaxCurrency(
         ?string $newDocumentTaxCurrency = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->unsetTaxCurrencyCode();
         $this->updateCurrencies();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentTaxCurrency])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDocumentTaxCurrency])');
+
             return $this;
         }
 
@@ -1441,6 +1489,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->setValue($newDocumentTaxCurrency);
 
         $this->updateCurrencies();
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1454,7 +1504,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentIsCopy(
         ?bool $newDocumentIsCopy = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1468,7 +1522,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentIsTest(
         ?bool $newDocumentIsTest = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1486,13 +1544,19 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->getCrossIndustryRootObject()->getExchangedDocumentWithCreate()->unsetIncludedNote();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])');
+
             return $this;
         }
 
         $this->addDocumentNote($newContent, $newContentCode, $newSubjectCode);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1510,7 +1574,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])');
+
             return $this;
         }
 
@@ -1524,6 +1592,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         if (!InvoiceSuiteStringUtils::allIsNullOrEmpty([$newSubjectCode])) {
             $note->getSubjectCodeWithCreate()->setValue($newSubjectCode);
         }
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1541,6 +1611,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -1548,6 +1620,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetBillingSpecifiedPeriod();
 
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])');
+
             return $this;
         }
 
@@ -1569,6 +1643,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->setValue($newEndDate->format('Ymd'))
             ->setFormat('102');
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -1585,7 +1661,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])');
+
             return $this;
         }
 
@@ -1594,6 +1674,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $newEndDate,
             $newDescription
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1607,6 +1689,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -1614,6 +1698,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetReceivableSpecifiedTradeAccountingAccount();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])');
+
             return $this;
         }
 
@@ -1624,6 +1710,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getReceivableSpecifiedTradeAccountingAccountWithCreate()
             ->getIDWithCreate()
             ->setValue($newAccountId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1637,11 +1725,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAccountId])');
+
             return $this;
         }
 
         $this->setDocumentPostingReference($newType, $newAccountId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1657,7 +1751,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1673,7 +1771,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1689,6 +1791,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -1696,6 +1800,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetBuyerOrderReferencedDocument();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
@@ -1706,6 +1812,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getBuyerOrderReferencedDocumentWithCreate()
             ->getIssuerAssignedIDWithCreate()
             ->setValue($newReferenceNumber);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1721,11 +1829,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
         $this->setDocumentBuyerOrderReference($newReferenceNumber, $newReferenceDate);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1741,7 +1855,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1757,7 +1875,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1773,6 +1895,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -1780,6 +1904,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetContractReferencedDocument();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
@@ -1790,6 +1916,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getContractReferencedDocumentWithCreate()
             ->getIssuerAssignedIDWithCreate()
             ->setValue($newReferenceNumber);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1805,11 +1933,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
         $this->setDocumentContractReference($newReferenceNumber, $newReferenceDate);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1833,7 +1967,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1857,7 +1995,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1875,6 +2017,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -1882,6 +2026,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetInvoiceReferencedDocument();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
@@ -1890,6 +2036,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $newReferenceDate,
             $newTypeCode
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1907,7 +2055,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
@@ -1929,6 +2081,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
                 ->setFormat('102');
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -1941,7 +2095,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1955,7 +2113,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1971,7 +2133,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -1987,7 +2153,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2003,6 +2173,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -2010,6 +2182,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetDespatchAdviceReferencedDocument();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
@@ -2020,6 +2194,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getDespatchAdviceReferencedDocumentWithCreate()
             ->getIssuerAssignedIDWithCreate()
             ->setValue($newReferenceNumber);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2035,11 +2211,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])');
+
             return $this;
         }
 
         $this->setDocumentDespatchAdviceReference($newReferenceNumber, $newReferenceDate);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2055,7 +2237,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2071,7 +2257,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2087,7 +2277,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2103,7 +2297,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2117,6 +2315,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentSupplyChainEvent(
         ?DateTimeInterface $newDate = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -2124,6 +2324,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetActualDeliverySupplyChainEvent();
 
         if (InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDate)) {
+            $this->traceMethodEarlyExit(__METHOD__, 'datetimeIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDate)');
+
             return $this;
         }
 
@@ -2137,6 +2339,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->setValue($newDate->format('Ymd'))
             ->setFormat('102');
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -2149,6 +2353,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentBuyerReference(
         ?string $newBuyerReference = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -2156,6 +2362,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetBuyerReference();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newBuyerReference])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newBuyerReference])');
+
             return $this;
         }
 
@@ -2165,6 +2373,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getApplicableHeaderTradeAgreementWithCreate()
             ->getBuyerReferenceWithCreate()
             ->setValue($newBuyerReference);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2178,7 +2388,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentDeliveryTerms(
         ?string $newCode = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2192,6 +2406,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentSellerName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -2200,6 +2416,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetName();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
@@ -2210,6 +2428,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getSellerTradePartyWithCreate()
             ->getNameWithCreate()
             ->setValue($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2223,11 +2443,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentSellerName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
         $this->setDocumentSellerName($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2241,6 +2467,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentSellerId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -2249,10 +2477,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetID();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
         $this->addDocumentSellerId($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2266,7 +2498,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentSellerId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
@@ -2277,6 +2513,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getSellerTradePartyWithCreate()
             ->addToIDWithCreate()
             ->setValue($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2290,6 +2528,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -2298,10 +2538,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetGlobalID();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
         $this->addDocumentSellerGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2315,7 +2559,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
@@ -2327,6 +2575,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->addToGlobalIDWithCreate()
             ->setValue($newGlobalId)
             ->setSchemeID($newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2342,6 +2592,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -2350,10 +2602,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetSpecifiedTaxRegistration();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
+
             return $this;
         }
 
         $this->addDocumentSellerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2369,9 +2625,13 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
+
             return $this;
         }
 
@@ -2384,6 +2644,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getIDWithCreate()
             ->setValue($newTaxRegistrationId)
             ->setSchemeID($newTaxRegistrationType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2409,6 +2671,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -2427,6 +2691,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
                 $newSubDivision,
             ])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([ $newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision, ])');
+
             return $this;
         }
 
@@ -2464,6 +2730,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $sellerTradeParty->getPostalTradeAddressWithCreate()->getCountrySubDivisionNameWithCreate()->setValue($newSubDivision);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -2488,6 +2756,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -2499,6 +2769,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
                 $newSubDivision,
             ])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([ $newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision, ])');
+
             return $this;
         }
 
@@ -2511,6 +2783,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $newCountryId,
             $newSubDivision
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2528,6 +2802,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -2536,6 +2812,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetSpecifiedLegalOrganization();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])');
+
             return $this;
         }
 
@@ -2557,6 +2835,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $sellerTradeParty->getSpecifiedLegalOrganizationWithCreate()->getTradingBusinessNameWithCreate()->setValue($newName);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -2573,11 +2853,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])');
+
             return $this;
         }
 
         $this->setDocumentSellerLegalOrganisation($newType, $newId, $newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2599,7 +2885,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2621,7 +2911,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2635,6 +2929,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -2643,6 +2939,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetURIUniversalCommunication();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])');
+
             return $this;
         }
 
@@ -2656,6 +2954,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->setValue($newUri)
             ->setSchemeID($newType);
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -2668,11 +2968,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])');
+
             return $this;
         }
 
         $this->setDocumentSellerCommunication($newType, $newUri);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2686,6 +2992,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentBuyerName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -2694,6 +3002,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetName();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
@@ -2704,6 +3014,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getBuyerTradePartyWithCreate()
             ->getNameWithCreate()
             ->setValue($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2717,11 +3029,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentBuyerName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
         $this->setDocumentBuyerName($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2735,6 +3053,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentBuyerId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -2743,10 +3063,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetID();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
         $this->addDocumentBuyerId($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2760,7 +3084,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentBuyerId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
@@ -2771,6 +3099,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getBuyerTradePartyWithCreate()
             ->addToIDWithCreate()
             ->setValue($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2784,6 +3114,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -2794,10 +3126,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
         $this->addDocumentBuyerGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2811,9 +3147,13 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
@@ -2825,6 +3165,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->addToGlobalIDWithCreate()
             ->setValue($newGlobalId)
             ->setSchemeID($newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2840,6 +3182,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -2850,10 +3194,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
+
             return $this;
         }
 
         $this->addDocumentBuyerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2869,9 +3217,13 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
+
             return $this;
         }
 
@@ -2884,6 +3236,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getIDWithCreate()
             ->setValue($newTaxRegistrationId)
             ->setSchemeID($newTaxRegistrationType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -2909,6 +3263,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -2927,6 +3283,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
                 $newSubDivision,
             ])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([ $newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision, ])');
+
             return $this;
         }
 
@@ -2964,6 +3322,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $buyerTradeParty->getPostalTradeAddressWithCreate()->getCountrySubDivisionNameWithCreate()->setValue($newSubDivision);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -2988,6 +3348,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -2999,6 +3361,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
                 $newSubDivision,
             ])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([ $newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision, ])');
+
             return $this;
         }
 
@@ -3011,6 +3375,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $newCountryId,
             $newSubDivision
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3028,6 +3394,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -3036,6 +3404,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetSpecifiedLegalOrganization();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])');
+
             return $this;
         }
 
@@ -3057,6 +3427,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $buyerTradeParty->getSpecifiedLegalOrganizationWithCreate()->getTradingBusinessNameWithCreate()->setValue($newName);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -3073,11 +3445,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])');
+
             return $this;
         }
 
         $this->setDocumentBuyerLegalOrganisation($newType, $newId, $newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3099,7 +3477,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3121,7 +3503,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3135,6 +3521,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -3143,6 +3531,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetURIUniversalCommunication();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])');
+
             return $this;
         }
 
@@ -3161,6 +3551,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $buyerUniversalCommunication->getURIIDWithCreate()->setValue($newUri);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -3173,11 +3565,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])');
+
             return $this;
         }
 
         $this->setDocumentBuyerCommunication($newType, $newUri);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3191,6 +3589,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentTaxRepresentativeName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -3199,6 +3599,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetName();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
@@ -3209,6 +3611,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getSellerTaxRepresentativeTradePartyWithCreate()
             ->getNameWithCreate()
             ->setValue($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3222,11 +3626,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentTaxRepresentativeName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
         $this->setDocumentTaxRepresentativeName($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3240,7 +3650,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentTaxRepresentativeId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3254,7 +3668,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentTaxRepresentativeId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3270,7 +3688,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3286,7 +3708,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3302,6 +3728,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -3312,10 +3740,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
+
             return $this;
         }
 
         $this->addDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3331,9 +3763,13 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
+
             return $this;
         }
 
@@ -3346,6 +3782,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getIDWithCreate()
             ->setValue($newTaxRegistrationId)
             ->setSchemeID($newTaxRegistrationType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3371,6 +3809,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -3389,6 +3829,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
                 $newSubDivision,
             ])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([ $newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision, ])');
+
             return $this;
         }
 
@@ -3426,6 +3868,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $taxRepresentativeTradeParty->getPostalTradeAddressWithCreate()->getCountrySubDivisionNameWithCreate()->setValue($newSubDivision);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -3450,6 +3894,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -3461,6 +3907,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
                 $newSubDivision,
             ])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([ $newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision, ])');
+
             return $this;
         }
 
@@ -3473,6 +3921,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $newCountryId,
             $newSubDivision
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3490,7 +3940,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3508,7 +3962,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3530,7 +3988,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3552,7 +4014,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3566,7 +4032,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3580,7 +4050,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3594,7 +4068,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentProductEndUserName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3608,7 +4086,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentProductEndUserName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3622,7 +4104,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentProductEndUserId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3636,7 +4122,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentProductEndUserId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3652,7 +4142,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3668,7 +4162,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3684,7 +4182,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3700,7 +4202,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3726,7 +4232,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3752,7 +4262,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3770,7 +4284,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3788,7 +4306,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3810,7 +4332,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3832,7 +4358,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3846,7 +4376,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3860,7 +4394,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3874,6 +4412,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -3882,6 +4422,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetName();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
@@ -3892,6 +4434,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getShipToTradePartyWithCreate()
             ->getNameWithCreate()
             ->setValue($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3905,11 +4449,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
         $this->setDocumentShipToName($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3923,6 +4473,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -3931,10 +4483,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetID();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
         $this->addDocumentShipToId($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3948,7 +4504,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
@@ -3959,6 +4519,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getShipToTradePartyWithCreate()
             ->addToIDWithCreate()
             ->setValue($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3972,6 +4534,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -3982,10 +4546,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
         $this->addDocumentShipToGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -3999,9 +4567,13 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
@@ -4013,6 +4585,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->addToGlobalIDWithCreate()
             ->setValue($newGlobalId)
             ->setSchemeID($newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4028,7 +4602,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4044,7 +4622,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4070,6 +4652,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -4088,6 +4672,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
                 $newSubDivision,
             ])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([ $newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision, ])');
+
             return $this;
         }
 
@@ -4125,6 +4711,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $shipToTradeParty->getPostalTradeAddressWithCreate()->getCountrySubDivisionNameWithCreate()->setValue($newSubDivision);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -4149,6 +4737,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::allIsNullOrEmpty([
                 $newAddressLine1,
@@ -4160,6 +4750,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
                 $newSubDivision,
             ])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([ $newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision, ])');
+
             return $this;
         }
 
@@ -4172,6 +4764,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $newCountryId,
             $newSubDivision
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4189,7 +4783,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4207,7 +4805,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4229,7 +4831,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4251,7 +4857,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4265,7 +4875,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4279,7 +4893,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4293,7 +4911,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentUltimateShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4307,7 +4929,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentUltimateShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4321,7 +4947,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentUltimateShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4335,7 +4965,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentUltimateShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4351,7 +4985,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4367,7 +5005,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4383,7 +5025,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4399,7 +5045,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4425,7 +5075,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4451,7 +5105,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4469,7 +5127,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4487,7 +5149,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4509,7 +5175,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4531,7 +5201,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4545,7 +5219,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4559,7 +5237,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4573,7 +5255,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentShipFromName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4587,7 +5273,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentShipFromName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4601,7 +5291,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentShipFromId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4615,7 +5309,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentShipFromId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4629,7 +5327,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4643,7 +5345,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4659,7 +5365,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4675,7 +5385,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4701,7 +5415,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4727,7 +5445,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4745,7 +5467,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4763,7 +5489,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4785,7 +5515,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4807,7 +5541,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4821,7 +5559,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4835,7 +5577,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4849,7 +5595,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentInvoicerName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4863,7 +5613,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentInvoicerName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4877,7 +5631,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentInvoicerId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4891,7 +5649,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentInvoicerId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4905,7 +5667,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4919,7 +5685,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4935,7 +5705,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4951,7 +5725,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -4977,7 +5755,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5003,7 +5785,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5021,7 +5807,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5039,7 +5829,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5061,7 +5855,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5083,7 +5881,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5097,7 +5899,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5111,7 +5917,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5125,7 +5935,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentInvoiceeName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5139,7 +5953,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentInvoiceeName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5153,7 +5971,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentInvoiceeId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5167,7 +5989,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentInvoiceeId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5181,7 +6007,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5195,7 +6025,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5211,7 +6045,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5227,7 +6065,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5253,7 +6095,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5279,7 +6125,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5297,7 +6147,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5315,7 +6169,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5337,7 +6195,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5359,7 +6221,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5373,7 +6239,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5387,7 +6257,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5401,6 +6275,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentPayeeName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -5409,6 +6285,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetName();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
@@ -5419,6 +6297,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getPayeeTradePartyWithCreate()
             ->getNameWithCreate()
             ->setValue($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5432,11 +6312,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentPayeeName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newName])');
+
             return $this;
         }
 
         $this->setDocumentPayeeName($newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5450,6 +6336,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentPayeeId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -5458,10 +6346,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetID();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
         $this->addDocumentPayeeId($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5475,7 +6367,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentPayeeId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
@@ -5486,6 +6382,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getPayeeTradePartyWithCreate()
             ->addToIDWithCreate()
             ->setValue($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5499,6 +6397,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -5509,10 +6409,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
         $this->addDocumentPayeeGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5526,9 +6430,13 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
+
             return $this;
         }
 
@@ -5540,6 +6448,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->addToGlobalIDWithCreate()
             ->setValue($newGlobalId)
             ->setSchemeID($newGlobalIdType);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5555,7 +6465,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5571,7 +6485,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5597,7 +6515,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5623,7 +6545,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5641,6 +6567,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -5649,6 +6577,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetSpecifiedLegalOrganization();
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId])');
+
             return $this;
         }
 
@@ -5666,6 +6596,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             }
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -5682,11 +6614,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId])');
+
             return $this;
         }
 
         $this->setDocumentPayeeLegalOrganisation($newType, $newId, $newName);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5708,7 +6646,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5730,7 +6672,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5744,7 +6690,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentPayeeCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5758,7 +6708,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentPayeeCommunication(?string $newType = null, ?string $newUri = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5792,6 +6746,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newPaymentReference = null,
         ?string $newMandate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -5799,6 +6755,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetSpecifiedTradeSettlementPaymentMeans();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTypeCode])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTypeCode])');
+
             return $this;
         }
 
@@ -5815,6 +6773,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $newPaymentReference,
             $newMandate
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5848,7 +6808,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newPaymentReference = null,
         ?string $newMandate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTypeCode])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTypeCode])');
+
             return $this;
         }
 
@@ -5900,6 +6864,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $paymentTerm->getDirectDebitMandateIDWithCreate()->setValue($newMandate);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -5920,6 +6886,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->setDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_58->value,
             newPayeeIban: $newPayeeIban,
@@ -5928,6 +6896,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             newPayeeBic: $newPayeeBic,
             newPaymentReference: $newPaymentReference,
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5949,6 +6919,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->addDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_58->value,
             newPayeeIban: $newPayeeIban,
@@ -5957,6 +6929,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             newPayeeBic: $newPayeeBic,
             newPaymentReference: $newPaymentReference,
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -5978,6 +6952,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->setDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_30->value,
             newPayeeIban: $newPayeeIban,
@@ -5986,6 +6962,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             newPayeeBic: $newPayeeBic,
             newPaymentReference: $newPaymentReference,
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6007,6 +6985,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newPayeeBic = null,
         ?string $newPaymentReference = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->addDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_30->value,
             newPayeeIban: $newPayeeIban,
@@ -6015,6 +6995,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             newPayeeBic: $newPayeeBic,
             newPaymentReference: $newPaymentReference,
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6030,11 +7012,15 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->setDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_59->value,
             newBuyerIban: $newBuyerIban,
             newMandate: $newMandate
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6050,11 +7036,15 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->addDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_59->value,
             newBuyerIban: $newBuyerIban,
             newMandate: $newMandate
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6070,11 +7060,15 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->setDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_49->value,
             newBuyerIban: $newBuyerIban,
             newMandate: $newMandate
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6090,11 +7084,15 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newBuyerIban = null,
         ?string $newMandate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->addDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_49->value,
             newBuyerIban: $newBuyerIban,
             newMandate: $newMandate
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6110,11 +7108,15 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFinancialCardId = null,
         ?string $newFinancialCardHolder = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->setDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_48->value,
             newFinancialCardId: $newFinancialCardId,
             newFinancialCardHolder: $newFinancialCardHolder
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6130,11 +7132,15 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFinancialCardId = null,
         ?string $newFinancialCardHolder = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this->addDocumentPaymentMean(
             newTypeCode: InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_48->value,
             newFinancialCardId: $newFinancialCardId,
             newFinancialCardHolder: $newFinancialCardHolder
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6148,6 +7154,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentPaymentCreditorReferenceID(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -6155,6 +7163,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetCreditorReferenceID();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
@@ -6164,6 +7174,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getApplicableHeaderTradeSettlementWithCreate()
             ->getCreditorReferenceIDWithCreate()
             ->setValue($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6177,11 +7189,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentPaymentCreditorReferenceID(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
         $this->setDocumentPaymentCreditorReferenceID($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6195,6 +7213,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentPaymentReference(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -6202,6 +7222,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetPaymentReference();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
@@ -6211,6 +7233,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getApplicableHeaderTradeSettlementWithCreate()
             ->getPaymentReferenceWithCreate()
             ->setValue($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6224,11 +7248,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentPaymentReference(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newId])');
+
             return $this;
         }
 
         $this->setDocumentPaymentReference($newId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6246,6 +7276,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface $newDueDate = null,
         ?string $newMandate = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -6253,6 +7285,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetSpecifiedTradePaymentTerms();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDescription])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDescription])');
+
             return $this;
         }
 
@@ -6278,6 +7312,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
                 ->setValue($newMandate);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -6294,11 +7330,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface $newDueDate = null,
         ?string $newMandate = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDescription])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newDescription])');
+
             return $this;
         }
 
         $this->setDocumentPaymentTerm($newDescription, $newDueDate, $newMandate);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6322,7 +7364,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6346,7 +7392,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6370,7 +7420,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6394,7 +7448,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?float $newBasePeriod = null,
         ?string $newBasePeriodUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6424,6 +7482,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface $newTaxDueDate = null,
         ?string $newTaxDueCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -6434,6 +7494,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
             || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType]) || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])');
+
             return $this;
         }
 
@@ -6448,6 +7510,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $newTaxDueDate,
             $newTaxDueCode
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6477,10 +7541,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface $newTaxDueDate = null,
         ?string $newTaxDueCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
             || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType]) || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])');
+
             return $this;
         }
 
@@ -6511,6 +7579,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $applicableTradeTax->getDueDateTypeCodeWithCreate()->setValue($newTaxDueCode);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -6539,6 +7609,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -6549,6 +7621,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
             || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType]) || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])');
+
             return $this;
         }
 
@@ -6563,6 +7637,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $newAllowanceChargeReasonCode,
             $newAllowanceChargePercent
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6592,10 +7668,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
             || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType]) || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])');
+
             return $this;
         }
 
@@ -6646,6 +7726,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $categoryTradeTax->getRateApplicablePercentWithCreate()->setValue($newTaxPercent);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -6666,7 +7748,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxType = null,
         ?float $newTaxPercent = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6688,7 +7774,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxType = null,
         ?float $newTaxPercent = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6769,6 +7859,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?float $newPrepaidAmount = null,
         ?float $newRoungingAmount = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -6776,6 +7868,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetSpecifiedTradeSettlementHeaderMonetarySummation();
 
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetAmount, $newTaxBasisAmount, $newTaxTotalAmount, $newGrossAmount, $newDueAmount])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetAmount, $newTaxBasisAmount, $newTaxTotalAmount, $newGrossAmount, $newDueAmount])');
+
             return $this;
         }
 
@@ -6810,6 +7904,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
 
         $this->updateCurrencies();
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -6828,7 +7924,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newLineStatusCode = null,
         ?string $newLineStatusReasonCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newPositionId])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newPositionId])');
+
             return $this;
         }
 
@@ -6839,6 +7939,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getAssociatedDocumentLineDocumentWithCreate()
             ->getLineIDWithCreate()
             ->setValue($newPositionId);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6856,6 +7958,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -6864,6 +7968,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetIncludedNote();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])');
+
             return $this;
         }
 
@@ -6875,6 +7981,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getIncludedNoteWithCreate();
 
         $positionNote->getContentWithCreate()->setValue($newContent);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6892,11 +8000,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newContentCode = null,
         ?string $newSubjectCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newContent])');
+
             return $this;
         }
 
         $this->setDocumentPositionNote($newContent, $newContentCode, $newSubjectCode);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6934,6 +8048,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newProductModelName = null,
         ?string $newProductOriginTradeCountry = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -6941,6 +8057,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetSpecifiedTradeProduct();
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductName])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductName])');
+
             return $this;
         }
 
@@ -6955,6 +8073,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newProductGlobalIdType, $newProductGlobalId])) {
             $positionProduct->getGlobalIDWithCreate()->setValue($newProductGlobalId)->setSchemeID($newProductGlobalIdType);
         }
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6976,7 +8096,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?float $newProductCharacteristicMeasureValue = null,
         ?string $newProductCharacteristicMeasureUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -6998,7 +8122,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?float $newProductCharacteristicMeasureValue = null,
         ?string $newProductCharacteristicMeasureUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7018,7 +8146,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newProductClassificationListVersionId = null,
         ?string $newProductClassificationCodeClassname = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7038,7 +8170,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newProductClassificationListVersionId = null,
         ?string $newProductClassificationCodeClassname = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7070,7 +8206,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?float $newProductUnitQuantity = null,
         ?string $newProductUnitQuantityUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7102,7 +8242,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?float $newProductUnitQuantity = null,
         ?string $newProductUnitQuantityUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7120,7 +8264,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7138,7 +8286,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7156,7 +8308,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7174,7 +8330,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7192,7 +8352,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7210,7 +8374,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7228,7 +8396,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7246,7 +8418,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7272,7 +8448,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7298,7 +8478,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newDescription = null,
         ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7316,7 +8500,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7334,7 +8522,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7352,7 +8544,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7370,7 +8566,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7388,7 +8588,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7406,7 +8610,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7424,7 +8632,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7442,7 +8654,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newReferenceLineNumber = null,
         ?DateTimeInterface $newReferenceDate = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7462,7 +8678,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7482,7 +8702,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface $newReferenceDate = null,
         ?string $newTypeCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7500,7 +8724,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTypeCode = null,
         ?string $newReferenceTypeCode = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7518,7 +8746,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTypeCode = null,
         ?string $newReferenceTypeCode = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7536,6 +8768,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?float $newGrossPriceBasisQuantity = null,
         ?string $newGrossPriceBasisQuantityUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -7544,6 +8778,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetGrossPriceProductTradePrice();
 
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPrice])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPrice])');
+
             return $this;
         }
 
@@ -7562,6 +8798,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ) {
             $grossPrice->getBasisQuantityWithCreate()->setValue($newGrossPriceBasisQuantity)->setUnitCode($newGrossPriceBasisQuantityUnit);
         }
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7585,6 +8823,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newGrossPriceAllowanceChargeReason = null,
         ?string $newGrossPriceAllowanceChargeReasonCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $grossPrice = $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -7593,18 +8833,24 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->getGrossPriceProductTradePrice();
 
         if (is_null($grossPrice)) {
+            $this->traceMethodEarlyExit(__METHOD__, 'null', 'is_null($grossPrice)');
+
             return $this;
         }
 
         $grossPrice->unsetAppliedTradeAllowanceCharge();
 
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeAmount]) || is_null($newIsCharge)) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeAmount]) || is_null($newIsCharge)');
+
             return $this;
         }
 
         $allowanceCharge = $grossPrice->getAppliedTradeAllowanceChargeWithCreate();
         $allowanceCharge->getActualAmountWithCreate()->setValue($newGrossPriceAllowanceChargeAmount);
         $allowanceCharge->getChargeIndicatorWithCreate()->setIndicator($newIsCharge);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7628,7 +8874,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newGrossPriceAllowanceChargeReason = null,
         ?string $newGrossPriceAllowanceChargeReasonCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeAmount]) || is_null($newIsCharge)) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeAmount]) || is_null($newIsCharge)');
+
             return $this;
         }
 
@@ -7640,6 +8890,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $newGrossPriceAllowanceChargeReason,
             $newGrossPriceAllowanceChargeReasonCode,
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7657,6 +8909,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?float $newNetPriceBasisQuantity = null,
         ?string $newNetPriceBasisQuantityUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -7665,6 +8919,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetNetPriceProductTradePrice();
 
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetPrice])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetPrice])');
+
             return $this;
         }
 
@@ -7683,6 +8939,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ) {
             $netPrice->getBasisQuantityWithCreate()->setValue($newNetPriceBasisQuantity)->setUnitCode($newNetPriceBasisQuantityUnit);
         }
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7706,7 +8964,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newExemptionReason = null,
         ?string $newExemptionReasonCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7734,6 +8996,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?float $newPerPackageUnitQuantity = null,
         ?string $newPerPackageUnitQuantityUnit = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -7745,6 +9009,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newQuantity])
             || InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newQuantityUnit])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newQuantity]) || InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newQuantityUnit])');
+
             return $this;
         }
 
@@ -7759,6 +9025,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->setValue($newQuantity)
             ->setUnitCode($newQuantityUnit);
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -7771,7 +9039,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentPositionShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7785,7 +9057,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentPositionShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7799,7 +9075,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentPositionShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7813,7 +9093,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentPositionShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7829,7 +9113,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7845,7 +9133,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7861,7 +9153,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7877,7 +9173,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7903,7 +9203,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7929,7 +9233,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7947,7 +9255,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7965,7 +9277,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -7987,7 +9303,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8009,7 +9329,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8025,7 +9349,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newType = null,
         ?string $newUri = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8041,7 +9369,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newType = null,
         ?string $newUri = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8055,7 +9387,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentPositionUltimateShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8069,7 +9405,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentPositionUltimateShipToName(
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8083,7 +9423,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentPositionUltimateShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8097,7 +9441,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentPositionUltimateShipToId(
         ?string $newId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8113,7 +9461,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8129,7 +9481,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8145,7 +9501,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8161,7 +9521,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8187,7 +9551,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8213,7 +9581,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newCountryId = null,
         ?string $newSubDivision = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8231,7 +9603,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8249,7 +9625,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newId = null,
         ?string $newName = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8271,7 +9651,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8293,7 +9677,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8309,7 +9697,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newType = null,
         ?string $newUri = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8325,7 +9717,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newType = null,
         ?string $newUri = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8339,7 +9735,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentPositionSupplyChainEvent(
         ?DateTimeInterface $newDate = null
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8357,6 +9757,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -8365,6 +9767,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetBillingSpecifiedPeriod();
 
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])');
+
             return $this;
         }
 
@@ -8387,6 +9791,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->setValue($newEndDate->format('Ymd'))
             ->setFormat('102');
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -8403,11 +9809,17 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?DateTimeInterface $newEndDate = null,
         ?string $newDescription = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newStartDate, $newEndDate])');
+
             return $this;
         }
 
         $this->setDocumentPositionBillingPeriod($newStartDate, $newEndDate, $newDescription);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8431,6 +9843,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newExemptionReason = null,
         ?string $newExemptionReasonCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -8442,6 +9856,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent])
             || InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent]) || InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])');
+
             return $this;
         }
 
@@ -8455,6 +9871,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         $tradeTax->getCategoryCodeWithCreate()->setValue($newTaxCategory);
         $tradeTax->getTypeCodeWithCreate()->setValue($newTaxType);
         $tradeTax->getRateApplicablePercentWithCreate()->setValue($newTaxPercent);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8478,10 +9896,14 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newExemptionReason = null,
         ?string $newExemptionReasonCode = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (
             InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent])
             || InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
         ) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent]) || InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])');
+
             return $this;
         }
 
@@ -8493,6 +9915,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $newExemptionReason,
             $newExemptionReasonCode
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8516,6 +9940,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -8524,6 +9950,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetSpecifiedTradeAllowanceCharge();
 
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount]) || is_null($newChargeIndicator)) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount]) || is_null($newChargeIndicator)');
+
             return $this;
         }
 
@@ -8535,6 +9963,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $newAllowanceChargeReasonCode,
             $newAllowanceChargePercent
         );
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8558,7 +9988,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?string $newAllowanceChargeReasonCode = null,
         ?float $newAllowanceChargePercent = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount]) || is_null($newChargeIndicator)) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount]) || is_null($newChargeIndicator)');
+
             return $this;
         }
 
@@ -8588,6 +10022,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             $allowanceCharge->getReasonCodeWithCreate()->setValue($newAllowanceChargeReasonCode);
         }
 
+        $this->traceMethodExit(__METHOD__);
+
         return $this;
     }
 
@@ -8608,6 +10044,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
         ?float $newTaxTotalAmount = null,
         ?float $newGrossAmount = null,
     ): static {
+        $this->traceMethodEnter(__METHOD__);
+
         $this
             ->getCrossIndustryRootObject()
             ->getSupplyChainTradeTransaction()
@@ -8616,6 +10054,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ?->unsetSpecifiedTradeSettlementLineMonetarySummation();
 
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetAmount])) {
+            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetAmount])');
+
             return $this;
         }
 
@@ -8627,6 +10067,8 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getSpecifiedTradeSettlementLineMonetarySummationWithCreate();
 
         $positionSummation->getLineTotalAmountWithCreate()->setValue($newNetAmount);
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8640,7 +10082,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function setDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }
@@ -8654,7 +10100,11 @@ class InvoiceSuiteZfFxBasicProviderBuilder extends InvoiceSuiteAbstractDocumentF
      */
     public function addDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): static
     {
+        $this->traceMethodEnter(__METHOD__);
+
         // Nothing here...
+
+        $this->traceMethodExit(__METHOD__);
 
         return $this;
     }

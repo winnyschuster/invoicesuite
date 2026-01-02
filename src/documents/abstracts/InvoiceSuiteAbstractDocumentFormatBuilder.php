@@ -15,6 +15,8 @@ use DateTimeInterface;
 use horstoeko\invoicesuite\concerns\HandlesCurrentDocumentFormatProvider;
 use horstoeko\invoicesuite\concerns\HandlesDocumentRootObject;
 use horstoeko\invoicesuite\concerns\HandlesDocumentSerializer;
+use horstoeko\invoicesuite\concerns\HandlesMessageBag;
+use horstoeko\invoicesuite\concerns\HandlesMethodTracing;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use JMS\Serializer\Exception\RuntimeException;
@@ -33,6 +35,8 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
     use HandlesCurrentDocumentFormatProvider;
     use HandlesDocumentSerializer;
     use HandlesDocumentRootObject;
+    use HandlesMessageBag;
+    use HandlesMethodTracing;
 
     /**
      * Constructor
