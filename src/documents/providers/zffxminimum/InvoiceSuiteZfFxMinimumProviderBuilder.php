@@ -2948,7 +2948,7 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractDocumen
      *
      * @param  null|string $newType __BT-47-1, From MINIMUM__ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-47, From MINIMUM__ Identification number of the legal registration of the party
-     * @param  null|string $newName __BT-45, From BASIC WL__ Name by which the party is known, if different from the party's name
+     * @param  null|string $newName __BT-45, From EN 16931__ Name by which the party is known, if different from the party's name
      * @return static
      */
     public function setDocumentBuyerLegalOrganisation(
@@ -2995,7 +2995,7 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractDocumen
      *
      * @param  null|string $newType __BT-47-1, From MINIMUM__ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-47, From MINIMUM__ Identification number of the legal registration of the party
-     * @param  null|string $newName __BT-45, From BASIC WL__ Name by which the party is known, if different from the party's name
+     * @param  null|string $newName __BT-45, From EN 16931__ Name by which the party is known, if different from the party's name
      * @return static
      */
     public function addDocumentBuyerLegalOrganisation(

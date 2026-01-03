@@ -620,7 +620,7 @@ final class ZfFxBasicWlDocumentReaderTest extends TestCase
 
         $this->assertSame('8884', $newType);
         $this->assertSame('3874837489237', $newId);
-        $this->assertSame('Kunde AG', $newName);
+        $this->assertSame('', $newName);
 
         $this->assertFalse(static::$document->nextDocumentBuyerLegalOrganisation());
 
