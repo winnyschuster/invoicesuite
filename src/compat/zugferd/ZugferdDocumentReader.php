@@ -5012,7 +5012,7 @@ class ZugferdDocumentReader extends ZugferdDocument
      *
      * @param  null|float  $actualAmount          __BT-136/BT-141, From BASIC__ The surcharge/discount amount excluding sales tax
      * @param  null|bool   $isCharge              __BT-27-1/BT-28-1, From BASIC__ (true for BT-/ and false for /BT-) Switch that indicates whether the following data refer to an allowance or a discount, true means that it is a surcharge
-     * @param  null|float  $calculationPercent    __BT-138, From BASIC__ The percentage that may be used in conjunction with the base invoice line discount amount to calculate the invoice line discount amount
+     * @param  null|float  $calculationPercent    __BT-138, From EN 16931__ The percentage that may be used in conjunction with the base invoice line discount amount to calculate the invoice line discount amount
      * @param  null|float  $basisAmount           __BT-137, From EN 16931__ The base amount that may be used in conjunction with the invoice line discount percentage to calculate the invoice line discount amount
      * @param  null|string $reason                __BT-139/BT-144, From BASIC__ The reason given in text form for the invoice item discount/surcharge
      * @param  null|string $taxTypeCode
@@ -5076,7 +5076,7 @@ class ZugferdDocumentReader extends ZugferdDocument
      *
      * @param  null|float  $actualAmount       __BT-136/BT-141, From BASIC__ The surcharge/discount amount excluding sales tax
      * @param  null|bool   $isCharge           __BT-27-1/BT-28-1, From BASIC__ (true for BT-/ and false for /BT-) Switch that indicates whether the following data refer to an allowance or a discount, true means that it is a surcharge
-     * @param  null|float  $calculationPercent __BT-138, From BASIC__ The percentage that may be used in conjunction with the base invoice line discount amount to calculate the invoice line discount amount
+     * @param  null|float  $calculationPercent __BT-138, From EN 16931__ The percentage that may be used in conjunction with the base invoice line discount amount to calculate the invoice line discount amount
      * @param  null|float  $basisAmount        __BT-137, From EN 16931__ The base amount that may be used in conjunction with the invoice line discount percentage to calculate the invoice line discount amount
      * @param  null|string $reasonCode         __BT-140/BT-145, From BASIC__ The reason given as a code for the invoice line discount
      * @param  null|string $reason             __BT-139/BT-144, From BASIC__ The reason given in text form for the invoice item discount/surcharge
