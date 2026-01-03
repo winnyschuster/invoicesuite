@@ -115,7 +115,7 @@ class InvoiceSuiteArrayUtils
     public static function pushBooleanToIntIndexedArray(array &$array, ?bool $value): void
     {
         if (!is_null($value)) {
-            $array[] = (bool) $value;
+            $array[] = $value;
         }
     }
 
@@ -132,7 +132,7 @@ class InvoiceSuiteArrayUtils
     public static function pushBooleanToStringIndexedArray(array &$array, ?string $key, ?bool $value): void
     {
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($key) && !is_null($value)) {
-            $array[(string) $key] = (bool) $value;
+            $array[(string) $key] = $value;
         }
     }
 

@@ -8060,7 +8060,7 @@ class InvoiceSuiteZfFxComfortProviderBuilder extends InvoiceSuiteAbstractDocumen
      * @param  null|float $newTaxTotalAmount      __BT-110, From MINIMUM__ Total amount of the invoice sales tax (in the invoice currency)
      * @param  null|float $newTaxTotalAmount2     __BT-111, From BASIC WL__ Total amount of the invoice sales tax (in the ledger currency)
      * @param  null|float $newGrossAmount         __BT-112, From MINIMUM__ Total invoice amount including sales tax
-     * @param  null|float $newDueAmount           __BT-115,  From MINIMUM__ Payment amount due
+     * @param  null|float $newDueAmount           __BT-115, From MINIMUM__ Payment amount due
      * @param  null|float $newPrepaidAmount       __BT-113, From BASIC WL__ Prepayment amount
      * @param  null|float $newRoungingAmount      __BT-114, From EN16931__ Rounding amount
      * @return static

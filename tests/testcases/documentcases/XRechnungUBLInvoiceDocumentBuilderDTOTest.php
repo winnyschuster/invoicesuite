@@ -24,6 +24,7 @@ use horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteSummationDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitesummationLineDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
+use horstoeko\invoicesuite\documents\providers\peppol30invoice\InvoiceSuitePeppol30InvoiceProviderBuilder;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\invoicesuite\InvoiceSuiteSettings;
 use horstoeko\invoicesuite\tests\TestCase;
@@ -447,7 +448,7 @@ final class XRechnungUBLInvoiceDocumentBuilderDTOTest extends TestCase
         $this->assertArrayHasKey(0, static::$document->getWarningMessagesInMessageBag());
         $this->assertArrayHasKey('status', static::$document->getWarningMessagesInMessageBag()[0]->getMessageAdditionalData());
         $this->assertSame('early_exit', static::$document->getWarningMessagesInMessageBag()[0]->getMessageAdditionalData()['status']);
-        $this->assertSame('EXIT horstoeko\invoicesuite\documents\providers\peppol30invoice\InvoiceSuitePeppol30InvoiceProviderBuilder::setDocumentTaxCurrency', static::$document->getWarningMessagesInMessageBag()[0]->getMessageContent());
+        $this->assertSame('EXIT '.InvoiceSuitePeppol30InvoiceProviderBuilder::class.'::setDocumentTaxCurrency', static::$document->getWarningMessagesInMessageBag()[0]->getMessageContent());
         $this->assertArrayNotHasKey(0, static::$document->getErrorMessagesInMessageBag());
     }
 
