@@ -32,14 +32,14 @@ trait HandlesMethodTracing
      * @param  string $newEvent  Event, contains enter or early_exit or exit
      * @param  string $newReason Reason for early exit
      * @param  string $newGuard  Guard which leads to early exit
-     * @return void
+     * @return static
      */
     protected function traceMethodCall(
         string $newMethod,
         string $newEvent,
         string $newReason = '',
         string $newGuard = ''
-    ): void {
+    ): static {
         /**
          * @var array<string,string>
          */
@@ -75,28 +75,30 @@ trait HandlesMethodTracing
                 newMessageAdditionalData: $dataEarlyExit
             );
         }
+
+        return $this;
     }
 
     /**
      * Trace entering a method
      *
      * @param  string $newMethod Name of the method which was called
-     * @return void
+     * @return static
      */
-    protected function traceMethodEnter(string $newMethod): void
+    protected function traceMethodEnter(string $newMethod): static
     {
-        $this->traceMethodCall($newMethod, 'enter');
+        return $this->traceMethodCall($newMethod, 'enter');
     }
 
     /**
      * Trace leaving a method
      *
      * @param  string $newMethod Name of the method which was called
-     * @return void
+     * @return static
      */
-    protected function traceMethodExit(string $newMethod): void
+    protected function traceMethodExit(string $newMethod): static
     {
-        $this->traceMethodCall($newMethod, 'exit');
+        return $this->traceMethodCall($newMethod, 'exit');
     }
 
     /**
@@ -105,10 +107,10 @@ trait HandlesMethodTracing
      * @param  string $newMethod Name of the method which was called
      * @param  string $newReason Reason for early exit
      * @param  string $newGuard  Guard which leads to early exit
-     * @return void
+     * @return static
      */
-    protected function traceMethodEarlyExit(string $newMethod, string $newReason, string $newGuard): void
+    protected function traceMethodEarlyExit(string $newMethod, string $newReason, string $newGuard): static
     {
-        $this->traceMethodCall($newMethod, 'early_exit', $newReason, $newGuard);
+        return $this->traceMethodCall($newMethod, 'early_exit', $newReason, $newGuard);
     }
 }

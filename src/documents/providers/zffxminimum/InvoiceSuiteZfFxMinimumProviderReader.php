@@ -4024,12 +4024,7 @@ class InvoiceSuiteZfFxMinimumProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function firstDocumentBuyerTaxRegistration(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTradeParty()?->getSpecifiedTaxRegistration() ?? []
-            ),
-            'documentbuyertaxregistration'
-        );
+        return false;
     }
 
     /**
@@ -4039,12 +4034,7 @@ class InvoiceSuiteZfFxMinimumProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function nextDocumentBuyerTaxRegistration(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTradeParty()?->getSpecifiedTaxRegistration() ?? []
-            ),
-            'documentbuyertaxregistration'
-        );
+        return false;
     }
 
     /**
@@ -4063,18 +4053,8 @@ class InvoiceSuiteZfFxMinimumProviderReader extends InvoiceSuiteAbstractDocument
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        /**
-         * @var array<TaxRegistrationType>
-         */
-        $documentBuyerTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTradeParty()?->getSpecifiedTaxRegistration() ?? []);
-
-        /**
-         * @var TaxRegistrationType
-         */
-        $documentBuyerTaxRegistration = $documentBuyerTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentbuyertaxregistration')];
-
-        $newTaxRegistrationType = $documentBuyerTaxRegistration->getID()?->getSchemeID() ?? '';
-        $newTaxRegistrationId = $documentBuyerTaxRegistration->getID()?->getValue() ?? '';
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4088,12 +4068,7 @@ class InvoiceSuiteZfFxMinimumProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function firstDocumentBuyerAddress(): bool
     {
-        return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTradeParty()?->getPostalTradeAddress() ?? []
-            ),
-            'documentbuyeraddress'
-        );
+        return false;
     }
 
     /**
@@ -4103,12 +4078,7 @@ class InvoiceSuiteZfFxMinimumProviderReader extends InvoiceSuiteAbstractDocument
      */
     public function nextDocumentBuyerAddress(): bool
     {
-        return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTradeParty()?->getPostalTradeAddress() ?? []
-            ),
-            'documentbuyeraddress'
-        );
+        return false;
     }
 
     /**
@@ -4142,22 +4112,12 @@ class InvoiceSuiteZfFxMinimumProviderReader extends InvoiceSuiteAbstractDocument
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        /**
-         * @var array<TradeAddressType>
-         */
-        $documentBuyerAddresses = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTradeParty()?->getPostalTradeAddress() ?? []);
-
-        /**
-         * @var TradeAddressType
-         */
-        $documentBuyerAddress = $documentBuyerAddresses[InvoiceSuitePointerUtils::getValue('documentbuyeraddress')];
-
         $newAddressLine1 = '';
         $newAddressLine2 = '';
         $newAddressLine3 = '';
         $newPostcode = '';
         $newCity = '';
-        $newCountryId = $documentBuyerAddress->getCountryID()?->getValue() ?? '';
+        $newCountryId = '';
         $newSubDivision = '';
 
         $this->traceMethodExit(__METHOD__);
@@ -7792,16 +7752,12 @@ class InvoiceSuiteZfFxMinimumProviderReader extends InvoiceSuiteAbstractDocument
 
         $documentSummation = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getSpecifiedTradeSettlementHeaderMonetarySummation();
 
-        $taxTotalAmounts = $documentSummation?->getTaxTotalAmount() ?? [];
-        $taxTotalAmount = reset($taxTotalAmounts);
-        $taxTotalAmount2 = next($taxTotalAmounts);
-
         $newNetAmount = 0.0;
         $newChargeTotalAmount = 0.0;
         $newDiscountTotalAmount = 0.0;
         $newTaxBasisAmount = $documentSummation?->getTaxBasisTotalAmount()?->getValue() ?? 0.0;
-        $newTaxTotalAmount = false !== $taxTotalAmount ? ($taxTotalAmount->getValue() ?? 0.0) : 0.0;
-        $newTaxTotalAmount2 = false !== $taxTotalAmount2 ? ($taxTotalAmount2->getValue() ?? 0.0) : 0.0;
+        $newTaxTotalAmount = 0.0;
+        $newTaxTotalAmount2 = 0.0;
         $newGrossAmount = $documentSummation?->getGrandTotalAmount()?->getValue() ?? 0.0;
         $newDueAmount = $documentSummation?->getDuePayableAmount()?->getValue() ?? 0.0;
         $newPrepaidAmount = 0.0;

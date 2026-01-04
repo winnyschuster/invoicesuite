@@ -550,18 +550,18 @@ final class ZfFxMinimumProviderReaderTest extends TestCase
 
         // Tax Registration
 
-        $this->assertTrue(static::$document->firstDocumentBuyerTaxRegistration());
+        $this->assertFalse(static::$document->firstDocumentBuyerTaxRegistration());
 
         static::$document->getDocumentBuyerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
-        $this->assertSame('893489787987', $newTaxRegistrationId);
-        $this->assertSame('VA', $newTaxRegistrationType);
+        $this->assertSame('', $newTaxRegistrationId);
+        $this->assertSame('', $newTaxRegistrationType);
 
         $this->assertFalse(static::$document->nextDocumentBuyerTaxRegistration());
 
         // Address
 
-        $this->assertTrue(static::$document->firstDocumentBuyerAddress());
+        $this->assertFalse(static::$document->firstDocumentBuyerAddress());
 
         static::$document->getDocumentBuyerAddress(
             $newAddressLine1,
@@ -578,7 +578,7 @@ final class ZfFxMinimumProviderReaderTest extends TestCase
         $this->assertSame('', $newAddressLine3);
         $this->assertSame('', $newPostcode);
         $this->assertSame('', $newCity);
-        $this->assertSame('DE', $newCountryId);
+        $this->assertSame('', $newCountryId);
         $this->assertSame('', $newSubDivision);
 
         $this->assertFalse(static::$document->nextDocumentBuyerAddress());
@@ -1667,8 +1667,8 @@ final class ZfFxMinimumProviderReaderTest extends TestCase
         $this->assertEqualsWithDelta(0.00, $newChargeTotalAmount, PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(0.00, $newDiscountTotalAmount, PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(4.00, $newTaxBasisAmount, PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(5.00, $newTaxTotalAmount, PHP_FLOAT_EPSILON);
-        $this->assertEqualsWithDelta(6.00, $newTaxTotalAmount2, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.00, $newTaxTotalAmount, PHP_FLOAT_EPSILON);
+        $this->assertEqualsWithDelta(0.00, $newTaxTotalAmount2, PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(7.00, $newGrossAmount, PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(8.00, $newDueAmount, PHP_FLOAT_EPSILON);
         $this->assertEqualsWithDelta(0.00, $newPrepaidAmount, PHP_FLOAT_EPSILON);

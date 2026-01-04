@@ -2791,22 +2791,7 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractDocumen
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransaction()
-            ?->getApplicableHeaderTradeAgreement()
-            ?->getBuyerTradeParty()
-            ?->unsetSpecifiedTaxRegistration();
-
-        if (
-            InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
-        ) {
-            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
-
-            return $this;
-        }
-
-        $this->addDocumentBuyerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+        // Nothing here...
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2826,23 +2811,7 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractDocumen
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        if (
-            InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])
-        ) {
-            $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
-
-            return $this;
-        }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getBuyerTradePartyWithCreate()
-            ->addToSpecifiedTaxRegistrationWithCreate()
-            ->getIDWithCreate()
-            ->setValue($newTaxRegistrationId)
-            ->setSchemeID($newTaxRegistrationType);
+        // Nothing here...
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2872,27 +2841,7 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractDocumen
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransaction()
-            ?->getApplicableHeaderTradeAgreement()
-            ?->getBuyerTradeParty()
-            ?->unsetPostalTradeAddress();
-
-        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])) {
-            $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newCountryId)');
-
-            return $this;
-        }
-
-        $this
-            ->getCrossIndustryRootObject()
-            ->getSupplyChainTradeTransactionWithCreate()
-            ->getApplicableHeaderTradeAgreementWithCreate()
-            ->getBuyerTradePartyWithCreate()
-            ->getPostalTradeAddressWithCreate()
-            ->getCountryIDWithCreate()
-            ->setValue($newCountryId);
+        // Nothing here...
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2922,21 +2871,7 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractDocumen
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newCountryId])) {
-            $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newCountryId)');
-
-            return $this;
-        }
-
-        $this->setDocumentBuyerAddress(
-            $newAddressLine1,
-            $newAddressLine2,
-            $newAddressLine3,
-            $newPostcode,
-            $newCity,
-            $newCountryId,
-            $newSubDivision
-        );
+        // Nothing here...
 
         $this->traceMethodExit(__METHOD__);
 
@@ -6622,7 +6557,7 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractDocumen
             ?->getApplicableHeaderTradeSettlement()
             ?->unsetSpecifiedTradeSettlementHeaderMonetarySummation();
 
-        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetAmount, $newTaxBasisAmount, $newTaxTotalAmount, $newGrossAmount, $newDueAmount])) {
+        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxBasisAmount, $newTaxTotalAmount, $newGrossAmount, $newDueAmount])) {
             $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetAmount, $newTaxBasisAmount, $newTaxTotalAmount, $newGrossAmount, $newDueAmount])');
 
             return $this;
@@ -6639,10 +6574,6 @@ class InvoiceSuiteZfFxMinimumProviderBuilder extends InvoiceSuiteAbstractDocumen
         $summation->getDuePayableAmountWithCreate()->setValue($newDueAmount);
 
         $summation->clearTaxTotalAmount()->addToTaxTotalAmountWithCreate()->setValue($newTaxTotalAmount);
-
-        if (!InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxTotalAmount2)) {
-            $summation->addToTaxTotalAmountWithCreate()->setValue($newTaxTotalAmount2);
-        }
 
         $this->traceMethodExit(__METHOD__);
 
