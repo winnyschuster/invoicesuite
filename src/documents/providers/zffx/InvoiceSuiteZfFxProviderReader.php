@@ -15145,7 +15145,7 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
      * Checks if a tag is not valid for the current profile, logs a trace entry
      *
      * @param  InvoiceSuiteZfFxProfiles $requestedMinimumProdileId
-     * @param  string                          $method
+     * @param  string                   $method
      * @return bool
      */
     protected function supportsNotAtLeastWithTace(InvoiceSuiteZfFxProfiles $requestedMinimumProdileId, string $method): bool
