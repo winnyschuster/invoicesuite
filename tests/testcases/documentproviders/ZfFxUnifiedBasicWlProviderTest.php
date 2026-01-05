@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\tests\testcases\documentproviders;
 
 use horstoeko\invoicesuite\documents\models\zffx\rsm\CrossIndustryInvoice;
-use horstoeko\invoicesuite\documents\providers\zffxunified\InvoiceSuiteZfFxUnifiedBasicWlProvider;
-use horstoeko\invoicesuite\documents\providers\zffxunified\InvoiceSuiteZfFxUnifiedProfiles;
-use horstoeko\invoicesuite\documents\providers\zffxunified\InvoiceSuiteZfFxUnifiedProviderBuilder;
-use horstoeko\invoicesuite\documents\providers\zffxunified\InvoiceSuiteZfFxUnifiedProviderReader;
-use horstoeko\invoicesuite\documents\providers\zffxunified\InvoiceSuiteZfFxUnifiedSerializerHandler;
+use horstoeko\invoicesuite\documents\providers\zffx\InvoiceSuiteZfFxUnifiedBasicWlProvider;
+use horstoeko\invoicesuite\documents\providers\zffx\InvoiceSuiteZfFxUnifiedProfiles;
+use horstoeko\invoicesuite\documents\providers\zffx\InvoiceSuiteZfFxUnifiedProviderBuilder;
+use horstoeko\invoicesuite\documents\providers\zffx\InvoiceSuiteZfFxUnifiedProviderReader;
+use horstoeko\invoicesuite\documents\providers\zffx\InvoiceSuiteZfFxUnifiedSerializerHandler;
 use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\tests\TestCase;
 

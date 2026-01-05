@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace horstoeko\invoicesuite\documents\providers\zffxunified;
+namespace horstoeko\invoicesuite\documents\providers\zffx;
 
 use DOMDocument;
 use DOMXPath;
@@ -19,14 +19,14 @@ use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentType;
 
-class InvoiceSuiteZfFxUnifiedExtendedProvider extends InvoiceSuiteAbstractDocumentFormatProvider
+class InvoiceSuiteZfFxUnifiedMinimumProvider extends InvoiceSuiteAbstractDocumentFormatProvider
 {
     /**
      * {@inheritDoc}
      */
     public function getUniqueId(): string
     {
-        return 'zffxextended';
+        return 'zffxminimum';
     }
 
     /**
@@ -42,9 +42,8 @@ class InvoiceSuiteZfFxUnifiedExtendedProvider extends InvoiceSuiteAbstractDocume
      */
     public function getDescription(): string
     {
-        return 'The EXTENDED profile is an extension of EN 16931-1 to support more complex business processes (invoices '
-            .'in which several deliveries / delivery locations are billed, structured payment conditions, further information at '
-            .'item level to support warehousing, etc.)';
+        return 'The MINIMUM profile includes the main information about the purchaser and vendor, the total invoice amount, and the total sales tax (VAT). '
+            .'Only the purchaser s reference can be given at item level. A breakdown of the sales tax (VAT) is not supported. It is therefore a booking aid.';
     }
 
     /**
@@ -53,12 +52,11 @@ class InvoiceSuiteZfFxUnifiedExtendedProvider extends InvoiceSuiteAbstractDocume
     public function getParameters(): array
     {
         return [
-            'ContextParameter' => 'urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended',
-            'AlternativeContextParameters' => ['urn:cen.eu:en16931:2017#conformant#urn:zugferd.de:2p0:extended'],
-            'BusinessProcess' => 'urn:fdc:peppol.eu:2017:poacc:billing:01:1.0',
-            'PdfXmpName' => 'EXTENDED',
+            'ContextParameter' => 'urn:factur-x.eu:1p0:minimum',
+            'AlternativeContextParameters' => ['urn:zugferd.de:2p0:minimum'],
+            'PdfXmpName' => 'MINIMUM',
             'PdfXmpVersion' => '1.0',
-            'WantsMaximumProfile' => InvoiceSuiteZfFxUnifiedProfiles::EXTENDED->value,
+            'WantsMaximumProfile' => InvoiceSuiteZfFxUnifiedProfiles::MINIMUM->value,
         ];
     }
 

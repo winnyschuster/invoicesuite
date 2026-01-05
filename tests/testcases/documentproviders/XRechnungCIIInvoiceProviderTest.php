@@ -9,7 +9,7 @@ use horstoeko\invoicesuite\documents\providers\xrechnungciiinvoice\InvoiceSuiteX
 use horstoeko\invoicesuite\documents\providers\xrechnungciiinvoice\InvoiceSuiteXRechnungCIIInvoiceProviderBuilder;
 use horstoeko\invoicesuite\documents\providers\xrechnungciiinvoice\InvoiceSuiteXRechnungCIIInvoiceProviderReader;
 use horstoeko\invoicesuite\documents\providers\xrechnungciiinvoice\InvoiceSuiteXRechnungCIIInvoiceSerializerHandler;
-use horstoeko\invoicesuite\documents\providers\zffxunified\InvoiceSuiteZfFxUnifiedProfiles;
+use horstoeko\invoicesuite\documents\providers\zffx\InvoiceSuiteZfFxUnifiedProfiles;
 use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\tests\TestCase;
 

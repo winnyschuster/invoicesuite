@@ -6,8 +6,8 @@ namespace horstoeko\invoicesuite\tests\testcases\concerns;
 
 use horstoeko\invoicesuite\concerns\HandlesDocumentFormatProviders;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
-use horstoeko\invoicesuite\documents\providers\zffxunified\InvoiceSuiteZfFxUnifiedExtendedProvider;
-use horstoeko\invoicesuite\documents\providers\zffxunified\InvoiceSuiteZfFxUnifiedMinimumProvider;
+use horstoeko\invoicesuite\documents\providers\zffx\InvoiceSuiteZfFxUnifiedExtendedProvider;
+use horstoeko\invoicesuite\documents\providers\zffx\InvoiceSuiteZfFxUnifiedMinimumProvider;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\tests\TestCase;
 

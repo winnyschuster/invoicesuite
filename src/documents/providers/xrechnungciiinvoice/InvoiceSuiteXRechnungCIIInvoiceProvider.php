@@ -15,7 +15,7 @@ use DOMDocument;
 use DOMXPath;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\documents\models\zffx\rsm\CrossIndustryInvoice;
-use horstoeko\invoicesuite\documents\providers\zffxunified\InvoiceSuiteZfFxUnifiedProfiles;
+use horstoeko\invoicesuite\documents\providers\zffx\InvoiceSuiteZfFxUnifiedProfiles;
 use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentType;

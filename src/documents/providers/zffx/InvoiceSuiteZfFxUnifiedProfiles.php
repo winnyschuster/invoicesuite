@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace horstoeko\invoicesuite\documents\providers\zffxunified;
+namespace horstoeko\invoicesuite\documents\providers\zffx;
 
 enum InvoiceSuiteZfFxUnifiedProfiles: int
 {

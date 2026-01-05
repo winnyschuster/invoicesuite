@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace horstoeko\invoicesuite\documents\providers\zffxunified;
+namespace horstoeko\invoicesuite\documents\providers\zffx;
 
 use DOMDocument;
 use DOMXPath;
@@ -19,14 +19,14 @@ use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentType;
 
-class InvoiceSuiteZfFxUnifiedBasicProvider extends InvoiceSuiteAbstractDocumentFormatProvider
+class InvoiceSuiteZfFxUnifiedBasicWlProvider extends InvoiceSuiteAbstractDocumentFormatProvider
 {
     /**
      * {@inheritDoc}
      */
     public function getUniqueId(): string
     {
-        return 'zffxbasic';
+        return 'zffxbasicwl';
     }
 
     /**
@@ -42,7 +42,9 @@ class InvoiceSuiteZfFxUnifiedBasicProvider extends InvoiceSuiteAbstractDocumentF
      */
     public function getDescription(): string
     {
-        return 'The BASIC profile is a subset of EN 16931-1 and can be used for simple VAT-compliant invoices.';
+        return 'The BASIC WL profile does not contain any invoice items and therefore cannot display any VAT-compliant '
+            .'invoices. However, it contains all the information at document level that is required to post the invoice. '
+            .'It is therefore a booking aid.';
     }
 
     /**
@@ -51,11 +53,11 @@ class InvoiceSuiteZfFxUnifiedBasicProvider extends InvoiceSuiteAbstractDocumentF
     public function getParameters(): array
     {
         return [
-            'ContextParameter' => 'urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic',
-            'AlternativeContextParameters' => ['urn:cen.eu:en16931:2017#compliant#urn:zugferd.de:2p0:basic'],
-            'PdfXmpName' => 'BASIC',
+            'ContextParameter' => 'urn:factur-x.eu:1p0:basicwl',
+            'AlternativeContextParameters' => ['urn:zugferd.de:2p0:basicwl'],
+            'PdfXmpName' => 'BASIC WL',
             'PdfXmpVersion' => '1.0',
-            'WantsMaximumProfile' => InvoiceSuiteZfFxUnifiedProfiles::BASIC->value,
+            'WantsMaximumProfile' => InvoiceSuiteZfFxUnifiedProfiles::BASICWL->value,
         ];
     }
 

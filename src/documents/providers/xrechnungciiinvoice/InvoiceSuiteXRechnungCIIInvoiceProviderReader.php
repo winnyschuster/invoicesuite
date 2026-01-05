@@ -11,6 +11,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\providers\xrechnungciiinvoice;
 
-use horstoeko\invoicesuite\documents\providers\zffxunified\InvoiceSuiteZfFxUnifiedProviderReader;
+use horstoeko\invoicesuite\documents\providers\zffx\InvoiceSuiteZfFxUnifiedProviderReader;
 
 class InvoiceSuiteXRechnungCIIInvoiceProviderReader extends InvoiceSuiteZfFxUnifiedProviderReader {}

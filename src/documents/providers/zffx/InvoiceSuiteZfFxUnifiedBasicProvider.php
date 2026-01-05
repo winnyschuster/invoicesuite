@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace horstoeko\invoicesuite\documents\providers\zffxunified;
+namespace horstoeko\invoicesuite\documents\providers\zffx;
 
 use DOMDocument;
 use DOMXPath;
@@ -19,14 +19,14 @@ use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentType;
 
-class InvoiceSuiteZfFxUnifiedComfortProvider extends InvoiceSuiteAbstractDocumentFormatProvider
+class InvoiceSuiteZfFxUnifiedBasicProvider extends InvoiceSuiteAbstractDocumentFormatProvider
 {
     /**
      * {@inheritDoc}
      */
     public function getUniqueId(): string
     {
-        return 'zffxcomfort';
+        return 'zffxbasic';
     }
 
     /**
@@ -42,8 +42,7 @@ class InvoiceSuiteZfFxUnifiedComfortProvider extends InvoiceSuiteAbstractDocumen
      */
     public function getDescription(): string
     {
-        return 'The EN 16931 (COMFORT) profile completely maps the EN 16931-1 and focuses on the core elements '
-            .'of an electronic invoice.';
+        return 'The BASIC profile is a subset of EN 16931-1 and can be used for simple VAT-compliant invoices.';
     }
 
     /**
@@ -52,11 +51,11 @@ class InvoiceSuiteZfFxUnifiedComfortProvider extends InvoiceSuiteAbstractDocumen
     public function getParameters(): array
     {
         return [
-            'ContextParameter' => 'urn:cen.eu:en16931:2017',
-            'AlternativeContextParameters' => [],
-            'PdfXmpName' => 'EN 16931',
+            'ContextParameter' => 'urn:cen.eu:en16931:2017#compliant#urn:factur-x.eu:1p0:basic',
+            'AlternativeContextParameters' => ['urn:cen.eu:en16931:2017#compliant#urn:zugferd.de:2p0:basic'],
+            'PdfXmpName' => 'BASIC',
             'PdfXmpVersion' => '1.0',
-            'WantsMaximumProfile' => InvoiceSuiteZfFxUnifiedProfiles::EN16931->value,
+            'WantsMaximumProfile' => InvoiceSuiteZfFxUnifiedProfiles::BASIC->value,
         ];
     }
 

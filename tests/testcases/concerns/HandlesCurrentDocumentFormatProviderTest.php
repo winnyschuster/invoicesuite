@@ -6,7 +6,7 @@ namespace horstoeko\invoicesuite\tests\testcases\concerns;
 
 use horstoeko\invoicesuite\concerns\HandlesCurrentDocumentFormatProvider;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
-use horstoeko\invoicesuite\documents\providers\zffxunified\InvoiceSuiteZfFxUnifiedExtendedProvider;
+use horstoeko\invoicesuite\documents\providers\zffx\InvoiceSuiteZfFxUnifiedExtendedProvider;
 use horstoeko\invoicesuite\tests\TestCase;
 
 final class HandlesCurrentDocumentFormatProviderTest extends TestCase

@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace horstoeko\invoicesuite\documents\providers\zffxunified;
+namespace horstoeko\invoicesuite\documents\providers\zffx;
 
 use DOMDocument;
 use DOMXPath;
@@ -19,14 +19,14 @@ use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentType;
 
-class InvoiceSuiteZfFxUnifiedBasicWlProvider extends InvoiceSuiteAbstractDocumentFormatProvider
+class InvoiceSuiteZfFxUnifiedExtendedProvider extends InvoiceSuiteAbstractDocumentFormatProvider
 {
     /**
      * {@inheritDoc}
      */
     public function getUniqueId(): string
     {
-        return 'zffxbasicwl';
+        return 'zffxextended';
     }
 
     /**
@@ -42,9 +42,9 @@ class InvoiceSuiteZfFxUnifiedBasicWlProvider extends InvoiceSuiteAbstractDocumen
      */
     public function getDescription(): string
     {
-        return 'The BASIC WL profile does not contain any invoice items and therefore cannot display any VAT-compliant '
-            .'invoices. However, it contains all the information at document level that is required to post the invoice. '
-            .'It is therefore a booking aid.';
+        return 'The EXTENDED profile is an extension of EN 16931-1 to support more complex business processes (invoices '
+            .'in which several deliveries / delivery locations are billed, structured payment conditions, further information at '
+            .'item level to support warehousing, etc.)';
     }
 
     /**
@@ -53,11 +53,12 @@ class InvoiceSuiteZfFxUnifiedBasicWlProvider extends InvoiceSuiteAbstractDocumen
     public function getParameters(): array
     {
         return [
-            'ContextParameter' => 'urn:factur-x.eu:1p0:basicwl',
-            'AlternativeContextParameters' => ['urn:zugferd.de:2p0:basicwl'],
-            'PdfXmpName' => 'BASIC WL',
+            'ContextParameter' => 'urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended',
+            'AlternativeContextParameters' => ['urn:cen.eu:en16931:2017#conformant#urn:zugferd.de:2p0:extended'],
+            'BusinessProcess' => 'urn:fdc:peppol.eu:2017:poacc:billing:01:1.0',
+            'PdfXmpName' => 'EXTENDED',
             'PdfXmpVersion' => '1.0',
-            'WantsMaximumProfile' => InvoiceSuiteZfFxUnifiedProfiles::BASICWL->value,
+            'WantsMaximumProfile' => InvoiceSuiteZfFxUnifiedProfiles::EXTENDED->value,
         ];
     }
 
