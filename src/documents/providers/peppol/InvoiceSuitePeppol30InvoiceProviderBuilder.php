@@ -6221,7 +6221,7 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
             ->getUblRootObject()
             ->addToPaymentMeansWithCreate();
 
-        $paymentMean->getPaymentMeansCodeWithCreate()->setValue($newTypeCode)->setName(InvoiceSuiteCodelistPaymentMeans::tryFrom($newTypeCode)?->getCaption() ?? "");
+        $paymentMean->getPaymentMeansCodeWithCreate()->setValue($newTypeCode)->setName(InvoiceSuiteCodelistPaymentMeans::tryFrom($newTypeCode)?->getCaption() ?? '');
 
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
             $paymentMean->getPaymentMeansCodeWithCreate()->setName($newName);
