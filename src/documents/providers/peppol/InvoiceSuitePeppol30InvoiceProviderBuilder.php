@@ -9542,7 +9542,7 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
         $this
             ->getUblRootObject()
             ->getLatestDocumentLineWithCreate()
-            ->getAccountingCostCodeWithCreate()
+            ->getAccountingCostWithCreate()
             ->setValue($newAccountId);
 
         $this->traceMethodExit(__METHOD__);

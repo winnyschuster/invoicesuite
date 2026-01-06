@@ -7774,42 +7774,42 @@ final class XRechnungUBLInvoiceProviderBuilderTest extends TestCase
     {
         $this->disableRenderXmlContent();
 
-        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCostCode', 0);
-        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCostCode', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCost', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCost', 1);
 
         static::$document->setDocumentPositionPostingReference();
 
         $this->disableRenderXmlContent();
 
-        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCostCode', 0);
-        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCostCode', 1);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCost', 0);
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCost', 1);
 
         static::$document->setDocumentPositionPostingReference('type', '0815');
 
         $this->disableRenderXmlContent();
 
-        $this->assertXPathValueWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCostCode', 0, '0815');
-        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCostCode', 1);
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCost', 0, '0815');
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCost', 1);
 
         static::$document->addDocumentPositionPostingReference();
 
         $this->disableRenderXmlContent();
 
-        $this->assertXPathValueWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCostCode', 0, '0815');
-        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCostCode', 1);
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCost', 0, '0815');
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCost', 1);
 
         static::$document->addDocumentPositionPostingReference('type2', '4711');
 
         $this->disableRenderXmlContent();
 
-        $this->assertXPathValueWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCostCode', 0, '4711');
-        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCostCode', 1);
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCost', 0, '4711');
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCost', 1);
 
         static::$document->setDocumentPositionPostingReference('type3', '4712');
 
         $this->disableRenderXmlContent();
 
-        $this->assertXPathValueWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCostCode', 0, '4712');
-        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCostCode', 1);
+        $this->assertXPathValueWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCost', 0, '4712');
+        $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:InvoiceLine/cbc:AccountingCost', 1);
     }
 }
