@@ -94,6 +94,8 @@
             <file>../tests/testcases/documentproviders/XRechnungUBLInvoiceProviderBuilderTest.php</file>
             <file>../tests/testcases/documentproviders/XRechnungUBLInvoiceProviderReaderTest.php</file>
             <file>../tests/testcases/documentproviders/XRechnungUBLCreditNoteProviderTest.php</file>
+            <file>../tests/testcases/documentproviders/XRechnungUBLCreditNoteProviderBuilderTest.php</file>
+            <file>../tests/testcases/documentproviders/XRechnungUBLCreditNoteProviderReaderTest.php</file>
         </testsuite>
         <testsuite name="documentreadbuild">
             <!-- Builder -->
@@ -104,6 +106,7 @@
             <file>../tests/testcases/documentreadbuild/ZfFxMinimumDocumentBuilderTest.php</file>
             <file>../tests/testcases/documentreadbuild/XRechnungCIIInvoiceBuilderTest.php</file>
             <file>../tests/testcases/documentreadbuild/XRechnungUBLInvoiceBuilderTest.php</file>
+            <file>../tests/testcases/documentreadbuild/XRechnungUBLCreditNoteBuilderTest.php</file>
             <!-- Reader -->
             <file>../tests/testcases/documentreadbuild/ZfFxExtendedDocumentReaderTest.php</file>
             <file>../tests/testcases/documentreadbuild/ZfFxComfortDocumentReaderTest.php</file>
@@ -112,6 +115,7 @@
             <file>../tests/testcases/documentreadbuild/ZfFxMinimumDocumentReaderTest.php</file>
             <file>../tests/testcases/documentreadbuild/XRechnungCIIInvoiceReaderTest.php</file>
             <file>../tests/testcases/documentreadbuild/XRechnungUBLInvoiceReaderTest.php</file>
+            <file>../tests/testcases/documentreadbuild/XRechnungUBLCreditNoteReaderTest.php</file>
         </testsuite>
         <testsuite name="documentcase">
             <file>../tests/testcases/documentcases/ZfFxComfortDocumentBuilderTest.php</file>

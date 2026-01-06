@@ -134,7 +134,7 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
             [
                 'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
                 'format' => 'xml',
-                'type' => 'horstoeko\invoicesuite\documents\models\peppol\cbc\InvoicedQuantity',
+                'type' => 'horstoeko\invoicesuite\documents\models\peppol\cbc\CreditedQuantity',
                 'method' => 'serializeQuantityType',
             ],
             [
