@@ -82,6 +82,37 @@ final class XRechnungUBLCreditNoteDocumentBuilderTest extends TestCase
             newPayeeBic: 'BIC324098',
             newPaymentReference: 'Snippet1'
         );
+
+        static::$document->setDocumentAllowanceCharge(
+            newChargeIndicator: true,
+            newAllowanceChargeReason: 'Insurance',
+            newAllowanceChargeAmount: 25.00,
+            newTaxCategory: 'S',
+            newTaxPercent: 25.0,
+            newTaxType: 'VAT'
+        );
+
+        static::$document->setDocumentTax(
+            newBasisAmount: 1325.00,
+            newTaxAmount: 331.25,
+            newTaxCategory: 'S',
+            newTaxType: 'VAT'
+        );
+
+        static::$document->setDocumentSummation(
+            newNetAmount: 1300.00,
+            newTaxBasisAmount: 1325.00,
+            newGrossAmount: 1656.25,
+            newChargeTotalAmount: 25.00,
+            newDueAmount: 1656.25,
+            newTaxTotalAmount: 331.25
+        );
+
+        static::$document->addDocumentPosition('1');
+        static::$document->setDocumentPositionQuantities(7, 'DAY');
+        static::$document->setDocumentPositionSummation(2800.00);
+        static::$document->setDocumentPositionPostingReference(newAccountId: 'Konteringsstreng');
+        static::$document->setDocumentPositionBuyerOrderReference(newReferenceLineNumber: '123');
     }
 
     public static function tearDownAfterClass(): void
