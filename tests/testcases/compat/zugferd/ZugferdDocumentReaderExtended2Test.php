@@ -847,8 +847,6 @@ final class ZugferdDocumentReaderExtended2Test extends TestCase
     public function testGetDocumentAdditionalReferencedDocument(): void
     {
         $this->assertTrue(self::$document->firstDocumentAdditionalReferencedDocument());
-        // TODO: Exception handling
-        /*
         self::$document->getDocumentAdditionalReferencedDocument($issuerassignedid, $typecode, $uriid, $name, $reftypecode, $issueddate, $binarydatafilename);
         $this->assertSame("SUPPort doc", $issuerassignedid);
         $this->assertSame("916", $typecode);
@@ -860,7 +858,29 @@ final class ZugferdDocumentReaderExtended2Test extends TestCase
         $this->assertSame("", $reftypecode);
         $this->assertNotInstanceOf(DateTime::class, $issueddate);
         $this->assertSame("", $binarydatafilename);
-        */
+        $this->assertTrue(self::$document->nextDocumentAdditionalReferencedDocument());
+        self::$document->getDocumentAdditionalReferencedDocument($issuerassignedid, $typecode, $uriid, $name, $reftypecode, $issueddate, $binarydatafilename);
+        $this->assertSame("TENDER-002", $issuerassignedid);
+        $this->assertSame("50", $typecode);
+        $this->assertSame("", $uriid);
+        $this->assertIsArray($name);
+        $this->assertEmpty($name);
+        $this->assertArrayNotHasKey(0, $name);
+        $this->assertSame("", $reftypecode);
+        $this->assertNotInstanceOf(DateTime::class, $issueddate);
+        $this->assertSame("", $binarydatafilename);
+        $this->assertTrue(self::$document->nextDocumentAdditionalReferencedDocument());
+        self::$document->getDocumentAdditionalReferencedDocument($issuerassignedid, $typecode, $uriid, $name, $reftypecode, $issueddate, $binarydatafilename);
+        $this->assertSame("REFCLI0215", $issuerassignedid);
+        $this->assertSame("130", $typecode);
+        $this->assertSame("", $uriid);
+        $this->assertIsArray($name);
+        $this->assertEmpty($name);
+        $this->assertArrayNotHasKey(0, $name);
+        $this->assertSame("", $reftypecode);
+        $this->assertNotInstanceOf(DateTime::class, $issueddate);
+        $this->assertSame("", $binarydatafilename);
+        $this->assertFalse(self::$document->nextDocumentAdditionalReferencedDocument());
     }
 
     public function testDocumentUltimateCustomerOrderReferencedDocumentLoop(): void
