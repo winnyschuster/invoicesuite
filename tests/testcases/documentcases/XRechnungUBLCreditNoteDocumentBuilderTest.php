@@ -75,6 +75,13 @@ final class XRechnungUBLCreditNoteDocumentBuilderTest extends TestCase
             newCountryId: InvoiceSuiteCodelistCountryCodes::SCHWEDEN->value
         );
         static::$document->setDocumentShipToName('Delivery party Name');
+
+        static::$document->setDocumentPaymentMeanAsCreditTransferNoSepa(
+            newPayeeIban: 'IBAN32423940',
+            newPayeeAccountName: 'AccountName',
+            newPayeeBic: 'BIC324098',
+            newPaymentReference: 'Snippet1'
+        );
     }
 
     public static function tearDownAfterClass(): void

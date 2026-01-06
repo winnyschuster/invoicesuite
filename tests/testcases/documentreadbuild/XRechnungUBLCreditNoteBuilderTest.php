@@ -5191,7 +5191,7 @@ final class XRechnungUBLCreditNoteBuilderTest extends TestCase
         $this->disableRenderXmlContent();
 
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentMeansCode', 0, InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_58->value);
-        $this->assertXPathNotExistsWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentID', 0);
+        $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentID', 0, 'paymentref');
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID', 0, 'iban');
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name', 0, 'accountname');
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID', 0, 'bic');
@@ -5289,7 +5289,7 @@ final class XRechnungUBLCreditNoteBuilderTest extends TestCase
         $this->disableRenderXmlContent();
 
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentMeansCode', 0, InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_58->value);
-        $this->assertXPathNotExistsWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentID', 0);
+        $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentID', 0, 'paymentref');
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID', 0, 'iban');
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name', 0, 'accountname');
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID', 0, 'bic');
@@ -5300,7 +5300,7 @@ final class XRechnungUBLCreditNoteBuilderTest extends TestCase
         $this->disableRenderXmlContent();
 
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentMeansCode', 0, InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_58->value);
-        $this->assertXPathNotExistsWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentID', 0);
+        $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentID', 0, 'paymentref');
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID', 0, 'iban');
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name', 0, 'accountname');
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID', 0, 'bic');
@@ -5316,7 +5316,7 @@ final class XRechnungUBLCreditNoteBuilderTest extends TestCase
         $this->disableRenderXmlContent();
 
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentMeansCode', 0, InvoiceSuiteCodelistPaymentMeans::UNTDID_4461_58->value);
-        $this->assertXPathNotExistsWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentID', 0);
+        $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentID', 0, 'paymentref');
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID', 0, 'iban');
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:Name', 0, 'accountname');
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cbc:ID', 0, 'bic');
@@ -8640,10 +8640,10 @@ final class XRechnungUBLCreditNoteBuilderTest extends TestCase
         // Payment Mean
 
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentMeansCode', 0, 'typecode');
-        $this->assertXPathNotExistsWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentID', 0);
+        $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentID', 0, 'paymentReference');
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cac:PaymentMandate/cbc:ID', 0, 'mandate');
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentMeansCode', 1, 'typecode2');
-        $this->assertXPathNotExistsWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentID', 1);
+        $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentID', 1, 'paymentReference2');
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:PaymentMeans/cac:PaymentMandate/cbc:ID', 1, 'mandate2');
         $this->assertXPathNotExistsWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentMeansCode', 2);
         $this->assertXPathNotExistsWithIndex('/ns:CreditNote/cac:PaymentMeans/cbc:PaymentID', 2);

@@ -6221,7 +6221,7 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
             ->getUblRootObject()
             ->addToPaymentMeansWithCreate();
 
-        $paymentMean->getPaymentMeansCodeWithCreate()->setValue($newTypeCode);
+        $paymentMean->getPaymentMeansCodeWithCreate()->setValue($newTypeCode)->setName(InvoiceSuiteCodelistPaymentMeans::tryFrom($newTypeCode)?->getCaption() ?? "");
 
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
             $paymentMean->getPaymentMeansCodeWithCreate()->setName($newName);
@@ -6278,6 +6278,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
 
         if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newMandate])) {
             $paymentMean->getPaymentMandateWithCreate()->getIDWithCreate()->setValue($newMandate);
+        }
+
+        if (!InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newPaymentReference])) {
+            $paymentMean->addOnceToPaymentIDWithCreate()->setValue($newPaymentReference);
         }
 
         $this->traceMethodExit(__METHOD__);
