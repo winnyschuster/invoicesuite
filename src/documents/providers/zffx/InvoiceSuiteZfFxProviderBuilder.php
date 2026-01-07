@@ -1303,7 +1303,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetID();
+        $this
+            ->getCrossIndustryRootObject()
+            ->getExchangedDocument()
+            ?->unsetID();
 
         if ($this->supportsNotAtLeastMinimumWithTrace(__METHOD__)) {
             return $this;
@@ -1335,7 +1338,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetTypeCode();
+        $this
+            ->getCrossIndustryRootObject()
+            ->getExchangedDocument()
+            ?->unsetTypeCode();
 
         if ($this->supportsNotAtLeastMinimumWithTrace(__METHOD__)) {
             return $this;
@@ -1367,7 +1373,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetName();
+        $this
+            ->getCrossIndustryRootObject()
+            ->getExchangedDocument()
+            ?->unsetName();
 
         if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
             return $this;
@@ -1399,7 +1408,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetLanguageID();
+        $this
+            ->getCrossIndustryRootObject()
+            ->getExchangedDocument()
+            ?->unsetLanguageID();
 
         if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
             return $this;
@@ -1431,7 +1443,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        $this->getCrossIndustryRootObject()->getExchangedDocument()?->unsetIssueDateTime();
+        $this
+            ->getCrossIndustryRootObject()
+            ->getExchangedDocument()
+            ?->unsetIssueDateTime();
 
         if ($this->supportsNotAtLeastMinimumWithTrace(__METHOD__)) {
             return $this;
@@ -1465,7 +1480,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        $this->getCrossIndustryRootObject()->getExchangedDocumentWithCreate()->unsetEffectiveSpecifiedPeriod();
+        $this
+            ->getCrossIndustryRootObject()
+            ->getExchangedDocument()
+            ?->unsetEffectiveSpecifiedPeriod();
 
         if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
             return $this;
@@ -1500,7 +1518,12 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->unsetInvoiceCurrencyCode();
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->unsetInvoiceCurrencyCode();
+
         $this->updateCurrencies();
 
         if ($this->supportsNotAtLeastMinimumWithTrace(__METHOD__)) {
@@ -1536,7 +1559,12 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->unsetTaxCurrencyCode();
+        $this
+            ->getCrossIndustryRootObject()
+            ->getSupplyChainTradeTransaction()
+            ?->getApplicableHeaderTradeSettlement()
+            ?->unsetTaxCurrencyCode();
+
         $this->updateCurrencies();
 
         if ($this->supportsNotAtLeastBasicWlWithTrace(__METHOD__)) {
@@ -1646,7 +1674,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        $this->getCrossIndustryRootObject()->getExchangedDocumentWithCreate()->unsetIncludedNote();
+        $this
+            ->getCrossIndustryRootObject()
+            ->getExchangedDocument()
+            ?->unsetIncludedNote();
 
         if ($this->supportsNotAtLeastBasicWlWithTrace(__METHOD__)) {
             return $this;
@@ -2194,7 +2225,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string                 $newTypeCode               __BT-122-0, From EN 16931__ Additional document type code
      * @param  null|string                 $newReferenceTypeCode      __BT-18-1, From EN 16931__ Additional document reference-type code
      * @param  null|string                 $newDescription            __BT-123, From EN 16931__ Additional document description
-     * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
+     * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment __BT-125, From EN 16931__ Additional document attachment
      * @return static
      */
     public function setDocumentAdditionalReference(
@@ -2243,7 +2274,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string                 $newTypeCode               __BT-122-0, From EN 16931__ Additional document type code
      * @param  null|string                 $newReferenceTypeCode      __BT-18-1, From EN 16931__ Additional document reference-type code
      * @param  null|string                 $newDescription            __BT-123, From EN 16931__ Additional document description
-     * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
+     * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment __BT-125, From EN 16931__ Additional document attachment
      * @return static
      */
     public function addDocumentAdditionalReference(
@@ -11832,7 +11863,9 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
         $buyerOrderReference->getLineIDWithCreate()->setValue($newReferenceLineNumber);
 
         if ($this->supportsAtLeastExtended() && !InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newReferenceNumber])) {
-            $buyerOrderReference->getIssuerAssignedIDWithCreate()->setValue($newReferenceNumber);
+            $buyerOrderReference
+                ->getIssuerAssignedIDWithCreate()
+                ->setValue($newReferenceNumber);
         }
 
         if ($this->supportsAtLeastExtended() && !InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newReferenceDate])) {
