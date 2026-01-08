@@ -306,8 +306,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
                     $item->getName()
                 )
             )
-            ?->forEachContact(
-                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentSellerContact(
+            ?->firstContact(
+                fn (InvoiceSuiteContactDTO $item) => $this->setDocumentSellerContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
                     $item->getPhoneNumber(),
@@ -356,8 +356,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
                     $item->getName()
                 )
             )
-            ?->forEachContact(
-                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentBuyerContact(
+            ?->firstContact(
+                fn (InvoiceSuiteContactDTO $item) => $this->setDocumentBuyerContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
                     $item->getPhoneNumber(),
