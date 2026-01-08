@@ -1452,8 +1452,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDocumentDate])) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDocumentDate])');
+        if (InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDocumentDate)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'datetimeIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDocumentDate)');
         }
 
         $this
@@ -1489,8 +1489,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newCompleteDate])) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newCompleteDate])');
+        if (InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newCompleteDate)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'datetimeIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newCompleteDate)');
         }
 
         $this
@@ -10602,11 +10602,12 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (
-            InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
-            || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])
-        ) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType]) || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])');
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])');
+        }
+
+        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])');
         }
 
         $this->addDocumentTax(
@@ -10657,11 +10658,12 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (
-            InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
-            || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])
-        ) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType]) || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])');
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])');
+        }
+
+        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newBasisAmount, $newTaxAmount])');
         }
 
         $applicableTradeTax = $this
@@ -10741,11 +10743,12 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (
-            InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
-            || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])
-        ) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType]) || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])');
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])');
+        }
+
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newAllowanceChargeAmount)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newAllowanceChargeAmount)');
         }
 
         $this->addDocumentAllowanceCharge(
@@ -10796,11 +10799,12 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (
-            InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
-            || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])
-        ) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType]) || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount])');
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])');
+        }
+
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newAllowanceChargeAmount)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newAllowanceChargeAmount)');
         }
 
         $specifiedTradeAllowanceCharge = $this
@@ -10884,11 +10888,12 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (
-            InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType, $newDescription])
-            || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newChargeAmount])
-        ) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType, $newDescription]) || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newChargeAmount])');
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType, $newDescription])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType, $newDescription])');
+        }
+
+        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newChargeAmount])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newChargeAmount])');
         }
 
         $this->addDocumentLogisticServiceCharge(
@@ -10927,11 +10932,12 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (
-            InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType, $newDescription])
-            || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newChargeAmount])
-        ) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType, $newDescription]) || InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newChargeAmount])');
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType, $newDescription])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType, $newDescription])');
+        }
+
+        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newChargeAmount])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newChargeAmount])');
         }
 
         $logisticServiceCharge = $this
@@ -11469,7 +11475,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             $positionProductCharacteristic->getTypeCodeWithCreate()->setValue($newProductCharacteristicType);
         }
 
-        if ($this->supportsAtLeastExtended() && (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newProductCharacteristicMeasureUnit) && !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newProductCharacteristicMeasureValue]))) {
+        if ($this->supportsAtLeastExtended() && (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newProductCharacteristicMeasureUnit) && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newProductCharacteristicMeasureValue))) {
             $positionProductCharacteristic
                 ->getValueMeasureWithCreate()
                 ->setValue($newProductCharacteristicMeasureValue)
@@ -11723,7 +11729,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
         }
 
         if (
-            !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newProductUnitQuantity])
+            !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newProductUnitQuantity)
             && !InvoiceSuiteStringUtils::stringIsNullOrEmpty($newProductUnitQuantityUnit)
         ) {
             $positionReferencedProduct->getUnitQuantityWithCreate()->setValue($newProductUnitQuantity)->setUnitCode($newProductUnitQuantityUnit);
@@ -12831,8 +12837,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPrice])) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPrice])');
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newGrossPrice)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newGrossPrice)');
         }
 
         $grossPrice = $this
@@ -12845,7 +12851,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
         $grossPrice->getChargeAmountWithCreate()->setValue($newGrossPrice);
 
         if (
-            !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceBasisQuantity])
+            !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newGrossPriceBasisQuantity)
             && !InvoiceSuiteStringUtils::stringIsNullOrEmpty($newGrossPriceBasisQuantityUnit)
         ) {
             $grossPrice->getBasisQuantityWithCreate()->setValue($newGrossPriceBasisQuantity)->setUnitCode($newGrossPriceBasisQuantityUnit);
@@ -12894,8 +12900,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
 
         $grossPrice->unsetAppliedTradeAllowanceCharge();
 
-        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeAmount]) || is_null($newIsCharge)) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeAmount]) || is_null($newIsCharge)');
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newGrossPriceAllowanceChargeAmount) || is_null($newIsCharge)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newGrossPriceAllowanceChargeAmount) || is_null($newIsCharge)');
         }
 
         $this->addDocumentPositionGrossPriceAllowanceCharge(
@@ -12948,8 +12954,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this->traceMethodEarlyExit(__METHOD__, 'null', 'is_null($grossPrice)');
         }
 
-        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeAmount]) || is_null($newIsCharge)) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeAmount]) || is_null($newIsCharge)');
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newGrossPriceAllowanceChargeAmount) || is_null($newIsCharge)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newGrossPriceAllowanceChargeAmount) || is_null($newIsCharge)');
         }
 
         if ($this->supportsNotAtLeastExtended()) {
@@ -12960,11 +12966,11 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
         $allowanceCharge->getActualAmountWithCreate()->setValue($newGrossPriceAllowanceChargeAmount);
         $allowanceCharge->getChargeIndicatorWithCreate()->setIndicator($newIsCharge);
 
-        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargePercent])) {
+        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newGrossPriceAllowanceChargePercent)) {
             $allowanceCharge->getCalculationPercentWithCreate()->setValue($newGrossPriceAllowanceChargePercent);
         }
 
-        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossPriceAllowanceChargeBasisAmount])) {
+        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newGrossPriceAllowanceChargeBasisAmount)) {
             $allowanceCharge->getBasisAmountWithCreate()->setValue($newGrossPriceAllowanceChargeBasisAmount);
         }
 
@@ -13007,8 +13013,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetPrice])) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetPrice])');
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newNetPrice)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newNetPrice)');
         }
 
         $netPrice = $this
@@ -13021,7 +13027,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
         $netPrice->getChargeAmountWithCreate()->setValue($newNetPrice);
 
         if (
-            !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetPriceBasisQuantity])
+            !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newNetPriceBasisQuantity)
             && !InvoiceSuiteStringUtils::stringIsNullOrEmpty($newNetPriceBasisQuantityUnit)
         ) {
             $netPrice->getBasisQuantityWithCreate()->setValue($newNetPriceBasisQuantity)->setUnitCode($newNetPriceBasisQuantityUnit);
@@ -13070,11 +13076,12 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
 
         $netPrice->unsetIncludedTradeTax();
 
-        if (
-            InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newTaxAmount])
-            || InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
-        ) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newTaxAmount]) || InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])');
+        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newTaxAmount])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newTaxAmount])');
+        }
+
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])');
         }
 
         $tradeTax = $netPrice->getIncludedTradeTaxWithCreate();
@@ -13135,11 +13142,12 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (
-            InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newQuantity])
-            || InvoiceSuiteStringUtils::stringIsNullOrEmpty($newQuantityUnit)
-        ) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', '\horstoeko\invoicesuite\utils\InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newQuantity]) || InvoiceSuiteStringUtils::stringIsNullOrEmpty($newQuantityUnit)');
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newQuantity)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newQuantity)');
+        }
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newQuantityUnit)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newQuantityUnit)');
         }
 
         $latestPosition = $this
@@ -13153,7 +13161,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             ->setValue($newQuantity)
             ->setUnitCode($newQuantityUnit);
 
-        if ($this->supportsAtLeastExtended() && (!InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newChargeFreeQuantity]) || !InvoiceSuiteStringUtils::stringIsNullOrEmpty($newChargeFreeQuantityUnit))) {
+        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newChargeFreeQuantity) && !InvoiceSuiteStringUtils::stringIsNullOrEmpty($newChargeFreeQuantityUnit)) {
             $latestPosition
                 ->getSpecifiedLineTradeDeliveryWithCreate()
                 ->getChargeFreeQuantityWithCreate()
@@ -13161,7 +13169,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
                 ->setUnitCode($newChargeFreeQuantityUnit);
         }
 
-        if ($this->supportsAtLeastExtended() && (!InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newPackageQuantity]) || !InvoiceSuiteStringUtils::stringIsNullOrEmpty($newPackageQuantityUnit))) {
+        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newPackageQuantity) && !InvoiceSuiteStringUtils::stringIsNullOrEmpty($newPackageQuantityUnit)) {
             $latestPosition
                 ->getSpecifiedLineTradeDeliveryWithCreate()
                 ->getPackageQuantityWithCreate()
@@ -13169,7 +13177,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
                 ->setUnitCode($newPackageQuantityUnit);
         }
 
-        if ($this->supportsAtLeastExtended() && (!InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newPerPackageUnitQuantity]) || !InvoiceSuiteStringUtils::stringIsNullOrEmpty($newPerPackageUnitQuantityUnit))) {
+        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newPerPackageUnitQuantity) && !InvoiceSuiteStringUtils::stringIsNullOrEmpty($newPerPackageUnitQuantityUnit)) {
             $latestPosition
                 ->getSpecifiedLineTradeDeliveryWithCreate()
                 ->getPerPackageUnitQuantityWithCreate()
@@ -14556,8 +14564,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDate])) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDate])');
+        if (InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDate)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'datetimeIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDate)');
         }
 
         $this
@@ -14698,11 +14706,12 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (
-            InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent])
-            || InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
-        ) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent]) || InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])');
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxPercent)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxPercent)');
+        }
+
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])');
         }
 
         $this->addDocumentPositionTax(
@@ -14744,11 +14753,12 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (
-            InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent])
-            || InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])
-        ) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent]) || InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])');
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxPercent)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxPercent)');
+        }
+
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxCategory, $newTaxType])');
         }
 
         if ($this->supportsNotAtLeastExtended()) {
@@ -14771,7 +14781,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
         $tradeTax->getTypeCodeWithCreate()->setValue($newTaxType);
         $tradeTax->getRateApplicablePercentWithCreate()->setValue($newTaxPercent);
 
-        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxAmount])) {
+        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxAmount)) {
             $tradeTax->getCalculatedAmountWithCreate()->setValue($newTaxAmount);
         }
 
@@ -14820,8 +14830,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount]) || is_null($newChargeIndicator)) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount]) || is_null($newChargeIndicator)');
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newAllowanceChargeAmount) || is_null($newChargeIndicator)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newAllowanceChargeAmount) || is_null($newChargeIndicator)');
         }
 
         $this->addDocumentPositionAllowanceCharge(
@@ -14863,8 +14873,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount]) || is_null($newChargeIndicator)) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeAmount]) || is_null($newChargeIndicator)');
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newAllowanceChargeAmount) || is_null($newChargeIndicator)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newAllowanceChargeAmount) || is_null($newChargeIndicator)');
         }
 
         $allowanceCharge = $this
@@ -14877,11 +14887,11 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
         $allowanceCharge->getChargeIndicatorWithCreate()->setIndicator($newChargeIndicator);
         $allowanceCharge->getActualAmountWithCreate()->setValue($newAllowanceChargeAmount);
 
-        if ($this->supportsAtLeastEn16931() && !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargeBaseAmount])) {
+        if ($this->supportsAtLeastEn16931() && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newAllowanceChargeBaseAmount)) {
             $allowanceCharge->getBasisAmountWithCreate()->setValue($newAllowanceChargeBaseAmount);
         }
 
-        if ($this->supportsAtLeastEn16931() && !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newAllowanceChargePercent])) {
+        if ($this->supportsAtLeastEn16931() && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newAllowanceChargePercent)) {
             $allowanceCharge->getCalculationPercentWithCreate()->setValue($newAllowanceChargePercent);
         }
 
@@ -14928,8 +14938,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this;
         }
 
-        if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetAmount])) {
-            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newNetAmount])');
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newNetAmount)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newNetAmount)');
         }
 
         $positionSummation = $this
@@ -14941,19 +14951,19 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
 
         $positionSummation->getLineTotalAmountWithCreate()->setValue($newNetAmount);
 
-        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newChargeTotalAmount])) {
+        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newChargeTotalAmount)) {
             $positionSummation->getChargeTotalAmountWithCreate()->setValue($newChargeTotalAmount);
         }
 
-        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newDiscountTotalAmount])) {
+        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newDiscountTotalAmount)) {
             $positionSummation->getAllowanceTotalAmountWithCreate()->setValue($newDiscountTotalAmount);
         }
 
-        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxTotalAmount])) {
+        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxTotalAmount)) {
             $positionSummation->getTaxTotalAmountWithCreate()->setValue($newTaxTotalAmount);
         }
 
-        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newGrossAmount])) {
+        if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newGrossAmount)) {
             $positionSummation->getGrandTotalAmountWithCreate()->setValue($newGrossAmount);
         }
 

@@ -443,3 +443,341 @@ CODE
         return preg_replace($patterns, 'InvoiceSuiteStringUtils', $code) ?? $code;
     }
 }
+
+final class OneIsNullOrEmptyIfTraceToDatetTimeIsNullOrEmptyRector extends AbstractRector
+{
+    public function __construct(
+        private BetterStandardPrinter $betterStandardPrinter,
+    ) {
+    }
+
+    public function getRuleDefinition(): RuleDefinition
+    {
+        return new RuleDefinition(
+            'In if-conditions: InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$x]) -> datetimeIsNullOrEmpty($x) and update traceMethodEarlyExit args accordingly.',
+            [
+                new CodeSample(
+                    <<<'CODE'
+if (InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDocumentNo])) {
+    return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::oneIsNullOrEmpty([$newDocumentDate])');
+}
+CODE
+                    ,
+                    <<<'CODE'
+if (InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDocumentNo)) {
+    return $this->traceMethodEarlyExit(__METHOD__, 'datetimeIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDocumentDate)');
+}
+CODE
+                ),
+            ]
+        );
+    }
+
+    public function getNodeTypes(): array
+    {
+        return [If_::class];
+    }
+
+    public function refactor(Node $node): ?Node
+    {
+        if (!$node instanceof If_) {
+            return null;
+        }
+
+        $changed = $this->refactorCondition($node);
+
+        if (!$changed && !$this->conditionContainsDateTimeIsNullOrEmpty($node)) {
+            return null;
+        }
+
+        $condAsString = $this->betterStandardPrinter->print($node->cond);
+        $condAsString = $this->normalizeInvoiceSuiteDateTimeUtilsClassName($condAsString);
+
+        $this->updateTraceMethodEarlyExit($node, $condAsString);
+
+        return $node;
+    }
+
+    private function refactorCondition(If_ $if): bool
+    {
+        $nodeFinder = new NodeFinder();
+
+        $staticCalls = $nodeFinder->findInstanceOf($if->cond, StaticCall::class);
+
+        $changed = false;
+
+        foreach ($staticCalls as $staticCall) {
+            if (!$this->isInvoiceSuiteDateTimeUtilsClass($staticCall)) {
+                continue;
+            }
+
+            if (!$this->isName($staticCall->name, 'oneIsNullOrEmpty')) {
+                continue;
+            }
+
+            if (\count($staticCall->args) !== 1) {
+                continue;
+            }
+
+            $argValue = $staticCall->args[0]->value;
+
+            if (!$argValue instanceof Array_) {
+                continue;
+            }
+
+            if (\count($argValue->items) !== 1) {
+                continue;
+            }
+
+            $item = $argValue->items[0];
+
+            if ($item === null || $item->key !== null) {
+                continue;
+            }
+
+            $staticCall->name = new Identifier('datetimeIsNullOrEmpty');
+            $staticCall->args = [new Arg($item->value)];
+
+            $changed = true;
+        }
+
+        return $changed;
+    }
+
+    private function updateTraceMethodEarlyExit(If_ $if, string $condAsString): void
+    {
+        $nodeFinder = new NodeFinder();
+
+        $methodCalls = $nodeFinder->findInstanceOf($if->stmts, MethodCall::class);
+
+        foreach ($methodCalls as $methodCall) {
+            if (!$this->isName($methodCall->name, 'traceMethodEarlyExit')) {
+                continue;
+            }
+
+            if (\count($methodCall->args) < 3) {
+                continue;
+            }
+
+            $second = $methodCall->args[1]->value;
+
+            if ($second instanceof String_ && $second->value === 'oneIsNullOrEmpty') {
+                $methodCall->args[1]->value = new String_('datetimeIsNullOrEmpty');
+            }
+
+            $third = $methodCall->args[2]->value;
+
+            if ($third instanceof String_) {
+                $methodCall->args[2]->value = new String_($condAsString);
+            }
+        }
+    }
+
+    private function conditionContainsDateTimeIsNullOrEmpty(If_ $if): bool
+    {
+        $nodeFinder = new NodeFinder();
+
+        $staticCalls = $nodeFinder->findInstanceOf($if->cond, StaticCall::class);
+
+        foreach ($staticCalls as $staticCall) {
+            if (!$this->isInvoiceSuiteDateTimeUtilsClass($staticCall)) {
+                continue;
+            }
+
+            if ($this->isName($staticCall->name, 'datetimeIsNullOrEmpty')) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private function isInvoiceSuiteDateTimeUtilsClass(StaticCall $staticCall): bool
+    {
+        if (!$staticCall->class instanceof Name) {
+            return false;
+        }
+
+        return $this->isName($staticCall->class, 'InvoiceSuiteDateTimeUtils')
+            || $this->isName($staticCall->class, 'horstoeko\\invoicesuite\\utils\\InvoiceSuiteDateTimeUtils');
+    }
+
+    private function normalizeInvoiceSuiteDateTimeUtilsClassName(string $code): string
+    {
+        $patterns = [
+            '~\\\\horstoeko\\\\invoicesuite\\\\utils\\\\InvoiceSuiteDateTimeUtils~',
+            '~horstoeko\\\\invoicesuite\\\\utils\\\\InvoiceSuiteDateTimeUtils~',
+        ];
+
+        return preg_replace($patterns, 'InvoiceSuiteDateTimeUtils', $code) ?? $code;
+    }
+}
+
+final class OneIsNullOrEmptyIfTraceToFloatIsNullOrEmptyRector extends AbstractRector
+{
+    public function __construct(
+        private BetterStandardPrinter $betterStandardPrinter,
+    ) {
+    }
+
+    public function getRuleDefinition(): RuleDefinition
+    {
+        return new RuleDefinition(
+            'In if-conditions: InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$x]) -> floatIsNullOrEmpty($x) and update traceMethodEarlyExit args accordingly.',
+            [
+                new CodeSample(
+                    <<<'CODE'
+if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newDocumentNo])) {
+    return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newDocumentNo])');
+}
+CODE
+                    ,
+                    <<<'CODE'
+if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newDocumentNo)) {
+    return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newDocumentNo)');
+}
+CODE
+                ),
+            ]
+        );
+    }
+
+    public function getNodeTypes(): array
+    {
+        return [If_::class];
+    }
+
+    public function refactor(Node $node): ?Node
+    {
+        if (!$node instanceof If_) {
+            return null;
+        }
+
+        $changed = $this->refactorCondition($node);
+
+        if (!$changed && !$this->conditionContainsfloatIsNullOrEmpty($node)) {
+            return null;
+        }
+
+        $condAsString = $this->betterStandardPrinter->print($node->cond);
+        $condAsString = $this->normalizeInvoiceSuiteFloatUtilsClassName($condAsString);
+
+        $this->updateTraceMethodEarlyExit($node, $condAsString);
+
+        return $node;
+    }
+
+    private function refactorCondition(If_ $if): bool
+    {
+        $nodeFinder = new NodeFinder();
+
+        $staticCalls = $nodeFinder->findInstanceOf($if->cond, StaticCall::class);
+
+        $changed = false;
+
+        foreach ($staticCalls as $staticCall) {
+            if (!$this->isInvoiceSuiteFloatUtilsClass($staticCall)) {
+                continue;
+            }
+
+            if (!$this->isName($staticCall->name, 'oneIsNullOrEmpty')) {
+                continue;
+            }
+
+            if (\count($staticCall->args) !== 1) {
+                continue;
+            }
+
+            $argValue = $staticCall->args[0]->value;
+
+            if (!$argValue instanceof Array_) {
+                continue;
+            }
+
+            if (\count($argValue->items) !== 1) {
+                continue;
+            }
+
+            $item = $argValue->items[0];
+
+            if ($item === null || $item->key !== null) {
+                continue;
+            }
+
+            $staticCall->name = new Identifier('floatIsNullOrEmpty');
+            $staticCall->args = [new Arg($item->value)];
+
+            $changed = true;
+        }
+
+        return $changed;
+    }
+
+    private function updateTraceMethodEarlyExit(If_ $if, string $condAsString): void
+    {
+        $nodeFinder = new NodeFinder();
+
+        $methodCalls = $nodeFinder->findInstanceOf($if->stmts, MethodCall::class);
+
+        foreach ($methodCalls as $methodCall) {
+            if (!$this->isName($methodCall->name, 'traceMethodEarlyExit')) {
+                continue;
+            }
+
+            if (\count($methodCall->args) < 3) {
+                continue;
+            }
+
+            $second = $methodCall->args[1]->value;
+
+            if ($second instanceof String_ && $second->value === 'oneIsNullOrEmpty') {
+                $methodCall->args[1]->value = new String_('floatIsNullOrEmpty');
+            }
+
+            $third = $methodCall->args[2]->value;
+
+            if ($third instanceof String_) {
+                $methodCall->args[2]->value = new String_($condAsString);
+            }
+        }
+    }
+
+    private function conditionContainsfloatIsNullOrEmpty(If_ $if): bool
+    {
+        $nodeFinder = new NodeFinder();
+
+        $staticCalls = $nodeFinder->findInstanceOf($if->cond, StaticCall::class);
+
+        foreach ($staticCalls as $staticCall) {
+            if (!$this->isInvoiceSuiteFloatUtilsClass($staticCall)) {
+                continue;
+            }
+
+            if ($this->isName($staticCall->name, 'floatIsNullOrEmpty')) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private function isInvoiceSuiteFloatUtilsClass(StaticCall $staticCall): bool
+    {
+        if (!$staticCall->class instanceof Name) {
+            return false;
+        }
+
+        return $this->isName($staticCall->class, 'InvoiceSuiteFloatUtils')
+            || $this->isName($staticCall->class, 'horstoeko\\invoicesuite\\utils\\InvoiceSuiteFloatUtils');
+    }
+
+    private function normalizeInvoiceSuiteFloatUtilsClassName(string $code): string
+    {
+        $patterns = [
+            '~\\\\horstoeko\\\\invoicesuite\\\\utils\\\\InvoiceSuiteFloatUtils~',
+            '~horstoeko\\\\invoicesuite\\\\utils\\\\InvoiceSuiteFloatUtils~',
+        ];
+
+        return preg_replace($patterns, 'InvoiceSuiteFloatUtils', $code) ?? $code;
+    }
+}
