@@ -6,6 +6,7 @@ parameters:
         - ../src
     excludePaths:
         - ../src/codelists
+        - ../src/visualizers/templates/default.php
     level: 6
     treatPhpDocTypesAsCertain: false
     phpVersion: 80400
