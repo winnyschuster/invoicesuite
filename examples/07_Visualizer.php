@@ -1,10 +1,12 @@
 <?php
 
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
+use horstoeko\invoicesuite\InvoiceSuitePdfDocumentBuilder;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteNoteDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO;
+use horstoeko\invoicesuite\visualizers\InvoiceSuiteVisualizer;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAddressDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteContactDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductDTO;
@@ -20,7 +22,6 @@ use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistCurrencyCodes;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentPositionDTO;
-use horstoeko\invoicesuite\visualizers\InvoiceSuiteVisualizer;
 
 require __DIR__ . "/../vendor/autoload.php";
 
@@ -154,4 +155,7 @@ $documentBuilder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('zffxco
 $documentBuilder->createFromDTO($dtoDocumentHeader);
 
 $visualizer = InvoiceSuiteVisualizer::createFromDocumentBuilder($documentBuilder);
-$visualizer->setDefaultTemplate()->renderPdfFile(__DIR__ . '/07_visualized_document.pdf');
+$pdfContent = $visualizer->setDefaultTemplate()->renderPdf();
+
+$pdfDocumentBuiler = InvoiceSuitePdfDocumentBuilder::createFromDocumentBuilderAndPdfContent($documentBuilder, $pdfContent);
+$pdfDocumentBuiler->generatePdfDocumentAndSaveToFile(__DIR__ . '/07_visualized_document.pdf');
