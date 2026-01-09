@@ -306,8 +306,9 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
                     $item->getName()
                 )
             )
-            ?->firstContact(
-                fn (InvoiceSuiteContactDTO $item) => $this->setDocumentSellerContact(
+            ?->forEachOrFirstContact(
+                $this->supportsAtLeastExtended(),
+                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentSellerContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
                     $item->getPhoneNumber(),
@@ -356,8 +357,9 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
                     $item->getName()
                 )
             )
-            ?->firstContact(
-                fn (InvoiceSuiteContactDTO $item) => $this->setDocumentBuyerContact(
+            ?->forEachOrFirstContact(
+                $this->supportsAtLeastExtended(),
+                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentBuyerContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
                     $item->getPhoneNumber(),
@@ -802,9 +804,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
 
         // Document-Level Payment Terms
 
-        $methodName = $this->supportsAtLeastExtended() ? 'forEachPaymentTerm' : 'firstPaymentTerm';
-
-        $newDocumentDTO->{$methodName}(
+        $newDocumentDTO->forEachOrFirstPaymentTerm(
+            $this->supportsAtLeastExtended(),
             function (InvoiceSuitePaymentTermDTO $item): void {
                 $this->addDocumentPaymentTerm(
                     $item->getDescription(),
@@ -1061,9 +1062,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
                     )
                 );
 
-                $methodName = $this->supportsAtLeastExtended() ? 'forEachAdditionalObjectReference' : 'firstAdditionalObjectReference';
-
-                $item->{$methodName}(
+                $item->forEachOrFirstAdditionalObjectReference(
+                    $this->supportsAtLeastExtended(),
                     fn (InvoiceSuiteReferenceDocumentExtDTO $item) => $this->addDocumentPositionAdditionalObjectReference(
                         $item->getReferenceNumber(),
                         $item->getTypeCode(),
@@ -1079,9 +1079,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
                     $item->getGrossPrice()?->getPriceQuantity()?->getQuantityUnit()
                 );
 
-                $methodName = $this->supportsAtLeastExtended() ? 'forEachAllowanceCharge' : 'firstAllowanceCharge';
-
-                $item->getGrossPrice()?->{$methodName}(
+                $item->getGrossPrice()?->forEachOrFirstAllowanceCharge(
+                    $this->supportsAtLeastExtended(),
                     fn (InvoiceSuiteAllowanceChargeDTO $itemGrossPriceAllowanceCharge) => $this->addDocumentPositionGrossPriceAllowanceCharge(
                         $itemGrossPriceAllowanceCharge->getAmount(),
                         $itemGrossPriceAllowanceCharge->getChargeIndicator(),
@@ -1249,9 +1248,8 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
 
                 // Position taxes
 
-                $methodName = $this->supportsAtLeastExtended() ? 'forEachTax' : 'firstTax';
-
-                $item->{$methodName}(
+                $item->forEachOrFirstTax(
+                    $this->supportsAtLeastExtended(),
                     fn (InvoiceSuiteTaxDTO $tax) => $this->addDocumentPositionTax(
                         $tax->getCategory(),
                         $tax->getType(),
