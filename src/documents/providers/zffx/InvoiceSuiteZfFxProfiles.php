@@ -55,12 +55,34 @@ enum InvoiceSuiteZfFxProfiles: int
     }
 
     /**
-     * Get a logging message
+     * Returns the guard name for the specific profile
      *
      * @return string
      */
-    final public function getOnlyValidFromProfileMessage(): string
+    final public function getGuard(): string
     {
-        return sprintf('Only valid from profile %s', $this->getCaption());
+        return match ($this) {
+            InvoiceSuiteZfFxProfiles::MINIMUM => 'supportsAtLeastMinimum',
+            InvoiceSuiteZfFxProfiles::BASICWL => 'supportsAtLeastBasicWl',
+            InvoiceSuiteZfFxProfiles::BASIC => 'supportsAtLeastBasic',
+            InvoiceSuiteZfFxProfiles::EN16931 => 'supportsAtLeastEn16931',
+            InvoiceSuiteZfFxProfiles::EXTENDED => 'supportsAtLeastExtended',
+        };
+    }
+
+    /**
+     * Returns the guard name for the specific profile
+     *
+     * @return string
+     */
+    final public function getGuardNegative(): string
+    {
+        return match ($this) {
+            InvoiceSuiteZfFxProfiles::MINIMUM => 'supportsNotAtLeastMinimum',
+            InvoiceSuiteZfFxProfiles::BASICWL => 'supportsNotAtLeastBasicWl',
+            InvoiceSuiteZfFxProfiles::BASIC => 'supportsNotAtLeastBasic',
+            InvoiceSuiteZfFxProfiles::EN16931 => 'supportsNotAtLeastEn16931',
+            InvoiceSuiteZfFxProfiles::EXTENDED => 'supportsNotAtLeastExtended',
+        };
     }
 }

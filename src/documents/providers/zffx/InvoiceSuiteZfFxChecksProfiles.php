@@ -55,7 +55,7 @@ trait InvoiceSuiteZfFxChecksProfiles
         $tagIsNotValid = $this->supportsNotAtLeast($requestedMinimumProdileId);
 
         if ($tagIsNotValid) {
-            $this->traceMethodEarlyExit($method, 'supportsNotAtLeast', $requestedMinimumProdileId->getOnlyValidFromProfileMessage());
+            $this->traceMethodEarlyExit($method, 'supportsNotAtLeast', $requestedMinimumProdileId->getGuardNegative());
         }
 
         return $tagIsNotValid;
