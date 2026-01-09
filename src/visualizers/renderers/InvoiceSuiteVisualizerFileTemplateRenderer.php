@@ -22,14 +22,14 @@ use horstoeko\invoicesuite\visualizers\abstracts\InvoiceSuiteVisualizerAbstractR
  * @license  https://opensource.org/licenses/MIT MIT
  * @see      https://github.com/horstoeko/invoicesuite
  */
-class InvoiceSuiteVisualizerDefaultRenderer extends InvoiceSuiteVisualizerAbstractRenderer
+class InvoiceSuiteVisualizerFileTemplateRenderer extends InvoiceSuiteVisualizerAbstractRenderer
 {
     /**
      * {@inheritDoc}
      */
     public function templateExists(string $template): bool
     {
-        return file_exists($template);
+        return is_file($template) && is_readable($template);
     }
 
     /**
@@ -38,6 +38,7 @@ class InvoiceSuiteVisualizerDefaultRenderer extends InvoiceSuiteVisualizerAbstra
     public function render(InvoiceSuiteAbstractDocumentFormatReader $document, string $template): string
     {
         ob_start();
+
         include $template;
 
         return ob_get_clean();

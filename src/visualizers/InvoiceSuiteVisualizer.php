@@ -23,7 +23,7 @@ use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\visualizers\abstracts\InvoiceSuiteVisualizerAbstractRenderer;
-use horstoeko\invoicesuite\visualizers\renderers\InvoiceSuiteVisualizerDefaultRenderer;
+use horstoeko\invoicesuite\visualizers\renderers\InvoiceSuiteVisualizerFileTemplateRenderer;
 use InvalidArgumentException;
 use JMS\Serializer\Exception\RuntimeException;
 use Mpdf\Config\ConfigVariables;
@@ -263,7 +263,7 @@ class InvoiceSuiteVisualizer
      */
     public function setDefaultTemplate(): static
     {
-        $this->setRenderer(new InvoiceSuiteVisualizerDefaultRenderer());
+        $this->setRenderer(new InvoiceSuiteVisualizerFileTemplateRenderer());
         $this->setTemplate(
             InvoiceSuitePathUtils::combinePathWithFile(
                 InvoiceSuitePathUtils::combineAllPaths(
@@ -433,7 +433,7 @@ class InvoiceSuiteVisualizer
     protected function testMustUseDefaultRenderer(): static
     {
         if (!$this->renderer) {
-            $this->setRenderer(new InvoiceSuiteVisualizerDefaultRenderer());
+            $this->setRenderer(new InvoiceSuiteVisualizerFileTemplateRenderer());
         }
 
         return $this;
