@@ -16,10 +16,13 @@ use horstoeko\invoicesuite\concerns\HandlesDocumentFormatProviders;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
+use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
+use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentType;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\validators\abstracts\InvoiceSuiteAbstractDocumentValidator;
+use JMS\Serializer\Exception\RuntimeException;
 use Throwable;
 
 /**
@@ -40,6 +43,47 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
      * @var string
      */
     private $xsdFilename = '';
+
+    /**
+     * Create a validator instance by the XML content of a given InvoiceSuiteDocumentReader
+     *
+     * @param  InvoiceSuiteDocumentReader $fromDocumentReader
+     * @return static
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     */
+    public static function createFromDocumentReader(InvoiceSuiteDocumentReader $fromDocumentReader): static
+    {
+        $validator = parent::createFromDocumentReader($fromDocumentReader);
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($fromDocumentReader->getCurrentDocumentFormatProvider()->getXsdFilename())) {
+            $validator->setXsdFilename($fromDocumentReader->getCurrentDocumentFormatProvider()->getXsdFilename());
+        }
+
+        return $validator;
+    }
+
+    /**
+     * Create a validator instance by the XML content of a given InvoiceSuiteDocumentBuilder
+     *
+     * @param  InvoiceSuiteDocumentBuilder $fromDocumentBuilder
+     * @return static
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws RuntimeException
+     */
+    public static function createFromDocumentBuilder(InvoiceSuiteDocumentBuilder $fromDocumentBuilder): static
+    {
+        $validator = parent::createFromDocumentBuilder($fromDocumentBuilder);
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($fromDocumentBuilder->getCurrentDocumentFormatProvider()->getXsdFilename())) {
+            $validator->setXsdFilename($fromDocumentBuilder->getCurrentDocumentFormatProvider()->getXsdFilename());
+        }
+
+        return $validator;
+    }
 
     /**
      * Returns the configurred location of the mein XSD-scheme file
@@ -158,7 +202,6 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
             fn ($formatProvider) => (
                 $formatProvider->isSatisfiableBySerializedContent($this->getRawDocumentContent())
                 && InvoiceSuiteContentType::XML == $formatProvider->getContentType()
-                && !InvoiceSuiteStringUtils::stringIsNullOrEmpty($formatProvider->getXsdFilename())
             )
         );
 
@@ -169,6 +212,12 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
         }
 
         $formatProvider = reset($formatProviders);
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($formatProvider->getXsdFilename())) {
+            $this->addErrorMessageToMessageBag(sprintf('Format provider %s did not present a XSD filename', $formatProvider->getUniqueId()));
+
+            return false;
+        }
 
         $this->setXsdFilename($formatProvider->getXsdFilename());
 
@@ -191,21 +240,24 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
         try {
             $doc = new DOMDocument();
 
-            $doc->loadXML($this->getRawDocumentContent());
-            $doc->schemaValidate($this->getXsdFilename());
+            if (true === $doc->loadXML($this->getRawDocumentContent())) {
+                if (true === $doc->schemaValidate($this->getXsdFilename())) {
+                    return true;
+                }
 
-            foreach (libxml_get_errors() as $xmlError) {
-                $this->addErrorMessageToMessageBag(
-                    sprintf(
-                        '[line %d] %s : %s',
-                        $xmlError->line,
-                        $xmlError->code,
-                        $xmlError->message
-                    )
-                );
+                foreach (libxml_get_errors() as $xmlError) {
+                    $this->addErrorMessageToMessageBag(
+                        sprintf(
+                            '[line %d] %s : %s',
+                            $xmlError->line,
+                            $xmlError->code,
+                            $xmlError->message
+                        )
+                    );
+                }
+            } else {
+                $this->addErrorMessageToMessageBag('Failed to create DOMDocument from Content');
             }
-
-            return !$this->hasErrorMessagesInMessageBag();
         } catch (Throwable $exception) {
             $this->addErrorMessageToMessageBag($exception->getMessage());
         } finally {
