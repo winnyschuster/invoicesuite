@@ -22,7 +22,6 @@ use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\visualizers\abstracts\InvoiceSuiteVisualizerAbstractRenderer;
 use horstoeko\invoicesuite\visualizers\renderers\InvoiceSuiteVisualizerFileTemplateRenderer;
-use InvalidArgumentException;
 use JMS\Serializer\Exception\RuntimeException;
 use Mpdf\Config\ConfigVariables;
 use Mpdf\Config\FontVariables;
@@ -222,12 +221,12 @@ class InvoiceSuiteVisualizer
      * @param  string $template
      * @return static
      *
-     * @throws InvalidArgumentException
+     * @throws InvoiceSuiteInvalidArgumentException
      */
     public function setTemplate(string $template): static
     {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($template)) {
-            throw new InvalidArgumentException('The template must not be empty');
+            throw new InvoiceSuiteInvalidArgumentException('The template must not be empty');
         }
 
         $this->template = $template;
@@ -240,7 +239,7 @@ class InvoiceSuiteVisualizer
      *
      * @return static
      *
-     * @throws InvalidArgumentException
+     * @throws InvoiceSuiteInvalidArgumentException
      */
     public function setDefaultTemplate(): static
     {
