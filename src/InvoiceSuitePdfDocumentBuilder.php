@@ -76,7 +76,10 @@ class InvoiceSuitePdfDocumentBuilder
             throw new InvoiceSuiteFileNotReadableException($fromPdfFilename);
         }
 
-        return static::createFromDocumentBuilderAndPdfContent($fromDocumentBuilder, $fromPdfContent);
+        return (new static())
+            ->setDocumentBuilder($fromDocumentBuilder)
+            ->setRawPdfContent($fromPdfContent)
+            ->initCurrentPdfConstructor();
     }
 
     /**
@@ -91,7 +94,10 @@ class InvoiceSuitePdfDocumentBuilder
      */
     public static function createFromDocumentBuilderAndPdfContent(InvoiceSuiteDocumentBuilder $fromDocumentBuilder, string $fromPdfContent): static
     {
-        return (new static())->setDocumentBuilder($fromDocumentBuilder)->setRawPdfContent($fromPdfContent)->initCurrentPdfConstructor();
+        return (new static())
+            ->setDocumentBuilder($fromDocumentBuilder)
+            ->setRawPdfContent($fromPdfContent)
+            ->initCurrentPdfConstructor();
     }
 
     /**
@@ -117,7 +123,10 @@ class InvoiceSuitePdfDocumentBuilder
             throw new InvoiceSuiteFileNotReadableException($fromPdfFilename);
         }
 
-        return static::createFromDocumentContentAndPdfContent($fromDocumentContent, $fromPdfContent);
+        return (new static())
+            ->setDocumentContent($fromDocumentContent)
+            ->setRawPdfContent($fromPdfContent)
+            ->initCurrentPdfConstructor();
     }
 
     /**
@@ -131,7 +140,10 @@ class InvoiceSuitePdfDocumentBuilder
      */
     public static function createFromDocumentContentAndPdfContent(string $fromDocumentContent, string $fromPdfContent): static
     {
-        return (new static())->setDocumentContent($fromDocumentContent)->setRawPdfContent($fromPdfContent)->initCurrentPdfConstructor();
+        return (new static())
+            ->setDocumentContent($fromDocumentContent)
+            ->setRawPdfContent($fromPdfContent)
+            ->initCurrentPdfConstructor();
     }
 
     /**
