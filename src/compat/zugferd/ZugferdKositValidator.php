@@ -13,7 +13,7 @@ namespace horstoeko\zugferd;
 
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageBagItem;
-use horstoeko\invoicesuite\validators\kosit\InvoiceSuiteKositDocumentValidator;
+use horstoeko\invoicesuite\validators\InvoiceSuiteKositDocumentValidator;
 use JMS\Serializer\Exception\RuntimeException;
 
 /**

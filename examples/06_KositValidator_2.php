@@ -3,7 +3,7 @@
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
-use horstoeko\invoicesuite\validators\kosit\InvoiceSuiteKositDocumentValidator;
+use horstoeko\invoicesuite\validators\InvoiceSuiteKositDocumentValidator;
 
 require __DIR__ . "/../vendor/autoload.php";
 

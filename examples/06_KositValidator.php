@@ -2,7 +2,7 @@
 
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistCurrencyCodes;
-use horstoeko\invoicesuite\validators\kosit\InvoiceSuiteKositDocumentValidator;
+use horstoeko\invoicesuite\validators\InvoiceSuiteKositDocumentValidator;
 
 require __DIR__ . "/../vendor/autoload.php";
 
