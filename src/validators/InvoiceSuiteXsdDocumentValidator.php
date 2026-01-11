@@ -199,7 +199,10 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
 
         $formatProviders = array_filter(
             $this->getRegisteredDocumentFormatProviders(),
-            fn ($formatProvider) => $formatProvider->getIsSatisfiableBySerializedContent($this->getRawDocumentContent())
+            fn ($formatProvider) => (
+                $formatProvider->getIsSatisfiableBySerializedContent($this->getRawDocumentContent())
+                && $formatProvider->getValidationXsdAvailable()
+            )
         );
 
         if ([] === $formatProviders) {
@@ -210,13 +213,7 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
 
         $formatProvider = reset($formatProviders);
 
-        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($formatProvider->getXsdFilename())) {
-            $this->addErrorMessageToMessageBag(sprintf('Format provider %s did not present a XSD filename', $formatProvider->getUniqueId()));
-
-            return false;
-        }
-
-        $this->setXsdFilename($formatProvider->getXsdFilename());
+        $this->setXsdFilename($formatProvider->getValidationXsdFilename());
 
         return true;
     }

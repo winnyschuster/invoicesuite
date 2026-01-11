@@ -177,16 +177,6 @@ class InvoiceSuiteZfFxBasicWlProvider extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Returns true if PDF support is available
-     *
-     * @return bool
-     */
-    public function getIsPdfSupportAvailable(): bool
-    {
-        return true;
-    }
-
-    /**
      * Returns a list of valid PDF attachment filenames
      *
      * @return array<string>

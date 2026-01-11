@@ -189,16 +189,6 @@ class InvoiceSuiteXRechnungUBLCreditNoteProvider extends InvoiceSuiteAbstractDoc
     }
 
     /**
-     * Returns true if PDF support is available
-     *
-     * @return bool
-     */
-    public function getIsPdfSupportAvailable(): bool
-    {
-        return false;
-    }
-
-    /**
      * Returns a list of valid PDF attachment filenames
      *
      * @return array<string>

@@ -499,10 +499,6 @@ class InvoiceSuitePdfDocumentBuilder
             throw new InvoiceSuiteInvalidArgumentException(sprintf('Provider %s does not support PDF embedding', $fromDocumentBuilder->getCurrentDocumentFormatProvider()->getUniqueId()));
         }
 
-        if (!is_subclass_of($fromDocumentBuilder->getCurrentDocumentFormatProvider()->getPdfConstructorClassName(), InvoiceSuiteAbstractPdfConstructor::class)) {
-            throw new InvoiceSuiteInvalidArgumentException('The PDF constructor class provided by format provider must inherit from InvoiceSuiteAbstractPdfConstructor');
-        }
-
         $this->setCurrentDocumentFormatProvider($fromDocumentBuilder->getCurrentDocumentFormatProvider());
         $this->setRawDocumentContent($fromDocumentBuilder->getContent());
 
@@ -525,9 +521,8 @@ class InvoiceSuitePdfDocumentBuilder
         $formatProviders = array_filter(
             $this->getRegisteredDocumentFormatProviders(),
             static fn ($formatProvider) => (
-                $formatProvider->getIsPdfSupportAvailable()
-                && is_subclass_of($formatProvider->getPdfConstructorClassName(), InvoiceSuiteAbstractPdfConstructor::class)
-                && $formatProvider->getIsSatisfiableBySerializedContent($fromDocumentContent)
+                $formatProvider->getIsSatisfiableBySerializedContent($fromDocumentContent)
+                && $formatProvider->getIsPdfSupportAvailable()
             )
         );
 

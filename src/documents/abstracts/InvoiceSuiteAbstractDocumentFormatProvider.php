@@ -13,9 +13,11 @@ namespace horstoeko\invoicesuite\documents\abstracts;
 
 use Closure;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownProviderParameterException;
+use horstoeko\invoicesuite\pdfs\abstracts\InvoiceSuiteAbstractPdfConstructor;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentType;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 /**
  * Class representing methods for a document format provider definition
@@ -132,13 +134,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      * @return string
      */
     abstract public function getBuilderClassName(): string;
-
-    /**
-     * Returns true if PDF support is available
-     *
-     * @return bool
-     */
-    abstract public function getIsPdfSupportAvailable(): bool;
 
     /**
      * Returns a list of valid PDF attachment filenames
@@ -361,6 +356,32 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
     }
 
     /**
+     * Returns true if PDF support is available
+     *
+     * @return bool
+     */
+    public function getIsPdfSupportAvailable(): bool
+    {
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($this->getPdfConstructorClassName())) {
+            return false;
+        }
+
+        if (!is_subclass_of($this->getPdfConstructorClassName(), InvoiceSuiteAbstractPdfConstructor::class)) {
+            return false;
+        }
+
+        if ([] === $this->getAllowedPdfAttachmentFilenames()) {
+            return false;
+        }
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($this->getDefaultPdfAttachmentFilename())) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
      * Returns true if the given filename is a valid PDF attachment filename
      *
      * @param  string $filename
@@ -369,5 +390,19 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
     public function getIsValidPdfAttachmentFilename(string $filename): bool
     {
         return InvoiceSuiteArrayUtils::inArrayNoCase($this->getAllowedPdfAttachmentFilenames(), $filename);
+    }
+
+    /**
+     * Returns true if XSD validation is available
+     *
+     * @return bool
+     */
+    public function getValidationXsdAvailable(): bool
+    {
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($this->getValidationXsdFilename())) {
+            return false;
+        }
+
+        return true;
     }
 }
