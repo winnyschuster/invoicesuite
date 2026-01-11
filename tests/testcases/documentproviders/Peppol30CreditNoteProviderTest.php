@@ -42,7 +42,7 @@ final class Peppol30CreditNoteProviderTest extends TestCase
     {
         $provider = new InvoiceSuitePeppol30CreditNoteProvider();
 
-        $this->assertFalse($provider->isPdfSupportAvailable());
+        $this->assertFalse($provider->getIsPdfSupportAvailable());
         $this->assertCount(0, $provider->getAllowedPdfAttachmentFilenames());
         $this->assertSame('', $provider->getPdfConstructorClassName());
     }

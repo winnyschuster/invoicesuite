@@ -63,7 +63,7 @@ final class XRechnungCIIInvoiceProviderTest extends TestCase
     {
         $provider = new InvoiceSuiteXRechnungCIIInvoiceProvider();
 
-        $this->assertTrue($provider->isPdfSupportAvailable());
+        $this->assertTrue($provider->getIsPdfSupportAvailable());
         $this->assertCount(1, $provider->getAllowedPdfAttachmentFilenames());
         $this->assertContains('xrechnung.xml', $provider->getAllowedPdfAttachmentFilenames());
         $this->assertSame('xrechnung.xml', $provider->getDefaultPdfAttachmentFilename());

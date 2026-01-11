@@ -48,7 +48,7 @@ final class XRechnungUBLInvoiceProviderTest extends TestCase
     {
         $provider = new InvoiceSuiteXRechnungUBLInvoiceProvider();
 
-        $this->assertFalse($provider->isPdfSupportAvailable());
+        $this->assertFalse($provider->getIsPdfSupportAvailable());
         $this->assertEmpty($provider->getAllowedPdfAttachmentFilenames());
         $this->assertSame('', $provider->getDefaultPdfAttachmentFilename());
         $this->assertSame('', $provider->getPdfConstructorClassName());

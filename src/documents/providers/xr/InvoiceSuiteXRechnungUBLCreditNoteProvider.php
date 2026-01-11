@@ -193,7 +193,7 @@ class InvoiceSuiteXRechnungUBLCreditNoteProvider extends InvoiceSuiteAbstractDoc
      *
      * @return bool
      */
-    public function isPdfSupportAvailable(): bool
+    public function getIsPdfSupportAvailable(): bool
     {
         return false;
     }

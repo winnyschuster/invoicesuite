@@ -172,7 +172,7 @@ class InvoiceSuitePeppol30InvoiceProvider extends InvoiceSuiteAbstractDocumentFo
      *
      * @return bool
      */
-    public function isPdfSupportAvailable(): bool
+    public function getIsPdfSupportAvailable(): bool
     {
         return false;
     }

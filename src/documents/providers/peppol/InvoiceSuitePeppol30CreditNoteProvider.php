@@ -172,7 +172,7 @@ class InvoiceSuitePeppol30CreditNoteProvider extends InvoiceSuiteAbstractDocumen
      *
      * @return bool
      */
-    public function isPdfSupportAvailable(): bool
+    public function getIsPdfSupportAvailable(): bool
     {
         return false;
     }

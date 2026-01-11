@@ -56,7 +56,7 @@ final class ZfFxMinimumProviderTest extends TestCase
     {
         $provider = new InvoiceSuiteZfFxMinimumProvider();
 
-        $this->assertTrue($provider->isPdfSupportAvailable());
+        $this->assertTrue($provider->getIsPdfSupportAvailable());
         $this->assertCount(4, $provider->getAllowedPdfAttachmentFilenames());
         $this->assertContains('ZUGFeRD-invoice.xml', $provider->getAllowedPdfAttachmentFilenames());
         $this->assertContains('zugferd-invoice.xml', $provider->getAllowedPdfAttachmentFilenames());

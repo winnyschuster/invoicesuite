@@ -189,7 +189,7 @@ class InvoiceSuiteXRechnungCIIInvoiceProvider extends InvoiceSuiteAbstractDocume
      *
      * @return bool
      */
-    public function isPdfSupportAvailable(): bool
+    public function getIsPdfSupportAvailable(): bool
     {
         return true;
     }
