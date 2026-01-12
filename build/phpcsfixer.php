@@ -148,5 +148,8 @@ return (new Config())
                 'less_and_greater' => null,
                 'always_move_variable' => false,
             ],
+            'ordered_traits' => [
+                'case_sensitive' => false,
+            ],
         ]
     );

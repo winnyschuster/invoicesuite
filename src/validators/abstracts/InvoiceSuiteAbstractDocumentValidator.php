@@ -11,10 +11,13 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\validators\abstracts;
 
+use horstoeko\invoicesuite\concerns\HandlesCurrentDocumentFormatProvider;
+use horstoeko\invoicesuite\concerns\HandlesDocumentFormatProviders;
 use horstoeko\invoicesuite\concerns\HandlesMessageBag;
 use horstoeko\invoicesuite\concerns\HandlesRawContents;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
@@ -30,19 +33,17 @@ use JMS\Serializer\Exception\RuntimeException;
  */
 abstract class InvoiceSuiteAbstractDocumentValidator
 {
+    use HandlesCurrentDocumentFormatProvider;
+    use HandlesDocumentFormatProviders;
     use HandlesMessageBag;
     use HandlesRawContents;
 
     /**
      * Constructor (hidden)
      *
-     * @param string $newRawDocumentContent
+     * @return void
      */
-    final protected function __construct(string $newRawDocumentContent)
-    {
-        $this->setRawDocumentContent($newRawDocumentContent);
-        $this->intializeAfterConstruct();
-    }
+    final protected function __construct() {}
 
     /**
      * Create a validator instance by a file which contains the document to validate
@@ -52,6 +53,7 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      *
      * @throws InvoiceSuiteFileNotFoundException
      * @throws InvoiceSuiteFileNotReadableException
+     * @throws InvoiceSuiteFormatProviderNotFoundException
      */
     public static function createFromFile(string $fromFilename): static
     {
@@ -73,10 +75,15 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      *
      * @param  InvoiceSuiteDocumentReader $fromDocumentReader
      * @return static
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
      */
     public static function createFromDocumentReader(InvoiceSuiteDocumentReader $fromDocumentReader): static
     {
-        return static::createFromContent($fromDocumentReader->getOriginalDocumentContent());
+        // @phpstan-ignore new.staticInAbstractClassStaticMethod
+        return (new static())
+            ->intializeAfterConstruct()
+            ->setDocumentReader($fromDocumentReader);
     }
 
     /**
@@ -85,11 +92,15 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      * @param  InvoiceSuiteDocumentBuilder $fromDocumentBuilder
      * @return static
      *
+     * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
     public static function createFromDocumentBuilder(InvoiceSuiteDocumentBuilder $fromDocumentBuilder): static
     {
-        return static::createFromContent($fromDocumentBuilder->getContent());
+        // @phpstan-ignore new.staticInAbstractClassStaticMethod
+        return (new static())
+            ->intializeAfterConstruct()
+            ->setDocumentBuilder($fromDocumentBuilder);
     }
 
     /**
@@ -97,11 +108,15 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      *
      * @param  string $fromDocumentContent
      * @return static
+     *
+     * @throws InvoiceSuiteFormatProviderNotFoundException
      */
     public static function createFromContent(string $fromDocumentContent): static
     {
         // @phpstan-ignore new.staticInAbstractClassStaticMethod
-        return new static($fromDocumentContent);
+        return (new static())
+            ->intializeAfterConstruct()
+            ->setDocumentContent($fromDocumentContent);
     }
 
     /**
@@ -131,14 +146,7 @@ abstract class InvoiceSuiteAbstractDocumentValidator
     }
 
     /**
-     * The validator-specifc validation entry point
-     *
-     * @return static
-     */
-    abstract protected function doValidate(): static;
-
-    /**
-     * Some initialization after constructing an instance
+     * Init after constructing the validator
      *
      * @return static
      */
@@ -146,4 +154,85 @@ abstract class InvoiceSuiteAbstractDocumentValidator
     {
         return $this;
     }
+
+    /**
+     * Internal method to set a document builder from which to get the content from. This will check
+     * if the given provider has an enabled XSD validation support
+     *
+     * @param  InvoiceSuiteDocumentBuilder $fromDocumentBuilder
+     * @return static
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     * @throws RuntimeException
+     */
+    protected function setDocumentBuilder(InvoiceSuiteDocumentBuilder $fromDocumentBuilder): static
+    {
+        if (!$fromDocumentBuilder->getCurrentDocumentFormatProvider()->getValidationXsdAvailable()) {
+            throw new InvoiceSuiteInvalidArgumentException(sprintf('Provider %s does not support XSD validation', $fromDocumentBuilder->getCurrentDocumentFormatProvider()->getUniqueId()));
+        }
+
+        $this->setCurrentDocumentFormatProvider($fromDocumentBuilder->getCurrentDocumentFormatProvider());
+        $this->setRawDocumentContent($fromDocumentBuilder->getContent());
+
+        return $this;
+    }
+
+    /**
+     * Internal method to set a document reader from which to get the content from. This will check
+     * if the given provider has an enabled XSD validation support
+     *
+     * @param  InvoiceSuiteDocumentReader $fromDocumentReader
+     * @return static
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    protected function setDocumentReader(InvoiceSuiteDocumentReader $fromDocumentReader): static
+    {
+        if (!$fromDocumentReader->getCurrentDocumentFormatProvider()->getValidationXsdAvailable()) {
+            throw new InvoiceSuiteInvalidArgumentException(sprintf('Provider %s does not support XSD validation', $fromDocumentReader->getCurrentDocumentFormatProvider()->getUniqueId()));
+        }
+
+        $this->setCurrentDocumentFormatProvider($fromDocumentReader->getCurrentDocumentFormatProvider());
+        $this->setRawDocumentContent($fromDocumentReader->getOriginalDocumentContent());
+
+        return $this;
+    }
+
+    /**
+     * Internal method to set the document content directly. This will look for a provider and check if
+     * XSD validation support is enabled
+     *
+     * @param  string $fromDocumentContent
+     * @return static
+     *
+     * @throws InvoiceSuiteFormatProviderNotFoundException
+     */
+    protected function setDocumentContent(string $fromDocumentContent): static
+    {
+        $this->resolveAvailableDocumentFormatProviders();
+
+        $formatProviders = array_filter(
+            $this->getRegisteredDocumentFormatProviders(),
+            static fn ($formatProvider)
+                => $formatProvider->getIsSatisfiableBySerializedContent($fromDocumentContent)
+        );
+
+        if ([] === $formatProviders) {
+            throw new InvoiceSuiteFormatProviderNotFoundException('unknown');
+        }
+
+        $formatProvider = reset($formatProviders);
+
+        $this->setCurrentDocumentFormatProvider($formatProvider);
+        $this->setRawDocumentContent($fromDocumentContent);
+
+        return $this;
+    }
+
+    /**
+     * The validator-specifc validation entry point
+     *
+     * @return static
+     */
+    abstract protected function doValidate(): static;
 }

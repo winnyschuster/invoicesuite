@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace horstoeko\zugferd;
 
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageBagItem;
 use horstoeko\invoicesuite\validators\InvoiceSuiteKositDocumentValidator;
@@ -38,6 +39,8 @@ class ZugferdKositValidator
      *
      * @param null|string|ZugferdDocument $document $document
      *
+     * @throws InvoiceSuiteFormatProviderNotFoundException
+     * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
     public function __construct($document = null)
@@ -51,6 +54,8 @@ class ZugferdKositValidator
      * @param  null|string|ZugferdDocumentBuilder|ZugferdDocumentReader $document $document
      * @return ZugferdKositValidator
      *
+     * @throws InvoiceSuiteFormatProviderNotFoundException
+     * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
     public function setDocument($document): self
@@ -88,6 +93,8 @@ class ZugferdKositValidator
      * @param  string                $document
      * @return ZugferdKositValidator
      *
+     * @throws InvoiceSuiteFormatProviderNotFoundException
+     * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
     public static function fromString(string $document): self
@@ -101,6 +108,8 @@ class ZugferdKositValidator
      * @param  ZugferdDocument       $zugferdDocument
      * @return ZugferdKositValidator
      *
+     * @throws InvoiceSuiteFormatProviderNotFoundException
+     * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
     public static function fromZugferdDocument(ZugferdDocument $zugferdDocument): self

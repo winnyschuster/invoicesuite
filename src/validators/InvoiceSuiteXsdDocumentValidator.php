@@ -52,6 +52,7 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
      *
      * @throws InvoiceSuiteFileNotFoundException
      * @throws InvoiceSuiteFileNotReadableException
+     * @throws InvoiceSuiteInvalidArgumentException
      */
     public static function createFromDocumentReader(InvoiceSuiteDocumentReader $fromDocumentReader): static
     {
@@ -70,6 +71,7 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
      *
      * @throws InvoiceSuiteFileNotFoundException
      * @throws InvoiceSuiteFileNotReadableException
+     * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
     public static function createFromDocumentBuilder(InvoiceSuiteDocumentBuilder $fromDocumentBuilder): static

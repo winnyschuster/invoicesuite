@@ -34,8 +34,8 @@ use JMS\Serializer\Exception\RuntimeException;
 abstract class InvoiceSuiteAbstractDocumentFormatReader
 {
     use HandlesCurrentDocumentFormatProvider;
-    use HandlesDocumentSerializer;
     use HandlesDocumentRootObject;
+    use HandlesDocumentSerializer;
     use HandlesMessageBag;
     use HandlesMethodTracing;
 
