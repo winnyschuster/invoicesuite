@@ -213,8 +213,7 @@ abstract class InvoiceSuiteAbstractDocumentValidator
 
         $formatProviders = array_filter(
             $this->getRegisteredDocumentFormatProviders(),
-            static fn ($formatProvider)
-                => $formatProvider->getIsSatisfiableBySerializedContent($fromDocumentContent)
+            static fn ($formatProvider) => $formatProvider->getIsSatisfiableBySerializedContent($fromDocumentContent)
         );
 
         if ([] === $formatProviders) {

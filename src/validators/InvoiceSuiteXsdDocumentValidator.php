@@ -45,45 +45,6 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
     private $xsdFilename = '';
 
     /**
-     * Create a validator instance by the XML content of a given InvoiceSuiteDocumentReader
-     *
-     * @param  InvoiceSuiteDocumentReader $fromDocumentReader
-     * @return static
-     *
-     * @throws InvoiceSuiteFileNotFoundException
-     * @throws InvoiceSuiteFileNotReadableException
-     * @throws InvoiceSuiteInvalidArgumentException
-     */
-    public static function createFromDocumentReader(InvoiceSuiteDocumentReader $fromDocumentReader): static
-    {
-        $validator = parent::createFromDocumentReader($fromDocumentReader);
-
-        $validator->setXsdFilename($fromDocumentReader->getCurrentDocumentFormatProvider()->getValidationXsdFilename());
-
-        return $validator;
-    }
-
-    /**
-     * Create a validator instance by the XML content of a given InvoiceSuiteDocumentBuilder
-     *
-     * @param  InvoiceSuiteDocumentBuilder $fromDocumentBuilder
-     * @return static
-     *
-     * @throws InvoiceSuiteFileNotFoundException
-     * @throws InvoiceSuiteFileNotReadableException
-     * @throws InvoiceSuiteInvalidArgumentException
-     * @throws RuntimeException
-     */
-    public static function createFromDocumentBuilder(InvoiceSuiteDocumentBuilder $fromDocumentBuilder): static
-    {
-        $validator = parent::createFromDocumentBuilder($fromDocumentBuilder);
-
-        $validator->setXsdFilename($fromDocumentBuilder->getCurrentDocumentFormatProvider()->getValidationXsdFilename());
-
-        return $validator;
-    }
-
-    /**
      * Returns the configurred location of the mein XSD-scheme file
      *
      * @return string
@@ -118,6 +79,51 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
         $this->xsdFilename = $newXsdFilename;
 
         return $this;
+    }
+
+    /**
+     * Internal method to set a document builder from which to get the content from. This will check
+     * if the given provider has an enabled XSD validation support
+     *
+     * @param  InvoiceSuiteDocumentBuilder $fromDocumentBuilder
+     * @return static
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws InvoiceSuiteInvalidArgumentException
+     * @throws RuntimeException
+     */
+    protected function setDocumentBuilder(InvoiceSuiteDocumentBuilder $fromDocumentBuilder): static
+    {
+        if (!$fromDocumentBuilder->getCurrentDocumentFormatProvider()->getValidationXsdAvailable()) {
+            throw new InvoiceSuiteInvalidArgumentException(sprintf('Provider %s does not support XSD validation', $fromDocumentBuilder->getCurrentDocumentFormatProvider()->getUniqueId()));
+        }
+
+        $this->setXsdFilename($fromDocumentBuilder->getCurrentDocumentFormatProvider()->getValidationXsdFilename());
+
+        return parent::setDocumentBuilder($fromDocumentBuilder);
+    }
+
+    /**
+     * Internal method to set a document reader from which to get the content from. This will check
+     * if the given provider has an enabled XSD validation support
+     *
+     * @param  InvoiceSuiteDocumentReader $fromDocumentReader
+     * @return static
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    protected function setDocumentReader(InvoiceSuiteDocumentReader $fromDocumentReader): static
+    {
+        if (!$fromDocumentReader->getCurrentDocumentFormatProvider()->getValidationXsdAvailable()) {
+            throw new InvoiceSuiteInvalidArgumentException(sprintf('Provider %s does not support XSD validation', $fromDocumentReader->getCurrentDocumentFormatProvider()->getUniqueId()));
+        }
+
+        $this->setXsdFilename($fromDocumentReader->getCurrentDocumentFormatProvider()->getValidationXsdFilename());
+
+        return parent::setDocumentReader($fromDocumentReader);
     }
 
     /**
