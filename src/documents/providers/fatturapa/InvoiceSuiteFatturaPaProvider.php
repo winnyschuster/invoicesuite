@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\providers\fatturapa;
 
+use Closure;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\documents\providers\fatturapa\models\FatturaElettronica;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentType;

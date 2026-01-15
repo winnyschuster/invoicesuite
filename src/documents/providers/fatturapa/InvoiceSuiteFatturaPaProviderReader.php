@@ -30,6 +30,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newDocumentDTO = new InvoiceSuiteDocumentHeaderDTO();
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -46,6 +48,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentNo(?string &$newDocumentNo): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newDocumentNo = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -64,6 +68,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newDocumentType = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -80,6 +86,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentDescription(?string &$newDocumentDescription): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newDocumentDescription = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -98,6 +106,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newDocumentLanguage = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -114,6 +124,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentDate(?DateTimeInterface &$newDocumentDate): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newDocumentDate = null;
 
         $this->traceMethodExit(__METHOD__);
 
@@ -132,6 +144,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newCompleteDate = null;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -148,6 +162,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentCurrency(?string &$newDocumentCurrency): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newDocumentCurrency = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -166,6 +182,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newDocumentTaxCurrency = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -183,6 +201,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newDocumentIsCopy = false;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -199,6 +219,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentIsTest(?bool &$newDocumentIsTest): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newDocumentIsTest = false;
 
         $this->traceMethodExit(__METHOD__);
 
@@ -241,6 +263,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newContent = '';
+        $newContentCode = '';
+        $newSubjectCode = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -282,6 +308,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newStartDate = null;
+        $newEndDate = null;
+        $newDescription = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -320,6 +350,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPostingReference(?string &$newType, ?string &$newAccountId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newAccountId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -360,6 +393,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newReferenceNumber = '';
+        $newReferenceDate = null;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -398,6 +434,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentBuyerOrderReference(?string &$newReferenceNumber, ?DateTimeInterface &$newReferenceDate): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newReferenceNumber = '';
+        $newReferenceDate = null;
 
         $this->traceMethodExit(__METHOD__);
 
@@ -438,6 +477,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newReferenceNumber = '';
+        $newReferenceDate = null;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -476,6 +518,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentContractReference(?string &$newReferenceNumber, ?DateTimeInterface &$newReferenceDate): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newReferenceNumber = '';
+        $newReferenceDate = null;
 
         $this->traceMethodExit(__METHOD__);
 
@@ -524,6 +569,13 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newReferenceNumber = '';
+        $newReferenceDate = null;
+        $newTypeCode = '';
+        $newReferenceTypeCode = '';
+        $newDescription = '';
+        $newInvoiceSuiteAttachment = null;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -565,6 +617,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newReferenceNumber = '';
+        $newReferenceDate = null;
+        $newTypeCode = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -603,6 +659,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentProjectReference(?string &$newReferenceNumber, ?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newReferenceNumber = '';
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -643,6 +702,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newReferenceNumber = '';
+        $newReferenceDate = null;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -681,6 +743,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentDespatchAdviceReference(?string &$newReferenceNumber, ?DateTimeInterface &$newReferenceDate): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newReferenceNumber = '';
+        $newReferenceDate = null;
 
         $this->traceMethodExit(__METHOD__);
 
@@ -721,6 +786,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newReferenceNumber = '';
+        $newReferenceDate = null;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -760,6 +828,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newReferenceNumber = '';
+        $newReferenceDate = null;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -776,6 +847,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentSupplyChainEvent(?DateTimeInterface &$newDate): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newDate = null;
 
         $this->traceMethodExit(__METHOD__);
 
@@ -794,6 +867,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newBuyerReference = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -811,6 +886,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newCode = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -827,6 +904,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentSellerName(?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -864,6 +943,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentSellerId(?string &$newId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -904,6 +985,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newGlobalId = '';
+        $newGlobalIdType = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -942,6 +1026,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentSellerTaxRegistration(?string &$newTaxRegistrationType, ?string &$newTaxRegistrationId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -992,6 +1079,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -1032,6 +1127,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentSellerLegalOrganisation(?string &$newType, ?string &$newId, ?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -1078,6 +1177,12 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -1117,6 +1222,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newType = '';
+        $newUri = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -1133,6 +1241,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentBuyerName(?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -1170,6 +1280,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentBuyerId(?string &$newId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -1210,6 +1322,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newGlobalId = '';
+        $newGlobalIdType = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -1248,6 +1363,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentBuyerTaxRegistration(?string &$newTaxRegistrationType, ?string &$newTaxRegistrationId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -1298,6 +1416,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -1338,6 +1464,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentBuyerLegalOrganisation(?string &$newType, ?string &$newId, ?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -1384,6 +1514,12 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -1423,6 +1559,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newType = '';
+        $newUri = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -1439,6 +1578,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentTaxRepresentativeName(?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -1476,6 +1617,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentTaxRepresentativeId(?string &$newId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -1516,6 +1659,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newGlobalId = '';
+        $newGlobalIdType = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -1554,6 +1700,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentTaxRepresentativeTaxRegistration(?string &$newTaxRegistrationType, ?string &$newTaxRegistrationId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -1604,6 +1753,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -1644,6 +1801,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentTaxRepresentativeLegalOrganisation(?string &$newType, ?string &$newId, ?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -1690,6 +1851,12 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -1729,6 +1896,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newType = '';
+        $newUri = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -1745,6 +1915,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentProductEndUserName(?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -1782,6 +1954,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentProductEndUserId(?string &$newId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -1822,6 +1996,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newGlobalId = '';
+        $newGlobalIdType = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -1860,6 +2037,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentProductEndUserTaxRegistration(?string &$newTaxRegistrationType, ?string &$newTaxRegistrationId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -1910,6 +2090,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -1950,6 +2138,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentProductEndUserLegalOrganisation(?string &$newType, ?string &$newId, ?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -1996,6 +2188,12 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -2035,6 +2233,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newType = '';
+        $newUri = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -2051,6 +2252,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentShipToName(?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2088,6 +2291,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentShipToId(?string &$newId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2128,6 +2333,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newGlobalId = '';
+        $newGlobalIdType = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -2166,6 +2374,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentShipToTaxRegistration(?string &$newTaxRegistrationType, ?string &$newTaxRegistrationId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2216,6 +2427,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -2256,6 +2475,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentShipToLegalOrganisation(?string &$newType, ?string &$newId, ?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2302,6 +2525,12 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -2341,6 +2570,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newType = '';
+        $newUri = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -2357,6 +2589,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentUltimateShipToName(?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2394,6 +2628,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentUltimateShipToId(?string &$newId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2434,6 +2670,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newGlobalId = '';
+        $newGlobalIdType = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -2472,6 +2711,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentUltimateShipToTaxRegistration(?string &$newTaxRegistrationType, ?string &$newTaxRegistrationId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2522,6 +2764,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -2562,6 +2812,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentUltimateShipToLegalOrganisation(?string &$newType, ?string &$newId, ?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2608,6 +2862,12 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -2647,6 +2907,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newType = '';
+        $newUri = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -2663,6 +2926,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentShipFromName(?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2700,6 +2965,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentShipFromId(?string &$newId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2740,6 +3007,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newGlobalId = '';
+        $newGlobalIdType = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -2778,6 +3048,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentShipFromTaxRegistration(?string &$newTaxRegistrationType, ?string &$newTaxRegistrationId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2828,6 +3101,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -2868,6 +3149,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentShipFromLegalOrganisation(?string &$newType, ?string &$newId, ?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2914,6 +3199,12 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -2953,6 +3244,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newType = '';
+        $newUri = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -2969,6 +3263,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentInvoicerName(?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -3006,6 +3302,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentInvoicerId(?string &$newId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -3046,6 +3344,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newGlobalId = '';
+        $newGlobalIdType = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -3084,6 +3385,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentInvoicerTaxRegistration(?string &$newTaxRegistrationType, ?string &$newTaxRegistrationId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -3134,6 +3438,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -3174,6 +3486,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentInvoicerLegalOrganisation(?string &$newType, ?string &$newId, ?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -3220,6 +3536,12 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -3259,6 +3581,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newType = '';
+        $newUri = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -3275,6 +3600,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentInvoiceeName(?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -3312,6 +3639,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentInvoiceeId(?string &$newId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -3352,6 +3681,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newGlobalId = '';
+        $newGlobalIdType = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -3390,6 +3722,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentInvoiceeTaxRegistration(?string &$newTaxRegistrationType, ?string &$newTaxRegistrationId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -3440,6 +3775,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -3480,6 +3823,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentInvoiceeLegalOrganisation(?string &$newType, ?string &$newId, ?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -3526,6 +3873,12 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -3565,6 +3918,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newType = '';
+        $newUri = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -3581,6 +3937,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPayeeName(?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -3618,6 +3976,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPayeeId(?string &$newId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -3658,6 +4018,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newGlobalId = '';
+        $newGlobalIdType = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -3696,6 +4059,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPayeeTaxRegistration(?string &$newTaxRegistrationType, ?string &$newTaxRegistrationId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -3746,6 +4112,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -3786,6 +4160,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPayeeLegalOrganisation(?string &$newType, ?string &$newId, ?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -3832,6 +4210,12 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -3870,6 +4254,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPayeeCommunication(?string &$newType, ?string &$newUri): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newUri = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -3928,6 +4315,18 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newTypeCode = '';
+        $newName = '';
+        $newFinancialCardId = '';
+        $newFinancialCardHolder = '';
+        $newBuyerIban = '';
+        $newPayeeIban = '';
+        $newPayeeAccountName = '';
+        $newPayeeProprietaryId = '';
+        $newPayeeBic = '';
+        $newPaymentReference = '';
+        $newMandate = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -3965,6 +4364,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newId = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -4001,6 +4402,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPaymentReference(?string &$newId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4041,6 +4444,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPaymentTerm(?string &$newDescription, ?DateTimeInterface &$newDueDate, ?string &$newMandate): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newDescription = '';
+        $newDueDate = null;
+        $newMandate = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4088,6 +4495,13 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newBaseAmount = 0.0;
+        $newDiscountAmount = 0.0;
+        $newDiscountPercent = 0.0;
+        $newBaseDate = null;
+        $newBasePeriod = 0.0;
+        $newBasePeriodUnit = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -4133,6 +4547,13 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPaymentPenaltyTermsInLastPaymentTerm(?float &$newBaseAmount, ?float &$newPenaltyAmount, ?float &$newPenaltyPercent, ?DateTimeInterface &$newBaseDate, ?float &$newBasePeriod, ?string &$newBasePeriodUnit): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newBaseAmount = 0.0;
+        $newPenaltyAmount = 0.0;
+        $newPenaltyPercent = 0.0;
+        $newBaseDate = null;
+        $newBasePeriod = 0.0;
+        $newBasePeriodUnit = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4187,6 +4608,16 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newTaxCategory = '';
+        $newTaxType = '';
+        $newBasisAmount = 0.0;
+        $newTaxAmount = 0.0;
+        $newTaxPercent = 0.0;
+        $newExemptionReason = '';
+        $newExemptionReasonCode = '';
+        $newTaxDueDate = null;
+        $newTaxDueCode = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -4240,6 +4671,16 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newChargeIndicator = false;
+        $newAllowanceChargeAmount = 0.0;
+        $newAllowanceChargeBaseAmount = 0.0;
+        $newTaxCategory = '';
+        $newTaxType = '';
+        $newTaxPercent = 0.0;
+        $newAllowanceChargeReason = '';
+        $newAllowanceChargeReasonCode = '';
+        $newAllowanceChargePercent = 0.0;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -4285,6 +4726,12 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newChargeAmount = 0.0;
+        $newDescription = '';
+        $newTaxCategory = '';
+        $newTaxType = '';
+        $newTaxPercent = 0.0;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -4318,6 +4765,17 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentSummation(?float &$newNetAmount, ?float &$newChargeTotalAmount, ?float &$newDiscountTotalAmount, ?float &$newTaxBasisAmount, ?float &$newTaxTotalAmount, ?float &$newTaxTotalAmount2, ?float &$newGrossAmount, ?float &$newDueAmount, ?float &$newPrepaidAmount, ?float &$newRoungingAmount): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newNetAmount = 0.0;
+        $newChargeTotalAmount = 0.0;
+        $newDiscountTotalAmount = 0.0;
+        $newTaxBasisAmount = 0.0;
+        $newTaxTotalAmount = 0.0;
+        $newTaxTotalAmount2 = 0.0;
+        $newGrossAmount = 0.0;
+        $newDueAmount = 0.0;
+        $newPrepaidAmount = 0.0;
+        $newRoungingAmount = 0.0;
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4362,6 +4820,11 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newPositionId = '';
+        $newParentPositionId = '';
+        $newLineStatusCode = '';
+        $newLineStatusReasonCode = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -4403,6 +4866,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newContent = '';
+        $newContentCode = '';
+        $newSubjectCode = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -4443,6 +4910,20 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionProductDetails(?string &$newProductId, ?string &$newProductName, ?string &$newProductDescription, ?string &$newProductSellerId, ?string &$newProductBuyerId, ?string &$newProductGlobalId, ?string &$newProductGlobalIdType, ?string &$newProductIndustryId, ?string &$newProductModelId, ?string &$newProductBatchId, ?string &$newProductBrandName, ?string &$newProductModelName, ?string &$newProductOriginTradeCountry): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newProductId = '';
+        $newProductName = '';
+        $newProductDescription = '';
+        $newProductSellerId = '';
+        $newProductBuyerId = '';
+        $newProductGlobalId = '';
+        $newProductGlobalIdType = '';
+        $newProductIndustryId = '';
+        $newProductModelId = '';
+        $newProductBatchId = '';
+        $newProductBrandName = '';
+        $newProductModelName = '';
+        $newProductOriginTradeCountry = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4489,6 +4970,12 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newProductCharacteristicDescription = '';
+        $newProductCharacteristicValue = '';
+        $newProductCharacteristicType = '';
+        $newProductCharacteristicMeasureValue = 0.0;
+        $newProductCharacteristicMeasureUnit = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -4531,6 +5018,11 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionProductClassification(?string &$newProductClassificationCode, ?string &$newProductClassificationListId, ?string &$newProductClassificationListVersionId, ?string &$newProductClassificationCodeClassname): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newProductClassificationCode = '';
+        $newProductClassificationListId = '';
+        $newProductClassificationListVersionId = '';
+        $newProductClassificationCodeClassname = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4587,6 +5079,17 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newProductId = '';
+        $newProductName = '';
+        $newProductDescription = '';
+        $newProductSellerId = '';
+        $newProductBuyerId = '';
+        $newProductGlobalId = '';
+        $newProductGlobalIdType = '';
+        $newProductIndustryId = '';
+        $newProductUnitQuantity = 0.0;
+        $newProductUnitQuantityUnit = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -4627,6 +5130,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionSellerOrderReference(?string &$newReferenceNumber, ?string &$newReferenceLineNumber, ?DateTimeInterface &$newReferenceDate): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newReferenceNumber = '';
+        $newReferenceLineNumber = '';
+        $newReferenceDate = null;
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4669,6 +5176,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newReferenceNumber = '';
+        $newReferenceLineNumber = '';
+        $newReferenceDate = null;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -4710,6 +5221,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newReferenceNumber = '';
+        $newReferenceLineNumber = '';
+        $newReferenceDate = null;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -4750,6 +5265,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionContractReference(?string &$newReferenceNumber, ?string &$newReferenceLineNumber, ?DateTimeInterface &$newReferenceDate): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newReferenceNumber = '';
+        $newReferenceLineNumber = '';
+        $newReferenceDate = null;
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4800,6 +5319,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newReferenceNumber = '';
+        $newReferenceLineNumber = '';
+        $newReferenceDate = null;
+        $newTypeCode = '';
+        $newReferenceTypeCode = '';
+        $newDescription = '';
+        $newInvoiceSuiteAttachment = null;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -4840,6 +5367,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionUltimateCustomerOrderReference(?string &$newReferenceNumber, ?string &$newReferenceLineNumber, ?DateTimeInterface &$newReferenceDate): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newReferenceNumber = '';
+        $newReferenceLineNumber = '';
+        $newReferenceDate = null;
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4882,6 +5413,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newReferenceNumber = '';
+        $newReferenceLineNumber = '';
+        $newReferenceDate = null;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -4923,6 +5458,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newReferenceNumber = '';
+        $newReferenceLineNumber = '';
+        $newReferenceDate = null;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -4963,6 +5502,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionDeliveryNoteReference(?string &$newReferenceNumber, ?string &$newReferenceLineNumber, ?DateTimeInterface &$newReferenceDate): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newReferenceNumber = '';
+        $newReferenceLineNumber = '';
+        $newReferenceDate = null;
 
         $this->traceMethodExit(__METHOD__);
 
@@ -5007,6 +5550,11 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newReferenceNumber = '';
+        $newReferenceLineNumber = '';
+        $newReferenceDate = null;
+        $newTypeCode = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -5048,6 +5596,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newReferenceNumber = '';
+        $newTypeCode = '';
+        $newReferenceTypeCode = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -5078,6 +5630,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionGrossPrice(?float &$newGrossPrice, ?float &$newGrossPriceBasisQuantity, ?string &$newGrossPriceBasisQuantityUnit): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newGrossPrice = 0.0;
+        $newGrossPriceBasisQuantity = 0.0;
+        $newGrossPriceBasisQuantityUnit = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -5126,6 +5682,13 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newGrossPriceAllowanceChargeAmount = 0.0;
+        $newIsCharge = false;
+        $newGrossPriceAllowanceChargePercent = 0.0;
+        $newGrossPriceAllowanceChargeBasisAmount = 0.0;
+        $newGrossPriceAllowanceChargeReason = '';
+        $newGrossPriceAllowanceChargeReasonCode = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -5157,6 +5720,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newNetPrice = 0.0;
+        $newNetPriceBasisQuantity = 0.0;
+        $newNetPriceBasisQuantityUnit = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -5183,6 +5750,13 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionNetPriceTax(?string &$newTaxCategory, ?string &$newTaxType, ?float &$newTaxAmount, ?float &$newTaxPercent, ?string &$newExemptionReason, ?string &$newExemptionReasonCode): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newTaxCategory = '';
+        $newTaxType = '';
+        $newTaxAmount = 0.0;
+        $newTaxPercent = 0.0;
+        $newExemptionReason = '';
+        $newExemptionReasonCode = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -5215,6 +5789,15 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newQuantity = 0.0;
+        $newQuantityUnit = '';
+        $newChargeFreeQuantity = 0.0;
+        $newChargeFreeQuantityUnit = '';
+        $newPackageQuantity = 0.0;
+        $newPackageQuantityUnit = '';
+        $newPerPackageUnitQuantity = 0.0;
+        $newPerPackageUnitQuantityUnit = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -5231,6 +5814,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionShipToName(?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -5268,6 +5853,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionShipToId(?string &$newId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -5308,6 +5895,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newGlobalId = '';
+        $newGlobalIdType = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -5346,6 +5936,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionShipToTaxRegistration(?string &$newTaxRegistrationType, ?string &$newTaxRegistrationId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -5396,6 +5989,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -5436,6 +6037,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionShipToLegalOrganisation(?string &$newType, ?string &$newId, ?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -5482,6 +6087,12 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -5521,6 +6132,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newType = '';
+        $newUri = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -5537,6 +6151,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionUltimateShipToName(?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -5574,6 +6190,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionUltimateShipToId(?string &$newId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -5614,6 +6232,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newGlobalId = '';
+        $newGlobalIdType = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -5652,6 +6273,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionUltimateShipToTaxRegistration(?string &$newTaxRegistrationType, ?string &$newTaxRegistrationId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -5702,6 +6326,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -5742,6 +6374,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionUltimateShipToLegalOrganisation(?string &$newType, ?string &$newId, ?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newId = '';
+        $newName = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -5788,6 +6424,12 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -5827,6 +6469,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newType = '';
+        $newUri = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -5843,6 +6488,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionSupplyChainEvent(?DateTimeInterface &$newDate): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newDate = null;
 
         $this->traceMethodExit(__METHOD__);
 
@@ -5884,6 +6531,10 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionBillingPeriod(?DateTimeInterface &$newStartDate, ?DateTimeInterface &$newEndDate, ?string &$newDescription): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newStartDate = null;
+        $newEndDate = null;
+        $newDescription = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -5932,6 +6583,13 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newTaxCategory = '';
+        $newTaxType = '';
+        $newTaxAmount = 0.0;
+        $newTaxPercent = 0.0;
+        $newExemptionReason = '';
+        $newExemptionReasonCode = '';
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -5979,6 +6637,13 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $newChargeIndicator = false;
+        $newAllowanceChargeAmount = 0.0;
+        $newAllowanceChargeBaseAmount = 0.0;
+        $newAllowanceChargeReason = '';
+        $newAllowanceChargeReasonCode = '';
+        $newAllowanceChargePercent = 0.0;
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -6013,6 +6678,12 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionSummation(?float &$newNetAmount, ?float &$newChargeTotalAmount, ?float &$newDiscountTotalAmount, ?float &$newTaxTotalAmount, ?float &$newGrossAmount): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newNetAmount = 0.0;
+        $newChargeTotalAmount = 0.0;
+        $newDiscountTotalAmount = 0.0;
+        $newTaxTotalAmount = 0.0;
+        $newGrossAmount = 0.0;
 
         $this->traceMethodExit(__METHOD__);
 
@@ -6052,6 +6723,9 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     public function getDocumentPositionPostingReference(?string &$newType, ?string &$newAccountId): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newAccountId = '';
 
         $this->traceMethodExit(__METHOD__);
 
