@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\tests\testcases\utils;
 
-use horstoeko\invoicesuite\InvoiceSuitePackageVersion;
 use horstoeko\invoicesuite\tests\TestCase;
+use horstoeko\invoicesuite\utils\InvoiceSuitePackageVersion;
 
 final class InvoiceSuitePackageVersionTest extends TestCase
 {

@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace horstoeko\zugferd;
 
-use horstoeko\invoicesuite\InvoiceSuitePackageVersion;
+use horstoeko\invoicesuite\utils\InvoiceSuitePackageVersion;
 
 /**
  * Legacy-class representing some tools for getting the package version

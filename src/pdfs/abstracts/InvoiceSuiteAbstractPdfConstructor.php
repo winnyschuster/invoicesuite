@@ -18,8 +18,8 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
-use horstoeko\invoicesuite\InvoiceSuitePackageVersion;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuitePackageVersion;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\mimedb\MimeDb;
 
