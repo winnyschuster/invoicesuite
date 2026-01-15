@@ -1,0 +1,155 @@
+<?php
+
+declare(strict_types=1);
+
+namespace horstoeko\invoicesuite\documents\providers\fatturapa\models;
+
+use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use JMS\Serializer\Annotation as JMS;
+
+final class Contatti
+{
+    use HandlesObjectFlags;
+
+    /**
+     * @translation-german Telefon
+     *
+     * @JMS\Expose
+     * @JMS\Groups({"fatturapa"})
+     * @JMS\Type("string")
+     * @JMS\Accessor(getter="getTelefono", setter="setTelefono")
+     * @JMS\SerializedName("Telefono")
+     * @JMS\XmlElement(cdata=false)
+     */
+    private ?string $telefono = null;
+
+    /**
+     * @translation-german-untranslated
+     *
+     * @JMS\Expose
+     * @JMS\Groups({"fatturapa"})
+     * @JMS\Type("string")
+     * @JMS\Accessor(getter="getFax", setter="setFax")
+     * @JMS\SerializedName("Fax")
+     * @JMS\XmlElement(cdata=false)
+     */
+    private ?string $fax = null;
+
+    /**
+     * @translation-german E-Mail
+     *
+     * @JMS\Expose
+     * @JMS\Groups({"fatturapa"})
+     * @JMS\Type("string")
+     * @JMS\Accessor(getter="getEmail", setter="setEmail")
+     * @JMS\SerializedName("Email")
+     * @JMS\XmlElement(cdata=false)
+     */
+    private ?string $email = null;
+
+    /**
+     * @translation-german Telefon
+     *
+     * @return null|string
+     */
+    public function getTelefono(): ?string
+    {
+        return $this->telefono;
+    }
+
+    /**
+     * @translation-german Telefon
+     *
+     * @param  null|string $telefono
+     * @return static
+     */
+    public function setTelefono(?string $telefono = null): static
+    {
+        $this->telefono = InvoiceSuiteStringUtils::asNullWhenEmpty($telefono);
+
+        return $this;
+    }
+
+    /**
+     * @translation-german Telefon
+     *
+     * @return static
+     */
+    public function unsetTelefono(): static
+    {
+        $this->telefono = null;
+
+        return $this;
+    }
+
+    /**
+     * @translation-german-untranslated
+     *
+     * @return null|string
+     */
+    public function getFax(): ?string
+    {
+        return $this->fax;
+    }
+
+    /**
+     * @translation-german-untranslated
+     *
+     * @param  null|string $fax
+     * @return static
+     */
+    public function setFax(?string $fax = null): static
+    {
+        $this->fax = InvoiceSuiteStringUtils::asNullWhenEmpty($fax);
+
+        return $this;
+    }
+
+    /**
+     * @translation-german-untranslated
+     *
+     * @return static
+     */
+    public function unsetFax(): static
+    {
+        $this->fax = null;
+
+        return $this;
+    }
+
+    /**
+     * @translation-german E-Mail
+     *
+     * @return null|string
+     */
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @translation-german E-Mail
+     *
+     * @param  null|string $email
+     * @return static
+     */
+    public function setEmail(?string $email = null): static
+    {
+        $this->email = InvoiceSuiteStringUtils::asNullWhenEmpty($email);
+
+        return $this;
+    }
+
+    /**
+     * @translation-german E-Mail
+     *
+     * @return static
+     */
+    public function unsetEmail(): static
+    {
+        $this->email = null;
+
+        return $this;
+    }
+}

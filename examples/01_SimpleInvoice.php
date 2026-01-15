@@ -39,7 +39,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 
 require __DIR__ . "/../vendor/autoload.php";
 
-$creationMode = 2; // 0 = XRechnung UBL Invoice, 1 ZF/FX Extended, 2 = ZF/FX Comfort, 3 = ZF/FX BasicWL, 4 = ZF/FX Basic, 5 = ZF/FX Minimum, 6 = XRechnung, 7 = Peppol 3.0 Invoice, 8 = Peppol 3.0 Credit Note, 9 = XRechnung UBL Credit Note
+$creationMode = 10; // 0 = XRechnung UBL Invoice, 1 ZF/FX Extended, 2 = ZF/FX Comfort, 3 = ZF/FX BasicWL, 4 = ZF/FX Basic, 5 = ZF/FX Minimum, 6 = XRechnung, 7 = Peppol 3.0 Invoice, 8 = Peppol 3.0 Credit Note, 9 = XRechnung UBL Credit Note; 10 = FatturaPA
 
 if ($creationMode === 0) {
     $builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('xrechnungublinvoice');
@@ -70,6 +70,9 @@ if ($creationMode === 8) {
 }
 if ($creationMode === 9) {
     $builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('xrechnungublcreditnote');
+}
+if ($creationMode === 10) {
+    $builder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId('fatturapa');
 }
 
 InvoiceSuiteSettings::setUnitAmountDecimals(5);
@@ -460,4 +463,7 @@ if ($creationMode === 8) {
 }
 if ($creationMode === 9) {
     $builder->saveContentToFile(__DIR__ . "/01_SimpleInvoice_UBL.xml");
+}
+if ($creationMode === 10) {
+    $builder->saveContentToFile(__DIR__ . "/01_SimpleInvoice_FatturaPa.xml");
 }
