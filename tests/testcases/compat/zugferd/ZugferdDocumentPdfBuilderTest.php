@@ -345,7 +345,7 @@ final class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertEquals('factur-x.xml', $pdfFilespecDetails['F']);
         $this->assertEquals('Filespec', $pdfFilespecDetails['Type']);
         $this->assertEquals('factur-x.xml', $pdfFilespecDetails['UF']);
-        $this->assertEquals(ZugferdDocumentPdfBuilder::AF_RELATIONSHIP_DATA, $pdfFilespecDetails['AFRelationship']);
+        $this->assertEquals(ZugferdDocumentPdfBuilder::AF_RELATIONSHIP_ALTERNATIVE, $pdfFilespecDetails['AFRelationship']);
         $this->assertEquals('Factur-X Invoice', $pdfFilespecDetails['Desc']);
 
         $pdfFilespec = $pdfFilespecs['10_0'];
@@ -446,7 +446,7 @@ final class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->assertEquals('factur-x.xml', $pdfFilespecDetails['F']);
         $this->assertEquals('Filespec', $pdfFilespecDetails['Type']);
         $this->assertEquals('factur-x.xml', $pdfFilespecDetails['UF']);
-        $this->assertEquals(ZugferdDocumentPdfBuilder::AF_RELATIONSHIP_DATA, $pdfFilespecDetails['AFRelationship']);
+        $this->assertEquals(ZugferdDocumentPdfBuilder::AF_RELATIONSHIP_ALTERNATIVE, $pdfFilespecDetails['AFRelationship']);
         $this->assertEquals('Factur-X Invoice', $pdfFilespecDetails['Desc']);
 
         $pdfFilespec = $pdfFilespecs['10_0'];

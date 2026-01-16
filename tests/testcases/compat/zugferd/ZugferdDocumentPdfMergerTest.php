@@ -89,7 +89,7 @@ final class ZugferdDocumentPdfMergerTest extends TestCase
         $this->assertEquals('factur-x.xml', $pdfFilespecDetails['F']);
         $this->assertEquals('Filespec', $pdfFilespecDetails['Type']);
         $this->assertEquals('factur-x.xml', $pdfFilespecDetails['UF']);
-        $this->assertEquals(ZugferdDocumentPdfBuilder::AF_RELATIONSHIP_DATA, $pdfFilespecDetails['AFRelationship']);
+        $this->assertEquals(ZugferdDocumentPdfBuilder::AF_RELATIONSHIP_ALTERNATIVE, $pdfFilespecDetails['AFRelationship']);
         $this->assertEquals('Factur-X Invoice', $pdfFilespecDetails['Desc']);
 
         /* $this->assertSame('EN 16931', $this->getPrivateMethodFromObject($pdfMerger, 'getProfileDefinitionParameter')->invokeArgs($pdfMerger, ['xmpname']));

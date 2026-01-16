@@ -102,7 +102,7 @@ final class InvoiceSuitePdfDocumentBuilderTest extends TestCase
         // Initial values
 
         $this->assertSame('', $pdfDOcumentBuilder->getAdditionalCreatorTool());
-        $this->assertSame('Data', $pdfDOcumentBuilder->getDocumentRelationshipType());
+        $this->assertSame('Alternative', $pdfDOcumentBuilder->getDocumentRelationshipType());
         $this->assertEmpty($pdfDOcumentBuilder->getaddAdditionalDocument());
         $this->assertFalse($pdfDOcumentBuilder->getDeterministicMode());
         $this->assertSame('', $pdfDOcumentBuilder->getMetaInformationAuthorTemplate());
