@@ -73,7 +73,7 @@ final class FatturaElettronica
      *
      * @JMS\Expose
      * @JMS\Groups({"fatturapa"})
-     * @JMS\Type("horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\\FormatoTrasmissione")
+     * @JMS\Type("horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\FormatoTrasmissione")
      * @JMS\Accessor(getter="getVersione", setter="setVersione")
      * @JMS\SerializedName("versione")
      * @JMS\XmlAttribute
