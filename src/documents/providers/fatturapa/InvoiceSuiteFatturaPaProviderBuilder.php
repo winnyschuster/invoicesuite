@@ -13,11 +13,70 @@ namespace horstoeko\invoicesuite\documents\providers\fatturapa;
 
 use DateTimeInterface;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatBuilder;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAddressDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAllowanceChargeDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteCommunicationDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteContactDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDateRangeDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentHeaderDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentPositionDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteNoteDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteOrganisationDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentMeanDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermDiscountDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermPenaltyDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductCharacteristicDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductClassificationDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteProjectDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentExtDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineExtDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceProductDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteServiceChargeDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteSummationDTO;
+use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
+use horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\FormatoTrasmissione;
+use horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\RegimeFiscale;
+use horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\TipoDocumento;
+use horstoeko\invoicesuite\documents\providers\fatturapa\models\FatturaElettronica;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
+use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentFormatBuilder
 {
+    /**
+     * {@inheritDoc}
+     */
+    public function initDocumentRootObject(): static
+    {
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeaderWithCreate()
+            ->getDatiTrasmissioneWithCreate()
+            ->setFormatoTrasmissione(FormatoTrasmissione::FPR12);
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeaderWithCreate()
+            ->getCedentePrestatoreWithCreate()
+            ->getDatiAnagraficiWithCreate()
+            ->setRegimeFiscale(RegimeFiscale::RF01);
+
+        $this
+            ->getFatturaPaRootObject()
+            ->addOnceToFatturaElettronicaBodyWithCreate()
+            ->getDatiGeneraliWithCreate()
+            ->getDatiGeneraliDocumentoWithCreate()
+            ->setTipoDocumento(TipoDocumento::TD01);
+
+        return $this;
+    }
+
     /**
      * Create a document by a DTO
      *
@@ -27,6 +86,1175 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function createFromDTO(InvoiceSuiteDocumentHeaderDTO $newDocumentDTO): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        // Document-Level General information
+
+        $this->setDocumentNo($newDocumentDTO->getNumber());
+        $this->setDocumentType($newDocumentDTO->getType());
+        $this->setDocumentDescription($newDocumentDTO->getDescription());
+        $this->setDocumentLanguage($newDocumentDTO->getLanguage());
+        $this->setDocumentDate($newDocumentDTO->getDate());
+        $this->setDocumentCompleteDate($newDocumentDTO->getCompleteDate());
+        $this->setDocumentCurrency($newDocumentDTO->getCurrency());
+        $this->setDocumentTaxCurrency($newDocumentDTO->getTaxCurrency());
+        $this->setDocumentIsCopy($newDocumentDTO->getIsCopy());
+        $this->setDocumentIsTest($newDocumentDTO->getIsTest());
+
+        // Document-Level Notes
+
+        $newDocumentDTO->forEachNote(fn (InvoiceSuiteNoteDTO $note) => $this->addDocumentNote(
+            $note->getContent(),
+            $note->getContentCode(),
+            $note->getSubjectCode()
+        ));
+
+        // Document-Level Billing period
+
+        $newDocumentDTO->firstBillingPeriod(
+            fn (InvoiceSuiteDateRangeDTO $item) => $this->setDocumentBillingPeriod(
+                $item->getStartDate(),
+                $item->getEndDate(),
+                $item->getDescription()
+            )
+        );
+
+        // Document-Level Posting Reference
+
+        $newDocumentDTO->firstPostingReference(
+            fn (InvoiceSuiteIdDTO $item) => $this->setDocumentPostingReference(
+                $item->getIdType(),
+                $item->getId()
+            )
+        );
+
+        // Document-Level Seller Order Reference
+
+        $newDocumentDTO->firstSellerOrderReference(
+            fn (InvoiceSuiteReferenceDocumentDTO $item) => $this->setDocumentSellerOrderReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            )
+        );
+
+        // Document-Level Buyer Order Reference
+
+        $newDocumentDTO->firstBuyerOrderReference(
+            fn (InvoiceSuiteReferenceDocumentDTO $item) => $this->setDocumentBuyerOrderReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            )
+        );
+
+        // Document-Level Quotation Reference
+
+        $newDocumentDTO->firstQuotationReference(
+            fn (InvoiceSuiteReferenceDocumentDTO $item) => $this->setDocumentQuotationReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            )
+        );
+
+        // Document-Level Contract Reference
+
+        $newDocumentDTO->firstContractReference(
+            fn (InvoiceSuiteReferenceDocumentDTO $item) => $this->setDocumentContractReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            )
+        );
+
+        // Document-Level Additional Reference
+
+        $newDocumentDTO->forEachAdditionalReference(
+            fn (InvoiceSuiteReferenceDocumentExtDTO $item) => $this->addDocumentAdditionalReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate(),
+                $item->getTypeCode(),
+                $item->getReferenceTypeCode(),
+                $item->getDescription(),
+                $item->getAttachment()
+            )
+        );
+
+        // Document-Level Invoice Reference
+
+        $newDocumentDTO->forEachInvoiceReference(
+            fn (InvoiceSuiteReferenceDocumentExtDTO $item) => $this->addDocumentInvoiceReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate(),
+                $item->getTypeCode()
+            )
+        );
+
+        // Document-Level Project Reference
+
+        $newDocumentDTO->firstProjectReference(
+            fn (InvoiceSuiteProjectDTO $item) => $this->setDocumentProjectReference(
+                $item->getProjectNumber(),
+                $item->getProjectName()
+            )
+        );
+
+        // Document-Level Ultimate Customer Order Reference
+
+        $newDocumentDTO->forEachUltimateCustomerOrderReference(
+            fn (InvoiceSuiteReferenceDocumentDTO $item) => $this->addDocumentUltimateCustomerOrderReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            )
+        );
+
+        // Document-Level Despatch Advice Reference
+
+        $newDocumentDTO->firstDespatchAdviceReference(
+            fn (InvoiceSuiteReferenceDocumentDTO $item) => $this->setDocumentDespatchAdviceReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            )
+        );
+
+        // Document-Level Receiving Advice Reference
+
+        $newDocumentDTO->firstReceivingAdviceReference(
+            fn (InvoiceSuiteReferenceDocumentDTO $item) => $this->setDocumentReceivingAdviceReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            )
+        );
+
+        // Document-Level Delivery Note Reference
+
+        $newDocumentDTO->firstDeliveryNoteReference(
+            fn (InvoiceSuiteReferenceDocumentDTO $item) => $this->setDocumentDeliveryNoteReference(
+                $item->getReferenceNumber(),
+                $item->getReferenceDate()
+            )
+        );
+
+        // Document-Level Supply Chain Event
+
+        $newDocumentDTO->firstSupplyChainEvent(
+            fn (DateTimeInterface $item) => $this->setDocumentSupplyChainEvent($item)
+        );
+
+        // Document-Level Buyer Reference
+
+        $newDocumentDTO->firstBuyerReference(
+            fn (InvoiceSuiteIdDTO $item) => $this->setDocumentBuyerReference($item->getId())
+        );
+
+        // Document-Level Delivery Terms
+
+        $newDocumentDTO->firstDeliveryTerm(
+            fn (InvoiceSuiteIdDTO $item) => $this->setDocumentDeliveryTerms($item->getId())
+        );
+
+        // Document-Level Seller/Supplier Party
+
+        $newDocumentDTO
+            ->getSellerParty()
+            ?->firstName(
+                fn (string $item) => $this->setDocumentSellerName($item)
+            )
+            ?->forEachId(
+                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentSellerId($item->getId())
+            )
+            ?->forEachGlobalId(
+                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentSellerGlobalId($item->getId(), $item->getIdType())
+            )
+            ?->forEachTaxRegistration(
+                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentSellerTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ?->firstAddress(
+                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentSellerAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ?->firstLegalOrganisation(
+                fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentSellerLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ?->firstContact(
+                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentSellerContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ?->firstCommunication(
+                fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentSellerCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        // Document-Level Buyer/Customer Party
+
+        $newDocumentDTO
+            ->getBuyerParty()
+            ?->firstName(
+                fn (string $item) => $this->setDocumentBuyerName($item)
+            )
+            ?->firstId(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentBuyerId($item->getId())
+            )
+            ?->forEachGlobalId(
+                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentBuyerGlobalId($item->getId(), $item->getIdType())
+            )
+            ?->firstTaxRegistration(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentBuyerTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ?->firstAddress(
+                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentBuyerAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ?->firstLegalOrganisation(
+                fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentBuyerLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ?->firstContact(
+                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentBuyerContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ?->firstCommunication(
+                fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentBuyerCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        // Document-Level Seller Tax Representative Party
+
+        $newDocumentDTO
+            ->getTaxRepresentativeParty()
+            ?->firstName(
+                fn (string $item) => $this->setDocumentTaxRepresentativeName($item)
+            )
+            ?->firstId(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentTaxRepresentativeId($item->getId())
+            )
+            ?->forEachGlobalId(
+                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentTaxRepresentativeGlobalId($item->getId(), $item->getIdType())
+            )
+            ?->firstTaxRegistration(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentTaxRepresentativeTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ?->firstAddress(
+                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentTaxRepresentativeAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ?->firstLegalOrganisation(
+                fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentTaxRepresentativeLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ?->forEachContact(
+                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentTaxRepresentativeContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ?->firstCommunication(
+                fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentTaxRepresentativeCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        // Document-Level Product End-User Party
+
+        $newDocumentDTO
+            ->getProductEndUserParty()
+            ?->firstName(
+                fn (string $item) => $this->setDocumentProductEndUserName($item)
+            )
+            ?->firstId(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentProductEndUserId($item->getId())
+            )
+            ?->forEachGlobalId(
+                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentProductEndUserGlobalId($item->getId(), $item->getIdType())
+            )
+            ?->firstTaxRegistration(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentProductEndUserTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ?->firstAddress(
+                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentProductEndUserAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ?->firstLegalOrganisation(
+                fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentProductEndUserLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ?->forEachContact(
+                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentProductEndUserContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ?->firstCommunication(
+                fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentProductEndUserCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        // Document-Level Ship-To Party
+
+        $newDocumentDTO
+            ->getShipToParty()
+            ?->firstName(
+                fn (string $item) => $this->setDocumentShipToName($item)
+            )
+            ?->firstId(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentShipToId($item->getId())
+            )
+            ?->forEachGlobalId(
+                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentShipToGlobalId($item->getId(), $item->getIdType())
+            )
+            ?->firstTaxRegistration(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentShipToTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ?->firstAddress(
+                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentShipToAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ?->firstLegalOrganisation(
+                fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentShipToLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ?->forEachContact(
+                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentShipToContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ?->firstCommunication(
+                fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentShipToCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        // Document-Level Ultimate Ship-To Party
+
+        $newDocumentDTO
+            ->getUltimateShipToParty()
+            ?->firstName(
+                fn (string $item) => $this->setDocumentUltimateShipToName($item)
+            )
+            ?->firstId(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentUltimateShipToId($item->getId())
+            )
+            ?->forEachGlobalId(
+                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentUltimateShipToGlobalId($item->getId(), $item->getIdType())
+            )
+            ?->firstTaxRegistration(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentUltimateShipToTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ?->firstAddress(
+                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentUltimateShipToAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ?->firstLegalOrganisation(
+                fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentUltimateShipToLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ?->forEachContact(
+                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentUltimateShipToContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ?->firstCommunication(
+                fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentUltimateShipToCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        // Document-Level Ship-From Party
+
+        $newDocumentDTO
+            ->getShipFromParty()
+            ?->firstName(
+                fn (string $item) => $this->setDocumentShipfromName($item)
+            )
+            ?->firstId(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentShipfromId($item->getId())
+            )
+            ?->forEachGlobalId(
+                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentShipfromGlobalId($item->getId(), $item->getIdType())
+            )
+            ?->firstTaxRegistration(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentShipfromTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ?->firstAddress(
+                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentShipfromAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ?->firstLegalOrganisation(
+                fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentShipfromLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ?->forEachContact(
+                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentShipfromContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ?->firstCommunication(
+                fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentShipfromCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        // Document-Level Invoicer Party
+
+        $newDocumentDTO
+            ->getInvoicerParty()
+            ?->firstName(
+                fn (string $item) => $this->setDocumentInvoicerName($item)
+            )
+            ?->firstId(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentInvoicerId($item->getId())
+            )
+            ?->forEachGlobalId(
+                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentInvoicerGlobalId($item->getId(), $item->getIdType())
+            )
+            ?->firstTaxRegistration(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentInvoicerTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ?->firstAddress(
+                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentInvoicerAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ?->firstLegalOrganisation(
+                fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentInvoicerLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ?->forEachContact(
+                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentInvoicerContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ?->firstCommunication(
+                fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentInvoicerCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        // Document-Level Invoicee Party
+
+        $newDocumentDTO
+            ->getInvoiceeParty()
+            ?->firstName(
+                fn (string $item) => $this->setDocumentInvoiceeName($item)
+            )
+            ?->firstId(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentInvoiceeId($item->getId())
+            )
+            ?->forEachGlobalId(
+                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentInvoiceeGlobalId($item->getId(), $item->getIdType())
+            )
+            ?->firstTaxRegistration(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentInvoiceeTaxRegistration($item->getIdType(), $item->getId())
+            )
+            ?->firstAddress(
+                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentInvoiceeAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ?->firstLegalOrganisation(
+                fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentInvoiceeLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ?->forEachContact(
+                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentInvoiceeContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ?->firstCommunication(
+                fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentInvoiceeCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        // Document-Level Payee Party
+
+        $newDocumentDTO
+            ->getPayeeParty()
+            ?->firstName(
+                fn (string $item) => $this->setDocumentPayeeName(
+                    $item
+                )
+            )
+            ?->firstId(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentPayeeId(
+                    $item->getId()
+                )
+            )
+            ?->forEachGlobalId(
+                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentPayeeGlobalId(
+                    $item->getId(),
+                    $item->getIdType()
+                )
+            )
+            ?->firstTaxRegistration(
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentPayeeTaxRegistration(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            )
+            ?->firstAddress(
+                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentPayeeAddress(
+                    $item->getAddressLine1(),
+                    $item->getAddressLine2(),
+                    $item->getAddressLine3(),
+                    $item->getPostcode(),
+                    $item->getCity(),
+                    $item->getCountry(),
+                    $item->getSubDivision()
+                )
+            )
+            ?->firstLegalOrganisation(
+                fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentPayeeLegalOrganisation(
+                    $item->getIdType(),
+                    $item->getId(),
+                    $item->getName()
+                )
+            )
+            ?->forEachContact(
+                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentPayeeContact(
+                    $item->getPersonName(),
+                    $item->getDepartmentName(),
+                    $item->getPhoneNumber(),
+                    $item->getFaxNumber(),
+                    $item->getEmailAddress()
+                )
+            )
+            ?->firstCommunication(
+                fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentPayeeCommunication(
+                    $item->getIdType(),
+                    $item->getId()
+                )
+            );
+
+        // Document-Level Payment Means
+
+        $newDocumentDTO->forEachPaymentMean(
+            fn (InvoiceSuitePaymentMeanDTO $item) => $this->addDocumentPaymentMean(
+                $item->getTypeCode(),
+                $item->getName(),
+                $item->getFinancialCardId(),
+                $item->getFinancialCardHolder(),
+                $item->getBuyerIban(),
+                $item->getPayeeIban(),
+                $item->getPayeeAccountName(),
+                $item->getPayeeProprietaryId(),
+                $item->getPayeeBic(),
+                $item->getPaymentReference(),
+                $item->getMandate()
+            )
+        );
+
+        // Document-Level Payment Terms
+
+        $newDocumentDTO->firstPaymentTerm(
+            function (InvoiceSuitePaymentTermDTO $item): void {
+                $this->addDocumentPaymentTerm(
+                    $item->getDescription(),
+                    $item->getDueDate(),
+                    $item->getMandate()
+                );
+                $item->firstDiscountTerm(
+                    fn (InvoiceSuitePaymentTermDiscountDTO $item) => $this->setDocumentPaymentDiscountTermsInLastPaymentTerm(
+                        $item->getBaseAmount(),
+                        $item->getDiscountAmount(),
+                        $item->getDiscountPercent(),
+                        $item->getBaseDate(),
+                        $item->getPeriod()?->getPeriod(),
+                        $item->getPeriod()?->getPeriodUnit()
+                    )
+                );
+                $item->firstPenaltyTerm(
+                    fn (InvoiceSuitePaymentTermPenaltyDTO $item) => $this->setDocumentPaymentPenaltyTermsInLastPaymentTerm(
+                        $item->getBaseAmount(),
+                        $item->getPenaltyAmount(),
+                        $item->getPenaltyPercent(),
+                        $item->getBaseDate(),
+                        $item->getPeriod()?->getPeriod(),
+                        $item->getPeriod()?->getPeriodUnit()
+                    )
+                );
+            }
+        );
+
+        // Document-Level Creditor reference
+
+        $newDocumentDTO->firstCreditorReference(
+            fn (InvoiceSuiteIdDTO $item) => $this->setDocumentPaymentCreditorReferenceID($item->getId())
+        );
+
+        // Document-Level Payment Reference
+
+        $newDocumentDTO->firstPaymentReference(
+            fn (InvoiceSuiteIdDTO $item) => $this->setDocumentPaymentReference($item->getId())
+        );
+
+        // Document-Level Taxes
+
+        $newDocumentDTO->forEachTax(
+            fn (InvoiceSuiteTaxDTO $item) => $this->addDocumentTax(
+                $item->getCategory(),
+                $item->getType(),
+                $item->getBasisAmount(),
+                $item->getAmount(),
+                $item->getPercent(),
+                $item->getExemptionReason(),
+                $item->getExemptionReasonCode(),
+                $item->getDueDate(),
+                $item->getDueCode()
+            )
+        );
+
+        // Document-Level Allowances/Charges
+
+        $newDocumentDTO->forEachAllowanceCharge(
+            fn (InvoiceSuiteAllowanceChargeDTO $item) => $this->addDocumentAllowanceCharge(
+                $item->getChargeIndicator(),
+                $item->getAmount(),
+                $item->getBaseAmount(),
+                $item->getTaxCategory(),
+                $item->getTaxType(),
+                $item->getTaxPercent(),
+                $item->getReason(),
+                $item->getReasonCode(),
+                $item->getPercent()
+            )
+        );
+
+        // Document-Level Logistic Service Charges
+
+        $newDocumentDTO->forEachServiceCharge(
+            fn (InvoiceSuiteServiceChargeDTO $item) => $this->addDocumentLogisticServiceCharge(
+                $item->getAmount(),
+                $item->getDescription(),
+                $item->getTaxCategory(),
+                $item->getTaxType(),
+                $item->getTaxPercent()
+            )
+        );
+
+        // Document-Level Summation
+
+        $newDocumentDTO->firstSummation(
+            fn (InvoiceSuiteSummationDTO $item) => $this->setDocumentSummation(
+                $item->getNetAmount(),
+                $item->getChargeTotalAmount(),
+                $item->getDiscountTotalAmount(),
+                $item->getTaxBasisAmount(),
+                $item->getTaxTotalAmount(),
+                $item->getTaxTotalAmount2(),
+                $item->getGrossAmount(),
+                $item->getDueAmount(),
+                $item->getPrepaidAmount(),
+                $item->getRoungingAmount()
+            )
+        );
+
+        // Positions
+
+        $newDocumentDTO->forEachPosition(
+            function (InvoiceSuiteDocumentPositionDTO $item): void {
+                $this->addDocumentPosition(
+                    $item->getLineId(),
+                    $item->getParentLineId(),
+                    $item->getLineStatus(),
+                    $item->getLineStatusReason()
+                );
+
+                $item->firstNote(
+                    fn (InvoiceSuiteNoteDTO $itemNote) => $this->setDocumentPositionNote(
+                        $itemNote->getContent(),
+                        $itemNote->getContentCode(),
+                        $itemNote->getSubjectCode()
+                    )
+                );
+
+                $this->setDocumentPositionProductDetails(
+                    $item->getProduct()?->getId(),
+                    $item->getProduct()?->getName(),
+                    $item->getProduct()?->getDescription(),
+                    $item->getProduct()?->getSellerId(),
+                    $item->getProduct()?->getBuyerId(),
+                    $item->getProduct()?->getGlobalId()?->getId(),
+                    $item->getProduct()?->getGlobalId()?->getIdType(),
+                    $item->getProduct()?->getIndustryId(),
+                    $item->getProduct()?->getModelId(),
+                    $item->getProduct()?->getBatchId(),
+                    $item->getProduct()?->getBrandName(),
+                    $item->getProduct()?->getModelName(),
+                    $item->getProduct()?->getOriginTradeCountry()
+                );
+
+                $item->getProduct()?->forEachCharacteristic(
+                    fn (InvoiceSuiteProductCharacteristicDTO $characteristic) => $this->addDocumentPositionProductCharacteristic(
+                        $characteristic->getDescription(),
+                        $characteristic->getValue(),
+                        $characteristic->getType(),
+                        $characteristic->getValueMeasure()?->getValue(),
+                        $characteristic->getValueMeasure()?->getUnit()
+                    )
+                );
+
+                $item->getProduct()?->forEachClassification(
+                    fn (InvoiceSuiteProductClassificationDTO $classification) => $this->addDocumentPositionProductClassification(
+                        $classification->getCode(),
+                        $classification->getListId(),
+                        $classification->getListVersionId(),
+                        $classification->getName()
+                    )
+                );
+
+                $item->getProduct()?->forEachReferenceProduct(
+                    fn (InvoiceSuiteReferenceProductDTO $referencedProduct) => $this->addDocumentPositionReferencedProduct(
+                        $referencedProduct->getId(),
+                        $referencedProduct->getName(),
+                        $referencedProduct->getDescription(),
+                        $referencedProduct->getSellerId(),
+                        $referencedProduct->getBuyerId(),
+                        $referencedProduct->getGlobalId()?->getId(),
+                        $referencedProduct->getGlobalId()?->getIdType(),
+                        $referencedProduct->getIndustryId(),
+                        $referencedProduct->getUnitQuantity()?->getQuantity(),
+                        $referencedProduct->getUnitQuantity()?->getQuantityUnit()
+                    )
+                );
+
+                $item->firstSellerOrderReference(
+                    fn (InvoiceSuiteReferenceDocumentLineDTO $item) => $this->setDocumentPositionSellerOrderReference(
+                        $item->getReferenceNumber(),
+                        $item->getReferenceLineNumber(),
+                        $item->getReferenceDate()
+                    )
+                );
+
+                $item->firstBuyerOrderReference(
+                    fn (InvoiceSuiteReferenceDocumentLineDTO $item) => $this->setDocumentPositionBuyerOrderReference(
+                        $item->getReferenceNumber(),
+                        $item->getReferenceLineNumber(),
+                        $item->getReferenceDate()
+                    )
+                );
+
+                $item->firstQuotationReference(
+                    fn (InvoiceSuiteReferenceDocumentLineDTO $item) => $this->setDocumentPositionQuotationReference(
+                        $item->getReferenceNumber(),
+                        $item->getReferenceLineNumber(),
+                        $item->getReferenceDate()
+                    )
+                );
+
+                $item->firstContractReference(
+                    fn (InvoiceSuiteReferenceDocumentLineDTO $item) => $this->setDocumentPositionContractReference(
+                        $item->getReferenceNumber(),
+                        $item->getReferenceLineNumber(),
+                        $item->getReferenceDate()
+                    )
+                );
+
+                $item->forEachAdditionalReference(
+                    fn (InvoiceSuiteReferenceDocumentLineExtDTO $item) => $this->addDocumentPositionAdditionalReference(
+                        $item->getReferenceNumber(),
+                        $item->getReferenceLineNumber(),
+                        $item->getReferenceDate(),
+                        $item->getTypeCode(),
+                        $item->getReferenceTypeCode(),
+                        $item->getDescription(),
+                        $item->getAttachment()
+                    )
+                );
+
+                $item->forEachUltimateCustomerOrderReference(
+                    fn (InvoiceSuiteReferenceDocumentLineDTO $item) => $this->addDocumentPositionUltimateCustomerOrderReference(
+                        $item->getReferenceNumber(),
+                        $item->getReferenceLineNumber(),
+                        $item->getReferenceDate()
+                    )
+                );
+
+                $item->firstDespatchAdviceReference(
+                    fn (InvoiceSuiteReferenceDocumentLineDTO $item) => $this->setDocumentPositionDespatchAdviceReference(
+                        $item->getReferenceNumber(),
+                        $item->getReferenceLineNumber(),
+                        $item->getReferenceDate()
+                    )
+                );
+
+                $item->firstReceivingAdviceReference(
+                    fn (InvoiceSuiteReferenceDocumentLineDTO $item) => $this->setDocumentPositionReceivingAdviceReference(
+                        $item->getReferenceNumber(),
+                        $item->getReferenceLineNumber(),
+                        $item->getReferenceDate()
+                    )
+                );
+
+                $item->firstDeliveryNoteReference(
+                    fn (InvoiceSuiteReferenceDocumentLineDTO $item) => $this->setDocumentPositionDeliveryNoteReference(
+                        $item->getReferenceNumber(),
+                        $item->getReferenceLineNumber(),
+                        $item->getReferenceDate()
+                    )
+                );
+
+                $item->firstInvoiceReference(
+                    fn (InvoiceSuiteReferenceDocumentLineExtDTO $item) => $this->setDocumentPositionInvoiceReference(
+                        $item->getReferenceNumber(),
+                        $item->getReferenceLineNumber(),
+                        $item->getReferenceDate(),
+                        $item->getTypeCode()
+                    )
+                );
+
+                $item->forEachAdditionalObjectReference(
+                    fn (InvoiceSuiteReferenceDocumentExtDTO $item) => $this->addDocumentPositionAdditionalObjectReference(
+                        $item->getReferenceNumber(),
+                        $item->getTypeCode(),
+                        $item->getReferenceTypeCode()
+                    )
+                );
+
+                // Position Gross Price
+
+                $this->setDocumentPositionGrossPrice(
+                    $item->getGrossPrice()?->getAmount(),
+                    $item->getGrossPrice()?->getPriceQuantity()?->getQuantity(),
+                    $item->getGrossPrice()?->getPriceQuantity()?->getQuantityUnit()
+                );
+
+                $item->getGrossPrice()?->foreachAllowanceCharge(
+                    fn (InvoiceSuiteAllowanceChargeDTO $itemGrossPriceAllowanceCharge) => $this->addDocumentPositionGrossPriceAllowanceCharge(
+                        $itemGrossPriceAllowanceCharge->getAmount(),
+                        $itemGrossPriceAllowanceCharge->getChargeIndicator(),
+                        $itemGrossPriceAllowanceCharge->getPercent(),
+                        $itemGrossPriceAllowanceCharge->getBaseAmount(),
+                        $itemGrossPriceAllowanceCharge->getReason(),
+                        $itemGrossPriceAllowanceCharge->getReasonCode()
+                    )
+                );
+
+                // Position Net Price
+
+                $this->setDocumentPositionNetPrice(
+                    $item->getNetPrice()?->getAmount(),
+                    $item->getNetPrice()?->getPriceQuantity()?->getQuantity(),
+                    $item->getNetPrice()?->getPriceQuantity()?->getQuantityUnit()
+                );
+
+                $item->getNetPrice()?->firstTax(
+                    fn (InvoiceSuiteTaxDTO $netPriceTax) => $this->setDocumentPositionNetPriceTax(
+                        $netPriceTax->getCategory(),
+                        $netPriceTax->getType(),
+                        $netPriceTax->getAmount(),
+                        $netPriceTax->getPercent(),
+                        $netPriceTax->getExemptionReason(),
+                        $netPriceTax->getExemptionReasonCode()
+                    )
+                );
+
+                // Position Quantities
+
+                $this->setDocumentPositionQuantities(
+                    $item->getQuantityBilled()?->getQuantity(),
+                    $item->getQuantityBilled()?->getQuantityUnit(),
+                    $item->getQuantityChargeFree()?->getQuantity(),
+                    $item->getQuantityChargeFree()?->getQuantityUnit(),
+                    $item->getQuantityPackage()?->getQuantity(),
+                    $item->getQuantityPackage()?->getQuantityUnit(),
+                    $item->getQuantityPerPackage()?->getQuantity(),
+                    $item->getQuantityPerPackage()?->getQuantityUnit()
+                );
+
+                // Position Ship-To
+
+                $item->getShipToParty()
+                    ?->firstName(
+                        fn (string $item) => $this->setDocumentPositionShipToName($item)
+                    )
+                    ?->firstId(
+                        fn (InvoiceSuiteIdDTO $item) => $this->setDocumentPositionShipToId($item->getId())
+                    )
+                    ?->forEachGlobalId(
+                        fn (InvoiceSuiteIdDTO $item) => $this->addDocumentPositionShipToGlobalId($item->getId(), $item->getIdType())
+                    )
+                    ?->firstTaxRegistration(
+                        fn (InvoiceSuiteIdDTO $item) => $this->setDocumentPositionShipToTaxRegistration($item->getIdType(), $item->getId())
+                    )
+                    ?->firstAddress(
+                        fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentPositionShipToAddress(
+                            $item->getAddressLine1(),
+                            $item->getAddressLine2(),
+                            $item->getAddressLine3(),
+                            $item->getPostcode(),
+                            $item->getCity(),
+                            $item->getCountry(),
+                            $item->getSubDivision()
+                        )
+                    )
+                    ?->firstLegalOrganisation(
+                        fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentPositionShipToLegalOrganisation(
+                            $item->getIdType(),
+                            $item->getId(),
+                            $item->getName()
+                        )
+                    )
+                    ?->forEachContact(
+                        fn (InvoiceSuiteContactDTO $item) => $this->addDocumentPositionShipToContact(
+                            $item->getPersonName(),
+                            $item->getDepartmentName(),
+                            $item->getPhoneNumber(),
+                            $item->getFaxNumber(),
+                            $item->getEmailAddress()
+                        )
+                    )
+                    ?->firstCommunication(
+                        fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentPositionShipToCommunication(
+                            $item->getIdType(),
+                            $item->getId()
+                        )
+                    );
+
+                // Position Ultimate Ship-To
+
+                $item->getUltimateShipToParty()
+                    ?->firstName(
+                        fn (string $item) => $this->setDocumentPositionUltimateShipToName($item)
+                    )
+                    ?->firstId(
+                        fn (InvoiceSuiteIdDTO $item) => $this->setDocumentPositionUltimateShipToId($item->getId())
+                    )
+                    ?->forEachGlobalId(
+                        fn (InvoiceSuiteIdDTO $item) => $this->addDocumentPositionUltimateShipToGlobalId($item->getId(), $item->getIdType())
+                    )
+                    ?->firstTaxRegistration(
+                        fn (InvoiceSuiteIdDTO $item) => $this->setDocumentPositionUltimateShipToTaxRegistration($item->getIdType(), $item->getId())
+                    )
+                    ?->firstAddress(
+                        fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentPositionUltimateShipToAddress(
+                            $item->getAddressLine1(),
+                            $item->getAddressLine2(),
+                            $item->getAddressLine3(),
+                            $item->getPostcode(),
+                            $item->getCity(),
+                            $item->getCountry(),
+                            $item->getSubDivision()
+                        )
+                    )
+                    ?->firstLegalOrganisation(
+                        fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentPositionUltimateShipToLegalOrganisation(
+                            $item->getIdType(),
+                            $item->getId(),
+                            $item->getName()
+                        )
+                    )
+                    ?->forEachContact(
+                        fn (InvoiceSuiteContactDTO $item) => $this->addDocumentPositionUltimateShipToContact(
+                            $item->getPersonName(),
+                            $item->getDepartmentName(),
+                            $item->getPhoneNumber(),
+                            $item->getFaxNumber(),
+                            $item->getEmailAddress()
+                        )
+                    )
+                    ?->firstCommunication(
+                        fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentPositionUltimateShipToCommunication(
+                            $item->getIdType(),
+                            $item->getId()
+                        )
+                    );
+
+                // Position supply chain event
+
+                $item->firstSupplyChainEvent(
+                    fn (DateTimeInterface $supplyChainEvent) => $this->setDocumentPositionSupplyChainEvent($supplyChainEvent)
+                );
+
+                // Position billing period
+
+                $item->firstBillingPeriod(
+                    fn (InvoiceSuiteDateRangeDTO $billingPeriod) => $this->setDocumentPositionBillingPeriod(
+                        $billingPeriod->getStartDate(),
+                        $billingPeriod->getEndDate(),
+                        $billingPeriod->getDescription()
+                    )
+                );
+
+                // Position posting references
+
+                $item->firstPostingReference(
+                    fn (InvoiceSuiteIdDTO $postingReference) => $this->setDocumentPositionPostingReference(
+                        $postingReference->getIdType(),
+                        $postingReference->getId()
+                    )
+                );
+
+                // Position taxes
+
+                $item->forEachTax(
+                    fn (InvoiceSuiteTaxDTO $tax) => $this->addDocumentPositionTax(
+                        $tax->getCategory(),
+                        $tax->getType(),
+                        $tax->getAmount(),
+                        $tax->getPercent(),
+                        $tax->getExemptionReason(),
+                        $tax->getExemptionReasonCode()
+                    )
+                );
+
+                // Position allowances/charges
+
+                $item->forEachAllowanceCharge(
+                    fn (InvoiceSuiteAllowanceChargeDTO $allowanceCharge) => $this->addDocumentPositionAllowanceCharge(
+                        $allowanceCharge->getChargeIndicator(),
+                        $allowanceCharge->getAmount(),
+                        $allowanceCharge->getBaseAmount(),
+                        $allowanceCharge->getReason(),
+                        $allowanceCharge->getReasonCode(),
+                        $allowanceCharge->getPercent()
+                    )
+                );
+
+                // Position summation
+
+                $this->setDocumentPositionSummation(
+                    $item->getSummation()?->getNetAmount(),
+                    $item->getSummation()?->getChargeTotalAmount(),
+                    $item->getSummation()?->getDiscountTotalAmount(),
+                    $item->getSummation()?->getTaxTotalAmount(),
+                    $item->getSummation()?->getGrossAmount()
+                );
+            }
+        );
 
         $this->traceMethodExit(__METHOD__);
 
@@ -42,6 +1270,36 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentNo(?string $newDocumentNo = null): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeader()
+            ?->getDatiTrasmissione()
+            ?->unsetProgressivoInvio();
+
+        $this
+            ->getFatturaPaRootObject()
+            ?->getFirstFatturaElettronicaBody()
+            ?->getDatiGenerali()
+            ?->getDatiGeneraliDocumento()
+            ?->unsetNumero();
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newDocumentNo)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newDocumentNo)');
+        }
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeaderWithCreate()
+            ->getDatiTrasmissioneWithCreate()
+            ->setProgressivoInvio($newDocumentNo);
+
+        $this
+            ->getFatturaPaRootObject()
+            ->addOnceToFatturaElettronicaBodyWithCreate()
+            ->getDatiGeneraliWithCreate()
+            ->getDatiGeneraliDocumentoWithCreate()
+            ->setNumero($newDocumentNo);
 
         $this->traceMethodExit(__METHOD__);
 
@@ -103,6 +1361,24 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $this
+            ->getFatturaPaRootObject()
+            ->getFirstFatturaElettronicaBody()
+            ?->getDatiGenerali()
+            ?->getDatiGeneraliDocumento()
+            ?->unsetData();
+
+        if (InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDocumentDate)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'datetimeIsNullOrEmpty', 'InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDocumentDate)');
+        }
+
+        $this
+            ->getFatturaPaRootObject()
+            ->addOnceToFatturaElettronicaBodyWithCreate()
+            ->getDatiGeneraliWithCreate()
+            ->getDatiGeneraliDocumentoWithCreate()
+            ->setData($newDocumentDate);
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -132,6 +1408,24 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentCurrency(?string $newDocumentCurrency = null): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getFirstFatturaElettronicaBody()
+            ?->getDatiGenerali()
+            ?->getDatiGeneraliDocumento()
+            ?->unsetDivisa();
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newDocumentCurrency)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newDocumentCurrency)');
+        }
+
+        $this
+            ->getFatturaPaRootObject()
+            ->addOnceToFatturaElettronicaBodyWithCreate()
+            ->getDatiGeneraliWithCreate()
+            ->getDatiGeneraliDocumentoWithCreate()
+            ->setDivisa($newDocumentCurrency);
 
         $this->traceMethodExit(__METHOD__);
 
@@ -195,6 +1489,19 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $this
+            ->getFatturaPaRootObject()
+            ->getFirstFatturaElettronicaBody()
+            ?->getDatiGenerali()
+            ?->getDatiGeneraliDocumento()
+            ?->unsetCausale();
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newContent)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newContent)');
+        }
+
+        $this->addDocumentNote($newContent, $newContentCode, $newSubjectCode);
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -211,6 +1518,17 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentNote(?string $newContent = null, ?string $newContentCode = null, ?string $newSubjectCode = null): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newContent)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newContent)');
+        }
+
+        $this
+            ->getFatturaPaRootObject()
+            ->addOnceToFatturaElettronicaBodyWithCreate()
+            ->getDatiGeneraliWithCreate()
+            ->getDatiGeneraliDocumentoWithCreate()
+            ->addToCausale($newContent);
 
         $this->traceMethodExit(__METHOD__);
 
@@ -326,6 +1644,18 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $this
+            ->getFatturaPaRootObject()
+            ->getFirstFatturaElettronicaBody()
+            ?->getDatiGenerali()
+            ?->unsetDatiOrdineAcquisto();
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newReferenceNumber)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newReferenceNumber)');
+        }
+
+        $this->addDocumentBuyerOrderReference($newReferenceNumber, $newReferenceDate);
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -341,6 +1671,21 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentBuyerOrderReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newReferenceNumber)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newReferenceNumber)');
+        }
+
+        $buyerOrderReference = $this
+            ->getFatturaPaRootObject()
+            ->addOnceToFatturaElettronicaBodyWithCreate()
+            ->getDatiGeneraliWithCreate()
+            ->addOnceToDatiOrdineAcquistoWithCreate()
+            ->setIdDocumento($newReferenceNumber);
+
+        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newReferenceDate)) {
+            $buyerOrderReference->setData($newReferenceDate);
+        }
 
         $this->traceMethodExit(__METHOD__);
 
@@ -390,7 +1735,19 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $this
+            ->getFatturaPaRootObject()
+            ->getFirstFatturaElettronicaBody()
+            ?->getDatiGenerali()
+            ?->unsetDatiContratto();
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newReferenceNumber)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newReferenceNumber)');
+        }
+
         $this->traceMethodExit(__METHOD__);
+
+        $this->addDocumentContractReference($newReferenceNumber, $newReferenceDate);
 
         return $this;
     }
@@ -405,6 +1762,21 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentContractReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newReferenceNumber)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newReferenceNumber)');
+        }
+
+        $contractReference = $this
+            ->getFatturaPaRootObject()
+            ->getFirstFatturaElettronicaBody()
+            ->getDatiGenerali()
+            ->addToDatiContrattoWithCreate()
+            ->setIdDocumento($newReferenceNumber);
+
+        if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newReferenceDate)) {
+            $contractReference->setData($newReferenceDate);
+        }
 
         $this->traceMethodExit(__METHOD__);
 
@@ -670,7 +2042,23 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeader()
+            ?->getDatiTrasmissione()
+            ?->unsetCodiceDestinatario();
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newBuyerReference)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newBuyerReference)');
+        }
+
         $this->traceMethodExit(__METHOD__);
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeaderWithCreate()
+            ->getDatiTrasmissioneWithCreate()
+            ->setCodiceDestinatario($newBuyerReference);
 
         return $this;
     }
@@ -700,6 +2088,26 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeader()
+            ?->getCedentePrestatore()
+            ?->getDatiAnagrafici()
+            ?->getAnagrafica()
+            ?->unsetDenominazione();
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)');
+        }
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeaderWithCreate()
+            ->getCedentePrestatoreWithCreate()
+            ->getDatiAnagraficiWithCreate()
+            ->getAnagraficaWithCreate()
+            ->setDenominazione($newName);
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -714,6 +2122,12 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentSellerName(?string $newName = null): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)');
+        }
+
+        $this->setDocumentSellerName($newName);
 
         $this->traceMethodExit(__METHOD__);
 
@@ -793,6 +2207,66 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        if (!$this->isTaxRegistrationTypeVat($newTaxRegistrationType) && !$this->isTaxRegistrationTypeFiscal($newTaxRegistrationType)) {
+            return $this;
+        }
+
+        if ($this->isTaxRegistrationTypeVat($newTaxRegistrationType)) {
+            $this
+                ->getFatturaPaRootObject()
+                ->getFatturaElettronicaHeader()
+                ?->getDatiTrasmissione()
+                ?->unsetIdTrasmittente();
+
+            $this
+                ->getFatturaPaRootObject()
+                ->getFatturaElettronicaHeader()
+                ?->getCedentePrestatore()
+                ?->getDatiAnagrafici()
+                ?->unsetIdFiscaleIVA();
+        }
+
+        if ($this->isTaxRegistrationTypeFiscal($newTaxRegistrationType)) {
+            $this
+                ->getFatturaPaRootObject()
+                ->getFatturaElettronicaHeader()
+                ?->getCedentePrestatore()
+                ?->getDatiAnagrafici()
+                ?->unsetCodiceFiscale();
+        }
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newTaxRegistrationId)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newTaxRegistrationId)');
+        }
+
+        if ($this->isTaxRegistrationTypeVat($newTaxRegistrationType)) {
+            $this
+                ->getFatturaPaRootObject()
+                ->getFatturaElettronicaHeader()
+                ->getDatiTrasmissioneWithCreate()
+                ->getIdTrasmittenteWithCreate()
+                ->setIdCodice($newTaxRegistrationId);
+
+            $this
+                ->getFatturaPaRootObject()
+                ->getFatturaElettronicaHeaderWithCreate()
+                ->getCedentePrestatoreWithCreate()
+                ->getDatiAnagraficiWithCreate()
+                ->getIdFiscaleIVAWithCreate()
+                ->setIdCodice($newTaxRegistrationId);
+        }
+
+        if ($this->isTaxRegistrationTypeFiscal($newTaxRegistrationType)) {
+            $this
+                ->getFatturaPaRootObject()
+                ->getFatturaElettronicaHeaderWithCreate()
+                ->getCedentePrestatoreWithCreate()
+                ->getDatiAnagraficiWithCreate()
+                ->setCodiceFiscale($newTaxRegistrationId);
+        }
+
+        $this->updateSellerCountry();
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -808,6 +2282,16 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentSellerTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        if (!$this->isTaxRegistrationTypeVat($newTaxRegistrationType) && !$this->isTaxRegistrationTypeFiscal($newTaxRegistrationType)) {
+            return $this;
+        }
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newTaxRegistrationId)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newTaxRegistrationId)');
+        }
+
+        $this->setDocumentSellerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         $this->traceMethodExit(__METHOD__);
 
@@ -830,6 +2314,29 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeader()
+            ?->getCedentePrestatore()
+            ?->unsetSede();
+
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAddressLine1, $newPostcode, $newCity, $newCountryId])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAddressLine1, $newPostcode, $newCity, $newCountryId]');
+        }
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeaderWithCreate()
+            ->getCedentePrestatoreWithCreate()
+            ->getSedeWithCreate()
+            ->setIndirizzo($newAddressLine1)
+            ->setCAP($newPostcode)
+            ->setComune($newCity)
+            ->setNazione($newCountryId)
+            ->setProvincia($newSubDivision);
+
+        $this->updateSellerCountry();
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -850,6 +2357,16 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentSellerAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $this->setDocumentSellerAddress(
+            $newAddressLine1,
+            $newAddressLine2,
+            $newAddressLine3,
+            $newPostcode,
+            $newCity,
+            $newCountryId,
+            $newSubDivision
+        );
 
         $this->traceMethodExit(__METHOD__);
 
@@ -970,6 +2487,26 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeader()
+            ?->getCessionarioCommittente()
+            ?->getDatiAnagrafici()
+            ?->getAnagrafica()
+            ?->unsetDenominazione();
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)');
+        }
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeaderWithCreate()
+            ->getCessionarioCommittenteWithCreate()
+            ->getDatiAnagraficiWithCreate()
+            ->getAnagraficaWithCreate()
+            ->setDenominazione($newName);
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -984,6 +2521,12 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentBuyerName(?string $newName = null): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)');
+        }
+
+        $this->setDocumentBuyerName($newName);
 
         $this->traceMethodExit(__METHOD__);
 
@@ -1063,6 +2606,53 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        if (!$this->isTaxRegistrationTypeVat($newTaxRegistrationType) && !$this->isTaxRegistrationTypeFiscal($newTaxRegistrationType)) {
+            return $this;
+        }
+
+        if ($this->isTaxRegistrationTypeVat($newTaxRegistrationType)) {
+            $this
+                ->getFatturaPaRootObject()
+                ->getFatturaElettronicaHeader()
+                ?->getCessionarioCommittente()
+                ?->getDatiAnagrafici()
+                ?->unsetIdFiscaleIVA();
+        }
+
+        if ($this->isTaxRegistrationTypeFiscal($newTaxRegistrationType)) {
+            $this
+                ->getFatturaPaRootObject()
+                ->getFatturaElettronicaHeader()
+                ?->getCessionarioCommittente()
+                ?->getDatiAnagrafici()
+                ?->unsetCodiceFiscale();
+        }
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newTaxRegistrationId)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newTaxRegistrationId)');
+        }
+
+        if ($this->isTaxRegistrationTypeVat($newTaxRegistrationType)) {
+            $this
+                ->getFatturaPaRootObject()
+                ->getFatturaElettronicaHeaderWithCreate()
+                ->getCessionarioCommittenteWithCreate()
+                ->getDatiAnagraficiWithCreate()
+                ->getIdFiscaleIVAWithCreate()
+                ->setIdCodice($newTaxRegistrationId);
+        }
+
+        if ($this->isTaxRegistrationTypeFiscal($newTaxRegistrationType)) {
+            $this
+                ->getFatturaPaRootObject()
+                ->getFatturaElettronicaHeaderWithCreate()
+                ->getCessionarioCommittenteWithCreate()
+                ->getDatiAnagraficiWithCreate()
+                ->setCodiceFiscale($newTaxRegistrationId);
+        }
+
+        $this->updateBuyerCountry();
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -1078,6 +2668,16 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentBuyerTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        if (!$this->isTaxRegistrationTypeVat($newTaxRegistrationType) && !$this->isTaxRegistrationTypeFiscal($newTaxRegistrationType)) {
+            return $this;
+        }
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newTaxRegistrationId)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newTaxRegistrationId)');
+        }
+
+        $this->setDocumentBuyerTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         $this->traceMethodExit(__METHOD__);
 
@@ -1099,6 +2699,29 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentBuyerAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeader()
+            ?->getCessionarioCommittente()
+            ?->unsetSede();
+
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAddressLine1, $newPostcode, $newCity, $newCountryId])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newAddressLine1, $newPostcode, $newCity, $newCountryId]');
+        }
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeaderWithCreate()
+            ->getCessionarioCommittenteWithCreate()
+            ->getSedeWithCreate()
+            ->setIndirizzo($newAddressLine1)
+            ->setCAP($newPostcode)
+            ->setComune($newCity)
+            ->setNazione($newCountryId)
+            ->setProvincia($newSubDivision);
+
+        $this->updateBuyerCountry();
 
         $this->traceMethodExit(__METHOD__);
 
@@ -3966,6 +5589,17 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newPositionId)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newPositionId)');
+        }
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getLatestFatturaElettronicaBodyWithCreate()
+            ->getDatiBeniServiziWithCreate()
+            ->addToDettaglioLineeWithCreate()
+            ->setNumeroLinea((int) $newPositionId);
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -4026,6 +5660,24 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentPositionProductDetails(?string $newProductId = null, ?string $newProductName = null, ?string $newProductDescription = null, ?string $newProductSellerId = null, ?string $newProductBuyerId = null, ?string $newProductGlobalId = null, ?string $newProductGlobalIdType = null, ?string $newProductIndustryId = null, ?string $newProductModelId = null, ?string $newProductBatchId = null, ?string $newProductBrandName = null, ?string $newProductModelName = null, ?string $newProductOriginTradeCountry = null): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getLatestFatturaElettronicaBody()
+            ?->getDatiBeniServizi()
+            ?->getLatestDettaglioLinee()
+            ?->unsetDescrizione();
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newProductName)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newProductName)');
+        }
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getLatestFatturaElettronicaBodyWithCreate()
+            ->getDatiBeniServiziWithCreate()
+            ->getLatestDettaglioLineeWithCreate()
+            ->setDescrizione($newProductName);
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4649,7 +6301,21 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $this
+            ->getFatturaPaRootObject()
+            ->getLatestFatturaElettronicaBody()
+            ?->getDatiBeniServizi()
+            ?->getLatestDettaglioLinee()
+            ?->unsetQuantita();
+
         $this->traceMethodExit(__METHOD__);
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getLatestFatturaElettronicaBodyWithCreate()
+            ->getDatiBeniServiziWithCreate()
+            ->getLatestDettaglioLineeWithCreate()
+            ->setQuantita(number_format($newQuantity, 2, '.', ''));
 
         return $this;
     }
@@ -5370,6 +7036,132 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
+
+        return $this;
+    }
+
+    /**
+     * Returns the root object as a FatturaElettronica instance
+     *
+     * @return FatturaElettronica
+     */
+    protected function getFatturaPaRootObject(): FatturaElettronica
+    {
+        return $this->getDocumentRootObject();
+    }
+
+    /**
+     * Check tax registration type is "VAT"
+     *
+     * @param  null|string $newTaxRegistrationType
+     * @return bool
+     */
+    private function isTaxRegistrationTypeVat(?string $newTaxRegistrationType): bool
+    {
+        return InvoiceSuiteArrayUtils::inArrayNoCase(['VAT', 'VA'], $newTaxRegistrationType ?? '');
+    }
+
+    /**
+     * Check tax registration type is "Fiscal"
+     *
+     * @param  null|string $newTaxRegistrationType
+     * @return bool
+     */
+    private function isTaxRegistrationTypeFiscal(?string $newTaxRegistrationType): bool
+    {
+        return InvoiceSuiteArrayUtils::inArrayNoCase(['FC'], $newTaxRegistrationType ?? '');
+    }
+
+    /**
+     * Update the sellers country to related entities
+     *
+     * @return static
+     */
+    private function updateSellerCountry(): static
+    {
+        $sellerTaxRegistration1 = $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeader()
+            ?->getDatiTrasmissione()
+            ?->getIdTrasmittente()
+            ?->getIdCodice();
+
+        $sellerTaxRegistration2 = $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeader()
+            ?->getCedentePrestatore()
+            ?->getDatiAnagrafici()
+            ?->getIdFiscaleIVA()
+            ?->getIdCodice();
+
+        $sellerCountry = $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeader()
+            ?->getCedentePrestatore()
+            ?->getSede()
+            ?->getNazione();
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($sellerCountry)) {
+            return $this;
+        }
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($sellerTaxRegistration1)) {
+            $this
+                ->getFatturaPaRootObject()
+                ->getFatturaElettronicaHeaderWithCreate()
+                ->getDatiTrasmissioneWithCreate()
+                ->getIdTrasmittenteWithCreate()
+                ->setIdPaese($sellerCountry);
+        }
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($sellerTaxRegistration2)) {
+            $this
+                ->getFatturaPaRootObject()
+                ->getFatturaElettronicaHeaderWithCreate()
+                ->getCedentePrestatoreWithCreate()
+                ->getDatiAnagraficiWithCreate()
+                ->getIdFiscaleIVAWithCreate()
+                ->setIdPaese($sellerCountry);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Update the buyers country to related entities
+     *
+     * @return static
+     */
+    private function updateBuyerCountry(): static
+    {
+        $buyerTaxRegistration = $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeader()
+            ?->getCessionarioCommittente()
+            ?->getDatiAnagrafici()
+            ?->getIdFiscaleIVA()
+            ?->getIdCodice();
+
+        $buyerCountry = $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeader()
+            ?->getCessionarioCommittente()
+            ?->getSede()
+            ?->getNazione();
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($buyerCountry)) {
+            return $this;
+        }
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($buyerTaxRegistration)) {
+            $this
+                ->getFatturaPaRootObject()
+                ->getFatturaElettronicaHeaderWithCreate()
+                ->getCessionarioCommittenteWithCreate()
+                ->getDatiAnagraficiWithCreate()
+                ->getIdFiscaleIVAWithCreate()
+                ->setIdPaese($buyerCountry);
+        }
 
         return $this;
     }
