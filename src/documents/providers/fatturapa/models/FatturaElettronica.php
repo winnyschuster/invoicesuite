@@ -296,6 +296,33 @@ final class FatturaElettronica
     }
 
     /**
+     * @return null|FatturaElettronicaBody
+     */
+    public function getLatestFatturaElettronicaBody(): ?FatturaElettronicaBody
+    {
+        $fatturaElettronicaBodies = $this->getFatturaElettronicaBody() ?? [];
+        $fatturaElettronicaBody = end($fatturaElettronicaBodies);
+
+        if (false === $fatturaElettronicaBody) {
+            return null;
+        }
+
+        return $fatturaElettronicaBody;
+    }
+
+    /**
+     * @return FatturaElettronicaBody
+     */
+    public function getLatestFatturaElettronicaBodyWithCreate(): FatturaElettronicaBody
+    {
+        if (is_null($fatturaElettronicaBody = $this->getLatestFatturaElettronicaBody())) {
+            $fatturaElettronicaBody = $this->addToFatturaElettronicaBodyWithCreate();
+        }
+
+        return $fatturaElettronicaBody;
+    }
+
+    /**
      * @translation-german-untranslated
      *
      * @return null|mixed

@@ -151,6 +151,33 @@ final class DatiBeniServizi
     }
 
     /**
+     * @return null|DettaglioLinee
+     */
+    public function getLatestDettaglioLinee(): ?DettaglioLinee
+    {
+        $dettaglioLinees = $this->getDettaglioLinee() ?? [];
+        $dettaglioLinee = end($dettaglioLinees);
+
+        if (false === $dettaglioLinee) {
+            return null;
+        }
+
+        return $dettaglioLinee;
+    }
+
+    /**
+     * @return DettaglioLinee
+     */
+    public function getLatestDettaglioLineeWithCreate(): DettaglioLinee
+    {
+        if (is_null($dettaglioLinee = $this->getLatestDettaglioLinee())) {
+            $dettaglioLinee = $this->addToDettaglioLineeWithCreate();
+        }
+
+        return $dettaglioLinee;
+    }
+
+    /**
      * @translation-german Angaben Zusammenfassung
      *
      * @return null|array<DatiRiepilogo>
