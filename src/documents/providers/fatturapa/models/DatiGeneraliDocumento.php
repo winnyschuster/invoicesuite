@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\providers\fatturapa\models;
 
-use DateTimeImmutable;
+use DateTimeInterface;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\Art73;
 use horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\TipoDocumento;
@@ -49,7 +49,7 @@ final class DatiGeneraliDocumento
      * @JMS\SerializedName("Data")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?DateTimeImmutable $data = null;
+    private ?DateTimeInterface $data = null;
 
     /**
      * @translation-german Nummer
@@ -240,9 +240,9 @@ final class DatiGeneraliDocumento
     /**
      * @translation-german Datum
      *
-     * @return null|DateTimeImmutable
+     * @return null|DateTimeInterface
      */
-    public function getData(): ?DateTimeImmutable
+    public function getData(): ?DateTimeInterface
     {
         return $this->data;
     }
@@ -250,10 +250,10 @@ final class DatiGeneraliDocumento
     /**
      * @translation-german Datum
      *
-     * @param  null|DateTimeImmutable $data
+     * @param  null|DateTimeInterface $data
      * @return static
      */
-    public function setData(?DateTimeImmutable $data = null): static
+    public function setData(?DateTimeInterface $data = null): static
     {
         $this->data = $data;
 

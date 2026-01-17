@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\providers\fatturapa\models;
 
-use DateTimeImmutable;
+use DateTimeInterface;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use JMS\Serializer\Annotation as JMS;
@@ -35,7 +35,7 @@ final class FatturaPrincipale
      * @JMS\SerializedName("DataFatturaPrincipale")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?DateTimeImmutable $dataFatturaPrincipale = null;
+    private ?DateTimeInterface $dataFatturaPrincipale = null;
 
     /**
      * @translation-german Nummer Fattura Principale
@@ -75,9 +75,9 @@ final class FatturaPrincipale
     /**
      * @translation-german Datum Fattura Principale
      *
-     * @return null|DateTimeImmutable
+     * @return null|DateTimeInterface
      */
-    public function getDataFatturaPrincipale(): ?DateTimeImmutable
+    public function getDataFatturaPrincipale(): ?DateTimeInterface
     {
         return $this->dataFatturaPrincipale;
     }
@@ -85,10 +85,10 @@ final class FatturaPrincipale
     /**
      * @translation-german Datum Fattura Principale
      *
-     * @param  null|DateTimeImmutable $dataFatturaPrincipale
+     * @param  null|DateTimeInterface $dataFatturaPrincipale
      * @return static
      */
-    public function setDataFatturaPrincipale(?DateTimeImmutable $dataFatturaPrincipale = null): static
+    public function setDataFatturaPrincipale(?DateTimeInterface $dataFatturaPrincipale = null): static
     {
         $this->dataFatturaPrincipale = $dataFatturaPrincipale;
 

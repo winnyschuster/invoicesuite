@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\providers\fatturapa\models;
 
-use DateTimeImmutable;
+use DateTimeInterface;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\RegimeFiscale;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
@@ -96,7 +96,7 @@ final class DatiAnagraficiCedente
      * @JMS\SerializedName("DataIscrizioneAlbo")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?DateTimeImmutable $dataIscrizioneAlbo = null;
+    private ?DateTimeInterface $dataIscrizioneAlbo = null;
 
     /**
      * @translation-german-untranslated
@@ -347,9 +347,9 @@ final class DatiAnagraficiCedente
     /**
      * @translation-german Datum Iscrizione Albo
      *
-     * @return null|DateTimeImmutable
+     * @return null|DateTimeInterface
      */
-    public function getDataIscrizioneAlbo(): ?DateTimeImmutable
+    public function getDataIscrizioneAlbo(): ?DateTimeInterface
     {
         return $this->dataIscrizioneAlbo;
     }
@@ -357,10 +357,10 @@ final class DatiAnagraficiCedente
     /**
      * @translation-german Datum Iscrizione Albo
      *
-     * @param  null|DateTimeImmutable $dataIscrizioneAlbo
+     * @param  null|DateTimeInterface $dataIscrizioneAlbo
      * @return static
      */
-    public function setDataIscrizioneAlbo(?DateTimeImmutable $dataIscrizioneAlbo = null): static
+    public function setDataIscrizioneAlbo(?DateTimeInterface $dataIscrizioneAlbo = null): static
     {
         $this->dataIscrizioneAlbo = $dataIscrizioneAlbo;
 

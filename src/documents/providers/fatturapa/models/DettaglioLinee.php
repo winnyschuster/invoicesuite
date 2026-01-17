@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\providers\fatturapa\models;
 
-use DateTimeImmutable;
+use DateTimeInterface;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\Natura;
 use horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\Ritenuta;
@@ -100,7 +100,7 @@ final class DettaglioLinee
      * @JMS\SerializedName("DataInizioPeriodo")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?DateTimeImmutable $dataInizioPeriodo = null;
+    private ?DateTimeInterface $dataInizioPeriodo = null;
 
     /**
      * @translation-german Datum Fine Periodo
@@ -112,7 +112,7 @@ final class DettaglioLinee
      * @JMS\SerializedName("DataFinePeriodo")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?DateTimeImmutable $dataFinePeriodo = null;
+    private ?DateTimeInterface $dataFinePeriodo = null;
 
     /**
      * @translation-german-untranslated
@@ -503,9 +503,9 @@ final class DettaglioLinee
     /**
      * @translation-german Datum Inizio Periodo
      *
-     * @return null|DateTimeImmutable
+     * @return null|DateTimeInterface
      */
-    public function getDataInizioPeriodo(): ?DateTimeImmutable
+    public function getDataInizioPeriodo(): ?DateTimeInterface
     {
         return $this->dataInizioPeriodo;
     }
@@ -513,10 +513,10 @@ final class DettaglioLinee
     /**
      * @translation-german Datum Inizio Periodo
      *
-     * @param  null|DateTimeImmutable $dataInizioPeriodo
+     * @param  null|DateTimeInterface $dataInizioPeriodo
      * @return static
      */
-    public function setDataInizioPeriodo(?DateTimeImmutable $dataInizioPeriodo = null): static
+    public function setDataInizioPeriodo(?DateTimeInterface $dataInizioPeriodo = null): static
     {
         $this->dataInizioPeriodo = $dataInizioPeriodo;
 
@@ -538,9 +538,9 @@ final class DettaglioLinee
     /**
      * @translation-german Datum Fine Periodo
      *
-     * @return null|DateTimeImmutable
+     * @return null|DateTimeInterface
      */
-    public function getDataFinePeriodo(): ?DateTimeImmutable
+    public function getDataFinePeriodo(): ?DateTimeInterface
     {
         return $this->dataFinePeriodo;
     }
@@ -548,10 +548,10 @@ final class DettaglioLinee
     /**
      * @translation-german Datum Fine Periodo
      *
-     * @param  null|DateTimeImmutable $dataFinePeriodo
+     * @param  null|DateTimeInterface $dataFinePeriodo
      * @return static
      */
-    public function setDataFinePeriodo(?DateTimeImmutable $dataFinePeriodo = null): static
+    public function setDataFinePeriodo(?DateTimeInterface $dataFinePeriodo = null): static
     {
         $this->dataFinePeriodo = $dataFinePeriodo;
 

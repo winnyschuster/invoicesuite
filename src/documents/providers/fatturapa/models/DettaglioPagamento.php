@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\providers\fatturapa\models;
 
-use DateTimeImmutable;
+use DateTimeInterface;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\ModalitaPagamento;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
@@ -48,7 +48,7 @@ final class DettaglioPagamento
      * @JMS\SerializedName("DataRiferimentoTerminiPagamento")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?DateTimeImmutable $dataRiferimentoTerminiPagamento = null;
+    private ?DateTimeInterface $dataRiferimentoTerminiPagamento = null;
 
     /**
      * @translation-german Giorni Termini Zahlung
@@ -72,7 +72,7 @@ final class DettaglioPagamento
      * @JMS\SerializedName("DataScadenzaPagamento")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?DateTimeImmutable $dataScadenzaPagamento = null;
+    private ?DateTimeInterface $dataScadenzaPagamento = null;
 
     /**
      * @translation-german Betrag Zahlung
@@ -228,7 +228,7 @@ final class DettaglioPagamento
      * @JMS\SerializedName("DataLimitePagamentoAnticipato")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?DateTimeImmutable $dataLimitePagamentoAnticipato = null;
+    private ?DateTimeInterface $dataLimitePagamentoAnticipato = null;
 
     /**
      * @translation-german-untranslated
@@ -252,7 +252,7 @@ final class DettaglioPagamento
      * @JMS\SerializedName("DataDecorrenzaPenale")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?DateTimeImmutable $dataDecorrenzaPenale = null;
+    private ?DateTimeInterface $dataDecorrenzaPenale = null;
 
     /**
      * @translation-german Code Zahlung
@@ -339,9 +339,9 @@ final class DettaglioPagamento
     /**
      * @translation-german Datum Referenz Termini Zahlung
      *
-     * @return null|DateTimeImmutable
+     * @return null|DateTimeInterface
      */
-    public function getDataRiferimentoTerminiPagamento(): ?DateTimeImmutable
+    public function getDataRiferimentoTerminiPagamento(): ?DateTimeInterface
     {
         return $this->dataRiferimentoTerminiPagamento;
     }
@@ -349,10 +349,10 @@ final class DettaglioPagamento
     /**
      * @translation-german Datum Referenz Termini Zahlung
      *
-     * @param  null|DateTimeImmutable $dataRiferimentoTerminiPagamento
+     * @param  null|DateTimeInterface $dataRiferimentoTerminiPagamento
      * @return static
      */
-    public function setDataRiferimentoTerminiPagamento(?DateTimeImmutable $dataRiferimentoTerminiPagamento = null): static
+    public function setDataRiferimentoTerminiPagamento(?DateTimeInterface $dataRiferimentoTerminiPagamento = null): static
     {
         $this->dataRiferimentoTerminiPagamento = $dataRiferimentoTerminiPagamento;
 
@@ -409,9 +409,9 @@ final class DettaglioPagamento
     /**
      * @translation-german Datum Fälligkeit Zahlung
      *
-     * @return null|DateTimeImmutable
+     * @return null|DateTimeInterface
      */
-    public function getDataScadenzaPagamento(): ?DateTimeImmutable
+    public function getDataScadenzaPagamento(): ?DateTimeInterface
     {
         return $this->dataScadenzaPagamento;
     }
@@ -419,10 +419,10 @@ final class DettaglioPagamento
     /**
      * @translation-german Datum Fälligkeit Zahlung
      *
-     * @param  null|DateTimeImmutable $dataScadenzaPagamento
+     * @param  null|DateTimeInterface $dataScadenzaPagamento
      * @return static
      */
-    public function setDataScadenzaPagamento(?DateTimeImmutable $dataScadenzaPagamento = null): static
+    public function setDataScadenzaPagamento(?DateTimeInterface $dataScadenzaPagamento = null): static
     {
         $this->dataScadenzaPagamento = $dataScadenzaPagamento;
 
@@ -864,9 +864,9 @@ final class DettaglioPagamento
     /**
      * @translation-german Datum Limite Zahlung Anticipato
      *
-     * @return null|DateTimeImmutable
+     * @return null|DateTimeInterface
      */
-    public function getDataLimitePagamentoAnticipato(): ?DateTimeImmutable
+    public function getDataLimitePagamentoAnticipato(): ?DateTimeInterface
     {
         return $this->dataLimitePagamentoAnticipato;
     }
@@ -874,10 +874,10 @@ final class DettaglioPagamento
     /**
      * @translation-german Datum Limite Zahlung Anticipato
      *
-     * @param  null|DateTimeImmutable $dataLimitePagamentoAnticipato
+     * @param  null|DateTimeInterface $dataLimitePagamentoAnticipato
      * @return static
      */
-    public function setDataLimitePagamentoAnticipato(?DateTimeImmutable $dataLimitePagamentoAnticipato = null): static
+    public function setDataLimitePagamentoAnticipato(?DateTimeInterface $dataLimitePagamentoAnticipato = null): static
     {
         $this->dataLimitePagamentoAnticipato = $dataLimitePagamentoAnticipato;
 
@@ -934,9 +934,9 @@ final class DettaglioPagamento
     /**
      * @translation-german Datum Decorrenza Penale
      *
-     * @return null|DateTimeImmutable
+     * @return null|DateTimeInterface
      */
-    public function getDataDecorrenzaPenale(): ?DateTimeImmutable
+    public function getDataDecorrenzaPenale(): ?DateTimeInterface
     {
         return $this->dataDecorrenzaPenale;
     }
@@ -944,10 +944,10 @@ final class DettaglioPagamento
     /**
      * @translation-german Datum Decorrenza Penale
      *
-     * @param  null|DateTimeImmutable $dataDecorrenzaPenale
+     * @param  null|DateTimeInterface $dataDecorrenzaPenale
      * @return static
      */
-    public function setDataDecorrenzaPenale(?DateTimeImmutable $dataDecorrenzaPenale = null): static
+    public function setDataDecorrenzaPenale(?DateTimeInterface $dataDecorrenzaPenale = null): static
     {
         $this->dataDecorrenzaPenale = $dataDecorrenzaPenale;
 

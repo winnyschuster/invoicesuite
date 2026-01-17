@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\providers\fatturapa\models;
 
-use DateTimeImmutable;
+use DateTimeInterface;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use JMS\Serializer\Annotation as JMS;
@@ -35,7 +35,7 @@ final class DatiDDT
      * @JMS\SerializedName("DataDDT")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?DateTimeImmutable $dataDDT = null;
+    private ?DateTimeInterface $dataDDT = null;
 
     /**
      * @translation-german Referenz Nummer Position
@@ -89,9 +89,9 @@ final class DatiDDT
     /**
      * @translation-german Datum DDT
      *
-     * @return null|DateTimeImmutable
+     * @return null|DateTimeInterface
      */
-    public function getDataDDT(): ?DateTimeImmutable
+    public function getDataDDT(): ?DateTimeInterface
     {
         return $this->dataDDT;
     }
@@ -99,10 +99,10 @@ final class DatiDDT
     /**
      * @translation-german Datum DDT
      *
-     * @param  null|DateTimeImmutable $dataDDT
+     * @param  null|DateTimeInterface $dataDDT
      * @return static
      */
-    public function setDataDDT(?DateTimeImmutable $dataDDT = null): static
+    public function setDataDDT(?DateTimeInterface $dataDDT = null): static
     {
         $this->dataDDT = $dataDDT;
 

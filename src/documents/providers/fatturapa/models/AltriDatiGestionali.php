@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\providers\fatturapa\models;
 
-use DateTimeImmutable;
+use DateTimeInterface;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use JMS\Serializer\Annotation as JMS;
@@ -59,7 +59,7 @@ final class AltriDatiGestionali
      * @JMS\SerializedName("RiferimentoData")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?DateTimeImmutable $riferimentoData = null;
+    private ?DateTimeInterface $riferimentoData = null;
 
     /**
      * @translation-german-untranslated
@@ -169,9 +169,9 @@ final class AltriDatiGestionali
     /**
      * @translation-german Referenz Datum
      *
-     * @return null|DateTimeImmutable
+     * @return null|DateTimeInterface
      */
-    public function getRiferimentoData(): ?DateTimeImmutable
+    public function getRiferimentoData(): ?DateTimeInterface
     {
         return $this->riferimentoData;
     }
@@ -179,10 +179,10 @@ final class AltriDatiGestionali
     /**
      * @translation-german Referenz Datum
      *
-     * @param  null|DateTimeImmutable $riferimentoData
+     * @param  null|DateTimeInterface $riferimentoData
      * @return static
      */
-    public function setRiferimentoData(?DateTimeImmutable $riferimentoData = null): static
+    public function setRiferimentoData(?DateTimeInterface $riferimentoData = null): static
     {
         $this->riferimentoData = $riferimentoData;
 

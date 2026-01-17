@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\providers\fatturapa\models;
 
-use DateTimeImmutable;
+use DateTimeInterface;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use JMS\Serializer\Annotation as JMS;
@@ -119,7 +119,7 @@ final class DatiTrasporto
      * @JMS\SerializedName("DataOraRitiro")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?DateTimeImmutable $dataOraRitiro = null;
+    private ?DateTimeInterface $dataOraRitiro = null;
 
     /**
      * @translation-german Datum Inizio Trasporto
@@ -131,7 +131,7 @@ final class DatiTrasporto
      * @JMS\SerializedName("DataInizioTrasporto")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?DateTimeImmutable $dataInizioTrasporto = null;
+    private ?DateTimeInterface $dataInizioTrasporto = null;
 
     /**
      * @translation-german-untranslated
@@ -167,7 +167,7 @@ final class DatiTrasporto
      * @JMS\SerializedName("DataOraConsegna")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?DateTimeImmutable $dataOraConsegna = null;
+    private ?DateTimeInterface $dataOraConsegna = null;
 
     /**
      * @translation-german Stammdaten Vettore
@@ -464,9 +464,9 @@ final class DatiTrasporto
     /**
      * @translation-german Datum Ora Ritiro
      *
-     * @return null|DateTimeImmutable
+     * @return null|DateTimeInterface
      */
-    public function getDataOraRitiro(): ?DateTimeImmutable
+    public function getDataOraRitiro(): ?DateTimeInterface
     {
         return $this->dataOraRitiro;
     }
@@ -474,10 +474,10 @@ final class DatiTrasporto
     /**
      * @translation-german Datum Ora Ritiro
      *
-     * @param  null|DateTimeImmutable $dataOraRitiro
+     * @param  null|DateTimeInterface $dataOraRitiro
      * @return static
      */
-    public function setDataOraRitiro(?DateTimeImmutable $dataOraRitiro = null): static
+    public function setDataOraRitiro(?DateTimeInterface $dataOraRitiro = null): static
     {
         $this->dataOraRitiro = $dataOraRitiro;
 
@@ -499,9 +499,9 @@ final class DatiTrasporto
     /**
      * @translation-german Datum Inizio Trasporto
      *
-     * @return null|DateTimeImmutable
+     * @return null|DateTimeInterface
      */
-    public function getDataInizioTrasporto(): ?DateTimeImmutable
+    public function getDataInizioTrasporto(): ?DateTimeInterface
     {
         return $this->dataInizioTrasporto;
     }
@@ -509,10 +509,10 @@ final class DatiTrasporto
     /**
      * @translation-german Datum Inizio Trasporto
      *
-     * @param  null|DateTimeImmutable $dataInizioTrasporto
+     * @param  null|DateTimeInterface $dataInizioTrasporto
      * @return static
      */
-    public function setDataInizioTrasporto(?DateTimeImmutable $dataInizioTrasporto = null): static
+    public function setDataInizioTrasporto(?DateTimeInterface $dataInizioTrasporto = null): static
     {
         $this->dataInizioTrasporto = $dataInizioTrasporto;
 
@@ -616,9 +616,9 @@ final class DatiTrasporto
     /**
      * @translation-german Datum Ora Consegna
      *
-     * @return null|DateTimeImmutable
+     * @return null|DateTimeInterface
      */
-    public function getDataOraConsegna(): ?DateTimeImmutable
+    public function getDataOraConsegna(): ?DateTimeInterface
     {
         return $this->dataOraConsegna;
     }
@@ -626,10 +626,10 @@ final class DatiTrasporto
     /**
      * @translation-german Datum Ora Consegna
      *
-     * @param  null|DateTimeImmutable $dataOraConsegna
+     * @param  null|DateTimeInterface $dataOraConsegna
      * @return static
      */
-    public function setDataOraConsegna(?DateTimeImmutable $dataOraConsegna = null): static
+    public function setDataOraConsegna(?DateTimeInterface $dataOraConsegna = null): static
     {
         $this->dataOraConsegna = $dataOraConsegna;
 
