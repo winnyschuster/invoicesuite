@@ -43,12 +43,12 @@ final class IscrizioneREA
      *
      * @JMS\Expose
      * @JMS\Groups({"fatturapa"})
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\Accessor(getter="getCapitaleSociale", setter="setCapitaleSociale")
      * @JMS\SerializedName("CapitaleSociale")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?string $capitaleSociale = null;
+    private ?float $capitaleSociale = null;
 
     /**
      * @translation-german-untranslated
@@ -147,9 +147,9 @@ final class IscrizioneREA
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getCapitaleSociale(): ?string
+    public function getCapitaleSociale(): ?float
     {
         return $this->capitaleSociale;
     }
@@ -157,12 +157,12 @@ final class IscrizioneREA
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $capitaleSociale
+     * @param  null|float $capitaleSociale
      * @return static
      */
-    public function setCapitaleSociale(?string $capitaleSociale = null): static
+    public function setCapitaleSociale(?float $capitaleSociale = null): static
     {
-        $this->capitaleSociale = InvoiceSuiteStringUtils::asNullWhenEmpty($capitaleSociale);
+        $this->capitaleSociale = $capitaleSociale;
 
         return $this;
     }
@@ -247,40 +247,5 @@ final class IscrizioneREA
         $this->statoLiquidazione = null;
 
         return $this;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getCapitaleSocialeAsFloat(): ?float
-    {
-        return is_null($this->capitaleSociale) ? null : (float) $this->capitaleSociale;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setCapitaleSocialeFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setCapitaleSociale(null);
-        }
-
-        $formatted = number_format($value, 2, '.', '');
-
-        return $this->setCapitaleSociale($formatted);
     }
 }

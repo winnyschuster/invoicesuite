@@ -6,7 +6,6 @@ namespace horstoeko\invoicesuite\documents\providers\fatturapa\models;
 
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\BolloVirtuale;
-use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use JMS\Serializer\Annotation as JMS;
 
 final class DatiBollo
@@ -30,12 +29,12 @@ final class DatiBollo
      *
      * @JMS\Expose
      * @JMS\Groups({"fatturapa"})
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\Accessor(getter="getImportoBollo", setter="setImportoBollo")
      * @JMS\SerializedName("ImportoBollo")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?string $importoBollo = null;
+    private ?float $importoBollo = null;
 
     /**
      * @translation-german-untranslated
@@ -75,9 +74,9 @@ final class DatiBollo
     /**
      * @translation-german Betrag Bollo
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getImportoBollo(): ?string
+    public function getImportoBollo(): ?float
     {
         return $this->importoBollo;
     }
@@ -85,12 +84,12 @@ final class DatiBollo
     /**
      * @translation-german Betrag Bollo
      *
-     * @param  null|string $importoBollo
+     * @param  null|float $importoBollo
      * @return static
      */
-    public function setImportoBollo(?string $importoBollo = null): static
+    public function setImportoBollo(?float $importoBollo = null): static
     {
-        $this->importoBollo = InvoiceSuiteStringUtils::asNullWhenEmpty($importoBollo);
+        $this->importoBollo = $importoBollo;
 
         return $this;
     }
@@ -105,40 +104,5 @@ final class DatiBollo
         $this->importoBollo = null;
 
         return $this;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getImportoBolloAsFloat(): ?float
-    {
-        return is_null($this->importoBollo) ? null : (float) $this->importoBollo;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setImportoBolloFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setImportoBollo(null);
-        }
-
-        $formatted = number_format($value, 2, '.', '');
-
-        return $this->setImportoBollo($formatted);
     }
 }

@@ -6,7 +6,6 @@ namespace horstoeko\invoicesuite\documents\providers\fatturapa\models;
 
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\TipoScontoMaggiorazione;
-use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use JMS\Serializer\Annotation as JMS;
 
 final class ScontoMaggiorazione
@@ -30,24 +29,24 @@ final class ScontoMaggiorazione
      *
      * @JMS\Expose
      * @JMS\Groups({"fatturapa"})
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\Accessor(getter="getPercentuale", setter="setPercentuale")
      * @JMS\SerializedName("Percentuale")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?string $percentuale = null;
+    private ?float $percentuale = null;
 
     /**
      * @translation-german Betrag
      *
      * @JMS\Expose
      * @JMS\Groups({"fatturapa"})
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\Accessor(getter="getImporto", setter="setImporto")
      * @JMS\SerializedName("Importo")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?string $importo = null;
+    private ?float $importo = null;
 
     /**
      * @translation-german-untranslated
@@ -87,9 +86,9 @@ final class ScontoMaggiorazione
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getPercentuale(): ?string
+    public function getPercentuale(): ?float
     {
         return $this->percentuale;
     }
@@ -97,12 +96,12 @@ final class ScontoMaggiorazione
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $percentuale
+     * @param  null|float $percentuale
      * @return static
      */
-    public function setPercentuale(?string $percentuale = null): static
+    public function setPercentuale(?float $percentuale = null): static
     {
-        $this->percentuale = InvoiceSuiteStringUtils::asNullWhenEmpty($percentuale);
+        $this->percentuale = $percentuale;
 
         return $this;
     }
@@ -122,9 +121,9 @@ final class ScontoMaggiorazione
     /**
      * @translation-german Betrag
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getImporto(): ?string
+    public function getImporto(): ?float
     {
         return $this->importo;
     }
@@ -132,12 +131,12 @@ final class ScontoMaggiorazione
     /**
      * @translation-german Betrag
      *
-     * @param  null|string $importo
+     * @param  null|float $importo
      * @return static
      */
-    public function setImporto(?string $importo = null): static
+    public function setImporto(?float $importo = null): static
     {
-        $this->importo = InvoiceSuiteStringUtils::asNullWhenEmpty($importo);
+        $this->importo = $importo;
 
         return $this;
     }
@@ -152,76 +151,5 @@ final class ScontoMaggiorazione
         $this->importo = null;
 
         return $this;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getPercentualeAsFloat(): ?float
-    {
-        return is_null($this->percentuale) ? null : (float) $this->percentuale;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setPercentualeFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setPercentuale(null);
-        }
-
-        $formatted = number_format($value, 2, '.', '');
-
-        return $this->setPercentuale($formatted);
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getImportoAsFloat(): ?float
-    {
-        return is_null($this->importo) ? null : (float) $this->importo;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setImportoFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setImporto(null);
-        }
-
-        $scale = max(2, min(8, $scale ?? 2));
-        $formatted = number_format($value, $scale, '.', '');
-
-        return $this->setImporto($formatted);
     }
 }

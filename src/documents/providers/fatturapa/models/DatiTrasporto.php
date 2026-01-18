@@ -90,24 +90,24 @@ final class DatiTrasporto
      *
      * @JMS\Expose
      * @JMS\Groups({"fatturapa"})
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\Accessor(getter="getPesoLordo", setter="setPesoLordo")
      * @JMS\SerializedName("PesoLordo")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?string $pesoLordo = null;
+    private ?float $pesoLordo = null;
 
     /**
      * @translation-german-untranslated
      *
      * @JMS\Expose
      * @JMS\Groups({"fatturapa"})
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\Accessor(getter="getPesoNetto", setter="setPesoNetto")
      * @JMS\SerializedName("PesoNetto")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?string $pesoNetto = null;
+    private ?float $pesoNetto = null;
 
     /**
      * @translation-german Datum Ora Ritiro
@@ -394,9 +394,9 @@ final class DatiTrasporto
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getPesoLordo(): ?string
+    public function getPesoLordo(): ?float
     {
         return $this->pesoLordo;
     }
@@ -404,12 +404,12 @@ final class DatiTrasporto
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $pesoLordo
+     * @param  null|float $pesoLordo
      * @return static
      */
-    public function setPesoLordo(?string $pesoLordo = null): static
+    public function setPesoLordo(?float $pesoLordo = null): static
     {
-        $this->pesoLordo = InvoiceSuiteStringUtils::asNullWhenEmpty($pesoLordo);
+        $this->pesoLordo = $pesoLordo;
 
         return $this;
     }
@@ -429,9 +429,9 @@ final class DatiTrasporto
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getPesoNetto(): ?string
+    public function getPesoNetto(): ?float
     {
         return $this->pesoNetto;
     }
@@ -439,12 +439,12 @@ final class DatiTrasporto
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $pesoNetto
+     * @param  null|float $pesoNetto
      * @return static
      */
-    public function setPesoNetto(?string $pesoNetto = null): static
+    public function setPesoNetto(?float $pesoNetto = null): static
     {
-        $this->pesoNetto = InvoiceSuiteStringUtils::asNullWhenEmpty($pesoNetto);
+        $this->pesoNetto = $pesoNetto;
 
         return $this;
     }
@@ -646,77 +646,5 @@ final class DatiTrasporto
         $this->dataOraConsegna = null;
 
         return $this;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getPesoLordoAsFloat(): ?float
-    {
-        return is_null($this->pesoLordo) ? null : (float) $this->pesoLordo;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setPesoLordoFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setPesoLordo(null);
-        }
-
-        $scale = max(1, min(2, $scale ?? 1));
-        $formatted = number_format($value, $scale, '.', '');
-
-        return $this->setPesoLordo($formatted);
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getPesoNettoAsFloat(): ?float
-    {
-        return is_null($this->pesoNetto) ? null : (float) $this->pesoNetto;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setPesoNettoFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setPesoNetto(null);
-        }
-
-        $scale = max(1, min(2, $scale ?? 1));
-        $formatted = number_format($value, $scale, '.', '');
-
-        return $this->setPesoNetto($formatted);
     }
 }

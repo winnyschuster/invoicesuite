@@ -6323,7 +6323,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
             ->getLatestFatturaElettronicaBodyWithCreate()
             ->getDatiBeniServiziWithCreate()
             ->getLatestDettaglioLineeWithCreate()
-            ->setQuantitaFromFloat($newQuantity)
+            ->setQuantita($newQuantity)
             ->setUnitaMisura($newQuantityUnit);
 
         $this->traceMethodExit(__METHOD__);

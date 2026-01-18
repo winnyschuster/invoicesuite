@@ -690,9 +690,9 @@ final class DatiGeneraliDocumento
     /**
      * @translation-german Betrag Gesamt Documento
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getImportoTotaleDocumento(): ?string
+    public function getImportoTotaleDocumento(): ?float
     {
         return $this->importoTotaleDocumento;
     }
@@ -700,12 +700,12 @@ final class DatiGeneraliDocumento
     /**
      * @translation-german Betrag Gesamt Documento
      *
-     * @param  null|string $importoTotaleDocumento
+     * @param  null|float $importoTotaleDocumento
      * @return static
      */
-    public function setImportoTotaleDocumento(?string $importoTotaleDocumento = null): static
+    public function setImportoTotaleDocumento(?float $importoTotaleDocumento = null): static
     {
-        $this->importoTotaleDocumento = InvoiceSuiteStringUtils::asNullWhenEmpty($importoTotaleDocumento);
+        $this->importoTotaleDocumento = $importoTotaleDocumento;
 
         return $this;
     }
@@ -725,9 +725,9 @@ final class DatiGeneraliDocumento
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getArrotondamento(): ?string
+    public function getArrotondamento(): ?float
     {
         return $this->arrotondamento;
     }
@@ -735,12 +735,12 @@ final class DatiGeneraliDocumento
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $arrotondamento
+     * @param  null|float $arrotondamento
      * @return static
      */
-    public function setArrotondamento(?string $arrotondamento = null): static
+    public function setArrotondamento(?float $arrotondamento = null): static
     {
-        $this->arrotondamento = InvoiceSuiteStringUtils::asNullWhenEmpty($arrotondamento);
+        $this->arrotondamento = $arrotondamento;
 
         return $this;
     }
@@ -871,75 +871,5 @@ final class DatiGeneraliDocumento
         $this->art73 = null;
 
         return $this;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getImportoTotaleDocumentoAsFloat(): ?float
-    {
-        return is_null($this->importoTotaleDocumento) ? null : (float) $this->importoTotaleDocumento;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setImportoTotaleDocumentoFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setImportoTotaleDocumento(null);
-        }
-
-        $formatted = number_format($value, 2, '.', '');
-
-        return $this->setImportoTotaleDocumento($formatted);
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getArrotondamentoAsFloat(): ?float
-    {
-        return is_null($this->arrotondamento) ? null : (float) $this->arrotondamento;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setArrotondamentoFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setArrotondamento(null);
-        }
-
-        $formatted = number_format($value, 2, '.', '');
-
-        return $this->setArrotondamento($formatted);
     }
 }

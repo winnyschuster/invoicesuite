@@ -79,12 +79,12 @@ final class DettaglioPagamento
      *
      * @JMS\Expose
      * @JMS\Groups({"fatturapa"})
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\Accessor(getter="getImportoPagamento", setter="setImportoPagamento")
      * @JMS\SerializedName("ImportoPagamento")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?string $importoPagamento = null;
+    private ?float $importoPagamento = null;
 
     /**
      * @translation-german-untranslated
@@ -211,12 +211,12 @@ final class DettaglioPagamento
      *
      * @JMS\Expose
      * @JMS\Groups({"fatturapa"})
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\Accessor(getter="getScontoPagamentoAnticipato", setter="setScontoPagamentoAnticipato")
      * @JMS\SerializedName("ScontoPagamentoAnticipato")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?string $scontoPagamentoAnticipato = null;
+    private ?float $scontoPagamentoAnticipato = null;
 
     /**
      * @translation-german Datum Limite Zahlung Anticipato
@@ -235,12 +235,12 @@ final class DettaglioPagamento
      *
      * @JMS\Expose
      * @JMS\Groups({"fatturapa"})
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\Accessor(getter="getPenalitaPagamentiRitardati", setter="setPenalitaPagamentiRitardati")
      * @JMS\SerializedName("PenalitaPagamentiRitardati")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?string $penalitaPagamentiRitardati = null;
+    private ?float $penalitaPagamentiRitardati = null;
 
     /**
      * @translation-german Datum Decorrenza Penale
@@ -444,9 +444,9 @@ final class DettaglioPagamento
     /**
      * @translation-german Betrag Zahlung
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getImportoPagamento(): ?string
+    public function getImportoPagamento(): ?float
     {
         return $this->importoPagamento;
     }
@@ -454,12 +454,12 @@ final class DettaglioPagamento
     /**
      * @translation-german Betrag Zahlung
      *
-     * @param  null|string $importoPagamento
+     * @param  null|float $importoPagamento
      * @return static
      */
-    public function setImportoPagamento(?string $importoPagamento = null): static
+    public function setImportoPagamento(?float $importoPagamento = null): static
     {
-        $this->importoPagamento = InvoiceSuiteStringUtils::asNullWhenEmpty($importoPagamento);
+        $this->importoPagamento = $importoPagamento;
 
         return $this;
     }
@@ -829,9 +829,9 @@ final class DettaglioPagamento
     /**
      * @translation-german Sconto Zahlung Anticipato
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getScontoPagamentoAnticipato(): ?string
+    public function getScontoPagamentoAnticipato(): ?float
     {
         return $this->scontoPagamentoAnticipato;
     }
@@ -839,12 +839,12 @@ final class DettaglioPagamento
     /**
      * @translation-german Sconto Zahlung Anticipato
      *
-     * @param  null|string $scontoPagamentoAnticipato
+     * @param  null|float $scontoPagamentoAnticipato
      * @return static
      */
-    public function setScontoPagamentoAnticipato(?string $scontoPagamentoAnticipato = null): static
+    public function setScontoPagamentoAnticipato(?float $scontoPagamentoAnticipato = null): static
     {
-        $this->scontoPagamentoAnticipato = InvoiceSuiteStringUtils::asNullWhenEmpty($scontoPagamentoAnticipato);
+        $this->scontoPagamentoAnticipato = $scontoPagamentoAnticipato;
 
         return $this;
     }
@@ -899,9 +899,9 @@ final class DettaglioPagamento
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getPenalitaPagamentiRitardati(): ?string
+    public function getPenalitaPagamentiRitardati(): ?float
     {
         return $this->penalitaPagamentiRitardati;
     }
@@ -909,12 +909,12 @@ final class DettaglioPagamento
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $penalitaPagamentiRitardati
+     * @param  null|float $penalitaPagamentiRitardati
      * @return static
      */
-    public function setPenalitaPagamentiRitardati(?string $penalitaPagamentiRitardati = null): static
+    public function setPenalitaPagamentiRitardati(?float $penalitaPagamentiRitardati = null): static
     {
-        $this->penalitaPagamentiRitardati = InvoiceSuiteStringUtils::asNullWhenEmpty($penalitaPagamentiRitardati);
+        $this->penalitaPagamentiRitardati = $penalitaPagamentiRitardati;
 
         return $this;
     }
@@ -999,110 +999,5 @@ final class DettaglioPagamento
         $this->codicePagamento = null;
 
         return $this;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getImportoPagamentoAsFloat(): ?float
-    {
-        return is_null($this->importoPagamento) ? null : (float) $this->importoPagamento;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setImportoPagamentoFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setImportoPagamento(null);
-        }
-
-        $formatted = number_format($value, 2, '.', '');
-
-        return $this->setImportoPagamento($formatted);
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getScontoPagamentoAnticipatoAsFloat(): ?float
-    {
-        return is_null($this->scontoPagamentoAnticipato) ? null : (float) $this->scontoPagamentoAnticipato;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setScontoPagamentoAnticipatoFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setScontoPagamentoAnticipato(null);
-        }
-
-        $formatted = number_format($value, 2, '.', '');
-
-        return $this->setScontoPagamentoAnticipato($formatted);
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getPenalitaPagamentiRitardatiAsFloat(): ?float
-    {
-        return is_null($this->penalitaPagamentiRitardati) ? null : (float) $this->penalitaPagamentiRitardati;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setPenalitaPagamentiRitardatiFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setPenalitaPagamentiRitardati(null);
-        }
-
-        $formatted = number_format($value, 2, '.', '');
-
-        return $this->setPenalitaPagamentiRitardati($formatted);
     }
 }

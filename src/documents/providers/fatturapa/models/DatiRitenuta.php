@@ -7,7 +7,6 @@ namespace horstoeko\invoicesuite\documents\providers\fatturapa\models;
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\CausalePagamento;
 use horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\TipoRitenuta;
-use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use JMS\Serializer\Annotation as JMS;
 
 final class DatiRitenuta
@@ -31,24 +30,24 @@ final class DatiRitenuta
      *
      * @JMS\Expose
      * @JMS\Groups({"fatturapa"})
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\Accessor(getter="getImportoRitenuta", setter="setImportoRitenuta")
      * @JMS\SerializedName("ImportoRitenuta")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?string $importoRitenuta = null;
+    private ?float $importoRitenuta = null;
 
     /**
      * @translation-german Steuersatz Ritenuta
      *
      * @JMS\Expose
      * @JMS\Groups({"fatturapa"})
-     * @JMS\Type("string")
+     * @JMS\Type("float")
      * @JMS\Accessor(getter="getAliquotaRitenuta", setter="setAliquotaRitenuta")
      * @JMS\SerializedName("AliquotaRitenuta")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?string $aliquotaRitenuta = null;
+    private ?float $aliquotaRitenuta = null;
 
     /**
      * @translation-german Begründung Zahlung
@@ -100,9 +99,9 @@ final class DatiRitenuta
     /**
      * @translation-german Betrag Ritenuta
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getImportoRitenuta(): ?string
+    public function getImportoRitenuta(): ?float
     {
         return $this->importoRitenuta;
     }
@@ -110,12 +109,12 @@ final class DatiRitenuta
     /**
      * @translation-german Betrag Ritenuta
      *
-     * @param  null|string $importoRitenuta
+     * @param  null|float $importoRitenuta
      * @return static
      */
-    public function setImportoRitenuta(?string $importoRitenuta = null): static
+    public function setImportoRitenuta(?float $importoRitenuta = null): static
     {
-        $this->importoRitenuta = InvoiceSuiteStringUtils::asNullWhenEmpty($importoRitenuta);
+        $this->importoRitenuta = $importoRitenuta;
 
         return $this;
     }
@@ -135,9 +134,9 @@ final class DatiRitenuta
     /**
      * @translation-german Steuersatz Ritenuta
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getAliquotaRitenuta(): ?string
+    public function getAliquotaRitenuta(): ?float
     {
         return $this->aliquotaRitenuta;
     }
@@ -145,12 +144,12 @@ final class DatiRitenuta
     /**
      * @translation-german Steuersatz Ritenuta
      *
-     * @param  null|string $aliquotaRitenuta
+     * @param  null|float $aliquotaRitenuta
      * @return static
      */
-    public function setAliquotaRitenuta(?string $aliquotaRitenuta = null): static
+    public function setAliquotaRitenuta(?float $aliquotaRitenuta = null): static
     {
-        $this->aliquotaRitenuta = InvoiceSuiteStringUtils::asNullWhenEmpty($aliquotaRitenuta);
+        $this->aliquotaRitenuta = $aliquotaRitenuta;
 
         return $this;
     }
@@ -200,75 +199,5 @@ final class DatiRitenuta
         $this->causalePagamento = null;
 
         return $this;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getImportoRitenutaAsFloat(): ?float
-    {
-        return is_null($this->importoRitenuta) ? null : (float) $this->importoRitenuta;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setImportoRitenutaFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setImportoRitenuta(null);
-        }
-
-        $formatted = number_format($value, 2, '.', '');
-
-        return $this->setImportoRitenuta($formatted);
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getAliquotaRitenutaAsFloat(): ?float
-    {
-        return is_null($this->aliquotaRitenuta) ? null : (float) $this->aliquotaRitenuta;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setAliquotaRitenutaFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setAliquotaRitenuta(null);
-        }
-
-        $formatted = number_format($value, 2, '.', '');
-
-        return $this->setAliquotaRitenuta($formatted);
     }
 }

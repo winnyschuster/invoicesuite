@@ -433,9 +433,9 @@ final class DettaglioLinee
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getQuantita(): ?string
+    public function getQuantita(): ?float
     {
         return $this->quantita;
     }
@@ -443,12 +443,12 @@ final class DettaglioLinee
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $quantita
+     * @param  null|float $quantita
      * @return static
      */
-    public function setQuantita(?string $quantita = null): static
+    public function setQuantita(?float $quantita = null): static
     {
-        $this->quantita = InvoiceSuiteStringUtils::asNullWhenEmpty($quantita);
+        $this->quantita = $quantita;
 
         return $this;
     }
@@ -573,9 +573,9 @@ final class DettaglioLinee
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getPrezzoUnitario(): ?string
+    public function getPrezzoUnitario(): ?float
     {
         return $this->prezzoUnitario;
     }
@@ -583,12 +583,12 @@ final class DettaglioLinee
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $prezzoUnitario
+     * @param  null|float $prezzoUnitario
      * @return static
      */
-    public function setPrezzoUnitario(?string $prezzoUnitario = null): static
+    public function setPrezzoUnitario(?float $prezzoUnitario = null): static
     {
-        $this->prezzoUnitario = InvoiceSuiteStringUtils::asNullWhenEmpty($prezzoUnitario);
+        $this->prezzoUnitario = $prezzoUnitario;
 
         return $this;
     }
@@ -719,9 +719,9 @@ final class DettaglioLinee
     /**
      * @translation-german Prezzo Gesamt
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getPrezzoTotale(): ?string
+    public function getPrezzoTotale(): ?float
     {
         return $this->prezzoTotale;
     }
@@ -729,12 +729,12 @@ final class DettaglioLinee
     /**
      * @translation-german Prezzo Gesamt
      *
-     * @param  null|string $prezzoTotale
+     * @param  null|float $prezzoTotale
      * @return static
      */
-    public function setPrezzoTotale(?string $prezzoTotale = null): static
+    public function setPrezzoTotale(?float $prezzoTotale = null): static
     {
-        $this->prezzoTotale = InvoiceSuiteStringUtils::asNullWhenEmpty($prezzoTotale);
+        $this->prezzoTotale = $prezzoTotale;
 
         return $this;
     }
@@ -754,9 +754,9 @@ final class DettaglioLinee
     /**
      * @translation-german Steuersatz IVA
      *
-     * @return null|string
+     * @return null|float
      */
-    public function getAliquotaIVA(): ?string
+    public function getAliquotaIVA(): ?float
     {
         return $this->aliquotaIVA;
     }
@@ -764,12 +764,12 @@ final class DettaglioLinee
     /**
      * @translation-german Steuersatz IVA
      *
-     * @param  null|string $aliquotaIVA
+     * @param  null|float $aliquotaIVA
      * @return static
      */
-    public function setAliquotaIVA(?string $aliquotaIVA = null): static
+    public function setAliquotaIVA(?float $aliquotaIVA = null): static
     {
-        $this->aliquotaIVA = InvoiceSuiteStringUtils::asNullWhenEmpty($aliquotaIVA);
+        $this->aliquotaIVA = $aliquotaIVA;
 
         return $this;
     }
@@ -1000,148 +1000,5 @@ final class DettaglioLinee
         }
 
         return $this->altriDatiGestionali[0];
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getQuantitaAsFloat(): ?float
-    {
-        return is_null($this->quantita) ? null : (float) $this->quantita;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setQuantitaFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setQuantita(null);
-        }
-
-        $scale = max(2, min(8, $scale ?? 2));
-        $formatted = number_format($value, $scale, '.', '');
-
-        return $this->setQuantita($formatted);
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getPrezzoUnitarioAsFloat(): ?float
-    {
-        return is_null($this->prezzoUnitario) ? null : (float) $this->prezzoUnitario;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setPrezzoUnitarioFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setPrezzoUnitario(null);
-        }
-
-        $scale = max(2, min(8, $scale ?? 2));
-        $formatted = number_format($value, $scale, '.', '');
-
-        return $this->setPrezzoUnitario($formatted);
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getPrezzoTotaleAsFloat(): ?float
-    {
-        return is_null($this->prezzoTotale) ? null : (float) $this->prezzoTotale;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setPrezzoTotaleFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setPrezzoTotale(null);
-        }
-
-        $scale = max(2, min(8, $scale ?? 2));
-        $formatted = number_format($value, $scale, '.', '');
-
-        return $this->setPrezzoTotale($formatted);
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert als Float lesen.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @return null|float
-     */
-    public function getAliquotaIVAAsFloat(): ?float
-    {
-        return is_null($this->aliquotaIVA) ? null : (float) $this->aliquotaIVA;
-    }
-
-    /**
-     * @translation-german-untranslated
-     *
-     * Komfort-Methode: Dezimalwert aus Float setzen.
-     * Wenn $scale nicht gesetzt ist, wird ein sinnvoller Default verwendet.
-     * Achtung: Floats sind ungenau (IEEE 754) und nur für Bequemlichkeit gedacht.
-     *
-     * @param  null|float $value
-     * @param  null|int   $scale anzahl Nachkommastellen (wird auf den erlaubten Bereich begrenzt)
-     * @return static
-     */
-    public function setAliquotaIVAFromFloat(?float $value = null, ?int $scale = null): static
-    {
-        if (is_null($value)) {
-            return $this->setAliquotaIVA(null);
-        }
-
-        $formatted = number_format($value, 2, '.', '');
-
-        return $this->setAliquotaIVA($formatted);
     }
 }
