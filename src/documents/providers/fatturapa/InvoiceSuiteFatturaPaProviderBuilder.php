@@ -6260,6 +6260,24 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $this
+            ->getFatturaPaRootObject()
+            ->getLatestFatturaElettronicaBody()
+            ?->getDatiBeniServizi()
+            ?->getLatestDettaglioLinee()
+            ?->unsetPrezzoUnitario();
+
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newNetPrice)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newNetPrice)');
+        }
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getLatestFatturaElettronicaBodyWithCreate()
+            ->getDatiBeniServiziWithCreate()
+            ->getLatestDettaglioLineeWithCreate()
+            ->setPrezzoUnitario($newNetPrice);
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;

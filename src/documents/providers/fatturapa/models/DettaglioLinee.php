@@ -119,12 +119,12 @@ final class DettaglioLinee
      *
      * @JMS\Expose
      * @JMS\Groups({"fatturapa"})
-     * @JMS\Type("string")
+     * @JMS\Type("fatturapa_decimal<2>")
      * @JMS\Accessor(getter="getPrezzoUnitario", setter="setPrezzoUnitario")
      * @JMS\SerializedName("PrezzoUnitario")
      * @JMS\XmlElement(cdata=false)
      */
-    private ?string $prezzoUnitario = null;
+    private ?float $prezzoUnitario = null;
 
     /**
      * @translation-german-untranslated
