@@ -6953,6 +6953,24 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $this
+            ->getFatturaPaRootObject()
+            ->getLatestFatturaElettronicaBody()
+            ?->getDatiBeniServizi()
+            ?->getLatestDettaglioLinee()
+            ?->unsetAliquotaIVA();
+
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxPercent)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxPercent)');
+        }
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getLatestFatturaElettronicaBodyWithCreate()
+            ->getDatiBeniServiziWithCreate()
+            ->getLatestDettaglioLineeWithCreate()
+            ->setAliquotaIVA($newTaxPercent);
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -6972,6 +6990,19 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentPositionTax(?string $newTaxCategory = null, ?string $newTaxType = null, ?float $newTaxAmount = null, ?float $newTaxPercent = null, ?string $newExemptionReason = null, ?string $newExemptionReasonCode = null): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxPercent)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxPercent)');
+        }
+
+        $this->setDocumentPositionTax(
+            $newTaxCategory,
+            $newTaxType,
+            $newTaxAmount,
+            $newTaxPercent,
+            $newExemptionReason,
+            $newExemptionReasonCode
+        );
 
         $this->traceMethodExit(__METHOD__);
 
@@ -7031,6 +7062,24 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function setDocumentPositionSummation(?float $newNetAmount = null, ?float $newChargeTotalAmount = null, ?float $newDiscountTotalAmount = null, ?float $newTaxTotalAmount = null, ?float $newGrossAmount = null): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getLatestFatturaElettronicaBody()
+            ?->getDatiBeniServizi()
+            ?->getLatestDettaglioLinee()
+            ?->unsetPrezzoTotale();
+
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newNetAmount)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newNetPrice)');
+        }
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getLatestFatturaElettronicaBodyWithCreate()
+            ->getDatiBeniServiziWithCreate()
+            ->getLatestDettaglioLineeWithCreate()
+            ->setPrezzoTotale($newNetAmount);
 
         $this->traceMethodExit(__METHOD__);
 
