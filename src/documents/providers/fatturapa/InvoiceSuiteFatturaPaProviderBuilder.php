@@ -2425,6 +2425,25 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeader()
+            ?->getCedentePrestatore()
+            ?->unsetContatti();
+
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newPhoneNumber, $newFaxNumber, $newEmailAddress])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newPhoneNumber, $newFaxNumber, $newEmailAddress])');
+        }
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeaderWithCreate()
+            ->getCedentePrestatoreWithCreate()
+            ->getContattiWithCreate()
+            ->setTelefono($newPhoneNumber)
+            ->setFax($newFaxNumber)
+            ->setEmail($newEmailAddress);
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -2443,6 +2462,12 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     public function addDocumentSellerContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
     {
         $this->traceMethodEnter(__METHOD__);
+
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newPhoneNumber, $newFaxNumber, $newEmailAddress])) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newPhoneNumber, $newFaxNumber, $newEmailAddress])');
+        }
+
+        $this->setDocumentSellerContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         $this->traceMethodExit(__METHOD__);
 
