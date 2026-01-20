@@ -5639,6 +5639,17 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this->traceMethodEnter(__METHOD__);
 
+        if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newDueAmount)) {
+            return $this->traceMethodEarlyExit(__METHOD__, 'floatIsNullOrEmpty', 'InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newDueAmount)');
+        }
+
+        $this
+            ->getFatturaPaRootObject()
+            ->getLatestFatturaElettronicaBodyWithCreate()
+            ->addOnceToDatiPagamentoWithCreate()
+            ->addOnceToDettaglioPagamentoWithCreate()
+            ->setImportoPagamento($newDueAmount);
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
