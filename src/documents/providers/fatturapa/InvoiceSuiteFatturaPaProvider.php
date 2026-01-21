@@ -13,6 +13,7 @@ namespace horstoeko\invoicesuite\documents\providers\fatturapa;
 
 use Closure;
 use DOMDocument;
+use DOMElement;
 use DOMXPath;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\documents\providers\fatturapa\models\FatturaElettronica;
@@ -133,10 +134,26 @@ class InvoiceSuiteFatturaPaProvider extends InvoiceSuiteAbstractDocumentFormatPr
 
             $contentDomXPath = new DOMXPath($contentDomDocument);
 
-            $contentEntries = $contentDomXPath->query('//FatturaElettronica/FatturaElettronicaHeader');
+            $contentDomDocumentRoot = $contentDomDocument->documentElement;
+
+            if (!$contentDomDocumentRoot instanceof DOMElement) {
+                return false;
+            }
+
+            $contentDomDocumentRootNs = $contentDomDocumentRoot->namespaceURI ?? '';
+
+            if ('' !== $contentDomDocumentRootNs) {
+                $contentDomXPath->registerNamespace('d', $contentDomDocumentRootNs);
+            }
+
+            $contentDomXPathQuery = ('' !== $contentDomDocumentRootNs)
+                ? '//d:FatturaElettronica/d:FatturaElettronicaHeader'
+                : '//FatturaElettronica/FatturaElettronicaHeader';
+
+            $contentEntries = $contentDomXPath->query($contentDomXPathQuery);
 
             if (false === $contentEntries) {
-                continue;
+                return false;
             }
 
             if (1 === $contentEntries->length) {
