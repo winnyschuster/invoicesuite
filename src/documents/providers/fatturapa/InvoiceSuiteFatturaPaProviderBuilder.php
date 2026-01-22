@@ -60,6 +60,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
     {
         $this
             ->getFatturaPaRootObject()
+            ->setVersione(FormatoTrasmissione::FPR12);
+
+        $this
+            ->getFatturaPaRootObject()
             ->getFatturaElettronicaHeaderWithCreate()
             ->getDatiTrasmissioneWithCreate()
             ->setFormatoTrasmissione(FormatoTrasmissione::FPR12);
