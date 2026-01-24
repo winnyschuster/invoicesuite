@@ -394,7 +394,7 @@ final class DatiTrasporto
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
     public function getPesoLordo(): ?float
     {
@@ -404,7 +404,7 @@ final class DatiTrasporto
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $pesoLordo
+     * @param  null|float $pesoLordo
      * @return static
      */
     public function setPesoLordo(?float $pesoLordo = null): static
@@ -429,7 +429,7 @@ final class DatiTrasporto
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
     public function getPesoNetto(): ?float
     {
@@ -439,7 +439,7 @@ final class DatiTrasporto
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $pesoNetto
+     * @param  null|float $pesoNetto
      * @return static
      */
     public function setPesoNetto(?float $pesoNetto = null): static

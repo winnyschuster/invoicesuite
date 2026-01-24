@@ -13,7 +13,7 @@ use JMS\Serializer\Annotation as JMS;
  * @JMS\XmlRoot("DigestValue")
  * @JMS\XmlNamespace(uri="http://www.w3.org/2000/09/xmldsig#", prefix="ds")
  */
-class DigestValue extends DigestValueType
+class DigestValue // extends DigestValueType
 {
     use HandlesObjectFlags;
 }

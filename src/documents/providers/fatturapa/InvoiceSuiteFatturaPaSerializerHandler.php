@@ -56,12 +56,10 @@ class InvoiceSuiteFatturaPaSerializerHandler implements SubscribingHandlerInterf
     }
 
     /**
-     * Serialize float to XML text
-     *
-     * @param  XmlSerializationVisitor $visitor
-     * @param  null|float              $data
-     * @param  array                   $type
-     * @param  Context                 $context
+     * @param  XmlSerializationVisitor      $visitor
+     * @param  null|float                   $data
+     * @param  array<string,array<int,int>> $type
+     * @param  Context                      $context
      * @return null|DOMNode
      */
     public function serializeDecimalToXml(XmlSerializationVisitor $visitor, ?float $data, array $type, Context $context): ?DOMNode
@@ -79,6 +77,13 @@ class InvoiceSuiteFatturaPaSerializerHandler implements SubscribingHandlerInterf
         return $visitor->getDocument()->createTextNode($formatted);
     }
 
+    /**
+     * @param  XmlDeserializationVisitor    $visitor
+     * @param  mixed                        $data
+     * @param  array<string,array<int,int>> $type
+     * @param  Context                      $context
+     * @return null|float
+     */
     public function deserializeDecimalFromXml(XmlDeserializationVisitor $visitor, $data, array $type, Context $context): ?float
     {
         $s = $this->scalarToString($data);
@@ -87,12 +92,18 @@ class InvoiceSuiteFatturaPaSerializerHandler implements SubscribingHandlerInterf
             return null;
         }
 
-        // Falls dein XML mal Komma enthält:
         $s = str_replace(',', '.', $s);
 
         return (float) $s;
     }
 
+    /**
+     * @param  XmlSerializationVisitor $visitor
+     * @param  null|int                $data
+     * @param  array<int,int>          $type
+     * @param  Context                 $context
+     * @return null|DOMNode
+     */
     public function serializeIntToXml(XmlSerializationVisitor $visitor, ?int $data, array $type, Context $context): ?DOMNode
     {
         if (null === $data) {
@@ -102,6 +113,13 @@ class InvoiceSuiteFatturaPaSerializerHandler implements SubscribingHandlerInterf
         return $visitor->getDocument()->createTextNode((string) $data);
     }
 
+    /**
+     * @param  XmlDeserializationVisitor $visitor
+     * @param  mixed                     $data
+     * @param  array<int,int>            $type
+     * @param  Context                   $context
+     * @return null|int
+     */
     public function deserializeIntFromXml(XmlDeserializationVisitor $visitor, $data, array $type, Context $context): ?int
     {
         $s = $this->scalarToString($data);
@@ -114,7 +132,8 @@ class InvoiceSuiteFatturaPaSerializerHandler implements SubscribingHandlerInterf
     }
 
     /**
-     * @return array{0:int,1:int}
+     * @param  array<string,array<int,int>> $type
+     * @return array<int,int>
      */
     private function readScaleParams(array $type): array
     {
@@ -133,6 +152,10 @@ class InvoiceSuiteFatturaPaSerializerHandler implements SubscribingHandlerInterf
         return [(int) $params[0], (int) $params[1]];
     }
 
+    /**
+     * @param  mixed  $data
+     * @return string
+     */
     private function scalarToString($data): string
     {
         if (null === $data) {

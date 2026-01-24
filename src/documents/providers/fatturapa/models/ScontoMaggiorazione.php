@@ -86,7 +86,7 @@ final class ScontoMaggiorazione
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
     public function getPercentuale(): ?float
     {
@@ -96,7 +96,7 @@ final class ScontoMaggiorazione
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $percentuale
+     * @param  null|float $percentuale
      * @return static
      */
     public function setPercentuale(?float $percentuale = null): static
@@ -121,7 +121,7 @@ final class ScontoMaggiorazione
     /**
      * @translation-german Betrag
      *
-     * @return null|string
+     * @return null|float
      */
     public function getImporto(): ?float
     {
@@ -131,7 +131,7 @@ final class ScontoMaggiorazione
     /**
      * @translation-german Betrag
      *
-     * @param  null|string $importo
+     * @param  null|float $importo
      * @return static
      */
     public function setImporto(?float $importo = null): static

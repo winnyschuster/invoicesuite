@@ -690,7 +690,7 @@ final class DatiGeneraliDocumento
     /**
      * @translation-german Betrag Gesamt Documento
      *
-     * @return null|string
+     * @return null|float
      */
     public function getImportoTotaleDocumento(): ?float
     {
@@ -700,7 +700,7 @@ final class DatiGeneraliDocumento
     /**
      * @translation-german Betrag Gesamt Documento
      *
-     * @param  null|string $importoTotaleDocumento
+     * @param  null|float $importoTotaleDocumento
      * @return static
      */
     public function setImportoTotaleDocumento(?float $importoTotaleDocumento = null): static
@@ -725,7 +725,7 @@ final class DatiGeneraliDocumento
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
     public function getArrotondamento(): ?float
     {
@@ -735,7 +735,7 @@ final class DatiGeneraliDocumento
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $arrotondamento
+     * @param  null|float $arrotondamento
      * @return static
      */
     public function setArrotondamento(?float $arrotondamento = null): static

@@ -74,7 +74,7 @@ final class DatiBollo
     /**
      * @translation-german Betrag Bollo
      *
-     * @return null|string
+     * @return null|float
      */
     public function getImportoBollo(): ?float
     {
@@ -84,7 +84,7 @@ final class DatiBollo
     /**
      * @translation-german Betrag Bollo
      *
-     * @param  null|string $importoBollo
+     * @param  null|float $importoBollo
      * @return static
      */
     public function setImportoBollo(?float $importoBollo = null): static

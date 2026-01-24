@@ -134,7 +134,7 @@ final class AltriDatiGestionali
     /**
      * @translation-german Referenz Nummer
      *
-     * @return null|string
+     * @return null|float
      */
     public function getRiferimentoNumero(): ?float
     {
@@ -144,7 +144,7 @@ final class AltriDatiGestionali
     /**
      * @translation-german Referenz Nummer
      *
-     * @param  null|string $riferimentoNumero
+     * @param  null|float $riferimentoNumero
      * @return static
      */
     public function setRiferimentoNumero(?float $riferimentoNumero = null): static

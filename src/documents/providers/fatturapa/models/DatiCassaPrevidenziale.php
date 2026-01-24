@@ -149,7 +149,7 @@ final class DatiCassaPrevidenziale
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
     public function getAlCassa(): ?float
     {
@@ -159,7 +159,7 @@ final class DatiCassaPrevidenziale
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $alCassa
+     * @param  null|float $alCassa
      * @return static
      */
     public function setAlCassa(?float $alCassa = null): static
@@ -184,7 +184,7 @@ final class DatiCassaPrevidenziale
     /**
      * @translation-german Betrag Contributo Cassa
      *
-     * @return null|string
+     * @return null|float
      */
     public function getImportoContributoCassa(): ?float
     {
@@ -194,7 +194,7 @@ final class DatiCassaPrevidenziale
     /**
      * @translation-german Betrag Contributo Cassa
      *
-     * @param  null|string $importoContributoCassa
+     * @param  null|float $importoContributoCassa
      * @return static
      */
     public function setImportoContributoCassa(?float $importoContributoCassa = null): static
@@ -219,7 +219,7 @@ final class DatiCassaPrevidenziale
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
     public function getImponibileCassa(): ?float
     {
@@ -229,7 +229,7 @@ final class DatiCassaPrevidenziale
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $imponibileCassa
+     * @param  null|float $imponibileCassa
      * @return static
      */
     public function setImponibileCassa(?float $imponibileCassa = null): static
@@ -254,7 +254,7 @@ final class DatiCassaPrevidenziale
     /**
      * @translation-german Steuersatz IVA
      *
-     * @return null|string
+     * @return null|float
      */
     public function getAliquotaIVA(): ?float
     {
@@ -264,7 +264,7 @@ final class DatiCassaPrevidenziale
     /**
      * @translation-german Steuersatz IVA
      *
-     * @param  null|string $aliquotaIVA
+     * @param  null|float $aliquotaIVA
      * @return static
      */
     public function setAliquotaIVA(?float $aliquotaIVA = null): static

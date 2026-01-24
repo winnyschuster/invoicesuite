@@ -433,7 +433,7 @@ final class DettaglioLinee
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
     public function getQuantita(): ?float
     {
@@ -443,7 +443,7 @@ final class DettaglioLinee
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $quantita
+     * @param  null|float $quantita
      * @return static
      */
     public function setQuantita(?float $quantita = null): static
@@ -573,7 +573,7 @@ final class DettaglioLinee
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
     public function getPrezzoUnitario(): ?float
     {
@@ -583,7 +583,7 @@ final class DettaglioLinee
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $prezzoUnitario
+     * @param  null|float $prezzoUnitario
      * @return static
      */
     public function setPrezzoUnitario(?float $prezzoUnitario = null): static
@@ -719,7 +719,7 @@ final class DettaglioLinee
     /**
      * @translation-german Prezzo Gesamt
      *
-     * @return null|string
+     * @return null|float
      */
     public function getPrezzoTotale(): ?float
     {
@@ -729,7 +729,7 @@ final class DettaglioLinee
     /**
      * @translation-german Prezzo Gesamt
      *
-     * @param  null|string $prezzoTotale
+     * @param  null|float $prezzoTotale
      * @return static
      */
     public function setPrezzoTotale(?float $prezzoTotale = null): static
@@ -754,7 +754,7 @@ final class DettaglioLinee
     /**
      * @translation-german Steuersatz IVA
      *
-     * @return null|string
+     * @return null|float
      */
     public function getAliquotaIVA(): ?float
     {
@@ -764,7 +764,7 @@ final class DettaglioLinee
     /**
      * @translation-german Steuersatz IVA
      *
-     * @param  null|string $aliquotaIVA
+     * @param  null|float $aliquotaIVA
      * @return static
      */
     public function setAliquotaIVA(?float $aliquotaIVA = null): static

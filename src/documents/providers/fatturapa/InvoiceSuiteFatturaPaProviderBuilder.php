@@ -1287,7 +1287,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
 
         $this
             ->getFatturaPaRootObject()
-            ?->getFirstFatturaElettronicaBody()
+            ->getFirstFatturaElettronicaBody()
             ?->getDatiGenerali()
             ?->getDatiGeneraliDocumento()
             ?->unsetNumero();

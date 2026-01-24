@@ -444,7 +444,7 @@ final class DettaglioPagamento
     /**
      * @translation-german Betrag Zahlung
      *
-     * @return null|string
+     * @return null|float
      */
     public function getImportoPagamento(): ?float
     {
@@ -454,7 +454,7 @@ final class DettaglioPagamento
     /**
      * @translation-german Betrag Zahlung
      *
-     * @param  null|string $importoPagamento
+     * @param  null|float $importoPagamento
      * @return static
      */
     public function setImportoPagamento(?float $importoPagamento = null): static
@@ -829,7 +829,7 @@ final class DettaglioPagamento
     /**
      * @translation-german Sconto Zahlung Anticipato
      *
-     * @return null|string
+     * @return null|float
      */
     public function getScontoPagamentoAnticipato(): ?float
     {
@@ -839,7 +839,7 @@ final class DettaglioPagamento
     /**
      * @translation-german Sconto Zahlung Anticipato
      *
-     * @param  null|string $scontoPagamentoAnticipato
+     * @param  null|float $scontoPagamentoAnticipato
      * @return static
      */
     public function setScontoPagamentoAnticipato(?float $scontoPagamentoAnticipato = null): static
@@ -899,7 +899,7 @@ final class DettaglioPagamento
     /**
      * @translation-german-untranslated
      *
-     * @return null|string
+     * @return null|float
      */
     public function getPenalitaPagamentiRitardati(): ?float
     {
@@ -909,7 +909,7 @@ final class DettaglioPagamento
     /**
      * @translation-german-untranslated
      *
-     * @param  null|string $penalitaPagamentiRitardati
+     * @param  null|float $penalitaPagamentiRitardati
      * @return static
      */
     public function setPenalitaPagamentiRitardati(?float $penalitaPagamentiRitardati = null): static
