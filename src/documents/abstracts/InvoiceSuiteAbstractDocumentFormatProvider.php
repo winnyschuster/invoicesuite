@@ -140,14 +140,14 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      *
      * @return array<string>
      */
-    abstract public function getAllowedPdfAttachmentFilenames(): array;
+    abstract public function getPdfAllowedAttachmentFilenames(): array;
 
     /**
      * Get the default PDF attachment filename
      *
      * @return string
      */
-    abstract public function getDefaultPdfAttachmentFilename(): string;
+    abstract public function getPdfDefaultAttachmentFilename(): string;
 
     /**
      * Returns the PDF constructor classname for this format provider
@@ -370,11 +370,11 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
             return false;
         }
 
-        if ([] === $this->getAllowedPdfAttachmentFilenames()) {
+        if ([] === $this->getPdfAllowedAttachmentFilenames()) {
             return false;
         }
 
-        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($this->getDefaultPdfAttachmentFilename())) {
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($this->getPdfDefaultAttachmentFilename())) {
             return false;
         }
 
@@ -389,7 +389,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      */
     public function getIsValidPdfAttachmentFilename(string $filename): bool
     {
-        return InvoiceSuiteArrayUtils::inArrayNoCase($this->getAllowedPdfAttachmentFilenames(), $filename);
+        return InvoiceSuiteArrayUtils::inArrayNoCase($this->getPdfAllowedAttachmentFilenames(), $filename);
     }
 
     /**

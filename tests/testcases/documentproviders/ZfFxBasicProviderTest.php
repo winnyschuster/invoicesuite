@@ -57,12 +57,12 @@ final class ZfFxBasicProviderTest extends TestCase
         $provider = new InvoiceSuiteZfFxBasicProvider();
 
         $this->assertTrue($provider->getIsPdfSupportAvailable());
-        $this->assertCount(4, $provider->getAllowedPdfAttachmentFilenames());
-        $this->assertContains('ZUGFeRD-invoice.xml', $provider->getAllowedPdfAttachmentFilenames());
-        $this->assertContains('zugferd-invoice.xml', $provider->getAllowedPdfAttachmentFilenames());
-        $this->assertContains('factur-x.xml', $provider->getAllowedPdfAttachmentFilenames());
-        $this->assertContains('xrechnung.xml', $provider->getAllowedPdfAttachmentFilenames());
-        $this->assertSame('factur-x.xml', $provider->getDefaultPdfAttachmentFilename());
+        $this->assertCount(4, $provider->getPdfAllowedAttachmentFilenames());
+        $this->assertContains('ZUGFeRD-invoice.xml', $provider->getPdfAllowedAttachmentFilenames());
+        $this->assertContains('zugferd-invoice.xml', $provider->getPdfAllowedAttachmentFilenames());
+        $this->assertContains('factur-x.xml', $provider->getPdfAllowedAttachmentFilenames());
+        $this->assertContains('xrechnung.xml', $provider->getPdfAllowedAttachmentFilenames());
+        $this->assertSame('factur-x.xml', $provider->getPdfDefaultAttachmentFilename());
         $this->assertSame(InvoiceSuiteZffxPdfConstructor::class, $provider->getPdfConstructorClassName());
     }
 

@@ -202,7 +202,7 @@ class InvoiceSuiteFatturaPaProvider extends InvoiceSuiteAbstractDocumentFormatPr
      *
      * @return array<string>
      */
-    public function getAllowedPdfAttachmentFilenames(): array
+    public function getPdfAllowedAttachmentFilenames(): array
     {
         return [];
     }
@@ -212,7 +212,7 @@ class InvoiceSuiteFatturaPaProvider extends InvoiceSuiteAbstractDocumentFormatPr
      *
      * @return string
      */
-    public function getDefaultPdfAttachmentFilename(): string
+    public function getPdfDefaultAttachmentFilename(): string
     {
         return '';
     }

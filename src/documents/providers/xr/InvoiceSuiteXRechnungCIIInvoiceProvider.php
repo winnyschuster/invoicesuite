@@ -189,7 +189,7 @@ class InvoiceSuiteXRechnungCIIInvoiceProvider extends InvoiceSuiteAbstractDocume
      *
      * @return array<string>
      */
-    public function getAllowedPdfAttachmentFilenames(): array
+    public function getPdfAllowedAttachmentFilenames(): array
     {
         return ['xrechnung.xml'];
     }
@@ -199,7 +199,7 @@ class InvoiceSuiteXRechnungCIIInvoiceProvider extends InvoiceSuiteAbstractDocume
      *
      * @return string
      */
-    public function getDefaultPdfAttachmentFilename(): string
+    public function getPdfDefaultAttachmentFilename(): string
     {
         return 'xrechnung.xml';
     }

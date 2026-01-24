@@ -49,8 +49,8 @@ final class XRechnungUBLCreditNoteProviderTest extends TestCase
         $provider = new InvoiceSuiteXRechnungUBLCreditNoteProvider();
 
         $this->assertFalse($provider->getIsPdfSupportAvailable());
-        $this->assertEmpty($provider->getAllowedPdfAttachmentFilenames());
-        $this->assertSame('', $provider->getDefaultPdfAttachmentFilename());
+        $this->assertEmpty($provider->getPdfAllowedAttachmentFilenames());
+        $this->assertSame('', $provider->getPdfDefaultAttachmentFilename());
         $this->assertSame('', $provider->getPdfConstructorClassName());
     }
 

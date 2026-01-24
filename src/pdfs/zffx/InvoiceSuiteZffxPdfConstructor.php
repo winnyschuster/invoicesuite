@@ -78,7 +78,7 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
 
         $this->pdfWriter->attach(
             PdfStreamReader::createByString($this->getRawDocumentContent()),
-            $this->getCurrentDocumentFormatProvider()->getDefaultPdfAttachmentFilename(),
+            $this->getCurrentDocumentFormatProvider()->getPdfDefaultAttachmentFilename(),
             'Factur-X Invoice',
             $this->getDocumentRelationshipType(),
             'text#2Fxml'
@@ -222,7 +222,7 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
         $descFx = $descriptionNodes[0];
         $descFx->children('fx', true)->{'ConformanceLevel'} = strtoupper($this->getXmlAttachmentXmpName());
         $descFx->children('fx', true)->{'Version'} = strtoupper($this->getXmlAttachmentXmpVersion());
-        $descFx->children('fx', true)->{'DocumentFileName'} = $this->getCurrentDocumentFormatProvider()->getDefaultPdfAttachmentFilename();
+        $descFx->children('fx', true)->{'DocumentFileName'} = $this->getCurrentDocumentFormatProvider()->getPdfDefaultAttachmentFilename();
         $this->pdfWriter->addMetadataDescriptionNode($descFx->asXML());
 
         $this->pdfWriter->addMetadataDescriptionNode($descriptionNodes[1]->asXML());

@@ -172,7 +172,7 @@ class InvoiceSuitePeppol30InvoiceProvider extends InvoiceSuiteAbstractDocumentFo
      *
      * @return array<string>
      */
-    public function getAllowedPdfAttachmentFilenames(): array
+    public function getPdfAllowedAttachmentFilenames(): array
     {
         return [];
     }
@@ -182,7 +182,7 @@ class InvoiceSuitePeppol30InvoiceProvider extends InvoiceSuiteAbstractDocumentFo
      *
      * @return string
      */
-    public function getDefaultPdfAttachmentFilename(): string
+    public function getPdfDefaultAttachmentFilename(): string
     {
         return '';
     }

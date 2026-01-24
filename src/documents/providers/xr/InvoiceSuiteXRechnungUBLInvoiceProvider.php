@@ -193,7 +193,7 @@ class InvoiceSuiteXRechnungUBLInvoiceProvider extends InvoiceSuiteAbstractDocume
      *
      * @return array<string>
      */
-    public function getAllowedPdfAttachmentFilenames(): array
+    public function getPdfAllowedAttachmentFilenames(): array
     {
         return [];
     }
@@ -203,7 +203,7 @@ class InvoiceSuiteXRechnungUBLInvoiceProvider extends InvoiceSuiteAbstractDocume
      *
      * @return string
      */
-    public function getDefaultPdfAttachmentFilename(): string
+    public function getPdfDefaultAttachmentFilename(): string
     {
         return '';
     }

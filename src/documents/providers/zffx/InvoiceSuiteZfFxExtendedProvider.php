@@ -182,7 +182,7 @@ class InvoiceSuiteZfFxExtendedProvider extends InvoiceSuiteAbstractDocumentForma
      *
      * @return array<string>
      */
-    public function getAllowedPdfAttachmentFilenames(): array
+    public function getPdfAllowedAttachmentFilenames(): array
     {
         return [
             'ZUGFeRD-invoice.xml' /* 1.0 */,
@@ -197,7 +197,7 @@ class InvoiceSuiteZfFxExtendedProvider extends InvoiceSuiteAbstractDocumentForma
      *
      * @return string
      */
-    public function getDefaultPdfAttachmentFilename(): string
+    public function getPdfDefaultAttachmentFilename(): string
     {
         return 'factur-x.xml';
     }

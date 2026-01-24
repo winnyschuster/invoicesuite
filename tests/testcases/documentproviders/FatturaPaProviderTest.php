@@ -37,7 +37,7 @@ final class FatturaPaProviderTest extends TestCase
         $provider = new InvoiceSuiteFatturaPaProvider();
 
         $this->assertFalse($provider->getIsPdfSupportAvailable());
-        $this->assertCount(0, $provider->getAllowedPdfAttachmentFilenames());
+        $this->assertCount(0, $provider->getPdfAllowedAttachmentFilenames());
         $this->assertSame('', $provider->getPdfConstructorClassName());
     }
 
