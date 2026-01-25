@@ -11,7 +11,6 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\InvoiceSuitePdfDocumentReader;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\InvoiceSuitePdfDocumentBuilder;
-use horstoeko\invoicesuite\pdfs\extractor\InvoiceSuitePdfExtractor;
 use horstoeko\invoicesuite\documents\providers\zffx\InvoiceSuiteZfFxBasicProvider;
 use horstoeko\invoicesuite\documents\providers\zffx\InvoiceSuiteZfFxProviderReader;
 use horstoeko\invoicesuite\documents\providers\zffx\InvoiceSuiteZfFxBasicWlProvider;
@@ -50,7 +49,7 @@ class CustomPhpPrinter extends Printer
     }
 }
 
-class ExtractClass
+class ExtractClass implements Stringable
 {
     /**
      * The class to analyze
@@ -104,7 +103,7 @@ class ExtractClass
      *
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->getJson();
     }
@@ -681,40 +680,40 @@ class BatchMarkDownGenerator
 }
 
 BatchMarkDownGenerator::generate([
-    InvoiceSuiteDocumentReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteDocumentReader.md',
-    InvoiceSuiteDocumentBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteDocumentBuilder.md',
-    InvoiceSuitePdfDocumentReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuitePdfDocumentReader.md',
-    InvoiceSuitePdfDocumentBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuitePdfDocumentBuilder.md',
+    InvoiceSuiteDocumentReader::class => __DIR__ . '/classes/Class-InvoiceSuiteDocumentReader.md',
+    InvoiceSuiteDocumentBuilder::class => __DIR__ . '/classes/Class-InvoiceSuiteDocumentBuilder.md',
+    InvoiceSuitePdfDocumentReader::class => __DIR__ . '/classes/Class-InvoiceSuitePdfDocumentReader.md',
+    InvoiceSuitePdfDocumentBuilder::class => __DIR__ . '/classes/Class-InvoiceSuitePdfDocumentBuilder.md',
     // ZF/FX
-    InvoiceSuiteZfFxMinimumProvider::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxMinimumProvider.md',
-    InvoiceSuiteZfFxBasicProvider::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxBasicProvider.md',
-    InvoiceSuiteZfFxBasicWlProvider::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxBasicWlProvider.md',
-    InvoiceSuiteZfFxComfortProvider::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxComfortProvider.md',
-    InvoiceSuiteZfFxExtendedProvider::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxExtendedProvider.md',
-    InvoiceSuiteZfFxProviderReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxProviderReader.md',
-    InvoiceSuiteZfFxProviderBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteZfFxProviderBuilder.md',
+    InvoiceSuiteZfFxMinimumProvider::class => __DIR__ . '/classes/Class-InvoiceSuiteZfFxMinimumProvider.md',
+    InvoiceSuiteZfFxBasicProvider::class => __DIR__ . '/classes/Class-InvoiceSuiteZfFxBasicProvider.md',
+    InvoiceSuiteZfFxBasicWlProvider::class => __DIR__ . '/classes/Class-InvoiceSuiteZfFxBasicWlProvider.md',
+    InvoiceSuiteZfFxComfortProvider::class => __DIR__ . '/classes/Class-InvoiceSuiteZfFxComfortProvider.md',
+    InvoiceSuiteZfFxExtendedProvider::class => __DIR__ . '/classes/Class-InvoiceSuiteZfFxExtendedProvider.md',
+    InvoiceSuiteZfFxProviderReader::class => __DIR__ . '/classes/Class-InvoiceSuiteZfFxProviderReader.md',
+    InvoiceSuiteZfFxProviderBuilder::class => __DIR__ . '/classes/Class-InvoiceSuiteZfFxProviderBuilder.md',
     // Peppol
-    InvoiceSuitePeppol30InvoiceProvider::class => dirname(__FILE__) . '/classes/Class-InvoiceSuitePeppol30InvoiceProvider.md',
-    InvoiceSuitePeppol30InvoiceProviderReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuitePeppol30InvoiceProviderReader.md',
-    InvoiceSuitePeppol30InvoiceProviderBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuitePeppol30InvoiceProviderBuilder.md',
-    InvoiceSuitePeppol30CreditNoteProvider::class => dirname(__FILE__) . '/classes/Class-InvoiceSuitePeppol30CreditNoteProvider.md',
-    InvoiceSuitePeppol30CreditNoteProviderReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuitePeppol30CreditNoteProviderReader.md',
-    InvoiceSuitePeppol30CreditNoteProviderBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuitePeppol30CreditNoteProviderBuilder.md',
+    InvoiceSuitePeppol30InvoiceProvider::class => __DIR__ . '/classes/Class-InvoiceSuitePeppol30InvoiceProvider.md',
+    InvoiceSuitePeppol30InvoiceProviderReader::class => __DIR__ . '/classes/Class-InvoiceSuitePeppol30InvoiceProviderReader.md',
+    InvoiceSuitePeppol30InvoiceProviderBuilder::class => __DIR__ . '/classes/Class-InvoiceSuitePeppol30InvoiceProviderBuilder.md',
+    InvoiceSuitePeppol30CreditNoteProvider::class => __DIR__ . '/classes/Class-InvoiceSuitePeppol30CreditNoteProvider.md',
+    InvoiceSuitePeppol30CreditNoteProviderReader::class => __DIR__ . '/classes/Class-InvoiceSuitePeppol30CreditNoteProviderReader.md',
+    InvoiceSuitePeppol30CreditNoteProviderBuilder::class => __DIR__ . '/classes/Class-InvoiceSuitePeppol30CreditNoteProviderBuilder.md',
     // XRechnung CII
-    InvoiceSuiteXRechnungCIIInvoiceProvider::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteXRechnungCIIInvoiceProvider.md',
-    InvoiceSuiteXRechnungCIIInvoiceProviderBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteXRechnungCIIInvoiceProviderBuilder.md',
-    InvoiceSuiteXRechnungCIIInvoiceProviderReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteXRechnungCIIInvoiceProviderReader.md',
+    InvoiceSuiteXRechnungCIIInvoiceProvider::class => __DIR__ . '/classes/Class-InvoiceSuiteXRechnungCIIInvoiceProvider.md',
+    InvoiceSuiteXRechnungCIIInvoiceProviderBuilder::class => __DIR__ . '/classes/Class-InvoiceSuiteXRechnungCIIInvoiceProviderBuilder.md',
+    InvoiceSuiteXRechnungCIIInvoiceProviderReader::class => __DIR__ . '/classes/Class-InvoiceSuiteXRechnungCIIInvoiceProviderReader.md',
     // XRechnung UBL
-    InvoiceSuiteXRechnungUBLCreditNoteProvider::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteXRechnungUBLCreditNoteProvider.md',
-    InvoiceSuiteXRechnungUBLCreditNoteProviderBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteXRechnungUBLCreditNoteProviderBuilder.md',
-    InvoiceSuiteXRechnungUBLCreditNoteProviderReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteXRechnungUBLCreditNoteProviderReader.md',
-    InvoiceSuiteXRechnungUBLInvoiceProvider::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteXRechnungUBLInvoiceProvider.md',
-    InvoiceSuiteXRechnungUBLInvoiceProviderBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteXRechnungUBLInvoiceProviderBuilder.md',
-    InvoiceSuiteXRechnungUBLInvoiceProviderReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteXRechnungUBLInvoiceProviderReader.md',
+    InvoiceSuiteXRechnungUBLCreditNoteProvider::class => __DIR__ . '/classes/Class-InvoiceSuiteXRechnungUBLCreditNoteProvider.md',
+    InvoiceSuiteXRechnungUBLCreditNoteProviderBuilder::class => __DIR__ . '/classes/Class-InvoiceSuiteXRechnungUBLCreditNoteProviderBuilder.md',
+    InvoiceSuiteXRechnungUBLCreditNoteProviderReader::class => __DIR__ . '/classes/Class-InvoiceSuiteXRechnungUBLCreditNoteProviderReader.md',
+    InvoiceSuiteXRechnungUBLInvoiceProvider::class => __DIR__ . '/classes/Class-InvoiceSuiteXRechnungUBLInvoiceProvider.md',
+    InvoiceSuiteXRechnungUBLInvoiceProviderBuilder::class => __DIR__ . '/classes/Class-InvoiceSuiteXRechnungUBLInvoiceProviderBuilder.md',
+    InvoiceSuiteXRechnungUBLInvoiceProviderReader::class => __DIR__ . '/classes/Class-InvoiceSuiteXRechnungUBLInvoiceProviderReader.md',
     // FatturaPA
-    InvoiceSuiteFatturaPaProvider::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteFatturaPaProvider.md',
-    InvoiceSuiteFatturaPaProviderBuilder::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteFatturaPaProviderBuilder.md',
-    InvoiceSuiteFatturaPaProviderReader::class => dirname(__FILE__) . '/classes/Class-InvoiceSuiteFatturaPaProviderReader.md',
+    InvoiceSuiteFatturaPaProvider::class => __DIR__ . '/classes/Class-InvoiceSuiteFatturaPaProvider.md',
+    InvoiceSuiteFatturaPaProviderBuilder::class => __DIR__ . '/classes/Class-InvoiceSuiteFatturaPaProviderBuilder.md',
+    InvoiceSuiteFatturaPaProviderReader::class => __DIR__ . '/classes/Class-InvoiceSuiteFatturaPaProviderReader.md',
 ], [
     //'horstoeko\\invoicesuite\\MyClass::myMethodName',
 ]);

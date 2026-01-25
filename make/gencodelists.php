@@ -1,5 +1,8 @@
 <?php
 
+use Nette\PhpGenerator\PsrPrinter;
+use Nette\PhpGenerator\PhpFile;
+use Nette\PhpGenerator\Printer;
 use horstoeko\stringmanagement\PathUtils;
 
 require __DIR__ . "/../vendor/autoload.php";
@@ -64,7 +67,7 @@ function strComment(string $str): string
     $str = str_replace("\r", "", $str);
     $str = str_replace("\t", "", $str);
     $str = preg_replace('/\s+/', ' ', $str);
-    return wordwrap($str);
+    return wordwrap((string) $str);
 }
 
 /**
@@ -85,8 +88,8 @@ function strIdentifier(string $str, bool $shortIdentifier, int $partLength = 4):
     $str = strtoupper($str);
     $str = preg_replace("/[^A-Za-z0-9\s]/", "", $str);
 
-    $strArray = explode(" ", $str);
-    if (count($strArray) == 1) {
+    $strArray = explode(" ", (string) $str);
+    if (count($strArray) === 1) {
         $strNew = $strArray[0];
     } else {
         foreach ($strArray as $item) {
@@ -103,8 +106,8 @@ function strIdentifier(string $str, bool $shortIdentifier, int $partLength = 4):
     }
 
     $strNew = preg_replace('/__+/', '_', $strNew);
-    $strNew = preg_replace('~\d~', '', $strNew, 5);
-    return rtrim(ltrim($strNew, "_"), "_");
+    $strNew = preg_replace('~\d~', '', (string) $strNew, 5);
+    return rtrim(ltrim((string) $strNew, "_"), "_");
 }
 
 /**
@@ -162,7 +165,7 @@ function downloadList(array $fileToDownload): void
     foreach ($fileToDownload[DOWNLOADDEF_KEY_URL] as $idx => $dummy) {
         $downloadFromUrl = $fileToDownload[DOWNLOADDEF_KEY_URL][$idx];
         $saveToFile = $fileToDownload[DOWNLOADDEF_KEY_TOFILE][$idx];
-        $saveToDirectory = dirname($saveToFile);
+        $saveToDirectory = dirname((string) $saveToFile);
 
         if (!is_file($saveToDirectory)) {
             @mkdir($saveToDirectory);
@@ -177,11 +180,11 @@ function downloadList(array $fileToDownload): void
         $downloadedContent = @file_get_contents($downloadFromUrl);
 
         if ($downloadedContent === false) {
-            throw new \Exception('Failed to download the file.');
+            throw new Exception('Failed to download the file.');
         }
 
         if (file_put_contents($saveToFile, $downloadedContent) === false) {
-            throw new \Exception('Failed saved the downloaded file.');
+            throw new Exception('Failed saved the downloaded file.');
         }
     }
 }
@@ -255,11 +258,11 @@ function createCodeClassFromKositJson(array $fileToDownload): void
 
     // Create PHP Printer
 
-    $phpPrinter = new Nette\PhpGenerator\PsrPrinter;
+    $phpPrinter = new PsrPrinter;
 
     // Create PHP File
 
-    $phpFile = new Nette\PhpGenerator\PhpFile;
+    $phpFile = new PhpFile;
     $phpFile->addComment(sprintf("This file is a part of horstoeko/%s.\n\nFor the full copyright and license information, please view the LICENSE\nfile that was distributed with this source code.", $libName));
 
     // Create PHP Class
@@ -269,6 +272,7 @@ function createCodeClassFromKositJson(array $fileToDownload): void
     foreach ($classHomepageUrls as $classHomepageUrl) {
         $phpEnum->addComment(sprintf("@see      %s", $classHomepageUrl));
     }
+
     foreach ($classDownloadUrls as $classDownloadUrl) {
         $phpEnum->addComment(sprintf("@see      %s", $classDownloadUrl));
     }
@@ -285,9 +289,7 @@ function createCodeClassFromKositJson(array $fileToDownload): void
 
         usort(
             $downloadedContentObjectData,
-            function ($a, $b) use ($dataSortIndex) {
-                return strcasecmp($a[$dataSortIndex], $b[$dataSortIndex]);
-            }
+            fn($a, $b) => strcasecmp((string) $a[$dataSortIndex], (string) $b[$dataSortIndex])
         );
 
         foreach ($downloadedContentObjectData as $line) {
@@ -296,6 +298,7 @@ function createCodeClassFromKositJson(array $fileToDownload): void
             } else {
                 $caseName = sprintf('%s%s', $constantPrefix, strIdentifier($line[$dataDescIndex], $classShortIdentifiers, $classShortIdentifiersLength));
             }
+
             if (!in_array($caseName, $allCases)) {
                 $phpEnum
                     ->addCase($caseName, $line[$dataCodeIndex])
@@ -327,9 +330,7 @@ function createCodeClassFromKositJson(array $fileToDownload): void
 
             usort(
                 $downloadedContentObjectData,
-                function ($a, $b) use ($dataSortIndex) {
-                    return strcasecmp($a[$dataSortIndex], $b[$dataSortIndex]);
-                }
+                fn($a, $b) => strcasecmp((string) $a[$dataSortIndex], (string) $b[$dataSortIndex])
             );
 
             foreach ($downloadedContentObjectData as $line) {
@@ -338,6 +339,7 @@ function createCodeClassFromKositJson(array $fileToDownload): void
                 } else {
                     $caseName = sprintf('%s%s', $constantPrefix, strIdentifier($line[$dataDescIndex], $classShortIdentifiers, $classShortIdentifiersLength));
                 }
+
                 if (!in_array($caseName, $allCases)) {
                     $phpEnumMethod->addBody(sprintf("	%s::%s => \"%s\",", $className, $caseName, strDescExt($line[$dataDescIndex] ?? "")));
                     $allCases[] = $caseName;
@@ -365,9 +367,7 @@ function createCodeClassFromKositJson(array $fileToDownload): void
 
             usort(
                 $downloadedContentObjectData,
-                function ($a, $b) use ($dataSortIndex) {
-                    return strcasecmp($a[$dataSortIndex], $b[$dataSortIndex]);
-                }
+                fn($a, $b) => strcasecmp((string) $a[$dataSortIndex], (string) $b[$dataSortIndex])
             );
 
             foreach ($downloadedContentObjectData as $line) {
@@ -376,6 +376,7 @@ function createCodeClassFromKositJson(array $fileToDownload): void
                 } else {
                     $caseName = sprintf('%s%s', $constantPrefix, strIdentifier($line[$dataDescIndex], $classShortIdentifiers, $classShortIdentifiersLength));
                 }
+
                 if (!in_array($caseName, $allCases)) {
                     $phpEnumMethod->addBody(sprintf("	%s::%s => \"%s\",", $className, $caseName, strDescExt($line[$dataDescLongIndex] ?? ($line[$dataDescIndex] ?? ""))));
                     $allCases[] = $caseName;
@@ -393,11 +394,12 @@ function createCodeClassFromKositJson(array $fileToDownload): void
             $phpEnumMethod->addComment("Returns the URLs where the data are hosted\n");
             $phpEnumMethod->addComment("@return array<int,string>");
             $phpEnumMethod->addComment("@codeCoverageIgnore");
-            $phpEnumMethod->addBody(sprintf('return ['));
+            $phpEnumMethod->addBody('return [');
             foreach ($classHomepageUrls as $classHomepageUrl) {
                 $phpEnumMethod->addBody(sprintf("    '%s',", $classHomepageUrl));
             }
-            $phpEnumMethod->addBody(sprintf('];'));
+
+            $phpEnumMethod->addBody('];');
         }
 
         if ($classDownloadUrls !== []) {
@@ -408,11 +410,12 @@ function createCodeClassFromKositJson(array $fileToDownload): void
             $phpEnumMethod->addComment("Returns the URLs from where the data was downloaded\n");
             $phpEnumMethod->addComment("@return array<int,string>");
             $phpEnumMethod->addComment("@codeCoverageIgnore");
-            $phpEnumMethod->addBody(sprintf('return ['));
+            $phpEnumMethod->addBody('return [');
             foreach ($classDownloadUrls as $classDownloadUrl) {
                 $phpEnumMethod->addBody(sprintf("    '%s',", $classDownloadUrl));
             }
-            $phpEnumMethod->addBody(sprintf('];'));
+
+            $phpEnumMethod->addBody('];');
         }
 
         $currentDate = (new DateTime())->setTimezone(new DateTimeZone('Europe/Berlin'));
@@ -424,7 +427,7 @@ function createCodeClassFromKositJson(array $fileToDownload): void
         $phpEnumMethod->addComment("Returns the ISO formatted date on which this enum was generated\n");
         $phpEnumMethod->addComment("@return string");
         $phpEnumMethod->addComment("@codeCoverageIgnore");
-        $phpEnumMethod->addBody(sprintf('return \'%s\';', $currentDate->format('c')));
+        $phpEnumMethod->addBody(sprintf("return '%s';", $currentDate->format('c')));
     }
 
     // Save generated class to file
@@ -491,11 +494,11 @@ function createCodeClassFromCsv(array $fileToDownload): void
 
     // Create PHP Printer
 
-    $phpPrinter = new Nette\PhpGenerator\Printer;
+    $phpPrinter = new Printer;
 
     // Create PHP File
 
-    $phpFile = new Nette\PhpGenerator\PhpFile;
+    $phpFile = new PhpFile;
     $phpFile->addComment(sprintf("This file is a part of horstoeko/%s.\n\nFor the full copyright and license information, please view the LICENSE\nfile that was distributed with this source code.", $libName));
 
     // Create PHP Class
@@ -505,6 +508,7 @@ function createCodeClassFromCsv(array $fileToDownload): void
     foreach ($classHomepageUrls as $classHomepageUrl) {
         $phpEnum->addComment(sprintf("@see      %s", $classHomepageUrl));
     }
+
     foreach ($classDownloadUrls as $classDownloadUrl) {
         $phpEnum->addComment(sprintf("@see      %s", $classDownloadUrl));
     }
@@ -530,9 +534,7 @@ function createCodeClassFromCsv(array $fileToDownload): void
 
         usort(
             $downloadedContentObjectData,
-            function ($a, $b) use ($dataSortIndex) {
-                return strcasecmp($a[$dataSortIndex], $b[$dataSortIndex]);
-            }
+            fn($a, $b) => strcasecmp((string) $a[$dataSortIndex], (string) $b[$dataSortIndex])
         );
 
         foreach ($downloadedContentObjectData as $line) {
@@ -541,6 +543,7 @@ function createCodeClassFromCsv(array $fileToDownload): void
             } else {
                 $caseName = sprintf('%s%s', $constantPrefix, strIdentifier($line[$dataDescIndex], $classShortIdentifiers, $classShortIdentifiersLength));
             }
+
             if (!in_array($caseName, $allCases)) {
                 $phpEnum
                     ->addCase(sprintf('%s%s', $constantPrefix, strIdentifier($line[$dataDescIndex], $classShortIdentifiers, $classShortIdentifiersLength)), $line[$dataCodeIndex])
@@ -572,9 +575,7 @@ function createCodeClassFromCsv(array $fileToDownload): void
 
             usort(
                 $downloadedContentObjectData,
-                function ($a, $b) use ($dataSortIndex) {
-                    return strcasecmp($a[$dataSortIndex], $b[$dataSortIndex]);
-                }
+                fn($a, $b) => strcasecmp((string) $a[$dataSortIndex], (string) $b[$dataSortIndex])
             );
 
             foreach ($downloadedContentObjectData as $line) {
@@ -583,6 +584,7 @@ function createCodeClassFromCsv(array $fileToDownload): void
                 } else {
                     $caseName = sprintf('%s%s', $constantPrefix, strIdentifier($line[$dataDescIndex], $classShortIdentifiers, $classShortIdentifiersLength));
                 }
+
                 if (!in_array($caseName, $allCases)) {
                     $phpEnumMethod->addBody(sprintf("	%s::%s => '%s',", $className, $caseName, strDescExt($line[$dataDescIndex] ?? "")));
                     $allCases[] = $caseName;
@@ -610,9 +612,7 @@ function createCodeClassFromCsv(array $fileToDownload): void
 
             usort(
                 $downloadedContentObjectData,
-                function ($a, $b) use ($dataSortIndex) {
-                    return strcasecmp($a[$dataSortIndex], $b[$dataSortIndex]);
-                }
+                fn($a, $b) => strcasecmp((string) $a[$dataSortIndex], (string) $b[$dataSortIndex])
             );
 
             foreach ($downloadedContentObjectData as $line) {
@@ -621,6 +621,7 @@ function createCodeClassFromCsv(array $fileToDownload): void
                 } else {
                     $caseName = sprintf('%s%s', $constantPrefix, strIdentifier($line[$dataDescIndex], $classShortIdentifiers, $classShortIdentifiersLength));
                 }
+
                 if (!in_array($caseName, $allCases)) {
                     $phpEnumMethod->addBody(sprintf("	%s::%s => '%s',", $className, $caseName, strDescExt($line[$dataDescLongIndex] ?? ($line[$dataDescIndex] ?? ""))));
                     $allCases[] = $caseName;
@@ -638,11 +639,12 @@ function createCodeClassFromCsv(array $fileToDownload): void
             $phpEnumMethod->addComment("Returns the URLs where the data are hosted\n");
             $phpEnumMethod->addComment("@return array<int,string>");
             $phpEnumMethod->addComment("@codeCoverageIgnore");
-            $phpEnumMethod->addBody(sprintf('return ['));
+            $phpEnumMethod->addBody('return [');
             foreach ($classHomepageUrls as $classHomepageUrl) {
                 $phpEnumMethod->addBody(sprintf("    '%s',", $classHomepageUrl));
             }
-            $phpEnumMethod->addBody(sprintf('];'));
+
+            $phpEnumMethod->addBody('];');
         }
 
         if ($classDownloadUrls !== []) {
@@ -653,11 +655,12 @@ function createCodeClassFromCsv(array $fileToDownload): void
             $phpEnumMethod->addComment("Returns the URLs from where the data was downloaded\n");
             $phpEnumMethod->addComment("@return array<int,string>");
             $phpEnumMethod->addComment("@codeCoverageIgnore");
-            $phpEnumMethod->addBody(sprintf('return ['));
+            $phpEnumMethod->addBody('return [');
             foreach ($classDownloadUrls as $classDownloadUrl) {
                 $phpEnumMethod->addBody(sprintf("    '%s',", $classDownloadUrl));
             }
-            $phpEnumMethod->addBody(sprintf('];'));
+
+            $phpEnumMethod->addBody('];');
         }
 
         $currentDate = (new DateTime())->setTimezone(new DateTimeZone('Europe/Berlin'));
@@ -669,7 +672,7 @@ function createCodeClassFromCsv(array $fileToDownload): void
         $phpEnumMethod->addComment("Returns the ISO formatted date on which this enum was generated\n");
         $phpEnumMethod->addComment("@return string");
         $phpEnumMethod->addComment("@codeCoverageIgnore");
-        $phpEnumMethod->addBody(sprintf('return \'%s\';', $currentDate->format('c')));
+        $phpEnumMethod->addBody(sprintf("return '%s';", $currentDate->format('c')));
     }
 
     // Save generated class to file

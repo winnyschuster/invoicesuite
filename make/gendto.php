@@ -49,9 +49,7 @@ function gendto(array $definitions): void
         $constructor->addComment('');
 
         if (isset($definition["extends"])) {
-            $baseDefinition = array_filter($definitions, function ($def) use ($definition) {
-                return strcasecmp(basename($definition["extends"]), $def["class"]) === 0;
-            });
+            $baseDefinition = array_filter($definitions, fn($def) => strcasecmp(basename($definition["extends"]), (string) $def["class"]) === 0);
 
             $baseDefinition = reset($baseDefinition);
 
@@ -62,11 +60,11 @@ function gendto(array $definitions): void
                 $propertyCaption = $basePropertyDefinition["caption"];
                 $propertyIsArray = $basePropertyDefinition["isarray"] ?? false;
                 $propertyTypeHint = $propertyType;
-                $propertyIsObject = $basePropertyDefinition["isobject"] ?? strpos($propertyType, '\\') !== false;
+                $propertyIsObject = $basePropertyDefinition["isobject"] ?? str_contains((string) $propertyType, '\\');
 
                 if ($propertyIsObject) {
                     $namespace->addUse($propertyType);
-                    $objectBaseName = explode('\\', $propertyTypeHint);
+                    $objectBaseName = explode('\\', (string) $propertyTypeHint);
                     $propertyTypeHint = end($objectBaseName);
                 }
 
@@ -87,7 +85,7 @@ function gendto(array $definitions): void
                 }
 
                 if ($parentParameterString !== "") {
-                    $parentParameterString = $parentParameterString . ", ";
+                    $parentParameterString .= ", ";
                 }
 
                 $parentParameterString .= ('$' . $basePropertyDefinitionName);
@@ -111,7 +109,7 @@ function gendto(array $definitions): void
             $propertyIsArray = $propertyDefinition["isarray"] ?? false;
             $propertyIsNullable = $propertyDefinition["isnullable"] ?? true;
             $propertyTypeHint = $propertyType;
-            $propertyIsObject = $propertyDefinition["isobject"] ?? strpos($propertyType, '\\') !== false;
+            $propertyIsObject = $propertyDefinition["isobject"] ?? str_contains((string) $propertyType, '\\');
             $propertyGetterName = $propertyDefinition["gettername"] ?? $propertyName;
             $propertySetterName = $propertyDefinition["settername"] ?? $propertyName;
             $propertyAdderName = $propertyDefinition["addername"] ?? $propertyName;
@@ -127,7 +125,7 @@ function gendto(array $definitions): void
             if ($propertyIsArray === true && $propertyAutoPlural === true) {
                 $appendix = $propertyAutoPluralAppendix;
 
-                if ($appendix === "s" && str_ends_with(strtolower($propertyGetterName), "s")) {
+                if ($appendix === "s" && str_ends_with(strtolower((string) $propertyGetterName), "s")) {
                     $appendix = "es";
                 }
 
@@ -136,7 +134,7 @@ function gendto(array $definitions): void
                         return rtrim($name, "s") . "s";
                     }
 
-                    return str_ends_with(strtolower($name), strtolower($appendix)) ? $name : ($name . $appendix);
+                    return str_ends_with(strtolower($name), strtolower((string) $appendix)) ? $name : ($name . $appendix);
                 };
 
                 $propertyGetterName        = $pluralize($propertyGetterName);
@@ -144,29 +142,29 @@ function gendto(array $definitions): void
                 $propertyClassPropertyName = $pluralize($propertyClassPropertyName);
 
                 if ($appendix === "s") {
-                    $propertyAdderName   = rtrim($propertyAdderName, "s");
-                    $propertyFirsterName = rtrim($propertyFirsterName, "s");
-                    $propertyNexterName  = rtrim($propertyNexterName, "s");
-                    $propertyLasterName  = rtrim($propertyLasterName, "s");
-                    $propertyLooperName  = rtrim($propertyLooperName, "s");
+                    $propertyAdderName   = rtrim((string) $propertyAdderName, "s");
+                    $propertyFirsterName = rtrim((string) $propertyFirsterName, "s");
+                    $propertyNexterName  = rtrim((string) $propertyNexterName, "s");
+                    $propertyLasterName  = rtrim((string) $propertyLasterName, "s");
+                    $propertyLooperName  = rtrim((string) $propertyLooperName, "s");
                 }
             }
 
             if ($propertyIsObject) {
                 $namespace->addUse($propertyType);
-                $objectBaseName = explode('\\', $propertyTypeHint);
+                $objectBaseName = explode('\\', (string) $propertyTypeHint);
                 $propertyTypeHint = end($objectBaseName);
             }
 
             if ($propertyIsArray === true) {
-                $propertyTypeHint = sprintf("array<%s>", basename($propertyTypeHint));
+                $propertyTypeHint = sprintf("array<%s>", basename((string) $propertyTypeHint));
             } elseif ($propertyIsObject === true) {
                 $propertyTypeHint .= "|null";
             } else {
                 $propertyTypeHint .= "|null";
             }
 
-            $property = $class->addProperty(lcfirst($propertyClassPropertyName))->setVisibility('protected')->setType($propertyIsArray === true ? "array" : $propertyType);
+            $property = $class->addProperty(lcfirst((string) $propertyClassPropertyName))->setVisibility('protected')->setType($propertyIsArray === true ? "array" : $propertyType);
             $property->addComment(sprintf("%s\n\n@var %s", $propertyCaption, $propertyTypeHint));
 
             if ($propertyIsArray === true) {
@@ -192,7 +190,7 @@ function gendto(array $definitions): void
             }
 
             $constructor->addComment(sprintf("@param %1\$s \$%2\$s %3\$s", basename($propertyTypeHint), $propertyClassPropertyName, $propertyCaption));
-            $constructor->addBody(sprintf("\$this->set%1\$s(\$%2\$s);", ucfirst($propertySetterName), $propertyClassPropertyName));
+            $constructor->addBody(sprintf("\$this->set%1\$s(\$%2\$s);", ucfirst((string) $propertySetterName), $propertyClassPropertyName));
 
             /**
              * -------------------
@@ -200,7 +198,7 @@ function gendto(array $definitions): void
              * -------------------
              */
 
-            $getter = $class->addMethod(sprintf("get%s", ucfirst($propertyGetterName)));
+            $getter = $class->addMethod(sprintf("get%s", ucfirst((string) $propertyGetterName)));
 
             if ($propertyIsArray === true) {
                 $getter->setReturnType("array");
@@ -211,7 +209,7 @@ function gendto(array $definitions): void
             }
 
             $getter->setBody(sprintf("return \$this->%s;", $propertyClassPropertyName));
-            $getter->addComment(sprintf("Returns %s\n\n@return %s", lcfirst($propertyCaption), $propertyTypeHint));
+            $getter->addComment(sprintf("Returns %s\n\n@return %s", lcfirst((string) $propertyCaption), $propertyTypeHint));
 
             /**
              * -------------------
@@ -219,7 +217,7 @@ function gendto(array $definitions): void
              * -------------------
              */
 
-            $setter = $class->addMethod(sprintf("set%s", ucfirst($propertySetterName)));
+            $setter = $class->addMethod(sprintf("set%s", ucfirst((string) $propertySetterName)));
             $setter->setReturnType("static");
 
             if ($propertyIsArray === true) {
@@ -237,7 +235,7 @@ function gendto(array $definitions): void
                 $setter->setBody(sprintf("\$this->%1\$s = \$%1\$s;\n\nreturn \$this;", $propertyClassPropertyName));
             }
 
-            $setter->addComment(sprintf("Sets %4\$s\n\n@param %3\$s \$%2\$s %1\$s\n@return static", $propertyCaption, $propertyClassPropertyName, $propertyTypeHint, lcfirst($propertyCaption)));
+            $setter->addComment(sprintf("Sets %4\$s\n\n@param %3\$s \$%2\$s %1\$s\n@return static", $propertyCaption, $propertyClassPropertyName, $propertyTypeHint, lcfirst((string) $propertyCaption)));
 
             /**
              * --------------------------------
@@ -253,7 +251,7 @@ function gendto(array $definitions): void
                  * -------------------
                  */
 
-                $adder = $class->addMethod(sprintf("add%s", ucfirst($propertyAdderName)));
+                $adder = $class->addMethod(sprintf("add%s", ucfirst((string) $propertyAdderName)));
                 $adder->setReturnType("static");
                 $adder->addParameter($propertyName)->setType($propertyType)->setNullable($propertyIsNullable);
                 if ($propertyIsNullable === true) {
@@ -262,10 +260,11 @@ function gendto(array $definitions): void
                     $adder->addBody("}");
                     $adder->addBody("");
                 }
+                
                 $adder->addBody(sprintf("\$this->%1\$s[] = \$%2\$s;", $propertyClassPropertyName, $propertyName));
                 $adder->addBody("");
                 $adder->addBody("return \$this;");
-                $adder->addComment(sprintf("Add single %1\$s\n\n@param %2\$s \$%3\$s %1\$s\n@return static", $propertyCaption, basename($propertyType), $propertyName));
+                $adder->addComment(sprintf("Add single %1\$s\n\n@param %2\$s \$%3\$s %1\$s\n@return static", $propertyCaption, basename((string) $propertyType), $propertyName));
 
                 /**
                  * -------------------
@@ -273,7 +272,7 @@ function gendto(array $definitions): void
                  * -------------------
                  */
 
-                $firster = $class->addMethod(sprintf("first%s", ucFirst($propertyFirsterName)));
+                $firster = $class->addMethod(sprintf("first%s", ucFirst((string) $propertyFirsterName)));
                 $firster->setReturnType("static");
                 $firster->addParameter("callback")->setType("callable");
                 $firster->addParameter("callbackElse")->setType("callable")->setNullable(true)->setDefaultValue(null);
@@ -283,7 +282,7 @@ function gendto(array $definitions): void
                 $firster->addBody("    \$callbackElse();");
                 $firster->addBody("}");
                 $firster->addBody("\nreturn \$this;");
-                $firster->addComment(sprintf("Get first %1\$s\n\n@param callable \$callback Callback to execute if an item was found\n@param callable|null \$callbackElse Callback to execute if no item was found\n@return static", $propertyCaption, basename($propertyType), $propertyName));
+                $firster->addComment(sprintf("Get first %1\$s\n\n@param callable \$callback Callback to execute if an item was found\n@param callable|null \$callbackElse Callback to execute if no item was found\n@return static", $propertyCaption, basename((string) $propertyType), $propertyName));
 
                 /**
                  * -------------------
@@ -291,7 +290,7 @@ function gendto(array $definitions): void
                  * -------------------
                  */
 
-                $nexter = $class->addMethod(sprintf("next%s", ucfirst($propertyNexterName)));
+                $nexter = $class->addMethod(sprintf("next%s", ucfirst((string) $propertyNexterName)));
                 $nexter->setReturnType("static");
                 $nexter->addParameter("callback")->setType("callable");
                 $nexter->addParameter("callbackElse")->setType("callable")->setNullable(true)->setDefaultValue(null);
@@ -301,7 +300,7 @@ function gendto(array $definitions): void
                 $nexter->addBody("    \$callbackElse();");
                 $nexter->addBody("}");
                 $nexter->addBody("\nreturn \$this;");
-                $nexter->addComment(sprintf("Get next %1\$s\n\n@param callable \$callback Callback to execute if an item was found\n@param callable|null \$callbackElse Callback to execute if no item was found\n@return static", $propertyCaption, basename($propertyType), $propertyName));
+                $nexter->addComment(sprintf("Get next %1\$s\n\n@param callable \$callback Callback to execute if an item was found\n@param callable|null \$callbackElse Callback to execute if no item was found\n@return static", $propertyCaption, basename((string) $propertyType), $propertyName));
 
                 /**
                  * -------------------
@@ -309,7 +308,7 @@ function gendto(array $definitions): void
                  * -------------------
                  */
 
-                $prever = $class->addMethod(sprintf("previous%s", ucfirst($propertyPreverName)));
+                $prever = $class->addMethod(sprintf("previous%s", ucfirst((string) $propertyPreverName)));
                 $prever->setReturnType("static");
                 $prever->addParameter("callback")->setType("callable");
                 $prever->addParameter("callbackElse")->setType("callable")->setNullable(true)->setDefaultValue(null);
@@ -319,7 +318,7 @@ function gendto(array $definitions): void
                 $prever->addBody("    \$callbackElse();");
                 $prever->addBody("}");
                 $prever->addBody("\nreturn \$this;");
-                $prever->addComment(sprintf("Get previous %1\$s\n\n@param callable \$callback Callback to execute if an item was found\n@param callable|null \$callbackElse Callback to execute if no item was found\n@return static", $propertyCaption, basename($propertyType), $propertyName));
+                $prever->addComment(sprintf("Get previous %1\$s\n\n@param callable \$callback Callback to execute if an item was found\n@param callable|null \$callbackElse Callback to execute if no item was found\n@return static", $propertyCaption, basename((string) $propertyType), $propertyName));
 
                 /**
                  * -------------------
@@ -327,7 +326,7 @@ function gendto(array $definitions): void
                  * -------------------
                  */
 
-                $laster = $class->addMethod(sprintf("last%s", ucfirst($propertyLasterName)));
+                $laster = $class->addMethod(sprintf("last%s", ucfirst((string) $propertyLasterName)));
                 $laster->setReturnType("static");
                 $laster->addParameter("callback")->setType("callable");
                 $laster->addParameter("callbackElse")->setType("callable")->setNullable(true)->setDefaultValue(null);
@@ -337,7 +336,7 @@ function gendto(array $definitions): void
                 $laster->addBody("    \$callbackElse();");
                 $laster->addBody("}");
                 $laster->addBody("\nreturn \$this;");
-                $laster->addComment(sprintf("Get last %1\$s\n\n@param callable \$callback Callback to execute if an item was found\n@param callable|null \$callbackElse Callback to execute if no item was found\n@return static", $propertyCaption, basename($propertyType), $propertyName));
+                $laster->addComment(sprintf("Get last %1\$s\n\n@param callable \$callback Callback to execute if an item was found\n@param callable|null \$callbackElse Callback to execute if no item was found\n@return static", $propertyCaption, basename((string) $propertyType), $propertyName));
 
                 /**
                  * -------------------
@@ -345,7 +344,7 @@ function gendto(array $definitions): void
                  * -------------------
                  */
 
-                $looper = $class->addMethod(sprintf("forEach%s", ucfirst($propertyLooperName)));
+                $looper = $class->addMethod(sprintf("forEach%s", ucfirst((string) $propertyLooperName)));
                 $looper->setReturnType("static");
                 $looper->addParameter("callback")->setType("callable");
                 $looper->addParameter("callbackElse")->setType("callable")->setNullable(true)->setDefaultValue(null);
@@ -367,7 +366,7 @@ function gendto(array $definitions): void
                 $looper->addBody("}");
                 $looper->addBody("");
                 $looper->addBody("return \$this;");
-                $looper->addComment(sprintf("Loop over %1\$s and execute callback\n\n@param callable \$callback Callback to execute for each item\n@param callable|null \$callbackElse Callback to execute if no item was found\n@param int|null \$limit Maximum number of loops\n@return static", $propertyCaption, basename($propertyType), $propertyName));
+                $looper->addComment(sprintf("Loop over %1\$s and execute callback\n\n@param callable \$callback Callback to execute for each item\n@param callable|null \$callbackElse Callback to execute if no item was found\n@param int|null \$limit Maximum number of loops\n@return static", $propertyCaption, basename((string) $propertyType), $propertyName));
 
                 /**
                  * --------------------------------
@@ -375,14 +374,14 @@ function gendto(array $definitions): void
                  * --------------------------------
                  */
 
-                $looper = $class->addMethod(sprintf("forEachOrFirst%s", ucfirst($propertyLooperName)));
+                $looper = $class->addMethod(sprintf("forEachOrFirst%s", ucfirst((string) $propertyLooperName)));
                 $looper->setReturnType("static");
                 $looper->addParameter("foreachCondition")->setType("bool");
                 $looper->addParameter("callback")->setType("callable");
                 $looper->addParameter("callbackElse")->setType("callable")->setNullable(true)->setDefaultValue(null);
                 $looper->addParameter("limit")->setType("int")->setNullable(true)->setDefaultValue(null);
                 $looper->addBody('if (!$foreachCondition) {');
-                $looper->addBody(sprintf('    return $this->first%s($callback, $callbackElse);', ucFirst($propertyFirsterName)));
+                $looper->addBody(sprintf('    return $this->first%s($callback, $callbackElse);', ucFirst((string) $propertyFirsterName)));
                 $looper->addBody("}");
                 $looper->addBody("");
                 $looper->addBody("\$count = 0;");
@@ -402,7 +401,7 @@ function gendto(array $definitions): void
                 $looper->addBody("}");
                 $looper->addBody("");
                 $looper->addBody("return \$this;");
-                $looper->addComment(sprintf("Loop over %1\$s and execute callback\n\n@param bool \$foreachCondition If this is true all items will be retrieved, otherwise the first item is retrieved\n@param callable \$callback Callback to execute for each item\n@param callable|null \$callbackElse Callback to execute if no item was found\n@param int|null \$limit Maximum number of loops\n@return static", $propertyCaption, basename($propertyType), $propertyName));
+                $looper->addComment(sprintf("Loop over %1\$s and execute callback\n\n@param bool \$foreachCondition If this is true all items will be retrieved, otherwise the first item is retrieved\n@param callable \$callback Callback to execute for each item\n@param callable|null \$callbackElse Callback to execute if no item was found\n@param int|null \$limit Maximum number of loops\n@return static", $propertyCaption, basename((string) $propertyType), $propertyName));
             }
         }
 
@@ -426,18 +425,10 @@ function gendto(array $definitions): void
                     $methodParam->setDefaultValue($paramDefinition['default']);
                 }
             }
+            
             foreach ($staticMethodDefinition['use'] ?? [] as $staticMethodUse) {
                 $namespace->addUse($staticMethodUse);
             }
-        }
-
-        /**
-         * ---------------------
-         * -- Additional methods
-         * ---------------------
-         */
-
-        foreach ($definition["methods"] ?? [] as $methodName => $methodDefinition) {
         }
 
         /**
@@ -1974,13 +1965,13 @@ $definitions = [
         "properties" => [
             "description" => [
                 "type" => "string",
-                "caption" => "The name of the attribute or characteristic (\"Colour\")",
+                "caption" => 'The name of the attribute or characteristic ("Colour")',
                 "isarray" => false,
                 "isobject" => false,
             ],
             "value" => [
                 "type" => "string",
-                "caption" => "The value of the attribute or characteristic (\"Red\")",
+                "caption" => 'The value of the attribute or characteristic ("Red")',
                 "isarray" => false,
                 "isobject" => false,
             ],

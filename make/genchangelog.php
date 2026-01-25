@@ -3,21 +3,21 @@
 if (!function_exists('str_starts_with')) {
     function str_starts_with(string $haystack, string $needle): bool
     {
-        return $needle === '' || strpos($haystack, $needle) === 0;
+        return $needle === '' || str_starts_with($haystack, $needle);
     }
 }
 
 if (!function_exists('str_contains')) {
     function str_contains($haystack, $needle)
     {
-        return (strpos($haystack, (string) $needle) !== false);
+        return (str_contains((string) $haystack, (string) $needle));
     }
 }
 
 if (!function_exists('str_ends_with')) {
     function str_ends_with(string $haystack, string $needle): bool
     {
-        return $needle === '' || substr($haystack, -strlen($needle)) === $needle;
+        return $needle === '' || str_ends_with($haystack, $needle);
     }
 }
 
@@ -33,7 +33,7 @@ function stristartswith(string $haystack, string $needle): bool
 
 function correctAuthor(string $author): string
 {
-    if ($author === "horstoeko" || $author === "ruff" || $author === "Daniel Erling") {
+    if (in_array($author, ["horstoeko", "ruff", "Daniel Erling"], true)) {
         return "HorstOeko";
     }
 
@@ -65,7 +65,7 @@ function correctSubject(string $commitSubject, ?array &$issues): string
 
 function mustHideCommit(?string $commitHash = "", ?string $commitAuthor = "", ?string $commitDate = "", ?string $commitSubject = ""): bool
 {
-    if ($commitSubject === null || $commitSubject === '' || $commitSubject === '0') {
+    if (in_array($commitSubject, [null, '', '0'], true)) {
         return true;
     }
 
@@ -119,14 +119,12 @@ function getMarkDown($prevTag, $currTag)
                 continue;
             }
 
-            $time = (new \DateTime())->setTimeStamp(strtotime($commitDate))->setTimezone(new DateTimeZone('Europe/Berlin'));
+            $time = (new DateTime())->setTimeStamp(strtotime($commitDate))->setTimezone(new DateTimeZone('Europe/Berlin'));
 
             $commitDate = $time->format('Y-m-d H:i:s T');
             $commitAuthor = correctAuthor($commitAuthor);
             $commitSubject = correctSubject($commitSubject, $commitIssues);
-            $commitIssuesWithUrls = array_map(function ($issue) {
-                return sprintf('[%1$s](https://github.com/horstoeko/invoicesuite/issues/%2$s)', $issue, substr($issue, 1));
-            }, $commitIssues);
+            $commitIssuesWithUrls = array_map(fn($issue) => sprintf('[%1$s](https://github.com/horstoeko/invoicesuite/issues/%2$s)', $issue, substr((string) $issue, 1)), $commitIssues);
 
             $commitSubjectIcons = "";
             $commitSubjectIcons .= str_starts_with($commitSubject, '[ENH] ') ? ':new: ' : '';
@@ -142,7 +140,7 @@ function getMarkDown($prevTag, $currTag)
         $markDown[] = '';
     }
 
-    if ($noOfHiddenCommits == 1) {
+    if ($noOfHiddenCommits === 1) {
         $markDown[] = ":exclamation: _There is one internal commit_";
         $markDown[] = '';
     }
@@ -179,9 +177,7 @@ if (!isset($argv[1]) && !isset($argv[2])) {
     echo "All-argument was presented. Looking for all tags" . PHP_EOL;
     $completeMarkDown = [];
     $allTags = explode("\n", trim(shell_exec('git tag --sort=-creatordate')));
-    $allTags = array_filter($allTags, function ($tag) {
-        return str_starts_with($tag, "v0.") === false;
-    });
+    $allTags = array_filter($allTags, fn($tag) => str_starts_with((string) $tag, "v0.") === false);
     if ($allTags !== []) {
         echo "Found tags..." . implode(', ', $allTags) . PHP_EOL;
         foreach ($allTags as $currTagKey => $currTag) {
