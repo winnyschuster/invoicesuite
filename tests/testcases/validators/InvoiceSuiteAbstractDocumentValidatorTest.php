@@ -79,7 +79,7 @@ final class InvoiceSuiteAbstractDocumentValidatorTest extends TestCase
 
         $nonExistingFilename = InvoiceSuitePathUtils::combinePathWithFile(
             InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', '..', 'assets'),
-            bin2hex(random_bytes(16)).'.xml'
+            bin2hex(random_bytes(16)) . '.xml'
         );
 
         $this->assertFileDoesNotExist($nonExistingFilename);
@@ -98,7 +98,7 @@ final class InvoiceSuiteAbstractDocumentValidatorTest extends TestCase
             '..',
             '..',
             'assets',
-            'invoicesuite_dir_'.bin2hex(random_bytes(16))
+            'invoicesuite_dir_' . bin2hex(random_bytes(16))
         );
 
         $this->assertDirectoryNotExists($temporaryDirectory);
@@ -123,7 +123,7 @@ final class InvoiceSuiteAbstractDocumentValidatorTest extends TestCase
 
         $temporaryFilename = InvoiceSuitePathUtils::combinePathWithFile(
             InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', '..', 'assets'),
-            bin2hex(random_bytes(16)).'.xml'
+            bin2hex(random_bytes(16)) . '.xml'
         );
 
         $this->assertNotFalse(file_put_contents($temporaryFilename, '<file/>'));

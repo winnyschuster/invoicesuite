@@ -106,9 +106,9 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
 
         if (true == $binary_data) {
             if (true === $this->deterministicModeEnabled) {
-                $this->PDFVersion .= "\n".'%'.chr(128).chr(129).chr(130).chr(131);
+                $this->PDFVersion .= "\n" . '%' . chr(128) . chr(129) . chr(130) . chr(131);
             } else {
-                $this->PDFVersion .= "\n".'%'.chr(random_int(128, 255)).chr(random_int(128, 255)).chr(random_int(128, 255)).chr(random_int(128, 255));
+                $this->PDFVersion .= "\n" . '%' . chr(random_int(128, 255)) . chr(random_int(128, 255)) . chr(random_int(128, 255)) . chr(random_int(128, 255));
             }
         }
     }
@@ -230,21 +230,21 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
         $this->_newobj();
         $this->fileSpecDictionnaryIndex = $this->n;
         $this->_put('<<');
-        $this->_put('/F ('.$this->_escape($file_info['name']).')');
+        $this->_put('/F (' . $this->_escape($file_info['name']) . ')');
         $this->_put('/Type /Filespec');
-        $this->_put('/UF '.$this->_textstring(mb_convert_encoding($file_info['name'], 'UTF-8', mb_list_encodings())));
+        $this->_put('/UF ' . $this->_textstring(mb_convert_encoding($file_info['name'], 'UTF-8', mb_list_encodings())));
 
         if ($file_info['relationship']) {
-            $this->_put('/AFRelationship /'.$file_info['relationship']);
+            $this->_put('/AFRelationship /' . $file_info['relationship']);
         }
 
         if ($file_info['desc']) {
-            $this->_put('/Desc '.$this->_textstring($file_info['desc']));
+            $this->_put('/Desc ' . $this->_textstring($file_info['desc']));
         }
 
         $this->_put('/EF <<');
-        $this->_put('/F '.($this->n + 1).' 0 R');
-        $this->_put('/UF '.($this->n + 1).' 0 R');
+        $this->_put('/F ' . ($this->n + 1) . ' 0 R');
+        $this->_put('/UF ' . ($this->n + 1) . ' 0 R');
         $this->_put('>>');
         $this->_put('>>');
         $this->_put('endobj');
@@ -263,7 +263,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
         $this->_put('/Filter /FlateDecode');
 
         if ($file_info['subtype']) {
-            $this->_put('/Subtype /'.$file_info['subtype']);
+            $this->_put('/Subtype /' . $file_info['subtype']);
         }
 
         $this->_put('/Type /EmbeddedFile');
@@ -289,7 +289,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
         }
 
         $fc = gzcompress($fc);
-        $this->_put('/Length '.strlen($fc));
+        $this->_put('/Length ' . strlen($fc));
         $this->_put(sprintf('/Params <</ModDate (D:%s)>>', $md));
         $this->_put('>>');
         $this->_putstream($fc);
@@ -327,20 +327,20 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
      */
     protected function putMetadataDescriptions(): void
     {
-        $s = '<?xpacket begin="" id="W5M0MpCehiHzreSzNTczkc9d"?>'."\n";
-        $s .= '<x:xmpmeta xmlns:x="adobe:ns:meta/">'."\n";
-        $s .= '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">'."\n";
+        $s = '<?xpacket begin="" id="W5M0MpCehiHzreSzNTczkc9d"?>' . "\n";
+        $s .= '<x:xmpmeta xmlns:x="adobe:ns:meta/">' . "\n";
+        $s .= '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">' . "\n";
         $this->_newobj();
         $this->descriptionIndex = $this->n;
         foreach ($this->metaDataDescriptions as $desc) {
-            $s .= $desc."\n";
+            $s .= $desc . "\n";
         }
 
-        $s .= '</rdf:RDF>'."\n";
-        $s .= '</x:xmpmeta>'."\n";
+        $s .= '</rdf:RDF>' . "\n";
+        $s .= '</x:xmpmeta>' . "\n";
         $s .= '<?xpacket end="w"?>';
         $this->_put('<<');
-        $this->_put('/Length '.strlen($s));
+        $this->_put('/Length ' . strlen($s));
         $this->_put('/Type /Metadata');
         $this->_put('/Subtype /XML');
         $this->_put('>>');
@@ -385,7 +385,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
         $this->_put('/S /GTS_PDFA1');
         $this->_put('/OuputCondition (sRGB)');
         $this->_put('/OutputConditionIdentifier (Custom)');
-        $this->_put('/DestOutputProfile '.($this->n + 1).' 0 R');
+        $this->_put('/DestOutputProfile ' . ($this->n + 1) . ' 0 R');
         $this->_put('/Info (sRGB V4 ICC)');
         $this->_put('>>');
         $this->_put('endobj');
@@ -396,7 +396,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
 
         $this->_newobj();
         $this->_put('<<');
-        $this->_put('/Length '.strlen($icc));
+        $this->_put('/Length ' . strlen($icc));
         $this->_put('/N 3');
         $this->_put('/Filter /FlateDecode');
         $this->_put('>>');
@@ -498,18 +498,18 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
         foreach ($this->PageLinks[$n] as $pl) {
             $this->_newobj();
             $rect = sprintf('%.2F %.2F %.2F %.2F', $pl[0], $pl[1], $pl[0] + $pl[2], $pl[1] - $pl[3]);
-            $this->_put('<</Type /Annot /Subtype /Link /Rect ['.$rect.'] /F 4', false); // Fix 1
+            $this->_put('<</Type /Annot /Subtype /Link /Rect [' . $rect . '] /F 4', false); // Fix 1
 
             if (is_string($pl[4])) {
                 if (isset($pl['importedLink'])) {
-                    $this->_put('/A <</S /URI /URI ('.$this->_escape($pl[4]).')>>');
+                    $this->_put('/A <</S /URI /URI (' . $this->_escape($pl[4]) . ')>>');
                     $values = $pl['importedLink']['pdfObject']->value;
 
                     foreach ($values as $name => $entry) {
                         if ('F' === $name) { // Fix 2
                             continue;
                         }
-                        $this->_put('/'.$name.' ', false);
+                        $this->_put('/' . $name . ' ', false);
                         $this->writePdfType($entry);
                     }
 
@@ -522,7 +522,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
                         $this->_put($s);
                     }
                 } else {
-                    $this->_put('/A <</S /URI /URI '.$this->_textstring($pl[4]).'>>');
+                    $this->_put('/A <</S /URI /URI ' . $this->_textstring($pl[4]) . '>>');
                     $this->_put('/Border [0 0 0]', false);
                 }
                 $this->_put('>>');

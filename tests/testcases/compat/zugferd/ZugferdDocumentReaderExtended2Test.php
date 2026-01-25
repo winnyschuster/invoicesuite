@@ -19,7 +19,7 @@ final class ZugferdDocumentReaderExtended2Test extends TestCase
 
     public static function setUpBeforeClass(): void
     {
-        self::$document = ZugferdDocumentReader::readAndGuessFromFile(__DIR__.'/../../../assets/03_zugferddocumentreader_2.xml');
+        self::$document = ZugferdDocumentReader::readAndGuessFromFile(__DIR__ . '/../../../assets/03_zugferddocumentreader_2.xml');
     }
 
     public function testDocumentProfile(): void

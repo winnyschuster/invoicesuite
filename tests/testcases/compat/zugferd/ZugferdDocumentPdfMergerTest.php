@@ -13,8 +13,8 @@ final class ZugferdDocumentPdfMergerTest extends TestCase
 {
     public function testConstructByXmlFileAndPdfFile(): void
     {
-        $xmlFilename = __DIR__.'/../../../assets/00_case_comfort_simple.xml';
-        $pdfFilename = __DIR__.'/../../../assets/pdf_plain.pdf';
+        $xmlFilename = __DIR__ . '/../../../assets/00_case_comfort_simple.xml';
+        $pdfFilename = __DIR__ . '/../../../assets/pdf_plain.pdf';
 
         $pdfMerger = new ZugferdDocumentPdfMerger($xmlFilename, $pdfFilename);
 
@@ -23,8 +23,8 @@ final class ZugferdDocumentPdfMergerTest extends TestCase
 
     public function testConstructByXmlContentAndPdfFile(): void
     {
-        $xmlFilename = __DIR__.'/../../../assets/00_case_comfort_simple.xml';
-        $pdfFilename = __DIR__.'/../../../assets/pdf_plain.pdf';
+        $xmlFilename = __DIR__ . '/../../../assets/00_case_comfort_simple.xml';
+        $pdfFilename = __DIR__ . '/../../../assets/pdf_plain.pdf';
 
         $xmlContent = file_get_contents($xmlFilename);
 
@@ -35,8 +35,8 @@ final class ZugferdDocumentPdfMergerTest extends TestCase
 
     public function testConstructByXmlFileAndPdfContent(): void
     {
-        $xmlFilename = __DIR__.'/../../../assets/00_case_comfort_simple.xml';
-        $pdfFilename = __DIR__.'/../../../assets/pdf_plain.pdf';
+        $xmlFilename = __DIR__ . '/../../../assets/00_case_comfort_simple.xml';
+        $pdfFilename = __DIR__ . '/../../../assets/pdf_plain.pdf';
 
         $pdfContent = file_get_contents($pdfFilename);
 
@@ -47,8 +47,8 @@ final class ZugferdDocumentPdfMergerTest extends TestCase
 
     public function testConstructByXmlContentAndPdfContent(): void
     {
-        $xmlFilename = __DIR__.'/../../../assets/00_case_comfort_simple.xml';
-        $pdfFilename = __DIR__.'/../../../assets/pdf_plain.pdf';
+        $xmlFilename = __DIR__ . '/../../../assets/00_case_comfort_simple.xml';
+        $pdfFilename = __DIR__ . '/../../../assets/pdf_plain.pdf';
 
         $xmlContent = file_get_contents($xmlFilename);
         $pdfContent = file_get_contents($pdfFilename);

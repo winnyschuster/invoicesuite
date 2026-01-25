@@ -4,7 +4,7 @@ use horstoeko\stringmanagement\PathUtils;
 use Nette\PhpGenerator\PhpFile;
 use Nette\PhpGenerator\PsrPrinter;
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 function gendto(array $definitions): void
 {
@@ -86,7 +86,7 @@ function gendto(array $definitions): void
                     $parentParameterString .= ', ';
                 }
 
-                $parentParameterString .= ('$'.$basePropertyDefinitionName);
+                $parentParameterString .= ('$' . $basePropertyDefinitionName);
 
                 $constructor->addComment(sprintf('@param %1$s $%2$s %3$s', basename($propertyTypeHint), $basePropertyDefinitionName, $propertyCaption));
             }
@@ -129,10 +129,10 @@ function gendto(array $definitions): void
 
                 $pluralize = static function (string $name) use ($appendix): string {
                     if ('s' === $appendix) {
-                        return rtrim($name, 's').'s';
+                        return rtrim($name, 's') . 's';
                     }
 
-                    return str_ends_with(strtolower($name), strtolower((string) $appendix)) ? $name : ($name.$appendix);
+                    return str_ends_with(strtolower($name), strtolower((string) $appendix)) ? $name : ($name . $appendix);
                 };
 
                 $propertyGetterName = $pluralize($propertyGetterName);
@@ -432,8 +432,8 @@ function gendto(array $definitions): void
 
 $definitions = [
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteNoteDTO',
         'properties' => [
             'content' => [
@@ -457,8 +457,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteDateRangeDTO',
         'properties' => [
             'startDate' => [
@@ -482,8 +482,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteReferenceDocumentDTO',
         'properties' => [
             'referenceNumber' => [
@@ -501,8 +501,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteReferenceDocumentLineDTO',
         'properties' => [
             'referenceNumber' => [
@@ -526,10 +526,10 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteReferenceDocumentExtDTO',
-        'extends' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentDTO',
+        'extends' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentDTO',
         'properties' => [
             'typeCode' => [
                 'type' => 'string',
@@ -550,7 +550,7 @@ $definitions = [
                 'isobject' => false,
             ],
             'attachment' => [
-                'type' => 'horstoeko\\invoicesuite\\utils\\InvoiceSuiteAttachment',
+                'type' => 'horstoeko\invoicesuite\utils\InvoiceSuiteAttachment',
                 'caption' => 'The additional document description',
                 'isarray' => false,
                 'isobject' => true,
@@ -558,10 +558,10 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteReferenceDocumentLineExtDTO',
-        'extends' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentLineDTO',
+        'extends' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO',
         'properties' => [
             'typeCode' => [
                 'type' => 'string',
@@ -582,7 +582,7 @@ $definitions = [
                 'isobject' => false,
             ],
             'attachment' => [
-                'type' => 'horstoeko\\invoicesuite\\utils\\InvoiceSuiteAttachment',
+                'type' => 'horstoeko\invoicesuite\utils\InvoiceSuiteAttachment',
                 'caption' => 'The additional document description',
                 'isarray' => false,
                 'isobject' => true,
@@ -590,8 +590,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteProjectDTO',
         'properties' => [
             'projectNumber' => [
@@ -609,8 +609,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuitePartyDTO',
         'properties' => [
             'name' => [
@@ -621,49 +621,49 @@ $definitions = [
                 'autoplural' => true,
             ],
             'id' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteIdDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO',
                 'caption' => 'Party IDs',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'globalId' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteIdDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO',
                 'caption' => 'Party global IDs',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'taxRegistration' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteIdDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO',
                 'caption' => 'Party tax registrations',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'address' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteAddressDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteAddressDTO',
                 'caption' => 'Party addresses',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'legalOrganisation' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteOrganisationDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteOrganisationDTO',
                 'caption' => 'Party legal organisations',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'contact' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteContactDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteContactDTO',
                 'caption' => 'Party contacts',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'communication' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteCommunicationDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteCommunicationDTO',
                 'caption' => 'Party electronic communications',
                 'isarray' => true,
                 'isobject' => true,
@@ -672,8 +672,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuitePaymentMeanDTO',
         'properties' => [
             'typeCode' => [
@@ -949,8 +949,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteDocumentPositionDTO',
         'properties' => [
             'lineId' => [
@@ -978,138 +978,138 @@ $definitions = [
                 'isobject' => false,
             ],
             'note' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteNoteDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteNoteDTO',
                 'caption' => 'The notes for this position',
                 'isarray' => true,
                 'isobject' => true,
             ],
             'product' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteProductDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductDTO',
                 'caption' => 'The product for this position',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'sellerOrderReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentLineDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO',
                 'caption' => "The associated seller's order confirmation (line reference)",
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'buyerOrderReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentLineDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO',
                 'caption' => "The associated buyer's order (line reference)",
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'quotationReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentLineDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO',
                 'caption' => 'The associated quotation (line reference)',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'contractReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentLineDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO',
                 'caption' => 'The associated contract (line reference)',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'additionalReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentLineExtDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineExtDTO',
                 'caption' => 'The additional associated document (line reference)',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'ultimateCustomerOrderReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentLineDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO',
                 'caption' => 'The ultimate customer order reference (line reference)',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'despatchAdviceReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentLineDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO',
                 'caption' => 'The despatch advice reference (line reference)',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'receivingAdviceReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentLineDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO',
                 'caption' => 'The receiving advice reference (line reference)',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'deliveryNoteReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentLineDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO',
                 'caption' => 'The delivery note reference (line reference)',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'invoiceReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentLineExtDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineExtDTO',
                 'caption' => 'The additional invoice document (line reference)',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'additionalObjectReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentExtDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentExtDTO',
                 'caption' => 'The additional object references (line reference)',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'grossPrice' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePriceGrossDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceGrossDTO',
                 'caption' => 'The gross price',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'netPrice' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePriceNetDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceNetDTO',
                 'caption' => 'The net price',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'quantityBilled' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteQuantityDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO',
                 'caption' => 'The billed quantity',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'quantityChargeFree' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteQuantityDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO',
                 'caption' => 'The charge-free quantity',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'quantityPackage' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteQuantityDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO',
                 'caption' => 'The package quantity',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'quantityPerPackage' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteQuantityDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO',
                 'caption' => 'The per-package quantity',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'shipToParty' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePartyDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
                 'caption' => 'The Ship-To Party',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'ultimateShipToParty' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePartyDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
                 'caption' => 'The Ultimate Ship-To Party',
                 'isarray' => false,
                 'isobject' => true,
@@ -1123,21 +1123,21 @@ $definitions = [
                 'isnullable' => true,
             ],
             'billingPeriod' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteDateRangeDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteDateRangeDTO',
                 'caption' => 'The start and/or end date of the billing period',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'postingReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteIdDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO',
                 'caption' => 'The posting reference',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'tax' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteTaxDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO',
                 'caption' => 'The VAT breakdown',
                 'isarray' => true,
                 'isobject' => true,
@@ -1145,14 +1145,14 @@ $definitions = [
                 'autopluralappendix' => 'es',
             ],
             'allowanceCharge' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteAllowanceChargeDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteAllowanceChargeDTO',
                 'caption' => 'The allowances/charges',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'summation' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitesummationLineDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitesummationLineDTO',
                 'caption' => 'The summation',
                 'isarray' => false,
                 'isobject' => true,
@@ -1160,8 +1160,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteDocumentHeaderDTO',
         'properties' => [
             'number' => [
@@ -1233,214 +1233,214 @@ $definitions = [
                 'isobject' => false,
             ],
             'note' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteNoteDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteNoteDTO',
                 'caption' => 'The notes for this document',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'billingPeriod' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteDateRangeDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteDateRangeDTO',
                 'caption' => 'The start and/or end date of the billing period',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'postingReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteIdDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO',
                 'caption' => 'The posting reference',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'sellerOrderReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentDTO',
                 'caption' => "The associated seller's order confirmation",
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'buyerOrderReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentDTO',
                 'caption' => "The associated buyer's order",
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'quotationReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentDTO',
                 'caption' => 'The associated quotation',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'contractReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentDTO',
                 'caption' => 'The associated contract',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'additionalReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentExtDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentExtDTO',
                 'caption' => 'The additional associated document',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'invoiceReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentExtDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentExtDTO',
                 'caption' => 'The additional invoice document',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'projectReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteProjectDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteProjectDTO',
                 'caption' => 'The project reference',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'ultimateCustomerOrderReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentDTO',
                 'caption' => 'The ultimate customer order reference',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'despatchAdviceReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentDTO',
                 'caption' => 'The despatch advice reference',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'receivingAdviceReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentDTO',
                 'caption' => 'The receiving advice reference',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'deliveryNoteReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceDocumentDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentDTO',
                 'caption' => 'The delivery note reference',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'sellerParty' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePartyDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
                 'caption' => 'The Seller/Supplier Party',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'buyerParty' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePartyDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
                 'caption' => 'The Buyer/Customer Party',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'taxRepresentativeParty' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePartyDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
                 'caption' => 'The Tax Representativ Party',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'productEndUserParty' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePartyDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
                 'caption' => 'The Product Enduser Party',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'shipToParty' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePartyDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
                 'caption' => 'The Ship-To Party',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'ultimateShipToParty' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePartyDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
                 'caption' => 'The Ultimate Ship-To Party',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'shipFromParty' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePartyDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
                 'caption' => 'The Ship-From Party',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'invoicerParty' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePartyDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
                 'caption' => 'The Invoicer Party',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'invoiceeParty' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePartyDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
                 'caption' => 'The Invoicee Party',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'payeeParty' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePartyDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
                 'caption' => 'The Payee Party',
                 'isarray' => false,
                 'isobject' => true,
             ],
             'paymentMean' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePaymentMeanDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentMeanDTO',
                 'caption' => 'The payment means',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'paymentTerm' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePaymentTermDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermDTO',
                 'caption' => 'The payment terms',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'creditorReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteIdDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO',
                 'caption' => 'The creditor identifier',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'paymentReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteIdDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO',
                 'caption' => 'The payment reference',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'buyerReference' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteIdDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO',
                 'caption' => 'The ID for internal routing (Leitweg ID)',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'position' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteDocumentPositionDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteDocumentPositionDTO',
                 'caption' => 'The Document positions',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'deliveryTerm' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteIdDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO',
                 'caption' => 'delivery term',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'tax' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteTaxDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO',
                 'caption' => 'The VAT breakdown',
                 'isarray' => true,
                 'isobject' => true,
@@ -1448,21 +1448,21 @@ $definitions = [
                 'autopluralappendix' => 'es',
             ],
             'allowanceCharge' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteAllowanceChargeDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteAllowanceChargeDTO',
                 'caption' => 'The allowances/charges',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'serviceCharge' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteServiceChargeDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteServiceChargeDTO',
                 'caption' => 'The allowances/charges',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'summation' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteSummationDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteSummationDTO',
                 'caption' => 'The summation',
                 'isarray' => true,
                 'isobject' => false,
@@ -1471,8 +1471,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuitePaymentTermDTO',
         'properties' => [
             'description' => [
@@ -1488,14 +1488,14 @@ $definitions = [
                 'isobject' => true,
             ],
             'discountTerm' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePaymentTermDiscountDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermDiscountDTO',
                 'caption' => 'The payment discounts',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'penaltyTerm' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePaymentTermPenaltyDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePaymentTermPenaltyDTO',
                 'caption' => 'The payment penalties',
                 'isarray' => true,
                 'isobject' => true,
@@ -1510,8 +1510,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuitePaymentTermDiscountDTO',
         'properties' => [
             'baseAmount' => [
@@ -1539,7 +1539,7 @@ $definitions = [
                 'isobject' => true,
             ],
             'period' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePeriodDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePeriodDTO',
                 'caption' => 'The maturity period (basis)',
                 'isarray' => false,
                 'isobject' => true,
@@ -1547,8 +1547,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuitePaymentTermPenaltyDTO',
         'properties' => [
             'baseAmount' => [
@@ -1576,7 +1576,7 @@ $definitions = [
                 'isobject' => true,
             ],
             'period' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePeriodDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePeriodDTO',
                 'caption' => 'The maturity period (basis)',
                 'isarray' => false,
                 'isobject' => true,
@@ -1584,8 +1584,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteTaxDTO',
         'properties' => [
             'category' => [
@@ -1645,8 +1645,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteAllowanceChargeDTO',
         'properties' => [
             'chargeIndicator' => [
@@ -1706,8 +1706,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteServiceChargeDTO',
         'properties' => [
             'amount' => [
@@ -1743,8 +1743,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteSummationDTO',
         'properties' => [
             'netAmount' => [
@@ -1810,8 +1810,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuitesummationLineDTO',
         'properties' => [
             'netAmount' => [
@@ -1847,8 +1847,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteProductDTO',
         'properties' => [
             'id' => [
@@ -1882,7 +1882,7 @@ $definitions = [
                 'isobject' => false,
             ],
             'globalId' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteIdDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO',
                 'caption' => 'The product global id',
                 'isarray' => false,
                 'isobject' => true,
@@ -1924,21 +1924,21 @@ $definitions = [
                 'isobject' => false,
             ],
             'characteristic' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteProductCharacteristicDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductCharacteristicDTO',
                 'caption' => 'The product characteristics',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'classification' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteProductClassificationDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteProductClassificationDTO',
                 'caption' => 'The product classification',
                 'isarray' => true,
                 'isobject' => true,
                 'autoplural' => true,
             ],
             'referenceProduct' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteReferenceProductDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceProductDTO',
                 'caption' => 'The reference product',
                 'isarray' => true,
                 'isobject' => true,
@@ -1947,8 +1947,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteProductCharacteristicDTO',
         'properties' => [
             'description' => [
@@ -1970,7 +1970,7 @@ $definitions = [
                 'isobject' => false,
             ],
             'valueMeasure' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteMeasureDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteMeasureDTO',
                 'caption' => 'The value of the product property (numerical measured variable)',
                 'isarray' => false,
                 'isobject' => true,
@@ -1978,8 +1978,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteProductClassificationDTO',
         'properties' => [
             'code' => [
@@ -2009,8 +2009,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteReferenceProductDTO',
         'properties' => [
             'id' => [
@@ -2044,7 +2044,7 @@ $definitions = [
                 'isobject' => false,
             ],
             'globalId' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteIdDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO',
                 'caption' => 'The product global id',
                 'isarray' => false,
                 'isobject' => true,
@@ -2056,7 +2056,7 @@ $definitions = [
                 'isobject' => false,
             ],
             'unitQuantity' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteQuantityDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO',
                 'caption' => 'The quantity of the referenced product contained product',
                 'isarray' => false,
                 'isobject' => true,
@@ -2064,8 +2064,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteMeasureDTO',
         'properties' => [
             'value' => [
@@ -2083,8 +2083,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteQuantityDTO',
         'properties' => [
             'quantity' => [
@@ -2102,8 +2102,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuitePeriodDTO',
         'properties' => [
             'period' => [
@@ -2121,8 +2121,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuitePriceDTO',
         'properties' => [
             'amount' => [
@@ -2132,7 +2132,7 @@ $definitions = [
                 'isobject' => false,
             ],
             'priceQuantity' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteQuantityDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteQuantityDTO',
                 'caption' => 'The number of item units for which the price applies',
                 'isarray' => false,
                 'isobject' => true,
@@ -2140,13 +2140,13 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuitePriceGrossDTO',
-        'extends' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePriceDTO',
+        'extends' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceDTO',
         'properties' => [
             'allowanceCharge' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteAllowanceChargeDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteAllowanceChargeDTO',
                 'caption' => 'The discounts or charges to the gross price',
                 'isarray' => true,
                 'isobject' => true,
@@ -2155,13 +2155,13 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuitePriceNetDTO',
-        'extends' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuitePriceDTO',
+        'extends' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePriceDTO',
         'properties' => [
             'tax' => [
-                'type' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteTaxDTO',
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO',
                 'caption' => 'The net price included tax',
                 'isarray' => true,
                 'isobject' => true,
@@ -2171,8 +2171,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteIdDTO',
         'properties' => [
             'id' => [
@@ -2190,10 +2190,10 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteOrganisationDTO',
-        'extends' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteIdDTO',
+        'extends' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO',
         'properties' => [
             'name' => [
                 'type' => 'string',
@@ -2204,16 +2204,16 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteCommunicationDTO',
-        'extends' => 'horstoeko\\invoicesuite\\documents\\dto\\InvoiceSuiteIdDTO',
+        'extends' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO',
         'properties' => [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteAddressDTO',
         'properties' => [
             'addressLine1' => [
@@ -2261,8 +2261,8 @@ $definitions = [
         ],
     ],
     [
-        'todir' => __DIR__.'/../src/documents/dto',
-        'ns' => 'horstoeko\\invoicesuite\\documents\\dto',
+        'todir' => __DIR__ . '/../src/documents/dto',
+        'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteContactDTO',
         'properties' => [
             'personName' => [

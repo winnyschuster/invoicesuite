@@ -93,7 +93,7 @@ class InvoiceSuiteClassFinder
     public function getClassesWhenItsSubClassOf(string $isSubClassOf, bool $disableCache = false): array
     {
         if (!$disableCache) {
-            $cacheFilename = md5((string) preg_replace('/[^a-zA-Z0-9]/', '', sprintf('invoicesuite-cf-%s', $isSubClassOf))).'.cache';
+            $cacheFilename = md5((string) preg_replace('/[^a-zA-Z0-9]/', '', sprintf('invoicesuite-cf-%s', $isSubClassOf))) . '.cache';
             $cacheFilepath = InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', 'cache');
             $cacheFilenameFq = InvoiceSuitePathUtils::combinePathWithFile($cacheFilepath, $cacheFilename);
 
@@ -130,7 +130,7 @@ class InvoiceSuiteClassFinder
             @mkdir(directory: $cacheFilepath, recursive: true);
 
             // @phpstan-ignore arrayValues.list
-            $cacheFilePhpCode = "<?php\ndeclare(strict_types=1);\nreturn ".var_export(array_values($classes), true).";\n";
+            $cacheFilePhpCode = "<?php\ndeclare(strict_types=1);\nreturn " . var_export(array_values($classes), true) . ";\n";
 
             file_put_contents($cacheFilenameFq, $cacheFilePhpCode, LOCK_EX);
         }
@@ -145,7 +145,7 @@ class InvoiceSuiteClassFinder
      */
     public static function clearCache(): void
     {
-        $files = glob(__DIR__.'/../cache/*.cache');
+        $files = glob(__DIR__ . '/../cache/*.cache');
 
         foreach ($files as $file) {
             if (is_file($file)) {
@@ -153,7 +153,7 @@ class InvoiceSuiteClassFinder
             }
         }
 
-        $files = glob(__DIR__.'/../cache/jms/**/*.*', GLOB_BRACE);
+        $files = glob(__DIR__ . '/../cache/jms/**/*.*', GLOB_BRACE);
 
         foreach ($files as $file) {
             if (is_file($file)) {

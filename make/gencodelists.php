@@ -5,7 +5,7 @@ use Nette\PhpGenerator\PhpFile;
 use Nette\PhpGenerator\Printer;
 use Nette\PhpGenerator\PsrPrinter;
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 define('DOWNLOADDEF_KEY_ENABLED', 'enabled');
 define('DOWNLOADDEF_LIB_NAME', 'libname');
@@ -86,7 +86,7 @@ function strIdentifier(string $str, bool $shortIdentifier, int $partLength = 4):
     $str = str_replace("\r", '', $str);
     $str = str_replace("\t", '', $str);
     $str = strtoupper($str);
-    $str = preg_replace('/[^A-Za-z0-9\\s]/', '', $str);
+    $str = preg_replace('/[^A-Za-z0-9\s]/', '', $str);
 
     $strArray = explode(' ', (string) $str);
 
@@ -155,7 +155,7 @@ function strDescExt(string $str): string
  */
 function outputLine(string $str): void
 {
-    echo $str.PHP_EOL;
+    echo $str . PHP_EOL;
 }
 
 /**
@@ -307,8 +307,8 @@ function createCodeClassFromKositJson(array $fileToDownload): void
             if (!in_array($caseName, $allCases)) {
                 $phpEnum
                     ->addCase($caseName, $line[$dataCodeIndex])
-                    ->addComment("\n".strComment($line[$dataDescIndex] ?? '').' ('.strComment($line[$dataCodeIndex] ?? '').')')
-                    ->addComment("\n".strComment($line[$dataDescLongIndex] ?? ($line[$dataDescIndex] ?? '')));
+                    ->addComment("\n" . strComment($line[$dataDescIndex] ?? '') . ' (' . strComment($line[$dataCodeIndex] ?? '') . ')')
+                    ->addComment("\n" . strComment($line[$dataDescLongIndex] ?? ($line[$dataDescIndex] ?? '')));
                 $allCases[] = $caseName;
             }
         }
@@ -552,8 +552,8 @@ function createCodeClassFromCsv(array $fileToDownload): void
             if (!in_array($caseName, $allCases)) {
                 $phpEnum
                     ->addCase(sprintf('%s%s', $constantPrefix, strIdentifier($line[$dataDescIndex], $classShortIdentifiers, $classShortIdentifiersLength)), $line[$dataCodeIndex])
-                    ->addComment("\n".strComment($line[$dataDescIndex] ?? '').' ('.strComment($line[$dataCodeIndex] ?? '').')')
-                    ->addComment("\n".strComment($line[$dataDescLongIndex] ?? ($line[$dataDescIndex] ?? '')));
+                    ->addComment("\n" . strComment($line[$dataDescIndex] ?? '') . ' (' . strComment($line[$dataCodeIndex] ?? '') . ')')
+                    ->addComment("\n" . strComment($line[$dataDescLongIndex] ?? ($line[$dataDescIndex] ?? '')));
                 $allCases[] = $caseName;
             }
         }
@@ -719,7 +719,7 @@ $filesToDownload = [
             PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_5189.json'),
         ],
         DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.7161',
-        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\\invoicesuite\\codelists',
+        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\invoicesuite\codelists',
         DOWNLOADDEF_KEY_CLASSNAME => 'InvoiceSuiteCodelistAllowanceChargeCodes',
         DOWNLOADDEF_KEY_TITLE => 'list of allowance and charge identification codes',
         DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 7161 Special service description code, UNTDID 5189 Allowance or charge identification code',
@@ -740,7 +740,7 @@ $filesToDownload = [
             PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'ISO_COUNTRY_CODES.json'),
         ],
         DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:country-codes',
-        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\\invoicesuite\\codelists',
+        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\invoicesuite\codelists',
         DOWNLOADDEF_KEY_CLASSNAME => 'InvoiceSuiteCodelistCountryCodes',
         DOWNLOADDEF_KEY_TITLE => 'list of country codes',
         DOWNLOADDEF_KEY_TITLE_LIST => 'ISO',
@@ -764,7 +764,7 @@ $filesToDownload = [
             PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'ISO_CURRENCY_CODES.json'),
         ],
         DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:currency-codes',
-        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\\invoicesuite\\codelists',
+        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\invoicesuite\codelists',
         DOWNLOADDEF_KEY_CLASSNAME => 'InvoiceSuiteCodelistCurrencyCodes',
         DOWNLOADDEF_KEY_TITLE => 'list of currency codes',
         DOWNLOADDEF_KEY_TITLE_LIST => 'ISO',
@@ -788,7 +788,7 @@ $filesToDownload = [
             PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_5305.json'),
         ],
         DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.5305',
-        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\\invoicesuite\\codelists',
+        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\invoicesuite\codelists',
         DOWNLOADDEF_KEY_CLASSNAME => 'InvoiceSuiteCodelistDutyTaxFeeCategories',
         DOWNLOADDEF_KEY_TITLE => 'list of duty or tax or fee category codes',
         DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 5305 Duty or tax or fee category code',
@@ -812,7 +812,7 @@ $filesToDownload = [
             PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_1001.json'),
         ],
         DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.1001',
-        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\\invoicesuite\\codelists',
+        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\invoicesuite\codelists',
         DOWNLOADDEF_KEY_CLASSNAME => 'InvoiceSuiteCodelistDocumentTypes',
         DOWNLOADDEF_KEY_TITLE => 'list of document name codes',
         DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 1001 Document name code',
@@ -833,7 +833,7 @@ $filesToDownload = [
             PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_7143.json'),
         ],
         DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.7143',
-        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\\invoicesuite\\codelists',
+        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\invoicesuite\codelists',
         DOWNLOADDEF_KEY_CLASSNAME => 'InvoiceSuiteCodelistItemTypeIdentificationCodes',
         DOWNLOADDEF_KEY_TITLE => 'list of item type identification codes',
         DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 7143 Item type identification code',
@@ -854,7 +854,7 @@ $filesToDownload = [
             PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_4461.json'),
         ],
         DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:xrechnung:codeliste:untdid.4461',
-        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\\invoicesuite\\codelists',
+        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\invoicesuite\codelists',
         DOWNLOADDEF_KEY_CLASSNAME => 'InvoiceSuiteCodelistPaymentMeans',
         DOWNLOADDEF_KEY_TITLE => 'list of payment means codes',
         DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 4461 Payment means code',
@@ -875,7 +875,7 @@ $filesToDownload = [
             PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_1153.json'),
         ],
         DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.1153',
-        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\\invoicesuite\\codelists',
+        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\invoicesuite\codelists',
         DOWNLOADDEF_KEY_CLASSNAME => 'InvoiceSuiteCodelistReferenceCodeQualifiers',
         DOWNLOADDEF_KEY_TITLE => 'list of reference code qualifiers',
         DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 1153 Reference code qualifier',
@@ -896,7 +896,7 @@ $filesToDownload = [
             PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_4451.json'),
         ],
         DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.4451',
-        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\\invoicesuite\\codelists',
+        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\invoicesuite\codelists',
         DOWNLOADDEF_KEY_CLASSNAME => 'InvoiceSuiteCodelistTextSubjectCodeQualifiers',
         DOWNLOADDEF_KEY_TITLE => 'list of text subject code qualifiers',
         DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 4451 Text subject code qualifier',
@@ -917,7 +917,7 @@ $filesToDownload = [
             PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'ICD_5.json'),
         ],
         DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:icd',
-        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\\invoicesuite\\codelists',
+        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\invoicesuite\codelists',
         DOWNLOADDEF_KEY_CLASSNAME => 'InvoiceSuiteCodelistSchemeIdentifiers',
         DOWNLOADDEF_KEY_TITLE => 'list of codes for the identification of organizations and organization parts',
         DOWNLOADDEF_KEY_TITLE_LIST => 'ISO/IEC 17 6523 - Identifier scheme code (ICD)',
@@ -943,7 +943,7 @@ $filesToDownload = [
             'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:rec20',
             'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:rec21',
         ],
-        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\\invoicesuite\\codelists',
+        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\invoicesuite\codelists',
         DOWNLOADDEF_KEY_CLASSNAME => 'InvoiceSuiteCodelistUnitCodes',
         DOWNLOADDEF_KEY_TITLE => 'list of codes for units of measure used in international trade',
         DOWNLOADDEF_KEY_TITLE_LIST => 'UN/ECE Recommendation N°20 and N°21',
@@ -967,7 +967,7 @@ $filesToDownload = [
             PathUtils::combinePathWithFile(PathUtils::combineAllPaths(__DIR__, 'download'), 'UNTDID_5305.json'),
         ],
         DOWNLOADDEF_KEY_URL_HP => 'https://www.xrepository.de/details/urn:xoev-de:kosit:codeliste:untdid.5305_3',
-        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\\invoicesuite\\codelists',
+        DOWNLOADDEF_KEY_CLASSNAMESPACE => 'horstoeko\invoicesuite\codelists',
         DOWNLOADDEF_KEY_CLASSNAME => 'InvoiceSuiteCodelistVatCategoryCodes',
         DOWNLOADDEF_KEY_TITLE => 'list of duty or tax or fee category codes',
         DOWNLOADDEF_KEY_TITLE_LIST => 'UNTDID 5305 Duty or tax or fee category code',

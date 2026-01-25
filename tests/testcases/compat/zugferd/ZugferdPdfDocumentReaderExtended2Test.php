@@ -20,7 +20,7 @@ final class ZugferdPdfDocumentReaderExtended2Test extends TestCase
 
     public function testCanReadPdf(): void
     {
-        self::$document = ZugferdDocumentPdfReader::readAndGuessFromFile(__DIR__.'/../../../assets/03_zugferdpdfdocumentreader_2.pdf');
+        self::$document = ZugferdDocumentPdfReader::readAndGuessFromFile(__DIR__ . '/../../../assets/03_zugferdpdfdocumentreader_2.pdf');
         $this->assertNotNull(self::$document);
     }
 

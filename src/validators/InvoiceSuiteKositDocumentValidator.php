@@ -369,7 +369,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      */
     private function resolveBaseDirectory(): string
     {
-        $baseDirectorySuffix = md5($this->validatorDownloadUrl.$this->validatorScenarioDownloadUrl);
+        $baseDirectorySuffix = md5($this->validatorDownloadUrl . $this->validatorScenarioDownloadUrl);
 
         $baseDirectory = InvoiceSuitePathUtils::combinePathWithPath($this->baseDirectory, sprintf('kositvalidator-%s', $baseDirectorySuffix));
 
@@ -819,7 +819,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
         $reportFilename
             = InvoiceSuitePathUtils::combinePathWithFile(
                 $this->resolveBaseDirectory(),
-                InvoiceSuiteFileUtils::getFilenameWithoutExtension($this->resolveFileToValidateFilename()).'-report.xml'
+                InvoiceSuiteFileUtils::getFilenameWithoutExtension($this->resolveFileToValidateFilename()) . '-report.xml'
             );
 
         if (!file_exists($reportFilename)) {

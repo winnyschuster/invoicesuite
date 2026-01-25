@@ -87,7 +87,7 @@ final class ZugferdSettingsTest extends TestCase
 
     public function testGetRootDirectory(): void
     {
-        $expected = realpath(__DIR__.'/../../../../');
+        $expected = realpath(__DIR__ . '/../../../../');
         $actual = realpath(ZugferdSettings::getRootDirectory());
 
         $this->assertNotFalse($expected);
@@ -100,7 +100,7 @@ final class ZugferdSettingsTest extends TestCase
 
     public function testGetSourceDirectory(): void
     {
-        $expected = realpath(__DIR__.'/../../../../src/compat/zugferd');
+        $expected = realpath(__DIR__ . '/../../../../src/compat/zugferd');
         $actual = realpath(ZugferdSettings::getSourceDirectory());
 
         $this->assertNotFalse($expected);
@@ -113,7 +113,7 @@ final class ZugferdSettingsTest extends TestCase
 
     public function testGetAssetDirectory(): void
     {
-        $expected = realpath(__DIR__.'/../../../../src/compat/zugferd/assets/');
+        $expected = realpath(__DIR__ . '/../../../../src/compat/zugferd/assets/');
         $actual = realpath(ZugferdSettings::getAssetDirectory());
 
         $this->assertNotFalse($expected);
@@ -126,7 +126,7 @@ final class ZugferdSettingsTest extends TestCase
 
     public function testGetYamlDirectory(): void
     {
-        $expected = realpath(__DIR__.'/../../../../src/compat/zugferd/yaml/');
+        $expected = realpath(__DIR__ . '/../../../../src/compat/zugferd/yaml/');
         $actual = realpath(ZugferdSettings::getYamlDirectory());
 
         $this->assertNotFalse($expected);
@@ -139,7 +139,7 @@ final class ZugferdSettingsTest extends TestCase
 
     public function testGetValidationDirectory(): void
     {
-        $expected = realpath(__DIR__.'/../../../../src/compat/zugferd/validation/');
+        $expected = realpath(__DIR__ . '/../../../../src/compat/zugferd/validation/');
         $actual = realpath(ZugferdSettings::getValidationDirectory());
 
         $this->assertNotFalse($expected);
@@ -162,7 +162,7 @@ final class ZugferdSettingsTest extends TestCase
     public function testGetFullIccProfileFilename(): void
     {
         $expected = InvoiceSuitePathUtils::combinePathWithFile(
-            realpath(__DIR__.'/../../../../src/compat/zugferd/assets/'),
+            realpath(__DIR__ . '/../../../../src/compat/zugferd/assets/'),
             'sRGB_v5_ICC.icc'
         );
         $actual = InvoiceSuitePathUtils::combinePathWithFile(
@@ -229,7 +229,7 @@ final class ZugferdSettingsTest extends TestCase
     public function testGetFullXmpMetaDataFilename(): void
     {
         $expected = InvoiceSuitePathUtils::combinePathWithFile(
-            realpath(__DIR__.'/../../../../src/compat/zugferd/assets/'),
+            realpath(__DIR__ . '/../../../../src/compat/zugferd/assets/'),
             'facturx_extension_schema_2.xmp'
         );
         $actual = InvoiceSuitePathUtils::combinePathWithFile(
@@ -245,7 +245,7 @@ final class ZugferdSettingsTest extends TestCase
 
     public function testGetSchemaDirectory(): void
     {
-        $expected = realpath(__DIR__.'/../../../../src/compat/zugferd/schema');
+        $expected = realpath(__DIR__ . '/../../../../src/compat/zugferd/schema');
         $actual = realpath(ZugferdSettings::getSchemaDirectory());
 
         $this->assertNotFalse($expected);
@@ -258,7 +258,7 @@ final class ZugferdSettingsTest extends TestCase
 
     public function testGetSchematronDirectory(): void
     {
-        $expected = realpath(__DIR__.'/../../../../src/compat/zugferd/schema/schematron');
+        $expected = realpath(__DIR__ . '/../../../../src/compat/zugferd/schema/schematron');
         $actual = realpath(ZugferdSettings::getSchematronDirectory());
 
         $this->assertNotFalse($expected);
@@ -271,7 +271,7 @@ final class ZugferdSettingsTest extends TestCase
 
     public function testGetXsltDirectory(): void
     {
-        $expected = realpath(__DIR__.'/../../../../src/compat/zugferd/schema/xslt');
+        $expected = realpath(__DIR__ . '/../../../../src/compat/zugferd/schema/xslt');
         $actual = realpath(ZugferdSettings::getXsltDirectory());
 
         $this->assertNotFalse($expected);

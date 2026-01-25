@@ -13,8 +13,8 @@ final class ZugferdProfileConverterTest extends TestCase
 {
     public function testComvertFromFileToFileXRechnung3(): void
     {
-        $fromfile = __DIR__.'/../../../assets/03_zugferddocumentreader_3.xml';
-        $tofile = __DIR__.'/../../../assets/converterresult.xml';
+        $fromfile = __DIR__ . '/../../../assets/03_zugferddocumentreader_3.xml';
+        $tofile = __DIR__ . '/../../../assets/converterresult.xml';
 
         ZugferdDocumentProfileConverter::convertFromFileToFile($fromfile, $tofile, ZugferdProfiles::PROFILE_XRECHNUNG_3);
 
@@ -36,7 +36,7 @@ final class ZugferdProfileConverterTest extends TestCase
 
     public function testConvertFromFileToStringXRechnung3(): void
     {
-        $fromfile = __DIR__.'/../../../assets/03_zugferddocumentreader_3.xml';
+        $fromfile = __DIR__ . '/../../../assets/03_zugferddocumentreader_3.xml';
         $converterResult = ZugferdDocumentProfileConverter::convertFromFileToString($fromfile, ZugferdProfiles::PROFILE_XRECHNUNG_3);
 
         $this->assertIsString($converterResult);
@@ -51,8 +51,8 @@ final class ZugferdProfileConverterTest extends TestCase
 
     public function testConvertFromContentToFileXRechnung3(): void
     {
-        $fromfile = __DIR__.'/../../../assets/03_zugferddocumentreader_3.xml';
-        $tofile = __DIR__.'/../../../assets/converterresult.xml';
+        $fromfile = __DIR__ . '/../../../assets/03_zugferddocumentreader_3.xml';
+        $tofile = __DIR__ . '/../../../assets/converterresult.xml';
         $fromfileContent = file_get_contents($fromfile);
 
         ZugferdDocumentProfileConverter::convertFromContentToFile($fromfileContent, $tofile, ZugferdProfiles::PROFILE_XRECHNUNG_3);
@@ -75,7 +75,7 @@ final class ZugferdProfileConverterTest extends TestCase
 
     public function testConvertFromContentToStringXRechnung3(): void
     {
-        $fromfile = __DIR__.'/../../../assets/03_zugferddocumentreader_3.xml';
+        $fromfile = __DIR__ . '/../../../assets/03_zugferddocumentreader_3.xml';
         $fromfileContent = file_get_contents($fromfile);
 
         $converterResult = ZugferdDocumentProfileConverter::convertFromContentToString($fromfileContent, ZugferdProfiles::PROFILE_XRECHNUNG_3);
@@ -92,8 +92,8 @@ final class ZugferdProfileConverterTest extends TestCase
 
     public function testComvertFromFileToFileEn16931(): void
     {
-        $fromfile = __DIR__.'/../../../assets/03_zugferddocumentreader_3.xml';
-        $tofile = __DIR__.'/../../../assets/converterresult.xml';
+        $fromfile = __DIR__ . '/../../../assets/03_zugferddocumentreader_3.xml';
+        $tofile = __DIR__ . '/../../../assets/converterresult.xml';
 
         ZugferdDocumentProfileConverter::convertFromFileToFile($fromfile, $tofile, ZugferdProfiles::PROFILE_EN16931);
 
@@ -115,7 +115,7 @@ final class ZugferdProfileConverterTest extends TestCase
 
     public function testConvertFromFileToStringEn16931(): void
     {
-        $fromfile = __DIR__.'/../../../assets/03_zugferddocumentreader_3.xml';
+        $fromfile = __DIR__ . '/../../../assets/03_zugferddocumentreader_3.xml';
         $converterResult = ZugferdDocumentProfileConverter::convertFromFileToString($fromfile, ZugferdProfiles::PROFILE_EN16931);
 
         $this->assertIsString($converterResult);
@@ -130,8 +130,8 @@ final class ZugferdProfileConverterTest extends TestCase
 
     public function testConvertFromContentToFileEn16931(): void
     {
-        $fromfile = __DIR__.'/../../../assets/03_zugferddocumentreader_3.xml';
-        $tofile = __DIR__.'/../../../assets/converterresult.xml';
+        $fromfile = __DIR__ . '/../../../assets/03_zugferddocumentreader_3.xml';
+        $tofile = __DIR__ . '/../../../assets/converterresult.xml';
         $fromfileContent = file_get_contents($fromfile);
 
         ZugferdDocumentProfileConverter::convertFromContentToFile($fromfileContent, $tofile, ZugferdProfiles::PROFILE_EN16931);
@@ -154,7 +154,7 @@ final class ZugferdProfileConverterTest extends TestCase
 
     public function testConvertFromContentToStringEn16931(): void
     {
-        $fromfile = __DIR__.'/../../../assets/03_zugferddocumentreader_3.xml';
+        $fromfile = __DIR__ . '/../../../assets/03_zugferddocumentreader_3.xml';
         $fromfileContent = file_get_contents($fromfile);
         $converterResult = ZugferdDocumentProfileConverter::convertFromContentToString($fromfileContent, ZugferdProfiles::PROFILE_EN16931);
 
@@ -172,15 +172,15 @@ final class ZugferdProfileConverterTest extends TestCase
     {
         $this->expectException(InvoiceSuiteFileNotFoundException::class);
 
-        $fromfile = __DIR__.'/../../../assets/not_existing_file.xml';
-        $tofile = __DIR__.'/../../../assets/converterresult.xml';
+        $fromfile = __DIR__ . '/../../../assets/not_existing_file.xml';
+        $tofile = __DIR__ . '/../../../assets/converterresult.xml';
 
         ZugferdDocumentProfileConverter::convertFromFileToFile($fromfile, $tofile, ZugferdProfiles::PROFILE_XRECHNUNG_3);
     }
 
     public function testComvertFromFileToFileExtendedToEn16931(): void
     {
-        $fromfile = __DIR__.'/../../../assets/03_zugferddocumentreader.xml';
+        $fromfile = __DIR__ . '/../../../assets/03_zugferddocumentreader.xml';
         $converterResult = ZugferdDocumentProfileConverter::convertFromFileToString($fromfile, ZugferdProfiles::PROFILE_EN16931);
 
         $this->assertIsString($converterResult);

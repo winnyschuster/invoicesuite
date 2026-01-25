@@ -796,7 +796,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
      */
     protected function addToInternalVatBuffer(string $taxCategoryCode, string $taxTypeCode, float $taxPercent, float $lineTotalAmount, float $chargeAmount, float $allowanceAmount, float $logisticServiceCharge)
     {
-        $vatGroup = md5($taxCategoryCode.'_'.$taxTypeCode.'_'.number_format($taxPercent, 10, '_', '__'));
+        $vatGroup = md5($taxCategoryCode . '_' . $taxTypeCode . '_' . number_format($taxPercent, 10, '_', '__'));
 
         if (!isset($this->vatBreakdown[$vatGroup])) {
             $this->vatBreakdown[$vatGroup] = [

@@ -45,8 +45,8 @@ class InvoiceSuiteXRechnungCIIInvoiceProvider extends InvoiceSuiteAbstractDocume
     public function getDescription(): string
     {
         return 'The reference profile is based on the CIUS XRechnung, which is maintained by KoSIT. It represents an '
-            .'extension of EN 16931-1 with its own business rules, the national German laws and regulations. It is therefore more '
-            .'specific than the EN 16931 (COMFORT) profile. This provider uses the CII syntax.';
+            . 'extension of EN 16931-1 with its own business rules, the national German laws and regulations. It is therefore more '
+            . 'specific than the EN 16931 (COMFORT) profile. This provider uses the CII syntax.';
     }
 
     /**

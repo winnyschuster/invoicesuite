@@ -37,13 +37,13 @@ final class ZugferdDocumentPdfBuilderTest extends TestCase
 
     public static function setUpBeforeClass(): void
     {
-        self::$sourcePdfFilename = __DIR__.'/../../../assets/pdf_plain.pdf';
-        self::$destPdfFilename = __DIR__.'/../../../assets/GeneratedPDF.pdf';
+        self::$sourcePdfFilename = __DIR__ . '/../../../assets/pdf_plain.pdf';
+        self::$destPdfFilename = __DIR__ . '/../../../assets/GeneratedPDF.pdf';
 
         self::$document = ZugferdDocumentBuilder::CreateNew(ZugferdProfiles::PROFILE_EN16931)
             ->setDocumentInformation('471102', '380', DateTime::createFromFormat('Ymd', '20180305'), 'EUR')
             ->addDocumentNote('Rechnung gemäß Bestellung vom 01.03.2018.')
-            ->addDocumentNote('Lieferant GmbH'.PHP_EOL.'Lieferantenstraße 20'.PHP_EOL.'80333 München'.PHP_EOL.'Deutschland'.PHP_EOL.'Geschäftsführer: Hans Muster'.PHP_EOL.'Handelsregisternummer: H A 123'.PHP_EOL.PHP_EOL, null, 'REG')
+            ->addDocumentNote('Lieferant GmbH' . PHP_EOL . 'Lieferantenstraße 20' . PHP_EOL . '80333 München' . PHP_EOL . 'Deutschland' . PHP_EOL . 'Geschäftsführer: Hans Muster' . PHP_EOL . 'Handelsregisternummer: H A 123' . PHP_EOL . PHP_EOL, null, 'REG')
             ->setDocumentSupplyChainEvent(DateTime::createFromFormat('Ymd', '20180305'))
             ->addDocumentPaymentMean('58', null, null, null, null, null, 'DE12500105170648489890')
             ->setDocumentSeller('Lieferant GmbH', '549910')
@@ -288,7 +288,7 @@ final class ZugferdDocumentPdfBuilderTest extends TestCase
 
     public function testAttachAdditionalFileFileDoesNotExist(): void
     {
-        $filename = __DIR__.'/unknown.txt';
+        $filename = __DIR__ . '/unknown.txt';
 
         $this->expectException(InvoiceSuiteFileNotFoundException::class);
         $this->expectExceptionMessage(sprintf('The file %s was not found', $filename));
@@ -308,7 +308,7 @@ final class ZugferdDocumentPdfBuilderTest extends TestCase
 
     public function testAttachAdditionalFileMimetypeUnknown(): void
     {
-        $filename = __DIR__.'/../../../assets/99_dummy_attachment_1.dummy';
+        $filename = __DIR__ . '/../../../assets/99_dummy_attachment_1.dummy';
 
         $this->expectException(InvoiceSuiteUnknownContentException::class);
         $this->expectExceptionMessage('Unknown content');
@@ -320,7 +320,7 @@ final class ZugferdDocumentPdfBuilderTest extends TestCase
     public function testAdditionalFilesAreEmbedded(): void
     {
         $pdfBuilder = ZugferdDocumentPdfBuilder::fromPdfFile(self::$document, self::$sourcePdfFilename);
-        $pdfBuilder->attachAdditionalFileByRealFile(__DIR__.'/../../../assets/99_txt_addattachment_1.txt');
+        $pdfBuilder->attachAdditionalFileByRealFile(__DIR__ . '/../../../assets/99_txt_addattachment_1.txt');
         $pdfBuilder->generateDocument();
         $pdfBuilder->saveDocument(self::$destPdfFilename);
 
@@ -406,7 +406,7 @@ final class ZugferdDocumentPdfBuilderTest extends TestCase
         $this->expectException(InvoiceSuiteInvalidArgumentException::class);
         $this->expectExceptionMessage('You must specify a filename for the content to attach');
 
-        $filename = __DIR__.'/../../../assets/99_txt_addattachment_1.txt';
+        $filename = __DIR__ . '/../../../assets/99_txt_addattachment_1.txt';
 
         $content = file_get_contents($filename);
 
@@ -416,7 +416,7 @@ final class ZugferdDocumentPdfBuilderTest extends TestCase
 
     public function testAttachAdditionalFileByContentAllValid(): void
     {
-        $filename = __DIR__.'/../../../assets/99_txt_addattachment_1.txt';
+        $filename = __DIR__ . '/../../../assets/99_txt_addattachment_1.txt';
 
         $content = file_get_contents($filename);
 

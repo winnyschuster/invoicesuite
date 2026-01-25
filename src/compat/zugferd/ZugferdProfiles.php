@@ -99,8 +99,8 @@ class ZugferdProfiles
             'name' => 'basicwl',
             'altname' => 'BASIC WL',
             'description' => 'The BASIC WL profile does not contain any invoice items and therefore cannot display any VAT-compliant '
-                .'invoices. However, it contains all the information at document level that is required to post the invoice. '
-                .'It is therefore a booking aid.',
+                . 'invoices. However, it contains all the information at document level that is required to post the invoice. '
+                . 'It is therefore a booking aid.',
             'contextparameter' => 'urn:factur-x.eu:1p0:basicwl',
             'alternativecontextparameters' => ['urn:zugferd.de:2p0:basicwl'],
             'businessprocess' => null,
@@ -116,7 +116,7 @@ class ZugferdProfiles
             'name' => 'en16931',
             'altname' => 'EN 16931 (COMFORT)',
             'description' => 'The EN 16931 (COMFORT) profile completely maps the EN 16931-1 and focuses on the core elements '
-                .'of an electronic invoice.',
+                . 'of an electronic invoice.',
             'contextparameter' => 'urn:cen.eu:en16931:2017',
             'alternativecontextparameters' => [],
             'businessprocess' => null,
@@ -132,8 +132,8 @@ class ZugferdProfiles
             'name' => 'extended',
             'altname' => 'EXTENDED',
             'description' => 'The EXTENDED profile is an extension of EN 16931-1 to support more complex business processes (invoices '
-                .'in which several deliveries / delivery locations are billed, structured payment conditions, further information at '
-                .'item level to support warehousing, etc.)',
+                . 'in which several deliveries / delivery locations are billed, structured payment conditions, further information at '
+                . 'item level to support warehousing, etc.)',
             'contextparameter' => 'urn:cen.eu:en16931:2017#conformant#urn:factur-x.eu:1p0:extended',
             'alternativecontextparameters' => ['urn:cen.eu:en16931:2017#conformant#urn:zugferd.de:2p0:extended'],
             'businessprocess' => 'urn:fdc:peppol.eu:2017:poacc:billing:01:1.0',
@@ -149,8 +149,8 @@ class ZugferdProfiles
             'name' => 'en16931',
             'altname' => 'XRECHNUNG',
             'description' => 'The reference profile is based on the CIUS XRechnung, which is maintained by KoSIT. It represents an '
-                .'extension of EN 16931-1 with its own business rules, the national German laws and regulations. It is therefore more '
-                .'specific than the EN 16931 (COMFORT) profile.',
+                . 'extension of EN 16931-1 with its own business rules, the national German laws and regulations. It is therefore more '
+                . 'specific than the EN 16931 (COMFORT) profile.',
             'contextparameter' => 'urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_1.2',
             'alternativecontextparameters' => [],
             'businessprocess' => null,
@@ -166,8 +166,8 @@ class ZugferdProfiles
             'name' => 'en16931',
             'altname' => 'XRECHNUNG',
             'description' => 'The reference profile is based on the CIUS XRechnung, which is maintained by KoSIT. It represents an '
-                .'extension of EN 16931-1 with its own business rules, the national German laws and regulations. It is therefore more '
-                .'specific than the EN 16931 (COMFORT) profile.',
+                . 'extension of EN 16931-1 with its own business rules, the national German laws and regulations. It is therefore more '
+                . 'specific than the EN 16931 (COMFORT) profile.',
             'contextparameter' => 'urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_2.0',
             'alternativecontextparameters' => [],
             'businessprocess' => null,
@@ -183,8 +183,8 @@ class ZugferdProfiles
             'name' => 'en16931',
             'altname' => 'XRECHNUNG',
             'description' => 'The reference profile is based on the CIUS XRechnung, which is maintained by KoSIT. It represents an '
-                .'extension of EN 16931-1 with its own business rules, the national German laws and regulations. It is therefore more '
-                .'specific than the EN 16931 (COMFORT) profile.',
+                . 'extension of EN 16931-1 with its own business rules, the national German laws and regulations. It is therefore more '
+                . 'specific than the EN 16931 (COMFORT) profile.',
             'contextparameter' => 'urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_2.1',
             'alternativecontextparameters' => [],
             'businessprocess' => null,
@@ -200,8 +200,8 @@ class ZugferdProfiles
             'name' => 'en16931',
             'altname' => 'XRECHNUNG',
             'description' => 'The reference profile is based on the CIUS XRechnung, which is maintained by KoSIT. It represents an '
-                .'extension of EN 16931-1 with its own business rules, the national German laws and regulations. It is therefore more '
-                .'specific than the EN 16931 (COMFORT) profile.',
+                . 'extension of EN 16931-1 with its own business rules, the national German laws and regulations. It is therefore more '
+                . 'specific than the EN 16931 (COMFORT) profile.',
             'contextparameter' => 'urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_2.2',
             'alternativecontextparameters' => [],
             'businessprocess' => null,
@@ -217,7 +217,7 @@ class ZugferdProfiles
             'name' => 'minimum',
             'altname' => 'MINIMUM',
             'description' => 'The MINIMUM profile includes the main information about the purchaser and vendor, the total invoice amount, and the total sales tax (VAT).'
-                .'Only the purchaser s reference can be given at item level. A breakdown of the sales tax (VAT) is not supported. It is therefore a booking aid.',
+                . 'Only the purchaser s reference can be given at item level. A breakdown of the sales tax (VAT) is not supported. It is therefore a booking aid.',
             'contextparameter' => 'urn:factur-x.eu:1p0:minimum',
             'alternativecontextparameters' => ['urn:zugferd.de:2p0:minimum'],
             'businessprocess' => null,
@@ -233,8 +233,8 @@ class ZugferdProfiles
             'name' => 'en16931',
             'altname' => 'XRECHNUNG',
             'description' => 'The reference profile is based on the CIUS XRechnung, which is maintained by KoSIT. It represents an '
-                .'extension of EN 16931-1 with its own business rules, the national German laws and regulations. It is therefore more '
-                .'specific than the EN 16931 (COMFORT) profile.',
+                . 'extension of EN 16931-1 with its own business rules, the national German laws and regulations. It is therefore more '
+                . 'specific than the EN 16931 (COMFORT) profile.',
             'contextparameter' => 'urn:cen.eu:en16931:2017#compliant#urn:xoev-de:kosit:standard:xrechnung_2.3',
             'alternativecontextparameters' => [],
             'businessprocess' => null,
@@ -250,8 +250,8 @@ class ZugferdProfiles
             'name' => 'en16931',
             'altname' => 'XRECHNUNG',
             'description' => 'The reference profile is based on the CIUS XRechnung, which is maintained by KoSIT. It represents an '
-                .'extension of EN 16931-1 with its own business rules, the national German laws and regulations. It is therefore more '
-                .'specific than the EN 16931 (COMFORT) profile.',
+                . 'extension of EN 16931-1 with its own business rules, the national German laws and regulations. It is therefore more '
+                . 'specific than the EN 16931 (COMFORT) profile.',
             'contextparameter' => 'urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0',
             'alternativecontextparameters' => [],
             'businessprocess' => 'urn:fdc:peppol.eu:2017:poacc:billing:01:1.0',

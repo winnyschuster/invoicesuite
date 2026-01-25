@@ -467,7 +467,7 @@ class InvoiceSuiteVisualizer
         $defaultFontData = $defaultFontConfig['fontdata'];
 
         $config = [
-            'tempDir' => sys_get_temp_dir().'/mpdf',
+            'tempDir' => sys_get_temp_dir() . '/mpdf',
             'fontDir' => array_merge($defaultFontDirs, $this->pdfFontDirectories),
             'fontdata' => $defaultFontData + $this->pdfFontData,
             'default_font' => $this->pdfFontDefault,

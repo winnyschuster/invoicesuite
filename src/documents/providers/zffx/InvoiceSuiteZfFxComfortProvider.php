@@ -44,7 +44,7 @@ class InvoiceSuiteZfFxComfortProvider extends InvoiceSuiteAbstractDocumentFormat
     public function getDescription(): string
     {
         return 'The EN 16931 (COMFORT) profile completely maps the EN 16931-1 and focuses on the core elements '
-            .'of an electronic invoice.';
+            . 'of an electronic invoice.';
     }
 
     /**

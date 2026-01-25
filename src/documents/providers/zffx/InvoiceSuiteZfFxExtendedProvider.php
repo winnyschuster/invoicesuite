@@ -44,8 +44,8 @@ class InvoiceSuiteZfFxExtendedProvider extends InvoiceSuiteAbstractDocumentForma
     public function getDescription(): string
     {
         return 'The EXTENDED profile is an extension of EN 16931-1 to support more complex business processes (invoices '
-            .'in which several deliveries / delivery locations are billed, structured payment conditions, further information at '
-            .'item level to support warehousing, etc.)';
+            . 'in which several deliveries / delivery locations are billed, structured payment conditions, further information at '
+            . 'item level to support warehousing, etc.)';
     }
 
     /**

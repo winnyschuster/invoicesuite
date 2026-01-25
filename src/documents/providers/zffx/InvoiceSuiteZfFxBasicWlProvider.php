@@ -44,8 +44,8 @@ class InvoiceSuiteZfFxBasicWlProvider extends InvoiceSuiteAbstractDocumentFormat
     public function getDescription(): string
     {
         return 'The BASIC WL profile does not contain any invoice items and therefore cannot display any VAT-compliant '
-            .'invoices. However, it contains all the information at document level that is required to post the invoice. '
-            .'It is therefore a booking aid.';
+            . 'invoices. However, it contains all the information at document level that is required to post the invoice. '
+            . 'It is therefore a booking aid.';
     }
 
     /**

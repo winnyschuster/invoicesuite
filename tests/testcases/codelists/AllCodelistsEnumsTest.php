@@ -5464,51 +5464,51 @@ final class AllCodelistsEnumsTest extends TestCase
     public function provideValidValues(): iterable
     {
         foreach (InvoiceSuiteCodelistAllowanceChargeCodes::cases() as $c) {
-            yield 'InvoiceSuiteCodelistAllowanceChargeCodes:'.$c->name => [InvoiceSuiteCodelistAllowanceChargeCodes::class, $c->value];
+            yield 'InvoiceSuiteCodelistAllowanceChargeCodes:' . $c->name => [InvoiceSuiteCodelistAllowanceChargeCodes::class, $c->value];
         }
 
         foreach (InvoiceSuiteCodelistCountryCodes::cases() as $c) {
-            yield 'InvoiceSuiteCodelistCountryCodes:'.$c->name => [InvoiceSuiteCodelistCountryCodes::class, $c->value];
+            yield 'InvoiceSuiteCodelistCountryCodes:' . $c->name => [InvoiceSuiteCodelistCountryCodes::class, $c->value];
         }
 
         foreach (InvoiceSuiteCodelistCurrencyCodes::cases() as $c) {
-            yield 'InvoiceSuiteCodelistCurrencyCodes:'.$c->name => [InvoiceSuiteCodelistCurrencyCodes::class, $c->value];
+            yield 'InvoiceSuiteCodelistCurrencyCodes:' . $c->name => [InvoiceSuiteCodelistCurrencyCodes::class, $c->value];
         }
 
         foreach (InvoiceSuiteCodelistDocumentTypes::cases() as $c) {
-            yield 'InvoiceSuiteCodelistDocumentTypes:'.$c->name => [InvoiceSuiteCodelistDocumentTypes::class, $c->value];
+            yield 'InvoiceSuiteCodelistDocumentTypes:' . $c->name => [InvoiceSuiteCodelistDocumentTypes::class, $c->value];
         }
 
         foreach (InvoiceSuiteCodelistDutyTaxFeeCategories::cases() as $c) {
-            yield 'InvoiceSuiteCodelistDutyTaxFeeCategories:'.$c->name => [InvoiceSuiteCodelistDutyTaxFeeCategories::class, $c->value];
+            yield 'InvoiceSuiteCodelistDutyTaxFeeCategories:' . $c->name => [InvoiceSuiteCodelistDutyTaxFeeCategories::class, $c->value];
         }
 
         foreach (InvoiceSuiteCodelistItemTypeIdentificationCodes::cases() as $c) {
-            yield 'InvoiceSuiteCodelistItemTypeIdentificationCodes:'.$c->name => [InvoiceSuiteCodelistItemTypeIdentificationCodes::class, $c->value];
+            yield 'InvoiceSuiteCodelistItemTypeIdentificationCodes:' . $c->name => [InvoiceSuiteCodelistItemTypeIdentificationCodes::class, $c->value];
         }
 
         foreach (InvoiceSuiteCodelistPaymentMeans::cases() as $c) {
-            yield 'InvoiceSuiteCodelistPaymentMeans:'.$c->name => [InvoiceSuiteCodelistPaymentMeans::class, $c->value];
+            yield 'InvoiceSuiteCodelistPaymentMeans:' . $c->name => [InvoiceSuiteCodelistPaymentMeans::class, $c->value];
         }
 
         foreach (InvoiceSuiteCodelistReferenceCodeQualifiers::cases() as $c) {
-            yield 'InvoiceSuiteCodelistReferenceCodeQualifiers:'.$c->name => [InvoiceSuiteCodelistReferenceCodeQualifiers::class, $c->value];
+            yield 'InvoiceSuiteCodelistReferenceCodeQualifiers:' . $c->name => [InvoiceSuiteCodelistReferenceCodeQualifiers::class, $c->value];
         }
 
         foreach (InvoiceSuiteCodelistSchemeIdentifiers::cases() as $c) {
-            yield 'InvoiceSuiteCodelistSchemeIdentifiers:'.$c->name => [InvoiceSuiteCodelistSchemeIdentifiers::class, $c->value];
+            yield 'InvoiceSuiteCodelistSchemeIdentifiers:' . $c->name => [InvoiceSuiteCodelistSchemeIdentifiers::class, $c->value];
         }
 
         foreach (InvoiceSuiteCodelistTextSubjectCodeQualifiers::cases() as $c) {
-            yield 'InvoiceSuiteCodelistTextSubjectCodeQualifiers:'.$c->name => [InvoiceSuiteCodelistTextSubjectCodeQualifiers::class, $c->value];
+            yield 'InvoiceSuiteCodelistTextSubjectCodeQualifiers:' . $c->name => [InvoiceSuiteCodelistTextSubjectCodeQualifiers::class, $c->value];
         }
 
         foreach (InvoiceSuiteCodelistUnitCodes::cases() as $c) {
-            yield 'InvoiceSuiteCodelistUnitCodes:'.$c->name => [InvoiceSuiteCodelistUnitCodes::class, $c->value];
+            yield 'InvoiceSuiteCodelistUnitCodes:' . $c->name => [InvoiceSuiteCodelistUnitCodes::class, $c->value];
         }
 
         foreach (InvoiceSuiteCodelistVatCategoryCodes::cases() as $c) {
-            yield 'InvoiceSuiteCodelistVatCategoryCodes:'.$c->name => [InvoiceSuiteCodelistVatCategoryCodes::class, $c->value];
+            yield 'InvoiceSuiteCodelistVatCategoryCodes:' . $c->name => [InvoiceSuiteCodelistVatCategoryCodes::class, $c->value];
         }
     }
 
