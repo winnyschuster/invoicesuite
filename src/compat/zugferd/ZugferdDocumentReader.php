@@ -2376,7 +2376,7 @@ class ZugferdDocumentReader extends ZugferdDocument
     /**
      * Get global identifier of the different invoice recipient party.
      *
-     * @param  null|null|array<string,string> $globalID __BT-X-225/BT-X-225-0, From EXTENDED__ Array of global ids indexed by the identification scheme
+     * @param  null|array<string,string> $globalID __BT-X-225/BT-X-225-0, From EXTENDED__ Array of global ids indexed by the identification scheme
      * @return static
      *
      * @phpstan-param-out array<string,string> $globalID

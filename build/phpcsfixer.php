@@ -11,6 +11,7 @@ $rootDir = __DIR__ . '/..';
 $finder = (new Finder())
     ->in([
         $rootDir . '/src',
+        $rootDir . '/make',
         $rootDir . '/tests',
     ])
     ->name('*.php')
@@ -27,12 +28,7 @@ $finder = (new Finder())
             '.git',
             '.idea',
         ]
-    )
-    /*
-    ->notPath([
-        'documents/models',
-    ])
-    */;
+    );
 
 return (new Config())
     ->setRiskyAllowed(true)
@@ -150,6 +146,9 @@ return (new Config())
             ],
             'ordered_traits' => [
                 'case_sensitive' => false,
+            ],
+            'concat_space' => [
+                'spacing' => 'one',
             ],
         ]
     );
