@@ -57,8 +57,9 @@ class TradeLocationType
      * @param  null|CountryIDType $countryID
      * @return static
      */
-    public function setCountryID(?CountryIDType $countryID = null): static
-    {
+    public function setCountryID(
+        ?CountryIDType $countryID = null
+    ): static {
         $this->countryID = $countryID;
 
         return $this;
@@ -96,8 +97,9 @@ class TradeLocationType
      * @param  null|TextType $name
      * @return static
      */
-    public function setName(?TextType $name = null): static
-    {
+    public function setName(
+        ?TextType $name = null
+    ): static {
         $this->name = $name;
 
         return $this;

@@ -68,8 +68,9 @@ class KeyValueType
      * @param  DSAKeyValueType $dSAKeyValue
      * @return static
      */
-    public function setDSAKeyValue(?DSAKeyValueType $dSAKeyValue = null): static
-    {
+    public function setDSAKeyValue(
+        ?DSAKeyValueType $dSAKeyValue = null
+    ): static {
         $this->dSAKeyValue = $dSAKeyValue;
 
         return $this;
@@ -115,8 +116,9 @@ class KeyValueType
      * @param  RSAKeyValueType $rSAKeyValue
      * @return static
      */
-    public function setRSAKeyValue(?RSAKeyValueType $rSAKeyValue = null): static
-    {
+    public function setRSAKeyValue(
+        ?RSAKeyValueType $rSAKeyValue = null
+    ): static {
         $this->rSAKeyValue = $rSAKeyValue;
 
         return $this;

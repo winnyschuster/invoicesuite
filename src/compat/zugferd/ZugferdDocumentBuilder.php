@@ -86,8 +86,10 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
      * @throws Error
      * @throws InvoiceSuiteBadMethodCallException
      */
-    public function __call($method, $parameters)
-    {
+    public function __call(
+        $method,
+        $parameters
+    ) {
         return $this->forwardCallWithCheckTo($this->documentBuilder, $method, $parameters);
     }
 
@@ -147,8 +149,9 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function getProfileDefinitionParameter(string $parameterName)
-    {
+    public function getProfileDefinitionParameter(
+        string $parameterName
+    ) {
         $profileDefinition = $this->getProfileDefinition();
 
         if (isset($profileDefinition[$parameterName])) {
@@ -188,8 +191,9 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function hasMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): bool
-    {
+    public function hasMessagesInMessageBagBySeverity(
+        InvoiceSuiteMessageSeverity $filterSeverity
+    ): bool {
         return $this->documentBuilder->hasMessagesInMessageBagBySeverity($filterSeverity);
     }
 
@@ -237,8 +241,9 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function countMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): int
-    {
+    public function countMessagesInMessageBagBySeverity(
+        InvoiceSuiteMessageSeverity $filterSeverity
+    ): int {
         return $this->documentBuilder->countMessagesInMessageBagBySeverity($filterSeverity);
     }
 
@@ -286,8 +291,9 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function getMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): array
-    {
+    public function getMessagesInMessageBagBySeverity(
+        InvoiceSuiteMessageSeverity $filterSeverity
+    ): array {
         return $this->documentBuilder->getMessagesInMessageBagBySeverity($filterSeverity);
     }
 
@@ -2502,8 +2508,9 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
      * @param  null|string $code __BT-X-145, From EXTENDED__ The code indicating the type of delivery for these commercial delivery terms. To be selected from the entries in the list UNTDID 4053 + INCOTERMS
      * @return static
      */
-    public function setDocumentDeliveryTerms(?string $code): static
-    {
+    public function setDocumentDeliveryTerms(
+        ?string $code
+    ): static {
         $this->documentBuilder->setDocumentDeliveryTerms($code);
 
         return $this;
@@ -2756,8 +2763,12 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
      * @throws InvoiceSuiteFileNotReadableException
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function addDocumentInvoiceSupportingDocumentWithBase64Data(string $issuerAssignedId, string $attachmentFilename, string $base64EncodedData, $name = null): self
-    {
+    public function addDocumentInvoiceSupportingDocumentWithBase64Data(
+        string $issuerAssignedId,
+        string $attachmentFilename,
+        string $base64EncodedData,
+        $name = null
+    ): self {
         return $this->addDocumentAdditionalReferencedDocument(
             issuerAssignedId: $issuerAssignedId,
             typeCode: InvoiceSuiteCodelistDocumentTypes::RELATED_DOCUMENT->value,

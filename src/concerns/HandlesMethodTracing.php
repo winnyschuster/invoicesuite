@@ -86,8 +86,9 @@ trait HandlesMethodTracing
      * @param  string $newMethod Name of the method which was called
      * @return static
      */
-    protected function traceMethodEnter(string $newMethod): static
-    {
+    protected function traceMethodEnter(
+        string $newMethod
+    ): static {
         return $this->traceMethodCall($newMethod, 'enter');
     }
 
@@ -97,8 +98,9 @@ trait HandlesMethodTracing
      * @param  string $newMethod Name of the method which was called
      * @return static
      */
-    protected function traceMethodExit(string $newMethod): static
-    {
+    protected function traceMethodExit(
+        string $newMethod
+    ): static {
         return $this->traceMethodCall($newMethod, 'exit');
     }
 
@@ -110,8 +112,11 @@ trait HandlesMethodTracing
      * @param  string $newGuard  Guard which leads to early exit
      * @return static
      */
-    protected function traceMethodEarlyExit(string $newMethod, string $newReason, string $newGuard): static
-    {
+    protected function traceMethodEarlyExit(
+        string $newMethod,
+        string $newReason,
+        string $newGuard
+    ): static {
         return $this->traceMethodCall($newMethod, 'early_exit', $newReason, $newGuard);
     }
 }

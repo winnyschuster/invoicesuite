@@ -96,8 +96,9 @@ class AttachmentType
      * @param  null|ExternalReference $externalReference
      * @return static
      */
-    public function setExternalReference(?ExternalReference $externalReference = null): static
-    {
+    public function setExternalReference(
+        ?ExternalReference $externalReference = null
+    ): static {
         $this->externalReference = $externalReference;
 
         return $this;

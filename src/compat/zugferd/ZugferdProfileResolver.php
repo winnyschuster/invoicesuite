@@ -52,8 +52,9 @@ class ZugferdProfileResolver
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    public static function resolve(string $xmlContent): array
-    {
+    public static function resolve(
+        string $xmlContent
+    ): array {
         $documentReader = InvoiceSuiteDocumentReader::createFromContent($xmlContent);
 
         foreach (ZugferdProfiles::PROFILEDEF as $profile => $profileDef) {
@@ -75,8 +76,9 @@ class ZugferdProfileResolver
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    public static function resolveProfileId(string $xmlContent): int
-    {
+    public static function resolveProfileId(
+        string $xmlContent
+    ): int {
         return static::resolve($xmlContent)[0];
     }
 
@@ -90,8 +92,9 @@ class ZugferdProfileResolver
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    public static function resolveProfileDef(string $xmlContent): array
-    {
+    public static function resolveProfileDef(
+        string $xmlContent
+    ): array {
         return static::resolve($xmlContent)[1];
     }
 
@@ -103,8 +106,9 @@ class ZugferdProfileResolver
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      */
-    public static function resolveById(int $profileId): array
-    {
+    public static function resolveById(
+        int $profileId
+    ): array {
         if (!isset(ZugferdProfiles::PROFILEDEF[$profileId])) {
             throw new InvoiceSuiteFormatProviderNotFoundException((string) $profileId);
         }
@@ -120,8 +124,9 @@ class ZugferdProfileResolver
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      */
-    public static function resolveProfileDefById(int $profileId): array
-    {
+    public static function resolveProfileDefById(
+        int $profileId
+    ): array {
         $resolved = static::resolveById($profileId);
 
         return $resolved[1];

@@ -57,8 +57,9 @@ class ItemComparisonType
      * @param  null|PriceAmount $priceAmount
      * @return static
      */
-    public function setPriceAmount(?PriceAmount $priceAmount = null): static
-    {
+    public function setPriceAmount(
+        ?PriceAmount $priceAmount = null
+    ): static {
         $this->priceAmount = $priceAmount;
 
         return $this;
@@ -96,8 +97,9 @@ class ItemComparisonType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;

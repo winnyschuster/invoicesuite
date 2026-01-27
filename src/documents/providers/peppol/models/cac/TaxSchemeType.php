@@ -93,8 +93,9 @@ class TaxSchemeType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -132,8 +133,9 @@ class TaxSchemeType
      * @param  null|Name $name
      * @return static
      */
-    public function setName(?Name $name = null): static
-    {
+    public function setName(
+        ?Name $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -171,8 +173,9 @@ class TaxSchemeType
      * @param  null|TaxTypeCode $taxTypeCode
      * @return static
      */
-    public function setTaxTypeCode(?TaxTypeCode $taxTypeCode = null): static
-    {
+    public function setTaxTypeCode(
+        ?TaxTypeCode $taxTypeCode = null
+    ): static {
         $this->taxTypeCode = $taxTypeCode;
 
         return $this;
@@ -210,8 +213,9 @@ class TaxSchemeType
      * @param  null|CurrencyCode $currencyCode
      * @return static
      */
-    public function setCurrencyCode(?CurrencyCode $currencyCode = null): static
-    {
+    public function setCurrencyCode(
+        ?CurrencyCode $currencyCode = null
+    ): static {
         $this->currencyCode = $currencyCode;
 
         return $this;
@@ -239,8 +243,9 @@ class TaxSchemeType
      * @param  null|array<JurisdictionRegionAddress> $jurisdictionRegionAddress
      * @return static
      */
-    public function setJurisdictionRegionAddress(?array $jurisdictionRegionAddress = null): static
-    {
+    public function setJurisdictionRegionAddress(
+        ?array $jurisdictionRegionAddress = null
+    ): static {
         $this->jurisdictionRegionAddress = $jurisdictionRegionAddress;
 
         return $this;
@@ -300,8 +305,9 @@ class TaxSchemeType
      * @param  JurisdictionRegionAddress $jurisdictionRegionAddress
      * @return static
      */
-    public function addToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): static
-    {
+    public function addToJurisdictionRegionAddress(
+        JurisdictionRegionAddress $jurisdictionRegionAddress
+    ): static {
         $this->jurisdictionRegionAddress[] = $jurisdictionRegionAddress;
 
         return $this;
@@ -321,8 +327,9 @@ class TaxSchemeType
      * @param  JurisdictionRegionAddress $jurisdictionRegionAddress
      * @return static
      */
-    public function addOnceToJurisdictionRegionAddress(JurisdictionRegionAddress $jurisdictionRegionAddress): static
-    {
+    public function addOnceToJurisdictionRegionAddress(
+        JurisdictionRegionAddress $jurisdictionRegionAddress
+    ): static {
         if (!is_array($this->jurisdictionRegionAddress)) {
             $this->jurisdictionRegionAddress = [];
         }

@@ -60,8 +60,9 @@ final class ZugferdDocumentPdfMergerTest extends TestCase
         $this->checkAndValidateMerger($pdfMerger);
     }
 
-    private function checkAndValidateMerger(ZugferdDocumentPdfMerger $pdfMerger): void
-    {
+    private function checkAndValidateMerger(
+        ZugferdDocumentPdfMerger $pdfMerger
+    ): void {
         // $this->assertSame("", $this->getPrivatePropertyFromObject($pdfMerger, 'xmlDataCache')->getValue($pdfMerger));
 
         $pdfMerger->generateDocument();

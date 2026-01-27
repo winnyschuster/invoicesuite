@@ -94,8 +94,9 @@ class SecondaryHazardType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -133,8 +134,9 @@ class SecondaryHazardType
      * @param  null|PlacardNotation $placardNotation
      * @return static
      */
-    public function setPlacardNotation(?PlacardNotation $placardNotation = null): static
-    {
+    public function setPlacardNotation(
+        ?PlacardNotation $placardNotation = null
+    ): static {
         $this->placardNotation = $placardNotation;
 
         return $this;
@@ -172,8 +174,9 @@ class SecondaryHazardType
      * @param  null|PlacardEndorsement $placardEndorsement
      * @return static
      */
-    public function setPlacardEndorsement(?PlacardEndorsement $placardEndorsement = null): static
-    {
+    public function setPlacardEndorsement(
+        ?PlacardEndorsement $placardEndorsement = null
+    ): static {
         $this->placardEndorsement = $placardEndorsement;
 
         return $this;
@@ -211,8 +214,9 @@ class SecondaryHazardType
      * @param  null|EmergencyProceduresCode $emergencyProceduresCode
      * @return static
      */
-    public function setEmergencyProceduresCode(?EmergencyProceduresCode $emergencyProceduresCode = null): static
-    {
+    public function setEmergencyProceduresCode(
+        ?EmergencyProceduresCode $emergencyProceduresCode = null
+    ): static {
         $this->emergencyProceduresCode = $emergencyProceduresCode;
 
         return $this;
@@ -240,8 +244,9 @@ class SecondaryHazardType
      * @param  null|array<Extension> $extension
      * @return static
      */
-    public function setExtension(?array $extension = null): static
-    {
+    public function setExtension(
+        ?array $extension = null
+    ): static {
         $this->extension = $extension;
 
         return $this;
@@ -301,8 +306,9 @@ class SecondaryHazardType
      * @param  Extension $extension
      * @return static
      */
-    public function addToExtension(Extension $extension): static
-    {
+    public function addToExtension(
+        Extension $extension
+    ): static {
         $this->extension[] = $extension;
 
         return $this;
@@ -322,8 +328,9 @@ class SecondaryHazardType
      * @param  Extension $extension
      * @return static
      */
-    public function addOnceToExtension(Extension $extension): static
-    {
+    public function addOnceToExtension(
+        Extension $extension
+    ): static {
         if (!is_array($this->extension)) {
             $this->extension = [];
         }

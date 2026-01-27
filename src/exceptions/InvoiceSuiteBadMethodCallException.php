@@ -29,8 +29,10 @@ class InvoiceSuiteBadMethodCallException extends InvoiceSuiteBaseException
      * @param string         $method
      * @param null|Throwable $throwable
      */
-    public function __construct(string $method, ?Throwable $throwable = null)
-    {
+    public function __construct(
+        string $method,
+        ?Throwable $throwable = null
+    ) {
         parent::__construct(sprintf('Call to undefined method %s::%s()', static::class, $method), InvoiceSuiteExceptionCodes::BAD_METHOD_CALL, $throwable);
     }
 }

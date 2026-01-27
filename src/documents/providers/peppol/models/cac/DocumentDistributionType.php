@@ -68,8 +68,9 @@ class DocumentDistributionType
      * @param  null|PrintQualifier $printQualifier
      * @return static
      */
-    public function setPrintQualifier(?PrintQualifier $printQualifier = null): static
-    {
+    public function setPrintQualifier(
+        ?PrintQualifier $printQualifier = null
+    ): static {
         $this->printQualifier = $printQualifier;
 
         return $this;
@@ -107,8 +108,9 @@ class DocumentDistributionType
      * @param  null|MaximumCopiesNumeric $maximumCopiesNumeric
      * @return static
      */
-    public function setMaximumCopiesNumeric(?MaximumCopiesNumeric $maximumCopiesNumeric = null): static
-    {
+    public function setMaximumCopiesNumeric(
+        ?MaximumCopiesNumeric $maximumCopiesNumeric = null
+    ): static {
         $this->maximumCopiesNumeric = $maximumCopiesNumeric;
 
         return $this;
@@ -146,8 +148,9 @@ class DocumentDistributionType
      * @param  null|Party $party
      * @return static
      */
-    public function setParty(?Party $party = null): static
-    {
+    public function setParty(
+        ?Party $party = null
+    ): static {
         $this->party = $party;
 
         return $this;

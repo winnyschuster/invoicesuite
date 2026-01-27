@@ -43,8 +43,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
      *
      * @param InvoiceSuiteAbstractDocumentFormatProvider $newProvider
      */
-    public function __construct(InvoiceSuiteAbstractDocumentFormatProvider $newProvider)
-    {
+    public function __construct(
+        InvoiceSuiteAbstractDocumentFormatProvider $newProvider
+    ) {
         $this->setCurrentDocumentFormatProvider($newProvider);
         $this->createAndInitDocumentSerializerByFormatProvider();
         $this->createAndInitDocumentRootObjectByFormatProvider();
@@ -74,8 +75,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder
      *
      * @throws RuntimeException
      */
-    public function saveContentToFile(string $tofile): void
-    {
+    public function saveContentToFile(
+        string $tofile
+    ): void {
         file_put_contents($tofile, $this->getContent());
     }
 

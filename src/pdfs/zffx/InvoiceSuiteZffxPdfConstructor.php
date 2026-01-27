@@ -139,8 +139,9 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
      * @param  string $toFilename
      * @return static
      */
-    protected function saveGeneratedPdfDocumentToFile(string $toFilename): static
-    {
+    protected function saveGeneratedPdfDocumentToFile(
+        string $toFilename
+    ): static {
         $this->pdfWriter->Output('F', $toFilename);
 
         return $this;
@@ -291,8 +292,11 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
      * @param  array{invoiceId: string, docTypeName: string, seller: string, date: string} $invoiceInformation
      * @return string
      */
-    private function buildMetadataField(string $whichTemplate, string $defaultValue, array $invoiceInformation): string
-    {
+    private function buildMetadataField(
+        string $whichTemplate,
+        string $defaultValue,
+        array $invoiceInformation
+    ): string {
         $xmlContent = $this->getRawDocumentContent();
 
         if (is_callable($this->getMetaInformationCallback())) {

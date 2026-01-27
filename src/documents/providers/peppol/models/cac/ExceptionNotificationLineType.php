@@ -212,8 +212,9 @@ class ExceptionNotificationLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -241,8 +242,9 @@ class ExceptionNotificationLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -302,8 +304,9 @@ class ExceptionNotificationLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -323,8 +326,9 @@ class ExceptionNotificationLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -362,8 +366,9 @@ class ExceptionNotificationLineType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -423,8 +428,9 @@ class ExceptionNotificationLineType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -444,8 +450,9 @@ class ExceptionNotificationLineType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -493,8 +500,9 @@ class ExceptionNotificationLineType
      * @param  null|ExceptionStatusCode $exceptionStatusCode
      * @return static
      */
-    public function setExceptionStatusCode(?ExceptionStatusCode $exceptionStatusCode = null): static
-    {
+    public function setExceptionStatusCode(
+        ?ExceptionStatusCode $exceptionStatusCode = null
+    ): static {
         $this->exceptionStatusCode = $exceptionStatusCode;
 
         return $this;
@@ -532,8 +540,9 @@ class ExceptionNotificationLineType
      * @param  null|CollaborationPriorityCode $collaborationPriorityCode
      * @return static
      */
-    public function setCollaborationPriorityCode(?CollaborationPriorityCode $collaborationPriorityCode = null): static
-    {
+    public function setCollaborationPriorityCode(
+        ?CollaborationPriorityCode $collaborationPriorityCode = null
+    ): static {
         $this->collaborationPriorityCode = $collaborationPriorityCode;
 
         return $this;
@@ -571,8 +580,9 @@ class ExceptionNotificationLineType
      * @param  null|ResolutionCode $resolutionCode
      * @return static
      */
-    public function setResolutionCode(?ResolutionCode $resolutionCode = null): static
-    {
+    public function setResolutionCode(
+        ?ResolutionCode $resolutionCode = null
+    ): static {
         $this->resolutionCode = $resolutionCode;
 
         return $this;
@@ -610,8 +620,9 @@ class ExceptionNotificationLineType
      * @param  null|ComparedValueMeasure $comparedValueMeasure
      * @return static
      */
-    public function setComparedValueMeasure(?ComparedValueMeasure $comparedValueMeasure = null): static
-    {
+    public function setComparedValueMeasure(
+        ?ComparedValueMeasure $comparedValueMeasure = null
+    ): static {
         $this->comparedValueMeasure = $comparedValueMeasure;
 
         return $this;
@@ -649,8 +660,9 @@ class ExceptionNotificationLineType
      * @param  null|SourceValueMeasure $sourceValueMeasure
      * @return static
      */
-    public function setSourceValueMeasure(?SourceValueMeasure $sourceValueMeasure = null): static
-    {
+    public function setSourceValueMeasure(
+        ?SourceValueMeasure $sourceValueMeasure = null
+    ): static {
         $this->sourceValueMeasure = $sourceValueMeasure;
 
         return $this;
@@ -688,8 +700,9 @@ class ExceptionNotificationLineType
      * @param  null|VarianceQuantity $varianceQuantity
      * @return static
      */
-    public function setVarianceQuantity(?VarianceQuantity $varianceQuantity = null): static
-    {
+    public function setVarianceQuantity(
+        ?VarianceQuantity $varianceQuantity = null
+    ): static {
         $this->varianceQuantity = $varianceQuantity;
 
         return $this;
@@ -767,8 +780,9 @@ class ExceptionNotificationLineType
      * @param  null|PerformanceMetricTypeCode $performanceMetricTypeCode
      * @return static
      */
-    public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): static
-    {
+    public function setPerformanceMetricTypeCode(
+        ?PerformanceMetricTypeCode $performanceMetricTypeCode = null
+    ): static {
         $this->performanceMetricTypeCode = $performanceMetricTypeCode;
 
         return $this;
@@ -836,8 +850,9 @@ class ExceptionNotificationLineType
      * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?array $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;
@@ -897,8 +912,9 @@ class ExceptionNotificationLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         $this->documentReference[] = $documentReference;
 
         return $this;
@@ -918,8 +934,9 @@ class ExceptionNotificationLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addOnceToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
         }
@@ -967,8 +984,9 @@ class ExceptionNotificationLineType
      * @param  null|ForecastException $forecastException
      * @return static
      */
-    public function setForecastException(?ForecastException $forecastException = null): static
-    {
+    public function setForecastException(
+        ?ForecastException $forecastException = null
+    ): static {
         $this->forecastException = $forecastException;
 
         return $this;
@@ -1006,8 +1024,9 @@ class ExceptionNotificationLineType
      * @param  null|SupplyItem $supplyItem
      * @return static
      */
-    public function setSupplyItem(?SupplyItem $supplyItem = null): static
-    {
+    public function setSupplyItem(
+        ?SupplyItem $supplyItem = null
+    ): static {
         $this->supplyItem = $supplyItem;
 
         return $this;

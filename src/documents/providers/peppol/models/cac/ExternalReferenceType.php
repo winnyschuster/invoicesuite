@@ -165,8 +165,9 @@ class ExternalReferenceType
      * @param  null|URI $uRI
      * @return static
      */
-    public function setURI(?URI $uRI = null): static
-    {
+    public function setURI(
+        ?URI $uRI = null
+    ): static {
         $this->uRI = $uRI;
 
         return $this;
@@ -204,8 +205,9 @@ class ExternalReferenceType
      * @param  null|DocumentHash $documentHash
      * @return static
      */
-    public function setDocumentHash(?DocumentHash $documentHash = null): static
-    {
+    public function setDocumentHash(
+        ?DocumentHash $documentHash = null
+    ): static {
         $this->documentHash = $documentHash;
 
         return $this;
@@ -243,8 +245,9 @@ class ExternalReferenceType
      * @param  null|HashAlgorithmMethod $hashAlgorithmMethod
      * @return static
      */
-    public function setHashAlgorithmMethod(?HashAlgorithmMethod $hashAlgorithmMethod = null): static
-    {
+    public function setHashAlgorithmMethod(
+        ?HashAlgorithmMethod $hashAlgorithmMethod = null
+    ): static {
         $this->hashAlgorithmMethod = $hashAlgorithmMethod;
 
         return $this;
@@ -272,8 +275,9 @@ class ExternalReferenceType
      * @param  null|DateTimeInterface $expiryDate
      * @return static
      */
-    public function setExpiryDate(?DateTimeInterface $expiryDate = null): static
-    {
+    public function setExpiryDate(
+        ?DateTimeInterface $expiryDate = null
+    ): static {
         $this->expiryDate = $expiryDate;
 
         return $this;
@@ -301,8 +305,9 @@ class ExternalReferenceType
      * @param  null|DateTimeInterface $expiryTime
      * @return static
      */
-    public function setExpiryTime(?DateTimeInterface $expiryTime = null): static
-    {
+    public function setExpiryTime(
+        ?DateTimeInterface $expiryTime = null
+    ): static {
         $this->expiryTime = $expiryTime;
 
         return $this;
@@ -340,8 +345,9 @@ class ExternalReferenceType
      * @param  null|MimeCode $mimeCode
      * @return static
      */
-    public function setMimeCode(?MimeCode $mimeCode = null): static
-    {
+    public function setMimeCode(
+        ?MimeCode $mimeCode = null
+    ): static {
         $this->mimeCode = $mimeCode;
 
         return $this;
@@ -379,8 +385,9 @@ class ExternalReferenceType
      * @param  null|FormatCode $formatCode
      * @return static
      */
-    public function setFormatCode(?FormatCode $formatCode = null): static
-    {
+    public function setFormatCode(
+        ?FormatCode $formatCode = null
+    ): static {
         $this->formatCode = $formatCode;
 
         return $this;
@@ -418,8 +425,9 @@ class ExternalReferenceType
      * @param  null|EncodingCode $encodingCode
      * @return static
      */
-    public function setEncodingCode(?EncodingCode $encodingCode = null): static
-    {
+    public function setEncodingCode(
+        ?EncodingCode $encodingCode = null
+    ): static {
         $this->encodingCode = $encodingCode;
 
         return $this;
@@ -457,8 +465,9 @@ class ExternalReferenceType
      * @param  null|CharacterSetCode $characterSetCode
      * @return static
      */
-    public function setCharacterSetCode(?CharacterSetCode $characterSetCode = null): static
-    {
+    public function setCharacterSetCode(
+        ?CharacterSetCode $characterSetCode = null
+    ): static {
         $this->characterSetCode = $characterSetCode;
 
         return $this;
@@ -496,8 +505,9 @@ class ExternalReferenceType
      * @param  null|FileName $fileName
      * @return static
      */
-    public function setFileName(?FileName $fileName = null): static
-    {
+    public function setFileName(
+        ?FileName $fileName = null
+    ): static {
         $this->fileName = $fileName;
 
         return $this;
@@ -525,8 +535,9 @@ class ExternalReferenceType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -586,8 +597,9 @@ class ExternalReferenceType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -607,8 +619,9 @@ class ExternalReferenceType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }

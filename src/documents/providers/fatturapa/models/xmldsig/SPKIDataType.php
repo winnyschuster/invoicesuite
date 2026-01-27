@@ -43,8 +43,9 @@ class SPKIDataType
      * @param  string $sPKISexp
      * @return static
      */
-    public function setSPKISexp(?string $sPKISexp = null): static
-    {
+    public function setSPKISexp(
+        ?string $sPKISexp = null
+    ): static {
         $this->sPKISexp = $sPKISexp;
 
         return $this;

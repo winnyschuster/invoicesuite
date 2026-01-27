@@ -91,8 +91,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  InvoiceSuiteDocumentHeaderDTO $newDocumentDTO Data-Transfer-Object
      * @return static
      */
-    public function createFromDTO(InvoiceSuiteDocumentHeaderDTO $newDocumentDTO): static
-    {
+    public function createFromDTO(
+        InvoiceSuiteDocumentHeaderDTO $newDocumentDTO
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Document-Level General information
@@ -1275,8 +1276,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newDocumentNo The document no issued by the seller
      * @return static
      */
-    public function setDocumentNo(?string $newDocumentNo = null): static
-    {
+    public function setDocumentNo(
+        ?string $newDocumentNo = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -1320,8 +1322,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newDocumentType The type of the document
      * @return static
      */
-    public function setDocumentType(?string $newDocumentType = null): static
-    {
+    public function setDocumentType(
+        ?string $newDocumentType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1335,8 +1338,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newDocumentDescription The documenttype as free text
      * @return static
      */
-    public function setDocumentDescription(?string $newDocumentDescription = null): static
-    {
+    public function setDocumentDescription(
+        ?string $newDocumentDescription = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1350,8 +1354,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newDocumentLanguage Language indicator. The language code in which the document was written
      * @return static
      */
-    public function setDocumentLanguage(?string $newDocumentLanguage = null): static
-    {
+    public function setDocumentLanguage(
+        ?string $newDocumentLanguage = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1365,8 +1370,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newDocumentDate Date of the document. The date when the document was issued by the seller
      * @return static
      */
-    public function setDocumentDate(?DateTimeInterface $newDocumentDate = null): static
-    {
+    public function setDocumentDate(
+        ?DateTimeInterface $newDocumentDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -1398,8 +1404,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newCompleteDate Contractual due date of the document
      * @return static
      */
-    public function setDocumentCompleteDate(?DateTimeInterface $newCompleteDate = null): static
-    {
+    public function setDocumentCompleteDate(
+        ?DateTimeInterface $newCompleteDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1413,8 +1420,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newDocumentCurrency Code for the invoice currency
      * @return static
      */
-    public function setDocumentCurrency(?string $newDocumentCurrency = null): static
-    {
+    public function setDocumentCurrency(
+        ?string $newDocumentCurrency = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -1446,8 +1454,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newDocumentTaxCurrency Code for the tax currency
      * @return static
      */
-    public function setDocumentTaxCurrency(?string $newDocumentTaxCurrency = null): static
-    {
+    public function setDocumentTaxCurrency(
+        ?string $newDocumentTaxCurrency = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1461,8 +1470,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|bool $newDocumentIsCopy Indicates that the document is a copy
      * @return static
      */
-    public function setDocumentIsCopy(?bool $newDocumentIsCopy = null): static
-    {
+    public function setDocumentIsCopy(
+        ?bool $newDocumentIsCopy = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1476,8 +1486,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|bool $newDocumentIsTest Indicates that the document is a test
      * @return static
      */
-    public function setDocumentIsTest(?bool $newDocumentIsTest = null): static
-    {
+    public function setDocumentIsTest(
+        ?bool $newDocumentIsTest = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1493,8 +1504,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubjectCode Qualification of the free text for the invoice
      * @return static
      */
-    public function setDocumentNote(?string $newContent = null, ?string $newContentCode = null, ?string $newSubjectCode = null): static
-    {
+    public function setDocumentNote(
+        ?string $newContent = null,
+        ?string $newContentCode = null,
+        ?string $newSubjectCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -1523,8 +1537,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubjectCode Qualification of the free text for the invoice
      * @return static
      */
-    public function addDocumentNote(?string $newContent = null, ?string $newContentCode = null, ?string $newSubjectCode = null): static
-    {
+    public function addDocumentNote(
+        ?string $newContent = null,
+        ?string $newContentCode = null,
+        ?string $newSubjectCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newContent)) {
@@ -1551,8 +1568,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
      * @return static
      */
-    public function setDocumentBillingPeriod(?DateTimeInterface $newStartDate = null, ?DateTimeInterface $newEndDate = null, ?string $newDescription = null): static
-    {
+    public function setDocumentBillingPeriod(
+        ?DateTimeInterface $newStartDate = null,
+        ?DateTimeInterface $newEndDate = null,
+        ?string $newDescription = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1568,8 +1588,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
      * @return static
      */
-    public function addDocumentBillingPeriod(?DateTimeInterface $newStartDate = null, ?DateTimeInterface $newEndDate = null, ?string $newDescription = null): static
-    {
+    public function addDocumentBillingPeriod(
+        ?DateTimeInterface $newStartDate = null,
+        ?DateTimeInterface $newEndDate = null,
+        ?string $newDescription = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1584,8 +1607,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newAccountId Posting reference of the byuer
      * @return static
      */
-    public function setDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): static
-    {
+    public function setDocumentPostingReference(
+        ?string $newType = null,
+        ?string $newAccountId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1600,8 +1625,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newAccountId Posting reference of the byuer
      * @return static
      */
-    public function addDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): static
-    {
+    public function addDocumentPostingReference(
+        ?string $newType = null,
+        ?string $newAccountId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1616,8 +1643,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate   Seller's order confirmation date
      * @return static
      */
-    public function setDocumentSellerOrderReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentSellerOrderReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1632,8 +1661,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate   Seller's order confirmation date
      * @return static
      */
-    public function addDocumentSellerOrderReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentSellerOrderReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1648,8 +1679,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate   Buyer's order date
      * @return static
      */
-    public function setDocumentBuyerOrderReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentBuyerOrderReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -1676,8 +1709,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate   Buyer's order date
      * @return static
      */
-    public function addDocumentBuyerOrderReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentBuyerOrderReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newReferenceNumber)) {
@@ -1707,8 +1742,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate   quotation date
      * @return static
      */
-    public function setDocumentQuotationReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentQuotationReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1723,8 +1760,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate   quotation date
      * @return static
      */
-    public function addDocumentQuotationReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentQuotationReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1739,8 +1778,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate   Contract date
      * @return static
      */
-    public function setDocumentContractReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentContractReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -1767,8 +1808,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate   Contract date
      * @return static
      */
-    public function addDocumentContractReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentContractReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newReferenceNumber)) {
@@ -1802,8 +1845,14 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
      * @return static
      */
-    public function setDocumentAdditionalReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null, ?string $newTypeCode = null, ?string $newReferenceTypeCode = null, ?string $newDescription = null, ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null): static
-    {
+    public function setDocumentAdditionalReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null,
+        ?string $newReferenceTypeCode = null,
+        ?string $newDescription = null,
+        ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1822,8 +1871,14 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
      * @return static
      */
-    public function addDocumentAdditionalReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null, ?string $newTypeCode = null, ?string $newReferenceTypeCode = null, ?string $newDescription = null, ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null): static
-    {
+    public function addDocumentAdditionalReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null,
+        ?string $newReferenceTypeCode = null,
+        ?string $newDescription = null,
+        ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1839,8 +1894,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newTypeCode        Type code of previous invoice
      * @return static
      */
-    public function setDocumentInvoiceReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null, ?string $newTypeCode = null): static
-    {
+    public function setDocumentInvoiceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1856,8 +1914,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newTypeCode        Type code of previous invoice
      * @return static
      */
-    public function addDocumentInvoiceReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null, ?string $newTypeCode = null): static
-    {
+    public function addDocumentInvoiceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1872,8 +1933,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName            Project name
      * @return static
      */
-    public function setDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): static
-    {
+    public function setDocumentProjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1888,8 +1951,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName            Project name
      * @return static
      */
-    public function addDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): static
-    {
+    public function addDocumentProjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1904,8 +1969,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate
      * @return static
      */
-    public function setDocumentUltimateCustomerOrderReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentUltimateCustomerOrderReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1920,8 +1987,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate
      * @return static
      */
-    public function addDocumentUltimateCustomerOrderReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentUltimateCustomerOrderReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1936,8 +2005,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate   Shipping notification date
      * @return static
      */
-    public function setDocumentDespatchAdviceReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentDespatchAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1952,8 +2023,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate   Shipping notification date
      * @return static
      */
-    public function addDocumentDespatchAdviceReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentDespatchAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1968,8 +2041,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate   Receipt notification date
      * @return static
      */
-    public function setDocumentReceivingAdviceReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentReceivingAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -1984,8 +2059,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate   Receipt notification date
      * @return static
      */
-    public function addDocumentReceivingAdviceReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentReceivingAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2000,8 +2077,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate   Delivery slip date
      * @return static
      */
-    public function setDocumentDeliveryNoteReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentDeliveryNoteReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2016,8 +2095,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate   Delivery slip date
      * @return static
      */
-    public function addDocumentDeliveryNoteReference(?string $newReferenceNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentDeliveryNoteReference(
+        ?string $newReferenceNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2031,8 +2112,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newDate Actual delivery date
      * @return static
      */
-    public function setDocumentSupplyChainEvent(?DateTimeInterface $newDate = null): static
-    {
+    public function setDocumentSupplyChainEvent(
+        ?DateTimeInterface $newDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2046,8 +2128,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newBuyerReference An identifier assigned by the buyer and used for internal routing
      * @return static
      */
-    public function setDocumentBuyerReference(?string $newBuyerReference = null): static
-    {
+    public function setDocumentBuyerReference(
+        ?string $newBuyerReference = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -2077,8 +2160,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newCode The code indicating the type of delivery for these commercial delivery terms. To be selected from the entries in the list UNTDID 4053 + INCOTERMS
      * @return static
      */
-    public function setDocumentDeliveryTerms(?string $newCode = null): static
-    {
+    public function setDocumentDeliveryTerms(
+        ?string $newCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2092,8 +2176,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentSellerName(?string $newName = null): static
-    {
+    public function setDocumentSellerName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -2127,8 +2212,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentSellerName(?string $newName = null): static
-    {
+    public function addDocumentSellerName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
@@ -2148,8 +2234,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentSellerId(?string $newId = null): static
-    {
+    public function setDocumentSellerId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2163,8 +2250,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentSellerId(?string $newId = null): static
-    {
+    public function addDocumentSellerId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2179,8 +2267,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentSellerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2195,8 +2285,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentSellerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2211,8 +2303,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function setDocumentSellerTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function setDocumentSellerTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (!$this->isTaxRegistrationTypeVat($newTaxRegistrationType) && !$this->isTaxRegistrationTypeFiscal($newTaxRegistrationType)) {
@@ -2287,8 +2381,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function addDocumentSellerTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function addDocumentSellerTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (!$this->isTaxRegistrationTypeVat($newTaxRegistrationType) && !$this->isTaxRegistrationTypeFiscal($newTaxRegistrationType)) {
@@ -2318,8 +2414,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentSellerAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function setDocumentSellerAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -2362,8 +2465,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentSellerAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function addDocumentSellerAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->setDocumentSellerAddress(
@@ -2389,8 +2499,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentSellerLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function setDocumentSellerLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2406,8 +2519,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentSellerLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function addDocumentSellerLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2425,8 +2541,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function setDocumentSellerContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function setDocumentSellerContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -2463,8 +2584,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentSellerContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function addDocumentSellerContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$newPhoneNumber, $newFaxNumber, $newEmailAddress])) {
@@ -2485,8 +2611,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentSellerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2501,8 +2629,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentSellerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2516,8 +2646,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentBuyerName(?string $newName = null): static
-    {
+    public function setDocumentBuyerName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -2551,8 +2682,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentBuyerName(?string $newName = null): static
-    {
+    public function addDocumentBuyerName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)) {
@@ -2572,8 +2704,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentBuyerId(?string $newId = null): static
-    {
+    public function setDocumentBuyerId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2587,8 +2720,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentBuyerId(?string $newId = null): static
-    {
+    public function addDocumentBuyerId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2603,8 +2737,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentBuyerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2619,8 +2755,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentBuyerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2635,8 +2773,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function setDocumentBuyerTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function setDocumentBuyerTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (!$this->isTaxRegistrationTypeVat($newTaxRegistrationType) && !$this->isTaxRegistrationTypeFiscal($newTaxRegistrationType)) {
@@ -2698,8 +2838,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function addDocumentBuyerTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function addDocumentBuyerTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (!$this->isTaxRegistrationTypeVat($newTaxRegistrationType) && !$this->isTaxRegistrationTypeFiscal($newTaxRegistrationType)) {
@@ -2729,8 +2871,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentBuyerAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function setDocumentBuyerAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -2773,8 +2922,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentBuyerAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function addDocumentBuyerAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2790,8 +2946,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentBuyerLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function setDocumentBuyerLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2807,8 +2966,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentBuyerLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function addDocumentBuyerLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2826,8 +2988,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress
      * @return static
      */
-    public function setDocumentBuyerContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function setDocumentBuyerContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2845,8 +3012,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentBuyerContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function addDocumentBuyerContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2861,8 +3033,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentBuyerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2877,8 +3051,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentBuyerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2892,8 +3068,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentTaxRepresentativeName(?string $newName = null): static
-    {
+    public function setDocumentTaxRepresentativeName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2907,8 +3084,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentTaxRepresentativeName(?string $newName = null): static
-    {
+    public function addDocumentTaxRepresentativeName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2922,8 +3100,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentTaxRepresentativeId(?string $newId = null): static
-    {
+    public function setDocumentTaxRepresentativeId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2937,8 +3116,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentTaxRepresentativeId(?string $newId = null): static
-    {
+    public function addDocumentTaxRepresentativeId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2953,8 +3133,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentTaxRepresentativeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentTaxRepresentativeGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2969,8 +3151,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentTaxRepresentativeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentTaxRepresentativeGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -2985,8 +3169,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function setDocumentTaxRepresentativeTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function setDocumentTaxRepresentativeTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3001,8 +3187,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function addDocumentTaxRepresentativeTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function addDocumentTaxRepresentativeTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3022,8 +3210,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentTaxRepresentativeAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function setDocumentTaxRepresentativeAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3043,8 +3238,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentTaxRepresentativeAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function addDocumentTaxRepresentativeAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3060,8 +3262,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentTaxRepresentativeLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function setDocumentTaxRepresentativeLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3077,8 +3282,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentTaxRepresentativeLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function addDocumentTaxRepresentativeLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3096,8 +3304,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function setDocumentTaxRepresentativeContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function setDocumentTaxRepresentativeContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3115,8 +3328,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentTaxRepresentativeContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function addDocumentTaxRepresentativeContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3131,8 +3349,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentTaxRepresentativeCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3147,8 +3367,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentTaxRepresentativeCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3162,8 +3384,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentProductEndUserName(?string $newName = null): static
-    {
+    public function setDocumentProductEndUserName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3177,8 +3400,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentProductEndUserName(?string $newName = null): static
-    {
+    public function addDocumentProductEndUserName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3192,8 +3416,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentProductEndUserId(?string $newId = null): static
-    {
+    public function setDocumentProductEndUserId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3207,8 +3432,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentProductEndUserId(?string $newId = null): static
-    {
+    public function addDocumentProductEndUserId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3223,8 +3449,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentProductEndUserGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentProductEndUserGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3239,8 +3467,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentProductEndUserGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentProductEndUserGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3255,8 +3485,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function setDocumentProductEndUserTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function setDocumentProductEndUserTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3271,8 +3503,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function addDocumentProductEndUserTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function addDocumentProductEndUserTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3292,8 +3526,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentProductEndUserAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function setDocumentProductEndUserAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3313,8 +3554,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentProductEndUserAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function addDocumentProductEndUserAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3330,8 +3578,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentProductEndUserLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function setDocumentProductEndUserLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3347,8 +3598,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentProductEndUserLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function addDocumentProductEndUserLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3366,8 +3620,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function setDocumentProductEndUserContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function setDocumentProductEndUserContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3385,8 +3644,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentProductEndUserContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function addDocumentProductEndUserContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3401,8 +3665,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentProductEndUserCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3417,8 +3683,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentProductEndUserCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3432,8 +3700,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentShipToName(?string $newName = null): static
-    {
+    public function setDocumentShipToName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3447,8 +3716,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentShipToName(?string $newName = null): static
-    {
+    public function addDocumentShipToName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3462,8 +3732,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentShipToId(?string $newId = null): static
-    {
+    public function setDocumentShipToId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3477,8 +3748,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentShipToId(?string $newId = null): static
-    {
+    public function addDocumentShipToId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3493,8 +3765,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentShipToGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3509,8 +3783,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentShipToGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3525,8 +3801,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function setDocumentShipToTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function setDocumentShipToTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3541,8 +3819,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function addDocumentShipToTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function addDocumentShipToTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3562,8 +3842,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentShipToAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function setDocumentShipToAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3583,8 +3870,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentShipToAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function addDocumentShipToAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3600,8 +3894,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentShipToLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function setDocumentShipToLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3617,8 +3914,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentShipToLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function addDocumentShipToLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3636,8 +3936,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function setDocumentShipToContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function setDocumentShipToContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3655,8 +3960,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentShipToContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function addDocumentShipToContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3671,8 +3981,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3687,8 +3999,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3702,8 +4016,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentUltimateShipToName(?string $newName = null): static
-    {
+    public function setDocumentUltimateShipToName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3717,8 +4032,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentUltimateShipToName(?string $newName = null): static
-    {
+    public function addDocumentUltimateShipToName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3732,8 +4048,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentUltimateShipToId(?string $newId = null): static
-    {
+    public function setDocumentUltimateShipToId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3747,8 +4064,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentUltimateShipToId(?string $newId = null): static
-    {
+    public function addDocumentUltimateShipToId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3763,8 +4081,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentUltimateShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentUltimateShipToGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3779,8 +4099,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentUltimateShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentUltimateShipToGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3795,8 +4117,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function setDocumentUltimateShipToTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function setDocumentUltimateShipToTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3811,8 +4135,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function addDocumentUltimateShipToTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function addDocumentUltimateShipToTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3832,8 +4158,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentUltimateShipToAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function setDocumentUltimateShipToAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3853,8 +4186,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentUltimateShipToAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function addDocumentUltimateShipToAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3870,8 +4210,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentUltimateShipToLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function setDocumentUltimateShipToLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3887,8 +4230,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentUltimateShipToLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function addDocumentUltimateShipToLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3906,8 +4252,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function setDocumentUltimateShipToContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function setDocumentUltimateShipToContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3925,8 +4276,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentUltimateShipToContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function addDocumentUltimateShipToContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3941,8 +4297,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentUltimateShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3957,8 +4315,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentUltimateShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3972,8 +4332,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentShipFromName(?string $newName = null): static
-    {
+    public function setDocumentShipFromName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -3987,8 +4348,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentShipFromName(?string $newName = null): static
-    {
+    public function addDocumentShipFromName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4002,8 +4364,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentShipFromId(?string $newId = null): static
-    {
+    public function setDocumentShipFromId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4017,8 +4380,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentShipFromId(?string $newId = null): static
-    {
+    public function addDocumentShipFromId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4033,8 +4397,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentShipFromGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4049,8 +4415,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentShipFromGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4065,8 +4433,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function setDocumentShipFromTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function setDocumentShipFromTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4081,8 +4451,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function addDocumentShipFromTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function addDocumentShipFromTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4102,8 +4474,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentShipFromAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function setDocumentShipFromAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4123,8 +4502,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentShipFromAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function addDocumentShipFromAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4140,8 +4526,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentShipFromLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function setDocumentShipFromLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4157,8 +4546,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentShipFromLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function addDocumentShipFromLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4176,8 +4568,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function setDocumentShipFromContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function setDocumentShipFromContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4195,8 +4592,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentShipFromContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function addDocumentShipFromContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4211,8 +4613,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentShipFromCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4227,8 +4631,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentShipFromCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4242,8 +4648,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentInvoicerName(?string $newName = null): static
-    {
+    public function setDocumentInvoicerName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4257,8 +4664,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentInvoicerName(?string $newName = null): static
-    {
+    public function addDocumentInvoicerName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4272,8 +4680,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentInvoicerId(?string $newId = null): static
-    {
+    public function setDocumentInvoicerId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4287,8 +4696,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentInvoicerId(?string $newId = null): static
-    {
+    public function addDocumentInvoicerId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4303,8 +4713,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentInvoicerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4319,8 +4731,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentInvoicerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4335,8 +4749,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function setDocumentInvoicerTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function setDocumentInvoicerTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4351,8 +4767,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function addDocumentInvoicerTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function addDocumentInvoicerTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4372,8 +4790,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentInvoicerAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function setDocumentInvoicerAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4393,8 +4818,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentInvoicerAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function addDocumentInvoicerAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4410,8 +4842,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentInvoicerLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function setDocumentInvoicerLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4427,8 +4862,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentInvoicerLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function addDocumentInvoicerLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4446,8 +4884,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function setDocumentInvoicerContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function setDocumentInvoicerContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4465,8 +4908,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentInvoicerContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function addDocumentInvoicerContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4481,8 +4929,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentInvoicerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4497,8 +4947,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentInvoicerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4512,8 +4964,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentInvoiceeName(?string $newName = null): static
-    {
+    public function setDocumentInvoiceeName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4527,8 +4980,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentInvoiceeName(?string $newName = null): static
-    {
+    public function addDocumentInvoiceeName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4542,8 +4996,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentInvoiceeId(?string $newId = null): static
-    {
+    public function setDocumentInvoiceeId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4557,8 +5012,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentInvoiceeId(?string $newId = null): static
-    {
+    public function addDocumentInvoiceeId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4573,8 +5029,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentInvoiceeGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4589,8 +5047,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentInvoiceeGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4605,8 +5065,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function setDocumentInvoiceeTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function setDocumentInvoiceeTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4621,8 +5083,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function addDocumentInvoiceeTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function addDocumentInvoiceeTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4642,8 +5106,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentInvoiceeAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function setDocumentInvoiceeAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4663,8 +5134,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentInvoiceeAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function addDocumentInvoiceeAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4680,8 +5158,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentInvoiceeLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function setDocumentInvoiceeLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4697,8 +5178,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentInvoiceeLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function addDocumentInvoiceeLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4716,8 +5200,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function setDocumentInvoiceeContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function setDocumentInvoiceeContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4735,8 +5224,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentInvoiceeContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function addDocumentInvoiceeContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4751,8 +5245,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentInvoiceeCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4767,8 +5263,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentInvoiceeCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4782,8 +5280,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentPayeeName(?string $newName = null): static
-    {
+    public function setDocumentPayeeName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4797,8 +5296,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentPayeeName(?string $newName = null): static
-    {
+    public function addDocumentPayeeName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4812,8 +5312,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentPayeeId(?string $newId = null): static
-    {
+    public function setDocumentPayeeId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4827,8 +5328,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentPayeeId(?string $newId = null): static
-    {
+    public function addDocumentPayeeId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4843,8 +5345,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentPayeeGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4859,8 +5363,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentPayeeGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4875,8 +5381,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function setDocumentPayeeTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function setDocumentPayeeTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4891,8 +5399,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function addDocumentPayeeTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function addDocumentPayeeTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4912,8 +5422,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentPayeeAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function setDocumentPayeeAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4933,8 +5450,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentPayeeAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function addDocumentPayeeAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4950,8 +5474,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentPayeeLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function setDocumentPayeeLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4967,8 +5494,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentPayeeLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function addDocumentPayeeLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -4986,8 +5516,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function setDocumentPayeeContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function setDocumentPayeeContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5005,8 +5540,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentPayeeContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function addDocumentPayeeContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5021,8 +5561,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentPayeeCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentPayeeCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5037,8 +5579,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentPayeeCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentPayeeCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5062,8 +5606,19 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newMandate             Identification of the mandate reference
      * @return static
      */
-    public function setDocumentPaymentMean(?string $newTypeCode = null, ?string $newName = null, ?string $newFinancialCardId = null, ?string $newFinancialCardHolder = null, ?string $newBuyerIban = null, ?string $newPayeeIban = null, ?string $newPayeeAccountName = null, ?string $newPayeeProprietaryId = null, ?string $newPayeeBic = null, ?string $newPaymentReference = null, ?string $newMandate = null): static
-    {
+    public function setDocumentPaymentMean(
+        ?string $newTypeCode = null,
+        ?string $newName = null,
+        ?string $newFinancialCardId = null,
+        ?string $newFinancialCardHolder = null,
+        ?string $newBuyerIban = null,
+        ?string $newPayeeIban = null,
+        ?string $newPayeeAccountName = null,
+        ?string $newPayeeProprietaryId = null,
+        ?string $newPayeeBic = null,
+        ?string $newPaymentReference = null,
+        ?string $newMandate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5087,8 +5642,19 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newMandate             Identification of the mandate reference
      * @return static
      */
-    public function addDocumentPaymentMean(?string $newTypeCode = null, ?string $newName = null, ?string $newFinancialCardId = null, ?string $newFinancialCardHolder = null, ?string $newBuyerIban = null, ?string $newPayeeIban = null, ?string $newPayeeAccountName = null, ?string $newPayeeProprietaryId = null, ?string $newPayeeBic = null, ?string $newPaymentReference = null, ?string $newMandate = null): static
-    {
+    public function addDocumentPaymentMean(
+        ?string $newTypeCode = null,
+        ?string $newName = null,
+        ?string $newFinancialCardId = null,
+        ?string $newFinancialCardHolder = null,
+        ?string $newBuyerIban = null,
+        ?string $newPayeeIban = null,
+        ?string $newPayeeAccountName = null,
+        ?string $newPayeeProprietaryId = null,
+        ?string $newPayeeBic = null,
+        ?string $newPaymentReference = null,
+        ?string $newMandate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5106,8 +5672,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPaymentReference   Text value used to link the payment to the invoice issued by the seller
      * @return static
      */
-    public function setDocumentPaymentMeanAsCreditTransferSepa(?string $newPayeeIban = null, ?string $newPayeeAccountName = null, ?string $newPayeeProprietaryId = null, ?string $newPayeeBic = null, ?string $newPaymentReference = null): static
-    {
+    public function setDocumentPaymentMeanAsCreditTransferSepa(
+        ?string $newPayeeIban = null,
+        ?string $newPayeeAccountName = null,
+        ?string $newPayeeProprietaryId = null,
+        ?string $newPayeeBic = null,
+        ?string $newPaymentReference = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5125,8 +5696,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPaymentReference   Text value used to link the payment to the invoice issued by the seller
      * @return static
      */
-    public function addDocumentPaymentMeanAsCreditTransferSepa(?string $newPayeeIban = null, ?string $newPayeeAccountName = null, ?string $newPayeeProprietaryId = null, ?string $newPayeeBic = null, ?string $newPaymentReference = null): static
-    {
+    public function addDocumentPaymentMeanAsCreditTransferSepa(
+        ?string $newPayeeIban = null,
+        ?string $newPayeeAccountName = null,
+        ?string $newPayeeProprietaryId = null,
+        ?string $newPayeeBic = null,
+        ?string $newPaymentReference = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5144,8 +5720,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPaymentReference   Text value used to link the payment to the invoice issued by the seller
      * @return static
      */
-    public function setDocumentPaymentMeanAsCreditTransferNoSepa(?string $newPayeeIban = null, ?string $newPayeeAccountName = null, ?string $newPayeeProprietaryId = null, ?string $newPayeeBic = null, ?string $newPaymentReference = null): static
-    {
+    public function setDocumentPaymentMeanAsCreditTransferNoSepa(
+        ?string $newPayeeIban = null,
+        ?string $newPayeeAccountName = null,
+        ?string $newPayeeProprietaryId = null,
+        ?string $newPayeeBic = null,
+        ?string $newPaymentReference = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5163,8 +5744,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPaymentReference   Text value used to link the payment to the invoice issued by the seller
      * @return static
      */
-    public function addDocumentPaymentMeanAsCreditTransferNoSepa(?string $newPayeeIban = null, ?string $newPayeeAccountName = null, ?string $newPayeeProprietaryId = null, ?string $newPayeeBic = null, ?string $newPaymentReference = null): static
-    {
+    public function addDocumentPaymentMeanAsCreditTransferNoSepa(
+        ?string $newPayeeIban = null,
+        ?string $newPayeeAccountName = null,
+        ?string $newPayeeProprietaryId = null,
+        ?string $newPayeeBic = null,
+        ?string $newPaymentReference = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5179,8 +5765,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newMandate   Identification of the mandate reference
      * @return static
      */
-    public function setDocumentPaymentMeanAsDirectDebitSepa(?string $newBuyerIban = null, ?string $newMandate = null): static
-    {
+    public function setDocumentPaymentMeanAsDirectDebitSepa(
+        ?string $newBuyerIban = null,
+        ?string $newMandate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5195,8 +5783,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newMandate   Identification of the mandate reference
      * @return static
      */
-    public function addDocumentPaymentMeanAsDirectDebitSepa(?string $newBuyerIban = null, ?string $newMandate = null): static
-    {
+    public function addDocumentPaymentMeanAsDirectDebitSepa(
+        ?string $newBuyerIban = null,
+        ?string $newMandate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5211,8 +5801,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newMandate   Identification of the mandate reference
      * @return static
      */
-    public function setDocumentPaymentMeanAsDirectDebitNoSepa(?string $newBuyerIban = null, ?string $newMandate = null): static
-    {
+    public function setDocumentPaymentMeanAsDirectDebitNoSepa(
+        ?string $newBuyerIban = null,
+        ?string $newMandate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5227,8 +5819,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newMandate   Identification of the mandate reference
      * @return static
      */
-    public function addDocumentPaymentMeanAsDirectDebitNoSepa(?string $newBuyerIban = null, ?string $newMandate = null): static
-    {
+    public function addDocumentPaymentMeanAsDirectDebitNoSepa(
+        ?string $newBuyerIban = null,
+        ?string $newMandate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5243,8 +5837,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newFinancialCardHolder Name of the payment card holder
      * @return static
      */
-    public function setDocumentPaymentMeanAsPaymentCard(?string $newFinancialCardId = null, ?string $newFinancialCardHolder = null): static
-    {
+    public function setDocumentPaymentMeanAsPaymentCard(
+        ?string $newFinancialCardId = null,
+        ?string $newFinancialCardHolder = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5259,8 +5855,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newFinancialCardHolder Name of the payment card holder
      * @return static
      */
-    public function addDocumentPaymentMeanAsPaymentCard(?string $newFinancialCardId = null, ?string $newFinancialCardHolder = null): static
-    {
+    public function addDocumentPaymentMeanAsPaymentCard(
+        ?string $newFinancialCardId = null,
+        ?string $newFinancialCardHolder = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5274,8 +5872,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId Creditor identifier
      * @return static
      */
-    public function setDocumentPaymentCreditorReferenceID(?string $newId = null): static
-    {
+    public function setDocumentPaymentCreditorReferenceID(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5289,8 +5888,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId Creditor identifier
      * @return static
      */
-    public function addDocumentPaymentCreditorReferenceID(?string $newId = null): static
-    {
+    public function addDocumentPaymentCreditorReferenceID(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5304,8 +5904,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId A text value used to link the payment to the invoice issued by the seller
      * @return static
      */
-    public function setDocumentPaymentReference(?string $newId = null): static
-    {
+    public function setDocumentPaymentReference(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5319,8 +5920,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId A text value used to link the payment to the invoice issued by the seller
      * @return static
      */
-    public function addDocumentPaymentReference(?string $newId = null): static
-    {
+    public function addDocumentPaymentReference(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5336,8 +5938,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newMandate     Identification of the mandate reference
      * @return static
      */
-    public function setDocumentPaymentTerm(?string $newDescription = null, ?DateTimeInterface $newDueDate = null, ?string $newMandate = null): static
-    {
+    public function setDocumentPaymentTerm(
+        ?string $newDescription = null,
+        ?DateTimeInterface $newDueDate = null,
+        ?string $newMandate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -5371,8 +5976,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newMandate     Identification of the mandate reference
      * @return static
      */
-    public function addDocumentPaymentTerm(?string $newDescription = null, ?DateTimeInterface $newDueDate = null, ?string $newMandate = null): static
-    {
+    public function addDocumentPaymentTerm(
+        ?string $newDescription = null,
+        ?DateTimeInterface $newDueDate = null,
+        ?string $newMandate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDueDate)) {
@@ -5401,8 +6009,14 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newBasePeriodUnit  Maturity period (unit)
      * @return static
      */
-    public function setDocumentPaymentDiscountTermsInLastPaymentTerm(?float $newBaseAmount = null, ?float $newDiscountAmount = null, ?float $newDiscountPercent = null, ?DateTimeInterface $newBaseDate = null, ?float $newBasePeriod = null, ?string $newBasePeriodUnit = null): static
-    {
+    public function setDocumentPaymentDiscountTermsInLastPaymentTerm(
+        ?float $newBaseAmount = null,
+        ?float $newDiscountAmount = null,
+        ?float $newDiscountPercent = null,
+        ?DateTimeInterface $newBaseDate = null,
+        ?float $newBasePeriod = null,
+        ?string $newBasePeriodUnit = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5421,8 +6035,14 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newBasePeriodUnit  Maturity period (unit)
      * @return static
      */
-    public function addDocumentPaymentDiscountTermsInLastPaymentTerm(?float $newBaseAmount = null, ?float $newDiscountAmount = null, ?float $newDiscountPercent = null, ?DateTimeInterface $newBaseDate = null, ?float $newBasePeriod = null, ?string $newBasePeriodUnit = null): static
-    {
+    public function addDocumentPaymentDiscountTermsInLastPaymentTerm(
+        ?float $newBaseAmount = null,
+        ?float $newDiscountAmount = null,
+        ?float $newDiscountPercent = null,
+        ?DateTimeInterface $newBaseDate = null,
+        ?float $newBasePeriod = null,
+        ?string $newBasePeriodUnit = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5441,8 +6061,14 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newBasePeriodUnit Maturity period (unit)
      * @return static
      */
-    public function setDocumentPaymentPenaltyTermsInLastPaymentTerm(?float $newBaseAmount = null, ?float $newPenaltyAmount = null, ?float $newPenaltyPercent = null, ?DateTimeInterface $newBaseDate = null, ?float $newBasePeriod = null, ?string $newBasePeriodUnit = null): static
-    {
+    public function setDocumentPaymentPenaltyTermsInLastPaymentTerm(
+        ?float $newBaseAmount = null,
+        ?float $newPenaltyAmount = null,
+        ?float $newPenaltyPercent = null,
+        ?DateTimeInterface $newBaseDate = null,
+        ?float $newBasePeriod = null,
+        ?string $newBasePeriodUnit = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5461,8 +6087,14 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newBasePeriodUnit Maturity period (unit)
      * @return static
      */
-    public function addDocumentPaymentPenaltyTermsInLastPaymentTerm(?float $newBaseAmount = null, ?float $newPenaltyAmount = null, ?float $newPenaltyPercent = null, ?DateTimeInterface $newBaseDate = null, ?float $newBasePeriod = null, ?string $newBasePeriodUnit = null): static
-    {
+    public function addDocumentPaymentPenaltyTermsInLastPaymentTerm(
+        ?float $newBaseAmount = null,
+        ?float $newPenaltyAmount = null,
+        ?float $newPenaltyPercent = null,
+        ?DateTimeInterface $newBaseDate = null,
+        ?float $newBasePeriod = null,
+        ?string $newBasePeriodUnit = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5484,8 +6116,17 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newTaxDueCode          Code for the date on which tax is due
      * @return static
      */
-    public function setDocumentTax(?string $newTaxCategory = null, ?string $newTaxType = null, ?float $newBasisAmount = null, ?float $newTaxAmount = null, ?float $newTaxPercent = null, ?string $newExemptionReason = null, ?string $newExemptionReasonCode = null, ?DateTimeInterface $newTaxDueDate = null, ?string $newTaxDueCode = null): static
-    {
+    public function setDocumentTax(
+        ?string $newTaxCategory = null,
+        ?string $newTaxType = null,
+        ?float $newBasisAmount = null,
+        ?float $newTaxAmount = null,
+        ?float $newTaxPercent = null,
+        ?string $newExemptionReason = null,
+        ?string $newExemptionReasonCode = null,
+        ?DateTimeInterface $newTaxDueDate = null,
+        ?string $newTaxDueCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -5529,8 +6170,17 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newTaxDueCode          Code for the date on which tax is due
      * @return static
      */
-    public function addDocumentTax(?string $newTaxCategory = null, ?string $newTaxType = null, ?float $newBasisAmount = null, ?float $newTaxAmount = null, ?float $newTaxPercent = null, ?string $newExemptionReason = null, ?string $newExemptionReasonCode = null, ?DateTimeInterface $newTaxDueDate = null, ?string $newTaxDueCode = null): static
-    {
+    public function addDocumentTax(
+        ?string $newTaxCategory = null,
+        ?string $newTaxType = null,
+        ?float $newBasisAmount = null,
+        ?float $newTaxAmount = null,
+        ?float $newTaxPercent = null,
+        ?string $newExemptionReason = null,
+        ?string $newExemptionReasonCode = null,
+        ?DateTimeInterface $newTaxDueDate = null,
+        ?string $newTaxDueCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteFloatUtils::oneIsNullOrEmpty([$newTaxPercent, $newBasisAmount, $newTaxAmount])) {
@@ -5566,8 +6216,17 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
      * @return static
      */
-    public function setDocumentAllowanceCharge(?bool $newChargeIndicator = null, ?float $newAllowanceChargeAmount = null, ?float $newAllowanceChargeBaseAmount = null, ?string $newTaxCategory = null, ?string $newTaxType = null, ?float $newTaxPercent = null, ?string $newAllowanceChargeReason = null, ?string $newAllowanceChargeReasonCode = null, ?float $newAllowanceChargePercent = null): static
-    {
+    public function setDocumentAllowanceCharge(
+        ?bool $newChargeIndicator = null,
+        ?float $newAllowanceChargeAmount = null,
+        ?float $newAllowanceChargeBaseAmount = null,
+        ?string $newTaxCategory = null,
+        ?string $newTaxType = null,
+        ?float $newTaxPercent = null,
+        ?string $newAllowanceChargeReason = null,
+        ?string $newAllowanceChargeReasonCode = null,
+        ?float $newAllowanceChargePercent = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5589,8 +6248,17 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
      * @return static
      */
-    public function addDocumentAllowanceCharge(?bool $newChargeIndicator = null, ?float $newAllowanceChargeAmount = null, ?float $newAllowanceChargeBaseAmount = null, ?string $newTaxCategory = null, ?string $newTaxType = null, ?float $newTaxPercent = null, ?string $newAllowanceChargeReason = null, ?string $newAllowanceChargeReasonCode = null, ?float $newAllowanceChargePercent = null): static
-    {
+    public function addDocumentAllowanceCharge(
+        ?bool $newChargeIndicator = null,
+        ?float $newAllowanceChargeAmount = null,
+        ?float $newAllowanceChargeBaseAmount = null,
+        ?string $newTaxCategory = null,
+        ?string $newTaxType = null,
+        ?float $newTaxPercent = null,
+        ?string $newAllowanceChargeReason = null,
+        ?string $newAllowanceChargeReasonCode = null,
+        ?float $newAllowanceChargePercent = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5608,8 +6276,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|float  $newTaxPercent   Tax Rate (Percentage)
      * @return static
      */
-    public function setDocumentLogisticServiceCharge(?float $newChargeAmount = null, ?string $newDescription = null, ?string $newTaxCategory = null, ?string $newTaxType = null, ?float $newTaxPercent = null): static
-    {
+    public function setDocumentLogisticServiceCharge(
+        ?float $newChargeAmount = null,
+        ?string $newDescription = null,
+        ?string $newTaxCategory = null,
+        ?string $newTaxType = null,
+        ?float $newTaxPercent = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5627,8 +6300,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|float  $newTaxPercent   Tax Rate (Percentage)
      * @return static
      */
-    public function addDocumentLogisticServiceCharge(?float $newChargeAmount = null, ?string $newDescription = null, ?string $newTaxCategory = null, ?string $newTaxType = null, ?float $newTaxPercent = null): static
-    {
+    public function addDocumentLogisticServiceCharge(
+        ?float $newChargeAmount = null,
+        ?string $newDescription = null,
+        ?string $newTaxCategory = null,
+        ?string $newTaxType = null,
+        ?float $newTaxPercent = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5664,8 +6342,18 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|float $newRoungingAmount      Rounding amount
      * @return static
      */
-    public function setDocumentSummation(?float $newNetAmount = null, ?float $newChargeTotalAmount = null, ?float $newDiscountTotalAmount = null, ?float $newTaxBasisAmount = null, ?float $newTaxTotalAmount = null, ?float $newTaxTotalAmount2 = null, ?float $newGrossAmount = null, ?float $newDueAmount = null, ?float $newPrepaidAmount = null, ?float $newRoungingAmount = null): static
-    {
+    public function setDocumentSummation(
+        ?float $newNetAmount = null,
+        ?float $newChargeTotalAmount = null,
+        ?float $newDiscountTotalAmount = null,
+        ?float $newTaxBasisAmount = null,
+        ?float $newTaxTotalAmount = null,
+        ?float $newTaxTotalAmount2 = null,
+        ?float $newGrossAmount = null,
+        ?float $newDueAmount = null,
+        ?float $newPrepaidAmount = null,
+        ?float $newRoungingAmount = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newDueAmount)) {
@@ -5693,8 +6381,12 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newLineStatusReasonCode Type to specify whether the invoice line is
      * @return static
      */
-    public function addDocumentPosition(?string $newPositionId = null, ?string $newParentPositionId = null, ?string $newLineStatusCode = null, ?string $newLineStatusReasonCode = null): static
-    {
+    public function addDocumentPosition(
+        ?string $newPositionId = null,
+        ?string $newParentPositionId = null,
+        ?string $newLineStatusCode = null,
+        ?string $newLineStatusReasonCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newPositionId)) {
@@ -5721,8 +6413,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubjectCode Code for qualifying the free text for the invoice item
      * @return static
      */
-    public function setDocumentPositionNote(?string $newContent = null, ?string $newContentCode = null, ?string $newSubjectCode = null): static
-    {
+    public function setDocumentPositionNote(
+        ?string $newContent = null,
+        ?string $newContentCode = null,
+        ?string $newSubjectCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5738,8 +6433,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubjectCode Code for qualifying the free text for the invoice item
      * @return static
      */
-    public function addDocumentPositionNote(?string $newContent = null, ?string $newContentCode = null, ?string $newSubjectCode = null): static
-    {
+    public function addDocumentPositionNote(
+        ?string $newContent = null,
+        ?string $newContentCode = null,
+        ?string $newSubjectCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5765,8 +6463,21 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newProductOriginTradeCountry Code indicating the country the goods came from
      * @return static
      */
-    public function setDocumentPositionProductDetails(?string $newProductId = null, ?string $newProductName = null, ?string $newProductDescription = null, ?string $newProductSellerId = null, ?string $newProductBuyerId = null, ?string $newProductGlobalId = null, ?string $newProductGlobalIdType = null, ?string $newProductIndustryId = null, ?string $newProductModelId = null, ?string $newProductBatchId = null, ?string $newProductBrandName = null, ?string $newProductModelName = null, ?string $newProductOriginTradeCountry = null): static
-    {
+    public function setDocumentPositionProductDetails(
+        ?string $newProductId = null,
+        ?string $newProductName = null,
+        ?string $newProductDescription = null,
+        ?string $newProductSellerId = null,
+        ?string $newProductBuyerId = null,
+        ?string $newProductGlobalId = null,
+        ?string $newProductGlobalIdType = null,
+        ?string $newProductIndustryId = null,
+        ?string $newProductModelId = null,
+        ?string $newProductBatchId = null,
+        ?string $newProductBrandName = null,
+        ?string $newProductModelName = null,
+        ?string $newProductOriginTradeCountry = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -5802,8 +6513,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newProductCharacteristicMeasureUnit  Unit of value of the characteristic
      * @return static
      */
-    public function setDocumentPositionProductCharacteristic(?string $newProductCharacteristicDescription = null, ?string $newProductCharacteristicValue = null, ?string $newProductCharacteristicType = null, ?float $newProductCharacteristicMeasureValue = null, ?string $newProductCharacteristicMeasureUnit = null): static
-    {
+    public function setDocumentPositionProductCharacteristic(
+        ?string $newProductCharacteristicDescription = null,
+        ?string $newProductCharacteristicValue = null,
+        ?string $newProductCharacteristicType = null,
+        ?float $newProductCharacteristicMeasureValue = null,
+        ?string $newProductCharacteristicMeasureUnit = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5821,8 +6537,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newProductCharacteristicMeasureUnit  Unit of value of the characteristic
      * @return static
      */
-    public function addDocumentPositionProductCharacteristic(?string $newProductCharacteristicDescription = null, ?string $newProductCharacteristicValue = null, ?string $newProductCharacteristicType = null, ?float $newProductCharacteristicMeasureValue = null, ?string $newProductCharacteristicMeasureUnit = null): static
-    {
+    public function addDocumentPositionProductCharacteristic(
+        ?string $newProductCharacteristicDescription = null,
+        ?string $newProductCharacteristicValue = null,
+        ?string $newProductCharacteristicType = null,
+        ?float $newProductCharacteristicMeasureValue = null,
+        ?string $newProductCharacteristicMeasureUnit = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5839,8 +6560,12 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newProductClassificationCodeClassname Name with which an article can be classified according to type or quality
      * @return static
      */
-    public function setDocumentPositionProductClassification(?string $newProductClassificationCode = null, ?string $newProductClassificationListId = null, ?string $newProductClassificationListVersionId = null, ?string $newProductClassificationCodeClassname = null): static
-    {
+    public function setDocumentPositionProductClassification(
+        ?string $newProductClassificationCode = null,
+        ?string $newProductClassificationListId = null,
+        ?string $newProductClassificationListVersionId = null,
+        ?string $newProductClassificationCodeClassname = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5857,8 +6582,12 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newProductClassificationCodeClassname Name with which an article can be classified according to type or quality
      * @return static
      */
-    public function addDocumentPositionProductClassification(?string $newProductClassificationCode = null, ?string $newProductClassificationListId = null, ?string $newProductClassificationListVersionId = null, ?string $newProductClassificationCodeClassname = null): static
-    {
+    public function addDocumentPositionProductClassification(
+        ?string $newProductClassificationCode = null,
+        ?string $newProductClassificationListId = null,
+        ?string $newProductClassificationListVersionId = null,
+        ?string $newProductClassificationCodeClassname = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5881,8 +6610,18 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newProductUnitQuantityUnit Unit code of the quantity of the referenced product contained
      * @return static
      */
-    public function setDocumentPositionReferencedProduct(?string $newProductId = null, ?string $newProductName = null, ?string $newProductDescription = null, ?string $newProductSellerId = null, ?string $newProductBuyerId = null, ?string $newProductGlobalId = null, ?string $newProductGlobalIdType = null, ?string $newProductIndustryId = null, ?float $newProductUnitQuantity = null, ?string $newProductUnitQuantityUnit = null): static
-    {
+    public function setDocumentPositionReferencedProduct(
+        ?string $newProductId = null,
+        ?string $newProductName = null,
+        ?string $newProductDescription = null,
+        ?string $newProductSellerId = null,
+        ?string $newProductBuyerId = null,
+        ?string $newProductGlobalId = null,
+        ?string $newProductGlobalIdType = null,
+        ?string $newProductIndustryId = null,
+        ?float $newProductUnitQuantity = null,
+        ?string $newProductUnitQuantityUnit = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5905,8 +6644,18 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newProductUnitQuantityUnit Unit code of the quantity of the referenced product contained
      * @return static
      */
-    public function addDocumentPositionReferencedProduct(?string $newProductId = null, ?string $newProductName = null, ?string $newProductDescription = null, ?string $newProductSellerId = null, ?string $newProductBuyerId = null, ?string $newProductGlobalId = null, ?string $newProductGlobalIdType = null, ?string $newProductIndustryId = null, ?float $newProductUnitQuantity = null, ?string $newProductUnitQuantityUnit = null): static
-    {
+    public function addDocumentPositionReferencedProduct(
+        ?string $newProductId = null,
+        ?string $newProductName = null,
+        ?string $newProductDescription = null,
+        ?string $newProductSellerId = null,
+        ?string $newProductBuyerId = null,
+        ?string $newProductGlobalId = null,
+        ?string $newProductGlobalIdType = null,
+        ?string $newProductIndustryId = null,
+        ?float $newProductUnitQuantity = null,
+        ?string $newProductUnitQuantityUnit = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5922,8 +6671,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Seller's order confirmation date
      * @return static
      */
-    public function setDocumentPositionSellerOrderReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentPositionSellerOrderReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5939,8 +6691,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Seller's order confirmation date
      * @return static
      */
-    public function addDocumentPositionSellerOrderReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentPositionSellerOrderReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5956,8 +6711,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
      * @return static
      */
-    public function setDocumentPositionBuyerOrderReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentPositionBuyerOrderReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5973,8 +6731,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
      * @return static
      */
-    public function addDocumentPositionBuyerOrderReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentPositionBuyerOrderReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -5990,8 +6751,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
      * @return static
      */
-    public function setDocumentPositionQuotationReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentPositionQuotationReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6007,8 +6771,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
      * @return static
      */
-    public function addDocumentPositionQuotationReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentPositionQuotationReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6024,8 +6791,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
      * @return static
      */
-    public function setDocumentPositionContractReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentPositionContractReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6041,8 +6811,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Buyer's order confirmation date
      * @return static
      */
-    public function addDocumentPositionContractReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentPositionContractReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6062,8 +6835,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
      * @return static
      */
-    public function setDocumentPositionAdditionalReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null, ?string $newTypeCode = null, ?string $newReferenceTypeCode = null, ?string $newDescription = null, ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null): static
-    {
+    public function setDocumentPositionAdditionalReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null,
+        ?string $newReferenceTypeCode = null,
+        ?string $newDescription = null,
+        ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6083,8 +6863,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|InvoiceSuiteAttachment $newInvoiceSuiteAttachment Additional document attachment
      * @return static
      */
-    public function addDocumentPositionAdditionalReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null, ?string $newTypeCode = null, ?string $newReferenceTypeCode = null, ?string $newDescription = null, ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null): static
-    {
+    public function addDocumentPositionAdditionalReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null,
+        ?string $newReferenceTypeCode = null,
+        ?string $newDescription = null,
+        ?InvoiceSuiteAttachment $newInvoiceSuiteAttachment = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6100,8 +6887,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Ultimate customer order date
      * @return static
      */
-    public function setDocumentPositionUltimateCustomerOrderReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentPositionUltimateCustomerOrderReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6117,8 +6907,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Ultimate customer order date
      * @return static
      */
-    public function addDocumentPositionUltimateCustomerOrderReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentPositionUltimateCustomerOrderReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6134,8 +6927,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Shipping notification date
      * @return static
      */
-    public function setDocumentPositionDespatchAdviceReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentPositionDespatchAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6151,8 +6947,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Shipping notification date
      * @return static
      */
-    public function addDocumentPositionDespatchAdviceReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentPositionDespatchAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6168,8 +6967,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Receipt notification date
      * @return static
      */
-    public function setDocumentPositionReceivingAdviceReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentPositionReceivingAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6185,8 +6987,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Receipt notification date
      * @return static
      */
-    public function addDocumentPositionReceivingAdviceReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentPositionReceivingAdviceReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6202,8 +7007,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Delivery slip date
      * @return static
      */
-    public function setDocumentPositionDeliveryNoteReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function setDocumentPositionDeliveryNoteReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6219,8 +7027,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newReferenceDate       Delivery slip date
      * @return static
      */
-    public function addDocumentPositionDeliveryNoteReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null): static
-    {
+    public function addDocumentPositionDeliveryNoteReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6237,8 +7048,12 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newTypeCode            Type code of previous invoice
      * @return static
      */
-    public function setDocumentPositionInvoiceReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null, ?string $newTypeCode = null): static
-    {
+    public function setDocumentPositionInvoiceReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6255,8 +7070,12 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newTypeCode            Type code of previous invoice
      * @return static
      */
-    public function addDocumentPositionInvoiceReference(?string $newReferenceNumber = null, ?string $newReferenceLineNumber = null, ?DateTimeInterface $newReferenceDate = null, ?string $newTypeCode = null): static
-    {
+    public function addDocumentPositionInvoiceReference(
+        ?string $newReferenceNumber = null,
+        ?string $newReferenceLineNumber = null,
+        ?DateTimeInterface $newReferenceDate = null,
+        ?string $newTypeCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6272,8 +7091,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newReferenceTypeCode Schema identifier, Type of identifier for an item on which the invoice item is based
      * @return static
      */
-    public function setDocumentPositionAdditionalObjectReference(?string $newReferenceNumber = null, ?string $newTypeCode = null, ?string $newReferenceTypeCode = null): static
-    {
+    public function setDocumentPositionAdditionalObjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newTypeCode = null,
+        ?string $newReferenceTypeCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6289,8 +7111,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newReferenceTypeCode Schema identifier, Type of identifier for an item on which the invoice item is based
      * @return static
      */
-    public function addDocumentPositionAdditionalObjectReference(?string $newReferenceNumber = null, ?string $newTypeCode = null, ?string $newReferenceTypeCode = null): static
-    {
+    public function addDocumentPositionAdditionalObjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newTypeCode = null,
+        ?string $newReferenceTypeCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6306,8 +7131,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGrossPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
      * @return static
      */
-    public function setDocumentPositionGrossPrice(?float $newGrossPrice = null, ?float $newGrossPriceBasisQuantity = null, ?string $newGrossPriceBasisQuantityUnit = null): static
-    {
+    public function setDocumentPositionGrossPrice(
+        ?float $newGrossPrice = null,
+        ?float $newGrossPriceBasisQuantity = null,
+        ?string $newGrossPriceBasisQuantityUnit = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6326,8 +7154,14 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGrossPriceAllowanceChargeReasonCode  Reason code for discount or charge (free text)
      * @return static
      */
-    public function setDocumentPositionGrossPriceAllowanceCharge(?float $newGrossPriceAllowanceChargeAmount = null, ?bool $newIsCharge = null, ?float $newGrossPriceAllowanceChargePercent = null, ?float $newGrossPriceAllowanceChargeBasisAmount = null, ?string $newGrossPriceAllowanceChargeReason = null, ?string $newGrossPriceAllowanceChargeReasonCode = null): static
-    {
+    public function setDocumentPositionGrossPriceAllowanceCharge(
+        ?float $newGrossPriceAllowanceChargeAmount = null,
+        ?bool $newIsCharge = null,
+        ?float $newGrossPriceAllowanceChargePercent = null,
+        ?float $newGrossPriceAllowanceChargeBasisAmount = null,
+        ?string $newGrossPriceAllowanceChargeReason = null,
+        ?string $newGrossPriceAllowanceChargeReasonCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6346,8 +7180,14 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGrossPriceAllowanceChargeReasonCode  Reason code for discount or charge (free text)
      * @return static
      */
-    public function addDocumentPositionGrossPriceAllowanceCharge(?float $newGrossPriceAllowanceChargeAmount = null, ?bool $newIsCharge = null, ?float $newGrossPriceAllowanceChargePercent = null, ?float $newGrossPriceAllowanceChargeBasisAmount = null, ?string $newGrossPriceAllowanceChargeReason = null, ?string $newGrossPriceAllowanceChargeReasonCode = null): static
-    {
+    public function addDocumentPositionGrossPriceAllowanceCharge(
+        ?float $newGrossPriceAllowanceChargeAmount = null,
+        ?bool $newIsCharge = null,
+        ?float $newGrossPriceAllowanceChargePercent = null,
+        ?float $newGrossPriceAllowanceChargeBasisAmount = null,
+        ?string $newGrossPriceAllowanceChargeReason = null,
+        ?string $newGrossPriceAllowanceChargeReasonCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6363,8 +7203,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newNetPriceBasisQuantityUnit Unit code of the number of item units for which the price applies
      * @return static
      */
-    public function setDocumentPositionNetPrice(?float $newNetPrice = null, ?float $newNetPriceBasisQuantity = null, ?string $newNetPriceBasisQuantityUnit = null): static
-    {
+    public function setDocumentPositionNetPrice(
+        ?float $newNetPrice = null,
+        ?float $newNetPriceBasisQuantity = null,
+        ?string $newNetPriceBasisQuantityUnit = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -6401,8 +7244,14 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newExemptionReasonCode Reason for tax exemption (Code)
      * @return static
      */
-    public function setDocumentPositionNetPriceTax(?string $newTaxCategory = null, ?string $newTaxType = null, ?float $newTaxAmount = null, ?float $newTaxPercent = null, ?string $newExemptionReason = null, ?string $newExemptionReasonCode = null): static
-    {
+    public function setDocumentPositionNetPriceTax(
+        ?string $newTaxCategory = null,
+        ?string $newTaxType = null,
+        ?float $newTaxAmount = null,
+        ?float $newTaxPercent = null,
+        ?string $newExemptionReason = null,
+        ?string $newExemptionReasonCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6423,8 +7272,16 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newPerPackageUnitQuantityUnit Per Package unit quantity unit
      * @return static
      */
-    public function setDocumentPositionQuantities(?float $newQuantity = null, ?string $newQuantityUnit = null, ?float $newChargeFreeQuantity = null, ?string $newChargeFreeQuantityUnit = null, ?float $newPackageQuantity = null, ?string $newPackageQuantityUnit = null, ?float $newPerPackageUnitQuantity = null, ?string $newPerPackageUnitQuantityUnit = null): static
-    {
+    public function setDocumentPositionQuantities(
+        ?float $newQuantity = null,
+        ?string $newQuantityUnit = null,
+        ?float $newChargeFreeQuantity = null,
+        ?string $newChargeFreeQuantityUnit = null,
+        ?float $newPackageQuantity = null,
+        ?string $newPackageQuantityUnit = null,
+        ?float $newPerPackageUnitQuantity = null,
+        ?string $newPerPackageUnitQuantityUnit = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -6462,8 +7319,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentPositionShipToName(?string $newName = null): static
-    {
+    public function setDocumentPositionShipToName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6477,8 +7335,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentPositionShipToName(?string $newName = null): static
-    {
+    public function addDocumentPositionShipToName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6492,8 +7351,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentPositionShipToId(?string $newId = null): static
-    {
+    public function setDocumentPositionShipToId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6507,8 +7367,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentPositionShipToId(?string $newId = null): static
-    {
+    public function addDocumentPositionShipToId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6523,8 +7384,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentPositionShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentPositionShipToGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6539,8 +7402,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentPositionShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentPositionShipToGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6555,8 +7420,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function setDocumentPositionShipToTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function setDocumentPositionShipToTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6571,8 +7438,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function addDocumentPositionShipToTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function addDocumentPositionShipToTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6592,8 +7461,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentPositionShipToAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function setDocumentPositionShipToAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6613,8 +7489,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentPositionShipToAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function addDocumentPositionShipToAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6630,8 +7513,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentPositionShipToLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function setDocumentPositionShipToLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6647,8 +7533,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentPositionShipToLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function addDocumentPositionShipToLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6666,8 +7555,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function setDocumentPositionShipToContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function setDocumentPositionShipToContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6685,8 +7579,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentPositionShipToContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function addDocumentPositionShipToContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6701,8 +7600,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentPositionShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentPositionShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6717,8 +7618,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentPositionShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentPositionShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6732,8 +7635,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentPositionUltimateShipToName(?string $newName = null): static
-    {
+    public function setDocumentPositionUltimateShipToName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6747,8 +7651,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentPositionUltimateShipToName(?string $newName = null): static
-    {
+    public function addDocumentPositionUltimateShipToName(
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6762,8 +7667,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentPositionUltimateShipToId(?string $newId = null): static
-    {
+    public function setDocumentPositionUltimateShipToId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6777,8 +7683,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentPositionUltimateShipToId(?string $newId = null): static
-    {
+    public function addDocumentPositionUltimateShipToId(
+        ?string $newId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6793,8 +7700,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentPositionUltimateShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentPositionUltimateShipToGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6809,8 +7718,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentPositionUltimateShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentPositionUltimateShipToGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6825,8 +7736,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function setDocumentPositionUltimateShipToTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function setDocumentPositionUltimateShipToTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6841,8 +7754,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function addDocumentPositionUltimateShipToTaxRegistration(?string $newTaxRegistrationType = null, ?string $newTaxRegistrationId = null): static
-    {
+    public function addDocumentPositionUltimateShipToTaxRegistration(
+        ?string $newTaxRegistrationType = null,
+        ?string $newTaxRegistrationId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6862,8 +7777,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentPositionUltimateShipToAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function setDocumentPositionUltimateShipToAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6883,8 +7805,15 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentPositionUltimateShipToAddress(?string $newAddressLine1 = null, ?string $newAddressLine2 = null, ?string $newAddressLine3 = null, ?string $newPostcode = null, ?string $newCity = null, ?string $newCountryId = null, ?string $newSubDivision = null): static
-    {
+    public function addDocumentPositionUltimateShipToAddress(
+        ?string $newAddressLine1 = null,
+        ?string $newAddressLine2 = null,
+        ?string $newAddressLine3 = null,
+        ?string $newPostcode = null,
+        ?string $newCity = null,
+        ?string $newCountryId = null,
+        ?string $newSubDivision = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6900,8 +7829,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentPositionUltimateShipToLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function setDocumentPositionUltimateShipToLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6917,8 +7849,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentPositionUltimateShipToLegalOrganisation(?string $newType = null, ?string $newId = null, ?string $newName = null): static
-    {
+    public function addDocumentPositionUltimateShipToLegalOrganisation(
+        ?string $newType = null,
+        ?string $newId = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6936,8 +7871,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function setDocumentPositionUltimateShipToContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function setDocumentPositionUltimateShipToContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6955,8 +7895,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentPositionUltimateShipToContact(?string $newPersonName = null, ?string $newDepartmentName = null, ?string $newPhoneNumber = null, ?string $newFaxNumber = null, ?string $newEmailAddress = null): static
-    {
+    public function addDocumentPositionUltimateShipToContact(
+        ?string $newPersonName = null,
+        ?string $newDepartmentName = null,
+        ?string $newPhoneNumber = null,
+        ?string $newFaxNumber = null,
+        ?string $newEmailAddress = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6971,8 +7916,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentPositionUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentPositionUltimateShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -6987,8 +7934,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentPositionUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentPositionUltimateShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -7002,8 +7951,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|DateTimeInterface $newDate
      * @return static
      */
-    public function setDocumentPositionSupplyChainEvent(?DateTimeInterface $newDate = null): static
-    {
+    public function setDocumentPositionSupplyChainEvent(
+        ?DateTimeInterface $newDate = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -7019,8 +7969,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
      * @return static
      */
-    public function setDocumentPositionBillingPeriod(?DateTimeInterface $newStartDate = null, ?DateTimeInterface $newEndDate = null, ?string $newDescription = null): static
-    {
+    public function setDocumentPositionBillingPeriod(
+        ?DateTimeInterface $newStartDate = null,
+        ?DateTimeInterface $newEndDate = null,
+        ?string $newDescription = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -7036,8 +7989,11 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string            $newDescription Further information of the billing period (Obsolete)
      * @return static
      */
-    public function addDocumentPositionBillingPeriod(?DateTimeInterface $newStartDate = null, ?DateTimeInterface $newEndDate = null, ?string $newDescription = null): static
-    {
+    public function addDocumentPositionBillingPeriod(
+        ?DateTimeInterface $newStartDate = null,
+        ?DateTimeInterface $newEndDate = null,
+        ?string $newDescription = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -7056,8 +8012,14 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newExemptionReasonCode Reason for tax exemption (Code)
      * @return static
      */
-    public function setDocumentPositionTax(?string $newTaxCategory = null, ?string $newTaxType = null, ?float $newTaxAmount = null, ?float $newTaxPercent = null, ?string $newExemptionReason = null, ?string $newExemptionReasonCode = null): static
-    {
+    public function setDocumentPositionTax(
+        ?string $newTaxCategory = null,
+        ?string $newTaxType = null,
+        ?float $newTaxAmount = null,
+        ?float $newTaxPercent = null,
+        ?string $newExemptionReason = null,
+        ?string $newExemptionReasonCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -7094,8 +8056,14 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newExemptionReasonCode Reason for tax exemption (Code)
      * @return static
      */
-    public function addDocumentPositionTax(?string $newTaxCategory = null, ?string $newTaxType = null, ?float $newTaxAmount = null, ?float $newTaxPercent = null, ?string $newExemptionReason = null, ?string $newExemptionReasonCode = null): static
-    {
+    public function addDocumentPositionTax(
+        ?string $newTaxCategory = null,
+        ?string $newTaxType = null,
+        ?float $newTaxAmount = null,
+        ?float $newTaxPercent = null,
+        ?string $newExemptionReason = null,
+        ?string $newExemptionReasonCode = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxPercent)) {
@@ -7127,8 +8095,14 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
      * @return static
      */
-    public function setDocumentPositionAllowanceCharge(?bool $newChargeIndicator = null, ?float $newAllowanceChargeAmount = null, ?float $newAllowanceChargeBaseAmount = null, ?string $newAllowanceChargeReason = null, ?string $newAllowanceChargeReasonCode = null, ?float $newAllowanceChargePercent = null): static
-    {
+    public function setDocumentPositionAllowanceCharge(
+        ?bool $newChargeIndicator = null,
+        ?float $newAllowanceChargeAmount = null,
+        ?float $newAllowanceChargeBaseAmount = null,
+        ?string $newAllowanceChargeReason = null,
+        ?string $newAllowanceChargeReasonCode = null,
+        ?float $newAllowanceChargePercent = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -7147,8 +8121,14 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|float  $newAllowanceChargePercent    Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
      * @return static
      */
-    public function addDocumentPositionAllowanceCharge(?bool $newChargeIndicator = null, ?float $newAllowanceChargeAmount = null, ?float $newAllowanceChargeBaseAmount = null, ?string $newAllowanceChargeReason = null, ?string $newAllowanceChargeReasonCode = null, ?float $newAllowanceChargePercent = null): static
-    {
+    public function addDocumentPositionAllowanceCharge(
+        ?bool $newChargeIndicator = null,
+        ?float $newAllowanceChargeAmount = null,
+        ?float $newAllowanceChargeBaseAmount = null,
+        ?string $newAllowanceChargeReason = null,
+        ?string $newAllowanceChargeReasonCode = null,
+        ?float $newAllowanceChargePercent = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -7166,8 +8146,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|float $newGrossAmount         Total invoice line amount including sales tax
      * @return static
      */
-    public function setDocumentPositionSummation(?float $newNetAmount = null, ?float $newChargeTotalAmount = null, ?float $newDiscountTotalAmount = null, ?float $newTaxTotalAmount = null, ?float $newGrossAmount = null): static
-    {
+    public function setDocumentPositionSummation(
+        ?float $newNetAmount = null,
+        ?float $newChargeTotalAmount = null,
+        ?float $newDiscountTotalAmount = null,
+        ?float $newTaxTotalAmount = null,
+        ?float $newGrossAmount = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -7200,8 +8185,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newAccountId Posting reference of the byuer
      * @return static
      */
-    public function setDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): static
-    {
+    public function setDocumentPositionPostingReference(
+        ?string $newType = null,
+        ?string $newAccountId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -7216,8 +8203,10 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newAccountId Posting reference of the byuer
      * @return static
      */
-    public function addDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): static
-    {
+    public function addDocumentPositionPostingReference(
+        ?string $newType = null,
+        ?string $newAccountId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->traceMethodExit(__METHOD__);
@@ -7241,8 +8230,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationType
      * @return bool
      */
-    private function isTaxRegistrationTypeVat(?string $newTaxRegistrationType): bool
-    {
+    private function isTaxRegistrationTypeVat(
+        ?string $newTaxRegistrationType
+    ): bool {
         return InvoiceSuiteArrayUtils::inArrayNoCase(['VAT', 'VA'], $newTaxRegistrationType ?? '');
     }
 
@@ -7252,8 +8242,9 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationType
      * @return bool
      */
-    private function isTaxRegistrationTypeFiscal(?string $newTaxRegistrationType): bool
-    {
+    private function isTaxRegistrationTypeFiscal(
+        ?string $newTaxRegistrationType
+    ): bool {
         return InvoiceSuiteArrayUtils::inArrayNoCase(['FC'], $newTaxRegistrationType ?? '');
     }
 

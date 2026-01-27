@@ -56,8 +56,9 @@ class RSAKeyValueType
      * @param  string $modulus
      * @return static
      */
-    public function setModulus(?string $modulus = null): static
-    {
+    public function setModulus(
+        ?string $modulus = null
+    ): static {
         $this->modulus = $modulus;
 
         return $this;
@@ -91,8 +92,9 @@ class RSAKeyValueType
      * @param  string $exponent
      * @return static
      */
-    public function setExponent(?string $exponent = null): static
-    {
+    public function setExponent(
+        ?string $exponent = null
+    ): static {
         $this->exponent = $exponent;
 
         return $this;

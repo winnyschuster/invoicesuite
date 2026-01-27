@@ -29,8 +29,10 @@ class InvoiceSuiteUnknownProviderParameterException extends InvoiceSuiteBaseExce
      * @param string         $parameterName
      * @param null|Throwable $throwable
      */
-    public function __construct(string $parameterName, ?Throwable $throwable = null)
-    {
+    public function __construct(
+        string $parameterName,
+        ?Throwable $throwable = null
+    ) {
         parent::__construct(sprintf('Unknown provider parameter %s', $parameterName), InvoiceSuiteExceptionCodes::UNKNOWN_PROVIDER_PARAMETER, $throwable);
     }
 }

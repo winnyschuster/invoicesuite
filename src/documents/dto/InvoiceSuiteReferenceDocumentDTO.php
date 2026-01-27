@@ -44,8 +44,10 @@ class InvoiceSuiteReferenceDocumentDTO
      * @param null|string            $referenceNumber Reference number
      * @param null|DateTimeInterface $referenceDate   Issue date of the reference
      */
-    public function __construct(?string $referenceNumber = null, ?DateTimeInterface $referenceDate = null)
-    {
+    public function __construct(
+        ?string $referenceNumber = null,
+        ?DateTimeInterface $referenceDate = null
+    ) {
         $this->setReferenceNumber($referenceNumber);
         $this->setReferenceDate($referenceDate);
     }
@@ -66,8 +68,9 @@ class InvoiceSuiteReferenceDocumentDTO
      * @param  null|string $referenceNumber Reference number
      * @return static
      */
-    public function setReferenceNumber(?string $referenceNumber): static
-    {
+    public function setReferenceNumber(
+        ?string $referenceNumber
+    ): static {
         $this->referenceNumber = InvoiceSuiteStringUtils::asNullWhenEmpty($referenceNumber);
 
         return $this;
@@ -89,8 +92,9 @@ class InvoiceSuiteReferenceDocumentDTO
      * @param  null|DateTimeInterface $referenceDate Issue date of the reference
      * @return static
      */
-    public function setReferenceDate(?DateTimeInterface $referenceDate): static
-    {
+    public function setReferenceDate(
+        ?DateTimeInterface $referenceDate
+    ): static {
         $this->referenceDate = $referenceDate;
 
         return $this;

@@ -140,8 +140,9 @@ class ExchangeRateType
      * @param  null|SourceCurrencyCode $sourceCurrencyCode
      * @return static
      */
-    public function setSourceCurrencyCode(?SourceCurrencyCode $sourceCurrencyCode = null): static
-    {
+    public function setSourceCurrencyCode(
+        ?SourceCurrencyCode $sourceCurrencyCode = null
+    ): static {
         $this->sourceCurrencyCode = $sourceCurrencyCode;
 
         return $this;
@@ -179,8 +180,9 @@ class ExchangeRateType
      * @param  null|SourceCurrencyBaseRate $sourceCurrencyBaseRate
      * @return static
      */
-    public function setSourceCurrencyBaseRate(?SourceCurrencyBaseRate $sourceCurrencyBaseRate = null): static
-    {
+    public function setSourceCurrencyBaseRate(
+        ?SourceCurrencyBaseRate $sourceCurrencyBaseRate = null
+    ): static {
         $this->sourceCurrencyBaseRate = $sourceCurrencyBaseRate;
 
         return $this;
@@ -218,8 +220,9 @@ class ExchangeRateType
      * @param  null|TargetCurrencyCode $targetCurrencyCode
      * @return static
      */
-    public function setTargetCurrencyCode(?TargetCurrencyCode $targetCurrencyCode = null): static
-    {
+    public function setTargetCurrencyCode(
+        ?TargetCurrencyCode $targetCurrencyCode = null
+    ): static {
         $this->targetCurrencyCode = $targetCurrencyCode;
 
         return $this;
@@ -257,8 +260,9 @@ class ExchangeRateType
      * @param  null|TargetCurrencyBaseRate $targetCurrencyBaseRate
      * @return static
      */
-    public function setTargetCurrencyBaseRate(?TargetCurrencyBaseRate $targetCurrencyBaseRate = null): static
-    {
+    public function setTargetCurrencyBaseRate(
+        ?TargetCurrencyBaseRate $targetCurrencyBaseRate = null
+    ): static {
         $this->targetCurrencyBaseRate = $targetCurrencyBaseRate;
 
         return $this;
@@ -296,8 +300,9 @@ class ExchangeRateType
      * @param  null|ExchangeMarketID $exchangeMarketID
      * @return static
      */
-    public function setExchangeMarketID(?ExchangeMarketID $exchangeMarketID = null): static
-    {
+    public function setExchangeMarketID(
+        ?ExchangeMarketID $exchangeMarketID = null
+    ): static {
         $this->exchangeMarketID = $exchangeMarketID;
 
         return $this;
@@ -335,8 +340,9 @@ class ExchangeRateType
      * @param  null|CalculationRate $calculationRate
      * @return static
      */
-    public function setCalculationRate(?CalculationRate $calculationRate = null): static
-    {
+    public function setCalculationRate(
+        ?CalculationRate $calculationRate = null
+    ): static {
         $this->calculationRate = $calculationRate;
 
         return $this;
@@ -374,8 +380,9 @@ class ExchangeRateType
      * @param  null|MathematicOperatorCode $mathematicOperatorCode
      * @return static
      */
-    public function setMathematicOperatorCode(?MathematicOperatorCode $mathematicOperatorCode = null): static
-    {
+    public function setMathematicOperatorCode(
+        ?MathematicOperatorCode $mathematicOperatorCode = null
+    ): static {
         $this->mathematicOperatorCode = $mathematicOperatorCode;
 
         return $this;
@@ -403,8 +410,9 @@ class ExchangeRateType
      * @param  null|DateTimeInterface $date
      * @return static
      */
-    public function setDate(?DateTimeInterface $date = null): static
-    {
+    public function setDate(
+        ?DateTimeInterface $date = null
+    ): static {
         $this->date = $date;
 
         return $this;
@@ -442,8 +450,9 @@ class ExchangeRateType
      * @param  null|ForeignExchangeContract $foreignExchangeContract
      * @return static
      */
-    public function setForeignExchangeContract(?ForeignExchangeContract $foreignExchangeContract = null): static
-    {
+    public function setForeignExchangeContract(
+        ?ForeignExchangeContract $foreignExchangeContract = null
+    ): static {
         $this->foreignExchangeContract = $foreignExchangeContract;
 
         return $this;

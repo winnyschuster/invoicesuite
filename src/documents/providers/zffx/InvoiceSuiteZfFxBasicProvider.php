@@ -105,8 +105,9 @@ class InvoiceSuiteZfFxBasicProvider extends InvoiceSuiteAbstractDocumentFormatPr
     /**
      * {@inheritDoc}
      */
-    public function getSerializedContentMatchesScheme(string $serializedContent): bool
-    {
+    public function getSerializedContentMatchesScheme(
+        string $serializedContent
+    ): bool {
         $prevUseInternalErrors = libxml_use_internal_errors(true);
         libxml_clear_errors();
 

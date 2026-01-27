@@ -29,7 +29,9 @@ abstract class InvoiceSuiteVisualizerAbstractRenderer
      * @param  string $template
      * @return bool
      */
-    abstract public function templateExists(string $template): bool;
+    abstract public function templateExists(
+        string $template
+    ): bool;
 
     /**
      * Render the HTML markup for the document
@@ -38,5 +40,8 @@ abstract class InvoiceSuiteVisualizerAbstractRenderer
      * @param  string                     $template
      * @return string
      */
-    abstract public function render(InvoiceSuiteDocumentReader $documentReader, string $template): string;
+    abstract public function render(
+        InvoiceSuiteDocumentReader $documentReader,
+        string $template
+    ): string;
 }

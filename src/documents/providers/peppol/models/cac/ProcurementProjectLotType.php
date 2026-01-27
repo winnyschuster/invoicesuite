@@ -67,8 +67,9 @@ class ProcurementProjectLotType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -106,8 +107,9 @@ class ProcurementProjectLotType
      * @param  null|TenderingTerms $tenderingTerms
      * @return static
      */
-    public function setTenderingTerms(?TenderingTerms $tenderingTerms = null): static
-    {
+    public function setTenderingTerms(
+        ?TenderingTerms $tenderingTerms = null
+    ): static {
         $this->tenderingTerms = $tenderingTerms;
 
         return $this;
@@ -145,8 +147,9 @@ class ProcurementProjectLotType
      * @param  null|ProcurementProject $procurementProject
      * @return static
      */
-    public function setProcurementProject(?ProcurementProject $procurementProject = null): static
-    {
+    public function setProcurementProject(
+        ?ProcurementProject $procurementProject = null
+    ): static {
         $this->procurementProject = $procurementProject;
 
         return $this;

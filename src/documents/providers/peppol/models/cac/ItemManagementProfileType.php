@@ -151,8 +151,9 @@ class ItemManagementProfileType
      * @param  null|FrozenPeriodDaysNumeric $frozenPeriodDaysNumeric
      * @return static
      */
-    public function setFrozenPeriodDaysNumeric(?FrozenPeriodDaysNumeric $frozenPeriodDaysNumeric = null): static
-    {
+    public function setFrozenPeriodDaysNumeric(
+        ?FrozenPeriodDaysNumeric $frozenPeriodDaysNumeric = null
+    ): static {
         $this->frozenPeriodDaysNumeric = $frozenPeriodDaysNumeric;
 
         return $this;
@@ -190,8 +191,9 @@ class ItemManagementProfileType
      * @param  null|MinimumInventoryQuantity $minimumInventoryQuantity
      * @return static
      */
-    public function setMinimumInventoryQuantity(?MinimumInventoryQuantity $minimumInventoryQuantity = null): static
-    {
+    public function setMinimumInventoryQuantity(
+        ?MinimumInventoryQuantity $minimumInventoryQuantity = null
+    ): static {
         $this->minimumInventoryQuantity = $minimumInventoryQuantity;
 
         return $this;
@@ -229,8 +231,9 @@ class ItemManagementProfileType
      * @param  null|MultipleOrderQuantity $multipleOrderQuantity
      * @return static
      */
-    public function setMultipleOrderQuantity(?MultipleOrderQuantity $multipleOrderQuantity = null): static
-    {
+    public function setMultipleOrderQuantity(
+        ?MultipleOrderQuantity $multipleOrderQuantity = null
+    ): static {
         $this->multipleOrderQuantity = $multipleOrderQuantity;
 
         return $this;
@@ -268,8 +271,9 @@ class ItemManagementProfileType
      * @param  null|OrderIntervalDaysNumeric $orderIntervalDaysNumeric
      * @return static
      */
-    public function setOrderIntervalDaysNumeric(?OrderIntervalDaysNumeric $orderIntervalDaysNumeric = null): static
-    {
+    public function setOrderIntervalDaysNumeric(
+        ?OrderIntervalDaysNumeric $orderIntervalDaysNumeric = null
+    ): static {
         $this->orderIntervalDaysNumeric = $orderIntervalDaysNumeric;
 
         return $this;
@@ -297,8 +301,9 @@ class ItemManagementProfileType
      * @param  null|array<ReplenishmentOwnerDescription> $replenishmentOwnerDescription
      * @return static
      */
-    public function setReplenishmentOwnerDescription(?array $replenishmentOwnerDescription = null): static
-    {
+    public function setReplenishmentOwnerDescription(
+        ?array $replenishmentOwnerDescription = null
+    ): static {
         $this->replenishmentOwnerDescription = $replenishmentOwnerDescription;
 
         return $this;
@@ -430,8 +435,9 @@ class ItemManagementProfileType
      * @param  null|TargetServicePercent $targetServicePercent
      * @return static
      */
-    public function setTargetServicePercent(?TargetServicePercent $targetServicePercent = null): static
-    {
+    public function setTargetServicePercent(
+        ?TargetServicePercent $targetServicePercent = null
+    ): static {
         $this->targetServicePercent = $targetServicePercent;
 
         return $this;
@@ -469,8 +475,9 @@ class ItemManagementProfileType
      * @param  null|TargetInventoryQuantity $targetInventoryQuantity
      * @return static
      */
-    public function setTargetInventoryQuantity(?TargetInventoryQuantity $targetInventoryQuantity = null): static
-    {
+    public function setTargetInventoryQuantity(
+        ?TargetInventoryQuantity $targetInventoryQuantity = null
+    ): static {
         $this->targetInventoryQuantity = $targetInventoryQuantity;
 
         return $this;
@@ -508,8 +515,9 @@ class ItemManagementProfileType
      * @param  null|EffectivePeriod $effectivePeriod
      * @return static
      */
-    public function setEffectivePeriod(?EffectivePeriod $effectivePeriod = null): static
-    {
+    public function setEffectivePeriod(
+        ?EffectivePeriod $effectivePeriod = null
+    ): static {
         $this->effectivePeriod = $effectivePeriod;
 
         return $this;
@@ -547,8 +555,9 @@ class ItemManagementProfileType
      * @param  null|Item $item
      * @return static
      */
-    public function setItem(?Item $item = null): static
-    {
+    public function setItem(
+        ?Item $item = null
+    ): static {
         $this->item = $item;
 
         return $this;
@@ -586,8 +595,9 @@ class ItemManagementProfileType
      * @param  null|ItemLocationQuantity $itemLocationQuantity
      * @return static
      */
-    public function setItemLocationQuantity(?ItemLocationQuantity $itemLocationQuantity = null): static
-    {
+    public function setItemLocationQuantity(
+        ?ItemLocationQuantity $itemLocationQuantity = null
+    ): static {
         $this->itemLocationQuantity = $itemLocationQuantity;
 
         return $this;

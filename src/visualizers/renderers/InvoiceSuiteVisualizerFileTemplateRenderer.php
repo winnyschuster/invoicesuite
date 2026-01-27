@@ -27,16 +27,19 @@ class InvoiceSuiteVisualizerFileTemplateRenderer extends InvoiceSuiteVisualizerA
     /**
      * {@inheritDoc}
      */
-    public function templateExists(string $template): bool
-    {
+    public function templateExists(
+        string $template
+    ): bool {
         return is_file($template) && is_readable($template);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function render(InvoiceSuiteDocumentReader $document, string $template): string
-    {
+    public function render(
+        InvoiceSuiteDocumentReader $document,
+        string $template
+    ): string {
         ob_start();
 
         include $template;

@@ -27,8 +27,9 @@ class InvoiceSuitePointerUtils
      * @param  string $name
      * @return void
      */
-    public static function first(string $name): void
-    {
+    public static function first(
+        string $name
+    ): void {
         static::initNamedPointer($name);
     }
 
@@ -38,8 +39,9 @@ class InvoiceSuitePointerUtils
      * @param  string $name
      * @return void
      */
-    public static function next(string $name): void
-    {
+    public static function next(
+        string $name
+    ): void {
         static::initNamedPointerIfNeeded($name, -1);
 
         ++static::$pointerState[$name];
@@ -51,8 +53,9 @@ class InvoiceSuitePointerUtils
      * @param  string $name
      * @return void
      */
-    public static function prev(string $name): void
-    {
+    public static function prev(
+        string $name
+    ): void {
         static::initNamedPointerIfNeeded($name, 1);
 
         --static::$pointerState[$name];
@@ -65,8 +68,10 @@ class InvoiceSuitePointerUtils
      * @param  string             $name
      * @return bool
      */
-    public static function has(array $array, string $name): bool
-    {
+    public static function has(
+        array $array,
+        string $name
+    ): bool {
         static::initNamedPointerIfNeeded($name);
 
         return array_key_exists(static::$pointerState[$name], $array);
@@ -79,8 +84,10 @@ class InvoiceSuitePointerUtils
      * @param  string             $name
      * @return bool
      */
-    public static function hasFirst(array $array, string $name): bool
-    {
+    public static function hasFirst(
+        array $array,
+        string $name
+    ): bool {
         static::first($name);
 
         return static::has($array, $name);
@@ -93,8 +100,10 @@ class InvoiceSuitePointerUtils
      * @param  string             $name
      * @return bool
      */
-    public static function hasNext(array $array, string $name): bool
-    {
+    public static function hasNext(
+        array $array,
+        string $name
+    ): bool {
         static::next($name);
 
         return static::has($array, $name);
@@ -106,8 +115,9 @@ class InvoiceSuitePointerUtils
      * @param  string $name
      * @return int
      */
-    public static function getValue(string $name): int
-    {
+    public static function getValue(
+        string $name
+    ): int {
         static::initNamedPointerIfNeeded($name);
 
         return static::$pointerState[$name];
@@ -129,8 +139,9 @@ class InvoiceSuitePointerUtils
      * @param  string $name
      * @return void
      */
-    public static function resetSingle(string $name): void
-    {
+    public static function resetSingle(
+        string $name
+    ): void {
         unset(static::$pointerState[$name]);
     }
 
@@ -141,8 +152,10 @@ class InvoiceSuitePointerUtils
      * @param  int    $withValue
      * @return void
      */
-    protected static function initNamedPointer(string $name, int $withValue = 0): void
-    {
+    protected static function initNamedPointer(
+        string $name,
+        int $withValue = 0
+    ): void {
         static::$pointerState[$name] = $withValue;
     }
 
@@ -153,8 +166,10 @@ class InvoiceSuitePointerUtils
      * @param  int    $withValue
      * @return void
      */
-    protected static function initNamedPointerIfNeeded(string $name, int $withValue = 0): void
-    {
+    protected static function initNamedPointerIfNeeded(
+        string $name,
+        int $withValue = 0
+    ): void {
         if (!array_key_exists($name, static::$pointerState)) {
             static::initNamedPointer($name, $withValue);
         }

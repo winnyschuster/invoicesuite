@@ -82,8 +82,9 @@ class ClassificationCategoryType
      * @param  null|Name $name
      * @return static
      */
-    public function setName(?Name $name = null): static
-    {
+    public function setName(
+        ?Name $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -121,8 +122,9 @@ class ClassificationCategoryType
      * @param  null|CodeValue $codeValue
      * @return static
      */
-    public function setCodeValue(?CodeValue $codeValue = null): static
-    {
+    public function setCodeValue(
+        ?CodeValue $codeValue = null
+    ): static {
         $this->codeValue = $codeValue;
 
         return $this;
@@ -150,8 +152,9 @@ class ClassificationCategoryType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -211,8 +214,9 @@ class ClassificationCategoryType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -232,8 +236,9 @@ class ClassificationCategoryType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -271,8 +276,9 @@ class ClassificationCategoryType
      * @param  null|array<CategorizesClassificationCategory> $categorizesClassificationCategory
      * @return static
      */
-    public function setCategorizesClassificationCategory(?array $categorizesClassificationCategory = null): static
-    {
+    public function setCategorizesClassificationCategory(
+        ?array $categorizesClassificationCategory = null
+    ): static {
         $this->categorizesClassificationCategory = $categorizesClassificationCategory;
 
         return $this;

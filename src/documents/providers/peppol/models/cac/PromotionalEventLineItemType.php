@@ -56,8 +56,9 @@ class PromotionalEventLineItemType
      * @param  null|Amount $amount
      * @return static
      */
-    public function setAmount(?Amount $amount = null): static
-    {
+    public function setAmount(
+        ?Amount $amount = null
+    ): static {
         $this->amount = $amount;
 
         return $this;
@@ -95,8 +96,9 @@ class PromotionalEventLineItemType
      * @param  null|EventLineItem $eventLineItem
      * @return static
      */
-    public function setEventLineItem(?EventLineItem $eventLineItem = null): static
-    {
+    public function setEventLineItem(
+        ?EventLineItem $eventLineItem = null
+    ): static {
         $this->eventLineItem = $eventLineItem;
 
         return $this;

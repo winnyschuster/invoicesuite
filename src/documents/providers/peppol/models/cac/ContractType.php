@@ -197,8 +197,9 @@ class ContractType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -226,8 +227,9 @@ class ContractType
      * @param  null|DateTimeInterface $issueDate
      * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): static
-    {
+    public function setIssueDate(
+        ?DateTimeInterface $issueDate = null
+    ): static {
         $this->issueDate = $issueDate;
 
         return $this;
@@ -255,8 +257,9 @@ class ContractType
      * @param  null|DateTimeInterface $issueTime
      * @return static
      */
-    public function setIssueTime(?DateTimeInterface $issueTime = null): static
-    {
+    public function setIssueTime(
+        ?DateTimeInterface $issueTime = null
+    ): static {
         $this->issueTime = $issueTime;
 
         return $this;
@@ -284,8 +287,9 @@ class ContractType
      * @param  null|DateTimeInterface $nominationDate
      * @return static
      */
-    public function setNominationDate(?DateTimeInterface $nominationDate = null): static
-    {
+    public function setNominationDate(
+        ?DateTimeInterface $nominationDate = null
+    ): static {
         $this->nominationDate = $nominationDate;
 
         return $this;
@@ -313,8 +317,9 @@ class ContractType
      * @param  null|DateTimeInterface $nominationTime
      * @return static
      */
-    public function setNominationTime(?DateTimeInterface $nominationTime = null): static
-    {
+    public function setNominationTime(
+        ?DateTimeInterface $nominationTime = null
+    ): static {
         $this->nominationTime = $nominationTime;
 
         return $this;
@@ -352,8 +357,9 @@ class ContractType
      * @param  null|ContractTypeCode $contractTypeCode
      * @return static
      */
-    public function setContractTypeCode(?ContractTypeCode $contractTypeCode = null): static
-    {
+    public function setContractTypeCode(
+        ?ContractTypeCode $contractTypeCode = null
+    ): static {
         $this->contractTypeCode = $contractTypeCode;
 
         return $this;
@@ -391,8 +397,9 @@ class ContractType
      * @param  null|ContractType1 $contractType
      * @return static
      */
-    public function setContractType(?ContractType1 $contractType = null): static
-    {
+    public function setContractType(
+        ?ContractType1 $contractType = null
+    ): static {
         $this->contractType = $contractType;
 
         return $this;
@@ -420,8 +427,9 @@ class ContractType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -481,8 +489,9 @@ class ContractType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -502,8 +511,9 @@ class ContractType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -551,8 +561,9 @@ class ContractType
      * @param  null|VersionID $versionID
      * @return static
      */
-    public function setVersionID(?VersionID $versionID = null): static
-    {
+    public function setVersionID(
+        ?VersionID $versionID = null
+    ): static {
         $this->versionID = $versionID;
 
         return $this;
@@ -580,8 +591,9 @@ class ContractType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -641,8 +653,9 @@ class ContractType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -662,8 +675,9 @@ class ContractType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -711,8 +725,9 @@ class ContractType
      * @param  null|ValidityPeriod $validityPeriod
      * @return static
      */
-    public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): static
-    {
+    public function setValidityPeriod(
+        ?ValidityPeriod $validityPeriod = null
+    ): static {
         $this->validityPeriod = $validityPeriod;
 
         return $this;
@@ -740,8 +755,9 @@ class ContractType
      * @param  null|array<ContractDocumentReference> $contractDocumentReference
      * @return static
      */
-    public function setContractDocumentReference(?array $contractDocumentReference = null): static
-    {
+    public function setContractDocumentReference(
+        ?array $contractDocumentReference = null
+    ): static {
         $this->contractDocumentReference = $contractDocumentReference;
 
         return $this;
@@ -801,8 +817,9 @@ class ContractType
      * @param  ContractDocumentReference $contractDocumentReference
      * @return static
      */
-    public function addToContractDocumentReference(ContractDocumentReference $contractDocumentReference): static
-    {
+    public function addToContractDocumentReference(
+        ContractDocumentReference $contractDocumentReference
+    ): static {
         $this->contractDocumentReference[] = $contractDocumentReference;
 
         return $this;
@@ -822,8 +839,9 @@ class ContractType
      * @param  ContractDocumentReference $contractDocumentReference
      * @return static
      */
-    public function addOnceToContractDocumentReference(ContractDocumentReference $contractDocumentReference): static
-    {
+    public function addOnceToContractDocumentReference(
+        ContractDocumentReference $contractDocumentReference
+    ): static {
         if (!is_array($this->contractDocumentReference)) {
             $this->contractDocumentReference = [];
         }
@@ -871,8 +889,9 @@ class ContractType
      * @param  null|NominationPeriod $nominationPeriod
      * @return static
      */
-    public function setNominationPeriod(?NominationPeriod $nominationPeriod = null): static
-    {
+    public function setNominationPeriod(
+        ?NominationPeriod $nominationPeriod = null
+    ): static {
         $this->nominationPeriod = $nominationPeriod;
 
         return $this;
@@ -910,8 +929,9 @@ class ContractType
      * @param  null|ContractualDelivery $contractualDelivery
      * @return static
      */
-    public function setContractualDelivery(?ContractualDelivery $contractualDelivery = null): static
-    {
+    public function setContractualDelivery(
+        ?ContractualDelivery $contractualDelivery = null
+    ): static {
         $this->contractualDelivery = $contractualDelivery;
 
         return $this;

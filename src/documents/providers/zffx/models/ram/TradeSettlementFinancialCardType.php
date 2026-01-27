@@ -57,8 +57,9 @@ class TradeSettlementFinancialCardType
      * @param  null|IDType $iD
      * @return static
      */
-    public function setID(?IDType $iD = null): static
-    {
+    public function setID(
+        ?IDType $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -96,8 +97,9 @@ class TradeSettlementFinancialCardType
      * @param  null|TextType $cardholderName
      * @return static
      */
-    public function setCardholderName(?TextType $cardholderName = null): static
-    {
+    public function setCardholderName(
+        ?TextType $cardholderName = null
+    ): static {
         $this->cardholderName = $cardholderName;
 
         return $this;

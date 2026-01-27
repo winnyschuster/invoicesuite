@@ -748,8 +748,9 @@ class TransportEquipmentType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -777,8 +778,9 @@ class TransportEquipmentType
      * @param  null|array<ReferencedConsignmentID> $referencedConsignmentID
      * @return static
      */
-    public function setReferencedConsignmentID(?array $referencedConsignmentID = null): static
-    {
+    public function setReferencedConsignmentID(
+        ?array $referencedConsignmentID = null
+    ): static {
         $this->referencedConsignmentID = $referencedConsignmentID;
 
         return $this;
@@ -838,8 +840,9 @@ class TransportEquipmentType
      * @param  ReferencedConsignmentID $referencedConsignmentID
      * @return static
      */
-    public function addToReferencedConsignmentID(ReferencedConsignmentID $referencedConsignmentID): static
-    {
+    public function addToReferencedConsignmentID(
+        ReferencedConsignmentID $referencedConsignmentID
+    ): static {
         $this->referencedConsignmentID[] = $referencedConsignmentID;
 
         return $this;
@@ -859,8 +862,9 @@ class TransportEquipmentType
      * @param  ReferencedConsignmentID $referencedConsignmentID
      * @return static
      */
-    public function addOnceToReferencedConsignmentID(ReferencedConsignmentID $referencedConsignmentID): static
-    {
+    public function addOnceToReferencedConsignmentID(
+        ReferencedConsignmentID $referencedConsignmentID
+    ): static {
         if (!is_array($this->referencedConsignmentID)) {
             $this->referencedConsignmentID = [];
         }
@@ -948,8 +952,9 @@ class TransportEquipmentType
      * @param  null|ProviderTypeCode $providerTypeCode
      * @return static
      */
-    public function setProviderTypeCode(?ProviderTypeCode $providerTypeCode = null): static
-    {
+    public function setProviderTypeCode(
+        ?ProviderTypeCode $providerTypeCode = null
+    ): static {
         $this->providerTypeCode = $providerTypeCode;
 
         return $this;
@@ -987,8 +992,9 @@ class TransportEquipmentType
      * @param  null|OwnerTypeCode $ownerTypeCode
      * @return static
      */
-    public function setOwnerTypeCode(?OwnerTypeCode $ownerTypeCode = null): static
-    {
+    public function setOwnerTypeCode(
+        ?OwnerTypeCode $ownerTypeCode = null
+    ): static {
         $this->ownerTypeCode = $ownerTypeCode;
 
         return $this;
@@ -1026,8 +1032,9 @@ class TransportEquipmentType
      * @param  null|SizeTypeCode $sizeTypeCode
      * @return static
      */
-    public function setSizeTypeCode(?SizeTypeCode $sizeTypeCode = null): static
-    {
+    public function setSizeTypeCode(
+        ?SizeTypeCode $sizeTypeCode = null
+    ): static {
         $this->sizeTypeCode = $sizeTypeCode;
 
         return $this;
@@ -1065,8 +1072,9 @@ class TransportEquipmentType
      * @param  null|DispositionCode $dispositionCode
      * @return static
      */
-    public function setDispositionCode(?DispositionCode $dispositionCode = null): static
-    {
+    public function setDispositionCode(
+        ?DispositionCode $dispositionCode = null
+    ): static {
         $this->dispositionCode = $dispositionCode;
 
         return $this;
@@ -1104,8 +1112,9 @@ class TransportEquipmentType
      * @param  null|FullnessIndicationCode $fullnessIndicationCode
      * @return static
      */
-    public function setFullnessIndicationCode(?FullnessIndicationCode $fullnessIndicationCode = null): static
-    {
+    public function setFullnessIndicationCode(
+        ?FullnessIndicationCode $fullnessIndicationCode = null
+    ): static {
         $this->fullnessIndicationCode = $fullnessIndicationCode;
 
         return $this;
@@ -1133,8 +1142,9 @@ class TransportEquipmentType
      * @param  null|bool $refrigerationOnIndicator
      * @return static
      */
-    public function setRefrigerationOnIndicator(?bool $refrigerationOnIndicator = null): static
-    {
+    public function setRefrigerationOnIndicator(
+        ?bool $refrigerationOnIndicator = null
+    ): static {
         $this->refrigerationOnIndicator = $refrigerationOnIndicator;
 
         return $this;
@@ -1162,8 +1172,9 @@ class TransportEquipmentType
      * @param  null|array<Information> $information
      * @return static
      */
-    public function setInformation(?array $information = null): static
-    {
+    public function setInformation(
+        ?array $information = null
+    ): static {
         $this->information = $information;
 
         return $this;
@@ -1223,8 +1234,9 @@ class TransportEquipmentType
      * @param  Information $information
      * @return static
      */
-    public function addToInformation(Information $information): static
-    {
+    public function addToInformation(
+        Information $information
+    ): static {
         $this->information[] = $information;
 
         return $this;
@@ -1244,8 +1256,9 @@ class TransportEquipmentType
      * @param  Information $information
      * @return static
      */
-    public function addOnceToInformation(Information $information): static
-    {
+    public function addOnceToInformation(
+        Information $information
+    ): static {
         if (!is_array($this->information)) {
             $this->information = [];
         }
@@ -1283,8 +1296,9 @@ class TransportEquipmentType
      * @param  null|bool $returnabilityIndicator
      * @return static
      */
-    public function setReturnabilityIndicator(?bool $returnabilityIndicator = null): static
-    {
+    public function setReturnabilityIndicator(
+        ?bool $returnabilityIndicator = null
+    ): static {
         $this->returnabilityIndicator = $returnabilityIndicator;
 
         return $this;
@@ -1312,8 +1326,9 @@ class TransportEquipmentType
      * @param  null|bool $legalStatusIndicator
      * @return static
      */
-    public function setLegalStatusIndicator(?bool $legalStatusIndicator = null): static
-    {
+    public function setLegalStatusIndicator(
+        ?bool $legalStatusIndicator = null
+    ): static {
         $this->legalStatusIndicator = $legalStatusIndicator;
 
         return $this;
@@ -1351,8 +1366,9 @@ class TransportEquipmentType
      * @param  null|AirFlowPercent $airFlowPercent
      * @return static
      */
-    public function setAirFlowPercent(?AirFlowPercent $airFlowPercent = null): static
-    {
+    public function setAirFlowPercent(
+        ?AirFlowPercent $airFlowPercent = null
+    ): static {
         $this->airFlowPercent = $airFlowPercent;
 
         return $this;
@@ -1390,8 +1406,9 @@ class TransportEquipmentType
      * @param  null|HumidityPercent $humidityPercent
      * @return static
      */
-    public function setHumidityPercent(?HumidityPercent $humidityPercent = null): static
-    {
+    public function setHumidityPercent(
+        ?HumidityPercent $humidityPercent = null
+    ): static {
         $this->humidityPercent = $humidityPercent;
 
         return $this;
@@ -1419,8 +1436,9 @@ class TransportEquipmentType
      * @param  null|bool $animalFoodApprovedIndicator
      * @return static
      */
-    public function setAnimalFoodApprovedIndicator(?bool $animalFoodApprovedIndicator = null): static
-    {
+    public function setAnimalFoodApprovedIndicator(
+        ?bool $animalFoodApprovedIndicator = null
+    ): static {
         $this->animalFoodApprovedIndicator = $animalFoodApprovedIndicator;
 
         return $this;
@@ -1448,8 +1466,9 @@ class TransportEquipmentType
      * @param  null|bool $humanFoodApprovedIndicator
      * @return static
      */
-    public function setHumanFoodApprovedIndicator(?bool $humanFoodApprovedIndicator = null): static
-    {
+    public function setHumanFoodApprovedIndicator(
+        ?bool $humanFoodApprovedIndicator = null
+    ): static {
         $this->humanFoodApprovedIndicator = $humanFoodApprovedIndicator;
 
         return $this;
@@ -1477,8 +1496,9 @@ class TransportEquipmentType
      * @param  null|bool $dangerousGoodsApprovedIndicator
      * @return static
      */
-    public function setDangerousGoodsApprovedIndicator(?bool $dangerousGoodsApprovedIndicator = null): static
-    {
+    public function setDangerousGoodsApprovedIndicator(
+        ?bool $dangerousGoodsApprovedIndicator = null
+    ): static {
         $this->dangerousGoodsApprovedIndicator = $dangerousGoodsApprovedIndicator;
 
         return $this;
@@ -1506,8 +1526,9 @@ class TransportEquipmentType
      * @param  null|bool $refrigeratedIndicator
      * @return static
      */
-    public function setRefrigeratedIndicator(?bool $refrigeratedIndicator = null): static
-    {
+    public function setRefrigeratedIndicator(
+        ?bool $refrigeratedIndicator = null
+    ): static {
         $this->refrigeratedIndicator = $refrigeratedIndicator;
 
         return $this;
@@ -1545,8 +1566,9 @@ class TransportEquipmentType
      * @param  null|Characteristics $characteristics
      * @return static
      */
-    public function setCharacteristics(?Characteristics $characteristics = null): static
-    {
+    public function setCharacteristics(
+        ?Characteristics $characteristics = null
+    ): static {
         $this->characteristics = $characteristics;
 
         return $this;
@@ -1574,8 +1596,9 @@ class TransportEquipmentType
      * @param  null|array<DamageRemarks> $damageRemarks
      * @return static
      */
-    public function setDamageRemarks(?array $damageRemarks = null): static
-    {
+    public function setDamageRemarks(
+        ?array $damageRemarks = null
+    ): static {
         $this->damageRemarks = $damageRemarks;
 
         return $this;
@@ -1635,8 +1658,9 @@ class TransportEquipmentType
      * @param  DamageRemarks $damageRemarks
      * @return static
      */
-    public function addToDamageRemarks(DamageRemarks $damageRemarks): static
-    {
+    public function addToDamageRemarks(
+        DamageRemarks $damageRemarks
+    ): static {
         $this->damageRemarks[] = $damageRemarks;
 
         return $this;
@@ -1656,8 +1680,9 @@ class TransportEquipmentType
      * @param  DamageRemarks $damageRemarks
      * @return static
      */
-    public function addOnceToDamageRemarks(DamageRemarks $damageRemarks): static
-    {
+    public function addOnceToDamageRemarks(
+        DamageRemarks $damageRemarks
+    ): static {
         if (!is_array($this->damageRemarks)) {
             $this->damageRemarks = [];
         }
@@ -1695,8 +1720,9 @@ class TransportEquipmentType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -1756,8 +1782,9 @@ class TransportEquipmentType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -1777,8 +1804,9 @@ class TransportEquipmentType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -1816,8 +1844,9 @@ class TransportEquipmentType
      * @param  null|array<SpecialTransportRequirements> $specialTransportRequirements
      * @return static
      */
-    public function setSpecialTransportRequirements(?array $specialTransportRequirements = null): static
-    {
+    public function setSpecialTransportRequirements(
+        ?array $specialTransportRequirements = null
+    ): static {
         $this->specialTransportRequirements = $specialTransportRequirements;
 
         return $this;
@@ -1949,8 +1978,9 @@ class TransportEquipmentType
      * @param  null|GrossWeightMeasure $grossWeightMeasure
      * @return static
      */
-    public function setGrossWeightMeasure(?GrossWeightMeasure $grossWeightMeasure = null): static
-    {
+    public function setGrossWeightMeasure(
+        ?GrossWeightMeasure $grossWeightMeasure = null
+    ): static {
         $this->grossWeightMeasure = $grossWeightMeasure;
 
         return $this;
@@ -1988,8 +2018,9 @@ class TransportEquipmentType
      * @param  null|GrossVolumeMeasure $grossVolumeMeasure
      * @return static
      */
-    public function setGrossVolumeMeasure(?GrossVolumeMeasure $grossVolumeMeasure = null): static
-    {
+    public function setGrossVolumeMeasure(
+        ?GrossVolumeMeasure $grossVolumeMeasure = null
+    ): static {
         $this->grossVolumeMeasure = $grossVolumeMeasure;
 
         return $this;
@@ -2027,8 +2058,9 @@ class TransportEquipmentType
      * @param  null|TareWeightMeasure $tareWeightMeasure
      * @return static
      */
-    public function setTareWeightMeasure(?TareWeightMeasure $tareWeightMeasure = null): static
-    {
+    public function setTareWeightMeasure(
+        ?TareWeightMeasure $tareWeightMeasure = null
+    ): static {
         $this->tareWeightMeasure = $tareWeightMeasure;
 
         return $this;
@@ -2066,8 +2098,9 @@ class TransportEquipmentType
      * @param  null|TrackingDeviceCode $trackingDeviceCode
      * @return static
      */
-    public function setTrackingDeviceCode(?TrackingDeviceCode $trackingDeviceCode = null): static
-    {
+    public function setTrackingDeviceCode(
+        ?TrackingDeviceCode $trackingDeviceCode = null
+    ): static {
         $this->trackingDeviceCode = $trackingDeviceCode;
 
         return $this;
@@ -2095,8 +2128,9 @@ class TransportEquipmentType
      * @param  null|bool $powerIndicator
      * @return static
      */
-    public function setPowerIndicator(?bool $powerIndicator = null): static
-    {
+    public function setPowerIndicator(
+        ?bool $powerIndicator = null
+    ): static {
         $this->powerIndicator = $powerIndicator;
 
         return $this;
@@ -2134,8 +2168,9 @@ class TransportEquipmentType
      * @param  null|TraceID $traceID
      * @return static
      */
-    public function setTraceID(?TraceID $traceID = null): static
-    {
+    public function setTraceID(
+        ?TraceID $traceID = null
+    ): static {
         $this->traceID = $traceID;
 
         return $this;
@@ -2163,8 +2198,9 @@ class TransportEquipmentType
      * @param  null|array<MeasurementDimension> $measurementDimension
      * @return static
      */
-    public function setMeasurementDimension(?array $measurementDimension = null): static
-    {
+    public function setMeasurementDimension(
+        ?array $measurementDimension = null
+    ): static {
         $this->measurementDimension = $measurementDimension;
 
         return $this;
@@ -2224,8 +2260,9 @@ class TransportEquipmentType
      * @param  MeasurementDimension $measurementDimension
      * @return static
      */
-    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
-    {
+    public function addToMeasurementDimension(
+        MeasurementDimension $measurementDimension
+    ): static {
         $this->measurementDimension[] = $measurementDimension;
 
         return $this;
@@ -2245,8 +2282,9 @@ class TransportEquipmentType
      * @param  MeasurementDimension $measurementDimension
      * @return static
      */
-    public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static
-    {
+    public function addOnceToMeasurementDimension(
+        MeasurementDimension $measurementDimension
+    ): static {
         if (!is_array($this->measurementDimension)) {
             $this->measurementDimension = [];
         }
@@ -2284,8 +2322,9 @@ class TransportEquipmentType
      * @param  null|array<TransportEquipmentSeal> $transportEquipmentSeal
      * @return static
      */
-    public function setTransportEquipmentSeal(?array $transportEquipmentSeal = null): static
-    {
+    public function setTransportEquipmentSeal(
+        ?array $transportEquipmentSeal = null
+    ): static {
         $this->transportEquipmentSeal = $transportEquipmentSeal;
 
         return $this;
@@ -2345,8 +2384,9 @@ class TransportEquipmentType
      * @param  TransportEquipmentSeal $transportEquipmentSeal
      * @return static
      */
-    public function addToTransportEquipmentSeal(TransportEquipmentSeal $transportEquipmentSeal): static
-    {
+    public function addToTransportEquipmentSeal(
+        TransportEquipmentSeal $transportEquipmentSeal
+    ): static {
         $this->transportEquipmentSeal[] = $transportEquipmentSeal;
 
         return $this;
@@ -2366,8 +2406,9 @@ class TransportEquipmentType
      * @param  TransportEquipmentSeal $transportEquipmentSeal
      * @return static
      */
-    public function addOnceToTransportEquipmentSeal(TransportEquipmentSeal $transportEquipmentSeal): static
-    {
+    public function addOnceToTransportEquipmentSeal(
+        TransportEquipmentSeal $transportEquipmentSeal
+    ): static {
         if (!is_array($this->transportEquipmentSeal)) {
             $this->transportEquipmentSeal = [];
         }
@@ -2415,8 +2456,9 @@ class TransportEquipmentType
      * @param  null|MinimumTemperature $minimumTemperature
      * @return static
      */
-    public function setMinimumTemperature(?MinimumTemperature $minimumTemperature = null): static
-    {
+    public function setMinimumTemperature(
+        ?MinimumTemperature $minimumTemperature = null
+    ): static {
         $this->minimumTemperature = $minimumTemperature;
 
         return $this;
@@ -2454,8 +2496,9 @@ class TransportEquipmentType
      * @param  null|MaximumTemperature $maximumTemperature
      * @return static
      */
-    public function setMaximumTemperature(?MaximumTemperature $maximumTemperature = null): static
-    {
+    public function setMaximumTemperature(
+        ?MaximumTemperature $maximumTemperature = null
+    ): static {
         $this->maximumTemperature = $maximumTemperature;
 
         return $this;
@@ -2493,8 +2536,9 @@ class TransportEquipmentType
      * @param  null|ProviderParty $providerParty
      * @return static
      */
-    public function setProviderParty(?ProviderParty $providerParty = null): static
-    {
+    public function setProviderParty(
+        ?ProviderParty $providerParty = null
+    ): static {
         $this->providerParty = $providerParty;
 
         return $this;
@@ -2532,8 +2576,9 @@ class TransportEquipmentType
      * @param  null|LoadingProofParty $loadingProofParty
      * @return static
      */
-    public function setLoadingProofParty(?LoadingProofParty $loadingProofParty = null): static
-    {
+    public function setLoadingProofParty(
+        ?LoadingProofParty $loadingProofParty = null
+    ): static {
         $this->loadingProofParty = $loadingProofParty;
 
         return $this;
@@ -2571,8 +2616,9 @@ class TransportEquipmentType
      * @param  null|SupplierParty $supplierParty
      * @return static
      */
-    public function setSupplierParty(?SupplierParty $supplierParty = null): static
-    {
+    public function setSupplierParty(
+        ?SupplierParty $supplierParty = null
+    ): static {
         $this->supplierParty = $supplierParty;
 
         return $this;
@@ -2610,8 +2656,9 @@ class TransportEquipmentType
      * @param  null|OwnerParty $ownerParty
      * @return static
      */
-    public function setOwnerParty(?OwnerParty $ownerParty = null): static
-    {
+    public function setOwnerParty(
+        ?OwnerParty $ownerParty = null
+    ): static {
         $this->ownerParty = $ownerParty;
 
         return $this;
@@ -2649,8 +2696,9 @@ class TransportEquipmentType
      * @param  null|OperatingParty $operatingParty
      * @return static
      */
-    public function setOperatingParty(?OperatingParty $operatingParty = null): static
-    {
+    public function setOperatingParty(
+        ?OperatingParty $operatingParty = null
+    ): static {
         $this->operatingParty = $operatingParty;
 
         return $this;
@@ -2688,8 +2736,9 @@ class TransportEquipmentType
      * @param  null|LoadingLocation $loadingLocation
      * @return static
      */
-    public function setLoadingLocation(?LoadingLocation $loadingLocation = null): static
-    {
+    public function setLoadingLocation(
+        ?LoadingLocation $loadingLocation = null
+    ): static {
         $this->loadingLocation = $loadingLocation;
 
         return $this;
@@ -2727,8 +2776,9 @@ class TransportEquipmentType
      * @param  null|UnloadingLocation $unloadingLocation
      * @return static
      */
-    public function setUnloadingLocation(?UnloadingLocation $unloadingLocation = null): static
-    {
+    public function setUnloadingLocation(
+        ?UnloadingLocation $unloadingLocation = null
+    ): static {
         $this->unloadingLocation = $unloadingLocation;
 
         return $this;
@@ -2766,8 +2816,9 @@ class TransportEquipmentType
      * @param  null|StorageLocation $storageLocation
      * @return static
      */
-    public function setStorageLocation(?StorageLocation $storageLocation = null): static
-    {
+    public function setStorageLocation(
+        ?StorageLocation $storageLocation = null
+    ): static {
         $this->storageLocation = $storageLocation;
 
         return $this;
@@ -2795,8 +2846,9 @@ class TransportEquipmentType
      * @param  null|array<PositioningTransportEvent> $positioningTransportEvent
      * @return static
      */
-    public function setPositioningTransportEvent(?array $positioningTransportEvent = null): static
-    {
+    public function setPositioningTransportEvent(
+        ?array $positioningTransportEvent = null
+    ): static {
         $this->positioningTransportEvent = $positioningTransportEvent;
 
         return $this;
@@ -2856,8 +2908,9 @@ class TransportEquipmentType
      * @param  PositioningTransportEvent $positioningTransportEvent
      * @return static
      */
-    public function addToPositioningTransportEvent(PositioningTransportEvent $positioningTransportEvent): static
-    {
+    public function addToPositioningTransportEvent(
+        PositioningTransportEvent $positioningTransportEvent
+    ): static {
         $this->positioningTransportEvent[] = $positioningTransportEvent;
 
         return $this;
@@ -2877,8 +2930,9 @@ class TransportEquipmentType
      * @param  PositioningTransportEvent $positioningTransportEvent
      * @return static
      */
-    public function addOnceToPositioningTransportEvent(PositioningTransportEvent $positioningTransportEvent): static
-    {
+    public function addOnceToPositioningTransportEvent(
+        PositioningTransportEvent $positioningTransportEvent
+    ): static {
         if (!is_array($this->positioningTransportEvent)) {
             $this->positioningTransportEvent = [];
         }
@@ -2916,8 +2970,9 @@ class TransportEquipmentType
      * @param  null|array<QuarantineTransportEvent> $quarantineTransportEvent
      * @return static
      */
-    public function setQuarantineTransportEvent(?array $quarantineTransportEvent = null): static
-    {
+    public function setQuarantineTransportEvent(
+        ?array $quarantineTransportEvent = null
+    ): static {
         $this->quarantineTransportEvent = $quarantineTransportEvent;
 
         return $this;
@@ -2977,8 +3032,9 @@ class TransportEquipmentType
      * @param  QuarantineTransportEvent $quarantineTransportEvent
      * @return static
      */
-    public function addToQuarantineTransportEvent(QuarantineTransportEvent $quarantineTransportEvent): static
-    {
+    public function addToQuarantineTransportEvent(
+        QuarantineTransportEvent $quarantineTransportEvent
+    ): static {
         $this->quarantineTransportEvent[] = $quarantineTransportEvent;
 
         return $this;
@@ -2998,8 +3054,9 @@ class TransportEquipmentType
      * @param  QuarantineTransportEvent $quarantineTransportEvent
      * @return static
      */
-    public function addOnceToQuarantineTransportEvent(QuarantineTransportEvent $quarantineTransportEvent): static
-    {
+    public function addOnceToQuarantineTransportEvent(
+        QuarantineTransportEvent $quarantineTransportEvent
+    ): static {
         if (!is_array($this->quarantineTransportEvent)) {
             $this->quarantineTransportEvent = [];
         }
@@ -3037,8 +3094,9 @@ class TransportEquipmentType
      * @param  null|array<DeliveryTransportEvent> $deliveryTransportEvent
      * @return static
      */
-    public function setDeliveryTransportEvent(?array $deliveryTransportEvent = null): static
-    {
+    public function setDeliveryTransportEvent(
+        ?array $deliveryTransportEvent = null
+    ): static {
         $this->deliveryTransportEvent = $deliveryTransportEvent;
 
         return $this;
@@ -3098,8 +3156,9 @@ class TransportEquipmentType
      * @param  DeliveryTransportEvent $deliveryTransportEvent
      * @return static
      */
-    public function addToDeliveryTransportEvent(DeliveryTransportEvent $deliveryTransportEvent): static
-    {
+    public function addToDeliveryTransportEvent(
+        DeliveryTransportEvent $deliveryTransportEvent
+    ): static {
         $this->deliveryTransportEvent[] = $deliveryTransportEvent;
 
         return $this;
@@ -3119,8 +3178,9 @@ class TransportEquipmentType
      * @param  DeliveryTransportEvent $deliveryTransportEvent
      * @return static
      */
-    public function addOnceToDeliveryTransportEvent(DeliveryTransportEvent $deliveryTransportEvent): static
-    {
+    public function addOnceToDeliveryTransportEvent(
+        DeliveryTransportEvent $deliveryTransportEvent
+    ): static {
         if (!is_array($this->deliveryTransportEvent)) {
             $this->deliveryTransportEvent = [];
         }
@@ -3158,8 +3218,9 @@ class TransportEquipmentType
      * @param  null|array<PickupTransportEvent> $pickupTransportEvent
      * @return static
      */
-    public function setPickupTransportEvent(?array $pickupTransportEvent = null): static
-    {
+    public function setPickupTransportEvent(
+        ?array $pickupTransportEvent = null
+    ): static {
         $this->pickupTransportEvent = $pickupTransportEvent;
 
         return $this;
@@ -3219,8 +3280,9 @@ class TransportEquipmentType
      * @param  PickupTransportEvent $pickupTransportEvent
      * @return static
      */
-    public function addToPickupTransportEvent(PickupTransportEvent $pickupTransportEvent): static
-    {
+    public function addToPickupTransportEvent(
+        PickupTransportEvent $pickupTransportEvent
+    ): static {
         $this->pickupTransportEvent[] = $pickupTransportEvent;
 
         return $this;
@@ -3240,8 +3302,9 @@ class TransportEquipmentType
      * @param  PickupTransportEvent $pickupTransportEvent
      * @return static
      */
-    public function addOnceToPickupTransportEvent(PickupTransportEvent $pickupTransportEvent): static
-    {
+    public function addOnceToPickupTransportEvent(
+        PickupTransportEvent $pickupTransportEvent
+    ): static {
         if (!is_array($this->pickupTransportEvent)) {
             $this->pickupTransportEvent = [];
         }
@@ -3279,8 +3342,9 @@ class TransportEquipmentType
      * @param  null|array<HandlingTransportEvent> $handlingTransportEvent
      * @return static
      */
-    public function setHandlingTransportEvent(?array $handlingTransportEvent = null): static
-    {
+    public function setHandlingTransportEvent(
+        ?array $handlingTransportEvent = null
+    ): static {
         $this->handlingTransportEvent = $handlingTransportEvent;
 
         return $this;
@@ -3340,8 +3404,9 @@ class TransportEquipmentType
      * @param  HandlingTransportEvent $handlingTransportEvent
      * @return static
      */
-    public function addToHandlingTransportEvent(HandlingTransportEvent $handlingTransportEvent): static
-    {
+    public function addToHandlingTransportEvent(
+        HandlingTransportEvent $handlingTransportEvent
+    ): static {
         $this->handlingTransportEvent[] = $handlingTransportEvent;
 
         return $this;
@@ -3361,8 +3426,9 @@ class TransportEquipmentType
      * @param  HandlingTransportEvent $handlingTransportEvent
      * @return static
      */
-    public function addOnceToHandlingTransportEvent(HandlingTransportEvent $handlingTransportEvent): static
-    {
+    public function addOnceToHandlingTransportEvent(
+        HandlingTransportEvent $handlingTransportEvent
+    ): static {
         if (!is_array($this->handlingTransportEvent)) {
             $this->handlingTransportEvent = [];
         }
@@ -3400,8 +3466,9 @@ class TransportEquipmentType
      * @param  null|array<LoadingTransportEvent> $loadingTransportEvent
      * @return static
      */
-    public function setLoadingTransportEvent(?array $loadingTransportEvent = null): static
-    {
+    public function setLoadingTransportEvent(
+        ?array $loadingTransportEvent = null
+    ): static {
         $this->loadingTransportEvent = $loadingTransportEvent;
 
         return $this;
@@ -3461,8 +3528,9 @@ class TransportEquipmentType
      * @param  LoadingTransportEvent $loadingTransportEvent
      * @return static
      */
-    public function addToLoadingTransportEvent(LoadingTransportEvent $loadingTransportEvent): static
-    {
+    public function addToLoadingTransportEvent(
+        LoadingTransportEvent $loadingTransportEvent
+    ): static {
         $this->loadingTransportEvent[] = $loadingTransportEvent;
 
         return $this;
@@ -3482,8 +3550,9 @@ class TransportEquipmentType
      * @param  LoadingTransportEvent $loadingTransportEvent
      * @return static
      */
-    public function addOnceToLoadingTransportEvent(LoadingTransportEvent $loadingTransportEvent): static
-    {
+    public function addOnceToLoadingTransportEvent(
+        LoadingTransportEvent $loadingTransportEvent
+    ): static {
         if (!is_array($this->loadingTransportEvent)) {
             $this->loadingTransportEvent = [];
         }
@@ -3521,8 +3590,9 @@ class TransportEquipmentType
      * @param  null|array<TransportEvent> $transportEvent
      * @return static
      */
-    public function setTransportEvent(?array $transportEvent = null): static
-    {
+    public function setTransportEvent(
+        ?array $transportEvent = null
+    ): static {
         $this->transportEvent = $transportEvent;
 
         return $this;
@@ -3582,8 +3652,9 @@ class TransportEquipmentType
      * @param  TransportEvent $transportEvent
      * @return static
      */
-    public function addToTransportEvent(TransportEvent $transportEvent): static
-    {
+    public function addToTransportEvent(
+        TransportEvent $transportEvent
+    ): static {
         $this->transportEvent[] = $transportEvent;
 
         return $this;
@@ -3603,8 +3674,9 @@ class TransportEquipmentType
      * @param  TransportEvent $transportEvent
      * @return static
      */
-    public function addOnceToTransportEvent(TransportEvent $transportEvent): static
-    {
+    public function addOnceToTransportEvent(
+        TransportEvent $transportEvent
+    ): static {
         if (!is_array($this->transportEvent)) {
             $this->transportEvent = [];
         }
@@ -3652,8 +3724,9 @@ class TransportEquipmentType
      * @param  null|ApplicableTransportMeans $applicableTransportMeans
      * @return static
      */
-    public function setApplicableTransportMeans(?ApplicableTransportMeans $applicableTransportMeans = null): static
-    {
+    public function setApplicableTransportMeans(
+        ?ApplicableTransportMeans $applicableTransportMeans = null
+    ): static {
         $this->applicableTransportMeans = $applicableTransportMeans;
 
         return $this;
@@ -3681,8 +3754,9 @@ class TransportEquipmentType
      * @param  null|array<HaulageTradingTerms> $haulageTradingTerms
      * @return static
      */
-    public function setHaulageTradingTerms(?array $haulageTradingTerms = null): static
-    {
+    public function setHaulageTradingTerms(
+        ?array $haulageTradingTerms = null
+    ): static {
         $this->haulageTradingTerms = $haulageTradingTerms;
 
         return $this;
@@ -3742,8 +3816,9 @@ class TransportEquipmentType
      * @param  HaulageTradingTerms $haulageTradingTerms
      * @return static
      */
-    public function addToHaulageTradingTerms(HaulageTradingTerms $haulageTradingTerms): static
-    {
+    public function addToHaulageTradingTerms(
+        HaulageTradingTerms $haulageTradingTerms
+    ): static {
         $this->haulageTradingTerms[] = $haulageTradingTerms;
 
         return $this;
@@ -3763,8 +3838,9 @@ class TransportEquipmentType
      * @param  HaulageTradingTerms $haulageTradingTerms
      * @return static
      */
-    public function addOnceToHaulageTradingTerms(HaulageTradingTerms $haulageTradingTerms): static
-    {
+    public function addOnceToHaulageTradingTerms(
+        HaulageTradingTerms $haulageTradingTerms
+    ): static {
         if (!is_array($this->haulageTradingTerms)) {
             $this->haulageTradingTerms = [];
         }
@@ -3802,8 +3878,9 @@ class TransportEquipmentType
      * @param  null|array<HazardousGoodsTransit> $hazardousGoodsTransit
      * @return static
      */
-    public function setHazardousGoodsTransit(?array $hazardousGoodsTransit = null): static
-    {
+    public function setHazardousGoodsTransit(
+        ?array $hazardousGoodsTransit = null
+    ): static {
         $this->hazardousGoodsTransit = $hazardousGoodsTransit;
 
         return $this;
@@ -3863,8 +3940,9 @@ class TransportEquipmentType
      * @param  HazardousGoodsTransit $hazardousGoodsTransit
      * @return static
      */
-    public function addToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): static
-    {
+    public function addToHazardousGoodsTransit(
+        HazardousGoodsTransit $hazardousGoodsTransit
+    ): static {
         $this->hazardousGoodsTransit[] = $hazardousGoodsTransit;
 
         return $this;
@@ -3884,8 +3962,9 @@ class TransportEquipmentType
      * @param  HazardousGoodsTransit $hazardousGoodsTransit
      * @return static
      */
-    public function addOnceToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): static
-    {
+    public function addOnceToHazardousGoodsTransit(
+        HazardousGoodsTransit $hazardousGoodsTransit
+    ): static {
         if (!is_array($this->hazardousGoodsTransit)) {
             $this->hazardousGoodsTransit = [];
         }
@@ -3923,8 +4002,9 @@ class TransportEquipmentType
      * @param  null|array<PackagedTransportHandlingUnit> $packagedTransportHandlingUnit
      * @return static
      */
-    public function setPackagedTransportHandlingUnit(?array $packagedTransportHandlingUnit = null): static
-    {
+    public function setPackagedTransportHandlingUnit(
+        ?array $packagedTransportHandlingUnit = null
+    ): static {
         $this->packagedTransportHandlingUnit = $packagedTransportHandlingUnit;
 
         return $this;
@@ -4046,8 +4126,9 @@ class TransportEquipmentType
      * @param  null|array<ServiceAllowanceCharge> $serviceAllowanceCharge
      * @return static
      */
-    public function setServiceAllowanceCharge(?array $serviceAllowanceCharge = null): static
-    {
+    public function setServiceAllowanceCharge(
+        ?array $serviceAllowanceCharge = null
+    ): static {
         $this->serviceAllowanceCharge = $serviceAllowanceCharge;
 
         return $this;
@@ -4107,8 +4188,9 @@ class TransportEquipmentType
      * @param  ServiceAllowanceCharge $serviceAllowanceCharge
      * @return static
      */
-    public function addToServiceAllowanceCharge(ServiceAllowanceCharge $serviceAllowanceCharge): static
-    {
+    public function addToServiceAllowanceCharge(
+        ServiceAllowanceCharge $serviceAllowanceCharge
+    ): static {
         $this->serviceAllowanceCharge[] = $serviceAllowanceCharge;
 
         return $this;
@@ -4128,8 +4210,9 @@ class TransportEquipmentType
      * @param  ServiceAllowanceCharge $serviceAllowanceCharge
      * @return static
      */
-    public function addOnceToServiceAllowanceCharge(ServiceAllowanceCharge $serviceAllowanceCharge): static
-    {
+    public function addOnceToServiceAllowanceCharge(
+        ServiceAllowanceCharge $serviceAllowanceCharge
+    ): static {
         if (!is_array($this->serviceAllowanceCharge)) {
             $this->serviceAllowanceCharge = [];
         }
@@ -4167,8 +4250,9 @@ class TransportEquipmentType
      * @param  null|array<FreightAllowanceCharge> $freightAllowanceCharge
      * @return static
      */
-    public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): static
-    {
+    public function setFreightAllowanceCharge(
+        ?array $freightAllowanceCharge = null
+    ): static {
         $this->freightAllowanceCharge = $freightAllowanceCharge;
 
         return $this;
@@ -4228,8 +4312,9 @@ class TransportEquipmentType
      * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
-    public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
-    {
+    public function addToFreightAllowanceCharge(
+        FreightAllowanceCharge $freightAllowanceCharge
+    ): static {
         $this->freightAllowanceCharge[] = $freightAllowanceCharge;
 
         return $this;
@@ -4249,8 +4334,9 @@ class TransportEquipmentType
      * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
-    public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
-    {
+    public function addOnceToFreightAllowanceCharge(
+        FreightAllowanceCharge $freightAllowanceCharge
+    ): static {
         if (!is_array($this->freightAllowanceCharge)) {
             $this->freightAllowanceCharge = [];
         }
@@ -4288,8 +4374,9 @@ class TransportEquipmentType
      * @param  null|array<AttachedTransportEquipment> $attachedTransportEquipment
      * @return static
      */
-    public function setAttachedTransportEquipment(?array $attachedTransportEquipment = null): static
-    {
+    public function setAttachedTransportEquipment(
+        ?array $attachedTransportEquipment = null
+    ): static {
         $this->attachedTransportEquipment = $attachedTransportEquipment;
 
         return $this;
@@ -4349,8 +4436,9 @@ class TransportEquipmentType
      * @param  AttachedTransportEquipment $attachedTransportEquipment
      * @return static
      */
-    public function addToAttachedTransportEquipment(AttachedTransportEquipment $attachedTransportEquipment): static
-    {
+    public function addToAttachedTransportEquipment(
+        AttachedTransportEquipment $attachedTransportEquipment
+    ): static {
         $this->attachedTransportEquipment[] = $attachedTransportEquipment;
 
         return $this;
@@ -4370,8 +4458,9 @@ class TransportEquipmentType
      * @param  AttachedTransportEquipment $attachedTransportEquipment
      * @return static
      */
-    public function addOnceToAttachedTransportEquipment(AttachedTransportEquipment $attachedTransportEquipment): static
-    {
+    public function addOnceToAttachedTransportEquipment(
+        AttachedTransportEquipment $attachedTransportEquipment
+    ): static {
         if (!is_array($this->attachedTransportEquipment)) {
             $this->attachedTransportEquipment = [];
         }
@@ -4419,8 +4508,9 @@ class TransportEquipmentType
      * @param  null|Delivery $delivery
      * @return static
      */
-    public function setDelivery(?Delivery $delivery = null): static
-    {
+    public function setDelivery(
+        ?Delivery $delivery = null
+    ): static {
         $this->delivery = $delivery;
 
         return $this;
@@ -4458,8 +4548,9 @@ class TransportEquipmentType
      * @param  null|Pickup $pickup
      * @return static
      */
-    public function setPickup(?Pickup $pickup = null): static
-    {
+    public function setPickup(
+        ?Pickup $pickup = null
+    ): static {
         $this->pickup = $pickup;
 
         return $this;
@@ -4497,8 +4588,9 @@ class TransportEquipmentType
      * @param  null|Despatch $despatch
      * @return static
      */
-    public function setDespatch(?Despatch $despatch = null): static
-    {
+    public function setDespatch(
+        ?Despatch $despatch = null
+    ): static {
         $this->despatch = $despatch;
 
         return $this;
@@ -4526,8 +4618,9 @@ class TransportEquipmentType
      * @param  null|array<ShipmentDocumentReference> $shipmentDocumentReference
      * @return static
      */
-    public function setShipmentDocumentReference(?array $shipmentDocumentReference = null): static
-    {
+    public function setShipmentDocumentReference(
+        ?array $shipmentDocumentReference = null
+    ): static {
         $this->shipmentDocumentReference = $shipmentDocumentReference;
 
         return $this;
@@ -4587,8 +4680,9 @@ class TransportEquipmentType
      * @param  ShipmentDocumentReference $shipmentDocumentReference
      * @return static
      */
-    public function addToShipmentDocumentReference(ShipmentDocumentReference $shipmentDocumentReference): static
-    {
+    public function addToShipmentDocumentReference(
+        ShipmentDocumentReference $shipmentDocumentReference
+    ): static {
         $this->shipmentDocumentReference[] = $shipmentDocumentReference;
 
         return $this;
@@ -4608,8 +4702,9 @@ class TransportEquipmentType
      * @param  ShipmentDocumentReference $shipmentDocumentReference
      * @return static
      */
-    public function addOnceToShipmentDocumentReference(ShipmentDocumentReference $shipmentDocumentReference): static
-    {
+    public function addOnceToShipmentDocumentReference(
+        ShipmentDocumentReference $shipmentDocumentReference
+    ): static {
         if (!is_array($this->shipmentDocumentReference)) {
             $this->shipmentDocumentReference = [];
         }
@@ -4647,8 +4742,9 @@ class TransportEquipmentType
      * @param  null|array<ContainedInTransportEquipment> $containedInTransportEquipment
      * @return static
      */
-    public function setContainedInTransportEquipment(?array $containedInTransportEquipment = null): static
-    {
+    public function setContainedInTransportEquipment(
+        ?array $containedInTransportEquipment = null
+    ): static {
         $this->containedInTransportEquipment = $containedInTransportEquipment;
 
         return $this;
@@ -4770,8 +4866,9 @@ class TransportEquipmentType
      * @param  null|array<Package> $package
      * @return static
      */
-    public function setPackage(?array $package = null): static
-    {
+    public function setPackage(
+        ?array $package = null
+    ): static {
         $this->package = $package;
 
         return $this;
@@ -4831,8 +4928,9 @@ class TransportEquipmentType
      * @param  Package $package
      * @return static
      */
-    public function addToPackage(Package $package): static
-    {
+    public function addToPackage(
+        Package $package
+    ): static {
         $this->package[] = $package;
 
         return $this;
@@ -4852,8 +4950,9 @@ class TransportEquipmentType
      * @param  Package $package
      * @return static
      */
-    public function addOnceToPackage(Package $package): static
-    {
+    public function addOnceToPackage(
+        Package $package
+    ): static {
         if (!is_array($this->package)) {
             $this->package = [];
         }
@@ -4891,8 +4990,9 @@ class TransportEquipmentType
      * @param  null|array<GoodsItem> $goodsItem
      * @return static
      */
-    public function setGoodsItem(?array $goodsItem = null): static
-    {
+    public function setGoodsItem(
+        ?array $goodsItem = null
+    ): static {
         $this->goodsItem = $goodsItem;
 
         return $this;
@@ -4952,8 +5052,9 @@ class TransportEquipmentType
      * @param  GoodsItem $goodsItem
      * @return static
      */
-    public function addToGoodsItem(GoodsItem $goodsItem): static
-    {
+    public function addToGoodsItem(
+        GoodsItem $goodsItem
+    ): static {
         $this->goodsItem[] = $goodsItem;
 
         return $this;
@@ -4973,8 +5074,9 @@ class TransportEquipmentType
      * @param  GoodsItem $goodsItem
      * @return static
      */
-    public function addOnceToGoodsItem(GoodsItem $goodsItem): static
-    {
+    public function addOnceToGoodsItem(
+        GoodsItem $goodsItem
+    ): static {
         if (!is_array($this->goodsItem)) {
             $this->goodsItem = [];
         }

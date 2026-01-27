@@ -39,8 +39,9 @@ final class DatiSAL
      * @param  null|int $riferimentoFase
      * @return static
      */
-    public function setRiferimentoFase(?int $riferimentoFase = null): static
-    {
+    public function setRiferimentoFase(
+        ?int $riferimentoFase = null
+    ): static {
         $this->riferimentoFase = $riferimentoFase;
 
         return $this;

@@ -56,8 +56,9 @@ class X509IssuerSerialType
      * @param  string $x509IssuerName
      * @return static
      */
-    public function setX509IssuerName(?string $x509IssuerName = null): static
-    {
+    public function setX509IssuerName(
+        ?string $x509IssuerName = null
+    ): static {
         $this->x509IssuerName = $x509IssuerName;
 
         return $this;
@@ -91,8 +92,9 @@ class X509IssuerSerialType
      * @param  int    $x509SerialNumber
      * @return static
      */
-    public function setX509SerialNumber(?int $x509SerialNumber = null): static
-    {
+    public function setX509SerialNumber(
+        ?int $x509SerialNumber = null
+    ): static {
         $this->x509SerialNumber = $x509SerialNumber;
 
         return $this;

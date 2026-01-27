@@ -87,8 +87,9 @@ class MiscellaneousEventType
      * @param  null|array<EventLineItem> $eventLineItem
      * @return static
      */
-    public function setEventLineItem(?array $eventLineItem = null): static
-    {
+    public function setEventLineItem(
+        ?array $eventLineItem = null
+    ): static {
         $this->eventLineItem = $eventLineItem;
 
         return $this;
@@ -148,8 +149,9 @@ class MiscellaneousEventType
      * @param  EventLineItem $eventLineItem
      * @return static
      */
-    public function addToEventLineItem(EventLineItem $eventLineItem): static
-    {
+    public function addToEventLineItem(
+        EventLineItem $eventLineItem
+    ): static {
         $this->eventLineItem[] = $eventLineItem;
 
         return $this;
@@ -169,8 +171,9 @@ class MiscellaneousEventType
      * @param  EventLineItem $eventLineItem
      * @return static
      */
-    public function addOnceToEventLineItem(EventLineItem $eventLineItem): static
-    {
+    public function addOnceToEventLineItem(
+        EventLineItem $eventLineItem
+    ): static {
         if (!is_array($this->eventLineItem)) {
             $this->eventLineItem = [];
         }

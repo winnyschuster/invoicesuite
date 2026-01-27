@@ -124,8 +124,9 @@ class ActivityDataLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -203,8 +204,9 @@ class ActivityDataLineType
      * @param  null|BuyerCustomerParty $buyerCustomerParty
      * @return static
      */
-    public function setBuyerCustomerParty(?BuyerCustomerParty $buyerCustomerParty = null): static
-    {
+    public function setBuyerCustomerParty(
+        ?BuyerCustomerParty $buyerCustomerParty = null
+    ): static {
         $this->buyerCustomerParty = $buyerCustomerParty;
 
         return $this;
@@ -242,8 +244,9 @@ class ActivityDataLineType
      * @param  null|SellerSupplierParty $sellerSupplierParty
      * @return static
      */
-    public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
-    {
+    public function setSellerSupplierParty(
+        ?SellerSupplierParty $sellerSupplierParty = null
+    ): static {
         $this->sellerSupplierParty = $sellerSupplierParty;
 
         return $this;
@@ -281,8 +284,9 @@ class ActivityDataLineType
      * @param  null|ActivityPeriod $activityPeriod
      * @return static
      */
-    public function setActivityPeriod(?ActivityPeriod $activityPeriod = null): static
-    {
+    public function setActivityPeriod(
+        ?ActivityPeriod $activityPeriod = null
+    ): static {
         $this->activityPeriod = $activityPeriod;
 
         return $this;
@@ -320,8 +324,9 @@ class ActivityDataLineType
      * @param  null|ActivityOriginLocation $activityOriginLocation
      * @return static
      */
-    public function setActivityOriginLocation(?ActivityOriginLocation $activityOriginLocation = null): static
-    {
+    public function setActivityOriginLocation(
+        ?ActivityOriginLocation $activityOriginLocation = null
+    ): static {
         $this->activityOriginLocation = $activityOriginLocation;
 
         return $this;
@@ -359,8 +364,9 @@ class ActivityDataLineType
      * @param  null|ActivityFinalLocation $activityFinalLocation
      * @return static
      */
-    public function setActivityFinalLocation(?ActivityFinalLocation $activityFinalLocation = null): static
-    {
+    public function setActivityFinalLocation(
+        ?ActivityFinalLocation $activityFinalLocation = null
+    ): static {
         $this->activityFinalLocation = $activityFinalLocation;
 
         return $this;
@@ -388,8 +394,9 @@ class ActivityDataLineType
      * @param  null|array<SalesItem> $salesItem
      * @return static
      */
-    public function setSalesItem(?array $salesItem = null): static
-    {
+    public function setSalesItem(
+        ?array $salesItem = null
+    ): static {
         $this->salesItem = $salesItem;
 
         return $this;
@@ -449,8 +456,9 @@ class ActivityDataLineType
      * @param  SalesItem $salesItem
      * @return static
      */
-    public function addToSalesItem(SalesItem $salesItem): static
-    {
+    public function addToSalesItem(
+        SalesItem $salesItem
+    ): static {
         $this->salesItem[] = $salesItem;
 
         return $this;
@@ -470,8 +478,9 @@ class ActivityDataLineType
      * @param  SalesItem $salesItem
      * @return static
      */
-    public function addOnceToSalesItem(SalesItem $salesItem): static
-    {
+    public function addOnceToSalesItem(
+        SalesItem $salesItem
+    ): static {
         if (!is_array($this->salesItem)) {
             $this->salesItem = [];
         }

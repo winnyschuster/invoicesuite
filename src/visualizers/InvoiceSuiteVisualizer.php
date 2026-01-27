@@ -115,8 +115,10 @@ class InvoiceSuiteVisualizer
      * @param  null|InvoiceSuiteVisualizerAbstractRenderer $renderer
      * @return void
      */
-    final protected function __construct(InvoiceSuiteDocumentReader $documentReader, ?InvoiceSuiteVisualizerAbstractRenderer $renderer = null)
-    {
+    final protected function __construct(
+        InvoiceSuiteDocumentReader $documentReader,
+        ?InvoiceSuiteVisualizerAbstractRenderer $renderer = null
+    ) {
         $this->documentReader = $documentReader;
 
         if ($renderer instanceof InvoiceSuiteVisualizerAbstractRenderer) {
@@ -131,8 +133,10 @@ class InvoiceSuiteVisualizer
      * @param  null|InvoiceSuiteVisualizerAbstractRenderer $renderer
      * @return static
      */
-    public static function createFromDocumentReader(InvoiceSuiteDocumentReader $documentReader, ?InvoiceSuiteVisualizerAbstractRenderer $renderer = null): static
-    {
+    public static function createFromDocumentReader(
+        InvoiceSuiteDocumentReader $documentReader,
+        ?InvoiceSuiteVisualizerAbstractRenderer $renderer = null
+    ): static {
         return new static($documentReader, $renderer);
     }
 
@@ -147,8 +151,10 @@ class InvoiceSuiteVisualizer
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    public static function createFromDocumentBuilder(InvoiceSuiteDocumentBuilder $documentBuilder, ?InvoiceSuiteVisualizerAbstractRenderer $renderer = null): static
-    {
+    public static function createFromDocumentBuilder(
+        InvoiceSuiteDocumentBuilder $documentBuilder,
+        ?InvoiceSuiteVisualizerAbstractRenderer $renderer = null
+    ): static {
         return static::createFromDocumentReader(
             InvoiceSuiteDocumentReader::createFromContent($documentBuilder->getContent()),
             $renderer
@@ -166,8 +172,10 @@ class InvoiceSuiteVisualizer
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    public static function createFromContent(string $fromContent, ?InvoiceSuiteVisualizerAbstractRenderer $renderer = null): static
-    {
+    public static function createFromContent(
+        string $fromContent,
+        ?InvoiceSuiteVisualizerAbstractRenderer $renderer = null
+    ): static {
         return static::createFromDocumentReader(
             InvoiceSuiteDocumentReader::createFromContent($fromContent),
             $renderer
@@ -187,8 +195,10 @@ class InvoiceSuiteVisualizer
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    public static function createFromFile(string $fromFile, ?InvoiceSuiteVisualizerAbstractRenderer $renderer = null): static
-    {
+    public static function createFromFile(
+        string $fromFile,
+        ?InvoiceSuiteVisualizerAbstractRenderer $renderer = null
+    ): static {
         if (!file_exists($fromFile)) {
             throw new InvoiceSuiteFileNotFoundException($fromFile);
         }
@@ -208,8 +218,9 @@ class InvoiceSuiteVisualizer
      * @param  InvoiceSuiteVisualizerAbstractRenderer $renderer
      * @return static
      */
-    public function setRenderer(InvoiceSuiteVisualizerAbstractRenderer $renderer): static
-    {
+    public function setRenderer(
+        InvoiceSuiteVisualizerAbstractRenderer $renderer
+    ): static {
         $this->renderer = $renderer;
 
         return $this;
@@ -223,8 +234,9 @@ class InvoiceSuiteVisualizer
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function setTemplate(string $template): static
-    {
+    public function setTemplate(
+        string $template
+    ): static {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($template)) {
             throw new InvoiceSuiteInvalidArgumentException('The template must not be empty');
         }
@@ -263,8 +275,9 @@ class InvoiceSuiteVisualizer
      * @param  string $directory
      * @return static
      */
-    public function addPdfFontDirectory(string $directory): static
-    {
+    public function addPdfFontDirectory(
+        string $directory
+    ): static {
         if (!is_dir($directory)) {
             return $this;
         }
@@ -285,8 +298,11 @@ class InvoiceSuiteVisualizer
      * @param  string $filename
      * @return static
      */
-    public function addPdfFontData(string $name, string $style, string $filename): static
-    {
+    public function addPdfFontData(
+        string $name,
+        string $style,
+        string $filename
+    ): static {
         $this->pdfFontData[$name][$style] = $filename;
 
         return $this;
@@ -298,8 +314,9 @@ class InvoiceSuiteVisualizer
      * @param  string $pdfFontDefault
      * @return static
      */
-    public function setPdfFontDefault(string $pdfFontDefault): static
-    {
+    public function setPdfFontDefault(
+        string $pdfFontDefault
+    ): static {
         $this->pdfFontDefault = $pdfFontDefault;
 
         return $this;
@@ -311,8 +328,9 @@ class InvoiceSuiteVisualizer
      * @param  string $pdfPaperSize
      * @return static
      */
-    public function setPdfPaperSize(string $pdfPaperSize): static
-    {
+    public function setPdfPaperSize(
+        string $pdfPaperSize
+    ): static {
         if (preg_match('/([0-9a-zA-Z]*)-([P,L])/i', $pdfPaperSize, $_)) {
             $this->pdfPaperSize = $pdfPaperSize;
         }
@@ -326,8 +344,9 @@ class InvoiceSuiteVisualizer
      * @param  callable(array<string, mixed>, InvoiceSuiteVisualizer): array<string, mixed> $callback
      * @return static
      */
-    public function setPdfPreInitCallback(callable $callback): static
-    {
+    public function setPdfPreInitCallback(
+        callable $callback
+    ): static {
         $this->mpdfPreInitCallback = $callback;
 
         return $this;
@@ -339,8 +358,9 @@ class InvoiceSuiteVisualizer
      * @param  callable(Mpdf, InvoiceSuiteVisualizer): void $callback
      * @return static
      */
-    public function setPdfPostInitCallback(callable $callback): static
-    {
+    public function setPdfPostInitCallback(
+        callable $callback
+    ): static {
         $this->mpdfPostInitCallback = $callback;
 
         return $this;
@@ -382,8 +402,9 @@ class InvoiceSuiteVisualizer
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function renderPdfFile(string $toFilename): static
-    {
+    public function renderPdfFile(
+        string $toFilename
+    ): static {
         $this->internalRenderPdf($this->renderMarkup(), 'F', $toFilename);
 
         return $this;
@@ -395,8 +416,11 @@ class InvoiceSuiteVisualizer
      * @param  string      $toFilename
      * @return string|void
      */
-    protected function internalRenderPdf(string $markup, string $outputDestination, string $toFilename)
-    {
+    protected function internalRenderPdf(
+        string $markup,
+        string $outputDestination,
+        string $toFilename
+    ) {
         $pdfEngine = $this->instanciatePdfEngine();
 
         $pdfEngine->WriteHTML($markup);

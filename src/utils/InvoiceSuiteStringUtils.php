@@ -24,8 +24,9 @@ class InvoiceSuiteStringUtils
      * @param  null|string $str
      * @return bool
      */
-    public static function stringIsNullOrEmpty(?string $str = null): bool
-    {
+    public static function stringIsNullOrEmpty(
+        ?string $str = null
+    ): bool {
         return StringUtils::stringIsNullOrEmpty($str);
     }
 
@@ -36,8 +37,9 @@ class InvoiceSuiteStringUtils
      * @param  array<null|string> $values
      * @return bool
      */
-    public static function allIsNullOrEmpty(array $values): bool
-    {
+    public static function allIsNullOrEmpty(
+        array $values
+    ): bool {
         foreach ($values as $value) {
             if (!static::stringIsNullOrEmpty($value)) {
                 return false;
@@ -53,8 +55,9 @@ class InvoiceSuiteStringUtils
      * @param  array<null|string> $values
      * @return bool
      */
-    public static function oneIsNullOrEmpty(array $values): bool
-    {
+    public static function oneIsNullOrEmpty(
+        array $values
+    ): bool {
         foreach ($values as $value) {
             if (static::stringIsNullOrEmpty($value)) {
                 return true;
@@ -70,8 +73,9 @@ class InvoiceSuiteStringUtils
      * @param  null|string $str
      * @return null|string
      */
-    public static function asNullWhenEmpty(?string $str): ?string
-    {
+    public static function asNullWhenEmpty(
+        ?string $str
+    ): ?string {
         return static::stringIsNullOrEmpty($str) ? null : $str;
     }
 
@@ -83,8 +87,9 @@ class InvoiceSuiteStringUtils
      *
      * @throws RandomException
      */
-    public static function createGuid(bool $useOpenSsl = true): string
-    {
+    public static function createGuid(
+        bool $useOpenSsl = true
+    ): string {
         $randomBytes = function_exists('openssl_random_pseudo_bytes') && $useOpenSsl ? openssl_random_pseudo_bytes(16) : random_bytes(16);
 
         $randomBytes[6] = chr(ord($randomBytes[6]) & 0x0F | 0x40);

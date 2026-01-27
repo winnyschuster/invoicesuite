@@ -139,8 +139,9 @@ class TradeAllowanceChargeType
      * @param  null|IndicatorType $chargeIndicator
      * @return static
      */
-    public function setChargeIndicator(?IndicatorType $chargeIndicator = null): static
-    {
+    public function setChargeIndicator(
+        ?IndicatorType $chargeIndicator = null
+    ): static {
         $this->chargeIndicator = $chargeIndicator;
 
         return $this;
@@ -178,8 +179,9 @@ class TradeAllowanceChargeType
      * @param  null|NumericType $sequenceNumeric
      * @return static
      */
-    public function setSequenceNumeric(?NumericType $sequenceNumeric = null): static
-    {
+    public function setSequenceNumeric(
+        ?NumericType $sequenceNumeric = null
+    ): static {
         $this->sequenceNumeric = $sequenceNumeric;
 
         return $this;
@@ -217,8 +219,9 @@ class TradeAllowanceChargeType
      * @param  null|PercentType $calculationPercent
      * @return static
      */
-    public function setCalculationPercent(?PercentType $calculationPercent = null): static
-    {
+    public function setCalculationPercent(
+        ?PercentType $calculationPercent = null
+    ): static {
         $this->calculationPercent = $calculationPercent;
 
         return $this;
@@ -256,8 +259,9 @@ class TradeAllowanceChargeType
      * @param  null|AmountType $basisAmount
      * @return static
      */
-    public function setBasisAmount(?AmountType $basisAmount = null): static
-    {
+    public function setBasisAmount(
+        ?AmountType $basisAmount = null
+    ): static {
         $this->basisAmount = $basisAmount;
 
         return $this;
@@ -295,8 +299,9 @@ class TradeAllowanceChargeType
      * @param  null|QuantityType $basisQuantity
      * @return static
      */
-    public function setBasisQuantity(?QuantityType $basisQuantity = null): static
-    {
+    public function setBasisQuantity(
+        ?QuantityType $basisQuantity = null
+    ): static {
         $this->basisQuantity = $basisQuantity;
 
         return $this;
@@ -334,8 +339,9 @@ class TradeAllowanceChargeType
      * @param  null|AmountType $actualAmount
      * @return static
      */
-    public function setActualAmount(?AmountType $actualAmount = null): static
-    {
+    public function setActualAmount(
+        ?AmountType $actualAmount = null
+    ): static {
         $this->actualAmount = $actualAmount;
 
         return $this;
@@ -373,8 +379,9 @@ class TradeAllowanceChargeType
      * @param  null|AllowanceChargeReasonCodeType $reasonCode
      * @return static
      */
-    public function setReasonCode(?AllowanceChargeReasonCodeType $reasonCode = null): static
-    {
+    public function setReasonCode(
+        ?AllowanceChargeReasonCodeType $reasonCode = null
+    ): static {
         $this->reasonCode = $reasonCode;
 
         return $this;
@@ -412,8 +419,9 @@ class TradeAllowanceChargeType
      * @param  null|TextType $reason
      * @return static
      */
-    public function setReason(?TextType $reason = null): static
-    {
+    public function setReason(
+        ?TextType $reason = null
+    ): static {
         $this->reason = $reason;
 
         return $this;
@@ -451,8 +459,9 @@ class TradeAllowanceChargeType
      * @param  null|TradeTaxType $categoryTradeTax
      * @return static
      */
-    public function setCategoryTradeTax(?TradeTaxType $categoryTradeTax = null): static
-    {
+    public function setCategoryTradeTax(
+        ?TradeTaxType $categoryTradeTax = null
+    ): static {
         $this->categoryTradeTax = $categoryTradeTax;
 
         return $this;

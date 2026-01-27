@@ -20,8 +20,9 @@ class InvoiceSuiteArrayUtils
      * @param  mixed              $value
      * @return array<mixed,mixed>
      */
-    public static function ensure($value): array
-    {
+    public static function ensure(
+        $value
+    ): array {
         return is_array($value) ? $value : [$value];
     }
 
@@ -32,8 +33,10 @@ class InvoiceSuiteArrayUtils
      * @param  string        $search
      * @return bool
      */
-    public static function inArrayNoCase(array $array, string $search): bool
-    {
+    public static function inArrayNoCase(
+        array $array,
+        string $search
+    ): bool {
         return in_array(strtolower($search), array_map(strtolower(...), $array));
     }
 

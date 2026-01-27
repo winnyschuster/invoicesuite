@@ -57,8 +57,9 @@ class TextType
      * @param  null|string $value
      * @return static
      */
-    public function setValue(?string $value = null): static
-    {
+    public function setValue(
+        ?string $value = null
+    ): static {
         $this->value = InvoiceSuiteStringUtils::asNullWhenEmpty($value);
 
         return $this;
@@ -86,8 +87,9 @@ class TextType
      * @param  null|string $languageID
      * @return static
      */
-    public function setLanguageID(?string $languageID = null): static
-    {
+    public function setLanguageID(
+        ?string $languageID = null
+    ): static {
         $this->languageID = InvoiceSuiteStringUtils::asNullWhenEmpty($languageID);
 
         return $this;
@@ -115,8 +117,9 @@ class TextType
      * @param  null|string $languageLocaleID
      * @return static
      */
-    public function setLanguageLocaleID(?string $languageLocaleID = null): static
-    {
+    public function setLanguageLocaleID(
+        ?string $languageLocaleID = null
+    ): static {
         $this->languageLocaleID = InvoiceSuiteStringUtils::asNullWhenEmpty($languageLocaleID);
 
         return $this;

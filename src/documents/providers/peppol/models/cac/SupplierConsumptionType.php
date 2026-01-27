@@ -92,8 +92,9 @@ class SupplierConsumptionType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -153,8 +154,9 @@ class SupplierConsumptionType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -174,8 +176,9 @@ class SupplierConsumptionType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -223,8 +226,9 @@ class SupplierConsumptionType
      * @param  null|UtilitySupplierParty $utilitySupplierParty
      * @return static
      */
-    public function setUtilitySupplierParty(?UtilitySupplierParty $utilitySupplierParty = null): static
-    {
+    public function setUtilitySupplierParty(
+        ?UtilitySupplierParty $utilitySupplierParty = null
+    ): static {
         $this->utilitySupplierParty = $utilitySupplierParty;
 
         return $this;
@@ -262,8 +266,9 @@ class SupplierConsumptionType
      * @param  null|UtilityCustomerParty $utilityCustomerParty
      * @return static
      */
-    public function setUtilityCustomerParty(?UtilityCustomerParty $utilityCustomerParty = null): static
-    {
+    public function setUtilityCustomerParty(
+        ?UtilityCustomerParty $utilityCustomerParty = null
+    ): static {
         $this->utilityCustomerParty = $utilityCustomerParty;
 
         return $this;
@@ -301,8 +306,9 @@ class SupplierConsumptionType
      * @param  null|Consumption $consumption
      * @return static
      */
-    public function setConsumption(?Consumption $consumption = null): static
-    {
+    public function setConsumption(
+        ?Consumption $consumption = null
+    ): static {
         $this->consumption = $consumption;
 
         return $this;
@@ -340,8 +346,9 @@ class SupplierConsumptionType
      * @param  null|Contract $contract
      * @return static
      */
-    public function setContract(?Contract $contract = null): static
-    {
+    public function setContract(
+        ?Contract $contract = null
+    ): static {
         $this->contract = $contract;
 
         return $this;
@@ -369,8 +376,9 @@ class SupplierConsumptionType
      * @param  null|array<ConsumptionLine> $consumptionLine
      * @return static
      */
-    public function setConsumptionLine(?array $consumptionLine = null): static
-    {
+    public function setConsumptionLine(
+        ?array $consumptionLine = null
+    ): static {
         $this->consumptionLine = $consumptionLine;
 
         return $this;
@@ -430,8 +438,9 @@ class SupplierConsumptionType
      * @param  ConsumptionLine $consumptionLine
      * @return static
      */
-    public function addToConsumptionLine(ConsumptionLine $consumptionLine): static
-    {
+    public function addToConsumptionLine(
+        ConsumptionLine $consumptionLine
+    ): static {
         $this->consumptionLine[] = $consumptionLine;
 
         return $this;
@@ -451,8 +460,9 @@ class SupplierConsumptionType
      * @param  ConsumptionLine $consumptionLine
      * @return static
      */
-    public function addOnceToConsumptionLine(ConsumptionLine $consumptionLine): static
-    {
+    public function addOnceToConsumptionLine(
+        ConsumptionLine $consumptionLine
+    ): static {
         if (!is_array($this->consumptionLine)) {
             $this->consumptionLine = [];
         }

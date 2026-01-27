@@ -43,8 +43,10 @@ class InvoiceSuiteProjectDTO
      * @param null|string $projectNumber The project number
      * @param null|string $projectName   The project name
      */
-    public function __construct(?string $projectNumber = null, ?string $projectName = null)
-    {
+    public function __construct(
+        ?string $projectNumber = null,
+        ?string $projectName = null
+    ) {
         $this->setProjectNumber($projectNumber);
         $this->setProjectName($projectName);
     }
@@ -65,8 +67,9 @@ class InvoiceSuiteProjectDTO
      * @param  null|string $projectNumber The project number
      * @return static
      */
-    public function setProjectNumber(?string $projectNumber): static
-    {
+    public function setProjectNumber(
+        ?string $projectNumber
+    ): static {
         $this->projectNumber = InvoiceSuiteStringUtils::asNullWhenEmpty($projectNumber);
 
         return $this;
@@ -88,8 +91,9 @@ class InvoiceSuiteProjectDTO
      * @param  null|string $projectName The project name
      * @return static
      */
-    public function setProjectName(?string $projectName): static
-    {
+    public function setProjectName(
+        ?string $projectName
+    ): static {
         $this->projectName = InvoiceSuiteStringUtils::asNullWhenEmpty($projectName);
 
         return $this;

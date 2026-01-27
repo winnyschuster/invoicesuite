@@ -80,8 +80,9 @@ class AppealTermsType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -141,8 +142,9 @@ class AppealTermsType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -162,8 +164,9 @@ class AppealTermsType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -211,8 +214,9 @@ class AppealTermsType
      * @param  null|PresentationPeriod $presentationPeriod
      * @return static
      */
-    public function setPresentationPeriod(?PresentationPeriod $presentationPeriod = null): static
-    {
+    public function setPresentationPeriod(
+        ?PresentationPeriod $presentationPeriod = null
+    ): static {
         $this->presentationPeriod = $presentationPeriod;
 
         return $this;
@@ -250,8 +254,9 @@ class AppealTermsType
      * @param  null|AppealInformationParty $appealInformationParty
      * @return static
      */
-    public function setAppealInformationParty(?AppealInformationParty $appealInformationParty = null): static
-    {
+    public function setAppealInformationParty(
+        ?AppealInformationParty $appealInformationParty = null
+    ): static {
         $this->appealInformationParty = $appealInformationParty;
 
         return $this;
@@ -289,8 +294,9 @@ class AppealTermsType
      * @param  null|AppealReceiverParty $appealReceiverParty
      * @return static
      */
-    public function setAppealReceiverParty(?AppealReceiverParty $appealReceiverParty = null): static
-    {
+    public function setAppealReceiverParty(
+        ?AppealReceiverParty $appealReceiverParty = null
+    ): static {
         $this->appealReceiverParty = $appealReceiverParty;
 
         return $this;
@@ -328,8 +334,9 @@ class AppealTermsType
      * @param  null|MediationParty $mediationParty
      * @return static
      */
-    public function setMediationParty(?MediationParty $mediationParty = null): static
-    {
+    public function setMediationParty(
+        ?MediationParty $mediationParty = null
+    ): static {
         $this->mediationParty = $mediationParty;
 
         return $this;

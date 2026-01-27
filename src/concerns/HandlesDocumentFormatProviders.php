@@ -41,8 +41,9 @@ trait HandlesDocumentFormatProviders
      * @param  InvoiceSuiteAbstractDocumentFormatProvider $invoiceSuiteAbstractFormatProvider
      * @return static
      */
-    public function registerDocumentFormatProvider(InvoiceSuiteAbstractDocumentFormatProvider $invoiceSuiteAbstractFormatProvider): static
-    {
+    public function registerDocumentFormatProvider(
+        InvoiceSuiteAbstractDocumentFormatProvider $invoiceSuiteAbstractFormatProvider
+    ): static {
         if (in_array($invoiceSuiteAbstractFormatProvider, $this->registeredDocumentFormatProviders)) {
             return $this;
         }
@@ -58,8 +59,9 @@ trait HandlesDocumentFormatProviders
      * @param  InvoiceSuiteAbstractDocumentFormatProvider $existingProvider
      * @return static
      */
-    public function unregisterDocumentFormatProvider(InvoiceSuiteAbstractDocumentFormatProvider $existingProvider): static
-    {
+    public function unregisterDocumentFormatProvider(
+        InvoiceSuiteAbstractDocumentFormatProvider $existingProvider
+    ): static {
         if (($key = array_search($existingProvider, $this->registeredDocumentFormatProviders, true)) === false) {
             return $this;
         }
@@ -75,8 +77,9 @@ trait HandlesDocumentFormatProviders
      * @param  string                                          $formatProviderUniqueId
      * @return null|InvoiceSuiteAbstractDocumentFormatProvider
      */
-    public function findDocumentFormatProviderByUniqueId(string $formatProviderUniqueId)
-    {
+    public function findDocumentFormatProviderByUniqueId(
+        string $formatProviderUniqueId
+    ) {
         $formatProvider = array_filter($this->registeredDocumentFormatProviders, static fn ($formatProvider) => 0 === strcasecmp($formatProvider->getUniqueId(), $formatProviderUniqueId));
 
         if ([] === $formatProvider) {
@@ -94,8 +97,9 @@ trait HandlesDocumentFormatProviders
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      */
-    public function findDocumentFormatProviderByUniqueIdOrFail(string $formatProviderUniqueId)
-    {
+    public function findDocumentFormatProviderByUniqueIdOrFail(
+        string $formatProviderUniqueId
+    ) {
         $formatProvider = $this->findDocumentFormatProviderByUniqueId($formatProviderUniqueId);
 
         if (is_null($formatProvider)) {

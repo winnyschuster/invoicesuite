@@ -173,8 +173,9 @@ final class DatiGenerali
      * @param  null|DatiGeneraliDocumento $datiGeneraliDocumento
      * @return static
      */
-    public function setDatiGeneraliDocumento(?DatiGeneraliDocumento $datiGeneraliDocumento = null): static
-    {
+    public function setDatiGeneraliDocumento(
+        ?DatiGeneraliDocumento $datiGeneraliDocumento = null
+    ): static {
         $this->datiGeneraliDocumento = $datiGeneraliDocumento;
 
         return $this;
@@ -208,8 +209,9 @@ final class DatiGenerali
      * @param  null|array<DatiDocumentiCorrelati> $datiOrdineAcquisto
      * @return static
      */
-    public function setDatiOrdineAcquisto(?array $datiOrdineAcquisto = null): static
-    {
+    public function setDatiOrdineAcquisto(
+        ?array $datiOrdineAcquisto = null
+    ): static {
         $this->datiOrdineAcquisto = $datiOrdineAcquisto;
 
         return $this;
@@ -245,8 +247,9 @@ final class DatiGenerali
      * @param  DatiDocumentiCorrelati $datiOrdineAcquisto
      * @return static
      */
-    public function addToDatiOrdineAcquisto(DatiDocumentiCorrelati $datiOrdineAcquisto): static
-    {
+    public function addToDatiOrdineAcquisto(
+        DatiDocumentiCorrelati $datiOrdineAcquisto
+    ): static {
         if (!is_array($this->datiOrdineAcquisto)) {
             $this->datiOrdineAcquisto = [];
         }
@@ -274,8 +277,9 @@ final class DatiGenerali
      * @param  DatiDocumentiCorrelati $datiOrdineAcquisto
      * @return static
      */
-    public function addOnceToDatiOrdineAcquisto(DatiDocumentiCorrelati $datiOrdineAcquisto): static
-    {
+    public function addOnceToDatiOrdineAcquisto(
+        DatiDocumentiCorrelati $datiOrdineAcquisto
+    ): static {
         if (!is_array($this->datiOrdineAcquisto)) {
             $this->datiOrdineAcquisto = [];
         }
@@ -319,8 +323,9 @@ final class DatiGenerali
      * @param  null|array<DatiDocumentiCorrelati> $datiContratto
      * @return static
      */
-    public function setDatiContratto(?array $datiContratto = null): static
-    {
+    public function setDatiContratto(
+        ?array $datiContratto = null
+    ): static {
         $this->datiContratto = $datiContratto;
 
         return $this;
@@ -356,8 +361,9 @@ final class DatiGenerali
      * @param  DatiDocumentiCorrelati $datiContratto
      * @return static
      */
-    public function addToDatiContratto(DatiDocumentiCorrelati $datiContratto): static
-    {
+    public function addToDatiContratto(
+        DatiDocumentiCorrelati $datiContratto
+    ): static {
         if (!is_array($this->datiContratto)) {
             $this->datiContratto = [];
         }
@@ -385,8 +391,9 @@ final class DatiGenerali
      * @param  DatiDocumentiCorrelati $datiContratto
      * @return static
      */
-    public function addOnceToDatiContratto(DatiDocumentiCorrelati $datiContratto): static
-    {
+    public function addOnceToDatiContratto(
+        DatiDocumentiCorrelati $datiContratto
+    ): static {
         if (!is_array($this->datiContratto)) {
             $this->datiContratto = [];
         }
@@ -430,8 +437,9 @@ final class DatiGenerali
      * @param  null|array<DatiDocumentiCorrelati> $datiConvenzione
      * @return static
      */
-    public function setDatiConvenzione(?array $datiConvenzione = null): static
-    {
+    public function setDatiConvenzione(
+        ?array $datiConvenzione = null
+    ): static {
         $this->datiConvenzione = $datiConvenzione;
 
         return $this;
@@ -467,8 +475,9 @@ final class DatiGenerali
      * @param  DatiDocumentiCorrelati $datiConvenzione
      * @return static
      */
-    public function addToDatiConvenzione(DatiDocumentiCorrelati $datiConvenzione): static
-    {
+    public function addToDatiConvenzione(
+        DatiDocumentiCorrelati $datiConvenzione
+    ): static {
         if (!is_array($this->datiConvenzione)) {
             $this->datiConvenzione = [];
         }
@@ -496,8 +505,9 @@ final class DatiGenerali
      * @param  DatiDocumentiCorrelati $datiConvenzione
      * @return static
      */
-    public function addOnceToDatiConvenzione(DatiDocumentiCorrelati $datiConvenzione): static
-    {
+    public function addOnceToDatiConvenzione(
+        DatiDocumentiCorrelati $datiConvenzione
+    ): static {
         if (!is_array($this->datiConvenzione)) {
             $this->datiConvenzione = [];
         }
@@ -541,8 +551,9 @@ final class DatiGenerali
      * @param  null|array<DatiDocumentiCorrelati> $datiRicezione
      * @return static
      */
-    public function setDatiRicezione(?array $datiRicezione = null): static
-    {
+    public function setDatiRicezione(
+        ?array $datiRicezione = null
+    ): static {
         $this->datiRicezione = $datiRicezione;
 
         return $this;
@@ -578,8 +589,9 @@ final class DatiGenerali
      * @param  DatiDocumentiCorrelati $datiRicezione
      * @return static
      */
-    public function addToDatiRicezione(DatiDocumentiCorrelati $datiRicezione): static
-    {
+    public function addToDatiRicezione(
+        DatiDocumentiCorrelati $datiRicezione
+    ): static {
         if (!is_array($this->datiRicezione)) {
             $this->datiRicezione = [];
         }
@@ -607,8 +619,9 @@ final class DatiGenerali
      * @param  DatiDocumentiCorrelati $datiRicezione
      * @return static
      */
-    public function addOnceToDatiRicezione(DatiDocumentiCorrelati $datiRicezione): static
-    {
+    public function addOnceToDatiRicezione(
+        DatiDocumentiCorrelati $datiRicezione
+    ): static {
         if (!is_array($this->datiRicezione)) {
             $this->datiRicezione = [];
         }
@@ -652,8 +665,9 @@ final class DatiGenerali
      * @param  null|array<DatiDocumentiCorrelati> $datiFattureCollegate
      * @return static
      */
-    public function setDatiFattureCollegate(?array $datiFattureCollegate = null): static
-    {
+    public function setDatiFattureCollegate(
+        ?array $datiFattureCollegate = null
+    ): static {
         $this->datiFattureCollegate = $datiFattureCollegate;
 
         return $this;
@@ -689,8 +703,9 @@ final class DatiGenerali
      * @param  DatiDocumentiCorrelati $datiFattureCollegate
      * @return static
      */
-    public function addToDatiFattureCollegate(DatiDocumentiCorrelati $datiFattureCollegate): static
-    {
+    public function addToDatiFattureCollegate(
+        DatiDocumentiCorrelati $datiFattureCollegate
+    ): static {
         if (!is_array($this->datiFattureCollegate)) {
             $this->datiFattureCollegate = [];
         }
@@ -718,8 +733,9 @@ final class DatiGenerali
      * @param  DatiDocumentiCorrelati $datiFattureCollegate
      * @return static
      */
-    public function addOnceToDatiFattureCollegate(DatiDocumentiCorrelati $datiFattureCollegate): static
-    {
+    public function addOnceToDatiFattureCollegate(
+        DatiDocumentiCorrelati $datiFattureCollegate
+    ): static {
         if (!is_array($this->datiFattureCollegate)) {
             $this->datiFattureCollegate = [];
         }
@@ -763,8 +779,9 @@ final class DatiGenerali
      * @param  null|array<DatiSAL> $datiSAL
      * @return static
      */
-    public function setDatiSAL(?array $datiSAL = null): static
-    {
+    public function setDatiSAL(
+        ?array $datiSAL = null
+    ): static {
         $this->datiSAL = $datiSAL;
 
         return $this;
@@ -800,8 +817,9 @@ final class DatiGenerali
      * @param  DatiSAL $datiSAL
      * @return static
      */
-    public function addToDatiSAL(DatiSAL $datiSAL): static
-    {
+    public function addToDatiSAL(
+        DatiSAL $datiSAL
+    ): static {
         if (!is_array($this->datiSAL)) {
             $this->datiSAL = [];
         }
@@ -829,8 +847,9 @@ final class DatiGenerali
      * @param  DatiSAL $datiSAL
      * @return static
      */
-    public function addOnceToDatiSAL(DatiSAL $datiSAL): static
-    {
+    public function addOnceToDatiSAL(
+        DatiSAL $datiSAL
+    ): static {
         if (!is_array($this->datiSAL)) {
             $this->datiSAL = [];
         }
@@ -874,8 +893,9 @@ final class DatiGenerali
      * @param  null|array<DatiDDT> $datiDDT
      * @return static
      */
-    public function setDatiDDT(?array $datiDDT = null): static
-    {
+    public function setDatiDDT(
+        ?array $datiDDT = null
+    ): static {
         $this->datiDDT = $datiDDT;
 
         return $this;
@@ -911,8 +931,9 @@ final class DatiGenerali
      * @param  DatiDDT $datiDDT
      * @return static
      */
-    public function addToDatiDDT(DatiDDT $datiDDT): static
-    {
+    public function addToDatiDDT(
+        DatiDDT $datiDDT
+    ): static {
         if (!is_array($this->datiDDT)) {
             $this->datiDDT = [];
         }
@@ -940,8 +961,9 @@ final class DatiGenerali
      * @param  DatiDDT $datiDDT
      * @return static
      */
-    public function addOnceToDatiDDT(DatiDDT $datiDDT): static
-    {
+    public function addOnceToDatiDDT(
+        DatiDDT $datiDDT
+    ): static {
         if (!is_array($this->datiDDT)) {
             $this->datiDDT = [];
         }
@@ -997,8 +1019,9 @@ final class DatiGenerali
      * @param  null|DatiTrasporto $datiTrasporto
      * @return static
      */
-    public function setDatiTrasporto(?DatiTrasporto $datiTrasporto = null): static
-    {
+    public function setDatiTrasporto(
+        ?DatiTrasporto $datiTrasporto = null
+    ): static {
         $this->datiTrasporto = $datiTrasporto;
 
         return $this;
@@ -1044,8 +1067,9 @@ final class DatiGenerali
      * @param  null|FatturaPrincipale $fatturaPrincipale
      * @return static
      */
-    public function setFatturaPrincipale(?FatturaPrincipale $fatturaPrincipale = null): static
-    {
+    public function setFatturaPrincipale(
+        ?FatturaPrincipale $fatturaPrincipale = null
+    ): static {
         $this->fatturaPrincipale = $fatturaPrincipale;
 
         return $this;

@@ -144,8 +144,9 @@ class LineTradeDeliveryType
      * @param  null|QuantityType $billedQuantity
      * @return static
      */
-    public function setBilledQuantity(?QuantityType $billedQuantity = null): static
-    {
+    public function setBilledQuantity(
+        ?QuantityType $billedQuantity = null
+    ): static {
         $this->billedQuantity = $billedQuantity;
 
         return $this;
@@ -183,8 +184,9 @@ class LineTradeDeliveryType
      * @param  null|QuantityType $chargeFreeQuantity
      * @return static
      */
-    public function setChargeFreeQuantity(?QuantityType $chargeFreeQuantity = null): static
-    {
+    public function setChargeFreeQuantity(
+        ?QuantityType $chargeFreeQuantity = null
+    ): static {
         $this->chargeFreeQuantity = $chargeFreeQuantity;
 
         return $this;
@@ -222,8 +224,9 @@ class LineTradeDeliveryType
      * @param  null|QuantityType $packageQuantity
      * @return static
      */
-    public function setPackageQuantity(?QuantityType $packageQuantity = null): static
-    {
+    public function setPackageQuantity(
+        ?QuantityType $packageQuantity = null
+    ): static {
         $this->packageQuantity = $packageQuantity;
 
         return $this;
@@ -261,8 +264,9 @@ class LineTradeDeliveryType
      * @param  null|QuantityType $perPackageUnitQuantity
      * @return static
      */
-    public function setPerPackageUnitQuantity(?QuantityType $perPackageUnitQuantity = null): static
-    {
+    public function setPerPackageUnitQuantity(
+        ?QuantityType $perPackageUnitQuantity = null
+    ): static {
         $this->perPackageUnitQuantity = $perPackageUnitQuantity;
 
         return $this;
@@ -300,8 +304,9 @@ class LineTradeDeliveryType
      * @param  null|TradePartyType $shipToTradeParty
      * @return static
      */
-    public function setShipToTradeParty(?TradePartyType $shipToTradeParty = null): static
-    {
+    public function setShipToTradeParty(
+        ?TradePartyType $shipToTradeParty = null
+    ): static {
         $this->shipToTradeParty = $shipToTradeParty;
 
         return $this;
@@ -339,8 +344,9 @@ class LineTradeDeliveryType
      * @param  null|TradePartyType $ultimateShipToTradeParty
      * @return static
      */
-    public function setUltimateShipToTradeParty(?TradePartyType $ultimateShipToTradeParty = null): static
-    {
+    public function setUltimateShipToTradeParty(
+        ?TradePartyType $ultimateShipToTradeParty = null
+    ): static {
         $this->ultimateShipToTradeParty = $ultimateShipToTradeParty;
 
         return $this;

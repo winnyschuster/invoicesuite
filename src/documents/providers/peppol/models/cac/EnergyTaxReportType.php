@@ -80,8 +80,9 @@ class EnergyTaxReportType
      * @param  null|TaxEnergyAmount $taxEnergyAmount
      * @return static
      */
-    public function setTaxEnergyAmount(?TaxEnergyAmount $taxEnergyAmount = null): static
-    {
+    public function setTaxEnergyAmount(
+        ?TaxEnergyAmount $taxEnergyAmount = null
+    ): static {
         $this->taxEnergyAmount = $taxEnergyAmount;
 
         return $this;
@@ -119,8 +120,9 @@ class EnergyTaxReportType
      * @param  null|TaxEnergyOnAccountAmount $taxEnergyOnAccountAmount
      * @return static
      */
-    public function setTaxEnergyOnAccountAmount(?TaxEnergyOnAccountAmount $taxEnergyOnAccountAmount = null): static
-    {
+    public function setTaxEnergyOnAccountAmount(
+        ?TaxEnergyOnAccountAmount $taxEnergyOnAccountAmount = null
+    ): static {
         $this->taxEnergyOnAccountAmount = $taxEnergyOnAccountAmount;
 
         return $this;
@@ -158,8 +160,9 @@ class EnergyTaxReportType
      * @param  null|TaxEnergyBalanceAmount $taxEnergyBalanceAmount
      * @return static
      */
-    public function setTaxEnergyBalanceAmount(?TaxEnergyBalanceAmount $taxEnergyBalanceAmount = null): static
-    {
+    public function setTaxEnergyBalanceAmount(
+        ?TaxEnergyBalanceAmount $taxEnergyBalanceAmount = null
+    ): static {
         $this->taxEnergyBalanceAmount = $taxEnergyBalanceAmount;
 
         return $this;
@@ -197,8 +200,9 @@ class EnergyTaxReportType
      * @param  null|TaxScheme $taxScheme
      * @return static
      */
-    public function setTaxScheme(?TaxScheme $taxScheme = null): static
-    {
+    public function setTaxScheme(
+        ?TaxScheme $taxScheme = null
+    ): static {
         $this->taxScheme = $taxScheme;
 
         return $this;

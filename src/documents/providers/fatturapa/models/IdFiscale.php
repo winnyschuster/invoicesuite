@@ -52,8 +52,9 @@ final class IdFiscale
      * @param  null|string $idPaese
      * @return static
      */
-    public function setIdPaese(?string $idPaese = null): static
-    {
+    public function setIdPaese(
+        ?string $idPaese = null
+    ): static {
         $this->idPaese = InvoiceSuiteStringUtils::asNullWhenEmpty($idPaese);
 
         return $this;
@@ -87,8 +88,9 @@ final class IdFiscale
      * @param  null|string $idCodice
      * @return static
      */
-    public function setIdCodice(?string $idCodice = null): static
-    {
+    public function setIdCodice(
+        ?string $idCodice = null
+    ): static {
         $this->idCodice = InvoiceSuiteStringUtils::asNullWhenEmpty($idCodice);
 
         return $this;

@@ -140,8 +140,9 @@ class ConsumptionPointType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -169,8 +170,9 @@ class ConsumptionPointType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -230,8 +232,9 @@ class ConsumptionPointType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -251,8 +254,9 @@ class ConsumptionPointType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -300,8 +304,9 @@ class ConsumptionPointType
      * @param  null|SubscriberID $subscriberID
      * @return static
      */
-    public function setSubscriberID(?SubscriberID $subscriberID = null): static
-    {
+    public function setSubscriberID(
+        ?SubscriberID $subscriberID = null
+    ): static {
         $this->subscriberID = $subscriberID;
 
         return $this;
@@ -339,8 +344,9 @@ class ConsumptionPointType
      * @param  null|SubscriberType $subscriberType
      * @return static
      */
-    public function setSubscriberType(?SubscriberType $subscriberType = null): static
-    {
+    public function setSubscriberType(
+        ?SubscriberType $subscriberType = null
+    ): static {
         $this->subscriberType = $subscriberType;
 
         return $this;
@@ -378,8 +384,9 @@ class ConsumptionPointType
      * @param  null|SubscriberTypeCode $subscriberTypeCode
      * @return static
      */
-    public function setSubscriberTypeCode(?SubscriberTypeCode $subscriberTypeCode = null): static
-    {
+    public function setSubscriberTypeCode(
+        ?SubscriberTypeCode $subscriberTypeCode = null
+    ): static {
         $this->subscriberTypeCode = $subscriberTypeCode;
 
         return $this;
@@ -417,8 +424,9 @@ class ConsumptionPointType
      * @param  null|TotalDeliveredQuantity $totalDeliveredQuantity
      * @return static
      */
-    public function setTotalDeliveredQuantity(?TotalDeliveredQuantity $totalDeliveredQuantity = null): static
-    {
+    public function setTotalDeliveredQuantity(
+        ?TotalDeliveredQuantity $totalDeliveredQuantity = null
+    ): static {
         $this->totalDeliveredQuantity = $totalDeliveredQuantity;
 
         return $this;
@@ -456,8 +464,9 @@ class ConsumptionPointType
      * @param  null|Address $address
      * @return static
      */
-    public function setAddress(?Address $address = null): static
-    {
+    public function setAddress(
+        ?Address $address = null
+    ): static {
         $this->address = $address;
 
         return $this;
@@ -495,8 +504,9 @@ class ConsumptionPointType
      * @param  null|WebSiteAccess $webSiteAccess
      * @return static
      */
-    public function setWebSiteAccess(?WebSiteAccess $webSiteAccess = null): static
-    {
+    public function setWebSiteAccess(
+        ?WebSiteAccess $webSiteAccess = null
+    ): static {
         $this->webSiteAccess = $webSiteAccess;
 
         return $this;
@@ -524,8 +534,9 @@ class ConsumptionPointType
      * @param  null|array<UtilityMeter> $utilityMeter
      * @return static
      */
-    public function setUtilityMeter(?array $utilityMeter = null): static
-    {
+    public function setUtilityMeter(
+        ?array $utilityMeter = null
+    ): static {
         $this->utilityMeter = $utilityMeter;
 
         return $this;
@@ -585,8 +596,9 @@ class ConsumptionPointType
      * @param  UtilityMeter $utilityMeter
      * @return static
      */
-    public function addToUtilityMeter(UtilityMeter $utilityMeter): static
-    {
+    public function addToUtilityMeter(
+        UtilityMeter $utilityMeter
+    ): static {
         $this->utilityMeter[] = $utilityMeter;
 
         return $this;
@@ -606,8 +618,9 @@ class ConsumptionPointType
      * @param  UtilityMeter $utilityMeter
      * @return static
      */
-    public function addOnceToUtilityMeter(UtilityMeter $utilityMeter): static
-    {
+    public function addOnceToUtilityMeter(
+        UtilityMeter $utilityMeter
+    ): static {
         if (!is_array($this->utilityMeter)) {
             $this->utilityMeter = [];
         }

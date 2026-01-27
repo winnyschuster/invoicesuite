@@ -176,8 +176,9 @@ class ExceptionCriteriaLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -205,8 +206,9 @@ class ExceptionCriteriaLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -266,8 +268,9 @@ class ExceptionCriteriaLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -287,8 +290,9 @@ class ExceptionCriteriaLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -376,8 +380,9 @@ class ExceptionCriteriaLineType
      * @param  null|ThresholdQuantity $thresholdQuantity
      * @return static
      */
-    public function setThresholdQuantity(?ThresholdQuantity $thresholdQuantity = null): static
-    {
+    public function setThresholdQuantity(
+        ?ThresholdQuantity $thresholdQuantity = null
+    ): static {
         $this->thresholdQuantity = $thresholdQuantity;
 
         return $this;
@@ -415,8 +420,9 @@ class ExceptionCriteriaLineType
      * @param  null|ExceptionStatusCode $exceptionStatusCode
      * @return static
      */
-    public function setExceptionStatusCode(?ExceptionStatusCode $exceptionStatusCode = null): static
-    {
+    public function setExceptionStatusCode(
+        ?ExceptionStatusCode $exceptionStatusCode = null
+    ): static {
         $this->exceptionStatusCode = $exceptionStatusCode;
 
         return $this;
@@ -454,8 +460,9 @@ class ExceptionCriteriaLineType
      * @param  null|CollaborationPriorityCode $collaborationPriorityCode
      * @return static
      */
-    public function setCollaborationPriorityCode(?CollaborationPriorityCode $collaborationPriorityCode = null): static
-    {
+    public function setCollaborationPriorityCode(
+        ?CollaborationPriorityCode $collaborationPriorityCode = null
+    ): static {
         $this->collaborationPriorityCode = $collaborationPriorityCode;
 
         return $this;
@@ -493,8 +500,9 @@ class ExceptionCriteriaLineType
      * @param  null|ExceptionResolutionCode $exceptionResolutionCode
      * @return static
      */
-    public function setExceptionResolutionCode(?ExceptionResolutionCode $exceptionResolutionCode = null): static
-    {
+    public function setExceptionResolutionCode(
+        ?ExceptionResolutionCode $exceptionResolutionCode = null
+    ): static {
         $this->exceptionResolutionCode = $exceptionResolutionCode;
 
         return $this;
@@ -572,8 +580,9 @@ class ExceptionCriteriaLineType
      * @param  null|PerformanceMetricTypeCode $performanceMetricTypeCode
      * @return static
      */
-    public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): static
-    {
+    public function setPerformanceMetricTypeCode(
+        ?PerformanceMetricTypeCode $performanceMetricTypeCode = null
+    ): static {
         $this->performanceMetricTypeCode = $performanceMetricTypeCode;
 
         return $this;
@@ -611,8 +620,9 @@ class ExceptionCriteriaLineType
      * @param  null|EffectivePeriod $effectivePeriod
      * @return static
      */
-    public function setEffectivePeriod(?EffectivePeriod $effectivePeriod = null): static
-    {
+    public function setEffectivePeriod(
+        ?EffectivePeriod $effectivePeriod = null
+    ): static {
         $this->effectivePeriod = $effectivePeriod;
 
         return $this;
@@ -640,8 +650,9 @@ class ExceptionCriteriaLineType
      * @param  null|array<SupplyItem> $supplyItem
      * @return static
      */
-    public function setSupplyItem(?array $supplyItem = null): static
-    {
+    public function setSupplyItem(
+        ?array $supplyItem = null
+    ): static {
         $this->supplyItem = $supplyItem;
 
         return $this;
@@ -701,8 +712,9 @@ class ExceptionCriteriaLineType
      * @param  SupplyItem $supplyItem
      * @return static
      */
-    public function addToSupplyItem(SupplyItem $supplyItem): static
-    {
+    public function addToSupplyItem(
+        SupplyItem $supplyItem
+    ): static {
         $this->supplyItem[] = $supplyItem;
 
         return $this;
@@ -722,8 +734,9 @@ class ExceptionCriteriaLineType
      * @param  SupplyItem $supplyItem
      * @return static
      */
-    public function addOnceToSupplyItem(SupplyItem $supplyItem): static
-    {
+    public function addOnceToSupplyItem(
+        SupplyItem $supplyItem
+    ): static {
         if (!is_array($this->supplyItem)) {
             $this->supplyItem = [];
         }

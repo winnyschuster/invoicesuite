@@ -184,8 +184,9 @@ class TransportMeansType
      * @param  null|JourneyID $journeyID
      * @return static
      */
-    public function setJourneyID(?JourneyID $journeyID = null): static
-    {
+    public function setJourneyID(
+        ?JourneyID $journeyID = null
+    ): static {
         $this->journeyID = $journeyID;
 
         return $this;
@@ -223,8 +224,9 @@ class TransportMeansType
      * @param  null|RegistrationNationalityID $registrationNationalityID
      * @return static
      */
-    public function setRegistrationNationalityID(?RegistrationNationalityID $registrationNationalityID = null): static
-    {
+    public function setRegistrationNationalityID(
+        ?RegistrationNationalityID $registrationNationalityID = null
+    ): static {
         $this->registrationNationalityID = $registrationNationalityID;
 
         return $this;
@@ -252,8 +254,9 @@ class TransportMeansType
      * @param  null|array<RegistrationNationality> $registrationNationality
      * @return static
      */
-    public function setRegistrationNationality(?array $registrationNationality = null): static
-    {
+    public function setRegistrationNationality(
+        ?array $registrationNationality = null
+    ): static {
         $this->registrationNationality = $registrationNationality;
 
         return $this;
@@ -313,8 +316,9 @@ class TransportMeansType
      * @param  RegistrationNationality $registrationNationality
      * @return static
      */
-    public function addToRegistrationNationality(RegistrationNationality $registrationNationality): static
-    {
+    public function addToRegistrationNationality(
+        RegistrationNationality $registrationNationality
+    ): static {
         $this->registrationNationality[] = $registrationNationality;
 
         return $this;
@@ -334,8 +338,9 @@ class TransportMeansType
      * @param  RegistrationNationality $registrationNationality
      * @return static
      */
-    public function addOnceToRegistrationNationality(RegistrationNationality $registrationNationality): static
-    {
+    public function addOnceToRegistrationNationality(
+        RegistrationNationality $registrationNationality
+    ): static {
         if (!is_array($this->registrationNationality)) {
             $this->registrationNationality = [];
         }
@@ -383,8 +388,9 @@ class TransportMeansType
      * @param  null|DirectionCode $directionCode
      * @return static
      */
-    public function setDirectionCode(?DirectionCode $directionCode = null): static
-    {
+    public function setDirectionCode(
+        ?DirectionCode $directionCode = null
+    ): static {
         $this->directionCode = $directionCode;
 
         return $this;
@@ -422,8 +428,9 @@ class TransportMeansType
      * @param  null|TransportMeansTypeCode $transportMeansTypeCode
      * @return static
      */
-    public function setTransportMeansTypeCode(?TransportMeansTypeCode $transportMeansTypeCode = null): static
-    {
+    public function setTransportMeansTypeCode(
+        ?TransportMeansTypeCode $transportMeansTypeCode = null
+    ): static {
         $this->transportMeansTypeCode = $transportMeansTypeCode;
 
         return $this;
@@ -461,8 +468,9 @@ class TransportMeansType
      * @param  null|TradeServiceCode $tradeServiceCode
      * @return static
      */
-    public function setTradeServiceCode(?TradeServiceCode $tradeServiceCode = null): static
-    {
+    public function setTradeServiceCode(
+        ?TradeServiceCode $tradeServiceCode = null
+    ): static {
         $this->tradeServiceCode = $tradeServiceCode;
 
         return $this;
@@ -500,8 +508,9 @@ class TransportMeansType
      * @param  null|Stowage $stowage
      * @return static
      */
-    public function setStowage(?Stowage $stowage = null): static
-    {
+    public function setStowage(
+        ?Stowage $stowage = null
+    ): static {
         $this->stowage = $stowage;
 
         return $this;
@@ -539,8 +548,9 @@ class TransportMeansType
      * @param  null|AirTransport $airTransport
      * @return static
      */
-    public function setAirTransport(?AirTransport $airTransport = null): static
-    {
+    public function setAirTransport(
+        ?AirTransport $airTransport = null
+    ): static {
         $this->airTransport = $airTransport;
 
         return $this;
@@ -578,8 +588,9 @@ class TransportMeansType
      * @param  null|RoadTransport $roadTransport
      * @return static
      */
-    public function setRoadTransport(?RoadTransport $roadTransport = null): static
-    {
+    public function setRoadTransport(
+        ?RoadTransport $roadTransport = null
+    ): static {
         $this->roadTransport = $roadTransport;
 
         return $this;
@@ -617,8 +628,9 @@ class TransportMeansType
      * @param  null|RailTransport $railTransport
      * @return static
      */
-    public function setRailTransport(?RailTransport $railTransport = null): static
-    {
+    public function setRailTransport(
+        ?RailTransport $railTransport = null
+    ): static {
         $this->railTransport = $railTransport;
 
         return $this;
@@ -656,8 +668,9 @@ class TransportMeansType
      * @param  null|MaritimeTransport $maritimeTransport
      * @return static
      */
-    public function setMaritimeTransport(?MaritimeTransport $maritimeTransport = null): static
-    {
+    public function setMaritimeTransport(
+        ?MaritimeTransport $maritimeTransport = null
+    ): static {
         $this->maritimeTransport = $maritimeTransport;
 
         return $this;
@@ -695,8 +708,9 @@ class TransportMeansType
      * @param  null|OwnerParty $ownerParty
      * @return static
      */
-    public function setOwnerParty(?OwnerParty $ownerParty = null): static
-    {
+    public function setOwnerParty(
+        ?OwnerParty $ownerParty = null
+    ): static {
         $this->ownerParty = $ownerParty;
 
         return $this;
@@ -724,8 +738,9 @@ class TransportMeansType
      * @param  null|array<MeasurementDimension> $measurementDimension
      * @return static
      */
-    public function setMeasurementDimension(?array $measurementDimension = null): static
-    {
+    public function setMeasurementDimension(
+        ?array $measurementDimension = null
+    ): static {
         $this->measurementDimension = $measurementDimension;
 
         return $this;
@@ -785,8 +800,9 @@ class TransportMeansType
      * @param  MeasurementDimension $measurementDimension
      * @return static
      */
-    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
-    {
+    public function addToMeasurementDimension(
+        MeasurementDimension $measurementDimension
+    ): static {
         $this->measurementDimension[] = $measurementDimension;
 
         return $this;
@@ -806,8 +822,9 @@ class TransportMeansType
      * @param  MeasurementDimension $measurementDimension
      * @return static
      */
-    public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static
-    {
+    public function addOnceToMeasurementDimension(
+        MeasurementDimension $measurementDimension
+    ): static {
         if (!is_array($this->measurementDimension)) {
             $this->measurementDimension = [];
         }

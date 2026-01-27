@@ -69,8 +69,9 @@ class WebSiteAccessType
      * @param  null|URI $uRI
      * @return static
      */
-    public function setURI(?URI $uRI = null): static
-    {
+    public function setURI(
+        ?URI $uRI = null
+    ): static {
         $this->uRI = $uRI;
 
         return $this;
@@ -108,8 +109,9 @@ class WebSiteAccessType
      * @param  null|Password $password
      * @return static
      */
-    public function setPassword(?Password $password = null): static
-    {
+    public function setPassword(
+        ?Password $password = null
+    ): static {
         $this->password = $password;
 
         return $this;
@@ -147,8 +149,9 @@ class WebSiteAccessType
      * @param  null|Login $login
      * @return static
      */
-    public function setLogin(?Login $login = null): static
-    {
+    public function setLogin(
+        ?Login $login = null
+    ): static {
         $this->login = $login;
 
         return $this;

@@ -40,8 +40,9 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
      *
      * @throws DateInvalidTimeZoneException
      */
-    public function __construct(string $defaultTimezone = 'UTC')
-    {
+    public function __construct(
+        string $defaultTimezone = 'UTC'
+    ) {
         $this->defaultTimezone = new DateTimeZone($defaultTimezone);
     }
 
@@ -221,8 +222,10 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
      *
      * @throws DOMException
      */
-    public function serializeAmountType(XmlSerializationVisitor $visitor, $data): DOMText
-    {
+    public function serializeAmountType(
+        XmlSerializationVisitor $visitor,
+        $data
+    ): DOMText {
         $node = $visitor->getDocument()->createTextNode(
             number_format(
                 $data->getValue(),
@@ -250,8 +253,10 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
      *
      * @throws DOMException
      */
-    public function serializeQuantityType(XmlSerializationVisitor $visitor, $data): DOMText
-    {
+    public function serializeQuantityType(
+        XmlSerializationVisitor $visitor,
+        $data
+    ): DOMText {
         $node = $visitor->getDocument()->createTextNode(
             number_format(
                 $data->getValue(),
@@ -277,8 +282,10 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
      * @param XmlSerializationVisitor $visitor
      * @param mixed                   $data
      */
-    public function serializePercentType(XmlSerializationVisitor $visitor, $data): DOMText
-    {
+    public function serializePercentType(
+        XmlSerializationVisitor $visitor,
+        $data
+    ): DOMText {
         return $visitor->getDocument()->createTextNode(
             number_format(
                 $data->getValue(),
@@ -298,8 +305,10 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
      *
      * @throws DOMException
      */
-    public function serializeMeasureType(XmlSerializationVisitor $visitor, $data): DOMText
-    {
+    public function serializeMeasureType(
+        XmlSerializationVisitor $visitor,
+        $data
+    ): DOMText {
         $node = $visitor->getDocument()->createTextNode(
             number_format(
                 $data->getValue(),
@@ -328,8 +337,10 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
      *
      * @throws DOMException
      */
-    public function serializeIndicatorType(XmlSerializationVisitor $visitor, $data): DOMElement
-    {
+    public function serializeIndicatorType(
+        XmlSerializationVisitor $visitor,
+        $data
+    ): DOMElement {
         return $visitor->getDocument()->createElement('udt:Indicator', false == $data->getIndicator() ? 'false' : 'true');
     }
 
@@ -342,8 +353,10 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
      *
      * @throws DateMalformedStringException
      */
-    public function deserializeJsonDate(JsonDeserializationVisitor $visitor, $data): ?DateTime
-    {
+    public function deserializeJsonDate(
+        JsonDeserializationVisitor $visitor,
+        $data
+    ): ?DateTime {
         return InvoiceSuiteStringUtils::stringIsNullOrEmpty($data) ? null : new DateTime((string) $data, $this->defaultTimezone);
     }
 
@@ -355,8 +368,11 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
      * @param  array<mixed,mixed>       $type
      * @return string
      */
-    public function serializeJsonDate(JsonSerializationVisitor $visitor, DateTime $date, array $type): string
-    {
+    public function serializeJsonDate(
+        JsonSerializationVisitor $visitor,
+        DateTime $date,
+        array $type
+    ): string {
         return $visitor->visitString($date->format('Y-m-d'), $type);
     }
 
@@ -369,8 +385,10 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
      *
      * @throws DateMalformedStringException
      */
-    public function deserializeJsonDateTime(JsonDeserializationVisitor $visitor, $data): ?DateTime
-    {
+    public function deserializeJsonDateTime(
+        JsonDeserializationVisitor $visitor,
+        $data
+    ): ?DateTime {
         return InvoiceSuiteStringUtils::stringIsNullOrEmpty($data) ? null : new DateTime((string) $data, $this->defaultTimezone);
     }
 
@@ -382,8 +400,11 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
      * @param  array<mixed,mixed>       $type
      * @return string
      */
-    public function serializeJsonDateTime(JsonSerializationVisitor $visitor, DateTime $date, array $type): string
-    {
+    public function serializeJsonDateTime(
+        JsonSerializationVisitor $visitor,
+        DateTime $date,
+        array $type
+    ): string {
         return $visitor->visitString($date->format(DateTime::ATOM), $type);
     }
 
@@ -396,8 +417,10 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
      *
      * @throws DateMalformedStringException
      */
-    public function deserializeJsonTime(JsonDeserializationVisitor $visitor, $data): ?DateTime
-    {
+    public function deserializeJsonTime(
+        JsonDeserializationVisitor $visitor,
+        $data
+    ): ?DateTime {
         return InvoiceSuiteStringUtils::stringIsNullOrEmpty($data) ? null : new DateTime($data, $this->defaultTimezone);
     }
 
@@ -409,8 +432,11 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
      * @param  array<mixed,mixed>       $type
      * @return string
      */
-    public function serializeJsonTime(JsonSerializationVisitor $visitor, DateTime $date, array $type): string
-    {
+    public function serializeJsonTime(
+        JsonSerializationVisitor $visitor,
+        DateTime $date,
+        array $type
+    ): string {
         $formattedDate = $date->format('H:i:s');
 
         if ($date->getTimezone()->getOffset($date) !== $this->defaultTimezone->getOffset($date)) {
@@ -427,8 +453,10 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
      * @param  null|string                $data
      * @return null|string
      */
-    public function deserializeBase64EncodedFromJson(JsonDeserializationVisitor $visitor, $data): ?string
-    {
+    public function deserializeBase64EncodedFromJson(
+        JsonDeserializationVisitor $visitor,
+        $data
+    ): ?string {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($data)) {
             return null;
         }
@@ -450,8 +478,11 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
      * @param  array<mixed,mixed>       $type
      * @return string
      */
-    public function serializeBase64EncodedToJson(JsonSerializationVisitor $visitor, $data, array $type): string
-    {
+    public function serializeBase64EncodedToJson(
+        JsonSerializationVisitor $visitor,
+        $data,
+        array $type
+    ): string {
         return $visitor->visitString(base64_encode((string) $data), $type);
     }
 }

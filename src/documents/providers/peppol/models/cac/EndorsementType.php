@@ -93,8 +93,9 @@ class EndorsementType
      * @param  null|DocumentID $documentID
      * @return static
      */
-    public function setDocumentID(?DocumentID $documentID = null): static
-    {
+    public function setDocumentID(
+        ?DocumentID $documentID = null
+    ): static {
         $this->documentID = $documentID;
 
         return $this;
@@ -132,8 +133,9 @@ class EndorsementType
      * @param  null|ApprovalStatus $approvalStatus
      * @return static
      */
-    public function setApprovalStatus(?ApprovalStatus $approvalStatus = null): static
-    {
+    public function setApprovalStatus(
+        ?ApprovalStatus $approvalStatus = null
+    ): static {
         $this->approvalStatus = $approvalStatus;
 
         return $this;
@@ -161,8 +163,9 @@ class EndorsementType
      * @param  null|array<Remarks> $remarks
      * @return static
      */
-    public function setRemarks(?array $remarks = null): static
-    {
+    public function setRemarks(
+        ?array $remarks = null
+    ): static {
         $this->remarks = $remarks;
 
         return $this;
@@ -222,8 +225,9 @@ class EndorsementType
      * @param  Remarks $remarks
      * @return static
      */
-    public function addToRemarks(Remarks $remarks): static
-    {
+    public function addToRemarks(
+        Remarks $remarks
+    ): static {
         $this->remarks[] = $remarks;
 
         return $this;
@@ -243,8 +247,9 @@ class EndorsementType
      * @param  Remarks $remarks
      * @return static
      */
-    public function addOnceToRemarks(Remarks $remarks): static
-    {
+    public function addOnceToRemarks(
+        Remarks $remarks
+    ): static {
         if (!is_array($this->remarks)) {
             $this->remarks = [];
         }
@@ -292,8 +297,9 @@ class EndorsementType
      * @param  null|EndorserParty $endorserParty
      * @return static
      */
-    public function setEndorserParty(?EndorserParty $endorserParty = null): static
-    {
+    public function setEndorserParty(
+        ?EndorserParty $endorserParty = null
+    ): static {
         $this->endorserParty = $endorserParty;
 
         return $this;
@@ -321,8 +327,9 @@ class EndorsementType
      * @param  null|array<Signature> $signature
      * @return static
      */
-    public function setSignature(?array $signature = null): static
-    {
+    public function setSignature(
+        ?array $signature = null
+    ): static {
         $this->signature = $signature;
 
         return $this;
@@ -382,8 +389,9 @@ class EndorsementType
      * @param  Signature $signature
      * @return static
      */
-    public function addToSignature(Signature $signature): static
-    {
+    public function addToSignature(
+        Signature $signature
+    ): static {
         $this->signature[] = $signature;
 
         return $this;
@@ -403,8 +411,9 @@ class EndorsementType
      * @param  Signature $signature
      * @return static
      */
-    public function addOnceToSignature(Signature $signature): static
-    {
+    public function addOnceToSignature(
+        Signature $signature
+    ): static {
         if (!is_array($this->signature)) {
             $this->signature = [];
         }

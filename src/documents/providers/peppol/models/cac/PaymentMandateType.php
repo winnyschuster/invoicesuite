@@ -149,8 +149,9 @@ class PaymentMandateType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -188,8 +189,9 @@ class PaymentMandateType
      * @param  null|MandateTypeCode $mandateTypeCode
      * @return static
      */
-    public function setMandateTypeCode(?MandateTypeCode $mandateTypeCode = null): static
-    {
+    public function setMandateTypeCode(
+        ?MandateTypeCode $mandateTypeCode = null
+    ): static {
         $this->mandateTypeCode = $mandateTypeCode;
 
         return $this;
@@ -267,8 +269,9 @@ class PaymentMandateType
      * @param  null|MaximumPaidAmount $maximumPaidAmount
      * @return static
      */
-    public function setMaximumPaidAmount(?MaximumPaidAmount $maximumPaidAmount = null): static
-    {
+    public function setMaximumPaidAmount(
+        ?MaximumPaidAmount $maximumPaidAmount = null
+    ): static {
         $this->maximumPaidAmount = $maximumPaidAmount;
 
         return $this;
@@ -306,8 +309,9 @@ class PaymentMandateType
      * @param  null|SignatureID $signatureID
      * @return static
      */
-    public function setSignatureID(?SignatureID $signatureID = null): static
-    {
+    public function setSignatureID(
+        ?SignatureID $signatureID = null
+    ): static {
         $this->signatureID = $signatureID;
 
         return $this;
@@ -345,8 +349,9 @@ class PaymentMandateType
      * @param  null|PayerParty $payerParty
      * @return static
      */
-    public function setPayerParty(?PayerParty $payerParty = null): static
-    {
+    public function setPayerParty(
+        ?PayerParty $payerParty = null
+    ): static {
         $this->payerParty = $payerParty;
 
         return $this;
@@ -384,8 +389,9 @@ class PaymentMandateType
      * @param  null|PayerFinancialAccount $payerFinancialAccount
      * @return static
      */
-    public function setPayerFinancialAccount(?PayerFinancialAccount $payerFinancialAccount = null): static
-    {
+    public function setPayerFinancialAccount(
+        ?PayerFinancialAccount $payerFinancialAccount = null
+    ): static {
         $this->payerFinancialAccount = $payerFinancialAccount;
 
         return $this;
@@ -423,8 +429,9 @@ class PaymentMandateType
      * @param  null|ValidityPeriod $validityPeriod
      * @return static
      */
-    public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): static
-    {
+    public function setValidityPeriod(
+        ?ValidityPeriod $validityPeriod = null
+    ): static {
         $this->validityPeriod = $validityPeriod;
 
         return $this;
@@ -462,8 +469,9 @@ class PaymentMandateType
      * @param  null|PaymentReversalPeriod $paymentReversalPeriod
      * @return static
      */
-    public function setPaymentReversalPeriod(?PaymentReversalPeriod $paymentReversalPeriod = null): static
-    {
+    public function setPaymentReversalPeriod(
+        ?PaymentReversalPeriod $paymentReversalPeriod = null
+    ): static {
         $this->paymentReversalPeriod = $paymentReversalPeriod;
 
         return $this;
@@ -491,8 +499,9 @@ class PaymentMandateType
      * @param  null|array<Clause> $clause
      * @return static
      */
-    public function setClause(?array $clause = null): static
-    {
+    public function setClause(
+        ?array $clause = null
+    ): static {
         $this->clause = $clause;
 
         return $this;
@@ -552,8 +561,9 @@ class PaymentMandateType
      * @param  Clause $clause
      * @return static
      */
-    public function addToClause(Clause $clause): static
-    {
+    public function addToClause(
+        Clause $clause
+    ): static {
         $this->clause[] = $clause;
 
         return $this;
@@ -573,8 +583,9 @@ class PaymentMandateType
      * @param  Clause $clause
      * @return static
      */
-    public function addOnceToClause(Clause $clause): static
-    {
+    public function addOnceToClause(
+        Clause $clause
+    ): static {
         if (!is_array($this->clause)) {
             $this->clause = [];
         }

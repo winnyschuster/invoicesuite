@@ -49,8 +49,9 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function __construct(array $newMessageBagItems = [])
-    {
+    public function __construct(
+        array $newMessageBagItems = []
+    ) {
         $this->addMessages($newMessageBagItems);
     }
 
@@ -83,8 +84,9 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function addMessages(array $newMessageBagItems): static
-    {
+    public function addMessages(
+        array $newMessageBagItems
+    ): static {
         foreach ($newMessageBagItems as $messageBagItem) {
             if (!$messageBagItem instanceof InvoiceSuiteMessageBagItem) {
                 throw new InvoiceSuiteInvalidArgumentException(
@@ -104,8 +106,9 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
      * @param  InvoiceSuiteMessageBagItem $newMessageBagItem the message to add
      * @return static
      */
-    public function add(InvoiceSuiteMessageBagItem $newMessageBagItem): static
-    {
+    public function add(
+        InvoiceSuiteMessageBagItem $newMessageBagItem
+    ): static {
         $this->messageBagItems[] = $newMessageBagItem;
 
         return $this;
@@ -150,8 +153,9 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
      * @param  InvoiceSuiteMessageSeverity $filterSeverity the severity to check
      * @return bool                        true if at least one message of this severity exists, otherwise false
      */
-    public function hasMessagesBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): bool
-    {
+    public function hasMessagesBySeverity(
+        InvoiceSuiteMessageSeverity $filterSeverity
+    ): bool {
         return [] !== $this->filterMessagesBySeverity($filterSeverity);
     }
 
@@ -191,8 +195,9 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
      * @param  InvoiceSuiteMessageSeverity $filterSeverity the severity to count
      * @return int                         number of messages with the given severity
      */
-    public function countBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): int
-    {
+    public function countBySeverity(
+        InvoiceSuiteMessageSeverity $filterSeverity
+    ): int {
         return count($this->filterMessagesBySeverity($filterSeverity));
     }
 
@@ -232,8 +237,9 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
      * @param  InvoiceSuiteMessageSeverity            $filterSeverity the severity to filter by
      * @return array<int, InvoiceSuiteMessageBagItem> list of messages with the given severity
      */
-    public function getMessagesBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): array
-    {
+    public function getMessagesBySeverity(
+        InvoiceSuiteMessageSeverity $filterSeverity
+    ): array {
         return $this->filterMessagesBySeverity($filterSeverity);
     }
 
@@ -295,8 +301,9 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function offsetExists(mixed $offset): bool
-    {
+    public function offsetExists(
+        mixed $offset
+    ): bool {
         if (!is_int($offset)) {
             throw new InvoiceSuiteInvalidArgumentException('Offset must be an int.');
         }
@@ -312,8 +319,9 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function offsetGet(mixed $offset): ?InvoiceSuiteMessageBagItem
-    {
+    public function offsetGet(
+        mixed $offset
+    ): ?InvoiceSuiteMessageBagItem {
         if (!is_int($offset)) {
             throw new InvoiceSuiteInvalidArgumentException('Offset must be an int.');
         }
@@ -330,8 +338,10 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
      *
      * @throws LogicException
      */
-    public function offsetSet(mixed $offset, mixed $value): void
-    {
+    public function offsetSet(
+        mixed $offset,
+        mixed $value
+    ): void {
         throw new LogicException('Messages are read-only via array access.');
     }
 
@@ -343,8 +353,9 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
      *
      * @throws LogicException
      */
-    public function offsetUnset(mixed $offset): void
-    {
+    public function offsetUnset(
+        mixed $offset
+    ): void {
         throw new LogicException('Messages are read-only via array access.');
     }
 
@@ -355,8 +366,9 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
      * @param  InvoiceSuiteMessageSeverity            $severity the severity to filter by
      * @return array<int, InvoiceSuiteMessageBagItem> filtered message items
      */
-    private function filterMessagesBySeverity(InvoiceSuiteMessageSeverity $severity): array
-    {
+    private function filterMessagesBySeverity(
+        InvoiceSuiteMessageSeverity $severity
+    ): array {
         return array_values(
             array_filter(
                 $this->messageBagItems,

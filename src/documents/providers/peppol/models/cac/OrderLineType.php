@@ -151,8 +151,9 @@ class OrderLineType
      * @param  null|SubstitutionStatusCode $substitutionStatusCode
      * @return static
      */
-    public function setSubstitutionStatusCode(?SubstitutionStatusCode $substitutionStatusCode = null): static
-    {
+    public function setSubstitutionStatusCode(
+        ?SubstitutionStatusCode $substitutionStatusCode = null
+    ): static {
         $this->substitutionStatusCode = $substitutionStatusCode;
 
         return $this;
@@ -180,8 +181,9 @@ class OrderLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -241,8 +243,9 @@ class OrderLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -262,8 +265,9 @@ class OrderLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -311,8 +315,9 @@ class OrderLineType
      * @param  null|LineItem $lineItem
      * @return static
      */
-    public function setLineItem(?LineItem $lineItem = null): static
-    {
+    public function setLineItem(
+        ?LineItem $lineItem = null
+    ): static {
         $this->lineItem = $lineItem;
 
         return $this;
@@ -340,8 +345,9 @@ class OrderLineType
      * @param  null|array<SellerProposedSubstituteLineItem> $sellerProposedSubstituteLineItem
      * @return static
      */
-    public function setSellerProposedSubstituteLineItem(?array $sellerProposedSubstituteLineItem = null): static
-    {
+    public function setSellerProposedSubstituteLineItem(
+        ?array $sellerProposedSubstituteLineItem = null
+    ): static {
         $this->sellerProposedSubstituteLineItem = $sellerProposedSubstituteLineItem;
 
         return $this;
@@ -463,8 +469,9 @@ class OrderLineType
      * @param  null|array<SellerSubstitutedLineItem> $sellerSubstitutedLineItem
      * @return static
      */
-    public function setSellerSubstitutedLineItem(?array $sellerSubstitutedLineItem = null): static
-    {
+    public function setSellerSubstitutedLineItem(
+        ?array $sellerSubstitutedLineItem = null
+    ): static {
         $this->sellerSubstitutedLineItem = $sellerSubstitutedLineItem;
 
         return $this;
@@ -524,8 +531,9 @@ class OrderLineType
      * @param  SellerSubstitutedLineItem $sellerSubstitutedLineItem
      * @return static
      */
-    public function addToSellerSubstitutedLineItem(SellerSubstitutedLineItem $sellerSubstitutedLineItem): static
-    {
+    public function addToSellerSubstitutedLineItem(
+        SellerSubstitutedLineItem $sellerSubstitutedLineItem
+    ): static {
         $this->sellerSubstitutedLineItem[] = $sellerSubstitutedLineItem;
 
         return $this;
@@ -545,8 +553,9 @@ class OrderLineType
      * @param  SellerSubstitutedLineItem $sellerSubstitutedLineItem
      * @return static
      */
-    public function addOnceToSellerSubstitutedLineItem(SellerSubstitutedLineItem $sellerSubstitutedLineItem): static
-    {
+    public function addOnceToSellerSubstitutedLineItem(
+        SellerSubstitutedLineItem $sellerSubstitutedLineItem
+    ): static {
         if (!is_array($this->sellerSubstitutedLineItem)) {
             $this->sellerSubstitutedLineItem = [];
         }
@@ -584,8 +593,9 @@ class OrderLineType
      * @param  null|array<BuyerProposedSubstituteLineItem> $buyerProposedSubstituteLineItem
      * @return static
      */
-    public function setBuyerProposedSubstituteLineItem(?array $buyerProposedSubstituteLineItem = null): static
-    {
+    public function setBuyerProposedSubstituteLineItem(
+        ?array $buyerProposedSubstituteLineItem = null
+    ): static {
         $this->buyerProposedSubstituteLineItem = $buyerProposedSubstituteLineItem;
 
         return $this;
@@ -717,8 +727,9 @@ class OrderLineType
      * @param  null|CatalogueLineReference $catalogueLineReference
      * @return static
      */
-    public function setCatalogueLineReference(?CatalogueLineReference $catalogueLineReference = null): static
-    {
+    public function setCatalogueLineReference(
+        ?CatalogueLineReference $catalogueLineReference = null
+    ): static {
         $this->catalogueLineReference = $catalogueLineReference;
 
         return $this;
@@ -756,8 +767,9 @@ class OrderLineType
      * @param  null|QuotationLineReference $quotationLineReference
      * @return static
      */
-    public function setQuotationLineReference(?QuotationLineReference $quotationLineReference = null): static
-    {
+    public function setQuotationLineReference(
+        ?QuotationLineReference $quotationLineReference = null
+    ): static {
         $this->quotationLineReference = $quotationLineReference;
 
         return $this;
@@ -785,8 +797,9 @@ class OrderLineType
      * @param  null|array<OrderLineReference> $orderLineReference
      * @return static
      */
-    public function setOrderLineReference(?array $orderLineReference = null): static
-    {
+    public function setOrderLineReference(
+        ?array $orderLineReference = null
+    ): static {
         $this->orderLineReference = $orderLineReference;
 
         return $this;
@@ -846,8 +859,9 @@ class OrderLineType
      * @param  OrderLineReference $orderLineReference
      * @return static
      */
-    public function addToOrderLineReference(OrderLineReference $orderLineReference): static
-    {
+    public function addToOrderLineReference(
+        OrderLineReference $orderLineReference
+    ): static {
         $this->orderLineReference[] = $orderLineReference;
 
         return $this;
@@ -867,8 +881,9 @@ class OrderLineType
      * @param  OrderLineReference $orderLineReference
      * @return static
      */
-    public function addOnceToOrderLineReference(OrderLineReference $orderLineReference): static
-    {
+    public function addOnceToOrderLineReference(
+        OrderLineReference $orderLineReference
+    ): static {
         if (!is_array($this->orderLineReference)) {
             $this->orderLineReference = [];
         }
@@ -906,8 +921,9 @@ class OrderLineType
      * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?array $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;
@@ -967,8 +983,9 @@ class OrderLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         $this->documentReference[] = $documentReference;
 
         return $this;
@@ -988,8 +1005,9 @@ class OrderLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addOnceToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
         }

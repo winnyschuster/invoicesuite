@@ -83,8 +83,9 @@ class ContractExtensionType
      * @param  null|array<OptionsDescription> $optionsDescription
      * @return static
      */
-    public function setOptionsDescription(?array $optionsDescription = null): static
-    {
+    public function setOptionsDescription(
+        ?array $optionsDescription = null
+    ): static {
         $this->optionsDescription = $optionsDescription;
 
         return $this;
@@ -144,8 +145,9 @@ class ContractExtensionType
      * @param  OptionsDescription $optionsDescription
      * @return static
      */
-    public function addToOptionsDescription(OptionsDescription $optionsDescription): static
-    {
+    public function addToOptionsDescription(
+        OptionsDescription $optionsDescription
+    ): static {
         $this->optionsDescription[] = $optionsDescription;
 
         return $this;
@@ -165,8 +167,9 @@ class ContractExtensionType
      * @param  OptionsDescription $optionsDescription
      * @return static
      */
-    public function addOnceToOptionsDescription(OptionsDescription $optionsDescription): static
-    {
+    public function addOnceToOptionsDescription(
+        OptionsDescription $optionsDescription
+    ): static {
         if (!is_array($this->optionsDescription)) {
             $this->optionsDescription = [];
         }
@@ -214,8 +217,9 @@ class ContractExtensionType
      * @param  null|MinimumNumberNumeric $minimumNumberNumeric
      * @return static
      */
-    public function setMinimumNumberNumeric(?MinimumNumberNumeric $minimumNumberNumeric = null): static
-    {
+    public function setMinimumNumberNumeric(
+        ?MinimumNumberNumeric $minimumNumberNumeric = null
+    ): static {
         $this->minimumNumberNumeric = $minimumNumberNumeric;
 
         return $this;
@@ -253,8 +257,9 @@ class ContractExtensionType
      * @param  null|MaximumNumberNumeric $maximumNumberNumeric
      * @return static
      */
-    public function setMaximumNumberNumeric(?MaximumNumberNumeric $maximumNumberNumeric = null): static
-    {
+    public function setMaximumNumberNumeric(
+        ?MaximumNumberNumeric $maximumNumberNumeric = null
+    ): static {
         $this->maximumNumberNumeric = $maximumNumberNumeric;
 
         return $this;
@@ -292,8 +297,9 @@ class ContractExtensionType
      * @param  null|OptionValidityPeriod $optionValidityPeriod
      * @return static
      */
-    public function setOptionValidityPeriod(?OptionValidityPeriod $optionValidityPeriod = null): static
-    {
+    public function setOptionValidityPeriod(
+        ?OptionValidityPeriod $optionValidityPeriod = null
+    ): static {
         $this->optionValidityPeriod = $optionValidityPeriod;
 
         return $this;
@@ -321,8 +327,9 @@ class ContractExtensionType
      * @param  null|array<Renewal> $renewal
      * @return static
      */
-    public function setRenewal(?array $renewal = null): static
-    {
+    public function setRenewal(
+        ?array $renewal = null
+    ): static {
         $this->renewal = $renewal;
 
         return $this;
@@ -382,8 +389,9 @@ class ContractExtensionType
      * @param  Renewal $renewal
      * @return static
      */
-    public function addToRenewal(Renewal $renewal): static
-    {
+    public function addToRenewal(
+        Renewal $renewal
+    ): static {
         $this->renewal[] = $renewal;
 
         return $this;
@@ -403,8 +411,9 @@ class ContractExtensionType
      * @param  Renewal $renewal
      * @return static
      */
-    public function addOnceToRenewal(Renewal $renewal): static
-    {
+    public function addOnceToRenewal(
+        Renewal $renewal
+    ): static {
         if (!is_array($this->renewal)) {
             $this->renewal = [];
         }

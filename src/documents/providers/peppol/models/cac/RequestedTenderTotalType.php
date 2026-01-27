@@ -169,8 +169,9 @@ class RequestedTenderTotalType
      * @param  null|TotalAmount $totalAmount
      * @return static
      */
-    public function setTotalAmount(?TotalAmount $totalAmount = null): static
-    {
+    public function setTotalAmount(
+        ?TotalAmount $totalAmount = null
+    ): static {
         $this->totalAmount = $totalAmount;
 
         return $this;
@@ -198,8 +199,9 @@ class RequestedTenderTotalType
      * @param  null|bool $taxIncludedIndicator
      * @return static
      */
-    public function setTaxIncludedIndicator(?bool $taxIncludedIndicator = null): static
-    {
+    public function setTaxIncludedIndicator(
+        ?bool $taxIncludedIndicator = null
+    ): static {
         $this->taxIncludedIndicator = $taxIncludedIndicator;
 
         return $this;
@@ -237,8 +239,9 @@ class RequestedTenderTotalType
      * @param  null|MinimumAmount $minimumAmount
      * @return static
      */
-    public function setMinimumAmount(?MinimumAmount $minimumAmount = null): static
-    {
+    public function setMinimumAmount(
+        ?MinimumAmount $minimumAmount = null
+    ): static {
         $this->minimumAmount = $minimumAmount;
 
         return $this;
@@ -276,8 +279,9 @@ class RequestedTenderTotalType
      * @param  null|MaximumAmount $maximumAmount
      * @return static
      */
-    public function setMaximumAmount(?MaximumAmount $maximumAmount = null): static
-    {
+    public function setMaximumAmount(
+        ?MaximumAmount $maximumAmount = null
+    ): static {
         $this->maximumAmount = $maximumAmount;
 
         return $this;
@@ -305,8 +309,9 @@ class RequestedTenderTotalType
      * @param  null|array<MonetaryScope> $monetaryScope
      * @return static
      */
-    public function setMonetaryScope(?array $monetaryScope = null): static
-    {
+    public function setMonetaryScope(
+        ?array $monetaryScope = null
+    ): static {
         $this->monetaryScope = $monetaryScope;
 
         return $this;
@@ -366,8 +371,9 @@ class RequestedTenderTotalType
      * @param  MonetaryScope $monetaryScope
      * @return static
      */
-    public function addToMonetaryScope(MonetaryScope $monetaryScope): static
-    {
+    public function addToMonetaryScope(
+        MonetaryScope $monetaryScope
+    ): static {
         $this->monetaryScope[] = $monetaryScope;
 
         return $this;
@@ -387,8 +393,9 @@ class RequestedTenderTotalType
      * @param  MonetaryScope $monetaryScope
      * @return static
      */
-    public function addOnceToMonetaryScope(MonetaryScope $monetaryScope): static
-    {
+    public function addOnceToMonetaryScope(
+        MonetaryScope $monetaryScope
+    ): static {
         if (!is_array($this->monetaryScope)) {
             $this->monetaryScope = [];
         }
@@ -466,8 +473,9 @@ class RequestedTenderTotalType
      * @param  null|array<ApplicableTaxCategory> $applicableTaxCategory
      * @return static
      */
-    public function setApplicableTaxCategory(?array $applicableTaxCategory = null): static
-    {
+    public function setApplicableTaxCategory(
+        ?array $applicableTaxCategory = null
+    ): static {
         $this->applicableTaxCategory = $applicableTaxCategory;
 
         return $this;
@@ -527,8 +535,9 @@ class RequestedTenderTotalType
      * @param  ApplicableTaxCategory $applicableTaxCategory
      * @return static
      */
-    public function addToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): static
-    {
+    public function addToApplicableTaxCategory(
+        ApplicableTaxCategory $applicableTaxCategory
+    ): static {
         $this->applicableTaxCategory[] = $applicableTaxCategory;
 
         return $this;
@@ -548,8 +557,9 @@ class RequestedTenderTotalType
      * @param  ApplicableTaxCategory $applicableTaxCategory
      * @return static
      */
-    public function addOnceToApplicableTaxCategory(ApplicableTaxCategory $applicableTaxCategory): static
-    {
+    public function addOnceToApplicableTaxCategory(
+        ApplicableTaxCategory $applicableTaxCategory
+    ): static {
         if (!is_array($this->applicableTaxCategory)) {
             $this->applicableTaxCategory = [];
         }

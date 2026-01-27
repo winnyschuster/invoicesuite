@@ -1834,8 +1834,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newAccountId __BT-19, From BASIC WL__ Posting reference of the byuer
      * @return static
      */
-    public function setDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): static
-    {
+    public function setDocumentPostingReference(
+        ?string $newType = null,
+        ?string $newAccountId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -1866,8 +1868,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newAccountId __BT-19, From BASIC WL__ Posting reference of the byuer
      * @return static
      */
-    public function addDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): static
-    {
+    public function addDocumentPostingReference(
+        ?string $newType = null,
+        ?string $newAccountId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastBasicWlWithTrace(__METHOD__)) {
@@ -2447,8 +2451,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newName            __BT-11-0, From EN 16931__ Project name
      * @return static
      */
-    public function setDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): static
-    {
+    public function setDocumentProjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -2491,8 +2497,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newName            __BT-11-0, From EN 16931__ Project name
      * @return static
      */
-    public function addDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): static
-    {
+    public function addDocumentProjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastEn16931WithTrace(__METHOD__)) {
@@ -3074,8 +3082,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-29-1, From BASIC WL__ Type of the global identifier of the party
      * @return static
      */
-    public function setDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentSellerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -3107,8 +3117,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-29-1, From BASIC WL__ Type of the global identifier of the party
      * @return static
      */
-    public function addDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentSellerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastBasicWlWithTrace(__METHOD__)) {
@@ -3546,8 +3558,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-34, From BASIC WL__ The party's electronic address
      * @return static
      */
-    public function setDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentSellerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -3587,8 +3601,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-34, From BASIC WL__ The party's electronic address
      * @return static
      */
-    public function addDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentSellerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastBasicWlWithTrace(__METHOD__)) {
@@ -3743,8 +3759,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-46-1, From BASIC WL__ Type of the global identifier of the party
      * @return static
      */
-    public function setDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentBuyerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -3776,8 +3794,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-46-1, From BASIC WL__ Type of the global identifier of the party
      * @return static
      */
-    public function addDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentBuyerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastBasicWlWithTrace(__METHOD__)) {
@@ -4215,8 +4235,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-49, From BASIC WL__ The party's electronic address
      * @return static
      */
-    public function setDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentBuyerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -4261,8 +4283,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-49, From BASIC WL__ The party's electronic address
      * @return static
      */
-    public function addDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentBuyerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastBasicWlWithTrace(__METHOD__)) {
@@ -4884,8 +4908,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-125, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function setDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentTaxRepresentativeCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -4930,8 +4956,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-125, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function addDocumentTaxRepresentativeCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentTaxRepresentativeCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
@@ -5553,8 +5581,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-143, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function setDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentProductEndUserCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -5599,8 +5629,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-143, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function addDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentProductEndUserCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
@@ -5755,8 +5787,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-71-1, From BASIC WL__ Type of the global identifier of the party
      * @return static
      */
-    public function setDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentShipToGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -5788,8 +5822,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-71-1, From BASIC WL__ Type of the global identifier of the party
      * @return static
      */
-    public function addDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentShipToGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastBasicWlWithTrace(__METHOD__)) {
@@ -6218,8 +6254,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-160-0, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function setDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -6264,8 +6302,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-160-0, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function addDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
@@ -6887,8 +6927,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-83-0, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function setDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentUltimateShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -6933,8 +6975,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-83-0, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function addDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentUltimateShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
@@ -7089,8 +7133,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-X-182-0, From EXTENDED__ Type of the global identifier of the party
      * @return static
      */
-    public function setDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentShipFromGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -7122,8 +7168,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-X-182-0, From EXTENDED__ Type of the global identifier of the party
      * @return static
      */
-    public function addDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentShipFromGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
@@ -7552,8 +7600,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-199-0, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function setDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentShipFromCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -7598,8 +7648,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-199-0, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function addDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentShipFromCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
@@ -7754,8 +7806,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-X-206-0, From EXTENDED__ Type of the global identifier of the party
      * @return static
      */
-    public function setDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentInvoicerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -7787,8 +7841,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-X-206-0, From EXTENDED__ Type of the global identifier of the party
      * @return static
      */
-    public function addDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentInvoicerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
@@ -8217,8 +8273,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-222, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function setDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentInvoicerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -8263,8 +8321,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-222, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function addDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentInvoicerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
@@ -8419,8 +8479,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-X-225-0, From EXTENDED__ Type of the global identifier of the party
      * @return static
      */
-    public function setDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentInvoiceeGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -8452,8 +8514,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-X-225-0, From EXTENDED__ Type of the global identifier of the party
      * @return static
      */
-    public function addDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentInvoiceeGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
@@ -8882,8 +8946,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-241, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function setDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentInvoiceeCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -8928,8 +8994,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-241, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function addDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentInvoiceeCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
@@ -9084,8 +9152,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-60-1, From BASIC WL__ Type of the global identifier of the party
      * @return static
      */
-    public function setDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentPayeeGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -9117,8 +9187,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-60-1, From BASIC WL__ Type of the global identifier of the party
      * @return static
      */
-    public function addDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentPayeeGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastBasicWlWithTrace(__METHOD__)) {
@@ -9547,8 +9619,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-256, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function setDocumentPayeeCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentPayeeCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -9588,8 +9662,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-256, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function addDocumentPayeeCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentPayeeCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
@@ -14977,8 +15053,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newAccountId __BT-133, From EN 16931__ Posting reference of the byuer
      * @return static
      */
-    public function setDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): static
-    {
+    public function setDocumentPositionPostingReference(
+        ?string $newType = null,
+        ?string $newAccountId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -15021,8 +15099,10 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newAccountId __BT-133, From EN 16931__ Posting reference of the byuer
      * @return static
      */
-    public function addDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): static
-    {
+    public function addDocumentPositionPostingReference(
+        ?string $newType = null,
+        ?string $newAccountId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if ($this->supportsNotAtLeastEn16931WithTrace(__METHOD__)) {

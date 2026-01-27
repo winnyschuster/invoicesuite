@@ -117,8 +117,9 @@ class WorkPhaseReferenceType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -156,8 +157,9 @@ class WorkPhaseReferenceType
      * @param  null|WorkPhaseCode $workPhaseCode
      * @return static
      */
-    public function setWorkPhaseCode(?WorkPhaseCode $workPhaseCode = null): static
-    {
+    public function setWorkPhaseCode(
+        ?WorkPhaseCode $workPhaseCode = null
+    ): static {
         $this->workPhaseCode = $workPhaseCode;
 
         return $this;
@@ -185,8 +187,9 @@ class WorkPhaseReferenceType
      * @param  null|array<WorkPhase> $workPhase
      * @return static
      */
-    public function setWorkPhase(?array $workPhase = null): static
-    {
+    public function setWorkPhase(
+        ?array $workPhase = null
+    ): static {
         $this->workPhase = $workPhase;
 
         return $this;
@@ -246,8 +249,9 @@ class WorkPhaseReferenceType
      * @param  WorkPhase $workPhase
      * @return static
      */
-    public function addToWorkPhase(WorkPhase $workPhase): static
-    {
+    public function addToWorkPhase(
+        WorkPhase $workPhase
+    ): static {
         $this->workPhase[] = $workPhase;
 
         return $this;
@@ -267,8 +271,9 @@ class WorkPhaseReferenceType
      * @param  WorkPhase $workPhase
      * @return static
      */
-    public function addOnceToWorkPhase(WorkPhase $workPhase): static
-    {
+    public function addOnceToWorkPhase(
+        WorkPhase $workPhase
+    ): static {
         if (!is_array($this->workPhase)) {
             $this->workPhase = [];
         }
@@ -316,8 +321,9 @@ class WorkPhaseReferenceType
      * @param  null|ProgressPercent $progressPercent
      * @return static
      */
-    public function setProgressPercent(?ProgressPercent $progressPercent = null): static
-    {
+    public function setProgressPercent(
+        ?ProgressPercent $progressPercent = null
+    ): static {
         $this->progressPercent = $progressPercent;
 
         return $this;
@@ -345,8 +351,9 @@ class WorkPhaseReferenceType
      * @param  null|DateTimeInterface $startDate
      * @return static
      */
-    public function setStartDate(?DateTimeInterface $startDate = null): static
-    {
+    public function setStartDate(
+        ?DateTimeInterface $startDate = null
+    ): static {
         $this->startDate = $startDate;
 
         return $this;
@@ -374,8 +381,9 @@ class WorkPhaseReferenceType
      * @param  null|DateTimeInterface $endDate
      * @return static
      */
-    public function setEndDate(?DateTimeInterface $endDate = null): static
-    {
+    public function setEndDate(
+        ?DateTimeInterface $endDate = null
+    ): static {
         $this->endDate = $endDate;
 
         return $this;
@@ -403,8 +411,9 @@ class WorkPhaseReferenceType
      * @param  null|array<WorkOrderDocumentReference> $workOrderDocumentReference
      * @return static
      */
-    public function setWorkOrderDocumentReference(?array $workOrderDocumentReference = null): static
-    {
+    public function setWorkOrderDocumentReference(
+        ?array $workOrderDocumentReference = null
+    ): static {
         $this->workOrderDocumentReference = $workOrderDocumentReference;
 
         return $this;
@@ -464,8 +473,9 @@ class WorkPhaseReferenceType
      * @param  WorkOrderDocumentReference $workOrderDocumentReference
      * @return static
      */
-    public function addToWorkOrderDocumentReference(WorkOrderDocumentReference $workOrderDocumentReference): static
-    {
+    public function addToWorkOrderDocumentReference(
+        WorkOrderDocumentReference $workOrderDocumentReference
+    ): static {
         $this->workOrderDocumentReference[] = $workOrderDocumentReference;
 
         return $this;
@@ -485,8 +495,9 @@ class WorkPhaseReferenceType
      * @param  WorkOrderDocumentReference $workOrderDocumentReference
      * @return static
      */
-    public function addOnceToWorkOrderDocumentReference(WorkOrderDocumentReference $workOrderDocumentReference): static
-    {
+    public function addOnceToWorkOrderDocumentReference(
+        WorkOrderDocumentReference $workOrderDocumentReference
+    ): static {
         if (!is_array($this->workOrderDocumentReference)) {
             $this->workOrderDocumentReference = [];
         }

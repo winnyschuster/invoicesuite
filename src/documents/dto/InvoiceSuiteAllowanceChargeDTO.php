@@ -137,8 +137,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * @param  null|bool $chargeIndicator The switch that indicates whether the following data refer to an surcharge or a discount, true means that this an charge
      * @return static
      */
-    public function setChargeIndicator(?bool $chargeIndicator): static
-    {
+    public function setChargeIndicator(
+        ?bool $chargeIndicator
+    ): static {
         $this->chargeIndicator = $chargeIndicator;
 
         return $this;
@@ -160,8 +161,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * @param  null|float $amount The amount of the surcharge or discount
      * @return static
      */
-    public function setAmount(?float $amount): static
-    {
+    public function setAmount(
+        ?float $amount
+    ): static {
         $this->amount = $amount;
 
         return $this;
@@ -183,8 +185,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * @param  null|float $baseAmount The base amount that may be used in conjunction with the percentage of the surcharge or discount
      * @return static
      */
-    public function setBaseAmount(?float $baseAmount): static
-    {
+    public function setBaseAmount(
+        ?float $baseAmount
+    ): static {
         $this->baseAmount = $baseAmount;
 
         return $this;
@@ -206,8 +209,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * @param  null|float $percent The Percentage that may be used, in conjunction with the document level allowance base amount, to calculate the document level allowance or charge amount. To state 20%, use value 20
      * @return static
      */
-    public function setPercent(?float $percent): static
-    {
+    public function setPercent(
+        ?float $percent
+    ): static {
         $this->percent = $percent;
 
         return $this;
@@ -229,8 +233,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * @param  null|string $taxCategory The coded description of the tax category
      * @return static
      */
-    public function setTaxCategory(?string $taxCategory): static
-    {
+    public function setTaxCategory(
+        ?string $taxCategory
+    ): static {
         $this->taxCategory = InvoiceSuiteStringUtils::asNullWhenEmpty($taxCategory);
 
         return $this;
@@ -252,8 +257,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * @param  null|string $taxType The coded description of the tax type
      * @return static
      */
-    public function setTaxType(?string $taxType): static
-    {
+    public function setTaxType(
+        ?string $taxType
+    ): static {
         $this->taxType = InvoiceSuiteStringUtils::asNullWhenEmpty($taxType);
 
         return $this;
@@ -275,8 +281,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * @param  null|float $taxPercent The tax Rate (Percentage)
      * @return static
      */
-    public function setTaxPercent(?float $taxPercent): static
-    {
+    public function setTaxPercent(
+        ?float $taxPercent
+    ): static {
         $this->taxPercent = $taxPercent;
 
         return $this;
@@ -298,8 +305,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * @param  null|string $reason The reason given in text form for the surcharge or discount
      * @return static
      */
-    public function setReason(?string $reason): static
-    {
+    public function setReason(
+        ?string $reason
+    ): static {
         $this->reason = InvoiceSuiteStringUtils::asNullWhenEmpty($reason);
 
         return $this;
@@ -321,8 +329,9 @@ class InvoiceSuiteAllowanceChargeDTO
      * @param  null|string $reasonCode The Reason given as a code for the surcharge or discount
      * @return static
      */
-    public function setReasonCode(?string $reasonCode): static
-    {
+    public function setReasonCode(
+        ?string $reasonCode
+    ): static {
         $this->reasonCode = InvoiceSuiteStringUtils::asNullWhenEmpty($reasonCode);
 
         return $this;

@@ -69,8 +69,9 @@ class CommunicationType
      * @param  null|ChannelCode $channelCode
      * @return static
      */
-    public function setChannelCode(?ChannelCode $channelCode = null): static
-    {
+    public function setChannelCode(
+        ?ChannelCode $channelCode = null
+    ): static {
         $this->channelCode = $channelCode;
 
         return $this;
@@ -108,8 +109,9 @@ class CommunicationType
      * @param  null|Channel $channel
      * @return static
      */
-    public function setChannel(?Channel $channel = null): static
-    {
+    public function setChannel(
+        ?Channel $channel = null
+    ): static {
         $this->channel = $channel;
 
         return $this;
@@ -147,8 +149,9 @@ class CommunicationType
      * @param  null|Value $value
      * @return static
      */
-    public function setValue(?Value $value = null): static
-    {
+    public function setValue(
+        ?Value $value = null
+    ): static {
         $this->value = $value;
 
         return $this;

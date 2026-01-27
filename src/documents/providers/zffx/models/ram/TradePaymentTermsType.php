@@ -114,8 +114,9 @@ class TradePaymentTermsType
      * @param  null|TextType $description
      * @return static
      */
-    public function setDescription(?TextType $description = null): static
-    {
+    public function setDescription(
+        ?TextType $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -153,8 +154,9 @@ class TradePaymentTermsType
      * @param  null|DateTimeType $dueDateDateTime
      * @return static
      */
-    public function setDueDateDateTime(?DateTimeType $dueDateDateTime = null): static
-    {
+    public function setDueDateDateTime(
+        ?DateTimeType $dueDateDateTime = null
+    ): static {
         $this->dueDateDateTime = $dueDateDateTime;
 
         return $this;
@@ -192,8 +194,9 @@ class TradePaymentTermsType
      * @param  null|IDType $directDebitMandateID
      * @return static
      */
-    public function setDirectDebitMandateID(?IDType $directDebitMandateID = null): static
-    {
+    public function setDirectDebitMandateID(
+        ?IDType $directDebitMandateID = null
+    ): static {
         $this->directDebitMandateID = $directDebitMandateID;
 
         return $this;
@@ -231,8 +234,9 @@ class TradePaymentTermsType
      * @param  null|AmountType $partialPaymentAmount
      * @return static
      */
-    public function setPartialPaymentAmount(?AmountType $partialPaymentAmount = null): static
-    {
+    public function setPartialPaymentAmount(
+        ?AmountType $partialPaymentAmount = null
+    ): static {
         $this->partialPaymentAmount = $partialPaymentAmount;
 
         return $this;
@@ -350,8 +354,9 @@ class TradePaymentTermsType
      * @param  null|TradePartyType $payeeTradeParty
      * @return static
      */
-    public function setPayeeTradeParty(?TradePartyType $payeeTradeParty = null): static
-    {
+    public function setPayeeTradeParty(
+        ?TradePartyType $payeeTradeParty = null
+    ): static {
         $this->payeeTradeParty = $payeeTradeParty;
 
         return $this;

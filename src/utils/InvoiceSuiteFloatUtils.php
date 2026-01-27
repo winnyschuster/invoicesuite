@@ -20,8 +20,9 @@ class InvoiceSuiteFloatUtils
      * @param  null|float $value
      * @return bool
      */
-    public static function floatIsNullOrEmpty(?float $value = null): bool
-    {
+    public static function floatIsNullOrEmpty(
+        ?float $value = null
+    ): bool {
         return is_null($value);
     }
 
@@ -32,8 +33,9 @@ class InvoiceSuiteFloatUtils
      * @param  array<null|float> $values
      * @return bool
      */
-    public static function allIsNullOrEmpty(array $values): bool
-    {
+    public static function allIsNullOrEmpty(
+        array $values
+    ): bool {
         foreach ($values as $value) {
             if (!static::floatIsNullOrEmpty($value)) {
                 return false;
@@ -49,8 +51,9 @@ class InvoiceSuiteFloatUtils
      * @param  array<null|float> $values
      * @return bool
      */
-    public static function oneIsNullOrEmpty(array $values): bool
-    {
+    public static function oneIsNullOrEmpty(
+        array $values
+    ): bool {
         foreach ($values as $value) {
             if (static::floatIsNullOrEmpty($value)) {
                 return true;
@@ -66,8 +69,9 @@ class InvoiceSuiteFloatUtils
      * @param  null|float $str
      * @return null|float
      */
-    public static function asNullWhenEmpty(?float $str): ?float
-    {
+    public static function asNullWhenEmpty(
+        ?float $str
+    ): ?float {
         return static::floatIsNullOrEmpty($str) ? null : $str;
     }
 }

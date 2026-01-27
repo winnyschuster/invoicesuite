@@ -112,7 +112,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      * @param  string $serializedContent
      * @return bool
      */
-    abstract public function getSerializedContentMatchesScheme(string $serializedContent): bool;
+    abstract public function getSerializedContentMatchesScheme(
+        string $serializedContent
+    ): bool;
 
     /**
      * Returns the classname of the root invoice-object
@@ -170,8 +172,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      * @param  string $serializedContent
      * @return bool
      */
-    public function getIsSatisfiableBySerializedContent(string $serializedContent): bool
-    {
+    public function getIsSatisfiableBySerializedContent(
+        string $serializedContent
+    ): bool {
         if (InvoiceSuiteContentTypeResolver::resolveContentType($serializedContent) != $this->getContentType()) {
             return false;
         }
@@ -237,8 +240,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      * @param  string $group
      * @return bool
      */
-    public function hasSerializerGroup(string $group): bool
-    {
+    public function hasSerializerGroup(
+        string $group
+    ): bool {
         return in_array($group, $this->getSerializerGroups());
     }
 
@@ -248,8 +252,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      * @param  string $parameterName
      * @return bool
      */
-    public function hasFormatProviderParameter(string $parameterName): bool
-    {
+    public function hasFormatProviderParameter(
+        string $parameterName
+    ): bool {
         return array_key_exists($parameterName, $this->getParameters());
     }
 
@@ -260,8 +265,10 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      * @param  mixed  $defaultValue
      * @return mixed
      */
-    public function getFormatProviderParameterValue(string $parameterName, $defaultValue)
-    {
+    public function getFormatProviderParameterValue(
+        string $parameterName,
+        $defaultValue
+    ) {
         if (!$this->hasFormatProviderParameter($parameterName)) {
             return $defaultValue;
         }
@@ -278,8 +285,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      *
      * @throws InvoiceSuiteUnknownProviderParameterException
      */
-    public function getFormatProviderRequiredParameterValue(string $parameterName)
-    {
+    public function getFormatProviderRequiredParameterValue(
+        string $parameterName
+    ) {
         if (!$this->hasFormatProviderParameter($parameterName)) {
             throw new InvoiceSuiteUnknownProviderParameterException($parameterName);
         }
@@ -294,8 +302,10 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      * @param  int    $defaultValue
      * @return int
      */
-    public function getFormatProviderParameterValueInt(string $parameterName, int $defaultValue): int
-    {
+    public function getFormatProviderParameterValueInt(
+        string $parameterName,
+        int $defaultValue
+    ): int {
         if (!$this->hasFormatProviderParameter($parameterName)) {
             return $defaultValue;
         }
@@ -312,8 +322,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      *
      * @throws InvoiceSuiteUnknownProviderParameterException
      */
-    public function getFormatProviderRequiredParameterValueInt(string $parameterName): int
-    {
+    public function getFormatProviderRequiredParameterValueInt(
+        string $parameterName
+    ): int {
         if (!$this->hasFormatProviderParameter($parameterName)) {
             throw new InvoiceSuiteUnknownProviderParameterException($parameterName);
         }
@@ -328,8 +339,10 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      * @param  bool   $defaultValue
      * @return bool
      */
-    public function getFormatProviderParameterValueBool(string $parameterName, bool $defaultValue): bool
-    {
+    public function getFormatProviderParameterValueBool(
+        string $parameterName,
+        bool $defaultValue
+    ): bool {
         if (!$this->hasFormatProviderParameter($parameterName)) {
             return $defaultValue;
         }
@@ -346,8 +359,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      *
      * @throws InvoiceSuiteUnknownProviderParameterException
      */
-    public function getFormatProviderRequiredParameterValueBool(string $parameterName): bool
-    {
+    public function getFormatProviderRequiredParameterValueBool(
+        string $parameterName
+    ): bool {
         if (!$this->hasFormatProviderParameter($parameterName)) {
             throw new InvoiceSuiteUnknownProviderParameterException($parameterName);
         }
@@ -387,8 +401,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
      * @param  string $filename
      * @return bool
      */
-    public function getIsValidPdfAttachmentFilename(string $filename): bool
-    {
+    public function getIsValidPdfAttachmentFilename(
+        string $filename
+    ): bool {
         return InvoiceSuiteArrayUtils::inArrayNoCase($this->getPdfAllowedAttachmentFilenames(), $filename);
     }
 

@@ -67,8 +67,9 @@ class ExchangedDocumentContextType
      * @param  null|IndicatorType $testIndicator
      * @return static
      */
-    public function setTestIndicator(?IndicatorType $testIndicator = null): static
-    {
+    public function setTestIndicator(
+        ?IndicatorType $testIndicator = null
+    ): static {
         $this->testIndicator = $testIndicator;
 
         return $this;

@@ -79,8 +79,9 @@ class EndorserPartyType
      * @param  null|RoleCode $roleCode
      * @return static
      */
-    public function setRoleCode(?RoleCode $roleCode = null): static
-    {
+    public function setRoleCode(
+        ?RoleCode $roleCode = null
+    ): static {
         $this->roleCode = $roleCode;
 
         return $this;
@@ -118,8 +119,9 @@ class EndorserPartyType
      * @param  null|SequenceNumeric $sequenceNumeric
      * @return static
      */
-    public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): static
-    {
+    public function setSequenceNumeric(
+        ?SequenceNumeric $sequenceNumeric = null
+    ): static {
         $this->sequenceNumeric = $sequenceNumeric;
 
         return $this;
@@ -157,8 +159,9 @@ class EndorserPartyType
      * @param  null|Party $party
      * @return static
      */
-    public function setParty(?Party $party = null): static
-    {
+    public function setParty(
+        ?Party $party = null
+    ): static {
         $this->party = $party;
 
         return $this;
@@ -196,8 +199,9 @@ class EndorserPartyType
      * @param  null|SignatoryContact $signatoryContact
      * @return static
      */
-    public function setSignatoryContact(?SignatoryContact $signatoryContact = null): static
-    {
+    public function setSignatoryContact(
+        ?SignatoryContact $signatoryContact = null
+    ): static {
         $this->signatoryContact = $signatoryContact;
 
         return $this;

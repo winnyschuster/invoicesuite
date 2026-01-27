@@ -34,8 +34,9 @@ trait HandlesKeyValuePairs
      * @param  string $newKey
      * @return bool
      */
-    protected function hasKeyValuePair(string $newKey): bool
-    {
+    protected function hasKeyValuePair(
+        string $newKey
+    ): bool {
         return array_key_exists($newKey, $this->keyValuePairContainer);
     }
 
@@ -47,8 +48,11 @@ trait HandlesKeyValuePairs
      * @param  bool   $newOverwrite
      * @return static
      */
-    protected function addKeyValuePair(string $newKey, mixed $newValue, bool $newOverwrite = false): static
-    {
+    protected function addKeyValuePair(
+        string $newKey,
+        mixed $newValue,
+        bool $newOverwrite = false
+    ): static {
         if ($this->hasKeyValuePair($newKey) && !$newOverwrite) {
             return $this;
         }
@@ -66,8 +70,10 @@ trait HandlesKeyValuePairs
      * @param  mixed  $newDefaultValue
      * @return mixed
      */
-    protected function getKeyValuePair(string $newKey, mixed $newDefaultValue): mixed
-    {
+    protected function getKeyValuePair(
+        string $newKey,
+        mixed $newDefaultValue
+    ): mixed {
         if (!$this->hasKeyValuePair($newKey)) {
             return $newDefaultValue;
         }
@@ -81,8 +87,9 @@ trait HandlesKeyValuePairs
      * @param  string $newKey
      * @return static
      */
-    protected function removeKeyValuePair(string $newKey): static
-    {
+    protected function removeKeyValuePair(
+        string $newKey
+    ): static {
         if (!$this->hasKeyValuePair($newKey)) {
             return $this;
         }

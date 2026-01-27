@@ -92,8 +92,9 @@ class ConsumptionReportReferenceType
      * @param  null|ConsumptionReportID $consumptionReportID
      * @return static
      */
-    public function setConsumptionReportID(?ConsumptionReportID $consumptionReportID = null): static
-    {
+    public function setConsumptionReportID(
+        ?ConsumptionReportID $consumptionReportID = null
+    ): static {
         $this->consumptionReportID = $consumptionReportID;
 
         return $this;
@@ -131,8 +132,9 @@ class ConsumptionReportReferenceType
      * @param  null|ConsumptionType $consumptionType
      * @return static
      */
-    public function setConsumptionType(?ConsumptionType $consumptionType = null): static
-    {
+    public function setConsumptionType(
+        ?ConsumptionType $consumptionType = null
+    ): static {
         $this->consumptionType = $consumptionType;
 
         return $this;
@@ -170,8 +172,9 @@ class ConsumptionReportReferenceType
      * @param  null|ConsumptionTypeCode $consumptionTypeCode
      * @return static
      */
-    public function setConsumptionTypeCode(?ConsumptionTypeCode $consumptionTypeCode = null): static
-    {
+    public function setConsumptionTypeCode(
+        ?ConsumptionTypeCode $consumptionTypeCode = null
+    ): static {
         $this->consumptionTypeCode = $consumptionTypeCode;
 
         return $this;
@@ -209,8 +212,9 @@ class ConsumptionReportReferenceType
      * @param  null|TotalConsumedQuantity $totalConsumedQuantity
      * @return static
      */
-    public function setTotalConsumedQuantity(?TotalConsumedQuantity $totalConsumedQuantity = null): static
-    {
+    public function setTotalConsumedQuantity(
+        ?TotalConsumedQuantity $totalConsumedQuantity = null
+    ): static {
         $this->totalConsumedQuantity = $totalConsumedQuantity;
 
         return $this;
@@ -248,8 +252,9 @@ class ConsumptionReportReferenceType
      * @param  null|Period $period
      * @return static
      */
-    public function setPeriod(?Period $period = null): static
-    {
+    public function setPeriod(
+        ?Period $period = null
+    ): static {
         $this->period = $period;
 
         return $this;

@@ -43,8 +43,9 @@ class ZugferdKositValidator
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
-    public function __construct($document = null)
-    {
+    public function __construct(
+        $document = null
+    ) {
         $this->setDocument($document);
     }
 
@@ -58,8 +59,9 @@ class ZugferdKositValidator
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
-    public function setDocument($document): self
-    {
+    public function setDocument(
+        $document
+    ): self {
         $this->kositValidator = null;
 
         if (!is_string($document) && !($document instanceof ZugferdDocument)) {
@@ -97,8 +99,9 @@ class ZugferdKositValidator
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
-    public static function fromString(string $document): self
-    {
+    public static function fromString(
+        string $document
+    ): self {
         return new self($document);
     }
 
@@ -112,8 +115,9 @@ class ZugferdKositValidator
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
-    public static function fromZugferdDocument(ZugferdDocument $zugferdDocument): self
-    {
+    public static function fromZugferdDocument(
+        ZugferdDocument $zugferdDocument
+    ): self {
         return new self($zugferdDocument);
     }
 
@@ -124,8 +128,9 @@ class ZugferdKositValidator
      * @param  string                $newBaseDirectory
      * @return ZugferdKositValidator
      */
-    public function setBaseDirectory(string $newBaseDirectory): self
-    {
+    public function setBaseDirectory(
+        string $newBaseDirectory
+    ): self {
         $this->kositValidator->setBaseDirectory($newBaseDirectory);
 
         return $this;
@@ -137,8 +142,9 @@ class ZugferdKositValidator
      * @param  string                $newValidatorDownloadUrl
      * @return ZugferdKositValidator
      */
-    public function setValidatorDownloadUrl(string $newValidatorDownloadUrl): self
-    {
+    public function setValidatorDownloadUrl(
+        string $newValidatorDownloadUrl
+    ): self {
         $this->kositValidator->setValidatorDownloadUrl($newValidatorDownloadUrl);
 
         return $this;
@@ -150,8 +156,9 @@ class ZugferdKositValidator
      * @param  string                $newValidatorScenarioDownloadUrl
      * @return ZugferdKositValidator
      */
-    public function setValidatorScenarioDownloadUrl(string $newValidatorScenarioDownloadUrl): self
-    {
+    public function setValidatorScenarioDownloadUrl(
+        string $newValidatorScenarioDownloadUrl
+    ): self {
         $this->kositValidator->setValidatorScenarioDownloadUrl($newValidatorScenarioDownloadUrl);
 
         return $this;
@@ -163,8 +170,9 @@ class ZugferdKositValidator
      * @param  string                $newValidatorAppZipFilename
      * @return ZugferdKositValidator
      */
-    public function setValidatorAppZipFilename(string $newValidatorAppZipFilename): self
-    {
+    public function setValidatorAppZipFilename(
+        string $newValidatorAppZipFilename
+    ): self {
         $this->kositValidator->setValidatorAppZipFilename($newValidatorAppZipFilename);
 
         return $this;
@@ -176,8 +184,9 @@ class ZugferdKositValidator
      * @param  string                $newValidatorScenarioZipFilename
      * @return ZugferdKositValidator
      */
-    public function setValidatorScenarioZipFilename(string $newValidatorScenarioZipFilename): self
-    {
+    public function setValidatorScenarioZipFilename(
+        string $newValidatorScenarioZipFilename
+    ): self {
         $this->kositValidator->setValidatorScenarioZipFilename($newValidatorScenarioZipFilename);
 
         return $this;
@@ -189,8 +198,9 @@ class ZugferdKositValidator
      * @param  string                $newValidatorAppJarFilename
      * @return ZugferdKositValidator
      */
-    public function setValidatorAppJarFilename(string $newValidatorAppJarFilename): self
-    {
+    public function setValidatorAppJarFilename(
+        string $newValidatorAppJarFilename
+    ): self {
         $this->kositValidator->setValidatorAppJarFilename($newValidatorAppJarFilename);
 
         return $this;
@@ -202,8 +212,9 @@ class ZugferdKositValidator
      * @param  string                $newValidatorAppScenarioFilename
      * @return ZugferdKositValidator
      */
-    public function setValidatorAppScenarioFilename(string $newValidatorAppScenarioFilename): self
-    {
+    public function setValidatorAppScenarioFilename(
+        string $newValidatorAppScenarioFilename
+    ): self {
         $this->kositValidator->setValidatorAppScenarioFilename($newValidatorAppScenarioFilename);
 
         return $this;
@@ -264,8 +275,9 @@ class ZugferdKositValidator
      * @param  string                $remoteModeHost
      * @return ZugferdKositValidator
      */
-    public function setRemoteModeHost(string $remoteModeHost): self
-    {
+    public function setRemoteModeHost(
+        string $remoteModeHost
+    ): self {
         $this->kositValidator->setRemoteModeHost($remoteModeHost);
 
         return $this;
@@ -278,8 +290,9 @@ class ZugferdKositValidator
      * @param  int                   $remoteModePort
      * @return ZugferdKositValidator
      */
-    public function setRemoteModePort(int $remoteModePort): self
-    {
+    public function setRemoteModePort(
+        int $remoteModePort
+    ): self {
         $this->kositValidator->setRemoteModePort($remoteModePort);
 
         return $this;
@@ -471,8 +484,9 @@ class ZugferdKositValidator
      * @param  array<int, InvoiceSuiteMessageBagItem> $messages
      * @return array<int, string>
      */
-    private function convertMessageBagMessagesToSimpleArray(array $messages): array
-    {
+    private function convertMessageBagMessagesToSimpleArray(
+        array $messages
+    ): array {
         return array_map(
             static fn (InvoiceSuiteMessageBagItem $messageBagItem) => $messageBagItem->getMessageContent(),
             $messages

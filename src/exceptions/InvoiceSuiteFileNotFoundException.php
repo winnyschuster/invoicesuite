@@ -29,8 +29,10 @@ class InvoiceSuiteFileNotFoundException extends InvoiceSuiteBaseException
      * @param string         $filename
      * @param null|Throwable $throwable
      */
-    public function __construct(string $filename, ?Throwable $throwable = null)
-    {
+    public function __construct(
+        string $filename,
+        ?Throwable $throwable = null
+    ) {
         parent::__construct(sprintf('The file %s was not found', $filename), InvoiceSuiteExceptionCodes::FILENOTFOUND, $throwable);
     }
 }

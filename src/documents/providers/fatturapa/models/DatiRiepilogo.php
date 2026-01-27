@@ -126,8 +126,9 @@ final class DatiRiepilogo
      * @param  null|float $aliquotaIVA
      * @return static
      */
-    public function setAliquotaIVA(?float $aliquotaIVA = null): static
-    {
+    public function setAliquotaIVA(
+        ?float $aliquotaIVA = null
+    ): static {
         $this->aliquotaIVA = $aliquotaIVA;
 
         return $this;
@@ -161,8 +162,9 @@ final class DatiRiepilogo
      * @param  null|Natura $natura
      * @return static
      */
-    public function setNatura(?Natura $natura = null): static
-    {
+    public function setNatura(
+        ?Natura $natura = null
+    ): static {
         $this->natura = $natura;
 
         return $this;
@@ -196,8 +198,9 @@ final class DatiRiepilogo
      * @param  null|float $speseAccessorie
      * @return static
      */
-    public function setSpeseAccessorie(?float $speseAccessorie = null): static
-    {
+    public function setSpeseAccessorie(
+        ?float $speseAccessorie = null
+    ): static {
         $this->speseAccessorie = $speseAccessorie;
 
         return $this;
@@ -231,8 +234,9 @@ final class DatiRiepilogo
      * @param  null|float $arrotondamento
      * @return static
      */
-    public function setArrotondamento(?float $arrotondamento = null): static
-    {
+    public function setArrotondamento(
+        ?float $arrotondamento = null
+    ): static {
         $this->arrotondamento = $arrotondamento;
 
         return $this;
@@ -266,8 +270,9 @@ final class DatiRiepilogo
      * @param  null|float $imponibileImporto
      * @return static
      */
-    public function setImponibileImporto(?float $imponibileImporto = null): static
-    {
+    public function setImponibileImporto(
+        ?float $imponibileImporto = null
+    ): static {
         $this->imponibileImporto = $imponibileImporto;
 
         return $this;
@@ -301,8 +306,9 @@ final class DatiRiepilogo
      * @param  null|float $imposta
      * @return static
      */
-    public function setImposta(?float $imposta = null): static
-    {
+    public function setImposta(
+        ?float $imposta = null
+    ): static {
         $this->imposta = $imposta;
 
         return $this;
@@ -336,8 +342,9 @@ final class DatiRiepilogo
      * @param  null|EsigibilitaIVA $esigibilitaIVA
      * @return static
      */
-    public function setEsigibilitaIVA(?EsigibilitaIVA $esigibilitaIVA = null): static
-    {
+    public function setEsigibilitaIVA(
+        ?EsigibilitaIVA $esigibilitaIVA = null
+    ): static {
         $this->esigibilitaIVA = $esigibilitaIVA;
 
         return $this;
@@ -371,8 +378,9 @@ final class DatiRiepilogo
      * @param  null|string $riferimentoNormativo
      * @return static
      */
-    public function setRiferimentoNormativo(?string $riferimentoNormativo = null): static
-    {
+    public function setRiferimentoNormativo(
+        ?string $riferimentoNormativo = null
+    ): static {
         $this->riferimentoNormativo = InvoiceSuiteStringUtils::asNullWhenEmpty($riferimentoNormativo);
 
         return $this;

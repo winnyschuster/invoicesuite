@@ -193,8 +193,9 @@ class AwardingCriterionType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -232,8 +233,9 @@ class AwardingCriterionType
      * @param  null|AwardingCriterionTypeCode $awardingCriterionTypeCode
      * @return static
      */
-    public function setAwardingCriterionTypeCode(?AwardingCriterionTypeCode $awardingCriterionTypeCode = null): static
-    {
+    public function setAwardingCriterionTypeCode(
+        ?AwardingCriterionTypeCode $awardingCriterionTypeCode = null
+    ): static {
         $this->awardingCriterionTypeCode = $awardingCriterionTypeCode;
 
         return $this;
@@ -261,8 +263,9 @@ class AwardingCriterionType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -322,8 +325,9 @@ class AwardingCriterionType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -343,8 +347,9 @@ class AwardingCriterionType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -392,8 +397,9 @@ class AwardingCriterionType
      * @param  null|WeightNumeric $weightNumeric
      * @return static
      */
-    public function setWeightNumeric(?WeightNumeric $weightNumeric = null): static
-    {
+    public function setWeightNumeric(
+        ?WeightNumeric $weightNumeric = null
+    ): static {
         $this->weightNumeric = $weightNumeric;
 
         return $this;
@@ -421,8 +427,9 @@ class AwardingCriterionType
      * @param  null|array<Weight> $weight
      * @return static
      */
-    public function setWeight(?array $weight = null): static
-    {
+    public function setWeight(
+        ?array $weight = null
+    ): static {
         $this->weight = $weight;
 
         return $this;
@@ -482,8 +489,9 @@ class AwardingCriterionType
      * @param  Weight $weight
      * @return static
      */
-    public function addToWeight(Weight $weight): static
-    {
+    public function addToWeight(
+        Weight $weight
+    ): static {
         $this->weight[] = $weight;
 
         return $this;
@@ -503,8 +511,9 @@ class AwardingCriterionType
      * @param  Weight $weight
      * @return static
      */
-    public function addOnceToWeight(Weight $weight): static
-    {
+    public function addOnceToWeight(
+        Weight $weight
+    ): static {
         if (!is_array($this->weight)) {
             $this->weight = [];
         }
@@ -542,8 +551,9 @@ class AwardingCriterionType
      * @param  null|array<CalculationExpression> $calculationExpression
      * @return static
      */
-    public function setCalculationExpression(?array $calculationExpression = null): static
-    {
+    public function setCalculationExpression(
+        ?array $calculationExpression = null
+    ): static {
         $this->calculationExpression = $calculationExpression;
 
         return $this;
@@ -603,8 +613,9 @@ class AwardingCriterionType
      * @param  CalculationExpression $calculationExpression
      * @return static
      */
-    public function addToCalculationExpression(CalculationExpression $calculationExpression): static
-    {
+    public function addToCalculationExpression(
+        CalculationExpression $calculationExpression
+    ): static {
         $this->calculationExpression[] = $calculationExpression;
 
         return $this;
@@ -624,8 +635,9 @@ class AwardingCriterionType
      * @param  CalculationExpression $calculationExpression
      * @return static
      */
-    public function addOnceToCalculationExpression(CalculationExpression $calculationExpression): static
-    {
+    public function addOnceToCalculationExpression(
+        CalculationExpression $calculationExpression
+    ): static {
         if (!is_array($this->calculationExpression)) {
             $this->calculationExpression = [];
         }
@@ -673,8 +685,9 @@ class AwardingCriterionType
      * @param  null|CalculationExpressionCode $calculationExpressionCode
      * @return static
      */
-    public function setCalculationExpressionCode(?CalculationExpressionCode $calculationExpressionCode = null): static
-    {
+    public function setCalculationExpressionCode(
+        ?CalculationExpressionCode $calculationExpressionCode = null
+    ): static {
         $this->calculationExpressionCode = $calculationExpressionCode;
 
         return $this;
@@ -712,8 +725,9 @@ class AwardingCriterionType
      * @param  null|MinimumQuantity $minimumQuantity
      * @return static
      */
-    public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): static
-    {
+    public function setMinimumQuantity(
+        ?MinimumQuantity $minimumQuantity = null
+    ): static {
         $this->minimumQuantity = $minimumQuantity;
 
         return $this;
@@ -751,8 +765,9 @@ class AwardingCriterionType
      * @param  null|MaximumQuantity $maximumQuantity
      * @return static
      */
-    public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): static
-    {
+    public function setMaximumQuantity(
+        ?MaximumQuantity $maximumQuantity = null
+    ): static {
         $this->maximumQuantity = $maximumQuantity;
 
         return $this;
@@ -790,8 +805,9 @@ class AwardingCriterionType
      * @param  null|MinimumAmount $minimumAmount
      * @return static
      */
-    public function setMinimumAmount(?MinimumAmount $minimumAmount = null): static
-    {
+    public function setMinimumAmount(
+        ?MinimumAmount $minimumAmount = null
+    ): static {
         $this->minimumAmount = $minimumAmount;
 
         return $this;
@@ -829,8 +845,9 @@ class AwardingCriterionType
      * @param  null|MaximumAmount $maximumAmount
      * @return static
      */
-    public function setMaximumAmount(?MaximumAmount $maximumAmount = null): static
-    {
+    public function setMaximumAmount(
+        ?MaximumAmount $maximumAmount = null
+    ): static {
         $this->maximumAmount = $maximumAmount;
 
         return $this;
@@ -858,8 +875,9 @@ class AwardingCriterionType
      * @param  null|array<MinimumImprovementBid> $minimumImprovementBid
      * @return static
      */
-    public function setMinimumImprovementBid(?array $minimumImprovementBid = null): static
-    {
+    public function setMinimumImprovementBid(
+        ?array $minimumImprovementBid = null
+    ): static {
         $this->minimumImprovementBid = $minimumImprovementBid;
 
         return $this;
@@ -919,8 +937,9 @@ class AwardingCriterionType
      * @param  MinimumImprovementBid $minimumImprovementBid
      * @return static
      */
-    public function addToMinimumImprovementBid(MinimumImprovementBid $minimumImprovementBid): static
-    {
+    public function addToMinimumImprovementBid(
+        MinimumImprovementBid $minimumImprovementBid
+    ): static {
         $this->minimumImprovementBid[] = $minimumImprovementBid;
 
         return $this;
@@ -940,8 +959,9 @@ class AwardingCriterionType
      * @param  MinimumImprovementBid $minimumImprovementBid
      * @return static
      */
-    public function addOnceToMinimumImprovementBid(MinimumImprovementBid $minimumImprovementBid): static
-    {
+    public function addOnceToMinimumImprovementBid(
+        MinimumImprovementBid $minimumImprovementBid
+    ): static {
         if (!is_array($this->minimumImprovementBid)) {
             $this->minimumImprovementBid = [];
         }
@@ -979,8 +999,9 @@ class AwardingCriterionType
      * @param  null|array<SubordinateAwardingCriterion> $subordinateAwardingCriterion
      * @return static
      */
-    public function setSubordinateAwardingCriterion(?array $subordinateAwardingCriterion = null): static
-    {
+    public function setSubordinateAwardingCriterion(
+        ?array $subordinateAwardingCriterion = null
+    ): static {
         $this->subordinateAwardingCriterion = $subordinateAwardingCriterion;
 
         return $this;

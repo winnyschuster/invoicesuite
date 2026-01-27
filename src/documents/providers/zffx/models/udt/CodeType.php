@@ -57,8 +57,9 @@ class CodeType
      * @param  null|string $value
      * @return static
      */
-    public function setValue(?string $value = null): static
-    {
+    public function setValue(
+        ?string $value = null
+    ): static {
         $this->value = InvoiceSuiteStringUtils::asNullWhenEmpty($value);
 
         return $this;
@@ -86,8 +87,9 @@ class CodeType
      * @param  null|string $listID
      * @return static
      */
-    public function setListID(?string $listID = null): static
-    {
+    public function setListID(
+        ?string $listID = null
+    ): static {
         $this->listID = InvoiceSuiteStringUtils::asNullWhenEmpty($listID);
 
         return $this;
@@ -115,8 +117,9 @@ class CodeType
      * @param  null|string $listVersionID
      * @return static
      */
-    public function setListVersionID(?string $listVersionID = null): static
-    {
+    public function setListVersionID(
+        ?string $listVersionID = null
+    ): static {
         $this->listVersionID = InvoiceSuiteStringUtils::asNullWhenEmpty($listVersionID);
 
         return $this;

@@ -220,8 +220,9 @@ class CertificateOfOriginApplicationType
      * @param  null|ReferenceID $referenceID
      * @return static
      */
-    public function setReferenceID(?ReferenceID $referenceID = null): static
-    {
+    public function setReferenceID(
+        ?ReferenceID $referenceID = null
+    ): static {
         $this->referenceID = $referenceID;
 
         return $this;
@@ -259,8 +260,9 @@ class CertificateOfOriginApplicationType
      * @param  null|CertificateType $certificateType
      * @return static
      */
-    public function setCertificateType(?CertificateType $certificateType = null): static
-    {
+    public function setCertificateType(
+        ?CertificateType $certificateType = null
+    ): static {
         $this->certificateType = $certificateType;
 
         return $this;
@@ -298,8 +300,9 @@ class CertificateOfOriginApplicationType
      * @param  null|ApplicationStatusCode $applicationStatusCode
      * @return static
      */
-    public function setApplicationStatusCode(?ApplicationStatusCode $applicationStatusCode = null): static
-    {
+    public function setApplicationStatusCode(
+        ?ApplicationStatusCode $applicationStatusCode = null
+    ): static {
         $this->applicationStatusCode = $applicationStatusCode;
 
         return $this;
@@ -337,8 +340,9 @@ class CertificateOfOriginApplicationType
      * @param  null|OriginalJobID $originalJobID
      * @return static
      */
-    public function setOriginalJobID(?OriginalJobID $originalJobID = null): static
-    {
+    public function setOriginalJobID(
+        ?OriginalJobID $originalJobID = null
+    ): static {
         $this->originalJobID = $originalJobID;
 
         return $this;
@@ -376,8 +380,9 @@ class CertificateOfOriginApplicationType
      * @param  null|PreviousJobID $previousJobID
      * @return static
      */
-    public function setPreviousJobID(?PreviousJobID $previousJobID = null): static
-    {
+    public function setPreviousJobID(
+        ?PreviousJobID $previousJobID = null
+    ): static {
         $this->previousJobID = $previousJobID;
 
         return $this;
@@ -405,8 +410,9 @@ class CertificateOfOriginApplicationType
      * @param  null|array<Remarks> $remarks
      * @return static
      */
-    public function setRemarks(?array $remarks = null): static
-    {
+    public function setRemarks(
+        ?array $remarks = null
+    ): static {
         $this->remarks = $remarks;
 
         return $this;
@@ -466,8 +472,9 @@ class CertificateOfOriginApplicationType
      * @param  Remarks $remarks
      * @return static
      */
-    public function addToRemarks(Remarks $remarks): static
-    {
+    public function addToRemarks(
+        Remarks $remarks
+    ): static {
         $this->remarks[] = $remarks;
 
         return $this;
@@ -487,8 +494,9 @@ class CertificateOfOriginApplicationType
      * @param  Remarks $remarks
      * @return static
      */
-    public function addOnceToRemarks(Remarks $remarks): static
-    {
+    public function addOnceToRemarks(
+        Remarks $remarks
+    ): static {
         if (!is_array($this->remarks)) {
             $this->remarks = [];
         }
@@ -536,8 +544,9 @@ class CertificateOfOriginApplicationType
      * @param  null|Shipment $shipment
      * @return static
      */
-    public function setShipment(?Shipment $shipment = null): static
-    {
+    public function setShipment(
+        ?Shipment $shipment = null
+    ): static {
         $this->shipment = $shipment;
 
         return $this;
@@ -565,8 +574,9 @@ class CertificateOfOriginApplicationType
      * @param  null|array<EndorserParty> $endorserParty
      * @return static
      */
-    public function setEndorserParty(?array $endorserParty = null): static
-    {
+    public function setEndorserParty(
+        ?array $endorserParty = null
+    ): static {
         $this->endorserParty = $endorserParty;
 
         return $this;
@@ -626,8 +636,9 @@ class CertificateOfOriginApplicationType
      * @param  EndorserParty $endorserParty
      * @return static
      */
-    public function addToEndorserParty(EndorserParty $endorserParty): static
-    {
+    public function addToEndorserParty(
+        EndorserParty $endorserParty
+    ): static {
         $this->endorserParty[] = $endorserParty;
 
         return $this;
@@ -647,8 +658,9 @@ class CertificateOfOriginApplicationType
      * @param  EndorserParty $endorserParty
      * @return static
      */
-    public function addOnceToEndorserParty(EndorserParty $endorserParty): static
-    {
+    public function addOnceToEndorserParty(
+        EndorserParty $endorserParty
+    ): static {
         if (!is_array($this->endorserParty)) {
             $this->endorserParty = [];
         }
@@ -696,8 +708,9 @@ class CertificateOfOriginApplicationType
      * @param  null|PreparationParty $preparationParty
      * @return static
      */
-    public function setPreparationParty(?PreparationParty $preparationParty = null): static
-    {
+    public function setPreparationParty(
+        ?PreparationParty $preparationParty = null
+    ): static {
         $this->preparationParty = $preparationParty;
 
         return $this;
@@ -735,8 +748,9 @@ class CertificateOfOriginApplicationType
      * @param  null|IssuerParty $issuerParty
      * @return static
      */
-    public function setIssuerParty(?IssuerParty $issuerParty = null): static
-    {
+    public function setIssuerParty(
+        ?IssuerParty $issuerParty = null
+    ): static {
         $this->issuerParty = $issuerParty;
 
         return $this;
@@ -774,8 +788,9 @@ class CertificateOfOriginApplicationType
      * @param  null|ExporterParty $exporterParty
      * @return static
      */
-    public function setExporterParty(?ExporterParty $exporterParty = null): static
-    {
+    public function setExporterParty(
+        ?ExporterParty $exporterParty = null
+    ): static {
         $this->exporterParty = $exporterParty;
 
         return $this;
@@ -813,8 +828,9 @@ class CertificateOfOriginApplicationType
      * @param  null|ImporterParty $importerParty
      * @return static
      */
-    public function setImporterParty(?ImporterParty $importerParty = null): static
-    {
+    public function setImporterParty(
+        ?ImporterParty $importerParty = null
+    ): static {
         $this->importerParty = $importerParty;
 
         return $this;
@@ -852,8 +868,9 @@ class CertificateOfOriginApplicationType
      * @param  null|IssuingCountry $issuingCountry
      * @return static
      */
-    public function setIssuingCountry(?IssuingCountry $issuingCountry = null): static
-    {
+    public function setIssuingCountry(
+        ?IssuingCountry $issuingCountry = null
+    ): static {
         $this->issuingCountry = $issuingCountry;
 
         return $this;
@@ -881,8 +898,9 @@ class CertificateOfOriginApplicationType
      * @param  null|array<DocumentDistribution> $documentDistribution
      * @return static
      */
-    public function setDocumentDistribution(?array $documentDistribution = null): static
-    {
+    public function setDocumentDistribution(
+        ?array $documentDistribution = null
+    ): static {
         $this->documentDistribution = $documentDistribution;
 
         return $this;
@@ -942,8 +960,9 @@ class CertificateOfOriginApplicationType
      * @param  DocumentDistribution $documentDistribution
      * @return static
      */
-    public function addToDocumentDistribution(DocumentDistribution $documentDistribution): static
-    {
+    public function addToDocumentDistribution(
+        DocumentDistribution $documentDistribution
+    ): static {
         $this->documentDistribution[] = $documentDistribution;
 
         return $this;
@@ -963,8 +982,9 @@ class CertificateOfOriginApplicationType
      * @param  DocumentDistribution $documentDistribution
      * @return static
      */
-    public function addOnceToDocumentDistribution(DocumentDistribution $documentDistribution): static
-    {
+    public function addOnceToDocumentDistribution(
+        DocumentDistribution $documentDistribution
+    ): static {
         if (!is_array($this->documentDistribution)) {
             $this->documentDistribution = [];
         }
@@ -1002,8 +1022,9 @@ class CertificateOfOriginApplicationType
      * @param  null|array<SupportingDocumentReference> $supportingDocumentReference
      * @return static
      */
-    public function setSupportingDocumentReference(?array $supportingDocumentReference = null): static
-    {
+    public function setSupportingDocumentReference(
+        ?array $supportingDocumentReference = null
+    ): static {
         $this->supportingDocumentReference = $supportingDocumentReference;
 
         return $this;
@@ -1063,8 +1084,9 @@ class CertificateOfOriginApplicationType
      * @param  SupportingDocumentReference $supportingDocumentReference
      * @return static
      */
-    public function addToSupportingDocumentReference(SupportingDocumentReference $supportingDocumentReference): static
-    {
+    public function addToSupportingDocumentReference(
+        SupportingDocumentReference $supportingDocumentReference
+    ): static {
         $this->supportingDocumentReference[] = $supportingDocumentReference;
 
         return $this;
@@ -1124,8 +1146,9 @@ class CertificateOfOriginApplicationType
      * @param  null|array<Signature> $signature
      * @return static
      */
-    public function setSignature(?array $signature = null): static
-    {
+    public function setSignature(
+        ?array $signature = null
+    ): static {
         $this->signature = $signature;
 
         return $this;
@@ -1185,8 +1208,9 @@ class CertificateOfOriginApplicationType
      * @param  Signature $signature
      * @return static
      */
-    public function addToSignature(Signature $signature): static
-    {
+    public function addToSignature(
+        Signature $signature
+    ): static {
         $this->signature[] = $signature;
 
         return $this;
@@ -1206,8 +1230,9 @@ class CertificateOfOriginApplicationType
      * @param  Signature $signature
      * @return static
      */
-    public function addOnceToSignature(Signature $signature): static
-    {
+    public function addOnceToSignature(
+        Signature $signature
+    ): static {
         if (!is_array($this->signature)) {
             $this->signature = [];
         }

@@ -212,8 +212,9 @@ class HeaderTradeAgreementType
      * @param  null|TextType $buyerReference
      * @return static
      */
-    public function setBuyerReference(?TextType $buyerReference = null): static
-    {
+    public function setBuyerReference(
+        ?TextType $buyerReference = null
+    ): static {
         $this->buyerReference = $buyerReference;
 
         return $this;
@@ -251,8 +252,9 @@ class HeaderTradeAgreementType
      * @param  null|TradePartyType $sellerTradeParty
      * @return static
      */
-    public function setSellerTradeParty(?TradePartyType $sellerTradeParty = null): static
-    {
+    public function setSellerTradeParty(
+        ?TradePartyType $sellerTradeParty = null
+    ): static {
         $this->sellerTradeParty = $sellerTradeParty;
 
         return $this;
@@ -290,8 +292,9 @@ class HeaderTradeAgreementType
      * @param  null|TradePartyType $buyerTradeParty
      * @return static
      */
-    public function setBuyerTradeParty(?TradePartyType $buyerTradeParty = null): static
-    {
+    public function setBuyerTradeParty(
+        ?TradePartyType $buyerTradeParty = null
+    ): static {
         $this->buyerTradeParty = $buyerTradeParty;
 
         return $this;
@@ -329,8 +332,9 @@ class HeaderTradeAgreementType
      * @param  null|TradePartyType $salesAgentTradeParty
      * @return static
      */
-    public function setSalesAgentTradeParty(?TradePartyType $salesAgentTradeParty = null): static
-    {
+    public function setSalesAgentTradeParty(
+        ?TradePartyType $salesAgentTradeParty = null
+    ): static {
         $this->salesAgentTradeParty = $salesAgentTradeParty;
 
         return $this;
@@ -448,8 +452,9 @@ class HeaderTradeAgreementType
      * @param  null|TradePartyType $productEndUserTradeParty
      * @return static
      */
-    public function setProductEndUserTradeParty(?TradePartyType $productEndUserTradeParty = null): static
-    {
+    public function setProductEndUserTradeParty(
+        ?TradePartyType $productEndUserTradeParty = null
+    ): static {
         $this->productEndUserTradeParty = $productEndUserTradeParty;
 
         return $this;
@@ -607,8 +612,9 @@ class HeaderTradeAgreementType
      * @param  null|ReferencedDocumentType $quotationReferencedDocument
      * @return static
      */
-    public function setQuotationReferencedDocument(?ReferencedDocumentType $quotationReferencedDocument = null): static
-    {
+    public function setQuotationReferencedDocument(
+        ?ReferencedDocumentType $quotationReferencedDocument = null
+    ): static {
         $this->quotationReferencedDocument = $quotationReferencedDocument;
 
         return $this;
@@ -646,8 +652,9 @@ class HeaderTradeAgreementType
      * @param  null|ReferencedDocumentType $contractReferencedDocument
      * @return static
      */
-    public function setContractReferencedDocument(?ReferencedDocumentType $contractReferencedDocument = null): static
-    {
+    public function setContractReferencedDocument(
+        ?ReferencedDocumentType $contractReferencedDocument = null
+    ): static {
         $this->contractReferencedDocument = $contractReferencedDocument;
 
         return $this;
@@ -675,8 +682,9 @@ class HeaderTradeAgreementType
      * @param  null|array<ReferencedDocumentType> $additionalReferencedDocument
      * @return static
      */
-    public function setAdditionalReferencedDocument(?array $additionalReferencedDocument = null): static
-    {
+    public function setAdditionalReferencedDocument(
+        ?array $additionalReferencedDocument = null
+    ): static {
         $this->additionalReferencedDocument = $additionalReferencedDocument;
 
         return $this;
@@ -706,8 +714,9 @@ class HeaderTradeAgreementType
      * @param  ReferencedDocumentType $additionalReferencedDocument
      * @return static
      */
-    public function addToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): static
-    {
+    public function addToAdditionalReferencedDocument(
+        ReferencedDocumentType $additionalReferencedDocument
+    ): static {
         $this->additionalReferencedDocument[] = $additionalReferencedDocument;
 
         return $this;
@@ -727,8 +736,9 @@ class HeaderTradeAgreementType
      * @param  ReferencedDocumentType $additionalReferencedDocument
      * @return static
      */
-    public function addOnceToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): static
-    {
+    public function addOnceToAdditionalReferencedDocument(
+        ReferencedDocumentType $additionalReferencedDocument
+    ): static {
         if (!is_array($this->additionalReferencedDocument)) {
             $this->additionalReferencedDocument = [];
         }
@@ -776,8 +786,9 @@ class HeaderTradeAgreementType
      * @param  null|TradePartyType $buyerAgentTradeParty
      * @return static
      */
-    public function setBuyerAgentTradeParty(?TradePartyType $buyerAgentTradeParty = null): static
-    {
+    public function setBuyerAgentTradeParty(
+        ?TradePartyType $buyerAgentTradeParty = null
+    ): static {
         $this->buyerAgentTradeParty = $buyerAgentTradeParty;
 
         return $this;
@@ -815,8 +826,9 @@ class HeaderTradeAgreementType
      * @param  null|ProcuringProjectType $specifiedProcuringProject
      * @return static
      */
-    public function setSpecifiedProcuringProject(?ProcuringProjectType $specifiedProcuringProject = null): static
-    {
+    public function setSpecifiedProcuringProject(
+        ?ProcuringProjectType $specifiedProcuringProject = null
+    ): static {
         $this->specifiedProcuringProject = $specifiedProcuringProject;
 
         return $this;

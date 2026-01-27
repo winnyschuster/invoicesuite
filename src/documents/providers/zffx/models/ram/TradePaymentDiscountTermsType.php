@@ -92,8 +92,9 @@ class TradePaymentDiscountTermsType
      * @param  null|DateTimeType $basisDateTime
      * @return static
      */
-    public function setBasisDateTime(?DateTimeType $basisDateTime = null): static
-    {
+    public function setBasisDateTime(
+        ?DateTimeType $basisDateTime = null
+    ): static {
         $this->basisDateTime = $basisDateTime;
 
         return $this;
@@ -131,8 +132,9 @@ class TradePaymentDiscountTermsType
      * @param  null|MeasureType $basisPeriodMeasure
      * @return static
      */
-    public function setBasisPeriodMeasure(?MeasureType $basisPeriodMeasure = null): static
-    {
+    public function setBasisPeriodMeasure(
+        ?MeasureType $basisPeriodMeasure = null
+    ): static {
         $this->basisPeriodMeasure = $basisPeriodMeasure;
 
         return $this;
@@ -170,8 +172,9 @@ class TradePaymentDiscountTermsType
      * @param  null|AmountType $basisAmount
      * @return static
      */
-    public function setBasisAmount(?AmountType $basisAmount = null): static
-    {
+    public function setBasisAmount(
+        ?AmountType $basisAmount = null
+    ): static {
         $this->basisAmount = $basisAmount;
 
         return $this;
@@ -209,8 +212,9 @@ class TradePaymentDiscountTermsType
      * @param  null|PercentType $calculationPercent
      * @return static
      */
-    public function setCalculationPercent(?PercentType $calculationPercent = null): static
-    {
+    public function setCalculationPercent(
+        ?PercentType $calculationPercent = null
+    ): static {
         $this->calculationPercent = $calculationPercent;
 
         return $this;
@@ -248,8 +252,9 @@ class TradePaymentDiscountTermsType
      * @param  null|AmountType $actualDiscountAmount
      * @return static
      */
-    public function setActualDiscountAmount(?AmountType $actualDiscountAmount = null): static
-    {
+    public function setActualDiscountAmount(
+        ?AmountType $actualDiscountAmount = null
+    ): static {
         $this->actualDiscountAmount = $actualDiscountAmount;
 
         return $this;

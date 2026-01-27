@@ -185,8 +185,9 @@ class PaymentMeansType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -224,8 +225,9 @@ class PaymentMeansType
      * @param  null|PaymentMeansCode $paymentMeansCode
      * @return static
      */
-    public function setPaymentMeansCode(?PaymentMeansCode $paymentMeansCode = null): static
-    {
+    public function setPaymentMeansCode(
+        ?PaymentMeansCode $paymentMeansCode = null
+    ): static {
         $this->paymentMeansCode = $paymentMeansCode;
 
         return $this;
@@ -253,8 +255,9 @@ class PaymentMeansType
      * @param  null|DateTimeInterface $paymentDueDate
      * @return static
      */
-    public function setPaymentDueDate(?DateTimeInterface $paymentDueDate = null): static
-    {
+    public function setPaymentDueDate(
+        ?DateTimeInterface $paymentDueDate = null
+    ): static {
         $this->paymentDueDate = $paymentDueDate;
 
         return $this;
@@ -292,8 +295,9 @@ class PaymentMeansType
      * @param  null|PaymentChannelCode $paymentChannelCode
      * @return static
      */
-    public function setPaymentChannelCode(?PaymentChannelCode $paymentChannelCode = null): static
-    {
+    public function setPaymentChannelCode(
+        ?PaymentChannelCode $paymentChannelCode = null
+    ): static {
         $this->paymentChannelCode = $paymentChannelCode;
 
         return $this;
@@ -331,8 +335,9 @@ class PaymentMeansType
      * @param  null|InstructionID $instructionID
      * @return static
      */
-    public function setInstructionID(?InstructionID $instructionID = null): static
-    {
+    public function setInstructionID(
+        ?InstructionID $instructionID = null
+    ): static {
         $this->instructionID = $instructionID;
 
         return $this;
@@ -360,8 +365,9 @@ class PaymentMeansType
      * @param  null|array<InstructionNote> $instructionNote
      * @return static
      */
-    public function setInstructionNote(?array $instructionNote = null): static
-    {
+    public function setInstructionNote(
+        ?array $instructionNote = null
+    ): static {
         $this->instructionNote = $instructionNote;
 
         return $this;
@@ -421,8 +427,9 @@ class PaymentMeansType
      * @param  InstructionNote $instructionNote
      * @return static
      */
-    public function addToInstructionNote(InstructionNote $instructionNote): static
-    {
+    public function addToInstructionNote(
+        InstructionNote $instructionNote
+    ): static {
         $this->instructionNote[] = $instructionNote;
 
         return $this;
@@ -442,8 +449,9 @@ class PaymentMeansType
      * @param  InstructionNote $instructionNote
      * @return static
      */
-    public function addOnceToInstructionNote(InstructionNote $instructionNote): static
-    {
+    public function addOnceToInstructionNote(
+        InstructionNote $instructionNote
+    ): static {
         if (!is_array($this->instructionNote)) {
             $this->instructionNote = [];
         }
@@ -481,8 +489,9 @@ class PaymentMeansType
      * @param  null|array<PaymentID> $paymentID
      * @return static
      */
-    public function setPaymentID(?array $paymentID = null): static
-    {
+    public function setPaymentID(
+        ?array $paymentID = null
+    ): static {
         $this->paymentID = $paymentID;
 
         return $this;
@@ -542,8 +551,9 @@ class PaymentMeansType
      * @param  PaymentID $paymentID
      * @return static
      */
-    public function addToPaymentID(PaymentID $paymentID): static
-    {
+    public function addToPaymentID(
+        PaymentID $paymentID
+    ): static {
         $this->paymentID[] = $paymentID;
 
         return $this;
@@ -563,8 +573,9 @@ class PaymentMeansType
      * @param  PaymentID $paymentID
      * @return static
      */
-    public function addOnceToPaymentID(PaymentID $paymentID): static
-    {
+    public function addOnceToPaymentID(
+        PaymentID $paymentID
+    ): static {
         if (!is_array($this->paymentID)) {
             $this->paymentID = [];
         }
@@ -612,8 +623,9 @@ class PaymentMeansType
      * @param  null|CardAccount $cardAccount
      * @return static
      */
-    public function setCardAccount(?CardAccount $cardAccount = null): static
-    {
+    public function setCardAccount(
+        ?CardAccount $cardAccount = null
+    ): static {
         $this->cardAccount = $cardAccount;
 
         return $this;
@@ -651,8 +663,9 @@ class PaymentMeansType
      * @param  null|PayerFinancialAccount $payerFinancialAccount
      * @return static
      */
-    public function setPayerFinancialAccount(?PayerFinancialAccount $payerFinancialAccount = null): static
-    {
+    public function setPayerFinancialAccount(
+        ?PayerFinancialAccount $payerFinancialAccount = null
+    ): static {
         $this->payerFinancialAccount = $payerFinancialAccount;
 
         return $this;
@@ -690,8 +703,9 @@ class PaymentMeansType
      * @param  null|PayeeFinancialAccount $payeeFinancialAccount
      * @return static
      */
-    public function setPayeeFinancialAccount(?PayeeFinancialAccount $payeeFinancialAccount = null): static
-    {
+    public function setPayeeFinancialAccount(
+        ?PayeeFinancialAccount $payeeFinancialAccount = null
+    ): static {
         $this->payeeFinancialAccount = $payeeFinancialAccount;
 
         return $this;
@@ -729,8 +743,9 @@ class PaymentMeansType
      * @param  null|CreditAccount $creditAccount
      * @return static
      */
-    public function setCreditAccount(?CreditAccount $creditAccount = null): static
-    {
+    public function setCreditAccount(
+        ?CreditAccount $creditAccount = null
+    ): static {
         $this->creditAccount = $creditAccount;
 
         return $this;
@@ -768,8 +783,9 @@ class PaymentMeansType
      * @param  null|PaymentMandate $paymentMandate
      * @return static
      */
-    public function setPaymentMandate(?PaymentMandate $paymentMandate = null): static
-    {
+    public function setPaymentMandate(
+        ?PaymentMandate $paymentMandate = null
+    ): static {
         $this->paymentMandate = $paymentMandate;
 
         return $this;
@@ -807,8 +823,9 @@ class PaymentMeansType
      * @param  null|TradeFinancing $tradeFinancing
      * @return static
      */
-    public function setTradeFinancing(?TradeFinancing $tradeFinancing = null): static
-    {
+    public function setTradeFinancing(
+        ?TradeFinancing $tradeFinancing = null
+    ): static {
         $this->tradeFinancing = $tradeFinancing;
 
         return $this;

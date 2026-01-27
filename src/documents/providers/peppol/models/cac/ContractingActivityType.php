@@ -57,8 +57,9 @@ class ContractingActivityType
      * @param  null|ActivityTypeCode $activityTypeCode
      * @return static
      */
-    public function setActivityTypeCode(?ActivityTypeCode $activityTypeCode = null): static
-    {
+    public function setActivityTypeCode(
+        ?ActivityTypeCode $activityTypeCode = null
+    ): static {
         $this->activityTypeCode = $activityTypeCode;
 
         return $this;
@@ -96,8 +97,9 @@ class ContractingActivityType
      * @param  null|ActivityType $activityType
      * @return static
      */
-    public function setActivityType(?ActivityType $activityType = null): static
-    {
+    public function setActivityType(
+        ?ActivityType $activityType = null
+    ): static {
         $this->activityType = $activityType;
 
         return $this;

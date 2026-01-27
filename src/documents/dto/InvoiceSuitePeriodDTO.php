@@ -43,8 +43,10 @@ class InvoiceSuitePeriodDTO
      * @param null|float  $period     The period value
      * @param null|string $periodUnit The periods's unit
      */
-    public function __construct(?float $period = null, ?string $periodUnit = null)
-    {
+    public function __construct(
+        ?float $period = null,
+        ?string $periodUnit = null
+    ) {
         $this->setPeriod($period);
         $this->setPeriodUnit($periodUnit);
     }
@@ -65,8 +67,9 @@ class InvoiceSuitePeriodDTO
      * @param  null|float $period The period value
      * @return static
      */
-    public function setPeriod(?float $period): static
-    {
+    public function setPeriod(
+        ?float $period
+    ): static {
         $this->period = $period;
 
         return $this;
@@ -88,8 +91,9 @@ class InvoiceSuitePeriodDTO
      * @param  null|string $periodUnit The periods's unit
      * @return static
      */
-    public function setPeriodUnit(?string $periodUnit): static
-    {
+    public function setPeriodUnit(
+        ?string $periodUnit
+    ): static {
         $this->periodUnit = InvoiceSuiteStringUtils::asNullWhenEmpty($periodUnit);
 
         return $this;

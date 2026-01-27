@@ -92,8 +92,9 @@ class ServiceProviderPartyType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -131,8 +132,9 @@ class ServiceProviderPartyType
      * @param  null|ServiceTypeCode $serviceTypeCode
      * @return static
      */
-    public function setServiceTypeCode(?ServiceTypeCode $serviceTypeCode = null): static
-    {
+    public function setServiceTypeCode(
+        ?ServiceTypeCode $serviceTypeCode = null
+    ): static {
         $this->serviceTypeCode = $serviceTypeCode;
 
         return $this;
@@ -160,8 +162,9 @@ class ServiceProviderPartyType
      * @param  null|array<ServiceType> $serviceType
      * @return static
      */
-    public function setServiceType(?array $serviceType = null): static
-    {
+    public function setServiceType(
+        ?array $serviceType = null
+    ): static {
         $this->serviceType = $serviceType;
 
         return $this;
@@ -221,8 +224,9 @@ class ServiceProviderPartyType
      * @param  ServiceType $serviceType
      * @return static
      */
-    public function addToServiceType(ServiceType $serviceType): static
-    {
+    public function addToServiceType(
+        ServiceType $serviceType
+    ): static {
         $this->serviceType[] = $serviceType;
 
         return $this;
@@ -242,8 +246,9 @@ class ServiceProviderPartyType
      * @param  ServiceType $serviceType
      * @return static
      */
-    public function addOnceToServiceType(ServiceType $serviceType): static
-    {
+    public function addOnceToServiceType(
+        ServiceType $serviceType
+    ): static {
         if (!is_array($this->serviceType)) {
             $this->serviceType = [];
         }
@@ -291,8 +296,9 @@ class ServiceProviderPartyType
      * @param  null|Party $party
      * @return static
      */
-    public function setParty(?Party $party = null): static
-    {
+    public function setParty(
+        ?Party $party = null
+    ): static {
         $this->party = $party;
 
         return $this;
@@ -330,8 +336,9 @@ class ServiceProviderPartyType
      * @param  null|SellerContact $sellerContact
      * @return static
      */
-    public function setSellerContact(?SellerContact $sellerContact = null): static
-    {
+    public function setSellerContact(
+        ?SellerContact $sellerContact = null
+    ): static {
         $this->sellerContact = $sellerContact;
 
         return $this;

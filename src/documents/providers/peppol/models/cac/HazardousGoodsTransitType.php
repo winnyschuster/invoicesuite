@@ -155,8 +155,9 @@ class HazardousGoodsTransitType
      * @param  null|PackingCriteriaCode $packingCriteriaCode
      * @return static
      */
-    public function setPackingCriteriaCode(?PackingCriteriaCode $packingCriteriaCode = null): static
-    {
+    public function setPackingCriteriaCode(
+        ?PackingCriteriaCode $packingCriteriaCode = null
+    ): static {
         $this->packingCriteriaCode = $packingCriteriaCode;
 
         return $this;
@@ -194,8 +195,9 @@ class HazardousGoodsTransitType
      * @param  null|HazardousRegulationCode $hazardousRegulationCode
      * @return static
      */
-    public function setHazardousRegulationCode(?HazardousRegulationCode $hazardousRegulationCode = null): static
-    {
+    public function setHazardousRegulationCode(
+        ?HazardousRegulationCode $hazardousRegulationCode = null
+    ): static {
         $this->hazardousRegulationCode = $hazardousRegulationCode;
 
         return $this;
@@ -313,8 +315,9 @@ class HazardousGoodsTransitType
      * @param  null|MaximumTemperature $maximumTemperature
      * @return static
      */
-    public function setMaximumTemperature(?MaximumTemperature $maximumTemperature = null): static
-    {
+    public function setMaximumTemperature(
+        ?MaximumTemperature $maximumTemperature = null
+    ): static {
         $this->maximumTemperature = $maximumTemperature;
 
         return $this;
@@ -352,8 +355,9 @@ class HazardousGoodsTransitType
      * @param  null|MinimumTemperature $minimumTemperature
      * @return static
      */
-    public function setMinimumTemperature(?MinimumTemperature $minimumTemperature = null): static
-    {
+    public function setMinimumTemperature(
+        ?MinimumTemperature $minimumTemperature = null
+    ): static {
         $this->minimumTemperature = $minimumTemperature;
 
         return $this;

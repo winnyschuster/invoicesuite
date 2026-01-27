@@ -289,8 +289,9 @@ class StatementLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -318,8 +319,9 @@ class StatementLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -379,8 +381,9 @@ class StatementLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -400,8 +403,9 @@ class StatementLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -449,8 +453,9 @@ class StatementLineType
      * @param  null|UUID $uUID
      * @return static
      */
-    public function setUUID(?UUID $uUID = null): static
-    {
+    public function setUUID(
+        ?UUID $uUID = null
+    ): static {
         $this->uUID = $uUID;
 
         return $this;
@@ -478,8 +483,9 @@ class StatementLineType
      * @param  null|bool $balanceBroughtForwardIndicator
      * @return static
      */
-    public function setBalanceBroughtForwardIndicator(?bool $balanceBroughtForwardIndicator = null): static
-    {
+    public function setBalanceBroughtForwardIndicator(
+        ?bool $balanceBroughtForwardIndicator = null
+    ): static {
         $this->balanceBroughtForwardIndicator = $balanceBroughtForwardIndicator;
 
         return $this;
@@ -517,8 +523,9 @@ class StatementLineType
      * @param  null|DebitLineAmount $debitLineAmount
      * @return static
      */
-    public function setDebitLineAmount(?DebitLineAmount $debitLineAmount = null): static
-    {
+    public function setDebitLineAmount(
+        ?DebitLineAmount $debitLineAmount = null
+    ): static {
         $this->debitLineAmount = $debitLineAmount;
 
         return $this;
@@ -556,8 +563,9 @@ class StatementLineType
      * @param  null|CreditLineAmount $creditLineAmount
      * @return static
      */
-    public function setCreditLineAmount(?CreditLineAmount $creditLineAmount = null): static
-    {
+    public function setCreditLineAmount(
+        ?CreditLineAmount $creditLineAmount = null
+    ): static {
         $this->creditLineAmount = $creditLineAmount;
 
         return $this;
@@ -595,8 +603,9 @@ class StatementLineType
      * @param  null|BalanceAmount $balanceAmount
      * @return static
      */
-    public function setBalanceAmount(?BalanceAmount $balanceAmount = null): static
-    {
+    public function setBalanceAmount(
+        ?BalanceAmount $balanceAmount = null
+    ): static {
         $this->balanceAmount = $balanceAmount;
 
         return $this;
@@ -634,8 +643,9 @@ class StatementLineType
      * @param  null|PaymentPurposeCode $paymentPurposeCode
      * @return static
      */
-    public function setPaymentPurposeCode(?PaymentPurposeCode $paymentPurposeCode = null): static
-    {
+    public function setPaymentPurposeCode(
+        ?PaymentPurposeCode $paymentPurposeCode = null
+    ): static {
         $this->paymentPurposeCode = $paymentPurposeCode;
 
         return $this;
@@ -673,8 +683,9 @@ class StatementLineType
      * @param  null|PaymentMeans $paymentMeans
      * @return static
      */
-    public function setPaymentMeans(?PaymentMeans $paymentMeans = null): static
-    {
+    public function setPaymentMeans(
+        ?PaymentMeans $paymentMeans = null
+    ): static {
         $this->paymentMeans = $paymentMeans;
 
         return $this;
@@ -702,8 +713,9 @@ class StatementLineType
      * @param  null|array<PaymentTerms> $paymentTerms
      * @return static
      */
-    public function setPaymentTerms(?array $paymentTerms = null): static
-    {
+    public function setPaymentTerms(
+        ?array $paymentTerms = null
+    ): static {
         $this->paymentTerms = $paymentTerms;
 
         return $this;
@@ -763,8 +775,9 @@ class StatementLineType
      * @param  PaymentTerms $paymentTerms
      * @return static
      */
-    public function addToPaymentTerms(PaymentTerms $paymentTerms): static
-    {
+    public function addToPaymentTerms(
+        PaymentTerms $paymentTerms
+    ): static {
         $this->paymentTerms[] = $paymentTerms;
 
         return $this;
@@ -784,8 +797,9 @@ class StatementLineType
      * @param  PaymentTerms $paymentTerms
      * @return static
      */
-    public function addOnceToPaymentTerms(PaymentTerms $paymentTerms): static
-    {
+    public function addOnceToPaymentTerms(
+        PaymentTerms $paymentTerms
+    ): static {
         if (!is_array($this->paymentTerms)) {
             $this->paymentTerms = [];
         }
@@ -833,8 +847,9 @@ class StatementLineType
      * @param  null|BuyerCustomerParty $buyerCustomerParty
      * @return static
      */
-    public function setBuyerCustomerParty(?BuyerCustomerParty $buyerCustomerParty = null): static
-    {
+    public function setBuyerCustomerParty(
+        ?BuyerCustomerParty $buyerCustomerParty = null
+    ): static {
         $this->buyerCustomerParty = $buyerCustomerParty;
 
         return $this;
@@ -872,8 +887,9 @@ class StatementLineType
      * @param  null|SellerSupplierParty $sellerSupplierParty
      * @return static
      */
-    public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
-    {
+    public function setSellerSupplierParty(
+        ?SellerSupplierParty $sellerSupplierParty = null
+    ): static {
         $this->sellerSupplierParty = $sellerSupplierParty;
 
         return $this;
@@ -911,8 +927,9 @@ class StatementLineType
      * @param  null|OriginatorCustomerParty $originatorCustomerParty
      * @return static
      */
-    public function setOriginatorCustomerParty(?OriginatorCustomerParty $originatorCustomerParty = null): static
-    {
+    public function setOriginatorCustomerParty(
+        ?OriginatorCustomerParty $originatorCustomerParty = null
+    ): static {
         $this->originatorCustomerParty = $originatorCustomerParty;
 
         return $this;
@@ -950,8 +967,9 @@ class StatementLineType
      * @param  null|AccountingCustomerParty $accountingCustomerParty
      * @return static
      */
-    public function setAccountingCustomerParty(?AccountingCustomerParty $accountingCustomerParty = null): static
-    {
+    public function setAccountingCustomerParty(
+        ?AccountingCustomerParty $accountingCustomerParty = null
+    ): static {
         $this->accountingCustomerParty = $accountingCustomerParty;
 
         return $this;
@@ -989,8 +1007,9 @@ class StatementLineType
      * @param  null|AccountingSupplierParty $accountingSupplierParty
      * @return static
      */
-    public function setAccountingSupplierParty(?AccountingSupplierParty $accountingSupplierParty = null): static
-    {
+    public function setAccountingSupplierParty(
+        ?AccountingSupplierParty $accountingSupplierParty = null
+    ): static {
         $this->accountingSupplierParty = $accountingSupplierParty;
 
         return $this;
@@ -1028,8 +1047,9 @@ class StatementLineType
      * @param  null|PayeeParty $payeeParty
      * @return static
      */
-    public function setPayeeParty(?PayeeParty $payeeParty = null): static
-    {
+    public function setPayeeParty(
+        ?PayeeParty $payeeParty = null
+    ): static {
         $this->payeeParty = $payeeParty;
 
         return $this;
@@ -1057,8 +1077,9 @@ class StatementLineType
      * @param  null|array<InvoicePeriod> $invoicePeriod
      * @return static
      */
-    public function setInvoicePeriod(?array $invoicePeriod = null): static
-    {
+    public function setInvoicePeriod(
+        ?array $invoicePeriod = null
+    ): static {
         $this->invoicePeriod = $invoicePeriod;
 
         return $this;
@@ -1118,8 +1139,9 @@ class StatementLineType
      * @param  InvoicePeriod $invoicePeriod
      * @return static
      */
-    public function addToInvoicePeriod(InvoicePeriod $invoicePeriod): static
-    {
+    public function addToInvoicePeriod(
+        InvoicePeriod $invoicePeriod
+    ): static {
         $this->invoicePeriod[] = $invoicePeriod;
 
         return $this;
@@ -1139,8 +1161,9 @@ class StatementLineType
      * @param  InvoicePeriod $invoicePeriod
      * @return static
      */
-    public function addOnceToInvoicePeriod(InvoicePeriod $invoicePeriod): static
-    {
+    public function addOnceToInvoicePeriod(
+        InvoicePeriod $invoicePeriod
+    ): static {
         if (!is_array($this->invoicePeriod)) {
             $this->invoicePeriod = [];
         }
@@ -1178,8 +1201,9 @@ class StatementLineType
      * @param  null|array<BillingReference> $billingReference
      * @return static
      */
-    public function setBillingReference(?array $billingReference = null): static
-    {
+    public function setBillingReference(
+        ?array $billingReference = null
+    ): static {
         $this->billingReference = $billingReference;
 
         return $this;
@@ -1239,8 +1263,9 @@ class StatementLineType
      * @param  BillingReference $billingReference
      * @return static
      */
-    public function addToBillingReference(BillingReference $billingReference): static
-    {
+    public function addToBillingReference(
+        BillingReference $billingReference
+    ): static {
         $this->billingReference[] = $billingReference;
 
         return $this;
@@ -1260,8 +1285,9 @@ class StatementLineType
      * @param  BillingReference $billingReference
      * @return static
      */
-    public function addOnceToBillingReference(BillingReference $billingReference): static
-    {
+    public function addOnceToBillingReference(
+        BillingReference $billingReference
+    ): static {
         if (!is_array($this->billingReference)) {
             $this->billingReference = [];
         }
@@ -1299,8 +1325,9 @@ class StatementLineType
      * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?array $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;
@@ -1360,8 +1387,9 @@ class StatementLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         $this->documentReference[] = $documentReference;
 
         return $this;
@@ -1381,8 +1409,9 @@ class StatementLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addOnceToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
         }
@@ -1430,8 +1459,9 @@ class StatementLineType
      * @param  null|ExchangeRate $exchangeRate
      * @return static
      */
-    public function setExchangeRate(?ExchangeRate $exchangeRate = null): static
-    {
+    public function setExchangeRate(
+        ?ExchangeRate $exchangeRate = null
+    ): static {
         $this->exchangeRate = $exchangeRate;
 
         return $this;
@@ -1459,8 +1489,9 @@ class StatementLineType
      * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): static
-    {
+    public function setAllowanceCharge(
+        ?array $allowanceCharge = null
+    ): static {
         $this->allowanceCharge = $allowanceCharge;
 
         return $this;
@@ -1520,8 +1551,9 @@ class StatementLineType
      * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
-    {
+    public function addToAllowanceCharge(
+        AllowanceCharge $allowanceCharge
+    ): static {
         $this->allowanceCharge[] = $allowanceCharge;
 
         return $this;
@@ -1541,8 +1573,9 @@ class StatementLineType
      * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
-    {
+    public function addOnceToAllowanceCharge(
+        AllowanceCharge $allowanceCharge
+    ): static {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];
         }
@@ -1580,8 +1613,9 @@ class StatementLineType
      * @param  null|array<CollectedPayment> $collectedPayment
      * @return static
      */
-    public function setCollectedPayment(?array $collectedPayment = null): static
-    {
+    public function setCollectedPayment(
+        ?array $collectedPayment = null
+    ): static {
         $this->collectedPayment = $collectedPayment;
 
         return $this;
@@ -1641,8 +1675,9 @@ class StatementLineType
      * @param  CollectedPayment $collectedPayment
      * @return static
      */
-    public function addToCollectedPayment(CollectedPayment $collectedPayment): static
-    {
+    public function addToCollectedPayment(
+        CollectedPayment $collectedPayment
+    ): static {
         $this->collectedPayment[] = $collectedPayment;
 
         return $this;
@@ -1662,8 +1697,9 @@ class StatementLineType
      * @param  CollectedPayment $collectedPayment
      * @return static
      */
-    public function addOnceToCollectedPayment(CollectedPayment $collectedPayment): static
-    {
+    public function addOnceToCollectedPayment(
+        CollectedPayment $collectedPayment
+    ): static {
         if (!is_array($this->collectedPayment)) {
             $this->collectedPayment = [];
         }

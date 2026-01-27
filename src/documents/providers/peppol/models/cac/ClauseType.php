@@ -58,8 +58,9 @@ class ClauseType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -87,8 +88,9 @@ class ClauseType
      * @param  null|array<Content> $content
      * @return static
      */
-    public function setContent(?array $content = null): static
-    {
+    public function setContent(
+        ?array $content = null
+    ): static {
         $this->content = $content;
 
         return $this;
@@ -148,8 +150,9 @@ class ClauseType
      * @param  Content $content
      * @return static
      */
-    public function addToContent(Content $content): static
-    {
+    public function addToContent(
+        Content $content
+    ): static {
         $this->content[] = $content;
 
         return $this;
@@ -169,8 +172,9 @@ class ClauseType
      * @param  Content $content
      * @return static
      */
-    public function addOnceToContent(Content $content): static
-    {
+    public function addOnceToContent(
+        Content $content
+    ): static {
         if (!is_array($this->content)) {
             $this->content = [];
         }

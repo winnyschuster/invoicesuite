@@ -57,8 +57,9 @@ class ContractingPartyTypeType
      * @param  null|PartyTypeCode $partyTypeCode
      * @return static
      */
-    public function setPartyTypeCode(?PartyTypeCode $partyTypeCode = null): static
-    {
+    public function setPartyTypeCode(
+        ?PartyTypeCode $partyTypeCode = null
+    ): static {
         $this->partyTypeCode = $partyTypeCode;
 
         return $this;
@@ -96,8 +97,9 @@ class ContractingPartyTypeType
      * @param  null|PartyType $partyType
      * @return static
      */
-    public function setPartyType(?PartyType $partyType = null): static
-    {
+    public function setPartyType(
+        ?PartyType $partyType = null
+    ): static {
         $this->partyType = $partyType;
 
         return $this;

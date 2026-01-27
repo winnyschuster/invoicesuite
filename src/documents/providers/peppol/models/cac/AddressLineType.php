@@ -45,8 +45,9 @@ class AddressLineType
      * @param  null|Line $line
      * @return static
      */
-    public function setLine(?Line $line = null): static
-    {
+    public function setLine(
+        ?Line $line = null
+    ): static {
         $this->line = $line;
 
         return $this;

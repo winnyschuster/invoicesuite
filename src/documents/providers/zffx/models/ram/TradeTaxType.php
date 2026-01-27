@@ -162,8 +162,9 @@ class TradeTaxType
      * @param  null|AmountType $calculatedAmount
      * @return static
      */
-    public function setCalculatedAmount(?AmountType $calculatedAmount = null): static
-    {
+    public function setCalculatedAmount(
+        ?AmountType $calculatedAmount = null
+    ): static {
         $this->calculatedAmount = $calculatedAmount;
 
         return $this;
@@ -201,8 +202,9 @@ class TradeTaxType
      * @param  null|TaxTypeCodeType $typeCode
      * @return static
      */
-    public function setTypeCode(?TaxTypeCodeType $typeCode = null): static
-    {
+    public function setTypeCode(
+        ?TaxTypeCodeType $typeCode = null
+    ): static {
         $this->typeCode = $typeCode;
 
         return $this;
@@ -240,8 +242,9 @@ class TradeTaxType
      * @param  null|TextType $exemptionReason
      * @return static
      */
-    public function setExemptionReason(?TextType $exemptionReason = null): static
-    {
+    public function setExemptionReason(
+        ?TextType $exemptionReason = null
+    ): static {
         $this->exemptionReason = $exemptionReason;
 
         return $this;
@@ -279,8 +282,9 @@ class TradeTaxType
      * @param  null|AmountType $basisAmount
      * @return static
      */
-    public function setBasisAmount(?AmountType $basisAmount = null): static
-    {
+    public function setBasisAmount(
+        ?AmountType $basisAmount = null
+    ): static {
         $this->basisAmount = $basisAmount;
 
         return $this;
@@ -318,8 +322,9 @@ class TradeTaxType
      * @param  null|AmountType $lineTotalBasisAmount
      * @return static
      */
-    public function setLineTotalBasisAmount(?AmountType $lineTotalBasisAmount = null): static
-    {
+    public function setLineTotalBasisAmount(
+        ?AmountType $lineTotalBasisAmount = null
+    ): static {
         $this->lineTotalBasisAmount = $lineTotalBasisAmount;
 
         return $this;
@@ -357,8 +362,9 @@ class TradeTaxType
      * @param  null|AmountType $allowanceChargeBasisAmount
      * @return static
      */
-    public function setAllowanceChargeBasisAmount(?AmountType $allowanceChargeBasisAmount = null): static
-    {
+    public function setAllowanceChargeBasisAmount(
+        ?AmountType $allowanceChargeBasisAmount = null
+    ): static {
         $this->allowanceChargeBasisAmount = $allowanceChargeBasisAmount;
 
         return $this;
@@ -396,8 +402,9 @@ class TradeTaxType
      * @param  null|TaxCategoryCodeType $categoryCode
      * @return static
      */
-    public function setCategoryCode(?TaxCategoryCodeType $categoryCode = null): static
-    {
+    public function setCategoryCode(
+        ?TaxCategoryCodeType $categoryCode = null
+    ): static {
         $this->categoryCode = $categoryCode;
 
         return $this;
@@ -435,8 +442,9 @@ class TradeTaxType
      * @param  null|CodeType $exemptionReasonCode
      * @return static
      */
-    public function setExemptionReasonCode(?CodeType $exemptionReasonCode = null): static
-    {
+    public function setExemptionReasonCode(
+        ?CodeType $exemptionReasonCode = null
+    ): static {
         $this->exemptionReasonCode = $exemptionReasonCode;
 
         return $this;
@@ -474,8 +482,9 @@ class TradeTaxType
      * @param  null|DateType $taxPointDate
      * @return static
      */
-    public function setTaxPointDate(?DateType $taxPointDate = null): static
-    {
+    public function setTaxPointDate(
+        ?DateType $taxPointDate = null
+    ): static {
         $this->taxPointDate = $taxPointDate;
 
         return $this;
@@ -513,8 +522,9 @@ class TradeTaxType
      * @param  null|TimeReferenceCodeType $dueDateTypeCode
      * @return static
      */
-    public function setDueDateTypeCode(?TimeReferenceCodeType $dueDateTypeCode = null): static
-    {
+    public function setDueDateTypeCode(
+        ?TimeReferenceCodeType $dueDateTypeCode = null
+    ): static {
         $this->dueDateTypeCode = $dueDateTypeCode;
 
         return $this;
@@ -552,8 +562,9 @@ class TradeTaxType
      * @param  null|PercentType $rateApplicablePercent
      * @return static
      */
-    public function setRateApplicablePercent(?PercentType $rateApplicablePercent = null): static
-    {
+    public function setRateApplicablePercent(
+        ?PercentType $rateApplicablePercent = null
+    ): static {
         $this->rateApplicablePercent = $rateApplicablePercent;
 
         return $this;

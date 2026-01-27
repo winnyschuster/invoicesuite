@@ -57,8 +57,9 @@ class ProductClassificationType
      * @param  null|CodeType $classCode
      * @return static
      */
-    public function setClassCode(?CodeType $classCode = null): static
-    {
+    public function setClassCode(
+        ?CodeType $classCode = null
+    ): static {
         $this->classCode = $classCode;
 
         return $this;
@@ -96,8 +97,9 @@ class ProductClassificationType
      * @param  null|TextType $className
      * @return static
      */
-    public function setClassName(?TextType $className = null): static
-    {
+    public function setClassName(
+        ?TextType $className = null
+    ): static {
         $this->className = $className;
 
         return $this;

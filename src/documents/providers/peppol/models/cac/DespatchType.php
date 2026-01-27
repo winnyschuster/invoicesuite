@@ -248,8 +248,9 @@ class DespatchType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -277,8 +278,9 @@ class DespatchType
      * @param  null|DateTimeInterface $requestedDespatchDate
      * @return static
      */
-    public function setRequestedDespatchDate(?DateTimeInterface $requestedDespatchDate = null): static
-    {
+    public function setRequestedDespatchDate(
+        ?DateTimeInterface $requestedDespatchDate = null
+    ): static {
         $this->requestedDespatchDate = $requestedDespatchDate;
 
         return $this;
@@ -306,8 +308,9 @@ class DespatchType
      * @param  null|DateTimeInterface $requestedDespatchTime
      * @return static
      */
-    public function setRequestedDespatchTime(?DateTimeInterface $requestedDespatchTime = null): static
-    {
+    public function setRequestedDespatchTime(
+        ?DateTimeInterface $requestedDespatchTime = null
+    ): static {
         $this->requestedDespatchTime = $requestedDespatchTime;
 
         return $this;
@@ -335,8 +338,9 @@ class DespatchType
      * @param  null|DateTimeInterface $estimatedDespatchDate
      * @return static
      */
-    public function setEstimatedDespatchDate(?DateTimeInterface $estimatedDespatchDate = null): static
-    {
+    public function setEstimatedDespatchDate(
+        ?DateTimeInterface $estimatedDespatchDate = null
+    ): static {
         $this->estimatedDespatchDate = $estimatedDespatchDate;
 
         return $this;
@@ -364,8 +368,9 @@ class DespatchType
      * @param  null|DateTimeInterface $estimatedDespatchTime
      * @return static
      */
-    public function setEstimatedDespatchTime(?DateTimeInterface $estimatedDespatchTime = null): static
-    {
+    public function setEstimatedDespatchTime(
+        ?DateTimeInterface $estimatedDespatchTime = null
+    ): static {
         $this->estimatedDespatchTime = $estimatedDespatchTime;
 
         return $this;
@@ -393,8 +398,9 @@ class DespatchType
      * @param  null|DateTimeInterface $actualDespatchDate
      * @return static
      */
-    public function setActualDespatchDate(?DateTimeInterface $actualDespatchDate = null): static
-    {
+    public function setActualDespatchDate(
+        ?DateTimeInterface $actualDespatchDate = null
+    ): static {
         $this->actualDespatchDate = $actualDespatchDate;
 
         return $this;
@@ -422,8 +428,9 @@ class DespatchType
      * @param  null|DateTimeInterface $actualDespatchTime
      * @return static
      */
-    public function setActualDespatchTime(?DateTimeInterface $actualDespatchTime = null): static
-    {
+    public function setActualDespatchTime(
+        ?DateTimeInterface $actualDespatchTime = null
+    ): static {
         $this->actualDespatchTime = $actualDespatchTime;
 
         return $this;
@@ -451,8 +458,9 @@ class DespatchType
      * @param  null|DateTimeInterface $guaranteedDespatchDate
      * @return static
      */
-    public function setGuaranteedDespatchDate(?DateTimeInterface $guaranteedDespatchDate = null): static
-    {
+    public function setGuaranteedDespatchDate(
+        ?DateTimeInterface $guaranteedDespatchDate = null
+    ): static {
         $this->guaranteedDespatchDate = $guaranteedDespatchDate;
 
         return $this;
@@ -480,8 +488,9 @@ class DespatchType
      * @param  null|DateTimeInterface $guaranteedDespatchTime
      * @return static
      */
-    public function setGuaranteedDespatchTime(?DateTimeInterface $guaranteedDespatchTime = null): static
-    {
+    public function setGuaranteedDespatchTime(
+        ?DateTimeInterface $guaranteedDespatchTime = null
+    ): static {
         $this->guaranteedDespatchTime = $guaranteedDespatchTime;
 
         return $this;
@@ -519,8 +528,9 @@ class DespatchType
      * @param  null|ReleaseID $releaseID
      * @return static
      */
-    public function setReleaseID(?ReleaseID $releaseID = null): static
-    {
+    public function setReleaseID(
+        ?ReleaseID $releaseID = null
+    ): static {
         $this->releaseID = $releaseID;
 
         return $this;
@@ -548,8 +558,9 @@ class DespatchType
      * @param  null|array<Instructions> $instructions
      * @return static
      */
-    public function setInstructions(?array $instructions = null): static
-    {
+    public function setInstructions(
+        ?array $instructions = null
+    ): static {
         $this->instructions = $instructions;
 
         return $this;
@@ -609,8 +620,9 @@ class DespatchType
      * @param  Instructions $instructions
      * @return static
      */
-    public function addToInstructions(Instructions $instructions): static
-    {
+    public function addToInstructions(
+        Instructions $instructions
+    ): static {
         $this->instructions[] = $instructions;
 
         return $this;
@@ -630,8 +642,9 @@ class DespatchType
      * @param  Instructions $instructions
      * @return static
      */
-    public function addOnceToInstructions(Instructions $instructions): static
-    {
+    public function addOnceToInstructions(
+        Instructions $instructions
+    ): static {
         if (!is_array($this->instructions)) {
             $this->instructions = [];
         }
@@ -679,8 +692,9 @@ class DespatchType
      * @param  null|DespatchAddress $despatchAddress
      * @return static
      */
-    public function setDespatchAddress(?DespatchAddress $despatchAddress = null): static
-    {
+    public function setDespatchAddress(
+        ?DespatchAddress $despatchAddress = null
+    ): static {
         $this->despatchAddress = $despatchAddress;
 
         return $this;
@@ -718,8 +732,9 @@ class DespatchType
      * @param  null|DespatchLocation $despatchLocation
      * @return static
      */
-    public function setDespatchLocation(?DespatchLocation $despatchLocation = null): static
-    {
+    public function setDespatchLocation(
+        ?DespatchLocation $despatchLocation = null
+    ): static {
         $this->despatchLocation = $despatchLocation;
 
         return $this;
@@ -757,8 +772,9 @@ class DespatchType
      * @param  null|DespatchParty $despatchParty
      * @return static
      */
-    public function setDespatchParty(?DespatchParty $despatchParty = null): static
-    {
+    public function setDespatchParty(
+        ?DespatchParty $despatchParty = null
+    ): static {
         $this->despatchParty = $despatchParty;
 
         return $this;
@@ -796,8 +812,9 @@ class DespatchType
      * @param  null|CarrierParty $carrierParty
      * @return static
      */
-    public function setCarrierParty(?CarrierParty $carrierParty = null): static
-    {
+    public function setCarrierParty(
+        ?CarrierParty $carrierParty = null
+    ): static {
         $this->carrierParty = $carrierParty;
 
         return $this;
@@ -825,8 +842,9 @@ class DespatchType
      * @param  null|array<NotifyParty> $notifyParty
      * @return static
      */
-    public function setNotifyParty(?array $notifyParty = null): static
-    {
+    public function setNotifyParty(
+        ?array $notifyParty = null
+    ): static {
         $this->notifyParty = $notifyParty;
 
         return $this;
@@ -886,8 +904,9 @@ class DespatchType
      * @param  NotifyParty $notifyParty
      * @return static
      */
-    public function addToNotifyParty(NotifyParty $notifyParty): static
-    {
+    public function addToNotifyParty(
+        NotifyParty $notifyParty
+    ): static {
         $this->notifyParty[] = $notifyParty;
 
         return $this;
@@ -907,8 +926,9 @@ class DespatchType
      * @param  NotifyParty $notifyParty
      * @return static
      */
-    public function addOnceToNotifyParty(NotifyParty $notifyParty): static
-    {
+    public function addOnceToNotifyParty(
+        NotifyParty $notifyParty
+    ): static {
         if (!is_array($this->notifyParty)) {
             $this->notifyParty = [];
         }
@@ -956,8 +976,9 @@ class DespatchType
      * @param  null|Contact $contact
      * @return static
      */
-    public function setContact(?Contact $contact = null): static
-    {
+    public function setContact(
+        ?Contact $contact = null
+    ): static {
         $this->contact = $contact;
 
         return $this;
@@ -995,8 +1016,9 @@ class DespatchType
      * @param  null|EstimatedDespatchPeriod $estimatedDespatchPeriod
      * @return static
      */
-    public function setEstimatedDespatchPeriod(?EstimatedDespatchPeriod $estimatedDespatchPeriod = null): static
-    {
+    public function setEstimatedDespatchPeriod(
+        ?EstimatedDespatchPeriod $estimatedDespatchPeriod = null
+    ): static {
         $this->estimatedDespatchPeriod = $estimatedDespatchPeriod;
 
         return $this;
@@ -1034,8 +1056,9 @@ class DespatchType
      * @param  null|RequestedDespatchPeriod $requestedDespatchPeriod
      * @return static
      */
-    public function setRequestedDespatchPeriod(?RequestedDespatchPeriod $requestedDespatchPeriod = null): static
-    {
+    public function setRequestedDespatchPeriod(
+        ?RequestedDespatchPeriod $requestedDespatchPeriod = null
+    ): static {
         $this->requestedDespatchPeriod = $requestedDespatchPeriod;
 
         return $this;

@@ -243,8 +243,9 @@ class RemittanceAdviceLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -272,8 +273,9 @@ class RemittanceAdviceLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -333,8 +335,9 @@ class RemittanceAdviceLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -354,8 +357,9 @@ class RemittanceAdviceLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -403,8 +407,9 @@ class RemittanceAdviceLineType
      * @param  null|UUID $uUID
      * @return static
      */
-    public function setUUID(?UUID $uUID = null): static
-    {
+    public function setUUID(
+        ?UUID $uUID = null
+    ): static {
         $this->uUID = $uUID;
 
         return $this;
@@ -442,8 +447,9 @@ class RemittanceAdviceLineType
      * @param  null|DebitLineAmount $debitLineAmount
      * @return static
      */
-    public function setDebitLineAmount(?DebitLineAmount $debitLineAmount = null): static
-    {
+    public function setDebitLineAmount(
+        ?DebitLineAmount $debitLineAmount = null
+    ): static {
         $this->debitLineAmount = $debitLineAmount;
 
         return $this;
@@ -481,8 +487,9 @@ class RemittanceAdviceLineType
      * @param  null|CreditLineAmount $creditLineAmount
      * @return static
      */
-    public function setCreditLineAmount(?CreditLineAmount $creditLineAmount = null): static
-    {
+    public function setCreditLineAmount(
+        ?CreditLineAmount $creditLineAmount = null
+    ): static {
         $this->creditLineAmount = $creditLineAmount;
 
         return $this;
@@ -520,8 +527,9 @@ class RemittanceAdviceLineType
      * @param  null|BalanceAmount $balanceAmount
      * @return static
      */
-    public function setBalanceAmount(?BalanceAmount $balanceAmount = null): static
-    {
+    public function setBalanceAmount(
+        ?BalanceAmount $balanceAmount = null
+    ): static {
         $this->balanceAmount = $balanceAmount;
 
         return $this;
@@ -559,8 +567,9 @@ class RemittanceAdviceLineType
      * @param  null|PaymentPurposeCode $paymentPurposeCode
      * @return static
      */
-    public function setPaymentPurposeCode(?PaymentPurposeCode $paymentPurposeCode = null): static
-    {
+    public function setPaymentPurposeCode(
+        ?PaymentPurposeCode $paymentPurposeCode = null
+    ): static {
         $this->paymentPurposeCode = $paymentPurposeCode;
 
         return $this;
@@ -598,8 +607,9 @@ class RemittanceAdviceLineType
      * @param  null|InvoicingPartyReference $invoicingPartyReference
      * @return static
      */
-    public function setInvoicingPartyReference(?InvoicingPartyReference $invoicingPartyReference = null): static
-    {
+    public function setInvoicingPartyReference(
+        ?InvoicingPartyReference $invoicingPartyReference = null
+    ): static {
         $this->invoicingPartyReference = $invoicingPartyReference;
 
         return $this;
@@ -637,8 +647,9 @@ class RemittanceAdviceLineType
      * @param  null|AccountingSupplierParty $accountingSupplierParty
      * @return static
      */
-    public function setAccountingSupplierParty(?AccountingSupplierParty $accountingSupplierParty = null): static
-    {
+    public function setAccountingSupplierParty(
+        ?AccountingSupplierParty $accountingSupplierParty = null
+    ): static {
         $this->accountingSupplierParty = $accountingSupplierParty;
 
         return $this;
@@ -676,8 +687,9 @@ class RemittanceAdviceLineType
      * @param  null|AccountingCustomerParty $accountingCustomerParty
      * @return static
      */
-    public function setAccountingCustomerParty(?AccountingCustomerParty $accountingCustomerParty = null): static
-    {
+    public function setAccountingCustomerParty(
+        ?AccountingCustomerParty $accountingCustomerParty = null
+    ): static {
         $this->accountingCustomerParty = $accountingCustomerParty;
 
         return $this;
@@ -715,8 +727,9 @@ class RemittanceAdviceLineType
      * @param  null|BuyerCustomerParty $buyerCustomerParty
      * @return static
      */
-    public function setBuyerCustomerParty(?BuyerCustomerParty $buyerCustomerParty = null): static
-    {
+    public function setBuyerCustomerParty(
+        ?BuyerCustomerParty $buyerCustomerParty = null
+    ): static {
         $this->buyerCustomerParty = $buyerCustomerParty;
 
         return $this;
@@ -754,8 +767,9 @@ class RemittanceAdviceLineType
      * @param  null|SellerSupplierParty $sellerSupplierParty
      * @return static
      */
-    public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
-    {
+    public function setSellerSupplierParty(
+        ?SellerSupplierParty $sellerSupplierParty = null
+    ): static {
         $this->sellerSupplierParty = $sellerSupplierParty;
 
         return $this;
@@ -793,8 +807,9 @@ class RemittanceAdviceLineType
      * @param  null|OriginatorCustomerParty $originatorCustomerParty
      * @return static
      */
-    public function setOriginatorCustomerParty(?OriginatorCustomerParty $originatorCustomerParty = null): static
-    {
+    public function setOriginatorCustomerParty(
+        ?OriginatorCustomerParty $originatorCustomerParty = null
+    ): static {
         $this->originatorCustomerParty = $originatorCustomerParty;
 
         return $this;
@@ -832,8 +847,9 @@ class RemittanceAdviceLineType
      * @param  null|PayeeParty $payeeParty
      * @return static
      */
-    public function setPayeeParty(?PayeeParty $payeeParty = null): static
-    {
+    public function setPayeeParty(
+        ?PayeeParty $payeeParty = null
+    ): static {
         $this->payeeParty = $payeeParty;
 
         return $this;
@@ -861,8 +877,9 @@ class RemittanceAdviceLineType
      * @param  null|array<InvoicePeriod> $invoicePeriod
      * @return static
      */
-    public function setInvoicePeriod(?array $invoicePeriod = null): static
-    {
+    public function setInvoicePeriod(
+        ?array $invoicePeriod = null
+    ): static {
         $this->invoicePeriod = $invoicePeriod;
 
         return $this;
@@ -922,8 +939,9 @@ class RemittanceAdviceLineType
      * @param  InvoicePeriod $invoicePeriod
      * @return static
      */
-    public function addToInvoicePeriod(InvoicePeriod $invoicePeriod): static
-    {
+    public function addToInvoicePeriod(
+        InvoicePeriod $invoicePeriod
+    ): static {
         $this->invoicePeriod[] = $invoicePeriod;
 
         return $this;
@@ -943,8 +961,9 @@ class RemittanceAdviceLineType
      * @param  InvoicePeriod $invoicePeriod
      * @return static
      */
-    public function addOnceToInvoicePeriod(InvoicePeriod $invoicePeriod): static
-    {
+    public function addOnceToInvoicePeriod(
+        InvoicePeriod $invoicePeriod
+    ): static {
         if (!is_array($this->invoicePeriod)) {
             $this->invoicePeriod = [];
         }
@@ -982,8 +1001,9 @@ class RemittanceAdviceLineType
      * @param  null|array<BillingReference> $billingReference
      * @return static
      */
-    public function setBillingReference(?array $billingReference = null): static
-    {
+    public function setBillingReference(
+        ?array $billingReference = null
+    ): static {
         $this->billingReference = $billingReference;
 
         return $this;
@@ -1043,8 +1063,9 @@ class RemittanceAdviceLineType
      * @param  BillingReference $billingReference
      * @return static
      */
-    public function addToBillingReference(BillingReference $billingReference): static
-    {
+    public function addToBillingReference(
+        BillingReference $billingReference
+    ): static {
         $this->billingReference[] = $billingReference;
 
         return $this;
@@ -1064,8 +1085,9 @@ class RemittanceAdviceLineType
      * @param  BillingReference $billingReference
      * @return static
      */
-    public function addOnceToBillingReference(BillingReference $billingReference): static
-    {
+    public function addOnceToBillingReference(
+        BillingReference $billingReference
+    ): static {
         if (!is_array($this->billingReference)) {
             $this->billingReference = [];
         }
@@ -1103,8 +1125,9 @@ class RemittanceAdviceLineType
      * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?array $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;
@@ -1164,8 +1187,9 @@ class RemittanceAdviceLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         $this->documentReference[] = $documentReference;
 
         return $this;
@@ -1185,8 +1209,9 @@ class RemittanceAdviceLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addOnceToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
         }
@@ -1234,8 +1259,9 @@ class RemittanceAdviceLineType
      * @param  null|ExchangeRate $exchangeRate
      * @return static
      */
-    public function setExchangeRate(?ExchangeRate $exchangeRate = null): static
-    {
+    public function setExchangeRate(
+        ?ExchangeRate $exchangeRate = null
+    ): static {
         $this->exchangeRate = $exchangeRate;
 
         return $this;

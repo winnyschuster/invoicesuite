@@ -1201,8 +1201,9 @@ class ConsignmentType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -1240,8 +1241,9 @@ class ConsignmentType
      * @param  null|CarrierAssignedID $carrierAssignedID
      * @return static
      */
-    public function setCarrierAssignedID(?CarrierAssignedID $carrierAssignedID = null): static
-    {
+    public function setCarrierAssignedID(
+        ?CarrierAssignedID $carrierAssignedID = null
+    ): static {
         $this->carrierAssignedID = $carrierAssignedID;
 
         return $this;
@@ -1279,8 +1281,9 @@ class ConsignmentType
      * @param  null|ConsigneeAssignedID $consigneeAssignedID
      * @return static
      */
-    public function setConsigneeAssignedID(?ConsigneeAssignedID $consigneeAssignedID = null): static
-    {
+    public function setConsigneeAssignedID(
+        ?ConsigneeAssignedID $consigneeAssignedID = null
+    ): static {
         $this->consigneeAssignedID = $consigneeAssignedID;
 
         return $this;
@@ -1318,8 +1321,9 @@ class ConsignmentType
      * @param  null|ConsignorAssignedID $consignorAssignedID
      * @return static
      */
-    public function setConsignorAssignedID(?ConsignorAssignedID $consignorAssignedID = null): static
-    {
+    public function setConsignorAssignedID(
+        ?ConsignorAssignedID $consignorAssignedID = null
+    ): static {
         $this->consignorAssignedID = $consignorAssignedID;
 
         return $this;
@@ -1397,8 +1401,9 @@ class ConsignmentType
      * @param  null|BrokerAssignedID $brokerAssignedID
      * @return static
      */
-    public function setBrokerAssignedID(?BrokerAssignedID $brokerAssignedID = null): static
-    {
+    public function setBrokerAssignedID(
+        ?BrokerAssignedID $brokerAssignedID = null
+    ): static {
         $this->brokerAssignedID = $brokerAssignedID;
 
         return $this;
@@ -1506,8 +1511,9 @@ class ConsignmentType
      * @param  null|array<SummaryDescription> $summaryDescription
      * @return static
      */
-    public function setSummaryDescription(?array $summaryDescription = null): static
-    {
+    public function setSummaryDescription(
+        ?array $summaryDescription = null
+    ): static {
         $this->summaryDescription = $summaryDescription;
 
         return $this;
@@ -1567,8 +1573,9 @@ class ConsignmentType
      * @param  SummaryDescription $summaryDescription
      * @return static
      */
-    public function addToSummaryDescription(SummaryDescription $summaryDescription): static
-    {
+    public function addToSummaryDescription(
+        SummaryDescription $summaryDescription
+    ): static {
         $this->summaryDescription[] = $summaryDescription;
 
         return $this;
@@ -1588,8 +1595,9 @@ class ConsignmentType
      * @param  SummaryDescription $summaryDescription
      * @return static
      */
-    public function addOnceToSummaryDescription(SummaryDescription $summaryDescription): static
-    {
+    public function addOnceToSummaryDescription(
+        SummaryDescription $summaryDescription
+    ): static {
         if (!is_array($this->summaryDescription)) {
             $this->summaryDescription = [];
         }
@@ -1637,8 +1645,9 @@ class ConsignmentType
      * @param  null|TotalInvoiceAmount $totalInvoiceAmount
      * @return static
      */
-    public function setTotalInvoiceAmount(?TotalInvoiceAmount $totalInvoiceAmount = null): static
-    {
+    public function setTotalInvoiceAmount(
+        ?TotalInvoiceAmount $totalInvoiceAmount = null
+    ): static {
         $this->totalInvoiceAmount = $totalInvoiceAmount;
 
         return $this;
@@ -1706,8 +1715,9 @@ class ConsignmentType
      * @param  null|array<TariffDescription> $tariffDescription
      * @return static
      */
-    public function setTariffDescription(?array $tariffDescription = null): static
-    {
+    public function setTariffDescription(
+        ?array $tariffDescription = null
+    ): static {
         $this->tariffDescription = $tariffDescription;
 
         return $this;
@@ -1767,8 +1777,9 @@ class ConsignmentType
      * @param  TariffDescription $tariffDescription
      * @return static
      */
-    public function addToTariffDescription(TariffDescription $tariffDescription): static
-    {
+    public function addToTariffDescription(
+        TariffDescription $tariffDescription
+    ): static {
         $this->tariffDescription[] = $tariffDescription;
 
         return $this;
@@ -1788,8 +1799,9 @@ class ConsignmentType
      * @param  TariffDescription $tariffDescription
      * @return static
      */
-    public function addOnceToTariffDescription(TariffDescription $tariffDescription): static
-    {
+    public function addOnceToTariffDescription(
+        TariffDescription $tariffDescription
+    ): static {
         if (!is_array($this->tariffDescription)) {
             $this->tariffDescription = [];
         }
@@ -1837,8 +1849,9 @@ class ConsignmentType
      * @param  null|TariffCode $tariffCode
      * @return static
      */
-    public function setTariffCode(?TariffCode $tariffCode = null): static
-    {
+    public function setTariffCode(
+        ?TariffCode $tariffCode = null
+    ): static {
         $this->tariffCode = $tariffCode;
 
         return $this;
@@ -1876,8 +1889,9 @@ class ConsignmentType
      * @param  null|InsurancePremiumAmount $insurancePremiumAmount
      * @return static
      */
-    public function setInsurancePremiumAmount(?InsurancePremiumAmount $insurancePremiumAmount = null): static
-    {
+    public function setInsurancePremiumAmount(
+        ?InsurancePremiumAmount $insurancePremiumAmount = null
+    ): static {
         $this->insurancePremiumAmount = $insurancePremiumAmount;
 
         return $this;
@@ -1915,8 +1929,9 @@ class ConsignmentType
      * @param  null|GrossWeightMeasure $grossWeightMeasure
      * @return static
      */
-    public function setGrossWeightMeasure(?GrossWeightMeasure $grossWeightMeasure = null): static
-    {
+    public function setGrossWeightMeasure(
+        ?GrossWeightMeasure $grossWeightMeasure = null
+    ): static {
         $this->grossWeightMeasure = $grossWeightMeasure;
 
         return $this;
@@ -1954,8 +1969,9 @@ class ConsignmentType
      * @param  null|NetWeightMeasure $netWeightMeasure
      * @return static
      */
-    public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): static
-    {
+    public function setNetWeightMeasure(
+        ?NetWeightMeasure $netWeightMeasure = null
+    ): static {
         $this->netWeightMeasure = $netWeightMeasure;
 
         return $this;
@@ -1993,8 +2009,9 @@ class ConsignmentType
      * @param  null|NetNetWeightMeasure $netNetWeightMeasure
      * @return static
      */
-    public function setNetNetWeightMeasure(?NetNetWeightMeasure $netNetWeightMeasure = null): static
-    {
+    public function setNetNetWeightMeasure(
+        ?NetNetWeightMeasure $netNetWeightMeasure = null
+    ): static {
         $this->netNetWeightMeasure = $netNetWeightMeasure;
 
         return $this;
@@ -2032,8 +2049,9 @@ class ConsignmentType
      * @param  null|ChargeableWeightMeasure $chargeableWeightMeasure
      * @return static
      */
-    public function setChargeableWeightMeasure(?ChargeableWeightMeasure $chargeableWeightMeasure = null): static
-    {
+    public function setChargeableWeightMeasure(
+        ?ChargeableWeightMeasure $chargeableWeightMeasure = null
+    ): static {
         $this->chargeableWeightMeasure = $chargeableWeightMeasure;
 
         return $this;
@@ -2071,8 +2089,9 @@ class ConsignmentType
      * @param  null|GrossVolumeMeasure $grossVolumeMeasure
      * @return static
      */
-    public function setGrossVolumeMeasure(?GrossVolumeMeasure $grossVolumeMeasure = null): static
-    {
+    public function setGrossVolumeMeasure(
+        ?GrossVolumeMeasure $grossVolumeMeasure = null
+    ): static {
         $this->grossVolumeMeasure = $grossVolumeMeasure;
 
         return $this;
@@ -2110,8 +2129,9 @@ class ConsignmentType
      * @param  null|NetVolumeMeasure $netVolumeMeasure
      * @return static
      */
-    public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): static
-    {
+    public function setNetVolumeMeasure(
+        ?NetVolumeMeasure $netVolumeMeasure = null
+    ): static {
         $this->netVolumeMeasure = $netVolumeMeasure;
 
         return $this;
@@ -2149,8 +2169,9 @@ class ConsignmentType
      * @param  null|LoadingLengthMeasure $loadingLengthMeasure
      * @return static
      */
-    public function setLoadingLengthMeasure(?LoadingLengthMeasure $loadingLengthMeasure = null): static
-    {
+    public function setLoadingLengthMeasure(
+        ?LoadingLengthMeasure $loadingLengthMeasure = null
+    ): static {
         $this->loadingLengthMeasure = $loadingLengthMeasure;
 
         return $this;
@@ -2178,8 +2199,9 @@ class ConsignmentType
      * @param  null|array<Remarks> $remarks
      * @return static
      */
-    public function setRemarks(?array $remarks = null): static
-    {
+    public function setRemarks(
+        ?array $remarks = null
+    ): static {
         $this->remarks = $remarks;
 
         return $this;
@@ -2239,8 +2261,9 @@ class ConsignmentType
      * @param  Remarks $remarks
      * @return static
      */
-    public function addToRemarks(Remarks $remarks): static
-    {
+    public function addToRemarks(
+        Remarks $remarks
+    ): static {
         $this->remarks[] = $remarks;
 
         return $this;
@@ -2260,8 +2283,9 @@ class ConsignmentType
      * @param  Remarks $remarks
      * @return static
      */
-    public function addOnceToRemarks(Remarks $remarks): static
-    {
+    public function addOnceToRemarks(
+        Remarks $remarks
+    ): static {
         if (!is_array($this->remarks)) {
             $this->remarks = [];
         }
@@ -2299,8 +2323,9 @@ class ConsignmentType
      * @param  null|bool $hazardousRiskIndicator
      * @return static
      */
-    public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): static
-    {
+    public function setHazardousRiskIndicator(
+        ?bool $hazardousRiskIndicator = null
+    ): static {
         $this->hazardousRiskIndicator = $hazardousRiskIndicator;
 
         return $this;
@@ -2328,8 +2353,9 @@ class ConsignmentType
      * @param  null|bool $animalFoodIndicator
      * @return static
      */
-    public function setAnimalFoodIndicator(?bool $animalFoodIndicator = null): static
-    {
+    public function setAnimalFoodIndicator(
+        ?bool $animalFoodIndicator = null
+    ): static {
         $this->animalFoodIndicator = $animalFoodIndicator;
 
         return $this;
@@ -2357,8 +2383,9 @@ class ConsignmentType
      * @param  null|bool $humanFoodIndicator
      * @return static
      */
-    public function setHumanFoodIndicator(?bool $humanFoodIndicator = null): static
-    {
+    public function setHumanFoodIndicator(
+        ?bool $humanFoodIndicator = null
+    ): static {
         $this->humanFoodIndicator = $humanFoodIndicator;
 
         return $this;
@@ -2386,8 +2413,9 @@ class ConsignmentType
      * @param  null|bool $livestockIndicator
      * @return static
      */
-    public function setLivestockIndicator(?bool $livestockIndicator = null): static
-    {
+    public function setLivestockIndicator(
+        ?bool $livestockIndicator = null
+    ): static {
         $this->livestockIndicator = $livestockIndicator;
 
         return $this;
@@ -2415,8 +2443,9 @@ class ConsignmentType
      * @param  null|bool $bulkCargoIndicator
      * @return static
      */
-    public function setBulkCargoIndicator(?bool $bulkCargoIndicator = null): static
-    {
+    public function setBulkCargoIndicator(
+        ?bool $bulkCargoIndicator = null
+    ): static {
         $this->bulkCargoIndicator = $bulkCargoIndicator;
 
         return $this;
@@ -2444,8 +2473,9 @@ class ConsignmentType
      * @param  null|bool $containerizedIndicator
      * @return static
      */
-    public function setContainerizedIndicator(?bool $containerizedIndicator = null): static
-    {
+    public function setContainerizedIndicator(
+        ?bool $containerizedIndicator = null
+    ): static {
         $this->containerizedIndicator = $containerizedIndicator;
 
         return $this;
@@ -2473,8 +2503,9 @@ class ConsignmentType
      * @param  null|bool $generalCargoIndicator
      * @return static
      */
-    public function setGeneralCargoIndicator(?bool $generalCargoIndicator = null): static
-    {
+    public function setGeneralCargoIndicator(
+        ?bool $generalCargoIndicator = null
+    ): static {
         $this->generalCargoIndicator = $generalCargoIndicator;
 
         return $this;
@@ -2502,8 +2533,9 @@ class ConsignmentType
      * @param  null|bool $specialSecurityIndicator
      * @return static
      */
-    public function setSpecialSecurityIndicator(?bool $specialSecurityIndicator = null): static
-    {
+    public function setSpecialSecurityIndicator(
+        ?bool $specialSecurityIndicator = null
+    ): static {
         $this->specialSecurityIndicator = $specialSecurityIndicator;
 
         return $this;
@@ -2531,8 +2563,9 @@ class ConsignmentType
      * @param  null|bool $thirdPartyPayerIndicator
      * @return static
      */
-    public function setThirdPartyPayerIndicator(?bool $thirdPartyPayerIndicator = null): static
-    {
+    public function setThirdPartyPayerIndicator(
+        ?bool $thirdPartyPayerIndicator = null
+    ): static {
         $this->thirdPartyPayerIndicator = $thirdPartyPayerIndicator;
 
         return $this;
@@ -2560,8 +2593,9 @@ class ConsignmentType
      * @param  null|array<CarrierServiceInstructions> $carrierServiceInstructions
      * @return static
      */
-    public function setCarrierServiceInstructions(?array $carrierServiceInstructions = null): static
-    {
+    public function setCarrierServiceInstructions(
+        ?array $carrierServiceInstructions = null
+    ): static {
         $this->carrierServiceInstructions = $carrierServiceInstructions;
 
         return $this;
@@ -2621,8 +2655,9 @@ class ConsignmentType
      * @param  CarrierServiceInstructions $carrierServiceInstructions
      * @return static
      */
-    public function addToCarrierServiceInstructions(CarrierServiceInstructions $carrierServiceInstructions): static
-    {
+    public function addToCarrierServiceInstructions(
+        CarrierServiceInstructions $carrierServiceInstructions
+    ): static {
         $this->carrierServiceInstructions[] = $carrierServiceInstructions;
 
         return $this;
@@ -2642,8 +2677,9 @@ class ConsignmentType
      * @param  CarrierServiceInstructions $carrierServiceInstructions
      * @return static
      */
-    public function addOnceToCarrierServiceInstructions(CarrierServiceInstructions $carrierServiceInstructions): static
-    {
+    public function addOnceToCarrierServiceInstructions(
+        CarrierServiceInstructions $carrierServiceInstructions
+    ): static {
         if (!is_array($this->carrierServiceInstructions)) {
             $this->carrierServiceInstructions = [];
         }
@@ -2681,8 +2717,9 @@ class ConsignmentType
      * @param  null|array<CustomsClearanceServiceInstructions> $customsClearanceServiceInstructions
      * @return static
      */
-    public function setCustomsClearanceServiceInstructions(?array $customsClearanceServiceInstructions = null): static
-    {
+    public function setCustomsClearanceServiceInstructions(
+        ?array $customsClearanceServiceInstructions = null
+    ): static {
         $this->customsClearanceServiceInstructions = $customsClearanceServiceInstructions;
 
         return $this;
@@ -2804,8 +2841,9 @@ class ConsignmentType
      * @param  null|array<ForwarderServiceInstructions> $forwarderServiceInstructions
      * @return static
      */
-    public function setForwarderServiceInstructions(?array $forwarderServiceInstructions = null): static
-    {
+    public function setForwarderServiceInstructions(
+        ?array $forwarderServiceInstructions = null
+    ): static {
         $this->forwarderServiceInstructions = $forwarderServiceInstructions;
 
         return $this;
@@ -2927,8 +2965,9 @@ class ConsignmentType
      * @param  null|array<SpecialServiceInstructions> $specialServiceInstructions
      * @return static
      */
-    public function setSpecialServiceInstructions(?array $specialServiceInstructions = null): static
-    {
+    public function setSpecialServiceInstructions(
+        ?array $specialServiceInstructions = null
+    ): static {
         $this->specialServiceInstructions = $specialServiceInstructions;
 
         return $this;
@@ -2988,8 +3027,9 @@ class ConsignmentType
      * @param  SpecialServiceInstructions $specialServiceInstructions
      * @return static
      */
-    public function addToSpecialServiceInstructions(SpecialServiceInstructions $specialServiceInstructions): static
-    {
+    public function addToSpecialServiceInstructions(
+        SpecialServiceInstructions $specialServiceInstructions
+    ): static {
         $this->specialServiceInstructions[] = $specialServiceInstructions;
 
         return $this;
@@ -3009,8 +3049,9 @@ class ConsignmentType
      * @param  SpecialServiceInstructions $specialServiceInstructions
      * @return static
      */
-    public function addOnceToSpecialServiceInstructions(SpecialServiceInstructions $specialServiceInstructions): static
-    {
+    public function addOnceToSpecialServiceInstructions(
+        SpecialServiceInstructions $specialServiceInstructions
+    ): static {
         if (!is_array($this->specialServiceInstructions)) {
             $this->specialServiceInstructions = [];
         }
@@ -3058,8 +3099,9 @@ class ConsignmentType
      * @param  null|SequenceID $sequenceID
      * @return static
      */
-    public function setSequenceID(?SequenceID $sequenceID = null): static
-    {
+    public function setSequenceID(
+        ?SequenceID $sequenceID = null
+    ): static {
         $this->sequenceID = $sequenceID;
 
         return $this;
@@ -3097,8 +3139,9 @@ class ConsignmentType
      * @param  null|ShippingPriorityLevelCode $shippingPriorityLevelCode
      * @return static
      */
-    public function setShippingPriorityLevelCode(?ShippingPriorityLevelCode $shippingPriorityLevelCode = null): static
-    {
+    public function setShippingPriorityLevelCode(
+        ?ShippingPriorityLevelCode $shippingPriorityLevelCode = null
+    ): static {
         $this->shippingPriorityLevelCode = $shippingPriorityLevelCode;
 
         return $this;
@@ -3136,8 +3179,9 @@ class ConsignmentType
      * @param  null|HandlingCode $handlingCode
      * @return static
      */
-    public function setHandlingCode(?HandlingCode $handlingCode = null): static
-    {
+    public function setHandlingCode(
+        ?HandlingCode $handlingCode = null
+    ): static {
         $this->handlingCode = $handlingCode;
 
         return $this;
@@ -3165,8 +3209,9 @@ class ConsignmentType
      * @param  null|array<HandlingInstructions> $handlingInstructions
      * @return static
      */
-    public function setHandlingInstructions(?array $handlingInstructions = null): static
-    {
+    public function setHandlingInstructions(
+        ?array $handlingInstructions = null
+    ): static {
         $this->handlingInstructions = $handlingInstructions;
 
         return $this;
@@ -3226,8 +3271,9 @@ class ConsignmentType
      * @param  HandlingInstructions $handlingInstructions
      * @return static
      */
-    public function addToHandlingInstructions(HandlingInstructions $handlingInstructions): static
-    {
+    public function addToHandlingInstructions(
+        HandlingInstructions $handlingInstructions
+    ): static {
         $this->handlingInstructions[] = $handlingInstructions;
 
         return $this;
@@ -3247,8 +3293,9 @@ class ConsignmentType
      * @param  HandlingInstructions $handlingInstructions
      * @return static
      */
-    public function addOnceToHandlingInstructions(HandlingInstructions $handlingInstructions): static
-    {
+    public function addOnceToHandlingInstructions(
+        HandlingInstructions $handlingInstructions
+    ): static {
         if (!is_array($this->handlingInstructions)) {
             $this->handlingInstructions = [];
         }
@@ -3286,8 +3333,9 @@ class ConsignmentType
      * @param  null|array<Information> $information
      * @return static
      */
-    public function setInformation(?array $information = null): static
-    {
+    public function setInformation(
+        ?array $information = null
+    ): static {
         $this->information = $information;
 
         return $this;
@@ -3347,8 +3395,9 @@ class ConsignmentType
      * @param  Information $information
      * @return static
      */
-    public function addToInformation(Information $information): static
-    {
+    public function addToInformation(
+        Information $information
+    ): static {
         $this->information[] = $information;
 
         return $this;
@@ -3368,8 +3417,9 @@ class ConsignmentType
      * @param  Information $information
      * @return static
      */
-    public function addOnceToInformation(Information $information): static
-    {
+    public function addOnceToInformation(
+        Information $information
+    ): static {
         if (!is_array($this->information)) {
             $this->information = [];
         }
@@ -3417,8 +3467,9 @@ class ConsignmentType
      * @param  null|TotalGoodsItemQuantity $totalGoodsItemQuantity
      * @return static
      */
-    public function setTotalGoodsItemQuantity(?TotalGoodsItemQuantity $totalGoodsItemQuantity = null): static
-    {
+    public function setTotalGoodsItemQuantity(
+        ?TotalGoodsItemQuantity $totalGoodsItemQuantity = null
+    ): static {
         $this->totalGoodsItemQuantity = $totalGoodsItemQuantity;
 
         return $this;
@@ -3496,8 +3547,9 @@ class ConsignmentType
      * @param  null|InsuranceValueAmount $insuranceValueAmount
      * @return static
      */
-    public function setInsuranceValueAmount(?InsuranceValueAmount $insuranceValueAmount = null): static
-    {
+    public function setInsuranceValueAmount(
+        ?InsuranceValueAmount $insuranceValueAmount = null
+    ): static {
         $this->insuranceValueAmount = $insuranceValueAmount;
 
         return $this;
@@ -3615,8 +3667,9 @@ class ConsignmentType
      * @param  null|FreeOnBoardValueAmount $freeOnBoardValueAmount
      * @return static
      */
-    public function setFreeOnBoardValueAmount(?FreeOnBoardValueAmount $freeOnBoardValueAmount = null): static
-    {
+    public function setFreeOnBoardValueAmount(
+        ?FreeOnBoardValueAmount $freeOnBoardValueAmount = null
+    ): static {
         $this->freeOnBoardValueAmount = $freeOnBoardValueAmount;
 
         return $this;
@@ -3644,8 +3697,9 @@ class ConsignmentType
      * @param  null|array<SpecialInstructions> $specialInstructions
      * @return static
      */
-    public function setSpecialInstructions(?array $specialInstructions = null): static
-    {
+    public function setSpecialInstructions(
+        ?array $specialInstructions = null
+    ): static {
         $this->specialInstructions = $specialInstructions;
 
         return $this;
@@ -3705,8 +3759,9 @@ class ConsignmentType
      * @param  SpecialInstructions $specialInstructions
      * @return static
      */
-    public function addToSpecialInstructions(SpecialInstructions $specialInstructions): static
-    {
+    public function addToSpecialInstructions(
+        SpecialInstructions $specialInstructions
+    ): static {
         $this->specialInstructions[] = $specialInstructions;
 
         return $this;
@@ -3726,8 +3781,9 @@ class ConsignmentType
      * @param  SpecialInstructions $specialInstructions
      * @return static
      */
-    public function addOnceToSpecialInstructions(SpecialInstructions $specialInstructions): static
-    {
+    public function addOnceToSpecialInstructions(
+        SpecialInstructions $specialInstructions
+    ): static {
         if (!is_array($this->specialInstructions)) {
             $this->specialInstructions = [];
         }
@@ -3765,8 +3821,9 @@ class ConsignmentType
      * @param  null|bool $splitConsignmentIndicator
      * @return static
      */
-    public function setSplitConsignmentIndicator(?bool $splitConsignmentIndicator = null): static
-    {
+    public function setSplitConsignmentIndicator(
+        ?bool $splitConsignmentIndicator = null
+    ): static {
         $this->splitConsignmentIndicator = $splitConsignmentIndicator;
 
         return $this;
@@ -3794,8 +3851,9 @@ class ConsignmentType
      * @param  null|array<DeliveryInstructions> $deliveryInstructions
      * @return static
      */
-    public function setDeliveryInstructions(?array $deliveryInstructions = null): static
-    {
+    public function setDeliveryInstructions(
+        ?array $deliveryInstructions = null
+    ): static {
         $this->deliveryInstructions = $deliveryInstructions;
 
         return $this;
@@ -3855,8 +3913,9 @@ class ConsignmentType
      * @param  DeliveryInstructions $deliveryInstructions
      * @return static
      */
-    public function addToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): static
-    {
+    public function addToDeliveryInstructions(
+        DeliveryInstructions $deliveryInstructions
+    ): static {
         $this->deliveryInstructions[] = $deliveryInstructions;
 
         return $this;
@@ -3876,8 +3935,9 @@ class ConsignmentType
      * @param  DeliveryInstructions $deliveryInstructions
      * @return static
      */
-    public function addOnceToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): static
-    {
+    public function addOnceToDeliveryInstructions(
+        DeliveryInstructions $deliveryInstructions
+    ): static {
         if (!is_array($this->deliveryInstructions)) {
             $this->deliveryInstructions = [];
         }
@@ -3925,8 +3985,9 @@ class ConsignmentType
      * @param  null|ConsignmentQuantity $consignmentQuantity
      * @return static
      */
-    public function setConsignmentQuantity(?ConsignmentQuantity $consignmentQuantity = null): static
-    {
+    public function setConsignmentQuantity(
+        ?ConsignmentQuantity $consignmentQuantity = null
+    ): static {
         $this->consignmentQuantity = $consignmentQuantity;
 
         return $this;
@@ -3954,8 +4015,9 @@ class ConsignmentType
      * @param  null|bool $consolidatableIndicator
      * @return static
      */
-    public function setConsolidatableIndicator(?bool $consolidatableIndicator = null): static
-    {
+    public function setConsolidatableIndicator(
+        ?bool $consolidatableIndicator = null
+    ): static {
         $this->consolidatableIndicator = $consolidatableIndicator;
 
         return $this;
@@ -3983,8 +4045,9 @@ class ConsignmentType
      * @param  null|array<HaulageInstructions> $haulageInstructions
      * @return static
      */
-    public function setHaulageInstructions(?array $haulageInstructions = null): static
-    {
+    public function setHaulageInstructions(
+        ?array $haulageInstructions = null
+    ): static {
         $this->haulageInstructions = $haulageInstructions;
 
         return $this;
@@ -4044,8 +4107,9 @@ class ConsignmentType
      * @param  HaulageInstructions $haulageInstructions
      * @return static
      */
-    public function addToHaulageInstructions(HaulageInstructions $haulageInstructions): static
-    {
+    public function addToHaulageInstructions(
+        HaulageInstructions $haulageInstructions
+    ): static {
         $this->haulageInstructions[] = $haulageInstructions;
 
         return $this;
@@ -4065,8 +4129,9 @@ class ConsignmentType
      * @param  HaulageInstructions $haulageInstructions
      * @return static
      */
-    public function addOnceToHaulageInstructions(HaulageInstructions $haulageInstructions): static
-    {
+    public function addOnceToHaulageInstructions(
+        HaulageInstructions $haulageInstructions
+    ): static {
         if (!is_array($this->haulageInstructions)) {
             $this->haulageInstructions = [];
         }
@@ -4114,8 +4179,9 @@ class ConsignmentType
      * @param  null|LoadingSequenceID $loadingSequenceID
      * @return static
      */
-    public function setLoadingSequenceID(?LoadingSequenceID $loadingSequenceID = null): static
-    {
+    public function setLoadingSequenceID(
+        ?LoadingSequenceID $loadingSequenceID = null
+    ): static {
         $this->loadingSequenceID = $loadingSequenceID;
 
         return $this;
@@ -4153,8 +4219,9 @@ class ConsignmentType
      * @param  null|ChildConsignmentQuantity $childConsignmentQuantity
      * @return static
      */
-    public function setChildConsignmentQuantity(?ChildConsignmentQuantity $childConsignmentQuantity = null): static
-    {
+    public function setChildConsignmentQuantity(
+        ?ChildConsignmentQuantity $childConsignmentQuantity = null
+    ): static {
         $this->childConsignmentQuantity = $childConsignmentQuantity;
 
         return $this;
@@ -4192,8 +4259,9 @@ class ConsignmentType
      * @param  null|TotalPackagesQuantity $totalPackagesQuantity
      * @return static
      */
-    public function setTotalPackagesQuantity(?TotalPackagesQuantity $totalPackagesQuantity = null): static
-    {
+    public function setTotalPackagesQuantity(
+        ?TotalPackagesQuantity $totalPackagesQuantity = null
+    ): static {
         $this->totalPackagesQuantity = $totalPackagesQuantity;
 
         return $this;
@@ -4221,8 +4289,9 @@ class ConsignmentType
      * @param  null|array<ConsolidatedShipment> $consolidatedShipment
      * @return static
      */
-    public function setConsolidatedShipment(?array $consolidatedShipment = null): static
-    {
+    public function setConsolidatedShipment(
+        ?array $consolidatedShipment = null
+    ): static {
         $this->consolidatedShipment = $consolidatedShipment;
 
         return $this;
@@ -4282,8 +4351,9 @@ class ConsignmentType
      * @param  ConsolidatedShipment $consolidatedShipment
      * @return static
      */
-    public function addToConsolidatedShipment(ConsolidatedShipment $consolidatedShipment): static
-    {
+    public function addToConsolidatedShipment(
+        ConsolidatedShipment $consolidatedShipment
+    ): static {
         $this->consolidatedShipment[] = $consolidatedShipment;
 
         return $this;
@@ -4303,8 +4373,9 @@ class ConsignmentType
      * @param  ConsolidatedShipment $consolidatedShipment
      * @return static
      */
-    public function addOnceToConsolidatedShipment(ConsolidatedShipment $consolidatedShipment): static
-    {
+    public function addOnceToConsolidatedShipment(
+        ConsolidatedShipment $consolidatedShipment
+    ): static {
         if (!is_array($this->consolidatedShipment)) {
             $this->consolidatedShipment = [];
         }
@@ -4342,8 +4413,9 @@ class ConsignmentType
      * @param  null|array<CustomsDeclaration> $customsDeclaration
      * @return static
      */
-    public function setCustomsDeclaration(?array $customsDeclaration = null): static
-    {
+    public function setCustomsDeclaration(
+        ?array $customsDeclaration = null
+    ): static {
         $this->customsDeclaration = $customsDeclaration;
 
         return $this;
@@ -4403,8 +4475,9 @@ class ConsignmentType
      * @param  CustomsDeclaration $customsDeclaration
      * @return static
      */
-    public function addToCustomsDeclaration(CustomsDeclaration $customsDeclaration): static
-    {
+    public function addToCustomsDeclaration(
+        CustomsDeclaration $customsDeclaration
+    ): static {
         $this->customsDeclaration[] = $customsDeclaration;
 
         return $this;
@@ -4424,8 +4497,9 @@ class ConsignmentType
      * @param  CustomsDeclaration $customsDeclaration
      * @return static
      */
-    public function addOnceToCustomsDeclaration(CustomsDeclaration $customsDeclaration): static
-    {
+    public function addOnceToCustomsDeclaration(
+        CustomsDeclaration $customsDeclaration
+    ): static {
         if (!is_array($this->customsDeclaration)) {
             $this->customsDeclaration = [];
         }
@@ -4623,8 +4697,9 @@ class ConsignmentType
      * @param  null|array<Status> $status
      * @return static
      */
-    public function setStatus(?array $status = null): static
-    {
+    public function setStatus(
+        ?array $status = null
+    ): static {
         $this->status = $status;
 
         return $this;
@@ -4684,8 +4759,9 @@ class ConsignmentType
      * @param  Status $status
      * @return static
      */
-    public function addToStatus(Status $status): static
-    {
+    public function addToStatus(
+        Status $status
+    ): static {
         $this->status[] = $status;
 
         return $this;
@@ -4705,8 +4781,9 @@ class ConsignmentType
      * @param  Status $status
      * @return static
      */
-    public function addOnceToStatus(Status $status): static
-    {
+    public function addOnceToStatus(
+        Status $status
+    ): static {
         if (!is_array($this->status)) {
             $this->status = [];
         }
@@ -4744,8 +4821,9 @@ class ConsignmentType
      * @param  null|array<ChildConsignment> $childConsignment
      * @return static
      */
-    public function setChildConsignment(?array $childConsignment = null): static
-    {
+    public function setChildConsignment(
+        ?array $childConsignment = null
+    ): static {
         $this->childConsignment = $childConsignment;
 
         return $this;
@@ -4805,8 +4883,9 @@ class ConsignmentType
      * @param  ChildConsignment $childConsignment
      * @return static
      */
-    public function addToChildConsignment(ChildConsignment $childConsignment): static
-    {
+    public function addToChildConsignment(
+        ChildConsignment $childConsignment
+    ): static {
         $this->childConsignment[] = $childConsignment;
 
         return $this;
@@ -4826,8 +4905,9 @@ class ConsignmentType
      * @param  ChildConsignment $childConsignment
      * @return static
      */
-    public function addOnceToChildConsignment(ChildConsignment $childConsignment): static
-    {
+    public function addOnceToChildConsignment(
+        ChildConsignment $childConsignment
+    ): static {
         if (!is_array($this->childConsignment)) {
             $this->childConsignment = [];
         }
@@ -4875,8 +4955,9 @@ class ConsignmentType
      * @param  null|ConsigneeParty $consigneeParty
      * @return static
      */
-    public function setConsigneeParty(?ConsigneeParty $consigneeParty = null): static
-    {
+    public function setConsigneeParty(
+        ?ConsigneeParty $consigneeParty = null
+    ): static {
         $this->consigneeParty = $consigneeParty;
 
         return $this;
@@ -4914,8 +4995,9 @@ class ConsignmentType
      * @param  null|ExporterParty $exporterParty
      * @return static
      */
-    public function setExporterParty(?ExporterParty $exporterParty = null): static
-    {
+    public function setExporterParty(
+        ?ExporterParty $exporterParty = null
+    ): static {
         $this->exporterParty = $exporterParty;
 
         return $this;
@@ -4953,8 +5035,9 @@ class ConsignmentType
      * @param  null|ConsignorParty $consignorParty
      * @return static
      */
-    public function setConsignorParty(?ConsignorParty $consignorParty = null): static
-    {
+    public function setConsignorParty(
+        ?ConsignorParty $consignorParty = null
+    ): static {
         $this->consignorParty = $consignorParty;
 
         return $this;
@@ -4992,8 +5075,9 @@ class ConsignmentType
      * @param  null|ImporterParty $importerParty
      * @return static
      */
-    public function setImporterParty(?ImporterParty $importerParty = null): static
-    {
+    public function setImporterParty(
+        ?ImporterParty $importerParty = null
+    ): static {
         $this->importerParty = $importerParty;
 
         return $this;
@@ -5031,8 +5115,9 @@ class ConsignmentType
      * @param  null|CarrierParty $carrierParty
      * @return static
      */
-    public function setCarrierParty(?CarrierParty $carrierParty = null): static
-    {
+    public function setCarrierParty(
+        ?CarrierParty $carrierParty = null
+    ): static {
         $this->carrierParty = $carrierParty;
 
         return $this;
@@ -5070,8 +5155,9 @@ class ConsignmentType
      * @param  null|FreightForwarderParty $freightForwarderParty
      * @return static
      */
-    public function setFreightForwarderParty(?FreightForwarderParty $freightForwarderParty = null): static
-    {
+    public function setFreightForwarderParty(
+        ?FreightForwarderParty $freightForwarderParty = null
+    ): static {
         $this->freightForwarderParty = $freightForwarderParty;
 
         return $this;
@@ -5109,8 +5195,9 @@ class ConsignmentType
      * @param  null|NotifyParty $notifyParty
      * @return static
      */
-    public function setNotifyParty(?NotifyParty $notifyParty = null): static
-    {
+    public function setNotifyParty(
+        ?NotifyParty $notifyParty = null
+    ): static {
         $this->notifyParty = $notifyParty;
 
         return $this;
@@ -5148,8 +5235,9 @@ class ConsignmentType
      * @param  null|OriginalDespatchParty $originalDespatchParty
      * @return static
      */
-    public function setOriginalDespatchParty(?OriginalDespatchParty $originalDespatchParty = null): static
-    {
+    public function setOriginalDespatchParty(
+        ?OriginalDespatchParty $originalDespatchParty = null
+    ): static {
         $this->originalDespatchParty = $originalDespatchParty;
 
         return $this;
@@ -5187,8 +5275,9 @@ class ConsignmentType
      * @param  null|FinalDeliveryParty $finalDeliveryParty
      * @return static
      */
-    public function setFinalDeliveryParty(?FinalDeliveryParty $finalDeliveryParty = null): static
-    {
+    public function setFinalDeliveryParty(
+        ?FinalDeliveryParty $finalDeliveryParty = null
+    ): static {
         $this->finalDeliveryParty = $finalDeliveryParty;
 
         return $this;
@@ -5226,8 +5315,9 @@ class ConsignmentType
      * @param  null|PerformingCarrierParty $performingCarrierParty
      * @return static
      */
-    public function setPerformingCarrierParty(?PerformingCarrierParty $performingCarrierParty = null): static
-    {
+    public function setPerformingCarrierParty(
+        ?PerformingCarrierParty $performingCarrierParty = null
+    ): static {
         $this->performingCarrierParty = $performingCarrierParty;
 
         return $this;
@@ -5265,8 +5355,9 @@ class ConsignmentType
      * @param  null|SubstituteCarrierParty $substituteCarrierParty
      * @return static
      */
-    public function setSubstituteCarrierParty(?SubstituteCarrierParty $substituteCarrierParty = null): static
-    {
+    public function setSubstituteCarrierParty(
+        ?SubstituteCarrierParty $substituteCarrierParty = null
+    ): static {
         $this->substituteCarrierParty = $substituteCarrierParty;
 
         return $this;
@@ -5304,8 +5395,9 @@ class ConsignmentType
      * @param  null|LogisticsOperatorParty $logisticsOperatorParty
      * @return static
      */
-    public function setLogisticsOperatorParty(?LogisticsOperatorParty $logisticsOperatorParty = null): static
-    {
+    public function setLogisticsOperatorParty(
+        ?LogisticsOperatorParty $logisticsOperatorParty = null
+    ): static {
         $this->logisticsOperatorParty = $logisticsOperatorParty;
 
         return $this;
@@ -5343,8 +5435,9 @@ class ConsignmentType
      * @param  null|TransportAdvisorParty $transportAdvisorParty
      * @return static
      */
-    public function setTransportAdvisorParty(?TransportAdvisorParty $transportAdvisorParty = null): static
-    {
+    public function setTransportAdvisorParty(
+        ?TransportAdvisorParty $transportAdvisorParty = null
+    ): static {
         $this->transportAdvisorParty = $transportAdvisorParty;
 
         return $this;
@@ -5422,8 +5515,9 @@ class ConsignmentType
      * @param  null|InsuranceParty $insuranceParty
      * @return static
      */
-    public function setInsuranceParty(?InsuranceParty $insuranceParty = null): static
-    {
+    public function setInsuranceParty(
+        ?InsuranceParty $insuranceParty = null
+    ): static {
         $this->insuranceParty = $insuranceParty;
 
         return $this;
@@ -5461,8 +5555,9 @@ class ConsignmentType
      * @param  null|MortgageHolderParty $mortgageHolderParty
      * @return static
      */
-    public function setMortgageHolderParty(?MortgageHolderParty $mortgageHolderParty = null): static
-    {
+    public function setMortgageHolderParty(
+        ?MortgageHolderParty $mortgageHolderParty = null
+    ): static {
         $this->mortgageHolderParty = $mortgageHolderParty;
 
         return $this;
@@ -5500,8 +5595,9 @@ class ConsignmentType
      * @param  null|BillOfLadingHolderParty $billOfLadingHolderParty
      * @return static
      */
-    public function setBillOfLadingHolderParty(?BillOfLadingHolderParty $billOfLadingHolderParty = null): static
-    {
+    public function setBillOfLadingHolderParty(
+        ?BillOfLadingHolderParty $billOfLadingHolderParty = null
+    ): static {
         $this->billOfLadingHolderParty = $billOfLadingHolderParty;
 
         return $this;
@@ -5539,8 +5635,9 @@ class ConsignmentType
      * @param  null|OriginalDepartureCountry $originalDepartureCountry
      * @return static
      */
-    public function setOriginalDepartureCountry(?OriginalDepartureCountry $originalDepartureCountry = null): static
-    {
+    public function setOriginalDepartureCountry(
+        ?OriginalDepartureCountry $originalDepartureCountry = null
+    ): static {
         $this->originalDepartureCountry = $originalDepartureCountry;
 
         return $this;
@@ -5578,8 +5675,9 @@ class ConsignmentType
      * @param  null|FinalDestinationCountry $finalDestinationCountry
      * @return static
      */
-    public function setFinalDestinationCountry(?FinalDestinationCountry $finalDestinationCountry = null): static
-    {
+    public function setFinalDestinationCountry(
+        ?FinalDestinationCountry $finalDestinationCountry = null
+    ): static {
         $this->finalDestinationCountry = $finalDestinationCountry;
 
         return $this;
@@ -5607,8 +5705,9 @@ class ConsignmentType
      * @param  null|array<TransitCountry> $transitCountry
      * @return static
      */
-    public function setTransitCountry(?array $transitCountry = null): static
-    {
+    public function setTransitCountry(
+        ?array $transitCountry = null
+    ): static {
         $this->transitCountry = $transitCountry;
 
         return $this;
@@ -5668,8 +5767,9 @@ class ConsignmentType
      * @param  TransitCountry $transitCountry
      * @return static
      */
-    public function addToTransitCountry(TransitCountry $transitCountry): static
-    {
+    public function addToTransitCountry(
+        TransitCountry $transitCountry
+    ): static {
         $this->transitCountry[] = $transitCountry;
 
         return $this;
@@ -5689,8 +5789,9 @@ class ConsignmentType
      * @param  TransitCountry $transitCountry
      * @return static
      */
-    public function addOnceToTransitCountry(TransitCountry $transitCountry): static
-    {
+    public function addOnceToTransitCountry(
+        TransitCountry $transitCountry
+    ): static {
         if (!is_array($this->transitCountry)) {
             $this->transitCountry = [];
         }
@@ -5738,8 +5839,9 @@ class ConsignmentType
      * @param  null|TransportContract $transportContract
      * @return static
      */
-    public function setTransportContract(?TransportContract $transportContract = null): static
-    {
+    public function setTransportContract(
+        ?TransportContract $transportContract = null
+    ): static {
         $this->transportContract = $transportContract;
 
         return $this;
@@ -5767,8 +5869,9 @@ class ConsignmentType
      * @param  null|array<TransportEvent> $transportEvent
      * @return static
      */
-    public function setTransportEvent(?array $transportEvent = null): static
-    {
+    public function setTransportEvent(
+        ?array $transportEvent = null
+    ): static {
         $this->transportEvent = $transportEvent;
 
         return $this;
@@ -5828,8 +5931,9 @@ class ConsignmentType
      * @param  TransportEvent $transportEvent
      * @return static
      */
-    public function addToTransportEvent(TransportEvent $transportEvent): static
-    {
+    public function addToTransportEvent(
+        TransportEvent $transportEvent
+    ): static {
         $this->transportEvent[] = $transportEvent;
 
         return $this;
@@ -5849,8 +5953,9 @@ class ConsignmentType
      * @param  TransportEvent $transportEvent
      * @return static
      */
-    public function addOnceToTransportEvent(TransportEvent $transportEvent): static
-    {
+    public function addOnceToTransportEvent(
+        TransportEvent $transportEvent
+    ): static {
         if (!is_array($this->transportEvent)) {
             $this->transportEvent = [];
         }
@@ -5978,8 +6083,9 @@ class ConsignmentType
      * @param  null|DeliveryTerms $deliveryTerms
      * @return static
      */
-    public function setDeliveryTerms(?DeliveryTerms $deliveryTerms = null): static
-    {
+    public function setDeliveryTerms(
+        ?DeliveryTerms $deliveryTerms = null
+    ): static {
         $this->deliveryTerms = $deliveryTerms;
 
         return $this;
@@ -6017,8 +6123,9 @@ class ConsignmentType
      * @param  null|PaymentTerms $paymentTerms
      * @return static
      */
-    public function setPaymentTerms(?PaymentTerms $paymentTerms = null): static
-    {
+    public function setPaymentTerms(
+        ?PaymentTerms $paymentTerms = null
+    ): static {
         $this->paymentTerms = $paymentTerms;
 
         return $this;
@@ -6056,8 +6163,9 @@ class ConsignmentType
      * @param  null|CollectPaymentTerms $collectPaymentTerms
      * @return static
      */
-    public function setCollectPaymentTerms(?CollectPaymentTerms $collectPaymentTerms = null): static
-    {
+    public function setCollectPaymentTerms(
+        ?CollectPaymentTerms $collectPaymentTerms = null
+    ): static {
         $this->collectPaymentTerms = $collectPaymentTerms;
 
         return $this;
@@ -6095,8 +6203,9 @@ class ConsignmentType
      * @param  null|DisbursementPaymentTerms $disbursementPaymentTerms
      * @return static
      */
-    public function setDisbursementPaymentTerms(?DisbursementPaymentTerms $disbursementPaymentTerms = null): static
-    {
+    public function setDisbursementPaymentTerms(
+        ?DisbursementPaymentTerms $disbursementPaymentTerms = null
+    ): static {
         $this->disbursementPaymentTerms = $disbursementPaymentTerms;
 
         return $this;
@@ -6134,8 +6243,9 @@ class ConsignmentType
      * @param  null|PrepaidPaymentTerms $prepaidPaymentTerms
      * @return static
      */
-    public function setPrepaidPaymentTerms(?PrepaidPaymentTerms $prepaidPaymentTerms = null): static
-    {
+    public function setPrepaidPaymentTerms(
+        ?PrepaidPaymentTerms $prepaidPaymentTerms = null
+    ): static {
         $this->prepaidPaymentTerms = $prepaidPaymentTerms;
 
         return $this;
@@ -6163,8 +6273,9 @@ class ConsignmentType
      * @param  null|array<FreightAllowanceCharge> $freightAllowanceCharge
      * @return static
      */
-    public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): static
-    {
+    public function setFreightAllowanceCharge(
+        ?array $freightAllowanceCharge = null
+    ): static {
         $this->freightAllowanceCharge = $freightAllowanceCharge;
 
         return $this;
@@ -6224,8 +6335,9 @@ class ConsignmentType
      * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
-    public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
-    {
+    public function addToFreightAllowanceCharge(
+        FreightAllowanceCharge $freightAllowanceCharge
+    ): static {
         $this->freightAllowanceCharge[] = $freightAllowanceCharge;
 
         return $this;
@@ -6245,8 +6357,9 @@ class ConsignmentType
      * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
-    public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
-    {
+    public function addOnceToFreightAllowanceCharge(
+        FreightAllowanceCharge $freightAllowanceCharge
+    ): static {
         if (!is_array($this->freightAllowanceCharge)) {
             $this->freightAllowanceCharge = [];
         }
@@ -6284,8 +6397,9 @@ class ConsignmentType
      * @param  null|array<ExtraAllowanceCharge> $extraAllowanceCharge
      * @return static
      */
-    public function setExtraAllowanceCharge(?array $extraAllowanceCharge = null): static
-    {
+    public function setExtraAllowanceCharge(
+        ?array $extraAllowanceCharge = null
+    ): static {
         $this->extraAllowanceCharge = $extraAllowanceCharge;
 
         return $this;
@@ -6345,8 +6459,9 @@ class ConsignmentType
      * @param  ExtraAllowanceCharge $extraAllowanceCharge
      * @return static
      */
-    public function addToExtraAllowanceCharge(ExtraAllowanceCharge $extraAllowanceCharge): static
-    {
+    public function addToExtraAllowanceCharge(
+        ExtraAllowanceCharge $extraAllowanceCharge
+    ): static {
         $this->extraAllowanceCharge[] = $extraAllowanceCharge;
 
         return $this;
@@ -6366,8 +6481,9 @@ class ConsignmentType
      * @param  ExtraAllowanceCharge $extraAllowanceCharge
      * @return static
      */
-    public function addOnceToExtraAllowanceCharge(ExtraAllowanceCharge $extraAllowanceCharge): static
-    {
+    public function addOnceToExtraAllowanceCharge(
+        ExtraAllowanceCharge $extraAllowanceCharge
+    ): static {
         if (!is_array($this->extraAllowanceCharge)) {
             $this->extraAllowanceCharge = [];
         }
@@ -6405,8 +6521,9 @@ class ConsignmentType
      * @param  null|array<MainCarriageShipmentStage> $mainCarriageShipmentStage
      * @return static
      */
-    public function setMainCarriageShipmentStage(?array $mainCarriageShipmentStage = null): static
-    {
+    public function setMainCarriageShipmentStage(
+        ?array $mainCarriageShipmentStage = null
+    ): static {
         $this->mainCarriageShipmentStage = $mainCarriageShipmentStage;
 
         return $this;
@@ -6466,8 +6583,9 @@ class ConsignmentType
      * @param  MainCarriageShipmentStage $mainCarriageShipmentStage
      * @return static
      */
-    public function addToMainCarriageShipmentStage(MainCarriageShipmentStage $mainCarriageShipmentStage): static
-    {
+    public function addToMainCarriageShipmentStage(
+        MainCarriageShipmentStage $mainCarriageShipmentStage
+    ): static {
         $this->mainCarriageShipmentStage[] = $mainCarriageShipmentStage;
 
         return $this;
@@ -6487,8 +6605,9 @@ class ConsignmentType
      * @param  MainCarriageShipmentStage $mainCarriageShipmentStage
      * @return static
      */
-    public function addOnceToMainCarriageShipmentStage(MainCarriageShipmentStage $mainCarriageShipmentStage): static
-    {
+    public function addOnceToMainCarriageShipmentStage(
+        MainCarriageShipmentStage $mainCarriageShipmentStage
+    ): static {
         if (!is_array($this->mainCarriageShipmentStage)) {
             $this->mainCarriageShipmentStage = [];
         }
@@ -6526,8 +6645,9 @@ class ConsignmentType
      * @param  null|array<PreCarriageShipmentStage> $preCarriageShipmentStage
      * @return static
      */
-    public function setPreCarriageShipmentStage(?array $preCarriageShipmentStage = null): static
-    {
+    public function setPreCarriageShipmentStage(
+        ?array $preCarriageShipmentStage = null
+    ): static {
         $this->preCarriageShipmentStage = $preCarriageShipmentStage;
 
         return $this;
@@ -6587,8 +6707,9 @@ class ConsignmentType
      * @param  PreCarriageShipmentStage $preCarriageShipmentStage
      * @return static
      */
-    public function addToPreCarriageShipmentStage(PreCarriageShipmentStage $preCarriageShipmentStage): static
-    {
+    public function addToPreCarriageShipmentStage(
+        PreCarriageShipmentStage $preCarriageShipmentStage
+    ): static {
         $this->preCarriageShipmentStage[] = $preCarriageShipmentStage;
 
         return $this;
@@ -6608,8 +6729,9 @@ class ConsignmentType
      * @param  PreCarriageShipmentStage $preCarriageShipmentStage
      * @return static
      */
-    public function addOnceToPreCarriageShipmentStage(PreCarriageShipmentStage $preCarriageShipmentStage): static
-    {
+    public function addOnceToPreCarriageShipmentStage(
+        PreCarriageShipmentStage $preCarriageShipmentStage
+    ): static {
         if (!is_array($this->preCarriageShipmentStage)) {
             $this->preCarriageShipmentStage = [];
         }
@@ -6647,8 +6769,9 @@ class ConsignmentType
      * @param  null|array<OnCarriageShipmentStage> $onCarriageShipmentStage
      * @return static
      */
-    public function setOnCarriageShipmentStage(?array $onCarriageShipmentStage = null): static
-    {
+    public function setOnCarriageShipmentStage(
+        ?array $onCarriageShipmentStage = null
+    ): static {
         $this->onCarriageShipmentStage = $onCarriageShipmentStage;
 
         return $this;
@@ -6708,8 +6831,9 @@ class ConsignmentType
      * @param  OnCarriageShipmentStage $onCarriageShipmentStage
      * @return static
      */
-    public function addToOnCarriageShipmentStage(OnCarriageShipmentStage $onCarriageShipmentStage): static
-    {
+    public function addToOnCarriageShipmentStage(
+        OnCarriageShipmentStage $onCarriageShipmentStage
+    ): static {
         $this->onCarriageShipmentStage[] = $onCarriageShipmentStage;
 
         return $this;
@@ -6729,8 +6853,9 @@ class ConsignmentType
      * @param  OnCarriageShipmentStage $onCarriageShipmentStage
      * @return static
      */
-    public function addOnceToOnCarriageShipmentStage(OnCarriageShipmentStage $onCarriageShipmentStage): static
-    {
+    public function addOnceToOnCarriageShipmentStage(
+        OnCarriageShipmentStage $onCarriageShipmentStage
+    ): static {
         if (!is_array($this->onCarriageShipmentStage)) {
             $this->onCarriageShipmentStage = [];
         }
@@ -6768,8 +6893,9 @@ class ConsignmentType
      * @param  null|array<TransportHandlingUnit> $transportHandlingUnit
      * @return static
      */
-    public function setTransportHandlingUnit(?array $transportHandlingUnit = null): static
-    {
+    public function setTransportHandlingUnit(
+        ?array $transportHandlingUnit = null
+    ): static {
         $this->transportHandlingUnit = $transportHandlingUnit;
 
         return $this;
@@ -6829,8 +6955,9 @@ class ConsignmentType
      * @param  TransportHandlingUnit $transportHandlingUnit
      * @return static
      */
-    public function addToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): static
-    {
+    public function addToTransportHandlingUnit(
+        TransportHandlingUnit $transportHandlingUnit
+    ): static {
         $this->transportHandlingUnit[] = $transportHandlingUnit;
 
         return $this;
@@ -6850,8 +6977,9 @@ class ConsignmentType
      * @param  TransportHandlingUnit $transportHandlingUnit
      * @return static
      */
-    public function addOnceToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): static
-    {
+    public function addOnceToTransportHandlingUnit(
+        TransportHandlingUnit $transportHandlingUnit
+    ): static {
         if (!is_array($this->transportHandlingUnit)) {
             $this->transportHandlingUnit = [];
         }
@@ -6899,8 +7027,9 @@ class ConsignmentType
      * @param  null|FirstArrivalPortLocation $firstArrivalPortLocation
      * @return static
      */
-    public function setFirstArrivalPortLocation(?FirstArrivalPortLocation $firstArrivalPortLocation = null): static
-    {
+    public function setFirstArrivalPortLocation(
+        ?FirstArrivalPortLocation $firstArrivalPortLocation = null
+    ): static {
         $this->firstArrivalPortLocation = $firstArrivalPortLocation;
 
         return $this;
@@ -6938,7 +7067,8 @@ class ConsignmentType
      * @param  null|LastExitPortLocation $lastExitPortLocation
      * @return static
      */
-    public function setLastExitPortLocation(?LastExitPortLocation $lastExitPortLocation = null): static
+    public function setLastExitPortLocation(
+        ?LastExitPortLocation $lastExitPortLocation = null): static
     {
         $this->lastExitPortLocation = $lastExitPortLocation;
 

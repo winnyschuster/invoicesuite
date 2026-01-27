@@ -69,8 +69,9 @@ class BillingReferenceLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -108,8 +109,9 @@ class BillingReferenceLineType
      * @param  null|Amount $amount
      * @return static
      */
-    public function setAmount(?Amount $amount = null): static
-    {
+    public function setAmount(
+        ?Amount $amount = null
+    ): static {
         $this->amount = $amount;
 
         return $this;
@@ -137,8 +139,9 @@ class BillingReferenceLineType
      * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): static
-    {
+    public function setAllowanceCharge(
+        ?array $allowanceCharge = null
+    ): static {
         $this->allowanceCharge = $allowanceCharge;
 
         return $this;
@@ -198,8 +201,9 @@ class BillingReferenceLineType
      * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
-    {
+    public function addToAllowanceCharge(
+        AllowanceCharge $allowanceCharge
+    ): static {
         $this->allowanceCharge[] = $allowanceCharge;
 
         return $this;
@@ -219,8 +223,9 @@ class BillingReferenceLineType
      * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
-    {
+    public function addOnceToAllowanceCharge(
+        AllowanceCharge $allowanceCharge
+    ): static {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];
         }

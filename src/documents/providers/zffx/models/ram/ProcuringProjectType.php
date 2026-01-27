@@ -57,8 +57,9 @@ class ProcuringProjectType
      * @param  null|IDType $iD
      * @return static
      */
-    public function setID(?IDType $iD = null): static
-    {
+    public function setID(
+        ?IDType $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -96,8 +97,9 @@ class ProcuringProjectType
      * @param  null|TextType $name
      * @return static
      */
-    public function setName(?TextType $name = null): static
-    {
+    public function setName(
+        ?TextType $name = null
+    ): static {
         $this->name = $name;
 
         return $this;

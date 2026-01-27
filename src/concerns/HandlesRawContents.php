@@ -43,8 +43,9 @@ trait HandlesRawContents
      * @param  string $fromDocumentContent
      * @return static
      */
-    protected function setRawDocumentContent(string $fromDocumentContent): static
-    {
+    protected function setRawDocumentContent(
+        string $fromDocumentContent
+    ): static {
         $this->rawDocumentContent = $fromDocumentContent;
 
         return $this;
@@ -88,8 +89,9 @@ trait HandlesRawContents
      * @param  string $fromPdfContent
      * @return static
      */
-    protected function setRawPdfContent(string $fromPdfContent): static
-    {
+    protected function setRawPdfContent(
+        string $fromPdfContent
+    ): static {
         $this->rawPdfContent = $fromPdfContent;
 
         return $this;

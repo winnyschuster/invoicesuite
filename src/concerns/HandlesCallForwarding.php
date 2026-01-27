@@ -39,8 +39,11 @@ trait HandlesCallForwarding
      * @throws Error
      * @throws InvoiceSuiteBadMethodCallException
      */
-    protected function forwardCallTo($object, $method, $parameters)
-    {
+    protected function forwardCallTo(
+        $object,
+        $method,
+        $parameters
+    ) {
         try {
             return $object->{$method}(...$parameters);
         } catch (BadMethodCallException|Error $e) {
@@ -73,8 +76,11 @@ trait HandlesCallForwarding
      * @throws Error
      * @throws InvoiceSuiteBadMethodCallException
      */
-    protected function forwardCallWithCheckTo($object, $method, $parameters)
-    {
+    protected function forwardCallWithCheckTo(
+        $object,
+        $method,
+        $parameters
+    ) {
         if (!method_exists($object, $method)) {
             return $this;
         }

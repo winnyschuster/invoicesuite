@@ -73,8 +73,10 @@ class ZugferdDocumentReader extends ZugferdDocument
      * @throws Error
      * @throws InvoiceSuiteBadMethodCallException
      */
-    public function __call($method, $parameters)
-    {
+    public function __call(
+        $method,
+        $parameters
+    ) {
         return $this->forwardCallWithCheckTo($this->documentReader, $method, $parameters);
     }
 
@@ -90,8 +92,9 @@ class ZugferdDocumentReader extends ZugferdDocument
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    public static function readAndGuessFromFile(string $xmlFilename): static
-    {
+    public static function readAndGuessFromFile(
+        string $xmlFilename
+    ): static {
         return new static(InvoiceSuiteDocumentReader::createFromFile($xmlFilename));
     }
 
@@ -105,8 +108,9 @@ class ZugferdDocumentReader extends ZugferdDocument
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    public static function readAndGuessFromContent(string $xmlContent): static
-    {
+    public static function readAndGuessFromContent(
+        string $xmlContent
+    ): static {
         return new static(InvoiceSuiteDocumentReader::createFromContent($xmlContent));
     }
 
@@ -154,8 +158,9 @@ class ZugferdDocumentReader extends ZugferdDocument
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function getProfileDefinitionParameter(string $parameterName)
-    {
+    public function getProfileDefinitionParameter(
+        string $parameterName
+    ) {
         $profileDefinition = $this->getProfileDefinition();
 
         if (isset($profileDefinition[$parameterName])) {
@@ -195,8 +200,9 @@ class ZugferdDocumentReader extends ZugferdDocument
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function hasMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): bool
-    {
+    public function hasMessagesInMessageBagBySeverity(
+        InvoiceSuiteMessageSeverity $filterSeverity
+    ): bool {
         return $this->documentReader->hasMessagesInMessageBagBySeverity($filterSeverity);
     }
 
@@ -244,8 +250,9 @@ class ZugferdDocumentReader extends ZugferdDocument
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function countMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): int
-    {
+    public function countMessagesInMessageBagBySeverity(
+        InvoiceSuiteMessageSeverity $filterSeverity
+    ): int {
         return $this->documentReader->countMessagesInMessageBagBySeverity($filterSeverity);
     }
 
@@ -293,8 +300,9 @@ class ZugferdDocumentReader extends ZugferdDocument
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function getMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): array
-    {
+    public function getMessagesInMessageBagBySeverity(
+        InvoiceSuiteMessageSeverity $filterSeverity
+    ): array {
         return $this->documentReader->getMessagesInMessageBagBySeverity($filterSeverity);
     }
 
@@ -340,8 +348,9 @@ class ZugferdDocumentReader extends ZugferdDocument
      * @param  string $binaryDataDirectory
      * @return static
      */
-    public function setBinaryDataDirectory(string $binaryDataDirectory): static
-    {
+    public function setBinaryDataDirectory(
+        string $binaryDataDirectory
+    ): static {
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($binaryDataDirectory) && is_dir($binaryDataDirectory)) {
             $this->binarydatadirectory = $binaryDataDirectory;
         }

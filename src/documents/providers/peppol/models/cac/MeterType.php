@@ -117,8 +117,9 @@ class MeterType
      * @param  null|MeterNumber $meterNumber
      * @return static
      */
-    public function setMeterNumber(?MeterNumber $meterNumber = null): static
-    {
+    public function setMeterNumber(
+        ?MeterNumber $meterNumber = null
+    ): static {
         $this->meterNumber = $meterNumber;
 
         return $this;
@@ -156,8 +157,9 @@ class MeterType
      * @param  null|MeterName $meterName
      * @return static
      */
-    public function setMeterName(?MeterName $meterName = null): static
-    {
+    public function setMeterName(
+        ?MeterName $meterName = null
+    ): static {
         $this->meterName = $meterName;
 
         return $this;
@@ -195,8 +197,9 @@ class MeterType
      * @param  null|MeterConstant $meterConstant
      * @return static
      */
-    public function setMeterConstant(?MeterConstant $meterConstant = null): static
-    {
+    public function setMeterConstant(
+        ?MeterConstant $meterConstant = null
+    ): static {
         $this->meterConstant = $meterConstant;
 
         return $this;
@@ -234,8 +237,9 @@ class MeterType
      * @param  null|MeterConstantCode $meterConstantCode
      * @return static
      */
-    public function setMeterConstantCode(?MeterConstantCode $meterConstantCode = null): static
-    {
+    public function setMeterConstantCode(
+        ?MeterConstantCode $meterConstantCode = null
+    ): static {
         $this->meterConstantCode = $meterConstantCode;
 
         return $this;
@@ -273,8 +277,9 @@ class MeterType
      * @param  null|TotalDeliveredQuantity $totalDeliveredQuantity
      * @return static
      */
-    public function setTotalDeliveredQuantity(?TotalDeliveredQuantity $totalDeliveredQuantity = null): static
-    {
+    public function setTotalDeliveredQuantity(
+        ?TotalDeliveredQuantity $totalDeliveredQuantity = null
+    ): static {
         $this->totalDeliveredQuantity = $totalDeliveredQuantity;
 
         return $this;
@@ -302,8 +307,9 @@ class MeterType
      * @param  null|array<MeterReading> $meterReading
      * @return static
      */
-    public function setMeterReading(?array $meterReading = null): static
-    {
+    public function setMeterReading(
+        ?array $meterReading = null
+    ): static {
         $this->meterReading = $meterReading;
 
         return $this;
@@ -363,8 +369,9 @@ class MeterType
      * @param  MeterReading $meterReading
      * @return static
      */
-    public function addToMeterReading(MeterReading $meterReading): static
-    {
+    public function addToMeterReading(
+        MeterReading $meterReading
+    ): static {
         $this->meterReading[] = $meterReading;
 
         return $this;
@@ -384,8 +391,9 @@ class MeterType
      * @param  MeterReading $meterReading
      * @return static
      */
-    public function addOnceToMeterReading(MeterReading $meterReading): static
-    {
+    public function addOnceToMeterReading(
+        MeterReading $meterReading
+    ): static {
         if (!is_array($this->meterReading)) {
             $this->meterReading = [];
         }
@@ -423,8 +431,9 @@ class MeterType
      * @param  null|array<MeterProperty> $meterProperty
      * @return static
      */
-    public function setMeterProperty(?array $meterProperty = null): static
-    {
+    public function setMeterProperty(
+        ?array $meterProperty = null
+    ): static {
         $this->meterProperty = $meterProperty;
 
         return $this;
@@ -484,8 +493,9 @@ class MeterType
      * @param  MeterProperty $meterProperty
      * @return static
      */
-    public function addToMeterProperty(MeterProperty $meterProperty): static
-    {
+    public function addToMeterProperty(
+        MeterProperty $meterProperty
+    ): static {
         $this->meterProperty[] = $meterProperty;
 
         return $this;
@@ -505,8 +515,9 @@ class MeterType
      * @param  MeterProperty $meterProperty
      * @return static
      */
-    public function addOnceToMeterProperty(MeterProperty $meterProperty): static
-    {
+    public function addOnceToMeterProperty(
+        MeterProperty $meterProperty
+    ): static {
         if (!is_array($this->meterProperty)) {
             $this->meterProperty = [];
         }

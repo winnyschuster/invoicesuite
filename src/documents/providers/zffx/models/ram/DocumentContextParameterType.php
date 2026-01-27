@@ -45,8 +45,9 @@ class DocumentContextParameterType
      * @param  null|IDType $iD
      * @return static
      */
-    public function setID(?IDType $iD = null): static
-    {
+    public function setID(
+        ?IDType $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;

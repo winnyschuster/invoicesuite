@@ -80,8 +80,9 @@ class RetailPlannedImpactType
      * @param  null|Amount $amount
      * @return static
      */
-    public function setAmount(?Amount $amount = null): static
-    {
+    public function setAmount(
+        ?Amount $amount = null
+    ): static {
         $this->amount = $amount;
 
         return $this;
@@ -119,8 +120,9 @@ class RetailPlannedImpactType
      * @param  null|ForecastPurposeCode $forecastPurposeCode
      * @return static
      */
-    public function setForecastPurposeCode(?ForecastPurposeCode $forecastPurposeCode = null): static
-    {
+    public function setForecastPurposeCode(
+        ?ForecastPurposeCode $forecastPurposeCode = null
+    ): static {
         $this->forecastPurposeCode = $forecastPurposeCode;
 
         return $this;
@@ -158,8 +160,9 @@ class RetailPlannedImpactType
      * @param  null|ForecastTypeCode $forecastTypeCode
      * @return static
      */
-    public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): static
-    {
+    public function setForecastTypeCode(
+        ?ForecastTypeCode $forecastTypeCode = null
+    ): static {
         $this->forecastTypeCode = $forecastTypeCode;
 
         return $this;
@@ -197,8 +200,9 @@ class RetailPlannedImpactType
      * @param  null|Period $period
      * @return static
      */
-    public function setPeriod(?Period $period = null): static
-    {
+    public function setPeriod(
+        ?Period $period = null
+    ): static {
         $this->period = $period;
 
         return $this;

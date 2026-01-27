@@ -114,8 +114,9 @@ class SupplierPartyType
      * @param  null|CustomerAssignedAccountID $customerAssignedAccountID
      * @return static
      */
-    public function setCustomerAssignedAccountID(?CustomerAssignedAccountID $customerAssignedAccountID = null): static
-    {
+    public function setCustomerAssignedAccountID(
+        ?CustomerAssignedAccountID $customerAssignedAccountID = null
+    ): static {
         $this->customerAssignedAccountID = $customerAssignedAccountID;
 
         return $this;
@@ -143,8 +144,9 @@ class SupplierPartyType
      * @param  null|array<AdditionalAccountID> $additionalAccountID
      * @return static
      */
-    public function setAdditionalAccountID(?array $additionalAccountID = null): static
-    {
+    public function setAdditionalAccountID(
+        ?array $additionalAccountID = null
+    ): static {
         $this->additionalAccountID = $additionalAccountID;
 
         return $this;
@@ -204,8 +206,9 @@ class SupplierPartyType
      * @param  AdditionalAccountID $additionalAccountID
      * @return static
      */
-    public function addToAdditionalAccountID(AdditionalAccountID $additionalAccountID): static
-    {
+    public function addToAdditionalAccountID(
+        AdditionalAccountID $additionalAccountID
+    ): static {
         $this->additionalAccountID[] = $additionalAccountID;
 
         return $this;
@@ -225,8 +228,9 @@ class SupplierPartyType
      * @param  AdditionalAccountID $additionalAccountID
      * @return static
      */
-    public function addOnceToAdditionalAccountID(AdditionalAccountID $additionalAccountID): static
-    {
+    public function addOnceToAdditionalAccountID(
+        AdditionalAccountID $additionalAccountID
+    ): static {
         if (!is_array($this->additionalAccountID)) {
             $this->additionalAccountID = [];
         }
@@ -274,8 +278,9 @@ class SupplierPartyType
      * @param  null|DataSendingCapability $dataSendingCapability
      * @return static
      */
-    public function setDataSendingCapability(?DataSendingCapability $dataSendingCapability = null): static
-    {
+    public function setDataSendingCapability(
+        ?DataSendingCapability $dataSendingCapability = null
+    ): static {
         $this->dataSendingCapability = $dataSendingCapability;
 
         return $this;
@@ -313,8 +318,9 @@ class SupplierPartyType
      * @param  null|Party $party
      * @return static
      */
-    public function setParty(?Party $party = null): static
-    {
+    public function setParty(
+        ?Party $party = null
+    ): static {
         $this->party = $party;
 
         return $this;
@@ -352,8 +358,9 @@ class SupplierPartyType
      * @param  null|DespatchContact $despatchContact
      * @return static
      */
-    public function setDespatchContact(?DespatchContact $despatchContact = null): static
-    {
+    public function setDespatchContact(
+        ?DespatchContact $despatchContact = null
+    ): static {
         $this->despatchContact = $despatchContact;
 
         return $this;
@@ -391,8 +398,9 @@ class SupplierPartyType
      * @param  null|AccountingContact $accountingContact
      * @return static
      */
-    public function setAccountingContact(?AccountingContact $accountingContact = null): static
-    {
+    public function setAccountingContact(
+        ?AccountingContact $accountingContact = null
+    ): static {
         $this->accountingContact = $accountingContact;
 
         return $this;
@@ -430,8 +438,9 @@ class SupplierPartyType
      * @param  null|SellerContact $sellerContact
      * @return static
      */
-    public function setSellerContact(?SellerContact $sellerContact = null): static
-    {
+    public function setSellerContact(
+        ?SellerContact $sellerContact = null
+    ): static {
         $this->sellerContact = $sellerContact;
 
         return $this;

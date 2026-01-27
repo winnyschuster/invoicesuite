@@ -87,8 +87,9 @@ class InvoiceSuiteProductClassificationDTO
      * @param  null|string $code The classification identifier
      * @return static
      */
-    public function setCode(?string $code): static
-    {
+    public function setCode(
+        ?string $code
+    ): static {
         $this->code = InvoiceSuiteStringUtils::asNullWhenEmpty($code);
 
         return $this;
@@ -110,8 +111,9 @@ class InvoiceSuiteProductClassificationDTO
      * @param  null|string $name The name with which an article can be classified according to type or quality
      * @return static
      */
-    public function setName(?string $name): static
-    {
+    public function setName(
+        ?string $name
+    ): static {
         $this->name = InvoiceSuiteStringUtils::asNullWhenEmpty($name);
 
         return $this;
@@ -133,8 +135,9 @@ class InvoiceSuiteProductClassificationDTO
      * @param  null|string $listId The identifier for the identification scheme of the item classification
      * @return static
      */
-    public function setListId(?string $listId): static
-    {
+    public function setListId(
+        ?string $listId
+    ): static {
         $this->listId = InvoiceSuiteStringUtils::asNullWhenEmpty($listId);
 
         return $this;
@@ -156,8 +159,9 @@ class InvoiceSuiteProductClassificationDTO
      * @param  null|string $listVersionId The version of the identification scheme
      * @return static
      */
-    public function setListVersionId(?string $listVersionId): static
-    {
+    public function setListVersionId(
+        ?string $listVersionId
+    ): static {
         $this->listVersionId = InvoiceSuiteStringUtils::asNullWhenEmpty($listVersionId);
 
         return $this;

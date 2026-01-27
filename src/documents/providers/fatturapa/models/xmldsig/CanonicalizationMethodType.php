@@ -43,8 +43,9 @@ class CanonicalizationMethodType
      * @param  string $algorithm
      * @return static
      */
-    public function setAlgorithm(?string $algorithm = null): static
-    {
+    public function setAlgorithm(
+        ?string $algorithm = null
+    ): static {
         $this->algorithm = $algorithm;
 
         return $this;

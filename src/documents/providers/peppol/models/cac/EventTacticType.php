@@ -79,8 +79,9 @@ class EventTacticType
      * @param  null|Comment $comment
      * @return static
      */
-    public function setComment(?Comment $comment = null): static
-    {
+    public function setComment(
+        ?Comment $comment = null
+    ): static {
         $this->comment = $comment;
 
         return $this;
@@ -118,8 +119,9 @@ class EventTacticType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -157,8 +159,9 @@ class EventTacticType
      * @param  null|EventTacticEnumeration $eventTacticEnumeration
      * @return static
      */
-    public function setEventTacticEnumeration(?EventTacticEnumeration $eventTacticEnumeration = null): static
-    {
+    public function setEventTacticEnumeration(
+        ?EventTacticEnumeration $eventTacticEnumeration = null
+    ): static {
         $this->eventTacticEnumeration = $eventTacticEnumeration;
 
         return $this;
@@ -196,8 +199,9 @@ class EventTacticType
      * @param  null|Period $period
      * @return static
      */
-    public function setPeriod(?Period $period = null): static
-    {
+    public function setPeriod(
+        ?Period $period = null
+    ): static {
         $this->period = $period;
 
         return $this;

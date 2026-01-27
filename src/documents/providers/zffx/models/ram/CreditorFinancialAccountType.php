@@ -68,8 +68,9 @@ class CreditorFinancialAccountType
      * @param  null|IDType $iBANID
      * @return static
      */
-    public function setIBANID(?IDType $iBANID = null): static
-    {
+    public function setIBANID(
+        ?IDType $iBANID = null
+    ): static {
         $this->iBANID = $iBANID;
 
         return $this;
@@ -107,8 +108,9 @@ class CreditorFinancialAccountType
      * @param  null|TextType $accountName
      * @return static
      */
-    public function setAccountName(?TextType $accountName = null): static
-    {
+    public function setAccountName(
+        ?TextType $accountName = null
+    ): static {
         $this->accountName = $accountName;
 
         return $this;
@@ -146,8 +148,9 @@ class CreditorFinancialAccountType
      * @param  null|IDType $proprietaryID
      * @return static
      */
-    public function setProprietaryID(?IDType $proprietaryID = null): static
-    {
+    public function setProprietaryID(
+        ?IDType $proprietaryID = null
+    ): static {
         $this->proprietaryID = $proprietaryID;
 
         return $this;

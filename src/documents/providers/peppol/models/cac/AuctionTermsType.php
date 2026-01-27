@@ -111,8 +111,9 @@ class AuctionTermsType
      * @param  null|bool $auctionConstraintIndicator
      * @return static
      */
-    public function setAuctionConstraintIndicator(?bool $auctionConstraintIndicator = null): static
-    {
+    public function setAuctionConstraintIndicator(
+        ?bool $auctionConstraintIndicator = null
+    ): static {
         $this->auctionConstraintIndicator = $auctionConstraintIndicator;
 
         return $this;
@@ -140,8 +141,9 @@ class AuctionTermsType
      * @param  null|array<JustificationDescription> $justificationDescription
      * @return static
      */
-    public function setJustificationDescription(?array $justificationDescription = null): static
-    {
+    public function setJustificationDescription(
+        ?array $justificationDescription = null
+    ): static {
         $this->justificationDescription = $justificationDescription;
 
         return $this;
@@ -201,8 +203,9 @@ class AuctionTermsType
      * @param  JustificationDescription $justificationDescription
      * @return static
      */
-    public function addToJustificationDescription(JustificationDescription $justificationDescription): static
-    {
+    public function addToJustificationDescription(
+        JustificationDescription $justificationDescription
+    ): static {
         $this->justificationDescription[] = $justificationDescription;
 
         return $this;
@@ -222,8 +225,9 @@ class AuctionTermsType
      * @param  JustificationDescription $justificationDescription
      * @return static
      */
-    public function addOnceToJustificationDescription(JustificationDescription $justificationDescription): static
-    {
+    public function addOnceToJustificationDescription(
+        JustificationDescription $justificationDescription
+    ): static {
         if (!is_array($this->justificationDescription)) {
             $this->justificationDescription = [];
         }
@@ -261,8 +265,9 @@ class AuctionTermsType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -322,8 +327,9 @@ class AuctionTermsType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -343,8 +349,9 @@ class AuctionTermsType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -382,8 +389,9 @@ class AuctionTermsType
      * @param  null|array<ProcessDescription> $processDescription
      * @return static
      */
-    public function setProcessDescription(?array $processDescription = null): static
-    {
+    public function setProcessDescription(
+        ?array $processDescription = null
+    ): static {
         $this->processDescription = $processDescription;
 
         return $this;
@@ -443,8 +451,9 @@ class AuctionTermsType
      * @param  ProcessDescription $processDescription
      * @return static
      */
-    public function addToProcessDescription(ProcessDescription $processDescription): static
-    {
+    public function addToProcessDescription(
+        ProcessDescription $processDescription
+    ): static {
         $this->processDescription[] = $processDescription;
 
         return $this;
@@ -464,8 +473,9 @@ class AuctionTermsType
      * @param  ProcessDescription $processDescription
      * @return static
      */
-    public function addOnceToProcessDescription(ProcessDescription $processDescription): static
-    {
+    public function addOnceToProcessDescription(
+        ProcessDescription $processDescription
+    ): static {
         if (!is_array($this->processDescription)) {
             $this->processDescription = [];
         }
@@ -503,8 +513,9 @@ class AuctionTermsType
      * @param  null|array<ConditionsDescription> $conditionsDescription
      * @return static
      */
-    public function setConditionsDescription(?array $conditionsDescription = null): static
-    {
+    public function setConditionsDescription(
+        ?array $conditionsDescription = null
+    ): static {
         $this->conditionsDescription = $conditionsDescription;
 
         return $this;
@@ -564,8 +575,9 @@ class AuctionTermsType
      * @param  ConditionsDescription $conditionsDescription
      * @return static
      */
-    public function addToConditionsDescription(ConditionsDescription $conditionsDescription): static
-    {
+    public function addToConditionsDescription(
+        ConditionsDescription $conditionsDescription
+    ): static {
         $this->conditionsDescription[] = $conditionsDescription;
 
         return $this;
@@ -585,8 +597,9 @@ class AuctionTermsType
      * @param  ConditionsDescription $conditionsDescription
      * @return static
      */
-    public function addOnceToConditionsDescription(ConditionsDescription $conditionsDescription): static
-    {
+    public function addOnceToConditionsDescription(
+        ConditionsDescription $conditionsDescription
+    ): static {
         if (!is_array($this->conditionsDescription)) {
             $this->conditionsDescription = [];
         }
@@ -624,8 +637,9 @@ class AuctionTermsType
      * @param  null|array<ElectronicDeviceDescription> $electronicDeviceDescription
      * @return static
      */
-    public function setElectronicDeviceDescription(?array $electronicDeviceDescription = null): static
-    {
+    public function setElectronicDeviceDescription(
+        ?array $electronicDeviceDescription = null
+    ): static {
         $this->electronicDeviceDescription = $electronicDeviceDescription;
 
         return $this;
@@ -685,8 +699,9 @@ class AuctionTermsType
      * @param  ElectronicDeviceDescription $electronicDeviceDescription
      * @return static
      */
-    public function addToElectronicDeviceDescription(ElectronicDeviceDescription $electronicDeviceDescription): static
-    {
+    public function addToElectronicDeviceDescription(
+        ElectronicDeviceDescription $electronicDeviceDescription
+    ): static {
         $this->electronicDeviceDescription[] = $electronicDeviceDescription;
 
         return $this;
@@ -756,8 +771,9 @@ class AuctionTermsType
      * @param  null|AuctionURI $auctionURI
      * @return static
      */
-    public function setAuctionURI(?AuctionURI $auctionURI = null): static
-    {
+    public function setAuctionURI(
+        ?AuctionURI $auctionURI = null
+    ): static {
         $this->auctionURI = $auctionURI;
 
         return $this;

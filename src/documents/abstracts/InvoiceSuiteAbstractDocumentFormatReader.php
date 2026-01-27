@@ -44,8 +44,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      *
      * @param InvoiceSuiteAbstractDocumentFormatProvider $newProvider
      */
-    public function __construct(InvoiceSuiteAbstractDocumentFormatProvider $newProvider)
-    {
+    public function __construct(
+        InvoiceSuiteAbstractDocumentFormatProvider $newProvider
+    ) {
         $this->setCurrentDocumentFormatProvider($newProvider);
         $this->createAndInitDocumentSerializerByFormatProvider();
     }
@@ -59,8 +60,9 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    public function deserializeFromContent(string $fromContent): static
-    {
+    public function deserializeFromContent(
+        string $fromContent
+    ): static {
         $this->setDocumentRootObject(
             $this->documentSerializer->deserialize(
                 $fromContent,

@@ -61,8 +61,9 @@ class ContractExecutionRequirementType
      * @param  null|array<Name> $name
      * @return static
      */
-    public function setName(?array $name = null): static
-    {
+    public function setName(
+        ?array $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -122,8 +123,9 @@ class ContractExecutionRequirementType
      * @param  Name   $name
      * @return static
      */
-    public function addToName(Name $name): static
-    {
+    public function addToName(
+        Name $name
+    ): static {
         $this->name[] = $name;
 
         return $this;
@@ -143,8 +145,9 @@ class ContractExecutionRequirementType
      * @param  Name   $name
      * @return static
      */
-    public function addOnceToName(Name $name): static
-    {
+    public function addOnceToName(
+        Name $name
+    ): static {
         if (!is_array($this->name)) {
             $this->name = [];
         }
@@ -192,8 +195,9 @@ class ContractExecutionRequirementType
      * @param  null|ExecutionRequirementCode $executionRequirementCode
      * @return static
      */
-    public function setExecutionRequirementCode(?ExecutionRequirementCode $executionRequirementCode = null): static
-    {
+    public function setExecutionRequirementCode(
+        ?ExecutionRequirementCode $executionRequirementCode = null
+    ): static {
         $this->executionRequirementCode = $executionRequirementCode;
 
         return $this;
@@ -221,8 +225,9 @@ class ContractExecutionRequirementType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -282,8 +287,9 @@ class ContractExecutionRequirementType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -303,8 +309,9 @@ class ContractExecutionRequirementType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }

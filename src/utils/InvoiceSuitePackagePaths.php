@@ -60,8 +60,9 @@ final class InvoiceSuitePackagePaths
      * @param  string $packageName
      * @return string
      */
-    public static function getInstallationPathByName(string $packageName): string
-    {
+    public static function getInstallationPathByName(
+        string $packageName
+    ): string {
         try {
             return ComposerInstalledVersions::getInstallPath($packageName) ?? '';
             // @phpstan-ignore catch.neverThrown

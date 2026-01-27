@@ -64,8 +64,9 @@ final class Contatti
      * @param  null|string $telefono
      * @return static
      */
-    public function setTelefono(?string $telefono = null): static
-    {
+    public function setTelefono(
+        ?string $telefono = null
+    ): static {
         $this->telefono = InvoiceSuiteStringUtils::asNullWhenEmpty($telefono);
 
         return $this;
@@ -99,8 +100,9 @@ final class Contatti
      * @param  null|string $fax
      * @return static
      */
-    public function setFax(?string $fax = null): static
-    {
+    public function setFax(
+        ?string $fax = null
+    ): static {
         $this->fax = InvoiceSuiteStringUtils::asNullWhenEmpty($fax);
 
         return $this;
@@ -134,8 +136,9 @@ final class Contatti
      * @param  null|string $email
      * @return static
      */
-    public function setEmail(?string $email = null): static
-    {
+    public function setEmail(
+        ?string $email = null
+    ): static {
         $this->email = InvoiceSuiteStringUtils::asNullWhenEmpty($email);
 
         return $this;

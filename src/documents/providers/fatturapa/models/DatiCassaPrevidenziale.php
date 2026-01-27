@@ -127,8 +127,9 @@ final class DatiCassaPrevidenziale
      * @param  null|TipoCassa $tipoCassa
      * @return static
      */
-    public function setTipoCassa(?TipoCassa $tipoCassa = null): static
-    {
+    public function setTipoCassa(
+        ?TipoCassa $tipoCassa = null
+    ): static {
         $this->tipoCassa = $tipoCassa;
 
         return $this;
@@ -162,8 +163,9 @@ final class DatiCassaPrevidenziale
      * @param  null|float $alCassa
      * @return static
      */
-    public function setAlCassa(?float $alCassa = null): static
-    {
+    public function setAlCassa(
+        ?float $alCassa = null
+    ): static {
         $this->alCassa = $alCassa;
 
         return $this;
@@ -197,8 +199,9 @@ final class DatiCassaPrevidenziale
      * @param  null|float $importoContributoCassa
      * @return static
      */
-    public function setImportoContributoCassa(?float $importoContributoCassa = null): static
-    {
+    public function setImportoContributoCassa(
+        ?float $importoContributoCassa = null
+    ): static {
         $this->importoContributoCassa = $importoContributoCassa;
 
         return $this;
@@ -232,8 +235,9 @@ final class DatiCassaPrevidenziale
      * @param  null|float $imponibileCassa
      * @return static
      */
-    public function setImponibileCassa(?float $imponibileCassa = null): static
-    {
+    public function setImponibileCassa(
+        ?float $imponibileCassa = null
+    ): static {
         $this->imponibileCassa = $imponibileCassa;
 
         return $this;
@@ -267,8 +271,9 @@ final class DatiCassaPrevidenziale
      * @param  null|float $aliquotaIVA
      * @return static
      */
-    public function setAliquotaIVA(?float $aliquotaIVA = null): static
-    {
+    public function setAliquotaIVA(
+        ?float $aliquotaIVA = null
+    ): static {
         $this->aliquotaIVA = $aliquotaIVA;
 
         return $this;
@@ -302,8 +307,9 @@ final class DatiCassaPrevidenziale
      * @param  null|Ritenuta $ritenuta
      * @return static
      */
-    public function setRitenuta(?Ritenuta $ritenuta = null): static
-    {
+    public function setRitenuta(
+        ?Ritenuta $ritenuta = null
+    ): static {
         $this->ritenuta = $ritenuta;
 
         return $this;
@@ -337,8 +343,9 @@ final class DatiCassaPrevidenziale
      * @param  null|Natura $natura
      * @return static
      */
-    public function setNatura(?Natura $natura = null): static
-    {
+    public function setNatura(
+        ?Natura $natura = null
+    ): static {
         $this->natura = $natura;
 
         return $this;
@@ -372,8 +379,9 @@ final class DatiCassaPrevidenziale
      * @param  null|string $riferimentoAmministrazione
      * @return static
      */
-    public function setRiferimentoAmministrazione(?string $riferimentoAmministrazione = null): static
-    {
+    public function setRiferimentoAmministrazione(
+        ?string $riferimentoAmministrazione = null
+    ): static {
         $this->riferimentoAmministrazione = InvoiceSuiteStringUtils::asNullWhenEmpty($riferimentoAmministrazione);
 
         return $this;

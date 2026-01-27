@@ -81,8 +81,9 @@ class ContractingPartyType extends ContractingPartyTypeType
      * @param  null|BuyerProfileURI $buyerProfileURI
      * @return static
      */
-    public function setBuyerProfileURI(?BuyerProfileURI $buyerProfileURI = null): static
-    {
+    public function setBuyerProfileURI(
+        ?BuyerProfileURI $buyerProfileURI = null
+    ): static {
         $this->buyerProfileURI = $buyerProfileURI;
 
         return $this;
@@ -110,8 +111,9 @@ class ContractingPartyType extends ContractingPartyTypeType
      * @param  null|array<ContractingPartyType1> $contractingPartyType
      * @return static
      */
-    public function setContractingPartyType(?array $contractingPartyType = null): static
-    {
+    public function setContractingPartyType(
+        ?array $contractingPartyType = null
+    ): static {
         $this->contractingPartyType = $contractingPartyType;
 
         return $this;
@@ -171,8 +173,9 @@ class ContractingPartyType extends ContractingPartyTypeType
      * @param  ContractingPartyType1 $contractingPartyType
      * @return static
      */
-    public function addToContractingPartyType(ContractingPartyType1 $contractingPartyType): static
-    {
+    public function addToContractingPartyType(
+        ContractingPartyType1 $contractingPartyType
+    ): static {
         $this->contractingPartyType[] = $contractingPartyType;
 
         return $this;
@@ -192,8 +195,9 @@ class ContractingPartyType extends ContractingPartyTypeType
      * @param  ContractingPartyType1 $contractingPartyType
      * @return static
      */
-    public function addOnceToContractingPartyType(ContractingPartyType1 $contractingPartyType): static
-    {
+    public function addOnceToContractingPartyType(
+        ContractingPartyType1 $contractingPartyType
+    ): static {
         if (!is_array($this->contractingPartyType)) {
             $this->contractingPartyType = [];
         }
@@ -231,8 +235,9 @@ class ContractingPartyType extends ContractingPartyTypeType
      * @param  null|array<ContractingActivity> $contractingActivity
      * @return static
      */
-    public function setContractingActivity(?array $contractingActivity = null): static
-    {
+    public function setContractingActivity(
+        ?array $contractingActivity = null
+    ): static {
         $this->contractingActivity = $contractingActivity;
 
         return $this;
@@ -292,8 +297,9 @@ class ContractingPartyType extends ContractingPartyTypeType
      * @param  ContractingActivity $contractingActivity
      * @return static
      */
-    public function addToContractingActivity(ContractingActivity $contractingActivity): static
-    {
+    public function addToContractingActivity(
+        ContractingActivity $contractingActivity
+    ): static {
         $this->contractingActivity[] = $contractingActivity;
 
         return $this;
@@ -313,8 +319,9 @@ class ContractingPartyType extends ContractingPartyTypeType
      * @param  ContractingActivity $contractingActivity
      * @return static
      */
-    public function addOnceToContractingActivity(ContractingActivity $contractingActivity): static
-    {
+    public function addOnceToContractingActivity(
+        ContractingActivity $contractingActivity
+    ): static {
         if (!is_array($this->contractingActivity)) {
             $this->contractingActivity = [];
         }
@@ -362,8 +369,9 @@ class ContractingPartyType extends ContractingPartyTypeType
      * @param  null|Party $party
      * @return static
      */
-    public function setParty(?Party $party = null): static
-    {
+    public function setParty(
+        ?Party $party = null
+    ): static {
         $this->party = $party;
 
         return $this;

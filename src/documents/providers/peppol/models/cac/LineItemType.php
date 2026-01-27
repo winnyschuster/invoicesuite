@@ -409,8 +409,9 @@ class LineItemType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -448,8 +449,9 @@ class LineItemType
      * @param  null|SalesOrderID $salesOrderID
      * @return static
      */
-    public function setSalesOrderID(?SalesOrderID $salesOrderID = null): static
-    {
+    public function setSalesOrderID(
+        ?SalesOrderID $salesOrderID = null
+    ): static {
         $this->salesOrderID = $salesOrderID;
 
         return $this;
@@ -487,8 +489,9 @@ class LineItemType
      * @param  null|UUID $uUID
      * @return static
      */
-    public function setUUID(?UUID $uUID = null): static
-    {
+    public function setUUID(
+        ?UUID $uUID = null
+    ): static {
         $this->uUID = $uUID;
 
         return $this;
@@ -516,8 +519,9 @@ class LineItemType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -577,8 +581,9 @@ class LineItemType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -598,8 +603,9 @@ class LineItemType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -647,8 +653,9 @@ class LineItemType
      * @param  null|LineStatusCode $lineStatusCode
      * @return static
      */
-    public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): static
-    {
+    public function setLineStatusCode(
+        ?LineStatusCode $lineStatusCode = null
+    ): static {
         $this->lineStatusCode = $lineStatusCode;
 
         return $this;
@@ -686,8 +693,9 @@ class LineItemType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -725,8 +733,9 @@ class LineItemType
      * @param  null|LineExtensionAmount $lineExtensionAmount
      * @return static
      */
-    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
-    {
+    public function setLineExtensionAmount(
+        ?LineExtensionAmount $lineExtensionAmount = null
+    ): static {
         $this->lineExtensionAmount = $lineExtensionAmount;
 
         return $this;
@@ -764,8 +773,9 @@ class LineItemType
      * @param  null|TotalTaxAmount $totalTaxAmount
      * @return static
      */
-    public function setTotalTaxAmount(?TotalTaxAmount $totalTaxAmount = null): static
-    {
+    public function setTotalTaxAmount(
+        ?TotalTaxAmount $totalTaxAmount = null
+    ): static {
         $this->totalTaxAmount = $totalTaxAmount;
 
         return $this;
@@ -803,8 +813,9 @@ class LineItemType
      * @param  null|MinimumQuantity $minimumQuantity
      * @return static
      */
-    public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): static
-    {
+    public function setMinimumQuantity(
+        ?MinimumQuantity $minimumQuantity = null
+    ): static {
         $this->minimumQuantity = $minimumQuantity;
 
         return $this;
@@ -842,8 +853,9 @@ class LineItemType
      * @param  null|MaximumQuantity $maximumQuantity
      * @return static
      */
-    public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): static
-    {
+    public function setMaximumQuantity(
+        ?MaximumQuantity $maximumQuantity = null
+    ): static {
         $this->maximumQuantity = $maximumQuantity;
 
         return $this;
@@ -881,8 +893,9 @@ class LineItemType
      * @param  null|MinimumBackorderQuantity $minimumBackorderQuantity
      * @return static
      */
-    public function setMinimumBackorderQuantity(?MinimumBackorderQuantity $minimumBackorderQuantity = null): static
-    {
+    public function setMinimumBackorderQuantity(
+        ?MinimumBackorderQuantity $minimumBackorderQuantity = null
+    ): static {
         $this->minimumBackorderQuantity = $minimumBackorderQuantity;
 
         return $this;
@@ -920,8 +933,9 @@ class LineItemType
      * @param  null|MaximumBackorderQuantity $maximumBackorderQuantity
      * @return static
      */
-    public function setMaximumBackorderQuantity(?MaximumBackorderQuantity $maximumBackorderQuantity = null): static
-    {
+    public function setMaximumBackorderQuantity(
+        ?MaximumBackorderQuantity $maximumBackorderQuantity = null
+    ): static {
         $this->maximumBackorderQuantity = $maximumBackorderQuantity;
 
         return $this;
@@ -959,8 +973,9 @@ class LineItemType
      * @param  null|InspectionMethodCode $inspectionMethodCode
      * @return static
      */
-    public function setInspectionMethodCode(?InspectionMethodCode $inspectionMethodCode = null): static
-    {
+    public function setInspectionMethodCode(
+        ?InspectionMethodCode $inspectionMethodCode = null
+    ): static {
         $this->inspectionMethodCode = $inspectionMethodCode;
 
         return $this;
@@ -988,8 +1003,9 @@ class LineItemType
      * @param  null|bool $partialDeliveryIndicator
      * @return static
      */
-    public function setPartialDeliveryIndicator(?bool $partialDeliveryIndicator = null): static
-    {
+    public function setPartialDeliveryIndicator(
+        ?bool $partialDeliveryIndicator = null
+    ): static {
         $this->partialDeliveryIndicator = $partialDeliveryIndicator;
 
         return $this;
@@ -1017,8 +1033,9 @@ class LineItemType
      * @param  null|bool $backOrderAllowedIndicator
      * @return static
      */
-    public function setBackOrderAllowedIndicator(?bool $backOrderAllowedIndicator = null): static
-    {
+    public function setBackOrderAllowedIndicator(
+        ?bool $backOrderAllowedIndicator = null
+    ): static {
         $this->backOrderAllowedIndicator = $backOrderAllowedIndicator;
 
         return $this;
@@ -1056,8 +1073,9 @@ class LineItemType
      * @param  null|AccountingCostCode $accountingCostCode
      * @return static
      */
-    public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): static
-    {
+    public function setAccountingCostCode(
+        ?AccountingCostCode $accountingCostCode = null
+    ): static {
         $this->accountingCostCode = $accountingCostCode;
 
         return $this;
@@ -1095,8 +1113,9 @@ class LineItemType
      * @param  null|AccountingCost $accountingCost
      * @return static
      */
-    public function setAccountingCost(?AccountingCost $accountingCost = null): static
-    {
+    public function setAccountingCost(
+        ?AccountingCost $accountingCost = null
+    ): static {
         $this->accountingCost = $accountingCost;
 
         return $this;
@@ -1124,8 +1143,9 @@ class LineItemType
      * @param  null|array<WarrantyInformation> $warrantyInformation
      * @return static
      */
-    public function setWarrantyInformation(?array $warrantyInformation = null): static
-    {
+    public function setWarrantyInformation(
+        ?array $warrantyInformation = null
+    ): static {
         $this->warrantyInformation = $warrantyInformation;
 
         return $this;
@@ -1185,8 +1205,9 @@ class LineItemType
      * @param  WarrantyInformation $warrantyInformation
      * @return static
      */
-    public function addToWarrantyInformation(WarrantyInformation $warrantyInformation): static
-    {
+    public function addToWarrantyInformation(
+        WarrantyInformation $warrantyInformation
+    ): static {
         $this->warrantyInformation[] = $warrantyInformation;
 
         return $this;
@@ -1206,8 +1227,9 @@ class LineItemType
      * @param  WarrantyInformation $warrantyInformation
      * @return static
      */
-    public function addOnceToWarrantyInformation(WarrantyInformation $warrantyInformation): static
-    {
+    public function addOnceToWarrantyInformation(
+        WarrantyInformation $warrantyInformation
+    ): static {
         if (!is_array($this->warrantyInformation)) {
             $this->warrantyInformation = [];
         }
@@ -1245,8 +1267,9 @@ class LineItemType
      * @param  null|array<Delivery> $delivery
      * @return static
      */
-    public function setDelivery(?array $delivery = null): static
-    {
+    public function setDelivery(
+        ?array $delivery = null
+    ): static {
         $this->delivery = $delivery;
 
         return $this;
@@ -1306,8 +1329,9 @@ class LineItemType
      * @param  Delivery $delivery
      * @return static
      */
-    public function addToDelivery(Delivery $delivery): static
-    {
+    public function addToDelivery(
+        Delivery $delivery
+    ): static {
         $this->delivery[] = $delivery;
 
         return $this;
@@ -1327,8 +1351,9 @@ class LineItemType
      * @param  Delivery $delivery
      * @return static
      */
-    public function addOnceToDelivery(Delivery $delivery): static
-    {
+    public function addOnceToDelivery(
+        Delivery $delivery
+    ): static {
         if (!is_array($this->delivery)) {
             $this->delivery = [];
         }
@@ -1376,8 +1401,9 @@ class LineItemType
      * @param  null|DeliveryTerms $deliveryTerms
      * @return static
      */
-    public function setDeliveryTerms(?DeliveryTerms $deliveryTerms = null): static
-    {
+    public function setDeliveryTerms(
+        ?DeliveryTerms $deliveryTerms = null
+    ): static {
         $this->deliveryTerms = $deliveryTerms;
 
         return $this;
@@ -1415,8 +1441,9 @@ class LineItemType
      * @param  null|OriginatorParty $originatorParty
      * @return static
      */
-    public function setOriginatorParty(?OriginatorParty $originatorParty = null): static
-    {
+    public function setOriginatorParty(
+        ?OriginatorParty $originatorParty = null
+    ): static {
         $this->originatorParty = $originatorParty;
 
         return $this;
@@ -1444,8 +1471,9 @@ class LineItemType
      * @param  null|array<OrderedShipment> $orderedShipment
      * @return static
      */
-    public function setOrderedShipment(?array $orderedShipment = null): static
-    {
+    public function setOrderedShipment(
+        ?array $orderedShipment = null
+    ): static {
         $this->orderedShipment = $orderedShipment;
 
         return $this;
@@ -1505,8 +1533,9 @@ class LineItemType
      * @param  OrderedShipment $orderedShipment
      * @return static
      */
-    public function addToOrderedShipment(OrderedShipment $orderedShipment): static
-    {
+    public function addToOrderedShipment(
+        OrderedShipment $orderedShipment
+    ): static {
         $this->orderedShipment[] = $orderedShipment;
 
         return $this;
@@ -1526,8 +1555,9 @@ class LineItemType
      * @param  OrderedShipment $orderedShipment
      * @return static
      */
-    public function addOnceToOrderedShipment(OrderedShipment $orderedShipment): static
-    {
+    public function addOnceToOrderedShipment(
+        OrderedShipment $orderedShipment
+    ): static {
         if (!is_array($this->orderedShipment)) {
             $this->orderedShipment = [];
         }
@@ -1575,8 +1605,9 @@ class LineItemType
      * @param  null|PricingReference $pricingReference
      * @return static
      */
-    public function setPricingReference(?PricingReference $pricingReference = null): static
-    {
+    public function setPricingReference(
+        ?PricingReference $pricingReference = null
+    ): static {
         $this->pricingReference = $pricingReference;
 
         return $this;
@@ -1604,8 +1635,9 @@ class LineItemType
      * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): static
-    {
+    public function setAllowanceCharge(
+        ?array $allowanceCharge = null
+    ): static {
         $this->allowanceCharge = $allowanceCharge;
 
         return $this;
@@ -1665,8 +1697,9 @@ class LineItemType
      * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
-    {
+    public function addToAllowanceCharge(
+        AllowanceCharge $allowanceCharge
+    ): static {
         $this->allowanceCharge[] = $allowanceCharge;
 
         return $this;
@@ -1686,8 +1719,9 @@ class LineItemType
      * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
-    {
+    public function addOnceToAllowanceCharge(
+        AllowanceCharge $allowanceCharge
+    ): static {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];
         }
@@ -1735,8 +1769,9 @@ class LineItemType
      * @param  null|Price $price
      * @return static
      */
-    public function setPrice(?Price $price = null): static
-    {
+    public function setPrice(
+        ?Price $price = null
+    ): static {
         $this->price = $price;
 
         return $this;
@@ -1774,8 +1809,9 @@ class LineItemType
      * @param  null|Item $item
      * @return static
      */
-    public function setItem(?Item $item = null): static
-    {
+    public function setItem(
+        ?Item $item = null
+    ): static {
         $this->item = $item;
 
         return $this;
@@ -1803,8 +1839,9 @@ class LineItemType
      * @param  null|array<SubLineItem> $subLineItem
      * @return static
      */
-    public function setSubLineItem(?array $subLineItem = null): static
-    {
+    public function setSubLineItem(
+        ?array $subLineItem = null
+    ): static {
         $this->subLineItem = $subLineItem;
 
         return $this;
@@ -1864,8 +1901,9 @@ class LineItemType
      * @param  SubLineItem $subLineItem
      * @return static
      */
-    public function addToSubLineItem(SubLineItem $subLineItem): static
-    {
+    public function addToSubLineItem(
+        SubLineItem $subLineItem
+    ): static {
         $this->subLineItem[] = $subLineItem;
 
         return $this;
@@ -1885,8 +1923,9 @@ class LineItemType
      * @param  SubLineItem $subLineItem
      * @return static
      */
-    public function addOnceToSubLineItem(SubLineItem $subLineItem): static
-    {
+    public function addOnceToSubLineItem(
+        SubLineItem $subLineItem
+    ): static {
         if (!is_array($this->subLineItem)) {
             $this->subLineItem = [];
         }
@@ -1934,8 +1973,9 @@ class LineItemType
      * @param  null|WarrantyValidityPeriod $warrantyValidityPeriod
      * @return static
      */
-    public function setWarrantyValidityPeriod(?WarrantyValidityPeriod $warrantyValidityPeriod = null): static
-    {
+    public function setWarrantyValidityPeriod(
+        ?WarrantyValidityPeriod $warrantyValidityPeriod = null
+    ): static {
         $this->warrantyValidityPeriod = $warrantyValidityPeriod;
 
         return $this;
@@ -1973,8 +2013,9 @@ class LineItemType
      * @param  null|WarrantyParty $warrantyParty
      * @return static
      */
-    public function setWarrantyParty(?WarrantyParty $warrantyParty = null): static
-    {
+    public function setWarrantyParty(
+        ?WarrantyParty $warrantyParty = null
+    ): static {
         $this->warrantyParty = $warrantyParty;
 
         return $this;
@@ -2002,8 +2043,9 @@ class LineItemType
      * @param  null|array<TaxTotal> $taxTotal
      * @return static
      */
-    public function setTaxTotal(?array $taxTotal = null): static
-    {
+    public function setTaxTotal(
+        ?array $taxTotal = null
+    ): static {
         $this->taxTotal = $taxTotal;
 
         return $this;
@@ -2063,8 +2105,9 @@ class LineItemType
      * @param  TaxTotal $taxTotal
      * @return static
      */
-    public function addToTaxTotal(TaxTotal $taxTotal): static
-    {
+    public function addToTaxTotal(
+        TaxTotal $taxTotal
+    ): static {
         $this->taxTotal[] = $taxTotal;
 
         return $this;
@@ -2084,8 +2127,9 @@ class LineItemType
      * @param  TaxTotal $taxTotal
      * @return static
      */
-    public function addOnceToTaxTotal(TaxTotal $taxTotal): static
-    {
+    public function addOnceToTaxTotal(
+        TaxTotal $taxTotal
+    ): static {
         if (!is_array($this->taxTotal)) {
             $this->taxTotal = [];
         }
@@ -2133,8 +2177,9 @@ class LineItemType
      * @param  null|ItemPriceExtension $itemPriceExtension
      * @return static
      */
-    public function setItemPriceExtension(?ItemPriceExtension $itemPriceExtension = null): static
-    {
+    public function setItemPriceExtension(
+        ?ItemPriceExtension $itemPriceExtension = null
+    ): static {
         $this->itemPriceExtension = $itemPriceExtension;
 
         return $this;
@@ -2162,8 +2207,9 @@ class LineItemType
      * @param  null|array<LineReference> $lineReference
      * @return static
      */
-    public function setLineReference(?array $lineReference = null): static
-    {
+    public function setLineReference(
+        ?array $lineReference = null
+    ): static {
         $this->lineReference = $lineReference;
 
         return $this;
@@ -2223,8 +2269,9 @@ class LineItemType
      * @param  LineReference $lineReference
      * @return static
      */
-    public function addToLineReference(LineReference $lineReference): static
-    {
+    public function addToLineReference(
+        LineReference $lineReference
+    ): static {
         $this->lineReference[] = $lineReference;
 
         return $this;
@@ -2244,8 +2291,9 @@ class LineItemType
      * @param  LineReference $lineReference
      * @return static
      */
-    public function addOnceToLineReference(LineReference $lineReference): static
-    {
+    public function addOnceToLineReference(
+        LineReference $lineReference
+    ): static {
         if (!is_array($this->lineReference)) {
             $this->lineReference = [];
         }

@@ -152,8 +152,9 @@ class TaxSubtotalType
      * @param  null|TaxableAmount $taxableAmount
      * @return static
      */
-    public function setTaxableAmount(?TaxableAmount $taxableAmount = null): static
-    {
+    public function setTaxableAmount(
+        ?TaxableAmount $taxableAmount = null
+    ): static {
         $this->taxableAmount = $taxableAmount;
 
         return $this;
@@ -191,8 +192,9 @@ class TaxSubtotalType
      * @param  null|TaxAmount $taxAmount
      * @return static
      */
-    public function setTaxAmount(?TaxAmount $taxAmount = null): static
-    {
+    public function setTaxAmount(
+        ?TaxAmount $taxAmount = null
+    ): static {
         $this->taxAmount = $taxAmount;
 
         return $this;
@@ -310,8 +312,9 @@ class TaxSubtotalType
      * @param  null|Percent $percent
      * @return static
      */
-    public function setPercent(?Percent $percent = null): static
-    {
+    public function setPercent(
+        ?Percent $percent = null
+    ): static {
         $this->percent = $percent;
 
         return $this;
@@ -349,8 +352,9 @@ class TaxSubtotalType
      * @param  null|BaseUnitMeasure $baseUnitMeasure
      * @return static
      */
-    public function setBaseUnitMeasure(?BaseUnitMeasure $baseUnitMeasure = null): static
-    {
+    public function setBaseUnitMeasure(
+        ?BaseUnitMeasure $baseUnitMeasure = null
+    ): static {
         $this->baseUnitMeasure = $baseUnitMeasure;
 
         return $this;
@@ -388,8 +392,9 @@ class TaxSubtotalType
      * @param  null|PerUnitAmount $perUnitAmount
      * @return static
      */
-    public function setPerUnitAmount(?PerUnitAmount $perUnitAmount = null): static
-    {
+    public function setPerUnitAmount(
+        ?PerUnitAmount $perUnitAmount = null
+    ): static {
         $this->perUnitAmount = $perUnitAmount;
 
         return $this;
@@ -427,8 +432,9 @@ class TaxSubtotalType
      * @param  null|TierRange $tierRange
      * @return static
      */
-    public function setTierRange(?TierRange $tierRange = null): static
-    {
+    public function setTierRange(
+        ?TierRange $tierRange = null
+    ): static {
         $this->tierRange = $tierRange;
 
         return $this;
@@ -466,8 +472,9 @@ class TaxSubtotalType
      * @param  null|TierRatePercent $tierRatePercent
      * @return static
      */
-    public function setTierRatePercent(?TierRatePercent $tierRatePercent = null): static
-    {
+    public function setTierRatePercent(
+        ?TierRatePercent $tierRatePercent = null
+    ): static {
         $this->tierRatePercent = $tierRatePercent;
 
         return $this;
@@ -505,8 +512,9 @@ class TaxSubtotalType
      * @param  null|TaxCategory $taxCategory
      * @return static
      */
-    public function setTaxCategory(?TaxCategory $taxCategory = null): static
-    {
+    public function setTaxCategory(
+        ?TaxCategory $taxCategory = null
+    ): static {
         $this->taxCategory = $taxCategory;
 
         return $this;

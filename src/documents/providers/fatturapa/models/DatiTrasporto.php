@@ -197,8 +197,9 @@ final class DatiTrasporto
      * @param  null|DatiAnagraficiVettore $datiAnagraficiVettore
      * @return static
      */
-    public function setDatiAnagraficiVettore(?DatiAnagraficiVettore $datiAnagraficiVettore = null): static
-    {
+    public function setDatiAnagraficiVettore(
+        ?DatiAnagraficiVettore $datiAnagraficiVettore = null
+    ): static {
         $this->datiAnagraficiVettore = $datiAnagraficiVettore;
 
         return $this;
@@ -232,8 +233,9 @@ final class DatiTrasporto
      * @param  null|string $mezzoTrasporto
      * @return static
      */
-    public function setMezzoTrasporto(?string $mezzoTrasporto = null): static
-    {
+    public function setMezzoTrasporto(
+        ?string $mezzoTrasporto = null
+    ): static {
         $this->mezzoTrasporto = InvoiceSuiteStringUtils::asNullWhenEmpty($mezzoTrasporto);
 
         return $this;
@@ -267,8 +269,9 @@ final class DatiTrasporto
      * @param  null|string $causaleTrasporto
      * @return static
      */
-    public function setCausaleTrasporto(?string $causaleTrasporto = null): static
-    {
+    public function setCausaleTrasporto(
+        ?string $causaleTrasporto = null
+    ): static {
         $this->causaleTrasporto = InvoiceSuiteStringUtils::asNullWhenEmpty($causaleTrasporto);
 
         return $this;
@@ -302,8 +305,9 @@ final class DatiTrasporto
      * @param  null|int $numeroColli
      * @return static
      */
-    public function setNumeroColli(?int $numeroColli = null): static
-    {
+    public function setNumeroColli(
+        ?int $numeroColli = null
+    ): static {
         $this->numeroColli = $numeroColli;
 
         return $this;
@@ -337,8 +341,9 @@ final class DatiTrasporto
      * @param  null|string $descrizione
      * @return static
      */
-    public function setDescrizione(?string $descrizione = null): static
-    {
+    public function setDescrizione(
+        ?string $descrizione = null
+    ): static {
         $this->descrizione = InvoiceSuiteStringUtils::asNullWhenEmpty($descrizione);
 
         return $this;
@@ -372,8 +377,9 @@ final class DatiTrasporto
      * @param  null|string $unitaMisuraPeso
      * @return static
      */
-    public function setUnitaMisuraPeso(?string $unitaMisuraPeso = null): static
-    {
+    public function setUnitaMisuraPeso(
+        ?string $unitaMisuraPeso = null
+    ): static {
         $this->unitaMisuraPeso = InvoiceSuiteStringUtils::asNullWhenEmpty($unitaMisuraPeso);
 
         return $this;
@@ -407,8 +413,9 @@ final class DatiTrasporto
      * @param  null|float $pesoLordo
      * @return static
      */
-    public function setPesoLordo(?float $pesoLordo = null): static
-    {
+    public function setPesoLordo(
+        ?float $pesoLordo = null
+    ): static {
         $this->pesoLordo = $pesoLordo;
 
         return $this;
@@ -442,8 +449,9 @@ final class DatiTrasporto
      * @param  null|float $pesoNetto
      * @return static
      */
-    public function setPesoNetto(?float $pesoNetto = null): static
-    {
+    public function setPesoNetto(
+        ?float $pesoNetto = null
+    ): static {
         $this->pesoNetto = $pesoNetto;
 
         return $this;
@@ -477,8 +485,9 @@ final class DatiTrasporto
      * @param  null|DateTimeInterface $dataOraRitiro
      * @return static
      */
-    public function setDataOraRitiro(?DateTimeInterface $dataOraRitiro = null): static
-    {
+    public function setDataOraRitiro(
+        ?DateTimeInterface $dataOraRitiro = null
+    ): static {
         $this->dataOraRitiro = $dataOraRitiro;
 
         return $this;
@@ -512,8 +521,9 @@ final class DatiTrasporto
      * @param  null|DateTimeInterface $dataInizioTrasporto
      * @return static
      */
-    public function setDataInizioTrasporto(?DateTimeInterface $dataInizioTrasporto = null): static
-    {
+    public function setDataInizioTrasporto(
+        ?DateTimeInterface $dataInizioTrasporto = null
+    ): static {
         $this->dataInizioTrasporto = $dataInizioTrasporto;
 
         return $this;
@@ -547,8 +557,9 @@ final class DatiTrasporto
      * @param  null|string $tipoResa
      * @return static
      */
-    public function setTipoResa(?string $tipoResa = null): static
-    {
+    public function setTipoResa(
+        ?string $tipoResa = null
+    ): static {
         $this->tipoResa = InvoiceSuiteStringUtils::asNullWhenEmpty($tipoResa);
 
         return $this;
@@ -594,8 +605,9 @@ final class DatiTrasporto
      * @param  null|Indirizzo $indirizzoResa
      * @return static
      */
-    public function setIndirizzoResa(?Indirizzo $indirizzoResa = null): static
-    {
+    public function setIndirizzoResa(
+        ?Indirizzo $indirizzoResa = null
+    ): static {
         $this->indirizzoResa = $indirizzoResa;
 
         return $this;
@@ -629,8 +641,9 @@ final class DatiTrasporto
      * @param  null|DateTimeInterface $dataOraConsegna
      * @return static
      */
-    public function setDataOraConsegna(?DateTimeInterface $dataOraConsegna = null): static
-    {
+    public function setDataOraConsegna(
+        ?DateTimeInterface $dataOraConsegna = null
+    ): static {
         $this->dataOraConsegna = $dataOraConsegna;
 
         return $this;

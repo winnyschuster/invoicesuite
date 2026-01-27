@@ -140,8 +140,9 @@ class FinancialAccountType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -179,8 +180,9 @@ class FinancialAccountType
      * @param  null|Name $name
      * @return static
      */
-    public function setName(?Name $name = null): static
-    {
+    public function setName(
+        ?Name $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -218,8 +220,9 @@ class FinancialAccountType
      * @param  null|AliasName $aliasName
      * @return static
      */
-    public function setAliasName(?AliasName $aliasName = null): static
-    {
+    public function setAliasName(
+        ?AliasName $aliasName = null
+    ): static {
         $this->aliasName = $aliasName;
 
         return $this;
@@ -257,8 +260,9 @@ class FinancialAccountType
      * @param  null|AccountTypeCode $accountTypeCode
      * @return static
      */
-    public function setAccountTypeCode(?AccountTypeCode $accountTypeCode = null): static
-    {
+    public function setAccountTypeCode(
+        ?AccountTypeCode $accountTypeCode = null
+    ): static {
         $this->accountTypeCode = $accountTypeCode;
 
         return $this;
@@ -296,8 +300,9 @@ class FinancialAccountType
      * @param  null|AccountFormatCode $accountFormatCode
      * @return static
      */
-    public function setAccountFormatCode(?AccountFormatCode $accountFormatCode = null): static
-    {
+    public function setAccountFormatCode(
+        ?AccountFormatCode $accountFormatCode = null
+    ): static {
         $this->accountFormatCode = $accountFormatCode;
 
         return $this;
@@ -335,8 +340,9 @@ class FinancialAccountType
      * @param  null|CurrencyCode $currencyCode
      * @return static
      */
-    public function setCurrencyCode(?CurrencyCode $currencyCode = null): static
-    {
+    public function setCurrencyCode(
+        ?CurrencyCode $currencyCode = null
+    ): static {
         $this->currencyCode = $currencyCode;
 
         return $this;
@@ -364,8 +370,9 @@ class FinancialAccountType
      * @param  null|array<PaymentNote> $paymentNote
      * @return static
      */
-    public function setPaymentNote(?array $paymentNote = null): static
-    {
+    public function setPaymentNote(
+        ?array $paymentNote = null
+    ): static {
         $this->paymentNote = $paymentNote;
 
         return $this;
@@ -425,8 +432,9 @@ class FinancialAccountType
      * @param  PaymentNote $paymentNote
      * @return static
      */
-    public function addToPaymentNote(PaymentNote $paymentNote): static
-    {
+    public function addToPaymentNote(
+        PaymentNote $paymentNote
+    ): static {
         $this->paymentNote[] = $paymentNote;
 
         return $this;
@@ -446,8 +454,9 @@ class FinancialAccountType
      * @param  PaymentNote $paymentNote
      * @return static
      */
-    public function addOnceToPaymentNote(PaymentNote $paymentNote): static
-    {
+    public function addOnceToPaymentNote(
+        PaymentNote $paymentNote
+    ): static {
         if (!is_array($this->paymentNote)) {
             $this->paymentNote = [];
         }
@@ -535,8 +544,9 @@ class FinancialAccountType
      * @param  null|Country $country
      * @return static
      */
-    public function setCountry(?Country $country = null): static
-    {
+    public function setCountry(
+        ?Country $country = null
+    ): static {
         $this->country = $country;
 
         return $this;

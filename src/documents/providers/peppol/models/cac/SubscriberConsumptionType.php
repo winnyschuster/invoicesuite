@@ -139,8 +139,9 @@ class SubscriberConsumptionType
      * @param  null|ConsumptionID $consumptionID
      * @return static
      */
-    public function setConsumptionID(?ConsumptionID $consumptionID = null): static
-    {
+    public function setConsumptionID(
+        ?ConsumptionID $consumptionID = null
+    ): static {
         $this->consumptionID = $consumptionID;
 
         return $this;
@@ -178,8 +179,9 @@ class SubscriberConsumptionType
      * @param  null|SpecificationTypeCode $specificationTypeCode
      * @return static
      */
-    public function setSpecificationTypeCode(?SpecificationTypeCode $specificationTypeCode = null): static
-    {
+    public function setSpecificationTypeCode(
+        ?SpecificationTypeCode $specificationTypeCode = null
+    ): static {
         $this->specificationTypeCode = $specificationTypeCode;
 
         return $this;
@@ -207,8 +209,9 @@ class SubscriberConsumptionType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -268,8 +271,9 @@ class SubscriberConsumptionType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -289,8 +293,9 @@ class SubscriberConsumptionType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -338,8 +343,9 @@ class SubscriberConsumptionType
      * @param  null|TotalMeteredQuantity $totalMeteredQuantity
      * @return static
      */
-    public function setTotalMeteredQuantity(?TotalMeteredQuantity $totalMeteredQuantity = null): static
-    {
+    public function setTotalMeteredQuantity(
+        ?TotalMeteredQuantity $totalMeteredQuantity = null
+    ): static {
         $this->totalMeteredQuantity = $totalMeteredQuantity;
 
         return $this;
@@ -377,8 +383,9 @@ class SubscriberConsumptionType
      * @param  null|SubscriberParty $subscriberParty
      * @return static
      */
-    public function setSubscriberParty(?SubscriberParty $subscriberParty = null): static
-    {
+    public function setSubscriberParty(
+        ?SubscriberParty $subscriberParty = null
+    ): static {
         $this->subscriberParty = $subscriberParty;
 
         return $this;
@@ -416,8 +423,9 @@ class SubscriberConsumptionType
      * @param  null|UtilityConsumptionPoint $utilityConsumptionPoint
      * @return static
      */
-    public function setUtilityConsumptionPoint(?UtilityConsumptionPoint $utilityConsumptionPoint = null): static
-    {
+    public function setUtilityConsumptionPoint(
+        ?UtilityConsumptionPoint $utilityConsumptionPoint = null
+    ): static {
         $this->utilityConsumptionPoint = $utilityConsumptionPoint;
 
         return $this;
@@ -445,8 +453,9 @@ class SubscriberConsumptionType
      * @param  null|array<OnAccountPayment> $onAccountPayment
      * @return static
      */
-    public function setOnAccountPayment(?array $onAccountPayment = null): static
-    {
+    public function setOnAccountPayment(
+        ?array $onAccountPayment = null
+    ): static {
         $this->onAccountPayment = $onAccountPayment;
 
         return $this;
@@ -506,8 +515,9 @@ class SubscriberConsumptionType
      * @param  OnAccountPayment $onAccountPayment
      * @return static
      */
-    public function addToOnAccountPayment(OnAccountPayment $onAccountPayment): static
-    {
+    public function addToOnAccountPayment(
+        OnAccountPayment $onAccountPayment
+    ): static {
         $this->onAccountPayment[] = $onAccountPayment;
 
         return $this;
@@ -527,8 +537,9 @@ class SubscriberConsumptionType
      * @param  OnAccountPayment $onAccountPayment
      * @return static
      */
-    public function addOnceToOnAccountPayment(OnAccountPayment $onAccountPayment): static
-    {
+    public function addOnceToOnAccountPayment(
+        OnAccountPayment $onAccountPayment
+    ): static {
         if (!is_array($this->onAccountPayment)) {
             $this->onAccountPayment = [];
         }
@@ -576,8 +587,9 @@ class SubscriberConsumptionType
      * @param  null|Consumption $consumption
      * @return static
      */
-    public function setConsumption(?Consumption $consumption = null): static
-    {
+    public function setConsumption(
+        ?Consumption $consumption = null
+    ): static {
         $this->consumption = $consumption;
 
         return $this;
@@ -605,8 +617,9 @@ class SubscriberConsumptionType
      * @param  null|array<SupplierConsumption> $supplierConsumption
      * @return static
      */
-    public function setSupplierConsumption(?array $supplierConsumption = null): static
-    {
+    public function setSupplierConsumption(
+        ?array $supplierConsumption = null
+    ): static {
         $this->supplierConsumption = $supplierConsumption;
 
         return $this;
@@ -666,8 +679,9 @@ class SubscriberConsumptionType
      * @param  SupplierConsumption $supplierConsumption
      * @return static
      */
-    public function addToSupplierConsumption(SupplierConsumption $supplierConsumption): static
-    {
+    public function addToSupplierConsumption(
+        SupplierConsumption $supplierConsumption
+    ): static {
         $this->supplierConsumption[] = $supplierConsumption;
 
         return $this;
@@ -687,8 +701,9 @@ class SubscriberConsumptionType
      * @param  SupplierConsumption $supplierConsumption
      * @return static
      */
-    public function addOnceToSupplierConsumption(SupplierConsumption $supplierConsumption): static
-    {
+    public function addOnceToSupplierConsumption(
+        SupplierConsumption $supplierConsumption
+    ): static {
         if (!is_array($this->supplierConsumption)) {
             $this->supplierConsumption = [];
         }

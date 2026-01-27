@@ -27,8 +27,9 @@ class InvoiceSuiteVisualizerLaravelRenderer extends InvoiceSuiteVisualizerAbstra
     /**
      * {@inheritDoc}
      */
-    public function templateExists(string $template): bool
-    {
+    public function templateExists(
+        string $template
+    ): bool {
         if (!function_exists('view')) {
             return false;
         }
@@ -42,8 +43,10 @@ class InvoiceSuiteVisualizerLaravelRenderer extends InvoiceSuiteVisualizerAbstra
     /**
      * {@inheritDoc}
      */
-    public function render(InvoiceSuiteDocumentReader $document, string $template): string
-    {
+    public function render(
+        InvoiceSuiteDocumentReader $document,
+        string $template
+    ): string {
         if (!function_exists('view')) {
             return '';
         }

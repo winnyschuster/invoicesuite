@@ -45,8 +45,9 @@ class SupplyChainEventType
      * @param  null|DateTimeType $occurrenceDateTime
      * @return static
      */
-    public function setOccurrenceDateTime(?DateTimeType $occurrenceDateTime = null): static
-    {
+    public function setOccurrenceDateTime(
+        ?DateTimeType $occurrenceDateTime = null
+    ): static {
         $this->occurrenceDateTime = $occurrenceDateTime;
 
         return $this;

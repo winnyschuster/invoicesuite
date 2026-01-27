@@ -43,8 +43,10 @@ class InvoiceSuiteMeasureDTO
      * @param null|float  $value The value
      * @param null|string $unit  The value's unit
      */
-    public function __construct(?float $value = null, ?string $unit = null)
-    {
+    public function __construct(
+        ?float $value = null,
+        ?string $unit = null
+    ) {
         $this->setValue($value);
         $this->setUnit($unit);
     }
@@ -65,8 +67,9 @@ class InvoiceSuiteMeasureDTO
      * @param  null|float $value The value
      * @return static
      */
-    public function setValue(?float $value): static
-    {
+    public function setValue(
+        ?float $value
+    ): static {
         $this->value = $value;
 
         return $this;
@@ -88,8 +91,9 @@ class InvoiceSuiteMeasureDTO
      * @param  null|string $unit The value's unit
      * @return static
      */
-    public function setUnit(?string $unit): static
-    {
+    public function setUnit(
+        ?string $unit
+    ): static {
         $this->unit = InvoiceSuiteStringUtils::asNullWhenEmpty($unit);
 
         return $this;

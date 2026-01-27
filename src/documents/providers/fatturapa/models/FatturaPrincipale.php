@@ -53,8 +53,9 @@ final class FatturaPrincipale
      * @param  null|string $numeroFatturaPrincipale
      * @return static
      */
-    public function setNumeroFatturaPrincipale(?string $numeroFatturaPrincipale = null): static
-    {
+    public function setNumeroFatturaPrincipale(
+        ?string $numeroFatturaPrincipale = null
+    ): static {
         $this->numeroFatturaPrincipale = InvoiceSuiteStringUtils::asNullWhenEmpty($numeroFatturaPrincipale);
 
         return $this;
@@ -88,8 +89,9 @@ final class FatturaPrincipale
      * @param  null|DateTimeInterface $dataFatturaPrincipale
      * @return static
      */
-    public function setDataFatturaPrincipale(?DateTimeInterface $dataFatturaPrincipale = null): static
-    {
+    public function setDataFatturaPrincipale(
+        ?DateTimeInterface $dataFatturaPrincipale = null
+    ): static {
         $this->dataFatturaPrincipale = $dataFatturaPrincipale;
 
         return $this;

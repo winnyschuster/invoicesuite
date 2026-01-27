@@ -282,8 +282,9 @@ final class DettaglioPagamento
      * @param  null|string $beneficiario
      * @return static
      */
-    public function setBeneficiario(?string $beneficiario = null): static
-    {
+    public function setBeneficiario(
+        ?string $beneficiario = null
+    ): static {
         $this->beneficiario = InvoiceSuiteStringUtils::asNullWhenEmpty($beneficiario);
 
         return $this;
@@ -317,8 +318,9 @@ final class DettaglioPagamento
      * @param  null|ModalitaPagamento $modalitaPagamento
      * @return static
      */
-    public function setModalitaPagamento(?ModalitaPagamento $modalitaPagamento = null): static
-    {
+    public function setModalitaPagamento(
+        ?ModalitaPagamento $modalitaPagamento = null
+    ): static {
         $this->modalitaPagamento = $modalitaPagamento;
 
         return $this;
@@ -352,8 +354,9 @@ final class DettaglioPagamento
      * @param  null|DateTimeInterface $dataRiferimentoTerminiPagamento
      * @return static
      */
-    public function setDataRiferimentoTerminiPagamento(?DateTimeInterface $dataRiferimentoTerminiPagamento = null): static
-    {
+    public function setDataRiferimentoTerminiPagamento(
+        ?DateTimeInterface $dataRiferimentoTerminiPagamento = null
+    ): static {
         $this->dataRiferimentoTerminiPagamento = $dataRiferimentoTerminiPagamento;
 
         return $this;
@@ -387,8 +390,9 @@ final class DettaglioPagamento
      * @param  null|int $giorniTerminiPagamento
      * @return static
      */
-    public function setGiorniTerminiPagamento(?int $giorniTerminiPagamento = null): static
-    {
+    public function setGiorniTerminiPagamento(
+        ?int $giorniTerminiPagamento = null
+    ): static {
         $this->giorniTerminiPagamento = $giorniTerminiPagamento;
 
         return $this;
@@ -422,8 +426,9 @@ final class DettaglioPagamento
      * @param  null|DateTimeInterface $dataScadenzaPagamento
      * @return static
      */
-    public function setDataScadenzaPagamento(?DateTimeInterface $dataScadenzaPagamento = null): static
-    {
+    public function setDataScadenzaPagamento(
+        ?DateTimeInterface $dataScadenzaPagamento = null
+    ): static {
         $this->dataScadenzaPagamento = $dataScadenzaPagamento;
 
         return $this;
@@ -457,8 +462,9 @@ final class DettaglioPagamento
      * @param  null|float $importoPagamento
      * @return static
      */
-    public function setImportoPagamento(?float $importoPagamento = null): static
-    {
+    public function setImportoPagamento(
+        ?float $importoPagamento = null
+    ): static {
         $this->importoPagamento = $importoPagamento;
 
         return $this;
@@ -492,8 +498,9 @@ final class DettaglioPagamento
      * @param  null|string $codUfficioPostale
      * @return static
      */
-    public function setCodUfficioPostale(?string $codUfficioPostale = null): static
-    {
+    public function setCodUfficioPostale(
+        ?string $codUfficioPostale = null
+    ): static {
         $this->codUfficioPostale = InvoiceSuiteStringUtils::asNullWhenEmpty($codUfficioPostale);
 
         return $this;
@@ -527,8 +534,9 @@ final class DettaglioPagamento
      * @param  null|string $cognomeQuietanzante
      * @return static
      */
-    public function setCognomeQuietanzante(?string $cognomeQuietanzante = null): static
-    {
+    public function setCognomeQuietanzante(
+        ?string $cognomeQuietanzante = null
+    ): static {
         $this->cognomeQuietanzante = InvoiceSuiteStringUtils::asNullWhenEmpty($cognomeQuietanzante);
 
         return $this;
@@ -562,8 +570,9 @@ final class DettaglioPagamento
      * @param  null|string $nomeQuietanzante
      * @return static
      */
-    public function setNomeQuietanzante(?string $nomeQuietanzante = null): static
-    {
+    public function setNomeQuietanzante(
+        ?string $nomeQuietanzante = null
+    ): static {
         $this->nomeQuietanzante = InvoiceSuiteStringUtils::asNullWhenEmpty($nomeQuietanzante);
 
         return $this;
@@ -597,8 +606,9 @@ final class DettaglioPagamento
      * @param  null|string $cFQuietanzante
      * @return static
      */
-    public function setCFQuietanzante(?string $cFQuietanzante = null): static
-    {
+    public function setCFQuietanzante(
+        ?string $cFQuietanzante = null
+    ): static {
         $this->cFQuietanzante = InvoiceSuiteStringUtils::asNullWhenEmpty($cFQuietanzante);
 
         return $this;
@@ -632,8 +642,9 @@ final class DettaglioPagamento
      * @param  null|string $titoloQuietanzante
      * @return static
      */
-    public function setTitoloQuietanzante(?string $titoloQuietanzante = null): static
-    {
+    public function setTitoloQuietanzante(
+        ?string $titoloQuietanzante = null
+    ): static {
         $this->titoloQuietanzante = InvoiceSuiteStringUtils::asNullWhenEmpty($titoloQuietanzante);
 
         return $this;
@@ -667,8 +678,9 @@ final class DettaglioPagamento
      * @param  null|string $istitutoFinanziario
      * @return static
      */
-    public function setIstitutoFinanziario(?string $istitutoFinanziario = null): static
-    {
+    public function setIstitutoFinanziario(
+        ?string $istitutoFinanziario = null
+    ): static {
         $this->istitutoFinanziario = InvoiceSuiteStringUtils::asNullWhenEmpty($istitutoFinanziario);
 
         return $this;
@@ -702,8 +714,9 @@ final class DettaglioPagamento
      * @param  null|string $iBAN
      * @return static
      */
-    public function setIBAN(?string $iBAN = null): static
-    {
+    public function setIBAN(
+        ?string $iBAN = null
+    ): static {
         $this->iBAN = InvoiceSuiteStringUtils::asNullWhenEmpty($iBAN);
 
         return $this;
@@ -737,8 +750,9 @@ final class DettaglioPagamento
      * @param  null|string $aBI
      * @return static
      */
-    public function setABI(?string $aBI = null): static
-    {
+    public function setABI(
+        ?string $aBI = null
+    ): static {
         $this->aBI = InvoiceSuiteStringUtils::asNullWhenEmpty($aBI);
 
         return $this;
@@ -772,8 +786,9 @@ final class DettaglioPagamento
      * @param  null|string $cAB
      * @return static
      */
-    public function setCAB(?string $cAB = null): static
-    {
+    public function setCAB(
+        ?string $cAB = null
+    ): static {
         $this->cAB = InvoiceSuiteStringUtils::asNullWhenEmpty($cAB);
 
         return $this;
@@ -807,8 +822,9 @@ final class DettaglioPagamento
      * @param  null|string $bIC
      * @return static
      */
-    public function setBIC(?string $bIC = null): static
-    {
+    public function setBIC(
+        ?string $bIC = null
+    ): static {
         $this->bIC = InvoiceSuiteStringUtils::asNullWhenEmpty($bIC);
 
         return $this;
@@ -842,8 +858,9 @@ final class DettaglioPagamento
      * @param  null|float $scontoPagamentoAnticipato
      * @return static
      */
-    public function setScontoPagamentoAnticipato(?float $scontoPagamentoAnticipato = null): static
-    {
+    public function setScontoPagamentoAnticipato(
+        ?float $scontoPagamentoAnticipato = null
+    ): static {
         $this->scontoPagamentoAnticipato = $scontoPagamentoAnticipato;
 
         return $this;
@@ -877,8 +894,9 @@ final class DettaglioPagamento
      * @param  null|DateTimeInterface $dataLimitePagamentoAnticipato
      * @return static
      */
-    public function setDataLimitePagamentoAnticipato(?DateTimeInterface $dataLimitePagamentoAnticipato = null): static
-    {
+    public function setDataLimitePagamentoAnticipato(
+        ?DateTimeInterface $dataLimitePagamentoAnticipato = null
+    ): static {
         $this->dataLimitePagamentoAnticipato = $dataLimitePagamentoAnticipato;
 
         return $this;
@@ -912,8 +930,9 @@ final class DettaglioPagamento
      * @param  null|float $penalitaPagamentiRitardati
      * @return static
      */
-    public function setPenalitaPagamentiRitardati(?float $penalitaPagamentiRitardati = null): static
-    {
+    public function setPenalitaPagamentiRitardati(
+        ?float $penalitaPagamentiRitardati = null
+    ): static {
         $this->penalitaPagamentiRitardati = $penalitaPagamentiRitardati;
 
         return $this;
@@ -947,8 +966,9 @@ final class DettaglioPagamento
      * @param  null|DateTimeInterface $dataDecorrenzaPenale
      * @return static
      */
-    public function setDataDecorrenzaPenale(?DateTimeInterface $dataDecorrenzaPenale = null): static
-    {
+    public function setDataDecorrenzaPenale(
+        ?DateTimeInterface $dataDecorrenzaPenale = null
+    ): static {
         $this->dataDecorrenzaPenale = $dataDecorrenzaPenale;
 
         return $this;
@@ -982,8 +1002,9 @@ final class DettaglioPagamento
      * @param  null|string $codicePagamento
      * @return static
      */
-    public function setCodicePagamento(?string $codicePagamento = null): static
-    {
+    public function setCodicePagamento(
+        ?string $codicePagamento = null
+    ): static {
         $this->codicePagamento = InvoiceSuiteStringUtils::asNullWhenEmpty($codicePagamento);
 
         return $this;

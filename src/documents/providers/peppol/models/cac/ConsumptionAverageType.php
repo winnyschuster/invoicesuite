@@ -58,8 +58,9 @@ class ConsumptionAverageType
      * @param  null|AverageAmount $averageAmount
      * @return static
      */
-    public function setAverageAmount(?AverageAmount $averageAmount = null): static
-    {
+    public function setAverageAmount(
+        ?AverageAmount $averageAmount = null
+    ): static {
         $this->averageAmount = $averageAmount;
 
         return $this;
@@ -87,8 +88,9 @@ class ConsumptionAverageType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -148,8 +150,9 @@ class ConsumptionAverageType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -169,8 +172,9 @@ class ConsumptionAverageType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }

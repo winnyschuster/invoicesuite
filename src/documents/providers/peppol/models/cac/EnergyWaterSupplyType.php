@@ -71,8 +71,9 @@ class EnergyWaterSupplyType
      * @param  null|array<ConsumptionReport> $consumptionReport
      * @return static
      */
-    public function setConsumptionReport(?array $consumptionReport = null): static
-    {
+    public function setConsumptionReport(
+        ?array $consumptionReport = null
+    ): static {
         $this->consumptionReport = $consumptionReport;
 
         return $this;
@@ -132,8 +133,9 @@ class EnergyWaterSupplyType
      * @param  ConsumptionReport $consumptionReport
      * @return static
      */
-    public function addToConsumptionReport(ConsumptionReport $consumptionReport): static
-    {
+    public function addToConsumptionReport(
+        ConsumptionReport $consumptionReport
+    ): static {
         $this->consumptionReport[] = $consumptionReport;
 
         return $this;
@@ -153,8 +155,9 @@ class EnergyWaterSupplyType
      * @param  ConsumptionReport $consumptionReport
      * @return static
      */
-    public function addOnceToConsumptionReport(ConsumptionReport $consumptionReport): static
-    {
+    public function addOnceToConsumptionReport(
+        ConsumptionReport $consumptionReport
+    ): static {
         if (!is_array($this->consumptionReport)) {
             $this->consumptionReport = [];
         }
@@ -192,8 +195,9 @@ class EnergyWaterSupplyType
      * @param  null|array<EnergyTaxReport> $energyTaxReport
      * @return static
      */
-    public function setEnergyTaxReport(?array $energyTaxReport = null): static
-    {
+    public function setEnergyTaxReport(
+        ?array $energyTaxReport = null
+    ): static {
         $this->energyTaxReport = $energyTaxReport;
 
         return $this;
@@ -253,8 +257,9 @@ class EnergyWaterSupplyType
      * @param  EnergyTaxReport $energyTaxReport
      * @return static
      */
-    public function addToEnergyTaxReport(EnergyTaxReport $energyTaxReport): static
-    {
+    public function addToEnergyTaxReport(
+        EnergyTaxReport $energyTaxReport
+    ): static {
         $this->energyTaxReport[] = $energyTaxReport;
 
         return $this;
@@ -274,8 +279,9 @@ class EnergyWaterSupplyType
      * @param  EnergyTaxReport $energyTaxReport
      * @return static
      */
-    public function addOnceToEnergyTaxReport(EnergyTaxReport $energyTaxReport): static
-    {
+    public function addOnceToEnergyTaxReport(
+        EnergyTaxReport $energyTaxReport
+    ): static {
         if (!is_array($this->energyTaxReport)) {
             $this->energyTaxReport = [];
         }
@@ -313,8 +319,9 @@ class EnergyWaterSupplyType
      * @param  null|array<ConsumptionAverage> $consumptionAverage
      * @return static
      */
-    public function setConsumptionAverage(?array $consumptionAverage = null): static
-    {
+    public function setConsumptionAverage(
+        ?array $consumptionAverage = null
+    ): static {
         $this->consumptionAverage = $consumptionAverage;
 
         return $this;
@@ -374,8 +381,9 @@ class EnergyWaterSupplyType
      * @param  ConsumptionAverage $consumptionAverage
      * @return static
      */
-    public function addToConsumptionAverage(ConsumptionAverage $consumptionAverage): static
-    {
+    public function addToConsumptionAverage(
+        ConsumptionAverage $consumptionAverage
+    ): static {
         $this->consumptionAverage[] = $consumptionAverage;
 
         return $this;
@@ -395,8 +403,9 @@ class EnergyWaterSupplyType
      * @param  ConsumptionAverage $consumptionAverage
      * @return static
      */
-    public function addOnceToConsumptionAverage(ConsumptionAverage $consumptionAverage): static
-    {
+    public function addOnceToConsumptionAverage(
+        ConsumptionAverage $consumptionAverage
+    ): static {
         if (!is_array($this->consumptionAverage)) {
             $this->consumptionAverage = [];
         }
@@ -434,8 +443,9 @@ class EnergyWaterSupplyType
      * @param  null|array<EnergyWaterConsumptionCorrection> $energyWaterConsumptionCorrection
      * @return static
      */
-    public function setEnergyWaterConsumptionCorrection(?array $energyWaterConsumptionCorrection = null): static
-    {
+    public function setEnergyWaterConsumptionCorrection(
+        ?array $energyWaterConsumptionCorrection = null
+    ): static {
         $this->energyWaterConsumptionCorrection = $energyWaterConsumptionCorrection;
 
         return $this;

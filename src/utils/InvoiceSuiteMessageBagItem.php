@@ -106,8 +106,9 @@ final class InvoiceSuiteMessageBagItem implements JsonSerializable
      * @param  string $newMessageContent the message to store
      * @return static returns the current instance for fluent calls
      */
-    public function setMessageContent(string $newMessageContent): static
-    {
+    public function setMessageContent(
+        string $newMessageContent
+    ): static {
         $this->messageContent = $newMessageContent;
 
         return $this;
@@ -129,8 +130,9 @@ final class InvoiceSuiteMessageBagItem implements JsonSerializable
      * @param  InvoiceSuiteMessageSeverity $newMessageSeverity the severity to store
      * @return static                      returns the current instance for fluent calls
      */
-    public function setMessageSeverity(InvoiceSuiteMessageSeverity $newMessageSeverity): static
-    {
+    public function setMessageSeverity(
+        InvoiceSuiteMessageSeverity $newMessageSeverity
+    ): static {
         $this->messageSeverity = $newMessageSeverity;
 
         return $this;
@@ -152,8 +154,9 @@ final class InvoiceSuiteMessageBagItem implements JsonSerializable
      * @param  DateTimeInterface $newMessageTimestamp the timestamp to store
      * @return static            returns the current instance for fluent calls
      */
-    public function setMessageTimestamp(DateTimeInterface $newMessageTimestamp): static
-    {
+    public function setMessageTimestamp(
+        DateTimeInterface $newMessageTimestamp
+    ): static {
         $this->messageTimestamp = $newMessageTimestamp;
 
         return $this;
@@ -175,8 +178,9 @@ final class InvoiceSuiteMessageBagItem implements JsonSerializable
      * @param  array<array-key, mixed> $newMessageAdditionalData Additional data related to this message
      * @return static                  returns the current instance for fluent calls
      */
-    public function setMessageAdditionalData(array $newMessageAdditionalData): static
-    {
+    public function setMessageAdditionalData(
+        array $newMessageAdditionalData
+    ): static {
         $this->messageAdditionalData = $newMessageAdditionalData;
 
         return $this;

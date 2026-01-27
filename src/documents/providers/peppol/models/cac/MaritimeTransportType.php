@@ -128,8 +128,9 @@ class MaritimeTransportType
      * @param  null|VesselID $vesselID
      * @return static
      */
-    public function setVesselID(?VesselID $vesselID = null): static
-    {
+    public function setVesselID(
+        ?VesselID $vesselID = null
+    ): static {
         $this->vesselID = $vesselID;
 
         return $this;
@@ -167,8 +168,9 @@ class MaritimeTransportType
      * @param  null|VesselName $vesselName
      * @return static
      */
-    public function setVesselName(?VesselName $vesselName = null): static
-    {
+    public function setVesselName(
+        ?VesselName $vesselName = null
+    ): static {
         $this->vesselName = $vesselName;
 
         return $this;
@@ -206,8 +208,9 @@ class MaritimeTransportType
      * @param  null|RadioCallSignID $radioCallSignID
      * @return static
      */
-    public function setRadioCallSignID(?RadioCallSignID $radioCallSignID = null): static
-    {
+    public function setRadioCallSignID(
+        ?RadioCallSignID $radioCallSignID = null
+    ): static {
         $this->radioCallSignID = $radioCallSignID;
 
         return $this;
@@ -235,8 +238,9 @@ class MaritimeTransportType
      * @param  null|array<ShipsRequirements> $shipsRequirements
      * @return static
      */
-    public function setShipsRequirements(?array $shipsRequirements = null): static
-    {
+    public function setShipsRequirements(
+        ?array $shipsRequirements = null
+    ): static {
         $this->shipsRequirements = $shipsRequirements;
 
         return $this;
@@ -296,8 +300,9 @@ class MaritimeTransportType
      * @param  ShipsRequirements $shipsRequirements
      * @return static
      */
-    public function addToShipsRequirements(ShipsRequirements $shipsRequirements): static
-    {
+    public function addToShipsRequirements(
+        ShipsRequirements $shipsRequirements
+    ): static {
         $this->shipsRequirements[] = $shipsRequirements;
 
         return $this;
@@ -317,8 +322,9 @@ class MaritimeTransportType
      * @param  ShipsRequirements $shipsRequirements
      * @return static
      */
-    public function addOnceToShipsRequirements(ShipsRequirements $shipsRequirements): static
-    {
+    public function addOnceToShipsRequirements(
+        ShipsRequirements $shipsRequirements
+    ): static {
         if (!is_array($this->shipsRequirements)) {
             $this->shipsRequirements = [];
         }
@@ -366,8 +372,9 @@ class MaritimeTransportType
      * @param  null|GrossTonnageMeasure $grossTonnageMeasure
      * @return static
      */
-    public function setGrossTonnageMeasure(?GrossTonnageMeasure $grossTonnageMeasure = null): static
-    {
+    public function setGrossTonnageMeasure(
+        ?GrossTonnageMeasure $grossTonnageMeasure = null
+    ): static {
         $this->grossTonnageMeasure = $grossTonnageMeasure;
 
         return $this;
@@ -405,8 +412,9 @@ class MaritimeTransportType
      * @param  null|NetTonnageMeasure $netTonnageMeasure
      * @return static
      */
-    public function setNetTonnageMeasure(?NetTonnageMeasure $netTonnageMeasure = null): static
-    {
+    public function setNetTonnageMeasure(
+        ?NetTonnageMeasure $netTonnageMeasure = null
+    ): static {
         $this->netTonnageMeasure = $netTonnageMeasure;
 
         return $this;
@@ -484,8 +492,9 @@ class MaritimeTransportType
      * @param  null|RegistryPortLocation $registryPortLocation
      * @return static
      */
-    public function setRegistryPortLocation(?RegistryPortLocation $registryPortLocation = null): static
-    {
+    public function setRegistryPortLocation(
+        ?RegistryPortLocation $registryPortLocation = null
+    ): static {
         $this->registryPortLocation = $registryPortLocation;
 
         return $this;

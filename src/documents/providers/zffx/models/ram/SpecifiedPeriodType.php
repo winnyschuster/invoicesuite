@@ -79,8 +79,9 @@ class SpecifiedPeriodType
      * @param  null|TextType $description
      * @return static
      */
-    public function setDescription(?TextType $description = null): static
-    {
+    public function setDescription(
+        ?TextType $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -118,8 +119,9 @@ class SpecifiedPeriodType
      * @param  null|DateTimeType $startDateTime
      * @return static
      */
-    public function setStartDateTime(?DateTimeType $startDateTime = null): static
-    {
+    public function setStartDateTime(
+        ?DateTimeType $startDateTime = null
+    ): static {
         $this->startDateTime = $startDateTime;
 
         return $this;
@@ -157,8 +159,9 @@ class SpecifiedPeriodType
      * @param  null|DateTimeType $endDateTime
      * @return static
      */
-    public function setEndDateTime(?DateTimeType $endDateTime = null): static
-    {
+    public function setEndDateTime(
+        ?DateTimeType $endDateTime = null
+    ): static {
         $this->endDateTime = $endDateTime;
 
         return $this;
@@ -196,8 +199,9 @@ class SpecifiedPeriodType
      * @param  null|DateTimeType $completeDateTime
      * @return static
      */
-    public function setCompleteDateTime(?DateTimeType $completeDateTime = null): static
-    {
+    public function setCompleteDateTime(
+        ?DateTimeType $completeDateTime = null
+    ): static {
         $this->completeDateTime = $completeDateTime;
 
         return $this;

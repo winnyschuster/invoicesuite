@@ -414,8 +414,9 @@ class ShipmentType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -453,8 +454,9 @@ class ShipmentType
      * @param  null|ShippingPriorityLevelCode $shippingPriorityLevelCode
      * @return static
      */
-    public function setShippingPriorityLevelCode(?ShippingPriorityLevelCode $shippingPriorityLevelCode = null): static
-    {
+    public function setShippingPriorityLevelCode(
+        ?ShippingPriorityLevelCode $shippingPriorityLevelCode = null
+    ): static {
         $this->shippingPriorityLevelCode = $shippingPriorityLevelCode;
 
         return $this;
@@ -492,8 +494,9 @@ class ShipmentType
      * @param  null|HandlingCode $handlingCode
      * @return static
      */
-    public function setHandlingCode(?HandlingCode $handlingCode = null): static
-    {
+    public function setHandlingCode(
+        ?HandlingCode $handlingCode = null
+    ): static {
         $this->handlingCode = $handlingCode;
 
         return $this;
@@ -521,8 +524,9 @@ class ShipmentType
      * @param  null|array<HandlingInstructions> $handlingInstructions
      * @return static
      */
-    public function setHandlingInstructions(?array $handlingInstructions = null): static
-    {
+    public function setHandlingInstructions(
+        ?array $handlingInstructions = null
+    ): static {
         $this->handlingInstructions = $handlingInstructions;
 
         return $this;
@@ -582,8 +586,9 @@ class ShipmentType
      * @param  HandlingInstructions $handlingInstructions
      * @return static
      */
-    public function addToHandlingInstructions(HandlingInstructions $handlingInstructions): static
-    {
+    public function addToHandlingInstructions(
+        HandlingInstructions $handlingInstructions
+    ): static {
         $this->handlingInstructions[] = $handlingInstructions;
 
         return $this;
@@ -603,8 +608,9 @@ class ShipmentType
      * @param  HandlingInstructions $handlingInstructions
      * @return static
      */
-    public function addOnceToHandlingInstructions(HandlingInstructions $handlingInstructions): static
-    {
+    public function addOnceToHandlingInstructions(
+        HandlingInstructions $handlingInstructions
+    ): static {
         if (!is_array($this->handlingInstructions)) {
             $this->handlingInstructions = [];
         }
@@ -642,8 +648,9 @@ class ShipmentType
      * @param  null|array<Information> $information
      * @return static
      */
-    public function setInformation(?array $information = null): static
-    {
+    public function setInformation(
+        ?array $information = null
+    ): static {
         $this->information = $information;
 
         return $this;
@@ -703,8 +710,9 @@ class ShipmentType
      * @param  Information $information
      * @return static
      */
-    public function addToInformation(Information $information): static
-    {
+    public function addToInformation(
+        Information $information
+    ): static {
         $this->information[] = $information;
 
         return $this;
@@ -724,8 +732,9 @@ class ShipmentType
      * @param  Information $information
      * @return static
      */
-    public function addOnceToInformation(Information $information): static
-    {
+    public function addOnceToInformation(
+        Information $information
+    ): static {
         if (!is_array($this->information)) {
             $this->information = [];
         }
@@ -773,8 +782,9 @@ class ShipmentType
      * @param  null|GrossWeightMeasure $grossWeightMeasure
      * @return static
      */
-    public function setGrossWeightMeasure(?GrossWeightMeasure $grossWeightMeasure = null): static
-    {
+    public function setGrossWeightMeasure(
+        ?GrossWeightMeasure $grossWeightMeasure = null
+    ): static {
         $this->grossWeightMeasure = $grossWeightMeasure;
 
         return $this;
@@ -812,8 +822,9 @@ class ShipmentType
      * @param  null|NetWeightMeasure $netWeightMeasure
      * @return static
      */
-    public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): static
-    {
+    public function setNetWeightMeasure(
+        ?NetWeightMeasure $netWeightMeasure = null
+    ): static {
         $this->netWeightMeasure = $netWeightMeasure;
 
         return $this;
@@ -851,8 +862,9 @@ class ShipmentType
      * @param  null|NetNetWeightMeasure $netNetWeightMeasure
      * @return static
      */
-    public function setNetNetWeightMeasure(?NetNetWeightMeasure $netNetWeightMeasure = null): static
-    {
+    public function setNetNetWeightMeasure(
+        ?NetNetWeightMeasure $netNetWeightMeasure = null
+    ): static {
         $this->netNetWeightMeasure = $netNetWeightMeasure;
 
         return $this;
@@ -890,8 +902,9 @@ class ShipmentType
      * @param  null|GrossVolumeMeasure $grossVolumeMeasure
      * @return static
      */
-    public function setGrossVolumeMeasure(?GrossVolumeMeasure $grossVolumeMeasure = null): static
-    {
+    public function setGrossVolumeMeasure(
+        ?GrossVolumeMeasure $grossVolumeMeasure = null
+    ): static {
         $this->grossVolumeMeasure = $grossVolumeMeasure;
 
         return $this;
@@ -929,8 +942,9 @@ class ShipmentType
      * @param  null|NetVolumeMeasure $netVolumeMeasure
      * @return static
      */
-    public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): static
-    {
+    public function setNetVolumeMeasure(
+        ?NetVolumeMeasure $netVolumeMeasure = null
+    ): static {
         $this->netVolumeMeasure = $netVolumeMeasure;
 
         return $this;
@@ -968,8 +982,9 @@ class ShipmentType
      * @param  null|TotalGoodsItemQuantity $totalGoodsItemQuantity
      * @return static
      */
-    public function setTotalGoodsItemQuantity(?TotalGoodsItemQuantity $totalGoodsItemQuantity = null): static
-    {
+    public function setTotalGoodsItemQuantity(
+        ?TotalGoodsItemQuantity $totalGoodsItemQuantity = null
+    ): static {
         $this->totalGoodsItemQuantity = $totalGoodsItemQuantity;
 
         return $this;
@@ -1047,8 +1062,9 @@ class ShipmentType
      * @param  null|InsuranceValueAmount $insuranceValueAmount
      * @return static
      */
-    public function setInsuranceValueAmount(?InsuranceValueAmount $insuranceValueAmount = null): static
-    {
+    public function setInsuranceValueAmount(
+        ?InsuranceValueAmount $insuranceValueAmount = null
+    ): static {
         $this->insuranceValueAmount = $insuranceValueAmount;
 
         return $this;
@@ -1206,8 +1222,9 @@ class ShipmentType
      * @param  null|FreeOnBoardValueAmount $freeOnBoardValueAmount
      * @return static
      */
-    public function setFreeOnBoardValueAmount(?FreeOnBoardValueAmount $freeOnBoardValueAmount = null): static
-    {
+    public function setFreeOnBoardValueAmount(
+        ?FreeOnBoardValueAmount $freeOnBoardValueAmount = null
+    ): static {
         $this->freeOnBoardValueAmount = $freeOnBoardValueAmount;
 
         return $this;
@@ -1235,8 +1252,9 @@ class ShipmentType
      * @param  null|array<SpecialInstructions> $specialInstructions
      * @return static
      */
-    public function setSpecialInstructions(?array $specialInstructions = null): static
-    {
+    public function setSpecialInstructions(
+        ?array $specialInstructions = null
+    ): static {
         $this->specialInstructions = $specialInstructions;
 
         return $this;
@@ -1296,8 +1314,9 @@ class ShipmentType
      * @param  SpecialInstructions $specialInstructions
      * @return static
      */
-    public function addToSpecialInstructions(SpecialInstructions $specialInstructions): static
-    {
+    public function addToSpecialInstructions(
+        SpecialInstructions $specialInstructions
+    ): static {
         $this->specialInstructions[] = $specialInstructions;
 
         return $this;
@@ -1317,8 +1336,9 @@ class ShipmentType
      * @param  SpecialInstructions $specialInstructions
      * @return static
      */
-    public function addOnceToSpecialInstructions(SpecialInstructions $specialInstructions): static
-    {
+    public function addOnceToSpecialInstructions(
+        SpecialInstructions $specialInstructions
+    ): static {
         if (!is_array($this->specialInstructions)) {
             $this->specialInstructions = [];
         }
@@ -1356,8 +1376,9 @@ class ShipmentType
      * @param  null|array<DeliveryInstructions> $deliveryInstructions
      * @return static
      */
-    public function setDeliveryInstructions(?array $deliveryInstructions = null): static
-    {
+    public function setDeliveryInstructions(
+        ?array $deliveryInstructions = null
+    ): static {
         $this->deliveryInstructions = $deliveryInstructions;
 
         return $this;
@@ -1417,8 +1438,9 @@ class ShipmentType
      * @param  DeliveryInstructions $deliveryInstructions
      * @return static
      */
-    public function addToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): static
-    {
+    public function addToDeliveryInstructions(
+        DeliveryInstructions $deliveryInstructions
+    ): static {
         $this->deliveryInstructions[] = $deliveryInstructions;
 
         return $this;
@@ -1438,8 +1460,9 @@ class ShipmentType
      * @param  DeliveryInstructions $deliveryInstructions
      * @return static
      */
-    public function addOnceToDeliveryInstructions(DeliveryInstructions $deliveryInstructions): static
-    {
+    public function addOnceToDeliveryInstructions(
+        DeliveryInstructions $deliveryInstructions
+    ): static {
         if (!is_array($this->deliveryInstructions)) {
             $this->deliveryInstructions = [];
         }
@@ -1477,8 +1500,9 @@ class ShipmentType
      * @param  null|bool $splitConsignmentIndicator
      * @return static
      */
-    public function setSplitConsignmentIndicator(?bool $splitConsignmentIndicator = null): static
-    {
+    public function setSplitConsignmentIndicator(
+        ?bool $splitConsignmentIndicator = null
+    ): static {
         $this->splitConsignmentIndicator = $splitConsignmentIndicator;
 
         return $this;
@@ -1516,8 +1540,9 @@ class ShipmentType
      * @param  null|ConsignmentQuantity $consignmentQuantity
      * @return static
      */
-    public function setConsignmentQuantity(?ConsignmentQuantity $consignmentQuantity = null): static
-    {
+    public function setConsignmentQuantity(
+        ?ConsignmentQuantity $consignmentQuantity = null
+    ): static {
         $this->consignmentQuantity = $consignmentQuantity;
 
         return $this;
@@ -1545,8 +1570,9 @@ class ShipmentType
      * @param  null|array<Consignment> $consignment
      * @return static
      */
-    public function setConsignment(?array $consignment = null): static
-    {
+    public function setConsignment(
+        ?array $consignment = null
+    ): static {
         $this->consignment = $consignment;
 
         return $this;
@@ -1606,8 +1632,9 @@ class ShipmentType
      * @param  Consignment $consignment
      * @return static
      */
-    public function addToConsignment(Consignment $consignment): static
-    {
+    public function addToConsignment(
+        Consignment $consignment
+    ): static {
         $this->consignment[] = $consignment;
 
         return $this;
@@ -1627,8 +1654,9 @@ class ShipmentType
      * @param  Consignment $consignment
      * @return static
      */
-    public function addOnceToConsignment(Consignment $consignment): static
-    {
+    public function addOnceToConsignment(
+        Consignment $consignment
+    ): static {
         if (!is_array($this->consignment)) {
             $this->consignment = [];
         }
@@ -1666,8 +1694,9 @@ class ShipmentType
      * @param  null|array<GoodsItem> $goodsItem
      * @return static
      */
-    public function setGoodsItem(?array $goodsItem = null): static
-    {
+    public function setGoodsItem(
+        ?array $goodsItem = null
+    ): static {
         $this->goodsItem = $goodsItem;
 
         return $this;
@@ -1727,8 +1756,9 @@ class ShipmentType
      * @param  GoodsItem $goodsItem
      * @return static
      */
-    public function addToGoodsItem(GoodsItem $goodsItem): static
-    {
+    public function addToGoodsItem(
+        GoodsItem $goodsItem
+    ): static {
         $this->goodsItem[] = $goodsItem;
 
         return $this;
@@ -1748,8 +1778,9 @@ class ShipmentType
      * @param  GoodsItem $goodsItem
      * @return static
      */
-    public function addOnceToGoodsItem(GoodsItem $goodsItem): static
-    {
+    public function addOnceToGoodsItem(
+        GoodsItem $goodsItem
+    ): static {
         if (!is_array($this->goodsItem)) {
             $this->goodsItem = [];
         }
@@ -1787,8 +1818,9 @@ class ShipmentType
      * @param  null|array<ShipmentStage> $shipmentStage
      * @return static
      */
-    public function setShipmentStage(?array $shipmentStage = null): static
-    {
+    public function setShipmentStage(
+        ?array $shipmentStage = null
+    ): static {
         $this->shipmentStage = $shipmentStage;
 
         return $this;
@@ -1848,8 +1880,9 @@ class ShipmentType
      * @param  ShipmentStage $shipmentStage
      * @return static
      */
-    public function addToShipmentStage(ShipmentStage $shipmentStage): static
-    {
+    public function addToShipmentStage(
+        ShipmentStage $shipmentStage
+    ): static {
         $this->shipmentStage[] = $shipmentStage;
 
         return $this;
@@ -1869,8 +1902,9 @@ class ShipmentType
      * @param  ShipmentStage $shipmentStage
      * @return static
      */
-    public function addOnceToShipmentStage(ShipmentStage $shipmentStage): static
-    {
+    public function addOnceToShipmentStage(
+        ShipmentStage $shipmentStage
+    ): static {
         if (!is_array($this->shipmentStage)) {
             $this->shipmentStage = [];
         }
@@ -1918,8 +1952,9 @@ class ShipmentType
      * @param  null|Delivery $delivery
      * @return static
      */
-    public function setDelivery(?Delivery $delivery = null): static
-    {
+    public function setDelivery(
+        ?Delivery $delivery = null
+    ): static {
         $this->delivery = $delivery;
 
         return $this;
@@ -1947,8 +1982,9 @@ class ShipmentType
      * @param  null|array<TransportHandlingUnit> $transportHandlingUnit
      * @return static
      */
-    public function setTransportHandlingUnit(?array $transportHandlingUnit = null): static
-    {
+    public function setTransportHandlingUnit(
+        ?array $transportHandlingUnit = null
+    ): static {
         $this->transportHandlingUnit = $transportHandlingUnit;
 
         return $this;
@@ -2008,8 +2044,9 @@ class ShipmentType
      * @param  TransportHandlingUnit $transportHandlingUnit
      * @return static
      */
-    public function addToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): static
-    {
+    public function addToTransportHandlingUnit(
+        TransportHandlingUnit $transportHandlingUnit
+    ): static {
         $this->transportHandlingUnit[] = $transportHandlingUnit;
 
         return $this;
@@ -2029,8 +2066,9 @@ class ShipmentType
      * @param  TransportHandlingUnit $transportHandlingUnit
      * @return static
      */
-    public function addOnceToTransportHandlingUnit(TransportHandlingUnit $transportHandlingUnit): static
-    {
+    public function addOnceToTransportHandlingUnit(
+        TransportHandlingUnit $transportHandlingUnit
+    ): static {
         if (!is_array($this->transportHandlingUnit)) {
             $this->transportHandlingUnit = [];
         }
@@ -2078,8 +2116,9 @@ class ShipmentType
      * @param  null|ReturnAddress $returnAddress
      * @return static
      */
-    public function setReturnAddress(?ReturnAddress $returnAddress = null): static
-    {
+    public function setReturnAddress(
+        ?ReturnAddress $returnAddress = null
+    ): static {
         $this->returnAddress = $returnAddress;
 
         return $this;
@@ -2117,8 +2156,9 @@ class ShipmentType
      * @param  null|OriginAddress $originAddress
      * @return static
      */
-    public function setOriginAddress(?OriginAddress $originAddress = null): static
-    {
+    public function setOriginAddress(
+        ?OriginAddress $originAddress = null
+    ): static {
         $this->originAddress = $originAddress;
 
         return $this;
@@ -2156,8 +2196,9 @@ class ShipmentType
      * @param  null|FirstArrivalPortLocation $firstArrivalPortLocation
      * @return static
      */
-    public function setFirstArrivalPortLocation(?FirstArrivalPortLocation $firstArrivalPortLocation = null): static
-    {
+    public function setFirstArrivalPortLocation(
+        ?FirstArrivalPortLocation $firstArrivalPortLocation = null
+    ): static {
         $this->firstArrivalPortLocation = $firstArrivalPortLocation;
 
         return $this;
@@ -2195,8 +2236,9 @@ class ShipmentType
      * @param  null|LastExitPortLocation $lastExitPortLocation
      * @return static
      */
-    public function setLastExitPortLocation(?LastExitPortLocation $lastExitPortLocation = null): static
-    {
+    public function setLastExitPortLocation(
+        ?LastExitPortLocation $lastExitPortLocation = null
+    ): static {
         $this->lastExitPortLocation = $lastExitPortLocation;
 
         return $this;
@@ -2234,8 +2276,9 @@ class ShipmentType
      * @param  null|ExportCountry $exportCountry
      * @return static
      */
-    public function setExportCountry(?ExportCountry $exportCountry = null): static
-    {
+    public function setExportCountry(
+        ?ExportCountry $exportCountry = null
+    ): static {
         $this->exportCountry = $exportCountry;
 
         return $this;
@@ -2263,8 +2306,9 @@ class ShipmentType
      * @param  null|array<FreightAllowanceCharge> $freightAllowanceCharge
      * @return static
      */
-    public function setFreightAllowanceCharge(?array $freightAllowanceCharge = null): static
-    {
+    public function setFreightAllowanceCharge(
+        ?array $freightAllowanceCharge = null
+    ): static {
         $this->freightAllowanceCharge = $freightAllowanceCharge;
 
         return $this;
@@ -2324,8 +2368,9 @@ class ShipmentType
      * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
-    public function addToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
-    {
+    public function addToFreightAllowanceCharge(
+        FreightAllowanceCharge $freightAllowanceCharge
+    ): static {
         $this->freightAllowanceCharge[] = $freightAllowanceCharge;
 
         return $this;
@@ -2345,8 +2390,9 @@ class ShipmentType
      * @param  FreightAllowanceCharge $freightAllowanceCharge
      * @return static
      */
-    public function addOnceToFreightAllowanceCharge(FreightAllowanceCharge $freightAllowanceCharge): static
-    {
+    public function addOnceToFreightAllowanceCharge(
+        FreightAllowanceCharge $freightAllowanceCharge
+    ): static {
         if (!is_array($this->freightAllowanceCharge)) {
             $this->freightAllowanceCharge = [];
         }

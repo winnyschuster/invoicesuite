@@ -197,8 +197,9 @@ class InvoiceSuiteProductDTO
      * @param  null|string $id The ID of the product (product id, Order-X interoperable)
      * @return static
      */
-    public function setId(?string $id): static
-    {
+    public function setId(
+        ?string $id
+    ): static {
         $this->id = InvoiceSuiteStringUtils::asNullWhenEmpty($id);
 
         return $this;
@@ -220,8 +221,9 @@ class InvoiceSuiteProductDTO
      * @param  null|string $name The name of the product (product name)
      * @return static
      */
-    public function setName(?string $name): static
-    {
+    public function setName(
+        ?string $name
+    ): static {
         $this->name = InvoiceSuiteStringUtils::asNullWhenEmpty($name);
 
         return $this;
@@ -243,8 +245,9 @@ class InvoiceSuiteProductDTO
      * @param  null|string $description The product description of the product
      * @return static
      */
-    public function setDescription(?string $description): static
-    {
+    public function setDescription(
+        ?string $description
+    ): static {
         $this->description = InvoiceSuiteStringUtils::asNullWhenEmpty($description);
 
         return $this;
@@ -266,8 +269,9 @@ class InvoiceSuiteProductDTO
      * @param  null|string $sellerId The identifier assigned to the product by the seller
      * @return static
      */
-    public function setSellerId(?string $sellerId): static
-    {
+    public function setSellerId(
+        ?string $sellerId
+    ): static {
         $this->sellerId = InvoiceSuiteStringUtils::asNullWhenEmpty($sellerId);
 
         return $this;
@@ -289,8 +293,9 @@ class InvoiceSuiteProductDTO
      * @param  null|string $buyerId The identifier assigned to the product by the buyer
      * @return static
      */
-    public function setBuyerId(?string $buyerId): static
-    {
+    public function setBuyerId(
+        ?string $buyerId
+    ): static {
         $this->buyerId = InvoiceSuiteStringUtils::asNullWhenEmpty($buyerId);
 
         return $this;
@@ -312,8 +317,9 @@ class InvoiceSuiteProductDTO
      * @param  null|InvoiceSuiteIdDTO $globalId The product global id
      * @return static
      */
-    public function setGlobalId(?InvoiceSuiteIdDTO $globalId): static
-    {
+    public function setGlobalId(
+        ?InvoiceSuiteIdDTO $globalId
+    ): static {
         $this->globalId = $globalId;
 
         return $this;
@@ -335,8 +341,9 @@ class InvoiceSuiteProductDTO
      * @param  null|string $industryId The id assigned by the industry
      * @return static
      */
-    public function setIndustryId(?string $industryId): static
-    {
+    public function setIndustryId(
+        ?string $industryId
+    ): static {
         $this->industryId = InvoiceSuiteStringUtils::asNullWhenEmpty($industryId);
 
         return $this;
@@ -358,8 +365,9 @@ class InvoiceSuiteProductDTO
      * @param  null|string $modelId The unique model identifier of the product
      * @return static
      */
-    public function setModelId(?string $modelId): static
-    {
+    public function setModelId(
+        ?string $modelId
+    ): static {
         $this->modelId = InvoiceSuiteStringUtils::asNullWhenEmpty($modelId);
 
         return $this;
@@ -381,8 +389,9 @@ class InvoiceSuiteProductDTO
      * @param  null|string $batchId The batch (lot) identifier of the product
      * @return static
      */
-    public function setBatchId(?string $batchId): static
-    {
+    public function setBatchId(
+        ?string $batchId
+    ): static {
         $this->batchId = InvoiceSuiteStringUtils::asNullWhenEmpty($batchId);
 
         return $this;
@@ -404,8 +413,9 @@ class InvoiceSuiteProductDTO
      * @param  null|string $brandName The brand name of the product
      * @return static
      */
-    public function setBrandName(?string $brandName): static
-    {
+    public function setBrandName(
+        ?string $brandName
+    ): static {
         $this->brandName = InvoiceSuiteStringUtils::asNullWhenEmpty($brandName);
 
         return $this;
@@ -427,8 +437,9 @@ class InvoiceSuiteProductDTO
      * @param  null|string $modelName The model name of the product
      * @return static
      */
-    public function setModelName(?string $modelName): static
-    {
+    public function setModelName(
+        ?string $modelName
+    ): static {
         $this->modelName = InvoiceSuiteStringUtils::asNullWhenEmpty($modelName);
 
         return $this;
@@ -450,8 +461,9 @@ class InvoiceSuiteProductDTO
      * @param  null|string $originTradeCountry The code indicating the country the goods came from
      * @return static
      */
-    public function setOriginTradeCountry(?string $originTradeCountry): static
-    {
+    public function setOriginTradeCountry(
+        ?string $originTradeCountry
+    ): static {
         $this->originTradeCountry = InvoiceSuiteStringUtils::asNullWhenEmpty($originTradeCountry);
 
         return $this;
@@ -473,8 +485,9 @@ class InvoiceSuiteProductDTO
      * @param  array<InvoiceSuiteProductCharacteristicDTO> $characteristics The product characteristics
      * @return static
      */
-    public function setCharacteristics(array $characteristics): static
-    {
+    public function setCharacteristics(
+        array $characteristics
+    ): static {
         $this->characteristics = $characteristics;
 
         return $this;
@@ -486,8 +499,9 @@ class InvoiceSuiteProductDTO
      * @param  InvoiceSuiteProductCharacteristicDTO $characteristic The product characteristics
      * @return static
      */
-    public function addCharacteristic(?InvoiceSuiteProductCharacteristicDTO $characteristic): static
-    {
+    public function addCharacteristic(
+        ?InvoiceSuiteProductCharacteristicDTO $characteristic
+    ): static {
         if (is_null($characteristic)) {
             return $this;
         }
@@ -504,8 +518,10 @@ class InvoiceSuiteProductDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstCharacteristic(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstCharacteristic(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($characteristic = reset($this->characteristics)) !== false) {
             $callback($characteristic);
         } elseif (!is_null($callbackElse)) {
@@ -522,8 +538,10 @@ class InvoiceSuiteProductDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextCharacteristic(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextCharacteristic(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($characteristic = next($this->characteristics)) !== false) {
             $callback($characteristic);
         } elseif (!is_null($callbackElse)) {
@@ -540,8 +558,10 @@ class InvoiceSuiteProductDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousCharacteristic(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousCharacteristic(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($characteristic = prev($this->characteristics)) !== false) {
             $callback($characteristic);
         } elseif (!is_null($callbackElse)) {
@@ -558,8 +578,10 @@ class InvoiceSuiteProductDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastCharacteristic(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastCharacteristic(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($characteristic = end($this->characteristics)) !== false) {
             $callback($characteristic);
         } elseif (!is_null($callbackElse)) {
@@ -655,8 +677,9 @@ class InvoiceSuiteProductDTO
      * @param  array<InvoiceSuiteProductClassificationDTO> $classifications The product classification
      * @return static
      */
-    public function setClassifications(array $classifications): static
-    {
+    public function setClassifications(
+        array $classifications
+    ): static {
         $this->classifications = $classifications;
 
         return $this;
@@ -668,8 +691,9 @@ class InvoiceSuiteProductDTO
      * @param  InvoiceSuiteProductClassificationDTO $classification The product classification
      * @return static
      */
-    public function addClassification(?InvoiceSuiteProductClassificationDTO $classification): static
-    {
+    public function addClassification(
+        ?InvoiceSuiteProductClassificationDTO $classification
+    ): static {
         if (is_null($classification)) {
             return $this;
         }
@@ -686,8 +710,10 @@ class InvoiceSuiteProductDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstClassification(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstClassification(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($classification = reset($this->classifications)) !== false) {
             $callback($classification);
         } elseif (!is_null($callbackElse)) {
@@ -704,8 +730,10 @@ class InvoiceSuiteProductDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextClassification(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextClassification(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($classification = next($this->classifications)) !== false) {
             $callback($classification);
         } elseif (!is_null($callbackElse)) {
@@ -722,8 +750,10 @@ class InvoiceSuiteProductDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousClassification(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousClassification(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($classification = prev($this->classifications)) !== false) {
             $callback($classification);
         } elseif (!is_null($callbackElse)) {
@@ -740,8 +770,10 @@ class InvoiceSuiteProductDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastClassification(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastClassification(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($classification = end($this->classifications)) !== false) {
             $callback($classification);
         } elseif (!is_null($callbackElse)) {
@@ -837,8 +869,9 @@ class InvoiceSuiteProductDTO
      * @param  array<InvoiceSuiteReferenceProductDTO> $referenceProducts The reference product
      * @return static
      */
-    public function setReferenceProducts(array $referenceProducts): static
-    {
+    public function setReferenceProducts(
+        array $referenceProducts
+    ): static {
         $this->referenceProducts = $referenceProducts;
 
         return $this;
@@ -850,8 +883,9 @@ class InvoiceSuiteProductDTO
      * @param  InvoiceSuiteReferenceProductDTO $referenceProduct The reference product
      * @return static
      */
-    public function addReferenceProduct(?InvoiceSuiteReferenceProductDTO $referenceProduct): static
-    {
+    public function addReferenceProduct(
+        ?InvoiceSuiteReferenceProductDTO $referenceProduct
+    ): static {
         if (is_null($referenceProduct)) {
             return $this;
         }
@@ -868,8 +902,10 @@ class InvoiceSuiteProductDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstReferenceProduct(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstReferenceProduct(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($referenceProduct = reset($this->referenceProducts)) !== false) {
             $callback($referenceProduct);
         } elseif (!is_null($callbackElse)) {
@@ -886,8 +922,10 @@ class InvoiceSuiteProductDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextReferenceProduct(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextReferenceProduct(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($referenceProduct = next($this->referenceProducts)) !== false) {
             $callback($referenceProduct);
         } elseif (!is_null($callbackElse)) {
@@ -904,8 +942,10 @@ class InvoiceSuiteProductDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousReferenceProduct(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousReferenceProduct(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($referenceProduct = prev($this->referenceProducts)) !== false) {
             $callback($referenceProduct);
         } elseif (!is_null($callbackElse)) {
@@ -922,8 +962,10 @@ class InvoiceSuiteProductDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastReferenceProduct(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastReferenceProduct(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($referenceProduct = end($this->referenceProducts)) !== false) {
             $callback($referenceProduct);
         } elseif (!is_null($callbackElse)) {

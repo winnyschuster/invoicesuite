@@ -126,8 +126,9 @@ class ForecastExceptionType
      * @param  null|ForecastPurposeCode $forecastPurposeCode
      * @return static
      */
-    public function setForecastPurposeCode(?ForecastPurposeCode $forecastPurposeCode = null): static
-    {
+    public function setForecastPurposeCode(
+        ?ForecastPurposeCode $forecastPurposeCode = null
+    ): static {
         $this->forecastPurposeCode = $forecastPurposeCode;
 
         return $this;
@@ -165,8 +166,9 @@ class ForecastExceptionType
      * @param  null|ForecastTypeCode $forecastTypeCode
      * @return static
      */
-    public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): static
-    {
+    public function setForecastTypeCode(
+        ?ForecastTypeCode $forecastTypeCode = null
+    ): static {
         $this->forecastTypeCode = $forecastTypeCode;
 
         return $this;
@@ -194,8 +196,9 @@ class ForecastExceptionType
      * @param  null|DateTimeInterface $issueDate
      * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): static
-    {
+    public function setIssueDate(
+        ?DateTimeInterface $issueDate = null
+    ): static {
         $this->issueDate = $issueDate;
 
         return $this;
@@ -223,8 +226,9 @@ class ForecastExceptionType
      * @param  null|DateTimeInterface $issueTime
      * @return static
      */
-    public function setIssueTime(?DateTimeInterface $issueTime = null): static
-    {
+    public function setIssueTime(
+        ?DateTimeInterface $issueTime = null
+    ): static {
         $this->issueTime = $issueTime;
 
         return $this;
@@ -262,8 +266,9 @@ class ForecastExceptionType
      * @param  null|DataSourceCode $dataSourceCode
      * @return static
      */
-    public function setDataSourceCode(?DataSourceCode $dataSourceCode = null): static
-    {
+    public function setDataSourceCode(
+        ?DataSourceCode $dataSourceCode = null
+    ): static {
         $this->dataSourceCode = $dataSourceCode;
 
         return $this;
@@ -301,8 +306,9 @@ class ForecastExceptionType
      * @param  null|ComparisonDataCode $comparisonDataCode
      * @return static
      */
-    public function setComparisonDataCode(?ComparisonDataCode $comparisonDataCode = null): static
-    {
+    public function setComparisonDataCode(
+        ?ComparisonDataCode $comparisonDataCode = null
+    ): static {
         $this->comparisonDataCode = $comparisonDataCode;
 
         return $this;
@@ -330,8 +336,9 @@ class ForecastExceptionType
      * @param  null|DateTimeInterface $comparisonForecastIssueTime
      * @return static
      */
-    public function setComparisonForecastIssueTime(?DateTimeInterface $comparisonForecastIssueTime = null): static
-    {
+    public function setComparisonForecastIssueTime(
+        ?DateTimeInterface $comparisonForecastIssueTime = null
+    ): static {
         $this->comparisonForecastIssueTime = $comparisonForecastIssueTime;
 
         return $this;
@@ -359,8 +366,9 @@ class ForecastExceptionType
      * @param  null|DateTimeInterface $comparisonForecastIssueDate
      * @return static
      */
-    public function setComparisonForecastIssueDate(?DateTimeInterface $comparisonForecastIssueDate = null): static
-    {
+    public function setComparisonForecastIssueDate(
+        ?DateTimeInterface $comparisonForecastIssueDate = null
+    ): static {
         $this->comparisonForecastIssueDate = $comparisonForecastIssueDate;
 
         return $this;

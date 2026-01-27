@@ -97,8 +97,9 @@ class InvoiceSuiteContactDTO
      * @param  null|string $personName Contact name
      * @return static
      */
-    public function setPersonName(?string $personName): static
-    {
+    public function setPersonName(
+        ?string $personName
+    ): static {
         $this->personName = InvoiceSuiteStringUtils::asNullWhenEmpty($personName);
 
         return $this;
@@ -120,8 +121,9 @@ class InvoiceSuiteContactDTO
      * @param  null|string $departmentName Contact department name
      * @return static
      */
-    public function setDepartmentName(?string $departmentName): static
-    {
+    public function setDepartmentName(
+        ?string $departmentName
+    ): static {
         $this->departmentName = InvoiceSuiteStringUtils::asNullWhenEmpty($departmentName);
 
         return $this;
@@ -143,8 +145,9 @@ class InvoiceSuiteContactDTO
      * @param  null|string $phoneNumber Contact phone number
      * @return static
      */
-    public function setPhoneNumber(?string $phoneNumber): static
-    {
+    public function setPhoneNumber(
+        ?string $phoneNumber
+    ): static {
         $this->phoneNumber = InvoiceSuiteStringUtils::asNullWhenEmpty($phoneNumber);
 
         return $this;
@@ -166,8 +169,9 @@ class InvoiceSuiteContactDTO
      * @param  null|string $faxNumber Contact fax number
      * @return static
      */
-    public function setFaxNumber(?string $faxNumber): static
-    {
+    public function setFaxNumber(
+        ?string $faxNumber
+    ): static {
         $this->faxNumber = InvoiceSuiteStringUtils::asNullWhenEmpty($faxNumber);
 
         return $this;
@@ -189,8 +193,9 @@ class InvoiceSuiteContactDTO
      * @param  null|string $emailAddress Contact e-mail address
      * @return static
      */
-    public function setEmailAddress(?string $emailAddress): static
-    {
+    public function setEmailAddress(
+        ?string $emailAddress
+    ): static {
         $this->emailAddress = InvoiceSuiteStringUtils::asNullWhenEmpty($emailAddress);
 
         return $this;

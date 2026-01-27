@@ -56,8 +56,9 @@ class TransformType
      * @param  string $xPath
      * @return static
      */
-    public function setXPath(?string $xPath = null): static
-    {
+    public function setXPath(
+        ?string $xPath = null
+    ): static {
         $this->xPath = $xPath;
 
         return $this;
@@ -91,8 +92,9 @@ class TransformType
      * @param  string $algorithm
      * @return static
      */
-    public function setAlgorithm(?string $algorithm = null): static
-    {
+    public function setAlgorithm(
+        ?string $algorithm = null
+    ): static {
         $this->algorithm = $algorithm;
 
         return $this;

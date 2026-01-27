@@ -90,8 +90,9 @@ final class IscrizioneREA
      * @param  null|string $ufficio
      * @return static
      */
-    public function setUfficio(?string $ufficio = null): static
-    {
+    public function setUfficio(
+        ?string $ufficio = null
+    ): static {
         $this->ufficio = InvoiceSuiteStringUtils::asNullWhenEmpty($ufficio);
 
         return $this;
@@ -125,8 +126,9 @@ final class IscrizioneREA
      * @param  null|string $numeroREA
      * @return static
      */
-    public function setNumeroREA(?string $numeroREA = null): static
-    {
+    public function setNumeroREA(
+        ?string $numeroREA = null
+    ): static {
         $this->numeroREA = InvoiceSuiteStringUtils::asNullWhenEmpty($numeroREA);
 
         return $this;
@@ -160,8 +162,9 @@ final class IscrizioneREA
      * @param  null|float $capitaleSociale
      * @return static
      */
-    public function setCapitaleSociale(?float $capitaleSociale = null): static
-    {
+    public function setCapitaleSociale(
+        ?float $capitaleSociale = null
+    ): static {
         $this->capitaleSociale = $capitaleSociale;
 
         return $this;
@@ -195,8 +198,9 @@ final class IscrizioneREA
      * @param  null|SocioUnico $socioUnico
      * @return static
      */
-    public function setSocioUnico(?SocioUnico $socioUnico = null): static
-    {
+    public function setSocioUnico(
+        ?SocioUnico $socioUnico = null
+    ): static {
         $this->socioUnico = $socioUnico;
 
         return $this;
@@ -230,8 +234,9 @@ final class IscrizioneREA
      * @param  null|StatoLiquidazione $statoLiquidazione
      * @return static
      */
-    public function setStatoLiquidazione(?StatoLiquidazione $statoLiquidazione = null): static
-    {
+    public function setStatoLiquidazione(
+        ?StatoLiquidazione $statoLiquidazione = null
+    ): static {
         $this->statoLiquidazione = $statoLiquidazione;
 
         return $this;

@@ -57,8 +57,9 @@ class BinaryObjectType
      * @param  null|string $value
      * @return static
      */
-    public function setValue(?string $value = null): static
-    {
+    public function setValue(
+        ?string $value = null
+    ): static {
         $this->value = InvoiceSuiteStringUtils::asNullWhenEmpty($value);
 
         return $this;
@@ -86,8 +87,9 @@ class BinaryObjectType
      * @param  null|string $mimeCode
      * @return static
      */
-    public function setMimeCode(?string $mimeCode = null): static
-    {
+    public function setMimeCode(
+        ?string $mimeCode = null
+    ): static {
         $this->mimeCode = InvoiceSuiteStringUtils::asNullWhenEmpty($mimeCode);
 
         return $this;
@@ -115,8 +117,9 @@ class BinaryObjectType
      * @param  null|string $filename
      * @return static
      */
-    public function setFilename(?string $filename = null): static
-    {
+    public function setFilename(
+        ?string $filename = null
+    ): static {
         $this->filename = InvoiceSuiteStringUtils::asNullWhenEmpty($filename);
 
         return $this;

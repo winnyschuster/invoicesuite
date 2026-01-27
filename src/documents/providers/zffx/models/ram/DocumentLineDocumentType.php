@@ -92,8 +92,9 @@ class DocumentLineDocumentType
      * @param  null|IDType $lineID
      * @return static
      */
-    public function setLineID(?IDType $lineID = null): static
-    {
+    public function setLineID(
+        ?IDType $lineID = null
+    ): static {
         $this->lineID = $lineID;
 
         return $this;
@@ -131,8 +132,9 @@ class DocumentLineDocumentType
      * @param  null|IDType $parentLineID
      * @return static
      */
-    public function setParentLineID(?IDType $parentLineID = null): static
-    {
+    public function setParentLineID(
+        ?IDType $parentLineID = null
+    ): static {
         $this->parentLineID = $parentLineID;
 
         return $this;
@@ -170,8 +172,9 @@ class DocumentLineDocumentType
      * @param  null|LineStatusCodeType $lineStatusCode
      * @return static
      */
-    public function setLineStatusCode(?LineStatusCodeType $lineStatusCode = null): static
-    {
+    public function setLineStatusCode(
+        ?LineStatusCodeType $lineStatusCode = null
+    ): static {
         $this->lineStatusCode = $lineStatusCode;
 
         return $this;
@@ -209,8 +212,9 @@ class DocumentLineDocumentType
      * @param  null|CodeType $lineStatusReasonCode
      * @return static
      */
-    public function setLineStatusReasonCode(?CodeType $lineStatusReasonCode = null): static
-    {
+    public function setLineStatusReasonCode(
+        ?CodeType $lineStatusReasonCode = null
+    ): static {
         $this->lineStatusReasonCode = $lineStatusReasonCode;
 
         return $this;
@@ -238,8 +242,9 @@ class DocumentLineDocumentType
      * @param  null|array<NoteType> $includedNote
      * @return static
      */
-    public function setIncludedNote(?array $includedNote = null): static
-    {
+    public function setIncludedNote(
+        ?array $includedNote = null
+    ): static {
         $this->includedNote = $includedNote;
 
         return $this;
@@ -269,8 +274,9 @@ class DocumentLineDocumentType
      * @param  NoteType $includedNote
      * @return static
      */
-    public function addToIncludedNote(NoteType $includedNote): static
-    {
+    public function addToIncludedNote(
+        NoteType $includedNote
+    ): static {
         $this->includedNote[] = $includedNote;
 
         return $this;
@@ -290,8 +296,9 @@ class DocumentLineDocumentType
      * @param  NoteType $includedNote
      * @return static
      */
-    public function addOnceToIncludedNote(NoteType $includedNote): static
-    {
+    public function addOnceToIncludedNote(
+        NoteType $includedNote
+    ): static {
         if (!is_array($this->includedNote)) {
             $this->includedNote = [];
         }

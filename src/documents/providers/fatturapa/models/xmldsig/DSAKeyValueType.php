@@ -121,8 +121,9 @@ class DSAKeyValueType
      * @param  string $p
      * @return static
      */
-    public function setP(?string $p = null): static
-    {
+    public function setP(
+        ?string $p = null
+    ): static {
         $this->p = $p;
 
         return $this;
@@ -156,8 +157,9 @@ class DSAKeyValueType
      * @param  string $q
      * @return static
      */
-    public function setQ(?string $q = null): static
-    {
+    public function setQ(
+        ?string $q = null
+    ): static {
         $this->q = $q;
 
         return $this;
@@ -191,8 +193,9 @@ class DSAKeyValueType
      * @param  string $g
      * @return static
      */
-    public function setG(?string $g = null): static
-    {
+    public function setG(
+        ?string $g = null
+    ): static {
         $this->g = $g;
 
         return $this;
@@ -226,8 +229,9 @@ class DSAKeyValueType
      * @param  string $y
      * @return static
      */
-    public function setY(?string $y = null): static
-    {
+    public function setY(
+        ?string $y = null
+    ): static {
         $this->y = $y;
 
         return $this;
@@ -261,8 +265,9 @@ class DSAKeyValueType
      * @param  string $j
      * @return static
      */
-    public function setJ(?string $j = null): static
-    {
+    public function setJ(
+        ?string $j = null
+    ): static {
         $this->j = $j;
 
         return $this;
@@ -296,8 +301,9 @@ class DSAKeyValueType
      * @param  string $seed
      * @return static
      */
-    public function setSeed(?string $seed = null): static
-    {
+    public function setSeed(
+        ?string $seed = null
+    ): static {
         $this->seed = $seed;
 
         return $this;
@@ -331,8 +337,9 @@ class DSAKeyValueType
      * @param  string $pgenCounter
      * @return static
      */
-    public function setPgenCounter(?string $pgenCounter = null): static
-    {
+    public function setPgenCounter(
+        ?string $pgenCounter = null
+    ): static {
         $this->pgenCounter = $pgenCounter;
 
         return $this;

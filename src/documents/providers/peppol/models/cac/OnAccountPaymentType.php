@@ -70,8 +70,9 @@ class OnAccountPaymentType
      * @param  null|EstimatedConsumedQuantity $estimatedConsumedQuantity
      * @return static
      */
-    public function setEstimatedConsumedQuantity(?EstimatedConsumedQuantity $estimatedConsumedQuantity = null): static
-    {
+    public function setEstimatedConsumedQuantity(
+        ?EstimatedConsumedQuantity $estimatedConsumedQuantity = null
+    ): static {
         $this->estimatedConsumedQuantity = $estimatedConsumedQuantity;
 
         return $this;
@@ -99,8 +100,9 @@ class OnAccountPaymentType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -160,8 +162,9 @@ class OnAccountPaymentType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -181,8 +184,9 @@ class OnAccountPaymentType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -220,8 +224,9 @@ class OnAccountPaymentType
      * @param  null|array<PaymentTerms> $paymentTerms
      * @return static
      */
-    public function setPaymentTerms(?array $paymentTerms = null): static
-    {
+    public function setPaymentTerms(
+        ?array $paymentTerms = null
+    ): static {
         $this->paymentTerms = $paymentTerms;
 
         return $this;
@@ -281,8 +286,9 @@ class OnAccountPaymentType
      * @param  PaymentTerms $paymentTerms
      * @return static
      */
-    public function addToPaymentTerms(PaymentTerms $paymentTerms): static
-    {
+    public function addToPaymentTerms(
+        PaymentTerms $paymentTerms
+    ): static {
         $this->paymentTerms[] = $paymentTerms;
 
         return $this;
@@ -302,8 +308,9 @@ class OnAccountPaymentType
      * @param  PaymentTerms $paymentTerms
      * @return static
      */
-    public function addOnceToPaymentTerms(PaymentTerms $paymentTerms): static
-    {
+    public function addOnceToPaymentTerms(
+        PaymentTerms $paymentTerms
+    ): static {
         if (!is_array($this->paymentTerms)) {
             $this->paymentTerms = [];
         }

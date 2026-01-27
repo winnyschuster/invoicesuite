@@ -116,8 +116,9 @@ class EvidenceType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -155,8 +156,9 @@ class EvidenceType
      * @param  null|EvidenceTypeCode $evidenceTypeCode
      * @return static
      */
-    public function setEvidenceTypeCode(?EvidenceTypeCode $evidenceTypeCode = null): static
-    {
+    public function setEvidenceTypeCode(
+        ?EvidenceTypeCode $evidenceTypeCode = null
+    ): static {
         $this->evidenceTypeCode = $evidenceTypeCode;
 
         return $this;
@@ -184,8 +186,9 @@ class EvidenceType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -245,8 +248,9 @@ class EvidenceType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -266,8 +270,9 @@ class EvidenceType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -305,8 +310,9 @@ class EvidenceType
      * @param  null|array<CandidateStatement> $candidateStatement
      * @return static
      */
-    public function setCandidateStatement(?array $candidateStatement = null): static
-    {
+    public function setCandidateStatement(
+        ?array $candidateStatement = null
+    ): static {
         $this->candidateStatement = $candidateStatement;
 
         return $this;
@@ -366,8 +372,9 @@ class EvidenceType
      * @param  CandidateStatement $candidateStatement
      * @return static
      */
-    public function addToCandidateStatement(CandidateStatement $candidateStatement): static
-    {
+    public function addToCandidateStatement(
+        CandidateStatement $candidateStatement
+    ): static {
         $this->candidateStatement[] = $candidateStatement;
 
         return $this;
@@ -387,8 +394,9 @@ class EvidenceType
      * @param  CandidateStatement $candidateStatement
      * @return static
      */
-    public function addOnceToCandidateStatement(CandidateStatement $candidateStatement): static
-    {
+    public function addOnceToCandidateStatement(
+        CandidateStatement $candidateStatement
+    ): static {
         if (!is_array($this->candidateStatement)) {
             $this->candidateStatement = [];
         }
@@ -436,8 +444,9 @@ class EvidenceType
      * @param  null|EvidenceIssuingParty $evidenceIssuingParty
      * @return static
      */
-    public function setEvidenceIssuingParty(?EvidenceIssuingParty $evidenceIssuingParty = null): static
-    {
+    public function setEvidenceIssuingParty(
+        ?EvidenceIssuingParty $evidenceIssuingParty = null
+    ): static {
         $this->evidenceIssuingParty = $evidenceIssuingParty;
 
         return $this;
@@ -475,8 +484,9 @@ class EvidenceType
      * @param  null|DocumentReference $documentReference
      * @return static
      */
-    public function setDocumentReference(?DocumentReference $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?DocumentReference $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;
@@ -514,8 +524,9 @@ class EvidenceType
      * @param  null|Language $language
      * @return static
      */
-    public function setLanguage(?Language $language = null): static
-    {
+    public function setLanguage(
+        ?Language $language = null
+    ): static {
         $this->language = $language;
 
         return $this;

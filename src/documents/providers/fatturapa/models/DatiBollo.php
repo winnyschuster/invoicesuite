@@ -52,8 +52,9 @@ final class DatiBollo
      * @param  null|BolloVirtuale $bolloVirtuale
      * @return static
      */
-    public function setBolloVirtuale(?BolloVirtuale $bolloVirtuale = null): static
-    {
+    public function setBolloVirtuale(
+        ?BolloVirtuale $bolloVirtuale = null
+    ): static {
         $this->bolloVirtuale = $bolloVirtuale;
 
         return $this;
@@ -87,8 +88,9 @@ final class DatiBollo
      * @param  null|float $importoBollo
      * @return static
      */
-    public function setImportoBollo(?float $importoBollo = null): static
-    {
+    public function setImportoBollo(
+        ?float $importoBollo = null
+    ): static {
         $this->importoBollo = $importoBollo;
 
         return $this;

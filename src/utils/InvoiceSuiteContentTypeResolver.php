@@ -23,8 +23,9 @@ class InvoiceSuiteContentTypeResolver
      * @param  string                       $fromContent
      * @return null|InvoiceSuiteContentType
      */
-    public static function resolveContentType(string $fromContent): ?InvoiceSuiteContentType
-    {
+    public static function resolveContentType(
+        string $fromContent
+    ): ?InvoiceSuiteContentType {
         if (static::isValidJson($fromContent)) {
             return InvoiceSuiteContentType::JSON;
         }
@@ -42,8 +43,9 @@ class InvoiceSuiteContentTypeResolver
      * @param  string $fromContent
      * @return bool
      */
-    protected static function isValidXml(string $fromContent): bool
-    {
+    protected static function isValidXml(
+        string $fromContent
+    ): bool {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($fromContent)) {
             return false;
         }
@@ -67,8 +69,9 @@ class InvoiceSuiteContentTypeResolver
      * @param  string $fromContent
      * @return bool
      */
-    protected static function isValidJson(string $fromContent): bool
-    {
+    protected static function isValidJson(
+        string $fromContent
+    ): bool {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($fromContent)) {
             return false;
         }

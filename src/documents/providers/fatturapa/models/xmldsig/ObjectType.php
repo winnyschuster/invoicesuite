@@ -69,8 +69,9 @@ class ObjectType
      * @param  string $id
      * @return static
      */
-    public function setId(?string $id = null): static
-    {
+    public function setId(
+        ?string $id = null
+    ): static {
         $this->id = $id;
 
         return $this;
@@ -104,8 +105,9 @@ class ObjectType
      * @param  string $mimeType
      * @return static
      */
-    public function setMimeType(?string $mimeType = null): static
-    {
+    public function setMimeType(
+        ?string $mimeType = null
+    ): static {
         $this->mimeType = $mimeType;
 
         return $this;
@@ -139,8 +141,9 @@ class ObjectType
      * @param  string $encoding
      * @return static
      */
-    public function setEncoding(?string $encoding = null): static
-    {
+    public function setEncoding(
+        ?string $encoding = null
+    ): static {
         $this->encoding = $encoding;
 
         return $this;

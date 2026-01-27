@@ -71,8 +71,10 @@ class ExtractClass implements Stringable
      * @param string $className
      * @param array  $ignoreInheritance
      */
-    public function __construct(string $className, array $ignoreInheritance = [])
-    {
+    public function __construct(
+        string $className,
+        array $ignoreInheritance = []
+    ) {
         $this->className = $className;
         $this->ignoreInheritance = $ignoreInheritance;
     }
@@ -251,8 +253,9 @@ class ExtractClass implements Stringable
      * @param  string $filename
      * @return void
      */
-    public function saveJson(string $filename): void
-    {
+    public function saveJson(
+        string $filename
+    ): void {
         file_put_contents($filename, $this->getJson());
     }
 }
@@ -278,8 +281,9 @@ class MarkDownGenerator
      *
      * @param ExtractClass $extractor
      */
-    public function __construct(ExtractClass $extractor)
-    {
+    public function __construct(
+        ExtractClass $extractor
+    ) {
         $this->extractor = $extractor;
     }
 
@@ -415,8 +419,9 @@ class MarkDownGenerator
      * @param  string            $filename
      * @return MarkDownGenerator
      */
-    public function saveToFile(string $filename): self
-    {
+    public function saveToFile(
+        string $filename
+    ): self {
         $dir = InvoiceSuiteFileUtils::getFileDirectory($filename);
 
         if (!is_dir($dir)) {
@@ -435,8 +440,10 @@ class MarkDownGenerator
      * @param  mixed             ...$args
      * @return MarkDownGenerator
      */
-    private function addLine(string $string, ...$args): self
-    {
+    private function addLine(
+        string $string,
+        ...$args
+    ): self {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($string)) {
             return $this;
         }
@@ -453,8 +460,10 @@ class MarkDownGenerator
      * @param  mixed             ...$args
      * @return MarkDownGenerator
      */
-    private function addLineRaw(string $string, ...$args): self
-    {
+    private function addLineRaw(
+        string $string,
+        ...$args
+    ): self {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($string)) {
             return $this;
         }
@@ -483,8 +492,10 @@ class MarkDownGenerator
      * @param  bool              $newLine
      * @return MarkDownGenerator
      */
-    private function addLineH2(string $string, bool $newLine = true): self
-    {
+    private function addLineH2(
+        string $string,
+        bool $newLine = true
+    ): self {
         $this->addLine('## %s', $string);
 
         if ($newLine) {
@@ -501,8 +512,10 @@ class MarkDownGenerator
      * @param  bool              $newLine
      * @return MarkDownGenerator
      */
-    private function addLineH3(string $string, bool $newLine = true): self
-    {
+    private function addLineH3(
+        string $string,
+        bool $newLine = true
+    ): self {
         $this->addLine('### %s', $string);
 
         if ($newLine) {
@@ -519,8 +532,10 @@ class MarkDownGenerator
      * @param  bool              $newLine
      * @return MarkDownGenerator
      */
-    private function addLineH4(string $string, bool $newLine = true): self
-    {
+    private function addLineH4(
+        string $string,
+        bool $newLine = true
+    ): self {
         $this->addLine('#### %s', $string);
 
         if ($newLine) {
@@ -538,8 +553,11 @@ class MarkDownGenerator
      * @param  mixed             ...$args
      * @return MarkDownGenerator
      */
-    private function addToLastLine(string $string, string $delimiter = '', ...$args): self
-    {
+    private function addToLastLine(
+        string $string,
+        string $delimiter = '',
+        ...$args
+    ): self {
         if ([] === $this->lines) {
             return $this->addLine($string, ...$args);
         }
@@ -557,8 +575,10 @@ class MarkDownGenerator
      * @param  mixed             ...$args
      * @return MarkDownGenerator
      */
-    private function addLineItalic(string $string, ...$args): self
-    {
+    private function addLineItalic(
+        string $string,
+        ...$args
+    ): self {
         return $this->addLine(sprintf('_%s_', $string), ...$args);
     }
 
@@ -569,8 +589,10 @@ class MarkDownGenerator
      * @param  bool              $isClass
      * @return MarkDownGenerator
      */
-    private function addExample(string $exampleFilename, bool $isClass = false): self
-    {
+    private function addExample(
+        string $exampleFilename,
+        bool $isClass = false
+    ): self {
         if (!file_exists($exampleFilename)) {
             return $this;
         }
@@ -604,8 +626,9 @@ class MarkDownGenerator
      * @param  string $string
      * @return string
      */
-    private function sanatizeString(string $string): string
-    {
+    private function sanatizeString(
+        string $string
+    ): string {
         $string = str_replace("\n", '<br/>', $string);
         $string = str_replace('__BT-, From __', '', $string);
         $string = str_replace('__BT-, From', '__BT-??, From', $string);
@@ -619,8 +642,9 @@ class MarkDownGenerator
      * @param  string $string
      * @return string
      */
-    private function removeSprintfPlaceholder(string $string): string
-    {
+    private function removeSprintfPlaceholder(
+        string $string
+    ): string {
         return str_replace('%', '', $string);
     }
 
@@ -630,8 +654,9 @@ class MarkDownGenerator
      * @param  string $string
      * @return string
      */
-    private function fixPhpType(string $string): string
-    {
+    private function fixPhpType(
+        string $string
+    ): string {
         if (false !== stripos($string, '[]')) {
             $string = 'array';
         }
@@ -657,8 +682,9 @@ class MarkDownGenerator
      * @param  string $boolText
      * @return string
      */
-    private function boolToMarkDown(string $boolText): string
-    {
+    private function boolToMarkDown(
+        string $boolText
+    ): string {
         return 0 === strcasecmp($boolText, 'no') ? ':x:' : ':heavy_check_mark:';
     }
 }
@@ -671,8 +697,10 @@ class BatchMarkDownGenerator
      * @param  array $classes
      * @return void
      */
-    public static function generate(array $classes, array $ignoreInheritance = [])
-    {
+    public static function generate(
+        array $classes,
+        array $ignoreInheritance = []
+    ) {
         foreach ($classes as $className => $toFilename) {
             $extractor = new ExtractClass($className, $ignoreInheritance);
             $generator = new MarkDownGenerator($extractor);

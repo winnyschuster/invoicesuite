@@ -81,8 +81,9 @@ class CommodityClassificationType
      * @param  null|NatureCode $natureCode
      * @return static
      */
-    public function setNatureCode(?NatureCode $natureCode = null): static
-    {
+    public function setNatureCode(
+        ?NatureCode $natureCode = null
+    ): static {
         $this->natureCode = $natureCode;
 
         return $this;
@@ -120,8 +121,9 @@ class CommodityClassificationType
      * @param  null|CargoTypeCode $cargoTypeCode
      * @return static
      */
-    public function setCargoTypeCode(?CargoTypeCode $cargoTypeCode = null): static
-    {
+    public function setCargoTypeCode(
+        ?CargoTypeCode $cargoTypeCode = null
+    ): static {
         $this->cargoTypeCode = $cargoTypeCode;
 
         return $this;
@@ -159,8 +161,9 @@ class CommodityClassificationType
      * @param  null|CommodityCode $commodityCode
      * @return static
      */
-    public function setCommodityCode(?CommodityCode $commodityCode = null): static
-    {
+    public function setCommodityCode(
+        ?CommodityCode $commodityCode = null
+    ): static {
         $this->commodityCode = $commodityCode;
 
         return $this;
@@ -198,8 +201,9 @@ class CommodityClassificationType
      * @param  null|ItemClassificationCode $itemClassificationCode
      * @return static
      */
-    public function setItemClassificationCode(?ItemClassificationCode $itemClassificationCode = null): static
-    {
+    public function setItemClassificationCode(
+        ?ItemClassificationCode $itemClassificationCode = null
+    ): static {
         $this->itemClassificationCode = $itemClassificationCode;
 
         return $this;

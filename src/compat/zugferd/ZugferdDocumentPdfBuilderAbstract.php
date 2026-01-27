@@ -57,8 +57,9 @@ abstract class ZugferdDocumentPdfBuilderAbstract
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      */
-    public function __construct(string $pdfContent)
-    {
+    public function __construct(
+        string $pdfContent
+    ) {
         $this->pdfDocumentBuilder = InvoiceSuitePdfDocumentBuilder::createFromDocumentContentAndPdfContent(
             $this->getXmlContent(),
             $pdfContent
@@ -83,8 +84,9 @@ abstract class ZugferdDocumentPdfBuilderAbstract
      * @param  string $toFilename The full qualified filename to which the generated PDF (with attachment)is stored
      * @return static
      */
-    public function saveDocument(string $toFilename): static
-    {
+    public function saveDocument(
+        string $toFilename
+    ): static {
         $this->pdfDocumentBuilder->generatePdfDocumentAndSaveToFile($toFilename);
 
         return $this;
@@ -96,8 +98,9 @@ abstract class ZugferdDocumentPdfBuilderAbstract
      * @param  string $toFilename
      * @return string
      */
-    public function saveDocumentInline(string $toFilename): string
-    {
+    public function saveDocumentInline(
+        string $toFilename
+    ): string {
         $pdfContent = $this->downloadString();
 
         if (PHP_SAPI !== 'cli') {
@@ -128,8 +131,9 @@ abstract class ZugferdDocumentPdfBuilderAbstract
      * @param  string $additionalCreatorTool The name of the creator
      * @return static
      */
-    public function setAdditionalCreatorTool(string $additionalCreatorTool): static
-    {
+    public function setAdditionalCreatorTool(
+        string $additionalCreatorTool
+    ): static {
         $this->pdfDocumentBuilder->setAdditionalCreatorTool($additionalCreatorTool);
 
         return $this;
@@ -151,8 +155,9 @@ abstract class ZugferdDocumentPdfBuilderAbstract
      * @param  string $relationshipType Type of relationship
      * @return static
      */
-    public function setAttachmentRelationshipType(string $relationshipType): static
-    {
+    public function setAttachmentRelationshipType(
+        string $relationshipType
+    ): static {
         $this->pdfDocumentBuilder->setDocumentRelationshipType($relationshipType);
 
         return $this;

@@ -141,8 +141,9 @@ class MonetaryTotalType
      * @param  null|LineExtensionAmount $lineExtensionAmount
      * @return static
      */
-    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
-    {
+    public function setLineExtensionAmount(
+        ?LineExtensionAmount $lineExtensionAmount = null
+    ): static {
         $this->lineExtensionAmount = $lineExtensionAmount;
 
         return $this;
@@ -180,8 +181,9 @@ class MonetaryTotalType
      * @param  null|TaxExclusiveAmount $taxExclusiveAmount
      * @return static
      */
-    public function setTaxExclusiveAmount(?TaxExclusiveAmount $taxExclusiveAmount = null): static
-    {
+    public function setTaxExclusiveAmount(
+        ?TaxExclusiveAmount $taxExclusiveAmount = null
+    ): static {
         $this->taxExclusiveAmount = $taxExclusiveAmount;
 
         return $this;
@@ -219,8 +221,9 @@ class MonetaryTotalType
      * @param  null|TaxInclusiveAmount $taxInclusiveAmount
      * @return static
      */
-    public function setTaxInclusiveAmount(?TaxInclusiveAmount $taxInclusiveAmount = null): static
-    {
+    public function setTaxInclusiveAmount(
+        ?TaxInclusiveAmount $taxInclusiveAmount = null
+    ): static {
         $this->taxInclusiveAmount = $taxInclusiveAmount;
 
         return $this;
@@ -258,8 +261,9 @@ class MonetaryTotalType
      * @param  null|AllowanceTotalAmount $allowanceTotalAmount
      * @return static
      */
-    public function setAllowanceTotalAmount(?AllowanceTotalAmount $allowanceTotalAmount = null): static
-    {
+    public function setAllowanceTotalAmount(
+        ?AllowanceTotalAmount $allowanceTotalAmount = null
+    ): static {
         $this->allowanceTotalAmount = $allowanceTotalAmount;
 
         return $this;
@@ -297,8 +301,9 @@ class MonetaryTotalType
      * @param  null|ChargeTotalAmount $chargeTotalAmount
      * @return static
      */
-    public function setChargeTotalAmount(?ChargeTotalAmount $chargeTotalAmount = null): static
-    {
+    public function setChargeTotalAmount(
+        ?ChargeTotalAmount $chargeTotalAmount = null
+    ): static {
         $this->chargeTotalAmount = $chargeTotalAmount;
 
         return $this;
@@ -336,8 +341,9 @@ class MonetaryTotalType
      * @param  null|PrepaidAmount $prepaidAmount
      * @return static
      */
-    public function setPrepaidAmount(?PrepaidAmount $prepaidAmount = null): static
-    {
+    public function setPrepaidAmount(
+        ?PrepaidAmount $prepaidAmount = null
+    ): static {
         $this->prepaidAmount = $prepaidAmount;
 
         return $this;
@@ -375,8 +381,9 @@ class MonetaryTotalType
      * @param  null|PayableRoundingAmount $payableRoundingAmount
      * @return static
      */
-    public function setPayableRoundingAmount(?PayableRoundingAmount $payableRoundingAmount = null): static
-    {
+    public function setPayableRoundingAmount(
+        ?PayableRoundingAmount $payableRoundingAmount = null
+    ): static {
         $this->payableRoundingAmount = $payableRoundingAmount;
 
         return $this;
@@ -414,8 +421,9 @@ class MonetaryTotalType
      * @param  null|PayableAmount $payableAmount
      * @return static
      */
-    public function setPayableAmount(?PayableAmount $payableAmount = null): static
-    {
+    public function setPayableAmount(
+        ?PayableAmount $payableAmount = null
+    ): static {
         $this->payableAmount = $payableAmount;
 
         return $this;
@@ -453,8 +461,9 @@ class MonetaryTotalType
      * @param  null|PayableAlternativeAmount $payableAlternativeAmount
      * @return static
      */
-    public function setPayableAlternativeAmount(?PayableAlternativeAmount $payableAlternativeAmount = null): static
-    {
+    public function setPayableAlternativeAmount(
+        ?PayableAlternativeAmount $payableAlternativeAmount = null
+    ): static {
         $this->payableAlternativeAmount = $payableAlternativeAmount;
 
         return $this;

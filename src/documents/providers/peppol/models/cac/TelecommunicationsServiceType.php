@@ -282,8 +282,9 @@ class TelecommunicationsServiceType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -311,8 +312,9 @@ class TelecommunicationsServiceType
      * @param  null|DateTimeInterface $callDate
      * @return static
      */
-    public function setCallDate(?DateTimeInterface $callDate = null): static
-    {
+    public function setCallDate(
+        ?DateTimeInterface $callDate = null
+    ): static {
         $this->callDate = $callDate;
 
         return $this;
@@ -340,8 +342,9 @@ class TelecommunicationsServiceType
      * @param  null|DateTimeInterface $callTime
      * @return static
      */
-    public function setCallTime(?DateTimeInterface $callTime = null): static
-    {
+    public function setCallTime(
+        ?DateTimeInterface $callTime = null
+    ): static {
         $this->callTime = $callTime;
 
         return $this;
@@ -379,8 +382,9 @@ class TelecommunicationsServiceType
      * @param  null|ServiceNumberCalled $serviceNumberCalled
      * @return static
      */
-    public function setServiceNumberCalled(?ServiceNumberCalled $serviceNumberCalled = null): static
-    {
+    public function setServiceNumberCalled(
+        ?ServiceNumberCalled $serviceNumberCalled = null
+    ): static {
         $this->serviceNumberCalled = $serviceNumberCalled;
 
         return $this;
@@ -498,8 +502,9 @@ class TelecommunicationsServiceType
      * @param  null|MovieTitle $movieTitle
      * @return static
      */
-    public function setMovieTitle(?MovieTitle $movieTitle = null): static
-    {
+    public function setMovieTitle(
+        ?MovieTitle $movieTitle = null
+    ): static {
         $this->movieTitle = $movieTitle;
 
         return $this;
@@ -537,8 +542,9 @@ class TelecommunicationsServiceType
      * @param  null|RoamingPartnerName $roamingPartnerName
      * @return static
      */
-    public function setRoamingPartnerName(?RoamingPartnerName $roamingPartnerName = null): static
-    {
+    public function setRoamingPartnerName(
+        ?RoamingPartnerName $roamingPartnerName = null
+    ): static {
         $this->roamingPartnerName = $roamingPartnerName;
 
         return $this;
@@ -576,8 +582,9 @@ class TelecommunicationsServiceType
      * @param  null|PayPerView $payPerView
      * @return static
      */
-    public function setPayPerView(?PayPerView $payPerView = null): static
-    {
+    public function setPayPerView(
+        ?PayPerView $payPerView = null
+    ): static {
         $this->payPerView = $payPerView;
 
         return $this;
@@ -615,8 +622,9 @@ class TelecommunicationsServiceType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -734,8 +742,9 @@ class TelecommunicationsServiceType
      * @param  null|CallBaseAmount $callBaseAmount
      * @return static
      */
-    public function setCallBaseAmount(?CallBaseAmount $callBaseAmount = null): static
-    {
+    public function setCallBaseAmount(
+        ?CallBaseAmount $callBaseAmount = null
+    ): static {
         $this->callBaseAmount = $callBaseAmount;
 
         return $this;
@@ -773,8 +782,9 @@ class TelecommunicationsServiceType
      * @param  null|CallExtensionAmount $callExtensionAmount
      * @return static
      */
-    public function setCallExtensionAmount(?CallExtensionAmount $callExtensionAmount = null): static
-    {
+    public function setCallExtensionAmount(
+        ?CallExtensionAmount $callExtensionAmount = null
+    ): static {
         $this->callExtensionAmount = $callExtensionAmount;
 
         return $this;
@@ -812,8 +822,9 @@ class TelecommunicationsServiceType
      * @param  null|Price $price
      * @return static
      */
-    public function setPrice(?Price $price = null): static
-    {
+    public function setPrice(
+        ?Price $price = null
+    ): static {
         $this->price = $price;
 
         return $this;
@@ -851,8 +862,9 @@ class TelecommunicationsServiceType
      * @param  null|Country $country
      * @return static
      */
-    public function setCountry(?Country $country = null): static
-    {
+    public function setCountry(
+        ?Country $country = null
+    ): static {
         $this->country = $country;
 
         return $this;
@@ -880,8 +892,9 @@ class TelecommunicationsServiceType
      * @param  null|array<ExchangeRate> $exchangeRate
      * @return static
      */
-    public function setExchangeRate(?array $exchangeRate = null): static
-    {
+    public function setExchangeRate(
+        ?array $exchangeRate = null
+    ): static {
         $this->exchangeRate = $exchangeRate;
 
         return $this;
@@ -941,8 +954,9 @@ class TelecommunicationsServiceType
      * @param  ExchangeRate $exchangeRate
      * @return static
      */
-    public function addToExchangeRate(ExchangeRate $exchangeRate): static
-    {
+    public function addToExchangeRate(
+        ExchangeRate $exchangeRate
+    ): static {
         $this->exchangeRate[] = $exchangeRate;
 
         return $this;
@@ -962,8 +976,9 @@ class TelecommunicationsServiceType
      * @param  ExchangeRate $exchangeRate
      * @return static
      */
-    public function addOnceToExchangeRate(ExchangeRate $exchangeRate): static
-    {
+    public function addOnceToExchangeRate(
+        ExchangeRate $exchangeRate
+    ): static {
         if (!is_array($this->exchangeRate)) {
             $this->exchangeRate = [];
         }
@@ -1001,8 +1016,9 @@ class TelecommunicationsServiceType
      * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): static
-    {
+    public function setAllowanceCharge(
+        ?array $allowanceCharge = null
+    ): static {
         $this->allowanceCharge = $allowanceCharge;
 
         return $this;
@@ -1062,8 +1078,9 @@ class TelecommunicationsServiceType
      * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
-    {
+    public function addToAllowanceCharge(
+        AllowanceCharge $allowanceCharge
+    ): static {
         $this->allowanceCharge[] = $allowanceCharge;
 
         return $this;
@@ -1083,8 +1100,9 @@ class TelecommunicationsServiceType
      * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
-    {
+    public function addOnceToAllowanceCharge(
+        AllowanceCharge $allowanceCharge
+    ): static {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];
         }
@@ -1122,8 +1140,9 @@ class TelecommunicationsServiceType
      * @param  null|array<TaxTotal> $taxTotal
      * @return static
      */
-    public function setTaxTotal(?array $taxTotal = null): static
-    {
+    public function setTaxTotal(
+        ?array $taxTotal = null
+    ): static {
         $this->taxTotal = $taxTotal;
 
         return $this;
@@ -1183,8 +1202,9 @@ class TelecommunicationsServiceType
      * @param  TaxTotal $taxTotal
      * @return static
      */
-    public function addToTaxTotal(TaxTotal $taxTotal): static
-    {
+    public function addToTaxTotal(
+        TaxTotal $taxTotal
+    ): static {
         $this->taxTotal[] = $taxTotal;
 
         return $this;
@@ -1204,8 +1224,9 @@ class TelecommunicationsServiceType
      * @param  TaxTotal $taxTotal
      * @return static
      */
-    public function addOnceToTaxTotal(TaxTotal $taxTotal): static
-    {
+    public function addOnceToTaxTotal(
+        TaxTotal $taxTotal
+    ): static {
         if (!is_array($this->taxTotal)) {
             $this->taxTotal = [];
         }
@@ -1243,8 +1264,9 @@ class TelecommunicationsServiceType
      * @param  null|array<CallDuty> $callDuty
      * @return static
      */
-    public function setCallDuty(?array $callDuty = null): static
-    {
+    public function setCallDuty(
+        ?array $callDuty = null
+    ): static {
         $this->callDuty = $callDuty;
 
         return $this;
@@ -1304,8 +1326,9 @@ class TelecommunicationsServiceType
      * @param  CallDuty $callDuty
      * @return static
      */
-    public function addToCallDuty(CallDuty $callDuty): static
-    {
+    public function addToCallDuty(
+        CallDuty $callDuty
+    ): static {
         $this->callDuty[] = $callDuty;
 
         return $this;
@@ -1325,8 +1348,9 @@ class TelecommunicationsServiceType
      * @param  CallDuty $callDuty
      * @return static
      */
-    public function addOnceToCallDuty(CallDuty $callDuty): static
-    {
+    public function addOnceToCallDuty(
+        CallDuty $callDuty
+    ): static {
         if (!is_array($this->callDuty)) {
             $this->callDuty = [];
         }
@@ -1364,8 +1388,9 @@ class TelecommunicationsServiceType
      * @param  null|array<TimeDuty> $timeDuty
      * @return static
      */
-    public function setTimeDuty(?array $timeDuty = null): static
-    {
+    public function setTimeDuty(
+        ?array $timeDuty = null
+    ): static {
         $this->timeDuty = $timeDuty;
 
         return $this;
@@ -1425,8 +1450,9 @@ class TelecommunicationsServiceType
      * @param  TimeDuty $timeDuty
      * @return static
      */
-    public function addToTimeDuty(TimeDuty $timeDuty): static
-    {
+    public function addToTimeDuty(
+        TimeDuty $timeDuty
+    ): static {
         $this->timeDuty[] = $timeDuty;
 
         return $this;
@@ -1446,8 +1472,9 @@ class TelecommunicationsServiceType
      * @param  TimeDuty $timeDuty
      * @return static
      */
-    public function addOnceToTimeDuty(TimeDuty $timeDuty): static
-    {
+    public function addOnceToTimeDuty(
+        TimeDuty $timeDuty
+    ): static {
         if (!is_array($this->timeDuty)) {
             $this->timeDuty = [];
         }

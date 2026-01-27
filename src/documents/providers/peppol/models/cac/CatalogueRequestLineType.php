@@ -104,8 +104,9 @@ class CatalogueRequestLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -143,8 +144,9 @@ class CatalogueRequestLineType
      * @param  null|ContractSubdivision $contractSubdivision
      * @return static
      */
-    public function setContractSubdivision(?ContractSubdivision $contractSubdivision = null): static
-    {
+    public function setContractSubdivision(
+        ?ContractSubdivision $contractSubdivision = null
+    ): static {
         $this->contractSubdivision = $contractSubdivision;
 
         return $this;
@@ -172,8 +174,9 @@ class CatalogueRequestLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -233,8 +236,9 @@ class CatalogueRequestLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -254,8 +258,9 @@ class CatalogueRequestLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -303,8 +308,9 @@ class CatalogueRequestLineType
      * @param  null|LineValidityPeriod $lineValidityPeriod
      * @return static
      */
-    public function setLineValidityPeriod(?LineValidityPeriod $lineValidityPeriod = null): static
-    {
+    public function setLineValidityPeriod(
+        ?LineValidityPeriod $lineValidityPeriod = null
+    ): static {
         $this->lineValidityPeriod = $lineValidityPeriod;
 
         return $this;
@@ -332,8 +338,9 @@ class CatalogueRequestLineType
      * @param  null|array<RequiredItemLocationQuantity> $requiredItemLocationQuantity
      * @return static
      */
-    public function setRequiredItemLocationQuantity(?array $requiredItemLocationQuantity = null): static
-    {
+    public function setRequiredItemLocationQuantity(
+        ?array $requiredItemLocationQuantity = null
+    ): static {
         $this->requiredItemLocationQuantity = $requiredItemLocationQuantity;
 
         return $this;
@@ -465,8 +472,9 @@ class CatalogueRequestLineType
      * @param  null|Item $item
      * @return static
      */
-    public function setItem(?Item $item = null): static
-    {
+    public function setItem(
+        ?Item $item = null
+    ): static {
         $this->item = $item;
 
         return $this;

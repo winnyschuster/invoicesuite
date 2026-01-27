@@ -106,8 +106,9 @@ class PeriodType
      * @param  null|DateTimeInterface $startDate
      * @return static
      */
-    public function setStartDate(?DateTimeInterface $startDate = null): static
-    {
+    public function setStartDate(
+        ?DateTimeInterface $startDate = null
+    ): static {
         $this->startDate = $startDate;
 
         return $this;
@@ -135,8 +136,9 @@ class PeriodType
      * @param  null|DateTimeInterface $startTime
      * @return static
      */
-    public function setStartTime(?DateTimeInterface $startTime = null): static
-    {
+    public function setStartTime(
+        ?DateTimeInterface $startTime = null
+    ): static {
         $this->startTime = $startTime;
 
         return $this;
@@ -164,8 +166,9 @@ class PeriodType
      * @param  null|DateTimeInterface $endDate
      * @return static
      */
-    public function setEndDate(?DateTimeInterface $endDate = null): static
-    {
+    public function setEndDate(
+        ?DateTimeInterface $endDate = null
+    ): static {
         $this->endDate = $endDate;
 
         return $this;
@@ -193,8 +196,9 @@ class PeriodType
      * @param  null|DateTimeInterface $endTime
      * @return static
      */
-    public function setEndTime(?DateTimeInterface $endTime = null): static
-    {
+    public function setEndTime(
+        ?DateTimeInterface $endTime = null
+    ): static {
         $this->endTime = $endTime;
 
         return $this;
@@ -232,8 +236,9 @@ class PeriodType
      * @param  null|DurationMeasure $durationMeasure
      * @return static
      */
-    public function setDurationMeasure(?DurationMeasure $durationMeasure = null): static
-    {
+    public function setDurationMeasure(
+        ?DurationMeasure $durationMeasure = null
+    ): static {
         $this->durationMeasure = $durationMeasure;
 
         return $this;
@@ -261,8 +266,9 @@ class PeriodType
      * @param  null|array<DescriptionCode> $descriptionCode
      * @return static
      */
-    public function setDescriptionCode(?array $descriptionCode = null): static
-    {
+    public function setDescriptionCode(
+        ?array $descriptionCode = null
+    ): static {
         $this->descriptionCode = $descriptionCode;
 
         return $this;
@@ -322,8 +328,9 @@ class PeriodType
      * @param  DescriptionCode $descriptionCode
      * @return static
      */
-    public function addToDescriptionCode(DescriptionCode $descriptionCode): static
-    {
+    public function addToDescriptionCode(
+        DescriptionCode $descriptionCode
+    ): static {
         $this->descriptionCode[] = $descriptionCode;
 
         return $this;
@@ -343,8 +350,9 @@ class PeriodType
      * @param  DescriptionCode $descriptionCode
      * @return static
      */
-    public function addOnceToDescriptionCode(DescriptionCode $descriptionCode): static
-    {
+    public function addOnceToDescriptionCode(
+        DescriptionCode $descriptionCode
+    ): static {
         if (!is_array($this->descriptionCode)) {
             $this->descriptionCode = [];
         }
@@ -382,8 +390,9 @@ class PeriodType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -443,8 +452,9 @@ class PeriodType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -464,8 +474,9 @@ class PeriodType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }

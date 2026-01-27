@@ -216,8 +216,9 @@ class TradeProductType
      * @param  null|IDType $iD
      * @return static
      */
-    public function setID(?IDType $iD = null): static
-    {
+    public function setID(
+        ?IDType $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -255,8 +256,9 @@ class TradeProductType
      * @param  null|IDType $globalID
      * @return static
      */
-    public function setGlobalID(?IDType $globalID = null): static
-    {
+    public function setGlobalID(
+        ?IDType $globalID = null
+    ): static {
         $this->globalID = $globalID;
 
         return $this;
@@ -294,8 +296,9 @@ class TradeProductType
      * @param  null|IDType $sellerAssignedID
      * @return static
      */
-    public function setSellerAssignedID(?IDType $sellerAssignedID = null): static
-    {
+    public function setSellerAssignedID(
+        ?IDType $sellerAssignedID = null
+    ): static {
         $this->sellerAssignedID = $sellerAssignedID;
 
         return $this;
@@ -333,8 +336,9 @@ class TradeProductType
      * @param  null|IDType $buyerAssignedID
      * @return static
      */
-    public function setBuyerAssignedID(?IDType $buyerAssignedID = null): static
-    {
+    public function setBuyerAssignedID(
+        ?IDType $buyerAssignedID = null
+    ): static {
         $this->buyerAssignedID = $buyerAssignedID;
 
         return $this;
@@ -372,8 +376,9 @@ class TradeProductType
      * @param  null|IDType $industryAssignedID
      * @return static
      */
-    public function setIndustryAssignedID(?IDType $industryAssignedID = null): static
-    {
+    public function setIndustryAssignedID(
+        ?IDType $industryAssignedID = null
+    ): static {
         $this->industryAssignedID = $industryAssignedID;
 
         return $this;
@@ -411,8 +416,9 @@ class TradeProductType
      * @param  null|IDType $modelID
      * @return static
      */
-    public function setModelID(?IDType $modelID = null): static
-    {
+    public function setModelID(
+        ?IDType $modelID = null
+    ): static {
         $this->modelID = $modelID;
 
         return $this;
@@ -450,8 +456,9 @@ class TradeProductType
      * @param  null|TextType $name
      * @return static
      */
-    public function setName(?TextType $name = null): static
-    {
+    public function setName(
+        ?TextType $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -489,8 +496,9 @@ class TradeProductType
      * @param  null|TextType $description
      * @return static
      */
-    public function setDescription(?TextType $description = null): static
-    {
+    public function setDescription(
+        ?TextType $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -518,8 +526,9 @@ class TradeProductType
      * @param  null|array<IDType> $batchID
      * @return static
      */
-    public function setBatchID(?array $batchID = null): static
-    {
+    public function setBatchID(
+        ?array $batchID = null
+    ): static {
         $this->batchID = $batchID;
 
         return $this;
@@ -549,8 +558,9 @@ class TradeProductType
      * @param  IDType $batchID
      * @return static
      */
-    public function addToBatchID(IDType $batchID): static
-    {
+    public function addToBatchID(
+        IDType $batchID
+    ): static {
         $this->batchID[] = $batchID;
 
         return $this;
@@ -570,8 +580,9 @@ class TradeProductType
      * @param  IDType $batchID
      * @return static
      */
-    public function addOnceToBatchID(IDType $batchID): static
-    {
+    public function addOnceToBatchID(
+        IDType $batchID
+    ): static {
         if (!is_array($this->batchID)) {
             $this->batchID = [];
         }
@@ -619,8 +630,9 @@ class TradeProductType
      * @param  null|TextType $brandName
      * @return static
      */
-    public function setBrandName(?TextType $brandName = null): static
-    {
+    public function setBrandName(
+        ?TextType $brandName = null
+    ): static {
         $this->brandName = $brandName;
 
         return $this;
@@ -658,8 +670,9 @@ class TradeProductType
      * @param  null|TextType $modelName
      * @return static
      */
-    public function setModelName(?TextType $modelName = null): static
-    {
+    public function setModelName(
+        ?TextType $modelName = null
+    ): static {
         $this->modelName = $modelName;
 
         return $this;
@@ -687,8 +700,9 @@ class TradeProductType
      * @param  null|array<ProductCharacteristicType> $applicableProductCharacteristic
      * @return static
      */
-    public function setApplicableProductCharacteristic(?array $applicableProductCharacteristic = null): static
-    {
+    public function setApplicableProductCharacteristic(
+        ?array $applicableProductCharacteristic = null
+    ): static {
         $this->applicableProductCharacteristic = $applicableProductCharacteristic;
 
         return $this;
@@ -780,8 +794,9 @@ class TradeProductType
      * @param  null|array<ProductClassificationType> $designatedProductClassification
      * @return static
      */
-    public function setDesignatedProductClassification(?array $designatedProductClassification = null): static
-    {
+    public function setDesignatedProductClassification(
+        ?array $designatedProductClassification = null
+    ): static {
         $this->designatedProductClassification = $designatedProductClassification;
 
         return $this;
@@ -873,8 +888,9 @@ class TradeProductType
      * @param  null|array<TradeProductInstanceType> $individualTradeProductInstance
      * @return static
      */
-    public function setIndividualTradeProductInstance(?array $individualTradeProductInstance = null): static
-    {
+    public function setIndividualTradeProductInstance(
+        ?array $individualTradeProductInstance = null
+    ): static {
         $this->individualTradeProductInstance = $individualTradeProductInstance;
 
         return $this;
@@ -976,8 +992,9 @@ class TradeProductType
      * @param  null|TradeCountryType $originTradeCountry
      * @return static
      */
-    public function setOriginTradeCountry(?TradeCountryType $originTradeCountry = null): static
-    {
+    public function setOriginTradeCountry(
+        ?TradeCountryType $originTradeCountry = null
+    ): static {
         $this->originTradeCountry = $originTradeCountry;
 
         return $this;
@@ -1005,8 +1022,9 @@ class TradeProductType
      * @param  null|array<ReferencedProductType> $includedReferencedProduct
      * @return static
      */
-    public function setIncludedReferencedProduct(?array $includedReferencedProduct = null): static
-    {
+    public function setIncludedReferencedProduct(
+        ?array $includedReferencedProduct = null
+    ): static {
         $this->includedReferencedProduct = $includedReferencedProduct;
 
         return $this;
@@ -1036,8 +1054,9 @@ class TradeProductType
      * @param  ReferencedProductType $includedReferencedProduct
      * @return static
      */
-    public function addToIncludedReferencedProduct(ReferencedProductType $includedReferencedProduct): static
-    {
+    public function addToIncludedReferencedProduct(
+        ReferencedProductType $includedReferencedProduct
+    ): static {
         $this->includedReferencedProduct[] = $includedReferencedProduct;
 
         return $this;
@@ -1057,8 +1076,9 @@ class TradeProductType
      * @param  ReferencedProductType $includedReferencedProduct
      * @return static
      */
-    public function addOnceToIncludedReferencedProduct(ReferencedProductType $includedReferencedProduct): static
-    {
+    public function addOnceToIncludedReferencedProduct(
+        ReferencedProductType $includedReferencedProduct
+    ): static {
         if (!is_array($this->includedReferencedProduct)) {
             $this->includedReferencedProduct = [];
         }

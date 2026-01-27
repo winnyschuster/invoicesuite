@@ -178,8 +178,9 @@ class ConsumptionCorrectionType
      * @param  null|CorrectionType $correctionType
      * @return static
      */
-    public function setCorrectionType(?CorrectionType $correctionType = null): static
-    {
+    public function setCorrectionType(
+        ?CorrectionType $correctionType = null
+    ): static {
         $this->correctionType = $correctionType;
 
         return $this;
@@ -217,8 +218,9 @@ class ConsumptionCorrectionType
      * @param  null|CorrectionTypeCode $correctionTypeCode
      * @return static
      */
-    public function setCorrectionTypeCode(?CorrectionTypeCode $correctionTypeCode = null): static
-    {
+    public function setCorrectionTypeCode(
+        ?CorrectionTypeCode $correctionTypeCode = null
+    ): static {
         $this->correctionTypeCode = $correctionTypeCode;
 
         return $this;
@@ -256,8 +258,9 @@ class ConsumptionCorrectionType
      * @param  null|MeterNumber $meterNumber
      * @return static
      */
-    public function setMeterNumber(?MeterNumber $meterNumber = null): static
-    {
+    public function setMeterNumber(
+        ?MeterNumber $meterNumber = null
+    ): static {
         $this->meterNumber = $meterNumber;
 
         return $this;
@@ -295,8 +298,9 @@ class ConsumptionCorrectionType
      * @param  null|GasPressureQuantity $gasPressureQuantity
      * @return static
      */
-    public function setGasPressureQuantity(?GasPressureQuantity $gasPressureQuantity = null): static
-    {
+    public function setGasPressureQuantity(
+        ?GasPressureQuantity $gasPressureQuantity = null
+    ): static {
         $this->gasPressureQuantity = $gasPressureQuantity;
 
         return $this;
@@ -444,8 +448,9 @@ class ConsumptionCorrectionType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -505,8 +510,9 @@ class ConsumptionCorrectionType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -526,8 +532,9 @@ class ConsumptionCorrectionType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -575,8 +582,9 @@ class ConsumptionCorrectionType
      * @param  null|CorrectionUnitAmount $correctionUnitAmount
      * @return static
      */
-    public function setCorrectionUnitAmount(?CorrectionUnitAmount $correctionUnitAmount = null): static
-    {
+    public function setCorrectionUnitAmount(
+        ?CorrectionUnitAmount $correctionUnitAmount = null
+    ): static {
         $this->correctionUnitAmount = $correctionUnitAmount;
 
         return $this;
@@ -614,8 +622,9 @@ class ConsumptionCorrectionType
      * @param  null|ConsumptionEnergyQuantity $consumptionEnergyQuantity
      * @return static
      */
-    public function setConsumptionEnergyQuantity(?ConsumptionEnergyQuantity $consumptionEnergyQuantity = null): static
-    {
+    public function setConsumptionEnergyQuantity(
+        ?ConsumptionEnergyQuantity $consumptionEnergyQuantity = null
+    ): static {
         $this->consumptionEnergyQuantity = $consumptionEnergyQuantity;
 
         return $this;
@@ -653,8 +662,9 @@ class ConsumptionCorrectionType
      * @param  null|ConsumptionWaterQuantity $consumptionWaterQuantity
      * @return static
      */
-    public function setConsumptionWaterQuantity(?ConsumptionWaterQuantity $consumptionWaterQuantity = null): static
-    {
+    public function setConsumptionWaterQuantity(
+        ?ConsumptionWaterQuantity $consumptionWaterQuantity = null
+    ): static {
         $this->consumptionWaterQuantity = $consumptionWaterQuantity;
 
         return $this;
@@ -692,8 +702,9 @@ class ConsumptionCorrectionType
      * @param  null|CorrectionAmount $correctionAmount
      * @return static
      */
-    public function setCorrectionAmount(?CorrectionAmount $correctionAmount = null): static
-    {
+    public function setCorrectionAmount(
+        ?CorrectionAmount $correctionAmount = null
+    ): static {
         $this->correctionAmount = $correctionAmount;
 
         return $this;

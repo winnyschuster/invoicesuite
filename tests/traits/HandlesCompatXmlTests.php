@@ -92,8 +92,10 @@ trait HandlesCompatXmlTests
      * @param  string $expected
      * @return void
      */
-    protected function assertXPathValue(string $xpath, string $expected): void
-    {
+    protected function assertXPathValue(
+        string $xpath,
+        string $expected
+    ): void {
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertArrayHasKey(0, $xmlvalue);
@@ -108,8 +110,11 @@ trait HandlesCompatXmlTests
      * @param  string $expected
      * @return void
      */
-    protected function assertXPathValueWithIndex(string $xpath, int $index, string $expected): void
-    {
+    protected function assertXPathValueWithIndex(
+        string $xpath,
+        int $index,
+        string $expected
+    ): void {
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertArrayHasKey($index, $xmlvalue);
@@ -124,8 +129,11 @@ trait HandlesCompatXmlTests
      * @param  string $expected
      * @return void
      */
-    protected function assertXPathValueStartsWithIndex(string $xpath, int $index, string $expected): void
-    {
+    protected function assertXPathValueStartsWithIndex(
+        string $xpath,
+        int $index,
+        string $expected
+    ): void {
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertArrayHasKey($index, $xmlvalue);
@@ -141,8 +149,12 @@ trait HandlesCompatXmlTests
      * @param  string $expectedAttributeValue
      * @return void
      */
-    protected function assertXPathValueWithAttribute(string $xpath, string $expected, string $expectedAttribute, string $expectedAttributeValue): void
-    {
+    protected function assertXPathValueWithAttribute(
+        string $xpath,
+        string $expected,
+        string $expectedAttribute,
+        string $expectedAttributeValue
+    ): void {
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertArrayHasKey(0, $xmlvalue);
@@ -161,8 +173,13 @@ trait HandlesCompatXmlTests
      * @param  string $expectedAttributeValue
      * @return void
      */
-    protected function assertXPathValueWithIndexAndAttribute(string $xpath, int $index, string $expected, string $expectedAttribute, string $expectedAttributeValue): void
-    {
+    protected function assertXPathValueWithIndexAndAttribute(
+        string $xpath,
+        int $index,
+        string $expected,
+        string $expectedAttribute,
+        string $expectedAttributeValue
+    ): void {
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertArrayHasKey($index, $xmlvalue);
@@ -180,8 +197,12 @@ trait HandlesCompatXmlTests
      * @param  string $notExpectedAttribute
      * @return void
      */
-    protected function assertXPathValueWithIndexAndNotWithAttribute(string $xpath, int $index, string $expected, string $notExpectedAttribute): void
-    {
+    protected function assertXPathValueWithIndexAndNotWithAttribute(
+        string $xpath,
+        int $index,
+        string $expected,
+        string $notExpectedAttribute
+    ): void {
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertArrayHasKey($index, $xmlvalue);
@@ -198,8 +219,13 @@ trait HandlesCompatXmlTests
      * @param  string $expectedAttributeValue
      * @return void
      */
-    protected function assertXPathValueStartsWithIndexAndAttribute(string $xpath, int $index, string $expected, string $expectedAttribute, string $expectedAttributeValue): void
-    {
+    protected function assertXPathValueStartsWithIndexAndAttribute(
+        string $xpath,
+        int $index,
+        string $expected,
+        string $expectedAttribute,
+        string $expectedAttributeValue
+    ): void {
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertArrayHasKey($index, $xmlvalue);
@@ -215,8 +241,9 @@ trait HandlesCompatXmlTests
      * @param  string $xpath
      * @return void
      */
-    protected function assertXPathExists(string $xpath)
-    {
+    protected function assertXPathExists(
+        string $xpath
+    ) {
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertNotEmpty($xmlvalue);
@@ -229,8 +256,10 @@ trait HandlesCompatXmlTests
      * @param  int    $index
      * @return void
      */
-    protected function assertXPathExistsWithIndex(string $xpath, int $index)
-    {
+    protected function assertXPathExistsWithIndex(
+        string $xpath,
+        int $index
+    ) {
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertArrayHasKey($index, $xmlvalue);
@@ -242,8 +271,9 @@ trait HandlesCompatXmlTests
      * @param  string $xpath
      * @return void
      */
-    protected function assertXPathNotExists(string $xpath)
-    {
+    protected function assertXPathNotExists(
+        string $xpath
+    ) {
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertEmpty($xmlvalue);
@@ -256,8 +286,10 @@ trait HandlesCompatXmlTests
      * @param  int    $index
      * @return void
      */
-    protected function assertXPathNotExistsWithIndex(string $xpath, int $index)
-    {
+    protected function assertXPathNotExistsWithIndex(
+        string $xpath,
+        int $index
+    ) {
         $xml = $this->getXml();
         $xmlvalue = $xml->xpath($xpath);
         $this->assertArrayNotHasKey($index, $xmlvalue);
@@ -270,8 +302,9 @@ trait HandlesCompatXmlTests
      * @param  SimpleXMLElement $xml
      * @return void
      */
-    private function registerAllNamespaces(SimpleXMLElement $xml): void
-    {
+    private function registerAllNamespaces(
+        SimpleXMLElement $xml
+    ): void {
         $ns = $xml->getDocNamespaces(true);
         foreach ($ns as $prefix => $uri) {
             $xml->registerXPathNamespace('' !== $prefix ? $prefix : 'ns', $uri);
@@ -284,8 +317,9 @@ trait HandlesCompatXmlTests
      * @param  callable $code
      * @return void
      */
-    private function assertXmlWasNotChanged($code): void
-    {
+    private function assertXmlWasNotChanged(
+        $code
+    ): void {
         $previousXml = static::$document->getContent();
 
         call_user_func($code);

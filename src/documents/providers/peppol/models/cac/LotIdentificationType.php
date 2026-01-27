@@ -69,8 +69,9 @@ class LotIdentificationType
      * @param  null|LotNumberID $lotNumberID
      * @return static
      */
-    public function setLotNumberID(?LotNumberID $lotNumberID = null): static
-    {
+    public function setLotNumberID(
+        ?LotNumberID $lotNumberID = null
+    ): static {
         $this->lotNumberID = $lotNumberID;
 
         return $this;
@@ -98,8 +99,9 @@ class LotIdentificationType
      * @param  null|DateTimeInterface $expiryDate
      * @return static
      */
-    public function setExpiryDate(?DateTimeInterface $expiryDate = null): static
-    {
+    public function setExpiryDate(
+        ?DateTimeInterface $expiryDate = null
+    ): static {
         $this->expiryDate = $expiryDate;
 
         return $this;
@@ -127,8 +129,9 @@ class LotIdentificationType
      * @param  null|array<AdditionalItemProperty> $additionalItemProperty
      * @return static
      */
-    public function setAdditionalItemProperty(?array $additionalItemProperty = null): static
-    {
+    public function setAdditionalItemProperty(
+        ?array $additionalItemProperty = null
+    ): static {
         $this->additionalItemProperty = $additionalItemProperty;
 
         return $this;
@@ -188,8 +191,9 @@ class LotIdentificationType
      * @param  AdditionalItemProperty $additionalItemProperty
      * @return static
      */
-    public function addToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static
-    {
+    public function addToAdditionalItemProperty(
+        AdditionalItemProperty $additionalItemProperty
+    ): static {
         $this->additionalItemProperty[] = $additionalItemProperty;
 
         return $this;
@@ -209,8 +213,9 @@ class LotIdentificationType
      * @param  AdditionalItemProperty $additionalItemProperty
      * @return static
      */
-    public function addOnceToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static
-    {
+    public function addOnceToAdditionalItemProperty(
+        AdditionalItemProperty $additionalItemProperty
+    ): static {
         if (!is_array($this->additionalItemProperty)) {
             $this->additionalItemProperty = [];
         }

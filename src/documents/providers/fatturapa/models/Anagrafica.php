@@ -88,8 +88,9 @@ final class Anagrafica
      * @param  null|string $denominazione
      * @return static
      */
-    public function setDenominazione(?string $denominazione = null): static
-    {
+    public function setDenominazione(
+        ?string $denominazione = null
+    ): static {
         $this->denominazione = InvoiceSuiteStringUtils::asNullWhenEmpty($denominazione);
 
         return $this;
@@ -123,8 +124,9 @@ final class Anagrafica
      * @param  null|string $nome
      * @return static
      */
-    public function setNome(?string $nome = null): static
-    {
+    public function setNome(
+        ?string $nome = null
+    ): static {
         $this->nome = InvoiceSuiteStringUtils::asNullWhenEmpty($nome);
 
         return $this;
@@ -158,8 +160,9 @@ final class Anagrafica
      * @param  null|string $cognome
      * @return static
      */
-    public function setCognome(?string $cognome = null): static
-    {
+    public function setCognome(
+        ?string $cognome = null
+    ): static {
         $this->cognome = InvoiceSuiteStringUtils::asNullWhenEmpty($cognome);
 
         return $this;
@@ -193,8 +196,9 @@ final class Anagrafica
      * @param  null|string $titolo
      * @return static
      */
-    public function setTitolo(?string $titolo = null): static
-    {
+    public function setTitolo(
+        ?string $titolo = null
+    ): static {
         $this->titolo = InvoiceSuiteStringUtils::asNullWhenEmpty($titolo);
 
         return $this;
@@ -228,8 +232,9 @@ final class Anagrafica
      * @param  null|string $codEORI
      * @return static
      */
-    public function setCodEORI(?string $codEORI = null): static
-    {
+    public function setCodEORI(
+        ?string $codEORI = null
+    ): static {
         $this->codEORI = InvoiceSuiteStringUtils::asNullWhenEmpty($codEORI);
 
         return $this;

@@ -112,8 +112,9 @@ final class FatturaElettronicaHeader
      * @param  null|DatiTrasmissione $datiTrasmissione
      * @return static
      */
-    public function setDatiTrasmissione(?DatiTrasmissione $datiTrasmissione = null): static
-    {
+    public function setDatiTrasmissione(
+        ?DatiTrasmissione $datiTrasmissione = null
+    ): static {
         $this->datiTrasmissione = $datiTrasmissione;
 
         return $this;
@@ -159,8 +160,9 @@ final class FatturaElettronicaHeader
      * @param  null|CedentePrestatore $cedentePrestatore
      * @return static
      */
-    public function setCedentePrestatore(?CedentePrestatore $cedentePrestatore = null): static
-    {
+    public function setCedentePrestatore(
+        ?CedentePrestatore $cedentePrestatore = null
+    ): static {
         $this->cedentePrestatore = $cedentePrestatore;
 
         return $this;
@@ -206,8 +208,9 @@ final class FatturaElettronicaHeader
      * @param  null|RappresentanteFiscale $rappresentanteFiscale
      * @return static
      */
-    public function setRappresentanteFiscale(?RappresentanteFiscale $rappresentanteFiscale = null): static
-    {
+    public function setRappresentanteFiscale(
+        ?RappresentanteFiscale $rappresentanteFiscale = null
+    ): static {
         $this->rappresentanteFiscale = $rappresentanteFiscale;
 
         return $this;
@@ -253,8 +256,9 @@ final class FatturaElettronicaHeader
      * @param  null|CessionarioCommittente $cessionarioCommittente
      * @return static
      */
-    public function setCessionarioCommittente(?CessionarioCommittente $cessionarioCommittente = null): static
-    {
+    public function setCessionarioCommittente(
+        ?CessionarioCommittente $cessionarioCommittente = null
+    ): static {
         $this->cessionarioCommittente = $cessionarioCommittente;
 
         return $this;
@@ -300,8 +304,9 @@ final class FatturaElettronicaHeader
      * @param  null|TerzoIntermediarioSoggettoEmittente $terzoIntermediarioOSoggettoEmittente
      * @return static
      */
-    public function setTerzoIntermediarioOSoggettoEmittente(?TerzoIntermediarioSoggettoEmittente $terzoIntermediarioOSoggettoEmittente = null): static
-    {
+    public function setTerzoIntermediarioOSoggettoEmittente(
+        ?TerzoIntermediarioSoggettoEmittente $terzoIntermediarioOSoggettoEmittente = null
+    ): static {
         $this->terzoIntermediarioOSoggettoEmittente = $terzoIntermediarioOSoggettoEmittente;
 
         return $this;
@@ -335,8 +340,9 @@ final class FatturaElettronicaHeader
      * @param  null|SoggettoEmittente $soggettoEmittente
      * @return static
      */
-    public function setSoggettoEmittente(?SoggettoEmittente $soggettoEmittente = null): static
-    {
+    public function setSoggettoEmittente(
+        ?SoggettoEmittente $soggettoEmittente = null
+    ): static {
         $this->soggettoEmittente = $soggettoEmittente;
 
         return $this;

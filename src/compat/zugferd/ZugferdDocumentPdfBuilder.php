@@ -40,8 +40,10 @@ class ZugferdDocumentPdfBuilder extends ZugferdDocumentPdfBuilderAbstract
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws RuntimeException
      */
-    public function __construct(ZugferdDocumentBuilder $documentBuilder, string $pdfContent)
-    {
+    public function __construct(
+        ZugferdDocumentBuilder $documentBuilder,
+        string $pdfContent
+    ) {
         $this->setRawDocumentContent($documentBuilder->getContent());
         $this->setRawPdfContent(InvoiceSuiteFileUtils::getContentFromFileOrString($pdfContent));
 
@@ -60,8 +62,10 @@ class ZugferdDocumentPdfBuilder extends ZugferdDocumentPdfBuilderAbstract
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws RuntimeException
      */
-    public static function fromPdfFile(ZugferdDocumentBuilder $documentBuilder, string $pdfFileName): static
-    {
+    public static function fromPdfFile(
+        ZugferdDocumentBuilder $documentBuilder,
+        string $pdfFileName
+    ): static {
         if (!is_file($pdfFileName)) {
             throw new InvoiceSuiteFileNotFoundException($pdfFileName);
         }
@@ -87,8 +91,10 @@ class ZugferdDocumentPdfBuilder extends ZugferdDocumentPdfBuilderAbstract
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws RuntimeException
      */
-    public static function fromPdfString(ZugferdDocumentBuilder $documentBuilder, string $pdfContent): static
-    {
+    public static function fromPdfString(
+        ZugferdDocumentBuilder $documentBuilder,
+        string $pdfContent
+    ): static {
         // @phpstan-ignore new.static
         return new static($documentBuilder, $pdfContent);
     }

@@ -195,8 +195,9 @@ class PartyLegalEntityType
      * @param  null|RegistrationName $registrationName
      * @return static
      */
-    public function setRegistrationName(?RegistrationName $registrationName = null): static
-    {
+    public function setRegistrationName(
+        ?RegistrationName $registrationName = null
+    ): static {
         $this->registrationName = $registrationName;
 
         return $this;
@@ -234,8 +235,9 @@ class PartyLegalEntityType
      * @param  null|CompanyID $companyID
      * @return static
      */
-    public function setCompanyID(?CompanyID $companyID = null): static
-    {
+    public function setCompanyID(
+        ?CompanyID $companyID = null
+    ): static {
         $this->companyID = $companyID;
 
         return $this;
@@ -263,8 +265,9 @@ class PartyLegalEntityType
      * @param  null|DateTimeInterface $registrationDate
      * @return static
      */
-    public function setRegistrationDate(?DateTimeInterface $registrationDate = null): static
-    {
+    public function setRegistrationDate(
+        ?DateTimeInterface $registrationDate = null
+    ): static {
         $this->registrationDate = $registrationDate;
 
         return $this;
@@ -292,8 +295,9 @@ class PartyLegalEntityType
      * @param  null|DateTimeInterface $registrationExpirationDate
      * @return static
      */
-    public function setRegistrationExpirationDate(?DateTimeInterface $registrationExpirationDate = null): static
-    {
+    public function setRegistrationExpirationDate(
+        ?DateTimeInterface $registrationExpirationDate = null
+    ): static {
         $this->registrationExpirationDate = $registrationExpirationDate;
 
         return $this;
@@ -331,8 +335,9 @@ class PartyLegalEntityType
      * @param  null|CompanyLegalFormCode $companyLegalFormCode
      * @return static
      */
-    public function setCompanyLegalFormCode(?CompanyLegalFormCode $companyLegalFormCode = null): static
-    {
+    public function setCompanyLegalFormCode(
+        ?CompanyLegalFormCode $companyLegalFormCode = null
+    ): static {
         $this->companyLegalFormCode = $companyLegalFormCode;
 
         return $this;
@@ -370,8 +375,9 @@ class PartyLegalEntityType
      * @param  null|CompanyLegalForm $companyLegalForm
      * @return static
      */
-    public function setCompanyLegalForm(?CompanyLegalForm $companyLegalForm = null): static
-    {
+    public function setCompanyLegalForm(
+        ?CompanyLegalForm $companyLegalForm = null
+    ): static {
         $this->companyLegalForm = $companyLegalForm;
 
         return $this;
@@ -399,8 +405,9 @@ class PartyLegalEntityType
      * @param  null|bool $soleProprietorshipIndicator
      * @return static
      */
-    public function setSoleProprietorshipIndicator(?bool $soleProprietorshipIndicator = null): static
-    {
+    public function setSoleProprietorshipIndicator(
+        ?bool $soleProprietorshipIndicator = null
+    ): static {
         $this->soleProprietorshipIndicator = $soleProprietorshipIndicator;
 
         return $this;
@@ -478,8 +485,9 @@ class PartyLegalEntityType
      * @param  null|CorporateStockAmount $corporateStockAmount
      * @return static
      */
-    public function setCorporateStockAmount(?CorporateStockAmount $corporateStockAmount = null): static
-    {
+    public function setCorporateStockAmount(
+        ?CorporateStockAmount $corporateStockAmount = null
+    ): static {
         $this->corporateStockAmount = $corporateStockAmount;
 
         return $this;
@@ -507,8 +515,9 @@ class PartyLegalEntityType
      * @param  null|bool $fullyPaidSharesIndicator
      * @return static
      */
-    public function setFullyPaidSharesIndicator(?bool $fullyPaidSharesIndicator = null): static
-    {
+    public function setFullyPaidSharesIndicator(
+        ?bool $fullyPaidSharesIndicator = null
+    ): static {
         $this->fullyPaidSharesIndicator = $fullyPaidSharesIndicator;
 
         return $this;
@@ -546,8 +555,9 @@ class PartyLegalEntityType
      * @param  null|RegistrationAddress $registrationAddress
      * @return static
      */
-    public function setRegistrationAddress(?RegistrationAddress $registrationAddress = null): static
-    {
+    public function setRegistrationAddress(
+        ?RegistrationAddress $registrationAddress = null
+    ): static {
         $this->registrationAddress = $registrationAddress;
 
         return $this;
@@ -625,8 +635,9 @@ class PartyLegalEntityType
      * @param  null|HeadOfficeParty $headOfficeParty
      * @return static
      */
-    public function setHeadOfficeParty(?HeadOfficeParty $headOfficeParty = null): static
-    {
+    public function setHeadOfficeParty(
+        ?HeadOfficeParty $headOfficeParty = null
+    ): static {
         $this->headOfficeParty = $headOfficeParty;
 
         return $this;
@@ -654,8 +665,9 @@ class PartyLegalEntityType
      * @param  null|array<ShareholderParty> $shareholderParty
      * @return static
      */
-    public function setShareholderParty(?array $shareholderParty = null): static
-    {
+    public function setShareholderParty(
+        ?array $shareholderParty = null
+    ): static {
         $this->shareholderParty = $shareholderParty;
 
         return $this;
@@ -715,8 +727,9 @@ class PartyLegalEntityType
      * @param  ShareholderParty $shareholderParty
      * @return static
      */
-    public function addToShareholderParty(ShareholderParty $shareholderParty): static
-    {
+    public function addToShareholderParty(
+        ShareholderParty $shareholderParty
+    ): static {
         $this->shareholderParty[] = $shareholderParty;
 
         return $this;
@@ -736,8 +749,9 @@ class PartyLegalEntityType
      * @param  ShareholderParty $shareholderParty
      * @return static
      */
-    public function addOnceToShareholderParty(ShareholderParty $shareholderParty): static
-    {
+    public function addOnceToShareholderParty(
+        ShareholderParty $shareholderParty
+    ): static {
         if (!is_array($this->shareholderParty)) {
             $this->shareholderParty = [];
         }

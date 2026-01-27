@@ -37,8 +37,11 @@ class InvoiceSuiteOrganisationDTO extends InvoiceSuiteIdDTO
      * @param null|string $idType Type of the ID
      * @param null|string $name   Organisation Name
      */
-    public function __construct(?string $id = null, ?string $idType = null, ?string $name = null)
-    {
+    public function __construct(
+        ?string $id = null,
+        ?string $idType = null,
+        ?string $name = null
+    ) {
         parent::__construct($id, $idType);
 
         $this->setName($name);
@@ -60,8 +63,9 @@ class InvoiceSuiteOrganisationDTO extends InvoiceSuiteIdDTO
      * @param  null|string $name Organisation Name
      * @return static
      */
-    public function setName(?string $name): static
-    {
+    public function setName(
+        ?string $name
+    ): static {
         $this->name = InvoiceSuiteStringUtils::asNullWhenEmpty($name);
 
         return $this;

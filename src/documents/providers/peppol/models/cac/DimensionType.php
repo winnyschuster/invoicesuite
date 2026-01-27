@@ -94,8 +94,9 @@ class DimensionType
      * @param  null|AttributeID $attributeID
      * @return static
      */
-    public function setAttributeID(?AttributeID $attributeID = null): static
-    {
+    public function setAttributeID(
+        ?AttributeID $attributeID = null
+    ): static {
         $this->attributeID = $attributeID;
 
         return $this;
@@ -133,8 +134,9 @@ class DimensionType
      * @param  null|Measure $measure
      * @return static
      */
-    public function setMeasure(?Measure $measure = null): static
-    {
+    public function setMeasure(
+        ?Measure $measure = null
+    ): static {
         $this->measure = $measure;
 
         return $this;
@@ -162,8 +164,9 @@ class DimensionType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -223,8 +226,9 @@ class DimensionType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -244,8 +248,9 @@ class DimensionType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -293,8 +298,9 @@ class DimensionType
      * @param  null|MinimumMeasure $minimumMeasure
      * @return static
      */
-    public function setMinimumMeasure(?MinimumMeasure $minimumMeasure = null): static
-    {
+    public function setMinimumMeasure(
+        ?MinimumMeasure $minimumMeasure = null
+    ): static {
         $this->minimumMeasure = $minimumMeasure;
 
         return $this;
@@ -332,8 +338,9 @@ class DimensionType
      * @param  null|MaximumMeasure $maximumMeasure
      * @return static
      */
-    public function setMaximumMeasure(?MaximumMeasure $maximumMeasure = null): static
-    {
+    public function setMaximumMeasure(
+        ?MaximumMeasure $maximumMeasure = null
+    ): static {
         $this->maximumMeasure = $maximumMeasure;
 
         return $this;

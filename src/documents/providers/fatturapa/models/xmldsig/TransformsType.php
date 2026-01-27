@@ -44,8 +44,9 @@ class TransformsType
      * @param  array<TransformType> $transform
      * @return static
      */
-    public function setTransform(?array $transform = null): static
-    {
+    public function setTransform(
+        ?array $transform = null
+    ): static {
         $this->transform = $transform;
 
         return $this;
@@ -81,8 +82,9 @@ class TransformsType
      * @param  TransformType $transform
      * @return static
      */
-    public function addToTransform(TransformType $transform): static
-    {
+    public function addToTransform(
+        TransformType $transform
+    ): static {
         $this->transform[] = $transform;
 
         return $this;
@@ -106,8 +108,9 @@ class TransformsType
      * @param  TransformType $transform
      * @return static
      */
-    public function addOnceToTransform(TransformType $transform): static
-    {
+    public function addOnceToTransform(
+        TransformType $transform
+    ): static {
         if (!is_array($this->transform)) {
             $this->transform = [];
         }

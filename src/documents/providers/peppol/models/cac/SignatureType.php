@@ -150,8 +150,9 @@ class SignatureType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -179,8 +180,9 @@ class SignatureType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -240,8 +242,9 @@ class SignatureType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -261,8 +264,9 @@ class SignatureType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -300,8 +304,9 @@ class SignatureType
      * @param  null|DateTimeInterface $validationDate
      * @return static
      */
-    public function setValidationDate(?DateTimeInterface $validationDate = null): static
-    {
+    public function setValidationDate(
+        ?DateTimeInterface $validationDate = null
+    ): static {
         $this->validationDate = $validationDate;
 
         return $this;
@@ -329,8 +334,9 @@ class SignatureType
      * @param  null|DateTimeInterface $validationTime
      * @return static
      */
-    public function setValidationTime(?DateTimeInterface $validationTime = null): static
-    {
+    public function setValidationTime(
+        ?DateTimeInterface $validationTime = null
+    ): static {
         $this->validationTime = $validationTime;
 
         return $this;
@@ -368,8 +374,9 @@ class SignatureType
      * @param  null|ValidatorID $validatorID
      * @return static
      */
-    public function setValidatorID(?ValidatorID $validatorID = null): static
-    {
+    public function setValidatorID(
+        ?ValidatorID $validatorID = null
+    ): static {
         $this->validatorID = $validatorID;
 
         return $this;
@@ -407,8 +414,9 @@ class SignatureType
      * @param  null|CanonicalizationMethod $canonicalizationMethod
      * @return static
      */
-    public function setCanonicalizationMethod(?CanonicalizationMethod $canonicalizationMethod = null): static
-    {
+    public function setCanonicalizationMethod(
+        ?CanonicalizationMethod $canonicalizationMethod = null
+    ): static {
         $this->canonicalizationMethod = $canonicalizationMethod;
 
         return $this;
@@ -446,8 +454,9 @@ class SignatureType
      * @param  null|SignatureMethod $signatureMethod
      * @return static
      */
-    public function setSignatureMethod(?SignatureMethod $signatureMethod = null): static
-    {
+    public function setSignatureMethod(
+        ?SignatureMethod $signatureMethod = null
+    ): static {
         $this->signatureMethod = $signatureMethod;
 
         return $this;
@@ -485,8 +494,9 @@ class SignatureType
      * @param  null|SignatoryParty $signatoryParty
      * @return static
      */
-    public function setSignatoryParty(?SignatoryParty $signatoryParty = null): static
-    {
+    public function setSignatoryParty(
+        ?SignatoryParty $signatoryParty = null
+    ): static {
         $this->signatoryParty = $signatoryParty;
 
         return $this;
@@ -564,8 +574,9 @@ class SignatureType
      * @param  null|OriginalDocumentReference $originalDocumentReference
      * @return static
      */
-    public function setOriginalDocumentReference(?OriginalDocumentReference $originalDocumentReference = null): static
-    {
+    public function setOriginalDocumentReference(
+        ?OriginalDocumentReference $originalDocumentReference = null
+    ): static {
         $this->originalDocumentReference = $originalDocumentReference;
 
         return $this;

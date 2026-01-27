@@ -149,14 +149,16 @@ final class ZugferdPdfDocumentReaderGeneral2Test extends TestCase
         $this->checkAdditionalAttachments($additionalDocuments);
     }
 
-    private function checkDocumentReader($documentReader): void
-    {
+    private function checkDocumentReader(
+        $documentReader
+    ): void {
         $this->assertNotNull($documentReader);
         $this->assertInstanceOf(ZugferdDocumentReader::class, $documentReader);
     }
 
-    private function checkInvoiceDocumentXml($xmlString): void
-    {
+    private function checkInvoiceDocumentXml(
+        $xmlString
+    ): void {
         $this->assertNotNull($xmlString);
         $this->assertIsString($xmlString);
         $this->assertStringContainsString("<?xml version='1.0'", $xmlString);
@@ -164,8 +166,9 @@ final class ZugferdPdfDocumentReaderGeneral2Test extends TestCase
         $this->assertStringContainsString('</rsm:CrossIndustryInvoice>', $xmlString);
     }
 
-    private function checkAdditionalAttachments($additionalDocuments): void
-    {
+    private function checkAdditionalAttachments(
+        $additionalDocuments
+    ): void {
         $this->assertNotEmpty($additionalDocuments);
         $this->assertCount(2, $additionalDocuments);
         $this->assertArrayHasKey(0, $additionalDocuments);

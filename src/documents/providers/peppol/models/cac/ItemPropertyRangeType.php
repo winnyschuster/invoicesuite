@@ -57,8 +57,9 @@ class ItemPropertyRangeType
      * @param  null|MinimumValue $minimumValue
      * @return static
      */
-    public function setMinimumValue(?MinimumValue $minimumValue = null): static
-    {
+    public function setMinimumValue(
+        ?MinimumValue $minimumValue = null
+    ): static {
         $this->minimumValue = $minimumValue;
 
         return $this;
@@ -96,8 +97,9 @@ class ItemPropertyRangeType
      * @param  null|MaximumValue $maximumValue
      * @return static
      */
-    public function setMaximumValue(?MaximumValue $maximumValue = null): static
-    {
+    public function setMaximumValue(
+        ?MaximumValue $maximumValue = null
+    ): static {
         $this->maximumValue = $maximumValue;
 
         return $this;

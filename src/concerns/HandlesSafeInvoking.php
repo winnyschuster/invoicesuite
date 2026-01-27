@@ -29,8 +29,11 @@ trait HandlesSafeInvoking
      * @param  mixed  $value
      * @return static
      */
-    private function safeInvokeTryCall($instance, string $method, $value): static
-    {
+    private function safeInvokeTryCall(
+        $instance,
+        string $method,
+        $value
+    ): static {
         if (!$instance) {
             return $this;
         }
@@ -54,8 +57,10 @@ trait HandlesSafeInvoking
      * @param  string $method
      * @return mixed
      */
-    private function safeInvokeTryCallAndReturn($instance, string $method)
-    {
+    private function safeInvokeTryCallAndReturn(
+        $instance,
+        string $method
+    ) {
         if (!$instance) {
             return null;
         }
@@ -79,8 +84,11 @@ trait HandlesSafeInvoking
      * @param  mixed  $value
      * @return void
      */
-    private function safeInvokeTryCallByPath($instance, string $methods, $value)
-    {
+    private function safeInvokeTryCallByPath(
+        $instance,
+        string $methods,
+        $value
+    ) {
         $methods = explode('.', $methods);
 
         foreach ($methods as $index => $method) {
@@ -99,8 +107,10 @@ trait HandlesSafeInvoking
      * @param  string        $method
      * @return bool
      */
-    private function safeInvokeMethodExists($instance, $method): bool
-    {
+    private function safeInvokeMethodExists(
+        $instance,
+        $method
+    ): bool {
         if (null == $instance) {
             return false;
         }

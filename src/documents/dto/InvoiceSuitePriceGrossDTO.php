@@ -61,8 +61,9 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO
      * @param  array<InvoiceSuiteAllowanceChargeDTO> $allowanceCharges The discounts or charges to the gross price
      * @return static
      */
-    public function setAllowanceCharges(array $allowanceCharges): static
-    {
+    public function setAllowanceCharges(
+        array $allowanceCharges
+    ): static {
         $this->allowanceCharges = $allowanceCharges;
 
         return $this;
@@ -74,8 +75,9 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO
      * @param  InvoiceSuiteAllowanceChargeDTO $allowanceCharge The discounts or charges to the gross price
      * @return static
      */
-    public function addAllowanceCharge(?InvoiceSuiteAllowanceChargeDTO $allowanceCharge): static
-    {
+    public function addAllowanceCharge(
+        ?InvoiceSuiteAllowanceChargeDTO $allowanceCharge
+    ): static {
         if (is_null($allowanceCharge)) {
             return $this;
         }
@@ -92,8 +94,10 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstAllowanceCharge(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstAllowanceCharge(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($allowanceCharge = reset($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
@@ -110,8 +114,10 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextAllowanceCharge(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextAllowanceCharge(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($allowanceCharge = next($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
@@ -128,8 +134,10 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousAllowanceCharge(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousAllowanceCharge(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($allowanceCharge = prev($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
@@ -146,8 +154,10 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastAllowanceCharge(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastAllowanceCharge(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($allowanceCharge = end($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {

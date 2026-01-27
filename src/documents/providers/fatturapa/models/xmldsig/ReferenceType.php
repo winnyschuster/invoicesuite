@@ -120,8 +120,9 @@ class ReferenceType
      * @param  TransformsType $transforms
      * @return static
      */
-    public function setTransforms(?TransformsType $transforms = null): static
-    {
+    public function setTransforms(
+        ?TransformsType $transforms = null
+    ): static {
         $this->transforms = $transforms;
 
         return $this;
@@ -167,8 +168,9 @@ class ReferenceType
      * @param  DigestMethodType $digestMethod
      * @return static
      */
-    public function setDigestMethod(?DigestMethodType $digestMethod = null): static
-    {
+    public function setDigestMethod(
+        ?DigestMethodType $digestMethod = null
+    ): static {
         $this->digestMethod = $digestMethod;
 
         return $this;
@@ -202,8 +204,9 @@ class ReferenceType
      * @param  string $digestValue
      * @return static
      */
-    public function setDigestValue(?string $digestValue = null): static
-    {
+    public function setDigestValue(
+        ?string $digestValue = null
+    ): static {
         $this->digestValue = $digestValue;
 
         return $this;
@@ -237,8 +240,9 @@ class ReferenceType
      * @param  string $id
      * @return static
      */
-    public function setId(?string $id = null): static
-    {
+    public function setId(
+        ?string $id = null
+    ): static {
         $this->id = $id;
 
         return $this;
@@ -272,8 +276,9 @@ class ReferenceType
      * @param  string $uRI
      * @return static
      */
-    public function setURI(?string $uRI = null): static
-    {
+    public function setURI(
+        ?string $uRI = null
+    ): static {
         $this->uRI = $uRI;
 
         return $this;
@@ -307,8 +312,9 @@ class ReferenceType
      * @param  string $type
      * @return static
      */
-    public function setType(?string $type = null): static
-    {
+    public function setType(
+        ?string $type = null
+    ): static {
         $this->type = $type;
 
         return $this;

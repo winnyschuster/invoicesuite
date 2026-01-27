@@ -45,8 +45,9 @@ class RoadTransportType
      * @param  null|LicensePlateID $licensePlateID
      * @return static
      */
-    public function setLicensePlateID(?LicensePlateID $licensePlateID = null): static
-    {
+    public function setLicensePlateID(
+        ?LicensePlateID $licensePlateID = null
+    ): static {
         $this->licensePlateID = $licensePlateID;
 
         return $this;

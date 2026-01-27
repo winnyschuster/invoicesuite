@@ -46,8 +46,9 @@ class MeasureType
      * @param  null|float $value
      * @return static
      */
-    public function setValue(?float $value = null): static
-    {
+    public function setValue(
+        ?float $value = null
+    ): static {
         $this->value = $value;
 
         return $this;
@@ -75,8 +76,9 @@ class MeasureType
      * @param  null|string $unitCode
      * @return static
      */
-    public function setUnitCode(?string $unitCode = null): static
-    {
+    public function setUnitCode(
+        ?string $unitCode = null
+    ): static {
         $this->unitCode = InvoiceSuiteStringUtils::asNullWhenEmpty($unitCode);
 
         return $this;

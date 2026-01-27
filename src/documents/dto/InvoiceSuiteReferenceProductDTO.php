@@ -127,8 +127,9 @@ class InvoiceSuiteReferenceProductDTO
      * @param  null|string $id The ID of the product (product id, Order-X interoperable)
      * @return static
      */
-    public function setId(?string $id): static
-    {
+    public function setId(
+        ?string $id
+    ): static {
         $this->id = InvoiceSuiteStringUtils::asNullWhenEmpty($id);
 
         return $this;
@@ -150,8 +151,9 @@ class InvoiceSuiteReferenceProductDTO
      * @param  null|string $name The name of the product (product name)
      * @return static
      */
-    public function setName(?string $name): static
-    {
+    public function setName(
+        ?string $name
+    ): static {
         $this->name = InvoiceSuiteStringUtils::asNullWhenEmpty($name);
 
         return $this;
@@ -173,8 +175,9 @@ class InvoiceSuiteReferenceProductDTO
      * @param  null|string $description The product description of the product
      * @return static
      */
-    public function setDescription(?string $description): static
-    {
+    public function setDescription(
+        ?string $description
+    ): static {
         $this->description = InvoiceSuiteStringUtils::asNullWhenEmpty($description);
 
         return $this;
@@ -196,8 +199,9 @@ class InvoiceSuiteReferenceProductDTO
      * @param  null|string $sellerId The identifier assigned to the product by the seller
      * @return static
      */
-    public function setSellerId(?string $sellerId): static
-    {
+    public function setSellerId(
+        ?string $sellerId
+    ): static {
         $this->sellerId = InvoiceSuiteStringUtils::asNullWhenEmpty($sellerId);
 
         return $this;
@@ -219,8 +223,9 @@ class InvoiceSuiteReferenceProductDTO
      * @param  null|string $buyerId The identifier assigned to the product by the buyer
      * @return static
      */
-    public function setBuyerId(?string $buyerId): static
-    {
+    public function setBuyerId(
+        ?string $buyerId
+    ): static {
         $this->buyerId = InvoiceSuiteStringUtils::asNullWhenEmpty($buyerId);
 
         return $this;
@@ -242,8 +247,9 @@ class InvoiceSuiteReferenceProductDTO
      * @param  null|InvoiceSuiteIdDTO $globalId The product global id
      * @return static
      */
-    public function setGlobalId(?InvoiceSuiteIdDTO $globalId): static
-    {
+    public function setGlobalId(
+        ?InvoiceSuiteIdDTO $globalId
+    ): static {
         $this->globalId = $globalId;
 
         return $this;
@@ -265,8 +271,9 @@ class InvoiceSuiteReferenceProductDTO
      * @param  null|string $industryId The id assigned by the industry
      * @return static
      */
-    public function setIndustryId(?string $industryId): static
-    {
+    public function setIndustryId(
+        ?string $industryId
+    ): static {
         $this->industryId = InvoiceSuiteStringUtils::asNullWhenEmpty($industryId);
 
         return $this;
@@ -288,8 +295,9 @@ class InvoiceSuiteReferenceProductDTO
      * @param  null|InvoiceSuiteQuantityDTO $unitQuantity The quantity of the referenced product contained product
      * @return static
      */
-    public function setUnitQuantity(?InvoiceSuiteQuantityDTO $unitQuantity): static
-    {
+    public function setUnitQuantity(
+        ?InvoiceSuiteQuantityDTO $unitQuantity
+    ): static {
         $this->unitQuantity = $unitQuantity;
 
         return $this;

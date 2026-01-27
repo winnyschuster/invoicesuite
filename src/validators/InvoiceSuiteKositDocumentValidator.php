@@ -129,8 +129,9 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      * @param  string $newBaseDirectory
      * @return static
      */
-    public function setBaseDirectory(string $newBaseDirectory): static
-    {
+    public function setBaseDirectory(
+        string $newBaseDirectory
+    ): static {
         if (is_dir($newBaseDirectory)) {
             $this->baseDirectory = $newBaseDirectory;
         }
@@ -144,8 +145,9 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      * @param  string $newValidatorDownloadUrl
      * @return static
      */
-    public function setValidatorDownloadUrl(string $newValidatorDownloadUrl): static
-    {
+    public function setValidatorDownloadUrl(
+        string $newValidatorDownloadUrl
+    ): static {
         if (false !== filter_var($newValidatorDownloadUrl, FILTER_VALIDATE_URL)) {
             $this->validatorDownloadUrl = $newValidatorDownloadUrl;
         }
@@ -159,8 +161,9 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      * @param  string $newValidatorScenarioDownloadUrl
      * @return static
      */
-    public function setValidatorScenarioDownloadUrl(string $newValidatorScenarioDownloadUrl): static
-    {
+    public function setValidatorScenarioDownloadUrl(
+        string $newValidatorScenarioDownloadUrl
+    ): static {
         if (false !== filter_var($newValidatorScenarioDownloadUrl, FILTER_VALIDATE_URL)) {
             $this->validatorScenarioDownloadUrl = $newValidatorScenarioDownloadUrl;
         }
@@ -174,8 +177,9 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      * @param  string $newValidatorAppZipFilename
      * @return static
      */
-    public function setValidatorAppZipFilename(string $newValidatorAppZipFilename): static
-    {
+    public function setValidatorAppZipFilename(
+        string $newValidatorAppZipFilename
+    ): static {
         $this->validatorAppZipFilename = $newValidatorAppZipFilename;
 
         return $this;
@@ -187,8 +191,9 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      * @param  string $newValidatorScenarioZipFilename
      * @return static
      */
-    public function setValidatorScenarioZipFilename(string $newValidatorScenarioZipFilename): static
-    {
+    public function setValidatorScenarioZipFilename(
+        string $newValidatorScenarioZipFilename
+    ): static {
         $this->validatorScenarioZipFilename = $newValidatorScenarioZipFilename;
 
         return $this;
@@ -200,8 +205,9 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      * @param  string $newValidatorAppJarFilename
      * @return static
      */
-    public function setValidatorAppJarFilename(string $newValidatorAppJarFilename): static
-    {
+    public function setValidatorAppJarFilename(
+        string $newValidatorAppJarFilename
+    ): static {
         $this->validatorAppJarFilename = $newValidatorAppJarFilename;
 
         return $this;
@@ -213,8 +219,9 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      * @param  string $newValidatorAppScenarioFilename
      * @return static
      */
-    public function setValidatorAppScenarioFilename(string $newValidatorAppScenarioFilename): static
-    {
+    public function setValidatorAppScenarioFilename(
+        string $newValidatorAppScenarioFilename
+    ): static {
         $this->validatorAppScenarioFilename = $newValidatorAppScenarioFilename;
 
         return $this;
@@ -275,8 +282,9 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      * @param  string $remoteModeHost
      * @return static
      */
-    public function setRemoteModeHost(string $remoteModeHost): static
-    {
+    public function setRemoteModeHost(
+        string $remoteModeHost
+    ): static {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($remoteModeHost)) {
             return $this;
         }
@@ -293,8 +301,9 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      * @param  int    $remoteModePort
      * @return static
      */
-    public function setRemoteModePort(int $remoteModePort): static
-    {
+    public function setRemoteModePort(
+        int $remoteModePort
+    ): static {
         if ($remoteModePort <= 0) {
             return $this;
         }
@@ -648,8 +657,9 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    private function unpackRequiredFile(string $filename): bool
-    {
+    private function unpackRequiredFile(
+        string $filename
+    ): bool {
         if (true === $this->remoteModeEnabled) {
             return true;
         }
@@ -843,8 +853,9 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      * @throws TypeError
      * @throws ValueError
      */
-    private function parseValidatorXmlReportByContent(string $xmlContent): void
-    {
+    private function parseValidatorXmlReportByContent(
+        string $xmlContent
+    ): void {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($xmlContent)) {
             return;
         }
@@ -866,8 +877,9 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      * @throws TypeError
      * @throws ValueError
      */
-    private function parseValidatorXmlReportByDomDocument(DOMDocument $domDocument): void
-    {
+    private function parseValidatorXmlReportByDomDocument(
+        DOMDocument $domDocument
+    ): void {
         $domXPath = new DOMXPath($domDocument);
 
         $messageTypeMaps = [
@@ -923,8 +935,9 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      * @param  string $directoryToRemove
      * @return void
      */
-    private function cleanupBaseDirectoryInternal(string $directoryToRemove): void
-    {
+    private function cleanupBaseDirectoryInternal(
+        string $directoryToRemove
+    ): void {
         if (true === $this->remoteModeEnabled) {
             return;
         }
@@ -964,8 +977,10 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    private function runValidationApplication(array $command, string $workingdirectory): bool
-    {
+    private function runValidationApplication(
+        array $command,
+        string $workingdirectory
+    ): bool {
         try {
             $process = new Process($command);
             $process->setTimeout(0.0);
@@ -1010,8 +1025,11 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    private function runFileDownload(string $url, string $toFilePath, bool $forceOverwrite = false): bool
-    {
+    private function runFileDownload(
+        string $url,
+        string $toFilePath,
+        bool $forceOverwrite = false
+    ): bool {
         if (file_exists($toFilePath) && !$forceOverwrite) {
             return true;
         }

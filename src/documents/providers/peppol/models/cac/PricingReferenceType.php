@@ -86,8 +86,9 @@ class PricingReferenceType
      * @param  null|array<AlternativeConditionPrice> $alternativeConditionPrice
      * @return static
      */
-    public function setAlternativeConditionPrice(?array $alternativeConditionPrice = null): static
-    {
+    public function setAlternativeConditionPrice(
+        ?array $alternativeConditionPrice = null
+    ): static {
         $this->alternativeConditionPrice = $alternativeConditionPrice;
 
         return $this;
@@ -147,8 +148,9 @@ class PricingReferenceType
      * @param  AlternativeConditionPrice $alternativeConditionPrice
      * @return static
      */
-    public function addToAlternativeConditionPrice(AlternativeConditionPrice $alternativeConditionPrice): static
-    {
+    public function addToAlternativeConditionPrice(
+        AlternativeConditionPrice $alternativeConditionPrice
+    ): static {
         $this->alternativeConditionPrice[] = $alternativeConditionPrice;
 
         return $this;
@@ -168,8 +170,9 @@ class PricingReferenceType
      * @param  AlternativeConditionPrice $alternativeConditionPrice
      * @return static
      */
-    public function addOnceToAlternativeConditionPrice(AlternativeConditionPrice $alternativeConditionPrice): static
-    {
+    public function addOnceToAlternativeConditionPrice(
+        AlternativeConditionPrice $alternativeConditionPrice
+    ): static {
         if (!is_array($this->alternativeConditionPrice)) {
             $this->alternativeConditionPrice = [];
         }

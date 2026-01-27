@@ -45,8 +45,9 @@ class CreditorFinancialInstitutionType
      * @param  null|IDType $bICID
      * @return static
      */
-    public function setBICID(?IDType $bICID = null): static
-    {
+    public function setBICID(
+        ?IDType $bICID = null
+    ): static {
         $this->bICID = $bICID;
 
         return $this;

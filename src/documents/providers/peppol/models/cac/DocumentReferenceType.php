@@ -233,8 +233,9 @@ class DocumentReferenceType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -262,8 +263,9 @@ class DocumentReferenceType
      * @param  null|bool $copyIndicator
      * @return static
      */
-    public function setCopyIndicator(?bool $copyIndicator = null): static
-    {
+    public function setCopyIndicator(
+        ?bool $copyIndicator = null
+    ): static {
         $this->copyIndicator = $copyIndicator;
 
         return $this;
@@ -301,8 +303,9 @@ class DocumentReferenceType
      * @param  null|UUID $uUID
      * @return static
      */
-    public function setUUID(?UUID $uUID = null): static
-    {
+    public function setUUID(
+        ?UUID $uUID = null
+    ): static {
         $this->uUID = $uUID;
 
         return $this;
@@ -330,8 +333,9 @@ class DocumentReferenceType
      * @param  null|DateTimeInterface $issueDate
      * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): static
-    {
+    public function setIssueDate(
+        ?DateTimeInterface $issueDate = null
+    ): static {
         $this->issueDate = $issueDate;
 
         return $this;
@@ -359,8 +363,9 @@ class DocumentReferenceType
      * @param  null|DateTimeInterface $issueTime
      * @return static
      */
-    public function setIssueTime(?DateTimeInterface $issueTime = null): static
-    {
+    public function setIssueTime(
+        ?DateTimeInterface $issueTime = null
+    ): static {
         $this->issueTime = $issueTime;
 
         return $this;
@@ -398,8 +403,9 @@ class DocumentReferenceType
      * @param  null|DocumentTypeCode $documentTypeCode
      * @return static
      */
-    public function setDocumentTypeCode(?DocumentTypeCode $documentTypeCode = null): static
-    {
+    public function setDocumentTypeCode(
+        ?DocumentTypeCode $documentTypeCode = null
+    ): static {
         $this->documentTypeCode = $documentTypeCode;
 
         return $this;
@@ -437,8 +443,9 @@ class DocumentReferenceType
      * @param  null|DocumentType $documentType
      * @return static
      */
-    public function setDocumentType(?DocumentType $documentType = null): static
-    {
+    public function setDocumentType(
+        ?DocumentType $documentType = null
+    ): static {
         $this->documentType = $documentType;
 
         return $this;
@@ -466,8 +473,9 @@ class DocumentReferenceType
      * @param  null|array<XPath> $xPath
      * @return static
      */
-    public function setXPath(?array $xPath = null): static
-    {
+    public function setXPath(
+        ?array $xPath = null
+    ): static {
         $this->xPath = $xPath;
 
         return $this;
@@ -527,8 +535,9 @@ class DocumentReferenceType
      * @param  XPath  $xPath
      * @return static
      */
-    public function addToXPath(XPath $xPath): static
-    {
+    public function addToXPath(
+        XPath $xPath
+    ): static {
         $this->xPath[] = $xPath;
 
         return $this;
@@ -548,8 +557,9 @@ class DocumentReferenceType
      * @param  XPath  $xPath
      * @return static
      */
-    public function addOnceToXPath(XPath $xPath): static
-    {
+    public function addOnceToXPath(
+        XPath $xPath
+    ): static {
         if (!is_array($this->xPath)) {
             $this->xPath = [];
         }
@@ -597,8 +607,9 @@ class DocumentReferenceType
      * @param  null|LanguageID $languageID
      * @return static
      */
-    public function setLanguageID(?LanguageID $languageID = null): static
-    {
+    public function setLanguageID(
+        ?LanguageID $languageID = null
+    ): static {
         $this->languageID = $languageID;
 
         return $this;
@@ -636,8 +647,9 @@ class DocumentReferenceType
      * @param  null|LocaleCode $localeCode
      * @return static
      */
-    public function setLocaleCode(?LocaleCode $localeCode = null): static
-    {
+    public function setLocaleCode(
+        ?LocaleCode $localeCode = null
+    ): static {
         $this->localeCode = $localeCode;
 
         return $this;
@@ -675,8 +687,9 @@ class DocumentReferenceType
      * @param  null|VersionID $versionID
      * @return static
      */
-    public function setVersionID(?VersionID $versionID = null): static
-    {
+    public function setVersionID(
+        ?VersionID $versionID = null
+    ): static {
         $this->versionID = $versionID;
 
         return $this;
@@ -714,8 +727,9 @@ class DocumentReferenceType
      * @param  null|DocumentStatusCode $documentStatusCode
      * @return static
      */
-    public function setDocumentStatusCode(?DocumentStatusCode $documentStatusCode = null): static
-    {
+    public function setDocumentStatusCode(
+        ?DocumentStatusCode $documentStatusCode = null
+    ): static {
         $this->documentStatusCode = $documentStatusCode;
 
         return $this;
@@ -743,8 +757,9 @@ class DocumentReferenceType
      * @param  null|array<DocumentDescription> $documentDescription
      * @return static
      */
-    public function setDocumentDescription(?array $documentDescription = null): static
-    {
+    public function setDocumentDescription(
+        ?array $documentDescription = null
+    ): static {
         $this->documentDescription = $documentDescription;
 
         return $this;
@@ -804,8 +819,9 @@ class DocumentReferenceType
      * @param  DocumentDescription $documentDescription
      * @return static
      */
-    public function addToDocumentDescription(DocumentDescription $documentDescription): static
-    {
+    public function addToDocumentDescription(
+        DocumentDescription $documentDescription
+    ): static {
         $this->documentDescription[] = $documentDescription;
 
         return $this;
@@ -825,8 +841,9 @@ class DocumentReferenceType
      * @param  DocumentDescription $documentDescription
      * @return static
      */
-    public function addOnceToDocumentDescription(DocumentDescription $documentDescription): static
-    {
+    public function addOnceToDocumentDescription(
+        DocumentDescription $documentDescription
+    ): static {
         if (!is_array($this->documentDescription)) {
             $this->documentDescription = [];
         }
@@ -874,8 +891,9 @@ class DocumentReferenceType
      * @param  null|Attachment $attachment
      * @return static
      */
-    public function setAttachment(?Attachment $attachment = null): static
-    {
+    public function setAttachment(
+        ?Attachment $attachment = null
+    ): static {
         $this->attachment = $attachment;
 
         return $this;
@@ -913,8 +931,9 @@ class DocumentReferenceType
      * @param  null|ValidityPeriod $validityPeriod
      * @return static
      */
-    public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): static
-    {
+    public function setValidityPeriod(
+        ?ValidityPeriod $validityPeriod = null
+    ): static {
         $this->validityPeriod = $validityPeriod;
 
         return $this;
@@ -952,8 +971,9 @@ class DocumentReferenceType
      * @param  null|IssuerParty $issuerParty
      * @return static
      */
-    public function setIssuerParty(?IssuerParty $issuerParty = null): static
-    {
+    public function setIssuerParty(
+        ?IssuerParty $issuerParty = null
+    ): static {
         $this->issuerParty = $issuerParty;
 
         return $this;
@@ -991,8 +1011,9 @@ class DocumentReferenceType
      * @param  null|ResultOfVerification $resultOfVerification
      * @return static
      */
-    public function setResultOfVerification(?ResultOfVerification $resultOfVerification = null): static
-    {
+    public function setResultOfVerification(
+        ?ResultOfVerification $resultOfVerification = null
+    ): static {
         $this->resultOfVerification = $resultOfVerification;
 
         return $this;

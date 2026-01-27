@@ -42,8 +42,10 @@ final class InvoiceSuitePackageVersion
      * @param  string $defaultPackageVersion
      * @return string
      */
-    public static function getInstalledVersionByName(string $packageName, string $defaultPackageVersion = '1.0.x'): string
-    {
+    public static function getInstalledVersionByName(
+        string $packageName,
+        string $defaultPackageVersion = '1.0.x'
+    ): string {
         try {
             return ComposerInstalledVersions::getVersion($packageName) ?? $defaultPackageVersion;
             // @phpstan-ignore catch.neverThrown

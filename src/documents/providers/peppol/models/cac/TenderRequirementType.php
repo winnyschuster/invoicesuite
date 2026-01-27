@@ -69,8 +69,9 @@ class TenderRequirementType
      * @param  null|Name $name
      * @return static
      */
-    public function setName(?Name $name = null): static
-    {
+    public function setName(
+        ?Name $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -98,8 +99,9 @@ class TenderRequirementType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -159,8 +161,9 @@ class TenderRequirementType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -180,8 +183,9 @@ class TenderRequirementType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -229,8 +233,9 @@ class TenderRequirementType
      * @param  null|TemplateDocumentReference $templateDocumentReference
      * @return static
      */
-    public function setTemplateDocumentReference(?TemplateDocumentReference $templateDocumentReference = null): static
-    {
+    public function setTemplateDocumentReference(
+        ?TemplateDocumentReference $templateDocumentReference = null
+    ): static {
         $this->templateDocumentReference = $templateDocumentReference;
 
         return $this;

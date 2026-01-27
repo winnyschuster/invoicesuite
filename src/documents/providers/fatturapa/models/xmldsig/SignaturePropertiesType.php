@@ -57,8 +57,9 @@ class SignaturePropertiesType
      * @param  array<SignaturePropertyType> $signatureProperty
      * @return static
      */
-    public function setSignatureProperty(?array $signatureProperty = null): static
-    {
+    public function setSignatureProperty(
+        ?array $signatureProperty = null
+    ): static {
         $this->signatureProperty = $signatureProperty;
 
         return $this;
@@ -94,8 +95,9 @@ class SignaturePropertiesType
      * @param  SignaturePropertyType $signatureProperty
      * @return static
      */
-    public function addToSignatureProperty(SignaturePropertyType $signatureProperty): static
-    {
+    public function addToSignatureProperty(
+        SignaturePropertyType $signatureProperty
+    ): static {
         $this->signatureProperty[] = $signatureProperty;
 
         return $this;
@@ -119,8 +121,9 @@ class SignaturePropertiesType
      * @param  SignaturePropertyType $signatureProperty
      * @return static
      */
-    public function addOnceToSignatureProperty(SignaturePropertyType $signatureProperty): static
-    {
+    public function addOnceToSignatureProperty(
+        SignaturePropertyType $signatureProperty
+    ): static {
         if (!is_array($this->signatureProperty)) {
             $this->signatureProperty = [];
         }
@@ -164,8 +167,9 @@ class SignaturePropertiesType
      * @param  string $id
      * @return static
      */
-    public function setId(?string $id = null): static
-    {
+    public function setId(
+        ?string $id = null
+    ): static {
         $this->id = $id;
 
         return $this;

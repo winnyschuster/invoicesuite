@@ -221,8 +221,9 @@ class TenderResultType
      * @param  null|TenderResultCode $tenderResultCode
      * @return static
      */
-    public function setTenderResultCode(?TenderResultCode $tenderResultCode = null): static
-    {
+    public function setTenderResultCode(
+        ?TenderResultCode $tenderResultCode = null
+    ): static {
         $this->tenderResultCode = $tenderResultCode;
 
         return $this;
@@ -250,8 +251,9 @@ class TenderResultType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -311,8 +313,9 @@ class TenderResultType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -332,8 +335,9 @@ class TenderResultType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -381,8 +385,9 @@ class TenderResultType
      * @param  null|AdvertisementAmount $advertisementAmount
      * @return static
      */
-    public function setAdvertisementAmount(?AdvertisementAmount $advertisementAmount = null): static
-    {
+    public function setAdvertisementAmount(
+        ?AdvertisementAmount $advertisementAmount = null
+    ): static {
         $this->advertisementAmount = $advertisementAmount;
 
         return $this;
@@ -410,8 +415,9 @@ class TenderResultType
      * @param  null|DateTimeInterface $awardDate
      * @return static
      */
-    public function setAwardDate(?DateTimeInterface $awardDate = null): static
-    {
+    public function setAwardDate(
+        ?DateTimeInterface $awardDate = null
+    ): static {
         $this->awardDate = $awardDate;
 
         return $this;
@@ -439,8 +445,9 @@ class TenderResultType
      * @param  null|DateTimeInterface $awardTime
      * @return static
      */
-    public function setAwardTime(?DateTimeInterface $awardTime = null): static
-    {
+    public function setAwardTime(
+        ?DateTimeInterface $awardTime = null
+    ): static {
         $this->awardTime = $awardTime;
 
         return $this;
@@ -478,8 +485,9 @@ class TenderResultType
      * @param  null|ReceivedTenderQuantity $receivedTenderQuantity
      * @return static
      */
-    public function setReceivedTenderQuantity(?ReceivedTenderQuantity $receivedTenderQuantity = null): static
-    {
+    public function setReceivedTenderQuantity(
+        ?ReceivedTenderQuantity $receivedTenderQuantity = null
+    ): static {
         $this->receivedTenderQuantity = $receivedTenderQuantity;
 
         return $this;
@@ -517,8 +525,9 @@ class TenderResultType
      * @param  null|LowerTenderAmount $lowerTenderAmount
      * @return static
      */
-    public function setLowerTenderAmount(?LowerTenderAmount $lowerTenderAmount = null): static
-    {
+    public function setLowerTenderAmount(
+        ?LowerTenderAmount $lowerTenderAmount = null
+    ): static {
         $this->lowerTenderAmount = $lowerTenderAmount;
 
         return $this;
@@ -556,8 +565,9 @@ class TenderResultType
      * @param  null|HigherTenderAmount $higherTenderAmount
      * @return static
      */
-    public function setHigherTenderAmount(?HigherTenderAmount $higherTenderAmount = null): static
-    {
+    public function setHigherTenderAmount(
+        ?HigherTenderAmount $higherTenderAmount = null
+    ): static {
         $this->higherTenderAmount = $higherTenderAmount;
 
         return $this;
@@ -585,8 +595,9 @@ class TenderResultType
      * @param  null|DateTimeInterface $startDate
      * @return static
      */
-    public function setStartDate(?DateTimeInterface $startDate = null): static
-    {
+    public function setStartDate(
+        ?DateTimeInterface $startDate = null
+    ): static {
         $this->startDate = $startDate;
 
         return $this;
@@ -704,8 +715,9 @@ class TenderResultType
      * @param  null|Contract $contract
      * @return static
      */
-    public function setContract(?Contract $contract = null): static
-    {
+    public function setContract(
+        ?Contract $contract = null
+    ): static {
         $this->contract = $contract;
 
         return $this;
@@ -743,8 +755,9 @@ class TenderResultType
      * @param  null|AwardedTenderedProject $awardedTenderedProject
      * @return static
      */
-    public function setAwardedTenderedProject(?AwardedTenderedProject $awardedTenderedProject = null): static
-    {
+    public function setAwardedTenderedProject(
+        ?AwardedTenderedProject $awardedTenderedProject = null
+    ): static {
         $this->awardedTenderedProject = $awardedTenderedProject;
 
         return $this;
@@ -812,8 +825,9 @@ class TenderResultType
      * @param  null|array<SubcontractTerms> $subcontractTerms
      * @return static
      */
-    public function setSubcontractTerms(?array $subcontractTerms = null): static
-    {
+    public function setSubcontractTerms(
+        ?array $subcontractTerms = null
+    ): static {
         $this->subcontractTerms = $subcontractTerms;
 
         return $this;
@@ -873,8 +887,9 @@ class TenderResultType
      * @param  SubcontractTerms $subcontractTerms
      * @return static
      */
-    public function addToSubcontractTerms(SubcontractTerms $subcontractTerms): static
-    {
+    public function addToSubcontractTerms(
+        SubcontractTerms $subcontractTerms
+    ): static {
         $this->subcontractTerms[] = $subcontractTerms;
 
         return $this;
@@ -894,8 +909,9 @@ class TenderResultType
      * @param  SubcontractTerms $subcontractTerms
      * @return static
      */
-    public function addOnceToSubcontractTerms(SubcontractTerms $subcontractTerms): static
-    {
+    public function addOnceToSubcontractTerms(
+        SubcontractTerms $subcontractTerms
+    ): static {
         if (!is_array($this->subcontractTerms)) {
             $this->subcontractTerms = [];
         }
@@ -933,8 +949,9 @@ class TenderResultType
      * @param  null|array<WinningParty> $winningParty
      * @return static
      */
-    public function setWinningParty(?array $winningParty = null): static
-    {
+    public function setWinningParty(
+        ?array $winningParty = null
+    ): static {
         $this->winningParty = $winningParty;
 
         return $this;
@@ -994,8 +1011,9 @@ class TenderResultType
      * @param  WinningParty $winningParty
      * @return static
      */
-    public function addToWinningParty(WinningParty $winningParty): static
-    {
+    public function addToWinningParty(
+        WinningParty $winningParty
+    ): static {
         $this->winningParty[] = $winningParty;
 
         return $this;
@@ -1015,8 +1033,9 @@ class TenderResultType
      * @param  WinningParty $winningParty
      * @return static
      */
-    public function addOnceToWinningParty(WinningParty $winningParty): static
-    {
+    public function addOnceToWinningParty(
+        WinningParty $winningParty
+    ): static {
         if (!is_array($this->winningParty)) {
             $this->winningParty = [];
         }

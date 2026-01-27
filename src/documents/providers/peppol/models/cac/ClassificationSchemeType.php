@@ -202,8 +202,9 @@ class ClassificationSchemeType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -241,8 +242,9 @@ class ClassificationSchemeType
      * @param  null|UUID $uUID
      * @return static
      */
-    public function setUUID(?UUID $uUID = null): static
-    {
+    public function setUUID(
+        ?UUID $uUID = null
+    ): static {
         $this->uUID = $uUID;
 
         return $this;
@@ -270,8 +272,9 @@ class ClassificationSchemeType
      * @param  null|DateTimeInterface $lastRevisionDate
      * @return static
      */
-    public function setLastRevisionDate(?DateTimeInterface $lastRevisionDate = null): static
-    {
+    public function setLastRevisionDate(
+        ?DateTimeInterface $lastRevisionDate = null
+    ): static {
         $this->lastRevisionDate = $lastRevisionDate;
 
         return $this;
@@ -299,8 +302,9 @@ class ClassificationSchemeType
      * @param  null|DateTimeInterface $lastRevisionTime
      * @return static
      */
-    public function setLastRevisionTime(?DateTimeInterface $lastRevisionTime = null): static
-    {
+    public function setLastRevisionTime(
+        ?DateTimeInterface $lastRevisionTime = null
+    ): static {
         $this->lastRevisionTime = $lastRevisionTime;
 
         return $this;
@@ -328,8 +332,9 @@ class ClassificationSchemeType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -389,8 +394,9 @@ class ClassificationSchemeType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -410,8 +416,9 @@ class ClassificationSchemeType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -459,8 +466,9 @@ class ClassificationSchemeType
      * @param  null|Name $name
      * @return static
      */
-    public function setName(?Name $name = null): static
-    {
+    public function setName(
+        ?Name $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -488,8 +496,9 @@ class ClassificationSchemeType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -549,8 +558,9 @@ class ClassificationSchemeType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -570,8 +580,9 @@ class ClassificationSchemeType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -619,8 +630,9 @@ class ClassificationSchemeType
      * @param  null|AgencyID $agencyID
      * @return static
      */
-    public function setAgencyID(?AgencyID $agencyID = null): static
-    {
+    public function setAgencyID(
+        ?AgencyID $agencyID = null
+    ): static {
         $this->agencyID = $agencyID;
 
         return $this;
@@ -658,8 +670,9 @@ class ClassificationSchemeType
      * @param  null|AgencyName $agencyName
      * @return static
      */
-    public function setAgencyName(?AgencyName $agencyName = null): static
-    {
+    public function setAgencyName(
+        ?AgencyName $agencyName = null
+    ): static {
         $this->agencyName = $agencyName;
 
         return $this;
@@ -697,8 +710,9 @@ class ClassificationSchemeType
      * @param  null|VersionID $versionID
      * @return static
      */
-    public function setVersionID(?VersionID $versionID = null): static
-    {
+    public function setVersionID(
+        ?VersionID $versionID = null
+    ): static {
         $this->versionID = $versionID;
 
         return $this;
@@ -736,8 +750,9 @@ class ClassificationSchemeType
      * @param  null|URI $uRI
      * @return static
      */
-    public function setURI(?URI $uRI = null): static
-    {
+    public function setURI(
+        ?URI $uRI = null
+    ): static {
         $this->uRI = $uRI;
 
         return $this;
@@ -775,8 +790,9 @@ class ClassificationSchemeType
      * @param  null|SchemeURI $schemeURI
      * @return static
      */
-    public function setSchemeURI(?SchemeURI $schemeURI = null): static
-    {
+    public function setSchemeURI(
+        ?SchemeURI $schemeURI = null
+    ): static {
         $this->schemeURI = $schemeURI;
 
         return $this;
@@ -814,8 +830,9 @@ class ClassificationSchemeType
      * @param  null|LanguageID $languageID
      * @return static
      */
-    public function setLanguageID(?LanguageID $languageID = null): static
-    {
+    public function setLanguageID(
+        ?LanguageID $languageID = null
+    ): static {
         $this->languageID = $languageID;
 
         return $this;
@@ -843,8 +860,9 @@ class ClassificationSchemeType
      * @param  null|array<ClassificationCategory> $classificationCategory
      * @return static
      */
-    public function setClassificationCategory(?array $classificationCategory = null): static
-    {
+    public function setClassificationCategory(
+        ?array $classificationCategory = null
+    ): static {
         $this->classificationCategory = $classificationCategory;
 
         return $this;
@@ -904,8 +922,9 @@ class ClassificationSchemeType
      * @param  ClassificationCategory $classificationCategory
      * @return static
      */
-    public function addToClassificationCategory(ClassificationCategory $classificationCategory): static
-    {
+    public function addToClassificationCategory(
+        ClassificationCategory $classificationCategory
+    ): static {
         $this->classificationCategory[] = $classificationCategory;
 
         return $this;
@@ -925,8 +944,9 @@ class ClassificationSchemeType
      * @param  ClassificationCategory $classificationCategory
      * @return static
      */
-    public function addOnceToClassificationCategory(ClassificationCategory $classificationCategory): static
-    {
+    public function addOnceToClassificationCategory(
+        ClassificationCategory $classificationCategory
+    ): static {
         if (!is_array($this->classificationCategory)) {
             $this->classificationCategory = [];
         }

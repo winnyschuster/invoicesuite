@@ -188,8 +188,9 @@ class ItemPropertyType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -227,8 +228,9 @@ class ItemPropertyType
      * @param  null|Name $name
      * @return static
      */
-    public function setName(?Name $name = null): static
-    {
+    public function setName(
+        ?Name $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -266,8 +268,9 @@ class ItemPropertyType
      * @param  null|NameCode $nameCode
      * @return static
      */
-    public function setNameCode(?NameCode $nameCode = null): static
-    {
+    public function setNameCode(
+        ?NameCode $nameCode = null
+    ): static {
         $this->nameCode = $nameCode;
 
         return $this;
@@ -305,8 +308,9 @@ class ItemPropertyType
      * @param  null|TestMethod $testMethod
      * @return static
      */
-    public function setTestMethod(?TestMethod $testMethod = null): static
-    {
+    public function setTestMethod(
+        ?TestMethod $testMethod = null
+    ): static {
         $this->testMethod = $testMethod;
 
         return $this;
@@ -344,8 +348,9 @@ class ItemPropertyType
      * @param  null|Value $value
      * @return static
      */
-    public function setValue(?Value $value = null): static
-    {
+    public function setValue(
+        ?Value $value = null
+    ): static {
         $this->value = $value;
 
         return $this;
@@ -383,8 +388,9 @@ class ItemPropertyType
      * @param  null|ValueQuantity $valueQuantity
      * @return static
      */
-    public function setValueQuantity(?ValueQuantity $valueQuantity = null): static
-    {
+    public function setValueQuantity(
+        ?ValueQuantity $valueQuantity = null
+    ): static {
         $this->valueQuantity = $valueQuantity;
 
         return $this;
@@ -412,8 +418,9 @@ class ItemPropertyType
      * @param  null|array<ValueQualifier> $valueQualifier
      * @return static
      */
-    public function setValueQualifier(?array $valueQualifier = null): static
-    {
+    public function setValueQualifier(
+        ?array $valueQualifier = null
+    ): static {
         $this->valueQualifier = $valueQualifier;
 
         return $this;
@@ -473,8 +480,9 @@ class ItemPropertyType
      * @param  ValueQualifier $valueQualifier
      * @return static
      */
-    public function addToValueQualifier(ValueQualifier $valueQualifier): static
-    {
+    public function addToValueQualifier(
+        ValueQualifier $valueQualifier
+    ): static {
         $this->valueQualifier[] = $valueQualifier;
 
         return $this;
@@ -494,8 +502,9 @@ class ItemPropertyType
      * @param  ValueQualifier $valueQualifier
      * @return static
      */
-    public function addOnceToValueQualifier(ValueQualifier $valueQualifier): static
-    {
+    public function addOnceToValueQualifier(
+        ValueQualifier $valueQualifier
+    ): static {
         if (!is_array($this->valueQualifier)) {
             $this->valueQualifier = [];
         }
@@ -543,8 +552,9 @@ class ItemPropertyType
      * @param  null|ImportanceCode $importanceCode
      * @return static
      */
-    public function setImportanceCode(?ImportanceCode $importanceCode = null): static
-    {
+    public function setImportanceCode(
+        ?ImportanceCode $importanceCode = null
+    ): static {
         $this->importanceCode = $importanceCode;
 
         return $this;
@@ -572,8 +582,9 @@ class ItemPropertyType
      * @param  null|array<ListValue> $listValue
      * @return static
      */
-    public function setListValue(?array $listValue = null): static
-    {
+    public function setListValue(
+        ?array $listValue = null
+    ): static {
         $this->listValue = $listValue;
 
         return $this;
@@ -633,8 +644,9 @@ class ItemPropertyType
      * @param  ListValue $listValue
      * @return static
      */
-    public function addToListValue(ListValue $listValue): static
-    {
+    public function addToListValue(
+        ListValue $listValue
+    ): static {
         $this->listValue[] = $listValue;
 
         return $this;
@@ -654,8 +666,9 @@ class ItemPropertyType
      * @param  ListValue $listValue
      * @return static
      */
-    public function addOnceToListValue(ListValue $listValue): static
-    {
+    public function addOnceToListValue(
+        ListValue $listValue
+    ): static {
         if (!is_array($this->listValue)) {
             $this->listValue = [];
         }
@@ -703,8 +716,9 @@ class ItemPropertyType
      * @param  null|UsabilityPeriod $usabilityPeriod
      * @return static
      */
-    public function setUsabilityPeriod(?UsabilityPeriod $usabilityPeriod = null): static
-    {
+    public function setUsabilityPeriod(
+        ?UsabilityPeriod $usabilityPeriod = null
+    ): static {
         $this->usabilityPeriod = $usabilityPeriod;
 
         return $this;
@@ -732,8 +746,9 @@ class ItemPropertyType
      * @param  null|array<ItemPropertyGroup> $itemPropertyGroup
      * @return static
      */
-    public function setItemPropertyGroup(?array $itemPropertyGroup = null): static
-    {
+    public function setItemPropertyGroup(
+        ?array $itemPropertyGroup = null
+    ): static {
         $this->itemPropertyGroup = $itemPropertyGroup;
 
         return $this;
@@ -793,8 +808,9 @@ class ItemPropertyType
      * @param  ItemPropertyGroup $itemPropertyGroup
      * @return static
      */
-    public function addToItemPropertyGroup(ItemPropertyGroup $itemPropertyGroup): static
-    {
+    public function addToItemPropertyGroup(
+        ItemPropertyGroup $itemPropertyGroup
+    ): static {
         $this->itemPropertyGroup[] = $itemPropertyGroup;
 
         return $this;
@@ -814,8 +830,9 @@ class ItemPropertyType
      * @param  ItemPropertyGroup $itemPropertyGroup
      * @return static
      */
-    public function addOnceToItemPropertyGroup(ItemPropertyGroup $itemPropertyGroup): static
-    {
+    public function addOnceToItemPropertyGroup(
+        ItemPropertyGroup $itemPropertyGroup
+    ): static {
         if (!is_array($this->itemPropertyGroup)) {
             $this->itemPropertyGroup = [];
         }
@@ -863,8 +880,9 @@ class ItemPropertyType
      * @param  null|RangeDimension $rangeDimension
      * @return static
      */
-    public function setRangeDimension(?RangeDimension $rangeDimension = null): static
-    {
+    public function setRangeDimension(
+        ?RangeDimension $rangeDimension = null
+    ): static {
         $this->rangeDimension = $rangeDimension;
 
         return $this;
@@ -902,8 +920,9 @@ class ItemPropertyType
      * @param  null|ItemPropertyRange $itemPropertyRange
      * @return static
      */
-    public function setItemPropertyRange(?ItemPropertyRange $itemPropertyRange = null): static
-    {
+    public function setItemPropertyRange(
+        ?ItemPropertyRange $itemPropertyRange = null
+    ): static {
         $this->itemPropertyRange = $itemPropertyRange;
 
         return $this;

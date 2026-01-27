@@ -34,8 +34,9 @@ class RateType
      * @param  null|float $value
      * @return static
      */
-    public function setValue(?float $value = null): static
-    {
+    public function setValue(
+        ?float $value = null
+    ): static {
         $this->value = $value;
 
         return $this;

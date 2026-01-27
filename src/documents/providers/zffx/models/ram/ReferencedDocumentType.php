@@ -127,8 +127,9 @@ class ReferencedDocumentType
      * @param  null|IDType $issuerAssignedID
      * @return static
      */
-    public function setIssuerAssignedID(?IDType $issuerAssignedID = null): static
-    {
+    public function setIssuerAssignedID(
+        ?IDType $issuerAssignedID = null
+    ): static {
         $this->issuerAssignedID = $issuerAssignedID;
 
         return $this;
@@ -166,8 +167,9 @@ class ReferencedDocumentType
      * @param  null|IDType $uRIID
      * @return static
      */
-    public function setURIID(?IDType $uRIID = null): static
-    {
+    public function setURIID(
+        ?IDType $uRIID = null
+    ): static {
         $this->uRIID = $uRIID;
 
         return $this;
@@ -205,8 +207,9 @@ class ReferencedDocumentType
      * @param  null|IDType $lineID
      * @return static
      */
-    public function setLineID(?IDType $lineID = null): static
-    {
+    public function setLineID(
+        ?IDType $lineID = null
+    ): static {
         $this->lineID = $lineID;
 
         return $this;
@@ -244,8 +247,9 @@ class ReferencedDocumentType
      * @param  null|DocumentCodeType $typeCode
      * @return static
      */
-    public function setTypeCode(?DocumentCodeType $typeCode = null): static
-    {
+    public function setTypeCode(
+        ?DocumentCodeType $typeCode = null
+    ): static {
         $this->typeCode = $typeCode;
 
         return $this;
@@ -283,8 +287,9 @@ class ReferencedDocumentType
      * @param  null|TextType $name
      * @return static
      */
-    public function setName(?TextType $name = null): static
-    {
+    public function setName(
+        ?TextType $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -322,8 +327,9 @@ class ReferencedDocumentType
      * @param  null|BinaryObjectType $attachmentBinaryObject
      * @return static
      */
-    public function setAttachmentBinaryObject(?BinaryObjectType $attachmentBinaryObject = null): static
-    {
+    public function setAttachmentBinaryObject(
+        ?BinaryObjectType $attachmentBinaryObject = null
+    ): static {
         $this->attachmentBinaryObject = $attachmentBinaryObject;
 
         return $this;
@@ -361,8 +367,9 @@ class ReferencedDocumentType
      * @param  null|ReferenceCodeType $referenceTypeCode
      * @return static
      */
-    public function setReferenceTypeCode(?ReferenceCodeType $referenceTypeCode = null): static
-    {
+    public function setReferenceTypeCode(
+        ?ReferenceCodeType $referenceTypeCode = null
+    ): static {
         $this->referenceTypeCode = $referenceTypeCode;
 
         return $this;
@@ -400,8 +407,9 @@ class ReferencedDocumentType
      * @param  null|FormattedDateTimeType $formattedIssueDateTime
      * @return static
      */
-    public function setFormattedIssueDateTime(?FormattedDateTimeType $formattedIssueDateTime = null): static
-    {
+    public function setFormattedIssueDateTime(
+        ?FormattedDateTimeType $formattedIssueDateTime = null
+    ): static {
         $this->formattedIssueDateTime = $formattedIssueDateTime;
 
         return $this;

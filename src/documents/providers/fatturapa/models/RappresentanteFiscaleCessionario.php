@@ -88,8 +88,9 @@ final class RappresentanteFiscaleCessionario
      * @param  null|IdFiscale $idFiscaleIVA
      * @return static
      */
-    public function setIdFiscaleIVA(?IdFiscale $idFiscaleIVA = null): static
-    {
+    public function setIdFiscaleIVA(
+        ?IdFiscale $idFiscaleIVA = null
+    ): static {
         $this->idFiscaleIVA = $idFiscaleIVA;
 
         return $this;
@@ -123,8 +124,9 @@ final class RappresentanteFiscaleCessionario
      * @param  null|string $denominazione
      * @return static
      */
-    public function setDenominazione(?string $denominazione = null): static
-    {
+    public function setDenominazione(
+        ?string $denominazione = null
+    ): static {
         $this->denominazione = InvoiceSuiteStringUtils::asNullWhenEmpty($denominazione);
 
         return $this;
@@ -158,8 +160,9 @@ final class RappresentanteFiscaleCessionario
      * @param  null|string $nome
      * @return static
      */
-    public function setNome(?string $nome = null): static
-    {
+    public function setNome(
+        ?string $nome = null
+    ): static {
         $this->nome = InvoiceSuiteStringUtils::asNullWhenEmpty($nome);
 
         return $this;
@@ -193,8 +196,9 @@ final class RappresentanteFiscaleCessionario
      * @param  null|string $cognome
      * @return static
      */
-    public function setCognome(?string $cognome = null): static
-    {
+    public function setCognome(
+        ?string $cognome = null
+    ): static {
         $this->cognome = InvoiceSuiteStringUtils::asNullWhenEmpty($cognome);
 
         return $this;

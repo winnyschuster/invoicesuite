@@ -95,8 +95,9 @@ class SignedInfoType
      * @param  CanonicalizationMethodType $canonicalizationMethod
      * @return static
      */
-    public function setCanonicalizationMethod(?CanonicalizationMethodType $canonicalizationMethod = null): static
-    {
+    public function setCanonicalizationMethod(
+        ?CanonicalizationMethodType $canonicalizationMethod = null
+    ): static {
         $this->canonicalizationMethod = $canonicalizationMethod;
 
         return $this;
@@ -142,8 +143,9 @@ class SignedInfoType
      * @param  SignatureMethodType $signatureMethod
      * @return static
      */
-    public function setSignatureMethod(?SignatureMethodType $signatureMethod = null): static
-    {
+    public function setSignatureMethod(
+        ?SignatureMethodType $signatureMethod = null
+    ): static {
         $this->signatureMethod = $signatureMethod;
 
         return $this;
@@ -177,8 +179,9 @@ class SignedInfoType
      * @param  array<ReferenceType> $reference
      * @return static
      */
-    public function setReference(?array $reference = null): static
-    {
+    public function setReference(
+        ?array $reference = null
+    ): static {
         $this->reference = $reference;
 
         return $this;
@@ -214,8 +217,9 @@ class SignedInfoType
      * @param  ReferenceType $reference
      * @return static
      */
-    public function addToReference(ReferenceType $reference): static
-    {
+    public function addToReference(
+        ReferenceType $reference
+    ): static {
         $this->reference[] = $reference;
 
         return $this;
@@ -239,8 +243,9 @@ class SignedInfoType
      * @param  ReferenceType $reference
      * @return static
      */
-    public function addOnceToReference(ReferenceType $reference): static
-    {
+    public function addOnceToReference(
+        ReferenceType $reference
+    ): static {
         if (!is_array($this->reference)) {
             $this->reference = [];
         }
@@ -284,8 +289,9 @@ class SignedInfoType
      * @param  string $id
      * @return static
      */
-    public function setId(?string $id = null): static
-    {
+    public function setId(
+        ?string $id = null
+    ): static {
         $this->id = $id;
 
         return $this;

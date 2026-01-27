@@ -77,8 +77,9 @@ class CrossIndustryInvoiceType
      * @param  null|ExchangedDocumentContextType $exchangedDocumentContext
      * @return static
      */
-    public function setExchangedDocumentContext(?ExchangedDocumentContextType $exchangedDocumentContext = null): static
-    {
+    public function setExchangedDocumentContext(
+        ?ExchangedDocumentContextType $exchangedDocumentContext = null
+    ): static {
         $this->exchangedDocumentContext = $exchangedDocumentContext;
 
         return $this;
@@ -116,8 +117,9 @@ class CrossIndustryInvoiceType
      * @param  null|ExchangedDocumentType $exchangedDocument
      * @return static
      */
-    public function setExchangedDocument(?ExchangedDocumentType $exchangedDocument = null): static
-    {
+    public function setExchangedDocument(
+        ?ExchangedDocumentType $exchangedDocument = null
+    ): static {
         $this->exchangedDocument = $exchangedDocument;
 
         return $this;

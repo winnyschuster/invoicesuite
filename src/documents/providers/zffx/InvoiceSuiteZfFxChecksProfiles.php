@@ -27,8 +27,9 @@ trait InvoiceSuiteZfFxChecksProfiles
      * @param  InvoiceSuiteZfFxProfiles $requestedMinimumProdileId
      * @return bool
      */
-    protected function supportsAtLeast(InvoiceSuiteZfFxProfiles $requestedMinimumProdileId): bool
-    {
+    protected function supportsAtLeast(
+        InvoiceSuiteZfFxProfiles $requestedMinimumProdileId
+    ): bool {
         return $this->getCurrentDocumentFormatProviderParameterValueInt('WantsMaximumProfile', -1) >= $requestedMinimumProdileId->value;
     }
 
@@ -38,8 +39,9 @@ trait InvoiceSuiteZfFxChecksProfiles
      * @param  InvoiceSuiteZfFxProfiles $requestedMinimumProdileId
      * @return bool
      */
-    protected function supportsNotAtLeast(InvoiceSuiteZfFxProfiles $requestedMinimumProdileId): bool
-    {
+    protected function supportsNotAtLeast(
+        InvoiceSuiteZfFxProfiles $requestedMinimumProdileId
+    ): bool {
         return !$this->supportsAtLeast($requestedMinimumProdileId);
     }
 
@@ -50,8 +52,10 @@ trait InvoiceSuiteZfFxChecksProfiles
      * @param  string                   $method
      * @return bool
      */
-    protected function supportsNotAtLeastWithTace(InvoiceSuiteZfFxProfiles $requestedMinimumProdileId, string $method): bool
-    {
+    protected function supportsNotAtLeastWithTace(
+        InvoiceSuiteZfFxProfiles $requestedMinimumProdileId,
+        string $method
+    ): bool {
         $tagIsNotValid = $this->supportsNotAtLeast($requestedMinimumProdileId);
 
         if ($tagIsNotValid) {
@@ -166,8 +170,9 @@ trait InvoiceSuiteZfFxChecksProfiles
      *
      * @return bool
      */
-    protected function supportsNotAtLeastExtendedWithTrace(string $method): bool
-    {
+    protected function supportsNotAtLeastExtendedWithTrace(
+        string $method
+    ): bool {
         return $this->supportsNotAtLeastWithTace(InvoiceSuiteZfFxProfiles::EXTENDED, $method);
     }
 
@@ -176,8 +181,9 @@ trait InvoiceSuiteZfFxChecksProfiles
      *
      * @return bool
      */
-    protected function supportsNotAtLeastEn16931WithTrace(string $method): bool
-    {
+    protected function supportsNotAtLeastEn16931WithTrace(
+        string $method
+    ): bool {
         return $this->supportsNotAtLeastWithTace(InvoiceSuiteZfFxProfiles::EN16931, $method);
     }
 
@@ -186,8 +192,9 @@ trait InvoiceSuiteZfFxChecksProfiles
      *
      * @return bool
      */
-    protected function supportsNotAtLeastBasicWithTrace(string $method): bool
-    {
+    protected function supportsNotAtLeastBasicWithTrace(
+        string $method
+    ): bool {
         return $this->supportsNotAtLeastWithTace(InvoiceSuiteZfFxProfiles::BASIC, $method);
     }
 
@@ -196,8 +203,9 @@ trait InvoiceSuiteZfFxChecksProfiles
      *
      * @return bool
      */
-    protected function supportsNotAtLeastBasicWlWithTrace(string $method): bool
-    {
+    protected function supportsNotAtLeastBasicWlWithTrace(
+        string $method
+    ): bool {
         return $this->supportsNotAtLeastWithTace(InvoiceSuiteZfFxProfiles::BASICWL, $method);
     }
 
@@ -206,8 +214,9 @@ trait InvoiceSuiteZfFxChecksProfiles
      *
      * @return bool
      */
-    protected function supportsNotAtLeastMinimumWithTrace(string $method): bool
-    {
+    protected function supportsNotAtLeastMinimumWithTrace(
+        string $method
+    ): bool {
         return $this->supportsNotAtLeastWithTace(InvoiceSuiteZfFxProfiles::MINIMUM, $method);
     }
 }

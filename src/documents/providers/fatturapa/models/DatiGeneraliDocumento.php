@@ -183,8 +183,9 @@ final class DatiGeneraliDocumento
      * @param  null|TipoDocumento $tipoDocumento
      * @return static
      */
-    public function setTipoDocumento(?TipoDocumento $tipoDocumento = null): static
-    {
+    public function setTipoDocumento(
+        ?TipoDocumento $tipoDocumento = null
+    ): static {
         $this->tipoDocumento = $tipoDocumento;
 
         return $this;
@@ -218,8 +219,9 @@ final class DatiGeneraliDocumento
      * @param  null|string $divisa
      * @return static
      */
-    public function setDivisa(?string $divisa = null): static
-    {
+    public function setDivisa(
+        ?string $divisa = null
+    ): static {
         $this->divisa = InvoiceSuiteStringUtils::asNullWhenEmpty($divisa);
 
         return $this;
@@ -253,8 +255,9 @@ final class DatiGeneraliDocumento
      * @param  null|DateTimeInterface $data
      * @return static
      */
-    public function setData(?DateTimeInterface $data = null): static
-    {
+    public function setData(
+        ?DateTimeInterface $data = null
+    ): static {
         $this->data = $data;
 
         return $this;
@@ -288,8 +291,9 @@ final class DatiGeneraliDocumento
      * @param  null|string $numero
      * @return static
      */
-    public function setNumero(?string $numero = null): static
-    {
+    public function setNumero(
+        ?string $numero = null
+    ): static {
         $this->numero = InvoiceSuiteStringUtils::asNullWhenEmpty($numero);
 
         return $this;
@@ -323,8 +327,9 @@ final class DatiGeneraliDocumento
      * @param  null|array<DatiRitenuta> $datiRitenuta
      * @return static
      */
-    public function setDatiRitenuta(?array $datiRitenuta = null): static
-    {
+    public function setDatiRitenuta(
+        ?array $datiRitenuta = null
+    ): static {
         $this->datiRitenuta = $datiRitenuta;
 
         return $this;
@@ -360,8 +365,9 @@ final class DatiGeneraliDocumento
      * @param  DatiRitenuta $datiRitenuta
      * @return static
      */
-    public function addToDatiRitenuta(DatiRitenuta $datiRitenuta): static
-    {
+    public function addToDatiRitenuta(
+        DatiRitenuta $datiRitenuta
+    ): static {
         if (!is_array($this->datiRitenuta)) {
             $this->datiRitenuta = [];
         }
@@ -389,8 +395,9 @@ final class DatiGeneraliDocumento
      * @param  DatiRitenuta $datiRitenuta
      * @return static
      */
-    public function addOnceToDatiRitenuta(DatiRitenuta $datiRitenuta): static
-    {
+    public function addOnceToDatiRitenuta(
+        DatiRitenuta $datiRitenuta
+    ): static {
         if (!is_array($this->datiRitenuta)) {
             $this->datiRitenuta = [];
         }
@@ -446,8 +453,9 @@ final class DatiGeneraliDocumento
      * @param  null|DatiBollo $datiBollo
      * @return static
      */
-    public function setDatiBollo(?DatiBollo $datiBollo = null): static
-    {
+    public function setDatiBollo(
+        ?DatiBollo $datiBollo = null
+    ): static {
         $this->datiBollo = $datiBollo;
 
         return $this;
@@ -481,8 +489,9 @@ final class DatiGeneraliDocumento
      * @param  null|array<DatiCassaPrevidenziale> $datiCassaPrevidenziale
      * @return static
      */
-    public function setDatiCassaPrevidenziale(?array $datiCassaPrevidenziale = null): static
-    {
+    public function setDatiCassaPrevidenziale(
+        ?array $datiCassaPrevidenziale = null
+    ): static {
         $this->datiCassaPrevidenziale = $datiCassaPrevidenziale;
 
         return $this;
@@ -518,8 +527,9 @@ final class DatiGeneraliDocumento
      * @param  DatiCassaPrevidenziale $datiCassaPrevidenziale
      * @return static
      */
-    public function addToDatiCassaPrevidenziale(DatiCassaPrevidenziale $datiCassaPrevidenziale): static
-    {
+    public function addToDatiCassaPrevidenziale(
+        DatiCassaPrevidenziale $datiCassaPrevidenziale
+    ): static {
         if (!is_array($this->datiCassaPrevidenziale)) {
             $this->datiCassaPrevidenziale = [];
         }
@@ -547,8 +557,9 @@ final class DatiGeneraliDocumento
      * @param  DatiCassaPrevidenziale $datiCassaPrevidenziale
      * @return static
      */
-    public function addOnceToDatiCassaPrevidenziale(DatiCassaPrevidenziale $datiCassaPrevidenziale): static
-    {
+    public function addOnceToDatiCassaPrevidenziale(
+        DatiCassaPrevidenziale $datiCassaPrevidenziale
+    ): static {
         if (!is_array($this->datiCassaPrevidenziale)) {
             $this->datiCassaPrevidenziale = [];
         }
@@ -592,8 +603,9 @@ final class DatiGeneraliDocumento
      * @param  null|array<ScontoMaggiorazione> $scontoMaggiorazione
      * @return static
      */
-    public function setScontoMaggiorazione(?array $scontoMaggiorazione = null): static
-    {
+    public function setScontoMaggiorazione(
+        ?array $scontoMaggiorazione = null
+    ): static {
         $this->scontoMaggiorazione = $scontoMaggiorazione;
 
         return $this;
@@ -629,8 +641,9 @@ final class DatiGeneraliDocumento
      * @param  ScontoMaggiorazione $scontoMaggiorazione
      * @return static
      */
-    public function addToScontoMaggiorazione(ScontoMaggiorazione $scontoMaggiorazione): static
-    {
+    public function addToScontoMaggiorazione(
+        ScontoMaggiorazione $scontoMaggiorazione
+    ): static {
         if (!is_array($this->scontoMaggiorazione)) {
             $this->scontoMaggiorazione = [];
         }
@@ -658,8 +671,9 @@ final class DatiGeneraliDocumento
      * @param  ScontoMaggiorazione $scontoMaggiorazione
      * @return static
      */
-    public function addOnceToScontoMaggiorazione(ScontoMaggiorazione $scontoMaggiorazione): static
-    {
+    public function addOnceToScontoMaggiorazione(
+        ScontoMaggiorazione $scontoMaggiorazione
+    ): static {
         if (!is_array($this->scontoMaggiorazione)) {
             $this->scontoMaggiorazione = [];
         }
@@ -703,8 +717,9 @@ final class DatiGeneraliDocumento
      * @param  null|float $importoTotaleDocumento
      * @return static
      */
-    public function setImportoTotaleDocumento(?float $importoTotaleDocumento = null): static
-    {
+    public function setImportoTotaleDocumento(
+        ?float $importoTotaleDocumento = null
+    ): static {
         $this->importoTotaleDocumento = $importoTotaleDocumento;
 
         return $this;
@@ -738,8 +753,9 @@ final class DatiGeneraliDocumento
      * @param  null|float $arrotondamento
      * @return static
      */
-    public function setArrotondamento(?float $arrotondamento = null): static
-    {
+    public function setArrotondamento(
+        ?float $arrotondamento = null
+    ): static {
         $this->arrotondamento = $arrotondamento;
 
         return $this;
@@ -773,8 +789,9 @@ final class DatiGeneraliDocumento
      * @param  null|array<string> $causale
      * @return static
      */
-    public function setCausale(?array $causale = null): static
-    {
+    public function setCausale(
+        ?array $causale = null
+    ): static {
         $this->causale = $causale;
 
         return $this;
@@ -810,8 +827,9 @@ final class DatiGeneraliDocumento
      * @param  string $causale
      * @return static
      */
-    public function addToCausale(string $causale): static
-    {
+    public function addToCausale(
+        string $causale
+    ): static {
         if (!is_array($this->causale)) {
             $this->causale = [];
         }
@@ -827,8 +845,9 @@ final class DatiGeneraliDocumento
      * @param  string $causale
      * @return static
      */
-    public function addOnceToCausale(string $causale): static
-    {
+    public function addOnceToCausale(
+        string $causale
+    ): static {
         if (!is_array($this->causale)) {
             $this->causale = [];
         }
@@ -854,8 +873,9 @@ final class DatiGeneraliDocumento
      * @param  null|Art73 $art73
      * @return static
      */
-    public function setArt73(?Art73 $art73 = null): static
-    {
+    public function setArt73(
+        ?Art73 $art73 = null
+    ): static {
         $this->art73 = $art73;
 
         return $this;

@@ -156,8 +156,9 @@ class ImmobilizedSecurityType
      * @param  null|SecurityID $securityID
      * @return static
      */
-    public function setSecurityID(?SecurityID $securityID = null): static
-    {
+    public function setSecurityID(
+        ?SecurityID $securityID = null
+    ): static {
         $this->securityID = $securityID;
 
         return $this;
@@ -185,8 +186,9 @@ class ImmobilizedSecurityType
      * @param  null|DateTimeInterface $issueDate
      * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): static
-    {
+    public function setIssueDate(
+        ?DateTimeInterface $issueDate = null
+    ): static {
         $this->issueDate = $issueDate;
 
         return $this;
@@ -224,8 +226,9 @@ class ImmobilizedSecurityType
      * @param  null|FaceValueAmount $faceValueAmount
      * @return static
      */
-    public function setFaceValueAmount(?FaceValueAmount $faceValueAmount = null): static
-    {
+    public function setFaceValueAmount(
+        ?FaceValueAmount $faceValueAmount = null
+    ): static {
         $this->faceValueAmount = $faceValueAmount;
 
         return $this;
@@ -263,8 +266,9 @@ class ImmobilizedSecurityType
      * @param  null|MarketValueAmount $marketValueAmount
      * @return static
      */
-    public function setMarketValueAmount(?MarketValueAmount $marketValueAmount = null): static
-    {
+    public function setMarketValueAmount(
+        ?MarketValueAmount $marketValueAmount = null
+    ): static {
         $this->marketValueAmount = $marketValueAmount;
 
         return $this;
@@ -302,8 +306,9 @@ class ImmobilizedSecurityType
      * @param  null|SharesNumberQuantity $sharesNumberQuantity
      * @return static
      */
-    public function setSharesNumberQuantity(?SharesNumberQuantity $sharesNumberQuantity = null): static
-    {
+    public function setSharesNumberQuantity(
+        ?SharesNumberQuantity $sharesNumberQuantity = null
+    ): static {
         $this->sharesNumberQuantity = $sharesNumberQuantity;
 
         return $this;
@@ -341,8 +346,9 @@ class ImmobilizedSecurityType
      * @param  null|IssuerParty $issuerParty
      * @return static
      */
-    public function setIssuerParty(?IssuerParty $issuerParty = null): static
-    {
+    public function setIssuerParty(
+        ?IssuerParty $issuerParty = null
+    ): static {
         $this->issuerParty = $issuerParty;
 
         return $this;

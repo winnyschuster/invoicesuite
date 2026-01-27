@@ -46,8 +46,9 @@ class NumericType
      * @param  null|float $value
      * @return static
      */
-    public function setValue(?float $value = null): static
-    {
+    public function setValue(
+        ?float $value = null
+    ): static {
         $this->value = $value;
 
         return $this;
@@ -75,8 +76,9 @@ class NumericType
      * @param  null|string $format
      * @return static
      */
-    public function setFormat(?string $format = null): static
-    {
+    public function setFormat(
+        ?string $format = null
+    ): static {
         $this->format = InvoiceSuiteStringUtils::asNullWhenEmpty($format);
 
         return $this;

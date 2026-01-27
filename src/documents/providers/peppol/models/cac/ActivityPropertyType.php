@@ -57,8 +57,9 @@ class ActivityPropertyType
      * @param  null|Name $name
      * @return static
      */
-    public function setName(?Name $name = null): static
-    {
+    public function setName(
+        ?Name $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -96,8 +97,9 @@ class ActivityPropertyType
      * @param  null|Value $value
      * @return static
      */
-    public function setValue(?Value $value = null): static
-    {
+    public function setValue(
+        ?Value $value = null
+    ): static {
         $this->value = $value;
 
         return $this;

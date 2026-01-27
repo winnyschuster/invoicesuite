@@ -114,8 +114,9 @@ class TradeFinancingType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -153,8 +154,9 @@ class TradeFinancingType
      * @param  null|FinancingInstrumentCode $financingInstrumentCode
      * @return static
      */
-    public function setFinancingInstrumentCode(?FinancingInstrumentCode $financingInstrumentCode = null): static
-    {
+    public function setFinancingInstrumentCode(
+        ?FinancingInstrumentCode $financingInstrumentCode = null
+    ): static {
         $this->financingInstrumentCode = $financingInstrumentCode;
 
         return $this;
@@ -192,8 +194,9 @@ class TradeFinancingType
      * @param  null|ContractDocumentReference $contractDocumentReference
      * @return static
      */
-    public function setContractDocumentReference(?ContractDocumentReference $contractDocumentReference = null): static
-    {
+    public function setContractDocumentReference(
+        ?ContractDocumentReference $contractDocumentReference = null
+    ): static {
         $this->contractDocumentReference = $contractDocumentReference;
 
         return $this;
@@ -221,8 +224,9 @@ class TradeFinancingType
      * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?array $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;
@@ -282,8 +286,9 @@ class TradeFinancingType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         $this->documentReference[] = $documentReference;
 
         return $this;
@@ -303,8 +308,9 @@ class TradeFinancingType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addOnceToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
         }
@@ -352,8 +358,9 @@ class TradeFinancingType
      * @param  null|FinancingParty $financingParty
      * @return static
      */
-    public function setFinancingParty(?FinancingParty $financingParty = null): static
-    {
+    public function setFinancingParty(
+        ?FinancingParty $financingParty = null
+    ): static {
         $this->financingParty = $financingParty;
 
         return $this;
@@ -391,8 +398,9 @@ class TradeFinancingType
      * @param  null|FinancingFinancialAccount $financingFinancialAccount
      * @return static
      */
-    public function setFinancingFinancialAccount(?FinancingFinancialAccount $financingFinancialAccount = null): static
-    {
+    public function setFinancingFinancialAccount(
+        ?FinancingFinancialAccount $financingFinancialAccount = null
+    ): static {
         $this->financingFinancialAccount = $financingFinancialAccount;
 
         return $this;
@@ -420,8 +428,9 @@ class TradeFinancingType
      * @param  null|array<Clause> $clause
      * @return static
      */
-    public function setClause(?array $clause = null): static
-    {
+    public function setClause(
+        ?array $clause = null
+    ): static {
         $this->clause = $clause;
 
         return $this;
@@ -481,8 +490,9 @@ class TradeFinancingType
      * @param  Clause $clause
      * @return static
      */
-    public function addToClause(Clause $clause): static
-    {
+    public function addToClause(
+        Clause $clause
+    ): static {
         $this->clause[] = $clause;
 
         return $this;
@@ -502,8 +512,9 @@ class TradeFinancingType
      * @param  Clause $clause
      * @return static
      */
-    public function addOnceToClause(Clause $clause): static
-    {
+    public function addOnceToClause(
+        Clause $clause
+    ): static {
         if (!is_array($this->clause)) {
             $this->clause = [];
         }

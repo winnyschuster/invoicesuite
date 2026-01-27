@@ -45,8 +45,9 @@ class DateType
      * @param  null|DateStringAType $dateString
      * @return static
      */
-    public function setDateString(?DateStringAType $dateString = null): static
-    {
+    public function setDateString(
+        ?DateStringAType $dateString = null
+    ): static {
         $this->dateString = $dateString;
 
         return $this;

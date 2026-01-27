@@ -58,8 +58,9 @@ class TendererPartyQualificationType
      * @param  null|array<InterestedProcurementProjectLot> $interestedProcurementProjectLot
      * @return static
      */
-    public function setInterestedProcurementProjectLot(?array $interestedProcurementProjectLot = null): static
-    {
+    public function setInterestedProcurementProjectLot(
+        ?array $interestedProcurementProjectLot = null
+    ): static {
         $this->interestedProcurementProjectLot = $interestedProcurementProjectLot;
 
         return $this;
@@ -191,8 +192,9 @@ class TendererPartyQualificationType
      * @param  null|MainQualifyingParty $mainQualifyingParty
      * @return static
      */
-    public function setMainQualifyingParty(?MainQualifyingParty $mainQualifyingParty = null): static
-    {
+    public function setMainQualifyingParty(
+        ?MainQualifyingParty $mainQualifyingParty = null
+    ): static {
         $this->mainQualifyingParty = $mainQualifyingParty;
 
         return $this;
@@ -220,8 +222,9 @@ class TendererPartyQualificationType
      * @param  null|array<AdditionalQualifyingParty> $additionalQualifyingParty
      * @return static
      */
-    public function setAdditionalQualifyingParty(?array $additionalQualifyingParty = null): static
-    {
+    public function setAdditionalQualifyingParty(
+        ?array $additionalQualifyingParty = null
+    ): static {
         $this->additionalQualifyingParty = $additionalQualifyingParty;
 
         return $this;
@@ -281,8 +284,9 @@ class TendererPartyQualificationType
      * @param  AdditionalQualifyingParty $additionalQualifyingParty
      * @return static
      */
-    public function addToAdditionalQualifyingParty(AdditionalQualifyingParty $additionalQualifyingParty): static
-    {
+    public function addToAdditionalQualifyingParty(
+        AdditionalQualifyingParty $additionalQualifyingParty
+    ): static {
         $this->additionalQualifyingParty[] = $additionalQualifyingParty;
 
         return $this;
@@ -302,8 +306,9 @@ class TendererPartyQualificationType
      * @param  AdditionalQualifyingParty $additionalQualifyingParty
      * @return static
      */
-    public function addOnceToAdditionalQualifyingParty(AdditionalQualifyingParty $additionalQualifyingParty): static
-    {
+    public function addOnceToAdditionalQualifyingParty(
+        AdditionalQualifyingParty $additionalQualifyingParty
+    ): static {
         if (!is_array($this->additionalQualifyingParty)) {
             $this->additionalQualifyingParty = [];
         }

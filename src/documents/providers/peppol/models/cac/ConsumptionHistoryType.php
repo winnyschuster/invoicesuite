@@ -117,8 +117,9 @@ class ConsumptionHistoryType
      * @param  null|MeterNumber $meterNumber
      * @return static
      */
-    public function setMeterNumber(?MeterNumber $meterNumber = null): static
-    {
+    public function setMeterNumber(
+        ?MeterNumber $meterNumber = null
+    ): static {
         $this->meterNumber = $meterNumber;
 
         return $this;
@@ -156,8 +157,9 @@ class ConsumptionHistoryType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -195,8 +197,9 @@ class ConsumptionHistoryType
      * @param  null|Amount $amount
      * @return static
      */
-    public function setAmount(?Amount $amount = null): static
-    {
+    public function setAmount(
+        ?Amount $amount = null
+    ): static {
         $this->amount = $amount;
 
         return $this;
@@ -234,8 +237,9 @@ class ConsumptionHistoryType
      * @param  null|ConsumptionLevelCode $consumptionLevelCode
      * @return static
      */
-    public function setConsumptionLevelCode(?ConsumptionLevelCode $consumptionLevelCode = null): static
-    {
+    public function setConsumptionLevelCode(
+        ?ConsumptionLevelCode $consumptionLevelCode = null
+    ): static {
         $this->consumptionLevelCode = $consumptionLevelCode;
 
         return $this;
@@ -273,8 +277,9 @@ class ConsumptionHistoryType
      * @param  null|ConsumptionLevel $consumptionLevel
      * @return static
      */
-    public function setConsumptionLevel(?ConsumptionLevel $consumptionLevel = null): static
-    {
+    public function setConsumptionLevel(
+        ?ConsumptionLevel $consumptionLevel = null
+    ): static {
         $this->consumptionLevel = $consumptionLevel;
 
         return $this;
@@ -302,8 +307,9 @@ class ConsumptionHistoryType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -363,8 +369,9 @@ class ConsumptionHistoryType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -384,8 +391,9 @@ class ConsumptionHistoryType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -433,8 +441,9 @@ class ConsumptionHistoryType
      * @param  null|Period $period
      * @return static
      */
-    public function setPeriod(?Period $period = null): static
-    {
+    public function setPeriod(
+        ?Period $period = null
+    ): static {
         $this->period = $period;
 
         return $this;

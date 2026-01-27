@@ -91,8 +91,9 @@ class TaxTotalType
      * @param  null|TaxAmount $taxAmount
      * @return static
      */
-    public function setTaxAmount(?TaxAmount $taxAmount = null): static
-    {
+    public function setTaxAmount(
+        ?TaxAmount $taxAmount = null
+    ): static {
         $this->taxAmount = $taxAmount;
 
         return $this;
@@ -130,8 +131,9 @@ class TaxTotalType
      * @param  null|RoundingAmount $roundingAmount
      * @return static
      */
-    public function setRoundingAmount(?RoundingAmount $roundingAmount = null): static
-    {
+    public function setRoundingAmount(
+        ?RoundingAmount $roundingAmount = null
+    ): static {
         $this->roundingAmount = $roundingAmount;
 
         return $this;
@@ -159,8 +161,9 @@ class TaxTotalType
      * @param  null|bool $taxEvidenceIndicator
      * @return static
      */
-    public function setTaxEvidenceIndicator(?bool $taxEvidenceIndicator = null): static
-    {
+    public function setTaxEvidenceIndicator(
+        ?bool $taxEvidenceIndicator = null
+    ): static {
         $this->taxEvidenceIndicator = $taxEvidenceIndicator;
 
         return $this;
@@ -188,8 +191,9 @@ class TaxTotalType
      * @param  null|bool $taxIncludedIndicator
      * @return static
      */
-    public function setTaxIncludedIndicator(?bool $taxIncludedIndicator = null): static
-    {
+    public function setTaxIncludedIndicator(
+        ?bool $taxIncludedIndicator = null
+    ): static {
         $this->taxIncludedIndicator = $taxIncludedIndicator;
 
         return $this;
@@ -217,8 +221,9 @@ class TaxTotalType
      * @param  null|array<TaxSubtotal> $taxSubtotal
      * @return static
      */
-    public function setTaxSubtotal(?array $taxSubtotal = null): static
-    {
+    public function setTaxSubtotal(
+        ?array $taxSubtotal = null
+    ): static {
         $this->taxSubtotal = $taxSubtotal;
 
         return $this;
@@ -278,8 +283,9 @@ class TaxTotalType
      * @param  TaxSubtotal $taxSubtotal
      * @return static
      */
-    public function addToTaxSubtotal(TaxSubtotal $taxSubtotal): static
-    {
+    public function addToTaxSubtotal(
+        TaxSubtotal $taxSubtotal
+    ): static {
         $this->taxSubtotal[] = $taxSubtotal;
 
         return $this;
@@ -299,8 +305,9 @@ class TaxTotalType
      * @param  TaxSubtotal $taxSubtotal
      * @return static
      */
-    public function addOnceToTaxSubtotal(TaxSubtotal $taxSubtotal): static
-    {
+    public function addOnceToTaxSubtotal(
+        TaxSubtotal $taxSubtotal
+    ): static {
         if (!is_array($this->taxSubtotal)) {
             $this->taxSubtotal = [];
         }

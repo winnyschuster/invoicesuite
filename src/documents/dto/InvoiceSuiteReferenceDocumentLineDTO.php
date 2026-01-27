@@ -78,8 +78,9 @@ class InvoiceSuiteReferenceDocumentLineDTO
      * @param  null|string $referenceNumber Reference number
      * @return static
      */
-    public function setReferenceNumber(?string $referenceNumber): static
-    {
+    public function setReferenceNumber(
+        ?string $referenceNumber
+    ): static {
         $this->referenceNumber = InvoiceSuiteStringUtils::asNullWhenEmpty($referenceNumber);
 
         return $this;
@@ -101,8 +102,9 @@ class InvoiceSuiteReferenceDocumentLineDTO
      * @param  null|string $referenceLineNumber Reference line number
      * @return static
      */
-    public function setReferenceLineNumber(?string $referenceLineNumber): static
-    {
+    public function setReferenceLineNumber(
+        ?string $referenceLineNumber
+    ): static {
         $this->referenceLineNumber = InvoiceSuiteStringUtils::asNullWhenEmpty($referenceLineNumber);
 
         return $this;
@@ -124,8 +126,9 @@ class InvoiceSuiteReferenceDocumentLineDTO
      * @param  null|DateTimeInterface $referenceDate Issue date of the reference
      * @return static
      */
-    public function setReferenceDate(?DateTimeInterface $referenceDate): static
-    {
+    public function setReferenceDate(
+        ?DateTimeInterface $referenceDate
+    ): static {
         $this->referenceDate = $referenceDate;
 
         return $this;

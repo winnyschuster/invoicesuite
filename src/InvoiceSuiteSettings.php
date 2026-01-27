@@ -96,8 +96,9 @@ class InvoiceSuiteSettings
      * @param  int  $amountDecimals
      * @return void
      */
-    public static function setAmountDecimals(int $amountDecimals): void
-    {
+    public static function setAmountDecimals(
+        int $amountDecimals
+    ): void {
         static::$amountDecimals = $amountDecimals;
     }
 
@@ -117,8 +118,9 @@ class InvoiceSuiteSettings
      * @param  int  $quantityDecimals
      * @return void
      */
-    public static function setQuantityDecimals(int $quantityDecimals): void
-    {
+    public static function setQuantityDecimals(
+        int $quantityDecimals
+    ): void {
         static::$quantityDecimals = $quantityDecimals;
     }
 
@@ -138,8 +140,9 @@ class InvoiceSuiteSettings
      * @param  int  $percentDecimals
      * @return void
      */
-    public static function setPercentDecimals(int $percentDecimals): void
-    {
+    public static function setPercentDecimals(
+        int $percentDecimals
+    ): void {
         static::$percentDecimals = $percentDecimals;
     }
 
@@ -159,8 +162,9 @@ class InvoiceSuiteSettings
      * @param  int  $measureDecimals
      * @return void
      */
-    public static function setMeasureDecimals(int $measureDecimals): void
-    {
+    public static function setMeasureDecimals(
+        int $measureDecimals
+    ): void {
         static::$measureDecimals = $measureDecimals;
     }
 
@@ -180,8 +184,9 @@ class InvoiceSuiteSettings
      * @param  string $decimalSeparator
      * @return void
      */
-    public static function setDecimalSeparator(string $decimalSeparator): void
-    {
+    public static function setDecimalSeparator(
+        string $decimalSeparator
+    ): void {
         static::$decimalSeparator = $decimalSeparator;
     }
 
@@ -201,8 +206,9 @@ class InvoiceSuiteSettings
      * @param  string $thousandsSeparator
      * @return void
      */
-    public static function setThousandsSeparator(string $thousandsSeparator): void
-    {
+    public static function setThousandsSeparator(
+        string $thousandsSeparator
+    ): void {
         static::$thousandsSeparator = $thousandsSeparator;
     }
 
@@ -224,8 +230,10 @@ class InvoiceSuiteSettings
      * @param  int    $defaultDecimalPlaces
      * @return int
      */
-    public static function getSpecialDecimalPlacesMap(string $nodePath, int $defaultDecimalPlaces): int
-    {
+    public static function getSpecialDecimalPlacesMap(
+        string $nodePath,
+        int $defaultDecimalPlaces
+    ): int {
         $nodePath = preg_replace('@\[\d+\]@', '', $nodePath);
 
         return static::$specialDecimalPlacesMaps[$nodePath] ?? $defaultDecimalPlaces;
@@ -237,8 +245,9 @@ class InvoiceSuiteSettings
      * @param  array<string,int> $specialDecimalPlacesMaps
      * @return void
      */
-    public static function setSpecialDecimalPlacesMaps(array $specialDecimalPlacesMaps): void
-    {
+    public static function setSpecialDecimalPlacesMaps(
+        array $specialDecimalPlacesMaps
+    ): void {
         static::$specialDecimalPlacesMaps = $specialDecimalPlacesMaps;
     }
 
@@ -249,8 +258,10 @@ class InvoiceSuiteSettings
      * @param  int    $defaultDecimalPlaces
      * @return void
      */
-    public static function addSpecialDecimalPlacesMap(string $nodePath, int $defaultDecimalPlaces): void
-    {
+    public static function addSpecialDecimalPlacesMap(
+        string $nodePath,
+        int $defaultDecimalPlaces
+    ): void {
         $nodePath = preg_replace('@\[\d+\]@', '', $nodePath);
 
         static::$specialDecimalPlacesMaps[$nodePath] = $defaultDecimalPlaces;
@@ -262,8 +273,9 @@ class InvoiceSuiteSettings
      * @param  int  $defaultDecimalPlaces
      * @return void
      */
-    public static function setUnitAmountDecimals(int $defaultDecimalPlaces): void
-    {
+    public static function setUnitAmountDecimals(
+        int $defaultDecimalPlaces
+    ): void {
         static::addSpecialDecimalPlacesMap('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:GrossPriceProductTradePrice/ram:ChargeAmount', $defaultDecimalPlaces);
         static::addSpecialDecimalPlacesMap('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:NetPriceProductTradePrice/ram:ChargeAmount', $defaultDecimalPlaces);
         static::addSpecialDecimalPlacesMap('/Invoice/cac:InvoiceLine/cac:Price/cbc:PriceAmount', $defaultDecimalPlaces);
@@ -276,8 +288,9 @@ class InvoiceSuiteSettings
      * @param  string $serializerCacheDirectoty
      * @return void
      */
-    public static function setSerializerCacheDirectory(string $serializerCacheDirectoty): void
-    {
+    public static function setSerializerCacheDirectory(
+        string $serializerCacheDirectoty
+    ): void {
         static::$serializerCacheDirectory = $serializerCacheDirectoty;
     }
 

@@ -63,8 +63,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  string $newProfileId
      * @return static
      */
-    public function setContextParameter(string $newCustomizationId, string $newProfileId): static
-    {
+    public function setContextParameter(
+        string $newCustomizationId,
+        string $newProfileId
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this->getUblRootObject()->getCustomizationIDWithCreate()->setValue($newCustomizationId);
@@ -980,8 +982,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newAccountId Posting reference of the byuer
      * @return static
      */
-    public function setDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): static
-    {
+    public function setDocumentPostingReference(
+        ?string $newType = null,
+        ?string $newAccountId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -1009,8 +1013,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newAccountId Posting reference of the byuer
      * @return static
      */
-    public function addDocumentPostingReference(?string $newType = null, ?string $newAccountId = null): static
-    {
+    public function addDocumentPostingReference(
+        ?string $newType = null,
+        ?string $newAccountId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newAccountId)) {
@@ -1417,8 +1423,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newName            Project name
      * @return static
      */
-    public function setDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): static
-    {
+    public function setDocumentProjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -1447,8 +1455,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newName            Project name
      * @return static
      */
-    public function addDocumentProjectReference(?string $newReferenceNumber = null, ?string $newName = null): static
-    {
+    public function addDocumentProjectReference(
+        ?string $newReferenceNumber = null,
+        ?string $newName = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newReferenceNumber)) {
@@ -1861,8 +1871,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentSellerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $ids = array_filter(
@@ -1898,8 +1910,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentSellerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentSellerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
@@ -2285,8 +2299,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentSellerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -2319,8 +2335,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentSellerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentSellerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
@@ -2454,8 +2472,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentBuyerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -2489,8 +2509,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentBuyerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentBuyerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
@@ -2868,8 +2890,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentBuyerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -2902,8 +2926,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentBuyerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentBuyerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])) {
@@ -3676,8 +3702,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentProductEndUserCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentProductEndUserCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -3825,8 +3853,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentShipToGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -3859,8 +3889,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentShipToGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentShipToGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
@@ -4139,8 +4171,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -4157,8 +4191,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -4483,8 +4519,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentUltimateShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -4501,8 +4539,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentUltimateShipToCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentUltimateShipToCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -4591,8 +4631,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentShipFromGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -4609,8 +4651,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentShipFromGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentShipFromGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -4823,8 +4867,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentShipFromCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -4841,8 +4887,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentShipFromCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentShipFromCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -4931,8 +4979,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentInvoicerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -4949,8 +4999,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentInvoicerGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentInvoicerGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -5163,8 +5215,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentInvoicerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -5181,8 +5235,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentInvoicerCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentInvoicerCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -5271,8 +5327,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentInvoiceeGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -5289,8 +5347,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentInvoiceeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentInvoiceeGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -5503,8 +5563,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function setDocumentInvoiceeCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -5521,8 +5583,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentInvoiceeCommunication(?string $newType = null, ?string $newUri = null): static
-    {
+    public function addDocumentInvoiceeCommunication(
+        ?string $newType = null,
+        ?string $newUri = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         // Nothing here...
@@ -5648,8 +5712,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function setDocumentPayeeGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -5681,8 +5747,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentPayeeGlobalId(?string $newGlobalId = null, ?string $newGlobalIdType = null): static
-    {
+    public function addDocumentPayeeGlobalId(
+        ?string $newGlobalId = null,
+        ?string $newGlobalIdType = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])) {
@@ -9292,8 +9360,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newAccountId Posting reference of the byuer
      * @return static
      */
-    public function setDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): static
-    {
+    public function setDocumentPositionPostingReference(
+        ?string $newType = null,
+        ?string $newAccountId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         $this
@@ -9323,8 +9393,10 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  null|string $newAccountId Posting reference of the byuer
      * @return static
      */
-    public function addDocumentPositionPostingReference(?string $newType = null, ?string $newAccountId = null): static
-    {
+    public function addDocumentPositionPostingReference(
+        ?string $newType = null,
+        ?string $newAccountId = null
+    ): static {
         $this->traceMethodEnter(__METHOD__);
 
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newAccountId)) {
@@ -9433,8 +9505,9 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
      * @param  ?string $newTaxRegistrationType
      * @return string
      */
-    private function convertTaxRegistrationType(?string $newTaxRegistrationType): string
-    {
+    private function convertTaxRegistrationType(
+        ?string $newTaxRegistrationType
+    ): string {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newTaxRegistrationType)) {
             return '';
         }

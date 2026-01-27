@@ -105,8 +105,9 @@ class NotificationRequirementType
      * @param  null|NotificationTypeCode $notificationTypeCode
      * @return static
      */
-    public function setNotificationTypeCode(?NotificationTypeCode $notificationTypeCode = null): static
-    {
+    public function setNotificationTypeCode(
+        ?NotificationTypeCode $notificationTypeCode = null
+    ): static {
         $this->notificationTypeCode = $notificationTypeCode;
 
         return $this;
@@ -214,8 +215,9 @@ class NotificationRequirementType
      * @param  null|array<NotifyParty> $notifyParty
      * @return static
      */
-    public function setNotifyParty(?array $notifyParty = null): static
-    {
+    public function setNotifyParty(
+        ?array $notifyParty = null
+    ): static {
         $this->notifyParty = $notifyParty;
 
         return $this;
@@ -275,8 +277,9 @@ class NotificationRequirementType
      * @param  NotifyParty $notifyParty
      * @return static
      */
-    public function addToNotifyParty(NotifyParty $notifyParty): static
-    {
+    public function addToNotifyParty(
+        NotifyParty $notifyParty
+    ): static {
         $this->notifyParty[] = $notifyParty;
 
         return $this;
@@ -296,8 +299,9 @@ class NotificationRequirementType
      * @param  NotifyParty $notifyParty
      * @return static
      */
-    public function addOnceToNotifyParty(NotifyParty $notifyParty): static
-    {
+    public function addOnceToNotifyParty(
+        NotifyParty $notifyParty
+    ): static {
         if (!is_array($this->notifyParty)) {
             $this->notifyParty = [];
         }
@@ -335,8 +339,9 @@ class NotificationRequirementType
      * @param  null|array<NotificationPeriod> $notificationPeriod
      * @return static
      */
-    public function setNotificationPeriod(?array $notificationPeriod = null): static
-    {
+    public function setNotificationPeriod(
+        ?array $notificationPeriod = null
+    ): static {
         $this->notificationPeriod = $notificationPeriod;
 
         return $this;
@@ -396,8 +401,9 @@ class NotificationRequirementType
      * @param  NotificationPeriod $notificationPeriod
      * @return static
      */
-    public function addToNotificationPeriod(NotificationPeriod $notificationPeriod): static
-    {
+    public function addToNotificationPeriod(
+        NotificationPeriod $notificationPeriod
+    ): static {
         $this->notificationPeriod[] = $notificationPeriod;
 
         return $this;
@@ -417,8 +423,9 @@ class NotificationRequirementType
      * @param  NotificationPeriod $notificationPeriod
      * @return static
      */
-    public function addOnceToNotificationPeriod(NotificationPeriod $notificationPeriod): static
-    {
+    public function addOnceToNotificationPeriod(
+        NotificationPeriod $notificationPeriod
+    ): static {
         if (!is_array($this->notificationPeriod)) {
             $this->notificationPeriod = [];
         }
@@ -456,8 +463,9 @@ class NotificationRequirementType
      * @param  null|array<NotificationLocation> $notificationLocation
      * @return static
      */
-    public function setNotificationLocation(?array $notificationLocation = null): static
-    {
+    public function setNotificationLocation(
+        ?array $notificationLocation = null
+    ): static {
         $this->notificationLocation = $notificationLocation;
 
         return $this;
@@ -517,8 +525,9 @@ class NotificationRequirementType
      * @param  NotificationLocation $notificationLocation
      * @return static
      */
-    public function addToNotificationLocation(NotificationLocation $notificationLocation): static
-    {
+    public function addToNotificationLocation(
+        NotificationLocation $notificationLocation
+    ): static {
         $this->notificationLocation[] = $notificationLocation;
 
         return $this;
@@ -538,8 +547,9 @@ class NotificationRequirementType
      * @param  NotificationLocation $notificationLocation
      * @return static
      */
-    public function addOnceToNotificationLocation(NotificationLocation $notificationLocation): static
-    {
+    public function addOnceToNotificationLocation(
+        NotificationLocation $notificationLocation
+    ): static {
         if (!is_array($this->notificationLocation)) {
             $this->notificationLocation = [];
         }

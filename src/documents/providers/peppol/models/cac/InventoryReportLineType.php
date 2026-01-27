@@ -128,8 +128,9 @@ class InventoryReportLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -157,8 +158,9 @@ class InventoryReportLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -218,8 +220,9 @@ class InventoryReportLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -239,8 +242,9 @@ class InventoryReportLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -288,8 +292,9 @@ class InventoryReportLineType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -327,8 +332,9 @@ class InventoryReportLineType
      * @param  null|InventoryValueAmount $inventoryValueAmount
      * @return static
      */
-    public function setInventoryValueAmount(?InventoryValueAmount $inventoryValueAmount = null): static
-    {
+    public function setInventoryValueAmount(
+        ?InventoryValueAmount $inventoryValueAmount = null
+    ): static {
         $this->inventoryValueAmount = $inventoryValueAmount;
 
         return $this;
@@ -356,8 +362,9 @@ class InventoryReportLineType
      * @param  null|DateTimeInterface $availabilityDate
      * @return static
      */
-    public function setAvailabilityDate(?DateTimeInterface $availabilityDate = null): static
-    {
+    public function setAvailabilityDate(
+        ?DateTimeInterface $availabilityDate = null
+    ): static {
         $this->availabilityDate = $availabilityDate;
 
         return $this;
@@ -395,8 +402,9 @@ class InventoryReportLineType
      * @param  null|AvailabilityStatusCode $availabilityStatusCode
      * @return static
      */
-    public function setAvailabilityStatusCode(?AvailabilityStatusCode $availabilityStatusCode = null): static
-    {
+    public function setAvailabilityStatusCode(
+        ?AvailabilityStatusCode $availabilityStatusCode = null
+    ): static {
         $this->availabilityStatusCode = $availabilityStatusCode;
 
         return $this;
@@ -434,8 +442,9 @@ class InventoryReportLineType
      * @param  null|Item $item
      * @return static
      */
-    public function setItem(?Item $item = null): static
-    {
+    public function setItem(
+        ?Item $item = null
+    ): static {
         $this->item = $item;
 
         return $this;
@@ -473,8 +482,9 @@ class InventoryReportLineType
      * @param  null|InventoryLocation $inventoryLocation
      * @return static
      */
-    public function setInventoryLocation(?InventoryLocation $inventoryLocation = null): static
-    {
+    public function setInventoryLocation(
+        ?InventoryLocation $inventoryLocation = null
+    ): static {
         $this->inventoryLocation = $inventoryLocation;
 
         return $this;

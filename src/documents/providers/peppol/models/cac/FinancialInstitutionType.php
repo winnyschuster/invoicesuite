@@ -68,8 +68,9 @@ class FinancialInstitutionType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -107,8 +108,9 @@ class FinancialInstitutionType
      * @param  null|Name $name
      * @return static
      */
-    public function setName(?Name $name = null): static
-    {
+    public function setName(
+        ?Name $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -146,8 +148,9 @@ class FinancialInstitutionType
      * @param  null|Address $address
      * @return static
      */
-    public function setAddress(?Address $address = null): static
-    {
+    public function setAddress(
+        ?Address $address = null
+    ): static {
         $this->address = $address;
 
         return $this;

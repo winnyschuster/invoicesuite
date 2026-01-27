@@ -35,8 +35,9 @@ class SupplyChainConsignmentType
      * @param  null|array<LogisticsTransportMovementType> $specifiedLogisticsTransportMovement
      * @return static
      */
-    public function setSpecifiedLogisticsTransportMovement(?array $specifiedLogisticsTransportMovement = null): static
-    {
+    public function setSpecifiedLogisticsTransportMovement(
+        ?array $specifiedLogisticsTransportMovement = null
+    ): static {
         $this->specifiedLogisticsTransportMovement = $specifiedLogisticsTransportMovement;
 
         return $this;

@@ -30,8 +30,10 @@ class InvoiceSuiteInvalidArgumentException extends InvoiceSuiteBaseException
      * @param  null|Throwable $throwable
      * @return void
      */
-    public function __construct(string $message, ?Throwable $throwable = null)
-    {
+    public function __construct(
+        string $message,
+        ?Throwable $throwable = null
+    ) {
         parent::__construct($message, InvoiceSuiteExceptionCodes::INVALID_ARGUMENT, $throwable);
     }
 }

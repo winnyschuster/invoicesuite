@@ -80,8 +80,9 @@ class ProductCharacteristicType
      * @param  null|CodeType $typeCode
      * @return static
      */
-    public function setTypeCode(?CodeType $typeCode = null): static
-    {
+    public function setTypeCode(
+        ?CodeType $typeCode = null
+    ): static {
         $this->typeCode = $typeCode;
 
         return $this;
@@ -119,8 +120,9 @@ class ProductCharacteristicType
      * @param  null|TextType $description
      * @return static
      */
-    public function setDescription(?TextType $description = null): static
-    {
+    public function setDescription(
+        ?TextType $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -158,8 +160,9 @@ class ProductCharacteristicType
      * @param  null|MeasureType $valueMeasure
      * @return static
      */
-    public function setValueMeasure(?MeasureType $valueMeasure = null): static
-    {
+    public function setValueMeasure(
+        ?MeasureType $valueMeasure = null
+    ): static {
         $this->valueMeasure = $valueMeasure;
 
         return $this;
@@ -197,8 +200,9 @@ class ProductCharacteristicType
      * @param  null|TextType $value
      * @return static
      */
-    public function setValue(?TextType $value = null): static
-    {
+    public function setValue(
+        ?TextType $value = null
+    ): static {
         $this->value = $value;
 
         return $this;

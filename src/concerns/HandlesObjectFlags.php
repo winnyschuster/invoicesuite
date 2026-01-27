@@ -29,8 +29,9 @@ trait HandlesObjectFlags
      * @param  string $flag
      * @return static
      */
-    public function addToObjectFlags(string $flag): static
-    {
+    public function addToObjectFlags(
+        string $flag
+    ): static {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($flag)) {
             return $this;
         }
@@ -50,8 +51,9 @@ trait HandlesObjectFlags
      * @param  string $flag
      * @return static
      */
-    public function removeFromObjectFlags(string $flag): static
-    {
+    public function removeFromObjectFlags(
+        string $flag
+    ): static {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($flag)) {
             return $this;
         }
@@ -74,8 +76,9 @@ trait HandlesObjectFlags
      * @param  string $flag
      * @return bool
      */
-    public function hasObjectFlag(string $flag): bool
-    {
+    public function hasObjectFlag(
+        string $flag
+    ): bool {
         return [] !== array_filter(
             $this->objectFlags,
             static fn ($currentFlag) => 0 === strcasecmp((string) $currentFlag, $flag)

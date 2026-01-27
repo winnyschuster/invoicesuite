@@ -56,8 +56,9 @@ class PGPDataType
      * @param  string $pGPKeyID
      * @return static
      */
-    public function setPGPKeyID(?string $pGPKeyID = null): static
-    {
+    public function setPGPKeyID(
+        ?string $pGPKeyID = null
+    ): static {
         $this->pGPKeyID = $pGPKeyID;
 
         return $this;
@@ -91,8 +92,9 @@ class PGPDataType
      * @param  string $pGPKeyPacket
      * @return static
      */
-    public function setPGPKeyPacket(?string $pGPKeyPacket = null): static
-    {
+    public function setPGPKeyPacket(
+        ?string $pGPKeyPacket = null
+    ): static {
         $this->pGPKeyPacket = $pGPKeyPacket;
 
         return $this;

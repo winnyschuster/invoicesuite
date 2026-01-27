@@ -45,8 +45,9 @@ class AirTransportType
      * @param  null|AircraftID $aircraftID
      * @return static
      */
-    public function setAircraftID(?AircraftID $aircraftID = null): static
-    {
+    public function setAircraftID(
+        ?AircraftID $aircraftID = null
+    ): static {
         $this->aircraftID = $aircraftID;
 
         return $this;

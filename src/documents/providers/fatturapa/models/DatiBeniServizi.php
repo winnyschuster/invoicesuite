@@ -55,8 +55,9 @@ final class DatiBeniServizi
      * @param  null|array<DettaglioLinee> $dettaglioLinee
      * @return static
      */
-    public function setDettaglioLinee(?array $dettaglioLinee = null): static
-    {
+    public function setDettaglioLinee(
+        ?array $dettaglioLinee = null
+    ): static {
         $this->dettaglioLinee = $dettaglioLinee;
 
         return $this;
@@ -92,8 +93,9 @@ final class DatiBeniServizi
      * @param  DettaglioLinee $dettaglioLinee
      * @return static
      */
-    public function addToDettaglioLinee(DettaglioLinee $dettaglioLinee): static
-    {
+    public function addToDettaglioLinee(
+        DettaglioLinee $dettaglioLinee
+    ): static {
         if (!is_array($this->dettaglioLinee)) {
             $this->dettaglioLinee = [];
         }
@@ -121,8 +123,9 @@ final class DatiBeniServizi
      * @param  DettaglioLinee $dettaglioLinee
      * @return static
      */
-    public function addOnceToDettaglioLinee(DettaglioLinee $dettaglioLinee): static
-    {
+    public function addOnceToDettaglioLinee(
+        DettaglioLinee $dettaglioLinee
+    ): static {
         if (!is_array($this->dettaglioLinee)) {
             $this->dettaglioLinee = [];
         }
@@ -193,8 +196,9 @@ final class DatiBeniServizi
      * @param  null|array<DatiRiepilogo> $datiRiepilogo
      * @return static
      */
-    public function setDatiRiepilogo(?array $datiRiepilogo = null): static
-    {
+    public function setDatiRiepilogo(
+        ?array $datiRiepilogo = null
+    ): static {
         $this->datiRiepilogo = $datiRiepilogo;
 
         return $this;
@@ -230,8 +234,9 @@ final class DatiBeniServizi
      * @param  DatiRiepilogo $datiRiepilogo
      * @return static
      */
-    public function addToDatiRiepilogo(DatiRiepilogo $datiRiepilogo): static
-    {
+    public function addToDatiRiepilogo(
+        DatiRiepilogo $datiRiepilogo
+    ): static {
         if (!is_array($this->datiRiepilogo)) {
             $this->datiRiepilogo = [];
         }
@@ -259,8 +264,9 @@ final class DatiBeniServizi
      * @param  DatiRiepilogo $datiRiepilogo
      * @return static
      */
-    public function addOnceToDatiRiepilogo(DatiRiepilogo $datiRiepilogo): static
-    {
+    public function addOnceToDatiRiepilogo(
+        DatiRiepilogo $datiRiepilogo
+    ): static {
         if (!is_array($this->datiRiepilogo)) {
             $this->datiRiepilogo = [];
         }

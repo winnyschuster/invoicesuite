@@ -165,8 +165,9 @@ abstract class InvoiceSuiteAbstractPdfConstructor
      * @param  string $toFilename
      * @return static
      */
-    public function generatePdfDocumentAndSaveToFile(string $toFilename): static
-    {
+    public function generatePdfDocumentAndSaveToFile(
+        string $toFilename
+    ): static {
         return $this->generatePdfDocument()->saveGeneratedPdfDocumentToFile($toFilename);
     }
 
@@ -186,8 +187,9 @@ abstract class InvoiceSuiteAbstractPdfConstructor
      * @param  string $newAdditionalCreatorTool
      * @return static
      */
-    public function setAdditionalCreatorTool(string $newAdditionalCreatorTool): static
-    {
+    public function setAdditionalCreatorTool(
+        string $newAdditionalCreatorTool
+    ): static {
         $this->additionalCreatorTool = $newAdditionalCreatorTool;
 
         return $this;
@@ -225,8 +227,9 @@ abstract class InvoiceSuiteAbstractPdfConstructor
      * @param  string $newDocumentRelationshipType
      * @return static
      */
-    public function setDocumentRelationshipType(string $newDocumentRelationshipType): static
-    {
+    public function setDocumentRelationshipType(
+        string $newDocumentRelationshipType
+    ): static {
         if (!in_array($newDocumentRelationshipType, [static::AF_RELATIONSHIP_DATA, static::AF_RELATIONSHIP_ALTERNATIVE, static::AF_RELATIONSHIP_SOURCE])) {
             $newDocumentRelationshipType = static::AF_RELATIONSHIP_DATA;
         }
@@ -289,8 +292,11 @@ abstract class InvoiceSuiteAbstractPdfConstructor
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws InvoiceSuiteUnknownContentException
      */
-    public function addAdditionalDocumentByRealFile(string $newFullFilename, string $newDisplayName = '', string $newRelationshipType = ''): static
-    {
+    public function addAdditionalDocumentByRealFile(
+        string $newFullFilename,
+        string $newDisplayName = '',
+        string $newRelationshipType = ''
+    ): static {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newFullFilename)) {
             throw new InvoiceSuiteInvalidArgumentException('You must specify a filename for the content to attach');
         }
@@ -325,8 +331,12 @@ abstract class InvoiceSuiteAbstractPdfConstructor
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws InvoiceSuiteUnknownContentException
      */
-    public function addAdditionalDocumentByContent(string $newContent, string $newFilename, string $newDisplayName = '', string $newRelationshipType = ''): static
-    {
+    public function addAdditionalDocumentByContent(
+        string $newContent,
+        string $newFilename,
+        string $newDisplayName = '',
+        string $newRelationshipType = ''
+    ): static {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newContent)) {
             throw new InvoiceSuiteInvalidArgumentException('You must specify a content to attach');
         }
@@ -380,8 +390,9 @@ abstract class InvoiceSuiteAbstractPdfConstructor
      * @param  bool   $newDeterministicMode
      * @return static
      */
-    public function setDeterministicMode(bool $newDeterministicMode): static
-    {
+    public function setDeterministicMode(
+        bool $newDeterministicMode
+    ): static {
         $this->deterministicMode = $newDeterministicMode;
 
         return $this;
@@ -423,8 +434,9 @@ abstract class InvoiceSuiteAbstractPdfConstructor
      * @param  string $newMetaInformationAuthorTemplate
      * @return static
      */
-    public function setMetaInformationAuthorTemplate(string $newMetaInformationAuthorTemplate): static
-    {
+    public function setMetaInformationAuthorTemplate(
+        string $newMetaInformationAuthorTemplate
+    ): static {
         $this->metaInformationAuthorTemplate = $newMetaInformationAuthorTemplate;
 
         return $this;
@@ -446,8 +458,9 @@ abstract class InvoiceSuiteAbstractPdfConstructor
      * @param  string $newMetaInformationKeywordTemplate
      * @return static
      */
-    public function setMetaInformationKeywordTemplate(string $newMetaInformationKeywordTemplate): static
-    {
+    public function setMetaInformationKeywordTemplate(
+        string $newMetaInformationKeywordTemplate
+    ): static {
         $this->metaInformationKeywordTemplate = $newMetaInformationKeywordTemplate;
 
         return $this;
@@ -469,8 +482,9 @@ abstract class InvoiceSuiteAbstractPdfConstructor
      * @param  string $newMetaInformationTitleTemplate
      * @return static
      */
-    public function setMetaInformationTitleTemplate(string $newMetaInformationTitleTemplate): static
-    {
+    public function setMetaInformationTitleTemplate(
+        string $newMetaInformationTitleTemplate
+    ): static {
         $this->metaInformationTitleTemplate = $newMetaInformationTitleTemplate;
 
         return $this;
@@ -492,8 +506,9 @@ abstract class InvoiceSuiteAbstractPdfConstructor
      * @param  string $newMetaInformationSubjectTemplate
      * @return static
      */
-    public function setMetaInformationSubjectTemplate(string $newMetaInformationSubjectTemplate): static
-    {
+    public function setMetaInformationSubjectTemplate(
+        string $newMetaInformationSubjectTemplate
+    ): static {
         $this->metaInformationSubjectTemplate = $newMetaInformationSubjectTemplate;
 
         return $this;
@@ -515,8 +530,9 @@ abstract class InvoiceSuiteAbstractPdfConstructor
      * @param  null|callable(string $whichTemplate,string $xmlContent,array{invoiceId: string, docTypeName: string, seller: string, date: string} $invoiceInformation,string $defaultValue): string $newMetaInformationCallback
      * @return static
      */
-    public function setMetaInformationCallback(?callable $newMetaInformationCallback): static
-    {
+    public function setMetaInformationCallback(
+        ?callable $newMetaInformationCallback
+    ): static {
         $this->metaInformationCallback = $newMetaInformationCallback;
 
         return $this;
@@ -538,8 +554,9 @@ abstract class InvoiceSuiteAbstractPdfConstructor
      * @param  bool   $newAttachmentPaneVisibility
      * @return static
      */
-    public function setAttachmentPaneVisibility(bool $newAttachmentPaneVisibility): static
-    {
+    public function setAttachmentPaneVisibility(
+        bool $newAttachmentPaneVisibility
+    ): static {
         $this->attachmentPaneVisibility = $newAttachmentPaneVisibility;
 
         return $this;
@@ -565,5 +582,7 @@ abstract class InvoiceSuiteAbstractPdfConstructor
      * @param  string $toFilename
      * @return static
      */
-    abstract protected function saveGeneratedPdfDocumentToFile(string $toFilename): static;
+    abstract protected function saveGeneratedPdfDocumentToFile(
+        string $toFilename
+    ): static;
 }

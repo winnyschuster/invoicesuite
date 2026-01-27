@@ -68,8 +68,9 @@ class EventCommentType
      * @param  null|Comment $comment
      * @return static
      */
-    public function setComment(?Comment $comment = null): static
-    {
+    public function setComment(
+        ?Comment $comment = null
+    ): static {
         $this->comment = $comment;
 
         return $this;
@@ -97,8 +98,9 @@ class EventCommentType
      * @param  null|DateTimeInterface $issueDate
      * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): static
-    {
+    public function setIssueDate(
+        ?DateTimeInterface $issueDate = null
+    ): static {
         $this->issueDate = $issueDate;
 
         return $this;
@@ -126,8 +128,9 @@ class EventCommentType
      * @param  null|DateTimeInterface $issueTime
      * @return static
      */
-    public function setIssueTime(?DateTimeInterface $issueTime = null): static
-    {
+    public function setIssueTime(
+        ?DateTimeInterface $issueTime = null
+    ): static {
         $this->issueTime = $issueTime;
 
         return $this;

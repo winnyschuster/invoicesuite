@@ -115,8 +115,9 @@ final class DatiDocumentiCorrelati
      * @param  null|array<int> $riferimentoNumeroLinea
      * @return static
      */
-    public function setRiferimentoNumeroLinea(?array $riferimentoNumeroLinea = null): static
-    {
+    public function setRiferimentoNumeroLinea(
+        ?array $riferimentoNumeroLinea = null
+    ): static {
         $this->riferimentoNumeroLinea = $riferimentoNumeroLinea;
 
         return $this;
@@ -152,8 +153,9 @@ final class DatiDocumentiCorrelati
      * @param  int    $riferimentoNumeroLinea
      * @return static
      */
-    public function addToRiferimentoNumeroLinea(int $riferimentoNumeroLinea): static
-    {
+    public function addToRiferimentoNumeroLinea(
+        int $riferimentoNumeroLinea
+    ): static {
         if (!is_array($this->riferimentoNumeroLinea)) {
             $this->riferimentoNumeroLinea = [];
         }
@@ -169,8 +171,9 @@ final class DatiDocumentiCorrelati
      * @param  int    $riferimentoNumeroLinea
      * @return static
      */
-    public function addOnceToRiferimentoNumeroLinea(int $riferimentoNumeroLinea): static
-    {
+    public function addOnceToRiferimentoNumeroLinea(
+        int $riferimentoNumeroLinea
+    ): static {
         if (!is_array($this->riferimentoNumeroLinea)) {
             $this->riferimentoNumeroLinea = [];
         }
@@ -196,8 +199,9 @@ final class DatiDocumentiCorrelati
      * @param  null|string $idDocumento
      * @return static
      */
-    public function setIdDocumento(?string $idDocumento = null): static
-    {
+    public function setIdDocumento(
+        ?string $idDocumento = null
+    ): static {
         $this->idDocumento = InvoiceSuiteStringUtils::asNullWhenEmpty($idDocumento);
 
         return $this;
@@ -231,8 +235,9 @@ final class DatiDocumentiCorrelati
      * @param  null|DateTimeInterface $data
      * @return static
      */
-    public function setData(?DateTimeInterface $data = null): static
-    {
+    public function setData(
+        ?DateTimeInterface $data = null
+    ): static {
         $this->data = $data;
 
         return $this;
@@ -266,8 +271,9 @@ final class DatiDocumentiCorrelati
      * @param  null|string $numItem
      * @return static
      */
-    public function setNumItem(?string $numItem = null): static
-    {
+    public function setNumItem(
+        ?string $numItem = null
+    ): static {
         $this->numItem = InvoiceSuiteStringUtils::asNullWhenEmpty($numItem);
 
         return $this;
@@ -301,8 +307,9 @@ final class DatiDocumentiCorrelati
      * @param  null|string $codiceCommessaConvenzione
      * @return static
      */
-    public function setCodiceCommessaConvenzione(?string $codiceCommessaConvenzione = null): static
-    {
+    public function setCodiceCommessaConvenzione(
+        ?string $codiceCommessaConvenzione = null
+    ): static {
         $this->codiceCommessaConvenzione = InvoiceSuiteStringUtils::asNullWhenEmpty($codiceCommessaConvenzione);
 
         return $this;
@@ -336,8 +343,9 @@ final class DatiDocumentiCorrelati
      * @param  null|string $codiceCUP
      * @return static
      */
-    public function setCodiceCUP(?string $codiceCUP = null): static
-    {
+    public function setCodiceCUP(
+        ?string $codiceCUP = null
+    ): static {
         $this->codiceCUP = InvoiceSuiteStringUtils::asNullWhenEmpty($codiceCUP);
 
         return $this;
@@ -371,8 +379,9 @@ final class DatiDocumentiCorrelati
      * @param  null|string $codiceCIG
      * @return static
      */
-    public function setCodiceCIG(?string $codiceCIG = null): static
-    {
+    public function setCodiceCIG(
+        ?string $codiceCIG = null
+    ): static {
         $this->codiceCIG = InvoiceSuiteStringUtils::asNullWhenEmpty($codiceCIG);
 
         return $this;

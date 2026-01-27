@@ -70,8 +70,9 @@ class TemperatureType
      * @param  null|AttributeID $attributeID
      * @return static
      */
-    public function setAttributeID(?AttributeID $attributeID = null): static
-    {
+    public function setAttributeID(
+        ?AttributeID $attributeID = null
+    ): static {
         $this->attributeID = $attributeID;
 
         return $this;
@@ -109,8 +110,9 @@ class TemperatureType
      * @param  null|Measure $measure
      * @return static
      */
-    public function setMeasure(?Measure $measure = null): static
-    {
+    public function setMeasure(
+        ?Measure $measure = null
+    ): static {
         $this->measure = $measure;
 
         return $this;
@@ -138,8 +140,9 @@ class TemperatureType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -199,8 +202,9 @@ class TemperatureType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -220,8 +224,9 @@ class TemperatureType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }

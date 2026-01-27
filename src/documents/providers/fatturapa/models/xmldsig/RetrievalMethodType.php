@@ -81,8 +81,9 @@ class RetrievalMethodType
      * @param  TransformsType $transforms
      * @return static
      */
-    public function setTransforms(?TransformsType $transforms = null): static
-    {
+    public function setTransforms(
+        ?TransformsType $transforms = null
+    ): static {
         $this->transforms = $transforms;
 
         return $this;
@@ -116,8 +117,9 @@ class RetrievalMethodType
      * @param  string $uRI
      * @return static
      */
-    public function setURI(?string $uRI = null): static
-    {
+    public function setURI(
+        ?string $uRI = null
+    ): static {
         $this->uRI = $uRI;
 
         return $this;
@@ -151,8 +153,9 @@ class RetrievalMethodType
      * @param  string $type
      * @return static
      */
-    public function setType(?string $type = null): static
-    {
+    public function setType(
+        ?string $type = null
+    ): static {
         $this->type = $type;
 
         return $this;

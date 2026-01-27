@@ -56,8 +56,9 @@ class TradeProductInstanceType
      * @param  null|IDType $batchID
      * @return static
      */
-    public function setBatchID(?IDType $batchID = null): static
-    {
+    public function setBatchID(
+        ?IDType $batchID = null
+    ): static {
         $this->batchID = $batchID;
 
         return $this;
@@ -95,8 +96,9 @@ class TradeProductInstanceType
      * @param  null|IDType $supplierAssignedSerialID
      * @return static
      */
-    public function setSupplierAssignedSerialID(?IDType $supplierAssignedSerialID = null): static
-    {
+    public function setSupplierAssignedSerialID(
+        ?IDType $supplierAssignedSerialID = null
+    ): static {
         $this->supplierAssignedSerialID = $supplierAssignedSerialID;
 
         return $this;

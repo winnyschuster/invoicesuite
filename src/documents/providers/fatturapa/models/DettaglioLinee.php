@@ -230,8 +230,9 @@ final class DettaglioLinee
      * @param  null|int $numeroLinea
      * @return static
      */
-    public function setNumeroLinea(?int $numeroLinea = null): static
-    {
+    public function setNumeroLinea(
+        ?int $numeroLinea = null
+    ): static {
         $this->numeroLinea = $numeroLinea;
 
         return $this;
@@ -265,8 +266,9 @@ final class DettaglioLinee
      * @param  null|TipoCessionePrestazione $tipoCessionePrestazione
      * @return static
      */
-    public function setTipoCessionePrestazione(?TipoCessionePrestazione $tipoCessionePrestazione = null): static
-    {
+    public function setTipoCessionePrestazione(
+        ?TipoCessionePrestazione $tipoCessionePrestazione = null
+    ): static {
         $this->tipoCessionePrestazione = $tipoCessionePrestazione;
 
         return $this;
@@ -300,8 +302,9 @@ final class DettaglioLinee
      * @param  null|array<CodiceArticolo> $codiceArticolo
      * @return static
      */
-    public function setCodiceArticolo(?array $codiceArticolo = null): static
-    {
+    public function setCodiceArticolo(
+        ?array $codiceArticolo = null
+    ): static {
         $this->codiceArticolo = $codiceArticolo;
 
         return $this;
@@ -337,8 +340,9 @@ final class DettaglioLinee
      * @param  CodiceArticolo $codiceArticolo
      * @return static
      */
-    public function addToCodiceArticolo(CodiceArticolo $codiceArticolo): static
-    {
+    public function addToCodiceArticolo(
+        CodiceArticolo $codiceArticolo
+    ): static {
         if (!is_array($this->codiceArticolo)) {
             $this->codiceArticolo = [];
         }
@@ -366,8 +370,9 @@ final class DettaglioLinee
      * @param  CodiceArticolo $codiceArticolo
      * @return static
      */
-    public function addOnceToCodiceArticolo(CodiceArticolo $codiceArticolo): static
-    {
+    public function addOnceToCodiceArticolo(
+        CodiceArticolo $codiceArticolo
+    ): static {
         if (!is_array($this->codiceArticolo)) {
             $this->codiceArticolo = [];
         }
@@ -411,8 +416,9 @@ final class DettaglioLinee
      * @param  null|string $descrizione
      * @return static
      */
-    public function setDescrizione(?string $descrizione = null): static
-    {
+    public function setDescrizione(
+        ?string $descrizione = null
+    ): static {
         $this->descrizione = InvoiceSuiteStringUtils::asNullWhenEmpty($descrizione);
 
         return $this;
@@ -446,8 +452,9 @@ final class DettaglioLinee
      * @param  null|float $quantita
      * @return static
      */
-    public function setQuantita(?float $quantita = null): static
-    {
+    public function setQuantita(
+        ?float $quantita = null
+    ): static {
         $this->quantita = $quantita;
 
         return $this;
@@ -481,8 +488,9 @@ final class DettaglioLinee
      * @param  null|string $unitaMisura
      * @return static
      */
-    public function setUnitaMisura(?string $unitaMisura = null): static
-    {
+    public function setUnitaMisura(
+        ?string $unitaMisura = null
+    ): static {
         $this->unitaMisura = InvoiceSuiteStringUtils::asNullWhenEmpty($unitaMisura);
 
         return $this;
@@ -516,8 +524,9 @@ final class DettaglioLinee
      * @param  null|DateTimeInterface $dataInizioPeriodo
      * @return static
      */
-    public function setDataInizioPeriodo(?DateTimeInterface $dataInizioPeriodo = null): static
-    {
+    public function setDataInizioPeriodo(
+        ?DateTimeInterface $dataInizioPeriodo = null
+    ): static {
         $this->dataInizioPeriodo = $dataInizioPeriodo;
 
         return $this;
@@ -551,8 +560,9 @@ final class DettaglioLinee
      * @param  null|DateTimeInterface $dataFinePeriodo
      * @return static
      */
-    public function setDataFinePeriodo(?DateTimeInterface $dataFinePeriodo = null): static
-    {
+    public function setDataFinePeriodo(
+        ?DateTimeInterface $dataFinePeriodo = null
+    ): static {
         $this->dataFinePeriodo = $dataFinePeriodo;
 
         return $this;
@@ -586,8 +596,9 @@ final class DettaglioLinee
      * @param  null|float $prezzoUnitario
      * @return static
      */
-    public function setPrezzoUnitario(?float $prezzoUnitario = null): static
-    {
+    public function setPrezzoUnitario(
+        ?float $prezzoUnitario = null
+    ): static {
         $this->prezzoUnitario = $prezzoUnitario;
 
         return $this;
@@ -621,8 +632,9 @@ final class DettaglioLinee
      * @param  null|array<ScontoMaggiorazione> $scontoMaggiorazione
      * @return static
      */
-    public function setScontoMaggiorazione(?array $scontoMaggiorazione = null): static
-    {
+    public function setScontoMaggiorazione(
+        ?array $scontoMaggiorazione = null
+    ): static {
         $this->scontoMaggiorazione = $scontoMaggiorazione;
 
         return $this;
@@ -658,8 +670,9 @@ final class DettaglioLinee
      * @param  ScontoMaggiorazione $scontoMaggiorazione
      * @return static
      */
-    public function addToScontoMaggiorazione(ScontoMaggiorazione $scontoMaggiorazione): static
-    {
+    public function addToScontoMaggiorazione(
+        ScontoMaggiorazione $scontoMaggiorazione
+    ): static {
         if (!is_array($this->scontoMaggiorazione)) {
             $this->scontoMaggiorazione = [];
         }
@@ -687,8 +700,9 @@ final class DettaglioLinee
      * @param  ScontoMaggiorazione $scontoMaggiorazione
      * @return static
      */
-    public function addOnceToScontoMaggiorazione(ScontoMaggiorazione $scontoMaggiorazione): static
-    {
+    public function addOnceToScontoMaggiorazione(
+        ScontoMaggiorazione $scontoMaggiorazione
+    ): static {
         if (!is_array($this->scontoMaggiorazione)) {
             $this->scontoMaggiorazione = [];
         }
@@ -732,8 +746,9 @@ final class DettaglioLinee
      * @param  null|float $prezzoTotale
      * @return static
      */
-    public function setPrezzoTotale(?float $prezzoTotale = null): static
-    {
+    public function setPrezzoTotale(
+        ?float $prezzoTotale = null
+    ): static {
         $this->prezzoTotale = $prezzoTotale;
 
         return $this;
@@ -767,8 +782,9 @@ final class DettaglioLinee
      * @param  null|float $aliquotaIVA
      * @return static
      */
-    public function setAliquotaIVA(?float $aliquotaIVA = null): static
-    {
+    public function setAliquotaIVA(
+        ?float $aliquotaIVA = null
+    ): static {
         $this->aliquotaIVA = $aliquotaIVA;
 
         return $this;
@@ -802,8 +818,9 @@ final class DettaglioLinee
      * @param  null|Ritenuta $ritenuta
      * @return static
      */
-    public function setRitenuta(?Ritenuta $ritenuta = null): static
-    {
+    public function setRitenuta(
+        ?Ritenuta $ritenuta = null
+    ): static {
         $this->ritenuta = $ritenuta;
 
         return $this;
@@ -837,8 +854,9 @@ final class DettaglioLinee
      * @param  null|Natura $natura
      * @return static
      */
-    public function setNatura(?Natura $natura = null): static
-    {
+    public function setNatura(
+        ?Natura $natura = null
+    ): static {
         $this->natura = $natura;
 
         return $this;
@@ -872,8 +890,9 @@ final class DettaglioLinee
      * @param  null|string $riferimentoAmministrazione
      * @return static
      */
-    public function setRiferimentoAmministrazione(?string $riferimentoAmministrazione = null): static
-    {
+    public function setRiferimentoAmministrazione(
+        ?string $riferimentoAmministrazione = null
+    ): static {
         $this->riferimentoAmministrazione = InvoiceSuiteStringUtils::asNullWhenEmpty($riferimentoAmministrazione);
 
         return $this;
@@ -907,8 +926,9 @@ final class DettaglioLinee
      * @param  null|array<AltriDatiGestionali> $altriDatiGestionali
      * @return static
      */
-    public function setAltriDatiGestionali(?array $altriDatiGestionali = null): static
-    {
+    public function setAltriDatiGestionali(
+        ?array $altriDatiGestionali = null
+    ): static {
         $this->altriDatiGestionali = $altriDatiGestionali;
 
         return $this;
@@ -944,8 +964,9 @@ final class DettaglioLinee
      * @param  AltriDatiGestionali $altriDatiGestionali
      * @return static
      */
-    public function addToAltriDatiGestionali(AltriDatiGestionali $altriDatiGestionali): static
-    {
+    public function addToAltriDatiGestionali(
+        AltriDatiGestionali $altriDatiGestionali
+    ): static {
         if (!is_array($this->altriDatiGestionali)) {
             $this->altriDatiGestionali = [];
         }
@@ -973,8 +994,9 @@ final class DettaglioLinee
      * @param  AltriDatiGestionali $altriDatiGestionali
      * @return static
      */
-    public function addOnceToAltriDatiGestionali(AltriDatiGestionali $altriDatiGestionali): static
-    {
+    public function addOnceToAltriDatiGestionali(
+        AltriDatiGestionali $altriDatiGestionali
+    ): static {
         if (!is_array($this->altriDatiGestionali)) {
             $this->altriDatiGestionali = [];
         }

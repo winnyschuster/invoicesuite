@@ -68,8 +68,9 @@ class SupplyChainTradeTransactionType
      * @param  null|array<SupplyChainTradeLineItemType> $includedSupplyChainTradeLineItem
      * @return static
      */
-    public function setIncludedSupplyChainTradeLineItem(?array $includedSupplyChainTradeLineItem = null): static
-    {
+    public function setIncludedSupplyChainTradeLineItem(
+        ?array $includedSupplyChainTradeLineItem = null
+    ): static {
         $this->includedSupplyChainTradeLineItem = $includedSupplyChainTradeLineItem;
 
         return $this;

@@ -306,8 +306,9 @@ class DeliveryType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -345,8 +346,9 @@ class DeliveryType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -384,8 +386,9 @@ class DeliveryType
      * @param  null|MinimumQuantity $minimumQuantity
      * @return static
      */
-    public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): static
-    {
+    public function setMinimumQuantity(
+        ?MinimumQuantity $minimumQuantity = null
+    ): static {
         $this->minimumQuantity = $minimumQuantity;
 
         return $this;
@@ -423,8 +426,9 @@ class DeliveryType
      * @param  null|MaximumQuantity $maximumQuantity
      * @return static
      */
-    public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): static
-    {
+    public function setMaximumQuantity(
+        ?MaximumQuantity $maximumQuantity = null
+    ): static {
         $this->maximumQuantity = $maximumQuantity;
 
         return $this;
@@ -452,8 +456,9 @@ class DeliveryType
      * @param  null|DateTimeInterface $actualDeliveryDate
      * @return static
      */
-    public function setActualDeliveryDate(?DateTimeInterface $actualDeliveryDate = null): static
-    {
+    public function setActualDeliveryDate(
+        ?DateTimeInterface $actualDeliveryDate = null
+    ): static {
         $this->actualDeliveryDate = $actualDeliveryDate;
 
         return $this;
@@ -481,8 +486,9 @@ class DeliveryType
      * @param  null|DateTimeInterface $actualDeliveryTime
      * @return static
      */
-    public function setActualDeliveryTime(?DateTimeInterface $actualDeliveryTime = null): static
-    {
+    public function setActualDeliveryTime(
+        ?DateTimeInterface $actualDeliveryTime = null
+    ): static {
         $this->actualDeliveryTime = $actualDeliveryTime;
 
         return $this;
@@ -510,8 +516,9 @@ class DeliveryType
      * @param  null|DateTimeInterface $latestDeliveryDate
      * @return static
      */
-    public function setLatestDeliveryDate(?DateTimeInterface $latestDeliveryDate = null): static
-    {
+    public function setLatestDeliveryDate(
+        ?DateTimeInterface $latestDeliveryDate = null
+    ): static {
         $this->latestDeliveryDate = $latestDeliveryDate;
 
         return $this;
@@ -539,8 +546,9 @@ class DeliveryType
      * @param  null|DateTimeInterface $latestDeliveryTime
      * @return static
      */
-    public function setLatestDeliveryTime(?DateTimeInterface $latestDeliveryTime = null): static
-    {
+    public function setLatestDeliveryTime(
+        ?DateTimeInterface $latestDeliveryTime = null
+    ): static {
         $this->latestDeliveryTime = $latestDeliveryTime;
 
         return $this;
@@ -578,8 +586,9 @@ class DeliveryType
      * @param  null|ReleaseID $releaseID
      * @return static
      */
-    public function setReleaseID(?ReleaseID $releaseID = null): static
-    {
+    public function setReleaseID(
+        ?ReleaseID $releaseID = null
+    ): static {
         $this->releaseID = $releaseID;
 
         return $this;
@@ -617,8 +626,9 @@ class DeliveryType
      * @param  null|TrackingID $trackingID
      * @return static
      */
-    public function setTrackingID(?TrackingID $trackingID = null): static
-    {
+    public function setTrackingID(
+        ?TrackingID $trackingID = null
+    ): static {
         $this->trackingID = $trackingID;
 
         return $this;
@@ -656,8 +666,9 @@ class DeliveryType
      * @param  null|DeliveryAddress $deliveryAddress
      * @return static
      */
-    public function setDeliveryAddress(?DeliveryAddress $deliveryAddress = null): static
-    {
+    public function setDeliveryAddress(
+        ?DeliveryAddress $deliveryAddress = null
+    ): static {
         $this->deliveryAddress = $deliveryAddress;
 
         return $this;
@@ -695,8 +706,9 @@ class DeliveryType
      * @param  null|DeliveryLocation $deliveryLocation
      * @return static
      */
-    public function setDeliveryLocation(?DeliveryLocation $deliveryLocation = null): static
-    {
+    public function setDeliveryLocation(
+        ?DeliveryLocation $deliveryLocation = null
+    ): static {
         $this->deliveryLocation = $deliveryLocation;
 
         return $this;
@@ -774,8 +786,9 @@ class DeliveryType
      * @param  null|RequestedDeliveryPeriod $requestedDeliveryPeriod
      * @return static
      */
-    public function setRequestedDeliveryPeriod(?RequestedDeliveryPeriod $requestedDeliveryPeriod = null): static
-    {
+    public function setRequestedDeliveryPeriod(
+        ?RequestedDeliveryPeriod $requestedDeliveryPeriod = null
+    ): static {
         $this->requestedDeliveryPeriod = $requestedDeliveryPeriod;
 
         return $this;
@@ -813,8 +826,9 @@ class DeliveryType
      * @param  null|PromisedDeliveryPeriod $promisedDeliveryPeriod
      * @return static
      */
-    public function setPromisedDeliveryPeriod(?PromisedDeliveryPeriod $promisedDeliveryPeriod = null): static
-    {
+    public function setPromisedDeliveryPeriod(
+        ?PromisedDeliveryPeriod $promisedDeliveryPeriod = null
+    ): static {
         $this->promisedDeliveryPeriod = $promisedDeliveryPeriod;
 
         return $this;
@@ -852,8 +866,9 @@ class DeliveryType
      * @param  null|EstimatedDeliveryPeriod $estimatedDeliveryPeriod
      * @return static
      */
-    public function setEstimatedDeliveryPeriod(?EstimatedDeliveryPeriod $estimatedDeliveryPeriod = null): static
-    {
+    public function setEstimatedDeliveryPeriod(
+        ?EstimatedDeliveryPeriod $estimatedDeliveryPeriod = null
+    ): static {
         $this->estimatedDeliveryPeriod = $estimatedDeliveryPeriod;
 
         return $this;
@@ -891,8 +906,9 @@ class DeliveryType
      * @param  null|CarrierParty $carrierParty
      * @return static
      */
-    public function setCarrierParty(?CarrierParty $carrierParty = null): static
-    {
+    public function setCarrierParty(
+        ?CarrierParty $carrierParty = null
+    ): static {
         $this->carrierParty = $carrierParty;
 
         return $this;
@@ -930,8 +946,9 @@ class DeliveryType
      * @param  null|DeliveryParty $deliveryParty
      * @return static
      */
-    public function setDeliveryParty(?DeliveryParty $deliveryParty = null): static
-    {
+    public function setDeliveryParty(
+        ?DeliveryParty $deliveryParty = null
+    ): static {
         $this->deliveryParty = $deliveryParty;
 
         return $this;
@@ -959,8 +976,9 @@ class DeliveryType
      * @param  null|array<NotifyParty> $notifyParty
      * @return static
      */
-    public function setNotifyParty(?array $notifyParty = null): static
-    {
+    public function setNotifyParty(
+        ?array $notifyParty = null
+    ): static {
         $this->notifyParty = $notifyParty;
 
         return $this;
@@ -1020,8 +1038,9 @@ class DeliveryType
      * @param  NotifyParty $notifyParty
      * @return static
      */
-    public function addToNotifyParty(NotifyParty $notifyParty): static
-    {
+    public function addToNotifyParty(
+        NotifyParty $notifyParty
+    ): static {
         $this->notifyParty[] = $notifyParty;
 
         return $this;
@@ -1041,8 +1060,9 @@ class DeliveryType
      * @param  NotifyParty $notifyParty
      * @return static
      */
-    public function addOnceToNotifyParty(NotifyParty $notifyParty): static
-    {
+    public function addOnceToNotifyParty(
+        NotifyParty $notifyParty
+    ): static {
         if (!is_array($this->notifyParty)) {
             $this->notifyParty = [];
         }
@@ -1090,8 +1110,9 @@ class DeliveryType
      * @param  null|Despatch $despatch
      * @return static
      */
-    public function setDespatch(?Despatch $despatch = null): static
-    {
+    public function setDespatch(
+        ?Despatch $despatch = null
+    ): static {
         $this->despatch = $despatch;
 
         return $this;
@@ -1119,8 +1140,9 @@ class DeliveryType
      * @param  null|array<DeliveryTerms> $deliveryTerms
      * @return static
      */
-    public function setDeliveryTerms(?array $deliveryTerms = null): static
-    {
+    public function setDeliveryTerms(
+        ?array $deliveryTerms = null
+    ): static {
         $this->deliveryTerms = $deliveryTerms;
 
         return $this;
@@ -1180,8 +1202,9 @@ class DeliveryType
      * @param  DeliveryTerms $deliveryTerms
      * @return static
      */
-    public function addToDeliveryTerms(DeliveryTerms $deliveryTerms): static
-    {
+    public function addToDeliveryTerms(
+        DeliveryTerms $deliveryTerms
+    ): static {
         $this->deliveryTerms[] = $deliveryTerms;
 
         return $this;
@@ -1201,8 +1224,9 @@ class DeliveryType
      * @param  DeliveryTerms $deliveryTerms
      * @return static
      */
-    public function addOnceToDeliveryTerms(DeliveryTerms $deliveryTerms): static
-    {
+    public function addOnceToDeliveryTerms(
+        DeliveryTerms $deliveryTerms
+    ): static {
         if (!is_array($this->deliveryTerms)) {
             $this->deliveryTerms = [];
         }
@@ -1250,8 +1274,9 @@ class DeliveryType
      * @param  null|MinimumDeliveryUnit $minimumDeliveryUnit
      * @return static
      */
-    public function setMinimumDeliveryUnit(?MinimumDeliveryUnit $minimumDeliveryUnit = null): static
-    {
+    public function setMinimumDeliveryUnit(
+        ?MinimumDeliveryUnit $minimumDeliveryUnit = null
+    ): static {
         $this->minimumDeliveryUnit = $minimumDeliveryUnit;
 
         return $this;
@@ -1289,8 +1314,9 @@ class DeliveryType
      * @param  null|MaximumDeliveryUnit $maximumDeliveryUnit
      * @return static
      */
-    public function setMaximumDeliveryUnit(?MaximumDeliveryUnit $maximumDeliveryUnit = null): static
-    {
+    public function setMaximumDeliveryUnit(
+        ?MaximumDeliveryUnit $maximumDeliveryUnit = null
+    ): static {
         $this->maximumDeliveryUnit = $maximumDeliveryUnit;
 
         return $this;
@@ -1328,8 +1354,9 @@ class DeliveryType
      * @param  null|Shipment $shipment
      * @return static
      */
-    public function setShipment(?Shipment $shipment = null): static
-    {
+    public function setShipment(
+        ?Shipment $shipment = null
+    ): static {
         $this->shipment = $shipment;
 
         return $this;

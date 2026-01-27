@@ -117,8 +117,9 @@ class StockAvailabilityReportLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -146,8 +147,9 @@ class StockAvailabilityReportLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -207,8 +209,9 @@ class StockAvailabilityReportLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -228,8 +231,9 @@ class StockAvailabilityReportLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -277,8 +281,9 @@ class StockAvailabilityReportLineType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -316,8 +321,9 @@ class StockAvailabilityReportLineType
      * @param  null|ValueAmount $valueAmount
      * @return static
      */
-    public function setValueAmount(?ValueAmount $valueAmount = null): static
-    {
+    public function setValueAmount(
+        ?ValueAmount $valueAmount = null
+    ): static {
         $this->valueAmount = $valueAmount;
 
         return $this;
@@ -345,8 +351,9 @@ class StockAvailabilityReportLineType
      * @param  null|DateTimeInterface $availabilityDate
      * @return static
      */
-    public function setAvailabilityDate(?DateTimeInterface $availabilityDate = null): static
-    {
+    public function setAvailabilityDate(
+        ?DateTimeInterface $availabilityDate = null
+    ): static {
         $this->availabilityDate = $availabilityDate;
 
         return $this;
@@ -384,8 +391,9 @@ class StockAvailabilityReportLineType
      * @param  null|AvailabilityStatusCode $availabilityStatusCode
      * @return static
      */
-    public function setAvailabilityStatusCode(?AvailabilityStatusCode $availabilityStatusCode = null): static
-    {
+    public function setAvailabilityStatusCode(
+        ?AvailabilityStatusCode $availabilityStatusCode = null
+    ): static {
         $this->availabilityStatusCode = $availabilityStatusCode;
 
         return $this;
@@ -423,8 +431,9 @@ class StockAvailabilityReportLineType
      * @param  null|Item $item
      * @return static
      */
-    public function setItem(?Item $item = null): static
-    {
+    public function setItem(
+        ?Item $item = null
+    ): static {
         $this->item = $item;
 
         return $this;

@@ -79,8 +79,9 @@ abstract class TestCase extends PhpUnitTestCase
      * @param  string $filename
      * @return void
      */
-    public function registerFileForTestCaseTeardown(string $filename): void
-    {
+    public function registerFileForTestCaseTeardown(
+        string $filename
+    ): void {
         static::$registeredTestCaseFiles[] = $filename;
     }
 
@@ -90,8 +91,9 @@ abstract class TestCase extends PhpUnitTestCase
      * @param  string $filename
      * @return void
      */
-    public function registerFileForTestMethodTeardown(string $filename): void
-    {
+    public function registerFileForTestMethodTeardown(
+        string $filename
+    ): void {
         $this->registeredTestFiles[] = $filename;
     }
 
@@ -117,8 +119,10 @@ abstract class TestCase extends PhpUnitTestCase
      * @param  string             $propertyName
      * @return ReflectionProperty
      */
-    public function getPrivatePropertyFromClassname(string $className, string $propertyName): ReflectionProperty
-    {
+    public function getPrivatePropertyFromClassname(
+        string $className,
+        string $propertyName
+    ): ReflectionProperty {
         $reflector = new ReflectionClass($className);
         $property = $reflector->getProperty($propertyName);
         $property->setAccessible(true);
@@ -133,8 +137,10 @@ abstract class TestCase extends PhpUnitTestCase
      * @param  string             $propertyName
      * @return ReflectionProperty
      */
-    public function getPrivatePropertyFromObject(object $object, string $propertyName): ReflectionProperty
-    {
+    public function getPrivatePropertyFromObject(
+        object $object,
+        string $propertyName
+    ): ReflectionProperty {
         $reflector = new ReflectionClass($object);
         $property = $reflector->getProperty($propertyName);
         $property->setAccessible(true);
@@ -149,8 +155,10 @@ abstract class TestCase extends PhpUnitTestCase
      * @param  string           $methodName
      * @return ReflectionMethod
      */
-    public function getPrivateMethodFromClassname(string $className, string $methodName): ReflectionMethod
-    {
+    public function getPrivateMethodFromClassname(
+        string $className,
+        string $methodName
+    ): ReflectionMethod {
         $reflector = new ReflectionClass($className);
         $method = $reflector->getMethod($methodName);
         $method->setAccessible(true);
@@ -165,8 +173,10 @@ abstract class TestCase extends PhpUnitTestCase
      * @param  string           $methodName
      * @return ReflectionMethod
      */
-    public function getPrivateMethodFromObject(object $object, string $methodName): ReflectionMethod
-    {
+    public function getPrivateMethodFromObject(
+        object $object,
+        string $methodName
+    ): ReflectionMethod {
         $reflector = new ReflectionClass($object);
         $method = $reflector->getMethod($methodName);
         $method->setAccessible(true);
@@ -181,8 +191,10 @@ abstract class TestCase extends PhpUnitTestCase
      * @param  string  $expectMessageRegEx
      * @return void
      */
-    public function expectNoticeOrWarningExt(Closure $run, string $expectMessageRegEx = ''): void
-    {
+    public function expectNoticeOrWarningExt(
+        Closure $run,
+        string $expectMessageRegEx = ''
+    ): void {
         $mask = E_WARNING | E_NOTICE;
         $prevLevel = error_reporting();
 

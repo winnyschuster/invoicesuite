@@ -57,8 +57,9 @@ class UniversalCommunicationType
      * @param  null|IDType $uRIID
      * @return static
      */
-    public function setURIID(?IDType $uRIID = null): static
-    {
+    public function setURIID(
+        ?IDType $uRIID = null
+    ): static {
         $this->uRIID = $uRIID;
 
         return $this;
@@ -96,8 +97,9 @@ class UniversalCommunicationType
      * @param  null|TextType $completeNumber
      * @return static
      */
-    public function setCompleteNumber(?TextType $completeNumber = null): static
-    {
+    public function setCompleteNumber(
+        ?TextType $completeNumber = null
+    ): static {
         $this->completeNumber = $completeNumber;
 
         return $this;

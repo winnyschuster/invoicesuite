@@ -51,8 +51,9 @@ final class TerzoIntermediarioSoggettoEmittente
      * @param  null|DatiAnagraficiTerzoIntermediario $datiAnagrafici
      * @return static
      */
-    public function setDatiAnagrafici(?DatiAnagraficiTerzoIntermediario $datiAnagrafici = null): static
-    {
+    public function setDatiAnagrafici(
+        ?DatiAnagraficiTerzoIntermediario $datiAnagrafici = null
+    ): static {
         $this->datiAnagrafici = $datiAnagrafici;
 
         return $this;

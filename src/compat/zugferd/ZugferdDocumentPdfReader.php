@@ -42,8 +42,9 @@ class ZugferdDocumentPdfReader
      * @throws PdfParserException
      * @throws RuntimeException
      */
-    public static function readAndGuessFromFile(string $pdfFilename): ZugferdDocumentReader
-    {
+    public static function readAndGuessFromFile(
+        string $pdfFilename
+    ): ZugferdDocumentReader {
         return ZugferdDocumentPdfReaderExt::readAndGuessFromFile($pdfFilename);
     }
 
@@ -58,8 +59,9 @@ class ZugferdDocumentPdfReader
      * @throws PdfParserException
      * @throws RuntimeException
      */
-    public static function readAndGuessFromContent(string $pdfContent): ZugferdDocumentReader
-    {
+    public static function readAndGuessFromContent(
+        string $pdfContent
+    ): ZugferdDocumentReader {
         return ZugferdDocumentPdfReaderExt::readAndGuessFromContent($pdfContent);
     }
 
@@ -76,8 +78,9 @@ class ZugferdDocumentPdfReader
      * @throws PdfParserException
      * @throws RuntimeException
      */
-    public static function getXmlFromFile(string $pdfFilename): string
-    {
+    public static function getXmlFromFile(
+        string $pdfFilename
+    ): string {
         return ZugferdDocumentPdfReaderExt::getInvoiceDocumentContentFromFile($pdfFilename);
     }
 
@@ -92,8 +95,9 @@ class ZugferdDocumentPdfReader
      * @throws PdfParserException
      * @throws RuntimeException
      */
-    public static function getXmlFromContent(string $pdfContent): string
-    {
+    public static function getXmlFromContent(
+        string $pdfContent
+    ): string {
         return ZugferdDocumentPdfReaderExt::getInvoiceDocumentContentFromContent($pdfContent);
     }
 }

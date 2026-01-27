@@ -59,8 +59,9 @@ class TradingTermsType
      * @param  null|array<Information> $information
      * @return static
      */
-    public function setInformation(?array $information = null): static
-    {
+    public function setInformation(
+        ?array $information = null
+    ): static {
         $this->information = $information;
 
         return $this;
@@ -120,8 +121,9 @@ class TradingTermsType
      * @param  Information $information
      * @return static
      */
-    public function addToInformation(Information $information): static
-    {
+    public function addToInformation(
+        Information $information
+    ): static {
         $this->information[] = $information;
 
         return $this;
@@ -141,8 +143,9 @@ class TradingTermsType
      * @param  Information $information
      * @return static
      */
-    public function addOnceToInformation(Information $information): static
-    {
+    public function addOnceToInformation(
+        Information $information
+    ): static {
         if (!is_array($this->information)) {
             $this->information = [];
         }
@@ -190,8 +193,9 @@ class TradingTermsType
      * @param  null|Reference $reference
      * @return static
      */
-    public function setReference(?Reference $reference = null): static
-    {
+    public function setReference(
+        ?Reference $reference = null
+    ): static {
         $this->reference = $reference;
 
         return $this;
@@ -229,8 +233,9 @@ class TradingTermsType
      * @param  null|ApplicableAddress $applicableAddress
      * @return static
      */
-    public function setApplicableAddress(?ApplicableAddress $applicableAddress = null): static
-    {
+    public function setApplicableAddress(
+        ?ApplicableAddress $applicableAddress = null
+    ): static {
         $this->applicableAddress = $applicableAddress;
 
         return $this;

@@ -139,8 +139,9 @@ class EventType
      * @param  null|IdentificationID $identificationID
      * @return static
      */
-    public function setIdentificationID(?IdentificationID $identificationID = null): static
-    {
+    public function setIdentificationID(
+        ?IdentificationID $identificationID = null
+    ): static {
         $this->identificationID = $identificationID;
 
         return $this;
@@ -168,8 +169,9 @@ class EventType
      * @param  null|DateTimeInterface $occurrenceDate
      * @return static
      */
-    public function setOccurrenceDate(?DateTimeInterface $occurrenceDate = null): static
-    {
+    public function setOccurrenceDate(
+        ?DateTimeInterface $occurrenceDate = null
+    ): static {
         $this->occurrenceDate = $occurrenceDate;
 
         return $this;
@@ -197,8 +199,9 @@ class EventType
      * @param  null|DateTimeInterface $occurrenceTime
      * @return static
      */
-    public function setOccurrenceTime(?DateTimeInterface $occurrenceTime = null): static
-    {
+    public function setOccurrenceTime(
+        ?DateTimeInterface $occurrenceTime = null
+    ): static {
         $this->occurrenceTime = $occurrenceTime;
 
         return $this;
@@ -236,8 +239,9 @@ class EventType
      * @param  null|TypeCode $typeCode
      * @return static
      */
-    public function setTypeCode(?TypeCode $typeCode = null): static
-    {
+    public function setTypeCode(
+        ?TypeCode $typeCode = null
+    ): static {
         $this->typeCode = $typeCode;
 
         return $this;
@@ -265,8 +269,9 @@ class EventType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -326,8 +331,9 @@ class EventType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -347,8 +353,9 @@ class EventType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -386,8 +393,9 @@ class EventType
      * @param  null|bool $completionIndicator
      * @return static
      */
-    public function setCompletionIndicator(?bool $completionIndicator = null): static
-    {
+    public function setCompletionIndicator(
+        ?bool $completionIndicator = null
+    ): static {
         $this->completionIndicator = $completionIndicator;
 
         return $this;
@@ -415,8 +423,9 @@ class EventType
      * @param  null|array<CurrentStatus> $currentStatus
      * @return static
      */
-    public function setCurrentStatus(?array $currentStatus = null): static
-    {
+    public function setCurrentStatus(
+        ?array $currentStatus = null
+    ): static {
         $this->currentStatus = $currentStatus;
 
         return $this;
@@ -476,8 +485,9 @@ class EventType
      * @param  CurrentStatus $currentStatus
      * @return static
      */
-    public function addToCurrentStatus(CurrentStatus $currentStatus): static
-    {
+    public function addToCurrentStatus(
+        CurrentStatus $currentStatus
+    ): static {
         $this->currentStatus[] = $currentStatus;
 
         return $this;
@@ -497,8 +507,9 @@ class EventType
      * @param  CurrentStatus $currentStatus
      * @return static
      */
-    public function addOnceToCurrentStatus(CurrentStatus $currentStatus): static
-    {
+    public function addOnceToCurrentStatus(
+        CurrentStatus $currentStatus
+    ): static {
         if (!is_array($this->currentStatus)) {
             $this->currentStatus = [];
         }
@@ -536,8 +547,9 @@ class EventType
      * @param  null|array<Contact> $contact
      * @return static
      */
-    public function setContact(?array $contact = null): static
-    {
+    public function setContact(
+        ?array $contact = null
+    ): static {
         $this->contact = $contact;
 
         return $this;
@@ -597,8 +609,9 @@ class EventType
      * @param  Contact $contact
      * @return static
      */
-    public function addToContact(Contact $contact): static
-    {
+    public function addToContact(
+        Contact $contact
+    ): static {
         $this->contact[] = $contact;
 
         return $this;
@@ -618,8 +631,9 @@ class EventType
      * @param  Contact $contact
      * @return static
      */
-    public function addOnceToContact(Contact $contact): static
-    {
+    public function addOnceToContact(
+        Contact $contact
+    ): static {
         if (!is_array($this->contact)) {
             $this->contact = [];
         }
@@ -667,8 +681,9 @@ class EventType
      * @param  null|OccurenceLocation $occurenceLocation
      * @return static
      */
-    public function setOccurenceLocation(?OccurenceLocation $occurenceLocation = null): static
-    {
+    public function setOccurenceLocation(
+        ?OccurenceLocation $occurenceLocation = null
+    ): static {
         $this->occurenceLocation = $occurenceLocation;
 
         return $this;

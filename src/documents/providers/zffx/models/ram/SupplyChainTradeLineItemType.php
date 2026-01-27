@@ -128,8 +128,9 @@ class SupplyChainTradeLineItemType
      * @param  null|TradeProductType $specifiedTradeProduct
      * @return static
      */
-    public function setSpecifiedTradeProduct(?TradeProductType $specifiedTradeProduct = null): static
-    {
+    public function setSpecifiedTradeProduct(
+        ?TradeProductType $specifiedTradeProduct = null
+    ): static {
         $this->specifiedTradeProduct = $specifiedTradeProduct;
 
         return $this;
@@ -167,8 +168,9 @@ class SupplyChainTradeLineItemType
      * @param  null|LineTradeAgreementType $specifiedLineTradeAgreement
      * @return static
      */
-    public function setSpecifiedLineTradeAgreement(?LineTradeAgreementType $specifiedLineTradeAgreement = null): static
-    {
+    public function setSpecifiedLineTradeAgreement(
+        ?LineTradeAgreementType $specifiedLineTradeAgreement = null
+    ): static {
         $this->specifiedLineTradeAgreement = $specifiedLineTradeAgreement;
 
         return $this;
@@ -206,8 +208,9 @@ class SupplyChainTradeLineItemType
      * @param  null|LineTradeDeliveryType $specifiedLineTradeDelivery
      * @return static
      */
-    public function setSpecifiedLineTradeDelivery(?LineTradeDeliveryType $specifiedLineTradeDelivery = null): static
-    {
+    public function setSpecifiedLineTradeDelivery(
+        ?LineTradeDeliveryType $specifiedLineTradeDelivery = null
+    ): static {
         $this->specifiedLineTradeDelivery = $specifiedLineTradeDelivery;
 
         return $this;

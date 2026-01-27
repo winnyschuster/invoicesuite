@@ -23,8 +23,9 @@ class InvoiceSuiteFileUtils extends FileUtils
      * @param  string $filenameOrContent
      * @return bool
      */
-    public static function isReadableFilePath(string $filenameOrContent): bool
-    {
+    public static function isReadableFilePath(
+        string $filenameOrContent
+    ): bool {
         if ('' === $filenameOrContent || str_contains($filenameOrContent, "\0")) {
             return false;
         }
@@ -44,8 +45,9 @@ class InvoiceSuiteFileUtils extends FileUtils
      *
      * @throws InvoiceSuiteFileNotReadableException
      */
-    public static function getContentFromFileOrString(string $filenameOrContent): string
-    {
+    public static function getContentFromFileOrString(
+        string $filenameOrContent
+    ): string {
         if (!static::isReadableFilePath($filenameOrContent)) {
             return $filenameOrContent;
         }

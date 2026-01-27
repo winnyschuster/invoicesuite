@@ -43,8 +43,10 @@ class InvoiceSuiteQuantityDTO
      * @param null|float  $quantity     The value
      * @param null|string $quantityUnit The value's unit
      */
-    public function __construct(?float $quantity = null, ?string $quantityUnit = null)
-    {
+    public function __construct(
+        ?float $quantity = null,
+        ?string $quantityUnit = null
+    ) {
         $this->setQuantity($quantity);
         $this->setQuantityUnit($quantityUnit);
     }
@@ -65,8 +67,9 @@ class InvoiceSuiteQuantityDTO
      * @param  null|float $quantity The value
      * @return static
      */
-    public function setQuantity(?float $quantity): static
-    {
+    public function setQuantity(
+        ?float $quantity
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -88,8 +91,9 @@ class InvoiceSuiteQuantityDTO
      * @param  null|string $quantityUnit The value's unit
      * @return static
      */
-    public function setQuantityUnit(?string $quantityUnit): static
-    {
+    public function setQuantityUnit(
+        ?string $quantityUnit
+    ): static {
         $this->quantityUnit = InvoiceSuiteStringUtils::asNullWhenEmpty($quantityUnit);
 
         return $this;

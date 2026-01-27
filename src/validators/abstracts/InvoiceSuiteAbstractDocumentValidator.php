@@ -56,8 +56,9 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      * @throws InvoiceSuiteFileNotReadableException
      * @throws InvoiceSuiteFormatProviderNotFoundException
      */
-    public static function createFromFile(string $fromFilename): static
-    {
+    public static function createFromFile(
+        string $fromFilename
+    ): static {
         if (!file_exists($fromFilename)) {
             throw new InvoiceSuiteFileNotFoundException($fromFilename);
         }
@@ -79,8 +80,9 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public static function createFromDocumentReader(InvoiceSuiteDocumentReader $fromDocumentReader): static
-    {
+    public static function createFromDocumentReader(
+        InvoiceSuiteDocumentReader $fromDocumentReader
+    ): static {
         // @phpstan-ignore new.staticInAbstractClassStaticMethod
         return (new static())
             ->intializeAfterConstruct()
@@ -96,8 +98,9 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
-    public static function createFromDocumentBuilder(InvoiceSuiteDocumentBuilder $fromDocumentBuilder): static
-    {
+    public static function createFromDocumentBuilder(
+        InvoiceSuiteDocumentBuilder $fromDocumentBuilder
+    ): static {
         // @phpstan-ignore new.staticInAbstractClassStaticMethod
         return (new static())
             ->intializeAfterConstruct()
@@ -112,8 +115,9 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      */
-    public static function createFromContent(string $fromDocumentContent): static
-    {
+    public static function createFromContent(
+        string $fromDocumentContent
+    ): static {
         // @phpstan-ignore new.staticInAbstractClassStaticMethod
         return (new static())
             ->intializeAfterConstruct()
@@ -166,8 +170,9 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
-    protected function setDocumentBuilder(InvoiceSuiteDocumentBuilder $fromDocumentBuilder): static
-    {
+    protected function setDocumentBuilder(
+        InvoiceSuiteDocumentBuilder $fromDocumentBuilder
+    ): static {
         if (!$this->checkFormatProviderRequirements($fromDocumentBuilder->getCurrentDocumentFormatProvider())) {
             throw new InvoiceSuiteInvalidArgumentException(sprintf('The provider %s does not meet the requirements.', $fromDocumentBuilder->getCurrentDocumentFormatProvider()->getUniqueId()));
         }
@@ -187,8 +192,9 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    protected function setDocumentReader(InvoiceSuiteDocumentReader $fromDocumentReader): static
-    {
+    protected function setDocumentReader(
+        InvoiceSuiteDocumentReader $fromDocumentReader
+    ): static {
         if (!$this->checkFormatProviderRequirements($fromDocumentReader->getCurrentDocumentFormatProvider())) {
             throw new InvoiceSuiteInvalidArgumentException(sprintf('The provider %s does not meet the requirements.', $fromDocumentReader->getCurrentDocumentFormatProvider()->getUniqueId()));
         }
@@ -208,8 +214,9 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      */
-    protected function setDocumentContent(string $fromDocumentContent): static
-    {
+    protected function setDocumentContent(
+        string $fromDocumentContent
+    ): static {
         $this->resolveAvailableDocumentFormatProviders();
 
         $formatProviders = array_filter(
@@ -238,8 +245,9 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      * @param  InvoiceSuiteAbstractDocumentFormatProvider $formatProvider
      * @return bool
      */
-    protected function checkFormatProviderRequirements(InvoiceSuiteAbstractDocumentFormatProvider $formatProvider): bool
-    {
+    protected function checkFormatProviderRequirements(
+        InvoiceSuiteAbstractDocumentFormatProvider $formatProvider
+    ): bool {
         return true;
     }
 

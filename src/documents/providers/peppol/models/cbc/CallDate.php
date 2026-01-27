@@ -38,8 +38,9 @@ class CallDate
      * @param  null|DateTimeInterface $value
      * @return static
      */
-    public function setValue(?DateTimeInterface $value = null): static
-    {
+    public function setValue(
+        ?DateTimeInterface $value = null
+    ): static {
         $this->value = $value;
 
         return $this;

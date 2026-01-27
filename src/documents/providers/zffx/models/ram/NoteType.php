@@ -68,8 +68,9 @@ class NoteType
      * @param  null|CodeType $contentCode
      * @return static
      */
-    public function setContentCode(?CodeType $contentCode = null): static
-    {
+    public function setContentCode(
+        ?CodeType $contentCode = null
+    ): static {
         $this->contentCode = $contentCode;
 
         return $this;
@@ -107,8 +108,9 @@ class NoteType
      * @param  null|TextType $content
      * @return static
      */
-    public function setContent(?TextType $content = null): static
-    {
+    public function setContent(
+        ?TextType $content = null
+    ): static {
         $this->content = $content;
 
         return $this;
@@ -146,8 +148,9 @@ class NoteType
      * @param  null|CodeType $subjectCode
      * @return static
      */
-    public function setSubjectCode(?CodeType $subjectCode = null): static
-    {
+    public function setSubjectCode(
+        ?CodeType $subjectCode = null
+    ): static {
         $this->subjectCode = $subjectCode;
 
         return $this;

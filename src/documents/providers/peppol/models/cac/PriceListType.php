@@ -80,8 +80,9 @@ class PriceListType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -119,8 +120,9 @@ class PriceListType
      * @param  null|StatusCode $statusCode
      * @return static
      */
-    public function setStatusCode(?StatusCode $statusCode = null): static
-    {
+    public function setStatusCode(
+        ?StatusCode $statusCode = null
+    ): static {
         $this->statusCode = $statusCode;
 
         return $this;
@@ -148,8 +150,9 @@ class PriceListType
      * @param  null|array<ValidityPeriod> $validityPeriod
      * @return static
      */
-    public function setValidityPeriod(?array $validityPeriod = null): static
-    {
+    public function setValidityPeriod(
+        ?array $validityPeriod = null
+    ): static {
         $this->validityPeriod = $validityPeriod;
 
         return $this;
@@ -209,8 +212,9 @@ class PriceListType
      * @param  ValidityPeriod $validityPeriod
      * @return static
      */
-    public function addToValidityPeriod(ValidityPeriod $validityPeriod): static
-    {
+    public function addToValidityPeriod(
+        ValidityPeriod $validityPeriod
+    ): static {
         $this->validityPeriod[] = $validityPeriod;
 
         return $this;
@@ -230,8 +234,9 @@ class PriceListType
      * @param  ValidityPeriod $validityPeriod
      * @return static
      */
-    public function addOnceToValidityPeriod(ValidityPeriod $validityPeriod): static
-    {
+    public function addOnceToValidityPeriod(
+        ValidityPeriod $validityPeriod
+    ): static {
         if (!is_array($this->validityPeriod)) {
             $this->validityPeriod = [];
         }
@@ -279,8 +284,9 @@ class PriceListType
      * @param  null|PreviousPriceList $previousPriceList
      * @return static
      */
-    public function setPreviousPriceList(?PreviousPriceList $previousPriceList = null): static
-    {
+    public function setPreviousPriceList(
+        ?PreviousPriceList $previousPriceList = null
+    ): static {
         $this->previousPriceList = $previousPriceList;
 
         return $this;

@@ -106,8 +106,9 @@ class FatturaElettronicaType
      * @param  null|string $schemaLocation
      * @return static
      */
-    public function setSchemaLocation(?string $schemaLocation = null): static
-    {
+    public function setSchemaLocation(
+        ?string $schemaLocation = null
+    ): static {
         $this->schemaLocation = InvoiceSuiteStringUtils::asNullWhenEmpty($schemaLocation);
 
         return $this;
@@ -141,8 +142,9 @@ class FatturaElettronicaType
      * @param  null|FatturaElettronicaHeader $fatturaElettronicaHeader
      * @return static
      */
-    public function setFatturaElettronicaHeader(?FatturaElettronicaHeader $fatturaElettronicaHeader = null): static
-    {
+    public function setFatturaElettronicaHeader(
+        ?FatturaElettronicaHeader $fatturaElettronicaHeader = null
+    ): static {
         $this->fatturaElettronicaHeader = $fatturaElettronicaHeader;
 
         return $this;
@@ -176,8 +178,9 @@ class FatturaElettronicaType
      * @param  null|array<FatturaElettronicaBody> $fatturaElettronicaBody
      * @return static
      */
-    public function setFatturaElettronicaBody(?array $fatturaElettronicaBody = null): static
-    {
+    public function setFatturaElettronicaBody(
+        ?array $fatturaElettronicaBody = null
+    ): static {
         $this->fatturaElettronicaBody = $fatturaElettronicaBody;
 
         return $this;
@@ -213,8 +216,9 @@ class FatturaElettronicaType
      * @param  FatturaElettronicaBody $fatturaElettronicaBody
      * @return static
      */
-    public function addToFatturaElettronicaBody(FatturaElettronicaBody $fatturaElettronicaBody): static
-    {
+    public function addToFatturaElettronicaBody(
+        FatturaElettronicaBody $fatturaElettronicaBody
+    ): static {
         if (!is_array($this->fatturaElettronicaBody)) {
             $this->fatturaElettronicaBody = [];
         }
@@ -242,8 +246,9 @@ class FatturaElettronicaType
      * @param  FatturaElettronicaBody $fatturaElettronicaBody
      * @return static
      */
-    public function addOnceToFatturaElettronicaBody(FatturaElettronicaBody $fatturaElettronicaBody): static
-    {
+    public function addOnceToFatturaElettronicaBody(
+        FatturaElettronicaBody $fatturaElettronicaBody
+    ): static {
         if (!is_array($this->fatturaElettronicaBody)) {
             $this->fatturaElettronicaBody = [];
         }
@@ -348,8 +353,9 @@ class FatturaElettronicaType
      * @param  null|Signature $signature
      * @return static
      */
-    public function setSignature(?Signature $signature = null): static
-    {
+    public function setSignature(
+        ?Signature $signature = null
+    ): static {
         $this->signature = $signature;
 
         return $this;
@@ -383,8 +389,9 @@ class FatturaElettronicaType
      * @param  null|FormatoTrasmissione $versione
      * @return static
      */
-    public function setVersione(?FormatoTrasmissione $versione = null): static
-    {
+    public function setVersione(
+        ?FormatoTrasmissione $versione = null
+    ): static {
         $this->versione = $versione;
 
         return $this;
@@ -418,8 +425,9 @@ class FatturaElettronicaType
      * @param  null|string $sistemaEmittente
      * @return static
      */
-    public function setSistemaEmittente(?string $sistemaEmittente = null): static
-    {
+    public function setSistemaEmittente(
+        ?string $sistemaEmittente = null
+    ): static {
         $this->sistemaEmittente = InvoiceSuiteStringUtils::asNullWhenEmpty($sistemaEmittente);
 
         return $this;

@@ -170,8 +170,9 @@ class TransportScheduleType
      * @param  null|SequenceNumeric $sequenceNumeric
      * @return static
      */
-    public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): static
-    {
+    public function setSequenceNumeric(
+        ?SequenceNumeric $sequenceNumeric = null
+    ): static {
         $this->sequenceNumeric = $sequenceNumeric;
 
         return $this;
@@ -199,8 +200,9 @@ class TransportScheduleType
      * @param  null|DateTimeInterface $referenceDate
      * @return static
      */
-    public function setReferenceDate(?DateTimeInterface $referenceDate = null): static
-    {
+    public function setReferenceDate(
+        ?DateTimeInterface $referenceDate = null
+    ): static {
         $this->referenceDate = $referenceDate;
 
         return $this;
@@ -228,8 +230,9 @@ class TransportScheduleType
      * @param  null|DateTimeInterface $referenceTime
      * @return static
      */
-    public function setReferenceTime(?DateTimeInterface $referenceTime = null): static
-    {
+    public function setReferenceTime(
+        ?DateTimeInterface $referenceTime = null
+    ): static {
         $this->referenceTime = $referenceTime;
 
         return $this;
@@ -267,8 +270,9 @@ class TransportScheduleType
      * @param  null|ReliabilityPercent $reliabilityPercent
      * @return static
      */
-    public function setReliabilityPercent(?ReliabilityPercent $reliabilityPercent = null): static
-    {
+    public function setReliabilityPercent(
+        ?ReliabilityPercent $reliabilityPercent = null
+    ): static {
         $this->reliabilityPercent = $reliabilityPercent;
 
         return $this;
@@ -296,8 +300,9 @@ class TransportScheduleType
      * @param  null|array<Remarks> $remarks
      * @return static
      */
-    public function setRemarks(?array $remarks = null): static
-    {
+    public function setRemarks(
+        ?array $remarks = null
+    ): static {
         $this->remarks = $remarks;
 
         return $this;
@@ -357,8 +362,9 @@ class TransportScheduleType
      * @param  Remarks $remarks
      * @return static
      */
-    public function addToRemarks(Remarks $remarks): static
-    {
+    public function addToRemarks(
+        Remarks $remarks
+    ): static {
         $this->remarks[] = $remarks;
 
         return $this;
@@ -378,8 +384,9 @@ class TransportScheduleType
      * @param  Remarks $remarks
      * @return static
      */
-    public function addOnceToRemarks(Remarks $remarks): static
-    {
+    public function addOnceToRemarks(
+        Remarks $remarks
+    ): static {
         if (!is_array($this->remarks)) {
             $this->remarks = [];
         }
@@ -427,8 +434,9 @@ class TransportScheduleType
      * @param  null|StatusLocation $statusLocation
      * @return static
      */
-    public function setStatusLocation(?StatusLocation $statusLocation = null): static
-    {
+    public function setStatusLocation(
+        ?StatusLocation $statusLocation = null
+    ): static {
         $this->statusLocation = $statusLocation;
 
         return $this;

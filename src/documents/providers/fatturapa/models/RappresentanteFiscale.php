@@ -51,8 +51,9 @@ final class RappresentanteFiscale
      * @param  null|DatiAnagraficiRappresentante $datiAnagrafici
      * @return static
      */
-    public function setDatiAnagrafici(?DatiAnagraficiRappresentante $datiAnagrafici = null): static
-    {
+    public function setDatiAnagrafici(
+        ?DatiAnagraficiRappresentante $datiAnagrafici = null
+    ): static {
         $this->datiAnagrafici = $datiAnagrafici;
 
         return $this;

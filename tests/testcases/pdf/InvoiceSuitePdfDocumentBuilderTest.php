@@ -26,8 +26,15 @@ final class InvoiceSuitePdfDocumentBuilderTest extends TestCase
      *
      * @param bool|string $expectedUseOfXmlFile
      */
-    public function testZfFxPdfBuilder(string $expectedProfile, string $expectedXmlContains, $expectedUseOfXmlFile, bool $expectusePdfContent, string $expectXmpName, string $expectXmpVersion, int $expectOutputType): void
-    {
+    public function testZfFxPdfBuilder(
+        string $expectedProfile,
+        string $expectedXmlContains,
+        $expectedUseOfXmlFile,
+        bool $expectusePdfContent,
+        string $expectXmpName,
+        string $expectXmpVersion,
+        int $expectOutputType
+    ): void {
         if (!$expectusePdfContent) {
             if (false !== $expectedUseOfXmlFile) {
                 $xmlFilename = InvoiceSuitePathUtils::combinePathWithFile($this->getAssetPath(), $expectedUseOfXmlFile);

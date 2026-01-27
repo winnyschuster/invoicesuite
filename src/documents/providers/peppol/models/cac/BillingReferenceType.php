@@ -122,8 +122,9 @@ class BillingReferenceType
      * @param  null|InvoiceDocumentReference $invoiceDocumentReference
      * @return static
      */
-    public function setInvoiceDocumentReference(?InvoiceDocumentReference $invoiceDocumentReference = null): static
-    {
+    public function setInvoiceDocumentReference(
+        ?InvoiceDocumentReference $invoiceDocumentReference = null
+    ): static {
         $this->invoiceDocumentReference = $invoiceDocumentReference;
 
         return $this;
@@ -321,8 +322,9 @@ class BillingReferenceType
      * @param  null|ReminderDocumentReference $reminderDocumentReference
      * @return static
      */
-    public function setReminderDocumentReference(?ReminderDocumentReference $reminderDocumentReference = null): static
-    {
+    public function setReminderDocumentReference(
+        ?ReminderDocumentReference $reminderDocumentReference = null
+    ): static {
         $this->reminderDocumentReference = $reminderDocumentReference;
 
         return $this;
@@ -390,8 +392,9 @@ class BillingReferenceType
      * @param  null|array<BillingReferenceLine> $billingReferenceLine
      * @return static
      */
-    public function setBillingReferenceLine(?array $billingReferenceLine = null): static
-    {
+    public function setBillingReferenceLine(
+        ?array $billingReferenceLine = null
+    ): static {
         $this->billingReferenceLine = $billingReferenceLine;
 
         return $this;
@@ -451,8 +454,9 @@ class BillingReferenceType
      * @param  BillingReferenceLine $billingReferenceLine
      * @return static
      */
-    public function addToBillingReferenceLine(BillingReferenceLine $billingReferenceLine): static
-    {
+    public function addToBillingReferenceLine(
+        BillingReferenceLine $billingReferenceLine
+    ): static {
         $this->billingReferenceLine[] = $billingReferenceLine;
 
         return $this;
@@ -472,8 +476,9 @@ class BillingReferenceType
      * @param  BillingReferenceLine $billingReferenceLine
      * @return static
      */
-    public function addOnceToBillingReferenceLine(BillingReferenceLine $billingReferenceLine): static
-    {
+    public function addOnceToBillingReferenceLine(
+        BillingReferenceLine $billingReferenceLine
+    ): static {
         if (!is_array($this->billingReferenceLine)) {
             $this->billingReferenceLine = [];
         }

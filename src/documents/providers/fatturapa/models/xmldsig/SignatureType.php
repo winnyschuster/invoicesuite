@@ -108,8 +108,9 @@ class SignatureType
      * @param  SignedInfoType $signedInfo
      * @return static
      */
-    public function setSignedInfo(?SignedInfoType $signedInfo = null): static
-    {
+    public function setSignedInfo(
+        ?SignedInfoType $signedInfo = null
+    ): static {
         $this->signedInfo = $signedInfo;
 
         return $this;
@@ -155,8 +156,9 @@ class SignatureType
      * @param  SignatureValueType $signatureValue
      * @return static
      */
-    public function setSignatureValue(?SignatureValueType $signatureValue = null): static
-    {
+    public function setSignatureValue(
+        ?SignatureValueType $signatureValue = null
+    ): static {
         $this->signatureValue = $signatureValue;
 
         return $this;
@@ -202,8 +204,9 @@ class SignatureType
      * @param  KeyInfoType $keyInfo
      * @return static
      */
-    public function setKeyInfo(?KeyInfoType $keyInfo = null): static
-    {
+    public function setKeyInfo(
+        ?KeyInfoType $keyInfo = null
+    ): static {
         $this->keyInfo = $keyInfo;
 
         return $this;
@@ -237,8 +240,9 @@ class SignatureType
      * @param  array<ObjectType> $object
      * @return static
      */
-    public function setObject(?array $object = null): static
-    {
+    public function setObject(
+        ?array $object = null
+    ): static {
         $this->object = $object;
 
         return $this;
@@ -274,8 +278,9 @@ class SignatureType
      * @param  ObjectType $object
      * @return static
      */
-    public function addToObject(ObjectType $object): static
-    {
+    public function addToObject(
+        ObjectType $object
+    ): static {
         $this->object[] = $object;
 
         return $this;
@@ -299,8 +304,9 @@ class SignatureType
      * @param  ObjectType $object
      * @return static
      */
-    public function addOnceToObject(ObjectType $object): static
-    {
+    public function addOnceToObject(
+        ObjectType $object
+    ): static {
         if (!is_array($this->object)) {
             $this->object = [];
         }
@@ -344,8 +350,9 @@ class SignatureType
      * @param  string $id
      * @return static
      */
-    public function setId(?string $id = null): static
-    {
+    public function setId(
+        ?string $id = null
+    ): static {
         $this->id = $id;
 
         return $this;

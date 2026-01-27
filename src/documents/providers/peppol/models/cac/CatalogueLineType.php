@@ -398,8 +398,9 @@ class CatalogueLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -437,8 +438,9 @@ class CatalogueLineType
      * @param  null|ActionCode $actionCode
      * @return static
      */
-    public function setActionCode(?ActionCode $actionCode = null): static
-    {
+    public function setActionCode(
+        ?ActionCode $actionCode = null
+    ): static {
         $this->actionCode = $actionCode;
 
         return $this;
@@ -476,8 +478,9 @@ class CatalogueLineType
      * @param  null|LifeCycleStatusCode $lifeCycleStatusCode
      * @return static
      */
-    public function setLifeCycleStatusCode(?LifeCycleStatusCode $lifeCycleStatusCode = null): static
-    {
+    public function setLifeCycleStatusCode(
+        ?LifeCycleStatusCode $lifeCycleStatusCode = null
+    ): static {
         $this->lifeCycleStatusCode = $lifeCycleStatusCode;
 
         return $this;
@@ -515,8 +518,9 @@ class CatalogueLineType
      * @param  null|ContractSubdivision $contractSubdivision
      * @return static
      */
-    public function setContractSubdivision(?ContractSubdivision $contractSubdivision = null): static
-    {
+    public function setContractSubdivision(
+        ?ContractSubdivision $contractSubdivision = null
+    ): static {
         $this->contractSubdivision = $contractSubdivision;
 
         return $this;
@@ -544,8 +548,9 @@ class CatalogueLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -605,8 +610,9 @@ class CatalogueLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -626,8 +632,9 @@ class CatalogueLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -665,8 +672,9 @@ class CatalogueLineType
      * @param  null|bool $orderableIndicator
      * @return static
      */
-    public function setOrderableIndicator(?bool $orderableIndicator = null): static
-    {
+    public function setOrderableIndicator(
+        ?bool $orderableIndicator = null
+    ): static {
         $this->orderableIndicator = $orderableIndicator;
 
         return $this;
@@ -704,8 +712,9 @@ class CatalogueLineType
      * @param  null|OrderableUnit $orderableUnit
      * @return static
      */
-    public function setOrderableUnit(?OrderableUnit $orderableUnit = null): static
-    {
+    public function setOrderableUnit(
+        ?OrderableUnit $orderableUnit = null
+    ): static {
         $this->orderableUnit = $orderableUnit;
 
         return $this;
@@ -743,8 +752,9 @@ class CatalogueLineType
      * @param  null|ContentUnitQuantity $contentUnitQuantity
      * @return static
      */
-    public function setContentUnitQuantity(?ContentUnitQuantity $contentUnitQuantity = null): static
-    {
+    public function setContentUnitQuantity(
+        ?ContentUnitQuantity $contentUnitQuantity = null
+    ): static {
         $this->contentUnitQuantity = $contentUnitQuantity;
 
         return $this;
@@ -822,8 +832,9 @@ class CatalogueLineType
      * @param  null|MinimumOrderQuantity $minimumOrderQuantity
      * @return static
      */
-    public function setMinimumOrderQuantity(?MinimumOrderQuantity $minimumOrderQuantity = null): static
-    {
+    public function setMinimumOrderQuantity(
+        ?MinimumOrderQuantity $minimumOrderQuantity = null
+    ): static {
         $this->minimumOrderQuantity = $minimumOrderQuantity;
 
         return $this;
@@ -861,8 +872,9 @@ class CatalogueLineType
      * @param  null|MaximumOrderQuantity $maximumOrderQuantity
      * @return static
      */
-    public function setMaximumOrderQuantity(?MaximumOrderQuantity $maximumOrderQuantity = null): static
-    {
+    public function setMaximumOrderQuantity(
+        ?MaximumOrderQuantity $maximumOrderQuantity = null
+    ): static {
         $this->maximumOrderQuantity = $maximumOrderQuantity;
 
         return $this;
@@ -890,8 +902,9 @@ class CatalogueLineType
      * @param  null|array<WarrantyInformation> $warrantyInformation
      * @return static
      */
-    public function setWarrantyInformation(?array $warrantyInformation = null): static
-    {
+    public function setWarrantyInformation(
+        ?array $warrantyInformation = null
+    ): static {
         $this->warrantyInformation = $warrantyInformation;
 
         return $this;
@@ -951,8 +964,9 @@ class CatalogueLineType
      * @param  WarrantyInformation $warrantyInformation
      * @return static
      */
-    public function addToWarrantyInformation(WarrantyInformation $warrantyInformation): static
-    {
+    public function addToWarrantyInformation(
+        WarrantyInformation $warrantyInformation
+    ): static {
         $this->warrantyInformation[] = $warrantyInformation;
 
         return $this;
@@ -972,8 +986,9 @@ class CatalogueLineType
      * @param  WarrantyInformation $warrantyInformation
      * @return static
      */
-    public function addOnceToWarrantyInformation(WarrantyInformation $warrantyInformation): static
-    {
+    public function addOnceToWarrantyInformation(
+        WarrantyInformation $warrantyInformation
+    ): static {
         if (!is_array($this->warrantyInformation)) {
             $this->warrantyInformation = [];
         }
@@ -1021,8 +1036,9 @@ class CatalogueLineType
      * @param  null|PackLevelCode $packLevelCode
      * @return static
      */
-    public function setPackLevelCode(?PackLevelCode $packLevelCode = null): static
-    {
+    public function setPackLevelCode(
+        ?PackLevelCode $packLevelCode = null
+    ): static {
         $this->packLevelCode = $packLevelCode;
 
         return $this;
@@ -1060,8 +1076,9 @@ class CatalogueLineType
      * @param  null|ContractorCustomerParty $contractorCustomerParty
      * @return static
      */
-    public function setContractorCustomerParty(?ContractorCustomerParty $contractorCustomerParty = null): static
-    {
+    public function setContractorCustomerParty(
+        ?ContractorCustomerParty $contractorCustomerParty = null
+    ): static {
         $this->contractorCustomerParty = $contractorCustomerParty;
 
         return $this;
@@ -1099,8 +1116,9 @@ class CatalogueLineType
      * @param  null|SellerSupplierParty $sellerSupplierParty
      * @return static
      */
-    public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
-    {
+    public function setSellerSupplierParty(
+        ?SellerSupplierParty $sellerSupplierParty = null
+    ): static {
         $this->sellerSupplierParty = $sellerSupplierParty;
 
         return $this;
@@ -1138,8 +1156,9 @@ class CatalogueLineType
      * @param  null|WarrantyParty $warrantyParty
      * @return static
      */
-    public function setWarrantyParty(?WarrantyParty $warrantyParty = null): static
-    {
+    public function setWarrantyParty(
+        ?WarrantyParty $warrantyParty = null
+    ): static {
         $this->warrantyParty = $warrantyParty;
 
         return $this;
@@ -1177,8 +1196,9 @@ class CatalogueLineType
      * @param  null|WarrantyValidityPeriod $warrantyValidityPeriod
      * @return static
      */
-    public function setWarrantyValidityPeriod(?WarrantyValidityPeriod $warrantyValidityPeriod = null): static
-    {
+    public function setWarrantyValidityPeriod(
+        ?WarrantyValidityPeriod $warrantyValidityPeriod = null
+    ): static {
         $this->warrantyValidityPeriod = $warrantyValidityPeriod;
 
         return $this;
@@ -1216,8 +1236,9 @@ class CatalogueLineType
      * @param  null|LineValidityPeriod $lineValidityPeriod
      * @return static
      */
-    public function setLineValidityPeriod(?LineValidityPeriod $lineValidityPeriod = null): static
-    {
+    public function setLineValidityPeriod(
+        ?LineValidityPeriod $lineValidityPeriod = null
+    ): static {
         $this->lineValidityPeriod = $lineValidityPeriod;
 
         return $this;
@@ -1245,8 +1266,9 @@ class CatalogueLineType
      * @param  null|array<ItemComparison> $itemComparison
      * @return static
      */
-    public function setItemComparison(?array $itemComparison = null): static
-    {
+    public function setItemComparison(
+        ?array $itemComparison = null
+    ): static {
         $this->itemComparison = $itemComparison;
 
         return $this;
@@ -1306,8 +1328,9 @@ class CatalogueLineType
      * @param  ItemComparison $itemComparison
      * @return static
      */
-    public function addToItemComparison(ItemComparison $itemComparison): static
-    {
+    public function addToItemComparison(
+        ItemComparison $itemComparison
+    ): static {
         $this->itemComparison[] = $itemComparison;
 
         return $this;
@@ -1327,8 +1350,9 @@ class CatalogueLineType
      * @param  ItemComparison $itemComparison
      * @return static
      */
-    public function addOnceToItemComparison(ItemComparison $itemComparison): static
-    {
+    public function addOnceToItemComparison(
+        ItemComparison $itemComparison
+    ): static {
         if (!is_array($this->itemComparison)) {
             $this->itemComparison = [];
         }
@@ -1366,8 +1390,9 @@ class CatalogueLineType
      * @param  null|array<ComponentRelatedItem> $componentRelatedItem
      * @return static
      */
-    public function setComponentRelatedItem(?array $componentRelatedItem = null): static
-    {
+    public function setComponentRelatedItem(
+        ?array $componentRelatedItem = null
+    ): static {
         $this->componentRelatedItem = $componentRelatedItem;
 
         return $this;
@@ -1427,8 +1452,9 @@ class CatalogueLineType
      * @param  ComponentRelatedItem $componentRelatedItem
      * @return static
      */
-    public function addToComponentRelatedItem(ComponentRelatedItem $componentRelatedItem): static
-    {
+    public function addToComponentRelatedItem(
+        ComponentRelatedItem $componentRelatedItem
+    ): static {
         $this->componentRelatedItem[] = $componentRelatedItem;
 
         return $this;
@@ -1448,8 +1474,9 @@ class CatalogueLineType
      * @param  ComponentRelatedItem $componentRelatedItem
      * @return static
      */
-    public function addOnceToComponentRelatedItem(ComponentRelatedItem $componentRelatedItem): static
-    {
+    public function addOnceToComponentRelatedItem(
+        ComponentRelatedItem $componentRelatedItem
+    ): static {
         if (!is_array($this->componentRelatedItem)) {
             $this->componentRelatedItem = [];
         }
@@ -1487,8 +1514,9 @@ class CatalogueLineType
      * @param  null|array<AccessoryRelatedItem> $accessoryRelatedItem
      * @return static
      */
-    public function setAccessoryRelatedItem(?array $accessoryRelatedItem = null): static
-    {
+    public function setAccessoryRelatedItem(
+        ?array $accessoryRelatedItem = null
+    ): static {
         $this->accessoryRelatedItem = $accessoryRelatedItem;
 
         return $this;
@@ -1548,8 +1576,9 @@ class CatalogueLineType
      * @param  AccessoryRelatedItem $accessoryRelatedItem
      * @return static
      */
-    public function addToAccessoryRelatedItem(AccessoryRelatedItem $accessoryRelatedItem): static
-    {
+    public function addToAccessoryRelatedItem(
+        AccessoryRelatedItem $accessoryRelatedItem
+    ): static {
         $this->accessoryRelatedItem[] = $accessoryRelatedItem;
 
         return $this;
@@ -1569,8 +1598,9 @@ class CatalogueLineType
      * @param  AccessoryRelatedItem $accessoryRelatedItem
      * @return static
      */
-    public function addOnceToAccessoryRelatedItem(AccessoryRelatedItem $accessoryRelatedItem): static
-    {
+    public function addOnceToAccessoryRelatedItem(
+        AccessoryRelatedItem $accessoryRelatedItem
+    ): static {
         if (!is_array($this->accessoryRelatedItem)) {
             $this->accessoryRelatedItem = [];
         }
@@ -1608,8 +1638,9 @@ class CatalogueLineType
      * @param  null|array<RequiredRelatedItem> $requiredRelatedItem
      * @return static
      */
-    public function setRequiredRelatedItem(?array $requiredRelatedItem = null): static
-    {
+    public function setRequiredRelatedItem(
+        ?array $requiredRelatedItem = null
+    ): static {
         $this->requiredRelatedItem = $requiredRelatedItem;
 
         return $this;
@@ -1669,8 +1700,9 @@ class CatalogueLineType
      * @param  RequiredRelatedItem $requiredRelatedItem
      * @return static
      */
-    public function addToRequiredRelatedItem(RequiredRelatedItem $requiredRelatedItem): static
-    {
+    public function addToRequiredRelatedItem(
+        RequiredRelatedItem $requiredRelatedItem
+    ): static {
         $this->requiredRelatedItem[] = $requiredRelatedItem;
 
         return $this;
@@ -1690,8 +1722,9 @@ class CatalogueLineType
      * @param  RequiredRelatedItem $requiredRelatedItem
      * @return static
      */
-    public function addOnceToRequiredRelatedItem(RequiredRelatedItem $requiredRelatedItem): static
-    {
+    public function addOnceToRequiredRelatedItem(
+        RequiredRelatedItem $requiredRelatedItem
+    ): static {
         if (!is_array($this->requiredRelatedItem)) {
             $this->requiredRelatedItem = [];
         }
@@ -1729,8 +1762,9 @@ class CatalogueLineType
      * @param  null|array<ReplacementRelatedItem> $replacementRelatedItem
      * @return static
      */
-    public function setReplacementRelatedItem(?array $replacementRelatedItem = null): static
-    {
+    public function setReplacementRelatedItem(
+        ?array $replacementRelatedItem = null
+    ): static {
         $this->replacementRelatedItem = $replacementRelatedItem;
 
         return $this;
@@ -1790,8 +1824,9 @@ class CatalogueLineType
      * @param  ReplacementRelatedItem $replacementRelatedItem
      * @return static
      */
-    public function addToReplacementRelatedItem(ReplacementRelatedItem $replacementRelatedItem): static
-    {
+    public function addToReplacementRelatedItem(
+        ReplacementRelatedItem $replacementRelatedItem
+    ): static {
         $this->replacementRelatedItem[] = $replacementRelatedItem;
 
         return $this;
@@ -1811,8 +1846,9 @@ class CatalogueLineType
      * @param  ReplacementRelatedItem $replacementRelatedItem
      * @return static
      */
-    public function addOnceToReplacementRelatedItem(ReplacementRelatedItem $replacementRelatedItem): static
-    {
+    public function addOnceToReplacementRelatedItem(
+        ReplacementRelatedItem $replacementRelatedItem
+    ): static {
         if (!is_array($this->replacementRelatedItem)) {
             $this->replacementRelatedItem = [];
         }
@@ -1850,8 +1886,9 @@ class CatalogueLineType
      * @param  null|array<ComplementaryRelatedItem> $complementaryRelatedItem
      * @return static
      */
-    public function setComplementaryRelatedItem(?array $complementaryRelatedItem = null): static
-    {
+    public function setComplementaryRelatedItem(
+        ?array $complementaryRelatedItem = null
+    ): static {
         $this->complementaryRelatedItem = $complementaryRelatedItem;
 
         return $this;
@@ -1911,8 +1948,9 @@ class CatalogueLineType
      * @param  ComplementaryRelatedItem $complementaryRelatedItem
      * @return static
      */
-    public function addToComplementaryRelatedItem(ComplementaryRelatedItem $complementaryRelatedItem): static
-    {
+    public function addToComplementaryRelatedItem(
+        ComplementaryRelatedItem $complementaryRelatedItem
+    ): static {
         $this->complementaryRelatedItem[] = $complementaryRelatedItem;
 
         return $this;
@@ -1932,8 +1970,9 @@ class CatalogueLineType
      * @param  ComplementaryRelatedItem $complementaryRelatedItem
      * @return static
      */
-    public function addOnceToComplementaryRelatedItem(ComplementaryRelatedItem $complementaryRelatedItem): static
-    {
+    public function addOnceToComplementaryRelatedItem(
+        ComplementaryRelatedItem $complementaryRelatedItem
+    ): static {
         if (!is_array($this->complementaryRelatedItem)) {
             $this->complementaryRelatedItem = [];
         }
@@ -1971,8 +2010,9 @@ class CatalogueLineType
      * @param  null|array<ReplacedRelatedItem> $replacedRelatedItem
      * @return static
      */
-    public function setReplacedRelatedItem(?array $replacedRelatedItem = null): static
-    {
+    public function setReplacedRelatedItem(
+        ?array $replacedRelatedItem = null
+    ): static {
         $this->replacedRelatedItem = $replacedRelatedItem;
 
         return $this;
@@ -2032,8 +2072,9 @@ class CatalogueLineType
      * @param  ReplacedRelatedItem $replacedRelatedItem
      * @return static
      */
-    public function addToReplacedRelatedItem(ReplacedRelatedItem $replacedRelatedItem): static
-    {
+    public function addToReplacedRelatedItem(
+        ReplacedRelatedItem $replacedRelatedItem
+    ): static {
         $this->replacedRelatedItem[] = $replacedRelatedItem;
 
         return $this;
@@ -2053,8 +2094,9 @@ class CatalogueLineType
      * @param  ReplacedRelatedItem $replacedRelatedItem
      * @return static
      */
-    public function addOnceToReplacedRelatedItem(ReplacedRelatedItem $replacedRelatedItem): static
-    {
+    public function addOnceToReplacedRelatedItem(
+        ReplacedRelatedItem $replacedRelatedItem
+    ): static {
         if (!is_array($this->replacedRelatedItem)) {
             $this->replacedRelatedItem = [];
         }
@@ -2092,8 +2134,9 @@ class CatalogueLineType
      * @param  null|array<RequiredItemLocationQuantity> $requiredItemLocationQuantity
      * @return static
      */
-    public function setRequiredItemLocationQuantity(?array $requiredItemLocationQuantity = null): static
-    {
+    public function setRequiredItemLocationQuantity(
+        ?array $requiredItemLocationQuantity = null
+    ): static {
         $this->requiredItemLocationQuantity = $requiredItemLocationQuantity;
 
         return $this;
@@ -2215,8 +2258,9 @@ class CatalogueLineType
      * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?array $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;
@@ -2276,8 +2320,9 @@ class CatalogueLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         $this->documentReference[] = $documentReference;
 
         return $this;
@@ -2297,8 +2342,9 @@ class CatalogueLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addOnceToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
         }
@@ -2346,8 +2392,9 @@ class CatalogueLineType
      * @param  null|Item $item
      * @return static
      */
-    public function setItem(?Item $item = null): static
-    {
+    public function setItem(
+        ?Item $item = null
+    ): static {
         $this->item = $item;
 
         return $this;
@@ -2375,8 +2422,9 @@ class CatalogueLineType
      * @param  null|array<KeywordItemProperty> $keywordItemProperty
      * @return static
      */
-    public function setKeywordItemProperty(?array $keywordItemProperty = null): static
-    {
+    public function setKeywordItemProperty(
+        ?array $keywordItemProperty = null
+    ): static {
         $this->keywordItemProperty = $keywordItemProperty;
 
         return $this;
@@ -2436,8 +2484,9 @@ class CatalogueLineType
      * @param  KeywordItemProperty $keywordItemProperty
      * @return static
      */
-    public function addToKeywordItemProperty(KeywordItemProperty $keywordItemProperty): static
-    {
+    public function addToKeywordItemProperty(
+        KeywordItemProperty $keywordItemProperty
+    ): static {
         $this->keywordItemProperty[] = $keywordItemProperty;
 
         return $this;
@@ -2457,8 +2506,9 @@ class CatalogueLineType
      * @param  KeywordItemProperty $keywordItemProperty
      * @return static
      */
-    public function addOnceToKeywordItemProperty(KeywordItemProperty $keywordItemProperty): static
-    {
+    public function addOnceToKeywordItemProperty(
+        KeywordItemProperty $keywordItemProperty
+    ): static {
         if (!is_array($this->keywordItemProperty)) {
             $this->keywordItemProperty = [];
         }

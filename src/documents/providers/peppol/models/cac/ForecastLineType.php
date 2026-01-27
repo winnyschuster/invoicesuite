@@ -103,8 +103,9 @@ class ForecastLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -132,8 +133,9 @@ class ForecastLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -193,8 +195,9 @@ class ForecastLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -214,8 +217,9 @@ class ForecastLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -253,8 +257,9 @@ class ForecastLineType
      * @param  null|bool $frozenDocumentIndicator
      * @return static
      */
-    public function setFrozenDocumentIndicator(?bool $frozenDocumentIndicator = null): static
-    {
+    public function setFrozenDocumentIndicator(
+        ?bool $frozenDocumentIndicator = null
+    ): static {
         $this->frozenDocumentIndicator = $frozenDocumentIndicator;
 
         return $this;
@@ -292,8 +297,9 @@ class ForecastLineType
      * @param  null|ForecastTypeCode $forecastTypeCode
      * @return static
      */
-    public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): static
-    {
+    public function setForecastTypeCode(
+        ?ForecastTypeCode $forecastTypeCode = null
+    ): static {
         $this->forecastTypeCode = $forecastTypeCode;
 
         return $this;
@@ -331,8 +337,9 @@ class ForecastLineType
      * @param  null|ForecastPeriod $forecastPeriod
      * @return static
      */
-    public function setForecastPeriod(?ForecastPeriod $forecastPeriod = null): static
-    {
+    public function setForecastPeriod(
+        ?ForecastPeriod $forecastPeriod = null
+    ): static {
         $this->forecastPeriod = $forecastPeriod;
 
         return $this;
@@ -370,8 +377,9 @@ class ForecastLineType
      * @param  null|SalesItem $salesItem
      * @return static
      */
-    public function setSalesItem(?SalesItem $salesItem = null): static
-    {
+    public function setSalesItem(
+        ?SalesItem $salesItem = null
+    ): static {
         $this->salesItem = $salesItem;
 
         return $this;

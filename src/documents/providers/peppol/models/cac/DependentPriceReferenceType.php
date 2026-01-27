@@ -67,8 +67,9 @@ class DependentPriceReferenceType
      * @param  null|Percent $percent
      * @return static
      */
-    public function setPercent(?Percent $percent = null): static
-    {
+    public function setPercent(
+        ?Percent $percent = null
+    ): static {
         $this->percent = $percent;
 
         return $this;
@@ -106,8 +107,9 @@ class DependentPriceReferenceType
      * @param  null|LocationAddress $locationAddress
      * @return static
      */
-    public function setLocationAddress(?LocationAddress $locationAddress = null): static
-    {
+    public function setLocationAddress(
+        ?LocationAddress $locationAddress = null
+    ): static {
         $this->locationAddress = $locationAddress;
 
         return $this;
@@ -145,8 +147,9 @@ class DependentPriceReferenceType
      * @param  null|DependentLineReference $dependentLineReference
      * @return static
      */
-    public function setDependentLineReference(?DependentLineReference $dependentLineReference = null): static
-    {
+    public function setDependentLineReference(
+        ?DependentLineReference $dependentLineReference = null
+    ): static {
         $this->dependentLineReference = $dependentLineReference;
 
         return $this;

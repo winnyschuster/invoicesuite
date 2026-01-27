@@ -103,8 +103,9 @@ class PaymentType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -142,8 +143,9 @@ class PaymentType
      * @param  null|PaidAmount $paidAmount
      * @return static
      */
-    public function setPaidAmount(?PaidAmount $paidAmount = null): static
-    {
+    public function setPaidAmount(
+        ?PaidAmount $paidAmount = null
+    ): static {
         $this->paidAmount = $paidAmount;
 
         return $this;
@@ -171,8 +173,9 @@ class PaymentType
      * @param  null|DateTimeInterface $receivedDate
      * @return static
      */
-    public function setReceivedDate(?DateTimeInterface $receivedDate = null): static
-    {
+    public function setReceivedDate(
+        ?DateTimeInterface $receivedDate = null
+    ): static {
         $this->receivedDate = $receivedDate;
 
         return $this;
@@ -200,8 +203,9 @@ class PaymentType
      * @param  null|DateTimeInterface $paidDate
      * @return static
      */
-    public function setPaidDate(?DateTimeInterface $paidDate = null): static
-    {
+    public function setPaidDate(
+        ?DateTimeInterface $paidDate = null
+    ): static {
         $this->paidDate = $paidDate;
 
         return $this;
@@ -229,8 +233,9 @@ class PaymentType
      * @param  null|DateTimeInterface $paidTime
      * @return static
      */
-    public function setPaidTime(?DateTimeInterface $paidTime = null): static
-    {
+    public function setPaidTime(
+        ?DateTimeInterface $paidTime = null
+    ): static {
         $this->paidTime = $paidTime;
 
         return $this;
@@ -268,8 +273,9 @@ class PaymentType
      * @param  null|InstructionID $instructionID
      * @return static
      */
-    public function setInstructionID(?InstructionID $instructionID = null): static
-    {
+    public function setInstructionID(
+        ?InstructionID $instructionID = null
+    ): static {
         $this->instructionID = $instructionID;
 
         return $this;

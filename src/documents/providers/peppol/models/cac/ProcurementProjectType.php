@@ -249,8 +249,9 @@ class ProcurementProjectType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -278,8 +279,9 @@ class ProcurementProjectType
      * @param  null|array<Name> $name
      * @return static
      */
-    public function setName(?array $name = null): static
-    {
+    public function setName(
+        ?array $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -339,8 +341,9 @@ class ProcurementProjectType
      * @param  Name   $name
      * @return static
      */
-    public function addToName(Name $name): static
-    {
+    public function addToName(
+        Name $name
+    ): static {
         $this->name[] = $name;
 
         return $this;
@@ -360,8 +363,9 @@ class ProcurementProjectType
      * @param  Name   $name
      * @return static
      */
-    public function addOnceToName(Name $name): static
-    {
+    public function addOnceToName(
+        Name $name
+    ): static {
         if (!is_array($this->name)) {
             $this->name = [];
         }
@@ -399,8 +403,9 @@ class ProcurementProjectType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -460,8 +465,9 @@ class ProcurementProjectType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -481,8 +487,9 @@ class ProcurementProjectType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -530,8 +537,9 @@ class ProcurementProjectType
      * @param  null|ProcurementTypeCode $procurementTypeCode
      * @return static
      */
-    public function setProcurementTypeCode(?ProcurementTypeCode $procurementTypeCode = null): static
-    {
+    public function setProcurementTypeCode(
+        ?ProcurementTypeCode $procurementTypeCode = null
+    ): static {
         $this->procurementTypeCode = $procurementTypeCode;
 
         return $this;
@@ -569,8 +577,9 @@ class ProcurementProjectType
      * @param  null|ProcurementSubTypeCode $procurementSubTypeCode
      * @return static
      */
-    public function setProcurementSubTypeCode(?ProcurementSubTypeCode $procurementSubTypeCode = null): static
-    {
+    public function setProcurementSubTypeCode(
+        ?ProcurementSubTypeCode $procurementSubTypeCode = null
+    ): static {
         $this->procurementSubTypeCode = $procurementSubTypeCode;
 
         return $this;
@@ -608,8 +617,9 @@ class ProcurementProjectType
      * @param  null|QualityControlCode $qualityControlCode
      * @return static
      */
-    public function setQualityControlCode(?QualityControlCode $qualityControlCode = null): static
-    {
+    public function setQualityControlCode(
+        ?QualityControlCode $qualityControlCode = null
+    ): static {
         $this->qualityControlCode = $qualityControlCode;
 
         return $this;
@@ -647,8 +657,9 @@ class ProcurementProjectType
      * @param  null|RequiredFeeAmount $requiredFeeAmount
      * @return static
      */
-    public function setRequiredFeeAmount(?RequiredFeeAmount $requiredFeeAmount = null): static
-    {
+    public function setRequiredFeeAmount(
+        ?RequiredFeeAmount $requiredFeeAmount = null
+    ): static {
         $this->requiredFeeAmount = $requiredFeeAmount;
 
         return $this;
@@ -676,8 +687,9 @@ class ProcurementProjectType
      * @param  null|array<FeeDescription> $feeDescription
      * @return static
      */
-    public function setFeeDescription(?array $feeDescription = null): static
-    {
+    public function setFeeDescription(
+        ?array $feeDescription = null
+    ): static {
         $this->feeDescription = $feeDescription;
 
         return $this;
@@ -737,8 +749,9 @@ class ProcurementProjectType
      * @param  FeeDescription $feeDescription
      * @return static
      */
-    public function addToFeeDescription(FeeDescription $feeDescription): static
-    {
+    public function addToFeeDescription(
+        FeeDescription $feeDescription
+    ): static {
         $this->feeDescription[] = $feeDescription;
 
         return $this;
@@ -758,8 +771,9 @@ class ProcurementProjectType
      * @param  FeeDescription $feeDescription
      * @return static
      */
-    public function addOnceToFeeDescription(FeeDescription $feeDescription): static
-    {
+    public function addOnceToFeeDescription(
+        FeeDescription $feeDescription
+    ): static {
         if (!is_array($this->feeDescription)) {
             $this->feeDescription = [];
         }
@@ -797,8 +811,9 @@ class ProcurementProjectType
      * @param  null|DateTimeInterface $requestedDeliveryDate
      * @return static
      */
-    public function setRequestedDeliveryDate(?DateTimeInterface $requestedDeliveryDate = null): static
-    {
+    public function setRequestedDeliveryDate(
+        ?DateTimeInterface $requestedDeliveryDate = null
+    ): static {
         $this->requestedDeliveryDate = $requestedDeliveryDate;
 
         return $this;
@@ -866,8 +881,9 @@ class ProcurementProjectType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -927,8 +943,9 @@ class ProcurementProjectType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -948,8 +965,9 @@ class ProcurementProjectType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -997,8 +1015,9 @@ class ProcurementProjectType
      * @param  null|RequestedTenderTotal $requestedTenderTotal
      * @return static
      */
-    public function setRequestedTenderTotal(?RequestedTenderTotal $requestedTenderTotal = null): static
-    {
+    public function setRequestedTenderTotal(
+        ?RequestedTenderTotal $requestedTenderTotal = null
+    ): static {
         $this->requestedTenderTotal = $requestedTenderTotal;
 
         return $this;
@@ -1066,8 +1085,9 @@ class ProcurementProjectType
      * @param  null|array<AdditionalCommodityClassification> $additionalCommodityClassification
      * @return static
      */
-    public function setAdditionalCommodityClassification(?array $additionalCommodityClassification = null): static
-    {
+    public function setAdditionalCommodityClassification(
+        ?array $additionalCommodityClassification = null
+    ): static {
         $this->additionalCommodityClassification = $additionalCommodityClassification;
 
         return $this;
@@ -1189,8 +1209,9 @@ class ProcurementProjectType
      * @param  null|array<RealizedLocation> $realizedLocation
      * @return static
      */
-    public function setRealizedLocation(?array $realizedLocation = null): static
-    {
+    public function setRealizedLocation(
+        ?array $realizedLocation = null
+    ): static {
         $this->realizedLocation = $realizedLocation;
 
         return $this;
@@ -1250,8 +1271,9 @@ class ProcurementProjectType
      * @param  RealizedLocation $realizedLocation
      * @return static
      */
-    public function addToRealizedLocation(RealizedLocation $realizedLocation): static
-    {
+    public function addToRealizedLocation(
+        RealizedLocation $realizedLocation
+    ): static {
         $this->realizedLocation[] = $realizedLocation;
 
         return $this;
@@ -1271,8 +1293,9 @@ class ProcurementProjectType
      * @param  RealizedLocation $realizedLocation
      * @return static
      */
-    public function addOnceToRealizedLocation(RealizedLocation $realizedLocation): static
-    {
+    public function addOnceToRealizedLocation(
+        RealizedLocation $realizedLocation
+    ): static {
         if (!is_array($this->realizedLocation)) {
             $this->realizedLocation = [];
         }
@@ -1320,8 +1343,9 @@ class ProcurementProjectType
      * @param  null|PlannedPeriod $plannedPeriod
      * @return static
      */
-    public function setPlannedPeriod(?PlannedPeriod $plannedPeriod = null): static
-    {
+    public function setPlannedPeriod(
+        ?PlannedPeriod $plannedPeriod = null
+    ): static {
         $this->plannedPeriod = $plannedPeriod;
 
         return $this;
@@ -1359,8 +1383,9 @@ class ProcurementProjectType
      * @param  null|ContractExtension $contractExtension
      * @return static
      */
-    public function setContractExtension(?ContractExtension $contractExtension = null): static
-    {
+    public function setContractExtension(
+        ?ContractExtension $contractExtension = null
+    ): static {
         $this->contractExtension = $contractExtension;
 
         return $this;
@@ -1388,8 +1413,9 @@ class ProcurementProjectType
      * @param  null|array<RequestForTenderLine> $requestForTenderLine
      * @return static
      */
-    public function setRequestForTenderLine(?array $requestForTenderLine = null): static
-    {
+    public function setRequestForTenderLine(
+        ?array $requestForTenderLine = null
+    ): static {
         $this->requestForTenderLine = $requestForTenderLine;
 
         return $this;
@@ -1449,8 +1475,9 @@ class ProcurementProjectType
      * @param  RequestForTenderLine $requestForTenderLine
      * @return static
      */
-    public function addToRequestForTenderLine(RequestForTenderLine $requestForTenderLine): static
-    {
+    public function addToRequestForTenderLine(
+        RequestForTenderLine $requestForTenderLine
+    ): static {
         $this->requestForTenderLine[] = $requestForTenderLine;
 
         return $this;
@@ -1470,8 +1497,9 @@ class ProcurementProjectType
      * @param  RequestForTenderLine $requestForTenderLine
      * @return static
      */
-    public function addOnceToRequestForTenderLine(RequestForTenderLine $requestForTenderLine): static
-    {
+    public function addOnceToRequestForTenderLine(
+        RequestForTenderLine $requestForTenderLine
+    ): static {
         if (!is_array($this->requestForTenderLine)) {
             $this->requestForTenderLine = [];
         }

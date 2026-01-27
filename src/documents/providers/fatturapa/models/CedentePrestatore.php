@@ -112,8 +112,9 @@ final class CedentePrestatore
      * @param  null|DatiAnagraficiCedente $datiAnagrafici
      * @return static
      */
-    public function setDatiAnagrafici(?DatiAnagraficiCedente $datiAnagrafici = null): static
-    {
+    public function setDatiAnagrafici(
+        ?DatiAnagraficiCedente $datiAnagrafici = null
+    ): static {
         $this->datiAnagrafici = $datiAnagrafici;
 
         return $this;
@@ -159,8 +160,9 @@ final class CedentePrestatore
      * @param  null|Indirizzo $sede
      * @return static
      */
-    public function setSede(?Indirizzo $sede = null): static
-    {
+    public function setSede(
+        ?Indirizzo $sede = null
+    ): static {
         $this->sede = $sede;
 
         return $this;
@@ -206,8 +208,9 @@ final class CedentePrestatore
      * @param  null|Indirizzo $stabileOrganizzazione
      * @return static
      */
-    public function setStabileOrganizzazione(?Indirizzo $stabileOrganizzazione = null): static
-    {
+    public function setStabileOrganizzazione(
+        ?Indirizzo $stabileOrganizzazione = null
+    ): static {
         $this->stabileOrganizzazione = $stabileOrganizzazione;
 
         return $this;
@@ -253,8 +256,9 @@ final class CedentePrestatore
      * @param  null|IscrizioneREA $iscrizioneREA
      * @return static
      */
-    public function setIscrizioneREA(?IscrizioneREA $iscrizioneREA = null): static
-    {
+    public function setIscrizioneREA(
+        ?IscrizioneREA $iscrizioneREA = null
+    ): static {
         $this->iscrizioneREA = $iscrizioneREA;
 
         return $this;
@@ -300,8 +304,9 @@ final class CedentePrestatore
      * @param  null|Contatti $contatti
      * @return static
      */
-    public function setContatti(?Contatti $contatti = null): static
-    {
+    public function setContatti(
+        ?Contatti $contatti = null
+    ): static {
         $this->contatti = $contatti;
 
         return $this;
@@ -335,8 +340,9 @@ final class CedentePrestatore
      * @param  null|string $riferimentoAmministrazione
      * @return static
      */
-    public function setRiferimentoAmministrazione(?string $riferimentoAmministrazione = null): static
-    {
+    public function setRiferimentoAmministrazione(
+        ?string $riferimentoAmministrazione = null
+    ): static {
         $this->riferimentoAmministrazione = InvoiceSuiteStringUtils::asNullWhenEmpty($riferimentoAmministrazione);
 
         return $this;

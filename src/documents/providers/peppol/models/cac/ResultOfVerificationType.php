@@ -127,8 +127,9 @@ class ResultOfVerificationType
      * @param  null|ValidatorID $validatorID
      * @return static
      */
-    public function setValidatorID(?ValidatorID $validatorID = null): static
-    {
+    public function setValidatorID(
+        ?ValidatorID $validatorID = null
+    ): static {
         $this->validatorID = $validatorID;
 
         return $this;
@@ -166,8 +167,9 @@ class ResultOfVerificationType
      * @param  null|ValidationResultCode $validationResultCode
      * @return static
      */
-    public function setValidationResultCode(?ValidationResultCode $validationResultCode = null): static
-    {
+    public function setValidationResultCode(
+        ?ValidationResultCode $validationResultCode = null
+    ): static {
         $this->validationResultCode = $validationResultCode;
 
         return $this;
@@ -195,8 +197,9 @@ class ResultOfVerificationType
      * @param  null|DateTimeInterface $validationDate
      * @return static
      */
-    public function setValidationDate(?DateTimeInterface $validationDate = null): static
-    {
+    public function setValidationDate(
+        ?DateTimeInterface $validationDate = null
+    ): static {
         $this->validationDate = $validationDate;
 
         return $this;
@@ -224,8 +227,9 @@ class ResultOfVerificationType
      * @param  null|DateTimeInterface $validationTime
      * @return static
      */
-    public function setValidationTime(?DateTimeInterface $validationTime = null): static
-    {
+    public function setValidationTime(
+        ?DateTimeInterface $validationTime = null
+    ): static {
         $this->validationTime = $validationTime;
 
         return $this;
@@ -263,8 +267,9 @@ class ResultOfVerificationType
      * @param  null|ValidateProcess $validateProcess
      * @return static
      */
-    public function setValidateProcess(?ValidateProcess $validateProcess = null): static
-    {
+    public function setValidateProcess(
+        ?ValidateProcess $validateProcess = null
+    ): static {
         $this->validateProcess = $validateProcess;
 
         return $this;
@@ -302,8 +307,9 @@ class ResultOfVerificationType
      * @param  null|ValidateTool $validateTool
      * @return static
      */
-    public function setValidateTool(?ValidateTool $validateTool = null): static
-    {
+    public function setValidateTool(
+        ?ValidateTool $validateTool = null
+    ): static {
         $this->validateTool = $validateTool;
 
         return $this;
@@ -341,8 +347,9 @@ class ResultOfVerificationType
      * @param  null|ValidateToolVersion $validateToolVersion
      * @return static
      */
-    public function setValidateToolVersion(?ValidateToolVersion $validateToolVersion = null): static
-    {
+    public function setValidateToolVersion(
+        ?ValidateToolVersion $validateToolVersion = null
+    ): static {
         $this->validateToolVersion = $validateToolVersion;
 
         return $this;
@@ -380,8 +387,9 @@ class ResultOfVerificationType
      * @param  null|SignatoryParty $signatoryParty
      * @return static
      */
-    public function setSignatoryParty(?SignatoryParty $signatoryParty = null): static
-    {
+    public function setSignatoryParty(
+        ?SignatoryParty $signatoryParty = null
+    ): static {
         $this->signatoryParty = $signatoryParty;
 
         return $this;

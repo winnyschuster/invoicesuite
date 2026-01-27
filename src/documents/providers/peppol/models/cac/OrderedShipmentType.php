@@ -56,8 +56,9 @@ class OrderedShipmentType
      * @param  null|Shipment $shipment
      * @return static
      */
-    public function setShipment(?Shipment $shipment = null): static
-    {
+    public function setShipment(
+        ?Shipment $shipment = null
+    ): static {
         $this->shipment = $shipment;
 
         return $this;
@@ -85,8 +86,9 @@ class OrderedShipmentType
      * @param  null|array<Package> $package
      * @return static
      */
-    public function setPackage(?array $package = null): static
-    {
+    public function setPackage(
+        ?array $package = null
+    ): static {
         $this->package = $package;
 
         return $this;
@@ -146,8 +148,9 @@ class OrderedShipmentType
      * @param  Package $package
      * @return static
      */
-    public function addToPackage(Package $package): static
-    {
+    public function addToPackage(
+        Package $package
+    ): static {
         $this->package[] = $package;
 
         return $this;
@@ -167,8 +170,9 @@ class OrderedShipmentType
      * @param  Package $package
      * @return static
      */
-    public function addOnceToPackage(Package $package): static
-    {
+    public function addOnceToPackage(
+        Package $package
+    ): static {
         if (!is_array($this->package)) {
             $this->package = [];
         }

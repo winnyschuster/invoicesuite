@@ -80,8 +80,9 @@ class TradeCurrencyExchangeType
      * @param  null|CurrencyCodeType $sourceCurrencyCode
      * @return static
      */
-    public function setSourceCurrencyCode(?CurrencyCodeType $sourceCurrencyCode = null): static
-    {
+    public function setSourceCurrencyCode(
+        ?CurrencyCodeType $sourceCurrencyCode = null
+    ): static {
         $this->sourceCurrencyCode = $sourceCurrencyCode;
 
         return $this;
@@ -119,8 +120,9 @@ class TradeCurrencyExchangeType
      * @param  null|CurrencyCodeType $targetCurrencyCode
      * @return static
      */
-    public function setTargetCurrencyCode(?CurrencyCodeType $targetCurrencyCode = null): static
-    {
+    public function setTargetCurrencyCode(
+        ?CurrencyCodeType $targetCurrencyCode = null
+    ): static {
         $this->targetCurrencyCode = $targetCurrencyCode;
 
         return $this;
@@ -158,8 +160,9 @@ class TradeCurrencyExchangeType
      * @param  null|RateType $conversionRate
      * @return static
      */
-    public function setConversionRate(?RateType $conversionRate = null): static
-    {
+    public function setConversionRate(
+        ?RateType $conversionRate = null
+    ): static {
         $this->conversionRate = $conversionRate;
 
         return $this;
@@ -197,8 +200,9 @@ class TradeCurrencyExchangeType
      * @param  null|DateTimeType $conversionRateDateTime
      * @return static
      */
-    public function setConversionRateDateTime(?DateTimeType $conversionRateDateTime = null): static
-    {
+    public function setConversionRateDateTime(
+        ?DateTimeType $conversionRateDateTime = null
+    ): static {
         $this->conversionRateDateTime = $conversionRateDateTime;
 
         return $this;

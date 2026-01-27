@@ -56,8 +56,9 @@ class CustomsDeclarationType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -95,8 +96,9 @@ class CustomsDeclarationType
      * @param  null|IssuerParty $issuerParty
      * @return static
      */
-    public function setIssuerParty(?IssuerParty $issuerParty = null): static
-    {
+    public function setIssuerParty(
+        ?IssuerParty $issuerParty = null
+    ): static {
         $this->issuerParty = $issuerParty;
 
         return $this;

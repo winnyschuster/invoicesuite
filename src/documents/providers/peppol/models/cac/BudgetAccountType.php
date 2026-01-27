@@ -68,8 +68,9 @@ class BudgetAccountType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -107,8 +108,9 @@ class BudgetAccountType
      * @param  null|BudgetYearNumeric $budgetYearNumeric
      * @return static
      */
-    public function setBudgetYearNumeric(?BudgetYearNumeric $budgetYearNumeric = null): static
-    {
+    public function setBudgetYearNumeric(
+        ?BudgetYearNumeric $budgetYearNumeric = null
+    ): static {
         $this->budgetYearNumeric = $budgetYearNumeric;
 
         return $this;

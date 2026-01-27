@@ -55,8 +55,9 @@ class SignatureValueType
      * @param  string $value
      * @return static
      */
-    public function setValue(?string $value = null): static
-    {
+    public function setValue(
+        ?string $value = null
+    ): static {
         $this->value = $value;
 
         return $this;
@@ -90,8 +91,9 @@ class SignatureValueType
      * @param  string $id
      * @return static
      */
-    public function setId(?string $id = null): static
-    {
+    public function setId(
+        ?string $id = null
+    ): static {
         $this->id = $id;
 
         return $this;

@@ -57,8 +57,9 @@ class ManifestType
      * @param  array<ReferenceType> $reference
      * @return static
      */
-    public function setReference(?array $reference = null): static
-    {
+    public function setReference(
+        ?array $reference = null
+    ): static {
         $this->reference = $reference;
 
         return $this;
@@ -94,8 +95,9 @@ class ManifestType
      * @param  ReferenceType $reference
      * @return static
      */
-    public function addToReference(ReferenceType $reference): static
-    {
+    public function addToReference(
+        ReferenceType $reference
+    ): static {
         $this->reference[] = $reference;
 
         return $this;
@@ -119,8 +121,9 @@ class ManifestType
      * @param  ReferenceType $reference
      * @return static
      */
-    public function addOnceToReference(ReferenceType $reference): static
-    {
+    public function addOnceToReference(
+        ReferenceType $reference
+    ): static {
         if (!is_array($this->reference)) {
             $this->reference = [];
         }
@@ -164,8 +167,9 @@ class ManifestType
      * @param  string $id
      * @return static
      */
-    public function setId(?string $id = null): static
-    {
+    public function setId(
+        ?string $id = null
+    ): static {
         $this->id = $id;
 
         return $this;

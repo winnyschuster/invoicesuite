@@ -75,8 +75,9 @@ class InvoiceSuitePdfExtractorAttachment
      *
      * @return static
      */
-    public function setAttachmentContent(string $newAttachmentContent): static
-    {
+    public function setAttachmentContent(
+        string $newAttachmentContent
+    ): static {
         $this->attachmentContent = $newAttachmentContent;
 
         return $this;
@@ -97,8 +98,9 @@ class InvoiceSuitePdfExtractorAttachment
      *
      * @return static
      */
-    public function setAttachmentFilename(string $newAttachmentFilename): static
-    {
+    public function setAttachmentFilename(
+        string $newAttachmentFilename
+    ): static {
         $this->attachmentFilename = $newAttachmentFilename;
 
         return $this;
@@ -119,8 +121,9 @@ class InvoiceSuitePdfExtractorAttachment
      *
      * @return static
      */
-    public function setAttachmentMimeType(string $newAttachmentMimeType): static
-    {
+    public function setAttachmentMimeType(
+        string $newAttachmentMimeType
+    ): static {
         $this->attachmentMimeType = $newAttachmentMimeType;
 
         return $this;

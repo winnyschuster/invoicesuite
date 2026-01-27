@@ -57,8 +57,9 @@ class RailTransportType
      * @param  null|TrainID $trainID
      * @return static
      */
-    public function setTrainID(?TrainID $trainID = null): static
-    {
+    public function setTrainID(
+        ?TrainID $trainID = null
+    ): static {
         $this->trainID = $trainID;
 
         return $this;
@@ -96,8 +97,9 @@ class RailTransportType
      * @param  null|RailCarID $railCarID
      * @return static
      */
-    public function setRailCarID(?RailCarID $railCarID = null): static
-    {
+    public function setRailCarID(
+        ?RailCarID $railCarID = null
+    ): static {
         $this->railCarID = $railCarID;
 
         return $this;

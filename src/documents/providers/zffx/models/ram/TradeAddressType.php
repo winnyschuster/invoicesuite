@@ -113,8 +113,9 @@ class TradeAddressType
      * @param  null|CodeType $postcodeCode
      * @return static
      */
-    public function setPostcodeCode(?CodeType $postcodeCode = null): static
-    {
+    public function setPostcodeCode(
+        ?CodeType $postcodeCode = null
+    ): static {
         $this->postcodeCode = $postcodeCode;
 
         return $this;
@@ -152,8 +153,9 @@ class TradeAddressType
      * @param  null|TextType $lineOne
      * @return static
      */
-    public function setLineOne(?TextType $lineOne = null): static
-    {
+    public function setLineOne(
+        ?TextType $lineOne = null
+    ): static {
         $this->lineOne = $lineOne;
 
         return $this;
@@ -191,8 +193,9 @@ class TradeAddressType
      * @param  null|TextType $lineTwo
      * @return static
      */
-    public function setLineTwo(?TextType $lineTwo = null): static
-    {
+    public function setLineTwo(
+        ?TextType $lineTwo = null
+    ): static {
         $this->lineTwo = $lineTwo;
 
         return $this;
@@ -230,8 +233,9 @@ class TradeAddressType
      * @param  null|TextType $lineThree
      * @return static
      */
-    public function setLineThree(?TextType $lineThree = null): static
-    {
+    public function setLineThree(
+        ?TextType $lineThree = null
+    ): static {
         $this->lineThree = $lineThree;
 
         return $this;
@@ -269,8 +273,9 @@ class TradeAddressType
      * @param  null|TextType $cityName
      * @return static
      */
-    public function setCityName(?TextType $cityName = null): static
-    {
+    public function setCityName(
+        ?TextType $cityName = null
+    ): static {
         $this->cityName = $cityName;
 
         return $this;
@@ -308,8 +313,9 @@ class TradeAddressType
      * @param  null|CountryIDType $countryID
      * @return static
      */
-    public function setCountryID(?CountryIDType $countryID = null): static
-    {
+    public function setCountryID(
+        ?CountryIDType $countryID = null
+    ): static {
         $this->countryID = $countryID;
 
         return $this;
@@ -347,8 +353,9 @@ class TradeAddressType
      * @param  null|TextType $countrySubDivisionName
      * @return static
      */
-    public function setCountrySubDivisionName(?TextType $countrySubDivisionName = null): static
-    {
+    public function setCountrySubDivisionName(
+        ?TextType $countrySubDivisionName = null
+    ): static {
         $this->countrySubDivisionName = $countrySubDivisionName;
 
         return $this;

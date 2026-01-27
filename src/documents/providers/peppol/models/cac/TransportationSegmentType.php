@@ -102,8 +102,9 @@ class TransportationSegmentType
      * @param  null|SequenceNumeric $sequenceNumeric
      * @return static
      */
-    public function setSequenceNumeric(?SequenceNumeric $sequenceNumeric = null): static
-    {
+    public function setSequenceNumeric(
+        ?SequenceNumeric $sequenceNumeric = null
+    ): static {
         $this->sequenceNumeric = $sequenceNumeric;
 
         return $this;
@@ -181,8 +182,9 @@ class TransportationSegmentType
      * @param  null|TransportationService $transportationService
      * @return static
      */
-    public function setTransportationService(?TransportationService $transportationService = null): static
-    {
+    public function setTransportationService(
+        ?TransportationService $transportationService = null
+    ): static {
         $this->transportationService = $transportationService;
 
         return $this;
@@ -260,8 +262,9 @@ class TransportationSegmentType
      * @param  null|ReferencedConsignment $referencedConsignment
      * @return static
      */
-    public function setReferencedConsignment(?ReferencedConsignment $referencedConsignment = null): static
-    {
+    public function setReferencedConsignment(
+        ?ReferencedConsignment $referencedConsignment = null
+    ): static {
         $this->referencedConsignment = $referencedConsignment;
 
         return $this;
@@ -289,8 +292,9 @@ class TransportationSegmentType
      * @param  null|array<ShipmentStage> $shipmentStage
      * @return static
      */
-    public function setShipmentStage(?array $shipmentStage = null): static
-    {
+    public function setShipmentStage(
+        ?array $shipmentStage = null
+    ): static {
         $this->shipmentStage = $shipmentStage;
 
         return $this;
@@ -350,8 +354,9 @@ class TransportationSegmentType
      * @param  ShipmentStage $shipmentStage
      * @return static
      */
-    public function addToShipmentStage(ShipmentStage $shipmentStage): static
-    {
+    public function addToShipmentStage(
+        ShipmentStage $shipmentStage
+    ): static {
         $this->shipmentStage[] = $shipmentStage;
 
         return $this;
@@ -371,8 +376,9 @@ class TransportationSegmentType
      * @param  ShipmentStage $shipmentStage
      * @return static
      */
-    public function addOnceToShipmentStage(ShipmentStage $shipmentStage): static
-    {
+    public function addOnceToShipmentStage(
+        ShipmentStage $shipmentStage
+    ): static {
         if (!is_array($this->shipmentStage)) {
             $this->shipmentStage = [];
         }

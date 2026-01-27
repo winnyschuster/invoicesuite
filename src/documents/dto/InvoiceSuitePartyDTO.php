@@ -125,8 +125,9 @@ class InvoiceSuitePartyDTO
      * @param  array<string> $names Party names
      * @return static
      */
-    public function setNames(array $names): static
-    {
+    public function setNames(
+        array $names
+    ): static {
         $this->names = $names;
 
         return $this;
@@ -138,8 +139,9 @@ class InvoiceSuitePartyDTO
      * @param  string $name Party names
      * @return static
      */
-    public function addName(?string $name): static
-    {
+    public function addName(
+        ?string $name
+    ): static {
         if (is_null($name)) {
             return $this;
         }
@@ -156,8 +158,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstName(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstName(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($name = reset($this->names)) !== false) {
             $callback($name);
         } elseif (!is_null($callbackElse)) {
@@ -174,8 +178,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextName(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextName(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($name = next($this->names)) !== false) {
             $callback($name);
         } elseif (!is_null($callbackElse)) {
@@ -192,8 +198,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousName(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousName(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($name = prev($this->names)) !== false) {
             $callback($name);
         } elseif (!is_null($callbackElse)) {
@@ -210,8 +218,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastName(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastName(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($name = end($this->names)) !== false) {
             $callback($name);
         } elseif (!is_null($callbackElse)) {
@@ -229,8 +239,11 @@ class InvoiceSuitePartyDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachName(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachName(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null
+    ): static {
         $count = 0;
 
         foreach ($this->names as $name) {
@@ -304,8 +317,9 @@ class InvoiceSuitePartyDTO
      * @param  array<InvoiceSuiteIdDTO> $ids Party IDs
      * @return static
      */
-    public function setIds(array $ids): static
-    {
+    public function setIds(
+        array $ids
+    ): static {
         $this->ids = $ids;
 
         return $this;
@@ -317,8 +331,9 @@ class InvoiceSuitePartyDTO
      * @param  InvoiceSuiteIdDTO $id Party IDs
      * @return static
      */
-    public function addId(?InvoiceSuiteIdDTO $id): static
-    {
+    public function addId(
+        ?InvoiceSuiteIdDTO $id
+    ): static {
         if (is_null($id)) {
             return $this;
         }
@@ -335,8 +350,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstId(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstId(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($id = reset($this->ids)) !== false) {
             $callback($id);
         } elseif (!is_null($callbackElse)) {
@@ -353,8 +370,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextId(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextId(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($id = next($this->ids)) !== false) {
             $callback($id);
         } elseif (!is_null($callbackElse)) {
@@ -371,8 +390,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousId(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousId(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($id = prev($this->ids)) !== false) {
             $callback($id);
         } elseif (!is_null($callbackElse)) {
@@ -389,8 +410,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastId(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastId(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($id = end($this->ids)) !== false) {
             $callback($id);
         } elseif (!is_null($callbackElse)) {
@@ -408,8 +431,11 @@ class InvoiceSuitePartyDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachId(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachId(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null
+    ): static {
         $count = 0;
 
         foreach ($this->ids as $id) {
@@ -483,8 +509,9 @@ class InvoiceSuitePartyDTO
      * @param  array<InvoiceSuiteIdDTO> $globalIds Party global IDs
      * @return static
      */
-    public function setGlobalIds(array $globalIds): static
-    {
+    public function setGlobalIds(
+        array $globalIds
+    ): static {
         $this->globalIds = $globalIds;
 
         return $this;
@@ -496,8 +523,9 @@ class InvoiceSuitePartyDTO
      * @param  InvoiceSuiteIdDTO $globalId Party global IDs
      * @return static
      */
-    public function addGlobalId(?InvoiceSuiteIdDTO $globalId): static
-    {
+    public function addGlobalId(
+        ?InvoiceSuiteIdDTO $globalId
+    ): static {
         if (is_null($globalId)) {
             return $this;
         }
@@ -514,8 +542,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstGlobalId(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstGlobalId(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($globalId = reset($this->globalIds)) !== false) {
             $callback($globalId);
         } elseif (!is_null($callbackElse)) {
@@ -532,8 +562,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextGlobalId(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextGlobalId(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($globalId = next($this->globalIds)) !== false) {
             $callback($globalId);
         } elseif (!is_null($callbackElse)) {
@@ -550,8 +582,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousGlobalId(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousGlobalId(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($globalId = prev($this->globalIds)) !== false) {
             $callback($globalId);
         } elseif (!is_null($callbackElse)) {
@@ -568,8 +602,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastGlobalId(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastGlobalId(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($globalId = end($this->globalIds)) !== false) {
             $callback($globalId);
         } elseif (!is_null($callbackElse)) {
@@ -587,8 +623,11 @@ class InvoiceSuitePartyDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachGlobalId(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachGlobalId(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null
+    ): static {
         $count = 0;
 
         foreach ($this->globalIds as $globalId) {
@@ -662,8 +701,9 @@ class InvoiceSuitePartyDTO
      * @param  array<InvoiceSuiteIdDTO> $taxRegistrations Party tax registrations
      * @return static
      */
-    public function setTaxRegistrations(array $taxRegistrations): static
-    {
+    public function setTaxRegistrations(
+        array $taxRegistrations
+    ): static {
         $this->taxRegistrations = $taxRegistrations;
 
         return $this;
@@ -675,8 +715,9 @@ class InvoiceSuitePartyDTO
      * @param  InvoiceSuiteIdDTO $taxRegistration Party tax registrations
      * @return static
      */
-    public function addTaxRegistration(?InvoiceSuiteIdDTO $taxRegistration): static
-    {
+    public function addTaxRegistration(
+        ?InvoiceSuiteIdDTO $taxRegistration
+    ): static {
         if (is_null($taxRegistration)) {
             return $this;
         }
@@ -693,8 +734,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstTaxRegistration(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstTaxRegistration(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($taxRegistration = reset($this->taxRegistrations)) !== false) {
             $callback($taxRegistration);
         } elseif (!is_null($callbackElse)) {
@@ -711,8 +754,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextTaxRegistration(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextTaxRegistration(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($taxRegistration = next($this->taxRegistrations)) !== false) {
             $callback($taxRegistration);
         } elseif (!is_null($callbackElse)) {
@@ -729,8 +774,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousTaxRegistration(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousTaxRegistration(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($taxRegistration = prev($this->taxRegistrations)) !== false) {
             $callback($taxRegistration);
         } elseif (!is_null($callbackElse)) {
@@ -747,8 +794,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastTaxRegistration(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastTaxRegistration(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($taxRegistration = end($this->taxRegistrations)) !== false) {
             $callback($taxRegistration);
         } elseif (!is_null($callbackElse)) {
@@ -844,8 +893,9 @@ class InvoiceSuitePartyDTO
      * @param  array<InvoiceSuiteAddressDTO> $addresses Party addresses
      * @return static
      */
-    public function setAddresses(array $addresses): static
-    {
+    public function setAddresses(
+        array $addresses
+    ): static {
         $this->addresses = $addresses;
 
         return $this;
@@ -857,8 +907,9 @@ class InvoiceSuitePartyDTO
      * @param  InvoiceSuiteAddressDTO $address Party addresses
      * @return static
      */
-    public function addAddress(?InvoiceSuiteAddressDTO $address): static
-    {
+    public function addAddress(
+        ?InvoiceSuiteAddressDTO $address
+    ): static {
         if (is_null($address)) {
             return $this;
         }
@@ -875,8 +926,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstAddress(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstAddress(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($address = reset($this->addresses)) !== false) {
             $callback($address);
         } elseif (!is_null($callbackElse)) {
@@ -893,8 +946,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextAddress(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextAddress(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($address = next($this->addresses)) !== false) {
             $callback($address);
         } elseif (!is_null($callbackElse)) {
@@ -911,8 +966,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousAddress(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousAddress(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($address = prev($this->addresses)) !== false) {
             $callback($address);
         } elseif (!is_null($callbackElse)) {
@@ -929,8 +986,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastAddress(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastAddress(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($address = end($this->addresses)) !== false) {
             $callback($address);
         } elseif (!is_null($callbackElse)) {
@@ -948,8 +1007,11 @@ class InvoiceSuitePartyDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachAddress(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachAddress(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null
+    ): static {
         $count = 0;
 
         foreach ($this->addresses as $address) {
@@ -1023,8 +1085,9 @@ class InvoiceSuitePartyDTO
      * @param  array<InvoiceSuiteOrganisationDTO> $legalOrganisations Party legal organisations
      * @return static
      */
-    public function setLegalOrganisations(array $legalOrganisations): static
-    {
+    public function setLegalOrganisations(
+        array $legalOrganisations
+    ): static {
         $this->legalOrganisations = $legalOrganisations;
 
         return $this;
@@ -1036,8 +1099,9 @@ class InvoiceSuitePartyDTO
      * @param  InvoiceSuiteOrganisationDTO $legalOrganisation Party legal organisations
      * @return static
      */
-    public function addLegalOrganisation(?InvoiceSuiteOrganisationDTO $legalOrganisation): static
-    {
+    public function addLegalOrganisation(
+        ?InvoiceSuiteOrganisationDTO $legalOrganisation
+    ): static {
         if (is_null($legalOrganisation)) {
             return $this;
         }
@@ -1054,8 +1118,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstLegalOrganisation(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstLegalOrganisation(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($legalOrganisation = reset($this->legalOrganisations)) !== false) {
             $callback($legalOrganisation);
         } elseif (!is_null($callbackElse)) {
@@ -1072,8 +1138,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextLegalOrganisation(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextLegalOrganisation(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($legalOrganisation = next($this->legalOrganisations)) !== false) {
             $callback($legalOrganisation);
         } elseif (!is_null($callbackElse)) {
@@ -1090,8 +1158,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousLegalOrganisation(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousLegalOrganisation(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($legalOrganisation = prev($this->legalOrganisations)) !== false) {
             $callback($legalOrganisation);
         } elseif (!is_null($callbackElse)) {
@@ -1108,8 +1178,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastLegalOrganisation(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastLegalOrganisation(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($legalOrganisation = end($this->legalOrganisations)) !== false) {
             $callback($legalOrganisation);
         } elseif (!is_null($callbackElse)) {
@@ -1205,8 +1277,9 @@ class InvoiceSuitePartyDTO
      * @param  array<InvoiceSuiteContactDTO> $contacts Party contacts
      * @return static
      */
-    public function setContacts(array $contacts): static
-    {
+    public function setContacts(
+        array $contacts
+    ): static {
         $this->contacts = $contacts;
 
         return $this;
@@ -1218,8 +1291,9 @@ class InvoiceSuitePartyDTO
      * @param  InvoiceSuiteContactDTO $contact Party contacts
      * @return static
      */
-    public function addContact(?InvoiceSuiteContactDTO $contact): static
-    {
+    public function addContact(
+        ?InvoiceSuiteContactDTO $contact
+    ): static {
         if (is_null($contact)) {
             return $this;
         }
@@ -1236,8 +1310,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstContact(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstContact(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($contact = reset($this->contacts)) !== false) {
             $callback($contact);
         } elseif (!is_null($callbackElse)) {
@@ -1254,8 +1330,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextContact(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextContact(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($contact = next($this->contacts)) !== false) {
             $callback($contact);
         } elseif (!is_null($callbackElse)) {
@@ -1272,8 +1350,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousContact(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousContact(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($contact = prev($this->contacts)) !== false) {
             $callback($contact);
         } elseif (!is_null($callbackElse)) {
@@ -1290,8 +1370,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastContact(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastContact(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($contact = end($this->contacts)) !== false) {
             $callback($contact);
         } elseif (!is_null($callbackElse)) {
@@ -1309,8 +1391,11 @@ class InvoiceSuitePartyDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachContact(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachContact(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null
+    ): static {
         $count = 0;
 
         foreach ($this->contacts as $contact) {
@@ -1384,8 +1469,9 @@ class InvoiceSuitePartyDTO
      * @param  array<InvoiceSuiteCommunicationDTO> $communications Party electronic communications
      * @return static
      */
-    public function setCommunications(array $communications): static
-    {
+    public function setCommunications(
+        array $communications
+    ): static {
         $this->communications = $communications;
 
         return $this;
@@ -1397,8 +1483,9 @@ class InvoiceSuitePartyDTO
      * @param  InvoiceSuiteCommunicationDTO $communication Party electronic communications
      * @return static
      */
-    public function addCommunication(?InvoiceSuiteCommunicationDTO $communication): static
-    {
+    public function addCommunication(
+        ?InvoiceSuiteCommunicationDTO $communication
+    ): static {
         if (is_null($communication)) {
             return $this;
         }
@@ -1415,8 +1502,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstCommunication(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstCommunication(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($communication = reset($this->communications)) !== false) {
             $callback($communication);
         } elseif (!is_null($callbackElse)) {
@@ -1433,8 +1522,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextCommunication(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextCommunication(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($communication = next($this->communications)) !== false) {
             $callback($communication);
         } elseif (!is_null($callbackElse)) {
@@ -1451,8 +1542,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousCommunication(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousCommunication(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($communication = prev($this->communications)) !== false) {
             $callback($communication);
         } elseif (!is_null($callbackElse)) {
@@ -1469,8 +1562,10 @@ class InvoiceSuitePartyDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastCommunication(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastCommunication(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($communication = end($this->communications)) !== false) {
             $callback($communication);
         } elseif (!is_null($callbackElse)) {

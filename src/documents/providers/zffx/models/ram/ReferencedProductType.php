@@ -125,8 +125,9 @@ class ReferencedProductType
      * @param  null|IDType $iD
      * @return static
      */
-    public function setID(?IDType $iD = null): static
-    {
+    public function setID(
+        ?IDType $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -154,8 +155,9 @@ class ReferencedProductType
      * @param  null|array<IDType> $globalID
      * @return static
      */
-    public function setGlobalID(?array $globalID = null): static
-    {
+    public function setGlobalID(
+        ?array $globalID = null
+    ): static {
         $this->globalID = $globalID;
 
         return $this;
@@ -185,8 +187,9 @@ class ReferencedProductType
      * @param  IDType $globalID
      * @return static
      */
-    public function addToGlobalID(IDType $globalID): static
-    {
+    public function addToGlobalID(
+        IDType $globalID
+    ): static {
         $this->globalID[] = $globalID;
 
         return $this;
@@ -206,8 +209,9 @@ class ReferencedProductType
      * @param  IDType $globalID
      * @return static
      */
-    public function addOnceToGlobalID(IDType $globalID): static
-    {
+    public function addOnceToGlobalID(
+        IDType $globalID
+    ): static {
         if (!is_array($this->globalID)) {
             $this->globalID = [];
         }
@@ -255,8 +259,9 @@ class ReferencedProductType
      * @param  null|IDType $sellerAssignedID
      * @return static
      */
-    public function setSellerAssignedID(?IDType $sellerAssignedID = null): static
-    {
+    public function setSellerAssignedID(
+        ?IDType $sellerAssignedID = null
+    ): static {
         $this->sellerAssignedID = $sellerAssignedID;
 
         return $this;
@@ -294,8 +299,9 @@ class ReferencedProductType
      * @param  null|IDType $buyerAssignedID
      * @return static
      */
-    public function setBuyerAssignedID(?IDType $buyerAssignedID = null): static
-    {
+    public function setBuyerAssignedID(
+        ?IDType $buyerAssignedID = null
+    ): static {
         $this->buyerAssignedID = $buyerAssignedID;
 
         return $this;
@@ -333,8 +339,9 @@ class ReferencedProductType
      * @param  null|IDType $industryAssignedID
      * @return static
      */
-    public function setIndustryAssignedID(?IDType $industryAssignedID = null): static
-    {
+    public function setIndustryAssignedID(
+        ?IDType $industryAssignedID = null
+    ): static {
         $this->industryAssignedID = $industryAssignedID;
 
         return $this;
@@ -372,8 +379,9 @@ class ReferencedProductType
      * @param  null|TextType $name
      * @return static
      */
-    public function setName(?TextType $name = null): static
-    {
+    public function setName(
+        ?TextType $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -411,8 +419,9 @@ class ReferencedProductType
      * @param  null|TextType $description
      * @return static
      */
-    public function setDescription(?TextType $description = null): static
-    {
+    public function setDescription(
+        ?TextType $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -450,8 +459,9 @@ class ReferencedProductType
      * @param  null|QuantityType $unitQuantity
      * @return static
      */
-    public function setUnitQuantity(?QuantityType $unitQuantity = null): static
-    {
+    public function setUnitQuantity(
+        ?QuantityType $unitQuantity = null
+    ): static {
         $this->unitQuantity = $unitQuantity;
 
         return $this;

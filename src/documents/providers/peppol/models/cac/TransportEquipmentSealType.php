@@ -93,8 +93,9 @@ class TransportEquipmentSealType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -132,8 +133,9 @@ class TransportEquipmentSealType
      * @param  null|SealIssuerTypeCode $sealIssuerTypeCode
      * @return static
      */
-    public function setSealIssuerTypeCode(?SealIssuerTypeCode $sealIssuerTypeCode = null): static
-    {
+    public function setSealIssuerTypeCode(
+        ?SealIssuerTypeCode $sealIssuerTypeCode = null
+    ): static {
         $this->sealIssuerTypeCode = $sealIssuerTypeCode;
 
         return $this;
@@ -171,8 +173,9 @@ class TransportEquipmentSealType
      * @param  null|Condition $condition
      * @return static
      */
-    public function setCondition(?Condition $condition = null): static
-    {
+    public function setCondition(
+        ?Condition $condition = null
+    ): static {
         $this->condition = $condition;
 
         return $this;
@@ -210,8 +213,9 @@ class TransportEquipmentSealType
      * @param  null|SealStatusCode $sealStatusCode
      * @return static
      */
-    public function setSealStatusCode(?SealStatusCode $sealStatusCode = null): static
-    {
+    public function setSealStatusCode(
+        ?SealStatusCode $sealStatusCode = null
+    ): static {
         $this->sealStatusCode = $sealStatusCode;
 
         return $this;
@@ -249,8 +253,9 @@ class TransportEquipmentSealType
      * @param  null|SealingPartyType $sealingPartyType
      * @return static
      */
-    public function setSealingPartyType(?SealingPartyType $sealingPartyType = null): static
-    {
+    public function setSealingPartyType(
+        ?SealingPartyType $sealingPartyType = null
+    ): static {
         $this->sealingPartyType = $sealingPartyType;
 
         return $this;

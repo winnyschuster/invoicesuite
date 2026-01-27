@@ -130,8 +130,9 @@ class TelecommunicationsSupplyLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -169,8 +170,9 @@ class TelecommunicationsSupplyLineType
      * @param  null|PhoneNumber $phoneNumber
      * @return static
      */
-    public function setPhoneNumber(?PhoneNumber $phoneNumber = null): static
-    {
+    public function setPhoneNumber(
+        ?PhoneNumber $phoneNumber = null
+    ): static {
         $this->phoneNumber = $phoneNumber;
 
         return $this;
@@ -198,8 +200,9 @@ class TelecommunicationsSupplyLineType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -259,8 +262,9 @@ class TelecommunicationsSupplyLineType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -280,8 +284,9 @@ class TelecommunicationsSupplyLineType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -329,8 +334,9 @@ class TelecommunicationsSupplyLineType
      * @param  null|LineExtensionAmount $lineExtensionAmount
      * @return static
      */
-    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
-    {
+    public function setLineExtensionAmount(
+        ?LineExtensionAmount $lineExtensionAmount = null
+    ): static {
         $this->lineExtensionAmount = $lineExtensionAmount;
 
         return $this;
@@ -358,8 +364,9 @@ class TelecommunicationsSupplyLineType
      * @param  null|array<ExchangeRate> $exchangeRate
      * @return static
      */
-    public function setExchangeRate(?array $exchangeRate = null): static
-    {
+    public function setExchangeRate(
+        ?array $exchangeRate = null
+    ): static {
         $this->exchangeRate = $exchangeRate;
 
         return $this;
@@ -419,8 +426,9 @@ class TelecommunicationsSupplyLineType
      * @param  ExchangeRate $exchangeRate
      * @return static
      */
-    public function addToExchangeRate(ExchangeRate $exchangeRate): static
-    {
+    public function addToExchangeRate(
+        ExchangeRate $exchangeRate
+    ): static {
         $this->exchangeRate[] = $exchangeRate;
 
         return $this;
@@ -440,8 +448,9 @@ class TelecommunicationsSupplyLineType
      * @param  ExchangeRate $exchangeRate
      * @return static
      */
-    public function addOnceToExchangeRate(ExchangeRate $exchangeRate): static
-    {
+    public function addOnceToExchangeRate(
+        ExchangeRate $exchangeRate
+    ): static {
         if (!is_array($this->exchangeRate)) {
             $this->exchangeRate = [];
         }
@@ -479,8 +488,9 @@ class TelecommunicationsSupplyLineType
      * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): static
-    {
+    public function setAllowanceCharge(
+        ?array $allowanceCharge = null
+    ): static {
         $this->allowanceCharge = $allowanceCharge;
 
         return $this;
@@ -540,8 +550,9 @@ class TelecommunicationsSupplyLineType
      * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
-    {
+    public function addToAllowanceCharge(
+        AllowanceCharge $allowanceCharge
+    ): static {
         $this->allowanceCharge[] = $allowanceCharge;
 
         return $this;
@@ -561,8 +572,9 @@ class TelecommunicationsSupplyLineType
      * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
-    {
+    public function addOnceToAllowanceCharge(
+        AllowanceCharge $allowanceCharge
+    ): static {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];
         }
@@ -600,8 +612,9 @@ class TelecommunicationsSupplyLineType
      * @param  null|array<TaxTotal> $taxTotal
      * @return static
      */
-    public function setTaxTotal(?array $taxTotal = null): static
-    {
+    public function setTaxTotal(
+        ?array $taxTotal = null
+    ): static {
         $this->taxTotal = $taxTotal;
 
         return $this;
@@ -661,8 +674,9 @@ class TelecommunicationsSupplyLineType
      * @param  TaxTotal $taxTotal
      * @return static
      */
-    public function addToTaxTotal(TaxTotal $taxTotal): static
-    {
+    public function addToTaxTotal(
+        TaxTotal $taxTotal
+    ): static {
         $this->taxTotal[] = $taxTotal;
 
         return $this;
@@ -682,8 +696,9 @@ class TelecommunicationsSupplyLineType
      * @param  TaxTotal $taxTotal
      * @return static
      */
-    public function addOnceToTaxTotal(TaxTotal $taxTotal): static
-    {
+    public function addOnceToTaxTotal(
+        TaxTotal $taxTotal
+    ): static {
         if (!is_array($this->taxTotal)) {
             $this->taxTotal = [];
         }
@@ -721,8 +736,9 @@ class TelecommunicationsSupplyLineType
      * @param  null|array<TelecommunicationsService> $telecommunicationsService
      * @return static
      */
-    public function setTelecommunicationsService(?array $telecommunicationsService = null): static
-    {
+    public function setTelecommunicationsService(
+        ?array $telecommunicationsService = null
+    ): static {
         $this->telecommunicationsService = $telecommunicationsService;
 
         return $this;
@@ -782,8 +798,9 @@ class TelecommunicationsSupplyLineType
      * @param  TelecommunicationsService $telecommunicationsService
      * @return static
      */
-    public function addToTelecommunicationsService(TelecommunicationsService $telecommunicationsService): static
-    {
+    public function addToTelecommunicationsService(
+        TelecommunicationsService $telecommunicationsService
+    ): static {
         $this->telecommunicationsService[] = $telecommunicationsService;
 
         return $this;
@@ -803,8 +820,9 @@ class TelecommunicationsSupplyLineType
      * @param  TelecommunicationsService $telecommunicationsService
      * @return static
      */
-    public function addOnceToTelecommunicationsService(TelecommunicationsService $telecommunicationsService): static
-    {
+    public function addOnceToTelecommunicationsService(
+        TelecommunicationsService $telecommunicationsService
+    ): static {
         if (!is_array($this->telecommunicationsService)) {
             $this->telecommunicationsService = [];
         }

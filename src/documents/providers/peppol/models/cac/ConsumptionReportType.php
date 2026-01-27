@@ -247,8 +247,9 @@ class ConsumptionReportType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -286,8 +287,9 @@ class ConsumptionReportType
      * @param  null|ConsumptionType $consumptionType
      * @return static
      */
-    public function setConsumptionType(?ConsumptionType $consumptionType = null): static
-    {
+    public function setConsumptionType(
+        ?ConsumptionType $consumptionType = null
+    ): static {
         $this->consumptionType = $consumptionType;
 
         return $this;
@@ -325,8 +327,9 @@ class ConsumptionReportType
      * @param  null|ConsumptionTypeCode $consumptionTypeCode
      * @return static
      */
-    public function setConsumptionTypeCode(?ConsumptionTypeCode $consumptionTypeCode = null): static
-    {
+    public function setConsumptionTypeCode(
+        ?ConsumptionTypeCode $consumptionTypeCode = null
+    ): static {
         $this->consumptionTypeCode = $consumptionTypeCode;
 
         return $this;
@@ -354,8 +357,9 @@ class ConsumptionReportType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -415,8 +419,9 @@ class ConsumptionReportType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -436,8 +441,9 @@ class ConsumptionReportType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -485,8 +491,9 @@ class ConsumptionReportType
      * @param  null|TotalConsumedQuantity $totalConsumedQuantity
      * @return static
      */
-    public function setTotalConsumedQuantity(?TotalConsumedQuantity $totalConsumedQuantity = null): static
-    {
+    public function setTotalConsumedQuantity(
+        ?TotalConsumedQuantity $totalConsumedQuantity = null
+    ): static {
         $this->totalConsumedQuantity = $totalConsumedQuantity;
 
         return $this;
@@ -524,8 +531,9 @@ class ConsumptionReportType
      * @param  null|BasicConsumedQuantity $basicConsumedQuantity
      * @return static
      */
-    public function setBasicConsumedQuantity(?BasicConsumedQuantity $basicConsumedQuantity = null): static
-    {
+    public function setBasicConsumedQuantity(
+        ?BasicConsumedQuantity $basicConsumedQuantity = null
+    ): static {
         $this->basicConsumedQuantity = $basicConsumedQuantity;
 
         return $this;
@@ -563,8 +571,9 @@ class ConsumptionReportType
      * @param  null|ResidentOccupantsNumeric $residentOccupantsNumeric
      * @return static
      */
-    public function setResidentOccupantsNumeric(?ResidentOccupantsNumeric $residentOccupantsNumeric = null): static
-    {
+    public function setResidentOccupantsNumeric(
+        ?ResidentOccupantsNumeric $residentOccupantsNumeric = null
+    ): static {
         $this->residentOccupantsNumeric = $residentOccupantsNumeric;
 
         return $this;
@@ -602,8 +611,9 @@ class ConsumptionReportType
      * @param  null|ConsumersEnergyLevelCode $consumersEnergyLevelCode
      * @return static
      */
-    public function setConsumersEnergyLevelCode(?ConsumersEnergyLevelCode $consumersEnergyLevelCode = null): static
-    {
+    public function setConsumersEnergyLevelCode(
+        ?ConsumersEnergyLevelCode $consumersEnergyLevelCode = null
+    ): static {
         $this->consumersEnergyLevelCode = $consumersEnergyLevelCode;
 
         return $this;
@@ -641,8 +651,9 @@ class ConsumptionReportType
      * @param  null|ConsumersEnergyLevel $consumersEnergyLevel
      * @return static
      */
-    public function setConsumersEnergyLevel(?ConsumersEnergyLevel $consumersEnergyLevel = null): static
-    {
+    public function setConsumersEnergyLevel(
+        ?ConsumersEnergyLevel $consumersEnergyLevel = null
+    ): static {
         $this->consumersEnergyLevel = $consumersEnergyLevel;
 
         return $this;
@@ -680,8 +691,9 @@ class ConsumptionReportType
      * @param  null|ResidenceType $residenceType
      * @return static
      */
-    public function setResidenceType(?ResidenceType $residenceType = null): static
-    {
+    public function setResidenceType(
+        ?ResidenceType $residenceType = null
+    ): static {
         $this->residenceType = $residenceType;
 
         return $this;
@@ -719,8 +731,9 @@ class ConsumptionReportType
      * @param  null|ResidenceTypeCode $residenceTypeCode
      * @return static
      */
-    public function setResidenceTypeCode(?ResidenceTypeCode $residenceTypeCode = null): static
-    {
+    public function setResidenceTypeCode(
+        ?ResidenceTypeCode $residenceTypeCode = null
+    ): static {
         $this->residenceTypeCode = $residenceTypeCode;
 
         return $this;
@@ -758,8 +771,9 @@ class ConsumptionReportType
      * @param  null|HeatingType $heatingType
      * @return static
      */
-    public function setHeatingType(?HeatingType $heatingType = null): static
-    {
+    public function setHeatingType(
+        ?HeatingType $heatingType = null
+    ): static {
         $this->heatingType = $heatingType;
 
         return $this;
@@ -797,8 +811,9 @@ class ConsumptionReportType
      * @param  null|HeatingTypeCode $heatingTypeCode
      * @return static
      */
-    public function setHeatingTypeCode(?HeatingTypeCode $heatingTypeCode = null): static
-    {
+    public function setHeatingTypeCode(
+        ?HeatingTypeCode $heatingTypeCode = null
+    ): static {
         $this->heatingTypeCode = $heatingTypeCode;
 
         return $this;
@@ -836,8 +851,9 @@ class ConsumptionReportType
      * @param  null|Period $period
      * @return static
      */
-    public function setPeriod(?Period $period = null): static
-    {
+    public function setPeriod(
+        ?Period $period = null
+    ): static {
         $this->period = $period;
 
         return $this;
@@ -875,8 +891,9 @@ class ConsumptionReportType
      * @param  null|GuidanceDocumentReference $guidanceDocumentReference
      * @return static
      */
-    public function setGuidanceDocumentReference(?GuidanceDocumentReference $guidanceDocumentReference = null): static
-    {
+    public function setGuidanceDocumentReference(
+        ?GuidanceDocumentReference $guidanceDocumentReference = null
+    ): static {
         $this->guidanceDocumentReference = $guidanceDocumentReference;
 
         return $this;
@@ -914,8 +931,9 @@ class ConsumptionReportType
      * @param  null|DocumentReference $documentReference
      * @return static
      */
-    public function setDocumentReference(?DocumentReference $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?DocumentReference $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;
@@ -943,8 +961,9 @@ class ConsumptionReportType
      * @param  null|array<ConsumptionReportReference> $consumptionReportReference
      * @return static
      */
-    public function setConsumptionReportReference(?array $consumptionReportReference = null): static
-    {
+    public function setConsumptionReportReference(
+        ?array $consumptionReportReference = null
+    ): static {
         $this->consumptionReportReference = $consumptionReportReference;
 
         return $this;
@@ -1004,8 +1023,9 @@ class ConsumptionReportType
      * @param  ConsumptionReportReference $consumptionReportReference
      * @return static
      */
-    public function addToConsumptionReportReference(ConsumptionReportReference $consumptionReportReference): static
-    {
+    public function addToConsumptionReportReference(
+        ConsumptionReportReference $consumptionReportReference
+    ): static {
         $this->consumptionReportReference[] = $consumptionReportReference;
 
         return $this;
@@ -1025,8 +1045,9 @@ class ConsumptionReportType
      * @param  ConsumptionReportReference $consumptionReportReference
      * @return static
      */
-    public function addOnceToConsumptionReportReference(ConsumptionReportReference $consumptionReportReference): static
-    {
+    public function addOnceToConsumptionReportReference(
+        ConsumptionReportReference $consumptionReportReference
+    ): static {
         if (!is_array($this->consumptionReportReference)) {
             $this->consumptionReportReference = [];
         }
@@ -1064,8 +1085,9 @@ class ConsumptionReportType
      * @param  null|array<ConsumptionHistory> $consumptionHistory
      * @return static
      */
-    public function setConsumptionHistory(?array $consumptionHistory = null): static
-    {
+    public function setConsumptionHistory(
+        ?array $consumptionHistory = null
+    ): static {
         $this->consumptionHistory = $consumptionHistory;
 
         return $this;
@@ -1125,8 +1147,9 @@ class ConsumptionReportType
      * @param  ConsumptionHistory $consumptionHistory
      * @return static
      */
-    public function addToConsumptionHistory(ConsumptionHistory $consumptionHistory): static
-    {
+    public function addToConsumptionHistory(
+        ConsumptionHistory $consumptionHistory
+    ): static {
         $this->consumptionHistory[] = $consumptionHistory;
 
         return $this;
@@ -1146,8 +1169,9 @@ class ConsumptionReportType
      * @param  ConsumptionHistory $consumptionHistory
      * @return static
      */
-    public function addOnceToConsumptionHistory(ConsumptionHistory $consumptionHistory): static
-    {
+    public function addOnceToConsumptionHistory(
+        ConsumptionHistory $consumptionHistory
+    ): static {
         if (!is_array($this->consumptionHistory)) {
             $this->consumptionHistory = [];
         }

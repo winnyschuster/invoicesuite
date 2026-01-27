@@ -100,8 +100,9 @@ final class Indirizzo
      * @param  null|string $indirizzo
      * @return static
      */
-    public function setIndirizzo(?string $indirizzo = null): static
-    {
+    public function setIndirizzo(
+        ?string $indirizzo = null
+    ): static {
         $this->indirizzo = InvoiceSuiteStringUtils::asNullWhenEmpty($indirizzo);
 
         return $this;
@@ -135,8 +136,9 @@ final class Indirizzo
      * @param  null|string $numeroCivico
      * @return static
      */
-    public function setNumeroCivico(?string $numeroCivico = null): static
-    {
+    public function setNumeroCivico(
+        ?string $numeroCivico = null
+    ): static {
         $this->numeroCivico = InvoiceSuiteStringUtils::asNullWhenEmpty($numeroCivico);
 
         return $this;
@@ -170,8 +172,9 @@ final class Indirizzo
      * @param  null|string $cAP
      * @return static
      */
-    public function setCAP(?string $cAP = null): static
-    {
+    public function setCAP(
+        ?string $cAP = null
+    ): static {
         $this->cAP = InvoiceSuiteStringUtils::asNullWhenEmpty($cAP);
 
         return $this;
@@ -205,8 +208,9 @@ final class Indirizzo
      * @param  null|string $comune
      * @return static
      */
-    public function setComune(?string $comune = null): static
-    {
+    public function setComune(
+        ?string $comune = null
+    ): static {
         $this->comune = InvoiceSuiteStringUtils::asNullWhenEmpty($comune);
 
         return $this;
@@ -240,8 +244,9 @@ final class Indirizzo
      * @param  null|string $provincia
      * @return static
      */
-    public function setProvincia(?string $provincia = null): static
-    {
+    public function setProvincia(
+        ?string $provincia = null
+    ): static {
         $this->provincia = InvoiceSuiteStringUtils::asNullWhenEmpty($provincia);
 
         return $this;
@@ -275,8 +280,9 @@ final class Indirizzo
      * @param  null|string $nazione
      * @return static
      */
-    public function setNazione(?string $nazione = null): static
-    {
+    public function setNazione(
+        ?string $nazione = null
+    ): static {
         $this->nazione = InvoiceSuiteStringUtils::asNullWhenEmpty($nazione);
 
         return $this;

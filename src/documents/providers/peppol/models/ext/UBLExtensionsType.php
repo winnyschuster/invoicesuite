@@ -35,8 +35,9 @@ class UBLExtensionsType
      * @param  null|array<UBLExtension> $uBLExtension
      * @return static
      */
-    public function setUBLExtension(?array $uBLExtension = null): static
-    {
+    public function setUBLExtension(
+        ?array $uBLExtension = null
+    ): static {
         $this->uBLExtension = $uBLExtension;
 
         return $this;
@@ -96,8 +97,9 @@ class UBLExtensionsType
      * @param  UBLExtension $uBLExtension
      * @return static
      */
-    public function addToUBLExtension(UBLExtension $uBLExtension): static
-    {
+    public function addToUBLExtension(
+        UBLExtension $uBLExtension
+    ): static {
         $this->uBLExtension[] = $uBLExtension;
 
         return $this;
@@ -117,8 +119,9 @@ class UBLExtensionsType
      * @param  UBLExtension $uBLExtension
      * @return static
      */
-    public function addOnceToUBLExtension(UBLExtension $uBLExtension): static
-    {
+    public function addOnceToUBLExtension(
+        UBLExtension $uBLExtension
+    ): static {
         if (!is_array($this->uBLExtension)) {
             $this->uBLExtension = [];
         }

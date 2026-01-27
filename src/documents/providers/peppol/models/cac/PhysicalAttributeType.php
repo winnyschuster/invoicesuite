@@ -82,8 +82,9 @@ class PhysicalAttributeType
      * @param  null|AttributeID $attributeID
      * @return static
      */
-    public function setAttributeID(?AttributeID $attributeID = null): static
-    {
+    public function setAttributeID(
+        ?AttributeID $attributeID = null
+    ): static {
         $this->attributeID = $attributeID;
 
         return $this;
@@ -121,8 +122,9 @@ class PhysicalAttributeType
      * @param  null|PositionCode $positionCode
      * @return static
      */
-    public function setPositionCode(?PositionCode $positionCode = null): static
-    {
+    public function setPositionCode(
+        ?PositionCode $positionCode = null
+    ): static {
         $this->positionCode = $positionCode;
 
         return $this;
@@ -160,8 +162,9 @@ class PhysicalAttributeType
      * @param  null|DescriptionCode $descriptionCode
      * @return static
      */
-    public function setDescriptionCode(?DescriptionCode $descriptionCode = null): static
-    {
+    public function setDescriptionCode(
+        ?DescriptionCode $descriptionCode = null
+    ): static {
         $this->descriptionCode = $descriptionCode;
 
         return $this;
@@ -189,8 +192,9 @@ class PhysicalAttributeType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -250,8 +254,9 @@ class PhysicalAttributeType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -271,8 +276,9 @@ class PhysicalAttributeType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }

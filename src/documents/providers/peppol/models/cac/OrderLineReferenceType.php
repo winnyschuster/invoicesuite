@@ -92,8 +92,9 @@ class OrderLineReferenceType
      * @param  null|LineID $lineID
      * @return static
      */
-    public function setLineID(?LineID $lineID = null): static
-    {
+    public function setLineID(
+        ?LineID $lineID = null
+    ): static {
         $this->lineID = $lineID;
 
         return $this;
@@ -131,8 +132,9 @@ class OrderLineReferenceType
      * @param  null|SalesOrderLineID $salesOrderLineID
      * @return static
      */
-    public function setSalesOrderLineID(?SalesOrderLineID $salesOrderLineID = null): static
-    {
+    public function setSalesOrderLineID(
+        ?SalesOrderLineID $salesOrderLineID = null
+    ): static {
         $this->salesOrderLineID = $salesOrderLineID;
 
         return $this;
@@ -170,8 +172,9 @@ class OrderLineReferenceType
      * @param  null|UUID $uUID
      * @return static
      */
-    public function setUUID(?UUID $uUID = null): static
-    {
+    public function setUUID(
+        ?UUID $uUID = null
+    ): static {
         $this->uUID = $uUID;
 
         return $this;
@@ -209,8 +212,9 @@ class OrderLineReferenceType
      * @param  null|LineStatusCode $lineStatusCode
      * @return static
      */
-    public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): static
-    {
+    public function setLineStatusCode(
+        ?LineStatusCode $lineStatusCode = null
+    ): static {
         $this->lineStatusCode = $lineStatusCode;
 
         return $this;
@@ -248,8 +252,9 @@ class OrderLineReferenceType
      * @param  null|OrderReference $orderReference
      * @return static
      */
-    public function setOrderReference(?OrderReference $orderReference = null): static
-    {
+    public function setOrderReference(
+        ?OrderReference $orderReference = null
+    ): static {
         $this->orderReference = $orderReference;
 
         return $this;

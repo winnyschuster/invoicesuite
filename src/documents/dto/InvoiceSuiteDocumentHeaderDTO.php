@@ -508,8 +508,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|string $number The document number issued by the seller
      * @return static
      */
-    public function setNumber(?string $number): static
-    {
+    public function setNumber(
+        ?string $number
+    ): static {
         $this->number = InvoiceSuiteStringUtils::asNullWhenEmpty($number);
 
         return $this;
@@ -531,8 +532,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|string $type The type of the document expressed as a code
      * @return static
      */
-    public function setType(?string $type): static
-    {
+    public function setType(
+        ?string $type
+    ): static {
         $this->type = InvoiceSuiteStringUtils::asNullWhenEmpty($type);
 
         return $this;
@@ -554,8 +556,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|string $description The document type as free text
      * @return static
      */
-    public function setDescription(?string $description): static
-    {
+    public function setDescription(
+        ?string $description
+    ): static {
         $this->description = InvoiceSuiteStringUtils::asNullWhenEmpty($description);
 
         return $this;
@@ -577,8 +580,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|string $language The language code in which the document was written
      * @return static
      */
-    public function setLanguage(?string $language): static
-    {
+    public function setLanguage(
+        ?string $language
+    ): static {
         $this->language = InvoiceSuiteStringUtils::asNullWhenEmpty($language);
 
         return $this;
@@ -600,8 +604,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|DateTimeInterface $date Date of the document. The date when the document was issued by the seller
      * @return static
      */
-    public function setDate(?DateTimeInterface $date): static
-    {
+    public function setDate(
+        ?DateTimeInterface $date
+    ): static {
         $this->date = $date;
 
         return $this;
@@ -623,8 +628,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|DateTimeInterface $completeDate The contractual due date of the document
      * @return static
      */
-    public function setCompleteDate(?DateTimeInterface $completeDate): static
-    {
+    public function setCompleteDate(
+        ?DateTimeInterface $completeDate
+    ): static {
         $this->completeDate = $completeDate;
 
         return $this;
@@ -646,8 +652,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<DateTimeInterface> $supplyChainEvents The date of the delivery
      * @return static
      */
-    public function setSupplyChainEvents(array $supplyChainEvents): static
-    {
+    public function setSupplyChainEvents(
+        array $supplyChainEvents
+    ): static {
         $this->supplyChainEvents = $supplyChainEvents;
 
         return $this;
@@ -659,8 +666,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  DateTimeInterface $supplyChainEvent The date of the delivery
      * @return static
      */
-    public function addSupplyChainEvent(?DateTimeInterface $supplyChainEvent): static
-    {
+    public function addSupplyChainEvent(
+        ?DateTimeInterface $supplyChainEvent
+    ): static {
         if (is_null($supplyChainEvent)) {
             return $this;
         }
@@ -677,8 +685,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstSupplyChainEvent(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstSupplyChainEvent(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($supplyChainEvent = reset($this->supplyChainEvents)) !== false) {
             $callback($supplyChainEvent);
         } elseif (!is_null($callbackElse)) {
@@ -695,8 +705,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextSupplyChainEvent(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextSupplyChainEvent(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($supplyChainEvent = next($this->supplyChainEvents)) !== false) {
             $callback($supplyChainEvent);
         } elseif (!is_null($callbackElse)) {
@@ -713,8 +725,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousSupplyChainEvent(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousSupplyChainEvent(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($supplyChainEvent = prev($this->supplyChainEvents)) !== false) {
             $callback($supplyChainEvent);
         } elseif (!is_null($callbackElse)) {
@@ -731,8 +745,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastSupplyChainEvent(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastSupplyChainEvent(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($supplyChainEvent = end($this->supplyChainEvents)) !== false) {
             $callback($supplyChainEvent);
         } elseif (!is_null($callbackElse)) {
@@ -828,8 +844,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|string $currency The code for the invoice currency
      * @return static
      */
-    public function setCurrency(?string $currency): static
-    {
+    public function setCurrency(
+        ?string $currency
+    ): static {
         $this->currency = InvoiceSuiteStringUtils::asNullWhenEmpty($currency);
 
         return $this;
@@ -851,8 +868,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|string $taxCurrency The code for the tax currency
      * @return static
      */
-    public function setTaxCurrency(?string $taxCurrency): static
-    {
+    public function setTaxCurrency(
+        ?string $taxCurrency
+    ): static {
         $this->taxCurrency = InvoiceSuiteStringUtils::asNullWhenEmpty($taxCurrency);
 
         return $this;
@@ -874,8 +892,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|bool $isCopy The flag that indicated that this document is a copy
      * @return static
      */
-    public function setIsCopy(?bool $isCopy): static
-    {
+    public function setIsCopy(
+        ?bool $isCopy
+    ): static {
         $this->isCopy = $isCopy;
 
         return $this;
@@ -897,8 +916,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|bool $isTest The flag that indicated that this document is a test
      * @return static
      */
-    public function setIsTest(?bool $isTest): static
-    {
+    public function setIsTest(
+        ?bool $isTest
+    ): static {
         $this->isTest = $isTest;
 
         return $this;
@@ -920,8 +940,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteNoteDTO> $notes The notes for this document
      * @return static
      */
-    public function setNotes(array $notes): static
-    {
+    public function setNotes(
+        array $notes
+    ): static {
         $this->notes = $notes;
 
         return $this;
@@ -933,8 +954,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteNoteDTO $note The notes for this document
      * @return static
      */
-    public function addNote(?InvoiceSuiteNoteDTO $note): static
-    {
+    public function addNote(
+        ?InvoiceSuiteNoteDTO $note
+    ): static {
         if (is_null($note)) {
             return $this;
         }
@@ -951,8 +973,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstNote(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstNote(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($note = reset($this->notes)) !== false) {
             $callback($note);
         } elseif (!is_null($callbackElse)) {
@@ -969,8 +993,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextNote(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextNote(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($note = next($this->notes)) !== false) {
             $callback($note);
         } elseif (!is_null($callbackElse)) {
@@ -987,8 +1013,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousNote(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousNote(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($note = prev($this->notes)) !== false) {
             $callback($note);
         } elseif (!is_null($callbackElse)) {
@@ -1005,8 +1033,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastNote(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastNote(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($note = end($this->notes)) !== false) {
             $callback($note);
         } elseif (!is_null($callbackElse)) {
@@ -1024,8 +1054,11 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachNote(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachNote(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null
+    ): static {
         $count = 0;
 
         foreach ($this->notes as $note) {
@@ -1099,8 +1132,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteDateRangeDTO> $billingPeriods The start and/or end date of the billing period
      * @return static
      */
-    public function setBillingPeriods(array $billingPeriods): static
-    {
+    public function setBillingPeriods(
+        array $billingPeriods
+    ): static {
         $this->billingPeriods = $billingPeriods;
 
         return $this;
@@ -1112,8 +1146,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteDateRangeDTO $billingPeriod The start and/or end date of the billing period
      * @return static
      */
-    public function addBillingPeriod(?InvoiceSuiteDateRangeDTO $billingPeriod): static
-    {
+    public function addBillingPeriod(
+        ?InvoiceSuiteDateRangeDTO $billingPeriod
+    ): static {
         if (is_null($billingPeriod)) {
             return $this;
         }
@@ -1130,8 +1165,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstBillingPeriod(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstBillingPeriod(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($billingPeriod = reset($this->billingPeriods)) !== false) {
             $callback($billingPeriod);
         } elseif (!is_null($callbackElse)) {
@@ -1148,8 +1185,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextBillingPeriod(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextBillingPeriod(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($billingPeriod = next($this->billingPeriods)) !== false) {
             $callback($billingPeriod);
         } elseif (!is_null($callbackElse)) {
@@ -1166,8 +1205,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousBillingPeriod(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousBillingPeriod(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($billingPeriod = prev($this->billingPeriods)) !== false) {
             $callback($billingPeriod);
         } elseif (!is_null($callbackElse)) {
@@ -1184,8 +1225,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastBillingPeriod(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastBillingPeriod(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($billingPeriod = end($this->billingPeriods)) !== false) {
             $callback($billingPeriod);
         } elseif (!is_null($callbackElse)) {
@@ -1281,8 +1324,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteIdDTO> $postingReferences The posting reference
      * @return static
      */
-    public function setPostingReferences(array $postingReferences): static
-    {
+    public function setPostingReferences(
+        array $postingReferences
+    ): static {
         $this->postingReferences = $postingReferences;
 
         return $this;
@@ -1294,8 +1338,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteIdDTO $postingReference The posting reference
      * @return static
      */
-    public function addPostingReference(?InvoiceSuiteIdDTO $postingReference): static
-    {
+    public function addPostingReference(
+        ?InvoiceSuiteIdDTO $postingReference
+    ): static {
         if (is_null($postingReference)) {
             return $this;
         }
@@ -1312,8 +1357,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstPostingReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstPostingReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($postingReference = reset($this->postingReferences)) !== false) {
             $callback($postingReference);
         } elseif (!is_null($callbackElse)) {
@@ -1330,8 +1377,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextPostingReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextPostingReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($postingReference = next($this->postingReferences)) !== false) {
             $callback($postingReference);
         } elseif (!is_null($callbackElse)) {
@@ -1348,8 +1397,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousPostingReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousPostingReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($postingReference = prev($this->postingReferences)) !== false) {
             $callback($postingReference);
         } elseif (!is_null($callbackElse)) {
@@ -1366,8 +1417,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastPostingReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastPostingReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($postingReference = end($this->postingReferences)) !== false) {
             $callback($postingReference);
         } elseif (!is_null($callbackElse)) {
@@ -1463,8 +1516,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteReferenceDocumentDTO> $sellerOrderReferences The associated seller's order confirmation
      * @return static
      */
-    public function setSellerOrderReferences(array $sellerOrderReferences): static
-    {
+    public function setSellerOrderReferences(
+        array $sellerOrderReferences
+    ): static {
         $this->sellerOrderReferences = $sellerOrderReferences;
 
         return $this;
@@ -1476,8 +1530,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteReferenceDocumentDTO $sellerOrderReference The associated seller's order confirmation
      * @return static
      */
-    public function addSellerOrderReference(?InvoiceSuiteReferenceDocumentDTO $sellerOrderReference): static
-    {
+    public function addSellerOrderReference(
+        ?InvoiceSuiteReferenceDocumentDTO $sellerOrderReference
+    ): static {
         if (is_null($sellerOrderReference)) {
             return $this;
         }
@@ -1494,8 +1549,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstSellerOrderReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstSellerOrderReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($sellerOrderReference = reset($this->sellerOrderReferences)) !== false) {
             $callback($sellerOrderReference);
         } elseif (!is_null($callbackElse)) {
@@ -1512,8 +1569,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextSellerOrderReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextSellerOrderReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($sellerOrderReference = next($this->sellerOrderReferences)) !== false) {
             $callback($sellerOrderReference);
         } elseif (!is_null($callbackElse)) {
@@ -1530,8 +1589,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousSellerOrderReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousSellerOrderReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($sellerOrderReference = prev($this->sellerOrderReferences)) !== false) {
             $callback($sellerOrderReference);
         } elseif (!is_null($callbackElse)) {
@@ -1548,8 +1609,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastSellerOrderReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastSellerOrderReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($sellerOrderReference = end($this->sellerOrderReferences)) !== false) {
             $callback($sellerOrderReference);
         } elseif (!is_null($callbackElse)) {
@@ -1645,8 +1708,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteReferenceDocumentDTO> $buyerOrderReferences The associated buyer's order
      * @return static
      */
-    public function setBuyerOrderReferences(array $buyerOrderReferences): static
-    {
+    public function setBuyerOrderReferences(
+        array $buyerOrderReferences
+    ): static {
         $this->buyerOrderReferences = $buyerOrderReferences;
 
         return $this;
@@ -1658,8 +1722,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteReferenceDocumentDTO $buyerOrderReference The associated buyer's order
      * @return static
      */
-    public function addBuyerOrderReference(?InvoiceSuiteReferenceDocumentDTO $buyerOrderReference): static
-    {
+    public function addBuyerOrderReference(
+        ?InvoiceSuiteReferenceDocumentDTO $buyerOrderReference
+    ): static {
         if (is_null($buyerOrderReference)) {
             return $this;
         }
@@ -1676,8 +1741,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstBuyerOrderReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstBuyerOrderReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($buyerOrderReference = reset($this->buyerOrderReferences)) !== false) {
             $callback($buyerOrderReference);
         } elseif (!is_null($callbackElse)) {
@@ -1694,8 +1761,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextBuyerOrderReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextBuyerOrderReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($buyerOrderReference = next($this->buyerOrderReferences)) !== false) {
             $callback($buyerOrderReference);
         } elseif (!is_null($callbackElse)) {
@@ -1712,8 +1781,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousBuyerOrderReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousBuyerOrderReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($buyerOrderReference = prev($this->buyerOrderReferences)) !== false) {
             $callback($buyerOrderReference);
         } elseif (!is_null($callbackElse)) {
@@ -1730,8 +1801,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastBuyerOrderReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastBuyerOrderReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($buyerOrderReference = end($this->buyerOrderReferences)) !== false) {
             $callback($buyerOrderReference);
         } elseif (!is_null($callbackElse)) {
@@ -1827,8 +1900,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteReferenceDocumentDTO> $quotationReferences The associated quotation
      * @return static
      */
-    public function setQuotationReferences(array $quotationReferences): static
-    {
+    public function setQuotationReferences(
+        array $quotationReferences
+    ): static {
         $this->quotationReferences = $quotationReferences;
 
         return $this;
@@ -1840,8 +1914,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteReferenceDocumentDTO $quotationReference The associated quotation
      * @return static
      */
-    public function addQuotationReference(?InvoiceSuiteReferenceDocumentDTO $quotationReference): static
-    {
+    public function addQuotationReference(
+        ?InvoiceSuiteReferenceDocumentDTO $quotationReference
+    ): static {
         if (is_null($quotationReference)) {
             return $this;
         }
@@ -1858,8 +1933,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstQuotationReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstQuotationReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($quotationReference = reset($this->quotationReferences)) !== false) {
             $callback($quotationReference);
         } elseif (!is_null($callbackElse)) {
@@ -1876,8 +1953,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextQuotationReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextQuotationReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($quotationReference = next($this->quotationReferences)) !== false) {
             $callback($quotationReference);
         } elseif (!is_null($callbackElse)) {
@@ -1894,8 +1973,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousQuotationReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousQuotationReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($quotationReference = prev($this->quotationReferences)) !== false) {
             $callback($quotationReference);
         } elseif (!is_null($callbackElse)) {
@@ -1912,8 +1993,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastQuotationReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastQuotationReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($quotationReference = end($this->quotationReferences)) !== false) {
             $callback($quotationReference);
         } elseif (!is_null($callbackElse)) {
@@ -2009,8 +2092,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteReferenceDocumentDTO> $contractReferences The associated contract
      * @return static
      */
-    public function setContractReferences(array $contractReferences): static
-    {
+    public function setContractReferences(
+        array $contractReferences
+    ): static {
         $this->contractReferences = $contractReferences;
 
         return $this;
@@ -2022,8 +2106,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteReferenceDocumentDTO $contractReference The associated contract
      * @return static
      */
-    public function addContractReference(?InvoiceSuiteReferenceDocumentDTO $contractReference): static
-    {
+    public function addContractReference(
+        ?InvoiceSuiteReferenceDocumentDTO $contractReference
+    ): static {
         if (is_null($contractReference)) {
             return $this;
         }
@@ -2040,8 +2125,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstContractReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstContractReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($contractReference = reset($this->contractReferences)) !== false) {
             $callback($contractReference);
         } elseif (!is_null($callbackElse)) {
@@ -2058,8 +2145,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextContractReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextContractReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($contractReference = next($this->contractReferences)) !== false) {
             $callback($contractReference);
         } elseif (!is_null($callbackElse)) {
@@ -2076,8 +2165,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousContractReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousContractReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($contractReference = prev($this->contractReferences)) !== false) {
             $callback($contractReference);
         } elseif (!is_null($callbackElse)) {
@@ -2094,8 +2185,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastContractReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastContractReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($contractReference = end($this->contractReferences)) !== false) {
             $callback($contractReference);
         } elseif (!is_null($callbackElse)) {
@@ -2191,8 +2284,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteReferenceDocumentExtDTO> $additionalReferences The additional associated document
      * @return static
      */
-    public function setAdditionalReferences(array $additionalReferences): static
-    {
+    public function setAdditionalReferences(
+        array $additionalReferences
+    ): static {
         $this->additionalReferences = $additionalReferences;
 
         return $this;
@@ -2204,8 +2298,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteReferenceDocumentExtDTO $additionalReference The additional associated document
      * @return static
      */
-    public function addAdditionalReference(?InvoiceSuiteReferenceDocumentExtDTO $additionalReference): static
-    {
+    public function addAdditionalReference(
+        ?InvoiceSuiteReferenceDocumentExtDTO $additionalReference
+    ): static {
         if (is_null($additionalReference)) {
             return $this;
         }
@@ -2222,8 +2317,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstAdditionalReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstAdditionalReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($additionalReference = reset($this->additionalReferences)) !== false) {
             $callback($additionalReference);
         } elseif (!is_null($callbackElse)) {
@@ -2240,8 +2337,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextAdditionalReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextAdditionalReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($additionalReference = next($this->additionalReferences)) !== false) {
             $callback($additionalReference);
         } elseif (!is_null($callbackElse)) {
@@ -2258,8 +2357,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousAdditionalReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousAdditionalReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($additionalReference = prev($this->additionalReferences)) !== false) {
             $callback($additionalReference);
         } elseif (!is_null($callbackElse)) {
@@ -2276,8 +2377,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastAdditionalReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastAdditionalReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($additionalReference = end($this->additionalReferences)) !== false) {
             $callback($additionalReference);
         } elseif (!is_null($callbackElse)) {
@@ -2373,8 +2476,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteReferenceDocumentExtDTO> $invoiceReferences The additional invoice document
      * @return static
      */
-    public function setInvoiceReferences(array $invoiceReferences): static
-    {
+    public function setInvoiceReferences(
+        array $invoiceReferences
+    ): static {
         $this->invoiceReferences = $invoiceReferences;
 
         return $this;
@@ -2386,8 +2490,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteReferenceDocumentExtDTO $invoiceReference The additional invoice document
      * @return static
      */
-    public function addInvoiceReference(?InvoiceSuiteReferenceDocumentExtDTO $invoiceReference): static
-    {
+    public function addInvoiceReference(
+        ?InvoiceSuiteReferenceDocumentExtDTO $invoiceReference
+    ): static {
         if (is_null($invoiceReference)) {
             return $this;
         }
@@ -2404,8 +2509,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstInvoiceReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstInvoiceReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($invoiceReference = reset($this->invoiceReferences)) !== false) {
             $callback($invoiceReference);
         } elseif (!is_null($callbackElse)) {
@@ -2422,8 +2529,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextInvoiceReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextInvoiceReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($invoiceReference = next($this->invoiceReferences)) !== false) {
             $callback($invoiceReference);
         } elseif (!is_null($callbackElse)) {
@@ -2440,8 +2549,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousInvoiceReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousInvoiceReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($invoiceReference = prev($this->invoiceReferences)) !== false) {
             $callback($invoiceReference);
         } elseif (!is_null($callbackElse)) {
@@ -2458,8 +2569,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastInvoiceReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastInvoiceReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($invoiceReference = end($this->invoiceReferences)) !== false) {
             $callback($invoiceReference);
         } elseif (!is_null($callbackElse)) {
@@ -2555,8 +2668,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteProjectDTO> $projectReferences The project reference
      * @return static
      */
-    public function setProjectReferences(array $projectReferences): static
-    {
+    public function setProjectReferences(
+        array $projectReferences
+    ): static {
         $this->projectReferences = $projectReferences;
 
         return $this;
@@ -2568,8 +2682,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteProjectDTO $projectReference The project reference
      * @return static
      */
-    public function addProjectReference(?InvoiceSuiteProjectDTO $projectReference): static
-    {
+    public function addProjectReference(
+        ?InvoiceSuiteProjectDTO $projectReference
+    ): static {
         if (is_null($projectReference)) {
             return $this;
         }
@@ -2586,8 +2701,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstProjectReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstProjectReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($projectReference = reset($this->projectReferences)) !== false) {
             $callback($projectReference);
         } elseif (!is_null($callbackElse)) {
@@ -2604,8 +2721,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextProjectReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextProjectReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($projectReference = next($this->projectReferences)) !== false) {
             $callback($projectReference);
         } elseif (!is_null($callbackElse)) {
@@ -2622,8 +2741,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousProjectReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousProjectReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($projectReference = prev($this->projectReferences)) !== false) {
             $callback($projectReference);
         } elseif (!is_null($callbackElse)) {
@@ -2640,8 +2761,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastProjectReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastProjectReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($projectReference = end($this->projectReferences)) !== false) {
             $callback($projectReference);
         } elseif (!is_null($callbackElse)) {
@@ -2737,8 +2860,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteReferenceDocumentDTO> $ultimateCustomerOrderReferences The ultimate customer order reference
      * @return static
      */
-    public function setUltimateCustomerOrderReferences(array $ultimateCustomerOrderReferences): static
-    {
+    public function setUltimateCustomerOrderReferences(
+        array $ultimateCustomerOrderReferences
+    ): static {
         $this->ultimateCustomerOrderReferences = $ultimateCustomerOrderReferences;
 
         return $this;
@@ -2769,8 +2893,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstUltimateCustomerOrderReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstUltimateCustomerOrderReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($ultimateCustomerOrderReference = reset($this->ultimateCustomerOrderReferences)) !== false) {
             $callback($ultimateCustomerOrderReference);
         } elseif (!is_null($callbackElse)) {
@@ -2787,8 +2913,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextUltimateCustomerOrderReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextUltimateCustomerOrderReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($ultimateCustomerOrderReference = next($this->ultimateCustomerOrderReferences)) !== false) {
             $callback($ultimateCustomerOrderReference);
         } elseif (!is_null($callbackElse)) {
@@ -2805,8 +2933,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousUltimateCustomerOrderReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousUltimateCustomerOrderReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($ultimateCustomerOrderReference = prev($this->ultimateCustomerOrderReferences)) !== false) {
             $callback($ultimateCustomerOrderReference);
         } elseif (!is_null($callbackElse)) {
@@ -2823,8 +2953,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastUltimateCustomerOrderReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastUltimateCustomerOrderReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($ultimateCustomerOrderReference = end($this->ultimateCustomerOrderReferences)) !== false) {
             $callback($ultimateCustomerOrderReference);
         } elseif (!is_null($callbackElse)) {
@@ -2920,8 +3052,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteReferenceDocumentDTO> $despatchAdviceReferences The despatch advice reference
      * @return static
      */
-    public function setDespatchAdviceReferences(array $despatchAdviceReferences): static
-    {
+    public function setDespatchAdviceReferences(
+        array $despatchAdviceReferences
+    ): static {
         $this->despatchAdviceReferences = $despatchAdviceReferences;
 
         return $this;
@@ -2933,8 +3066,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteReferenceDocumentDTO $despatchAdviceReference The despatch advice reference
      * @return static
      */
-    public function addDespatchAdviceReference(?InvoiceSuiteReferenceDocumentDTO $despatchAdviceReference): static
-    {
+    public function addDespatchAdviceReference(
+        ?InvoiceSuiteReferenceDocumentDTO $despatchAdviceReference
+    ): static {
         if (is_null($despatchAdviceReference)) {
             return $this;
         }
@@ -2951,8 +3085,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstDespatchAdviceReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstDespatchAdviceReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($despatchAdviceReference = reset($this->despatchAdviceReferences)) !== false) {
             $callback($despatchAdviceReference);
         } elseif (!is_null($callbackElse)) {
@@ -2969,8 +3105,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextDespatchAdviceReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextDespatchAdviceReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($despatchAdviceReference = next($this->despatchAdviceReferences)) !== false) {
             $callback($despatchAdviceReference);
         } elseif (!is_null($callbackElse)) {
@@ -2987,8 +3125,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousDespatchAdviceReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousDespatchAdviceReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($despatchAdviceReference = prev($this->despatchAdviceReferences)) !== false) {
             $callback($despatchAdviceReference);
         } elseif (!is_null($callbackElse)) {
@@ -3005,8 +3145,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastDespatchAdviceReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastDespatchAdviceReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($despatchAdviceReference = end($this->despatchAdviceReferences)) !== false) {
             $callback($despatchAdviceReference);
         } elseif (!is_null($callbackElse)) {
@@ -3102,8 +3244,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteReferenceDocumentDTO> $receivingAdviceReferences The receiving advice reference
      * @return static
      */
-    public function setReceivingAdviceReferences(array $receivingAdviceReferences): static
-    {
+    public function setReceivingAdviceReferences(
+        array $receivingAdviceReferences
+    ): static {
         $this->receivingAdviceReferences = $receivingAdviceReferences;
 
         return $this;
@@ -3115,8 +3258,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteReferenceDocumentDTO $receivingAdviceReference The receiving advice reference
      * @return static
      */
-    public function addReceivingAdviceReference(?InvoiceSuiteReferenceDocumentDTO $receivingAdviceReference): static
-    {
+    public function addReceivingAdviceReference(
+        ?InvoiceSuiteReferenceDocumentDTO $receivingAdviceReference
+    ): static {
         if (is_null($receivingAdviceReference)) {
             return $this;
         }
@@ -3133,8 +3277,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstReceivingAdviceReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstReceivingAdviceReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($receivingAdviceReference = reset($this->receivingAdviceReferences)) !== false) {
             $callback($receivingAdviceReference);
         } elseif (!is_null($callbackElse)) {
@@ -3151,8 +3297,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextReceivingAdviceReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextReceivingAdviceReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($receivingAdviceReference = next($this->receivingAdviceReferences)) !== false) {
             $callback($receivingAdviceReference);
         } elseif (!is_null($callbackElse)) {
@@ -3169,8 +3317,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousReceivingAdviceReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousReceivingAdviceReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($receivingAdviceReference = prev($this->receivingAdviceReferences)) !== false) {
             $callback($receivingAdviceReference);
         } elseif (!is_null($callbackElse)) {
@@ -3187,8 +3337,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastReceivingAdviceReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastReceivingAdviceReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($receivingAdviceReference = end($this->receivingAdviceReferences)) !== false) {
             $callback($receivingAdviceReference);
         } elseif (!is_null($callbackElse)) {
@@ -3284,8 +3436,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteReferenceDocumentDTO> $deliveryNoteReferences The delivery note reference
      * @return static
      */
-    public function setDeliveryNoteReferences(array $deliveryNoteReferences): static
-    {
+    public function setDeliveryNoteReferences(
+        array $deliveryNoteReferences
+    ): static {
         $this->deliveryNoteReferences = $deliveryNoteReferences;
 
         return $this;
@@ -3297,8 +3450,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteReferenceDocumentDTO $deliveryNoteReference The delivery note reference
      * @return static
      */
-    public function addDeliveryNoteReference(?InvoiceSuiteReferenceDocumentDTO $deliveryNoteReference): static
-    {
+    public function addDeliveryNoteReference(
+        ?InvoiceSuiteReferenceDocumentDTO $deliveryNoteReference
+    ): static {
         if (is_null($deliveryNoteReference)) {
             return $this;
         }
@@ -3315,8 +3469,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstDeliveryNoteReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstDeliveryNoteReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($deliveryNoteReference = reset($this->deliveryNoteReferences)) !== false) {
             $callback($deliveryNoteReference);
         } elseif (!is_null($callbackElse)) {
@@ -3333,8 +3489,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextDeliveryNoteReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextDeliveryNoteReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($deliveryNoteReference = next($this->deliveryNoteReferences)) !== false) {
             $callback($deliveryNoteReference);
         } elseif (!is_null($callbackElse)) {
@@ -3351,8 +3509,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousDeliveryNoteReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousDeliveryNoteReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($deliveryNoteReference = prev($this->deliveryNoteReferences)) !== false) {
             $callback($deliveryNoteReference);
         } elseif (!is_null($callbackElse)) {
@@ -3369,8 +3529,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastDeliveryNoteReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastDeliveryNoteReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($deliveryNoteReference = end($this->deliveryNoteReferences)) !== false) {
             $callback($deliveryNoteReference);
         } elseif (!is_null($callbackElse)) {
@@ -3466,8 +3628,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|InvoiceSuitePartyDTO $sellerParty The Seller/Supplier Party
      * @return static
      */
-    public function setSellerParty(?InvoiceSuitePartyDTO $sellerParty): static
-    {
+    public function setSellerParty(
+        ?InvoiceSuitePartyDTO $sellerParty
+    ): static {
         $this->sellerParty = $sellerParty;
 
         return $this;
@@ -3489,8 +3652,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|InvoiceSuitePartyDTO $buyerParty The Buyer/Customer Party
      * @return static
      */
-    public function setBuyerParty(?InvoiceSuitePartyDTO $buyerParty): static
-    {
+    public function setBuyerParty(
+        ?InvoiceSuitePartyDTO $buyerParty
+    ): static {
         $this->buyerParty = $buyerParty;
 
         return $this;
@@ -3512,8 +3676,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|InvoiceSuitePartyDTO $taxRepresentativeParty The Tax Representativ Party
      * @return static
      */
-    public function setTaxRepresentativeParty(?InvoiceSuitePartyDTO $taxRepresentativeParty): static
-    {
+    public function setTaxRepresentativeParty(
+        ?InvoiceSuitePartyDTO $taxRepresentativeParty
+    ): static {
         $this->taxRepresentativeParty = $taxRepresentativeParty;
 
         return $this;
@@ -3535,8 +3700,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|InvoiceSuitePartyDTO $productEndUserParty The Product Enduser Party
      * @return static
      */
-    public function setProductEndUserParty(?InvoiceSuitePartyDTO $productEndUserParty): static
-    {
+    public function setProductEndUserParty(
+        ?InvoiceSuitePartyDTO $productEndUserParty
+    ): static {
         $this->productEndUserParty = $productEndUserParty;
 
         return $this;
@@ -3558,8 +3724,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|InvoiceSuitePartyDTO $shipToParty The Ship-To Party
      * @return static
      */
-    public function setShipToParty(?InvoiceSuitePartyDTO $shipToParty): static
-    {
+    public function setShipToParty(
+        ?InvoiceSuitePartyDTO $shipToParty
+    ): static {
         $this->shipToParty = $shipToParty;
 
         return $this;
@@ -3581,8 +3748,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|InvoiceSuitePartyDTO $ultimateShipToParty The Ultimate Ship-To Party
      * @return static
      */
-    public function setUltimateShipToParty(?InvoiceSuitePartyDTO $ultimateShipToParty): static
-    {
+    public function setUltimateShipToParty(
+        ?InvoiceSuitePartyDTO $ultimateShipToParty
+    ): static {
         $this->ultimateShipToParty = $ultimateShipToParty;
 
         return $this;
@@ -3604,8 +3772,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|InvoiceSuitePartyDTO $shipFromParty The Ship-From Party
      * @return static
      */
-    public function setShipFromParty(?InvoiceSuitePartyDTO $shipFromParty): static
-    {
+    public function setShipFromParty(
+        ?InvoiceSuitePartyDTO $shipFromParty
+    ): static {
         $this->shipFromParty = $shipFromParty;
 
         return $this;
@@ -3627,8 +3796,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|InvoiceSuitePartyDTO $invoicerParty The Invoicer Party
      * @return static
      */
-    public function setInvoicerParty(?InvoiceSuitePartyDTO $invoicerParty): static
-    {
+    public function setInvoicerParty(
+        ?InvoiceSuitePartyDTO $invoicerParty
+    ): static {
         $this->invoicerParty = $invoicerParty;
 
         return $this;
@@ -3650,8 +3820,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|InvoiceSuitePartyDTO $invoiceeParty The Invoicee Party
      * @return static
      */
-    public function setInvoiceeParty(?InvoiceSuitePartyDTO $invoiceeParty): static
-    {
+    public function setInvoiceeParty(
+        ?InvoiceSuitePartyDTO $invoiceeParty
+    ): static {
         $this->invoiceeParty = $invoiceeParty;
 
         return $this;
@@ -3673,8 +3844,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|InvoiceSuitePartyDTO $payeeParty The Payee Party
      * @return static
      */
-    public function setPayeeParty(?InvoiceSuitePartyDTO $payeeParty): static
-    {
+    public function setPayeeParty(
+        ?InvoiceSuitePartyDTO $payeeParty
+    ): static {
         $this->payeeParty = $payeeParty;
 
         return $this;
@@ -3696,8 +3868,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuitePaymentMeanDTO> $paymentMeans The payment means
      * @return static
      */
-    public function setPaymentMeans(array $paymentMeans): static
-    {
+    public function setPaymentMeans(
+        array $paymentMeans
+    ): static {
         $this->paymentMeans = $paymentMeans;
 
         return $this;
@@ -3709,8 +3882,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuitePaymentMeanDTO $paymentMean The payment means
      * @return static
      */
-    public function addPaymentMean(?InvoiceSuitePaymentMeanDTO $paymentMean): static
-    {
+    public function addPaymentMean(
+        ?InvoiceSuitePaymentMeanDTO $paymentMean
+    ): static {
         if (is_null($paymentMean)) {
             return $this;
         }
@@ -3727,8 +3901,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstPaymentMean(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstPaymentMean(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($paymentMean = reset($this->paymentMeans)) !== false) {
             $callback($paymentMean);
         } elseif (!is_null($callbackElse)) {
@@ -3745,8 +3921,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextPaymentMean(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextPaymentMean(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($paymentMean = next($this->paymentMeans)) !== false) {
             $callback($paymentMean);
         } elseif (!is_null($callbackElse)) {
@@ -3763,8 +3941,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousPaymentMean(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousPaymentMean(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($paymentMean = prev($this->paymentMeans)) !== false) {
             $callback($paymentMean);
         } elseif (!is_null($callbackElse)) {
@@ -3781,8 +3961,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastPaymentMean(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastPaymentMean(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($paymentMean = end($this->paymentMeans)) !== false) {
             $callback($paymentMean);
         } elseif (!is_null($callbackElse)) {
@@ -3800,8 +3982,11 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachPaymentMean(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachPaymentMean(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null
+    ): static {
         $count = 0;
 
         foreach ($this->paymentMeans as $paymentMean) {
@@ -3875,8 +4060,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuitePaymentTermDTO> $paymentTerms The payment terms
      * @return static
      */
-    public function setPaymentTerms(array $paymentTerms): static
-    {
+    public function setPaymentTerms(
+        array $paymentTerms
+    ): static {
         $this->paymentTerms = $paymentTerms;
 
         return $this;
@@ -3888,8 +4074,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuitePaymentTermDTO $paymentTerm The payment terms
      * @return static
      */
-    public function addPaymentTerm(?InvoiceSuitePaymentTermDTO $paymentTerm): static
-    {
+    public function addPaymentTerm(
+        ?InvoiceSuitePaymentTermDTO $paymentTerm
+    ): static {
         if (is_null($paymentTerm)) {
             return $this;
         }
@@ -3906,8 +4093,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstPaymentTerm(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstPaymentTerm(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($paymentTerm = reset($this->paymentTerms)) !== false) {
             $callback($paymentTerm);
         } elseif (!is_null($callbackElse)) {
@@ -3924,8 +4113,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextPaymentTerm(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextPaymentTerm(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($paymentTerm = next($this->paymentTerms)) !== false) {
             $callback($paymentTerm);
         } elseif (!is_null($callbackElse)) {
@@ -3942,8 +4133,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousPaymentTerm(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousPaymentTerm(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($paymentTerm = prev($this->paymentTerms)) !== false) {
             $callback($paymentTerm);
         } elseif (!is_null($callbackElse)) {
@@ -3960,8 +4153,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastPaymentTerm(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastPaymentTerm(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($paymentTerm = end($this->paymentTerms)) !== false) {
             $callback($paymentTerm);
         } elseif (!is_null($callbackElse)) {
@@ -3979,8 +4174,11 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachPaymentTerm(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachPaymentTerm(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null
+    ): static {
         $count = 0;
 
         foreach ($this->paymentTerms as $paymentTerm) {
@@ -4054,8 +4252,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteIdDTO> $creditorReferences The creditor identifier
      * @return static
      */
-    public function setCreditorReferences(array $creditorReferences): static
-    {
+    public function setCreditorReferences(
+        array $creditorReferences
+    ): static {
         $this->creditorReferences = $creditorReferences;
 
         return $this;
@@ -4067,8 +4266,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteIdDTO $creditorReference The creditor identifier
      * @return static
      */
-    public function addCreditorReference(?InvoiceSuiteIdDTO $creditorReference): static
-    {
+    public function addCreditorReference(
+        ?InvoiceSuiteIdDTO $creditorReference
+    ): static {
         if (is_null($creditorReference)) {
             return $this;
         }
@@ -4085,8 +4285,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstCreditorReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstCreditorReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($creditorReference = reset($this->creditorReferences)) !== false) {
             $callback($creditorReference);
         } elseif (!is_null($callbackElse)) {
@@ -4103,8 +4305,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextCreditorReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextCreditorReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($creditorReference = next($this->creditorReferences)) !== false) {
             $callback($creditorReference);
         } elseif (!is_null($callbackElse)) {
@@ -4121,8 +4325,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousCreditorReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousCreditorReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($creditorReference = prev($this->creditorReferences)) !== false) {
             $callback($creditorReference);
         } elseif (!is_null($callbackElse)) {
@@ -4139,8 +4345,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastCreditorReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastCreditorReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($creditorReference = end($this->creditorReferences)) !== false) {
             $callback($creditorReference);
         } elseif (!is_null($callbackElse)) {
@@ -4236,8 +4444,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteIdDTO> $paymentReferences The payment reference
      * @return static
      */
-    public function setPaymentReferences(array $paymentReferences): static
-    {
+    public function setPaymentReferences(
+        array $paymentReferences
+    ): static {
         $this->paymentReferences = $paymentReferences;
 
         return $this;
@@ -4249,8 +4458,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteIdDTO $paymentReference The payment reference
      * @return static
      */
-    public function addPaymentReference(?InvoiceSuiteIdDTO $paymentReference): static
-    {
+    public function addPaymentReference(
+        ?InvoiceSuiteIdDTO $paymentReference
+    ): static {
         if (is_null($paymentReference)) {
             return $this;
         }
@@ -4267,8 +4477,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstPaymentReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstPaymentReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($paymentReference = reset($this->paymentReferences)) !== false) {
             $callback($paymentReference);
         } elseif (!is_null($callbackElse)) {
@@ -4285,8 +4497,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextPaymentReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextPaymentReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($paymentReference = next($this->paymentReferences)) !== false) {
             $callback($paymentReference);
         } elseif (!is_null($callbackElse)) {
@@ -4303,8 +4517,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousPaymentReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousPaymentReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($paymentReference = prev($this->paymentReferences)) !== false) {
             $callback($paymentReference);
         } elseif (!is_null($callbackElse)) {
@@ -4321,8 +4537,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastPaymentReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastPaymentReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($paymentReference = end($this->paymentReferences)) !== false) {
             $callback($paymentReference);
         } elseif (!is_null($callbackElse)) {
@@ -4418,8 +4636,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteIdDTO> $buyerReferences The ID for internal routing (Leitweg ID)
      * @return static
      */
-    public function setBuyerReferences(array $buyerReferences): static
-    {
+    public function setBuyerReferences(
+        array $buyerReferences
+    ): static {
         $this->buyerReferences = $buyerReferences;
 
         return $this;
@@ -4431,8 +4650,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteIdDTO $buyerReference The ID for internal routing (Leitweg ID)
      * @return static
      */
-    public function addBuyerReference(?InvoiceSuiteIdDTO $buyerReference): static
-    {
+    public function addBuyerReference(
+        ?InvoiceSuiteIdDTO $buyerReference
+    ): static {
         if (is_null($buyerReference)) {
             return $this;
         }
@@ -4449,8 +4669,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstBuyerReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstBuyerReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($buyerReference = reset($this->buyerReferences)) !== false) {
             $callback($buyerReference);
         } elseif (!is_null($callbackElse)) {
@@ -4467,8 +4689,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextBuyerReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextBuyerReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($buyerReference = next($this->buyerReferences)) !== false) {
             $callback($buyerReference);
         } elseif (!is_null($callbackElse)) {
@@ -4485,8 +4709,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousBuyerReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousBuyerReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($buyerReference = prev($this->buyerReferences)) !== false) {
             $callback($buyerReference);
         } elseif (!is_null($callbackElse)) {
@@ -4503,8 +4729,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastBuyerReference(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastBuyerReference(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($buyerReference = end($this->buyerReferences)) !== false) {
             $callback($buyerReference);
         } elseif (!is_null($callbackElse)) {
@@ -4600,8 +4828,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteDocumentPositionDTO> $positions The Document positions
      * @return static
      */
-    public function setPositions(array $positions): static
-    {
+    public function setPositions(
+        array $positions
+    ): static {
         $this->positions = $positions;
 
         return $this;
@@ -4613,8 +4842,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteDocumentPositionDTO $position The Document positions
      * @return static
      */
-    public function addPosition(?InvoiceSuiteDocumentPositionDTO $position): static
-    {
+    public function addPosition(
+        ?InvoiceSuiteDocumentPositionDTO $position
+    ): static {
         if (is_null($position)) {
             return $this;
         }
@@ -4631,8 +4861,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstPosition(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstPosition(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($position = reset($this->positions)) !== false) {
             $callback($position);
         } elseif (!is_null($callbackElse)) {
@@ -4649,8 +4881,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextPosition(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextPosition(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($position = next($this->positions)) !== false) {
             $callback($position);
         } elseif (!is_null($callbackElse)) {
@@ -4667,8 +4901,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousPosition(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousPosition(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($position = prev($this->positions)) !== false) {
             $callback($position);
         } elseif (!is_null($callbackElse)) {
@@ -4685,8 +4921,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastPosition(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastPosition(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($position = end($this->positions)) !== false) {
             $callback($position);
         } elseif (!is_null($callbackElse)) {
@@ -4704,8 +4942,11 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachPosition(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachPosition(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null
+    ): static {
         $count = 0;
 
         foreach ($this->positions as $position) {
@@ -4779,8 +5020,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteIdDTO> $deliveryTerms delivery term
      * @return static
      */
-    public function setDeliveryTerms(array $deliveryTerms): static
-    {
+    public function setDeliveryTerms(
+        array $deliveryTerms
+    ): static {
         $this->deliveryTerms = $deliveryTerms;
 
         return $this;
@@ -4792,8 +5034,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteIdDTO $deliveryTerm delivery term
      * @return static
      */
-    public function addDeliveryTerm(?InvoiceSuiteIdDTO $deliveryTerm): static
-    {
+    public function addDeliveryTerm(
+        ?InvoiceSuiteIdDTO $deliveryTerm
+    ): static {
         if (is_null($deliveryTerm)) {
             return $this;
         }
@@ -4810,8 +5053,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstDeliveryTerm(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstDeliveryTerm(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($deliveryTerm = reset($this->deliveryTerms)) !== false) {
             $callback($deliveryTerm);
         } elseif (!is_null($callbackElse)) {
@@ -4828,8 +5073,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextDeliveryTerm(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextDeliveryTerm(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($deliveryTerm = next($this->deliveryTerms)) !== false) {
             $callback($deliveryTerm);
         } elseif (!is_null($callbackElse)) {
@@ -4846,8 +5093,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousDeliveryTerm(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousDeliveryTerm(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($deliveryTerm = prev($this->deliveryTerms)) !== false) {
             $callback($deliveryTerm);
         } elseif (!is_null($callbackElse)) {
@@ -4864,8 +5113,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastDeliveryTerm(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastDeliveryTerm(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($deliveryTerm = end($this->deliveryTerms)) !== false) {
             $callback($deliveryTerm);
         } elseif (!is_null($callbackElse)) {
@@ -4961,8 +5212,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteTaxDTO> $taxes The VAT breakdown
      * @return static
      */
-    public function setTaxes(array $taxes): static
-    {
+    public function setTaxes(
+        array $taxes
+    ): static {
         $this->taxes = $taxes;
 
         return $this;
@@ -4974,8 +5226,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteTaxDTO $tax The VAT breakdown
      * @return static
      */
-    public function addTax(?InvoiceSuiteTaxDTO $tax): static
-    {
+    public function addTax(
+        ?InvoiceSuiteTaxDTO $tax
+    ): static {
         if (is_null($tax)) {
             return $this;
         }
@@ -4992,8 +5245,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstTax(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstTax(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($tax = reset($this->taxes)) !== false) {
             $callback($tax);
         } elseif (!is_null($callbackElse)) {
@@ -5010,8 +5265,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextTax(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextTax(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($tax = next($this->taxes)) !== false) {
             $callback($tax);
         } elseif (!is_null($callbackElse)) {
@@ -5028,8 +5285,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousTax(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousTax(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($tax = prev($this->taxes)) !== false) {
             $callback($tax);
         } elseif (!is_null($callbackElse)) {
@@ -5046,8 +5305,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastTax(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastTax(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($tax = end($this->taxes)) !== false) {
             $callback($tax);
         } elseif (!is_null($callbackElse)) {
@@ -5065,8 +5326,11 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachTax(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachTax(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null
+    ): static {
         $count = 0;
 
         foreach ($this->taxes as $tax) {
@@ -5140,8 +5404,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteAllowanceChargeDTO> $allowanceCharges The allowances/charges
      * @return static
      */
-    public function setAllowanceCharges(array $allowanceCharges): static
-    {
+    public function setAllowanceCharges(
+        array $allowanceCharges
+    ): static {
         $this->allowanceCharges = $allowanceCharges;
 
         return $this;
@@ -5153,8 +5418,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteAllowanceChargeDTO $allowanceCharge The allowances/charges
      * @return static
      */
-    public function addAllowanceCharge(?InvoiceSuiteAllowanceChargeDTO $allowanceCharge): static
-    {
+    public function addAllowanceCharge(
+        ?InvoiceSuiteAllowanceChargeDTO $allowanceCharge
+    ): static {
         if (is_null($allowanceCharge)) {
             return $this;
         }
@@ -5171,8 +5437,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstAllowanceCharge(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstAllowanceCharge(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($allowanceCharge = reset($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
@@ -5189,8 +5457,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextAllowanceCharge(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextAllowanceCharge(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($allowanceCharge = next($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
@@ -5207,8 +5477,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousAllowanceCharge(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousAllowanceCharge(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($allowanceCharge = prev($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
@@ -5225,8 +5497,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastAllowanceCharge(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastAllowanceCharge(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($allowanceCharge = end($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
@@ -5322,8 +5596,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteServiceChargeDTO> $serviceCharges The allowances/charges
      * @return static
      */
-    public function setServiceCharges(array $serviceCharges): static
-    {
+    public function setServiceCharges(
+        array $serviceCharges
+    ): static {
         $this->serviceCharges = $serviceCharges;
 
         return $this;
@@ -5335,8 +5610,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteServiceChargeDTO $serviceCharge The allowances/charges
      * @return static
      */
-    public function addServiceCharge(?InvoiceSuiteServiceChargeDTO $serviceCharge): static
-    {
+    public function addServiceCharge(
+        ?InvoiceSuiteServiceChargeDTO $serviceCharge
+    ): static {
         if (is_null($serviceCharge)) {
             return $this;
         }
@@ -5353,8 +5629,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstServiceCharge(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstServiceCharge(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($serviceCharge = reset($this->serviceCharges)) !== false) {
             $callback($serviceCharge);
         } elseif (!is_null($callbackElse)) {
@@ -5371,8 +5649,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextServiceCharge(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextServiceCharge(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($serviceCharge = next($this->serviceCharges)) !== false) {
             $callback($serviceCharge);
         } elseif (!is_null($callbackElse)) {
@@ -5389,8 +5669,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousServiceCharge(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousServiceCharge(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($serviceCharge = prev($this->serviceCharges)) !== false) {
             $callback($serviceCharge);
         } elseif (!is_null($callbackElse)) {
@@ -5407,8 +5689,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastServiceCharge(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastServiceCharge(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($serviceCharge = end($this->serviceCharges)) !== false) {
             $callback($serviceCharge);
         } elseif (!is_null($callbackElse)) {
@@ -5504,8 +5788,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  array<InvoiceSuiteSummationDTO> $summations The summation
      * @return static
      */
-    public function setSummations(array $summations): static
-    {
+    public function setSummations(
+        array $summations
+    ): static {
         $this->summations = $summations;
 
         return $this;
@@ -5517,8 +5802,9 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  InvoiceSuiteSummationDTO $summation The summation
      * @return static
      */
-    public function addSummation(?InvoiceSuiteSummationDTO $summation): static
-    {
+    public function addSummation(
+        ?InvoiceSuiteSummationDTO $summation
+    ): static {
         if (is_null($summation)) {
             return $this;
         }
@@ -5535,8 +5821,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function firstSummation(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function firstSummation(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($summation = reset($this->summations)) !== false) {
             $callback($summation);
         } elseif (!is_null($callbackElse)) {
@@ -5553,8 +5841,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function nextSummation(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function nextSummation(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($summation = next($this->summations)) !== false) {
             $callback($summation);
         } elseif (!is_null($callbackElse)) {
@@ -5571,8 +5861,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function previousSummation(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function previousSummation(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($summation = prev($this->summations)) !== false) {
             $callback($summation);
         } elseif (!is_null($callbackElse)) {
@@ -5589,8 +5881,10 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|callable $callbackElse Callback to execute if no item was found
      * @return static
      */
-    public function lastSummation(callable $callback, ?callable $callbackElse = null): static
-    {
+    public function lastSummation(
+        callable $callback,
+        ?callable $callbackElse = null
+    ): static {
         if (($summation = end($this->summations)) !== false) {
             $callback($summation);
         } elseif (!is_null($callbackElse)) {
@@ -5608,8 +5902,11 @@ class InvoiceSuiteDocumentHeaderDTO
      * @param  null|int      $limit        Maximum number of loops
      * @return static
      */
-    public function forEachSummation(callable $callback, ?callable $callbackElse = null, ?int $limit = null): static
-    {
+    public function forEachSummation(
+        callable $callback,
+        ?callable $callbackElse = null,
+        ?int $limit = null
+    ): static {
         $count = 0;
 
         foreach ($this->summations as $summation) {

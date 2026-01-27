@@ -56,8 +56,9 @@ class LineResponseType
      * @param  null|LineReference $lineReference
      * @return static
      */
-    public function setLineReference(?LineReference $lineReference = null): static
-    {
+    public function setLineReference(
+        ?LineReference $lineReference = null
+    ): static {
         $this->lineReference = $lineReference;
 
         return $this;
@@ -85,8 +86,9 @@ class LineResponseType
      * @param  null|array<Response> $response
      * @return static
      */
-    public function setResponse(?array $response = null): static
-    {
+    public function setResponse(
+        ?array $response = null
+    ): static {
         $this->response = $response;
 
         return $this;
@@ -146,8 +148,9 @@ class LineResponseType
      * @param  Response $response
      * @return static
      */
-    public function addToResponse(Response $response): static
-    {
+    public function addToResponse(
+        Response $response
+    ): static {
         $this->response[] = $response;
 
         return $this;
@@ -167,8 +170,9 @@ class LineResponseType
      * @param  Response $response
      * @return static
      */
-    public function addOnceToResponse(Response $response): static
-    {
+    public function addOnceToResponse(
+        Response $response
+    ): static {
         if (!is_array($this->response)) {
             $this->response = [];
         }

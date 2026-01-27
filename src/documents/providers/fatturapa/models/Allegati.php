@@ -88,8 +88,9 @@ final class Allegati
      * @param  null|string $nomeAttachment
      * @return static
      */
-    public function setNomeAttachment(?string $nomeAttachment = null): static
-    {
+    public function setNomeAttachment(
+        ?string $nomeAttachment = null
+    ): static {
         $this->nomeAttachment = InvoiceSuiteStringUtils::asNullWhenEmpty($nomeAttachment);
 
         return $this;
@@ -123,8 +124,9 @@ final class Allegati
      * @param  null|string $algoritmoCompressione
      * @return static
      */
-    public function setAlgoritmoCompressione(?string $algoritmoCompressione = null): static
-    {
+    public function setAlgoritmoCompressione(
+        ?string $algoritmoCompressione = null
+    ): static {
         $this->algoritmoCompressione = InvoiceSuiteStringUtils::asNullWhenEmpty($algoritmoCompressione);
 
         return $this;
@@ -158,8 +160,9 @@ final class Allegati
      * @param  null|string $formatoAttachment
      * @return static
      */
-    public function setFormatoAttachment(?string $formatoAttachment = null): static
-    {
+    public function setFormatoAttachment(
+        ?string $formatoAttachment = null
+    ): static {
         $this->formatoAttachment = InvoiceSuiteStringUtils::asNullWhenEmpty($formatoAttachment);
 
         return $this;
@@ -193,8 +196,9 @@ final class Allegati
      * @param  null|string $descrizioneAttachment
      * @return static
      */
-    public function setDescrizioneAttachment(?string $descrizioneAttachment = null): static
-    {
+    public function setDescrizioneAttachment(
+        ?string $descrizioneAttachment = null
+    ): static {
         $this->descrizioneAttachment = InvoiceSuiteStringUtils::asNullWhenEmpty($descrizioneAttachment);
 
         return $this;
@@ -228,8 +232,9 @@ final class Allegati
      * @param  null|mixed $attachment
      * @return static
      */
-    public function setAttachment($attachment = null): static
-    {
+    public function setAttachment(
+        $attachment = null
+    ): static {
         $this->attachment = $attachment;
 
         return $this;

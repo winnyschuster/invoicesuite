@@ -117,8 +117,9 @@ class DeliveryTermsType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -146,8 +147,9 @@ class DeliveryTermsType
      * @param  null|array<SpecialTerms> $specialTerms
      * @return static
      */
-    public function setSpecialTerms(?array $specialTerms = null): static
-    {
+    public function setSpecialTerms(
+        ?array $specialTerms = null
+    ): static {
         $this->specialTerms = $specialTerms;
 
         return $this;
@@ -207,8 +209,9 @@ class DeliveryTermsType
      * @param  SpecialTerms $specialTerms
      * @return static
      */
-    public function addToSpecialTerms(SpecialTerms $specialTerms): static
-    {
+    public function addToSpecialTerms(
+        SpecialTerms $specialTerms
+    ): static {
         $this->specialTerms[] = $specialTerms;
 
         return $this;
@@ -228,8 +231,9 @@ class DeliveryTermsType
      * @param  SpecialTerms $specialTerms
      * @return static
      */
-    public function addOnceToSpecialTerms(SpecialTerms $specialTerms): static
-    {
+    public function addOnceToSpecialTerms(
+        SpecialTerms $specialTerms
+    ): static {
         if (!is_array($this->specialTerms)) {
             $this->specialTerms = [];
         }
@@ -307,8 +311,9 @@ class DeliveryTermsType
      * @param  null|array<LossRisk> $lossRisk
      * @return static
      */
-    public function setLossRisk(?array $lossRisk = null): static
-    {
+    public function setLossRisk(
+        ?array $lossRisk = null
+    ): static {
         $this->lossRisk = $lossRisk;
 
         return $this;
@@ -368,8 +373,9 @@ class DeliveryTermsType
      * @param  LossRisk $lossRisk
      * @return static
      */
-    public function addToLossRisk(LossRisk $lossRisk): static
-    {
+    public function addToLossRisk(
+        LossRisk $lossRisk
+    ): static {
         $this->lossRisk[] = $lossRisk;
 
         return $this;
@@ -389,8 +395,9 @@ class DeliveryTermsType
      * @param  LossRisk $lossRisk
      * @return static
      */
-    public function addOnceToLossRisk(LossRisk $lossRisk): static
-    {
+    public function addOnceToLossRisk(
+        LossRisk $lossRisk
+    ): static {
         if (!is_array($this->lossRisk)) {
             $this->lossRisk = [];
         }
@@ -438,8 +445,9 @@ class DeliveryTermsType
      * @param  null|Amount $amount
      * @return static
      */
-    public function setAmount(?Amount $amount = null): static
-    {
+    public function setAmount(
+        ?Amount $amount = null
+    ): static {
         $this->amount = $amount;
 
         return $this;
@@ -477,8 +485,9 @@ class DeliveryTermsType
      * @param  null|DeliveryLocation $deliveryLocation
      * @return static
      */
-    public function setDeliveryLocation(?DeliveryLocation $deliveryLocation = null): static
-    {
+    public function setDeliveryLocation(
+        ?DeliveryLocation $deliveryLocation = null
+    ): static {
         $this->deliveryLocation = $deliveryLocation;
 
         return $this;
@@ -516,8 +525,9 @@ class DeliveryTermsType
      * @param  null|AllowanceCharge $allowanceCharge
      * @return static
      */
-    public function setAllowanceCharge(?AllowanceCharge $allowanceCharge = null): static
-    {
+    public function setAllowanceCharge(
+        ?AllowanceCharge $allowanceCharge = null
+    ): static {
         $this->allowanceCharge = $allowanceCharge;
 
         return $this;

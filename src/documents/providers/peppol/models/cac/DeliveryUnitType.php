@@ -68,8 +68,9 @@ class DeliveryUnitType
      * @param  null|BatchQuantity $batchQuantity
      * @return static
      */
-    public function setBatchQuantity(?BatchQuantity $batchQuantity = null): static
-    {
+    public function setBatchQuantity(
+        ?BatchQuantity $batchQuantity = null
+    ): static {
         $this->batchQuantity = $batchQuantity;
 
         return $this;
@@ -107,8 +108,9 @@ class DeliveryUnitType
      * @param  null|ConsumerUnitQuantity $consumerUnitQuantity
      * @return static
      */
-    public function setConsumerUnitQuantity(?ConsumerUnitQuantity $consumerUnitQuantity = null): static
-    {
+    public function setConsumerUnitQuantity(
+        ?ConsumerUnitQuantity $consumerUnitQuantity = null
+    ): static {
         $this->consumerUnitQuantity = $consumerUnitQuantity;
 
         return $this;
@@ -136,8 +138,9 @@ class DeliveryUnitType
      * @param  null|bool $hazardousRiskIndicator
      * @return static
      */
-    public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): static
-    {
+    public function setHazardousRiskIndicator(
+        ?bool $hazardousRiskIndicator = null
+    ): static {
         $this->hazardousRiskIndicator = $hazardousRiskIndicator;
 
         return $this;

@@ -45,8 +45,9 @@ class DateTimeType
      * @param  null|DateTimeStringAType $dateTimeString
      * @return static
      */
-    public function setDateTimeString(?DateTimeStringAType $dateTimeString = null): static
-    {
+    public function setDateTimeString(
+        ?DateTimeStringAType $dateTimeString = null
+    ): static {
         $this->dateTimeString = $dateTimeString;
 
         return $this;

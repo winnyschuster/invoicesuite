@@ -164,8 +164,9 @@ class TenderedProjectType
      * @param  null|VariantID $variantID
      * @return static
      */
-    public function setVariantID(?VariantID $variantID = null): static
-    {
+    public function setVariantID(
+        ?VariantID $variantID = null
+    ): static {
         $this->variantID = $variantID;
 
         return $this;
@@ -203,8 +204,9 @@ class TenderedProjectType
      * @param  null|FeeAmount $feeAmount
      * @return static
      */
-    public function setFeeAmount(?FeeAmount $feeAmount = null): static
-    {
+    public function setFeeAmount(
+        ?FeeAmount $feeAmount = null
+    ): static {
         $this->feeAmount = $feeAmount;
 
         return $this;
@@ -232,8 +234,9 @@ class TenderedProjectType
      * @param  null|array<FeeDescription> $feeDescription
      * @return static
      */
-    public function setFeeDescription(?array $feeDescription = null): static
-    {
+    public function setFeeDescription(
+        ?array $feeDescription = null
+    ): static {
         $this->feeDescription = $feeDescription;
 
         return $this;
@@ -293,8 +296,9 @@ class TenderedProjectType
      * @param  FeeDescription $feeDescription
      * @return static
      */
-    public function addToFeeDescription(FeeDescription $feeDescription): static
-    {
+    public function addToFeeDescription(
+        FeeDescription $feeDescription
+    ): static {
         $this->feeDescription[] = $feeDescription;
 
         return $this;
@@ -314,8 +318,9 @@ class TenderedProjectType
      * @param  FeeDescription $feeDescription
      * @return static
      */
-    public function addOnceToFeeDescription(FeeDescription $feeDescription): static
-    {
+    public function addOnceToFeeDescription(
+        FeeDescription $feeDescription
+    ): static {
         if (!is_array($this->feeDescription)) {
             $this->feeDescription = [];
         }
@@ -363,8 +368,9 @@ class TenderedProjectType
      * @param  null|TenderEnvelopeID $tenderEnvelopeID
      * @return static
      */
-    public function setTenderEnvelopeID(?TenderEnvelopeID $tenderEnvelopeID = null): static
-    {
+    public function setTenderEnvelopeID(
+        ?TenderEnvelopeID $tenderEnvelopeID = null
+    ): static {
         $this->tenderEnvelopeID = $tenderEnvelopeID;
 
         return $this;
@@ -402,8 +408,9 @@ class TenderedProjectType
      * @param  null|TenderEnvelopeTypeCode $tenderEnvelopeTypeCode
      * @return static
      */
-    public function setTenderEnvelopeTypeCode(?TenderEnvelopeTypeCode $tenderEnvelopeTypeCode = null): static
-    {
+    public function setTenderEnvelopeTypeCode(
+        ?TenderEnvelopeTypeCode $tenderEnvelopeTypeCode = null
+    ): static {
         $this->tenderEnvelopeTypeCode = $tenderEnvelopeTypeCode;
 
         return $this;
@@ -441,8 +448,9 @@ class TenderedProjectType
      * @param  null|ProcurementProjectLot $procurementProjectLot
      * @return static
      */
-    public function setProcurementProjectLot(?ProcurementProjectLot $procurementProjectLot = null): static
-    {
+    public function setProcurementProjectLot(
+        ?ProcurementProjectLot $procurementProjectLot = null
+    ): static {
         $this->procurementProjectLot = $procurementProjectLot;
 
         return $this;
@@ -470,8 +478,9 @@ class TenderedProjectType
      * @param  null|array<EvidenceDocumentReference> $evidenceDocumentReference
      * @return static
      */
-    public function setEvidenceDocumentReference(?array $evidenceDocumentReference = null): static
-    {
+    public function setEvidenceDocumentReference(
+        ?array $evidenceDocumentReference = null
+    ): static {
         $this->evidenceDocumentReference = $evidenceDocumentReference;
 
         return $this;
@@ -531,8 +540,9 @@ class TenderedProjectType
      * @param  EvidenceDocumentReference $evidenceDocumentReference
      * @return static
      */
-    public function addToEvidenceDocumentReference(EvidenceDocumentReference $evidenceDocumentReference): static
-    {
+    public function addToEvidenceDocumentReference(
+        EvidenceDocumentReference $evidenceDocumentReference
+    ): static {
         $this->evidenceDocumentReference[] = $evidenceDocumentReference;
 
         return $this;
@@ -552,8 +562,9 @@ class TenderedProjectType
      * @param  EvidenceDocumentReference $evidenceDocumentReference
      * @return static
      */
-    public function addOnceToEvidenceDocumentReference(EvidenceDocumentReference $evidenceDocumentReference): static
-    {
+    public function addOnceToEvidenceDocumentReference(
+        EvidenceDocumentReference $evidenceDocumentReference
+    ): static {
         if (!is_array($this->evidenceDocumentReference)) {
             $this->evidenceDocumentReference = [];
         }
@@ -591,8 +602,9 @@ class TenderedProjectType
      * @param  null|array<TaxTotal> $taxTotal
      * @return static
      */
-    public function setTaxTotal(?array $taxTotal = null): static
-    {
+    public function setTaxTotal(
+        ?array $taxTotal = null
+    ): static {
         $this->taxTotal = $taxTotal;
 
         return $this;
@@ -652,8 +664,9 @@ class TenderedProjectType
      * @param  TaxTotal $taxTotal
      * @return static
      */
-    public function addToTaxTotal(TaxTotal $taxTotal): static
-    {
+    public function addToTaxTotal(
+        TaxTotal $taxTotal
+    ): static {
         $this->taxTotal[] = $taxTotal;
 
         return $this;
@@ -673,8 +686,9 @@ class TenderedProjectType
      * @param  TaxTotal $taxTotal
      * @return static
      */
-    public function addOnceToTaxTotal(TaxTotal $taxTotal): static
-    {
+    public function addOnceToTaxTotal(
+        TaxTotal $taxTotal
+    ): static {
         if (!is_array($this->taxTotal)) {
             $this->taxTotal = [];
         }
@@ -722,8 +736,9 @@ class TenderedProjectType
      * @param  null|LegalMonetaryTotal $legalMonetaryTotal
      * @return static
      */
-    public function setLegalMonetaryTotal(?LegalMonetaryTotal $legalMonetaryTotal = null): static
-    {
+    public function setLegalMonetaryTotal(
+        ?LegalMonetaryTotal $legalMonetaryTotal = null
+    ): static {
         $this->legalMonetaryTotal = $legalMonetaryTotal;
 
         return $this;
@@ -751,8 +766,9 @@ class TenderedProjectType
      * @param  null|array<TenderLine> $tenderLine
      * @return static
      */
-    public function setTenderLine(?array $tenderLine = null): static
-    {
+    public function setTenderLine(
+        ?array $tenderLine = null
+    ): static {
         $this->tenderLine = $tenderLine;
 
         return $this;
@@ -812,8 +828,9 @@ class TenderedProjectType
      * @param  TenderLine $tenderLine
      * @return static
      */
-    public function addToTenderLine(TenderLine $tenderLine): static
-    {
+    public function addToTenderLine(
+        TenderLine $tenderLine
+    ): static {
         $this->tenderLine[] = $tenderLine;
 
         return $this;
@@ -833,8 +850,9 @@ class TenderedProjectType
      * @param  TenderLine $tenderLine
      * @return static
      */
-    public function addOnceToTenderLine(TenderLine $tenderLine): static
-    {
+    public function addOnceToTenderLine(
+        TenderLine $tenderLine
+    ): static {
         if (!is_array($this->tenderLine)) {
             $this->tenderLine = [];
         }
@@ -872,8 +890,9 @@ class TenderedProjectType
      * @param  null|array<AwardingCriterionResponse> $awardingCriterionResponse
      * @return static
      */
-    public function setAwardingCriterionResponse(?array $awardingCriterionResponse = null): static
-    {
+    public function setAwardingCriterionResponse(
+        ?array $awardingCriterionResponse = null
+    ): static {
         $this->awardingCriterionResponse = $awardingCriterionResponse;
 
         return $this;
@@ -933,8 +952,9 @@ class TenderedProjectType
      * @param  AwardingCriterionResponse $awardingCriterionResponse
      * @return static
      */
-    public function addToAwardingCriterionResponse(AwardingCriterionResponse $awardingCriterionResponse): static
-    {
+    public function addToAwardingCriterionResponse(
+        AwardingCriterionResponse $awardingCriterionResponse
+    ): static {
         $this->awardingCriterionResponse[] = $awardingCriterionResponse;
 
         return $this;
@@ -954,8 +974,9 @@ class TenderedProjectType
      * @param  AwardingCriterionResponse $awardingCriterionResponse
      * @return static
      */
-    public function addOnceToAwardingCriterionResponse(AwardingCriterionResponse $awardingCriterionResponse): static
-    {
+    public function addOnceToAwardingCriterionResponse(
+        AwardingCriterionResponse $awardingCriterionResponse
+    ): static {
         if (!is_array($this->awardingCriterionResponse)) {
             $this->awardingCriterionResponse = [];
         }

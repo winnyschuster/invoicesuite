@@ -121,8 +121,9 @@ class EventTacticEnumerationType
      * @param  null|DisplayTacticTypeCode $displayTacticTypeCode
      * @return static
      */
-    public function setDisplayTacticTypeCode(?DisplayTacticTypeCode $displayTacticTypeCode = null): static
-    {
+    public function setDisplayTacticTypeCode(
+        ?DisplayTacticTypeCode $displayTacticTypeCode = null
+    ): static {
         $this->displayTacticTypeCode = $displayTacticTypeCode;
 
         return $this;
@@ -160,8 +161,9 @@ class EventTacticEnumerationType
      * @param  null|FeatureTacticTypeCode $featureTacticTypeCode
      * @return static
      */
-    public function setFeatureTacticTypeCode(?FeatureTacticTypeCode $featureTacticTypeCode = null): static
-    {
+    public function setFeatureTacticTypeCode(
+        ?FeatureTacticTypeCode $featureTacticTypeCode = null
+    ): static {
         $this->featureTacticTypeCode = $featureTacticTypeCode;
 
         return $this;

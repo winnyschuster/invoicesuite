@@ -153,8 +153,9 @@ class TaxCategoryType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -192,8 +193,9 @@ class TaxCategoryType
      * @param  null|Name $name
      * @return static
      */
-    public function setName(?Name $name = null): static
-    {
+    public function setName(
+        ?Name $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -231,8 +233,9 @@ class TaxCategoryType
      * @param  null|Percent $percent
      * @return static
      */
-    public function setPercent(?Percent $percent = null): static
-    {
+    public function setPercent(
+        ?Percent $percent = null
+    ): static {
         $this->percent = $percent;
 
         return $this;
@@ -270,8 +273,9 @@ class TaxCategoryType
      * @param  null|BaseUnitMeasure $baseUnitMeasure
      * @return static
      */
-    public function setBaseUnitMeasure(?BaseUnitMeasure $baseUnitMeasure = null): static
-    {
+    public function setBaseUnitMeasure(
+        ?BaseUnitMeasure $baseUnitMeasure = null
+    ): static {
         $this->baseUnitMeasure = $baseUnitMeasure;
 
         return $this;
@@ -309,8 +313,9 @@ class TaxCategoryType
      * @param  null|PerUnitAmount $perUnitAmount
      * @return static
      */
-    public function setPerUnitAmount(?PerUnitAmount $perUnitAmount = null): static
-    {
+    public function setPerUnitAmount(
+        ?PerUnitAmount $perUnitAmount = null
+    ): static {
         $this->perUnitAmount = $perUnitAmount;
 
         return $this;
@@ -348,8 +353,9 @@ class TaxCategoryType
      * @param  null|TaxExemptionReasonCode $taxExemptionReasonCode
      * @return static
      */
-    public function setTaxExemptionReasonCode(?TaxExemptionReasonCode $taxExemptionReasonCode = null): static
-    {
+    public function setTaxExemptionReasonCode(
+        ?TaxExemptionReasonCode $taxExemptionReasonCode = null
+    ): static {
         $this->taxExemptionReasonCode = $taxExemptionReasonCode;
 
         return $this;
@@ -377,8 +383,9 @@ class TaxCategoryType
      * @param  null|array<TaxExemptionReason> $taxExemptionReason
      * @return static
      */
-    public function setTaxExemptionReason(?array $taxExemptionReason = null): static
-    {
+    public function setTaxExemptionReason(
+        ?array $taxExemptionReason = null
+    ): static {
         $this->taxExemptionReason = $taxExemptionReason;
 
         return $this;
@@ -438,8 +445,9 @@ class TaxCategoryType
      * @param  TaxExemptionReason $taxExemptionReason
      * @return static
      */
-    public function addToTaxExemptionReason(TaxExemptionReason $taxExemptionReason): static
-    {
+    public function addToTaxExemptionReason(
+        TaxExemptionReason $taxExemptionReason
+    ): static {
         $this->taxExemptionReason[] = $taxExemptionReason;
 
         return $this;
@@ -459,8 +467,9 @@ class TaxCategoryType
      * @param  TaxExemptionReason $taxExemptionReason
      * @return static
      */
-    public function addOnceToTaxExemptionReason(TaxExemptionReason $taxExemptionReason): static
-    {
+    public function addOnceToTaxExemptionReason(
+        TaxExemptionReason $taxExemptionReason
+    ): static {
         if (!is_array($this->taxExemptionReason)) {
             $this->taxExemptionReason = [];
         }
@@ -508,8 +517,9 @@ class TaxCategoryType
      * @param  null|TierRange $tierRange
      * @return static
      */
-    public function setTierRange(?TierRange $tierRange = null): static
-    {
+    public function setTierRange(
+        ?TierRange $tierRange = null
+    ): static {
         $this->tierRange = $tierRange;
 
         return $this;
@@ -547,8 +557,9 @@ class TaxCategoryType
      * @param  null|TierRatePercent $tierRatePercent
      * @return static
      */
-    public function setTierRatePercent(?TierRatePercent $tierRatePercent = null): static
-    {
+    public function setTierRatePercent(
+        ?TierRatePercent $tierRatePercent = null
+    ): static {
         $this->tierRatePercent = $tierRatePercent;
 
         return $this;
@@ -586,8 +597,9 @@ class TaxCategoryType
      * @param  null|TaxScheme $taxScheme
      * @return static
      */
-    public function setTaxScheme(?TaxScheme $taxScheme = null): static
-    {
+    public function setTaxScheme(
+        ?TaxScheme $taxScheme = null
+    ): static {
         $this->taxScheme = $taxScheme;
 
         return $this;

@@ -154,8 +154,9 @@ class TransportExecutionTermsType
      * @param  null|array<TransportUserSpecialTerms> $transportUserSpecialTerms
      * @return static
      */
-    public function setTransportUserSpecialTerms(?array $transportUserSpecialTerms = null): static
-    {
+    public function setTransportUserSpecialTerms(
+        ?array $transportUserSpecialTerms = null
+    ): static {
         $this->transportUserSpecialTerms = $transportUserSpecialTerms;
 
         return $this;
@@ -215,8 +216,9 @@ class TransportExecutionTermsType
      * @param  TransportUserSpecialTerms $transportUserSpecialTerms
      * @return static
      */
-    public function addToTransportUserSpecialTerms(TransportUserSpecialTerms $transportUserSpecialTerms): static
-    {
+    public function addToTransportUserSpecialTerms(
+        TransportUserSpecialTerms $transportUserSpecialTerms
+    ): static {
         $this->transportUserSpecialTerms[] = $transportUserSpecialTerms;
 
         return $this;
@@ -236,8 +238,9 @@ class TransportExecutionTermsType
      * @param  TransportUserSpecialTerms $transportUserSpecialTerms
      * @return static
      */
-    public function addOnceToTransportUserSpecialTerms(TransportUserSpecialTerms $transportUserSpecialTerms): static
-    {
+    public function addOnceToTransportUserSpecialTerms(
+        TransportUserSpecialTerms $transportUserSpecialTerms
+    ): static {
         if (!is_array($this->transportUserSpecialTerms)) {
             $this->transportUserSpecialTerms = [];
         }
@@ -275,8 +278,9 @@ class TransportExecutionTermsType
      * @param  null|array<TransportServiceProviderSpecialTerms> $transportServiceProviderSpecialTerms
      * @return static
      */
-    public function setTransportServiceProviderSpecialTerms(?array $transportServiceProviderSpecialTerms = null): static
-    {
+    public function setTransportServiceProviderSpecialTerms(
+        ?array $transportServiceProviderSpecialTerms = null
+    ): static {
         $this->transportServiceProviderSpecialTerms = $transportServiceProviderSpecialTerms;
 
         return $this;
@@ -398,8 +402,9 @@ class TransportExecutionTermsType
      * @param  null|array<ChangeConditions> $changeConditions
      * @return static
      */
-    public function setChangeConditions(?array $changeConditions = null): static
-    {
+    public function setChangeConditions(
+        ?array $changeConditions = null
+    ): static {
         $this->changeConditions = $changeConditions;
 
         return $this;
@@ -459,8 +464,9 @@ class TransportExecutionTermsType
      * @param  ChangeConditions $changeConditions
      * @return static
      */
-    public function addToChangeConditions(ChangeConditions $changeConditions): static
-    {
+    public function addToChangeConditions(
+        ChangeConditions $changeConditions
+    ): static {
         $this->changeConditions[] = $changeConditions;
 
         return $this;
@@ -480,8 +486,9 @@ class TransportExecutionTermsType
      * @param  ChangeConditions $changeConditions
      * @return static
      */
-    public function addOnceToChangeConditions(ChangeConditions $changeConditions): static
-    {
+    public function addOnceToChangeConditions(
+        ChangeConditions $changeConditions
+    ): static {
         if (!is_array($this->changeConditions)) {
             $this->changeConditions = [];
         }
@@ -519,8 +526,9 @@ class TransportExecutionTermsType
      * @param  null|array<PaymentTerms> $paymentTerms
      * @return static
      */
-    public function setPaymentTerms(?array $paymentTerms = null): static
-    {
+    public function setPaymentTerms(
+        ?array $paymentTerms = null
+    ): static {
         $this->paymentTerms = $paymentTerms;
 
         return $this;
@@ -580,8 +588,9 @@ class TransportExecutionTermsType
      * @param  PaymentTerms $paymentTerms
      * @return static
      */
-    public function addToPaymentTerms(PaymentTerms $paymentTerms): static
-    {
+    public function addToPaymentTerms(
+        PaymentTerms $paymentTerms
+    ): static {
         $this->paymentTerms[] = $paymentTerms;
 
         return $this;
@@ -601,8 +610,9 @@ class TransportExecutionTermsType
      * @param  PaymentTerms $paymentTerms
      * @return static
      */
-    public function addOnceToPaymentTerms(PaymentTerms $paymentTerms): static
-    {
+    public function addOnceToPaymentTerms(
+        PaymentTerms $paymentTerms
+    ): static {
         if (!is_array($this->paymentTerms)) {
             $this->paymentTerms = [];
         }
@@ -640,8 +650,9 @@ class TransportExecutionTermsType
      * @param  null|array<DeliveryTerms> $deliveryTerms
      * @return static
      */
-    public function setDeliveryTerms(?array $deliveryTerms = null): static
-    {
+    public function setDeliveryTerms(
+        ?array $deliveryTerms = null
+    ): static {
         $this->deliveryTerms = $deliveryTerms;
 
         return $this;
@@ -701,8 +712,9 @@ class TransportExecutionTermsType
      * @param  DeliveryTerms $deliveryTerms
      * @return static
      */
-    public function addToDeliveryTerms(DeliveryTerms $deliveryTerms): static
-    {
+    public function addToDeliveryTerms(
+        DeliveryTerms $deliveryTerms
+    ): static {
         $this->deliveryTerms[] = $deliveryTerms;
 
         return $this;
@@ -722,8 +734,9 @@ class TransportExecutionTermsType
      * @param  DeliveryTerms $deliveryTerms
      * @return static
      */
-    public function addOnceToDeliveryTerms(DeliveryTerms $deliveryTerms): static
-    {
+    public function addOnceToDeliveryTerms(
+        DeliveryTerms $deliveryTerms
+    ): static {
         if (!is_array($this->deliveryTerms)) {
             $this->deliveryTerms = [];
         }
@@ -771,8 +784,9 @@ class TransportExecutionTermsType
      * @param  null|BonusPaymentTerms $bonusPaymentTerms
      * @return static
      */
-    public function setBonusPaymentTerms(?BonusPaymentTerms $bonusPaymentTerms = null): static
-    {
+    public function setBonusPaymentTerms(
+        ?BonusPaymentTerms $bonusPaymentTerms = null
+    ): static {
         $this->bonusPaymentTerms = $bonusPaymentTerms;
 
         return $this;
@@ -810,8 +824,9 @@ class TransportExecutionTermsType
      * @param  null|CommissionPaymentTerms $commissionPaymentTerms
      * @return static
      */
-    public function setCommissionPaymentTerms(?CommissionPaymentTerms $commissionPaymentTerms = null): static
-    {
+    public function setCommissionPaymentTerms(
+        ?CommissionPaymentTerms $commissionPaymentTerms = null
+    ): static {
         $this->commissionPaymentTerms = $commissionPaymentTerms;
 
         return $this;
@@ -849,8 +864,9 @@ class TransportExecutionTermsType
      * @param  null|PenaltyPaymentTerms $penaltyPaymentTerms
      * @return static
      */
-    public function setPenaltyPaymentTerms(?PenaltyPaymentTerms $penaltyPaymentTerms = null): static
-    {
+    public function setPenaltyPaymentTerms(
+        ?PenaltyPaymentTerms $penaltyPaymentTerms = null
+    ): static {
         $this->penaltyPaymentTerms = $penaltyPaymentTerms;
 
         return $this;
@@ -878,8 +894,9 @@ class TransportExecutionTermsType
      * @param  null|array<EnvironmentalEmission> $environmentalEmission
      * @return static
      */
-    public function setEnvironmentalEmission(?array $environmentalEmission = null): static
-    {
+    public function setEnvironmentalEmission(
+        ?array $environmentalEmission = null
+    ): static {
         $this->environmentalEmission = $environmentalEmission;
 
         return $this;
@@ -939,8 +956,9 @@ class TransportExecutionTermsType
      * @param  EnvironmentalEmission $environmentalEmission
      * @return static
      */
-    public function addToEnvironmentalEmission(EnvironmentalEmission $environmentalEmission): static
-    {
+    public function addToEnvironmentalEmission(
+        EnvironmentalEmission $environmentalEmission
+    ): static {
         $this->environmentalEmission[] = $environmentalEmission;
 
         return $this;
@@ -960,8 +978,9 @@ class TransportExecutionTermsType
      * @param  EnvironmentalEmission $environmentalEmission
      * @return static
      */
-    public function addOnceToEnvironmentalEmission(EnvironmentalEmission $environmentalEmission): static
-    {
+    public function addOnceToEnvironmentalEmission(
+        EnvironmentalEmission $environmentalEmission
+    ): static {
         if (!is_array($this->environmentalEmission)) {
             $this->environmentalEmission = [];
         }
@@ -999,8 +1018,9 @@ class TransportExecutionTermsType
      * @param  null|array<NotificationRequirement> $notificationRequirement
      * @return static
      */
-    public function setNotificationRequirement(?array $notificationRequirement = null): static
-    {
+    public function setNotificationRequirement(
+        ?array $notificationRequirement = null
+    ): static {
         $this->notificationRequirement = $notificationRequirement;
 
         return $this;
@@ -1060,8 +1080,9 @@ class TransportExecutionTermsType
      * @param  NotificationRequirement $notificationRequirement
      * @return static
      */
-    public function addToNotificationRequirement(NotificationRequirement $notificationRequirement): static
-    {
+    public function addToNotificationRequirement(
+        NotificationRequirement $notificationRequirement
+    ): static {
         $this->notificationRequirement[] = $notificationRequirement;
 
         return $this;
@@ -1081,8 +1102,9 @@ class TransportExecutionTermsType
      * @param  NotificationRequirement $notificationRequirement
      * @return static
      */
-    public function addOnceToNotificationRequirement(NotificationRequirement $notificationRequirement): static
-    {
+    public function addOnceToNotificationRequirement(
+        NotificationRequirement $notificationRequirement
+    ): static {
         if (!is_array($this->notificationRequirement)) {
             $this->notificationRequirement = [];
         }
@@ -1130,8 +1152,9 @@ class TransportExecutionTermsType
      * @param  null|ServiceChargePaymentTerms $serviceChargePaymentTerms
      * @return static
      */
-    public function setServiceChargePaymentTerms(?ServiceChargePaymentTerms $serviceChargePaymentTerms = null): static
-    {
+    public function setServiceChargePaymentTerms(
+        ?ServiceChargePaymentTerms $serviceChargePaymentTerms = null
+    ): static {
         $this->serviceChargePaymentTerms = $serviceChargePaymentTerms;
 
         return $this;

@@ -178,8 +178,9 @@ class LocationType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -207,8 +208,9 @@ class LocationType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -268,8 +270,9 @@ class LocationType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -289,8 +292,9 @@ class LocationType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -328,8 +332,9 @@ class LocationType
      * @param  null|array<Conditions> $conditions
      * @return static
      */
-    public function setConditions(?array $conditions = null): static
-    {
+    public function setConditions(
+        ?array $conditions = null
+    ): static {
         $this->conditions = $conditions;
 
         return $this;
@@ -389,8 +394,9 @@ class LocationType
      * @param  Conditions $conditions
      * @return static
      */
-    public function addToConditions(Conditions $conditions): static
-    {
+    public function addToConditions(
+        Conditions $conditions
+    ): static {
         $this->conditions[] = $conditions;
 
         return $this;
@@ -410,8 +416,9 @@ class LocationType
      * @param  Conditions $conditions
      * @return static
      */
-    public function addOnceToConditions(Conditions $conditions): static
-    {
+    public function addOnceToConditions(
+        Conditions $conditions
+    ): static {
         if (!is_array($this->conditions)) {
             $this->conditions = [];
         }
@@ -459,8 +466,9 @@ class LocationType
      * @param  null|CountrySubentity $countrySubentity
      * @return static
      */
-    public function setCountrySubentity(?CountrySubentity $countrySubentity = null): static
-    {
+    public function setCountrySubentity(
+        ?CountrySubentity $countrySubentity = null
+    ): static {
         $this->countrySubentity = $countrySubentity;
 
         return $this;
@@ -498,8 +506,9 @@ class LocationType
      * @param  null|CountrySubentityCode $countrySubentityCode
      * @return static
      */
-    public function setCountrySubentityCode(?CountrySubentityCode $countrySubentityCode = null): static
-    {
+    public function setCountrySubentityCode(
+        ?CountrySubentityCode $countrySubentityCode = null
+    ): static {
         $this->countrySubentityCode = $countrySubentityCode;
 
         return $this;
@@ -537,8 +546,9 @@ class LocationType
      * @param  null|LocationTypeCode $locationTypeCode
      * @return static
      */
-    public function setLocationTypeCode(?LocationTypeCode $locationTypeCode = null): static
-    {
+    public function setLocationTypeCode(
+        ?LocationTypeCode $locationTypeCode = null
+    ): static {
         $this->locationTypeCode = $locationTypeCode;
 
         return $this;
@@ -576,8 +586,9 @@ class LocationType
      * @param  null|InformationURI $informationURI
      * @return static
      */
-    public function setInformationURI(?InformationURI $informationURI = null): static
-    {
+    public function setInformationURI(
+        ?InformationURI $informationURI = null
+    ): static {
         $this->informationURI = $informationURI;
 
         return $this;
@@ -615,8 +626,9 @@ class LocationType
      * @param  null|Name $name
      * @return static
      */
-    public function setName(?Name $name = null): static
-    {
+    public function setName(
+        ?Name $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -644,8 +656,9 @@ class LocationType
      * @param  null|array<ValidityPeriod> $validityPeriod
      * @return static
      */
-    public function setValidityPeriod(?array $validityPeriod = null): static
-    {
+    public function setValidityPeriod(
+        ?array $validityPeriod = null
+    ): static {
         $this->validityPeriod = $validityPeriod;
 
         return $this;
@@ -705,8 +718,9 @@ class LocationType
      * @param  ValidityPeriod $validityPeriod
      * @return static
      */
-    public function addToValidityPeriod(ValidityPeriod $validityPeriod): static
-    {
+    public function addToValidityPeriod(
+        ValidityPeriod $validityPeriod
+    ): static {
         $this->validityPeriod[] = $validityPeriod;
 
         return $this;
@@ -726,8 +740,9 @@ class LocationType
      * @param  ValidityPeriod $validityPeriod
      * @return static
      */
-    public function addOnceToValidityPeriod(ValidityPeriod $validityPeriod): static
-    {
+    public function addOnceToValidityPeriod(
+        ValidityPeriod $validityPeriod
+    ): static {
         if (!is_array($this->validityPeriod)) {
             $this->validityPeriod = [];
         }
@@ -775,8 +790,9 @@ class LocationType
      * @param  null|Address $address
      * @return static
      */
-    public function setAddress(?Address $address = null): static
-    {
+    public function setAddress(
+        ?Address $address = null
+    ): static {
         $this->address = $address;
 
         return $this;
@@ -804,8 +820,9 @@ class LocationType
      * @param  null|array<SubsidiaryLocation> $subsidiaryLocation
      * @return static
      */
-    public function setSubsidiaryLocation(?array $subsidiaryLocation = null): static
-    {
+    public function setSubsidiaryLocation(
+        ?array $subsidiaryLocation = null
+    ): static {
         $this->subsidiaryLocation = $subsidiaryLocation;
 
         return $this;
@@ -865,8 +882,9 @@ class LocationType
      * @param  SubsidiaryLocation $subsidiaryLocation
      * @return static
      */
-    public function addToSubsidiaryLocation(SubsidiaryLocation $subsidiaryLocation): static
-    {
+    public function addToSubsidiaryLocation(
+        SubsidiaryLocation $subsidiaryLocation
+    ): static {
         $this->subsidiaryLocation[] = $subsidiaryLocation;
 
         return $this;
@@ -886,8 +904,9 @@ class LocationType
      * @param  SubsidiaryLocation $subsidiaryLocation
      * @return static
      */
-    public function addOnceToSubsidiaryLocation(SubsidiaryLocation $subsidiaryLocation): static
-    {
+    public function addOnceToSubsidiaryLocation(
+        SubsidiaryLocation $subsidiaryLocation
+    ): static {
         if (!is_array($this->subsidiaryLocation)) {
             $this->subsidiaryLocation = [];
         }
@@ -925,8 +944,9 @@ class LocationType
      * @param  null|array<LocationCoordinate> $locationCoordinate
      * @return static
      */
-    public function setLocationCoordinate(?array $locationCoordinate = null): static
-    {
+    public function setLocationCoordinate(
+        ?array $locationCoordinate = null
+    ): static {
         $this->locationCoordinate = $locationCoordinate;
 
         return $this;
@@ -986,8 +1006,9 @@ class LocationType
      * @param  LocationCoordinate $locationCoordinate
      * @return static
      */
-    public function addToLocationCoordinate(LocationCoordinate $locationCoordinate): static
-    {
+    public function addToLocationCoordinate(
+        LocationCoordinate $locationCoordinate
+    ): static {
         $this->locationCoordinate[] = $locationCoordinate;
 
         return $this;
@@ -1007,8 +1028,9 @@ class LocationType
      * @param  LocationCoordinate $locationCoordinate
      * @return static
      */
-    public function addOnceToLocationCoordinate(LocationCoordinate $locationCoordinate): static
-    {
+    public function addOnceToLocationCoordinate(
+        LocationCoordinate $locationCoordinate
+    ): static {
         if (!is_array($this->locationCoordinate)) {
             $this->locationCoordinate = [];
         }

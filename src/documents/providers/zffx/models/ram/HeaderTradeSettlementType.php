@@ -264,8 +264,9 @@ class HeaderTradeSettlementType
      * @param  null|IDType $creditorReferenceID
      * @return static
      */
-    public function setCreditorReferenceID(?IDType $creditorReferenceID = null): static
-    {
+    public function setCreditorReferenceID(
+        ?IDType $creditorReferenceID = null
+    ): static {
         $this->creditorReferenceID = $creditorReferenceID;
 
         return $this;
@@ -303,8 +304,9 @@ class HeaderTradeSettlementType
      * @param  null|TextType $paymentReference
      * @return static
      */
-    public function setPaymentReference(?TextType $paymentReference = null): static
-    {
+    public function setPaymentReference(
+        ?TextType $paymentReference = null
+    ): static {
         $this->paymentReference = $paymentReference;
 
         return $this;
@@ -342,8 +344,9 @@ class HeaderTradeSettlementType
      * @param  null|CurrencyCodeType $taxCurrencyCode
      * @return static
      */
-    public function setTaxCurrencyCode(?CurrencyCodeType $taxCurrencyCode = null): static
-    {
+    public function setTaxCurrencyCode(
+        ?CurrencyCodeType $taxCurrencyCode = null
+    ): static {
         $this->taxCurrencyCode = $taxCurrencyCode;
 
         return $this;
@@ -381,8 +384,9 @@ class HeaderTradeSettlementType
      * @param  null|CurrencyCodeType $invoiceCurrencyCode
      * @return static
      */
-    public function setInvoiceCurrencyCode(?CurrencyCodeType $invoiceCurrencyCode = null): static
-    {
+    public function setInvoiceCurrencyCode(
+        ?CurrencyCodeType $invoiceCurrencyCode = null
+    ): static {
         $this->invoiceCurrencyCode = $invoiceCurrencyCode;
 
         return $this;
@@ -420,8 +424,9 @@ class HeaderTradeSettlementType
      * @param  null|TextType $invoiceIssuerReference
      * @return static
      */
-    public function setInvoiceIssuerReference(?TextType $invoiceIssuerReference = null): static
-    {
+    public function setInvoiceIssuerReference(
+        ?TextType $invoiceIssuerReference = null
+    ): static {
         $this->invoiceIssuerReference = $invoiceIssuerReference;
 
         return $this;
@@ -459,8 +464,9 @@ class HeaderTradeSettlementType
      * @param  null|TradePartyType $invoicerTradeParty
      * @return static
      */
-    public function setInvoicerTradeParty(?TradePartyType $invoicerTradeParty = null): static
-    {
+    public function setInvoicerTradeParty(
+        ?TradePartyType $invoicerTradeParty = null
+    ): static {
         $this->invoicerTradeParty = $invoicerTradeParty;
 
         return $this;
@@ -498,8 +504,9 @@ class HeaderTradeSettlementType
      * @param  null|TradePartyType $invoiceeTradeParty
      * @return static
      */
-    public function setInvoiceeTradeParty(?TradePartyType $invoiceeTradeParty = null): static
-    {
+    public function setInvoiceeTradeParty(
+        ?TradePartyType $invoiceeTradeParty = null
+    ): static {
         $this->invoiceeTradeParty = $invoiceeTradeParty;
 
         return $this;
@@ -537,8 +544,9 @@ class HeaderTradeSettlementType
      * @param  null|TradePartyType $payeeTradeParty
      * @return static
      */
-    public function setPayeeTradeParty(?TradePartyType $payeeTradeParty = null): static
-    {
+    public function setPayeeTradeParty(
+        ?TradePartyType $payeeTradeParty = null
+    ): static {
         $this->payeeTradeParty = $payeeTradeParty;
 
         return $this;
@@ -576,8 +584,9 @@ class HeaderTradeSettlementType
      * @param  null|TradePartyType $payerTradeParty
      * @return static
      */
-    public function setPayerTradeParty(?TradePartyType $payerTradeParty = null): static
-    {
+    public function setPayerTradeParty(
+        ?TradePartyType $payerTradeParty = null
+    ): static {
         $this->payerTradeParty = $payerTradeParty;
 
         return $this;
@@ -645,8 +654,9 @@ class HeaderTradeSettlementType
      * @param  null|array<TradeSettlementPaymentMeansType> $specifiedTradeSettlementPaymentMeans
      * @return static
      */
-    public function setSpecifiedTradeSettlementPaymentMeans(?array $specifiedTradeSettlementPaymentMeans = null): static
-    {
+    public function setSpecifiedTradeSettlementPaymentMeans(
+        ?array $specifiedTradeSettlementPaymentMeans = null
+    ): static {
         $this->specifiedTradeSettlementPaymentMeans = $specifiedTradeSettlementPaymentMeans;
 
         return $this;
@@ -738,8 +748,9 @@ class HeaderTradeSettlementType
      * @param  null|array<TradeTaxType> $applicableTradeTax
      * @return static
      */
-    public function setApplicableTradeTax(?array $applicableTradeTax = null): static
-    {
+    public function setApplicableTradeTax(
+        ?array $applicableTradeTax = null
+    ): static {
         $this->applicableTradeTax = $applicableTradeTax;
 
         return $this;
@@ -769,8 +780,9 @@ class HeaderTradeSettlementType
      * @param  TradeTaxType $applicableTradeTax
      * @return static
      */
-    public function addToApplicableTradeTax(TradeTaxType $applicableTradeTax): static
-    {
+    public function addToApplicableTradeTax(
+        TradeTaxType $applicableTradeTax
+    ): static {
         $this->applicableTradeTax[] = $applicableTradeTax;
 
         return $this;
@@ -790,8 +802,9 @@ class HeaderTradeSettlementType
      * @param  TradeTaxType $applicableTradeTax
      * @return static
      */
-    public function addOnceToApplicableTradeTax(TradeTaxType $applicableTradeTax): static
-    {
+    public function addOnceToApplicableTradeTax(
+        TradeTaxType $applicableTradeTax
+    ): static {
         if (!is_array($this->applicableTradeTax)) {
             $this->applicableTradeTax = [];
         }
@@ -839,8 +852,9 @@ class HeaderTradeSettlementType
      * @param  null|SpecifiedPeriodType $billingSpecifiedPeriod
      * @return static
      */
-    public function setBillingSpecifiedPeriod(?SpecifiedPeriodType $billingSpecifiedPeriod = null): static
-    {
+    public function setBillingSpecifiedPeriod(
+        ?SpecifiedPeriodType $billingSpecifiedPeriod = null
+    ): static {
         $this->billingSpecifiedPeriod = $billingSpecifiedPeriod;
 
         return $this;
@@ -868,8 +882,9 @@ class HeaderTradeSettlementType
      * @param  null|array<TradeAllowanceChargeType> $specifiedTradeAllowanceCharge
      * @return static
      */
-    public function setSpecifiedTradeAllowanceCharge(?array $specifiedTradeAllowanceCharge = null): static
-    {
+    public function setSpecifiedTradeAllowanceCharge(
+        ?array $specifiedTradeAllowanceCharge = null
+    ): static {
         $this->specifiedTradeAllowanceCharge = $specifiedTradeAllowanceCharge;
 
         return $this;
@@ -899,8 +914,9 @@ class HeaderTradeSettlementType
      * @param  TradeAllowanceChargeType $specifiedTradeAllowanceCharge
      * @return static
      */
-    public function addToSpecifiedTradeAllowanceCharge(TradeAllowanceChargeType $specifiedTradeAllowanceCharge): static
-    {
+    public function addToSpecifiedTradeAllowanceCharge(
+        TradeAllowanceChargeType $specifiedTradeAllowanceCharge
+    ): static {
         $this->specifiedTradeAllowanceCharge[] = $specifiedTradeAllowanceCharge;
 
         return $this;
@@ -960,8 +976,9 @@ class HeaderTradeSettlementType
      * @param  null|array<LogisticsServiceChargeType> $specifiedLogisticsServiceCharge
      * @return static
      */
-    public function setSpecifiedLogisticsServiceCharge(?array $specifiedLogisticsServiceCharge = null): static
-    {
+    public function setSpecifiedLogisticsServiceCharge(
+        ?array $specifiedLogisticsServiceCharge = null
+    ): static {
         $this->specifiedLogisticsServiceCharge = $specifiedLogisticsServiceCharge;
 
         return $this;
@@ -1053,8 +1070,9 @@ class HeaderTradeSettlementType
      * @param  null|array<TradePaymentTermsType> $specifiedTradePaymentTerms
      * @return static
      */
-    public function setSpecifiedTradePaymentTerms(?array $specifiedTradePaymentTerms = null): static
-    {
+    public function setSpecifiedTradePaymentTerms(
+        ?array $specifiedTradePaymentTerms = null
+    ): static {
         $this->specifiedTradePaymentTerms = $specifiedTradePaymentTerms;
 
         return $this;
@@ -1084,8 +1102,9 @@ class HeaderTradeSettlementType
      * @param  TradePaymentTermsType $specifiedTradePaymentTerms
      * @return static
      */
-    public function addToSpecifiedTradePaymentTerms(TradePaymentTermsType $specifiedTradePaymentTerms): static
-    {
+    public function addToSpecifiedTradePaymentTerms(
+        TradePaymentTermsType $specifiedTradePaymentTerms
+    ): static {
         $this->specifiedTradePaymentTerms[] = $specifiedTradePaymentTerms;
 
         return $this;
@@ -1105,8 +1124,9 @@ class HeaderTradeSettlementType
      * @param  TradePaymentTermsType $specifiedTradePaymentTerms
      * @return static
      */
-    public function addOnceToSpecifiedTradePaymentTerms(TradePaymentTermsType $specifiedTradePaymentTerms): static
-    {
+    public function addOnceToSpecifiedTradePaymentTerms(
+        TradePaymentTermsType $specifiedTradePaymentTerms
+    ): static {
         if (!is_array($this->specifiedTradePaymentTerms)) {
             $this->specifiedTradePaymentTerms = [];
         }
@@ -1184,8 +1204,9 @@ class HeaderTradeSettlementType
      * @param  null|array<ReferencedDocumentType> $invoiceReferencedDocument
      * @return static
      */
-    public function setInvoiceReferencedDocument(?array $invoiceReferencedDocument = null): static
-    {
+    public function setInvoiceReferencedDocument(
+        ?array $invoiceReferencedDocument = null
+    ): static {
         $this->invoiceReferencedDocument = $invoiceReferencedDocument;
 
         return $this;
@@ -1215,8 +1236,9 @@ class HeaderTradeSettlementType
      * @param  ReferencedDocumentType $invoiceReferencedDocument
      * @return static
      */
-    public function addToInvoiceReferencedDocument(ReferencedDocumentType $invoiceReferencedDocument): static
-    {
+    public function addToInvoiceReferencedDocument(
+        ReferencedDocumentType $invoiceReferencedDocument
+    ): static {
         $this->invoiceReferencedDocument[] = $invoiceReferencedDocument;
 
         return $this;
@@ -1236,8 +1258,9 @@ class HeaderTradeSettlementType
      * @param  ReferencedDocumentType $invoiceReferencedDocument
      * @return static
      */
-    public function addOnceToInvoiceReferencedDocument(ReferencedDocumentType $invoiceReferencedDocument): static
-    {
+    public function addOnceToInvoiceReferencedDocument(
+        ReferencedDocumentType $invoiceReferencedDocument
+    ): static {
         if (!is_array($this->invoiceReferencedDocument)) {
             $this->invoiceReferencedDocument = [];
         }
@@ -1369,8 +1392,9 @@ class HeaderTradeSettlementType
      * @param  null|array<AdvancePaymentType> $specifiedAdvancePayment
      * @return static
      */
-    public function setSpecifiedAdvancePayment(?array $specifiedAdvancePayment = null): static
-    {
+    public function setSpecifiedAdvancePayment(
+        ?array $specifiedAdvancePayment = null
+    ): static {
         $this->specifiedAdvancePayment = $specifiedAdvancePayment;
 
         return $this;
@@ -1400,8 +1424,9 @@ class HeaderTradeSettlementType
      * @param  AdvancePaymentType $specifiedAdvancePayment
      * @return static
      */
-    public function addToSpecifiedAdvancePayment(AdvancePaymentType $specifiedAdvancePayment): static
-    {
+    public function addToSpecifiedAdvancePayment(
+        AdvancePaymentType $specifiedAdvancePayment
+    ): static {
         $this->specifiedAdvancePayment[] = $specifiedAdvancePayment;
 
         return $this;
@@ -1421,8 +1446,9 @@ class HeaderTradeSettlementType
      * @param  AdvancePaymentType $specifiedAdvancePayment
      * @return static
      */
-    public function addOnceToSpecifiedAdvancePayment(AdvancePaymentType $specifiedAdvancePayment): static
-    {
+    public function addOnceToSpecifiedAdvancePayment(
+        AdvancePaymentType $specifiedAdvancePayment
+    ): static {
         if (!is_array($this->specifiedAdvancePayment)) {
             $this->specifiedAdvancePayment = [];
         }

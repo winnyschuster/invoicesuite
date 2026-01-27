@@ -79,8 +79,9 @@ class EventLineItemType
      * @param  null|LineNumberNumeric $lineNumberNumeric
      * @return static
      */
-    public function setLineNumberNumeric(?LineNumberNumeric $lineNumberNumeric = null): static
-    {
+    public function setLineNumberNumeric(
+        ?LineNumberNumeric $lineNumberNumeric = null
+    ): static {
         $this->lineNumberNumeric = $lineNumberNumeric;
 
         return $this;
@@ -148,8 +149,9 @@ class EventLineItemType
      * @param  null|array<RetailPlannedImpact> $retailPlannedImpact
      * @return static
      */
-    public function setRetailPlannedImpact(?array $retailPlannedImpact = null): static
-    {
+    public function setRetailPlannedImpact(
+        ?array $retailPlannedImpact = null
+    ): static {
         $this->retailPlannedImpact = $retailPlannedImpact;
 
         return $this;
@@ -209,8 +211,9 @@ class EventLineItemType
      * @param  RetailPlannedImpact $retailPlannedImpact
      * @return static
      */
-    public function addToRetailPlannedImpact(RetailPlannedImpact $retailPlannedImpact): static
-    {
+    public function addToRetailPlannedImpact(
+        RetailPlannedImpact $retailPlannedImpact
+    ): static {
         $this->retailPlannedImpact[] = $retailPlannedImpact;
 
         return $this;
@@ -230,8 +233,9 @@ class EventLineItemType
      * @param  RetailPlannedImpact $retailPlannedImpact
      * @return static
      */
-    public function addOnceToRetailPlannedImpact(RetailPlannedImpact $retailPlannedImpact): static
-    {
+    public function addOnceToRetailPlannedImpact(
+        RetailPlannedImpact $retailPlannedImpact
+    ): static {
         if (!is_array($this->retailPlannedImpact)) {
             $this->retailPlannedImpact = [];
         }
@@ -279,8 +283,9 @@ class EventLineItemType
      * @param  null|SupplyItem $supplyItem
      * @return static
      */
-    public function setSupplyItem(?SupplyItem $supplyItem = null): static
-    {
+    public function setSupplyItem(
+        ?SupplyItem $supplyItem = null
+    ): static {
         $this->supplyItem = $supplyItem;
 
         return $this;

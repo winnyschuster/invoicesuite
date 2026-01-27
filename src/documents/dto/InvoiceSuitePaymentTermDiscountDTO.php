@@ -97,8 +97,9 @@ class InvoiceSuitePaymentTermDiscountDTO
      * @param  null|float $baseAmount The base amount of the payment discount
      * @return static
      */
-    public function setBaseAmount(?float $baseAmount): static
-    {
+    public function setBaseAmount(
+        ?float $baseAmount
+    ): static {
         $this->baseAmount = $baseAmount;
 
         return $this;
@@ -120,8 +121,9 @@ class InvoiceSuitePaymentTermDiscountDTO
      * @param  null|float $discountAmount The amount of the payment discount
      * @return static
      */
-    public function setDiscountAmount(?float $discountAmount): static
-    {
+    public function setDiscountAmount(
+        ?float $discountAmount
+    ): static {
         $this->discountAmount = $discountAmount;
 
         return $this;
@@ -143,8 +145,9 @@ class InvoiceSuitePaymentTermDiscountDTO
      * @param  null|float $discountPercent The percentage of the payment discount
      * @return static
      */
-    public function setDiscountPercent(?float $discountPercent): static
-    {
+    public function setDiscountPercent(
+        ?float $discountPercent
+    ): static {
         $this->discountPercent = $discountPercent;
 
         return $this;
@@ -166,8 +169,9 @@ class InvoiceSuitePaymentTermDiscountDTO
      * @param  null|DateTimeInterface $baseDate The due date reference date
      * @return static
      */
-    public function setBaseDate(?DateTimeInterface $baseDate): static
-    {
+    public function setBaseDate(
+        ?DateTimeInterface $baseDate
+    ): static {
         $this->baseDate = $baseDate;
 
         return $this;
@@ -189,8 +193,9 @@ class InvoiceSuitePaymentTermDiscountDTO
      * @param  null|InvoiceSuitePeriodDTO $period The maturity period (basis)
      * @return static
      */
-    public function setPeriod(?InvoiceSuitePeriodDTO $period): static
-    {
+    public function setPeriod(
+        ?InvoiceSuitePeriodDTO $period
+    ): static {
         $this->period = $period;
 
         return $this;

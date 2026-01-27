@@ -41,8 +41,10 @@ class InvoiceSuitePriceDTO
      * @param null|float                   $amount        The price value
      * @param null|InvoiceSuiteQuantityDTO $priceQuantity The number of item units for which the price applies
      */
-    public function __construct(?float $amount = null, ?InvoiceSuiteQuantityDTO $priceQuantity = null)
-    {
+    public function __construct(
+        ?float $amount = null,
+        ?InvoiceSuiteQuantityDTO $priceQuantity = null
+    ) {
         $this->setAmount($amount);
         $this->setPriceQuantity($priceQuantity);
     }
@@ -63,8 +65,9 @@ class InvoiceSuitePriceDTO
      * @param  null|float $amount The price value
      * @return static
      */
-    public function setAmount(?float $amount): static
-    {
+    public function setAmount(
+        ?float $amount
+    ): static {
         $this->amount = $amount;
 
         return $this;
@@ -86,8 +89,9 @@ class InvoiceSuitePriceDTO
      * @param  null|InvoiceSuiteQuantityDTO $priceQuantity The number of item units for which the price applies
      * @return static
      */
-    public function setPriceQuantity(?InvoiceSuiteQuantityDTO $priceQuantity): static
-    {
+    public function setPriceQuantity(
+        ?InvoiceSuiteQuantityDTO $priceQuantity
+    ): static {
         $this->priceQuantity = $priceQuantity;
 
         return $this;

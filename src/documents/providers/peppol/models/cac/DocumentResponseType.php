@@ -90,8 +90,9 @@ class DocumentResponseType
      * @param  null|Response $response
      * @return static
      */
-    public function setResponse(?Response $response = null): static
-    {
+    public function setResponse(
+        ?Response $response = null
+    ): static {
         $this->response = $response;
 
         return $this;
@@ -119,8 +120,9 @@ class DocumentResponseType
      * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?array $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;
@@ -180,8 +182,9 @@ class DocumentResponseType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         $this->documentReference[] = $documentReference;
 
         return $this;
@@ -201,8 +204,9 @@ class DocumentResponseType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addOnceToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
         }
@@ -250,8 +254,9 @@ class DocumentResponseType
      * @param  null|IssuerParty $issuerParty
      * @return static
      */
-    public function setIssuerParty(?IssuerParty $issuerParty = null): static
-    {
+    public function setIssuerParty(
+        ?IssuerParty $issuerParty = null
+    ): static {
         $this->issuerParty = $issuerParty;
 
         return $this;
@@ -289,8 +294,9 @@ class DocumentResponseType
      * @param  null|RecipientParty $recipientParty
      * @return static
      */
-    public function setRecipientParty(?RecipientParty $recipientParty = null): static
-    {
+    public function setRecipientParty(
+        ?RecipientParty $recipientParty = null
+    ): static {
         $this->recipientParty = $recipientParty;
 
         return $this;
@@ -318,8 +324,9 @@ class DocumentResponseType
      * @param  null|array<LineResponse> $lineResponse
      * @return static
      */
-    public function setLineResponse(?array $lineResponse = null): static
-    {
+    public function setLineResponse(
+        ?array $lineResponse = null
+    ): static {
         $this->lineResponse = $lineResponse;
 
         return $this;
@@ -379,8 +386,9 @@ class DocumentResponseType
      * @param  LineResponse $lineResponse
      * @return static
      */
-    public function addToLineResponse(LineResponse $lineResponse): static
-    {
+    public function addToLineResponse(
+        LineResponse $lineResponse
+    ): static {
         $this->lineResponse[] = $lineResponse;
 
         return $this;
@@ -400,8 +408,9 @@ class DocumentResponseType
      * @param  LineResponse $lineResponse
      * @return static
      */
-    public function addOnceToLineResponse(LineResponse $lineResponse): static
-    {
+    public function addOnceToLineResponse(
+        LineResponse $lineResponse
+    ): static {
         if (!is_array($this->lineResponse)) {
             $this->lineResponse = [];
         }

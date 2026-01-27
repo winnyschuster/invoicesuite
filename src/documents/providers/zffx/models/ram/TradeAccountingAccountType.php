@@ -57,8 +57,9 @@ class TradeAccountingAccountType
      * @param  null|IDType $iD
      * @return static
      */
-    public function setID(?IDType $iD = null): static
-    {
+    public function setID(
+        ?IDType $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -96,8 +97,9 @@ class TradeAccountingAccountType
      * @param  null|AccountingAccountTypeCodeType $typeCode
      * @return static
      */
-    public function setTypeCode(?AccountingAccountTypeCodeType $typeCode = null): static
-    {
+    public function setTypeCode(
+        ?AccountingAccountTypeCodeType $typeCode = null
+    ): static {
         $this->typeCode = $typeCode;
 
         return $this;

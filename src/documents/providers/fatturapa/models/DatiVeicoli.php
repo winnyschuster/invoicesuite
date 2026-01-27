@@ -53,8 +53,9 @@ final class DatiVeicoli
      * @param  null|DateTimeInterface $data
      * @return static
      */
-    public function setData(?DateTimeInterface $data = null): static
-    {
+    public function setData(
+        ?DateTimeInterface $data = null
+    ): static {
         $this->data = $data;
 
         return $this;
@@ -88,8 +89,9 @@ final class DatiVeicoli
      * @param  null|string $totalePercorso
      * @return static
      */
-    public function setTotalePercorso(?string $totalePercorso = null): static
-    {
+    public function setTotalePercorso(
+        ?string $totalePercorso = null
+    ): static {
         $this->totalePercorso = InvoiceSuiteStringUtils::asNullWhenEmpty($totalePercorso);
 
         return $this;

@@ -79,8 +79,11 @@ class ZugferdDocumentProfileConverter
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    public static function convertFromFileToFile(string $fromFilename, string $toFile, int $newProfileId): void
-    {
+    public static function convertFromFileToFile(
+        string $fromFilename,
+        string $toFile,
+        int $newProfileId
+    ): void {
         static::convertFromFile($fromFilename, $newProfileId)->convertToFile($toFile);
     }
 
@@ -97,8 +100,10 @@ class ZugferdDocumentProfileConverter
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    public static function convertFromFileToString(string $fromFilename, int $newProfileId): string
-    {
+    public static function convertFromFileToString(
+        string $fromFilename,
+        int $newProfileId
+    ): string {
         return static::convertFromFile($fromFilename, $newProfileId)->convertToString();
     }
 
@@ -114,8 +119,11 @@ class ZugferdDocumentProfileConverter
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    public static function convertFromContentToFile(string $fromContent, string $toFile, int $newProfileId): void
-    {
+    public static function convertFromContentToFile(
+        string $fromContent,
+        string $toFile,
+        int $newProfileId
+    ): void {
         static::convertFromContent($fromContent, $newProfileId)->convertToFile($toFile);
     }
 
@@ -130,8 +138,10 @@ class ZugferdDocumentProfileConverter
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    public static function convertFromContentToString(string $fromContent, int $newProfileId): string
-    {
+    public static function convertFromContentToString(
+        string $fromContent,
+        int $newProfileId
+    ): string {
         return static::convertFromContent($fromContent, $newProfileId)->convertToString();
     }
 
@@ -148,8 +158,10 @@ class ZugferdDocumentProfileConverter
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    protected static function convertFromFile(string $fromFilename, int $newProfileId): static
-    {
+    protected static function convertFromFile(
+        string $fromFilename,
+        int $newProfileId
+    ): static {
         if (!file_exists($fromFilename)) {
             throw new InvoiceSuiteFileNotFoundException($fromFilename);
         }
@@ -174,8 +186,10 @@ class ZugferdDocumentProfileConverter
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    protected static function convertFromContent(string $fromContent, int $newProfileId): static
-    {
+    protected static function convertFromContent(
+        string $fromContent,
+        int $newProfileId
+    ): static {
         $fromProfileId = ZugferdProfileResolver::resolveProfileId($fromContent);
 
         // @phpstan-ignore new.static
@@ -192,8 +206,9 @@ class ZugferdDocumentProfileConverter
      * @param  int    $toProfileId
      * @return static
      */
-    protected function setConvertToProfileId(int $toProfileId): static
-    {
+    protected function setConvertToProfileId(
+        int $toProfileId
+    ): static {
         $this->convertToProfileId = $toProfileId;
 
         return $this;
@@ -205,8 +220,9 @@ class ZugferdDocumentProfileConverter
      * @param  string $fromContent
      * @return static
      */
-    protected function setConvertFromContent(string $fromContent): static
-    {
+    protected function setConvertFromContent(
+        string $fromContent
+    ): static {
         $this->convertFromContent = $fromContent;
 
         return $this;
@@ -222,8 +238,9 @@ class ZugferdDocumentProfileConverter
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    protected function convertToFile(string $toFile): static
-    {
+    protected function convertToFile(
+        string $toFile
+    ): static {
         file_put_contents($toFile, $this->convertToString());
 
         return $this;

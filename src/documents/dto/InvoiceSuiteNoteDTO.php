@@ -51,8 +51,11 @@ class InvoiceSuiteNoteDTO
      * @param null|string $contentCode Code to classify the content of the free text of the invoice
      * @param null|string $subjectCode Qualification of the free text for the invoice
      */
-    public function __construct(?string $content = null, ?string $contentCode = null, ?string $subjectCode = null)
-    {
+    public function __construct(
+        ?string $content = null,
+        ?string $contentCode = null,
+        ?string $subjectCode = null
+    ) {
         $this->setContent($content);
         $this->setContentCode($contentCode);
         $this->setSubjectCode($subjectCode);
@@ -74,8 +77,9 @@ class InvoiceSuiteNoteDTO
      * @param  null|string $content Free text containing unstructured information that is relevant to the invoice as a whole
      * @return static
      */
-    public function setContent(?string $content): static
-    {
+    public function setContent(
+        ?string $content
+    ): static {
         $this->content = InvoiceSuiteStringUtils::asNullWhenEmpty($content);
 
         return $this;
@@ -97,8 +101,9 @@ class InvoiceSuiteNoteDTO
      * @param  null|string $contentCode Code to classify the content of the free text of the invoice
      * @return static
      */
-    public function setContentCode(?string $contentCode): static
-    {
+    public function setContentCode(
+        ?string $contentCode
+    ): static {
         $this->contentCode = InvoiceSuiteStringUtils::asNullWhenEmpty($contentCode);
 
         return $this;
@@ -120,8 +125,9 @@ class InvoiceSuiteNoteDTO
      * @param  null|string $subjectCode Qualification of the free text for the invoice
      * @return static
      */
-    public function setSubjectCode(?string $subjectCode): static
-    {
+    public function setSubjectCode(
+        ?string $subjectCode
+    ): static {
         $this->subjectCode = InvoiceSuiteStringUtils::asNullWhenEmpty($subjectCode);
 
         return $this;

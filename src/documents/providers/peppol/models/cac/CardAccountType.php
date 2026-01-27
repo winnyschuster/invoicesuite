@@ -164,8 +164,9 @@ class CardAccountType
      * @param  null|PrimaryAccountNumberID $primaryAccountNumberID
      * @return static
      */
-    public function setPrimaryAccountNumberID(?PrimaryAccountNumberID $primaryAccountNumberID = null): static
-    {
+    public function setPrimaryAccountNumberID(
+        ?PrimaryAccountNumberID $primaryAccountNumberID = null
+    ): static {
         $this->primaryAccountNumberID = $primaryAccountNumberID;
 
         return $this;
@@ -203,8 +204,9 @@ class CardAccountType
      * @param  null|NetworkID $networkID
      * @return static
      */
-    public function setNetworkID(?NetworkID $networkID = null): static
-    {
+    public function setNetworkID(
+        ?NetworkID $networkID = null
+    ): static {
         $this->networkID = $networkID;
 
         return $this;
@@ -242,8 +244,9 @@ class CardAccountType
      * @param  null|CardTypeCode $cardTypeCode
      * @return static
      */
-    public function setCardTypeCode(?CardTypeCode $cardTypeCode = null): static
-    {
+    public function setCardTypeCode(
+        ?CardTypeCode $cardTypeCode = null
+    ): static {
         $this->cardTypeCode = $cardTypeCode;
 
         return $this;
@@ -271,8 +274,9 @@ class CardAccountType
      * @param  null|DateTimeInterface $validityStartDate
      * @return static
      */
-    public function setValidityStartDate(?DateTimeInterface $validityStartDate = null): static
-    {
+    public function setValidityStartDate(
+        ?DateTimeInterface $validityStartDate = null
+    ): static {
         $this->validityStartDate = $validityStartDate;
 
         return $this;
@@ -300,8 +304,9 @@ class CardAccountType
      * @param  null|DateTimeInterface $expiryDate
      * @return static
      */
-    public function setExpiryDate(?DateTimeInterface $expiryDate = null): static
-    {
+    public function setExpiryDate(
+        ?DateTimeInterface $expiryDate = null
+    ): static {
         $this->expiryDate = $expiryDate;
 
         return $this;
@@ -339,8 +344,9 @@ class CardAccountType
      * @param  null|IssuerID $issuerID
      * @return static
      */
-    public function setIssuerID(?IssuerID $issuerID = null): static
-    {
+    public function setIssuerID(
+        ?IssuerID $issuerID = null
+    ): static {
         $this->issuerID = $issuerID;
 
         return $this;
@@ -378,8 +384,9 @@ class CardAccountType
      * @param  null|IssueNumberID $issueNumberID
      * @return static
      */
-    public function setIssueNumberID(?IssueNumberID $issueNumberID = null): static
-    {
+    public function setIssueNumberID(
+        ?IssueNumberID $issueNumberID = null
+    ): static {
         $this->issueNumberID = $issueNumberID;
 
         return $this;
@@ -417,8 +424,9 @@ class CardAccountType
      * @param  null|CV2ID $cV2ID
      * @return static
      */
-    public function setCV2ID(?CV2ID $cV2ID = null): static
-    {
+    public function setCV2ID(
+        ?CV2ID $cV2ID = null
+    ): static {
         $this->cV2ID = $cV2ID;
 
         return $this;
@@ -456,8 +464,9 @@ class CardAccountType
      * @param  null|CardChipCode $cardChipCode
      * @return static
      */
-    public function setCardChipCode(?CardChipCode $cardChipCode = null): static
-    {
+    public function setCardChipCode(
+        ?CardChipCode $cardChipCode = null
+    ): static {
         $this->cardChipCode = $cardChipCode;
 
         return $this;
@@ -495,8 +504,9 @@ class CardAccountType
      * @param  null|ChipApplicationID $chipApplicationID
      * @return static
      */
-    public function setChipApplicationID(?ChipApplicationID $chipApplicationID = null): static
-    {
+    public function setChipApplicationID(
+        ?ChipApplicationID $chipApplicationID = null
+    ): static {
         $this->chipApplicationID = $chipApplicationID;
 
         return $this;
@@ -534,8 +544,9 @@ class CardAccountType
      * @param  null|HolderName $holderName
      * @return static
      */
-    public function setHolderName(?HolderName $holderName = null): static
-    {
+    public function setHolderName(
+        ?HolderName $holderName = null
+    ): static {
         $this->holderName = $holderName;
 
         return $this;

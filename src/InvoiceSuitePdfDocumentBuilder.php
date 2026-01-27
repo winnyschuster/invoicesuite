@@ -64,8 +64,10 @@ class InvoiceSuitePdfDocumentBuilder
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
-    public static function createFromDocumentBuilderAndPdfFile(InvoiceSuiteDocumentBuilder $fromDocumentBuilder, string $fromPdfFilename): static
-    {
+    public static function createFromDocumentBuilderAndPdfFile(
+        InvoiceSuiteDocumentBuilder $fromDocumentBuilder,
+        string $fromPdfFilename
+    ): static {
         if (!file_exists($fromPdfFilename)) {
             throw new InvoiceSuiteFileNotFoundException($fromPdfFilename);
         }
@@ -92,8 +94,10 @@ class InvoiceSuitePdfDocumentBuilder
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
-    public static function createFromDocumentBuilderAndPdfContent(InvoiceSuiteDocumentBuilder $fromDocumentBuilder, string $fromPdfContent): static
-    {
+    public static function createFromDocumentBuilderAndPdfContent(
+        InvoiceSuiteDocumentBuilder $fromDocumentBuilder,
+        string $fromPdfContent
+    ): static {
         return (new static())
             ->setDocumentBuilder($fromDocumentBuilder)
             ->setRawPdfContent($fromPdfContent)
@@ -111,8 +115,10 @@ class InvoiceSuitePdfDocumentBuilder
      * @throws InvoiceSuiteFileNotReadableException
      * @throws InvoiceSuiteFormatProviderNotFoundException
      */
-    public static function createFromDocumentContentAndPdfFile(string $fromDocumentContent, string $fromPdfFilename): static
-    {
+    public static function createFromDocumentContentAndPdfFile(
+        string $fromDocumentContent,
+        string $fromPdfFilename
+    ): static {
         if (!file_exists($fromPdfFilename)) {
             throw new InvoiceSuiteFileNotFoundException($fromPdfFilename);
         }
@@ -138,8 +144,10 @@ class InvoiceSuitePdfDocumentBuilder
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      */
-    public static function createFromDocumentContentAndPdfContent(string $fromDocumentContent, string $fromPdfContent): static
-    {
+    public static function createFromDocumentContentAndPdfContent(
+        string $fromDocumentContent,
+        string $fromPdfContent
+    ): static {
         return (new static())
             ->setDocumentContent($fromDocumentContent)
             ->setRawPdfContent($fromPdfContent)
@@ -162,8 +170,9 @@ class InvoiceSuitePdfDocumentBuilder
      * @param  string $toFilename
      * @return static
      */
-    public function generatePdfDocumentAndSaveToFile(string $toFilename): static
-    {
+    public function generatePdfDocumentAndSaveToFile(
+        string $toFilename
+    ): static {
         $this->getCurrentPdfConstructor()->generatePdfDocumentAndSaveToFile($toFilename);
 
         return $this;
@@ -185,8 +194,9 @@ class InvoiceSuitePdfDocumentBuilder
      * @param  string $newAdditionalCreatorTool
      * @return static
      */
-    public function setAdditionalCreatorTool(string $newAdditionalCreatorTool): static
-    {
+    public function setAdditionalCreatorTool(
+        string $newAdditionalCreatorTool
+    ): static {
         $this->getCurrentPdfConstructor()->setAdditionalCreatorTool($newAdditionalCreatorTool);
 
         return $this;
@@ -218,8 +228,9 @@ class InvoiceSuitePdfDocumentBuilder
      * @param  string $newDocumentRelationshipType
      * @return static
      */
-    public function setDocumentRelationshipType(string $newDocumentRelationshipType): static
-    {
+    public function setDocumentRelationshipType(
+        string $newDocumentRelationshipType
+    ): static {
         $this->getCurrentPdfConstructor()->setDocumentRelationshipType($newDocumentRelationshipType);
 
         return $this;
@@ -284,8 +295,11 @@ class InvoiceSuitePdfDocumentBuilder
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws InvoiceSuiteUnknownContentException
      */
-    public function addAdditionalDocumentByRealFile(string $newFullFilename, string $newDisplayName = '', string $newRelationshipType = ''): static
-    {
+    public function addAdditionalDocumentByRealFile(
+        string $newFullFilename,
+        string $newDisplayName = '',
+        string $newRelationshipType = ''
+    ): static {
         $this->getCurrentPdfConstructor()->addAdditionalDocumentByRealFile($newFullFilename, $newDisplayName, $newRelationshipType);
 
         return $this;
@@ -303,8 +317,12 @@ class InvoiceSuitePdfDocumentBuilder
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws InvoiceSuiteUnknownContentException
      */
-    public function addAdditionalDocumentByContent(string $newContent, string $newFilename, string $newDisplayName = '', string $newRelationshipType = ''): static
-    {
+    public function addAdditionalDocumentByContent(
+        string $newContent,
+        string $newFilename,
+        string $newDisplayName = '',
+        string $newRelationshipType = ''
+    ): static {
         $this->getCurrentPdfConstructor()->addAdditionalDocumentByContent($newContent, $newFilename, $newDisplayName, $newRelationshipType);
 
         return $this;
@@ -326,8 +344,9 @@ class InvoiceSuitePdfDocumentBuilder
      * @param  bool   $newDeterministicMode
      * @return static
      */
-    public function setDeterministicMode(bool $newDeterministicMode): static
-    {
+    public function setDeterministicMode(
+        bool $newDeterministicMode
+    ): static {
         $this->getCurrentPdfConstructor()->setDeterministicMode($newDeterministicMode);
 
         return $this;
@@ -373,8 +392,9 @@ class InvoiceSuitePdfDocumentBuilder
      * @param  string $newMetaInformationAuthorTemplate
      * @return static
      */
-    public function setMetaInformationAuthorTemplate(string $newMetaInformationAuthorTemplate): static
-    {
+    public function setMetaInformationAuthorTemplate(
+        string $newMetaInformationAuthorTemplate
+    ): static {
         $this->getCurrentPdfConstructor()->setMetaInformationAuthorTemplate($newMetaInformationAuthorTemplate);
 
         return $this;
@@ -396,8 +416,9 @@ class InvoiceSuitePdfDocumentBuilder
      * @param  string $newMetaInformationKeywordTemplate
      * @return static
      */
-    public function setMetaInformationKeywordTemplate(string $newMetaInformationKeywordTemplate): static
-    {
+    public function setMetaInformationKeywordTemplate(
+        string $newMetaInformationKeywordTemplate
+    ): static {
         $this->getCurrentPdfConstructor()->setMetaInformationKeywordTemplate($newMetaInformationKeywordTemplate);
 
         return $this;
@@ -419,8 +440,9 @@ class InvoiceSuitePdfDocumentBuilder
      * @param  string $newMetaInformationTitleTemplate
      * @return static
      */
-    public function setMetaInformationTitleTemplate(string $newMetaInformationTitleTemplate): static
-    {
+    public function setMetaInformationTitleTemplate(
+        string $newMetaInformationTitleTemplate
+    ): static {
         $this->getCurrentPdfConstructor()->setMetaInformationTitleTemplate($newMetaInformationTitleTemplate);
 
         return $this;
@@ -442,8 +464,9 @@ class InvoiceSuitePdfDocumentBuilder
      * @param  string $newMetaInformationSubjectTemplate
      * @return static
      */
-    public function setMetaInformationSubjectTemplate(string $newMetaInformationSubjectTemplate): static
-    {
+    public function setMetaInformationSubjectTemplate(
+        string $newMetaInformationSubjectTemplate
+    ): static {
         $this->getCurrentPdfConstructor()->setMetaInformationSubjectTemplate($newMetaInformationSubjectTemplate);
 
         return $this;
@@ -465,8 +488,9 @@ class InvoiceSuitePdfDocumentBuilder
      * @param  null|callable $newMetaInformationCallback
      * @return static
      */
-    public function setMetaInformationCallback(?callable $newMetaInformationCallback): static
-    {
+    public function setMetaInformationCallback(
+        ?callable $newMetaInformationCallback
+    ): static {
         $this->getCurrentPdfConstructor()->setMetaInformationCallback($newMetaInformationCallback);
 
         return $this;
@@ -488,8 +512,9 @@ class InvoiceSuitePdfDocumentBuilder
      * @param  bool   $newAttachmentPaneVisibility
      * @return static
      */
-    public function setAttachmentPaneVisibility(bool $newAttachmentPaneVisibility): static
-    {
+    public function setAttachmentPaneVisibility(
+        bool $newAttachmentPaneVisibility
+    ): static {
         $this->getCurrentPdfConstructor()->setAttachmentPaneVisibility($newAttachmentPaneVisibility);
 
         return $this;
@@ -505,8 +530,9 @@ class InvoiceSuitePdfDocumentBuilder
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
-    protected function setDocumentBuilder(InvoiceSuiteDocumentBuilder $fromDocumentBuilder): static
-    {
+    protected function setDocumentBuilder(
+        InvoiceSuiteDocumentBuilder $fromDocumentBuilder
+    ): static {
         if (!$fromDocumentBuilder->getCurrentDocumentFormatProvider()->getIsPdfSupportAvailable()) {
             throw new InvoiceSuiteInvalidArgumentException(sprintf('Provider %s does not support PDF embedding', $fromDocumentBuilder->getCurrentDocumentFormatProvider()->getUniqueId()));
         }
@@ -526,8 +552,9 @@ class InvoiceSuitePdfDocumentBuilder
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      */
-    protected function setDocumentContent(string $fromDocumentContent): static
-    {
+    protected function setDocumentContent(
+        string $fromDocumentContent
+    ): static {
         $this->resolveAvailableDocumentFormatProviders();
 
         $formatProviders = array_filter(
@@ -584,8 +611,9 @@ class InvoiceSuitePdfDocumentBuilder
      * @param  InvoiceSuiteAbstractPdfConstructor $pdfConstructor
      * @return static
      */
-    protected function setCurrentPdfConstructor(InvoiceSuiteAbstractPdfConstructor $pdfConstructor): static
-    {
+    protected function setCurrentPdfConstructor(
+        InvoiceSuiteAbstractPdfConstructor $pdfConstructor
+    ): static {
         $this->currentPdfConstructor = $pdfConstructor;
 
         return $this;

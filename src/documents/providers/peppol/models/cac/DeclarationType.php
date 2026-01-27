@@ -73,8 +73,9 @@ class DeclarationType
      * @param  null|array<Name> $name
      * @return static
      */
-    public function setName(?array $name = null): static
-    {
+    public function setName(
+        ?array $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -134,8 +135,9 @@ class DeclarationType
      * @param  Name   $name
      * @return static
      */
-    public function addToName(Name $name): static
-    {
+    public function addToName(
+        Name $name
+    ): static {
         $this->name[] = $name;
 
         return $this;
@@ -155,8 +157,9 @@ class DeclarationType
      * @param  Name   $name
      * @return static
      */
-    public function addOnceToName(Name $name): static
-    {
+    public function addOnceToName(
+        Name $name
+    ): static {
         if (!is_array($this->name)) {
             $this->name = [];
         }
@@ -204,8 +207,9 @@ class DeclarationType
      * @param  null|DeclarationTypeCode $declarationTypeCode
      * @return static
      */
-    public function setDeclarationTypeCode(?DeclarationTypeCode $declarationTypeCode = null): static
-    {
+    public function setDeclarationTypeCode(
+        ?DeclarationTypeCode $declarationTypeCode = null
+    ): static {
         $this->declarationTypeCode = $declarationTypeCode;
 
         return $this;
@@ -233,8 +237,9 @@ class DeclarationType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -294,8 +299,9 @@ class DeclarationType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -315,8 +321,9 @@ class DeclarationType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -354,8 +361,9 @@ class DeclarationType
      * @param  null|array<EvidenceSupplied> $evidenceSupplied
      * @return static
      */
-    public function setEvidenceSupplied(?array $evidenceSupplied = null): static
-    {
+    public function setEvidenceSupplied(
+        ?array $evidenceSupplied = null
+    ): static {
         $this->evidenceSupplied = $evidenceSupplied;
 
         return $this;
@@ -415,8 +423,9 @@ class DeclarationType
      * @param  EvidenceSupplied $evidenceSupplied
      * @return static
      */
-    public function addToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
-    {
+    public function addToEvidenceSupplied(
+        EvidenceSupplied $evidenceSupplied
+    ): static {
         $this->evidenceSupplied[] = $evidenceSupplied;
 
         return $this;
@@ -436,8 +445,9 @@ class DeclarationType
      * @param  EvidenceSupplied $evidenceSupplied
      * @return static
      */
-    public function addOnceToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
-    {
+    public function addOnceToEvidenceSupplied(
+        EvidenceSupplied $evidenceSupplied
+    ): static {
         if (!is_array($this->evidenceSupplied)) {
             $this->evidenceSupplied = [];
         }

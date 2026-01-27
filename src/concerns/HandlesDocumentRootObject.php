@@ -49,8 +49,9 @@ trait HandlesDocumentRootObject
      * @param  object $rootObject
      * @return static
      */
-    public function setDocumentRootObject(object $rootObject): static
-    {
+    public function setDocumentRootObject(
+        object $rootObject
+    ): static {
         $this->documentRootObject = $rootObject;
 
         return $this;

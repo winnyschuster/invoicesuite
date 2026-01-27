@@ -123,8 +123,9 @@ class ProcessJustificationType
      * @param  null|ProcessReasonCode $processReasonCode
      * @return static
      */
-    public function setProcessReasonCode(?ProcessReasonCode $processReasonCode = null): static
-    {
+    public function setProcessReasonCode(
+        ?ProcessReasonCode $processReasonCode = null
+    ): static {
         $this->processReasonCode = $processReasonCode;
 
         return $this;
@@ -152,8 +153,9 @@ class ProcessJustificationType
      * @param  null|array<ProcessReason> $processReason
      * @return static
      */
-    public function setProcessReason(?array $processReason = null): static
-    {
+    public function setProcessReason(
+        ?array $processReason = null
+    ): static {
         $this->processReason = $processReason;
 
         return $this;
@@ -213,8 +215,9 @@ class ProcessJustificationType
      * @param  ProcessReason $processReason
      * @return static
      */
-    public function addToProcessReason(ProcessReason $processReason): static
-    {
+    public function addToProcessReason(
+        ProcessReason $processReason
+    ): static {
         $this->processReason[] = $processReason;
 
         return $this;
@@ -234,8 +237,9 @@ class ProcessJustificationType
      * @param  ProcessReason $processReason
      * @return static
      */
-    public function addOnceToProcessReason(ProcessReason $processReason): static
-    {
+    public function addOnceToProcessReason(
+        ProcessReason $processReason
+    ): static {
         if (!is_array($this->processReason)) {
             $this->processReason = [];
         }
@@ -273,8 +277,9 @@ class ProcessJustificationType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -334,8 +339,9 @@ class ProcessJustificationType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -355,8 +361,9 @@ class ProcessJustificationType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }

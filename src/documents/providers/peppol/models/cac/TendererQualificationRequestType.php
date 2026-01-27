@@ -167,8 +167,9 @@ class TendererQualificationRequestType
      * @param  null|CompanyLegalFormCode $companyLegalFormCode
      * @return static
      */
-    public function setCompanyLegalFormCode(?CompanyLegalFormCode $companyLegalFormCode = null): static
-    {
+    public function setCompanyLegalFormCode(
+        ?CompanyLegalFormCode $companyLegalFormCode = null
+    ): static {
         $this->companyLegalFormCode = $companyLegalFormCode;
 
         return $this;
@@ -206,8 +207,9 @@ class TendererQualificationRequestType
      * @param  null|CompanyLegalForm $companyLegalForm
      * @return static
      */
-    public function setCompanyLegalForm(?CompanyLegalForm $companyLegalForm = null): static
-    {
+    public function setCompanyLegalForm(
+        ?CompanyLegalForm $companyLegalForm = null
+    ): static {
         $this->companyLegalForm = $companyLegalForm;
 
         return $this;
@@ -235,8 +237,9 @@ class TendererQualificationRequestType
      * @param  null|array<PersonalSituation> $personalSituation
      * @return static
      */
-    public function setPersonalSituation(?array $personalSituation = null): static
-    {
+    public function setPersonalSituation(
+        ?array $personalSituation = null
+    ): static {
         $this->personalSituation = $personalSituation;
 
         return $this;
@@ -296,8 +299,9 @@ class TendererQualificationRequestType
      * @param  PersonalSituation $personalSituation
      * @return static
      */
-    public function addToPersonalSituation(PersonalSituation $personalSituation): static
-    {
+    public function addToPersonalSituation(
+        PersonalSituation $personalSituation
+    ): static {
         $this->personalSituation[] = $personalSituation;
 
         return $this;
@@ -317,8 +321,9 @@ class TendererQualificationRequestType
      * @param  PersonalSituation $personalSituation
      * @return static
      */
-    public function addOnceToPersonalSituation(PersonalSituation $personalSituation): static
-    {
+    public function addOnceToPersonalSituation(
+        PersonalSituation $personalSituation
+    ): static {
         if (!is_array($this->personalSituation)) {
             $this->personalSituation = [];
         }
@@ -366,8 +371,9 @@ class TendererQualificationRequestType
      * @param  null|OperatingYearsQuantity $operatingYearsQuantity
      * @return static
      */
-    public function setOperatingYearsQuantity(?OperatingYearsQuantity $operatingYearsQuantity = null): static
-    {
+    public function setOperatingYearsQuantity(
+        ?OperatingYearsQuantity $operatingYearsQuantity = null
+    ): static {
         $this->operatingYearsQuantity = $operatingYearsQuantity;
 
         return $this;
@@ -405,8 +411,9 @@ class TendererQualificationRequestType
      * @param  null|EmployeeQuantity $employeeQuantity
      * @return static
      */
-    public function setEmployeeQuantity(?EmployeeQuantity $employeeQuantity = null): static
-    {
+    public function setEmployeeQuantity(
+        ?EmployeeQuantity $employeeQuantity = null
+    ): static {
         $this->employeeQuantity = $employeeQuantity;
 
         return $this;
@@ -434,8 +441,9 @@ class TendererQualificationRequestType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -495,8 +503,9 @@ class TendererQualificationRequestType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -516,8 +525,9 @@ class TendererQualificationRequestType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -555,8 +565,9 @@ class TendererQualificationRequestType
      * @param  null|array<RequiredBusinessClassificationScheme> $requiredBusinessClassificationScheme
      * @return static
      */
-    public function setRequiredBusinessClassificationScheme(?array $requiredBusinessClassificationScheme = null): static
-    {
+    public function setRequiredBusinessClassificationScheme(
+        ?array $requiredBusinessClassificationScheme = null
+    ): static {
         $this->requiredBusinessClassificationScheme = $requiredBusinessClassificationScheme;
 
         return $this;
@@ -678,8 +689,9 @@ class TendererQualificationRequestType
      * @param  null|array<TechnicalEvaluationCriterion> $technicalEvaluationCriterion
      * @return static
      */
-    public function setTechnicalEvaluationCriterion(?array $technicalEvaluationCriterion = null): static
-    {
+    public function setTechnicalEvaluationCriterion(
+        ?array $technicalEvaluationCriterion = null
+    ): static {
         $this->technicalEvaluationCriterion = $technicalEvaluationCriterion;
 
         return $this;
@@ -801,8 +813,9 @@ class TendererQualificationRequestType
      * @param  null|array<FinancialEvaluationCriterion> $financialEvaluationCriterion
      * @return static
      */
-    public function setFinancialEvaluationCriterion(?array $financialEvaluationCriterion = null): static
-    {
+    public function setFinancialEvaluationCriterion(
+        ?array $financialEvaluationCriterion = null
+    ): static {
         $this->financialEvaluationCriterion = $financialEvaluationCriterion;
 
         return $this;
@@ -924,8 +937,9 @@ class TendererQualificationRequestType
      * @param  null|array<SpecificTendererRequirement> $specificTendererRequirement
      * @return static
      */
-    public function setSpecificTendererRequirement(?array $specificTendererRequirement = null): static
-    {
+    public function setSpecificTendererRequirement(
+        ?array $specificTendererRequirement = null
+    ): static {
         $this->specificTendererRequirement = $specificTendererRequirement;
 
         return $this;
@@ -985,8 +999,9 @@ class TendererQualificationRequestType
      * @param  SpecificTendererRequirement $specificTendererRequirement
      * @return static
      */
-    public function addToSpecificTendererRequirement(SpecificTendererRequirement $specificTendererRequirement): static
-    {
+    public function addToSpecificTendererRequirement(
+        SpecificTendererRequirement $specificTendererRequirement
+    ): static {
         $this->specificTendererRequirement[] = $specificTendererRequirement;
 
         return $this;
@@ -1046,8 +1061,9 @@ class TendererQualificationRequestType
      * @param  null|array<EconomicOperatorRole> $economicOperatorRole
      * @return static
      */
-    public function setEconomicOperatorRole(?array $economicOperatorRole = null): static
-    {
+    public function setEconomicOperatorRole(
+        ?array $economicOperatorRole = null
+    ): static {
         $this->economicOperatorRole = $economicOperatorRole;
 
         return $this;
@@ -1107,8 +1123,9 @@ class TendererQualificationRequestType
      * @param  EconomicOperatorRole $economicOperatorRole
      * @return static
      */
-    public function addToEconomicOperatorRole(EconomicOperatorRole $economicOperatorRole): static
-    {
+    public function addToEconomicOperatorRole(
+        EconomicOperatorRole $economicOperatorRole
+    ): static {
         $this->economicOperatorRole[] = $economicOperatorRole;
 
         return $this;
@@ -1128,8 +1145,9 @@ class TendererQualificationRequestType
      * @param  EconomicOperatorRole $economicOperatorRole
      * @return static
      */
-    public function addOnceToEconomicOperatorRole(EconomicOperatorRole $economicOperatorRole): static
-    {
+    public function addOnceToEconomicOperatorRole(
+        EconomicOperatorRole $economicOperatorRole
+    ): static {
         if (!is_array($this->economicOperatorRole)) {
             $this->economicOperatorRole = [];
         }

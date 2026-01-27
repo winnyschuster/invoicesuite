@@ -379,8 +379,9 @@ class ItemType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -440,8 +441,9 @@ class ItemType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -461,8 +463,9 @@ class ItemType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -510,8 +513,9 @@ class ItemType
      * @param  null|PackQuantity $packQuantity
      * @return static
      */
-    public function setPackQuantity(?PackQuantity $packQuantity = null): static
-    {
+    public function setPackQuantity(
+        ?PackQuantity $packQuantity = null
+    ): static {
         $this->packQuantity = $packQuantity;
 
         return $this;
@@ -549,8 +553,9 @@ class ItemType
      * @param  null|PackSizeNumeric $packSizeNumeric
      * @return static
      */
-    public function setPackSizeNumeric(?PackSizeNumeric $packSizeNumeric = null): static
-    {
+    public function setPackSizeNumeric(
+        ?PackSizeNumeric $packSizeNumeric = null
+    ): static {
         $this->packSizeNumeric = $packSizeNumeric;
 
         return $this;
@@ -578,8 +583,9 @@ class ItemType
      * @param  null|bool $catalogueIndicator
      * @return static
      */
-    public function setCatalogueIndicator(?bool $catalogueIndicator = null): static
-    {
+    public function setCatalogueIndicator(
+        ?bool $catalogueIndicator = null
+    ): static {
         $this->catalogueIndicator = $catalogueIndicator;
 
         return $this;
@@ -617,8 +623,9 @@ class ItemType
      * @param  null|Name $name
      * @return static
      */
-    public function setName(?Name $name = null): static
-    {
+    public function setName(
+        ?Name $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -646,8 +653,9 @@ class ItemType
      * @param  null|bool $hazardousRiskIndicator
      * @return static
      */
-    public function setHazardousRiskIndicator(?bool $hazardousRiskIndicator = null): static
-    {
+    public function setHazardousRiskIndicator(
+        ?bool $hazardousRiskIndicator = null
+    ): static {
         $this->hazardousRiskIndicator = $hazardousRiskIndicator;
 
         return $this;
@@ -675,8 +683,9 @@ class ItemType
      * @param  null|array<AdditionalInformation> $additionalInformation
      * @return static
      */
-    public function setAdditionalInformation(?array $additionalInformation = null): static
-    {
+    public function setAdditionalInformation(
+        ?array $additionalInformation = null
+    ): static {
         $this->additionalInformation = $additionalInformation;
 
         return $this;
@@ -736,8 +745,9 @@ class ItemType
      * @param  AdditionalInformation $additionalInformation
      * @return static
      */
-    public function addToAdditionalInformation(AdditionalInformation $additionalInformation): static
-    {
+    public function addToAdditionalInformation(
+        AdditionalInformation $additionalInformation
+    ): static {
         $this->additionalInformation[] = $additionalInformation;
 
         return $this;
@@ -757,8 +767,9 @@ class ItemType
      * @param  AdditionalInformation $additionalInformation
      * @return static
      */
-    public function addOnceToAdditionalInformation(AdditionalInformation $additionalInformation): static
-    {
+    public function addOnceToAdditionalInformation(
+        AdditionalInformation $additionalInformation
+    ): static {
         if (!is_array($this->additionalInformation)) {
             $this->additionalInformation = [];
         }
@@ -796,8 +807,9 @@ class ItemType
      * @param  null|array<Keyword> $keyword
      * @return static
      */
-    public function setKeyword(?array $keyword = null): static
-    {
+    public function setKeyword(
+        ?array $keyword = null
+    ): static {
         $this->keyword = $keyword;
 
         return $this;
@@ -857,8 +869,9 @@ class ItemType
      * @param  Keyword $keyword
      * @return static
      */
-    public function addToKeyword(Keyword $keyword): static
-    {
+    public function addToKeyword(
+        Keyword $keyword
+    ): static {
         $this->keyword[] = $keyword;
 
         return $this;
@@ -878,8 +891,9 @@ class ItemType
      * @param  Keyword $keyword
      * @return static
      */
-    public function addOnceToKeyword(Keyword $keyword): static
-    {
+    public function addOnceToKeyword(
+        Keyword $keyword
+    ): static {
         if (!is_array($this->keyword)) {
             $this->keyword = [];
         }
@@ -917,8 +931,9 @@ class ItemType
      * @param  null|array<BrandName> $brandName
      * @return static
      */
-    public function setBrandName(?array $brandName = null): static
-    {
+    public function setBrandName(
+        ?array $brandName = null
+    ): static {
         $this->brandName = $brandName;
 
         return $this;
@@ -978,8 +993,9 @@ class ItemType
      * @param  BrandName $brandName
      * @return static
      */
-    public function addToBrandName(BrandName $brandName): static
-    {
+    public function addToBrandName(
+        BrandName $brandName
+    ): static {
         $this->brandName[] = $brandName;
 
         return $this;
@@ -999,8 +1015,9 @@ class ItemType
      * @param  BrandName $brandName
      * @return static
      */
-    public function addOnceToBrandName(BrandName $brandName): static
-    {
+    public function addOnceToBrandName(
+        BrandName $brandName
+    ): static {
         if (!is_array($this->brandName)) {
             $this->brandName = [];
         }
@@ -1038,8 +1055,9 @@ class ItemType
      * @param  null|array<ModelName> $modelName
      * @return static
      */
-    public function setModelName(?array $modelName = null): static
-    {
+    public function setModelName(
+        ?array $modelName = null
+    ): static {
         $this->modelName = $modelName;
 
         return $this;
@@ -1099,8 +1117,9 @@ class ItemType
      * @param  ModelName $modelName
      * @return static
      */
-    public function addToModelName(ModelName $modelName): static
-    {
+    public function addToModelName(
+        ModelName $modelName
+    ): static {
         $this->modelName[] = $modelName;
 
         return $this;
@@ -1120,8 +1139,9 @@ class ItemType
      * @param  ModelName $modelName
      * @return static
      */
-    public function addOnceToModelName(ModelName $modelName): static
-    {
+    public function addOnceToModelName(
+        ModelName $modelName
+    ): static {
         if (!is_array($this->modelName)) {
             $this->modelName = [];
         }
@@ -1169,8 +1189,9 @@ class ItemType
      * @param  null|BuyersItemIdentification $buyersItemIdentification
      * @return static
      */
-    public function setBuyersItemIdentification(?BuyersItemIdentification $buyersItemIdentification = null): static
-    {
+    public function setBuyersItemIdentification(
+        ?BuyersItemIdentification $buyersItemIdentification = null
+    ): static {
         $this->buyersItemIdentification = $buyersItemIdentification;
 
         return $this;
@@ -1208,8 +1229,9 @@ class ItemType
      * @param  null|SellersItemIdentification $sellersItemIdentification
      * @return static
      */
-    public function setSellersItemIdentification(?SellersItemIdentification $sellersItemIdentification = null): static
-    {
+    public function setSellersItemIdentification(
+        ?SellersItemIdentification $sellersItemIdentification = null
+    ): static {
         $this->sellersItemIdentification = $sellersItemIdentification;
 
         return $this;
@@ -1237,8 +1259,9 @@ class ItemType
      * @param  null|array<ManufacturersItemIdentification> $manufacturersItemIdentification
      * @return static
      */
-    public function setManufacturersItemIdentification(?array $manufacturersItemIdentification = null): static
-    {
+    public function setManufacturersItemIdentification(
+        ?array $manufacturersItemIdentification = null
+    ): static {
         $this->manufacturersItemIdentification = $manufacturersItemIdentification;
 
         return $this;
@@ -1440,8 +1463,9 @@ class ItemType
      * @param  null|array<AdditionalItemIdentification> $additionalItemIdentification
      * @return static
      */
-    public function setAdditionalItemIdentification(?array $additionalItemIdentification = null): static
-    {
+    public function setAdditionalItemIdentification(
+        ?array $additionalItemIdentification = null
+    ): static {
         $this->additionalItemIdentification = $additionalItemIdentification;
 
         return $this;
@@ -1603,8 +1627,9 @@ class ItemType
      * @param  null|array<ItemSpecificationDocumentReference> $itemSpecificationDocumentReference
      * @return static
      */
-    public function setItemSpecificationDocumentReference(?array $itemSpecificationDocumentReference = null): static
-    {
+    public function setItemSpecificationDocumentReference(
+        ?array $itemSpecificationDocumentReference = null
+    ): static {
         $this->itemSpecificationDocumentReference = $itemSpecificationDocumentReference;
 
         return $this;
@@ -1736,8 +1761,9 @@ class ItemType
      * @param  null|OriginCountry $originCountry
      * @return static
      */
-    public function setOriginCountry(?OriginCountry $originCountry = null): static
-    {
+    public function setOriginCountry(
+        ?OriginCountry $originCountry = null
+    ): static {
         $this->originCountry = $originCountry;
 
         return $this;
@@ -1765,8 +1791,9 @@ class ItemType
      * @param  null|array<CommodityClassification> $commodityClassification
      * @return static
      */
-    public function setCommodityClassification(?array $commodityClassification = null): static
-    {
+    public function setCommodityClassification(
+        ?array $commodityClassification = null
+    ): static {
         $this->commodityClassification = $commodityClassification;
 
         return $this;
@@ -1826,8 +1853,9 @@ class ItemType
      * @param  CommodityClassification $commodityClassification
      * @return static
      */
-    public function addToCommodityClassification(CommodityClassification $commodityClassification): static
-    {
+    public function addToCommodityClassification(
+        CommodityClassification $commodityClassification
+    ): static {
         $this->commodityClassification[] = $commodityClassification;
 
         return $this;
@@ -1847,8 +1875,9 @@ class ItemType
      * @param  CommodityClassification $commodityClassification
      * @return static
      */
-    public function addOnceToCommodityClassification(CommodityClassification $commodityClassification): static
-    {
+    public function addOnceToCommodityClassification(
+        CommodityClassification $commodityClassification
+    ): static {
         if (!is_array($this->commodityClassification)) {
             $this->commodityClassification = [];
         }
@@ -1886,8 +1915,9 @@ class ItemType
      * @param  null|array<TransactionConditions> $transactionConditions
      * @return static
      */
-    public function setTransactionConditions(?array $transactionConditions = null): static
-    {
+    public function setTransactionConditions(
+        ?array $transactionConditions = null
+    ): static {
         $this->transactionConditions = $transactionConditions;
 
         return $this;
@@ -1947,8 +1977,9 @@ class ItemType
      * @param  TransactionConditions $transactionConditions
      * @return static
      */
-    public function addToTransactionConditions(TransactionConditions $transactionConditions): static
-    {
+    public function addToTransactionConditions(
+        TransactionConditions $transactionConditions
+    ): static {
         $this->transactionConditions[] = $transactionConditions;
 
         return $this;
@@ -1968,8 +1999,9 @@ class ItemType
      * @param  TransactionConditions $transactionConditions
      * @return static
      */
-    public function addOnceToTransactionConditions(TransactionConditions $transactionConditions): static
-    {
+    public function addOnceToTransactionConditions(
+        TransactionConditions $transactionConditions
+    ): static {
         if (!is_array($this->transactionConditions)) {
             $this->transactionConditions = [];
         }
@@ -2007,8 +2039,9 @@ class ItemType
      * @param  null|array<HazardousItem> $hazardousItem
      * @return static
      */
-    public function setHazardousItem(?array $hazardousItem = null): static
-    {
+    public function setHazardousItem(
+        ?array $hazardousItem = null
+    ): static {
         $this->hazardousItem = $hazardousItem;
 
         return $this;
@@ -2068,8 +2101,9 @@ class ItemType
      * @param  HazardousItem $hazardousItem
      * @return static
      */
-    public function addToHazardousItem(HazardousItem $hazardousItem): static
-    {
+    public function addToHazardousItem(
+        HazardousItem $hazardousItem
+    ): static {
         $this->hazardousItem[] = $hazardousItem;
 
         return $this;
@@ -2089,8 +2123,9 @@ class ItemType
      * @param  HazardousItem $hazardousItem
      * @return static
      */
-    public function addOnceToHazardousItem(HazardousItem $hazardousItem): static
-    {
+    public function addOnceToHazardousItem(
+        HazardousItem $hazardousItem
+    ): static {
         if (!is_array($this->hazardousItem)) {
             $this->hazardousItem = [];
         }
@@ -2128,8 +2163,9 @@ class ItemType
      * @param  null|array<ClassifiedTaxCategory> $classifiedTaxCategory
      * @return static
      */
-    public function setClassifiedTaxCategory(?array $classifiedTaxCategory = null): static
-    {
+    public function setClassifiedTaxCategory(
+        ?array $classifiedTaxCategory = null
+    ): static {
         $this->classifiedTaxCategory = $classifiedTaxCategory;
 
         return $this;
@@ -2189,8 +2225,9 @@ class ItemType
      * @param  ClassifiedTaxCategory $classifiedTaxCategory
      * @return static
      */
-    public function addToClassifiedTaxCategory(ClassifiedTaxCategory $classifiedTaxCategory): static
-    {
+    public function addToClassifiedTaxCategory(
+        ClassifiedTaxCategory $classifiedTaxCategory
+    ): static {
         $this->classifiedTaxCategory[] = $classifiedTaxCategory;
 
         return $this;
@@ -2210,8 +2247,9 @@ class ItemType
      * @param  ClassifiedTaxCategory $classifiedTaxCategory
      * @return static
      */
-    public function addOnceToClassifiedTaxCategory(ClassifiedTaxCategory $classifiedTaxCategory): static
-    {
+    public function addOnceToClassifiedTaxCategory(
+        ClassifiedTaxCategory $classifiedTaxCategory
+    ): static {
         if (!is_array($this->classifiedTaxCategory)) {
             $this->classifiedTaxCategory = [];
         }
@@ -2249,8 +2287,9 @@ class ItemType
      * @param  null|array<AdditionalItemProperty> $additionalItemProperty
      * @return static
      */
-    public function setAdditionalItemProperty(?array $additionalItemProperty = null): static
-    {
+    public function setAdditionalItemProperty(
+        ?array $additionalItemProperty = null
+    ): static {
         $this->additionalItemProperty = $additionalItemProperty;
 
         return $this;
@@ -2310,8 +2349,9 @@ class ItemType
      * @param  AdditionalItemProperty $additionalItemProperty
      * @return static
      */
-    public function addToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static
-    {
+    public function addToAdditionalItemProperty(
+        AdditionalItemProperty $additionalItemProperty
+    ): static {
         $this->additionalItemProperty[] = $additionalItemProperty;
 
         return $this;
@@ -2331,8 +2371,9 @@ class ItemType
      * @param  AdditionalItemProperty $additionalItemProperty
      * @return static
      */
-    public function addOnceToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static
-    {
+    public function addOnceToAdditionalItemProperty(
+        AdditionalItemProperty $additionalItemProperty
+    ): static {
         if (!is_array($this->additionalItemProperty)) {
             $this->additionalItemProperty = [];
         }
@@ -2370,8 +2411,9 @@ class ItemType
      * @param  null|array<ManufacturerParty> $manufacturerParty
      * @return static
      */
-    public function setManufacturerParty(?array $manufacturerParty = null): static
-    {
+    public function setManufacturerParty(
+        ?array $manufacturerParty = null
+    ): static {
         $this->manufacturerParty = $manufacturerParty;
 
         return $this;
@@ -2431,8 +2473,9 @@ class ItemType
      * @param  ManufacturerParty $manufacturerParty
      * @return static
      */
-    public function addToManufacturerParty(ManufacturerParty $manufacturerParty): static
-    {
+    public function addToManufacturerParty(
+        ManufacturerParty $manufacturerParty
+    ): static {
         $this->manufacturerParty[] = $manufacturerParty;
 
         return $this;
@@ -2452,8 +2495,9 @@ class ItemType
      * @param  ManufacturerParty $manufacturerParty
      * @return static
      */
-    public function addOnceToManufacturerParty(ManufacturerParty $manufacturerParty): static
-    {
+    public function addOnceToManufacturerParty(
+        ManufacturerParty $manufacturerParty
+    ): static {
         if (!is_array($this->manufacturerParty)) {
             $this->manufacturerParty = [];
         }
@@ -2531,8 +2575,9 @@ class ItemType
      * @param  null|array<OriginAddress> $originAddress
      * @return static
      */
-    public function setOriginAddress(?array $originAddress = null): static
-    {
+    public function setOriginAddress(
+        ?array $originAddress = null
+    ): static {
         $this->originAddress = $originAddress;
 
         return $this;
@@ -2592,8 +2637,9 @@ class ItemType
      * @param  OriginAddress $originAddress
      * @return static
      */
-    public function addToOriginAddress(OriginAddress $originAddress): static
-    {
+    public function addToOriginAddress(
+        OriginAddress $originAddress
+    ): static {
         $this->originAddress[] = $originAddress;
 
         return $this;
@@ -2613,8 +2659,9 @@ class ItemType
      * @param  OriginAddress $originAddress
      * @return static
      */
-    public function addOnceToOriginAddress(OriginAddress $originAddress): static
-    {
+    public function addOnceToOriginAddress(
+        OriginAddress $originAddress
+    ): static {
         if (!is_array($this->originAddress)) {
             $this->originAddress = [];
         }
@@ -2652,8 +2699,9 @@ class ItemType
      * @param  null|array<ItemInstance> $itemInstance
      * @return static
      */
-    public function setItemInstance(?array $itemInstance = null): static
-    {
+    public function setItemInstance(
+        ?array $itemInstance = null
+    ): static {
         $this->itemInstance = $itemInstance;
 
         return $this;
@@ -2713,8 +2761,9 @@ class ItemType
      * @param  ItemInstance $itemInstance
      * @return static
      */
-    public function addToItemInstance(ItemInstance $itemInstance): static
-    {
+    public function addToItemInstance(
+        ItemInstance $itemInstance
+    ): static {
         $this->itemInstance[] = $itemInstance;
 
         return $this;
@@ -2734,8 +2783,9 @@ class ItemType
      * @param  ItemInstance $itemInstance
      * @return static
      */
-    public function addOnceToItemInstance(ItemInstance $itemInstance): static
-    {
+    public function addOnceToItemInstance(
+        ItemInstance $itemInstance
+    ): static {
         if (!is_array($this->itemInstance)) {
             $this->itemInstance = [];
         }
@@ -2773,8 +2823,9 @@ class ItemType
      * @param  null|array<Certificate> $certificate
      * @return static
      */
-    public function setCertificate(?array $certificate = null): static
-    {
+    public function setCertificate(
+        ?array $certificate = null
+    ): static {
         $this->certificate = $certificate;
 
         return $this;
@@ -2834,8 +2885,9 @@ class ItemType
      * @param  Certificate $certificate
      * @return static
      */
-    public function addToCertificate(Certificate $certificate): static
-    {
+    public function addToCertificate(
+        Certificate $certificate
+    ): static {
         $this->certificate[] = $certificate;
 
         return $this;
@@ -2855,8 +2907,9 @@ class ItemType
      * @param  Certificate $certificate
      * @return static
      */
-    public function addOnceToCertificate(Certificate $certificate): static
-    {
+    public function addOnceToCertificate(
+        Certificate $certificate
+    ): static {
         if (!is_array($this->certificate)) {
             $this->certificate = [];
         }
@@ -2894,8 +2947,9 @@ class ItemType
      * @param  null|array<Dimension> $dimension
      * @return static
      */
-    public function setDimension(?array $dimension = null): static
-    {
+    public function setDimension(
+        ?array $dimension = null
+    ): static {
         $this->dimension = $dimension;
 
         return $this;
@@ -2955,8 +3009,9 @@ class ItemType
      * @param  Dimension $dimension
      * @return static
      */
-    public function addToDimension(Dimension $dimension): static
-    {
+    public function addToDimension(
+        Dimension $dimension
+    ): static {
         $this->dimension[] = $dimension;
 
         return $this;
@@ -2976,8 +3031,9 @@ class ItemType
      * @param  Dimension $dimension
      * @return static
      */
-    public function addOnceToDimension(Dimension $dimension): static
-    {
+    public function addOnceToDimension(
+        Dimension $dimension
+    ): static {
         if (!is_array($this->dimension)) {
             $this->dimension = [];
         }

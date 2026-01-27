@@ -209,8 +209,9 @@ class PackageType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -248,8 +249,9 @@ class PackageType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -277,8 +279,9 @@ class PackageType
      * @param  null|bool $returnableMaterialIndicator
      * @return static
      */
-    public function setReturnableMaterialIndicator(?bool $returnableMaterialIndicator = null): static
-    {
+    public function setReturnableMaterialIndicator(
+        ?bool $returnableMaterialIndicator = null
+    ): static {
         $this->returnableMaterialIndicator = $returnableMaterialIndicator;
 
         return $this;
@@ -316,8 +319,9 @@ class PackageType
      * @param  null|PackageLevelCode $packageLevelCode
      * @return static
      */
-    public function setPackageLevelCode(?PackageLevelCode $packageLevelCode = null): static
-    {
+    public function setPackageLevelCode(
+        ?PackageLevelCode $packageLevelCode = null
+    ): static {
         $this->packageLevelCode = $packageLevelCode;
 
         return $this;
@@ -355,8 +359,9 @@ class PackageType
      * @param  null|PackagingTypeCode $packagingTypeCode
      * @return static
      */
-    public function setPackagingTypeCode(?PackagingTypeCode $packagingTypeCode = null): static
-    {
+    public function setPackagingTypeCode(
+        ?PackagingTypeCode $packagingTypeCode = null
+    ): static {
         $this->packagingTypeCode = $packagingTypeCode;
 
         return $this;
@@ -384,8 +389,9 @@ class PackageType
      * @param  null|array<PackingMaterial> $packingMaterial
      * @return static
      */
-    public function setPackingMaterial(?array $packingMaterial = null): static
-    {
+    public function setPackingMaterial(
+        ?array $packingMaterial = null
+    ): static {
         $this->packingMaterial = $packingMaterial;
 
         return $this;
@@ -445,8 +451,9 @@ class PackageType
      * @param  PackingMaterial $packingMaterial
      * @return static
      */
-    public function addToPackingMaterial(PackingMaterial $packingMaterial): static
-    {
+    public function addToPackingMaterial(
+        PackingMaterial $packingMaterial
+    ): static {
         $this->packingMaterial[] = $packingMaterial;
 
         return $this;
@@ -466,8 +473,9 @@ class PackageType
      * @param  PackingMaterial $packingMaterial
      * @return static
      */
-    public function addOnceToPackingMaterial(PackingMaterial $packingMaterial): static
-    {
+    public function addOnceToPackingMaterial(
+        PackingMaterial $packingMaterial
+    ): static {
         if (!is_array($this->packingMaterial)) {
             $this->packingMaterial = [];
         }
@@ -515,8 +523,9 @@ class PackageType
      * @param  null|TraceID $traceID
      * @return static
      */
-    public function setTraceID(?TraceID $traceID = null): static
-    {
+    public function setTraceID(
+        ?TraceID $traceID = null
+    ): static {
         $this->traceID = $traceID;
 
         return $this;
@@ -544,8 +553,9 @@ class PackageType
      * @param  null|array<ContainedPackage> $containedPackage
      * @return static
      */
-    public function setContainedPackage(?array $containedPackage = null): static
-    {
+    public function setContainedPackage(
+        ?array $containedPackage = null
+    ): static {
         $this->containedPackage = $containedPackage;
 
         return $this;
@@ -605,8 +615,9 @@ class PackageType
      * @param  ContainedPackage $containedPackage
      * @return static
      */
-    public function addToContainedPackage(ContainedPackage $containedPackage): static
-    {
+    public function addToContainedPackage(
+        ContainedPackage $containedPackage
+    ): static {
         $this->containedPackage[] = $containedPackage;
 
         return $this;
@@ -626,8 +637,9 @@ class PackageType
      * @param  ContainedPackage $containedPackage
      * @return static
      */
-    public function addOnceToContainedPackage(ContainedPackage $containedPackage): static
-    {
+    public function addOnceToContainedPackage(
+        ContainedPackage $containedPackage
+    ): static {
         if (!is_array($this->containedPackage)) {
             $this->containedPackage = [];
         }
@@ -705,8 +717,9 @@ class PackageType
      * @param  null|array<GoodsItem> $goodsItem
      * @return static
      */
-    public function setGoodsItem(?array $goodsItem = null): static
-    {
+    public function setGoodsItem(
+        ?array $goodsItem = null
+    ): static {
         $this->goodsItem = $goodsItem;
 
         return $this;
@@ -766,8 +779,9 @@ class PackageType
      * @param  GoodsItem $goodsItem
      * @return static
      */
-    public function addToGoodsItem(GoodsItem $goodsItem): static
-    {
+    public function addToGoodsItem(
+        GoodsItem $goodsItem
+    ): static {
         $this->goodsItem[] = $goodsItem;
 
         return $this;
@@ -787,8 +801,9 @@ class PackageType
      * @param  GoodsItem $goodsItem
      * @return static
      */
-    public function addOnceToGoodsItem(GoodsItem $goodsItem): static
-    {
+    public function addOnceToGoodsItem(
+        GoodsItem $goodsItem
+    ): static {
         if (!is_array($this->goodsItem)) {
             $this->goodsItem = [];
         }
@@ -826,8 +841,9 @@ class PackageType
      * @param  null|array<MeasurementDimension> $measurementDimension
      * @return static
      */
-    public function setMeasurementDimension(?array $measurementDimension = null): static
-    {
+    public function setMeasurementDimension(
+        ?array $measurementDimension = null
+    ): static {
         $this->measurementDimension = $measurementDimension;
 
         return $this;
@@ -887,8 +903,9 @@ class PackageType
      * @param  MeasurementDimension $measurementDimension
      * @return static
      */
-    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
-    {
+    public function addToMeasurementDimension(
+        MeasurementDimension $measurementDimension
+    ): static {
         $this->measurementDimension[] = $measurementDimension;
 
         return $this;
@@ -908,8 +925,9 @@ class PackageType
      * @param  MeasurementDimension $measurementDimension
      * @return static
      */
-    public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static
-    {
+    public function addOnceToMeasurementDimension(
+        MeasurementDimension $measurementDimension
+    ): static {
         if (!is_array($this->measurementDimension)) {
             $this->measurementDimension = [];
         }
@@ -947,8 +965,9 @@ class PackageType
      * @param  null|array<DeliveryUnit> $deliveryUnit
      * @return static
      */
-    public function setDeliveryUnit(?array $deliveryUnit = null): static
-    {
+    public function setDeliveryUnit(
+        ?array $deliveryUnit = null
+    ): static {
         $this->deliveryUnit = $deliveryUnit;
 
         return $this;
@@ -1008,8 +1027,9 @@ class PackageType
      * @param  DeliveryUnit $deliveryUnit
      * @return static
      */
-    public function addToDeliveryUnit(DeliveryUnit $deliveryUnit): static
-    {
+    public function addToDeliveryUnit(
+        DeliveryUnit $deliveryUnit
+    ): static {
         $this->deliveryUnit[] = $deliveryUnit;
 
         return $this;
@@ -1029,8 +1049,9 @@ class PackageType
      * @param  DeliveryUnit $deliveryUnit
      * @return static
      */
-    public function addOnceToDeliveryUnit(DeliveryUnit $deliveryUnit): static
-    {
+    public function addOnceToDeliveryUnit(
+        DeliveryUnit $deliveryUnit
+    ): static {
         if (!is_array($this->deliveryUnit)) {
             $this->deliveryUnit = [];
         }
@@ -1078,8 +1099,9 @@ class PackageType
      * @param  null|Delivery $delivery
      * @return static
      */
-    public function setDelivery(?Delivery $delivery = null): static
-    {
+    public function setDelivery(
+        ?Delivery $delivery = null
+    ): static {
         $this->delivery = $delivery;
 
         return $this;
@@ -1117,8 +1139,9 @@ class PackageType
      * @param  null|Pickup $pickup
      * @return static
      */
-    public function setPickup(?Pickup $pickup = null): static
-    {
+    public function setPickup(
+        ?Pickup $pickup = null
+    ): static {
         $this->pickup = $pickup;
 
         return $this;
@@ -1156,8 +1179,9 @@ class PackageType
      * @param  null|Despatch $despatch
      * @return static
      */
-    public function setDespatch(?Despatch $despatch = null): static
-    {
+    public function setDespatch(
+        ?Despatch $despatch = null
+    ): static {
         $this->despatch = $despatch;
 
         return $this;

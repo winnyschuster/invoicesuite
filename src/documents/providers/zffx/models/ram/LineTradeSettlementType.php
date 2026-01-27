@@ -103,8 +103,9 @@ class LineTradeSettlementType
      * @param  null|array<TradeTaxType> $applicableTradeTax
      * @return static
      */
-    public function setApplicableTradeTax(?array $applicableTradeTax = null): static
-    {
+    public function setApplicableTradeTax(
+        ?array $applicableTradeTax = null
+    ): static {
         $this->applicableTradeTax = $applicableTradeTax;
 
         return $this;
@@ -134,8 +135,9 @@ class LineTradeSettlementType
      * @param  TradeTaxType $applicableTradeTax
      * @return static
      */
-    public function addToApplicableTradeTax(TradeTaxType $applicableTradeTax): static
-    {
+    public function addToApplicableTradeTax(
+        TradeTaxType $applicableTradeTax
+    ): static {
         $this->applicableTradeTax[] = $applicableTradeTax;
 
         return $this;
@@ -155,8 +157,9 @@ class LineTradeSettlementType
      * @param  TradeTaxType $applicableTradeTax
      * @return static
      */
-    public function addOnceToApplicableTradeTax(TradeTaxType $applicableTradeTax): static
-    {
+    public function addOnceToApplicableTradeTax(
+        TradeTaxType $applicableTradeTax
+    ): static {
         if (!is_array($this->applicableTradeTax)) {
             $this->applicableTradeTax = [];
         }
@@ -204,8 +207,9 @@ class LineTradeSettlementType
      * @param  null|SpecifiedPeriodType $billingSpecifiedPeriod
      * @return static
      */
-    public function setBillingSpecifiedPeriod(?SpecifiedPeriodType $billingSpecifiedPeriod = null): static
-    {
+    public function setBillingSpecifiedPeriod(
+        ?SpecifiedPeriodType $billingSpecifiedPeriod = null
+    ): static {
         $this->billingSpecifiedPeriod = $billingSpecifiedPeriod;
 
         return $this;
@@ -233,8 +237,9 @@ class LineTradeSettlementType
      * @param  null|array<TradeAllowanceChargeType> $specifiedTradeAllowanceCharge
      * @return static
      */
-    public function setSpecifiedTradeAllowanceCharge(?array $specifiedTradeAllowanceCharge = null): static
-    {
+    public function setSpecifiedTradeAllowanceCharge(
+        ?array $specifiedTradeAllowanceCharge = null
+    ): static {
         $this->specifiedTradeAllowanceCharge = $specifiedTradeAllowanceCharge;
 
         return $this;
@@ -264,8 +269,9 @@ class LineTradeSettlementType
      * @param  TradeAllowanceChargeType $specifiedTradeAllowanceCharge
      * @return static
      */
-    public function addToSpecifiedTradeAllowanceCharge(TradeAllowanceChargeType $specifiedTradeAllowanceCharge): static
-    {
+    public function addToSpecifiedTradeAllowanceCharge(
+        TradeAllowanceChargeType $specifiedTradeAllowanceCharge
+    ): static {
         $this->specifiedTradeAllowanceCharge[] = $specifiedTradeAllowanceCharge;
 
         return $this;
@@ -375,8 +381,9 @@ class LineTradeSettlementType
      * @param  null|ReferencedDocumentType $invoiceReferencedDocument
      * @return static
      */
-    public function setInvoiceReferencedDocument(?ReferencedDocumentType $invoiceReferencedDocument = null): static
-    {
+    public function setInvoiceReferencedDocument(
+        ?ReferencedDocumentType $invoiceReferencedDocument = null
+    ): static {
         $this->invoiceReferencedDocument = $invoiceReferencedDocument;
 
         return $this;
@@ -404,8 +411,9 @@ class LineTradeSettlementType
      * @param  null|array<ReferencedDocumentType> $additionalReferencedDocument
      * @return static
      */
-    public function setAdditionalReferencedDocument(?array $additionalReferencedDocument = null): static
-    {
+    public function setAdditionalReferencedDocument(
+        ?array $additionalReferencedDocument = null
+    ): static {
         $this->additionalReferencedDocument = $additionalReferencedDocument;
 
         return $this;
@@ -435,8 +443,9 @@ class LineTradeSettlementType
      * @param  ReferencedDocumentType $additionalReferencedDocument
      * @return static
      */
-    public function addToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): static
-    {
+    public function addToAdditionalReferencedDocument(
+        ReferencedDocumentType $additionalReferencedDocument
+    ): static {
         $this->additionalReferencedDocument[] = $additionalReferencedDocument;
 
         return $this;
@@ -456,8 +465,9 @@ class LineTradeSettlementType
      * @param  ReferencedDocumentType $additionalReferencedDocument
      * @return static
      */
-    public function addOnceToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): static
-    {
+    public function addOnceToAdditionalReferencedDocument(
+        ReferencedDocumentType $additionalReferencedDocument
+    ): static {
         if (!is_array($this->additionalReferencedDocument)) {
             $this->additionalReferencedDocument = [];
         }

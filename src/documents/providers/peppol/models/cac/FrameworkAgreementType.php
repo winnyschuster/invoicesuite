@@ -106,8 +106,9 @@ class FrameworkAgreementType
      * @param  null|ExpectedOperatorQuantity $expectedOperatorQuantity
      * @return static
      */
-    public function setExpectedOperatorQuantity(?ExpectedOperatorQuantity $expectedOperatorQuantity = null): static
-    {
+    public function setExpectedOperatorQuantity(
+        ?ExpectedOperatorQuantity $expectedOperatorQuantity = null
+    ): static {
         $this->expectedOperatorQuantity = $expectedOperatorQuantity;
 
         return $this;
@@ -145,8 +146,9 @@ class FrameworkAgreementType
      * @param  null|MaximumOperatorQuantity $maximumOperatorQuantity
      * @return static
      */
-    public function setMaximumOperatorQuantity(?MaximumOperatorQuantity $maximumOperatorQuantity = null): static
-    {
+    public function setMaximumOperatorQuantity(
+        ?MaximumOperatorQuantity $maximumOperatorQuantity = null
+    ): static {
         $this->maximumOperatorQuantity = $maximumOperatorQuantity;
 
         return $this;
@@ -174,8 +176,9 @@ class FrameworkAgreementType
      * @param  null|array<Justification> $justification
      * @return static
      */
-    public function setJustification(?array $justification = null): static
-    {
+    public function setJustification(
+        ?array $justification = null
+    ): static {
         $this->justification = $justification;
 
         return $this;
@@ -235,8 +238,9 @@ class FrameworkAgreementType
      * @param  Justification $justification
      * @return static
      */
-    public function addToJustification(Justification $justification): static
-    {
+    public function addToJustification(
+        Justification $justification
+    ): static {
         $this->justification[] = $justification;
 
         return $this;
@@ -256,8 +260,9 @@ class FrameworkAgreementType
      * @param  Justification $justification
      * @return static
      */
-    public function addOnceToJustification(Justification $justification): static
-    {
+    public function addOnceToJustification(
+        Justification $justification
+    ): static {
         if (!is_array($this->justification)) {
             $this->justification = [];
         }
@@ -295,8 +300,9 @@ class FrameworkAgreementType
      * @param  null|array<Frequency> $frequency
      * @return static
      */
-    public function setFrequency(?array $frequency = null): static
-    {
+    public function setFrequency(
+        ?array $frequency = null
+    ): static {
         $this->frequency = $frequency;
 
         return $this;
@@ -356,8 +362,9 @@ class FrameworkAgreementType
      * @param  Frequency $frequency
      * @return static
      */
-    public function addToFrequency(Frequency $frequency): static
-    {
+    public function addToFrequency(
+        Frequency $frequency
+    ): static {
         $this->frequency[] = $frequency;
 
         return $this;
@@ -377,8 +384,9 @@ class FrameworkAgreementType
      * @param  Frequency $frequency
      * @return static
      */
-    public function addOnceToFrequency(Frequency $frequency): static
-    {
+    public function addOnceToFrequency(
+        Frequency $frequency
+    ): static {
         if (!is_array($this->frequency)) {
             $this->frequency = [];
         }
@@ -426,8 +434,9 @@ class FrameworkAgreementType
      * @param  null|DurationPeriod $durationPeriod
      * @return static
      */
-    public function setDurationPeriod(?DurationPeriod $durationPeriod = null): static
-    {
+    public function setDurationPeriod(
+        ?DurationPeriod $durationPeriod = null
+    ): static {
         $this->durationPeriod = $durationPeriod;
 
         return $this;
@@ -455,8 +464,9 @@ class FrameworkAgreementType
      * @param  null|array<SubsequentProcessTenderRequirement> $subsequentProcessTenderRequirement
      * @return static
      */
-    public function setSubsequentProcessTenderRequirement(?array $subsequentProcessTenderRequirement = null): static
-    {
+    public function setSubsequentProcessTenderRequirement(
+        ?array $subsequentProcessTenderRequirement = null
+    ): static {
         $this->subsequentProcessTenderRequirement = $subsequentProcessTenderRequirement;
 
         return $this;

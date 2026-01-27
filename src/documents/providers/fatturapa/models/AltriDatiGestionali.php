@@ -77,8 +77,9 @@ final class AltriDatiGestionali
      * @param  null|string $tipoDato
      * @return static
      */
-    public function setTipoDato(?string $tipoDato = null): static
-    {
+    public function setTipoDato(
+        ?string $tipoDato = null
+    ): static {
         $this->tipoDato = InvoiceSuiteStringUtils::asNullWhenEmpty($tipoDato);
 
         return $this;
@@ -112,8 +113,9 @@ final class AltriDatiGestionali
      * @param  null|string $riferimentoTesto
      * @return static
      */
-    public function setRiferimentoTesto(?string $riferimentoTesto = null): static
-    {
+    public function setRiferimentoTesto(
+        ?string $riferimentoTesto = null
+    ): static {
         $this->riferimentoTesto = InvoiceSuiteStringUtils::asNullWhenEmpty($riferimentoTesto);
 
         return $this;
@@ -147,8 +149,9 @@ final class AltriDatiGestionali
      * @param  null|float $riferimentoNumero
      * @return static
      */
-    public function setRiferimentoNumero(?float $riferimentoNumero = null): static
-    {
+    public function setRiferimentoNumero(
+        ?float $riferimentoNumero = null
+    ): static {
         $this->riferimentoNumero = $riferimentoNumero;
 
         return $this;
@@ -182,8 +185,9 @@ final class AltriDatiGestionali
      * @param  null|DateTimeInterface $riferimentoData
      * @return static
      */
-    public function setRiferimentoData(?DateTimeInterface $riferimentoData = null): static
-    {
+    public function setRiferimentoData(
+        ?DateTimeInterface $riferimentoData = null
+    ): static {
         $this->riferimentoData = $riferimentoData;
 
         return $this;

@@ -22,8 +22,11 @@ final class InvoiceSuitePdfMergerTest extends TestCase
      *
      * @dataProvider caseProvider
      */
-    public function testMergePdfWithXmlTest(string $fromXmlFilename, string $fromPdfFilename, string $toPdfFilename): void
-    {
+    public function testMergePdfWithXmlTest(
+        string $fromXmlFilename,
+        string $fromPdfFilename,
+        string $toPdfFilename
+    ): void {
         $xmlFilename = InvoiceSuitePathUtils::combinePathWithFile(
             InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', '..', 'assets'),
             $fromXmlFilename

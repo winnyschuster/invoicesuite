@@ -97,8 +97,9 @@ class InvoiceSuitePaymentTermPenaltyDTO
      * @param  null|float $baseAmount The base amount of the payment penalty
      * @return static
      */
-    public function setBaseAmount(?float $baseAmount): static
-    {
+    public function setBaseAmount(
+        ?float $baseAmount
+    ): static {
         $this->baseAmount = $baseAmount;
 
         return $this;
@@ -120,8 +121,9 @@ class InvoiceSuitePaymentTermPenaltyDTO
      * @param  null|float $penaltyAmount The amount of the payment penalty
      * @return static
      */
-    public function setPenaltyAmount(?float $penaltyAmount): static
-    {
+    public function setPenaltyAmount(
+        ?float $penaltyAmount
+    ): static {
         $this->penaltyAmount = $penaltyAmount;
 
         return $this;
@@ -143,8 +145,9 @@ class InvoiceSuitePaymentTermPenaltyDTO
      * @param  null|float $penaltyPercent The percentage of the payment penalty
      * @return static
      */
-    public function setPenaltyPercent(?float $penaltyPercent): static
-    {
+    public function setPenaltyPercent(
+        ?float $penaltyPercent
+    ): static {
         $this->penaltyPercent = $penaltyPercent;
 
         return $this;
@@ -166,8 +169,9 @@ class InvoiceSuitePaymentTermPenaltyDTO
      * @param  null|DateTimeInterface $baseDate The due date reference date
      * @return static
      */
-    public function setBaseDate(?DateTimeInterface $baseDate): static
-    {
+    public function setBaseDate(
+        ?DateTimeInterface $baseDate
+    ): static {
         $this->baseDate = $baseDate;
 
         return $this;
@@ -189,8 +193,9 @@ class InvoiceSuitePaymentTermPenaltyDTO
      * @param  null|InvoiceSuitePeriodDTO $period The maturity period (basis)
      * @return static
      */
-    public function setPeriod(?InvoiceSuitePeriodDTO $period): static
-    {
+    public function setPeriod(
+        ?InvoiceSuitePeriodDTO $period
+    ): static {
         $this->period = $period;
 
         return $this;

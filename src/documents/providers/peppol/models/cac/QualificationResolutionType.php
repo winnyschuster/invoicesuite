@@ -105,8 +105,9 @@ class QualificationResolutionType
      * @param  null|AdmissionCode $admissionCode
      * @return static
      */
-    public function setAdmissionCode(?AdmissionCode $admissionCode = null): static
-    {
+    public function setAdmissionCode(
+        ?AdmissionCode $admissionCode = null
+    ): static {
         $this->admissionCode = $admissionCode;
 
         return $this;
@@ -134,8 +135,9 @@ class QualificationResolutionType
      * @param  null|array<ExclusionReason> $exclusionReason
      * @return static
      */
-    public function setExclusionReason(?array $exclusionReason = null): static
-    {
+    public function setExclusionReason(
+        ?array $exclusionReason = null
+    ): static {
         $this->exclusionReason = $exclusionReason;
 
         return $this;
@@ -195,8 +197,9 @@ class QualificationResolutionType
      * @param  ExclusionReason $exclusionReason
      * @return static
      */
-    public function addToExclusionReason(ExclusionReason $exclusionReason): static
-    {
+    public function addToExclusionReason(
+        ExclusionReason $exclusionReason
+    ): static {
         $this->exclusionReason[] = $exclusionReason;
 
         return $this;
@@ -216,8 +219,9 @@ class QualificationResolutionType
      * @param  ExclusionReason $exclusionReason
      * @return static
      */
-    public function addOnceToExclusionReason(ExclusionReason $exclusionReason): static
-    {
+    public function addOnceToExclusionReason(
+        ExclusionReason $exclusionReason
+    ): static {
         if (!is_array($this->exclusionReason)) {
             $this->exclusionReason = [];
         }
@@ -255,8 +259,9 @@ class QualificationResolutionType
      * @param  null|array<Resolution> $resolution
      * @return static
      */
-    public function setResolution(?array $resolution = null): static
-    {
+    public function setResolution(
+        ?array $resolution = null
+    ): static {
         $this->resolution = $resolution;
 
         return $this;
@@ -316,8 +321,9 @@ class QualificationResolutionType
      * @param  Resolution $resolution
      * @return static
      */
-    public function addToResolution(Resolution $resolution): static
-    {
+    public function addToResolution(
+        Resolution $resolution
+    ): static {
         $this->resolution[] = $resolution;
 
         return $this;
@@ -337,8 +343,9 @@ class QualificationResolutionType
      * @param  Resolution $resolution
      * @return static
      */
-    public function addOnceToResolution(Resolution $resolution): static
-    {
+    public function addOnceToResolution(
+        Resolution $resolution
+    ): static {
         if (!is_array($this->resolution)) {
             $this->resolution = [];
         }
@@ -376,8 +383,9 @@ class QualificationResolutionType
      * @param  null|DateTimeInterface $resolutionDate
      * @return static
      */
-    public function setResolutionDate(?DateTimeInterface $resolutionDate = null): static
-    {
+    public function setResolutionDate(
+        ?DateTimeInterface $resolutionDate = null
+    ): static {
         $this->resolutionDate = $resolutionDate;
 
         return $this;
@@ -405,8 +413,9 @@ class QualificationResolutionType
      * @param  null|DateTimeInterface $resolutionTime
      * @return static
      */
-    public function setResolutionTime(?DateTimeInterface $resolutionTime = null): static
-    {
+    public function setResolutionTime(
+        ?DateTimeInterface $resolutionTime = null
+    ): static {
         $this->resolutionTime = $resolutionTime;
 
         return $this;
@@ -444,8 +453,9 @@ class QualificationResolutionType
      * @param  null|ProcurementProjectLot $procurementProjectLot
      * @return static
      */
-    public function setProcurementProjectLot(?ProcurementProjectLot $procurementProjectLot = null): static
-    {
+    public function setProcurementProjectLot(
+        ?ProcurementProjectLot $procurementProjectLot = null
+    ): static {
         $this->procurementProjectLot = $procurementProjectLot;
 
         return $this;

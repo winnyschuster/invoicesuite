@@ -69,8 +69,9 @@ class LanguageType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -108,8 +109,9 @@ class LanguageType
      * @param  null|Name $name
      * @return static
      */
-    public function setName(?Name $name = null): static
-    {
+    public function setName(
+        ?Name $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -147,8 +149,9 @@ class LanguageType
      * @param  null|LocaleCode $localeCode
      * @return static
      */
-    public function setLocaleCode(?LocaleCode $localeCode = null): static
-    {
+    public function setLocaleCode(
+        ?LocaleCode $localeCode = null
+    ): static {
         $this->localeCode = $localeCode;
 
         return $this;

@@ -302,8 +302,9 @@ class TenderingProcessType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -371,8 +372,9 @@ class TenderingProcessType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -432,8 +434,9 @@ class TenderingProcessType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -453,8 +456,9 @@ class TenderingProcessType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -492,8 +496,9 @@ class TenderingProcessType
      * @param  null|array<NegotiationDescription> $negotiationDescription
      * @return static
      */
-    public function setNegotiationDescription(?array $negotiationDescription = null): static
-    {
+    public function setNegotiationDescription(
+        ?array $negotiationDescription = null
+    ): static {
         $this->negotiationDescription = $negotiationDescription;
 
         return $this;
@@ -553,8 +558,9 @@ class TenderingProcessType
      * @param  NegotiationDescription $negotiationDescription
      * @return static
      */
-    public function addToNegotiationDescription(NegotiationDescription $negotiationDescription): static
-    {
+    public function addToNegotiationDescription(
+        NegotiationDescription $negotiationDescription
+    ): static {
         $this->negotiationDescription[] = $negotiationDescription;
 
         return $this;
@@ -574,8 +580,9 @@ class TenderingProcessType
      * @param  NegotiationDescription $negotiationDescription
      * @return static
      */
-    public function addOnceToNegotiationDescription(NegotiationDescription $negotiationDescription): static
-    {
+    public function addOnceToNegotiationDescription(
+        NegotiationDescription $negotiationDescription
+    ): static {
         if (!is_array($this->negotiationDescription)) {
             $this->negotiationDescription = [];
         }
@@ -623,8 +630,9 @@ class TenderingProcessType
      * @param  null|ProcedureCode $procedureCode
      * @return static
      */
-    public function setProcedureCode(?ProcedureCode $procedureCode = null): static
-    {
+    public function setProcedureCode(
+        ?ProcedureCode $procedureCode = null
+    ): static {
         $this->procedureCode = $procedureCode;
 
         return $this;
@@ -662,8 +670,9 @@ class TenderingProcessType
      * @param  null|UrgencyCode $urgencyCode
      * @return static
      */
-    public function setUrgencyCode(?UrgencyCode $urgencyCode = null): static
-    {
+    public function setUrgencyCode(
+        ?UrgencyCode $urgencyCode = null
+    ): static {
         $this->urgencyCode = $urgencyCode;
 
         return $this;
@@ -701,8 +710,9 @@ class TenderingProcessType
      * @param  null|ExpenseCode $expenseCode
      * @return static
      */
-    public function setExpenseCode(?ExpenseCode $expenseCode = null): static
-    {
+    public function setExpenseCode(
+        ?ExpenseCode $expenseCode = null
+    ): static {
         $this->expenseCode = $expenseCode;
 
         return $this;
@@ -740,8 +750,9 @@ class TenderingProcessType
      * @param  null|PartPresentationCode $partPresentationCode
      * @return static
      */
-    public function setPartPresentationCode(?PartPresentationCode $partPresentationCode = null): static
-    {
+    public function setPartPresentationCode(
+        ?PartPresentationCode $partPresentationCode = null
+    ): static {
         $this->partPresentationCode = $partPresentationCode;
 
         return $this;
@@ -779,8 +790,9 @@ class TenderingProcessType
      * @param  null|ContractingSystemCode $contractingSystemCode
      * @return static
      */
-    public function setContractingSystemCode(?ContractingSystemCode $contractingSystemCode = null): static
-    {
+    public function setContractingSystemCode(
+        ?ContractingSystemCode $contractingSystemCode = null
+    ): static {
         $this->contractingSystemCode = $contractingSystemCode;
 
         return $this;
@@ -818,8 +830,9 @@ class TenderingProcessType
      * @param  null|SubmissionMethodCode $submissionMethodCode
      * @return static
      */
-    public function setSubmissionMethodCode(?SubmissionMethodCode $submissionMethodCode = null): static
-    {
+    public function setSubmissionMethodCode(
+        ?SubmissionMethodCode $submissionMethodCode = null
+    ): static {
         $this->submissionMethodCode = $submissionMethodCode;
 
         return $this;
@@ -1067,8 +1080,9 @@ class TenderingProcessType
      * @param  null|array<NoticeDocumentReference> $noticeDocumentReference
      * @return static
      */
-    public function setNoticeDocumentReference(?array $noticeDocumentReference = null): static
-    {
+    public function setNoticeDocumentReference(
+        ?array $noticeDocumentReference = null
+    ): static {
         $this->noticeDocumentReference = $noticeDocumentReference;
 
         return $this;
@@ -1128,8 +1142,9 @@ class TenderingProcessType
      * @param  NoticeDocumentReference $noticeDocumentReference
      * @return static
      */
-    public function addToNoticeDocumentReference(NoticeDocumentReference $noticeDocumentReference): static
-    {
+    public function addToNoticeDocumentReference(
+        NoticeDocumentReference $noticeDocumentReference
+    ): static {
         $this->noticeDocumentReference[] = $noticeDocumentReference;
 
         return $this;
@@ -1149,8 +1164,9 @@ class TenderingProcessType
      * @param  NoticeDocumentReference $noticeDocumentReference
      * @return static
      */
-    public function addOnceToNoticeDocumentReference(NoticeDocumentReference $noticeDocumentReference): static
-    {
+    public function addOnceToNoticeDocumentReference(
+        NoticeDocumentReference $noticeDocumentReference
+    ): static {
         if (!is_array($this->noticeDocumentReference)) {
             $this->noticeDocumentReference = [];
         }
@@ -1188,8 +1204,9 @@ class TenderingProcessType
      * @param  null|array<AdditionalDocumentReference> $additionalDocumentReference
      * @return static
      */
-    public function setAdditionalDocumentReference(?array $additionalDocumentReference = null): static
-    {
+    public function setAdditionalDocumentReference(
+        ?array $additionalDocumentReference = null
+    ): static {
         $this->additionalDocumentReference = $additionalDocumentReference;
 
         return $this;
@@ -1249,8 +1266,9 @@ class TenderingProcessType
      * @param  AdditionalDocumentReference $additionalDocumentReference
      * @return static
      */
-    public function addToAdditionalDocumentReference(AdditionalDocumentReference $additionalDocumentReference): static
-    {
+    public function addToAdditionalDocumentReference(
+        AdditionalDocumentReference $additionalDocumentReference
+    ): static {
         $this->additionalDocumentReference[] = $additionalDocumentReference;
 
         return $this;
@@ -1310,8 +1328,9 @@ class TenderingProcessType
      * @param  null|array<ProcessJustification> $processJustification
      * @return static
      */
-    public function setProcessJustification(?array $processJustification = null): static
-    {
+    public function setProcessJustification(
+        ?array $processJustification = null
+    ): static {
         $this->processJustification = $processJustification;
 
         return $this;
@@ -1371,8 +1390,9 @@ class TenderingProcessType
      * @param  ProcessJustification $processJustification
      * @return static
      */
-    public function addToProcessJustification(ProcessJustification $processJustification): static
-    {
+    public function addToProcessJustification(
+        ProcessJustification $processJustification
+    ): static {
         $this->processJustification[] = $processJustification;
 
         return $this;
@@ -1392,8 +1412,9 @@ class TenderingProcessType
      * @param  ProcessJustification $processJustification
      * @return static
      */
-    public function addOnceToProcessJustification(ProcessJustification $processJustification): static
-    {
+    public function addOnceToProcessJustification(
+        ProcessJustification $processJustification
+    ): static {
         if (!is_array($this->processJustification)) {
             $this->processJustification = [];
         }
@@ -1441,8 +1462,9 @@ class TenderingProcessType
      * @param  null|EconomicOperatorShortList $economicOperatorShortList
      * @return static
      */
-    public function setEconomicOperatorShortList(?EconomicOperatorShortList $economicOperatorShortList = null): static
-    {
+    public function setEconomicOperatorShortList(
+        ?EconomicOperatorShortList $economicOperatorShortList = null
+    ): static {
         $this->economicOperatorShortList = $economicOperatorShortList;
 
         return $this;
@@ -1470,8 +1492,9 @@ class TenderingProcessType
      * @param  null|array<OpenTenderEvent> $openTenderEvent
      * @return static
      */
-    public function setOpenTenderEvent(?array $openTenderEvent = null): static
-    {
+    public function setOpenTenderEvent(
+        ?array $openTenderEvent = null
+    ): static {
         $this->openTenderEvent = $openTenderEvent;
 
         return $this;
@@ -1531,8 +1554,9 @@ class TenderingProcessType
      * @param  OpenTenderEvent $openTenderEvent
      * @return static
      */
-    public function addToOpenTenderEvent(OpenTenderEvent $openTenderEvent): static
-    {
+    public function addToOpenTenderEvent(
+        OpenTenderEvent $openTenderEvent
+    ): static {
         $this->openTenderEvent[] = $openTenderEvent;
 
         return $this;
@@ -1552,8 +1576,9 @@ class TenderingProcessType
      * @param  OpenTenderEvent $openTenderEvent
      * @return static
      */
-    public function addOnceToOpenTenderEvent(OpenTenderEvent $openTenderEvent): static
-    {
+    public function addOnceToOpenTenderEvent(
+        OpenTenderEvent $openTenderEvent
+    ): static {
         if (!is_array($this->openTenderEvent)) {
             $this->openTenderEvent = [];
         }
@@ -1601,8 +1626,9 @@ class TenderingProcessType
      * @param  null|AuctionTerms $auctionTerms
      * @return static
      */
-    public function setAuctionTerms(?AuctionTerms $auctionTerms = null): static
-    {
+    public function setAuctionTerms(
+        ?AuctionTerms $auctionTerms = null
+    ): static {
         $this->auctionTerms = $auctionTerms;
 
         return $this;
@@ -1640,8 +1666,9 @@ class TenderingProcessType
      * @param  null|FrameworkAgreement $frameworkAgreement
      * @return static
      */
-    public function setFrameworkAgreement(?FrameworkAgreement $frameworkAgreement = null): static
-    {
+    public function setFrameworkAgreement(
+        ?FrameworkAgreement $frameworkAgreement = null
+    ): static {
         $this->frameworkAgreement = $frameworkAgreement;
 
         return $this;

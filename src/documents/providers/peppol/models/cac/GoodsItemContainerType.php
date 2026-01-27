@@ -69,8 +69,9 @@ class GoodsItemContainerType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -108,8 +109,9 @@ class GoodsItemContainerType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -137,8 +139,9 @@ class GoodsItemContainerType
      * @param  null|array<TransportEquipment> $transportEquipment
      * @return static
      */
-    public function setTransportEquipment(?array $transportEquipment = null): static
-    {
+    public function setTransportEquipment(
+        ?array $transportEquipment = null
+    ): static {
         $this->transportEquipment = $transportEquipment;
 
         return $this;
@@ -198,8 +201,9 @@ class GoodsItemContainerType
      * @param  TransportEquipment $transportEquipment
      * @return static
      */
-    public function addToTransportEquipment(TransportEquipment $transportEquipment): static
-    {
+    public function addToTransportEquipment(
+        TransportEquipment $transportEquipment
+    ): static {
         $this->transportEquipment[] = $transportEquipment;
 
         return $this;
@@ -219,8 +223,9 @@ class GoodsItemContainerType
      * @param  TransportEquipment $transportEquipment
      * @return static
      */
-    public function addOnceToTransportEquipment(TransportEquipment $transportEquipment): static
-    {
+    public function addOnceToTransportEquipment(
+        TransportEquipment $transportEquipment
+    ): static {
         if (!is_array($this->transportEquipment)) {
             $this->transportEquipment = [];
         }

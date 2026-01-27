@@ -118,8 +118,9 @@ class ContactType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -157,8 +158,9 @@ class ContactType
      * @param  null|Name $name
      * @return static
      */
-    public function setName(?Name $name = null): static
-    {
+    public function setName(
+        ?Name $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -196,8 +198,9 @@ class ContactType
      * @param  null|Telephone $telephone
      * @return static
      */
-    public function setTelephone(?Telephone $telephone = null): static
-    {
+    public function setTelephone(
+        ?Telephone $telephone = null
+    ): static {
         $this->telephone = $telephone;
 
         return $this;
@@ -235,8 +238,9 @@ class ContactType
      * @param  null|Telefax $telefax
      * @return static
      */
-    public function setTelefax(?Telefax $telefax = null): static
-    {
+    public function setTelefax(
+        ?Telefax $telefax = null
+    ): static {
         $this->telefax = $telefax;
 
         return $this;
@@ -274,8 +278,9 @@ class ContactType
      * @param  null|ElectronicMail $electronicMail
      * @return static
      */
-    public function setElectronicMail(?ElectronicMail $electronicMail = null): static
-    {
+    public function setElectronicMail(
+        ?ElectronicMail $electronicMail = null
+    ): static {
         $this->electronicMail = $electronicMail;
 
         return $this;
@@ -303,8 +308,9 @@ class ContactType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -364,8 +370,9 @@ class ContactType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -385,8 +392,9 @@ class ContactType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -424,8 +432,9 @@ class ContactType
      * @param  null|array<OtherCommunication> $otherCommunication
      * @return static
      */
-    public function setOtherCommunication(?array $otherCommunication = null): static
-    {
+    public function setOtherCommunication(
+        ?array $otherCommunication = null
+    ): static {
         $this->otherCommunication = $otherCommunication;
 
         return $this;
@@ -485,8 +494,9 @@ class ContactType
      * @param  OtherCommunication $otherCommunication
      * @return static
      */
-    public function addToOtherCommunication(OtherCommunication $otherCommunication): static
-    {
+    public function addToOtherCommunication(
+        OtherCommunication $otherCommunication
+    ): static {
         $this->otherCommunication[] = $otherCommunication;
 
         return $this;
@@ -506,8 +516,9 @@ class ContactType
      * @param  OtherCommunication $otherCommunication
      * @return static
      */
-    public function addOnceToOtherCommunication(OtherCommunication $otherCommunication): static
-    {
+    public function addOnceToOtherCommunication(
+        OtherCommunication $otherCommunication
+    ): static {
         if (!is_array($this->otherCommunication)) {
             $this->otherCommunication = [];
         }

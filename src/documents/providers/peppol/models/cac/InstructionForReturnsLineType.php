@@ -92,8 +92,9 @@ class InstructionForReturnsLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -121,8 +122,9 @@ class InstructionForReturnsLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -182,8 +184,9 @@ class InstructionForReturnsLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -203,8 +206,9 @@ class InstructionForReturnsLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -252,8 +256,9 @@ class InstructionForReturnsLineType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -291,8 +296,9 @@ class InstructionForReturnsLineType
      * @param  null|ManufacturerParty $manufacturerParty
      * @return static
      */
-    public function setManufacturerParty(?ManufacturerParty $manufacturerParty = null): static
-    {
+    public function setManufacturerParty(
+        ?ManufacturerParty $manufacturerParty = null
+    ): static {
         $this->manufacturerParty = $manufacturerParty;
 
         return $this;
@@ -330,8 +336,9 @@ class InstructionForReturnsLineType
      * @param  null|Item $item
      * @return static
      */
-    public function setItem(?Item $item = null): static
-    {
+    public function setItem(
+        ?Item $item = null
+    ): static {
         $this->item = $item;
 
         return $this;

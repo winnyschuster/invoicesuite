@@ -69,8 +69,11 @@ class InvoiceSuiteAttachment
      * @param  int    $internalType
      * @return void
      */
-    final protected function __construct(string $internalContent, string $internalFilename, int $internalType)
-    {
+    final protected function __construct(
+        string $internalContent,
+        string $internalFilename,
+        int $internalType
+    ) {
         $this->internalType = $internalType;
         $this->internalContent = $internalContent;
         $this->internalFilename = InvoiceSuiteFileUtils::getFilenameWithoutExtension($internalFilename);
@@ -85,8 +88,9 @@ class InvoiceSuiteAttachment
      * @throws InvoiceSuiteFileNotFoundException
      * @throws InvoiceSuiteFileNotReadableException
      */
-    public static function fromFile(string $filename): static
-    {
+    public static function fromFile(
+        string $filename
+    ): static {
         if (!file_exists($filename)) {
             throw new InvoiceSuiteFileNotFoundException($filename);
         }
@@ -107,8 +111,10 @@ class InvoiceSuiteAttachment
      * @param  string $filename
      * @return static
      */
-    public static function fromBinaryString(string $content, string $filename): static
-    {
+    public static function fromBinaryString(
+        string $content,
+        string $filename
+    ): static {
         return new static($content, $filename, static::IS_FROM_BINARY_STRING);
     }
 
@@ -121,8 +127,10 @@ class InvoiceSuiteAttachment
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public static function fromBase64String(string $content, string $filename): static
-    {
+    public static function fromBase64String(
+        string $content,
+        string $filename
+    ): static {
         $content = base64_decode($content, true);
 
         if (false === $content) {
@@ -138,8 +146,9 @@ class InvoiceSuiteAttachment
      * @param  string $url
      * @return static
      */
-    public static function fromUrl(string $url): static
-    {
+    public static function fromUrl(
+        string $url
+    ): static {
         return new static($url, '', static::IS_FROM_URL);
     }
 

@@ -87,8 +87,9 @@ final class CessionarioCommittente
      * @param  null|DatiAnagraficiCessionario $datiAnagrafici
      * @return static
      */
-    public function setDatiAnagrafici(?DatiAnagraficiCessionario $datiAnagrafici = null): static
-    {
+    public function setDatiAnagrafici(
+        ?DatiAnagraficiCessionario $datiAnagrafici = null
+    ): static {
         $this->datiAnagrafici = $datiAnagrafici;
 
         return $this;
@@ -134,8 +135,9 @@ final class CessionarioCommittente
      * @param  null|Indirizzo $sede
      * @return static
      */
-    public function setSede(?Indirizzo $sede = null): static
-    {
+    public function setSede(
+        ?Indirizzo $sede = null
+    ): static {
         $this->sede = $sede;
 
         return $this;
@@ -181,8 +183,9 @@ final class CessionarioCommittente
      * @param  null|Indirizzo $stabileOrganizzazione
      * @return static
      */
-    public function setStabileOrganizzazione(?Indirizzo $stabileOrganizzazione = null): static
-    {
+    public function setStabileOrganizzazione(
+        ?Indirizzo $stabileOrganizzazione = null
+    ): static {
         $this->stabileOrganizzazione = $stabileOrganizzazione;
 
         return $this;
@@ -228,8 +231,9 @@ final class CessionarioCommittente
      * @param  null|RappresentanteFiscaleCessionario $rappresentanteFiscale
      * @return static
      */
-    public function setRappresentanteFiscale(?RappresentanteFiscaleCessionario $rappresentanteFiscale = null): static
-    {
+    public function setRappresentanteFiscale(
+        ?RappresentanteFiscaleCessionario $rappresentanteFiscale = null
+    ): static {
         $this->rappresentanteFiscale = $rappresentanteFiscale;
 
         return $this;

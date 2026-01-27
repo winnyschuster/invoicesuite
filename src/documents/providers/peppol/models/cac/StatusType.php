@@ -178,8 +178,9 @@ class StatusType
      * @param  null|ConditionCode $conditionCode
      * @return static
      */
-    public function setConditionCode(?ConditionCode $conditionCode = null): static
-    {
+    public function setConditionCode(
+        ?ConditionCode $conditionCode = null
+    ): static {
         $this->conditionCode = $conditionCode;
 
         return $this;
@@ -207,8 +208,9 @@ class StatusType
      * @param  null|DateTimeInterface $referenceDate
      * @return static
      */
-    public function setReferenceDate(?DateTimeInterface $referenceDate = null): static
-    {
+    public function setReferenceDate(
+        ?DateTimeInterface $referenceDate = null
+    ): static {
         $this->referenceDate = $referenceDate;
 
         return $this;
@@ -236,8 +238,9 @@ class StatusType
      * @param  null|DateTimeInterface $referenceTime
      * @return static
      */
-    public function setReferenceTime(?DateTimeInterface $referenceTime = null): static
-    {
+    public function setReferenceTime(
+        ?DateTimeInterface $referenceTime = null
+    ): static {
         $this->referenceTime = $referenceTime;
 
         return $this;
@@ -265,8 +268,9 @@ class StatusType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -326,8 +330,9 @@ class StatusType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -347,8 +352,9 @@ class StatusType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -396,8 +402,9 @@ class StatusType
      * @param  null|StatusReasonCode $statusReasonCode
      * @return static
      */
-    public function setStatusReasonCode(?StatusReasonCode $statusReasonCode = null): static
-    {
+    public function setStatusReasonCode(
+        ?StatusReasonCode $statusReasonCode = null
+    ): static {
         $this->statusReasonCode = $statusReasonCode;
 
         return $this;
@@ -425,8 +432,9 @@ class StatusType
      * @param  null|array<StatusReason> $statusReason
      * @return static
      */
-    public function setStatusReason(?array $statusReason = null): static
-    {
+    public function setStatusReason(
+        ?array $statusReason = null
+    ): static {
         $this->statusReason = $statusReason;
 
         return $this;
@@ -486,8 +494,9 @@ class StatusType
      * @param  StatusReason $statusReason
      * @return static
      */
-    public function addToStatusReason(StatusReason $statusReason): static
-    {
+    public function addToStatusReason(
+        StatusReason $statusReason
+    ): static {
         $this->statusReason[] = $statusReason;
 
         return $this;
@@ -507,8 +516,9 @@ class StatusType
      * @param  StatusReason $statusReason
      * @return static
      */
-    public function addOnceToStatusReason(StatusReason $statusReason): static
-    {
+    public function addOnceToStatusReason(
+        StatusReason $statusReason
+    ): static {
         if (!is_array($this->statusReason)) {
             $this->statusReason = [];
         }
@@ -556,8 +566,9 @@ class StatusType
      * @param  null|SequenceID $sequenceID
      * @return static
      */
-    public function setSequenceID(?SequenceID $sequenceID = null): static
-    {
+    public function setSequenceID(
+        ?SequenceID $sequenceID = null
+    ): static {
         $this->sequenceID = $sequenceID;
 
         return $this;
@@ -585,8 +596,9 @@ class StatusType
      * @param  null|array<Text> $text
      * @return static
      */
-    public function setText(?array $text = null): static
-    {
+    public function setText(
+        ?array $text = null
+    ): static {
         $this->text = $text;
 
         return $this;
@@ -646,8 +658,9 @@ class StatusType
      * @param  Text   $text
      * @return static
      */
-    public function addToText(Text $text): static
-    {
+    public function addToText(
+        Text $text
+    ): static {
         $this->text[] = $text;
 
         return $this;
@@ -667,8 +680,9 @@ class StatusType
      * @param  Text   $text
      * @return static
      */
-    public function addOnceToText(Text $text): static
-    {
+    public function addOnceToText(
+        Text $text
+    ): static {
         if (!is_array($this->text)) {
             $this->text = [];
         }
@@ -706,8 +720,9 @@ class StatusType
      * @param  null|bool $indicationIndicator
      * @return static
      */
-    public function setIndicationIndicator(?bool $indicationIndicator = null): static
-    {
+    public function setIndicationIndicator(
+        ?bool $indicationIndicator = null
+    ): static {
         $this->indicationIndicator = $indicationIndicator;
 
         return $this;
@@ -745,8 +760,9 @@ class StatusType
      * @param  null|Percent $percent
      * @return static
      */
-    public function setPercent(?Percent $percent = null): static
-    {
+    public function setPercent(
+        ?Percent $percent = null
+    ): static {
         $this->percent = $percent;
 
         return $this;
@@ -784,8 +800,9 @@ class StatusType
      * @param  null|ReliabilityPercent $reliabilityPercent
      * @return static
      */
-    public function setReliabilityPercent(?ReliabilityPercent $reliabilityPercent = null): static
-    {
+    public function setReliabilityPercent(
+        ?ReliabilityPercent $reliabilityPercent = null
+    ): static {
         $this->reliabilityPercent = $reliabilityPercent;
 
         return $this;
@@ -813,8 +830,9 @@ class StatusType
      * @param  null|array<Condition> $condition
      * @return static
      */
-    public function setCondition(?array $condition = null): static
-    {
+    public function setCondition(
+        ?array $condition = null
+    ): static {
         $this->condition = $condition;
 
         return $this;
@@ -874,8 +892,9 @@ class StatusType
      * @param  Condition $condition
      * @return static
      */
-    public function addToCondition(Condition $condition): static
-    {
+    public function addToCondition(
+        Condition $condition
+    ): static {
         $this->condition[] = $condition;
 
         return $this;
@@ -895,8 +914,9 @@ class StatusType
      * @param  Condition $condition
      * @return static
      */
-    public function addOnceToCondition(Condition $condition): static
-    {
+    public function addOnceToCondition(
+        Condition $condition
+    ): static {
         if (!is_array($this->condition)) {
             $this->condition = [];
         }

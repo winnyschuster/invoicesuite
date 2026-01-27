@@ -88,8 +88,9 @@ final class DatiAnagraficiVettore
      * @param  null|IdFiscale $idFiscaleIVA
      * @return static
      */
-    public function setIdFiscaleIVA(?IdFiscale $idFiscaleIVA = null): static
-    {
+    public function setIdFiscaleIVA(
+        ?IdFiscale $idFiscaleIVA = null
+    ): static {
         $this->idFiscaleIVA = $idFiscaleIVA;
 
         return $this;
@@ -123,8 +124,9 @@ final class DatiAnagraficiVettore
      * @param  null|string $codiceFiscale
      * @return static
      */
-    public function setCodiceFiscale(?string $codiceFiscale = null): static
-    {
+    public function setCodiceFiscale(
+        ?string $codiceFiscale = null
+    ): static {
         $this->codiceFiscale = InvoiceSuiteStringUtils::asNullWhenEmpty($codiceFiscale);
 
         return $this;
@@ -170,8 +172,9 @@ final class DatiAnagraficiVettore
      * @param  null|Anagrafica $anagrafica
      * @return static
      */
-    public function setAnagrafica(?Anagrafica $anagrafica = null): static
-    {
+    public function setAnagrafica(
+        ?Anagrafica $anagrafica = null
+    ): static {
         $this->anagrafica = $anagrafica;
 
         return $this;
@@ -205,8 +208,9 @@ final class DatiAnagraficiVettore
      * @param  null|string $numeroLicenzaGuida
      * @return static
      */
-    public function setNumeroLicenzaGuida(?string $numeroLicenzaGuida = null): static
-    {
+    public function setNumeroLicenzaGuida(
+        ?string $numeroLicenzaGuida = null
+    ): static {
         $this->numeroLicenzaGuida = InvoiceSuiteStringUtils::asNullWhenEmpty($numeroLicenzaGuida);
 
         return $this;

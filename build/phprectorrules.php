@@ -43,7 +43,8 @@ CODE
         return [StaticCall::class];
     }
 
-    public function refactor(Node $node): ?Node
+    public function refactor(
+        Node $node): ?Node
     {
         if (!$node instanceof StaticCall) {
             return null;
@@ -140,7 +141,8 @@ CODE
         return [If_::class];
     }
 
-    public function refactor(Node $node): ?Node
+    public function refactor(
+        Node $node): ?Node
     {
         if (!$node instanceof If_) {
             return null;
@@ -160,7 +162,8 @@ CODE
         return $node;
     }
 
-    private function refactorCondition(If_ $if): bool
+    private function refactorCondition(
+        If_ $if): bool
     {
         $nodeFinder = new NodeFinder();
 
@@ -206,7 +209,8 @@ CODE
         return $changed;
     }
 
-    private function updateTraceMethodEarlyExit(If_ $if, string $condAsString): void
+    private function updateTraceMethodEarlyExit(
+        If_ $if, string $condAsString): void
     {
         $nodeFinder = new NodeFinder();
 
@@ -235,7 +239,8 @@ CODE
         }
     }
 
-    private function conditionContainsStringIsNullOrEmpty(If_ $if): bool
+    private function conditionContainsStringIsNullOrEmpty(
+        If_ $if): bool
     {
         $nodeFinder = new NodeFinder();
 
@@ -254,7 +259,8 @@ CODE
         return false;
     }
 
-    private function isInvoiceSuiteStringUtilsClass(StaticCall $staticCall): bool
+    private function isInvoiceSuiteStringUtilsClass(
+        StaticCall $staticCall): bool
     {
         if (!$staticCall->class instanceof Name) {
             return false;
@@ -264,7 +270,8 @@ CODE
             || $this->isName($staticCall->class, 'horstoeko\\invoicesuite\\utils\\InvoiceSuiteStringUtils');
     }
 
-    private function normalizeInvoiceSuiteStringUtilsClassName(string $code): string
+    private function normalizeInvoiceSuiteStringUtilsClassName(
+        string $code): string
     {
         $patterns = [
             '~\\\\horstoeko\\\\invoicesuite\\\\utils\\\\InvoiceSuiteStringUtils~',
@@ -309,7 +316,8 @@ CODE
         return [If_::class];
     }
 
-    public function refactor(Node $node): ?Node
+    public function refactor(
+        Node $node): ?Node
     {
         if (!$node instanceof If_) {
             return null;
@@ -329,7 +337,8 @@ CODE
         return $node;
     }
 
-    private function refactorCondition(If_ $if): bool
+    private function refactorCondition(
+        If_ $if): bool
     {
         $nodeFinder = new NodeFinder();
 
@@ -375,7 +384,8 @@ CODE
         return $changed;
     }
 
-    private function updateTraceMethodEarlyExit(If_ $if, string $condAsString): void
+    private function updateTraceMethodEarlyExit(
+        If_ $if, string $condAsString): void
     {
         $nodeFinder = new NodeFinder();
 
@@ -404,7 +414,8 @@ CODE
         }
     }
 
-    private function conditionContainsStringIsNullOrEmpty(If_ $if): bool
+    private function conditionContainsStringIsNullOrEmpty(
+        If_ $if): bool
     {
         $nodeFinder = new NodeFinder();
 
@@ -423,7 +434,8 @@ CODE
         return false;
     }
 
-    private function isInvoiceSuiteStringUtilsClass(StaticCall $staticCall): bool
+    private function isInvoiceSuiteStringUtilsClass(
+        StaticCall $staticCall): bool
     {
         if (!$staticCall->class instanceof Name) {
             return false;
@@ -433,7 +445,8 @@ CODE
             || $this->isName($staticCall->class, 'horstoeko\\invoicesuite\\utils\\InvoiceSuiteStringUtils');
     }
 
-    private function normalizeInvoiceSuiteStringUtilsClassName(string $code): string
+    private function normalizeInvoiceSuiteStringUtilsClassName(
+        string $code): string
     {
         $patterns = [
             '~\\\\horstoeko\\\\invoicesuite\\\\utils\\\\InvoiceSuiteStringUtils~',
@@ -478,7 +491,8 @@ CODE
         return [If_::class];
     }
 
-    public function refactor(Node $node): ?Node
+    public function refactor(
+        Node $node): ?Node
     {
         if (!$node instanceof If_) {
             return null;
@@ -498,7 +512,8 @@ CODE
         return $node;
     }
 
-    private function refactorCondition(If_ $if): bool
+    private function refactorCondition(
+        If_ $if): bool
     {
         $nodeFinder = new NodeFinder();
 
@@ -544,7 +559,8 @@ CODE
         return $changed;
     }
 
-    private function updateTraceMethodEarlyExit(If_ $if, string $condAsString): void
+    private function updateTraceMethodEarlyExit(
+        If_ $if, string $condAsString): void
     {
         $nodeFinder = new NodeFinder();
 
@@ -573,7 +589,8 @@ CODE
         }
     }
 
-    private function conditionContainsDateTimeIsNullOrEmpty(If_ $if): bool
+    private function conditionContainsDateTimeIsNullOrEmpty(
+        If_ $if): bool
     {
         $nodeFinder = new NodeFinder();
 
@@ -592,7 +609,8 @@ CODE
         return false;
     }
 
-    private function isInvoiceSuiteDateTimeUtilsClass(StaticCall $staticCall): bool
+    private function isInvoiceSuiteDateTimeUtilsClass(
+        StaticCall $staticCall): bool
     {
         if (!$staticCall->class instanceof Name) {
             return false;
@@ -602,7 +620,8 @@ CODE
             || $this->isName($staticCall->class, 'horstoeko\\invoicesuite\\utils\\InvoiceSuiteDateTimeUtils');
     }
 
-    private function normalizeInvoiceSuiteDateTimeUtilsClassName(string $code): string
+    private function normalizeInvoiceSuiteDateTimeUtilsClassName(
+        string $code): string
     {
         $patterns = [
             '~\\\\horstoeko\\\\invoicesuite\\\\utils\\\\InvoiceSuiteDateTimeUtils~',
@@ -647,7 +666,8 @@ CODE
         return [If_::class];
     }
 
-    public function refactor(Node $node): ?Node
+    public function refactor(
+        Node $node): ?Node
     {
         if (!$node instanceof If_) {
             return null;
@@ -667,7 +687,8 @@ CODE
         return $node;
     }
 
-    private function refactorCondition(If_ $if): bool
+    private function refactorCondition(
+        If_ $if): bool
     {
         $nodeFinder = new NodeFinder();
 
@@ -713,7 +734,8 @@ CODE
         return $changed;
     }
 
-    private function updateTraceMethodEarlyExit(If_ $if, string $condAsString): void
+    private function updateTraceMethodEarlyExit(
+        If_ $if, string $condAsString): void
     {
         $nodeFinder = new NodeFinder();
 
@@ -742,7 +764,8 @@ CODE
         }
     }
 
-    private function conditionContainsfloatIsNullOrEmpty(If_ $if): bool
+    private function conditionContainsfloatIsNullOrEmpty(
+        If_ $if): bool
     {
         $nodeFinder = new NodeFinder();
 
@@ -761,7 +784,8 @@ CODE
         return false;
     }
 
-    private function isInvoiceSuiteFloatUtilsClass(StaticCall $staticCall): bool
+    private function isInvoiceSuiteFloatUtilsClass(
+        StaticCall $staticCall): bool
     {
         if (!$staticCall->class instanceof Name) {
             return false;
@@ -771,7 +795,8 @@ CODE
             || $this->isName($staticCall->class, 'horstoeko\\invoicesuite\\utils\\InvoiceSuiteFloatUtils');
     }
 
-    private function normalizeInvoiceSuiteFloatUtilsClassName(string $code): string
+    private function normalizeInvoiceSuiteFloatUtilsClassName(
+        string $code): string
     {
         $patterns = [
             '~\\\\horstoeko\\\\invoicesuite\\\\utils\\\\InvoiceSuiteFloatUtils~',

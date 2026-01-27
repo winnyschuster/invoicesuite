@@ -186,8 +186,9 @@ class TelecommunicationsSupplyType
      * @param  null|PrivacyCode $privacyCode
      * @return static
      */
-    public function setPrivacyCode(?PrivacyCode $privacyCode = null): static
-    {
+    public function setPrivacyCode(
+        ?PrivacyCode $privacyCode = null
+    ): static {
         $this->privacyCode = $privacyCode;
 
         return $this;
@@ -215,8 +216,9 @@ class TelecommunicationsSupplyType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -276,8 +278,9 @@ class TelecommunicationsSupplyType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -297,8 +300,9 @@ class TelecommunicationsSupplyType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -346,8 +350,9 @@ class TelecommunicationsSupplyType
      * @param  null|TotalAmount $totalAmount
      * @return static
      */
-    public function setTotalAmount(?TotalAmount $totalAmount = null): static
-    {
+    public function setTotalAmount(
+        ?TotalAmount $totalAmount = null
+    ): static {
         $this->totalAmount = $totalAmount;
 
         return $this;
@@ -375,8 +380,9 @@ class TelecommunicationsSupplyType
      * @param  null|array<TelecommunicationsSupplyLine> $telecommunicationsSupplyLine
      * @return static
      */
-    public function setTelecommunicationsSupplyLine(?array $telecommunicationsSupplyLine = null): static
-    {
+    public function setTelecommunicationsSupplyLine(
+        ?array $telecommunicationsSupplyLine = null
+    ): static {
         $this->telecommunicationsSupplyLine = $telecommunicationsSupplyLine;
 
         return $this;

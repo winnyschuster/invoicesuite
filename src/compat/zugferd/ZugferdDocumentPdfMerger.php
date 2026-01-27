@@ -38,8 +38,10 @@ class ZugferdDocumentPdfMerger extends ZugferdDocumentPdfBuilderAbstract
      * @throws InvoiceSuiteFileNotReadableException
      * @throws InvoiceSuiteFormatProviderNotFoundException
      */
-    public function __construct(string $xmlDataOrFilename, string $pdfData)
-    {
+    public function __construct(
+        string $xmlDataOrFilename,
+        string $pdfData
+    ) {
         $this->setRawDocumentContent(InvoiceSuiteFileUtils::getContentFromFileOrString($xmlDataOrFilename));
         $this->setRawPdfContent(InvoiceSuiteFileUtils::getContentFromFileOrString($pdfData));
 

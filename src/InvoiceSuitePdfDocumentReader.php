@@ -63,8 +63,9 @@ class InvoiceSuitePdfDocumentReader
      * @throws PdfParserException
      * @throws RuntimeException
      */
-    final protected function __construct(string $fromContent)
-    {
+    final protected function __construct(
+        string $fromContent
+    ) {
         $this->resolveAvailableDocumentFormatProviders();
 
         $pdfExtractor = InvoiceSuitePdfExtractor::fromContent($fromContent);
@@ -115,8 +116,9 @@ class InvoiceSuitePdfDocumentReader
      * @throws PdfParserException
      * @throws RuntimeException
      */
-    public static function createFromFile(string $fromFile): static
-    {
+    public static function createFromFile(
+        string $fromFile
+    ): static {
         if (!file_exists($fromFile)) {
             throw new InvoiceSuiteFileNotFoundException($fromFile);
         }
@@ -141,8 +143,9 @@ class InvoiceSuitePdfDocumentReader
      * @throws PdfParserException
      * @throws RuntimeException
      */
-    public static function createFromContent(string $fromContent): static
-    {
+    public static function createFromContent(
+        string $fromContent
+    ): static {
         return new static($fromContent);
     }
 
@@ -182,8 +185,9 @@ class InvoiceSuitePdfDocumentReader
      * @param  InvoiceSuitePdfExtractorAttachment $attachment
      * @return static
      */
-    protected function setInvoiceDocumentAttachment(InvoiceSuitePdfExtractorAttachment $attachment): static
-    {
+    protected function setInvoiceDocumentAttachment(
+        InvoiceSuitePdfExtractorAttachment $attachment
+    ): static {
         $this->invoiceDocumentAttachment = $attachment;
 
         return $this;
@@ -195,8 +199,9 @@ class InvoiceSuitePdfDocumentReader
      * @param  InvoiceSuitePdfExtractorAttachment $attachment
      * @return static
      */
-    protected function addAdditionalDocumentAttachments(InvoiceSuitePdfExtractorAttachment $attachment): static
-    {
+    protected function addAdditionalDocumentAttachments(
+        InvoiceSuitePdfExtractorAttachment $attachment
+    ): static {
         $this->additionalDocumentAttachments[] = $attachment;
 
         return $this;

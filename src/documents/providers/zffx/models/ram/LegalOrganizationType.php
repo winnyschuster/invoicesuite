@@ -68,8 +68,9 @@ class LegalOrganizationType
      * @param  null|IDType $iD
      * @return static
      */
-    public function setID(?IDType $iD = null): static
-    {
+    public function setID(
+        ?IDType $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -107,8 +108,9 @@ class LegalOrganizationType
      * @param  null|TextType $tradingBusinessName
      * @return static
      */
-    public function setTradingBusinessName(?TextType $tradingBusinessName = null): static
-    {
+    public function setTradingBusinessName(
+        ?TextType $tradingBusinessName = null
+    ): static {
         $this->tradingBusinessName = $tradingBusinessName;
 
         return $this;
@@ -146,8 +148,9 @@ class LegalOrganizationType
      * @param  null|TradeAddressType $postalTradeAddress
      * @return static
      */
-    public function setPostalTradeAddress(?TradeAddressType $postalTradeAddress = null): static
-    {
+    public function setPostalTradeAddress(
+        ?TradeAddressType $postalTradeAddress = null
+    ): static {
         $this->postalTradeAddress = $postalTradeAddress;
 
         return $this;

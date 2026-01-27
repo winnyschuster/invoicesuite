@@ -37,8 +37,9 @@ class AnimalFoodIndicator
      * @param  null|bool $value
      * @return static
      */
-    public function setValue(?bool $value = null): static
-    {
+    public function setValue(
+        ?bool $value = null
+    ): static {
         $this->value = $value;
 
         return $this;

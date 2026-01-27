@@ -117,8 +117,9 @@ class InvoiceSuiteAddressDTO
      * @param  null|string $addressLine1 Address line 1
      * @return static
      */
-    public function setAddressLine1(?string $addressLine1): static
-    {
+    public function setAddressLine1(
+        ?string $addressLine1
+    ): static {
         $this->addressLine1 = InvoiceSuiteStringUtils::asNullWhenEmpty($addressLine1);
 
         return $this;
@@ -140,8 +141,9 @@ class InvoiceSuiteAddressDTO
      * @param  null|string $addressLine2 Address line 2
      * @return static
      */
-    public function setAddressLine2(?string $addressLine2): static
-    {
+    public function setAddressLine2(
+        ?string $addressLine2
+    ): static {
         $this->addressLine2 = InvoiceSuiteStringUtils::asNullWhenEmpty($addressLine2);
 
         return $this;
@@ -163,8 +165,9 @@ class InvoiceSuiteAddressDTO
      * @param  null|string $addressLine3 Address line 3
      * @return static
      */
-    public function setAddressLine3(?string $addressLine3): static
-    {
+    public function setAddressLine3(
+        ?string $addressLine3
+    ): static {
         $this->addressLine3 = InvoiceSuiteStringUtils::asNullWhenEmpty($addressLine3);
 
         return $this;
@@ -186,8 +189,9 @@ class InvoiceSuiteAddressDTO
      * @param  null|string $postcode Post Code / ZIP Code
      * @return static
      */
-    public function setPostcode(?string $postcode): static
-    {
+    public function setPostcode(
+        ?string $postcode
+    ): static {
         $this->postcode = InvoiceSuiteStringUtils::asNullWhenEmpty($postcode);
 
         return $this;
@@ -209,8 +213,9 @@ class InvoiceSuiteAddressDTO
      * @param  null|string $city City
      * @return static
      */
-    public function setCity(?string $city): static
-    {
+    public function setCity(
+        ?string $city
+    ): static {
         $this->city = InvoiceSuiteStringUtils::asNullWhenEmpty($city);
 
         return $this;
@@ -232,8 +237,9 @@ class InvoiceSuiteAddressDTO
      * @param  null|string $country Country
      * @return static
      */
-    public function setCountry(?string $country): static
-    {
+    public function setCountry(
+        ?string $country
+    ): static {
         $this->country = InvoiceSuiteStringUtils::asNullWhenEmpty($country);
 
         return $this;
@@ -255,8 +261,9 @@ class InvoiceSuiteAddressDTO
      * @param  null|string $subDivision Subdivision
      * @return static
      */
-    public function setSubDivision(?string $subDivision): static
-    {
+    public function setSubDivision(
+        ?string $subDivision
+    ): static {
         $this->subDivision = InvoiceSuiteStringUtils::asNullWhenEmpty($subDivision);
 
         return $this;

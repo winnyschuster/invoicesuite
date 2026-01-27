@@ -189,8 +189,9 @@ class MeterReadingType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -228,8 +229,9 @@ class MeterReadingType
      * @param  null|MeterReadingType1 $meterReadingType
      * @return static
      */
-    public function setMeterReadingType(?MeterReadingType1 $meterReadingType = null): static
-    {
+    public function setMeterReadingType(
+        ?MeterReadingType1 $meterReadingType = null
+    ): static {
         $this->meterReadingType = $meterReadingType;
 
         return $this;
@@ -267,8 +269,9 @@ class MeterReadingType
      * @param  null|MeterReadingTypeCode $meterReadingTypeCode
      * @return static
      */
-    public function setMeterReadingTypeCode(?MeterReadingTypeCode $meterReadingTypeCode = null): static
-    {
+    public function setMeterReadingTypeCode(
+        ?MeterReadingTypeCode $meterReadingTypeCode = null
+    ): static {
         $this->meterReadingTypeCode = $meterReadingTypeCode;
 
         return $this;
@@ -296,8 +299,9 @@ class MeterReadingType
      * @param  null|DateTimeInterface $previousMeterReadingDate
      * @return static
      */
-    public function setPreviousMeterReadingDate(?DateTimeInterface $previousMeterReadingDate = null): static
-    {
+    public function setPreviousMeterReadingDate(
+        ?DateTimeInterface $previousMeterReadingDate = null
+    ): static {
         $this->previousMeterReadingDate = $previousMeterReadingDate;
 
         return $this;
@@ -335,8 +339,9 @@ class MeterReadingType
      * @param  null|PreviousMeterQuantity $previousMeterQuantity
      * @return static
      */
-    public function setPreviousMeterQuantity(?PreviousMeterQuantity $previousMeterQuantity = null): static
-    {
+    public function setPreviousMeterQuantity(
+        ?PreviousMeterQuantity $previousMeterQuantity = null
+    ): static {
         $this->previousMeterQuantity = $previousMeterQuantity;
 
         return $this;
@@ -364,8 +369,9 @@ class MeterReadingType
      * @param  null|DateTimeInterface $latestMeterReadingDate
      * @return static
      */
-    public function setLatestMeterReadingDate(?DateTimeInterface $latestMeterReadingDate = null): static
-    {
+    public function setLatestMeterReadingDate(
+        ?DateTimeInterface $latestMeterReadingDate = null
+    ): static {
         $this->latestMeterReadingDate = $latestMeterReadingDate;
 
         return $this;
@@ -403,8 +409,9 @@ class MeterReadingType
      * @param  null|LatestMeterQuantity $latestMeterQuantity
      * @return static
      */
-    public function setLatestMeterQuantity(?LatestMeterQuantity $latestMeterQuantity = null): static
-    {
+    public function setLatestMeterQuantity(
+        ?LatestMeterQuantity $latestMeterQuantity = null
+    ): static {
         $this->latestMeterQuantity = $latestMeterQuantity;
 
         return $this;
@@ -522,8 +529,9 @@ class MeterReadingType
      * @param  null|LatestMeterReadingMethod $latestMeterReadingMethod
      * @return static
      */
-    public function setLatestMeterReadingMethod(?LatestMeterReadingMethod $latestMeterReadingMethod = null): static
-    {
+    public function setLatestMeterReadingMethod(
+        ?LatestMeterReadingMethod $latestMeterReadingMethod = null
+    ): static {
         $this->latestMeterReadingMethod = $latestMeterReadingMethod;
 
         return $this;
@@ -591,8 +599,9 @@ class MeterReadingType
      * @param  null|array<MeterReadingComments> $meterReadingComments
      * @return static
      */
-    public function setMeterReadingComments(?array $meterReadingComments = null): static
-    {
+    public function setMeterReadingComments(
+        ?array $meterReadingComments = null
+    ): static {
         $this->meterReadingComments = $meterReadingComments;
 
         return $this;
@@ -652,8 +661,9 @@ class MeterReadingType
      * @param  MeterReadingComments $meterReadingComments
      * @return static
      */
-    public function addToMeterReadingComments(MeterReadingComments $meterReadingComments): static
-    {
+    public function addToMeterReadingComments(
+        MeterReadingComments $meterReadingComments
+    ): static {
         $this->meterReadingComments[] = $meterReadingComments;
 
         return $this;
@@ -673,8 +683,9 @@ class MeterReadingType
      * @param  MeterReadingComments $meterReadingComments
      * @return static
      */
-    public function addOnceToMeterReadingComments(MeterReadingComments $meterReadingComments): static
-    {
+    public function addOnceToMeterReadingComments(
+        MeterReadingComments $meterReadingComments
+    ): static {
         if (!is_array($this->meterReadingComments)) {
             $this->meterReadingComments = [];
         }
@@ -722,8 +733,9 @@ class MeterReadingType
      * @param  null|DeliveredQuantity $deliveredQuantity
      * @return static
      */
-    public function setDeliveredQuantity(?DeliveredQuantity $deliveredQuantity = null): static
-    {
+    public function setDeliveredQuantity(
+        ?DeliveredQuantity $deliveredQuantity = null
+    ): static {
         $this->deliveredQuantity = $deliveredQuantity;
 
         return $this;

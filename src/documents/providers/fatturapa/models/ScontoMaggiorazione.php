@@ -64,8 +64,9 @@ final class ScontoMaggiorazione
      * @param  null|TipoScontoMaggiorazione $tipo
      * @return static
      */
-    public function setTipo(?TipoScontoMaggiorazione $tipo = null): static
-    {
+    public function setTipo(
+        ?TipoScontoMaggiorazione $tipo = null
+    ): static {
         $this->tipo = $tipo;
 
         return $this;
@@ -99,8 +100,9 @@ final class ScontoMaggiorazione
      * @param  null|float $percentuale
      * @return static
      */
-    public function setPercentuale(?float $percentuale = null): static
-    {
+    public function setPercentuale(
+        ?float $percentuale = null
+    ): static {
         $this->percentuale = $percentuale;
 
         return $this;
@@ -134,8 +136,9 @@ final class ScontoMaggiorazione
      * @param  null|float $importo
      * @return static
      */
-    public function setImporto(?float $importo = null): static
-    {
+    public function setImporto(
+        ?float $importo = null
+    ): static {
         $this->importo = $importo;
 
         return $this;

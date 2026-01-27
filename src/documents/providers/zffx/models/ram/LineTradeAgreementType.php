@@ -265,8 +265,9 @@ class LineTradeAgreementType
      * @param  null|ReferencedDocumentType $quotationReferencedDocument
      * @return static
      */
-    public function setQuotationReferencedDocument(?ReferencedDocumentType $quotationReferencedDocument = null): static
-    {
+    public function setQuotationReferencedDocument(
+        ?ReferencedDocumentType $quotationReferencedDocument = null
+    ): static {
         $this->quotationReferencedDocument = $quotationReferencedDocument;
 
         return $this;
@@ -304,8 +305,9 @@ class LineTradeAgreementType
      * @param  null|ReferencedDocumentType $contractReferencedDocument
      * @return static
      */
-    public function setContractReferencedDocument(?ReferencedDocumentType $contractReferencedDocument = null): static
-    {
+    public function setContractReferencedDocument(
+        ?ReferencedDocumentType $contractReferencedDocument = null
+    ): static {
         $this->contractReferencedDocument = $contractReferencedDocument;
 
         return $this;
@@ -333,8 +335,9 @@ class LineTradeAgreementType
      * @param  null|array<ReferencedDocumentType> $additionalReferencedDocument
      * @return static
      */
-    public function setAdditionalReferencedDocument(?array $additionalReferencedDocument = null): static
-    {
+    public function setAdditionalReferencedDocument(
+        ?array $additionalReferencedDocument = null
+    ): static {
         $this->additionalReferencedDocument = $additionalReferencedDocument;
 
         return $this;
@@ -364,8 +367,9 @@ class LineTradeAgreementType
      * @param  ReferencedDocumentType $additionalReferencedDocument
      * @return static
      */
-    public function addToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): static
-    {
+    public function addToAdditionalReferencedDocument(
+        ReferencedDocumentType $additionalReferencedDocument
+    ): static {
         $this->additionalReferencedDocument[] = $additionalReferencedDocument;
 
         return $this;
@@ -385,8 +389,9 @@ class LineTradeAgreementType
      * @param  ReferencedDocumentType $additionalReferencedDocument
      * @return static
      */
-    public function addOnceToAdditionalReferencedDocument(ReferencedDocumentType $additionalReferencedDocument): static
-    {
+    public function addOnceToAdditionalReferencedDocument(
+        ReferencedDocumentType $additionalReferencedDocument
+    ): static {
         if (!is_array($this->additionalReferencedDocument)) {
             $this->additionalReferencedDocument = [];
         }
@@ -434,8 +439,9 @@ class LineTradeAgreementType
      * @param  null|TradePriceType $grossPriceProductTradePrice
      * @return static
      */
-    public function setGrossPriceProductTradePrice(?TradePriceType $grossPriceProductTradePrice = null): static
-    {
+    public function setGrossPriceProductTradePrice(
+        ?TradePriceType $grossPriceProductTradePrice = null
+    ): static {
         $this->grossPriceProductTradePrice = $grossPriceProductTradePrice;
 
         return $this;
@@ -473,8 +479,9 @@ class LineTradeAgreementType
      * @param  null|TradePriceType $netPriceProductTradePrice
      * @return static
      */
-    public function setNetPriceProductTradePrice(?TradePriceType $netPriceProductTradePrice = null): static
-    {
+    public function setNetPriceProductTradePrice(
+        ?TradePriceType $netPriceProductTradePrice = null
+    ): static {
         $this->netPriceProductTradePrice = $netPriceProductTradePrice;
 
         return $this;
@@ -512,8 +519,9 @@ class LineTradeAgreementType
      * @param  null|TradePartyType $itemSellerTradeParty
      * @return static
      */
-    public function setItemSellerTradeParty(?TradePartyType $itemSellerTradeParty = null): static
-    {
+    public function setItemSellerTradeParty(
+        ?TradePartyType $itemSellerTradeParty = null
+    ): static {
         $this->itemSellerTradeParty = $itemSellerTradeParty;
 
         return $this;

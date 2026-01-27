@@ -223,8 +223,9 @@ class RequestForTenderLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -262,8 +263,9 @@ class RequestForTenderLineType
      * @param  null|UUID $uUID
      * @return static
      */
-    public function setUUID(?UUID $uUID = null): static
-    {
+    public function setUUID(
+        ?UUID $uUID = null
+    ): static {
         $this->uUID = $uUID;
 
         return $this;
@@ -291,8 +293,9 @@ class RequestForTenderLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -352,8 +355,9 @@ class RequestForTenderLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -373,8 +377,9 @@ class RequestForTenderLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -422,8 +427,9 @@ class RequestForTenderLineType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -461,8 +467,9 @@ class RequestForTenderLineType
      * @param  null|MinimumQuantity $minimumQuantity
      * @return static
      */
-    public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): static
-    {
+    public function setMinimumQuantity(
+        ?MinimumQuantity $minimumQuantity = null
+    ): static {
         $this->minimumQuantity = $minimumQuantity;
 
         return $this;
@@ -500,8 +507,9 @@ class RequestForTenderLineType
      * @param  null|MaximumQuantity $maximumQuantity
      * @return static
      */
-    public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): static
-    {
+    public function setMaximumQuantity(
+        ?MaximumQuantity $maximumQuantity = null
+    ): static {
         $this->maximumQuantity = $maximumQuantity;
 
         return $this;
@@ -529,8 +537,9 @@ class RequestForTenderLineType
      * @param  null|bool $taxIncludedIndicator
      * @return static
      */
-    public function setTaxIncludedIndicator(?bool $taxIncludedIndicator = null): static
-    {
+    public function setTaxIncludedIndicator(
+        ?bool $taxIncludedIndicator = null
+    ): static {
         $this->taxIncludedIndicator = $taxIncludedIndicator;
 
         return $this;
@@ -568,8 +577,9 @@ class RequestForTenderLineType
      * @param  null|MinimumAmount $minimumAmount
      * @return static
      */
-    public function setMinimumAmount(?MinimumAmount $minimumAmount = null): static
-    {
+    public function setMinimumAmount(
+        ?MinimumAmount $minimumAmount = null
+    ): static {
         $this->minimumAmount = $minimumAmount;
 
         return $this;
@@ -607,8 +617,9 @@ class RequestForTenderLineType
      * @param  null|MaximumAmount $maximumAmount
      * @return static
      */
-    public function setMaximumAmount(?MaximumAmount $maximumAmount = null): static
-    {
+    public function setMaximumAmount(
+        ?MaximumAmount $maximumAmount = null
+    ): static {
         $this->maximumAmount = $maximumAmount;
 
         return $this;
@@ -646,8 +657,9 @@ class RequestForTenderLineType
      * @param  null|EstimatedAmount $estimatedAmount
      * @return static
      */
-    public function setEstimatedAmount(?EstimatedAmount $estimatedAmount = null): static
-    {
+    public function setEstimatedAmount(
+        ?EstimatedAmount $estimatedAmount = null
+    ): static {
         $this->estimatedAmount = $estimatedAmount;
 
         return $this;
@@ -675,8 +687,9 @@ class RequestForTenderLineType
      * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?array $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;
@@ -736,8 +749,9 @@ class RequestForTenderLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         $this->documentReference[] = $documentReference;
 
         return $this;
@@ -757,8 +771,9 @@ class RequestForTenderLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addOnceToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
         }
@@ -796,8 +811,9 @@ class RequestForTenderLineType
      * @param  null|array<DeliveryPeriod> $deliveryPeriod
      * @return static
      */
-    public function setDeliveryPeriod(?array $deliveryPeriod = null): static
-    {
+    public function setDeliveryPeriod(
+        ?array $deliveryPeriod = null
+    ): static {
         $this->deliveryPeriod = $deliveryPeriod;
 
         return $this;
@@ -857,8 +873,9 @@ class RequestForTenderLineType
      * @param  DeliveryPeriod $deliveryPeriod
      * @return static
      */
-    public function addToDeliveryPeriod(DeliveryPeriod $deliveryPeriod): static
-    {
+    public function addToDeliveryPeriod(
+        DeliveryPeriod $deliveryPeriod
+    ): static {
         $this->deliveryPeriod[] = $deliveryPeriod;
 
         return $this;
@@ -878,8 +895,9 @@ class RequestForTenderLineType
      * @param  DeliveryPeriod $deliveryPeriod
      * @return static
      */
-    public function addOnceToDeliveryPeriod(DeliveryPeriod $deliveryPeriod): static
-    {
+    public function addOnceToDeliveryPeriod(
+        DeliveryPeriod $deliveryPeriod
+    ): static {
         if (!is_array($this->deliveryPeriod)) {
             $this->deliveryPeriod = [];
         }
@@ -917,8 +935,9 @@ class RequestForTenderLineType
      * @param  null|array<RequiredItemLocationQuantity> $requiredItemLocationQuantity
      * @return static
      */
-    public function setRequiredItemLocationQuantity(?array $requiredItemLocationQuantity = null): static
-    {
+    public function setRequiredItemLocationQuantity(
+        ?array $requiredItemLocationQuantity = null
+    ): static {
         $this->requiredItemLocationQuantity = $requiredItemLocationQuantity;
 
         return $this;
@@ -1050,8 +1069,9 @@ class RequestForTenderLineType
      * @param  null|WarrantyValidityPeriod $warrantyValidityPeriod
      * @return static
      */
-    public function setWarrantyValidityPeriod(?WarrantyValidityPeriod $warrantyValidityPeriod = null): static
-    {
+    public function setWarrantyValidityPeriod(
+        ?WarrantyValidityPeriod $warrantyValidityPeriod = null
+    ): static {
         $this->warrantyValidityPeriod = $warrantyValidityPeriod;
 
         return $this;
@@ -1089,8 +1109,9 @@ class RequestForTenderLineType
      * @param  null|Item $item
      * @return static
      */
-    public function setItem(?Item $item = null): static
-    {
+    public function setItem(
+        ?Item $item = null
+    ): static {
         $this->item = $item;
 
         return $this;
@@ -1118,8 +1139,9 @@ class RequestForTenderLineType
      * @param  null|array<SubRequestForTenderLine> $subRequestForTenderLine
      * @return static
      */
-    public function setSubRequestForTenderLine(?array $subRequestForTenderLine = null): static
-    {
+    public function setSubRequestForTenderLine(
+        ?array $subRequestForTenderLine = null
+    ): static {
         $this->subRequestForTenderLine = $subRequestForTenderLine;
 
         return $this;
@@ -1179,8 +1201,9 @@ class RequestForTenderLineType
      * @param  SubRequestForTenderLine $subRequestForTenderLine
      * @return static
      */
-    public function addToSubRequestForTenderLine(SubRequestForTenderLine $subRequestForTenderLine): static
-    {
+    public function addToSubRequestForTenderLine(
+        SubRequestForTenderLine $subRequestForTenderLine
+    ): static {
         $this->subRequestForTenderLine[] = $subRequestForTenderLine;
 
         return $this;
@@ -1200,8 +1223,9 @@ class RequestForTenderLineType
      * @param  SubRequestForTenderLine $subRequestForTenderLine
      * @return static
      */
-    public function addOnceToSubRequestForTenderLine(SubRequestForTenderLine $subRequestForTenderLine): static
-    {
+    public function addOnceToSubRequestForTenderLine(
+        SubRequestForTenderLine $subRequestForTenderLine
+    ): static {
         if (!is_array($this->subRequestForTenderLine)) {
             $this->subRequestForTenderLine = [];
         }

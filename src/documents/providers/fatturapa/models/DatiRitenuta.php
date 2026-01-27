@@ -77,8 +77,9 @@ final class DatiRitenuta
      * @param  null|TipoRitenuta $tipoRitenuta
      * @return static
      */
-    public function setTipoRitenuta(?TipoRitenuta $tipoRitenuta = null): static
-    {
+    public function setTipoRitenuta(
+        ?TipoRitenuta $tipoRitenuta = null
+    ): static {
         $this->tipoRitenuta = $tipoRitenuta;
 
         return $this;
@@ -112,8 +113,9 @@ final class DatiRitenuta
      * @param  null|float $importoRitenuta
      * @return static
      */
-    public function setImportoRitenuta(?float $importoRitenuta = null): static
-    {
+    public function setImportoRitenuta(
+        ?float $importoRitenuta = null
+    ): static {
         $this->importoRitenuta = $importoRitenuta;
 
         return $this;
@@ -147,8 +149,9 @@ final class DatiRitenuta
      * @param  null|float $aliquotaRitenuta
      * @return static
      */
-    public function setAliquotaRitenuta(?float $aliquotaRitenuta = null): static
-    {
+    public function setAliquotaRitenuta(
+        ?float $aliquotaRitenuta = null
+    ): static {
         $this->aliquotaRitenuta = $aliquotaRitenuta;
 
         return $this;
@@ -182,8 +185,9 @@ final class DatiRitenuta
      * @param  null|CausalePagamento $causalePagamento
      * @return static
      */
-    public function setCausalePagamento(?CausalePagamento $causalePagamento = null): static
-    {
+    public function setCausalePagamento(
+        ?CausalePagamento $causalePagamento = null
+    ): static {
         $this->causalePagamento = $causalePagamento;
 
         return $this;

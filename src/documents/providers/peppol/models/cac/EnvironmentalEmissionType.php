@@ -122,8 +122,9 @@ class EnvironmentalEmissionType
      * @param  null|ValueMeasure $valueMeasure
      * @return static
      */
-    public function setValueMeasure(?ValueMeasure $valueMeasure = null): static
-    {
+    public function setValueMeasure(
+        ?ValueMeasure $valueMeasure = null
+    ): static {
         $this->valueMeasure = $valueMeasure;
 
         return $this;
@@ -151,8 +152,9 @@ class EnvironmentalEmissionType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -212,8 +214,9 @@ class EnvironmentalEmissionType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -233,8 +236,9 @@ class EnvironmentalEmissionType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -272,8 +276,9 @@ class EnvironmentalEmissionType
      * @param  null|array<EmissionCalculationMethod> $emissionCalculationMethod
      * @return static
      */
-    public function setEmissionCalculationMethod(?array $emissionCalculationMethod = null): static
-    {
+    public function setEmissionCalculationMethod(
+        ?array $emissionCalculationMethod = null
+    ): static {
         $this->emissionCalculationMethod = $emissionCalculationMethod;
 
         return $this;
@@ -333,8 +338,9 @@ class EnvironmentalEmissionType
      * @param  EmissionCalculationMethod $emissionCalculationMethod
      * @return static
      */
-    public function addToEmissionCalculationMethod(EmissionCalculationMethod $emissionCalculationMethod): static
-    {
+    public function addToEmissionCalculationMethod(
+        EmissionCalculationMethod $emissionCalculationMethod
+    ): static {
         $this->emissionCalculationMethod[] = $emissionCalculationMethod;
 
         return $this;
@@ -354,8 +360,9 @@ class EnvironmentalEmissionType
      * @param  EmissionCalculationMethod $emissionCalculationMethod
      * @return static
      */
-    public function addOnceToEmissionCalculationMethod(EmissionCalculationMethod $emissionCalculationMethod): static
-    {
+    public function addOnceToEmissionCalculationMethod(
+        EmissionCalculationMethod $emissionCalculationMethod
+    ): static {
         if (!is_array($this->emissionCalculationMethod)) {
             $this->emissionCalculationMethod = [];
         }

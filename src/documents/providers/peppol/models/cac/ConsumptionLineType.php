@@ -161,8 +161,9 @@ class ConsumptionLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -240,8 +241,9 @@ class ConsumptionLineType
      * @param  null|InvoicedQuantity $invoicedQuantity
      * @return static
      */
-    public function setInvoicedQuantity(?InvoicedQuantity $invoicedQuantity = null): static
-    {
+    public function setInvoicedQuantity(
+        ?InvoicedQuantity $invoicedQuantity = null
+    ): static {
         $this->invoicedQuantity = $invoicedQuantity;
 
         return $this;
@@ -279,8 +281,9 @@ class ConsumptionLineType
      * @param  null|LineExtensionAmount $lineExtensionAmount
      * @return static
      */
-    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
-    {
+    public function setLineExtensionAmount(
+        ?LineExtensionAmount $lineExtensionAmount = null
+    ): static {
         $this->lineExtensionAmount = $lineExtensionAmount;
 
         return $this;
@@ -318,8 +321,9 @@ class ConsumptionLineType
      * @param  null|Period $period
      * @return static
      */
-    public function setPeriod(?Period $period = null): static
-    {
+    public function setPeriod(
+        ?Period $period = null
+    ): static {
         $this->period = $period;
 
         return $this;
@@ -347,8 +351,9 @@ class ConsumptionLineType
      * @param  null|array<Delivery> $delivery
      * @return static
      */
-    public function setDelivery(?array $delivery = null): static
-    {
+    public function setDelivery(
+        ?array $delivery = null
+    ): static {
         $this->delivery = $delivery;
 
         return $this;
@@ -408,8 +413,9 @@ class ConsumptionLineType
      * @param  Delivery $delivery
      * @return static
      */
-    public function addToDelivery(Delivery $delivery): static
-    {
+    public function addToDelivery(
+        Delivery $delivery
+    ): static {
         $this->delivery[] = $delivery;
 
         return $this;
@@ -429,8 +435,9 @@ class ConsumptionLineType
      * @param  Delivery $delivery
      * @return static
      */
-    public function addOnceToDelivery(Delivery $delivery): static
-    {
+    public function addOnceToDelivery(
+        Delivery $delivery
+    ): static {
         if (!is_array($this->delivery)) {
             $this->delivery = [];
         }
@@ -468,8 +475,9 @@ class ConsumptionLineType
      * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): static
-    {
+    public function setAllowanceCharge(
+        ?array $allowanceCharge = null
+    ): static {
         $this->allowanceCharge = $allowanceCharge;
 
         return $this;
@@ -529,8 +537,9 @@ class ConsumptionLineType
      * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
-    {
+    public function addToAllowanceCharge(
+        AllowanceCharge $allowanceCharge
+    ): static {
         $this->allowanceCharge[] = $allowanceCharge;
 
         return $this;
@@ -550,8 +559,9 @@ class ConsumptionLineType
      * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
-    {
+    public function addOnceToAllowanceCharge(
+        AllowanceCharge $allowanceCharge
+    ): static {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];
         }
@@ -589,8 +599,9 @@ class ConsumptionLineType
      * @param  null|array<TaxTotal> $taxTotal
      * @return static
      */
-    public function setTaxTotal(?array $taxTotal = null): static
-    {
+    public function setTaxTotal(
+        ?array $taxTotal = null
+    ): static {
         $this->taxTotal = $taxTotal;
 
         return $this;
@@ -650,8 +661,9 @@ class ConsumptionLineType
      * @param  TaxTotal $taxTotal
      * @return static
      */
-    public function addToTaxTotal(TaxTotal $taxTotal): static
-    {
+    public function addToTaxTotal(
+        TaxTotal $taxTotal
+    ): static {
         $this->taxTotal[] = $taxTotal;
 
         return $this;
@@ -671,8 +683,9 @@ class ConsumptionLineType
      * @param  TaxTotal $taxTotal
      * @return static
      */
-    public function addOnceToTaxTotal(TaxTotal $taxTotal): static
-    {
+    public function addOnceToTaxTotal(
+        TaxTotal $taxTotal
+    ): static {
         if (!is_array($this->taxTotal)) {
             $this->taxTotal = [];
         }
@@ -720,8 +733,9 @@ class ConsumptionLineType
      * @param  null|UtilityItem $utilityItem
      * @return static
      */
-    public function setUtilityItem(?UtilityItem $utilityItem = null): static
-    {
+    public function setUtilityItem(
+        ?UtilityItem $utilityItem = null
+    ): static {
         $this->utilityItem = $utilityItem;
 
         return $this;
@@ -759,8 +773,9 @@ class ConsumptionLineType
      * @param  null|Price $price
      * @return static
      */
-    public function setPrice(?Price $price = null): static
-    {
+    public function setPrice(
+        ?Price $price = null
+    ): static {
         $this->price = $price;
 
         return $this;
@@ -798,8 +813,9 @@ class ConsumptionLineType
      * @param  null|UnstructuredPrice $unstructuredPrice
      * @return static
      */
-    public function setUnstructuredPrice(?UnstructuredPrice $unstructuredPrice = null): static
-    {
+    public function setUnstructuredPrice(
+        ?UnstructuredPrice $unstructuredPrice = null
+    ): static {
         $this->unstructuredPrice = $unstructuredPrice;
 
         return $this;

@@ -55,8 +55,9 @@ class InvoiceSuiteDocumentReader
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    final protected function __construct(string $fromContent)
-    {
+    final protected function __construct(
+        string $fromContent
+    ) {
         $this->resolveAvailableDocumentFormatProviders();
 
         $formatProviders = array_filter(
@@ -87,8 +88,10 @@ class InvoiceSuiteDocumentReader
      * @throws Error
      * @throws InvoiceSuiteBadMethodCallException
      */
-    public function __call($method, $parameters)
-    {
+    public function __call(
+        $method,
+        $parameters
+    ) {
         return $this->forwardCallWithCheckTo($this->getCurrentDocumentFormatProvider()->getReader(), $method, $parameters);
     }
 
@@ -104,8 +107,9 @@ class InvoiceSuiteDocumentReader
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    public static function createFromFile(string $fromFile): static
-    {
+    public static function createFromFile(
+        string $fromFile
+    ): static {
         if (!file_exists($fromFile)) {
             throw new InvoiceSuiteFileNotFoundException($fromFile);
         }
@@ -129,8 +133,9 @@ class InvoiceSuiteDocumentReader
      * @throws InvoiceSuiteUnknownContentException
      * @throws RuntimeException
      */
-    public static function createFromContent(string $fromContent): static
-    {
+    public static function createFromContent(
+        string $fromContent
+    ): static {
         return new static($fromContent);
     }
 
@@ -180,8 +185,9 @@ class InvoiceSuiteDocumentReader
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function hasMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): bool
-    {
+    public function hasMessagesInMessageBagBySeverity(
+        InvoiceSuiteMessageSeverity $filterSeverity
+    ): bool {
         return $this->getCurrentDocumentFormatProvider()->getReader()->hasMessagesInMessageBagBySeverity($filterSeverity);
     }
 
@@ -229,8 +235,9 @@ class InvoiceSuiteDocumentReader
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function countMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): int
-    {
+    public function countMessagesInMessageBagBySeverity(
+        InvoiceSuiteMessageSeverity $filterSeverity
+    ): int {
         return $this->getCurrentDocumentFormatProvider()->getReader()->countMessagesInMessageBagBySeverity($filterSeverity);
     }
 
@@ -278,8 +285,9 @@ class InvoiceSuiteDocumentReader
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function getMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): array
-    {
+    public function getMessagesInMessageBagBySeverity(
+        InvoiceSuiteMessageSeverity $filterSeverity
+    ): array {
         return $this->getCurrentDocumentFormatProvider()->getReader()->getMessagesInMessageBagBySeverity($filterSeverity);
     }
 

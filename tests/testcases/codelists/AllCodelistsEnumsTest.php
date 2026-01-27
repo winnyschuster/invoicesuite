@@ -60,8 +60,12 @@ final class AllCodelistsEnumsTest extends TestCase
      *
      * @dataProvider provideExpectedOrder
      */
-    public function testOrderAndValuesAreStable(string $enumClass, int $index, string $expectedName, $expectedValue = null): void
-    {
+    public function testOrderAndValuesAreStable(
+        string $enumClass,
+        int $index,
+        string $expectedName,
+        $expectedValue = null
+    ): void {
         $this->assertSame($expectedName, $enumClass::cases()[$index]->name);
         $this->assertSame($expectedValue, $enumClass::cases()[$index]->value);
     }
@@ -5448,8 +5452,10 @@ final class AllCodelistsEnumsTest extends TestCase
      *
      * @dataProvider provideValidValues
      */
-    public function testFromAndTryFromRoundtrip(string $enumClass, $value): void
-    {
+    public function testFromAndTryFromRoundtrip(
+        string $enumClass,
+        $value
+    ): void {
         $this->assertInstanceOf($enumClass, $enumClass::from($value));
         $this->assertSame($value, $enumClass::from($value)->value);
         $this->assertSame($enumClass::from($value), $enumClass::tryFrom($value));
@@ -5519,8 +5525,10 @@ final class AllCodelistsEnumsTest extends TestCase
      *
      * @dataProvider provideInvalidValues
      */
-    public function testInvalidValues(string $enumClass, $invalid): void
-    {
+    public function testInvalidValues(
+        string $enumClass,
+        $invalid
+    ): void {
         $this->assertNull($enumClass::tryFrom($invalid));
 
         $this->expectException(ValueError::class);

@@ -138,8 +138,9 @@ final class DatiAnagraficiCedente
      * @param  null|IdFiscale $idFiscaleIVA
      * @return static
      */
-    public function setIdFiscaleIVA(?IdFiscale $idFiscaleIVA = null): static
-    {
+    public function setIdFiscaleIVA(
+        ?IdFiscale $idFiscaleIVA = null
+    ): static {
         $this->idFiscaleIVA = $idFiscaleIVA;
 
         return $this;
@@ -173,8 +174,9 @@ final class DatiAnagraficiCedente
      * @param  null|string $codiceFiscale
      * @return static
      */
-    public function setCodiceFiscale(?string $codiceFiscale = null): static
-    {
+    public function setCodiceFiscale(
+        ?string $codiceFiscale = null
+    ): static {
         $this->codiceFiscale = InvoiceSuiteStringUtils::asNullWhenEmpty($codiceFiscale);
 
         return $this;
@@ -220,8 +222,9 @@ final class DatiAnagraficiCedente
      * @param  null|Anagrafica $anagrafica
      * @return static
      */
-    public function setAnagrafica(?Anagrafica $anagrafica = null): static
-    {
+    public function setAnagrafica(
+        ?Anagrafica $anagrafica = null
+    ): static {
         $this->anagrafica = $anagrafica;
 
         return $this;
@@ -255,8 +258,9 @@ final class DatiAnagraficiCedente
      * @param  null|string $alboProfessionale
      * @return static
      */
-    public function setAlboProfessionale(?string $alboProfessionale = null): static
-    {
+    public function setAlboProfessionale(
+        ?string $alboProfessionale = null
+    ): static {
         $this->alboProfessionale = InvoiceSuiteStringUtils::asNullWhenEmpty($alboProfessionale);
 
         return $this;
@@ -290,8 +294,9 @@ final class DatiAnagraficiCedente
      * @param  null|string $provinciaAlbo
      * @return static
      */
-    public function setProvinciaAlbo(?string $provinciaAlbo = null): static
-    {
+    public function setProvinciaAlbo(
+        ?string $provinciaAlbo = null
+    ): static {
         $this->provinciaAlbo = InvoiceSuiteStringUtils::asNullWhenEmpty($provinciaAlbo);
 
         return $this;
@@ -325,8 +330,9 @@ final class DatiAnagraficiCedente
      * @param  null|string $numeroIscrizioneAlbo
      * @return static
      */
-    public function setNumeroIscrizioneAlbo(?string $numeroIscrizioneAlbo = null): static
-    {
+    public function setNumeroIscrizioneAlbo(
+        ?string $numeroIscrizioneAlbo = null
+    ): static {
         $this->numeroIscrizioneAlbo = InvoiceSuiteStringUtils::asNullWhenEmpty($numeroIscrizioneAlbo);
 
         return $this;
@@ -360,8 +366,9 @@ final class DatiAnagraficiCedente
      * @param  null|DateTimeInterface $dataIscrizioneAlbo
      * @return static
      */
-    public function setDataIscrizioneAlbo(?DateTimeInterface $dataIscrizioneAlbo = null): static
-    {
+    public function setDataIscrizioneAlbo(
+        ?DateTimeInterface $dataIscrizioneAlbo = null
+    ): static {
         $this->dataIscrizioneAlbo = $dataIscrizioneAlbo;
 
         return $this;
@@ -395,8 +402,9 @@ final class DatiAnagraficiCedente
      * @param  null|RegimeFiscale $regimeFiscale
      * @return static
      */
-    public function setRegimeFiscale(?RegimeFiscale $regimeFiscale = null): static
-    {
+    public function setRegimeFiscale(
+        ?RegimeFiscale $regimeFiscale = null
+    ): static {
         $this->regimeFiscale = $regimeFiscale;
 
         return $this;

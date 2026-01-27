@@ -58,8 +58,9 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
      * @throws InvoiceSuiteFileNotReadableException
      * @throws PdfParserException
      */
-    public static function fromFile(string $pdfFilename): static
-    {
+    public static function fromFile(
+        string $pdfFilename
+    ): static {
         if (!file_exists($pdfFilename)) {
             throw new InvoiceSuiteFileNotFoundException($pdfFilename);
         }
@@ -81,8 +82,9 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
      *
      * @throws PdfParserException
      */
-    public static function fromContent(string $pdfContent): static
-    {
+    public static function fromContent(
+        string $pdfContent
+    ): static {
         return (new static())->collectAttachmentsFromPdfContent($pdfContent);
     }
 
@@ -110,8 +112,9 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
      * @param  mixed $offset
      * @return bool
      */
-    public function offsetExists(mixed $offset): bool
-    {
+    public function offsetExists(
+        mixed $offset
+    ): bool {
         return is_int($offset) && array_key_exists($offset, $this->attachmentList);
     }
 
@@ -121,8 +124,9 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
      * @param  mixed                                   $offset
      * @return null|InvoiceSuitePdfExtractorAttachment
      */
-    public function offsetGet(mixed $offset): ?InvoiceSuitePdfExtractorAttachment
-    {
+    public function offsetGet(
+        mixed $offset
+    ): ?InvoiceSuitePdfExtractorAttachment {
         if (!is_int($offset)) {
             return null;
         }
@@ -139,8 +143,10 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
      *
      * @throws LogicException
      */
-    public function offsetSet(mixed $offset, mixed $value): void
-    {
+    public function offsetSet(
+        mixed $offset,
+        mixed $value
+    ): void {
         throw new LogicException('Attachments are read-only via array access.');
     }
 
@@ -152,8 +158,9 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
      *
      * @throws LogicException
      */
-    public function offsetUnset(mixed $offset): void
-    {
+    public function offsetUnset(
+        mixed $offset
+    ): void {
         throw new LogicException('Attachments are read-only via array access.');
     }
 
@@ -175,8 +182,9 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
      *
      * @throws PdfParserException
      */
-    protected function collectAttachmentsFromPdfContent(string $pdfContent): static
-    {
+    protected function collectAttachmentsFromPdfContent(
+        string $pdfContent
+    ): static {
         $this->attachmentList = [];
 
         if (class_exists(SmalotPdfParser::class)) {

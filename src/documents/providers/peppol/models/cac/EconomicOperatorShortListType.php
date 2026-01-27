@@ -84,8 +84,9 @@ class EconomicOperatorShortListType
      * @param  null|array<LimitationDescription> $limitationDescription
      * @return static
      */
-    public function setLimitationDescription(?array $limitationDescription = null): static
-    {
+    public function setLimitationDescription(
+        ?array $limitationDescription = null
+    ): static {
         $this->limitationDescription = $limitationDescription;
 
         return $this;
@@ -145,8 +146,9 @@ class EconomicOperatorShortListType
      * @param  LimitationDescription $limitationDescription
      * @return static
      */
-    public function addToLimitationDescription(LimitationDescription $limitationDescription): static
-    {
+    public function addToLimitationDescription(
+        LimitationDescription $limitationDescription
+    ): static {
         $this->limitationDescription[] = $limitationDescription;
 
         return $this;
@@ -166,8 +168,9 @@ class EconomicOperatorShortListType
      * @param  LimitationDescription $limitationDescription
      * @return static
      */
-    public function addOnceToLimitationDescription(LimitationDescription $limitationDescription): static
-    {
+    public function addOnceToLimitationDescription(
+        LimitationDescription $limitationDescription
+    ): static {
         if (!is_array($this->limitationDescription)) {
             $this->limitationDescription = [];
         }
@@ -215,8 +218,9 @@ class EconomicOperatorShortListType
      * @param  null|ExpectedQuantity $expectedQuantity
      * @return static
      */
-    public function setExpectedQuantity(?ExpectedQuantity $expectedQuantity = null): static
-    {
+    public function setExpectedQuantity(
+        ?ExpectedQuantity $expectedQuantity = null
+    ): static {
         $this->expectedQuantity = $expectedQuantity;
 
         return $this;
@@ -254,8 +258,9 @@ class EconomicOperatorShortListType
      * @param  null|MaximumQuantity $maximumQuantity
      * @return static
      */
-    public function setMaximumQuantity(?MaximumQuantity $maximumQuantity = null): static
-    {
+    public function setMaximumQuantity(
+        ?MaximumQuantity $maximumQuantity = null
+    ): static {
         $this->maximumQuantity = $maximumQuantity;
 
         return $this;
@@ -293,8 +298,9 @@ class EconomicOperatorShortListType
      * @param  null|MinimumQuantity $minimumQuantity
      * @return static
      */
-    public function setMinimumQuantity(?MinimumQuantity $minimumQuantity = null): static
-    {
+    public function setMinimumQuantity(
+        ?MinimumQuantity $minimumQuantity = null
+    ): static {
         $this->minimumQuantity = $minimumQuantity;
 
         return $this;
@@ -322,8 +328,9 @@ class EconomicOperatorShortListType
      * @param  null|array<PreSelectedParty> $preSelectedParty
      * @return static
      */
-    public function setPreSelectedParty(?array $preSelectedParty = null): static
-    {
+    public function setPreSelectedParty(
+        ?array $preSelectedParty = null
+    ): static {
         $this->preSelectedParty = $preSelectedParty;
 
         return $this;
@@ -383,8 +390,9 @@ class EconomicOperatorShortListType
      * @param  PreSelectedParty $preSelectedParty
      * @return static
      */
-    public function addToPreSelectedParty(PreSelectedParty $preSelectedParty): static
-    {
+    public function addToPreSelectedParty(
+        PreSelectedParty $preSelectedParty
+    ): static {
         $this->preSelectedParty[] = $preSelectedParty;
 
         return $this;
@@ -404,8 +412,9 @@ class EconomicOperatorShortListType
      * @param  PreSelectedParty $preSelectedParty
      * @return static
      */
-    public function addOnceToPreSelectedParty(PreSelectedParty $preSelectedParty): static
-    {
+    public function addOnceToPreSelectedParty(
+        PreSelectedParty $preSelectedParty
+    ): static {
         if (!is_array($this->preSelectedParty)) {
             $this->preSelectedParty = [];
         }

@@ -104,8 +104,9 @@ class ItemIdentificationType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -143,8 +144,9 @@ class ItemIdentificationType
      * @param  null|ExtendedID $extendedID
      * @return static
      */
-    public function setExtendedID(?ExtendedID $extendedID = null): static
-    {
+    public function setExtendedID(
+        ?ExtendedID $extendedID = null
+    ): static {
         $this->extendedID = $extendedID;
 
         return $this;
@@ -182,8 +184,9 @@ class ItemIdentificationType
      * @param  null|BarcodeSymbologyID $barcodeSymbologyID
      * @return static
      */
-    public function setBarcodeSymbologyID(?BarcodeSymbologyID $barcodeSymbologyID = null): static
-    {
+    public function setBarcodeSymbologyID(
+        ?BarcodeSymbologyID $barcodeSymbologyID = null
+    ): static {
         $this->barcodeSymbologyID = $barcodeSymbologyID;
 
         return $this;
@@ -211,8 +214,9 @@ class ItemIdentificationType
      * @param  null|array<PhysicalAttribute> $physicalAttribute
      * @return static
      */
-    public function setPhysicalAttribute(?array $physicalAttribute = null): static
-    {
+    public function setPhysicalAttribute(
+        ?array $physicalAttribute = null
+    ): static {
         $this->physicalAttribute = $physicalAttribute;
 
         return $this;
@@ -272,8 +276,9 @@ class ItemIdentificationType
      * @param  PhysicalAttribute $physicalAttribute
      * @return static
      */
-    public function addToPhysicalAttribute(PhysicalAttribute $physicalAttribute): static
-    {
+    public function addToPhysicalAttribute(
+        PhysicalAttribute $physicalAttribute
+    ): static {
         $this->physicalAttribute[] = $physicalAttribute;
 
         return $this;
@@ -293,8 +298,9 @@ class ItemIdentificationType
      * @param  PhysicalAttribute $physicalAttribute
      * @return static
      */
-    public function addOnceToPhysicalAttribute(PhysicalAttribute $physicalAttribute): static
-    {
+    public function addOnceToPhysicalAttribute(
+        PhysicalAttribute $physicalAttribute
+    ): static {
         if (!is_array($this->physicalAttribute)) {
             $this->physicalAttribute = [];
         }
@@ -332,8 +338,9 @@ class ItemIdentificationType
      * @param  null|array<MeasurementDimension> $measurementDimension
      * @return static
      */
-    public function setMeasurementDimension(?array $measurementDimension = null): static
-    {
+    public function setMeasurementDimension(
+        ?array $measurementDimension = null
+    ): static {
         $this->measurementDimension = $measurementDimension;
 
         return $this;
@@ -393,8 +400,9 @@ class ItemIdentificationType
      * @param  MeasurementDimension $measurementDimension
      * @return static
      */
-    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
-    {
+    public function addToMeasurementDimension(
+        MeasurementDimension $measurementDimension
+    ): static {
         $this->measurementDimension[] = $measurementDimension;
 
         return $this;
@@ -414,8 +422,9 @@ class ItemIdentificationType
      * @param  MeasurementDimension $measurementDimension
      * @return static
      */
-    public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static
-    {
+    public function addOnceToMeasurementDimension(
+        MeasurementDimension $measurementDimension
+    ): static {
         if (!is_array($this->measurementDimension)) {
             $this->measurementDimension = [];
         }
@@ -463,8 +472,9 @@ class ItemIdentificationType
      * @param  null|IssuerParty $issuerParty
      * @return static
      */
-    public function setIssuerParty(?IssuerParty $issuerParty = null): static
-    {
+    public function setIssuerParty(
+        ?IssuerParty $issuerParty = null
+    ): static {
         $this->issuerParty = $issuerParty;
 
         return $this;

@@ -282,8 +282,9 @@ class TenderLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -311,8 +312,9 @@ class TenderLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -372,8 +374,9 @@ class TenderLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -393,8 +396,9 @@ class TenderLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -442,8 +446,9 @@ class TenderLineType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -481,8 +486,9 @@ class TenderLineType
      * @param  null|LineExtensionAmount $lineExtensionAmount
      * @return static
      */
-    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
-    {
+    public function setLineExtensionAmount(
+        ?LineExtensionAmount $lineExtensionAmount = null
+    ): static {
         $this->lineExtensionAmount = $lineExtensionAmount;
 
         return $this;
@@ -520,8 +526,9 @@ class TenderLineType
      * @param  null|TotalTaxAmount $totalTaxAmount
      * @return static
      */
-    public function setTotalTaxAmount(?TotalTaxAmount $totalTaxAmount = null): static
-    {
+    public function setTotalTaxAmount(
+        ?TotalTaxAmount $totalTaxAmount = null
+    ): static {
         $this->totalTaxAmount = $totalTaxAmount;
 
         return $this;
@@ -559,8 +566,9 @@ class TenderLineType
      * @param  null|OrderableUnit $orderableUnit
      * @return static
      */
-    public function setOrderableUnit(?OrderableUnit $orderableUnit = null): static
-    {
+    public function setOrderableUnit(
+        ?OrderableUnit $orderableUnit = null
+    ): static {
         $this->orderableUnit = $orderableUnit;
 
         return $this;
@@ -598,8 +606,9 @@ class TenderLineType
      * @param  null|ContentUnitQuantity $contentUnitQuantity
      * @return static
      */
-    public function setContentUnitQuantity(?ContentUnitQuantity $contentUnitQuantity = null): static
-    {
+    public function setContentUnitQuantity(
+        ?ContentUnitQuantity $contentUnitQuantity = null
+    ): static {
         $this->contentUnitQuantity = $contentUnitQuantity;
 
         return $this;
@@ -677,8 +686,9 @@ class TenderLineType
      * @param  null|MinimumOrderQuantity $minimumOrderQuantity
      * @return static
      */
-    public function setMinimumOrderQuantity(?MinimumOrderQuantity $minimumOrderQuantity = null): static
-    {
+    public function setMinimumOrderQuantity(
+        ?MinimumOrderQuantity $minimumOrderQuantity = null
+    ): static {
         $this->minimumOrderQuantity = $minimumOrderQuantity;
 
         return $this;
@@ -716,8 +726,9 @@ class TenderLineType
      * @param  null|MaximumOrderQuantity $maximumOrderQuantity
      * @return static
      */
-    public function setMaximumOrderQuantity(?MaximumOrderQuantity $maximumOrderQuantity = null): static
-    {
+    public function setMaximumOrderQuantity(
+        ?MaximumOrderQuantity $maximumOrderQuantity = null
+    ): static {
         $this->maximumOrderQuantity = $maximumOrderQuantity;
 
         return $this;
@@ -745,8 +756,9 @@ class TenderLineType
      * @param  null|array<WarrantyInformation> $warrantyInformation
      * @return static
      */
-    public function setWarrantyInformation(?array $warrantyInformation = null): static
-    {
+    public function setWarrantyInformation(
+        ?array $warrantyInformation = null
+    ): static {
         $this->warrantyInformation = $warrantyInformation;
 
         return $this;
@@ -806,8 +818,9 @@ class TenderLineType
      * @param  WarrantyInformation $warrantyInformation
      * @return static
      */
-    public function addToWarrantyInformation(WarrantyInformation $warrantyInformation): static
-    {
+    public function addToWarrantyInformation(
+        WarrantyInformation $warrantyInformation
+    ): static {
         $this->warrantyInformation[] = $warrantyInformation;
 
         return $this;
@@ -827,8 +840,9 @@ class TenderLineType
      * @param  WarrantyInformation $warrantyInformation
      * @return static
      */
-    public function addOnceToWarrantyInformation(WarrantyInformation $warrantyInformation): static
-    {
+    public function addOnceToWarrantyInformation(
+        WarrantyInformation $warrantyInformation
+    ): static {
         if (!is_array($this->warrantyInformation)) {
             $this->warrantyInformation = [];
         }
@@ -876,8 +890,9 @@ class TenderLineType
      * @param  null|PackLevelCode $packLevelCode
      * @return static
      */
-    public function setPackLevelCode(?PackLevelCode $packLevelCode = null): static
-    {
+    public function setPackLevelCode(
+        ?PackLevelCode $packLevelCode = null
+    ): static {
         $this->packLevelCode = $packLevelCode;
 
         return $this;
@@ -905,8 +920,9 @@ class TenderLineType
      * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?array $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;
@@ -966,8 +982,9 @@ class TenderLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         $this->documentReference[] = $documentReference;
 
         return $this;
@@ -987,8 +1004,9 @@ class TenderLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addOnceToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
         }
@@ -1036,8 +1054,9 @@ class TenderLineType
      * @param  null|Item $item
      * @return static
      */
-    public function setItem(?Item $item = null): static
-    {
+    public function setItem(
+        ?Item $item = null
+    ): static {
         $this->item = $item;
 
         return $this;
@@ -1065,8 +1084,9 @@ class TenderLineType
      * @param  null|array<OfferedItemLocationQuantity> $offeredItemLocationQuantity
      * @return static
      */
-    public function setOfferedItemLocationQuantity(?array $offeredItemLocationQuantity = null): static
-    {
+    public function setOfferedItemLocationQuantity(
+        ?array $offeredItemLocationQuantity = null
+    ): static {
         $this->offeredItemLocationQuantity = $offeredItemLocationQuantity;
 
         return $this;
@@ -1126,8 +1146,9 @@ class TenderLineType
      * @param  OfferedItemLocationQuantity $offeredItemLocationQuantity
      * @return static
      */
-    public function addToOfferedItemLocationQuantity(OfferedItemLocationQuantity $offeredItemLocationQuantity): static
-    {
+    public function addToOfferedItemLocationQuantity(
+        OfferedItemLocationQuantity $offeredItemLocationQuantity
+    ): static {
         $this->offeredItemLocationQuantity[] = $offeredItemLocationQuantity;
 
         return $this;
@@ -1187,8 +1208,9 @@ class TenderLineType
      * @param  null|array<ReplacementRelatedItem> $replacementRelatedItem
      * @return static
      */
-    public function setReplacementRelatedItem(?array $replacementRelatedItem = null): static
-    {
+    public function setReplacementRelatedItem(
+        ?array $replacementRelatedItem = null
+    ): static {
         $this->replacementRelatedItem = $replacementRelatedItem;
 
         return $this;
@@ -1248,8 +1270,9 @@ class TenderLineType
      * @param  ReplacementRelatedItem $replacementRelatedItem
      * @return static
      */
-    public function addToReplacementRelatedItem(ReplacementRelatedItem $replacementRelatedItem): static
-    {
+    public function addToReplacementRelatedItem(
+        ReplacementRelatedItem $replacementRelatedItem
+    ): static {
         $this->replacementRelatedItem[] = $replacementRelatedItem;
 
         return $this;
@@ -1269,8 +1292,9 @@ class TenderLineType
      * @param  ReplacementRelatedItem $replacementRelatedItem
      * @return static
      */
-    public function addOnceToReplacementRelatedItem(ReplacementRelatedItem $replacementRelatedItem): static
-    {
+    public function addOnceToReplacementRelatedItem(
+        ReplacementRelatedItem $replacementRelatedItem
+    ): static {
         if (!is_array($this->replacementRelatedItem)) {
             $this->replacementRelatedItem = [];
         }
@@ -1318,8 +1342,9 @@ class TenderLineType
      * @param  null|WarrantyParty $warrantyParty
      * @return static
      */
-    public function setWarrantyParty(?WarrantyParty $warrantyParty = null): static
-    {
+    public function setWarrantyParty(
+        ?WarrantyParty $warrantyParty = null
+    ): static {
         $this->warrantyParty = $warrantyParty;
 
         return $this;
@@ -1357,8 +1382,9 @@ class TenderLineType
      * @param  null|WarrantyValidityPeriod $warrantyValidityPeriod
      * @return static
      */
-    public function setWarrantyValidityPeriod(?WarrantyValidityPeriod $warrantyValidityPeriod = null): static
-    {
+    public function setWarrantyValidityPeriod(
+        ?WarrantyValidityPeriod $warrantyValidityPeriod = null
+    ): static {
         $this->warrantyValidityPeriod = $warrantyValidityPeriod;
 
         return $this;
@@ -1386,8 +1412,9 @@ class TenderLineType
      * @param  null|array<SubTenderLine> $subTenderLine
      * @return static
      */
-    public function setSubTenderLine(?array $subTenderLine = null): static
-    {
+    public function setSubTenderLine(
+        ?array $subTenderLine = null
+    ): static {
         $this->subTenderLine = $subTenderLine;
 
         return $this;
@@ -1447,8 +1474,9 @@ class TenderLineType
      * @param  SubTenderLine $subTenderLine
      * @return static
      */
-    public function addToSubTenderLine(SubTenderLine $subTenderLine): static
-    {
+    public function addToSubTenderLine(
+        SubTenderLine $subTenderLine
+    ): static {
         $this->subTenderLine[] = $subTenderLine;
 
         return $this;
@@ -1468,8 +1496,9 @@ class TenderLineType
      * @param  SubTenderLine $subTenderLine
      * @return static
      */
-    public function addOnceToSubTenderLine(SubTenderLine $subTenderLine): static
-    {
+    public function addOnceToSubTenderLine(
+        SubTenderLine $subTenderLine
+    ): static {
         if (!is_array($this->subTenderLine)) {
             $this->subTenderLine = [];
         }

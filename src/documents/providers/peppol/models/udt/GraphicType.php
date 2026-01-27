@@ -36,8 +36,9 @@ class GraphicType extends BinaryObjectType
      * @param  null|string $mimeCode
      * @return static
      */
-    public function setMimeCode(?string $mimeCode = null): static
-    {
+    public function setMimeCode(
+        ?string $mimeCode = null
+    ): static {
         $this->mimeCode = InvoiceSuiteStringUtils::asNullWhenEmpty($mimeCode);
 
         return $this;

@@ -164,8 +164,9 @@ class QuotationLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -193,8 +194,9 @@ class QuotationLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -254,8 +256,9 @@ class QuotationLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -275,8 +278,9 @@ class QuotationLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -324,8 +328,9 @@ class QuotationLineType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -363,8 +368,9 @@ class QuotationLineType
      * @param  null|LineExtensionAmount $lineExtensionAmount
      * @return static
      */
-    public function setLineExtensionAmount(?LineExtensionAmount $lineExtensionAmount = null): static
-    {
+    public function setLineExtensionAmount(
+        ?LineExtensionAmount $lineExtensionAmount = null
+    ): static {
         $this->lineExtensionAmount = $lineExtensionAmount;
 
         return $this;
@@ -402,8 +408,9 @@ class QuotationLineType
      * @param  null|TotalTaxAmount $totalTaxAmount
      * @return static
      */
-    public function setTotalTaxAmount(?TotalTaxAmount $totalTaxAmount = null): static
-    {
+    public function setTotalTaxAmount(
+        ?TotalTaxAmount $totalTaxAmount = null
+    ): static {
         $this->totalTaxAmount = $totalTaxAmount;
 
         return $this;
@@ -441,8 +448,9 @@ class QuotationLineType
      * @param  null|RequestForQuotationLineID $requestForQuotationLineID
      * @return static
      */
-    public function setRequestForQuotationLineID(?RequestForQuotationLineID $requestForQuotationLineID = null): static
-    {
+    public function setRequestForQuotationLineID(
+        ?RequestForQuotationLineID $requestForQuotationLineID = null
+    ): static {
         $this->requestForQuotationLineID = $requestForQuotationLineID;
 
         return $this;
@@ -470,8 +478,9 @@ class QuotationLineType
      * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?array $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;
@@ -531,8 +540,9 @@ class QuotationLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         $this->documentReference[] = $documentReference;
 
         return $this;
@@ -552,8 +562,9 @@ class QuotationLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addOnceToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
         }
@@ -601,8 +612,9 @@ class QuotationLineType
      * @param  null|LineItem $lineItem
      * @return static
      */
-    public function setLineItem(?LineItem $lineItem = null): static
-    {
+    public function setLineItem(
+        ?LineItem $lineItem = null
+    ): static {
         $this->lineItem = $lineItem;
 
         return $this;
@@ -630,8 +642,9 @@ class QuotationLineType
      * @param  null|array<SellerProposedSubstituteLineItem> $sellerProposedSubstituteLineItem
      * @return static
      */
-    public function setSellerProposedSubstituteLineItem(?array $sellerProposedSubstituteLineItem = null): static
-    {
+    public function setSellerProposedSubstituteLineItem(
+        ?array $sellerProposedSubstituteLineItem = null
+    ): static {
         $this->sellerProposedSubstituteLineItem = $sellerProposedSubstituteLineItem;
 
         return $this;
@@ -753,8 +766,9 @@ class QuotationLineType
      * @param  null|array<AlternativeLineItem> $alternativeLineItem
      * @return static
      */
-    public function setAlternativeLineItem(?array $alternativeLineItem = null): static
-    {
+    public function setAlternativeLineItem(
+        ?array $alternativeLineItem = null
+    ): static {
         $this->alternativeLineItem = $alternativeLineItem;
 
         return $this;
@@ -814,8 +828,9 @@ class QuotationLineType
      * @param  AlternativeLineItem $alternativeLineItem
      * @return static
      */
-    public function addToAlternativeLineItem(AlternativeLineItem $alternativeLineItem): static
-    {
+    public function addToAlternativeLineItem(
+        AlternativeLineItem $alternativeLineItem
+    ): static {
         $this->alternativeLineItem[] = $alternativeLineItem;
 
         return $this;
@@ -835,8 +850,9 @@ class QuotationLineType
      * @param  AlternativeLineItem $alternativeLineItem
      * @return static
      */
-    public function addOnceToAlternativeLineItem(AlternativeLineItem $alternativeLineItem): static
-    {
+    public function addOnceToAlternativeLineItem(
+        AlternativeLineItem $alternativeLineItem
+    ): static {
         if (!is_array($this->alternativeLineItem)) {
             $this->alternativeLineItem = [];
         }
@@ -884,8 +900,9 @@ class QuotationLineType
      * @param  null|RequestLineReference $requestLineReference
      * @return static
      */
-    public function setRequestLineReference(?RequestLineReference $requestLineReference = null): static
-    {
+    public function setRequestLineReference(
+        ?RequestLineReference $requestLineReference = null
+    ): static {
         $this->requestLineReference = $requestLineReference;
 
         return $this;

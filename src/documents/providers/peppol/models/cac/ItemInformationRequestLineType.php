@@ -105,8 +105,9 @@ class ItemInformationRequestLineType
      * @param  null|TimeFrequencyCode $timeFrequencyCode
      * @return static
      */
-    public function setTimeFrequencyCode(?TimeFrequencyCode $timeFrequencyCode = null): static
-    {
+    public function setTimeFrequencyCode(
+        ?TimeFrequencyCode $timeFrequencyCode = null
+    ): static {
         $this->timeFrequencyCode = $timeFrequencyCode;
 
         return $this;
@@ -184,8 +185,9 @@ class ItemInformationRequestLineType
      * @param  null|ForecastTypeCode $forecastTypeCode
      * @return static
      */
-    public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): static
-    {
+    public function setForecastTypeCode(
+        ?ForecastTypeCode $forecastTypeCode = null
+    ): static {
         $this->forecastTypeCode = $forecastTypeCode;
 
         return $this;
@@ -223,8 +225,9 @@ class ItemInformationRequestLineType
      * @param  null|PerformanceMetricTypeCode $performanceMetricTypeCode
      * @return static
      */
-    public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): static
-    {
+    public function setPerformanceMetricTypeCode(
+        ?PerformanceMetricTypeCode $performanceMetricTypeCode = null
+    ): static {
         $this->performanceMetricTypeCode = $performanceMetricTypeCode;
 
         return $this;
@@ -252,8 +255,9 @@ class ItemInformationRequestLineType
      * @param  null|array<Period> $period
      * @return static
      */
-    public function setPeriod(?array $period = null): static
-    {
+    public function setPeriod(
+        ?array $period = null
+    ): static {
         $this->period = $period;
 
         return $this;
@@ -313,8 +317,9 @@ class ItemInformationRequestLineType
      * @param  Period $period
      * @return static
      */
-    public function addToPeriod(Period $period): static
-    {
+    public function addToPeriod(
+        Period $period
+    ): static {
         $this->period[] = $period;
 
         return $this;
@@ -334,8 +339,9 @@ class ItemInformationRequestLineType
      * @param  Period $period
      * @return static
      */
-    public function addOnceToPeriod(Period $period): static
-    {
+    public function addOnceToPeriod(
+        Period $period
+    ): static {
         if (!is_array($this->period)) {
             $this->period = [];
         }
@@ -373,8 +379,9 @@ class ItemInformationRequestLineType
      * @param  null|array<SalesItem> $salesItem
      * @return static
      */
-    public function setSalesItem(?array $salesItem = null): static
-    {
+    public function setSalesItem(
+        ?array $salesItem = null
+    ): static {
         $this->salesItem = $salesItem;
 
         return $this;
@@ -434,8 +441,9 @@ class ItemInformationRequestLineType
      * @param  SalesItem $salesItem
      * @return static
      */
-    public function addToSalesItem(SalesItem $salesItem): static
-    {
+    public function addToSalesItem(
+        SalesItem $salesItem
+    ): static {
         $this->salesItem[] = $salesItem;
 
         return $this;
@@ -455,8 +463,9 @@ class ItemInformationRequestLineType
      * @param  SalesItem $salesItem
      * @return static
      */
-    public function addOnceToSalesItem(SalesItem $salesItem): static
-    {
+    public function addOnceToSalesItem(
+        SalesItem $salesItem
+    ): static {
         if (!is_array($this->salesItem)) {
             $this->salesItem = [];
         }

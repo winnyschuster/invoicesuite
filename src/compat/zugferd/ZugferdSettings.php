@@ -55,8 +55,9 @@ class ZugferdSettings
      * @param  int  $amountDecimals
      * @return void
      */
-    public static function setAmountDecimals(int $amountDecimals): void
-    {
+    public static function setAmountDecimals(
+        int $amountDecimals
+    ): void {
         InvoiceSuiteSettings::setAmountDecimals($amountDecimals);
     }
 
@@ -76,8 +77,9 @@ class ZugferdSettings
      * @param  int  $quantityDecimals
      * @return void
      */
-    public static function setQuantityDecimals(int $quantityDecimals): void
-    {
+    public static function setQuantityDecimals(
+        int $quantityDecimals
+    ): void {
         InvoiceSuiteSettings::setQuantityDecimals($quantityDecimals);
     }
 
@@ -97,8 +99,9 @@ class ZugferdSettings
      * @param  int  $percentDecimals
      * @return void
      */
-    public static function setPercentDecimals(int $percentDecimals): void
-    {
+    public static function setPercentDecimals(
+        int $percentDecimals
+    ): void {
         InvoiceSuiteSettings::setPercentDecimals($percentDecimals);
     }
 
@@ -118,8 +121,9 @@ class ZugferdSettings
      * @param  int  $measureDecimals
      * @return void
      */
-    public static function setMeasureDecimals(int $measureDecimals): void
-    {
+    public static function setMeasureDecimals(
+        int $measureDecimals
+    ): void {
         InvoiceSuiteSettings::setMeasureDecimals($measureDecimals);
     }
 
@@ -139,8 +143,9 @@ class ZugferdSettings
      * @param  string $decimalSeparator
      * @return void
      */
-    public static function setDecimalSeparator(string $decimalSeparator): void
-    {
+    public static function setDecimalSeparator(
+        string $decimalSeparator
+    ): void {
         InvoiceSuiteSettings::setDecimalSeparator($decimalSeparator);
     }
 
@@ -160,8 +165,9 @@ class ZugferdSettings
      * @param  string $thousandsSeparator
      * @return void
      */
-    public static function setThousandsSeparator(string $thousandsSeparator): void
-    {
+    public static function setThousandsSeparator(
+        string $thousandsSeparator
+    ): void {
         InvoiceSuiteSettings::setThousandsSeparator($thousandsSeparator);
     }
 
@@ -181,8 +187,9 @@ class ZugferdSettings
      * @param  string $iccProfileFilename
      * @return void
      */
-    public static function setIccProfileFilename(string $iccProfileFilename): void
-    {
+    public static function setIccProfileFilename(
+        string $iccProfileFilename
+    ): void {
         static::$iccProfileFilename = $iccProfileFilename;
     }
 
@@ -202,8 +209,9 @@ class ZugferdSettings
      * @param  string $xmpMetaDataFilename
      * @return void
      */
-    public static function setXmpMetaDataFilename(string $xmpMetaDataFilename): void
-    {
+    public static function setXmpMetaDataFilename(
+        string $xmpMetaDataFilename
+    ): void {
         static::$xmpMetaDataFilename = $xmpMetaDataFilename;
     }
 
@@ -225,8 +233,10 @@ class ZugferdSettings
      * @param  int    $defaultDecimalPlaces
      * @return int
      */
-    public static function getSpecialDecimalPlacesMap(string $nodePath, int $defaultDecimalPlaces): int
-    {
+    public static function getSpecialDecimalPlacesMap(
+        string $nodePath,
+        int $defaultDecimalPlaces
+    ): int {
         return InvoiceSuiteSettings::getSpecialDecimalPlacesMap($nodePath, $defaultDecimalPlaces);
     }
 
@@ -236,8 +246,9 @@ class ZugferdSettings
      * @param  array<string,int> $specialDecimalPlacesMaps
      * @return void
      */
-    public static function setSpecialDecimalPlacesMaps(array $specialDecimalPlacesMaps): void
-    {
+    public static function setSpecialDecimalPlacesMaps(
+        array $specialDecimalPlacesMaps
+    ): void {
         InvoiceSuiteSettings::setSpecialDecimalPlacesMaps($specialDecimalPlacesMaps);
     }
 
@@ -248,8 +259,10 @@ class ZugferdSettings
      * @param  int    $defaultDecimalPlaces
      * @return void
      */
-    public static function addSpecialDecimalPlacesMap(string $nodePath, int $defaultDecimalPlaces): void
-    {
+    public static function addSpecialDecimalPlacesMap(
+        string $nodePath,
+        int $defaultDecimalPlaces
+    ): void {
         InvoiceSuiteSettings::addSpecialDecimalPlacesMap($nodePath, $defaultDecimalPlaces);
     }
 
@@ -259,8 +272,9 @@ class ZugferdSettings
      * @param  int  $defaultDecimalPlaces
      * @return void
      */
-    public static function setUnitAmountDecimals(int $defaultDecimalPlaces): void
-    {
+    public static function setUnitAmountDecimals(
+        int $defaultDecimalPlaces
+    ): void {
         static::addSpecialDecimalPlacesMap('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:GrossPriceProductTradePrice/ram:ChargeAmount', $defaultDecimalPlaces);
         static::addSpecialDecimalPlacesMap('/rsm:CrossIndustryInvoice/rsm:SupplyChainTradeTransaction/ram:IncludedSupplyChainTradeLineItem/ram:SpecifiedLineTradeAgreement/ram:NetPriceProductTradePrice/ram:ChargeAmount', $defaultDecimalPlaces);
     }
@@ -271,8 +285,9 @@ class ZugferdSettings
      * @param  string $serializerCacheDirectoty
      * @return void
      */
-    public static function setSerializerCacheDirectory(string $serializerCacheDirectoty): void
-    {
+    public static function setSerializerCacheDirectory(
+        string $serializerCacheDirectoty
+    ): void {
         InvoiceSuiteSettings::setSerializerCacheDirectory($serializerCacheDirectoty);
     }
 

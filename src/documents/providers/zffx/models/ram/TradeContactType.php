@@ -101,8 +101,9 @@ class TradeContactType
      * @param  null|TextType $personName
      * @return static
      */
-    public function setPersonName(?TextType $personName = null): static
-    {
+    public function setPersonName(
+        ?TextType $personName = null
+    ): static {
         $this->personName = $personName;
 
         return $this;
@@ -140,8 +141,9 @@ class TradeContactType
      * @param  null|TextType $departmentName
      * @return static
      */
-    public function setDepartmentName(?TextType $departmentName = null): static
-    {
+    public function setDepartmentName(
+        ?TextType $departmentName = null
+    ): static {
         $this->departmentName = $departmentName;
 
         return $this;
@@ -179,8 +181,9 @@ class TradeContactType
      * @param  null|CodeType $typeCode
      * @return static
      */
-    public function setTypeCode(?CodeType $typeCode = null): static
-    {
+    public function setTypeCode(
+        ?CodeType $typeCode = null
+    ): static {
         $this->typeCode = $typeCode;
 
         return $this;
@@ -258,8 +261,9 @@ class TradeContactType
      * @param  null|UniversalCommunicationType $faxUniversalCommunication
      * @return static
      */
-    public function setFaxUniversalCommunication(?UniversalCommunicationType $faxUniversalCommunication = null): static
-    {
+    public function setFaxUniversalCommunication(
+        ?UniversalCommunicationType $faxUniversalCommunication = null
+    ): static {
         $this->faxUniversalCommunication = $faxUniversalCommunication;
 
         return $this;

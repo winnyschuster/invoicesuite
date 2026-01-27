@@ -307,8 +307,9 @@ class HazardousItemType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -346,8 +347,9 @@ class HazardousItemType
      * @param  null|PlacardNotation $placardNotation
      * @return static
      */
-    public function setPlacardNotation(?PlacardNotation $placardNotation = null): static
-    {
+    public function setPlacardNotation(
+        ?PlacardNotation $placardNotation = null
+    ): static {
         $this->placardNotation = $placardNotation;
 
         return $this;
@@ -385,8 +387,9 @@ class HazardousItemType
      * @param  null|PlacardEndorsement $placardEndorsement
      * @return static
      */
-    public function setPlacardEndorsement(?PlacardEndorsement $placardEndorsement = null): static
-    {
+    public function setPlacardEndorsement(
+        ?PlacardEndorsement $placardEndorsement = null
+    ): static {
         $this->placardEndorsement = $placardEndorsement;
 
         return $this;
@@ -414,8 +417,9 @@ class HazardousItemType
      * @param  null|array<AdditionalInformation> $additionalInformation
      * @return static
      */
-    public function setAdditionalInformation(?array $additionalInformation = null): static
-    {
+    public function setAdditionalInformation(
+        ?array $additionalInformation = null
+    ): static {
         $this->additionalInformation = $additionalInformation;
 
         return $this;
@@ -475,8 +479,9 @@ class HazardousItemType
      * @param  AdditionalInformation $additionalInformation
      * @return static
      */
-    public function addToAdditionalInformation(AdditionalInformation $additionalInformation): static
-    {
+    public function addToAdditionalInformation(
+        AdditionalInformation $additionalInformation
+    ): static {
         $this->additionalInformation[] = $additionalInformation;
 
         return $this;
@@ -496,8 +501,9 @@ class HazardousItemType
      * @param  AdditionalInformation $additionalInformation
      * @return static
      */
-    public function addOnceToAdditionalInformation(AdditionalInformation $additionalInformation): static
-    {
+    public function addOnceToAdditionalInformation(
+        AdditionalInformation $additionalInformation
+    ): static {
         if (!is_array($this->additionalInformation)) {
             $this->additionalInformation = [];
         }
@@ -545,8 +551,9 @@ class HazardousItemType
      * @param  null|UNDGCode $uNDGCode
      * @return static
      */
-    public function setUNDGCode(?UNDGCode $uNDGCode = null): static
-    {
+    public function setUNDGCode(
+        ?UNDGCode $uNDGCode = null
+    ): static {
         $this->uNDGCode = $uNDGCode;
 
         return $this;
@@ -584,8 +591,9 @@ class HazardousItemType
      * @param  null|EmergencyProceduresCode $emergencyProceduresCode
      * @return static
      */
-    public function setEmergencyProceduresCode(?EmergencyProceduresCode $emergencyProceduresCode = null): static
-    {
+    public function setEmergencyProceduresCode(
+        ?EmergencyProceduresCode $emergencyProceduresCode = null
+    ): static {
         $this->emergencyProceduresCode = $emergencyProceduresCode;
 
         return $this;
@@ -623,8 +631,9 @@ class HazardousItemType
      * @param  null|MedicalFirstAidGuideCode $medicalFirstAidGuideCode
      * @return static
      */
-    public function setMedicalFirstAidGuideCode(?MedicalFirstAidGuideCode $medicalFirstAidGuideCode = null): static
-    {
+    public function setMedicalFirstAidGuideCode(
+        ?MedicalFirstAidGuideCode $medicalFirstAidGuideCode = null
+    ): static {
         $this->medicalFirstAidGuideCode = $medicalFirstAidGuideCode;
 
         return $this;
@@ -662,8 +671,9 @@ class HazardousItemType
      * @param  null|TechnicalName $technicalName
      * @return static
      */
-    public function setTechnicalName(?TechnicalName $technicalName = null): static
-    {
+    public function setTechnicalName(
+        ?TechnicalName $technicalName = null
+    ): static {
         $this->technicalName = $technicalName;
 
         return $this;
@@ -701,8 +711,9 @@ class HazardousItemType
      * @param  null|CategoryName $categoryName
      * @return static
      */
-    public function setCategoryName(?CategoryName $categoryName = null): static
-    {
+    public function setCategoryName(
+        ?CategoryName $categoryName = null
+    ): static {
         $this->categoryName = $categoryName;
 
         return $this;
@@ -740,8 +751,9 @@ class HazardousItemType
      * @param  null|HazardousCategoryCode $hazardousCategoryCode
      * @return static
      */
-    public function setHazardousCategoryCode(?HazardousCategoryCode $hazardousCategoryCode = null): static
-    {
+    public function setHazardousCategoryCode(
+        ?HazardousCategoryCode $hazardousCategoryCode = null
+    ): static {
         $this->hazardousCategoryCode = $hazardousCategoryCode;
 
         return $this;
@@ -859,8 +871,9 @@ class HazardousItemType
      * @param  null|MarkingID $markingID
      * @return static
      */
-    public function setMarkingID(?MarkingID $markingID = null): static
-    {
+    public function setMarkingID(
+        ?MarkingID $markingID = null
+    ): static {
         $this->markingID = $markingID;
 
         return $this;
@@ -898,8 +911,9 @@ class HazardousItemType
      * @param  null|HazardClassID $hazardClassID
      * @return static
      */
-    public function setHazardClassID(?HazardClassID $hazardClassID = null): static
-    {
+    public function setHazardClassID(
+        ?HazardClassID $hazardClassID = null
+    ): static {
         $this->hazardClassID = $hazardClassID;
 
         return $this;
@@ -937,8 +951,9 @@ class HazardousItemType
      * @param  null|NetWeightMeasure $netWeightMeasure
      * @return static
      */
-    public function setNetWeightMeasure(?NetWeightMeasure $netWeightMeasure = null): static
-    {
+    public function setNetWeightMeasure(
+        ?NetWeightMeasure $netWeightMeasure = null
+    ): static {
         $this->netWeightMeasure = $netWeightMeasure;
 
         return $this;
@@ -976,8 +991,9 @@ class HazardousItemType
      * @param  null|NetVolumeMeasure $netVolumeMeasure
      * @return static
      */
-    public function setNetVolumeMeasure(?NetVolumeMeasure $netVolumeMeasure = null): static
-    {
+    public function setNetVolumeMeasure(
+        ?NetVolumeMeasure $netVolumeMeasure = null
+    ): static {
         $this->netVolumeMeasure = $netVolumeMeasure;
 
         return $this;
@@ -1015,8 +1031,9 @@ class HazardousItemType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -1054,8 +1071,9 @@ class HazardousItemType
      * @param  null|ContactParty $contactParty
      * @return static
      */
-    public function setContactParty(?ContactParty $contactParty = null): static
-    {
+    public function setContactParty(
+        ?ContactParty $contactParty = null
+    ): static {
         $this->contactParty = $contactParty;
 
         return $this;
@@ -1083,8 +1101,9 @@ class HazardousItemType
      * @param  null|array<SecondaryHazard> $secondaryHazard
      * @return static
      */
-    public function setSecondaryHazard(?array $secondaryHazard = null): static
-    {
+    public function setSecondaryHazard(
+        ?array $secondaryHazard = null
+    ): static {
         $this->secondaryHazard = $secondaryHazard;
 
         return $this;
@@ -1144,8 +1163,9 @@ class HazardousItemType
      * @param  SecondaryHazard $secondaryHazard
      * @return static
      */
-    public function addToSecondaryHazard(SecondaryHazard $secondaryHazard): static
-    {
+    public function addToSecondaryHazard(
+        SecondaryHazard $secondaryHazard
+    ): static {
         $this->secondaryHazard[] = $secondaryHazard;
 
         return $this;
@@ -1165,8 +1185,9 @@ class HazardousItemType
      * @param  SecondaryHazard $secondaryHazard
      * @return static
      */
-    public function addOnceToSecondaryHazard(SecondaryHazard $secondaryHazard): static
-    {
+    public function addOnceToSecondaryHazard(
+        SecondaryHazard $secondaryHazard
+    ): static {
         if (!is_array($this->secondaryHazard)) {
             $this->secondaryHazard = [];
         }
@@ -1204,8 +1225,9 @@ class HazardousItemType
      * @param  null|array<HazardousGoodsTransit> $hazardousGoodsTransit
      * @return static
      */
-    public function setHazardousGoodsTransit(?array $hazardousGoodsTransit = null): static
-    {
+    public function setHazardousGoodsTransit(
+        ?array $hazardousGoodsTransit = null
+    ): static {
         $this->hazardousGoodsTransit = $hazardousGoodsTransit;
 
         return $this;
@@ -1265,8 +1287,9 @@ class HazardousItemType
      * @param  HazardousGoodsTransit $hazardousGoodsTransit
      * @return static
      */
-    public function addToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): static
-    {
+    public function addToHazardousGoodsTransit(
+        HazardousGoodsTransit $hazardousGoodsTransit
+    ): static {
         $this->hazardousGoodsTransit[] = $hazardousGoodsTransit;
 
         return $this;
@@ -1286,8 +1309,9 @@ class HazardousItemType
      * @param  HazardousGoodsTransit $hazardousGoodsTransit
      * @return static
      */
-    public function addOnceToHazardousGoodsTransit(HazardousGoodsTransit $hazardousGoodsTransit): static
-    {
+    public function addOnceToHazardousGoodsTransit(
+        HazardousGoodsTransit $hazardousGoodsTransit
+    ): static {
         if (!is_array($this->hazardousGoodsTransit)) {
             $this->hazardousGoodsTransit = [];
         }
@@ -1335,8 +1359,9 @@ class HazardousItemType
      * @param  null|EmergencyTemperature $emergencyTemperature
      * @return static
      */
-    public function setEmergencyTemperature(?EmergencyTemperature $emergencyTemperature = null): static
-    {
+    public function setEmergencyTemperature(
+        ?EmergencyTemperature $emergencyTemperature = null
+    ): static {
         $this->emergencyTemperature = $emergencyTemperature;
 
         return $this;
@@ -1374,8 +1399,9 @@ class HazardousItemType
      * @param  null|FlashpointTemperature $flashpointTemperature
      * @return static
      */
-    public function setFlashpointTemperature(?FlashpointTemperature $flashpointTemperature = null): static
-    {
+    public function setFlashpointTemperature(
+        ?FlashpointTemperature $flashpointTemperature = null
+    ): static {
         $this->flashpointTemperature = $flashpointTemperature;
 
         return $this;
@@ -1403,8 +1429,9 @@ class HazardousItemType
      * @param  null|array<AdditionalTemperature> $additionalTemperature
      * @return static
      */
-    public function setAdditionalTemperature(?array $additionalTemperature = null): static
-    {
+    public function setAdditionalTemperature(
+        ?array $additionalTemperature = null
+    ): static {
         $this->additionalTemperature = $additionalTemperature;
 
         return $this;
@@ -1464,8 +1491,9 @@ class HazardousItemType
      * @param  AdditionalTemperature $additionalTemperature
      * @return static
      */
-    public function addToAdditionalTemperature(AdditionalTemperature $additionalTemperature): static
-    {
+    public function addToAdditionalTemperature(
+        AdditionalTemperature $additionalTemperature
+    ): static {
         $this->additionalTemperature[] = $additionalTemperature;
 
         return $this;
@@ -1485,8 +1513,9 @@ class HazardousItemType
      * @param  AdditionalTemperature $additionalTemperature
      * @return static
      */
-    public function addOnceToAdditionalTemperature(AdditionalTemperature $additionalTemperature): static
-    {
+    public function addOnceToAdditionalTemperature(
+        AdditionalTemperature $additionalTemperature
+    ): static {
         if (!is_array($this->additionalTemperature)) {
             $this->additionalTemperature = [];
         }

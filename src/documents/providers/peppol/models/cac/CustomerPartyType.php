@@ -114,8 +114,9 @@ class CustomerPartyType
      * @param  null|CustomerAssignedAccountID $customerAssignedAccountID
      * @return static
      */
-    public function setCustomerAssignedAccountID(?CustomerAssignedAccountID $customerAssignedAccountID = null): static
-    {
+    public function setCustomerAssignedAccountID(
+        ?CustomerAssignedAccountID $customerAssignedAccountID = null
+    ): static {
         $this->customerAssignedAccountID = $customerAssignedAccountID;
 
         return $this;
@@ -153,8 +154,9 @@ class CustomerPartyType
      * @param  null|SupplierAssignedAccountID $supplierAssignedAccountID
      * @return static
      */
-    public function setSupplierAssignedAccountID(?SupplierAssignedAccountID $supplierAssignedAccountID = null): static
-    {
+    public function setSupplierAssignedAccountID(
+        ?SupplierAssignedAccountID $supplierAssignedAccountID = null
+    ): static {
         $this->supplierAssignedAccountID = $supplierAssignedAccountID;
 
         return $this;
@@ -182,8 +184,9 @@ class CustomerPartyType
      * @param  null|array<AdditionalAccountID> $additionalAccountID
      * @return static
      */
-    public function setAdditionalAccountID(?array $additionalAccountID = null): static
-    {
+    public function setAdditionalAccountID(
+        ?array $additionalAccountID = null
+    ): static {
         $this->additionalAccountID = $additionalAccountID;
 
         return $this;
@@ -243,8 +246,9 @@ class CustomerPartyType
      * @param  AdditionalAccountID $additionalAccountID
      * @return static
      */
-    public function addToAdditionalAccountID(AdditionalAccountID $additionalAccountID): static
-    {
+    public function addToAdditionalAccountID(
+        AdditionalAccountID $additionalAccountID
+    ): static {
         $this->additionalAccountID[] = $additionalAccountID;
 
         return $this;
@@ -264,8 +268,9 @@ class CustomerPartyType
      * @param  AdditionalAccountID $additionalAccountID
      * @return static
      */
-    public function addOnceToAdditionalAccountID(AdditionalAccountID $additionalAccountID): static
-    {
+    public function addOnceToAdditionalAccountID(
+        AdditionalAccountID $additionalAccountID
+    ): static {
         if (!is_array($this->additionalAccountID)) {
             $this->additionalAccountID = [];
         }
@@ -313,8 +318,9 @@ class CustomerPartyType
      * @param  null|Party $party
      * @return static
      */
-    public function setParty(?Party $party = null): static
-    {
+    public function setParty(
+        ?Party $party = null
+    ): static {
         $this->party = $party;
 
         return $this;
@@ -352,8 +358,9 @@ class CustomerPartyType
      * @param  null|DeliveryContact $deliveryContact
      * @return static
      */
-    public function setDeliveryContact(?DeliveryContact $deliveryContact = null): static
-    {
+    public function setDeliveryContact(
+        ?DeliveryContact $deliveryContact = null
+    ): static {
         $this->deliveryContact = $deliveryContact;
 
         return $this;
@@ -391,8 +398,9 @@ class CustomerPartyType
      * @param  null|AccountingContact $accountingContact
      * @return static
      */
-    public function setAccountingContact(?AccountingContact $accountingContact = null): static
-    {
+    public function setAccountingContact(
+        ?AccountingContact $accountingContact = null
+    ): static {
         $this->accountingContact = $accountingContact;
 
         return $this;
@@ -430,8 +438,9 @@ class CustomerPartyType
      * @param  null|BuyerContact $buyerContact
      * @return static
      */
-    public function setBuyerContact(?BuyerContact $buyerContact = null): static
-    {
+    public function setBuyerContact(
+        ?BuyerContact $buyerContact = null
+    ): static {
         $this->buyerContact = $buyerContact;
 
         return $this;

@@ -113,8 +113,9 @@ final class DatiTrasmissione
      * @param  null|IdFiscale $idTrasmittente
      * @return static
      */
-    public function setIdTrasmittente(?IdFiscale $idTrasmittente = null): static
-    {
+    public function setIdTrasmittente(
+        ?IdFiscale $idTrasmittente = null
+    ): static {
         $this->idTrasmittente = $idTrasmittente;
 
         return $this;
@@ -148,8 +149,9 @@ final class DatiTrasmissione
      * @param  null|string $progressivoInvio
      * @return static
      */
-    public function setProgressivoInvio(?string $progressivoInvio = null): static
-    {
+    public function setProgressivoInvio(
+        ?string $progressivoInvio = null
+    ): static {
         $this->progressivoInvio = InvoiceSuiteStringUtils::asNullWhenEmpty($progressivoInvio);
 
         return $this;
@@ -183,8 +185,9 @@ final class DatiTrasmissione
      * @param  null|FormatoTrasmissione $formatoTrasmissione
      * @return static
      */
-    public function setFormatoTrasmissione(?FormatoTrasmissione $formatoTrasmissione = null): static
-    {
+    public function setFormatoTrasmissione(
+        ?FormatoTrasmissione $formatoTrasmissione = null
+    ): static {
         $this->formatoTrasmissione = $formatoTrasmissione;
 
         return $this;
@@ -218,8 +221,9 @@ final class DatiTrasmissione
      * @param  null|string $codiceDestinatario
      * @return static
      */
-    public function setCodiceDestinatario(?string $codiceDestinatario = null): static
-    {
+    public function setCodiceDestinatario(
+        ?string $codiceDestinatario = null
+    ): static {
         $this->codiceDestinatario = InvoiceSuiteStringUtils::asNullWhenEmpty($codiceDestinatario);
 
         return $this;
@@ -265,8 +269,9 @@ final class DatiTrasmissione
      * @param  null|ContattiTrasmittente $contattiTrasmittente
      * @return static
      */
-    public function setContattiTrasmittente(?ContattiTrasmittente $contattiTrasmittente = null): static
-    {
+    public function setContattiTrasmittente(
+        ?ContattiTrasmittente $contattiTrasmittente = null
+    ): static {
         $this->contattiTrasmittente = $contattiTrasmittente;
 
         return $this;
@@ -300,8 +305,9 @@ final class DatiTrasmissione
      * @param  null|string $pECDestinatario
      * @return static
      */
-    public function setPECDestinatario(?string $pECDestinatario = null): static
-    {
+    public function setPECDestinatario(
+        ?string $pECDestinatario = null
+    ): static {
         $this->pECDestinatario = InvoiceSuiteStringUtils::asNullWhenEmpty($pECDestinatario);
 
         return $this;

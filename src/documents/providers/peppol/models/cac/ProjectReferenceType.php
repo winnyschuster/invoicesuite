@@ -81,8 +81,9 @@ class ProjectReferenceType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -120,8 +121,9 @@ class ProjectReferenceType
      * @param  null|UUID $uUID
      * @return static
      */
-    public function setUUID(?UUID $uUID = null): static
-    {
+    public function setUUID(
+        ?UUID $uUID = null
+    ): static {
         $this->uUID = $uUID;
 
         return $this;
@@ -149,8 +151,9 @@ class ProjectReferenceType
      * @param  null|DateTimeInterface $issueDate
      * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): static
-    {
+    public function setIssueDate(
+        ?DateTimeInterface $issueDate = null
+    ): static {
         $this->issueDate = $issueDate;
 
         return $this;
@@ -178,8 +181,9 @@ class ProjectReferenceType
      * @param  null|array<WorkPhaseReference> $workPhaseReference
      * @return static
      */
-    public function setWorkPhaseReference(?array $workPhaseReference = null): static
-    {
+    public function setWorkPhaseReference(
+        ?array $workPhaseReference = null
+    ): static {
         $this->workPhaseReference = $workPhaseReference;
 
         return $this;
@@ -239,8 +243,9 @@ class ProjectReferenceType
      * @param  WorkPhaseReference $workPhaseReference
      * @return static
      */
-    public function addToWorkPhaseReference(WorkPhaseReference $workPhaseReference): static
-    {
+    public function addToWorkPhaseReference(
+        WorkPhaseReference $workPhaseReference
+    ): static {
         $this->workPhaseReference[] = $workPhaseReference;
 
         return $this;
@@ -260,8 +265,9 @@ class ProjectReferenceType
      * @param  WorkPhaseReference $workPhaseReference
      * @return static
      */
-    public function addOnceToWorkPhaseReference(WorkPhaseReference $workPhaseReference): static
-    {
+    public function addOnceToWorkPhaseReference(
+        WorkPhaseReference $workPhaseReference
+    ): static {
         if (!is_array($this->workPhaseReference)) {
             $this->workPhaseReference = [];
         }

@@ -112,8 +112,9 @@ class HeaderTradeDeliveryType
      * @param  null|array<LogisticsTransportMovementType> $relatedSupplyChainConsignment
      * @return static
      */
-    public function setRelatedSupplyChainConsignment(?array $relatedSupplyChainConsignment = null): static
-    {
+    public function setRelatedSupplyChainConsignment(
+        ?array $relatedSupplyChainConsignment = null
+    ): static {
         $this->relatedSupplyChainConsignment = $relatedSupplyChainConsignment;
 
         return $this;
@@ -215,8 +216,9 @@ class HeaderTradeDeliveryType
      * @param  null|TradePartyType $shipToTradeParty
      * @return static
      */
-    public function setShipToTradeParty(?TradePartyType $shipToTradeParty = null): static
-    {
+    public function setShipToTradeParty(
+        ?TradePartyType $shipToTradeParty = null
+    ): static {
         $this->shipToTradeParty = $shipToTradeParty;
 
         return $this;
@@ -254,8 +256,9 @@ class HeaderTradeDeliveryType
      * @param  null|TradePartyType $ultimateShipToTradeParty
      * @return static
      */
-    public function setUltimateShipToTradeParty(?TradePartyType $ultimateShipToTradeParty = null): static
-    {
+    public function setUltimateShipToTradeParty(
+        ?TradePartyType $ultimateShipToTradeParty = null
+    ): static {
         $this->ultimateShipToTradeParty = $ultimateShipToTradeParty;
 
         return $this;
@@ -293,8 +296,9 @@ class HeaderTradeDeliveryType
      * @param  null|TradePartyType $shipFromTradeParty
      * @return static
      */
-    public function setShipFromTradeParty(?TradePartyType $shipFromTradeParty = null): static
-    {
+    public function setShipFromTradeParty(
+        ?TradePartyType $shipFromTradeParty = null
+    ): static {
         $this->shipFromTradeParty = $shipFromTradeParty;
 
         return $this;

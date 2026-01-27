@@ -104,8 +104,9 @@ class PerformanceDataLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -133,8 +134,9 @@ class PerformanceDataLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -194,8 +196,9 @@ class PerformanceDataLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -215,8 +218,9 @@ class PerformanceDataLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -264,8 +268,9 @@ class PerformanceDataLineType
      * @param  null|PerformanceValueQuantity $performanceValueQuantity
      * @return static
      */
-    public function setPerformanceValueQuantity(?PerformanceValueQuantity $performanceValueQuantity = null): static
-    {
+    public function setPerformanceValueQuantity(
+        ?PerformanceValueQuantity $performanceValueQuantity = null
+    ): static {
         $this->performanceValueQuantity = $performanceValueQuantity;
 
         return $this;
@@ -303,8 +308,9 @@ class PerformanceDataLineType
      * @param  null|PerformanceMetricTypeCode $performanceMetricTypeCode
      * @return static
      */
-    public function setPerformanceMetricTypeCode(?PerformanceMetricTypeCode $performanceMetricTypeCode = null): static
-    {
+    public function setPerformanceMetricTypeCode(
+        ?PerformanceMetricTypeCode $performanceMetricTypeCode = null
+    ): static {
         $this->performanceMetricTypeCode = $performanceMetricTypeCode;
 
         return $this;
@@ -342,8 +348,9 @@ class PerformanceDataLineType
      * @param  null|Period $period
      * @return static
      */
-    public function setPeriod(?Period $period = null): static
-    {
+    public function setPeriod(
+        ?Period $period = null
+    ): static {
         $this->period = $period;
 
         return $this;
@@ -381,8 +388,9 @@ class PerformanceDataLineType
      * @param  null|Item $item
      * @return static
      */
-    public function setItem(?Item $item = null): static
-    {
+    public function setItem(
+        ?Item $item = null
+    ): static {
         $this->item = $item;
 
         return $this;

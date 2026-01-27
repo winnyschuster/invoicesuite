@@ -127,8 +127,9 @@ class PowerOfAttorneyType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -156,8 +157,9 @@ class PowerOfAttorneyType
      * @param  null|DateTimeInterface $issueDate
      * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): static
-    {
+    public function setIssueDate(
+        ?DateTimeInterface $issueDate = null
+    ): static {
         $this->issueDate = $issueDate;
 
         return $this;
@@ -185,8 +187,9 @@ class PowerOfAttorneyType
      * @param  null|DateTimeInterface $issueTime
      * @return static
      */
-    public function setIssueTime(?DateTimeInterface $issueTime = null): static
-    {
+    public function setIssueTime(
+        ?DateTimeInterface $issueTime = null
+    ): static {
         $this->issueTime = $issueTime;
 
         return $this;
@@ -214,8 +217,9 @@ class PowerOfAttorneyType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -275,8 +279,9 @@ class PowerOfAttorneyType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -296,8 +301,9 @@ class PowerOfAttorneyType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -345,8 +351,9 @@ class PowerOfAttorneyType
      * @param  null|NotaryParty $notaryParty
      * @return static
      */
-    public function setNotaryParty(?NotaryParty $notaryParty = null): static
-    {
+    public function setNotaryParty(
+        ?NotaryParty $notaryParty = null
+    ): static {
         $this->notaryParty = $notaryParty;
 
         return $this;
@@ -384,8 +391,9 @@ class PowerOfAttorneyType
      * @param  null|AgentParty $agentParty
      * @return static
      */
-    public function setAgentParty(?AgentParty $agentParty = null): static
-    {
+    public function setAgentParty(
+        ?AgentParty $agentParty = null
+    ): static {
         $this->agentParty = $agentParty;
 
         return $this;
@@ -413,8 +421,9 @@ class PowerOfAttorneyType
      * @param  null|array<WitnessParty> $witnessParty
      * @return static
      */
-    public function setWitnessParty(?array $witnessParty = null): static
-    {
+    public function setWitnessParty(
+        ?array $witnessParty = null
+    ): static {
         $this->witnessParty = $witnessParty;
 
         return $this;
@@ -474,8 +483,9 @@ class PowerOfAttorneyType
      * @param  WitnessParty $witnessParty
      * @return static
      */
-    public function addToWitnessParty(WitnessParty $witnessParty): static
-    {
+    public function addToWitnessParty(
+        WitnessParty $witnessParty
+    ): static {
         $this->witnessParty[] = $witnessParty;
 
         return $this;
@@ -495,8 +505,9 @@ class PowerOfAttorneyType
      * @param  WitnessParty $witnessParty
      * @return static
      */
-    public function addOnceToWitnessParty(WitnessParty $witnessParty): static
-    {
+    public function addOnceToWitnessParty(
+        WitnessParty $witnessParty
+    ): static {
         if (!is_array($this->witnessParty)) {
             $this->witnessParty = [];
         }
@@ -534,8 +545,9 @@ class PowerOfAttorneyType
      * @param  null|array<MandateDocumentReference> $mandateDocumentReference
      * @return static
      */
-    public function setMandateDocumentReference(?array $mandateDocumentReference = null): static
-    {
+    public function setMandateDocumentReference(
+        ?array $mandateDocumentReference = null
+    ): static {
         $this->mandateDocumentReference = $mandateDocumentReference;
 
         return $this;
@@ -595,8 +607,9 @@ class PowerOfAttorneyType
      * @param  MandateDocumentReference $mandateDocumentReference
      * @return static
      */
-    public function addToMandateDocumentReference(MandateDocumentReference $mandateDocumentReference): static
-    {
+    public function addToMandateDocumentReference(
+        MandateDocumentReference $mandateDocumentReference
+    ): static {
         $this->mandateDocumentReference[] = $mandateDocumentReference;
 
         return $this;
@@ -616,8 +629,9 @@ class PowerOfAttorneyType
      * @param  MandateDocumentReference $mandateDocumentReference
      * @return static
      */
-    public function addOnceToMandateDocumentReference(MandateDocumentReference $mandateDocumentReference): static
-    {
+    public function addOnceToMandateDocumentReference(
+        MandateDocumentReference $mandateDocumentReference
+    ): static {
         if (!is_array($this->mandateDocumentReference)) {
             $this->mandateDocumentReference = [];
         }

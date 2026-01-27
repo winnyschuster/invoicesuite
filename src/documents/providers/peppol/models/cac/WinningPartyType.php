@@ -56,8 +56,9 @@ class WinningPartyType
      * @param  null|Rank $rank
      * @return static
      */
-    public function setRank(?Rank $rank = null): static
-    {
+    public function setRank(
+        ?Rank $rank = null
+    ): static {
         $this->rank = $rank;
 
         return $this;
@@ -95,8 +96,9 @@ class WinningPartyType
      * @param  null|Party $party
      * @return static
      */
-    public function setParty(?Party $party = null): static
-    {
+    public function setParty(
+        ?Party $party = null
+    ): static {
         $this->party = $party;
 
         return $this;

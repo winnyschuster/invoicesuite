@@ -69,8 +69,9 @@ class BudgetAccountLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -108,8 +109,9 @@ class BudgetAccountLineType
      * @param  null|TotalAmount $totalAmount
      * @return static
      */
-    public function setTotalAmount(?TotalAmount $totalAmount = null): static
-    {
+    public function setTotalAmount(
+        ?TotalAmount $totalAmount = null
+    ): static {
         $this->totalAmount = $totalAmount;
 
         return $this;
@@ -137,8 +139,9 @@ class BudgetAccountLineType
      * @param  null|array<BudgetAccount> $budgetAccount
      * @return static
      */
-    public function setBudgetAccount(?array $budgetAccount = null): static
-    {
+    public function setBudgetAccount(
+        ?array $budgetAccount = null
+    ): static {
         $this->budgetAccount = $budgetAccount;
 
         return $this;
@@ -198,8 +201,9 @@ class BudgetAccountLineType
      * @param  BudgetAccount $budgetAccount
      * @return static
      */
-    public function addToBudgetAccount(BudgetAccount $budgetAccount): static
-    {
+    public function addToBudgetAccount(
+        BudgetAccount $budgetAccount
+    ): static {
         $this->budgetAccount[] = $budgetAccount;
 
         return $this;
@@ -219,8 +223,9 @@ class BudgetAccountLineType
      * @param  BudgetAccount $budgetAccount
      * @return static
      */
-    public function addOnceToBudgetAccount(BudgetAccount $budgetAccount): static
-    {
+    public function addOnceToBudgetAccount(
+        BudgetAccount $budgetAccount
+    ): static {
         if (!is_array($this->budgetAccount)) {
             $this->budgetAccount = [];
         }

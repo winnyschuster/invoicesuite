@@ -56,8 +56,9 @@ class SignaturePropertyType
      * @param  string $target
      * @return static
      */
-    public function setTarget(?string $target = null): static
-    {
+    public function setTarget(
+        ?string $target = null
+    ): static {
         $this->target = $target;
 
         return $this;
@@ -91,8 +92,9 @@ class SignaturePropertyType
      * @param  string $id
      * @return static
      */
-    public function setId(?string $id = null): static
-    {
+    public function setId(
+        ?string $id = null
+    ): static {
         $this->id = $id;
 
         return $this;

@@ -28,8 +28,9 @@ final class HandlesSafeInvokingTest extends TestCase
 
             public mixed $receivedValue = null;
 
-            public function setValue($value): void
-            {
+            public function setValue(
+                $value
+            ): void {
                 $this->wasCalled = true;
                 $this->receivedValue = $value;
             }
@@ -50,8 +51,9 @@ final class HandlesSafeInvokingTest extends TestCase
 
             public mixed $receivedValue = null;
 
-            public function setValue($value): void
-            {
+            public function setValue(
+                $value
+            ): void {
                 $this->wasCalled = true;
                 $this->receivedValue = $value;
             }
@@ -73,8 +75,9 @@ final class HandlesSafeInvokingTest extends TestCase
 
             public mixed $receivedValue = null;
 
-            public function setValue($value): void
-            {
+            public function setValue(
+                $value
+            ): void {
                 $this->wasCalled = true;
                 $this->receivedValue = $value;
             }
@@ -153,8 +156,9 @@ final class HandlesSafeInvokingTest extends TestCase
 
             public mixed $value = null;
 
-            public function setFoo($value): void
-            {
+            public function setFoo(
+                $value
+            ): void {
                 $this->wasSetCalled = true;
                 $this->value = $value;
             }
@@ -184,8 +188,9 @@ final class HandlesSafeInvokingTest extends TestCase
 
             public mixed $value = null;
 
-            public function setFoo($value): void
-            {
+            public function setFoo(
+                $value
+            ): void {
                 $this->wasSetCalled = true;
                 $this->value = $value;
             }
@@ -215,8 +220,9 @@ final class HandlesSafeInvokingTest extends TestCase
 
             public mixed $value = null;
 
-            public function setFoo($value): void
-            {
+            public function setFoo(
+                $value
+            ): void {
                 $this->wasSetCalled = true;
                 $this->value = $value;
             }
@@ -256,7 +262,9 @@ final class HandlesSafeInvokingTest extends TestCase
         $harness = $this->createHarness();
 
         $receiver = new class {
-            public function setValue($value): void {}
+            public function setValue(
+                $value
+            ): void {}
         };
 
         $this->assertTrue($harness->methodExists($receiver, 'setValue'));
@@ -278,23 +286,33 @@ final class HandlesSafeInvokingTest extends TestCase
         return new class {
             use HandlesSafeInvoking;
 
-            public function tryCall($instance, string $method, $value): static
-            {
+            public function tryCall(
+                $instance,
+                string $method,
+                $value
+            ): static {
                 return $this->safeInvokeTryCall($instance, $method, $value);
             }
 
-            public function tryCallAndReturn($instance, string $method)
-            {
+            public function tryCallAndReturn(
+                $instance,
+                string $method
+            ) {
                 return $this->safeInvokeTryCallAndReturn($instance, $method);
             }
 
-            public function tryCallByPath($instance, string $methods, $value): void
-            {
+            public function tryCallByPath(
+                $instance,
+                string $methods,
+                $value
+            ): void {
                 $this->safeInvokeTryCallByPath($instance, $methods, $value);
             }
 
-            public function methodExists($instance, $method): bool
-            {
+            public function methodExists(
+                $instance,
+                $method
+            ): bool {
                 return $this->safeInvokeMethodExists($instance, $method);
             }
         };

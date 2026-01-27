@@ -134,8 +134,9 @@ class KeyInfoType
      * @param  string $keyName
      * @return static
      */
-    public function setKeyName(?string $keyName = null): static
-    {
+    public function setKeyName(
+        ?string $keyName = null
+    ): static {
         $this->keyName = $keyName;
 
         return $this;
@@ -181,8 +182,9 @@ class KeyInfoType
      * @param  KeyValueType $keyValue
      * @return static
      */
-    public function setKeyValue(?KeyValueType $keyValue = null): static
-    {
+    public function setKeyValue(
+        ?KeyValueType $keyValue = null
+    ): static {
         $this->keyValue = $keyValue;
 
         return $this;
@@ -228,8 +230,9 @@ class KeyInfoType
      * @param  RetrievalMethodType $retrievalMethod
      * @return static
      */
-    public function setRetrievalMethod(?RetrievalMethodType $retrievalMethod = null): static
-    {
+    public function setRetrievalMethod(
+        ?RetrievalMethodType $retrievalMethod = null
+    ): static {
         $this->retrievalMethod = $retrievalMethod;
 
         return $this;
@@ -275,8 +278,9 @@ class KeyInfoType
      * @param  X509DataType $x509Data
      * @return static
      */
-    public function setX509Data(?X509DataType $x509Data = null): static
-    {
+    public function setX509Data(
+        ?X509DataType $x509Data = null
+    ): static {
         $this->x509Data = $x509Data;
 
         return $this;
@@ -322,8 +326,9 @@ class KeyInfoType
      * @param  PGPDataType $pGPData
      * @return static
      */
-    public function setPGPData(?PGPDataType $pGPData = null): static
-    {
+    public function setPGPData(
+        ?PGPDataType $pGPData = null
+    ): static {
         $this->pGPData = $pGPData;
 
         return $this;
@@ -369,8 +374,9 @@ class KeyInfoType
      * @param  SPKIDataType $sPKIData
      * @return static
      */
-    public function setSPKIData(?SPKIDataType $sPKIData = null): static
-    {
+    public function setSPKIData(
+        ?SPKIDataType $sPKIData = null
+    ): static {
         $this->sPKIData = $sPKIData;
 
         return $this;
@@ -404,8 +410,9 @@ class KeyInfoType
      * @param  string $mgmtData
      * @return static
      */
-    public function setMgmtData(?string $mgmtData = null): static
-    {
+    public function setMgmtData(
+        ?string $mgmtData = null
+    ): static {
         $this->mgmtData = $mgmtData;
 
         return $this;
@@ -439,8 +446,9 @@ class KeyInfoType
      * @param  string $id
      * @return static
      */
-    public function setId(?string $id = null): static
-    {
+    public function setId(
+        ?string $id = null
+    ): static {
         $this->id = $id;
 
         return $this;

@@ -258,8 +258,9 @@ class PaymentTermsType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -287,8 +288,9 @@ class PaymentTermsType
      * @param  null|array<PaymentMeansID> $paymentMeansID
      * @return static
      */
-    public function setPaymentMeansID(?array $paymentMeansID = null): static
-    {
+    public function setPaymentMeansID(
+        ?array $paymentMeansID = null
+    ): static {
         $this->paymentMeansID = $paymentMeansID;
 
         return $this;
@@ -348,8 +350,9 @@ class PaymentTermsType
      * @param  PaymentMeansID $paymentMeansID
      * @return static
      */
-    public function addToPaymentMeansID(PaymentMeansID $paymentMeansID): static
-    {
+    public function addToPaymentMeansID(
+        PaymentMeansID $paymentMeansID
+    ): static {
         $this->paymentMeansID[] = $paymentMeansID;
 
         return $this;
@@ -369,8 +372,9 @@ class PaymentTermsType
      * @param  PaymentMeansID $paymentMeansID
      * @return static
      */
-    public function addOnceToPaymentMeansID(PaymentMeansID $paymentMeansID): static
-    {
+    public function addOnceToPaymentMeansID(
+        PaymentMeansID $paymentMeansID
+    ): static {
         if (!is_array($this->paymentMeansID)) {
             $this->paymentMeansID = [];
         }
@@ -418,8 +422,9 @@ class PaymentTermsType
      * @param  null|PrepaidPaymentReferenceID $prepaidPaymentReferenceID
      * @return static
      */
-    public function setPrepaidPaymentReferenceID(?PrepaidPaymentReferenceID $prepaidPaymentReferenceID = null): static
-    {
+    public function setPrepaidPaymentReferenceID(
+        ?PrepaidPaymentReferenceID $prepaidPaymentReferenceID = null
+    ): static {
         $this->prepaidPaymentReferenceID = $prepaidPaymentReferenceID;
 
         return $this;
@@ -447,8 +452,9 @@ class PaymentTermsType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -508,8 +514,9 @@ class PaymentTermsType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -529,8 +536,9 @@ class PaymentTermsType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -578,8 +586,9 @@ class PaymentTermsType
      * @param  null|ReferenceEventCode $referenceEventCode
      * @return static
      */
-    public function setReferenceEventCode(?ReferenceEventCode $referenceEventCode = null): static
-    {
+    public function setReferenceEventCode(
+        ?ReferenceEventCode $referenceEventCode = null
+    ): static {
         $this->referenceEventCode = $referenceEventCode;
 
         return $this;
@@ -617,8 +626,9 @@ class PaymentTermsType
      * @param  null|SettlementDiscountPercent $settlementDiscountPercent
      * @return static
      */
-    public function setSettlementDiscountPercent(?SettlementDiscountPercent $settlementDiscountPercent = null): static
-    {
+    public function setSettlementDiscountPercent(
+        ?SettlementDiscountPercent $settlementDiscountPercent = null
+    ): static {
         $this->settlementDiscountPercent = $settlementDiscountPercent;
 
         return $this;
@@ -656,8 +666,9 @@ class PaymentTermsType
      * @param  null|PenaltySurchargePercent $penaltySurchargePercent
      * @return static
      */
-    public function setPenaltySurchargePercent(?PenaltySurchargePercent $penaltySurchargePercent = null): static
-    {
+    public function setPenaltySurchargePercent(
+        ?PenaltySurchargePercent $penaltySurchargePercent = null
+    ): static {
         $this->penaltySurchargePercent = $penaltySurchargePercent;
 
         return $this;
@@ -695,8 +706,9 @@ class PaymentTermsType
      * @param  null|PaymentPercent $paymentPercent
      * @return static
      */
-    public function setPaymentPercent(?PaymentPercent $paymentPercent = null): static
-    {
+    public function setPaymentPercent(
+        ?PaymentPercent $paymentPercent = null
+    ): static {
         $this->paymentPercent = $paymentPercent;
 
         return $this;
@@ -734,8 +746,9 @@ class PaymentTermsType
      * @param  null|Amount $amount
      * @return static
      */
-    public function setAmount(?Amount $amount = null): static
-    {
+    public function setAmount(
+        ?Amount $amount = null
+    ): static {
         $this->amount = $amount;
 
         return $this;
@@ -773,8 +786,9 @@ class PaymentTermsType
      * @param  null|SettlementDiscountAmount $settlementDiscountAmount
      * @return static
      */
-    public function setSettlementDiscountAmount(?SettlementDiscountAmount $settlementDiscountAmount = null): static
-    {
+    public function setSettlementDiscountAmount(
+        ?SettlementDiscountAmount $settlementDiscountAmount = null
+    ): static {
         $this->settlementDiscountAmount = $settlementDiscountAmount;
 
         return $this;
@@ -812,8 +826,9 @@ class PaymentTermsType
      * @param  null|PenaltyAmount $penaltyAmount
      * @return static
      */
-    public function setPenaltyAmount(?PenaltyAmount $penaltyAmount = null): static
-    {
+    public function setPenaltyAmount(
+        ?PenaltyAmount $penaltyAmount = null
+    ): static {
         $this->penaltyAmount = $penaltyAmount;
 
         return $this;
@@ -851,8 +866,9 @@ class PaymentTermsType
      * @param  null|PaymentTermsDetailsURI $paymentTermsDetailsURI
      * @return static
      */
-    public function setPaymentTermsDetailsURI(?PaymentTermsDetailsURI $paymentTermsDetailsURI = null): static
-    {
+    public function setPaymentTermsDetailsURI(
+        ?PaymentTermsDetailsURI $paymentTermsDetailsURI = null
+    ): static {
         $this->paymentTermsDetailsURI = $paymentTermsDetailsURI;
 
         return $this;
@@ -880,8 +896,9 @@ class PaymentTermsType
      * @param  null|DateTimeInterface $paymentDueDate
      * @return static
      */
-    public function setPaymentDueDate(?DateTimeInterface $paymentDueDate = null): static
-    {
+    public function setPaymentDueDate(
+        ?DateTimeInterface $paymentDueDate = null
+    ): static {
         $this->paymentDueDate = $paymentDueDate;
 
         return $this;
@@ -909,8 +926,9 @@ class PaymentTermsType
      * @param  null|DateTimeInterface $installmentDueDate
      * @return static
      */
-    public function setInstallmentDueDate(?DateTimeInterface $installmentDueDate = null): static
-    {
+    public function setInstallmentDueDate(
+        ?DateTimeInterface $installmentDueDate = null
+    ): static {
         $this->installmentDueDate = $installmentDueDate;
 
         return $this;
@@ -948,8 +966,9 @@ class PaymentTermsType
      * @param  null|InvoicingPartyReference $invoicingPartyReference
      * @return static
      */
-    public function setInvoicingPartyReference(?InvoicingPartyReference $invoicingPartyReference = null): static
-    {
+    public function setInvoicingPartyReference(
+        ?InvoicingPartyReference $invoicingPartyReference = null
+    ): static {
         $this->invoicingPartyReference = $invoicingPartyReference;
 
         return $this;
@@ -987,8 +1006,9 @@ class PaymentTermsType
      * @param  null|SettlementPeriod $settlementPeriod
      * @return static
      */
-    public function setSettlementPeriod(?SettlementPeriod $settlementPeriod = null): static
-    {
+    public function setSettlementPeriod(
+        ?SettlementPeriod $settlementPeriod = null
+    ): static {
         $this->settlementPeriod = $settlementPeriod;
 
         return $this;
@@ -1026,8 +1046,9 @@ class PaymentTermsType
      * @param  null|PenaltyPeriod $penaltyPeriod
      * @return static
      */
-    public function setPenaltyPeriod(?PenaltyPeriod $penaltyPeriod = null): static
-    {
+    public function setPenaltyPeriod(
+        ?PenaltyPeriod $penaltyPeriod = null
+    ): static {
         $this->penaltyPeriod = $penaltyPeriod;
 
         return $this;
@@ -1065,8 +1086,9 @@ class PaymentTermsType
      * @param  null|ExchangeRate $exchangeRate
      * @return static
      */
-    public function setExchangeRate(?ExchangeRate $exchangeRate = null): static
-    {
+    public function setExchangeRate(
+        ?ExchangeRate $exchangeRate = null
+    ): static {
         $this->exchangeRate = $exchangeRate;
 
         return $this;
@@ -1104,8 +1126,9 @@ class PaymentTermsType
      * @param  null|ValidityPeriod $validityPeriod
      * @return static
      */
-    public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): static
-    {
+    public function setValidityPeriod(
+        ?ValidityPeriod $validityPeriod = null
+    ): static {
         $this->validityPeriod = $validityPeriod;
 
         return $this;

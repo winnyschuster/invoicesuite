@@ -128,8 +128,9 @@ class RequestForQuotationLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -167,8 +168,9 @@ class RequestForQuotationLineType
      * @param  null|UUID $uUID
      * @return static
      */
-    public function setUUID(?UUID $uUID = null): static
-    {
+    public function setUUID(
+        ?UUID $uUID = null
+    ): static {
         $this->uUID = $uUID;
 
         return $this;
@@ -196,8 +198,9 @@ class RequestForQuotationLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -257,8 +260,9 @@ class RequestForQuotationLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -278,8 +282,9 @@ class RequestForQuotationLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -317,8 +322,9 @@ class RequestForQuotationLineType
      * @param  null|bool $optionalLineItemIndicator
      * @return static
      */
-    public function setOptionalLineItemIndicator(?bool $optionalLineItemIndicator = null): static
-    {
+    public function setOptionalLineItemIndicator(
+        ?bool $optionalLineItemIndicator = null
+    ): static {
         $this->optionalLineItemIndicator = $optionalLineItemIndicator;
 
         return $this;
@@ -356,8 +362,9 @@ class RequestForQuotationLineType
      * @param  null|PrivacyCode $privacyCode
      * @return static
      */
-    public function setPrivacyCode(?PrivacyCode $privacyCode = null): static
-    {
+    public function setPrivacyCode(
+        ?PrivacyCode $privacyCode = null
+    ): static {
         $this->privacyCode = $privacyCode;
 
         return $this;
@@ -425,8 +432,9 @@ class RequestForQuotationLineType
      * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?array $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;
@@ -486,8 +494,9 @@ class RequestForQuotationLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         $this->documentReference[] = $documentReference;
 
         return $this;
@@ -507,8 +516,9 @@ class RequestForQuotationLineType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addOnceToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
         }
@@ -556,8 +566,9 @@ class RequestForQuotationLineType
      * @param  null|LineItem $lineItem
      * @return static
      */
-    public function setLineItem(?LineItem $lineItem = null): static
-    {
+    public function setLineItem(
+        ?LineItem $lineItem = null
+    ): static {
         $this->lineItem = $lineItem;
 
         return $this;

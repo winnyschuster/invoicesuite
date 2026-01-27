@@ -45,8 +45,9 @@ class LogisticsTransportMovementType
      * @param  null|TransportModeCodeType $modeCode
      * @return static
      */
-    public function setModeCode(?TransportModeCodeType $modeCode = null): static
-    {
+    public function setModeCode(
+        ?TransportModeCodeType $modeCode = null
+    ): static {
         $this->modeCode = $modeCode;
 
         return $this;

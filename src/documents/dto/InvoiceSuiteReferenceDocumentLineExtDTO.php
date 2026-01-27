@@ -97,8 +97,9 @@ class InvoiceSuiteReferenceDocumentLineExtDTO extends InvoiceSuiteReferenceDocum
      * @param  null|string $typeCode The additional document type code
      * @return static
      */
-    public function setTypeCode(?string $typeCode): static
-    {
+    public function setTypeCode(
+        ?string $typeCode
+    ): static {
         $this->typeCode = InvoiceSuiteStringUtils::asNullWhenEmpty($typeCode);
 
         return $this;
@@ -120,8 +121,9 @@ class InvoiceSuiteReferenceDocumentLineExtDTO extends InvoiceSuiteReferenceDocum
      * @param  null|string $referenceTypeCode The additional document reference-type code
      * @return static
      */
-    public function setReferenceTypeCode(?string $referenceTypeCode): static
-    {
+    public function setReferenceTypeCode(
+        ?string $referenceTypeCode
+    ): static {
         $this->referenceTypeCode = InvoiceSuiteStringUtils::asNullWhenEmpty($referenceTypeCode);
 
         return $this;
@@ -143,8 +145,9 @@ class InvoiceSuiteReferenceDocumentLineExtDTO extends InvoiceSuiteReferenceDocum
      * @param  null|string $description The additional document description
      * @return static
      */
-    public function setDescription(?string $description): static
-    {
+    public function setDescription(
+        ?string $description
+    ): static {
         $this->description = InvoiceSuiteStringUtils::asNullWhenEmpty($description);
 
         return $this;
@@ -166,8 +169,9 @@ class InvoiceSuiteReferenceDocumentLineExtDTO extends InvoiceSuiteReferenceDocum
      * @param  null|InvoiceSuiteAttachment $attachment The additional document description
      * @return static
      */
-    public function setAttachment(?InvoiceSuiteAttachment $attachment): static
-    {
+    public function setAttachment(
+        ?InvoiceSuiteAttachment $attachment
+    ): static {
         $this->attachment = $attachment;
 
         return $this;

@@ -79,8 +79,9 @@ class CataloguePricingUpdateLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -118,8 +119,9 @@ class CataloguePricingUpdateLineType
      * @param  null|ContractorCustomerParty $contractorCustomerParty
      * @return static
      */
-    public function setContractorCustomerParty(?ContractorCustomerParty $contractorCustomerParty = null): static
-    {
+    public function setContractorCustomerParty(
+        ?ContractorCustomerParty $contractorCustomerParty = null
+    ): static {
         $this->contractorCustomerParty = $contractorCustomerParty;
 
         return $this;
@@ -157,8 +159,9 @@ class CataloguePricingUpdateLineType
      * @param  null|SellerSupplierParty $sellerSupplierParty
      * @return static
      */
-    public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
-    {
+    public function setSellerSupplierParty(
+        ?SellerSupplierParty $sellerSupplierParty = null
+    ): static {
         $this->sellerSupplierParty = $sellerSupplierParty;
 
         return $this;
@@ -186,8 +189,9 @@ class CataloguePricingUpdateLineType
      * @param  null|array<RequiredItemLocationQuantity> $requiredItemLocationQuantity
      * @return static
      */
-    public function setRequiredItemLocationQuantity(?array $requiredItemLocationQuantity = null): static
-    {
+    public function setRequiredItemLocationQuantity(
+        ?array $requiredItemLocationQuantity = null
+    ): static {
         $this->requiredItemLocationQuantity = $requiredItemLocationQuantity;
 
         return $this;

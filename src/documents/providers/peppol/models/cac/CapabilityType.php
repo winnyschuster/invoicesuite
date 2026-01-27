@@ -105,8 +105,9 @@ class CapabilityType
      * @param  null|CapabilityTypeCode $capabilityTypeCode
      * @return static
      */
-    public function setCapabilityTypeCode(?CapabilityTypeCode $capabilityTypeCode = null): static
-    {
+    public function setCapabilityTypeCode(
+        ?CapabilityTypeCode $capabilityTypeCode = null
+    ): static {
         $this->capabilityTypeCode = $capabilityTypeCode;
 
         return $this;
@@ -134,8 +135,9 @@ class CapabilityType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -195,8 +197,9 @@ class CapabilityType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -216,8 +219,9 @@ class CapabilityType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -265,8 +269,9 @@ class CapabilityType
      * @param  null|ValueAmount $valueAmount
      * @return static
      */
-    public function setValueAmount(?ValueAmount $valueAmount = null): static
-    {
+    public function setValueAmount(
+        ?ValueAmount $valueAmount = null
+    ): static {
         $this->valueAmount = $valueAmount;
 
         return $this;
@@ -304,8 +309,9 @@ class CapabilityType
      * @param  null|ValueQuantity $valueQuantity
      * @return static
      */
-    public function setValueQuantity(?ValueQuantity $valueQuantity = null): static
-    {
+    public function setValueQuantity(
+        ?ValueQuantity $valueQuantity = null
+    ): static {
         $this->valueQuantity = $valueQuantity;
 
         return $this;
@@ -333,8 +339,9 @@ class CapabilityType
      * @param  null|array<EvidenceSupplied> $evidenceSupplied
      * @return static
      */
-    public function setEvidenceSupplied(?array $evidenceSupplied = null): static
-    {
+    public function setEvidenceSupplied(
+        ?array $evidenceSupplied = null
+    ): static {
         $this->evidenceSupplied = $evidenceSupplied;
 
         return $this;
@@ -394,8 +401,9 @@ class CapabilityType
      * @param  EvidenceSupplied $evidenceSupplied
      * @return static
      */
-    public function addToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
-    {
+    public function addToEvidenceSupplied(
+        EvidenceSupplied $evidenceSupplied
+    ): static {
         $this->evidenceSupplied[] = $evidenceSupplied;
 
         return $this;
@@ -415,8 +423,9 @@ class CapabilityType
      * @param  EvidenceSupplied $evidenceSupplied
      * @return static
      */
-    public function addOnceToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
-    {
+    public function addOnceToEvidenceSupplied(
+        EvidenceSupplied $evidenceSupplied
+    ): static {
         if (!is_array($this->evidenceSupplied)) {
             $this->evidenceSupplied = [];
         }
@@ -464,8 +473,9 @@ class CapabilityType
      * @param  null|ValidityPeriod $validityPeriod
      * @return static
      */
-    public function setValidityPeriod(?ValidityPeriod $validityPeriod = null): static
-    {
+    public function setValidityPeriod(
+        ?ValidityPeriod $validityPeriod = null
+    ): static {
         $this->validityPeriod = $validityPeriod;
 
         return $this;

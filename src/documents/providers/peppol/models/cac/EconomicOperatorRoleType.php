@@ -58,8 +58,9 @@ class EconomicOperatorRoleType
      * @param  null|RoleCode $roleCode
      * @return static
      */
-    public function setRoleCode(?RoleCode $roleCode = null): static
-    {
+    public function setRoleCode(
+        ?RoleCode $roleCode = null
+    ): static {
         $this->roleCode = $roleCode;
 
         return $this;
@@ -87,8 +88,9 @@ class EconomicOperatorRoleType
      * @param  null|array<RoleDescription> $roleDescription
      * @return static
      */
-    public function setRoleDescription(?array $roleDescription = null): static
-    {
+    public function setRoleDescription(
+        ?array $roleDescription = null
+    ): static {
         $this->roleDescription = $roleDescription;
 
         return $this;
@@ -148,8 +150,9 @@ class EconomicOperatorRoleType
      * @param  RoleDescription $roleDescription
      * @return static
      */
-    public function addToRoleDescription(RoleDescription $roleDescription): static
-    {
+    public function addToRoleDescription(
+        RoleDescription $roleDescription
+    ): static {
         $this->roleDescription[] = $roleDescription;
 
         return $this;
@@ -169,8 +172,9 @@ class EconomicOperatorRoleType
      * @param  RoleDescription $roleDescription
      * @return static
      */
-    public function addOnceToRoleDescription(RoleDescription $roleDescription): static
-    {
+    public function addOnceToRoleDescription(
+        RoleDescription $roleDescription
+    ): static {
         if (!is_array($this->roleDescription)) {
             $this->roleDescription = [];
         }

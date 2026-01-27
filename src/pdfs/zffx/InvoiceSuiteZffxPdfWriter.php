@@ -100,8 +100,10 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
      *
      * @throws RandomException
      */
-    public function setPdfVersion($version = '1.3', $binary_data = false): void
-    {
+    public function setPdfVersion(
+        $version = '1.3',
+        $binary_data = false
+    ): void {
         $this->PDFVersion = sprintf('%.1F', $version);
 
         if (true == $binary_data) {
@@ -124,8 +126,14 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
      * @param  bool   $isUTF8       Set to true, if the attached file is UTF-8 encoded
      * @return void
      */
-    public function attach($file, $name = '', $desc = '', $relationship = 'Unspecified', $mimetype = '', $isUTF8 = false): void
-    {
+    public function attach(
+        $file,
+        $name = '',
+        $desc = '',
+        $relationship = 'Unspecified',
+        $mimetype = '',
+        $isUTF8 = false
+    ): void {
         if ('' == $name) {
             $p = strrpos((string) $file, '/');
 
@@ -168,8 +176,9 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
      * @param  string $description The description of the metadata
      * @return void
      */
-    public function addMetadataDescriptionNode($description): void
-    {
+    public function addMetadataDescriptionNode(
+        $description
+    ): void {
         $this->metaDataDescriptions[] = $description;
     }
 
@@ -196,8 +205,9 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
      * @param  bool $deterministicModeEnabled
      * @return void
      */
-    public function setDeterministicMode(bool $deterministicModeEnabled): void
-    {
+    public function setDeterministicMode(
+        bool $deterministicModeEnabled
+    ): void {
         $this->deterministicModeEnabled = $deterministicModeEnabled;
     }
 
@@ -225,8 +235,9 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
      * @param  array{file: StreamReader, name: string, desc: string, relationship: string, subtype: string, file_index: int} $file_info
      * @return void
      */
-    protected function putFileSpecification(array $file_info): void
-    {
+    protected function putFileSpecification(
+        array $file_info
+    ): void {
         $this->_newobj();
         $this->fileSpecDictionnaryIndex = $this->n;
         $this->_put('<<');
@@ -256,8 +267,9 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
      * @param  array{file: StreamReader, name: string, desc: string, relationship: string, subtype: string, file_index: int} $file_info
      * @return void
      */
-    protected function putFileStream(array $file_info): void
-    {
+    protected function putFileStream(
+        array $file_info
+    ): void {
         $this->_newobj();
         $this->_put('<<');
         $this->_put('/Filter /FlateDecode');
@@ -493,8 +505,9 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
      * @param  int  $n
      * @return void
      */
-    protected function _putlinks($n)
-    {
+    protected function _putlinks(
+        $n
+    ) {
         foreach ($this->PageLinks[$n] as $pl) {
             $this->_newobj();
             $rect = sprintf('%.2F %.2F %.2F %.2F', $pl[0], $pl[1], $pl[0] + $pl[2], $pl[1] - $pl[3]);
@@ -555,8 +568,9 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
      *
      * @codingStandardsIgnoreStart
      */
-    protected function generateMetadataString(?string $dateType = null)
-    {
+    protected function generateMetadataString(
+        ?string $dateType = null
+    ) {
         $dateType = $dateType ?? 'created';
         $metaDataString = '';
 

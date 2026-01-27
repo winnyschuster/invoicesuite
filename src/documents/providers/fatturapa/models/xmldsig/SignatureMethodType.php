@@ -56,8 +56,9 @@ class SignatureMethodType
      * @param  int    $hMACOutputLength
      * @return static
      */
-    public function setHMACOutputLength(?int $hMACOutputLength = null): static
-    {
+    public function setHMACOutputLength(
+        ?int $hMACOutputLength = null
+    ): static {
         $this->hMACOutputLength = $hMACOutputLength;
 
         return $this;
@@ -91,8 +92,9 @@ class SignatureMethodType
      * @param  string $algorithm
      * @return static
      */
-    public function setAlgorithm(?string $algorithm = null): static
-    {
+    public function setAlgorithm(
+        ?string $algorithm = null
+    ): static {
         $this->algorithm = $algorithm;
 
         return $this;

@@ -105,8 +105,9 @@ class ResponseType
      * @param  null|ReferenceID $referenceID
      * @return static
      */
-    public function setReferenceID(?ReferenceID $referenceID = null): static
-    {
+    public function setReferenceID(
+        ?ReferenceID $referenceID = null
+    ): static {
         $this->referenceID = $referenceID;
 
         return $this;
@@ -144,8 +145,9 @@ class ResponseType
      * @param  null|ResponseCode $responseCode
      * @return static
      */
-    public function setResponseCode(?ResponseCode $responseCode = null): static
-    {
+    public function setResponseCode(
+        ?ResponseCode $responseCode = null
+    ): static {
         $this->responseCode = $responseCode;
 
         return $this;
@@ -173,8 +175,9 @@ class ResponseType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -234,8 +237,9 @@ class ResponseType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -255,8 +259,9 @@ class ResponseType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -294,8 +299,9 @@ class ResponseType
      * @param  null|DateTimeInterface $effectiveDate
      * @return static
      */
-    public function setEffectiveDate(?DateTimeInterface $effectiveDate = null): static
-    {
+    public function setEffectiveDate(
+        ?DateTimeInterface $effectiveDate = null
+    ): static {
         $this->effectiveDate = $effectiveDate;
 
         return $this;
@@ -323,8 +329,9 @@ class ResponseType
      * @param  null|DateTimeInterface $effectiveTime
      * @return static
      */
-    public function setEffectiveTime(?DateTimeInterface $effectiveTime = null): static
-    {
+    public function setEffectiveTime(
+        ?DateTimeInterface $effectiveTime = null
+    ): static {
         $this->effectiveTime = $effectiveTime;
 
         return $this;
@@ -352,8 +359,9 @@ class ResponseType
      * @param  null|array<Status> $status
      * @return static
      */
-    public function setStatus(?array $status = null): static
-    {
+    public function setStatus(
+        ?array $status = null
+    ): static {
         $this->status = $status;
 
         return $this;
@@ -413,8 +421,9 @@ class ResponseType
      * @param  Status $status
      * @return static
      */
-    public function addToStatus(Status $status): static
-    {
+    public function addToStatus(
+        Status $status
+    ): static {
         $this->status[] = $status;
 
         return $this;
@@ -434,8 +443,9 @@ class ResponseType
      * @param  Status $status
      * @return static
      */
-    public function addOnceToStatus(Status $status): static
-    {
+    public function addOnceToStatus(
+        Status $status
+    ): static {
         if (!is_array($this->status)) {
             $this->status = [];
         }

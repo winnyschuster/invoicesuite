@@ -69,8 +69,9 @@ class LogisticsServiceChargeType
      * @param  null|TextType $description
      * @return static
      */
-    public function setDescription(?TextType $description = null): static
-    {
+    public function setDescription(
+        ?TextType $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -108,8 +109,9 @@ class LogisticsServiceChargeType
      * @param  null|AmountType $appliedAmount
      * @return static
      */
-    public function setAppliedAmount(?AmountType $appliedAmount = null): static
-    {
+    public function setAppliedAmount(
+        ?AmountType $appliedAmount = null
+    ): static {
         $this->appliedAmount = $appliedAmount;
 
         return $this;
@@ -137,8 +139,9 @@ class LogisticsServiceChargeType
      * @param  null|array<TradeTaxType> $appliedTradeTax
      * @return static
      */
-    public function setAppliedTradeTax(?array $appliedTradeTax = null): static
-    {
+    public function setAppliedTradeTax(
+        ?array $appliedTradeTax = null
+    ): static {
         $this->appliedTradeTax = $appliedTradeTax;
 
         return $this;
@@ -168,8 +171,9 @@ class LogisticsServiceChargeType
      * @param  TradeTaxType $appliedTradeTax
      * @return static
      */
-    public function addToAppliedTradeTax(TradeTaxType $appliedTradeTax): static
-    {
+    public function addToAppliedTradeTax(
+        TradeTaxType $appliedTradeTax
+    ): static {
         $this->appliedTradeTax[] = $appliedTradeTax;
 
         return $this;
@@ -189,8 +193,9 @@ class LogisticsServiceChargeType
      * @param  TradeTaxType $appliedTradeTax
      * @return static
      */
-    public function addOnceToAppliedTradeTax(TradeTaxType $appliedTradeTax): static
-    {
+    public function addOnceToAppliedTradeTax(
+        TradeTaxType $appliedTradeTax
+    ): static {
         if (!is_array($this->appliedTradeTax)) {
             $this->appliedTradeTax = [];
         }

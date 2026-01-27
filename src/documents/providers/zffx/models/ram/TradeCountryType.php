@@ -45,8 +45,9 @@ class TradeCountryType
      * @param  null|CountryIDType $iD
      * @return static
      */
-    public function setID(?CountryIDType $iD = null): static
-    {
+    public function setID(
+        ?CountryIDType $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;

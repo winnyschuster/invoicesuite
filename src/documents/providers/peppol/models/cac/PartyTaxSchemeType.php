@@ -116,8 +116,9 @@ class PartyTaxSchemeType
      * @param  null|RegistrationName $registrationName
      * @return static
      */
-    public function setRegistrationName(?RegistrationName $registrationName = null): static
-    {
+    public function setRegistrationName(
+        ?RegistrationName $registrationName = null
+    ): static {
         $this->registrationName = $registrationName;
 
         return $this;
@@ -155,8 +156,9 @@ class PartyTaxSchemeType
      * @param  null|CompanyID $companyID
      * @return static
      */
-    public function setCompanyID(?CompanyID $companyID = null): static
-    {
+    public function setCompanyID(
+        ?CompanyID $companyID = null
+    ): static {
         $this->companyID = $companyID;
 
         return $this;
@@ -194,8 +196,9 @@ class PartyTaxSchemeType
      * @param  null|TaxLevelCode $taxLevelCode
      * @return static
      */
-    public function setTaxLevelCode(?TaxLevelCode $taxLevelCode = null): static
-    {
+    public function setTaxLevelCode(
+        ?TaxLevelCode $taxLevelCode = null
+    ): static {
         $this->taxLevelCode = $taxLevelCode;
 
         return $this;
@@ -233,8 +236,9 @@ class PartyTaxSchemeType
      * @param  null|ExemptionReasonCode $exemptionReasonCode
      * @return static
      */
-    public function setExemptionReasonCode(?ExemptionReasonCode $exemptionReasonCode = null): static
-    {
+    public function setExemptionReasonCode(
+        ?ExemptionReasonCode $exemptionReasonCode = null
+    ): static {
         $this->exemptionReasonCode = $exemptionReasonCode;
 
         return $this;
@@ -262,8 +266,9 @@ class PartyTaxSchemeType
      * @param  null|array<ExemptionReason> $exemptionReason
      * @return static
      */
-    public function setExemptionReason(?array $exemptionReason = null): static
-    {
+    public function setExemptionReason(
+        ?array $exemptionReason = null
+    ): static {
         $this->exemptionReason = $exemptionReason;
 
         return $this;
@@ -323,8 +328,9 @@ class PartyTaxSchemeType
      * @param  ExemptionReason $exemptionReason
      * @return static
      */
-    public function addToExemptionReason(ExemptionReason $exemptionReason): static
-    {
+    public function addToExemptionReason(
+        ExemptionReason $exemptionReason
+    ): static {
         $this->exemptionReason[] = $exemptionReason;
 
         return $this;
@@ -344,8 +350,9 @@ class PartyTaxSchemeType
      * @param  ExemptionReason $exemptionReason
      * @return static
      */
-    public function addOnceToExemptionReason(ExemptionReason $exemptionReason): static
-    {
+    public function addOnceToExemptionReason(
+        ExemptionReason $exemptionReason
+    ): static {
         if (!is_array($this->exemptionReason)) {
             $this->exemptionReason = [];
         }
@@ -393,8 +400,9 @@ class PartyTaxSchemeType
      * @param  null|RegistrationAddress $registrationAddress
      * @return static
      */
-    public function setRegistrationAddress(?RegistrationAddress $registrationAddress = null): static
-    {
+    public function setRegistrationAddress(
+        ?RegistrationAddress $registrationAddress = null
+    ): static {
         $this->registrationAddress = $registrationAddress;
 
         return $this;
@@ -432,8 +440,9 @@ class PartyTaxSchemeType
      * @param  null|TaxScheme $taxScheme
      * @return static
      */
-    public function setTaxScheme(?TaxScheme $taxScheme = null): static
-    {
+    public function setTaxScheme(
+        ?TaxScheme $taxScheme = null
+    ): static {
         $this->taxScheme = $taxScheme;
 
         return $this;

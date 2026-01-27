@@ -80,8 +80,9 @@ class LineReferenceType
      * @param  null|LineID $lineID
      * @return static
      */
-    public function setLineID(?LineID $lineID = null): static
-    {
+    public function setLineID(
+        ?LineID $lineID = null
+    ): static {
         $this->lineID = $lineID;
 
         return $this;
@@ -119,8 +120,9 @@ class LineReferenceType
      * @param  null|UUID $uUID
      * @return static
      */
-    public function setUUID(?UUID $uUID = null): static
-    {
+    public function setUUID(
+        ?UUID $uUID = null
+    ): static {
         $this->uUID = $uUID;
 
         return $this;
@@ -158,8 +160,9 @@ class LineReferenceType
      * @param  null|LineStatusCode $lineStatusCode
      * @return static
      */
-    public function setLineStatusCode(?LineStatusCode $lineStatusCode = null): static
-    {
+    public function setLineStatusCode(
+        ?LineStatusCode $lineStatusCode = null
+    ): static {
         $this->lineStatusCode = $lineStatusCode;
 
         return $this;
@@ -197,8 +200,9 @@ class LineReferenceType
      * @param  null|DocumentReference $documentReference
      * @return static
      */
-    public function setDocumentReference(?DocumentReference $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?DocumentReference $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;

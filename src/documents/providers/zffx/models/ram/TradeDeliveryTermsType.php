@@ -56,8 +56,9 @@ class TradeDeliveryTermsType
      * @param  null|DeliveryTermsCodeType $deliveryTypeCode
      * @return static
      */
-    public function setDeliveryTypeCode(?DeliveryTermsCodeType $deliveryTypeCode = null): static
-    {
+    public function setDeliveryTypeCode(
+        ?DeliveryTermsCodeType $deliveryTypeCode = null
+    ): static {
         $this->deliveryTypeCode = $deliveryTypeCode;
 
         return $this;
@@ -95,8 +96,9 @@ class TradeDeliveryTermsType
      * @param  null|TradeLocationType $relevantTradeLocation
      * @return static
      */
-    public function setRelevantTradeLocation(?TradeLocationType $relevantTradeLocation = null): static
-    {
+    public function setRelevantTradeLocation(
+        ?TradeLocationType $relevantTradeLocation = null
+    ): static {
         $this->relevantTradeLocation = $relevantTradeLocation;
 
         return $this;

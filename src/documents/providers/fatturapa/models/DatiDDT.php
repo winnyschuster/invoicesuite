@@ -67,8 +67,9 @@ final class DatiDDT
      * @param  null|string $numeroDDT
      * @return static
      */
-    public function setNumeroDDT(?string $numeroDDT = null): static
-    {
+    public function setNumeroDDT(
+        ?string $numeroDDT = null
+    ): static {
         $this->numeroDDT = InvoiceSuiteStringUtils::asNullWhenEmpty($numeroDDT);
 
         return $this;
@@ -102,8 +103,9 @@ final class DatiDDT
      * @param  null|DateTimeInterface $dataDDT
      * @return static
      */
-    public function setDataDDT(?DateTimeInterface $dataDDT = null): static
-    {
+    public function setDataDDT(
+        ?DateTimeInterface $dataDDT = null
+    ): static {
         $this->dataDDT = $dataDDT;
 
         return $this;
@@ -137,8 +139,9 @@ final class DatiDDT
      * @param  null|array<int> $riferimentoNumeroLinea
      * @return static
      */
-    public function setRiferimentoNumeroLinea(?array $riferimentoNumeroLinea = null): static
-    {
+    public function setRiferimentoNumeroLinea(
+        ?array $riferimentoNumeroLinea = null
+    ): static {
         $this->riferimentoNumeroLinea = $riferimentoNumeroLinea;
 
         return $this;
@@ -174,8 +177,9 @@ final class DatiDDT
      * @param  int    $riferimentoNumeroLinea
      * @return static
      */
-    public function addToRiferimentoNumeroLinea(int $riferimentoNumeroLinea): static
-    {
+    public function addToRiferimentoNumeroLinea(
+        int $riferimentoNumeroLinea
+    ): static {
         if (!is_array($this->riferimentoNumeroLinea)) {
             $this->riferimentoNumeroLinea = [];
         }
@@ -191,8 +195,9 @@ final class DatiDDT
      * @param  int    $riferimentoNumeroLinea
      * @return static
      */
-    public function addOnceToRiferimentoNumeroLinea(int $riferimentoNumeroLinea): static
-    {
+    public function addOnceToRiferimentoNumeroLinea(
+        int $riferimentoNumeroLinea
+    ): static {
         if (!is_array($this->riferimentoNumeroLinea)) {
             $this->riferimentoNumeroLinea = [];
         }

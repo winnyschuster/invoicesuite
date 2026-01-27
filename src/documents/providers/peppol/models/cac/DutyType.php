@@ -80,8 +80,9 @@ class DutyType
      * @param  null|Amount $amount
      * @return static
      */
-    public function setAmount(?Amount $amount = null): static
-    {
+    public function setAmount(
+        ?Amount $amount = null
+    ): static {
         $this->amount = $amount;
 
         return $this;
@@ -119,8 +120,9 @@ class DutyType
      * @param  null|Duty $duty
      * @return static
      */
-    public function setDuty(?Duty $duty = null): static
-    {
+    public function setDuty(
+        ?Duty $duty = null
+    ): static {
         $this->duty = $duty;
 
         return $this;
@@ -158,8 +160,9 @@ class DutyType
      * @param  null|DutyCode $dutyCode
      * @return static
      */
-    public function setDutyCode(?DutyCode $dutyCode = null): static
-    {
+    public function setDutyCode(
+        ?DutyCode $dutyCode = null
+    ): static {
         $this->dutyCode = $dutyCode;
 
         return $this;
@@ -197,8 +200,9 @@ class DutyType
      * @param  null|TaxCategory $taxCategory
      * @return static
      */
-    public function setTaxCategory(?TaxCategory $taxCategory = null): static
-    {
+    public function setTaxCategory(
+        ?TaxCategory $taxCategory = null
+    ): static {
         $this->taxCategory = $taxCategory;
 
         return $this;

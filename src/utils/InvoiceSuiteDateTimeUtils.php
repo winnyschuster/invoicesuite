@@ -24,8 +24,9 @@ class InvoiceSuiteDateTimeUtils
      * @param  null|DateTimeInterface $value
      * @return bool
      */
-    public static function datetimeIsNullOrEmpty(?DateTimeInterface $value = null): bool
-    {
+    public static function datetimeIsNullOrEmpty(
+        ?DateTimeInterface $value = null
+    ): bool {
         return is_null($value);
     }
 
@@ -36,8 +37,9 @@ class InvoiceSuiteDateTimeUtils
      * @param  array<null|DateTimeInterface> $values
      * @return bool
      */
-    public static function allIsNullOrEmpty(array $values): bool
-    {
+    public static function allIsNullOrEmpty(
+        array $values
+    ): bool {
         foreach ($values as $value) {
             if (!static::datetimeIsNullOrEmpty($value)) {
                 return false;
@@ -53,8 +55,9 @@ class InvoiceSuiteDateTimeUtils
      * @param  array<null|DateTimeInterface> $values
      * @return bool
      */
-    public static function oneIsNullOrEmpty(array $values): bool
-    {
+    public static function oneIsNullOrEmpty(
+        array $values
+    ): bool {
         foreach ($values as $value) {
             if (static::dateTimeIsNullOrEmpty($value)) {
                 return true;
@@ -70,8 +73,9 @@ class InvoiceSuiteDateTimeUtils
      * @param  null|DateTimeInterface $str
      * @return null|DateTimeInterface
      */
-    public static function asNullWhenEmpty(?DateTimeInterface $str): ?DateTimeInterface
-    {
+    public static function asNullWhenEmpty(
+        ?DateTimeInterface $str
+    ): ?DateTimeInterface {
         return static::datetimeIsNullOrEmpty($str) ? null : $str;
     }
 
@@ -84,8 +88,10 @@ class InvoiceSuiteDateTimeUtils
      *
      * @throws ValueError
      */
-    public static function convertZfFxDateStringToDateTime(?string $dateTimeString, ?string $format): ?DateTimeInterface
-    {
+    public static function convertZfFxDateStringToDateTime(
+        ?string $dateTimeString,
+        ?string $format
+    ): ?DateTimeInterface {
         if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$dateTimeString, $format])) {
             return null;
         }

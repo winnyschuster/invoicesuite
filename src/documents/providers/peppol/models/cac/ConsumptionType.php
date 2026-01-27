@@ -113,8 +113,9 @@ class ConsumptionType
      * @param  null|UtilityStatementTypeCode $utilityStatementTypeCode
      * @return static
      */
-    public function setUtilityStatementTypeCode(?UtilityStatementTypeCode $utilityStatementTypeCode = null): static
-    {
+    public function setUtilityStatementTypeCode(
+        ?UtilityStatementTypeCode $utilityStatementTypeCode = null
+    ): static {
         $this->utilityStatementTypeCode = $utilityStatementTypeCode;
 
         return $this;
@@ -152,8 +153,9 @@ class ConsumptionType
      * @param  null|MainPeriod $mainPeriod
      * @return static
      */
-    public function setMainPeriod(?MainPeriod $mainPeriod = null): static
-    {
+    public function setMainPeriod(
+        ?MainPeriod $mainPeriod = null
+    ): static {
         $this->mainPeriod = $mainPeriod;
 
         return $this;
@@ -181,8 +183,9 @@ class ConsumptionType
      * @param  null|array<AllowanceCharge> $allowanceCharge
      * @return static
      */
-    public function setAllowanceCharge(?array $allowanceCharge = null): static
-    {
+    public function setAllowanceCharge(
+        ?array $allowanceCharge = null
+    ): static {
         $this->allowanceCharge = $allowanceCharge;
 
         return $this;
@@ -242,8 +245,9 @@ class ConsumptionType
      * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
-    public function addToAllowanceCharge(AllowanceCharge $allowanceCharge): static
-    {
+    public function addToAllowanceCharge(
+        AllowanceCharge $allowanceCharge
+    ): static {
         $this->allowanceCharge[] = $allowanceCharge;
 
         return $this;
@@ -263,8 +267,9 @@ class ConsumptionType
      * @param  AllowanceCharge $allowanceCharge
      * @return static
      */
-    public function addOnceToAllowanceCharge(AllowanceCharge $allowanceCharge): static
-    {
+    public function addOnceToAllowanceCharge(
+        AllowanceCharge $allowanceCharge
+    ): static {
         if (!is_array($this->allowanceCharge)) {
             $this->allowanceCharge = [];
         }
@@ -302,8 +307,9 @@ class ConsumptionType
      * @param  null|array<TaxTotal> $taxTotal
      * @return static
      */
-    public function setTaxTotal(?array $taxTotal = null): static
-    {
+    public function setTaxTotal(
+        ?array $taxTotal = null
+    ): static {
         $this->taxTotal = $taxTotal;
 
         return $this;
@@ -363,8 +369,9 @@ class ConsumptionType
      * @param  TaxTotal $taxTotal
      * @return static
      */
-    public function addToTaxTotal(TaxTotal $taxTotal): static
-    {
+    public function addToTaxTotal(
+        TaxTotal $taxTotal
+    ): static {
         $this->taxTotal[] = $taxTotal;
 
         return $this;
@@ -384,8 +391,9 @@ class ConsumptionType
      * @param  TaxTotal $taxTotal
      * @return static
      */
-    public function addOnceToTaxTotal(TaxTotal $taxTotal): static
-    {
+    public function addOnceToTaxTotal(
+        TaxTotal $taxTotal
+    ): static {
         if (!is_array($this->taxTotal)) {
             $this->taxTotal = [];
         }
@@ -433,8 +441,9 @@ class ConsumptionType
      * @param  null|EnergyWaterSupply $energyWaterSupply
      * @return static
      */
-    public function setEnergyWaterSupply(?EnergyWaterSupply $energyWaterSupply = null): static
-    {
+    public function setEnergyWaterSupply(
+        ?EnergyWaterSupply $energyWaterSupply = null
+    ): static {
         $this->energyWaterSupply = $energyWaterSupply;
 
         return $this;
@@ -472,8 +481,9 @@ class ConsumptionType
      * @param  null|TelecommunicationsSupply $telecommunicationsSupply
      * @return static
      */
-    public function setTelecommunicationsSupply(?TelecommunicationsSupply $telecommunicationsSupply = null): static
-    {
+    public function setTelecommunicationsSupply(
+        ?TelecommunicationsSupply $telecommunicationsSupply = null
+    ): static {
         $this->telecommunicationsSupply = $telecommunicationsSupply;
 
         return $this;
@@ -511,8 +521,9 @@ class ConsumptionType
      * @param  null|LegalMonetaryTotal $legalMonetaryTotal
      * @return static
      */
-    public function setLegalMonetaryTotal(?LegalMonetaryTotal $legalMonetaryTotal = null): static
-    {
+    public function setLegalMonetaryTotal(
+        ?LegalMonetaryTotal $legalMonetaryTotal = null
+    ): static {
         $this->legalMonetaryTotal = $legalMonetaryTotal;
 
         return $this;

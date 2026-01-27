@@ -28,8 +28,9 @@ class InvoiceSuiteUnknownContentException extends InvoiceSuiteBaseException
      *
      * @param null|Throwable $throwable
      */
-    public function __construct(?Throwable $throwable = null)
-    {
+    public function __construct(
+        ?Throwable $throwable = null
+    ) {
         parent::__construct('Unknown content', InvoiceSuiteExceptionCodes::UNKNOWN_CONTENT, $throwable);
     }
 }

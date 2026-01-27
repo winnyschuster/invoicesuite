@@ -167,8 +167,9 @@ class AwardingTermsType
      * @param  null|WeightingAlgorithmCode $weightingAlgorithmCode
      * @return static
      */
-    public function setWeightingAlgorithmCode(?WeightingAlgorithmCode $weightingAlgorithmCode = null): static
-    {
+    public function setWeightingAlgorithmCode(
+        ?WeightingAlgorithmCode $weightingAlgorithmCode = null
+    ): static {
         $this->weightingAlgorithmCode = $weightingAlgorithmCode;
 
         return $this;
@@ -196,8 +197,9 @@ class AwardingTermsType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -257,8 +259,9 @@ class AwardingTermsType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -278,8 +281,9 @@ class AwardingTermsType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -317,8 +321,9 @@ class AwardingTermsType
      * @param  null|array<TechnicalCommitteeDescription> $technicalCommitteeDescription
      * @return static
      */
-    public function setTechnicalCommitteeDescription(?array $technicalCommitteeDescription = null): static
-    {
+    public function setTechnicalCommitteeDescription(
+        ?array $technicalCommitteeDescription = null
+    ): static {
         $this->technicalCommitteeDescription = $technicalCommitteeDescription;
 
         return $this;
@@ -440,8 +445,9 @@ class AwardingTermsType
      * @param  null|array<LowTendersDescription> $lowTendersDescription
      * @return static
      */
-    public function setLowTendersDescription(?array $lowTendersDescription = null): static
-    {
+    public function setLowTendersDescription(
+        ?array $lowTendersDescription = null
+    ): static {
         $this->lowTendersDescription = $lowTendersDescription;
 
         return $this;
@@ -501,8 +507,9 @@ class AwardingTermsType
      * @param  LowTendersDescription $lowTendersDescription
      * @return static
      */
-    public function addToLowTendersDescription(LowTendersDescription $lowTendersDescription): static
-    {
+    public function addToLowTendersDescription(
+        LowTendersDescription $lowTendersDescription
+    ): static {
         $this->lowTendersDescription[] = $lowTendersDescription;
 
         return $this;
@@ -522,8 +529,9 @@ class AwardingTermsType
      * @param  LowTendersDescription $lowTendersDescription
      * @return static
      */
-    public function addOnceToLowTendersDescription(LowTendersDescription $lowTendersDescription): static
-    {
+    public function addOnceToLowTendersDescription(
+        LowTendersDescription $lowTendersDescription
+    ): static {
         if (!is_array($this->lowTendersDescription)) {
             $this->lowTendersDescription = [];
         }
@@ -561,8 +569,9 @@ class AwardingTermsType
      * @param  null|bool $prizeIndicator
      * @return static
      */
-    public function setPrizeIndicator(?bool $prizeIndicator = null): static
-    {
+    public function setPrizeIndicator(
+        ?bool $prizeIndicator = null
+    ): static {
         $this->prizeIndicator = $prizeIndicator;
 
         return $this;
@@ -590,8 +599,9 @@ class AwardingTermsType
      * @param  null|array<PrizeDescription> $prizeDescription
      * @return static
      */
-    public function setPrizeDescription(?array $prizeDescription = null): static
-    {
+    public function setPrizeDescription(
+        ?array $prizeDescription = null
+    ): static {
         $this->prizeDescription = $prizeDescription;
 
         return $this;
@@ -651,8 +661,9 @@ class AwardingTermsType
      * @param  PrizeDescription $prizeDescription
      * @return static
      */
-    public function addToPrizeDescription(PrizeDescription $prizeDescription): static
-    {
+    public function addToPrizeDescription(
+        PrizeDescription $prizeDescription
+    ): static {
         $this->prizeDescription[] = $prizeDescription;
 
         return $this;
@@ -672,8 +683,9 @@ class AwardingTermsType
      * @param  PrizeDescription $prizeDescription
      * @return static
      */
-    public function addOnceToPrizeDescription(PrizeDescription $prizeDescription): static
-    {
+    public function addOnceToPrizeDescription(
+        PrizeDescription $prizeDescription
+    ): static {
         if (!is_array($this->prizeDescription)) {
             $this->prizeDescription = [];
         }
@@ -711,8 +723,9 @@ class AwardingTermsType
      * @param  null|array<PaymentDescription> $paymentDescription
      * @return static
      */
-    public function setPaymentDescription(?array $paymentDescription = null): static
-    {
+    public function setPaymentDescription(
+        ?array $paymentDescription = null
+    ): static {
         $this->paymentDescription = $paymentDescription;
 
         return $this;
@@ -772,8 +785,9 @@ class AwardingTermsType
      * @param  PaymentDescription $paymentDescription
      * @return static
      */
-    public function addToPaymentDescription(PaymentDescription $paymentDescription): static
-    {
+    public function addToPaymentDescription(
+        PaymentDescription $paymentDescription
+    ): static {
         $this->paymentDescription[] = $paymentDescription;
 
         return $this;
@@ -793,8 +807,9 @@ class AwardingTermsType
      * @param  PaymentDescription $paymentDescription
      * @return static
      */
-    public function addOnceToPaymentDescription(PaymentDescription $paymentDescription): static
-    {
+    public function addOnceToPaymentDescription(
+        PaymentDescription $paymentDescription
+    ): static {
         if (!is_array($this->paymentDescription)) {
             $this->paymentDescription = [];
         }
@@ -832,8 +847,9 @@ class AwardingTermsType
      * @param  null|bool $followupContractIndicator
      * @return static
      */
-    public function setFollowupContractIndicator(?bool $followupContractIndicator = null): static
-    {
+    public function setFollowupContractIndicator(
+        ?bool $followupContractIndicator = null
+    ): static {
         $this->followupContractIndicator = $followupContractIndicator;
 
         return $this;
@@ -861,8 +877,9 @@ class AwardingTermsType
      * @param  null|bool $bindingOnBuyerIndicator
      * @return static
      */
-    public function setBindingOnBuyerIndicator(?bool $bindingOnBuyerIndicator = null): static
-    {
+    public function setBindingOnBuyerIndicator(
+        ?bool $bindingOnBuyerIndicator = null
+    ): static {
         $this->bindingOnBuyerIndicator = $bindingOnBuyerIndicator;
 
         return $this;
@@ -890,8 +907,9 @@ class AwardingTermsType
      * @param  null|array<AwardingCriterion> $awardingCriterion
      * @return static
      */
-    public function setAwardingCriterion(?array $awardingCriterion = null): static
-    {
+    public function setAwardingCriterion(
+        ?array $awardingCriterion = null
+    ): static {
         $this->awardingCriterion = $awardingCriterion;
 
         return $this;
@@ -951,8 +969,9 @@ class AwardingTermsType
      * @param  AwardingCriterion $awardingCriterion
      * @return static
      */
-    public function addToAwardingCriterion(AwardingCriterion $awardingCriterion): static
-    {
+    public function addToAwardingCriterion(
+        AwardingCriterion $awardingCriterion
+    ): static {
         $this->awardingCriterion[] = $awardingCriterion;
 
         return $this;
@@ -972,8 +991,9 @@ class AwardingTermsType
      * @param  AwardingCriterion $awardingCriterion
      * @return static
      */
-    public function addOnceToAwardingCriterion(AwardingCriterion $awardingCriterion): static
-    {
+    public function addOnceToAwardingCriterion(
+        AwardingCriterion $awardingCriterion
+    ): static {
         if (!is_array($this->awardingCriterion)) {
             $this->awardingCriterion = [];
         }
@@ -1011,8 +1031,9 @@ class AwardingTermsType
      * @param  null|array<TechnicalCommitteePerson> $technicalCommitteePerson
      * @return static
      */
-    public function setTechnicalCommitteePerson(?array $technicalCommitteePerson = null): static
-    {
+    public function setTechnicalCommitteePerson(
+        ?array $technicalCommitteePerson = null
+    ): static {
         $this->technicalCommitteePerson = $technicalCommitteePerson;
 
         return $this;
@@ -1072,8 +1093,9 @@ class AwardingTermsType
      * @param  TechnicalCommitteePerson $technicalCommitteePerson
      * @return static
      */
-    public function addToTechnicalCommitteePerson(TechnicalCommitteePerson $technicalCommitteePerson): static
-    {
+    public function addToTechnicalCommitteePerson(
+        TechnicalCommitteePerson $technicalCommitteePerson
+    ): static {
         $this->technicalCommitteePerson[] = $technicalCommitteePerson;
 
         return $this;
@@ -1093,8 +1115,9 @@ class AwardingTermsType
      * @param  TechnicalCommitteePerson $technicalCommitteePerson
      * @return static
      */
-    public function addOnceToTechnicalCommitteePerson(TechnicalCommitteePerson $technicalCommitteePerson): static
-    {
+    public function addOnceToTechnicalCommitteePerson(
+        TechnicalCommitteePerson $technicalCommitteePerson
+    ): static {
         if (!is_array($this->technicalCommitteePerson)) {
             $this->technicalCommitteePerson = [];
         }

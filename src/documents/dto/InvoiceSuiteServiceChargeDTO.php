@@ -97,8 +97,9 @@ class InvoiceSuiteServiceChargeDTO
      * @param  null|float $amount The amount of the service fee
      * @return static
      */
-    public function setAmount(?float $amount): static
-    {
+    public function setAmount(
+        ?float $amount
+    ): static {
         $this->amount = $amount;
 
         return $this;
@@ -120,8 +121,9 @@ class InvoiceSuiteServiceChargeDTO
      * @param  null|string $description The identification of the service fee
      * @return static
      */
-    public function setDescription(?string $description): static
-    {
+    public function setDescription(
+        ?string $description
+    ): static {
         $this->description = InvoiceSuiteStringUtils::asNullWhenEmpty($description);
 
         return $this;
@@ -143,8 +145,9 @@ class InvoiceSuiteServiceChargeDTO
      * @param  null|string $taxCategory The coded description of the tax category
      * @return static
      */
-    public function setTaxCategory(?string $taxCategory): static
-    {
+    public function setTaxCategory(
+        ?string $taxCategory
+    ): static {
         $this->taxCategory = InvoiceSuiteStringUtils::asNullWhenEmpty($taxCategory);
 
         return $this;
@@ -166,8 +169,9 @@ class InvoiceSuiteServiceChargeDTO
      * @param  null|string $taxType The coded description of the tax type
      * @return static
      */
-    public function setTaxType(?string $taxType): static
-    {
+    public function setTaxType(
+        ?string $taxType
+    ): static {
         $this->taxType = InvoiceSuiteStringUtils::asNullWhenEmpty($taxType);
 
         return $this;
@@ -189,8 +193,9 @@ class InvoiceSuiteServiceChargeDTO
      * @param  null|float $taxPercent The tax Rate (Percentage)
      * @return static
      */
-    public function setTaxPercent(?float $taxPercent): static
-    {
+    public function setTaxPercent(
+        ?float $taxPercent
+    ): static {
         $this->taxPercent = $taxPercent;
 
         return $this;

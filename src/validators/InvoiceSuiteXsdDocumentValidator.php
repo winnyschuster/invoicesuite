@@ -63,8 +63,9 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
      * @throws InvoiceSuiteFileNotFoundException
      * @throws InvoiceSuiteFileNotReadableException
      */
-    public function setXsdFilename(string $newXsdFilename): static
-    {
+    public function setXsdFilename(
+        string $newXsdFilename
+    ): static {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($newXsdFilename)) {
             return $this;
         }
@@ -94,8 +95,9 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
-    protected function setDocumentBuilder(InvoiceSuiteDocumentBuilder $fromDocumentBuilder): static
-    {
+    protected function setDocumentBuilder(
+        InvoiceSuiteDocumentBuilder $fromDocumentBuilder
+    ): static {
         parent::setDocumentBuilder($fromDocumentBuilder);
 
         $this->setXsdFilename($fromDocumentBuilder->getCurrentDocumentFormatProvider()->getValidationXsdFilename());
@@ -114,8 +116,9 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
      * @throws InvoiceSuiteFileNotReadableException
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    protected function setDocumentReader(InvoiceSuiteDocumentReader $fromDocumentReader): static
-    {
+    protected function setDocumentReader(
+        InvoiceSuiteDocumentReader $fromDocumentReader
+    ): static {
         parent::setDocumentReader($fromDocumentReader);
 
         $this->setXsdFilename($fromDocumentReader->getCurrentDocumentFormatProvider()->getValidationXsdFilename());
@@ -129,8 +132,9 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
      * @param  InvoiceSuiteAbstractDocumentFormatProvider $formatProvider
      * @return bool
      */
-    protected function checkFormatProviderRequirements(InvoiceSuiteAbstractDocumentFormatProvider $formatProvider): bool
-    {
+    protected function checkFormatProviderRequirements(
+        InvoiceSuiteAbstractDocumentFormatProvider $formatProvider
+    ): bool {
         return $formatProvider->getValidationXsdAvailable();
     }
 

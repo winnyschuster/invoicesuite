@@ -92,8 +92,9 @@ class SalesItemType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -121,8 +122,9 @@ class SalesItemType
      * @param  null|array<ActivityProperty> $activityProperty
      * @return static
      */
-    public function setActivityProperty(?array $activityProperty = null): static
-    {
+    public function setActivityProperty(
+        ?array $activityProperty = null
+    ): static {
         $this->activityProperty = $activityProperty;
 
         return $this;
@@ -182,8 +184,9 @@ class SalesItemType
      * @param  ActivityProperty $activityProperty
      * @return static
      */
-    public function addToActivityProperty(ActivityProperty $activityProperty): static
-    {
+    public function addToActivityProperty(
+        ActivityProperty $activityProperty
+    ): static {
         $this->activityProperty[] = $activityProperty;
 
         return $this;
@@ -203,8 +206,9 @@ class SalesItemType
      * @param  ActivityProperty $activityProperty
      * @return static
      */
-    public function addOnceToActivityProperty(ActivityProperty $activityProperty): static
-    {
+    public function addOnceToActivityProperty(
+        ActivityProperty $activityProperty
+    ): static {
         if (!is_array($this->activityProperty)) {
             $this->activityProperty = [];
         }
@@ -242,8 +246,9 @@ class SalesItemType
      * @param  null|array<TaxExclusivePrice> $taxExclusivePrice
      * @return static
      */
-    public function setTaxExclusivePrice(?array $taxExclusivePrice = null): static
-    {
+    public function setTaxExclusivePrice(
+        ?array $taxExclusivePrice = null
+    ): static {
         $this->taxExclusivePrice = $taxExclusivePrice;
 
         return $this;
@@ -303,8 +308,9 @@ class SalesItemType
      * @param  TaxExclusivePrice $taxExclusivePrice
      * @return static
      */
-    public function addToTaxExclusivePrice(TaxExclusivePrice $taxExclusivePrice): static
-    {
+    public function addToTaxExclusivePrice(
+        TaxExclusivePrice $taxExclusivePrice
+    ): static {
         $this->taxExclusivePrice[] = $taxExclusivePrice;
 
         return $this;
@@ -324,8 +330,9 @@ class SalesItemType
      * @param  TaxExclusivePrice $taxExclusivePrice
      * @return static
      */
-    public function addOnceToTaxExclusivePrice(TaxExclusivePrice $taxExclusivePrice): static
-    {
+    public function addOnceToTaxExclusivePrice(
+        TaxExclusivePrice $taxExclusivePrice
+    ): static {
         if (!is_array($this->taxExclusivePrice)) {
             $this->taxExclusivePrice = [];
         }
@@ -363,8 +370,9 @@ class SalesItemType
      * @param  null|array<TaxInclusivePrice> $taxInclusivePrice
      * @return static
      */
-    public function setTaxInclusivePrice(?array $taxInclusivePrice = null): static
-    {
+    public function setTaxInclusivePrice(
+        ?array $taxInclusivePrice = null
+    ): static {
         $this->taxInclusivePrice = $taxInclusivePrice;
 
         return $this;
@@ -424,8 +432,9 @@ class SalesItemType
      * @param  TaxInclusivePrice $taxInclusivePrice
      * @return static
      */
-    public function addToTaxInclusivePrice(TaxInclusivePrice $taxInclusivePrice): static
-    {
+    public function addToTaxInclusivePrice(
+        TaxInclusivePrice $taxInclusivePrice
+    ): static {
         $this->taxInclusivePrice[] = $taxInclusivePrice;
 
         return $this;
@@ -445,8 +454,9 @@ class SalesItemType
      * @param  TaxInclusivePrice $taxInclusivePrice
      * @return static
      */
-    public function addOnceToTaxInclusivePrice(TaxInclusivePrice $taxInclusivePrice): static
-    {
+    public function addOnceToTaxInclusivePrice(
+        TaxInclusivePrice $taxInclusivePrice
+    ): static {
         if (!is_array($this->taxInclusivePrice)) {
             $this->taxInclusivePrice = [];
         }
@@ -494,8 +504,9 @@ class SalesItemType
      * @param  null|Item $item
      * @return static
      */
-    public function setItem(?Item $item = null): static
-    {
+    public function setItem(
+        ?Item $item = null
+    ): static {
         $this->item = $item;
 
         return $this;

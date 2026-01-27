@@ -103,8 +103,9 @@ final class FatturaElettronicaBody
      * @param  null|DatiGenerali $datiGenerali
      * @return static
      */
-    public function setDatiGenerali(?DatiGenerali $datiGenerali = null): static
-    {
+    public function setDatiGenerali(
+        ?DatiGenerali $datiGenerali = null
+    ): static {
         $this->datiGenerali = $datiGenerali;
 
         return $this;
@@ -150,8 +151,9 @@ final class FatturaElettronicaBody
      * @param  null|DatiBeniServizi $datiBeniServizi
      * @return static
      */
-    public function setDatiBeniServizi(?DatiBeniServizi $datiBeniServizi = null): static
-    {
+    public function setDatiBeniServizi(
+        ?DatiBeniServizi $datiBeniServizi = null
+    ): static {
         $this->datiBeniServizi = $datiBeniServizi;
 
         return $this;
@@ -197,8 +199,9 @@ final class FatturaElettronicaBody
      * @param  null|DatiVeicoli $datiVeicoli
      * @return static
      */
-    public function setDatiVeicoli(?DatiVeicoli $datiVeicoli = null): static
-    {
+    public function setDatiVeicoli(
+        ?DatiVeicoli $datiVeicoli = null
+    ): static {
         $this->datiVeicoli = $datiVeicoli;
 
         return $this;
@@ -232,8 +235,9 @@ final class FatturaElettronicaBody
      * @param  null|array<DatiPagamento> $datiPagamento
      * @return static
      */
-    public function setDatiPagamento(?array $datiPagamento = null): static
-    {
+    public function setDatiPagamento(
+        ?array $datiPagamento = null
+    ): static {
         $this->datiPagamento = $datiPagamento;
 
         return $this;
@@ -269,8 +273,9 @@ final class FatturaElettronicaBody
      * @param  DatiPagamento $datiPagamento
      * @return static
      */
-    public function addToDatiPagamento(DatiPagamento $datiPagamento): static
-    {
+    public function addToDatiPagamento(
+        DatiPagamento $datiPagamento
+    ): static {
         if (!is_array($this->datiPagamento)) {
             $this->datiPagamento = [];
         }
@@ -298,8 +303,9 @@ final class FatturaElettronicaBody
      * @param  DatiPagamento $datiPagamento
      * @return static
      */
-    public function addOnceToDatiPagamento(DatiPagamento $datiPagamento): static
-    {
+    public function addOnceToDatiPagamento(
+        DatiPagamento $datiPagamento
+    ): static {
         if (!is_array($this->datiPagamento)) {
             $this->datiPagamento = [];
         }
@@ -343,8 +349,9 @@ final class FatturaElettronicaBody
      * @param  null|array<Allegati> $allegati
      * @return static
      */
-    public function setAllegati(?array $allegati = null): static
-    {
+    public function setAllegati(
+        ?array $allegati = null
+    ): static {
         $this->allegati = $allegati;
 
         return $this;
@@ -380,8 +387,9 @@ final class FatturaElettronicaBody
      * @param  Allegati $allegati
      * @return static
      */
-    public function addToAllegati(Allegati $allegati): static
-    {
+    public function addToAllegati(
+        Allegati $allegati
+    ): static {
         if (!is_array($this->allegati)) {
             $this->allegati = [];
         }
@@ -409,8 +417,9 @@ final class FatturaElettronicaBody
      * @param  Allegati $allegati
      * @return static
      */
-    public function addOnceToAllegati(Allegati $allegati): static
-    {
+    public function addOnceToAllegati(
+        Allegati $allegati
+    ): static {
         if (!is_array($this->allegati)) {
             $this->allegati = [];
         }

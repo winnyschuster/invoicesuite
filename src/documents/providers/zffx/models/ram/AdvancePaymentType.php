@@ -80,8 +80,9 @@ class AdvancePaymentType
      * @param  null|AmountType $paidAmount
      * @return static
      */
-    public function setPaidAmount(?AmountType $paidAmount = null): static
-    {
+    public function setPaidAmount(
+        ?AmountType $paidAmount = null
+    ): static {
         $this->paidAmount = $paidAmount;
 
         return $this;
@@ -119,8 +120,9 @@ class AdvancePaymentType
      * @param  null|FormattedDateTimeType $formattedReceivedDateTime
      * @return static
      */
-    public function setFormattedReceivedDateTime(?FormattedDateTimeType $formattedReceivedDateTime = null): static
-    {
+    public function setFormattedReceivedDateTime(
+        ?FormattedDateTimeType $formattedReceivedDateTime = null
+    ): static {
         $this->formattedReceivedDateTime = $formattedReceivedDateTime;
 
         return $this;
@@ -148,8 +150,9 @@ class AdvancePaymentType
      * @param  null|array<TradeTaxType> $includedTradeTax
      * @return static
      */
-    public function setIncludedTradeTax(?array $includedTradeTax = null): static
-    {
+    public function setIncludedTradeTax(
+        ?array $includedTradeTax = null
+    ): static {
         $this->includedTradeTax = $includedTradeTax;
 
         return $this;
@@ -179,8 +182,9 @@ class AdvancePaymentType
      * @param  TradeTaxType $includedTradeTax
      * @return static
      */
-    public function addToIncludedTradeTax(TradeTaxType $includedTradeTax): static
-    {
+    public function addToIncludedTradeTax(
+        TradeTaxType $includedTradeTax
+    ): static {
         $this->includedTradeTax[] = $includedTradeTax;
 
         return $this;
@@ -200,8 +204,9 @@ class AdvancePaymentType
      * @param  TradeTaxType $includedTradeTax
      * @return static
      */
-    public function addOnceToIncludedTradeTax(TradeTaxType $includedTradeTax): static
-    {
+    public function addOnceToIncludedTradeTax(
+        TradeTaxType $includedTradeTax
+    ): static {
         if (!is_array($this->includedTradeTax)) {
             $this->includedTradeTax = [];
         }

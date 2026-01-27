@@ -101,8 +101,9 @@ class BinaryObjectType
      * @param  null|string $value
      * @return static
      */
-    public function setValue(?string $value = null): static
-    {
+    public function setValue(
+        ?string $value = null
+    ): static {
         $this->value = InvoiceSuiteStringUtils::asNullWhenEmpty($value);
 
         return $this;
@@ -130,8 +131,9 @@ class BinaryObjectType
      * @param  null|string $format
      * @return static
      */
-    public function setFormat(?string $format = null): static
-    {
+    public function setFormat(
+        ?string $format = null
+    ): static {
         $this->format = InvoiceSuiteStringUtils::asNullWhenEmpty($format);
 
         return $this;
@@ -159,8 +161,9 @@ class BinaryObjectType
      * @param  null|string $mimeCode
      * @return static
      */
-    public function setMimeCode(?string $mimeCode = null): static
-    {
+    public function setMimeCode(
+        ?string $mimeCode = null
+    ): static {
         $this->mimeCode = InvoiceSuiteStringUtils::asNullWhenEmpty($mimeCode);
 
         return $this;
@@ -188,8 +191,9 @@ class BinaryObjectType
      * @param  null|string $encodingCode
      * @return static
      */
-    public function setEncodingCode(?string $encodingCode = null): static
-    {
+    public function setEncodingCode(
+        ?string $encodingCode = null
+    ): static {
         $this->encodingCode = InvoiceSuiteStringUtils::asNullWhenEmpty($encodingCode);
 
         return $this;
@@ -217,8 +221,9 @@ class BinaryObjectType
      * @param  null|string $characterSetCode
      * @return static
      */
-    public function setCharacterSetCode(?string $characterSetCode = null): static
-    {
+    public function setCharacterSetCode(
+        ?string $characterSetCode = null
+    ): static {
         $this->characterSetCode = InvoiceSuiteStringUtils::asNullWhenEmpty($characterSetCode);
 
         return $this;
@@ -246,8 +251,9 @@ class BinaryObjectType
      * @param  null|string $uri
      * @return static
      */
-    public function setUri(?string $uri = null): static
-    {
+    public function setUri(
+        ?string $uri = null
+    ): static {
         $this->uri = InvoiceSuiteStringUtils::asNullWhenEmpty($uri);
 
         return $this;
@@ -275,8 +281,9 @@ class BinaryObjectType
      * @param  null|string $filename
      * @return static
      */
-    public function setFilename(?string $filename = null): static
-    {
+    public function setFilename(
+        ?string $filename = null
+    ): static {
         $this->filename = InvoiceSuiteStringUtils::asNullWhenEmpty($filename);
 
         return $this;

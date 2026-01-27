@@ -52,8 +52,9 @@ final class CodiceArticolo
      * @param  null|string $codiceTipo
      * @return static
      */
-    public function setCodiceTipo(?string $codiceTipo = null): static
-    {
+    public function setCodiceTipo(
+        ?string $codiceTipo = null
+    ): static {
         $this->codiceTipo = InvoiceSuiteStringUtils::asNullWhenEmpty($codiceTipo);
 
         return $this;
@@ -87,8 +88,9 @@ final class CodiceArticolo
      * @param  null|string $codiceValore
      * @return static
      */
-    public function setCodiceValore(?string $codiceValore = null): static
-    {
+    public function setCodiceValore(
+        ?string $codiceValore = null
+    ): static {
         $this->codiceValore = InvoiceSuiteStringUtils::asNullWhenEmpty($codiceValore);
 
         return $this;

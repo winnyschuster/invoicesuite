@@ -127,8 +127,9 @@ class ExchangedDocumentType
      * @param  null|IDType $iD
      * @return static
      */
-    public function setID(?IDType $iD = null): static
-    {
+    public function setID(
+        ?IDType $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -166,8 +167,9 @@ class ExchangedDocumentType
      * @param  null|TextType $name
      * @return static
      */
-    public function setName(?TextType $name = null): static
-    {
+    public function setName(
+        ?TextType $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -205,8 +207,9 @@ class ExchangedDocumentType
      * @param  null|DocumentCodeType $typeCode
      * @return static
      */
-    public function setTypeCode(?DocumentCodeType $typeCode = null): static
-    {
+    public function setTypeCode(
+        ?DocumentCodeType $typeCode = null
+    ): static {
         $this->typeCode = $typeCode;
 
         return $this;
@@ -244,8 +247,9 @@ class ExchangedDocumentType
      * @param  null|DateTimeType $issueDateTime
      * @return static
      */
-    public function setIssueDateTime(?DateTimeType $issueDateTime = null): static
-    {
+    public function setIssueDateTime(
+        ?DateTimeType $issueDateTime = null
+    ): static {
         $this->issueDateTime = $issueDateTime;
 
         return $this;
@@ -283,8 +287,9 @@ class ExchangedDocumentType
      * @param  null|IndicatorType $copyIndicator
      * @return static
      */
-    public function setCopyIndicator(?IndicatorType $copyIndicator = null): static
-    {
+    public function setCopyIndicator(
+        ?IndicatorType $copyIndicator = null
+    ): static {
         $this->copyIndicator = $copyIndicator;
 
         return $this;
@@ -322,8 +327,9 @@ class ExchangedDocumentType
      * @param  null|IDType $languageID
      * @return static
      */
-    public function setLanguageID(?IDType $languageID = null): static
-    {
+    public function setLanguageID(
+        ?IDType $languageID = null
+    ): static {
         $this->languageID = $languageID;
 
         return $this;
@@ -351,8 +357,9 @@ class ExchangedDocumentType
      * @param  null|array<NoteType> $includedNote
      * @return static
      */
-    public function setIncludedNote(?array $includedNote = null): static
-    {
+    public function setIncludedNote(
+        ?array $includedNote = null
+    ): static {
         $this->includedNote = $includedNote;
 
         return $this;
@@ -382,8 +389,9 @@ class ExchangedDocumentType
      * @param  NoteType $includedNote
      * @return static
      */
-    public function addToIncludedNote(NoteType $includedNote): static
-    {
+    public function addToIncludedNote(
+        NoteType $includedNote
+    ): static {
         $this->includedNote[] = $includedNote;
 
         return $this;
@@ -403,8 +411,9 @@ class ExchangedDocumentType
      * @param  NoteType $includedNote
      * @return static
      */
-    public function addOnceToIncludedNote(NoteType $includedNote): static
-    {
+    public function addOnceToIncludedNote(
+        NoteType $includedNote
+    ): static {
         if (!is_array($this->includedNote)) {
             $this->includedNote = [];
         }
@@ -452,8 +461,9 @@ class ExchangedDocumentType
      * @param  null|SpecifiedPeriodType $effectiveSpecifiedPeriod
      * @return static
      */
-    public function setEffectiveSpecifiedPeriod(?SpecifiedPeriodType $effectiveSpecifiedPeriod = null): static
-    {
+    public function setEffectiveSpecifiedPeriod(
+        ?SpecifiedPeriodType $effectiveSpecifiedPeriod = null
+    ): static {
         $this->effectiveSpecifiedPeriod = $effectiveSpecifiedPeriod;
 
         return $this;

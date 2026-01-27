@@ -94,8 +94,9 @@ class MeterPropertyType
      * @param  null|Name $name
      * @return static
      */
-    public function setName(?Name $name = null): static
-    {
+    public function setName(
+        ?Name $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -133,8 +134,9 @@ class MeterPropertyType
      * @param  null|NameCode $nameCode
      * @return static
      */
-    public function setNameCode(?NameCode $nameCode = null): static
-    {
+    public function setNameCode(
+        ?NameCode $nameCode = null
+    ): static {
         $this->nameCode = $nameCode;
 
         return $this;
@@ -172,8 +174,9 @@ class MeterPropertyType
      * @param  null|Value $value
      * @return static
      */
-    public function setValue(?Value $value = null): static
-    {
+    public function setValue(
+        ?Value $value = null
+    ): static {
         $this->value = $value;
 
         return $this;
@@ -211,8 +214,9 @@ class MeterPropertyType
      * @param  null|ValueQuantity $valueQuantity
      * @return static
      */
-    public function setValueQuantity(?ValueQuantity $valueQuantity = null): static
-    {
+    public function setValueQuantity(
+        ?ValueQuantity $valueQuantity = null
+    ): static {
         $this->valueQuantity = $valueQuantity;
 
         return $this;
@@ -240,8 +244,9 @@ class MeterPropertyType
      * @param  null|array<ValueQualifier> $valueQualifier
      * @return static
      */
-    public function setValueQualifier(?array $valueQualifier = null): static
-    {
+    public function setValueQualifier(
+        ?array $valueQualifier = null
+    ): static {
         $this->valueQualifier = $valueQualifier;
 
         return $this;
@@ -301,8 +306,9 @@ class MeterPropertyType
      * @param  ValueQualifier $valueQualifier
      * @return static
      */
-    public function addToValueQualifier(ValueQualifier $valueQualifier): static
-    {
+    public function addToValueQualifier(
+        ValueQualifier $valueQualifier
+    ): static {
         $this->valueQualifier[] = $valueQualifier;
 
         return $this;
@@ -322,8 +328,9 @@ class MeterPropertyType
      * @param  ValueQualifier $valueQualifier
      * @return static
      */
-    public function addOnceToValueQualifier(ValueQualifier $valueQualifier): static
-    {
+    public function addOnceToValueQualifier(
+        ValueQualifier $valueQualifier
+    ): static {
         if (!is_array($this->valueQualifier)) {
             $this->valueQualifier = [];
         }

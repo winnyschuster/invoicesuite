@@ -116,8 +116,9 @@ class CompletedTaskType
      * @param  null|AnnualAverageAmount $annualAverageAmount
      * @return static
      */
-    public function setAnnualAverageAmount(?AnnualAverageAmount $annualAverageAmount = null): static
-    {
+    public function setAnnualAverageAmount(
+        ?AnnualAverageAmount $annualAverageAmount = null
+    ): static {
         $this->annualAverageAmount = $annualAverageAmount;
 
         return $this;
@@ -155,8 +156,9 @@ class CompletedTaskType
      * @param  null|TotalTaskAmount $totalTaskAmount
      * @return static
      */
-    public function setTotalTaskAmount(?TotalTaskAmount $totalTaskAmount = null): static
-    {
+    public function setTotalTaskAmount(
+        ?TotalTaskAmount $totalTaskAmount = null
+    ): static {
         $this->totalTaskAmount = $totalTaskAmount;
 
         return $this;
@@ -194,8 +196,9 @@ class CompletedTaskType
      * @param  null|PartyCapacityAmount $partyCapacityAmount
      * @return static
      */
-    public function setPartyCapacityAmount(?PartyCapacityAmount $partyCapacityAmount = null): static
-    {
+    public function setPartyCapacityAmount(
+        ?PartyCapacityAmount $partyCapacityAmount = null
+    ): static {
         $this->partyCapacityAmount = $partyCapacityAmount;
 
         return $this;
@@ -223,8 +226,9 @@ class CompletedTaskType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -284,8 +288,9 @@ class CompletedTaskType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -305,8 +310,9 @@ class CompletedTaskType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -344,8 +350,9 @@ class CompletedTaskType
      * @param  null|array<EvidenceSupplied> $evidenceSupplied
      * @return static
      */
-    public function setEvidenceSupplied(?array $evidenceSupplied = null): static
-    {
+    public function setEvidenceSupplied(
+        ?array $evidenceSupplied = null
+    ): static {
         $this->evidenceSupplied = $evidenceSupplied;
 
         return $this;
@@ -405,8 +412,9 @@ class CompletedTaskType
      * @param  EvidenceSupplied $evidenceSupplied
      * @return static
      */
-    public function addToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
-    {
+    public function addToEvidenceSupplied(
+        EvidenceSupplied $evidenceSupplied
+    ): static {
         $this->evidenceSupplied[] = $evidenceSupplied;
 
         return $this;
@@ -426,8 +434,9 @@ class CompletedTaskType
      * @param  EvidenceSupplied $evidenceSupplied
      * @return static
      */
-    public function addOnceToEvidenceSupplied(EvidenceSupplied $evidenceSupplied): static
-    {
+    public function addOnceToEvidenceSupplied(
+        EvidenceSupplied $evidenceSupplied
+    ): static {
         if (!is_array($this->evidenceSupplied)) {
             $this->evidenceSupplied = [];
         }
@@ -475,8 +484,9 @@ class CompletedTaskType
      * @param  null|Period $period
      * @return static
      */
-    public function setPeriod(?Period $period = null): static
-    {
+    public function setPeriod(
+        ?Period $period = null
+    ): static {
         $this->period = $period;
 
         return $this;
@@ -514,8 +524,9 @@ class CompletedTaskType
      * @param  null|RecipientCustomerParty $recipientCustomerParty
      * @return static
      */
-    public function setRecipientCustomerParty(?RecipientCustomerParty $recipientCustomerParty = null): static
-    {
+    public function setRecipientCustomerParty(
+        ?RecipientCustomerParty $recipientCustomerParty = null
+    ): static {
         $this->recipientCustomerParty = $recipientCustomerParty;
 
         return $this;

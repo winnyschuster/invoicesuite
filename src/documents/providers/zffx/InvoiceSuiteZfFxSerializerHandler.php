@@ -71,8 +71,10 @@ class InvoiceSuiteZfFxSerializerHandler implements SubscribingHandlerInterface
      *
      * @throws DOMException
      */
-    public function serializeAmountType(XmlSerializationVisitor $visitor, $data): DOMText
-    {
+    public function serializeAmountType(
+        XmlSerializationVisitor $visitor,
+        $data
+    ): DOMText {
         $node = $visitor->getDocument()->createTextNode(
             number_format(
                 $data->getValue(),
@@ -100,8 +102,10 @@ class InvoiceSuiteZfFxSerializerHandler implements SubscribingHandlerInterface
      *
      * @throws DOMException
      */
-    public function serializeQuantityType(XmlSerializationVisitor $visitor, $data): DOMText
-    {
+    public function serializeQuantityType(
+        XmlSerializationVisitor $visitor,
+        $data
+    ): DOMText {
         $node = $visitor->getDocument()->createTextNode(
             number_format(
                 $data->getValue(),
@@ -127,8 +131,10 @@ class InvoiceSuiteZfFxSerializerHandler implements SubscribingHandlerInterface
      * @param XmlSerializationVisitor $visitor
      * @param mixed                   $data
      */
-    public function serializePercentType(XmlSerializationVisitor $visitor, $data): DOMText
-    {
+    public function serializePercentType(
+        XmlSerializationVisitor $visitor,
+        $data
+    ): DOMText {
         return $visitor->getDocument()->createTextNode(
             number_format(
                 $data->getValue(),
@@ -148,8 +154,10 @@ class InvoiceSuiteZfFxSerializerHandler implements SubscribingHandlerInterface
      *
      * @throws DOMException
      */
-    public function serializeMeasureType(XmlSerializationVisitor $visitor, $data): DOMText
-    {
+    public function serializeMeasureType(
+        XmlSerializationVisitor $visitor,
+        $data
+    ): DOMText {
         $node = $visitor->getDocument()->createTextNode(
             number_format(
                 $data->getValue(),
@@ -178,8 +186,10 @@ class InvoiceSuiteZfFxSerializerHandler implements SubscribingHandlerInterface
      *
      * @throws DOMException
      */
-    public function serializeIndicatorType(XmlSerializationVisitor $visitor, $data): DOMElement
-    {
+    public function serializeIndicatorType(
+        XmlSerializationVisitor $visitor,
+        $data
+    ): DOMElement {
         return $visitor->getDocument()->createElement('udt:Indicator', false == $data->getIndicator() ? 'false' : 'true');
     }
 }

@@ -93,8 +93,9 @@ class FinancialGuaranteeType
      * @param  null|GuaranteeTypeCode $guaranteeTypeCode
      * @return static
      */
-    public function setGuaranteeTypeCode(?GuaranteeTypeCode $guaranteeTypeCode = null): static
-    {
+    public function setGuaranteeTypeCode(
+        ?GuaranteeTypeCode $guaranteeTypeCode = null
+    ): static {
         $this->guaranteeTypeCode = $guaranteeTypeCode;
 
         return $this;
@@ -122,8 +123,9 @@ class FinancialGuaranteeType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -183,8 +185,9 @@ class FinancialGuaranteeType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -204,8 +207,9 @@ class FinancialGuaranteeType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -253,8 +257,9 @@ class FinancialGuaranteeType
      * @param  null|LiabilityAmount $liabilityAmount
      * @return static
      */
-    public function setLiabilityAmount(?LiabilityAmount $liabilityAmount = null): static
-    {
+    public function setLiabilityAmount(
+        ?LiabilityAmount $liabilityAmount = null
+    ): static {
         $this->liabilityAmount = $liabilityAmount;
 
         return $this;
@@ -292,8 +297,9 @@ class FinancialGuaranteeType
      * @param  null|AmountRate $amountRate
      * @return static
      */
-    public function setAmountRate(?AmountRate $amountRate = null): static
-    {
+    public function setAmountRate(
+        ?AmountRate $amountRate = null
+    ): static {
         $this->amountRate = $amountRate;
 
         return $this;
@@ -331,8 +337,9 @@ class FinancialGuaranteeType
      * @param  null|ConstitutionPeriod $constitutionPeriod
      * @return static
      */
-    public function setConstitutionPeriod(?ConstitutionPeriod $constitutionPeriod = null): static
-    {
+    public function setConstitutionPeriod(
+        ?ConstitutionPeriod $constitutionPeriod = null
+    ): static {
         $this->constitutionPeriod = $constitutionPeriod;
 
         return $this;

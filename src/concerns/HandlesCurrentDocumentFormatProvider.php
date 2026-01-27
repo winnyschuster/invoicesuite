@@ -59,8 +59,9 @@ trait HandlesCurrentDocumentFormatProvider
      * @param  InvoiceSuiteAbstractDocumentFormatProvider $newDocumentFormatProvider
      * @return static
      */
-    public function setCurrentDocumentFormatProvider(InvoiceSuiteAbstractDocumentFormatProvider $newDocumentFormatProvider): static
-    {
+    public function setCurrentDocumentFormatProvider(
+        InvoiceSuiteAbstractDocumentFormatProvider $newDocumentFormatProvider
+    ): static {
         $this->currentDocumentFormatProvider = $newDocumentFormatProvider;
 
         return $this;
@@ -82,8 +83,9 @@ trait HandlesCurrentDocumentFormatProvider
      * @param  string $parameterName
      * @return bool
      */
-    public function hasCurrentDocumentFormatProviderParameter(string $parameterName): bool
-    {
+    public function hasCurrentDocumentFormatProviderParameter(
+        string $parameterName
+    ): bool {
         return $this->currentDocumentFormatProvider->hasFormatProviderParameter($parameterName);
     }
 
@@ -94,8 +96,10 @@ trait HandlesCurrentDocumentFormatProvider
      * @param  mixed  $defaultValue
      * @return mixed
      */
-    public function getCurrentDocumentFormatProviderParameterValue(string $parameterName, $defaultValue)
-    {
+    public function getCurrentDocumentFormatProviderParameterValue(
+        string $parameterName,
+        $defaultValue
+    ) {
         return $this->currentDocumentFormatProvider->getFormatProviderParameterValue($parameterName, $defaultValue);
     }
 
@@ -106,8 +110,10 @@ trait HandlesCurrentDocumentFormatProvider
      * @param  int    $defaultValue
      * @return int
      */
-    public function getCurrentDocumentFormatProviderParameterValueInt(string $parameterName, int $defaultValue): int
-    {
+    public function getCurrentDocumentFormatProviderParameterValueInt(
+        string $parameterName,
+        int $defaultValue
+    ): int {
         return $this->currentDocumentFormatProvider->getFormatProviderParameterValueInt($parameterName, $defaultValue);
     }
 
@@ -118,8 +124,10 @@ trait HandlesCurrentDocumentFormatProvider
      * @param  bool   $defaultValue
      * @return bool
      */
-    public function getCurrentDocumentFormatProviderParameterValueBool(string $parameterName, bool $defaultValue): bool
-    {
+    public function getCurrentDocumentFormatProviderParameterValueBool(
+        string $parameterName,
+        bool $defaultValue
+    ): bool {
         return $this->currentDocumentFormatProvider->getFormatProviderParameterValueBool($parameterName, $defaultValue);
     }
 }

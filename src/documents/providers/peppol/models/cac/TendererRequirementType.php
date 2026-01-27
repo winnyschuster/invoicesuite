@@ -85,8 +85,9 @@ class TendererRequirementType
      * @param  null|array<Name> $name
      * @return static
      */
-    public function setName(?array $name = null): static
-    {
+    public function setName(
+        ?array $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -146,8 +147,9 @@ class TendererRequirementType
      * @param  Name   $name
      * @return static
      */
-    public function addToName(Name $name): static
-    {
+    public function addToName(
+        Name $name
+    ): static {
         $this->name[] = $name;
 
         return $this;
@@ -167,8 +169,9 @@ class TendererRequirementType
      * @param  Name   $name
      * @return static
      */
-    public function addOnceToName(Name $name): static
-    {
+    public function addOnceToName(
+        Name $name
+    ): static {
         if (!is_array($this->name)) {
             $this->name = [];
         }
@@ -246,8 +249,9 @@ class TendererRequirementType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -307,8 +311,9 @@ class TendererRequirementType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -328,8 +333,9 @@ class TendererRequirementType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -377,8 +383,9 @@ class TendererRequirementType
      * @param  null|LegalReference $legalReference
      * @return static
      */
-    public function setLegalReference(?LegalReference $legalReference = null): static
-    {
+    public function setLegalReference(
+        ?LegalReference $legalReference = null
+    ): static {
         $this->legalReference = $legalReference;
 
         return $this;
@@ -406,8 +413,9 @@ class TendererRequirementType
      * @param  null|array<SuggestedEvidence> $suggestedEvidence
      * @return static
      */
-    public function setSuggestedEvidence(?array $suggestedEvidence = null): static
-    {
+    public function setSuggestedEvidence(
+        ?array $suggestedEvidence = null
+    ): static {
         $this->suggestedEvidence = $suggestedEvidence;
 
         return $this;
@@ -467,8 +475,9 @@ class TendererRequirementType
      * @param  SuggestedEvidence $suggestedEvidence
      * @return static
      */
-    public function addToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): static
-    {
+    public function addToSuggestedEvidence(
+        SuggestedEvidence $suggestedEvidence
+    ): static {
         $this->suggestedEvidence[] = $suggestedEvidence;
 
         return $this;
@@ -488,8 +497,9 @@ class TendererRequirementType
      * @param  SuggestedEvidence $suggestedEvidence
      * @return static
      */
-    public function addOnceToSuggestedEvidence(SuggestedEvidence $suggestedEvidence): static
-    {
+    public function addOnceToSuggestedEvidence(
+        SuggestedEvidence $suggestedEvidence
+    ): static {
         if (!is_array($this->suggestedEvidence)) {
             $this->suggestedEvidence = [];
         }

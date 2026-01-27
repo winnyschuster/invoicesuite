@@ -126,8 +126,9 @@ class ItemInstanceType
      * @param  null|ProductTraceID $productTraceID
      * @return static
      */
-    public function setProductTraceID(?ProductTraceID $productTraceID = null): static
-    {
+    public function setProductTraceID(
+        ?ProductTraceID $productTraceID = null
+    ): static {
         $this->productTraceID = $productTraceID;
 
         return $this;
@@ -155,8 +156,9 @@ class ItemInstanceType
      * @param  null|DateTimeInterface $manufactureDate
      * @return static
      */
-    public function setManufactureDate(?DateTimeInterface $manufactureDate = null): static
-    {
+    public function setManufactureDate(
+        ?DateTimeInterface $manufactureDate = null
+    ): static {
         $this->manufactureDate = $manufactureDate;
 
         return $this;
@@ -184,8 +186,9 @@ class ItemInstanceType
      * @param  null|DateTimeInterface $manufactureTime
      * @return static
      */
-    public function setManufactureTime(?DateTimeInterface $manufactureTime = null): static
-    {
+    public function setManufactureTime(
+        ?DateTimeInterface $manufactureTime = null
+    ): static {
         $this->manufactureTime = $manufactureTime;
 
         return $this;
@@ -213,8 +216,9 @@ class ItemInstanceType
      * @param  null|DateTimeInterface $bestBeforeDate
      * @return static
      */
-    public function setBestBeforeDate(?DateTimeInterface $bestBeforeDate = null): static
-    {
+    public function setBestBeforeDate(
+        ?DateTimeInterface $bestBeforeDate = null
+    ): static {
         $this->bestBeforeDate = $bestBeforeDate;
 
         return $this;
@@ -252,8 +256,9 @@ class ItemInstanceType
      * @param  null|RegistrationID $registrationID
      * @return static
      */
-    public function setRegistrationID(?RegistrationID $registrationID = null): static
-    {
+    public function setRegistrationID(
+        ?RegistrationID $registrationID = null
+    ): static {
         $this->registrationID = $registrationID;
 
         return $this;
@@ -291,8 +296,9 @@ class ItemInstanceType
      * @param  null|SerialID $serialID
      * @return static
      */
-    public function setSerialID(?SerialID $serialID = null): static
-    {
+    public function setSerialID(
+        ?SerialID $serialID = null
+    ): static {
         $this->serialID = $serialID;
 
         return $this;
@@ -320,8 +326,9 @@ class ItemInstanceType
      * @param  null|array<AdditionalItemProperty> $additionalItemProperty
      * @return static
      */
-    public function setAdditionalItemProperty(?array $additionalItemProperty = null): static
-    {
+    public function setAdditionalItemProperty(
+        ?array $additionalItemProperty = null
+    ): static {
         $this->additionalItemProperty = $additionalItemProperty;
 
         return $this;
@@ -381,8 +388,9 @@ class ItemInstanceType
      * @param  AdditionalItemProperty $additionalItemProperty
      * @return static
      */
-    public function addToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static
-    {
+    public function addToAdditionalItemProperty(
+        AdditionalItemProperty $additionalItemProperty
+    ): static {
         $this->additionalItemProperty[] = $additionalItemProperty;
 
         return $this;
@@ -402,8 +410,9 @@ class ItemInstanceType
      * @param  AdditionalItemProperty $additionalItemProperty
      * @return static
      */
-    public function addOnceToAdditionalItemProperty(AdditionalItemProperty $additionalItemProperty): static
-    {
+    public function addOnceToAdditionalItemProperty(
+        AdditionalItemProperty $additionalItemProperty
+    ): static {
         if (!is_array($this->additionalItemProperty)) {
             $this->additionalItemProperty = [];
         }
@@ -451,8 +460,9 @@ class ItemInstanceType
      * @param  null|LotIdentification $lotIdentification
      * @return static
      */
-    public function setLotIdentification(?LotIdentification $lotIdentification = null): static
-    {
+    public function setLotIdentification(
+        ?LotIdentification $lotIdentification = null
+    ): static {
         $this->lotIdentification = $lotIdentification;
 
         return $this;

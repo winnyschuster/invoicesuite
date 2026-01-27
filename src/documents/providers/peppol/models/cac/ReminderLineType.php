@@ -200,8 +200,9 @@ class ReminderLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -229,8 +230,9 @@ class ReminderLineType
      * @param  null|array<Note> $note
      * @return static
      */
-    public function setNote(?array $note = null): static
-    {
+    public function setNote(
+        ?array $note = null
+    ): static {
         $this->note = $note;
 
         return $this;
@@ -290,8 +292,9 @@ class ReminderLineType
      * @param  Note   $note
      * @return static
      */
-    public function addToNote(Note $note): static
-    {
+    public function addToNote(
+        Note $note
+    ): static {
         $this->note[] = $note;
 
         return $this;
@@ -311,8 +314,9 @@ class ReminderLineType
      * @param  Note   $note
      * @return static
      */
-    public function addOnceToNote(Note $note): static
-    {
+    public function addOnceToNote(
+        Note $note
+    ): static {
         if (!is_array($this->note)) {
             $this->note = [];
         }
@@ -360,8 +364,9 @@ class ReminderLineType
      * @param  null|UUID $uUID
      * @return static
      */
-    public function setUUID(?UUID $uUID = null): static
-    {
+    public function setUUID(
+        ?UUID $uUID = null
+    ): static {
         $this->uUID = $uUID;
 
         return $this;
@@ -389,8 +394,9 @@ class ReminderLineType
      * @param  null|bool $balanceBroughtForwardIndicator
      * @return static
      */
-    public function setBalanceBroughtForwardIndicator(?bool $balanceBroughtForwardIndicator = null): static
-    {
+    public function setBalanceBroughtForwardIndicator(
+        ?bool $balanceBroughtForwardIndicator = null
+    ): static {
         $this->balanceBroughtForwardIndicator = $balanceBroughtForwardIndicator;
 
         return $this;
@@ -428,8 +434,9 @@ class ReminderLineType
      * @param  null|DebitLineAmount $debitLineAmount
      * @return static
      */
-    public function setDebitLineAmount(?DebitLineAmount $debitLineAmount = null): static
-    {
+    public function setDebitLineAmount(
+        ?DebitLineAmount $debitLineAmount = null
+    ): static {
         $this->debitLineAmount = $debitLineAmount;
 
         return $this;
@@ -467,8 +474,9 @@ class ReminderLineType
      * @param  null|CreditLineAmount $creditLineAmount
      * @return static
      */
-    public function setCreditLineAmount(?CreditLineAmount $creditLineAmount = null): static
-    {
+    public function setCreditLineAmount(
+        ?CreditLineAmount $creditLineAmount = null
+    ): static {
         $this->creditLineAmount = $creditLineAmount;
 
         return $this;
@@ -506,8 +514,9 @@ class ReminderLineType
      * @param  null|AccountingCostCode $accountingCostCode
      * @return static
      */
-    public function setAccountingCostCode(?AccountingCostCode $accountingCostCode = null): static
-    {
+    public function setAccountingCostCode(
+        ?AccountingCostCode $accountingCostCode = null
+    ): static {
         $this->accountingCostCode = $accountingCostCode;
 
         return $this;
@@ -545,8 +554,9 @@ class ReminderLineType
      * @param  null|AccountingCost $accountingCost
      * @return static
      */
-    public function setAccountingCost(?AccountingCost $accountingCost = null): static
-    {
+    public function setAccountingCost(
+        ?AccountingCost $accountingCost = null
+    ): static {
         $this->accountingCost = $accountingCost;
 
         return $this;
@@ -584,8 +594,9 @@ class ReminderLineType
      * @param  null|PenaltySurchargePercent $penaltySurchargePercent
      * @return static
      */
-    public function setPenaltySurchargePercent(?PenaltySurchargePercent $penaltySurchargePercent = null): static
-    {
+    public function setPenaltySurchargePercent(
+        ?PenaltySurchargePercent $penaltySurchargePercent = null
+    ): static {
         $this->penaltySurchargePercent = $penaltySurchargePercent;
 
         return $this;
@@ -623,8 +634,9 @@ class ReminderLineType
      * @param  null|Amount $amount
      * @return static
      */
-    public function setAmount(?Amount $amount = null): static
-    {
+    public function setAmount(
+        ?Amount $amount = null
+    ): static {
         $this->amount = $amount;
 
         return $this;
@@ -662,8 +674,9 @@ class ReminderLineType
      * @param  null|PaymentPurposeCode $paymentPurposeCode
      * @return static
      */
-    public function setPaymentPurposeCode(?PaymentPurposeCode $paymentPurposeCode = null): static
-    {
+    public function setPaymentPurposeCode(
+        ?PaymentPurposeCode $paymentPurposeCode = null
+    ): static {
         $this->paymentPurposeCode = $paymentPurposeCode;
 
         return $this;
@@ -691,8 +704,9 @@ class ReminderLineType
      * @param  null|array<ReminderPeriod> $reminderPeriod
      * @return static
      */
-    public function setReminderPeriod(?array $reminderPeriod = null): static
-    {
+    public function setReminderPeriod(
+        ?array $reminderPeriod = null
+    ): static {
         $this->reminderPeriod = $reminderPeriod;
 
         return $this;
@@ -752,8 +766,9 @@ class ReminderLineType
      * @param  ReminderPeriod $reminderPeriod
      * @return static
      */
-    public function addToReminderPeriod(ReminderPeriod $reminderPeriod): static
-    {
+    public function addToReminderPeriod(
+        ReminderPeriod $reminderPeriod
+    ): static {
         $this->reminderPeriod[] = $reminderPeriod;
 
         return $this;
@@ -773,8 +788,9 @@ class ReminderLineType
      * @param  ReminderPeriod $reminderPeriod
      * @return static
      */
-    public function addOnceToReminderPeriod(ReminderPeriod $reminderPeriod): static
-    {
+    public function addOnceToReminderPeriod(
+        ReminderPeriod $reminderPeriod
+    ): static {
         if (!is_array($this->reminderPeriod)) {
             $this->reminderPeriod = [];
         }
@@ -812,8 +828,9 @@ class ReminderLineType
      * @param  null|array<BillingReference> $billingReference
      * @return static
      */
-    public function setBillingReference(?array $billingReference = null): static
-    {
+    public function setBillingReference(
+        ?array $billingReference = null
+    ): static {
         $this->billingReference = $billingReference;
 
         return $this;
@@ -873,8 +890,9 @@ class ReminderLineType
      * @param  BillingReference $billingReference
      * @return static
      */
-    public function addToBillingReference(BillingReference $billingReference): static
-    {
+    public function addToBillingReference(
+        BillingReference $billingReference
+    ): static {
         $this->billingReference[] = $billingReference;
 
         return $this;
@@ -894,8 +912,9 @@ class ReminderLineType
      * @param  BillingReference $billingReference
      * @return static
      */
-    public function addOnceToBillingReference(BillingReference $billingReference): static
-    {
+    public function addOnceToBillingReference(
+        BillingReference $billingReference
+    ): static {
         if (!is_array($this->billingReference)) {
             $this->billingReference = [];
         }
@@ -943,8 +962,9 @@ class ReminderLineType
      * @param  null|ExchangeRate $exchangeRate
      * @return static
      */
-    public function setExchangeRate(?ExchangeRate $exchangeRate = null): static
-    {
+    public function setExchangeRate(
+        ?ExchangeRate $exchangeRate = null
+    ): static {
         $this->exchangeRate = $exchangeRate;
 
         return $this;

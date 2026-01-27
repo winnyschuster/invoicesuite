@@ -43,8 +43,9 @@ class ZugferdXsdValidator
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
-    public function __construct($document = null)
-    {
+    public function __construct(
+        $document = null
+    ) {
         $this->setDocument($document);
     }
 
@@ -58,8 +59,9 @@ class ZugferdXsdValidator
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws RuntimeException
      */
-    public function setDocument($document): self
-    {
+    public function setDocument(
+        $document
+    ): self {
         $this->xsdValidator = null;
 
         if (!is_string($document) && !($document instanceof ZugferdDocument)) {
@@ -167,8 +169,9 @@ class ZugferdXsdValidator
      * @param  array<int, InvoiceSuiteMessageBagItem> $messages
      * @return array<int, string>
      */
-    private function convertMessageBagMessagesToSimpleArray(array $messages): array
-    {
+    private function convertMessageBagMessagesToSimpleArray(
+        array $messages
+    ): array {
         return array_map(
             static fn (InvoiceSuiteMessageBagItem $messageBagItem) => $messageBagItem->getMessageContent(),
             $messages

@@ -119,8 +119,9 @@ class AwardingCriterionResponseType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -158,8 +159,9 @@ class AwardingCriterionResponseType
      * @param  null|AwardingCriterionID $awardingCriterionID
      * @return static
      */
-    public function setAwardingCriterionID(?AwardingCriterionID $awardingCriterionID = null): static
-    {
+    public function setAwardingCriterionID(
+        ?AwardingCriterionID $awardingCriterionID = null
+    ): static {
         $this->awardingCriterionID = $awardingCriterionID;
 
         return $this;
@@ -187,8 +189,9 @@ class AwardingCriterionResponseType
      * @param  null|array<AwardingCriterionDescription> $awardingCriterionDescription
      * @return static
      */
-    public function setAwardingCriterionDescription(?array $awardingCriterionDescription = null): static
-    {
+    public function setAwardingCriterionDescription(
+        ?array $awardingCriterionDescription = null
+    ): static {
         $this->awardingCriterionDescription = $awardingCriterionDescription;
 
         return $this;
@@ -310,8 +313,9 @@ class AwardingCriterionResponseType
      * @param  null|array<Description> $description
      * @return static
      */
-    public function setDescription(?array $description = null): static
-    {
+    public function setDescription(
+        ?array $description = null
+    ): static {
         $this->description = $description;
 
         return $this;
@@ -371,8 +375,9 @@ class AwardingCriterionResponseType
      * @param  Description $description
      * @return static
      */
-    public function addToDescription(Description $description): static
-    {
+    public function addToDescription(
+        Description $description
+    ): static {
         $this->description[] = $description;
 
         return $this;
@@ -392,8 +397,9 @@ class AwardingCriterionResponseType
      * @param  Description $description
      * @return static
      */
-    public function addOnceToDescription(Description $description): static
-    {
+    public function addOnceToDescription(
+        Description $description
+    ): static {
         if (!is_array($this->description)) {
             $this->description = [];
         }
@@ -441,8 +447,9 @@ class AwardingCriterionResponseType
      * @param  null|Quantity $quantity
      * @return static
      */
-    public function setQuantity(?Quantity $quantity = null): static
-    {
+    public function setQuantity(
+        ?Quantity $quantity = null
+    ): static {
         $this->quantity = $quantity;
 
         return $this;
@@ -480,8 +487,9 @@ class AwardingCriterionResponseType
      * @param  null|Amount $amount
      * @return static
      */
-    public function setAmount(?Amount $amount = null): static
-    {
+    public function setAmount(
+        ?Amount $amount = null
+    ): static {
         $this->amount = $amount;
 
         return $this;
@@ -509,8 +517,9 @@ class AwardingCriterionResponseType
      * @param  null|array<SubordinateAwardingCriterionResponse> $subordinateAwardingCriterionResponse
      * @return static
      */
-    public function setSubordinateAwardingCriterionResponse(?array $subordinateAwardingCriterionResponse = null): static
-    {
+    public function setSubordinateAwardingCriterionResponse(
+        ?array $subordinateAwardingCriterionResponse = null
+    ): static {
         $this->subordinateAwardingCriterionResponse = $subordinateAwardingCriterionResponse;
 
         return $this;

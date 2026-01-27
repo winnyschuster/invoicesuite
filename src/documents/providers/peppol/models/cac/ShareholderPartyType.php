@@ -56,8 +56,9 @@ class ShareholderPartyType
      * @param  null|PartecipationPercent $partecipationPercent
      * @return static
      */
-    public function setPartecipationPercent(?PartecipationPercent $partecipationPercent = null): static
-    {
+    public function setPartecipationPercent(
+        ?PartecipationPercent $partecipationPercent = null
+    ): static {
         $this->partecipationPercent = $partecipationPercent;
 
         return $this;
@@ -95,8 +96,9 @@ class ShareholderPartyType
      * @param  null|Party $party
      * @return static
      */
-    public function setParty(?Party $party = null): static
-    {
+    public function setParty(
+        ?Party $party = null
+    ): static {
         $this->party = $party;
 
         return $this;

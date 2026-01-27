@@ -138,8 +138,9 @@ class OrderReferenceType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -177,8 +178,9 @@ class OrderReferenceType
      * @param  null|SalesOrderID $salesOrderID
      * @return static
      */
-    public function setSalesOrderID(?SalesOrderID $salesOrderID = null): static
-    {
+    public function setSalesOrderID(
+        ?SalesOrderID $salesOrderID = null
+    ): static {
         $this->salesOrderID = $salesOrderID;
 
         return $this;
@@ -206,8 +208,9 @@ class OrderReferenceType
      * @param  null|bool $copyIndicator
      * @return static
      */
-    public function setCopyIndicator(?bool $copyIndicator = null): static
-    {
+    public function setCopyIndicator(
+        ?bool $copyIndicator = null
+    ): static {
         $this->copyIndicator = $copyIndicator;
 
         return $this;
@@ -245,8 +248,9 @@ class OrderReferenceType
      * @param  null|UUID $uUID
      * @return static
      */
-    public function setUUID(?UUID $uUID = null): static
-    {
+    public function setUUID(
+        ?UUID $uUID = null
+    ): static {
         $this->uUID = $uUID;
 
         return $this;
@@ -274,8 +278,9 @@ class OrderReferenceType
      * @param  null|DateTimeInterface $issueDate
      * @return static
      */
-    public function setIssueDate(?DateTimeInterface $issueDate = null): static
-    {
+    public function setIssueDate(
+        ?DateTimeInterface $issueDate = null
+    ): static {
         $this->issueDate = $issueDate;
 
         return $this;
@@ -303,8 +308,9 @@ class OrderReferenceType
      * @param  null|DateTimeInterface $issueTime
      * @return static
      */
-    public function setIssueTime(?DateTimeInterface $issueTime = null): static
-    {
+    public function setIssueTime(
+        ?DateTimeInterface $issueTime = null
+    ): static {
         $this->issueTime = $issueTime;
 
         return $this;
@@ -342,8 +348,9 @@ class OrderReferenceType
      * @param  null|CustomerReference $customerReference
      * @return static
      */
-    public function setCustomerReference(?CustomerReference $customerReference = null): static
-    {
+    public function setCustomerReference(
+        ?CustomerReference $customerReference = null
+    ): static {
         $this->customerReference = $customerReference;
 
         return $this;
@@ -381,8 +388,9 @@ class OrderReferenceType
      * @param  null|OrderTypeCode $orderTypeCode
      * @return static
      */
-    public function setOrderTypeCode(?OrderTypeCode $orderTypeCode = null): static
-    {
+    public function setOrderTypeCode(
+        ?OrderTypeCode $orderTypeCode = null
+    ): static {
         $this->orderTypeCode = $orderTypeCode;
 
         return $this;
@@ -420,8 +428,9 @@ class OrderReferenceType
      * @param  null|DocumentReference $documentReference
      * @return static
      */
-    public function setDocumentReference(?DocumentReference $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?DocumentReference $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;

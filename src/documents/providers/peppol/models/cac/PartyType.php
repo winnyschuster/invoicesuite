@@ -243,8 +243,9 @@ class PartyType
      * @param  null|bool $markCareIndicator
      * @return static
      */
-    public function setMarkCareIndicator(?bool $markCareIndicator = null): static
-    {
+    public function setMarkCareIndicator(
+        ?bool $markCareIndicator = null
+    ): static {
         $this->markCareIndicator = $markCareIndicator;
 
         return $this;
@@ -272,8 +273,9 @@ class PartyType
      * @param  null|bool $markAttentionIndicator
      * @return static
      */
-    public function setMarkAttentionIndicator(?bool $markAttentionIndicator = null): static
-    {
+    public function setMarkAttentionIndicator(
+        ?bool $markAttentionIndicator = null
+    ): static {
         $this->markAttentionIndicator = $markAttentionIndicator;
 
         return $this;
@@ -311,8 +313,9 @@ class PartyType
      * @param  null|WebsiteURI $websiteURI
      * @return static
      */
-    public function setWebsiteURI(?WebsiteURI $websiteURI = null): static
-    {
+    public function setWebsiteURI(
+        ?WebsiteURI $websiteURI = null
+    ): static {
         $this->websiteURI = $websiteURI;
 
         return $this;
@@ -350,8 +353,9 @@ class PartyType
      * @param  null|LogoReferenceID $logoReferenceID
      * @return static
      */
-    public function setLogoReferenceID(?LogoReferenceID $logoReferenceID = null): static
-    {
+    public function setLogoReferenceID(
+        ?LogoReferenceID $logoReferenceID = null
+    ): static {
         $this->logoReferenceID = $logoReferenceID;
 
         return $this;
@@ -389,8 +393,9 @@ class PartyType
      * @param  null|EndpointID $endpointID
      * @return static
      */
-    public function setEndpointID(?EndpointID $endpointID = null): static
-    {
+    public function setEndpointID(
+        ?EndpointID $endpointID = null
+    ): static {
         $this->endpointID = $endpointID;
 
         return $this;
@@ -458,8 +463,9 @@ class PartyType
      * @param  null|array<PartyIdentification> $partyIdentification
      * @return static
      */
-    public function setPartyIdentification(?array $partyIdentification = null): static
-    {
+    public function setPartyIdentification(
+        ?array $partyIdentification = null
+    ): static {
         $this->partyIdentification = $partyIdentification;
 
         return $this;
@@ -519,8 +525,9 @@ class PartyType
      * @param  PartyIdentification $partyIdentification
      * @return static
      */
-    public function addToPartyIdentification(PartyIdentification $partyIdentification): static
-    {
+    public function addToPartyIdentification(
+        PartyIdentification $partyIdentification
+    ): static {
         $this->partyIdentification[] = $partyIdentification;
 
         return $this;
@@ -540,8 +547,9 @@ class PartyType
      * @param  PartyIdentification $partyIdentification
      * @return static
      */
-    public function addOnceToPartyIdentification(PartyIdentification $partyIdentification): static
-    {
+    public function addOnceToPartyIdentification(
+        PartyIdentification $partyIdentification
+    ): static {
         if (!is_array($this->partyIdentification)) {
             $this->partyIdentification = [];
         }
@@ -579,8 +587,9 @@ class PartyType
      * @param  null|array<PartyName> $partyName
      * @return static
      */
-    public function setPartyName(?array $partyName = null): static
-    {
+    public function setPartyName(
+        ?array $partyName = null
+    ): static {
         $this->partyName = $partyName;
 
         return $this;
@@ -640,8 +649,9 @@ class PartyType
      * @param  PartyName $partyName
      * @return static
      */
-    public function addToPartyName(PartyName $partyName): static
-    {
+    public function addToPartyName(
+        PartyName $partyName
+    ): static {
         $this->partyName[] = $partyName;
 
         return $this;
@@ -661,8 +671,9 @@ class PartyType
      * @param  PartyName $partyName
      * @return static
      */
-    public function addOnceToPartyName(PartyName $partyName): static
-    {
+    public function addOnceToPartyName(
+        PartyName $partyName
+    ): static {
         if (!is_array($this->partyName)) {
             $this->partyName = [];
         }
@@ -710,8 +721,9 @@ class PartyType
      * @param  null|Language $language
      * @return static
      */
-    public function setLanguage(?Language $language = null): static
-    {
+    public function setLanguage(
+        ?Language $language = null
+    ): static {
         $this->language = $language;
 
         return $this;
@@ -749,8 +761,9 @@ class PartyType
      * @param  null|PostalAddress $postalAddress
      * @return static
      */
-    public function setPostalAddress(?PostalAddress $postalAddress = null): static
-    {
+    public function setPostalAddress(
+        ?PostalAddress $postalAddress = null
+    ): static {
         $this->postalAddress = $postalAddress;
 
         return $this;
@@ -788,8 +801,9 @@ class PartyType
      * @param  null|PhysicalLocation $physicalLocation
      * @return static
      */
-    public function setPhysicalLocation(?PhysicalLocation $physicalLocation = null): static
-    {
+    public function setPhysicalLocation(
+        ?PhysicalLocation $physicalLocation = null
+    ): static {
         $this->physicalLocation = $physicalLocation;
 
         return $this;
@@ -817,8 +831,9 @@ class PartyType
      * @param  null|array<PartyTaxScheme> $partyTaxScheme
      * @return static
      */
-    public function setPartyTaxScheme(?array $partyTaxScheme = null): static
-    {
+    public function setPartyTaxScheme(
+        ?array $partyTaxScheme = null
+    ): static {
         $this->partyTaxScheme = $partyTaxScheme;
 
         return $this;
@@ -878,8 +893,9 @@ class PartyType
      * @param  PartyTaxScheme $partyTaxScheme
      * @return static
      */
-    public function addToPartyTaxScheme(PartyTaxScheme $partyTaxScheme): static
-    {
+    public function addToPartyTaxScheme(
+        PartyTaxScheme $partyTaxScheme
+    ): static {
         $this->partyTaxScheme[] = $partyTaxScheme;
 
         return $this;
@@ -899,8 +915,9 @@ class PartyType
      * @param  PartyTaxScheme $partyTaxScheme
      * @return static
      */
-    public function addOnceToPartyTaxScheme(PartyTaxScheme $partyTaxScheme): static
-    {
+    public function addOnceToPartyTaxScheme(
+        PartyTaxScheme $partyTaxScheme
+    ): static {
         if (!is_array($this->partyTaxScheme)) {
             $this->partyTaxScheme = [];
         }
@@ -938,8 +955,9 @@ class PartyType
      * @param  null|array<PartyLegalEntity> $partyLegalEntity
      * @return static
      */
-    public function setPartyLegalEntity(?array $partyLegalEntity = null): static
-    {
+    public function setPartyLegalEntity(
+        ?array $partyLegalEntity = null
+    ): static {
         $this->partyLegalEntity = $partyLegalEntity;
 
         return $this;
@@ -999,8 +1017,9 @@ class PartyType
      * @param  PartyLegalEntity $partyLegalEntity
      * @return static
      */
-    public function addToPartyLegalEntity(PartyLegalEntity $partyLegalEntity): static
-    {
+    public function addToPartyLegalEntity(
+        PartyLegalEntity $partyLegalEntity
+    ): static {
         $this->partyLegalEntity[] = $partyLegalEntity;
 
         return $this;
@@ -1020,8 +1039,9 @@ class PartyType
      * @param  PartyLegalEntity $partyLegalEntity
      * @return static
      */
-    public function addOnceToPartyLegalEntity(PartyLegalEntity $partyLegalEntity): static
-    {
+    public function addOnceToPartyLegalEntity(
+        PartyLegalEntity $partyLegalEntity
+    ): static {
         if (!is_array($this->partyLegalEntity)) {
             $this->partyLegalEntity = [];
         }
@@ -1069,8 +1089,9 @@ class PartyType
      * @param  null|Contact $contact
      * @return static
      */
-    public function setContact(?Contact $contact = null): static
-    {
+    public function setContact(
+        ?Contact $contact = null
+    ): static {
         $this->contact = $contact;
 
         return $this;
@@ -1098,8 +1119,9 @@ class PartyType
      * @param  null|array<Person> $person
      * @return static
      */
-    public function setPerson(?array $person = null): static
-    {
+    public function setPerson(
+        ?array $person = null
+    ): static {
         $this->person = $person;
 
         return $this;
@@ -1159,8 +1181,9 @@ class PartyType
      * @param  Person $person
      * @return static
      */
-    public function addToPerson(Person $person): static
-    {
+    public function addToPerson(
+        Person $person
+    ): static {
         $this->person[] = $person;
 
         return $this;
@@ -1180,8 +1203,9 @@ class PartyType
      * @param  Person $person
      * @return static
      */
-    public function addOnceToPerson(Person $person): static
-    {
+    public function addOnceToPerson(
+        Person $person
+    ): static {
         if (!is_array($this->person)) {
             $this->person = [];
         }
@@ -1229,8 +1253,9 @@ class PartyType
      * @param  null|AgentParty $agentParty
      * @return static
      */
-    public function setAgentParty(?AgentParty $agentParty = null): static
-    {
+    public function setAgentParty(
+        ?AgentParty $agentParty = null
+    ): static {
         $this->agentParty = $agentParty;
 
         return $this;
@@ -1258,8 +1283,9 @@ class PartyType
      * @param  null|array<ServiceProviderParty> $serviceProviderParty
      * @return static
      */
-    public function setServiceProviderParty(?array $serviceProviderParty = null): static
-    {
+    public function setServiceProviderParty(
+        ?array $serviceProviderParty = null
+    ): static {
         $this->serviceProviderParty = $serviceProviderParty;
 
         return $this;
@@ -1319,8 +1345,9 @@ class PartyType
      * @param  ServiceProviderParty $serviceProviderParty
      * @return static
      */
-    public function addToServiceProviderParty(ServiceProviderParty $serviceProviderParty): static
-    {
+    public function addToServiceProviderParty(
+        ServiceProviderParty $serviceProviderParty
+    ): static {
         $this->serviceProviderParty[] = $serviceProviderParty;
 
         return $this;
@@ -1340,8 +1367,9 @@ class PartyType
      * @param  ServiceProviderParty $serviceProviderParty
      * @return static
      */
-    public function addOnceToServiceProviderParty(ServiceProviderParty $serviceProviderParty): static
-    {
+    public function addOnceToServiceProviderParty(
+        ServiceProviderParty $serviceProviderParty
+    ): static {
         if (!is_array($this->serviceProviderParty)) {
             $this->serviceProviderParty = [];
         }
@@ -1379,8 +1407,9 @@ class PartyType
      * @param  null|array<PowerOfAttorney> $powerOfAttorney
      * @return static
      */
-    public function setPowerOfAttorney(?array $powerOfAttorney = null): static
-    {
+    public function setPowerOfAttorney(
+        ?array $powerOfAttorney = null
+    ): static {
         $this->powerOfAttorney = $powerOfAttorney;
 
         return $this;
@@ -1440,8 +1469,9 @@ class PartyType
      * @param  PowerOfAttorney $powerOfAttorney
      * @return static
      */
-    public function addToPowerOfAttorney(PowerOfAttorney $powerOfAttorney): static
-    {
+    public function addToPowerOfAttorney(
+        PowerOfAttorney $powerOfAttorney
+    ): static {
         $this->powerOfAttorney[] = $powerOfAttorney;
 
         return $this;
@@ -1461,8 +1491,9 @@ class PartyType
      * @param  PowerOfAttorney $powerOfAttorney
      * @return static
      */
-    public function addOnceToPowerOfAttorney(PowerOfAttorney $powerOfAttorney): static
-    {
+    public function addOnceToPowerOfAttorney(
+        PowerOfAttorney $powerOfAttorney
+    ): static {
         if (!is_array($this->powerOfAttorney)) {
             $this->powerOfAttorney = [];
         }
@@ -1510,8 +1541,9 @@ class PartyType
      * @param  null|FinancialAccount $financialAccount
      * @return static
      */
-    public function setFinancialAccount(?FinancialAccount $financialAccount = null): static
-    {
+    public function setFinancialAccount(
+        ?FinancialAccount $financialAccount = null
+    ): static {
         $this->financialAccount = $financialAccount;
 
         return $this;

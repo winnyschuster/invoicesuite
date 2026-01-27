@@ -117,8 +117,9 @@ class CertificateType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -156,8 +157,9 @@ class CertificateType
      * @param  null|CertificateTypeCode $certificateTypeCode
      * @return static
      */
-    public function setCertificateTypeCode(?CertificateTypeCode $certificateTypeCode = null): static
-    {
+    public function setCertificateTypeCode(
+        ?CertificateTypeCode $certificateTypeCode = null
+    ): static {
         $this->certificateTypeCode = $certificateTypeCode;
 
         return $this;
@@ -195,8 +197,9 @@ class CertificateType
      * @param  null|CertificateType1 $certificateType
      * @return static
      */
-    public function setCertificateType(?CertificateType1 $certificateType = null): static
-    {
+    public function setCertificateType(
+        ?CertificateType1 $certificateType = null
+    ): static {
         $this->certificateType = $certificateType;
 
         return $this;
@@ -224,8 +227,9 @@ class CertificateType
      * @param  null|array<Remarks> $remarks
      * @return static
      */
-    public function setRemarks(?array $remarks = null): static
-    {
+    public function setRemarks(
+        ?array $remarks = null
+    ): static {
         $this->remarks = $remarks;
 
         return $this;
@@ -285,8 +289,9 @@ class CertificateType
      * @param  Remarks $remarks
      * @return static
      */
-    public function addToRemarks(Remarks $remarks): static
-    {
+    public function addToRemarks(
+        Remarks $remarks
+    ): static {
         $this->remarks[] = $remarks;
 
         return $this;
@@ -306,8 +311,9 @@ class CertificateType
      * @param  Remarks $remarks
      * @return static
      */
-    public function addOnceToRemarks(Remarks $remarks): static
-    {
+    public function addOnceToRemarks(
+        Remarks $remarks
+    ): static {
         if (!is_array($this->remarks)) {
             $this->remarks = [];
         }
@@ -355,8 +361,9 @@ class CertificateType
      * @param  null|IssuerParty $issuerParty
      * @return static
      */
-    public function setIssuerParty(?IssuerParty $issuerParty = null): static
-    {
+    public function setIssuerParty(
+        ?IssuerParty $issuerParty = null
+    ): static {
         $this->issuerParty = $issuerParty;
 
         return $this;
@@ -384,8 +391,9 @@ class CertificateType
      * @param  null|array<DocumentReference> $documentReference
      * @return static
      */
-    public function setDocumentReference(?array $documentReference = null): static
-    {
+    public function setDocumentReference(
+        ?array $documentReference = null
+    ): static {
         $this->documentReference = $documentReference;
 
         return $this;
@@ -445,8 +453,9 @@ class CertificateType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         $this->documentReference[] = $documentReference;
 
         return $this;
@@ -466,8 +475,9 @@ class CertificateType
      * @param  DocumentReference $documentReference
      * @return static
      */
-    public function addOnceToDocumentReference(DocumentReference $documentReference): static
-    {
+    public function addOnceToDocumentReference(
+        DocumentReference $documentReference
+    ): static {
         if (!is_array($this->documentReference)) {
             $this->documentReference = [];
         }
@@ -505,8 +515,9 @@ class CertificateType
      * @param  null|array<Signature> $signature
      * @return static
      */
-    public function setSignature(?array $signature = null): static
-    {
+    public function setSignature(
+        ?array $signature = null
+    ): static {
         $this->signature = $signature;
 
         return $this;
@@ -566,8 +577,9 @@ class CertificateType
      * @param  Signature $signature
      * @return static
      */
-    public function addToSignature(Signature $signature): static
-    {
+    public function addToSignature(
+        Signature $signature
+    ): static {
         $this->signature[] = $signature;
 
         return $this;
@@ -587,8 +599,9 @@ class CertificateType
      * @param  Signature $signature
      * @return static
      */
-    public function addOnceToSignature(Signature $signature): static
-    {
+    public function addOnceToSignature(
+        Signature $signature
+    ): static {
         if (!is_array($this->signature)) {
             $this->signature = [];
         }

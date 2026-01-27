@@ -95,8 +95,9 @@ class InvoiceSuitesummationLineDTO
      * @param  null|float $netAmount The sum of the net amounts of all invoice lines
      * @return static
      */
-    public function setNetAmount(?float $netAmount): static
-    {
+    public function setNetAmount(
+        ?float $netAmount
+    ): static {
         $this->netAmount = $netAmount;
 
         return $this;
@@ -118,8 +119,9 @@ class InvoiceSuitesummationLineDTO
      * @param  null|float $chargeTotalAmount The sum of the charges
      * @return static
      */
-    public function setChargeTotalAmount(?float $chargeTotalAmount): static
-    {
+    public function setChargeTotalAmount(
+        ?float $chargeTotalAmount
+    ): static {
         $this->chargeTotalAmount = $chargeTotalAmount;
 
         return $this;
@@ -141,8 +143,9 @@ class InvoiceSuitesummationLineDTO
      * @param  null|float $discountTotalAmount The sum of the discounts
      * @return static
      */
-    public function setDiscountTotalAmount(?float $discountTotalAmount): static
-    {
+    public function setDiscountTotalAmount(
+        ?float $discountTotalAmount
+    ): static {
         $this->discountTotalAmount = $discountTotalAmount;
 
         return $this;
@@ -164,8 +167,9 @@ class InvoiceSuitesummationLineDTO
      * @param  null|float $taxTotalAmount The total amount of the invoice sales tax (in the invoice currency)
      * @return static
      */
-    public function setTaxTotalAmount(?float $taxTotalAmount): static
-    {
+    public function setTaxTotalAmount(
+        ?float $taxTotalAmount
+    ): static {
         $this->taxTotalAmount = $taxTotalAmount;
 
         return $this;
@@ -187,8 +191,9 @@ class InvoiceSuitesummationLineDTO
      * @param  null|float $grossAmount The total invoice amount including sales tax
      * @return static
      */
-    public function setGrossAmount(?float $grossAmount): static
-    {
+    public function setGrossAmount(
+        ?float $grossAmount
+    ): static {
         $this->grossAmount = $grossAmount;
 
         return $this;

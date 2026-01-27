@@ -93,8 +93,9 @@ class ForecastExceptionCriterionLineType
      * @param  null|ForecastPurposeCode $forecastPurposeCode
      * @return static
      */
-    public function setForecastPurposeCode(?ForecastPurposeCode $forecastPurposeCode = null): static
-    {
+    public function setForecastPurposeCode(
+        ?ForecastPurposeCode $forecastPurposeCode = null
+    ): static {
         $this->forecastPurposeCode = $forecastPurposeCode;
 
         return $this;
@@ -132,8 +133,9 @@ class ForecastExceptionCriterionLineType
      * @param  null|ForecastTypeCode $forecastTypeCode
      * @return static
      */
-    public function setForecastTypeCode(?ForecastTypeCode $forecastTypeCode = null): static
-    {
+    public function setForecastTypeCode(
+        ?ForecastTypeCode $forecastTypeCode = null
+    ): static {
         $this->forecastTypeCode = $forecastTypeCode;
 
         return $this;
@@ -171,8 +173,9 @@ class ForecastExceptionCriterionLineType
      * @param  null|ComparisonDataSourceCode $comparisonDataSourceCode
      * @return static
      */
-    public function setComparisonDataSourceCode(?ComparisonDataSourceCode $comparisonDataSourceCode = null): static
-    {
+    public function setComparisonDataSourceCode(
+        ?ComparisonDataSourceCode $comparisonDataSourceCode = null
+    ): static {
         $this->comparisonDataSourceCode = $comparisonDataSourceCode;
 
         return $this;
@@ -210,8 +213,9 @@ class ForecastExceptionCriterionLineType
      * @param  null|DataSourceCode $dataSourceCode
      * @return static
      */
-    public function setDataSourceCode(?DataSourceCode $dataSourceCode = null): static
-    {
+    public function setDataSourceCode(
+        ?DataSourceCode $dataSourceCode = null
+    ): static {
         $this->dataSourceCode = $dataSourceCode;
 
         return $this;
@@ -249,8 +253,9 @@ class ForecastExceptionCriterionLineType
      * @param  null|TimeDeltaDaysQuantity $timeDeltaDaysQuantity
      * @return static
      */
-    public function setTimeDeltaDaysQuantity(?TimeDeltaDaysQuantity $timeDeltaDaysQuantity = null): static
-    {
+    public function setTimeDeltaDaysQuantity(
+        ?TimeDeltaDaysQuantity $timeDeltaDaysQuantity = null
+    ): static {
         $this->timeDeltaDaysQuantity = $timeDeltaDaysQuantity;
 
         return $this;

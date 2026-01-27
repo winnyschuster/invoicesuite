@@ -54,8 +54,9 @@ final class DatiPagamento
      * @param  null|CondizioniPagamento $condizioniPagamento
      * @return static
      */
-    public function setCondizioniPagamento(?CondizioniPagamento $condizioniPagamento = null): static
-    {
+    public function setCondizioniPagamento(
+        ?CondizioniPagamento $condizioniPagamento = null
+    ): static {
         $this->condizioniPagamento = $condizioniPagamento;
 
         return $this;
@@ -89,8 +90,9 @@ final class DatiPagamento
      * @param  null|array<DettaglioPagamento> $dettaglioPagamento
      * @return static
      */
-    public function setDettaglioPagamento(?array $dettaglioPagamento = null): static
-    {
+    public function setDettaglioPagamento(
+        ?array $dettaglioPagamento = null
+    ): static {
         $this->dettaglioPagamento = $dettaglioPagamento;
 
         return $this;
@@ -126,8 +128,9 @@ final class DatiPagamento
      * @param  DettaglioPagamento $dettaglioPagamento
      * @return static
      */
-    public function addToDettaglioPagamento(DettaglioPagamento $dettaglioPagamento): static
-    {
+    public function addToDettaglioPagamento(
+        DettaglioPagamento $dettaglioPagamento
+    ): static {
         if (!is_array($this->dettaglioPagamento)) {
             $this->dettaglioPagamento = [];
         }
@@ -155,8 +158,9 @@ final class DatiPagamento
      * @param  DettaglioPagamento $dettaglioPagamento
      * @return static
      */
-    public function addOnceToDettaglioPagamento(DettaglioPagamento $dettaglioPagamento): static
-    {
+    public function addOnceToDettaglioPagamento(
+        DettaglioPagamento $dettaglioPagamento
+    ): static {
         if (!is_array($this->dettaglioPagamento)) {
             $this->dettaglioPagamento = [];
         }

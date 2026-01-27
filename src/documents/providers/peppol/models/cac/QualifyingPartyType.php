@@ -199,8 +199,9 @@ class QualifyingPartyType
      * @param  null|ParticipationPercent $participationPercent
      * @return static
      */
-    public function setParticipationPercent(?ParticipationPercent $participationPercent = null): static
-    {
+    public function setParticipationPercent(
+        ?ParticipationPercent $participationPercent = null
+    ): static {
         $this->participationPercent = $participationPercent;
 
         return $this;
@@ -228,8 +229,9 @@ class QualifyingPartyType
      * @param  null|array<PersonalSituation> $personalSituation
      * @return static
      */
-    public function setPersonalSituation(?array $personalSituation = null): static
-    {
+    public function setPersonalSituation(
+        ?array $personalSituation = null
+    ): static {
         $this->personalSituation = $personalSituation;
 
         return $this;
@@ -289,8 +291,9 @@ class QualifyingPartyType
      * @param  PersonalSituation $personalSituation
      * @return static
      */
-    public function addToPersonalSituation(PersonalSituation $personalSituation): static
-    {
+    public function addToPersonalSituation(
+        PersonalSituation $personalSituation
+    ): static {
         $this->personalSituation[] = $personalSituation;
 
         return $this;
@@ -310,8 +313,9 @@ class QualifyingPartyType
      * @param  PersonalSituation $personalSituation
      * @return static
      */
-    public function addOnceToPersonalSituation(PersonalSituation $personalSituation): static
-    {
+    public function addOnceToPersonalSituation(
+        PersonalSituation $personalSituation
+    ): static {
         if (!is_array($this->personalSituation)) {
             $this->personalSituation = [];
         }
@@ -359,8 +363,9 @@ class QualifyingPartyType
      * @param  null|OperatingYearsQuantity $operatingYearsQuantity
      * @return static
      */
-    public function setOperatingYearsQuantity(?OperatingYearsQuantity $operatingYearsQuantity = null): static
-    {
+    public function setOperatingYearsQuantity(
+        ?OperatingYearsQuantity $operatingYearsQuantity = null
+    ): static {
         $this->operatingYearsQuantity = $operatingYearsQuantity;
 
         return $this;
@@ -398,8 +403,9 @@ class QualifyingPartyType
      * @param  null|EmployeeQuantity $employeeQuantity
      * @return static
      */
-    public function setEmployeeQuantity(?EmployeeQuantity $employeeQuantity = null): static
-    {
+    public function setEmployeeQuantity(
+        ?EmployeeQuantity $employeeQuantity = null
+    ): static {
         $this->employeeQuantity = $employeeQuantity;
 
         return $this;
@@ -517,8 +523,9 @@ class QualifyingPartyType
      * @param  null|TendererRoleCode $tendererRoleCode
      * @return static
      */
-    public function setTendererRoleCode(?TendererRoleCode $tendererRoleCode = null): static
-    {
+    public function setTendererRoleCode(
+        ?TendererRoleCode $tendererRoleCode = null
+    ): static {
         $this->tendererRoleCode = $tendererRoleCode;
 
         return $this;
@@ -586,8 +593,9 @@ class QualifyingPartyType
      * @param  null|array<TechnicalCapability> $technicalCapability
      * @return static
      */
-    public function setTechnicalCapability(?array $technicalCapability = null): static
-    {
+    public function setTechnicalCapability(
+        ?array $technicalCapability = null
+    ): static {
         $this->technicalCapability = $technicalCapability;
 
         return $this;
@@ -647,8 +655,9 @@ class QualifyingPartyType
      * @param  TechnicalCapability $technicalCapability
      * @return static
      */
-    public function addToTechnicalCapability(TechnicalCapability $technicalCapability): static
-    {
+    public function addToTechnicalCapability(
+        TechnicalCapability $technicalCapability
+    ): static {
         $this->technicalCapability[] = $technicalCapability;
 
         return $this;
@@ -668,8 +677,9 @@ class QualifyingPartyType
      * @param  TechnicalCapability $technicalCapability
      * @return static
      */
-    public function addOnceToTechnicalCapability(TechnicalCapability $technicalCapability): static
-    {
+    public function addOnceToTechnicalCapability(
+        TechnicalCapability $technicalCapability
+    ): static {
         if (!is_array($this->technicalCapability)) {
             $this->technicalCapability = [];
         }
@@ -707,8 +717,9 @@ class QualifyingPartyType
      * @param  null|array<FinancialCapability> $financialCapability
      * @return static
      */
-    public function setFinancialCapability(?array $financialCapability = null): static
-    {
+    public function setFinancialCapability(
+        ?array $financialCapability = null
+    ): static {
         $this->financialCapability = $financialCapability;
 
         return $this;
@@ -768,8 +779,9 @@ class QualifyingPartyType
      * @param  FinancialCapability $financialCapability
      * @return static
      */
-    public function addToFinancialCapability(FinancialCapability $financialCapability): static
-    {
+    public function addToFinancialCapability(
+        FinancialCapability $financialCapability
+    ): static {
         $this->financialCapability[] = $financialCapability;
 
         return $this;
@@ -789,8 +801,9 @@ class QualifyingPartyType
      * @param  FinancialCapability $financialCapability
      * @return static
      */
-    public function addOnceToFinancialCapability(FinancialCapability $financialCapability): static
-    {
+    public function addOnceToFinancialCapability(
+        FinancialCapability $financialCapability
+    ): static {
         if (!is_array($this->financialCapability)) {
             $this->financialCapability = [];
         }
@@ -828,8 +841,9 @@ class QualifyingPartyType
      * @param  null|array<CompletedTask> $completedTask
      * @return static
      */
-    public function setCompletedTask(?array $completedTask = null): static
-    {
+    public function setCompletedTask(
+        ?array $completedTask = null
+    ): static {
         $this->completedTask = $completedTask;
 
         return $this;
@@ -889,8 +903,9 @@ class QualifyingPartyType
      * @param  CompletedTask $completedTask
      * @return static
      */
-    public function addToCompletedTask(CompletedTask $completedTask): static
-    {
+    public function addToCompletedTask(
+        CompletedTask $completedTask
+    ): static {
         $this->completedTask[] = $completedTask;
 
         return $this;
@@ -910,8 +925,9 @@ class QualifyingPartyType
      * @param  CompletedTask $completedTask
      * @return static
      */
-    public function addOnceToCompletedTask(CompletedTask $completedTask): static
-    {
+    public function addOnceToCompletedTask(
+        CompletedTask $completedTask
+    ): static {
         if (!is_array($this->completedTask)) {
             $this->completedTask = [];
         }
@@ -949,8 +965,9 @@ class QualifyingPartyType
      * @param  null|array<Declaration> $declaration
      * @return static
      */
-    public function setDeclaration(?array $declaration = null): static
-    {
+    public function setDeclaration(
+        ?array $declaration = null
+    ): static {
         $this->declaration = $declaration;
 
         return $this;
@@ -1010,8 +1027,9 @@ class QualifyingPartyType
      * @param  Declaration $declaration
      * @return static
      */
-    public function addToDeclaration(Declaration $declaration): static
-    {
+    public function addToDeclaration(
+        Declaration $declaration
+    ): static {
         $this->declaration[] = $declaration;
 
         return $this;
@@ -1031,8 +1049,9 @@ class QualifyingPartyType
      * @param  Declaration $declaration
      * @return static
      */
-    public function addOnceToDeclaration(Declaration $declaration): static
-    {
+    public function addOnceToDeclaration(
+        Declaration $declaration
+    ): static {
         if (!is_array($this->declaration)) {
             $this->declaration = [];
         }
@@ -1080,8 +1099,9 @@ class QualifyingPartyType
      * @param  null|Party $party
      * @return static
      */
-    public function setParty(?Party $party = null): static
-    {
+    public function setParty(
+        ?Party $party = null
+    ): static {
         $this->party = $party;
 
         return $this;
@@ -1119,8 +1139,9 @@ class QualifyingPartyType
      * @param  null|EconomicOperatorRole $economicOperatorRole
      * @return static
      */
-    public function setEconomicOperatorRole(?EconomicOperatorRole $economicOperatorRole = null): static
-    {
+    public function setEconomicOperatorRole(
+        ?EconomicOperatorRole $economicOperatorRole = null
+    ): static {
         $this->economicOperatorRole = $economicOperatorRole;
 
         return $this;

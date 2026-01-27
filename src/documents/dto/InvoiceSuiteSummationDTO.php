@@ -145,8 +145,9 @@ class InvoiceSuiteSummationDTO
      * @param  null|float $netAmount The sum of the net amounts of all invoice lines
      * @return static
      */
-    public function setNetAmount(?float $netAmount): static
-    {
+    public function setNetAmount(
+        ?float $netAmount
+    ): static {
         $this->netAmount = $netAmount;
 
         return $this;
@@ -168,8 +169,9 @@ class InvoiceSuiteSummationDTO
      * @param  null|float $chargeTotalAmount The sum of the charges
      * @return static
      */
-    public function setChargeTotalAmount(?float $chargeTotalAmount): static
-    {
+    public function setChargeTotalAmount(
+        ?float $chargeTotalAmount
+    ): static {
         $this->chargeTotalAmount = $chargeTotalAmount;
 
         return $this;
@@ -191,8 +193,9 @@ class InvoiceSuiteSummationDTO
      * @param  null|float $discountTotalAmount The sum of the discounts
      * @return static
      */
-    public function setDiscountTotalAmount(?float $discountTotalAmount): static
-    {
+    public function setDiscountTotalAmount(
+        ?float $discountTotalAmount
+    ): static {
         $this->discountTotalAmount = $discountTotalAmount;
 
         return $this;
@@ -214,8 +217,9 @@ class InvoiceSuiteSummationDTO
      * @param  null|float $taxBasisAmount The total invoice amount excluding sales tax
      * @return static
      */
-    public function setTaxBasisAmount(?float $taxBasisAmount): static
-    {
+    public function setTaxBasisAmount(
+        ?float $taxBasisAmount
+    ): static {
         $this->taxBasisAmount = $taxBasisAmount;
 
         return $this;
@@ -237,8 +241,9 @@ class InvoiceSuiteSummationDTO
      * @param  null|float $taxTotalAmount The total amount of the invoice sales tax (in the invoice currency)
      * @return static
      */
-    public function setTaxTotalAmount(?float $taxTotalAmount): static
-    {
+    public function setTaxTotalAmount(
+        ?float $taxTotalAmount
+    ): static {
         $this->taxTotalAmount = $taxTotalAmount;
 
         return $this;
@@ -260,8 +265,9 @@ class InvoiceSuiteSummationDTO
      * @param  null|float $taxTotalAmount2 The total amount of the invoice sales tax (in the tax currency)
      * @return static
      */
-    public function setTaxTotalAmount2(?float $taxTotalAmount2): static
-    {
+    public function setTaxTotalAmount2(
+        ?float $taxTotalAmount2
+    ): static {
         $this->taxTotalAmount2 = $taxTotalAmount2;
 
         return $this;
@@ -283,8 +289,9 @@ class InvoiceSuiteSummationDTO
      * @param  null|float $grossAmount The total invoice amount including sales tax
      * @return static
      */
-    public function setGrossAmount(?float $grossAmount): static
-    {
+    public function setGrossAmount(
+        ?float $grossAmount
+    ): static {
         $this->grossAmount = $grossAmount;
 
         return $this;
@@ -306,8 +313,9 @@ class InvoiceSuiteSummationDTO
      * @param  null|float $dueAmount The payment amount due
      * @return static
      */
-    public function setDueAmount(?float $dueAmount): static
-    {
+    public function setDueAmount(
+        ?float $dueAmount
+    ): static {
         $this->dueAmount = $dueAmount;
 
         return $this;
@@ -329,8 +337,9 @@ class InvoiceSuiteSummationDTO
      * @param  null|float $prepaidAmount The prepayment amount
      * @return static
      */
-    public function setPrepaidAmount(?float $prepaidAmount): static
-    {
+    public function setPrepaidAmount(
+        ?float $prepaidAmount
+    ): static {
         $this->prepaidAmount = $prepaidAmount;
 
         return $this;
@@ -352,8 +361,9 @@ class InvoiceSuiteSummationDTO
      * @param  null|float $roungingAmount The rounding amount
      * @return static
      */
-    public function setRoungingAmount(?float $roungingAmount): static
-    {
+    public function setRoungingAmount(
+        ?float $roungingAmount
+    ): static {
         $this->roungingAmount = $roungingAmount;
 
         return $this;

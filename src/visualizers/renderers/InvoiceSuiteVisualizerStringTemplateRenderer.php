@@ -28,16 +28,19 @@ class InvoiceSuiteVisualizerStringTemplateRenderer extends InvoiceSuiteVisualize
     /**
      * {@inheritDoc}
      */
-    public function templateExists(string $template): bool
-    {
+    public function templateExists(
+        string $template
+    ): bool {
         return !InvoiceSuiteStringUtils::stringIsNullOrEmpty($template);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function render(InvoiceSuiteDocumentReader $document, string $template): string
-    {
+    public function render(
+        InvoiceSuiteDocumentReader $document,
+        string $template
+    ): string {
         return $template;
     }
 }

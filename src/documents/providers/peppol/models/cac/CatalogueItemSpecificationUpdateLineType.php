@@ -78,8 +78,9 @@ class CatalogueItemSpecificationUpdateLineType
      * @param  null|ID $iD
      * @return static
      */
-    public function setID(?ID $iD = null): static
-    {
+    public function setID(
+        ?ID $iD = null
+    ): static {
         $this->iD = $iD;
 
         return $this;
@@ -117,8 +118,9 @@ class CatalogueItemSpecificationUpdateLineType
      * @param  null|ContractorCustomerParty $contractorCustomerParty
      * @return static
      */
-    public function setContractorCustomerParty(?ContractorCustomerParty $contractorCustomerParty = null): static
-    {
+    public function setContractorCustomerParty(
+        ?ContractorCustomerParty $contractorCustomerParty = null
+    ): static {
         $this->contractorCustomerParty = $contractorCustomerParty;
 
         return $this;
@@ -156,8 +158,9 @@ class CatalogueItemSpecificationUpdateLineType
      * @param  null|SellerSupplierParty $sellerSupplierParty
      * @return static
      */
-    public function setSellerSupplierParty(?SellerSupplierParty $sellerSupplierParty = null): static
-    {
+    public function setSellerSupplierParty(
+        ?SellerSupplierParty $sellerSupplierParty = null
+    ): static {
         $this->sellerSupplierParty = $sellerSupplierParty;
 
         return $this;
@@ -195,8 +198,9 @@ class CatalogueItemSpecificationUpdateLineType
      * @param  null|Item $item
      * @return static
      */
-    public function setItem(?Item $item = null): static
-    {
+    public function setItem(
+        ?Item $item = null
+    ): static {
         $this->item = $item;
 
         return $this;

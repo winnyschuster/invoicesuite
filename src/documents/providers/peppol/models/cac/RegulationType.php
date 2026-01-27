@@ -69,8 +69,9 @@ class RegulationType
      * @param  null|Name $name
      * @return static
      */
-    public function setName(?Name $name = null): static
-    {
+    public function setName(
+        ?Name $name = null
+    ): static {
         $this->name = $name;
 
         return $this;
@@ -108,8 +109,9 @@ class RegulationType
      * @param  null|LegalReference $legalReference
      * @return static
      */
-    public function setLegalReference(?LegalReference $legalReference = null): static
-    {
+    public function setLegalReference(
+        ?LegalReference $legalReference = null
+    ): static {
         $this->legalReference = $legalReference;
 
         return $this;
@@ -147,8 +149,9 @@ class RegulationType
      * @param  null|OntologyURI $ontologyURI
      * @return static
      */
-    public function setOntologyURI(?OntologyURI $ontologyURI = null): static
-    {
+    public function setOntologyURI(
+        ?OntologyURI $ontologyURI = null
+    ): static {
         $this->ontologyURI = $ontologyURI;
 
         return $this;

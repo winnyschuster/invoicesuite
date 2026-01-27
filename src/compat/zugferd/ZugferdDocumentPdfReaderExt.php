@@ -79,8 +79,9 @@ class ZugferdDocumentPdfReaderExt
      * @throws PdfParserException
      * @throws RuntimeException
      */
-    public static function fromFile(string $pdfFilename): static
-    {
+    public static function fromFile(
+        string $pdfFilename
+    ): static {
         return new static(InvoiceSuitePdfDocumentReader::createFromFile($pdfFilename));
     }
 
@@ -95,8 +96,9 @@ class ZugferdDocumentPdfReaderExt
      * @throws PdfParserException
      * @throws RuntimeException
      */
-    public static function fromContent(string $pdfContent): static
-    {
+    public static function fromContent(
+        string $pdfContent
+    ): static {
         return new static(InvoiceSuitePdfDocumentReader::createFromContent($pdfContent));
     }
 
@@ -113,8 +115,9 @@ class ZugferdDocumentPdfReaderExt
      * @throws PdfParserException
      * @throws RuntimeException
      */
-    public static function readAndGuessFromFile(string $pdfFilename): ZugferdDocumentReader
-    {
+    public static function readAndGuessFromFile(
+        string $pdfFilename
+    ): ZugferdDocumentReader {
         return static::fromFile($pdfFilename)->resolveInvoiceDocumentReader();
     }
 
@@ -129,8 +132,9 @@ class ZugferdDocumentPdfReaderExt
      * @throws PdfParserException
      * @throws RuntimeException
      */
-    public static function readAndGuessFromContent(string $pdfContent): ZugferdDocumentReader
-    {
+    public static function readAndGuessFromContent(
+        string $pdfContent
+    ): ZugferdDocumentReader {
         return static::fromContent($pdfContent)->resolveInvoiceDocumentReader();
     }
 
@@ -147,8 +151,9 @@ class ZugferdDocumentPdfReaderExt
      * @throws PdfParserException
      * @throws RuntimeException
      */
-    public static function getInvoiceDocumentContentFromFile(string $pdfFilename): string
-    {
+    public static function getInvoiceDocumentContentFromFile(
+        string $pdfFilename
+    ): string {
         return static::fromFile($pdfFilename)->resolveInvoiceDocumentContent();
     }
 
@@ -163,8 +168,9 @@ class ZugferdDocumentPdfReaderExt
      * @throws PdfParserException
      * @throws RuntimeException
      */
-    public static function getInvoiceDocumentContentFromContent(string $pdfContent): string
-    {
+    public static function getInvoiceDocumentContentFromContent(
+        string $pdfContent
+    ): string {
         return static::fromContent($pdfContent)->resolveInvoiceDocumentContent();
     }
 
@@ -181,8 +187,9 @@ class ZugferdDocumentPdfReaderExt
      * @throws PdfParserException
      * @throws RuntimeException
      */
-    public static function getAdditionalDocumentContentsFromFile(string $pdfFilename): array
-    {
+    public static function getAdditionalDocumentContentsFromFile(
+        string $pdfFilename
+    ): array {
         return static::fromFile($pdfFilename)->resolveAdditionalDocumentContents();
     }
 
@@ -197,8 +204,9 @@ class ZugferdDocumentPdfReaderExt
      * @throws PdfParserException
      * @throws RuntimeException
      */
-    public static function getAdditionalDocumentContentsFromContent(string $pdfContent): array
-    {
+    public static function getAdditionalDocumentContentsFromContent(
+        string $pdfContent
+    ): array {
         return static::fromContent($pdfContent)->resolveAdditionalDocumentContents();
     }
 

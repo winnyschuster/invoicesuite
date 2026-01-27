@@ -101,8 +101,9 @@ class TradeSettlementPaymentMeansType
      * @param  null|PaymentMeansCodeType $typeCode
      * @return static
      */
-    public function setTypeCode(?PaymentMeansCodeType $typeCode = null): static
-    {
+    public function setTypeCode(
+        ?PaymentMeansCodeType $typeCode = null
+    ): static {
         $this->typeCode = $typeCode;
 
         return $this;
@@ -140,8 +141,9 @@ class TradeSettlementPaymentMeansType
      * @param  null|TextType $information
      * @return static
      */
-    public function setInformation(?TextType $information = null): static
-    {
+    public function setInformation(
+        ?TextType $information = null
+    ): static {
         $this->information = $information;
 
         return $this;

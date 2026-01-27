@@ -70,8 +70,9 @@ class StowageType
      * @param  null|LocationID $locationID
      * @return static
      */
-    public function setLocationID(?LocationID $locationID = null): static
-    {
+    public function setLocationID(
+        ?LocationID $locationID = null
+    ): static {
         $this->locationID = $locationID;
 
         return $this;
@@ -99,8 +100,9 @@ class StowageType
      * @param  null|array<Location> $location
      * @return static
      */
-    public function setLocation(?array $location = null): static
-    {
+    public function setLocation(
+        ?array $location = null
+    ): static {
         $this->location = $location;
 
         return $this;
@@ -160,8 +162,9 @@ class StowageType
      * @param  Location $location
      * @return static
      */
-    public function addToLocation(Location $location): static
-    {
+    public function addToLocation(
+        Location $location
+    ): static {
         $this->location[] = $location;
 
         return $this;
@@ -181,8 +184,9 @@ class StowageType
      * @param  Location $location
      * @return static
      */
-    public function addOnceToLocation(Location $location): static
-    {
+    public function addOnceToLocation(
+        Location $location
+    ): static {
         if (!is_array($this->location)) {
             $this->location = [];
         }
@@ -220,8 +224,9 @@ class StowageType
      * @param  null|array<MeasurementDimension> $measurementDimension
      * @return static
      */
-    public function setMeasurementDimension(?array $measurementDimension = null): static
-    {
+    public function setMeasurementDimension(
+        ?array $measurementDimension = null
+    ): static {
         $this->measurementDimension = $measurementDimension;
 
         return $this;
@@ -281,8 +286,9 @@ class StowageType
      * @param  MeasurementDimension $measurementDimension
      * @return static
      */
-    public function addToMeasurementDimension(MeasurementDimension $measurementDimension): static
-    {
+    public function addToMeasurementDimension(
+        MeasurementDimension $measurementDimension
+    ): static {
         $this->measurementDimension[] = $measurementDimension;
 
         return $this;
@@ -302,8 +308,9 @@ class StowageType
      * @param  MeasurementDimension $measurementDimension
      * @return static
      */
-    public function addOnceToMeasurementDimension(MeasurementDimension $measurementDimension): static
-    {
+    public function addOnceToMeasurementDimension(
+        MeasurementDimension $measurementDimension
+    ): static {
         if (!is_array($this->measurementDimension)) {
             $this->measurementDimension = [];
         }

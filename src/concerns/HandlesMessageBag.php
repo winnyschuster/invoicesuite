@@ -73,8 +73,9 @@ trait HandlesMessageBag
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function addMessageItemToMessageBag(InvoiceSuiteMessageBagItem $newMessageBagItem): static
-    {
+    public function addMessageItemToMessageBag(
+        InvoiceSuiteMessageBagItem $newMessageBagItem
+    ): static {
         $this->getMessageBag()->add($newMessageBagItem);
 
         return $this;
@@ -211,8 +212,9 @@ trait HandlesMessageBag
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function hasMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): bool
-    {
+    public function hasMessagesInMessageBagBySeverity(
+        InvoiceSuiteMessageSeverity $filterSeverity
+    ): bool {
         return $this->getMessageBag()->hasMessagesBySeverity($filterSeverity);
     }
 
@@ -260,8 +262,9 @@ trait HandlesMessageBag
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function countMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): int
-    {
+    public function countMessagesInMessageBagBySeverity(
+        InvoiceSuiteMessageSeverity $filterSeverity
+    ): int {
         return $this->getMessageBag()->countBySeverity($filterSeverity);
     }
 
@@ -309,8 +312,9 @@ trait HandlesMessageBag
      *
      * @throws InvoiceSuiteInvalidArgumentException
      */
-    public function getMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity $filterSeverity): array
-    {
+    public function getMessagesInMessageBagBySeverity(
+        InvoiceSuiteMessageSeverity $filterSeverity
+    ): array {
         return $this->getMessageBag()->getMessagesBySeverity($filterSeverity);
     }
 
