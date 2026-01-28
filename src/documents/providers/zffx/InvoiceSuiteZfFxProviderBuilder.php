@@ -10361,9 +10361,9 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             $paymentTerm
                 ->getDirectDebitMandateIDWithCreate()
                 ->setValue($newMandate);
-
-            $this->updateMandates();
         }
+
+        $this->updateMandates();
 
         $this->traceMethodExit(__METHOD__);
 
