@@ -402,8 +402,8 @@ function gendto(array $definitions): void
                 $filter->addParameter('callback')->setType('callable');
                 $filter->addBody(sprintf('return array_filter($this->%1$s, $callback);', $propertyClassPropertyName, $propertyName));
                 $filter->addComment(sprintf('Filter %1$s', $propertyCaption));
-                $filter->addComment(sprintf('@param callable \$callback Callback to execute for each item', $propertyCaption));
-                $filter->addComment(sprintf('@return arra<%s>,', basename((string) $propertyType)));
+                $filter->addComment(sprintf('@param callable $callback Callback to execute filtering for each item', $propertyCaption));
+                $filter->addComment(sprintf('@return array<%s>', basename((string) $propertyType)));
             }
         }
 

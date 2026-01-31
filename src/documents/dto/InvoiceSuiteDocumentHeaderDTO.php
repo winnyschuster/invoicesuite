@@ -831,8 +831,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The date of the delivery
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<DateTimeInterface>,
+     * @param  callable                 $callback Callback to execute filtering for each item
+     * @return array<DateTimeInterface>
      */
     public function filterSupplyChainEvent(
         callable $callback
@@ -1131,8 +1131,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The notes for this document
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteNoteDTO>,
+     * @param  callable                   $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteNoteDTO>
      */
     public function filterNote(
         callable $callback
@@ -1335,8 +1335,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The start and/or end date of the billing period
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteDateRangeDTO>,
+     * @param  callable                        $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteDateRangeDTO>
      */
     public function filterBillingPeriod(
         callable $callback
@@ -1539,8 +1539,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The posting reference
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteIdDTO>,
+     * @param  callable                 $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteIdDTO>
      */
     public function filterPostingReference(
         callable $callback
@@ -1743,8 +1743,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The associated seller's order confirmation
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteReferenceDocumentDTO>,
+     * @param  callable                                $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteReferenceDocumentDTO>
      */
     public function filterSellerOrderReference(
         callable $callback
@@ -1947,8 +1947,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The associated buyer's order
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteReferenceDocumentDTO>,
+     * @param  callable                                $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteReferenceDocumentDTO>
      */
     public function filterBuyerOrderReference(
         callable $callback
@@ -2151,8 +2151,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The associated quotation
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteReferenceDocumentDTO>,
+     * @param  callable                                $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteReferenceDocumentDTO>
      */
     public function filterQuotationReference(
         callable $callback
@@ -2355,8 +2355,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The associated contract
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteReferenceDocumentDTO>,
+     * @param  callable                                $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteReferenceDocumentDTO>
      */
     public function filterContractReference(
         callable $callback
@@ -2559,8 +2559,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The additional associated document
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteReferenceDocumentExtDTO>,
+     * @param  callable                                   $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteReferenceDocumentExtDTO>
      */
     public function filterAdditionalReference(
         callable $callback
@@ -2763,8 +2763,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The additional invoice document
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteReferenceDocumentExtDTO>,
+     * @param  callable                                   $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteReferenceDocumentExtDTO>
      */
     public function filterInvoiceReference(
         callable $callback
@@ -2967,8 +2967,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The project reference
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteProjectDTO>,
+     * @param  callable                      $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteProjectDTO>
      */
     public function filterProjectReference(
         callable $callback
@@ -3171,8 +3171,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The ultimate customer order reference
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteReferenceDocumentDTO>,
+     * @param  callable                                $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteReferenceDocumentDTO>
      */
     public function filterUltimateCustomerOrderReference(
         callable $callback
@@ -3375,8 +3375,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The despatch advice reference
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteReferenceDocumentDTO>,
+     * @param  callable                                $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteReferenceDocumentDTO>
      */
     public function filterDespatchAdviceReference(
         callable $callback
@@ -3579,8 +3579,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The receiving advice reference
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteReferenceDocumentDTO>,
+     * @param  callable                                $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteReferenceDocumentDTO>
      */
     public function filterReceivingAdviceReference(
         callable $callback
@@ -3783,8 +3783,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The delivery note reference
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteReferenceDocumentDTO>,
+     * @param  callable                                $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteReferenceDocumentDTO>
      */
     public function filterDeliveryNoteReference(
         callable $callback
@@ -4227,8 +4227,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The payment means
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuitePaymentMeanDTO>,
+     * @param  callable                          $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuitePaymentMeanDTO>
      */
     public function filterPaymentMean(
         callable $callback
@@ -4431,8 +4431,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The payment terms
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuitePaymentTermDTO>,
+     * @param  callable                          $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuitePaymentTermDTO>
      */
     public function filterPaymentTerm(
         callable $callback
@@ -4635,8 +4635,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The creditor identifier
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteIdDTO>,
+     * @param  callable                 $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteIdDTO>
      */
     public function filterCreditorReference(
         callable $callback
@@ -4839,8 +4839,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The payment reference
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteIdDTO>,
+     * @param  callable                 $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteIdDTO>
      */
     public function filterPaymentReference(
         callable $callback
@@ -5043,8 +5043,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The ID for internal routing (Leitweg ID)
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteIdDTO>,
+     * @param  callable                 $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteIdDTO>
      */
     public function filterBuyerReference(
         callable $callback
@@ -5247,8 +5247,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The Document positions
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteDocumentPositionDTO>,
+     * @param  callable                               $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteDocumentPositionDTO>
      */
     public function filterPosition(
         callable $callback
@@ -5451,8 +5451,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter delivery term
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteIdDTO>,
+     * @param  callable                 $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteIdDTO>
      */
     public function filterDeliveryTerm(
         callable $callback
@@ -5655,8 +5655,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The VAT breakdown
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteTaxDTO>,
+     * @param  callable                  $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteTaxDTO>
      */
     public function filterTax(
         callable $callback
@@ -5859,8 +5859,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The allowances/charges
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteAllowanceChargeDTO>,
+     * @param  callable                              $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteAllowanceChargeDTO>
      */
     public function filterAllowanceCharge(
         callable $callback
@@ -6063,8 +6063,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The allowances/charges
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteServiceChargeDTO>,
+     * @param  callable                            $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteServiceChargeDTO>
      */
     public function filterServiceCharge(
         callable $callback
@@ -6267,8 +6267,8 @@ class InvoiceSuiteDocumentHeaderDTO
     /**
      * Filter The summation
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteSummationDTO>,
+     * @param  callable                        $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteSummationDTO>
      */
     public function filterSummation(
         callable $callback): array

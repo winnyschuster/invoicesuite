@@ -304,8 +304,8 @@ class InvoiceSuitePartyDTO
     /**
      * Filter Party names
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<string>,
+     * @param  callable      $callback Callback to execute filtering for each item
+     * @return array<string>
      */
     public function filterName(
         callable $callback
@@ -508,8 +508,8 @@ class InvoiceSuitePartyDTO
     /**
      * Filter Party IDs
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteIdDTO>,
+     * @param  callable                 $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteIdDTO>
      */
     public function filterId(
         callable $callback
@@ -712,8 +712,8 @@ class InvoiceSuitePartyDTO
     /**
      * Filter Party global IDs
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteIdDTO>,
+     * @param  callable                 $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteIdDTO>
      */
     public function filterGlobalId(
         callable $callback
@@ -916,8 +916,8 @@ class InvoiceSuitePartyDTO
     /**
      * Filter Party tax registrations
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteIdDTO>,
+     * @param  callable                 $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteIdDTO>
      */
     public function filterTaxRegistration(
         callable $callback
@@ -1120,8 +1120,8 @@ class InvoiceSuitePartyDTO
     /**
      * Filter Party addresses
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteAddressDTO>,
+     * @param  callable                      $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteAddressDTO>
      */
     public function filterAddress(
         callable $callback
@@ -1324,8 +1324,8 @@ class InvoiceSuitePartyDTO
     /**
      * Filter Party legal organisations
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteOrganisationDTO>,
+     * @param  callable                           $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteOrganisationDTO>
      */
     public function filterLegalOrganisation(
         callable $callback
@@ -1528,8 +1528,8 @@ class InvoiceSuitePartyDTO
     /**
      * Filter Party contacts
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteContactDTO>,
+     * @param  callable                      $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteContactDTO>
      */
     public function filterContact(
         callable $callback
@@ -1732,8 +1732,8 @@ class InvoiceSuitePartyDTO
     /**
      * Filter Party electronic communications
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteCommunicationDTO>,
+     * @param  callable                            $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteCommunicationDTO>
      */
     public function filterCommunication(
         callable $callback): array

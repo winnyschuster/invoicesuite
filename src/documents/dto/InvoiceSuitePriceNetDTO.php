@@ -240,8 +240,8 @@ class InvoiceSuitePriceNetDTO extends InvoiceSuitePriceDTO
     /**
      * Filter The net price included tax
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteTaxDTO>,
+     * @param  callable                  $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteTaxDTO>
      */
     public function filterTax(
         callable $callback

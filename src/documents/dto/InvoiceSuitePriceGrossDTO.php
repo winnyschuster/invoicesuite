@@ -240,8 +240,8 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO
     /**
      * Filter The discounts or charges to the gross price
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteAllowanceChargeDTO>,
+     * @param  callable                              $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteAllowanceChargeDTO>
      */
     public function filterAllowanceCharge(
         callable $callback

@@ -664,8 +664,8 @@ class InvoiceSuiteProductDTO
     /**
      * Filter The product characteristics
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteProductCharacteristicDTO>,
+     * @param  callable                                    $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteProductCharacteristicDTO>
      */
     public function filterCharacteristic(
         callable $callback
@@ -868,8 +868,8 @@ class InvoiceSuiteProductDTO
     /**
      * Filter The product classification
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteProductClassificationDTO>,
+     * @param  callable                                    $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteProductClassificationDTO>
      */
     public function filterClassification(
         callable $callback
@@ -1072,8 +1072,8 @@ class InvoiceSuiteProductDTO
     /**
      * Filter The reference product
      *
-     * @param callable \$callback Callback to execute for each item
-     * @return arra<InvoiceSuiteReferenceProductDTO>,
+     * @param  callable                               $callback Callback to execute filtering for each item
+     * @return array<InvoiceSuiteReferenceProductDTO>
      */
     public function filterReferenceProduct(
         callable $callback): array
