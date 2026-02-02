@@ -13,6 +13,7 @@ namespace horstoeko\invoicesuite\documents\providers\peppol;
 
 use DateTimeInterface;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistPaymentMeans;
+use horstoeko\invoicesuite\concerns\HandlesKeyValuePairs;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatBuilder;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAddressDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteAllowanceChargeDTO;
@@ -35,6 +36,7 @@ use horstoeko\invoicesuite\documents\dto\InvoiceSuiteReferenceDocumentLineDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteSummationDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
 use horstoeko\invoicesuite\documents\providers\peppol\models\cac\PartyIdentification;
+use horstoeko\invoicesuite\documents\providers\peppol\models\cac\PaymentMeans;
 use horstoeko\invoicesuite\documents\providers\peppol\models\main\Invoice;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
@@ -43,6 +45,8 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDocumentFormatBuilder
 {
+    use HandlesKeyValuePairs;
+
     /**
      * {@inheritDoc}
      */
@@ -6183,6 +6187,8 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
             $paymentMean->addOnceToPaymentIDWithCreate()->setValue($newPaymentReference);
         }
 
+        $this->updateMandates();
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -6600,6 +6606,11 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
 
         if (!InvoiceSuiteDateTimeUtils::datetimeIsNullOrEmpty($newDueDate)) {
             $this->getUblRootObject()->setDueDate($newDueDate);
+        }
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($newMandate)) {
+            $this->addKeyValuePair('mandantefrompaymentterm', $newMandate);
+            $this->updateMandates();
         }
 
         $this->traceMethodExit(__METHOD__);
@@ -9517,5 +9528,37 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
         }
 
         return $newTaxRegistrationType;
+    }
+
+    /**
+     * Update Direct Debit Mandate
+     *
+     * @return static
+     */
+    private function updateMandates(): static
+    {
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($this->getKeyValuePair('mandantefrompaymentterm', ''))) {
+            return $this;
+        }
+
+        $paymentMeans = $this
+            ->getUblRootObject()
+            ->getPaymentMeans() ?? [];
+
+        $paymentMeans = array_filter(
+            $paymentMeans,
+            static fn (PaymentMeans $paymentMean) => InvoiceSuiteStringUtils::stringIsNullOrEmpty(
+                $paymentMean->getPaymentMandate()?->getID()?->getValue()
+            )
+        );
+
+        foreach ($paymentMeans as $paymentMean) {
+            $paymentMean
+                ->getPaymentMandateWithCreate()
+                ->getIDWithCreate()
+                ->setValue($this->getKeyValuePair('mandantefrompaymentterm', ''));
+        }
+
+        return $this;
     }
 }
