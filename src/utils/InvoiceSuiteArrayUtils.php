@@ -190,4 +190,32 @@ class InvoiceSuiteArrayUtils
     ): array {
         return true === $limitCondition ? static::limit($array, $limit) : $array;
     }
+
+    /**
+     * Limit array to one element
+     *
+     * @param  array<mixed,mixed> $array
+     * @return array<mixed,mixed>
+     */
+    public static function limitToOne(
+        array $array
+    ): array {
+        return static::limit($array, 1);
+    }
+
+    /**
+     * Limit array to 1 element if $limitCondition evaluates to true, otherwise
+     * the original array is returned
+     *
+     * @param  bool               $limitCondition
+     * @param  array<mixed,mixed> $array
+     * @param  int                $limit
+     * @return array<mixed,mixed>
+     */
+    public static function limitToOneWhen(
+        bool $limitCondition,
+        array $array
+    ): array {
+        return true === $limitCondition ? static::limitToOne($array) : $array;
+    }
 }
