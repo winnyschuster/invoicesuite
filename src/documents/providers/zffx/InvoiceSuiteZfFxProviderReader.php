@@ -14879,8 +14879,11 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
         }
 
         return InvoiceSuitePointerUtils::hasFirst(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeSettlement()?->getReceivableSpecifiedTradeAccountingAccount() ?? []
+            InvoiceSuiteArrayUtils::limitToOneWhen(
+                $this->supportsNotAtLeastExtended(),
+                InvoiceSuiteArrayUtils::ensure(
+                    $this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeSettlement()?->getReceivableSpecifiedTradeAccountingAccount() ?? []
+                )
             ),
             'documentpositionpostingreference'
         );
@@ -14898,8 +14901,12 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
         }
 
         return InvoiceSuitePointerUtils::hasNext(
-            InvoiceSuiteArrayUtils::ensure(
-                $this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeSettlement()?->getReceivableSpecifiedTradeAccountingAccount() ?? []
+            InvoiceSuiteArrayUtils::limitWhen(
+                $this->supportsNotAtLeastExtended(),
+                InvoiceSuiteArrayUtils::ensure(
+                    $this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeSettlement()?->getReceivableSpecifiedTradeAccountingAccount() ?? []
+                ),
+                1
             ),
             'documentpositionpostingreference'
         );
