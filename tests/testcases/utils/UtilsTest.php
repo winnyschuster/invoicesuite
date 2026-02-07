@@ -66,6 +66,126 @@ final class UtilsTest extends TestCase
         $this->assertFalse(InvoiceSuiteArrayUtils::inArrayNoCase($variable, 'C'));
     }
 
+    public function testInvoiceSuiteArrayUtilsPushStringToIntIndexedArray(): void
+    {
+        $variable = [];
+
+        $this->assertCount(0, $variable);
+
+        InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($variable, 'a');
+        InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($variable, 'b');
+        InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($variable, null);
+
+        $this->assertCount(2, $variable);
+        $this->assertArrayHasKey(0, $variable);
+        $this->assertArrayHasKey(1, $variable);
+        $this->assertArrayNotHasKey(2, $variable);
+        $this->assertSame('a', $variable[0]);
+        $this->assertSame('b', $variable[1]);
+    }
+
+    public function testInvoiceSuiteArrayUtilsPushStringToStringIndexedArray(): void
+    {
+        $variable = [];
+
+        $this->assertCount(0, $variable);
+
+        InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($variable, 'a', 'aa');
+        InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($variable, 'b', 'bb');
+        InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($variable, '', '');
+        InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($variable, '', 'cc');
+        InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($variable, 'dd', '');
+        InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($variable, null, null);
+        InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($variable, null, 'cc');
+        InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($variable, 'dd', null);
+
+        $this->assertCount(2, $variable);
+        $this->assertArrayHasKey('a', $variable);
+        $this->assertArrayHasKey('b', $variable);
+        $this->assertSame('aa', $variable['a']);
+        $this->assertSame('bb', $variable['b']);
+    }
+
+    public function testInvoiceSuiteArrayUtilsPushFloatToIntIndexedArray(): void
+    {
+        $variable = [];
+
+        $this->assertCount(0, $variable);
+
+        InvoiceSuiteArrayUtils::pushFloatToIntIndexedArray($variable, 1.0);
+        InvoiceSuiteArrayUtils::pushFloatToIntIndexedArray($variable, 2.2);
+        InvoiceSuiteArrayUtils::pushFloatToIntIndexedArray($variable, null);
+
+        $this->assertCount(2, $variable);
+        $this->assertArrayHasKey(0, $variable);
+        $this->assertArrayHasKey(1, $variable);
+        $this->assertArrayNotHasKey(2, $variable);
+        $this->assertSame(1.0, $variable[0]);
+        $this->assertSame(2.2, $variable[1]);
+    }
+
+    public function testInvoiceSuiteArrayUtilsPushFloatToStringIndexedArray(): void
+    {
+        $variable = [];
+
+        $this->assertCount(0, $variable);
+
+        InvoiceSuiteArrayUtils::pushFloatToStringIndexedArray($variable, 'a', 1.0);
+        InvoiceSuiteArrayUtils::pushFloatToStringIndexedArray($variable, 'b', 2.2);
+        InvoiceSuiteArrayUtils::pushFloatToStringIndexedArray($variable, '', null);
+        InvoiceSuiteArrayUtils::pushFloatToStringIndexedArray($variable, '', 3.0);
+        InvoiceSuiteArrayUtils::pushFloatToStringIndexedArray($variable, 'dd', null);
+        InvoiceSuiteArrayUtils::pushFloatToStringIndexedArray($variable, null, null);
+        InvoiceSuiteArrayUtils::pushFloatToStringIndexedArray($variable, null, null);
+        InvoiceSuiteArrayUtils::pushFloatToStringIndexedArray($variable, 'dd', null);
+
+        $this->assertCount(2, $variable);
+        $this->assertArrayHasKey('a', $variable);
+        $this->assertArrayHasKey('b', $variable);
+        $this->assertSame(1.0, $variable['a']);
+        $this->assertSame(2.2, $variable['b']);
+    }
+
+    public function testInvoiceSuiteArrayUtilsPushBooleanToIntIndexedArray(): void
+    {
+        $variable = [];
+
+        $this->assertCount(0, $variable);
+
+        InvoiceSuiteArrayUtils::pushBooleanToIntIndexedArray($variable, true);
+        InvoiceSuiteArrayUtils::pushBooleanToIntIndexedArray($variable, false);
+        InvoiceSuiteArrayUtils::pushBooleanToIntIndexedArray($variable, null);
+
+        $this->assertCount(2, $variable);
+        $this->assertArrayHasKey(0, $variable);
+        $this->assertArrayHasKey(1, $variable);
+        $this->assertArrayNotHasKey(2, $variable);
+        $this->assertSame(true, $variable[0]);
+        $this->assertSame(false, $variable[1]);
+    }
+
+    public function testInvoiceSuiteArrayUtilsPushBooleanToStringIndexedArray(): void
+    {
+        $variable = [];
+
+        $this->assertCount(0, $variable);
+
+        InvoiceSuiteArrayUtils::pushBooleanToStringIndexedArray($variable, 'a', true);
+        InvoiceSuiteArrayUtils::pushBooleanToStringIndexedArray($variable, 'b', false);
+        InvoiceSuiteArrayUtils::pushBooleanToStringIndexedArray($variable, '', null);
+        InvoiceSuiteArrayUtils::pushBooleanToStringIndexedArray($variable, '', true);
+        InvoiceSuiteArrayUtils::pushBooleanToStringIndexedArray($variable, 'dd', null);
+        InvoiceSuiteArrayUtils::pushBooleanToStringIndexedArray($variable, null, null);
+        InvoiceSuiteArrayUtils::pushBooleanToStringIndexedArray($variable, null, null);
+        InvoiceSuiteArrayUtils::pushBooleanToStringIndexedArray($variable, 'dd', null);
+
+        $this->assertCount(2, $variable);
+        $this->assertArrayHasKey('a', $variable);
+        $this->assertArrayHasKey('b', $variable);
+        $this->assertSame(true, $variable['a']);
+        $this->assertSame(false, $variable['b']);
+    }
+
     public function testInvoiceSuiteArrayUtilsLimit(): void
     {
         $variable = ['a', 'b', 'c', 1, 2, 3];
@@ -705,90 +825,89 @@ final class UtilsTest extends TestCase
         // InvoiceSuiteAttachment::fromUrl('Dummy');
     }
 
-    /*
-        public function testInvoiceSuiteClassFinderFactory(): void
-        {
-            $cacheFilename = md5((string) preg_replace('/[^a-zA-Z0-9]/', '', sprintf('invoicesuite-cf-%s', InvoiceSuiteAbstractDocumentFormatProvider::class))) . '.cache';
-            $cacheFullFilename = __DIR__ . '/../../../src/cache/' . $cacheFilename;
-            @unlink($cacheFullFilename);
+    public function testInvoiceSuiteClassFinderFactory(): void
+    {
+        $cacheFilename = md5((string) preg_replace('/[^a-zA-Z0-9]/', '', sprintf('invoicesuite-cf-%s', InvoiceSuiteAbstractDocumentFormatProvider::class))) . '.cache';
+        $cacheFullFilename = __DIR__ . '/../../../src/cache/' . $cacheFilename;
+        @unlink($cacheFullFilename);
 
-            // One
+        // One
 
-            $classFinder = InvoiceSuiteClassFinder::factory();
+        $classFinder = InvoiceSuiteClassFinder::factory();
 
-            $this->assertInstanceOf(InvoiceSuiteClassFinder::class, $classFinder);
+        $this->assertInstanceOf(InvoiceSuiteClassFinder::class, $classFinder);
 
-            $classNames = $this->getPrivatePropertyFromObject($classFinder, 'classNames');
+        $classNames = $this->getPrivatePropertyFromObject($classFinder, 'classNames');
 
-            $this->assertIsArray($classNames->getValue($classFinder));
-            $this->assertNotEmpty($classNames->getValue($classFinder));
+        $this->assertIsArray($classNames->getValue($classFinder));
+        $this->assertNotEmpty($classNames->getValue($classFinder));
 
-            // Two
+        // Two
 
-            $classFinder = InvoiceSuiteClassFinder::factory();
+        $classFinder = InvoiceSuiteClassFinder::factory();
 
-            $this->assertInstanceOf(InvoiceSuiteClassFinder::class, $classFinder);
+        $this->assertInstanceOf(InvoiceSuiteClassFinder::class, $classFinder);
 
-            $classNames = $this->getPrivatePropertyFromObject($classFinder, 'classNames');
+        $classNames = $this->getPrivatePropertyFromObject($classFinder, 'classNames');
 
-            $this->assertIsArray($classNames->getValue($classFinder));
-            $this->assertNotEmpty($classNames->getValue($classFinder), 'Classnames should have been filled by Init ()');
+        $this->assertIsArray($classNames->getValue($classFinder));
+        $this->assertNotEmpty($classNames->getValue($classFinder), 'Classnames should have been filled by Init ()');
 
-            $classNames = $classFinder->getClassesWhenItsSubClassOf(InvoiceSuiteAbstractDocumentFormatProvider::class, true);
+        $classNames = $classFinder->getClassesWhenItsSubClassOf(InvoiceSuiteAbstractDocumentFormatProvider::class, true);
 
-            // @phpstan-ignore method.alreadyNarrowedType
-            $this->assertIsArray($classNames);
-            $this->assertCount(11, $classNames);
+        // @phpstan-ignore method.alreadyNarrowedType
+        $this->assertIsArray($classNames);
+        $this->assertCount(11, $classNames);
 
-            // Three
+        // Three
 
-            $classFinder->clear();
+        $classFinder->clear();
 
-            $classNames = $this->getPrivatePropertyFromObject($classFinder, 'classNames');
+        $classNames = $this->getPrivatePropertyFromObject($classFinder, 'classNames');
 
-            $this->assertIsArray($classNames->getValue($classFinder));
-            $this->assertEmpty($classNames->getValue($classFinder));
+        $this->assertIsArray($classNames->getValue($classFinder));
+        $this->assertEmpty($classNames->getValue($classFinder));
 
-            $classNames = $classFinder->getClassesWhenItsSubClassOf(InvoiceSuiteAbstractDocumentFormatProvider::class, true);
+        $classNames = $classFinder->getClassesWhenItsSubClassOf(InvoiceSuiteAbstractDocumentFormatProvider::class, true);
 
-            // @phpstan-ignore method.alreadyNarrowedType
-            $this->assertIsArray($classNames);
-            $this->assertEmpty($classNames);
-            $this->assertFileDoesNotExist($cacheFullFilename);
+        // @phpstan-ignore method.alreadyNarrowedType
+        $this->assertIsArray($classNames);
+        $this->assertEmpty($classNames);
+        $this->assertFileDoesNotExist($cacheFullFilename);
 
-            $classFinder->init();
+        $classFinder->init();
 
-            $classNames = $this->getPrivatePropertyFromObject($classFinder, 'classNames');
+        $classNames = $this->getPrivatePropertyFromObject($classFinder, 'classNames');
 
-            $this->assertIsArray($classNames->getValue($classFinder));
-            $this->assertNotEmpty($classNames->getValue($classFinder));
+        $this->assertIsArray($classNames->getValue($classFinder));
+        $this->assertNotEmpty($classNames->getValue($classFinder));
 
-            $classNames = $classFinder->getClassesWhenItsSubClassOf(InvoiceSuiteAbstractDocumentFormatProvider::class, true);
+        $classNames = $classFinder->getClassesWhenItsSubClassOf(InvoiceSuiteAbstractDocumentFormatProvider::class, true);
 
-            // @phpstan-ignore method.alreadyNarrowedType
-            $this->assertIsArray($classNames);
-            $this->assertCount(11, $classNames);
-            $this->assertFileDoesNotExist($cacheFullFilename);
+        // @phpstan-ignore method.alreadyNarrowedType
+        $this->assertIsArray($classNames);
+        $this->assertCount(11, $classNames);
+        $this->assertFileDoesNotExist($cacheFullFilename);
 
-            $classNames = $classFinder->getClassesWhenItsSubClassOf(InvoiceSuiteAbstractDocumentFormatProvider::class, false);
+        $classNames = $classFinder->getClassesWhenItsSubClassOf(InvoiceSuiteAbstractDocumentFormatProvider::class, false);
 
-            // @phpstan-ignore method.alreadyNarrowedType
-            $this->assertIsArray($classNames);
-            $this->assertCount(11, $classNames);
-            $this->assertFileExists($cacheFullFilename);
+        // @phpstan-ignore method.alreadyNarrowedType
+        $this->assertIsArray($classNames);
+        $this->assertCount(11, $classNames);
+        $this->assertFileExists($cacheFullFilename);
 
-            $classNames = $classFinder->getClassesWhenItsSubClassOf(InvoiceSuiteAbstractDocumentFormatProvider::class, false);
+        $classNames = $classFinder->getClassesWhenItsSubClassOf(InvoiceSuiteAbstractDocumentFormatProvider::class, false);
 
-            // @phpstan-ignore method.alreadyNarrowedType
-            $this->assertIsArray($classNames);
-            $this->assertCount(11, $classNames);
-            $this->assertFileExists($cacheFullFilename);
+        // @phpstan-ignore method.alreadyNarrowedType
+        $this->assertIsArray($classNames);
+        $this->assertCount(11, $classNames);
+        $this->assertFileExists($cacheFullFilename);
 
-            $this->assertFileExists(InvoiceSuitePathUtils::combinePathWithFile(InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', '..', '..', 'src', 'cache'), 'fb2c9c3d46a7d2650a8813477106ebca.cache'));
-            InvoiceSuiteClassFinder::clearCache();
-            $this->assertFileDoesNotExist(InvoiceSuitePathUtils::combinePathWithFile(InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', '..', '..', 'src', 'cache'), 'fb2c9c3d46a7d2650a8813477106ebca.cache'));
-        }
-    */
+        $this->assertFileExists(InvoiceSuitePathUtils::combinePathWithFile(InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', '..', '..', 'src', 'cache'), 'fb2c9c3d46a7d2650a8813477106ebca.cache'));
+        InvoiceSuiteClassFinder::clearCache();
+        $this->assertFileDoesNotExist(InvoiceSuitePathUtils::combinePathWithFile(InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', '..', '..', 'src', 'cache'), 'fb2c9c3d46a7d2650a8813477106ebca.cache'));
+    }
+
     public function testInvoiceSuiteFileUtils(): void
     {
         $this->assertTrue(InvoiceSuiteFileUtils::fileExists(__FILE__, true));
