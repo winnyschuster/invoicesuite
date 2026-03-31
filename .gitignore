@@ -97,6 +97,8 @@ lint.ps1
 /examples/05_pdf_*.pdf
 /examples/07_*.pdf
 
+/examples.old
+
 addusetoclasses.php
 addusetoclasses2.php
 convert_string_params.php

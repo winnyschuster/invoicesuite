@@ -324,6 +324,30 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
     }
 
     /**
+     * Completely activate remote validation
+     *
+     * @param  string $remoteModeHost
+     * @param  int    $remoteModePort
+     * @return static
+     */
+    public function activateRemoteValidation(
+        string $remoteModeHost,
+        int $remoteModePort
+    ): static {
+        return $this->enableRemoteMode()->setRemoteModeHost($remoteModeHost)->setRemoteModePort($remoteModePort);
+    }
+
+    /**
+     * Completely deactivate remote validation
+     *
+     * @return static
+     */
+    public function deactivateRemoteValidation(): static
+    {
+        return $this->disableRemoteMode()->setRemoteModeHost('0.0.0.0')->setRemoteModePort(0);
+    }
+
+    /**
      * The validation entry point
      *
      * @return static
