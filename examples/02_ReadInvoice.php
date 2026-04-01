@@ -9,7 +9,7 @@ use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/00_ExampleHelpers.php';
 
-$reader = InvoiceSuiteDocumentReader::createFromFile(__DIR__ . "/01_SimpleInvoice.xml");
+$reader = InvoiceSuiteDocumentReader::createFromFile(__DIR__ . '/01_SimpleInvoice.xml');
 
 // General invoice document information
 
@@ -24,17 +24,16 @@ $reader->getDocumentTaxCurrency($documentTaxCurrency);
 $reader->getDocumentIsCopy($documentIsCopy);
 $reader->getDocumentBuyerReference($documentBuyerReference);
 
-echo "Document Number ........ $documentNumber\n";
-echo "Document Type .......... $documentType\n";
-echo "Document Name .......... $documentDescription\n";
-echo "Document Language ...... $documentLanguage\n";
-echo "Document Date .......... " . $documentDate?->format("d.m.Y") . "\n";
-echo "Document Compl. Date ... " . $documentCompleteDate?->format("d.m.Y") . "\n";
-echo "Document Currency ...... $documentCurrency\n";
-echo "Document Tax Currency .. $documentTaxCurrency\n";
-echo "Document Copy .......... $documentIsCopy\n";
-echo "Document Leitweg ....... $documentBuyerReference\n";
-
+echo "Document Number ........ {$documentNumber}\n";
+echo "Document Type .......... {$documentType}\n";
+echo "Document Name .......... {$documentDescription}\n";
+echo "Document Language ...... {$documentLanguage}\n";
+echo 'Document Date .......... ' . $documentDate?->format('d.m.Y') . "\n";
+echo 'Document Compl. Date ... ' . $documentCompleteDate?->format('d.m.Y') . "\n";
+echo "Document Currency ...... {$documentCurrency}\n";
+echo "Document Tax Currency .. {$documentTaxCurrency}\n";
+echo "Document Copy .......... {$documentIsCopy}\n";
+echo "Document Leitweg ....... {$documentBuyerReference}\n";
 
 while ($reader->nextDocumentNote()) {
     $reader->getDocumentNote($documentNoteContent, $documentNoteContentCode, $documentNoteSubjectCode);
@@ -43,7 +42,7 @@ while ($reader->nextDocumentNote()) {
 
 while ($reader->nextDocumentBillingPeriod()) {
     $reader->getDocumentBillingPeriod($documentBillingPeriodStartDate, $documentBillingPeriodEndDate, $documentBillingPeriodDescription);
-    echo sprintf("%s - %s (%s)\n", $documentBillingPeriodStartDate?->format("d.m.Y") ?? "", $documentBillingPeriodEndDate?->format("d.m.Y") ?? "", $documentBillingPeriodDescription);
+    echo sprintf("%s - %s (%s)\n", $documentBillingPeriodStartDate?->format('d.m.Y') ?? '', $documentBillingPeriodEndDate?->format('d.m.Y') ?? '', $documentBillingPeriodDescription);
 }
 
 while ($reader->nextDocumentPostingReference()) {
@@ -53,32 +52,32 @@ while ($reader->nextDocumentPostingReference()) {
 
 while ($reader->nextDocumentSellerOrderReference()) {
     $reader->getDocumentSellerOrderReference($documentBuyerOrderNo, $documentBuyerOrderDate);
-    echo sprintf("Seller Order %s by %s\n", $documentBuyerOrderNo, $documentBuyerOrderDate?->format("d.m.Y") ?? "");
+    echo sprintf("Seller Order %s by %s\n", $documentBuyerOrderNo, $documentBuyerOrderDate?->format('d.m.Y') ?? '');
 }
 
 while ($reader->nextDocumentBuyerOrderReference()) {
     $reader->getDocumentBuyerOrderReference($documentBuyerOrderNo, $documentBuyerOrderDate);
-    echo sprintf("Buyer Order %s by %s\n", $documentBuyerOrderNo, $documentBuyerOrderDate?->format("d.m.Y") ?? "");
+    echo sprintf("Buyer Order %s by %s\n", $documentBuyerOrderNo, $documentBuyerOrderDate?->format('d.m.Y') ?? '');
 }
 
 while ($reader->nextDocumentQuotationReference()) {
     $reader->getDocumentQuotationReference($documentQuotationNo, $documentQuotationDate);
-    echo sprintf("Quotation %s by %s\n", $documentQuotationNo, $documentQuotationDate?->format("d.m.Y") ?? "");
+    echo sprintf("Quotation %s by %s\n", $documentQuotationNo, $documentQuotationDate?->format('d.m.Y') ?? '');
 }
 
 while ($reader->nextDocumentContractReference()) {
     $reader->getDocumentContractReference($documentContractNo, $documentContractDate);
-    echo sprintf("Contract %s by %s\n", $documentContractNo, $documentContractDate?->format("d.m.Y") ?? "");
+    echo sprintf("Contract %s by %s\n", $documentContractNo, $documentContractDate?->format('d.m.Y') ?? '');
 }
 
 while ($reader->nextDocumentAdditionalReference()) {
     $reader->getDocumentAdditionalReference($documentAdditionalNo, $documentAdditionalDate, $documentAdditionalTypeCode, $documentAdditionalRefTypeCode, $documentAdditionalDescription, $documentAdditionalAttachment);
-    echo sprintf("Additional Document %s by %s (%s)\n", $documentAdditionalNo, $documentAdditionalDate?->format("d.m.Y") ?? "", $documentAdditionalTypeCode);
+    echo sprintf("Additional Document %s by %s (%s)\n", $documentAdditionalNo, $documentAdditionalDate?->format('d.m.Y') ?? '', $documentAdditionalTypeCode);
 }
 
 while ($reader->nextDocumentInvoiceReference()) {
     $reader->getDocumentInvoiceReference($documentInvoiceReferenceNo, $documentInvoiceReferenceDate, $documentInvoiceReferenceTypeCode);
-    echo sprintf("Invoice Reference Document %s by %s (%s)\n", $documentInvoiceReferenceNo, $documentInvoiceReferenceDate?->format("d.m.Y") ?? "", $documentInvoiceReferenceTypeCode);
+    echo sprintf("Invoice Reference Document %s by %s (%s)\n", $documentInvoiceReferenceNo, $documentInvoiceReferenceDate?->format('d.m.Y') ?? '', $documentInvoiceReferenceTypeCode);
 }
 
 while ($reader->nextDocumentProjectReference()) {
@@ -88,30 +87,29 @@ while ($reader->nextDocumentProjectReference()) {
 
 while ($reader->nextDocumentUltimateCustomerOrderReference()) {
     $reader->getDocumentUltimateCustomerOrderReference($documentUltimateCustomerOrderNo, $documentUltimateCustomerOrderDate);
-    echo sprintf("Ultimate Customer Order %s by %s\n", $documentUltimateCustomerOrderNo, $documentUltimateCustomerOrderDate?->format("d.m.Y") ?? "");
+    echo sprintf("Ultimate Customer Order %s by %s\n", $documentUltimateCustomerOrderNo, $documentUltimateCustomerOrderDate?->format('d.m.Y') ?? '');
 }
 
 while ($reader->nextDocumentDespatchAdviceReference()) {
     $reader->getDocumentDespatchAdviceReference($documentDespatchAdviceNo, $documentDespatchAdviceDate);
-    echo sprintf("Despatch Advice %s by %s\n", $documentDespatchAdviceNo, $documentDespatchAdviceDate?->format("d.m.Y") ?? "");
+    echo sprintf("Despatch Advice %s by %s\n", $documentDespatchAdviceNo, $documentDespatchAdviceDate?->format('d.m.Y') ?? '');
 }
 
 while ($reader->nextDocumentReceivingAdviceReference()) {
     $reader->getDocumentReceivingAdviceReference($documentReceivingAdviceNo, $documentReceivingAdviceDate);
-    echo sprintf("Receiving Advice %s by %s\n", $documentReceivingAdviceNo, $documentReceivingAdviceDate?->format("d.m.Y") ?? "");
+    echo sprintf("Receiving Advice %s by %s\n", $documentReceivingAdviceNo, $documentReceivingAdviceDate?->format('d.m.Y') ?? '');
 }
 
 while ($reader->nextDocumentDeliveryNoteReference()) {
     $reader->getDocumentDeliveryNoteReference($documentDeliveryNoteNo, $documentDeliveryNoteDate);
-    echo sprintf("Delivery Note %s by %s\n", $documentDeliveryNoteNo, $documentDeliveryNoteDate?->format("d.m.Y") ?? "");
+    echo sprintf("Delivery Note %s by %s\n", $documentDeliveryNoteNo, $documentDeliveryNoteDate?->format('d.m.Y') ?? '');
 }
 
 $reader->getDocumentSupplyChainEvent($documemtSupplyChainEventDate);
 
-echo sprintf("Supply Chain event at %s\n", $documemtSupplyChainEventDate?->format("d.m.Y") ?? "");
+echo sprintf("Supply Chain event at %s\n", $documemtSupplyChainEventDate?->format('d.m.Y') ?? '');
 
 // Read information about the seller/supplier
-
 
 echo "\n";
 echo "Seller/Supplier Party\n";
