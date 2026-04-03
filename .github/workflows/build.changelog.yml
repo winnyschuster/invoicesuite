@@ -13,6 +13,7 @@ env:
 
 jobs:
   updatechangelog:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     permissions: write-all
     runs-on: "ubuntu-24.04"
 
@@ -23,7 +24,7 @@ jobs:
           token: ${{ secrets.UPDATEWIKITOKEN }}
           fetch-depth: 0
           fetch-tags: true
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.event.workflow_run.head_branch || github.ref_name }}
 
       - name: Setup PHP with PECL extension
         uses: shivammathur/setup-php@v2

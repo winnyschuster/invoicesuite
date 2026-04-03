@@ -79,7 +79,7 @@ jobs:
       - name: Install CycloneDX Composer plugin
         shell: bash
         run: |
-          composer global require cyclonedx/cyclonedx-php-composer
+          composer global require --no-progress cyclonedx/cyclonedx-php-composer
 
       - name: Verify CycloneDX command
         shell: bash
