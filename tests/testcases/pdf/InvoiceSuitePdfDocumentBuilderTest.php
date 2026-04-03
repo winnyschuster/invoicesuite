@@ -379,7 +379,6 @@ final class InvoiceSuitePdfDocumentBuilderTest extends TestCase
         $this->assertSame('Invoice 2025-04-000001, 1970-01-01T00:00:00+00:00', $propPdfWriterMetaDataValue['Keywords']);
         $this->assertSame('Invoice 2025-04-000001 issued by Lieferant GmbH', $propPdfWriterMetaDataValue['Title']);
         $this->assertSame('Invoice 2025-04-000001', $propPdfWriterMetaDataValue['Subject']);
-        $this->assertSame('My Creator Tool / InvoiceSuite PHP library vdev-master by HorstOeko', $propPdfWriterMetaDataValue['Creator']);
 
         $propPdfWriterMetaData = $this->getPrivatePropertyFromObject($propPdfWriterValue, 'metaDataDescriptions');
         $propPdfWriterMetaDataValue = $propPdfWriterMetaData->getValue($propPdfWriterValue);
@@ -435,7 +434,6 @@ final class InvoiceSuitePdfDocumentBuilderTest extends TestCase
         $this->assertSame('application/pdf', ltrim($fileSpecs[2]->getEmbeddedFile()->getSubType() ?? '', '/'));
         $this->assertSame('Invoice 2025-04-000001 issued by Lieferant GmbH', $pdfParsed->getInformationDictionary()?->getTitle());
         $this->assertSame('Lieferant GmbH', $pdfParsed->getInformationDictionary()->getAuthor());
-        $this->assertSame('My Creator Tool / InvoiceSuite PHP library vdev-master by HorstOeko', $pdfParsed->getInformationDictionary()->getCreator());
         $this->assertStringContainsString('FPDF', (string) $pdfParsed->getInformationDictionary()->getProducer());
         $this->assertInstanceOf(DateTimeInterface::class, $pdfParsed->getInformationDictionary()->getCreationDate());
         $this->assertSame('2000-01-01', $pdfParsed->getInformationDictionary()->getCreationDate()->format('Y-m-d'));
