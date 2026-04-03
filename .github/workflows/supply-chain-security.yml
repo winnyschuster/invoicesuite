@@ -1,0 +1,116 @@
+name: Supply Chain Security
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 4 * * 1'
+  push:
+    branches:
+      - master
+    paths:
+      - composer.json
+      - composer.lock
+      - .github/dependabot.yml
+      - .github/workflows/supply-chain-security.yml
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - master
+    paths:
+      - composer.json
+      - composer.lock
+      - .github/dependabot.yml
+      - .github/workflows/supply-chain-security.yml
+
+permissions:
+  contents: read
+
+jobs:
+  supply-chain-security:
+    name: Composer audit, SBOM, and license report
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout Sources
+        uses: actions/checkout@v6
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          coverage: none
+          tools: composer:v2
+
+      - name: Prepare report directory
+        run: mkdir -p build/reports
+
+      - name: Run Composer audit (JSON)
+        id: composer_audit_json
+        continue-on-error: true
+        run: |
+          composer audit --locked --format=json --abandoned=report > build/reports/composer-audit.json
+
+      - name: Run Composer audit (summary)
+        if: always()
+        run: |
+          composer audit --locked --format=summary --abandoned=report > build/reports/composer-audit.txt || true
+
+      - name: Generate Composer license report (JSON)
+        id: composer_licenses_json
+        run: |
+          composer licenses --locked --format=json > build/reports/composer-licenses.json
+
+      - name: Generate Composer license report (summary)
+        if: always()
+        run: |
+          composer licenses --locked --format=summary > build/reports/composer-licenses.txt
+
+      - name: Export SPDX SBOM from GitHub dependency graph
+        id: github_sbom
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2026-03-10" \
+            "/repos/${{ github.repository }}/dependency-graph/sbom" \
+            --jq '.sbom' > build/reports/github-dependency-graph-sbom.spdx.json
+
+      - name: Write workflow summary
+        if: always()
+        run: |
+          {
+            echo '# Supply Chain Security'
+            echo
+            echo '| Check | Result |'
+            echo '| --- | --- |'
+            echo '| Composer audit | ${{ steps.composer_audit_json.outcome }} |'
+            echo '| Composer license report | ${{ steps.composer_licenses_json.outcome }} |'
+            echo '| GitHub SPDX SBOM export | ${{ steps.github_sbom.outcome }} |'
+            echo
+            echo 'Artifacts produced:'
+            echo
+            echo '- `build/reports/composer-audit.json`'
+            echo '- `build/reports/composer-audit.txt`'
+            echo '- `build/reports/composer-licenses.json`'
+            echo '- `build/reports/composer-licenses.txt`'
+            echo '- `build/reports/github-dependency-graph-sbom.spdx.json`'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload supply-chain artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: supply-chain-security-reports
+          path: build/reports
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Fail on Composer audit findings
+        if: steps.composer_audit_json.outcome == 'failure'
+        run: |
+          echo 'Composer audit reported vulnerabilities, abandoned packages, or filtered packages.' >&2
+          exit 1

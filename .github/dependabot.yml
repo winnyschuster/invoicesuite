@@ -1,6 +1,6 @@
-# Keep GitHub Actions up to date with GitHub's Dependabot...
-# https://docs.github.com/en/code-security/dependabot/working-with-dependabot/keeping-your-actions-up-to-date-with-dependabot
-# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#package-ecosystem
+# Keep GitHub Actions and Composer dependencies up to date with GitHub's Dependabot.
+# https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference
+# https://docs.github.com/en/code-security/reference/supply-chain-security/supported-ecosystems-and-repositories
 version: 2
 updates:
   - package-ecosystem: github-actions
@@ -8,6 +8,15 @@ updates:
     groups:
       github-actions:
         patterns:
-          - "*"  # Group all Actions updates into a single larger pull request
+          - "*" # Group all Actions updates into a single pull request
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: composer
+    directory: /
+    groups:
+      composer:
+        patterns:
+          - "*" # Group all Composer updates into a single pull request
     schedule:
       interval: weekly
