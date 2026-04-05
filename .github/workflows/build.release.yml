@@ -121,11 +121,6 @@ jobs:
         env:
           XDEBUG_MODE: coverage
 
-      - name: Publish Coverage Summary
-        if: always()
-        run: |
-          php make/genbuildcoveragesummary.php --summary-file="$GITHUB_STEP_SUMMARY" --clover-file="build/logs/clover.xml" --crap4j-file="build/logs/crap4j.xml"
-
       - name: Cache Key (Schematron)
         id: hash-validator
         run: |
@@ -238,6 +233,11 @@ jobs:
         with:
           files: "build/logs/junit.xml"
           comment_mode: ${{ github.event_name == 'pull_request' && 'failures' || 'always' }}
+
+      - name: Publish Coverage Summary
+        if: always()
+        run: |
+          php make/genbuildcoveragesummary.php --summary-file="$GITHUB_STEP_SUMMARY" --clover-file="build/logs/clover.xml" --crap4j-file="build/logs/crap4j.xml"
 
       - name: Publish Build Logs
         if: always()
