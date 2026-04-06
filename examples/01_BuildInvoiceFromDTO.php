@@ -418,4 +418,4 @@ $documentBuilder->createFromDTO($dtoDocumentHeader);
 
 $documentBuilder->saveContentToFile(__DIR__ . '/01_SimpleInvoice_2.xml');
 
-validateInvoiceSuiteDocumentBuilder($documentBuilder);
+helpterValidateInvoiceSuiteDocumentBuilder($documentBuilder);
