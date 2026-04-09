@@ -150,6 +150,9 @@ return (new Config())
             ],
             'concat_space' => [
                 'spacing' => 'one',
-            ]
+            ],
+            'lowercase_cast' => true,
+            'short_scalar_cast' => true,
+            'cast_spaces' => ['space' => 'single']
         ]
     );
