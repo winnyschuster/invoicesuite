@@ -34,6 +34,13 @@ class InvoiceSuiteClassFinder
     private $classNames = [];
 
     /**
+     * In-memory cache for subclass lookups
+     *
+     * @var array<string,array<int,string>>
+     */
+    private $subClassNames = [];
+
+    /**
      * Constructor (Hidden)
      */
     final protected function __construct()
@@ -63,6 +70,7 @@ class InvoiceSuiteClassFinder
     public function clear(): static
     {
         $this->classNames = [];
+        $this->subClassNames = [];
 
         return $this;
     }
@@ -74,7 +82,7 @@ class InvoiceSuiteClassFinder
      */
     public function init(): static
     {
-        $this->classNames = [];
+        $this->clear();
 
         foreach (ClassLoader::getRegisteredLoaders() as $loader) {
             $this->classNames = array_merge($this->classNames, array_keys($loader->getClassMap()));
@@ -94,17 +102,21 @@ class InvoiceSuiteClassFinder
         string $isSubClassOf,
         bool $disableCache = false
     ): array {
-        if (!$disableCache) {
-            $cacheFilename = md5((string) preg_replace('/[^a-zA-Z0-9]/', '', sprintf('invoicesuite-cf-%s', $isSubClassOf))) . '.cache';
-            $cacheFilepath = InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', 'cache');
-            $cacheFilenameFq = InvoiceSuitePathUtils::combinePathWithFile($cacheFilepath, $cacheFilename);
+        if (!$disableCache && array_key_exists($isSubClassOf, $this->subClassNames)) {
+            return $this->subClassNames[$isSubClassOf];
+        }
 
-            if (is_file($cacheFilenameFq)) {
-                $cached = @require_once $cacheFilenameFq;
+        $cacheFilename = md5((string) preg_replace('/[^a-zA-Z0-9]/', '', sprintf('invoicesuite-cf-%s', $isSubClassOf))) . '.cache';
+        $cacheFilepath = InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', 'cache');
+        $cacheFilenameFq = InvoiceSuitePathUtils::combinePathWithFile($cacheFilepath, $cacheFilename);
 
-                if (is_array($cached)) {
-                    return $cached;
-                }
+        if (!$disableCache && is_file($cacheFilenameFq)) {
+            $cached = @require $cacheFilenameFq;
+
+            if (is_array($cached)) {
+                $this->subClassNames[$isSubClassOf] = $cached;
+
+                return $cached;
             }
         }
 
