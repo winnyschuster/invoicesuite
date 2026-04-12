@@ -2265,8 +2265,7 @@ $definitions = [
         'ns' => 'horstoeko\invoicesuite\documents\dto',
         'class' => 'InvoiceSuiteCommunicationDTO',
         'extends' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuiteIdDTO',
-        'properties' => [
-        ],
+        'properties' => [],
     ],
     [
         'todir' => __DIR__ . '/../src/documents/dto',

@@ -22,7 +22,7 @@ class InvoiceSuiteClassFinder
      *
      * @var null|static
      *
-     * @phpstan-var static|null
+     * @phpstan-var null|static
      */
     protected static $invoiceSuiteClassFinder;
 
