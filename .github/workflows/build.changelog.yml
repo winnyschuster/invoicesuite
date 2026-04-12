@@ -1,4 +1,4 @@
-name: Update ChangeLog
+name: Update CHANGELOG
 
 on:
   workflow_run:
@@ -14,6 +14,10 @@ env:
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name == 'workflow_dispatch' && github.ref_type == 'branch' && github.ref_name || github.event.repository.default_branch }}
   cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
   updatechangelog:
@@ -33,7 +37,7 @@ jobs:
           fetch-tags: true
           ref: ${{ env.TARGET_BRANCH }}
 
-      - name: Setup PHP
+      - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.5'
@@ -48,7 +52,7 @@ jobs:
         uses: actions/cache@v5
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-8.5-composer-${{ hashFiles('**/composer.json') }}
+          key: ${{ runner.os }}-8.5-composer-${{ hashFiles('**/composer.json', '**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-8.5-composer-${{ hashFiles('**/composer.json') }}
             ${{ runner.os }}-8.5-composer-
@@ -56,7 +60,12 @@ jobs:
       - name: Install Composer dependencies
         run: |
           composer config -g github-oauth.github.com ${{ secrets.GITHUB_TOKEN }}
-          composer update --no-interaction --prefer-dist --no-progress
+
+          if [ -f composer.lock ]; then
+            composer install --no-interaction --prefer-dist --no-progress
+          else
+            composer update --no-interaction --prefer-dist --no-progress
+          fi
 
       - name: Update CHANGELOG.md
         run: |
@@ -75,7 +84,7 @@ jobs:
 
           if [ -n "$(git status --porcelain)" ]; then
             git add CHANGELOG.md
-            git commit -m "[DOC] Updated CHANGELOG.md"
+            git commit -m "[DOC] Update CHANGELOG.md"
             git push origin HEAD:${{ env.TARGET_BRANCH }}
           else
             echo "No changes found. Skipping."

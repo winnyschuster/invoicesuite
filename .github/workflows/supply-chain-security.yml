@@ -16,10 +16,14 @@ concurrency:
 permissions:
   contents: read
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   supply-chain:
     name: Composer audit, SBOM, and license report
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       COMPOSER_PROCESS_TIMEOUT: 0
       COMPOSER_NO_INTERACTION: 1
@@ -27,7 +31,7 @@ jobs:
       COMPOSER_AUDIT_ABANDONED: report
 
     steps:
-      - name: Check out repository
+      - name: Checkout sources
         uses: actions/checkout@v6
 
       - name: Set up PHP
@@ -37,13 +41,11 @@ jobs:
           coverage: none
           tools: composer:v2
 
-      - name: Get Composer Cache Directory
+      - name: Get Composer cache directory
         id: composer-cache
-        shell: bash
-        run: |
-          echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
-      - name: Cache Composer downloads
+      - name: Cache Composer dependencies
         uses: actions/cache@v5
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
@@ -53,12 +55,9 @@ jobs:
             ${{ runner.os }}-composer-supply-chain-
 
       - name: Prepare build directories
-        shell: bash
-        run: |
-          mkdir -p build/supply-chain
+        run: mkdir -p build/supply-chain
 
-      - name: Resolve Composer dependencies
-        shell: bash
+      - name: Install Composer dependencies
         run: |
           if [ -f composer.lock ]; then
             composer install --prefer-dist --no-progress
@@ -68,7 +67,6 @@ jobs:
 
       - name: Run Composer audit
         id: composer-audit
-        shell: bash
         run: |
           set +e
           composer audit --no-dev --abandoned=report --format=json > build/supply-chain/composer-audit.json
@@ -85,39 +83,31 @@ jobs:
           echo "exit_code=$audit_exit" >> "$GITHUB_OUTPUT"
 
       - name: Generate Composer license report
-        shell: bash
         run: |
           composer licenses --no-dev --format=json > build/supply-chain/composer-licenses.json
           composer licenses --no-dev --format=summary > build/supply-chain/composer-licenses.txt
 
       - name: Allow CycloneDX Composer plugin
-        shell: bash
-        run: |
-          composer global config --no-plugins allow-plugins.cyclonedx/cyclonedx-php-composer true
+        run: composer global config --no-plugins allow-plugins.cyclonedx/cyclonedx-php-composer true
 
       - name: Install CycloneDX Composer plugin
-        shell: bash
-        run: |
-          composer global require --no-interaction --no-progress cyclonedx/cyclonedx-php-composer
-      - name: Generate local CycloneDX SBOM
-        shell: bash
-        run: |
-          composer CycloneDX:make-sbom \
-            --output-format=JSON \
-            --output-file=build/supply-chain/composer-sbom.cdx.json \
-            --omit=dev
+        run: composer global require --no-interaction --no-progress cyclonedx/cyclonedx-php-composer
 
-      - name: Upload supply-chain reports
+      - name: Generate CycloneDX SBOM
+        run: |
+          composer CycloneDX:make-sbom --output-format=JSON --output-file=build/supply-chain/composer-sbom.cdx.json --omit=dev
+          composer CycloneDX:make-sbom --output-format=XML --output-file=build/supply-chain/composer-sbom.cdx.xml --omit=dev
+
+      - name: Publish supply-chain reports
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: supply-chain-reports
+          name: Supply-chain reports
           path: build/supply-chain/
           if-no-files-found: error
 
       - name: Fail on Composer vulnerabilities
         if: steps.composer-audit.outputs.exit_code != '0'
-        shell: bash
         run: |
-          echo "Composer audit reported security advisories. Abandoned packages are reported separately and do not fail this workflow. See the uploaded supply-chain-reports artifact for details."
+          echo 'Composer audit reported security advisories. Abandoned packages are reported separately and do not fail this workflow. See the uploaded supply-chain reports artifact for details.'
           exit 1

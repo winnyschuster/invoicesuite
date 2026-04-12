@@ -1,7 +1,15 @@
-name: Update Documentation
+name: Build Documentation
 
 on:
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
 
 env:
   PHPDOCUMENTORURL: https://phpdoc.org/phpDocumentor.phar
@@ -11,56 +19,70 @@ jobs:
   build:
     permissions:
       contents: read
-    runs-on: "ubuntu-24.04"
+    runs-on: ubuntu-24.04
 
     steps:
-      - name: Checkout Sources
+      - name: Checkout sources
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          fetch-tags: true
 
-      - name: Setup PHP with PECL extension
+      - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.5"
+          php-version: '8.5'
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, bcmath, intl, gd, exif, iconv, imagick, json, xdebug
           coverage: none
 
-      - name: Get Composer Cache Directory
+      - name: Get Composer cache directory
         id: composer-cache
-        run: |
-          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/cache@v5
+      - name: Cache Composer dependencies
+        uses: actions/cache@v5
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-8.5-composer-${{ hashFiles('**/composer.json') }}
+          key: ${{ runner.os }}-8.5-composer-${{ hashFiles('**/composer.json', '**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-8.5-composer-${{ hashFiles('**/composer.json') }}
             ${{ runner.os }}-8.5-composer-
 
-      - name: Install composer dependencies
+      - name: Install Composer dependencies
         run: |
           composer config -g github-oauth.github.com ${{ secrets.GITHUB_TOKEN }}
-          composer update --no-interaction --prefer-dist --no-progress
 
-      - name: Prepare Directories
-        run: |
-          mkdir build/builddoc
-          mkdir build/doc
-          mkdir build/coverage
-          mkdir build/coverage-html
-          mkdir build/logs
-          mkdir build/dist
-          mkdir build/phpdoc
+          if [ -f composer.lock ]; then
+            composer install --no-interaction --prefer-dist --no-progress
+          else
+            composer update --no-interaction --prefer-dist --no-progress
+          fi
 
-      - name: Documentation
+      - name: Prepare build directories
         run: |
-          wget $PHPDOCUMENTORURL -O $PHPDOCUMENTORFILENAME
-          chmod +x $PHPDOCUMENTORFILENAME
+          mkdir -p build/builddoc
+          mkdir -p build/dist
+          mkdir -p build/doc
+          mkdir -p build/coverage
+          mkdir -p build/coverage-html
+          mkdir -p build/logs
+          mkdir -p build/phpdoc
+
+      - name: Generate API documentation
+        run: |
+          wget "$PHPDOCUMENTORURL" -O "$PHPDOCUMENTORFILENAME"
+          chmod +x "$PHPDOCUMENTORFILENAME"
           cd build
-          php ../$PHPDOCUMENTORFILENAME
+          php "../$PHPDOCUMENTORFILENAME"
           cd ..
-          rm -f $PHPDOCUMENTORFILENAME
+          rm -f "$PHPDOCUMENTORFILENAME"
 
-      - name: Deploy
-        run: |
-          zip -r build/dist/doc.zip build/doc
+      - name: Package documentation artifacts
+        run: zip -r build/dist/doc.zip build/doc
+
+      - name: Publish documentation artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: Documentation artifact
+          path: build/dist/doc.zip
+          if-no-files-found: error
