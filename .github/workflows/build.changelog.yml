@@ -9,22 +9,23 @@ on:
   workflow_dispatch:
 
 env:
-  GH_PAT: ${{ secrets.UPDATEWIKITOKEN }}
-  TARGET_BRANCH: ${{ github.event_name == 'workflow_dispatch' && github.ref_name || github.event.repository.default_branch }}
+  TARGET_BRANCH: ${{ github.event_name == 'workflow_dispatch' && github.ref_type == 'branch' && github.ref_name || github.event.repository.default_branch }}
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name || github.run_id }}
+  group: ${{ github.workflow }}-${{ github.event_name == 'workflow_dispatch' && github.ref_type == 'branch' && github.ref_name || github.event.repository.default_branch }}
   cancel-in-progress: true
 
 jobs:
   updatechangelog:
-    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     permissions:
       contents: write
-    runs-on: "ubuntu-24.04"
+    runs-on: ubuntu-24.04
 
     steps:
-      - name: Checkout Sources
+      - name: Checkout sources
         uses: actions/checkout@v6
         with:
           token: ${{ secrets.UPDATEWIKITOKEN }}
@@ -32,19 +33,19 @@ jobs:
           fetch-tags: true
           ref: ${{ env.TARGET_BRANCH }}
 
-      - name: Setup PHP with PECL extension
+      - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.5"
+          php-version: '8.5'
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, bcmath, intl, gd, exif, iconv, imagick, json, xdebug
           coverage: none
 
-      - name: Get Composer Cache Directory
+      - name: Get Composer cache directory
         id: composer-cache
-        run: |
-          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/cache@v5
+      - name: Cache Composer dependencies
+        uses: actions/cache@v5
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-8.5-composer-${{ hashFiles('**/composer.json') }}
@@ -52,24 +53,28 @@ jobs:
             ${{ runner.os }}-8.5-composer-${{ hashFiles('**/composer.json') }}
             ${{ runner.os }}-8.5-composer-
 
-      - name: Install composer dependencies
+      - name: Install Composer dependencies
         run: |
           composer config -g github-oauth.github.com ${{ secrets.GITHUB_TOKEN }}
           composer update --no-interaction --prefer-dist --no-progress
 
-      - name: Update ChangeLog
+      - name: Update CHANGELOG.md
         run: |
           php -f make/genchangelog.php all
+
           if [ ! -f make/CHANGELOG.md ]; then
             echo "No CHANGELOG.md was generated. Skipping update."
             exit 0
           fi
+
           rm -f CHANGELOG.md
           mv -f make/CHANGELOG.md .
+
           git config user.name "HorstOeko"
           git config user.email "horstoeko@erling.com.de"
+
           if [ -n "$(git status --porcelain)" ]; then
-            git add ./CHANGELOG.md
+            git add CHANGELOG.md
             git commit -m "[DOC] Updated CHANGELOG.md"
             git push origin HEAD:${{ env.TARGET_BRANCH }}
           else
