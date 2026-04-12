@@ -7,8 +7,10 @@ assignees: horstoeko
 
 ---
 
+Please answer all questions in this template as completely as possible. Bug reports with missing or incomplete information may not be processed.
+
 **Describe the bug**
-A clear and concise description of what the bug is.
+A clear and concise description of the bug.
 
 **To reproduce**
 Steps to reproduce the behavior:
@@ -21,10 +23,10 @@ Steps to reproduce the behavior:
 A clear and concise description of what you expected to happen.
 
 **Screenshots**
-If applicable, add screenshots to help explain your problem.
+If applicable, add screenshots to help explain the problem.
 
 **Sample code**
-If applicable, add sample code to help explain your problem.
+If applicable, add sample code to help explain the problem.
 
 **Additional information**
 - OS: [e.g. Windows, Linux, macOS]

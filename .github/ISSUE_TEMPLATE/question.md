@@ -7,6 +7,8 @@ assignees: horstoeko
 
 ---
 
+Please answer all questions in this template as completely as possible. Questions with missing or incomplete information may not be processed.
+
 **Your question**
 A clear and concise question.
 

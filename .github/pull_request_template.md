@@ -1,6 +1,8 @@
 # Description
 
-Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change.
+Please answer all questions in this template as completely as possible. Pull requests with missing or incomplete information will not be reviewed or merged.
+
+Please include a summary of the change and which issue is fixed. Also include the relevant motivation and context. List any dependencies that are required for this change.
 
 Fixes # (issue)
 
@@ -15,7 +17,7 @@ Please delete options that are not relevant.
 
 ## How has this been tested?
 
-Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce them. Please also list any relevant details for your test configuration.
+Please describe the tests that you ran to verify your changes. Provide instructions so the changes can be reproduced. Also list any relevant details about your test configuration.
 
 - [ ] Test A
 - [ ] Test B
@@ -28,12 +30,15 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 
 ## Checklist
 
-Pull requests are only accepted if the coding style has been checked before committing by running:
+Pull requests are only reviewed and merged when all relevant checks are in a clean state. This includes coding style, tests, and any other checks required by the project.
+
+The coding style must be checked before committing by running:
 
 ```bash
 composer checkstyle:run
 ```
 
+- [ ] I answered all questions in this template completely
 - [ ] I ran `composer checkstyle:run` before committing and the coding style check passed
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my own code
