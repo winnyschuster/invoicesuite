@@ -111,8 +111,8 @@ class InvoiceSuitePeppol30InvoiceProviderReader extends InvoiceSuiteAbstractDocu
         $this->getDocumentNo($newDocumentNo);
         $newDocumentDTO->setNumber($newDocumentNo);
 
-        $this->getDocumentType($newDocuemntType);
-        $newDocumentDTO->setType($newDocuemntType);
+        $this->getDocumentType($newDocumentType);
+        $newDocumentDTO->setType($newDocumentType);
 
         $this->getDocumentDescription($newDocumentDescription);
         $newDocumentDTO->setDescription($newDocumentDescription);
