@@ -26,7 +26,9 @@
         "sort-packages": true,
         "audit": {
             "ignore": {
-                "CVE-2026-24765": "Ignore CVE-2026-24765 temporary"
+                "CVE-2026-24765": "Ignore CVE-2026-24765 temporary",
+                "PKSA-z3gr-8qht-p93v": "Ignore CVE-2026-24765 temporary",
+                "GHSA-vvj3-c3rp-c85p": "Ignore CVE-2026-24765 temporary"
             }
         }
     },
