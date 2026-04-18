@@ -1,3 +1,17 @@
+## v0.0.7
+
+``Previous version v0.0.6``
+
+| Type | Hash    | Date    | Author  | Subject  | Issue(s)
+| :--- | :------ | :------ | :------ | :------- | :-----------: 
+| :new:  | [7a5fc4c9](https://github.com/horstoeko/invoicesuite/commit/7a5fc4c9) | 2026-04-18 11:50:33 CEST | HorstOeko | [ENH] Added InvoiceSuiteDocumentReader::toDTO() and InvoiceSuiteDocumentBuilder::fromDTO() | 
+| :new:  | [9a1b380e](https://github.com/horstoeko/invoicesuite/commit/9a1b380e) | 2026-04-18 10:50:31 CEST | HorstOeko | [ENH] Added JsonSerializable to DTOs | 
+| :new:  | [fb24d15f](https://github.com/horstoeko/invoicesuite/commit/fb24d15f) | 2026-04-18 09:25:21 CEST | HorstOeko | [ENH] Added version numbers to format providers | 
+| :new:  | [29beed57](https://github.com/horstoeko/invoicesuite/commit/29beed57) | 2026-04-18 08:08:35 CEST | HorstOeko | [ENH] Imprved FattruaPA-Support (Beta) | 
+| :new:  | [6dea5ef1](https://github.com/horstoeko/invoicesuite/commit/6dea5ef1) | 2026-04-17 05:13:33 CEST | HorstOeko | [ENH] Improved FatturaPA-Provider (Beta) | 
+
+:exclamation: _There are 9 internal commit(s)_
+
 ## v0.0.6
 
 :exclamation: _There are 7 internal commit(s)_
