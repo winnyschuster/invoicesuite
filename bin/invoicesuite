@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use horstoeko\invoicesuite\console\InvoiceSuiteConsoleApplication;
+
+$autoloadLocations = array(
+    getcwd() . '/vendor/autoload.php',
+    getcwd() . '/../../autoload.php',
+    __DIR__ . '/vendor/autoload.php',
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/../../../autoload.php',
+    __DIR__ . '/../../autoload.php',
+);
+
+$autoloaderFound = false;
+
+foreach ($autoloadLocations as $autoloadLocation) {
+    if (is_file($autoloadLocation)) {
+        require_once($autoloadLocation);
+        $autoloaderFound = true;
+        break;
+    }
+}
+
+if (!$autoloaderFound) {
+    fwrite(STDERR,
+        'You must set up the project dependencies, run the following commands:' . PHP_EOL .
+        'curl -s https://getcomposer.org/installer | php' . PHP_EOL .
+        'php composer.phar install' . PHP_EOL
+    );
+    exit(254);
+}
+
+$application = new InvoiceSuiteConsoleApplication();
+exit($application->run());

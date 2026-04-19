@@ -120,3 +120,4 @@ phpstan.txt
 /src/cache/
 
 !/assets/logo.png
+!/bin
