@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\console\commands;
 
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
-use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use RuntimeException;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Input\InputArgument;
@@ -44,7 +43,6 @@ class InvoiceSuiteMakeProviderCommand extends InvoiceSuiteAbstractCommand
         $this->addArgument('provider-class', InputArgument::REQUIRED, 'Provider class name');
         $this->addOption('unique-id', null, InputOption::VALUE_OPTIONAL, 'Provider unique id');
         $this->addOption('description', null, InputOption::VALUE_OPTIONAL, 'Provider description');
-        $this->addOption('root-class', null, InputOption::VALUE_OPTIONAL, 'Root class name');
         $this->addOption('force', 'f', InputOption::VALUE_NONE, 'Overwrite existing files');
     }
 
@@ -58,21 +56,16 @@ class InvoiceSuiteMakeProviderCommand extends InvoiceSuiteAbstractCommand
      */
     protected function handle(): int
     {
-        $inpArgNamespace = $this->getStringArgument('namespace');
-        $inpArgDirectory = $this->ensureDirectoryExists($this->getStringArgument('directory'));
-        $inpArgProviderClassName = $this->getStringArgument('provider-class');
+        $inpArgNamespace = $this->getRequiredStringArgument('namespace');
+        $inpArgDirectory = $this->getDirectoryArgument('directory');
+        $inpArgProviderClassName = $this->getRequiredStringArgument('provider-class');
 
         $inpOptionProviderUniqueId = $this->getStringOption('unique-id', strtolower($inpArgProviderClassName));
         $inpOptionProviderDescription = $this->getStringOption('description', strtolower($inpArgProviderClassName));
-        $inpOptionRootClassName = $this->getStringOption('root-class');
         $inpOptionforce = $this->getBoolOption('force');
 
         $newReaderClassName = $inpArgProviderClassName . 'Reader';
         $newBuilderClassName = $inpArgProviderClassName . 'Builder';
-
-        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$inpArgNamespace, $inpArgProviderClassName])) {
-            throw new RuntimeException('Namespace and provider class must not be empty.');
-        }
 
         $existingTemplateDirectory = InvoiceSuitePathUtils::combineAllPaths(dirname(__DIR__), 'templates');
         $newProviderPath = InvoiceSuitePathUtils::combinePathWithFile($inpArgDirectory, $inpArgProviderClassName . '.php');
@@ -88,7 +81,6 @@ class InvoiceSuiteMakeProviderCommand extends InvoiceSuiteAbstractCommand
             '{{BUILDER_CLASS_NAME_FQCN}}' => '\\' . $inpArgNamespace . '\\' . $newBuilderClassName,
             '{{PROVIDER_UNIQUE_ID}}' => $inpOptionProviderUniqueId,
             '{{PROVIDER_DESCRIPTION}}' => $inpOptionProviderDescription,
-            '{{ROOT_CLASS_NAME}}' => $inpOptionRootClassName,
         ];
 
         $this->writeTemplate(InvoiceSuitePathUtils::combinePathWithFile($existingTemplateDirectory, 'provider.tpl'), $newProviderPath, $myReplacements, $inpOptionforce);

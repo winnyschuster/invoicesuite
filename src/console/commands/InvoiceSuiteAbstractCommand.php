@@ -11,6 +11,9 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\console\commands;
 
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
+use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use RuntimeException;
 use Symfony\Component\Console\Command\Command;
@@ -129,6 +132,26 @@ abstract class InvoiceSuiteAbstractCommand extends Command
     }
 
     /**
+     * Get a string argument. The argument-value is required.
+     *
+     * @param  string $name
+     * @return string
+     *
+     * @throws ConsoleInvalidArgumentException
+     * @throws RuntimeException
+     */
+    protected function getRequiredStringArgument(string $name): string
+    {
+        $value = $this->getStringArgument($name);
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($value)) {
+            throw new RuntimeException(sprintf('Value for option %s must be given', $name));
+        }
+
+        return $value;
+    }
+
+    /**
      * Get a string option.
      *
      * @param  string $name
@@ -151,6 +174,26 @@ abstract class InvoiceSuiteAbstractCommand extends Command
         }
 
         throw new RuntimeException(sprintf('Option "%s" must be a string.', $name));
+    }
+
+    /**
+     * Get a string option. The option-value is required.
+     *
+     * @param  string $name
+     * @return string
+     *
+     * @throws ConsoleInvalidArgumentException
+     * @throws RuntimeException
+     */
+    protected function getRequiredStringOption(string $name): string
+    {
+        $value = $this->getStringOption($name);
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($value)) {
+            throw new RuntimeException(sprintf('Value for option %s must be given', $name));
+        }
+
+        return $value;
     }
 
     /**
@@ -184,6 +227,66 @@ abstract class InvoiceSuiteAbstractCommand extends Command
     }
 
     /**
+     * Get directory argument. Directory must not be empty and will be created if missing
+     *
+     * @param  string $name
+     * @return string
+     *
+     * @throws ConsoleInvalidArgumentException
+     * @throws RuntimeException
+     */
+    protected function getDirectoryArgument(string $name): string
+    {
+        return $this->ensureDirectoryExists($this->getStringArgument($name));
+    }
+
+    /**
+     * Get directory option. Directory must not be empty and will be created if missing
+     *
+     * @param  string $name
+     * @return string
+     *
+     * @throws ConsoleInvalidArgumentException
+     * @throws RuntimeException
+     */
+    protected function getDirectoryOption(string $name): string
+    {
+        return $this->ensureDirectoryExists($this->getStringOption($name));
+    }
+
+    /**
+     * Get file argument. File must not be empty and must exist
+     *
+     * @param  string $name
+     * @return string
+     *
+     * @throws ConsoleInvalidArgumentException
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws RuntimeException
+     */
+    protected function getFileArgument(string $name): string
+    {
+        return $this->ensureFileExists($this->getStringArgument($name));
+    }
+
+    /**
+     * Get file option. File must not be empty and must exist
+     *
+     * @param  string $name
+     * @return string
+     *
+     * @throws ConsoleInvalidArgumentException
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws RuntimeException
+     */
+    protected function getFileOption(string $name): string
+    {
+        return $this->ensureFileExists($this->getStringOption($name));
+    }
+
+    /**
      * Ensure that a directory exists.
      *
      * @param  string $directory
@@ -202,5 +305,28 @@ abstract class InvoiceSuiteAbstractCommand extends Command
         }
 
         return $directory;
+    }
+
+    /**
+     * Ensure that a fileexists.
+     *
+     * @param  string $filename
+     * @return string
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws RuntimeException
+     */
+    protected function ensureFileExists(string $filename): string
+    {
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($filename)) {
+            throw new RuntimeException('The file name must not be empty.');
+        }
+
+        if (!InvoiceSuiteFileUtils::isReadableFilePath($filename)) {
+            throw new InvoiceSuiteFileNotReadableException($filename);
+        }
+
+        return $filename;
     }
 }
