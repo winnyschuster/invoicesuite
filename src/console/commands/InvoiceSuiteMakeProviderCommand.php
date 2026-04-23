@@ -91,7 +91,7 @@ class InvoiceSuiteMakeProviderCommand extends InvoiceSuiteAbstractCommand
         $this->outputLineLF(sprintf('<info>Created:</info> %s', $newReaderPath));
         $this->outputLineLF(sprintf('<info>Created:</info> %s', $newBuilderPath));
 
-        return self::SUCCESS;
+        return $this->returnSuccess();
     }
 
     /**
@@ -101,11 +101,11 @@ class InvoiceSuiteMakeProviderCommand extends InvoiceSuiteAbstractCommand
      * @param  string               $targetPath
      * @param  array<string,string> $replacements
      * @param  bool                 $force
-     * @return void
+     * @return static
      *
      * @throws RuntimeException
      */
-    protected function writeTemplate(string $templatePath, string $targetPath, array $replacements, bool $force): void
+    protected function writeTemplate(string $templatePath, string $targetPath, array $replacements, bool $force): static
     {
         if (is_file($targetPath) && false === $force) {
             throw new RuntimeException(sprintf('Target file "%s" already exists. Use --force to overwrite.', $targetPath));
@@ -122,5 +122,7 @@ class InvoiceSuiteMakeProviderCommand extends InvoiceSuiteAbstractCommand
         if (false === file_put_contents($targetPath, $targetContent)) {
             throw new RuntimeException(sprintf('Unable to write target file "%s".', $targetPath));
         }
+
+        return $this;
     }
 }

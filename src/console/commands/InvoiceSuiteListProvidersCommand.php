@@ -59,8 +59,6 @@ class InvoiceSuiteListProvidersCommand extends InvoiceSuiteAbstractCommand
             $this->getRegisteredDocumentFormatProviders()
         );
 
-        $this->outputTable(['Provider', 'Description', 'Content-Type', 'PDF', 'XSD'], $rowsToOutput);
-
-        return self::SUCCESS;
+        return $this->outputTable(['Provider', 'Description', 'Content-Type', 'PDF', 'XSD'], $rowsToOutput)->returnSuccess();
     }
 }

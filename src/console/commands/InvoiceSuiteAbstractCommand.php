@@ -11,8 +11,10 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\console\commands;
 
+use finfo;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use RuntimeException;
@@ -67,6 +69,26 @@ abstract class InvoiceSuiteAbstractCommand extends Command
      * @return int
      */
     abstract protected function handle(): int;
+
+    /**
+     * Return the result code for "success"
+     *
+     * @return int
+     */
+    protected function returnSuccess(): int
+    {
+        return self::SUCCESS;
+    }
+
+    /**
+     * Return the result code for "failure"
+     *
+     * @return int
+     */
+    protected function returnFailure(): int
+    {
+        return self::FAILURE;
+    }
 
     /**
      * Writes a message to the output and adds a newline at the end.
@@ -328,5 +350,78 @@ abstract class InvoiceSuiteAbstractCommand extends Command
         }
 
         return $filename;
+    }
+
+    /**
+     * Detect the MIME type of a file.
+     *
+     * @param  string $filename
+     * @return string
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws RuntimeException
+     */
+    protected function detectMimeTypeByFilename(string $filename): string
+    {
+        $filename = $this->ensureFileExists($filename);
+
+        $fileInfo = new finfo(FILEINFO_MIME_TYPE);
+        $fileMimeType = $fileInfo->file($filename, FILEINFO_MIME_TYPE);
+
+        if (false === $fileMimeType) {
+            throw new RuntimeException(sprintf('Unable to detect MIME type for file "%s".', $filename));
+        }
+
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($fileMimeType)) {
+            throw new RuntimeException(sprintf('Unable to detect MIME type for file "%s".', $filename));
+        }
+
+        return $fileMimeType;
+    }
+
+    /**
+     * Check if given file is a XML file
+     *
+     * @param  string $filename
+     * @return bool
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws RuntimeException
+     */
+    protected function isXmlFilename(string $filename): bool
+    {
+        return InvoiceSuiteArrayUtils::inArrayNoCase(['application/xml', 'text/xml'], $this->detectMimeTypeByFilename($filename));
+    }
+
+    /**
+     * Check if given file is a PDF file
+     *
+     * @param  string $filename
+     * @return bool
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws RuntimeException
+     */
+    protected function isPdfFilename(string $filename): bool
+    {
+        return InvoiceSuiteArrayUtils::inArrayNoCase(['application/pdf'], $this->detectMimeTypeByFilename($filename));
+    }
+
+    /**
+     * Check if given file is a JSON file
+     *
+     * @param  string $filename
+     * @return bool
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws RuntimeException
+     */
+    protected function isJsonFilename(string $filename): bool
+    {
+        return InvoiceSuiteArrayUtils::inArrayNoCase(['application/json'], $this->detectMimeTypeByFilename($filename));
     }
 }

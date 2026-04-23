@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\console;
 
+use horstoeko\invoicesuite\console\commands\InvoiceSuiteDetectCommand;
 use horstoeko\invoicesuite\console\commands\InvoiceSuiteListProvidersCommand;
 use horstoeko\invoicesuite\console\commands\InvoiceSuiteMakeProviderCommand;
 use horstoeko\invoicesuite\utils\InvoiceSuitePackageVersion;
@@ -50,5 +51,6 @@ class InvoiceSuiteConsoleApplication extends Application
     {
         $this->addCommand(new InvoiceSuiteListProvidersCommand());
         $this->addCommand(new InvoiceSuiteMakeProviderCommand());
+        $this->addCommand(new InvoiceSuiteDetectCommand());
     }
 }
