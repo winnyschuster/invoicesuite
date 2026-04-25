@@ -353,6 +353,51 @@ abstract class InvoiceSuiteAbstractCommand extends Command
     }
 
     /**
+     * Ensure that the target file can be created without unintended overwrite.
+     *
+     * @param  string $filename
+     * @param  bool   $forceOverwrite
+     * @return static
+     *
+     * @throws RuntimeException
+     */
+    protected function ensureTargetFileCanBeCreated(string $filename, bool $forceOverwrite = false): static
+    {
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($filename)) {
+            throw new RuntimeException('The file name must not be empty.');
+        }
+
+        if (InvoiceSuiteFileUtils::isReadableFilePath($filename) && false === $forceOverwrite) {
+            throw new RuntimeException(sprintf('Target file "%s" already exists. Use --force to overwrite.', $filename));
+        }
+
+        return $this;
+    }
+
+    /**
+     * Ensure that the parent directory for a target file exists.
+     *
+     * @param  string $filename
+     * @return static
+     *
+     * @throws RuntimeException
+     */
+    protected function ensureTargetFileDirectoryExists(string $filename): static
+    {
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($filename)) {
+            throw new RuntimeException('The file name must not be empty.');
+        }
+
+        $targetDirectory = dirname($filename);
+
+        if ('.' !== $targetDirectory) {
+            $this->ensureDirectoryExists($targetDirectory);
+        }
+
+        return $this;
+    }
+
+    /**
      * Detect the MIME type of a file.
      *
      * @param  string $filename
@@ -390,7 +435,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
      * @throws InvoiceSuiteFileNotReadableException
      * @throws RuntimeException
      */
-    protected function isXmlFilename(string $filename): bool
+    protected function isXmlFile(string $filename): bool
     {
         return InvoiceSuiteArrayUtils::inArrayNoCase(['application/xml', 'text/xml'], $this->detectMimeTypeByFilename($filename));
     }
@@ -405,7 +450,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
      * @throws InvoiceSuiteFileNotReadableException
      * @throws RuntimeException
      */
-    protected function isPdfFilename(string $filename): bool
+    protected function isPdfFile(string $filename): bool
     {
         return InvoiceSuiteArrayUtils::inArrayNoCase(['application/pdf'], $this->detectMimeTypeByFilename($filename));
     }
@@ -420,8 +465,65 @@ abstract class InvoiceSuiteAbstractCommand extends Command
      * @throws InvoiceSuiteFileNotReadableException
      * @throws RuntimeException
      */
-    protected function isJsonFilename(string $filename): bool
+    protected function isJsonFile(string $filename): bool
     {
         return InvoiceSuiteArrayUtils::inArrayNoCase(['application/json'], $this->detectMimeTypeByFilename($filename));
+    }
+
+    /**
+     * Ensure given file is an XML file
+     *
+     * @param  string $filename
+     * @return static
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws RuntimeException
+     */
+    protected function ensureIsXmlFile(string $filename): static
+    {
+        if (!$this->isXmlFile($filename)) {
+            throw new RuntimeException(sprintf('Input file "%s" is not an XML file.', $filename));
+        }
+
+        return $this;
+    }
+
+    /**
+     * Ensure given file is an PDF file
+     *
+     * @param  string $filename
+     * @return static
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws RuntimeException
+     */
+    protected function ensureIsPdfFile(string $filename): static
+    {
+        if (!$this->isPdfFile($filename)) {
+            throw new RuntimeException(sprintf('Input file "%s" is not an PDF file.', $filename));
+        }
+
+        return $this;
+    }
+
+    /**
+     * Ensure given file is an JSON file
+     *
+     * @param  string $filename
+     * @return static
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws RuntimeException
+     */
+    protected function ensureIsJsonFile(string $filename): static
+    {
+        if (!$this->isJsonFile($filename)) {
+            throw new RuntimeException(sprintf('Input file "%s" is not an JSON file.', $filename));
+        }
+
+        return $this;
     }
 }
