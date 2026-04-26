@@ -71,7 +71,7 @@ class InvoiceSuiteVisualizeCommand extends InvoiceSuiteAbstractCommand
     {
         $inpArgInputFilename = $this->getSourceXmlFileArgument('input-file');
         $inpArgOutputFilename = $this->getTargetFileArgument('output-file', $this->getBoolOption('force'));
-        $inpOptionFormat = InvoiceSuiteStringUtils::lower($this->getStringOption('format', 'pdf'));
+        $inpOptionFormat = $this->getStringOption('format', 'pdf');
         $inpOptionTemplate = $this->getStringOption('template');
 
         if (!InvoiceSuiteArrayUtils::inArrayNoCase(['pdf', 'html'], $inpOptionFormat)) {
@@ -86,7 +86,7 @@ class InvoiceSuiteVisualizeCommand extends InvoiceSuiteAbstractCommand
             $visualizer->setDefaultTemplate();
         }
 
-        if ('pdf' === $inpOptionFormat) {
+        if (InvoiceSuiteStringUtils::equalsNoCase($inpOptionFormat, 'pdf')) {
             $visualizer->renderPdfFile($inpArgOutputFilename);
         } else {
             $markup = $visualizer->renderMarkup();
