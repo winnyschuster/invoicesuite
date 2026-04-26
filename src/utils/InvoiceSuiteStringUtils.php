@@ -141,4 +141,28 @@ class InvoiceSuiteStringUtils
     {
         return ucfirst($str);
     }
+
+    /**
+     * Binary safe string comparison
+     *
+     * @param  string $str1
+     * @param  string $str2
+     * @return bool
+     */
+    public static function equals(string $str1, string $str2): bool
+    {
+        return 0 === strcmp($str1, $str2);
+    }
+
+    /**
+     * Binary safe case-insensitive string comparison
+     *
+     * @param  string $str1
+     * @param  string $str2
+     * @return bool
+     */
+    public static function equalsNoCase(string $str1, string $str2): bool
+    {
+        return 0 === strcasecmp($str1, $str2);
+    }
 }
