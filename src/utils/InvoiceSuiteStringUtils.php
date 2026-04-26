@@ -97,4 +97,48 @@ class InvoiceSuiteStringUtils
 
         return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($randomBytes), 4));
     }
+
+    /**
+     * Lower a string
+     *
+     * @param  string $str
+     * @return string
+     */
+    public static function lower(string $str): string
+    {
+        return strtolower($str);
+    }
+
+    /**
+     * Upper a string
+     *
+     * @param  string $str
+     * @return string
+     */
+    public static function upper(string $str): string
+    {
+        return strtoupper($str);
+    }
+
+    /**
+     * Make a string's first character lowercase
+     *
+     * @param  string $str
+     * @return string
+     */
+    public static function lcFirst(string $str): string
+    {
+        return lcfirst($str);
+    }
+
+    /**
+     * Make a string's first character uppercase
+     *
+     * @param  string $str
+     * @return string
+     */
+    public static function ucFirst(string $str): string
+    {
+        return ucfirst($str);
+    }
 }
