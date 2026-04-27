@@ -65,32 +65,32 @@ class InvoiceSuiteMakeProviderCommand extends InvoiceSuiteAbstractCommand
         $inpOptionProviderDescription = $this->getStringOption('description', InvoiceSuiteStringUtils::lower($inpArgProviderClassName));
         $inpOptionforce = $this->getBoolOption('force');
 
-        $newReaderClassName = $inpArgProviderClassName . 'Reader';
-        $newBuilderClassName = $inpArgProviderClassName . 'Builder';
+        $newProviderReaderClassName = $inpArgProviderClassName . 'Reader';
+        $newProviderBuilderClassName = $inpArgProviderClassName . 'Builder';
 
         $existingTemplateDirectory = InvoiceSuitePathUtils::combineAllPaths(dirname(__DIR__), 'templates');
         $newProviderPath = InvoiceSuitePathUtils::combinePathWithFile($inpArgDirectory, $inpArgProviderClassName . '.php');
-        $newReaderPath = InvoiceSuitePathUtils::combinePathWithFile($inpArgDirectory, $newReaderClassName . '.php');
-        $newBuilderPath = InvoiceSuitePathUtils::combinePathWithFile($inpArgDirectory, $newBuilderClassName . '.php');
+        $newProviderReaderPath = InvoiceSuitePathUtils::combinePathWithFile($inpArgDirectory, $newProviderReaderClassName . '.php');
+        $newProviderBuilderPath = InvoiceSuitePathUtils::combinePathWithFile($inpArgDirectory, $newProviderBuilderClassName . '.php');
 
         $myReplacements = [
             '{{NAMESPACE}}' => $inpArgNamespace,
             '{{PROVIDER_CLASS_NAME}}' => $inpArgProviderClassName,
-            '{{READER_CLASS_NAME}}' => $newReaderClassName,
-            '{{BUILDER_CLASS_NAME}}' => $newBuilderClassName,
-            '{{READER_CLASS_NAME_FQCN}}' => '\\' . $inpArgNamespace . '\\' . $newReaderClassName,
-            '{{BUILDER_CLASS_NAME_FQCN}}' => '\\' . $inpArgNamespace . '\\' . $newBuilderClassName,
+            '{{READER_CLASS_NAME}}' => $newProviderReaderClassName,
+            '{{BUILDER_CLASS_NAME}}' => $newProviderBuilderClassName,
+            '{{READER_CLASS_NAME_FQCN}}' => '\\' . $inpArgNamespace . '\\' . $newProviderReaderClassName,
+            '{{BUILDER_CLASS_NAME_FQCN}}' => '\\' . $inpArgNamespace . '\\' . $newProviderBuilderClassName,
             '{{PROVIDER_UNIQUE_ID}}' => $inpOptionProviderUniqueId,
             '{{PROVIDER_DESCRIPTION}}' => $inpOptionProviderDescription,
         ];
 
         $this->writeTemplate(InvoiceSuitePathUtils::combinePathWithFile($existingTemplateDirectory, 'provider.tpl'), $newProviderPath, $myReplacements, $inpOptionforce);
-        $this->writeTemplate(InvoiceSuitePathUtils::combinePathWithFile($existingTemplateDirectory, 'provider_reader.tpl'), $newReaderPath, $myReplacements, $inpOptionforce);
-        $this->writeTemplate(InvoiceSuitePathUtils::combinePathWithFile($existingTemplateDirectory, 'provider_builder.tpl'), $newBuilderPath, $myReplacements, $inpOptionforce);
+        $this->writeTemplate(InvoiceSuitePathUtils::combinePathWithFile($existingTemplateDirectory, 'provider_reader.tpl'), $newProviderReaderPath, $myReplacements, $inpOptionforce);
+        $this->writeTemplate(InvoiceSuitePathUtils::combinePathWithFile($existingTemplateDirectory, 'provider_builder.tpl'), $newProviderBuilderPath, $myReplacements, $inpOptionforce);
 
         $this->outputLineLF(sprintf('<info>Created:</info> %s', $newProviderPath));
-        $this->outputLineLF(sprintf('<info>Created:</info> %s', $newReaderPath));
-        $this->outputLineLF(sprintf('<info>Created:</info> %s', $newBuilderPath));
+        $this->outputLineLF(sprintf('<info>Created:</info> %s', $newProviderReaderPath));
+        $this->outputLineLF(sprintf('<info>Created:</info> %s', $newProviderBuilderPath));
 
         return $this->returnSuccess();
     }
