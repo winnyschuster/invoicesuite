@@ -23,6 +23,7 @@ use RuntimeException;
 use Symfony\Component\Console\Exception\InvalidArgumentException as ConsoleInvalidArgumentException;
 use Symfony\Component\Console\Helper\TableSeparator;
 use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
 
 /**
  * Class representing a console command that detects the format of a given file
@@ -46,6 +47,7 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
         $this->setName('invoicesuite:detect');
         $this->setDescription('Detect the format of the given file');
         $this->addArgument('input-file', InputArgument::REQUIRED, 'The file to detect the format of');
+        $this->addOption('output-json', null, InputOption::VALUE_NONE, 'Output results as JSON');
     }
 
     /**
@@ -74,7 +76,7 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
             return $this->handleXml(InvoiceSuiteDocumentReader::createFromFile($inpArgFilename))->returnSuccess();
         }
 
-        return self::SUCCESS;
+        return $this->returnSuccess();
     }
 
     /**
@@ -82,9 +84,28 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
      *
      * @param  InvoiceSuitePdfDocumentReader $pdfReader
      * @return static
+     *
+     * @throws ConsoleInvalidArgumentException
+     * @throws RuntimeException
      */
     protected function handlePdf(InvoiceSuitePdfDocumentReader $pdfReader): static
     {
+        if (true === $this->getBoolOption('output-json')) {
+            return $this->outputLineLF(json_encode([
+                'id' => $pdfReader->getCurrentDocumentFormatProvider()->getUniqueId(),
+                'description' => $pdfReader->getCurrentDocumentFormatProvider()->getDescription(),
+                'documentAttachmentName' => $pdfReader->getInvoiceDocumentAttachment()->getAttachmentFilename(),
+                'documentAttachmentMimeType' => $pdfReader->getInvoiceDocumentAttachment()->getAttachmentMimeType(),
+                'noOfAdditionalAttachments' => count($pdfReader->getAdditionalDocumentAttachments()),
+                'additionalAttachments' => array_map(static function ($attachment) {
+                    return [
+                        'name' => $attachment->getAttachmentFilename(),
+                        'mimeType' => $attachment->getAttachmentMimeType(),
+                    ];
+                }, $pdfReader->getAdditionalDocumentAttachments()),
+            ], JSON_PRETTY_PRINT));
+        }
+
         $tableRows[] = ['ID', $pdfReader->getCurrentDocumentFormatProvider()->getUniqueId()];
         $tableRows[] = ['Description', mb_strimwidth($pdfReader->getCurrentDocumentFormatProvider()->getDescription(), 0, 60, '...')];
         $tableRows[] = [new TableSeparator(), new TableSeparator()];
@@ -115,6 +136,13 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
      */
     protected function handleXml(InvoiceSuiteDocumentReader $xmlOrJsonReader): static
     {
+        if (true === $this->getBoolOption('output-json')) {
+            return $this->outputLineLF(json_encode([
+                'id' => $xmlOrJsonReader->getCurrentDocumentFormatProvider()->getUniqueId(),
+                'description' => $xmlOrJsonReader->getCurrentDocumentFormatProvider()->getDescription(),
+            ], JSON_PRETTY_PRINT));
+        }
+
         $tableRows[] = ['ID', $xmlOrJsonReader->getCurrentDocumentFormatProvider()->getUniqueId()];
         $tableRows[] = ['Description', mb_strimwidth($xmlOrJsonReader->getCurrentDocumentFormatProvider()->getDescription(), 0, 60, '...')];
 
