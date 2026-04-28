@@ -671,6 +671,21 @@ abstract class InvoiceSuiteAbstractCommand extends Command
     }
 
     /**
+     * Check if given file is a XML or JSON file
+     *
+     * @param  string $filename
+     * @return bool
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws RuntimeException
+     */
+    protected function isXmlOrJsonFile(string $filename): bool
+    {
+        return $this->isXmlFile($filename) || $this->isJsonFile($filename);
+    }
+
+    /**
      * Ensure given file is a XML file
      *
      * @param  string $filename
@@ -739,10 +754,10 @@ abstract class InvoiceSuiteAbstractCommand extends Command
      */
     protected function ensureIsXmlOrJsonFile(string $filename): static
     {
-        if ($this->isJsonFile($filename) || $this->isXmlFile($filename)) {
-            return $this;
+        if (!$this->isXmlOrJsonFile($filename)) {
+            throw new RuntimeException(sprintf('Input file "%s" is not a XML or JSON file.', $filename));
         }
 
-        throw new RuntimeException(sprintf('Input file "%s" is not a XML or JSON file.', $filename));
+        return $this;
     }
 }

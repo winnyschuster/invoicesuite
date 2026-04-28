@@ -72,7 +72,7 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
             return $this->handlePdf(InvoiceSuitePdfDocumentReader::createFromFile($inpArgFilename))->returnSuccess();
         }
 
-        if ($this->isXmlFile($inpArgFilename) || $this->isJsonFile($inpArgFilename)) {
+        if ($this->isXmlOrJsonFile($inpArgFilename)) {
             return $this->handleXml(InvoiceSuiteDocumentReader::createFromFile($inpArgFilename))->returnSuccess();
         }
 
