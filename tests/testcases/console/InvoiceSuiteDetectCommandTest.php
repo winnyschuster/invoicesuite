@@ -23,21 +23,21 @@ class InvoiceSuiteDetectCommandTest extends InvoiceSuiteConsoleCommandTestCase
             '--output-json' => true,
         ]);
 
-        self::assertSame(Command::SUCCESS, $exitCode);
+        $this->assertSame(Command::SUCCESS, $exitCode);
 
         $decodedOutput = $this->decodeJsonOutput($commandTester->getDisplay());
 
-        self::assertArrayHasKey('id', $decodedOutput);
-        self::assertIsString($decodedOutput['id']);
-        self::assertSame('zffxcomfort', $decodedOutput['id']);
+        $this->assertArrayHasKey('id', $decodedOutput);
+        $this->assertIsString($decodedOutput['id']);
+        $this->assertSame('zffxcomfort', $decodedOutput['id']);
 
-        self::assertArrayHasKey('description', $decodedOutput);
-        self::assertIsString($decodedOutput['description']);
-        self::assertStringContainsString('EN 16931', $decodedOutput['description']);
+        $this->assertArrayHasKey('description', $decodedOutput);
+        $this->assertIsString($decodedOutput['description']);
+        $this->assertStringContainsString('EN 16931', $decodedOutput['description']);
 
-        self::assertArrayHasKey('error', $decodedOutput);
-        self::assertIsBool($decodedOutput['error']);
-        self::assertFalse($decodedOutput['error']);
+        $this->assertArrayHasKey('error', $decodedOutput);
+        $this->assertIsBool($decodedOutput['error']);
+        $this->assertFalse($decodedOutput['error']);
     }
 
     /**
@@ -53,14 +53,14 @@ class InvoiceSuiteDetectCommandTest extends InvoiceSuiteConsoleCommandTestCase
             'input-file' => $this->getTestAssetFilePath('00_case_comfort_simple.xml'),
         ]);
 
-        self::assertSame(Command::SUCCESS, $exitCode);
+        $this->assertSame(Command::SUCCESS, $exitCode);
 
         $commandOutput = $commandTester->getDisplay();
 
-        self::assertStringContainsString('Info', $commandOutput);
-        self::assertStringContainsString('Value', $commandOutput);
-        self::assertStringContainsString('zffxcomfort', $commandOutput);
-        self::assertStringContainsString('Error', $commandOutput);
+        $this->assertStringContainsString('Info', $commandOutput);
+        $this->assertStringContainsString('Value', $commandOutput);
+        $this->assertStringContainsString('zffxcomfort', $commandOutput);
+        $this->assertStringContainsString('Error', $commandOutput);
     }
 
     /**
@@ -77,51 +77,51 @@ class InvoiceSuiteDetectCommandTest extends InvoiceSuiteConsoleCommandTestCase
             '--output-json' => true,
         ]);
 
-        self::assertSame(Command::SUCCESS, $exitCode);
+        $this->assertSame(Command::SUCCESS, $exitCode);
 
         $decodedOutput = $this->decodeJsonOutput($commandTester->getDisplay());
 
-        self::assertArrayHasKey('id', $decodedOutput);
-        self::assertIsString($decodedOutput['id']);
-        self::assertSame('zffxcomfort', $decodedOutput['id']);
+        $this->assertArrayHasKey('id', $decodedOutput);
+        $this->assertIsString($decodedOutput['id']);
+        $this->assertSame('zffxcomfort', $decodedOutput['id']);
 
-        self::assertArrayHasKey('description', $decodedOutput);
-        self::assertIsString($decodedOutput['description']);
-        self::assertStringContainsString('EN 16931', $decodedOutput['description']);
+        $this->assertArrayHasKey('description', $decodedOutput);
+        $this->assertIsString($decodedOutput['description']);
+        $this->assertStringContainsString('EN 16931', $decodedOutput['description']);
 
-        self::assertArrayHasKey('error', $decodedOutput);
-        self::assertIsBool($decodedOutput['error']);
-        self::assertFalse($decodedOutput['error']);
+        $this->assertArrayHasKey('error', $decodedOutput);
+        $this->assertIsBool($decodedOutput['error']);
+        $this->assertFalse($decodedOutput['error']);
 
-        self::assertArrayHasKey('documentAttachmentName', $decodedOutput);
-        self::assertIsString($decodedOutput['documentAttachmentName']);
-        self::assertSame('factur-x.xml', $decodedOutput['documentAttachmentName']);
+        $this->assertArrayHasKey('documentAttachmentName', $decodedOutput);
+        $this->assertIsString($decodedOutput['documentAttachmentName']);
+        $this->assertSame('factur-x.xml', $decodedOutput['documentAttachmentName']);
 
-        self::assertArrayHasKey('documentAttachmentMimeType', $decodedOutput);
-        self::assertIsString($decodedOutput['documentAttachmentMimeType']);
-        self::assertSame('text/xml', $decodedOutput['documentAttachmentMimeType']);
+        $this->assertArrayHasKey('documentAttachmentMimeType', $decodedOutput);
+        $this->assertIsString($decodedOutput['documentAttachmentMimeType']);
+        $this->assertSame('text/xml', $decodedOutput['documentAttachmentMimeType']);
 
-        self::assertArrayHasKey('noOfAdditionalAttachments', $decodedOutput);
-        self::assertIsInt($decodedOutput['noOfAdditionalAttachments']);
-        self::assertSame(2, $decodedOutput['noOfAdditionalAttachments']);
+        $this->assertArrayHasKey('noOfAdditionalAttachments', $decodedOutput);
+        $this->assertIsInt($decodedOutput['noOfAdditionalAttachments']);
+        $this->assertSame(2, $decodedOutput['noOfAdditionalAttachments']);
 
-        self::assertArrayHasKey('additionalAttachments', $decodedOutput);
-        self::assertIsArray($decodedOutput['additionalAttachments']);
-        self::assertCount(2, $decodedOutput['additionalAttachments']);
+        $this->assertArrayHasKey('additionalAttachments', $decodedOutput);
+        $this->assertIsArray($decodedOutput['additionalAttachments']);
+        $this->assertCount(2, $decodedOutput['additionalAttachments']);
 
-        self::assertArrayHasKey(0, $decodedOutput['additionalAttachments']);
-        self::assertIsArray($decodedOutput['additionalAttachments']);
-        self::assertArrayHasKey('name', $decodedOutput['additionalAttachments'][0]);
-        self::assertArrayHasKey('mimeType', $decodedOutput['additionalAttachments'][0]);
-        self::assertSame('EN16931_Elektron_Aufmass.png', $decodedOutput['additionalAttachments'][0]['name']);
-        self::assertSame('image/png', $decodedOutput['additionalAttachments'][0]['mimeType']);
+        $this->assertArrayHasKey(0, $decodedOutput['additionalAttachments']);
+        $this->assertIsArray($decodedOutput['additionalAttachments']);
+        $this->assertArrayHasKey('name', $decodedOutput['additionalAttachments'][0]);
+        $this->assertArrayHasKey('mimeType', $decodedOutput['additionalAttachments'][0]);
+        $this->assertSame('EN16931_Elektron_Aufmass.png', $decodedOutput['additionalAttachments'][0]['name']);
+        $this->assertSame('image/png', $decodedOutput['additionalAttachments'][0]['mimeType']);
 
-        self::assertArrayHasKey(1, $decodedOutput['additionalAttachments']);
-        self::assertIsArray($decodedOutput['additionalAttachments']);
-        self::assertArrayHasKey('name', $decodedOutput['additionalAttachments'][1]);
-        self::assertArrayHasKey('mimeType', $decodedOutput['additionalAttachments'][1]);
-        self::assertSame('EN16931_Elektron_ElektronRapport.pdf', $decodedOutput['additionalAttachments'][1]['name']);
-        self::assertSame('application/pdf', $decodedOutput['additionalAttachments'][1]['mimeType']);
+        $this->assertArrayHasKey(1, $decodedOutput['additionalAttachments']);
+        $this->assertIsArray($decodedOutput['additionalAttachments']);
+        $this->assertArrayHasKey('name', $decodedOutput['additionalAttachments'][1]);
+        $this->assertArrayHasKey('mimeType', $decodedOutput['additionalAttachments'][1]);
+        $this->assertSame('EN16931_Elektron_ElektronRapport.pdf', $decodedOutput['additionalAttachments'][1]['name']);
+        $this->assertSame('application/pdf', $decodedOutput['additionalAttachments'][1]['mimeType']);
     }
 
     /**
@@ -137,16 +137,16 @@ class InvoiceSuiteDetectCommandTest extends InvoiceSuiteConsoleCommandTestCase
             'input-file' => $this->getTestAssetFilePath('pdf_with_multiple_attachments.pdf'),
         ]);
 
-        self::assertSame(Command::SUCCESS, $exitCode);
+        $this->assertSame(Command::SUCCESS, $exitCode);
 
         $commandOutput = $commandTester->getDisplay();
 
-        self::assertStringContainsString('Info', $commandOutput);
-        self::assertStringContainsString('Value', $commandOutput);
-        self::assertStringContainsString('zffxcomfort', $commandOutput);
-        self::assertStringContainsString('Error', $commandOutput);
-        self::assertStringContainsString('EN16931_Elektron_Aufmass.png', $commandOutput);
-        self::assertStringContainsString('EN16931_Elektron_ElektronRapport.pdf', $commandOutput);
+        $this->assertStringContainsString('Info', $commandOutput);
+        $this->assertStringContainsString('Value', $commandOutput);
+        $this->assertStringContainsString('zffxcomfort', $commandOutput);
+        $this->assertStringContainsString('Error', $commandOutput);
+        $this->assertStringContainsString('EN16931_Elektron_Aufmass.png', $commandOutput);
+        $this->assertStringContainsString('EN16931_Elektron_ElektronRapport.pdf', $commandOutput);
     }
 
     /**
@@ -180,21 +180,21 @@ class InvoiceSuiteDetectCommandTest extends InvoiceSuiteConsoleCommandTestCase
             '--output-json' => true,
         ]);
 
-        self::assertSame(Command::FAILURE, $exitCode);
+        $this->assertSame(Command::FAILURE, $exitCode);
 
         $decodedOutput = $this->decodeJsonOutput($commandTester->getDisplay());
 
-        self::assertArrayHasKey('id', $decodedOutput);
-        self::assertIsString($decodedOutput['id']);
-        self::assertSame('unknown', $decodedOutput['id']);
+        $this->assertArrayHasKey('id', $decodedOutput);
+        $this->assertIsString($decodedOutput['id']);
+        $this->assertSame('unknown', $decodedOutput['id']);
 
-        self::assertArrayHasKey('description', $decodedOutput);
-        self::assertIsString($decodedOutput['description']);
-        self::assertStringContainsString('unknown', $decodedOutput['description']);
+        $this->assertArrayHasKey('description', $decodedOutput);
+        $this->assertIsString($decodedOutput['description']);
+        $this->assertStringContainsString('unknown', $decodedOutput['description']);
 
-        self::assertArrayHasKey('error', $decodedOutput);
-        self::assertIsBool($decodedOutput['error']);
-        self::assertTrue($decodedOutput['error']);
+        $this->assertArrayHasKey('error', $decodedOutput);
+        $this->assertIsBool($decodedOutput['error']);
+        $this->assertTrue($decodedOutput['error']);
     }
 
     /**
@@ -210,14 +210,14 @@ class InvoiceSuiteDetectCommandTest extends InvoiceSuiteConsoleCommandTestCase
             'input-file' => $this->getTestAssetFilePath('99_dummy_attachment_1.dummy'),
         ]);
 
-        self::assertSame(Command::FAILURE, $exitCode);
+        $this->assertSame(Command::FAILURE, $exitCode);
 
         $commandOutput = $commandTester->getDisplay();
 
-        self::assertStringContainsString('Info', $commandOutput);
-        self::assertStringContainsString('Value', $commandOutput);
-        self::assertStringContainsString('unknown', $commandOutput);
-        self::assertStringContainsString('Error', $commandOutput);
-        self::assertStringContainsString('Yes', $commandOutput);
+        $this->assertStringContainsString('Info', $commandOutput);
+        $this->assertStringContainsString('Value', $commandOutput);
+        $this->assertStringContainsString('unknown', $commandOutput);
+        $this->assertStringContainsString('Error', $commandOutput);
+        $this->assertStringContainsString('Yes', $commandOutput);
     }
 }

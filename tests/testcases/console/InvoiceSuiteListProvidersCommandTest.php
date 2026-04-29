@@ -21,7 +21,7 @@ class InvoiceSuiteListProvidersCommandTest extends InvoiceSuiteConsoleCommandTes
             '--output-json' => true,
         ]);
 
-        self::assertSame(Command::SUCCESS, $exitCode);
+        $this->assertSame(Command::SUCCESS, $exitCode);
 
         $decodedOutput = $this->decodeJsonOutput($commandTester->getDisplay());
 
@@ -46,14 +46,14 @@ class InvoiceSuiteListProvidersCommandTest extends InvoiceSuiteConsoleCommandTes
 
         $exitCode = $commandTester->execute([]);
 
-        self::assertSame(Command::SUCCESS, $exitCode);
+        $this->assertSame(Command::SUCCESS, $exitCode);
 
         $commandOutput = $commandTester->getDisplay();
 
-        self::assertStringContainsString('│ Provider', $commandOutput);
-        self::assertStringContainsString('│ Description', $commandOutput);
-        self::assertStringContainsString('│ Content-Type', $commandOutput);
-        self::assertStringContainsString('│ PDF', $commandOutput);
-        self::assertStringContainsString('│ XSD', $commandOutput);
+        $this->assertStringContainsString('│ Provider', $commandOutput);
+        $this->assertStringContainsString('│ Description', $commandOutput);
+        $this->assertStringContainsString('│ Content-Type', $commandOutput);
+        $this->assertStringContainsString('│ PDF', $commandOutput);
+        $this->assertStringContainsString('│ XSD', $commandOutput);
     }
 }

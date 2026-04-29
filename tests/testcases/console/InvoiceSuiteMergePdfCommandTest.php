@@ -25,7 +25,7 @@ class InvoiceSuiteMergePdfCommandTest extends InvoiceSuiteConsoleCommandTestCase
             'output-file' => $this->getTempFilePath('output.pdf'),
         ]);
 
-        self::assertSame(Command::SUCCESS, $exitCode);
+        $this->assertSame(Command::SUCCESS, $exitCode);
 
         $commandOutput = $commandTester->getDisplay();
 
@@ -40,21 +40,21 @@ class InvoiceSuiteMergePdfCommandTest extends InvoiceSuiteConsoleCommandTestCase
             '--output-json' => true,
         ]);
 
-        self::assertSame(Command::SUCCESS, $exitCode);
+        $this->assertSame(Command::SUCCESS, $exitCode);
 
         $decodedOutput = $this->decodeJsonOutput($commandTester->getDisplay());
 
-        self::assertArrayHasKey('id', $decodedOutput);
-        self::assertIsString($decodedOutput['id']);
-        self::assertSame('zffxcomfort', $decodedOutput['id']);
+        $this->assertArrayHasKey('id', $decodedOutput);
+        $this->assertIsString($decodedOutput['id']);
+        $this->assertSame('zffxcomfort', $decodedOutput['id']);
 
-        self::assertArrayHasKey('description', $decodedOutput);
-        self::assertIsString($decodedOutput['description']);
-        self::assertStringContainsString('EN 16931', $decodedOutput['description']);
+        $this->assertArrayHasKey('description', $decodedOutput);
+        $this->assertIsString($decodedOutput['description']);
+        $this->assertStringContainsString('EN 16931', $decodedOutput['description']);
 
-        self::assertArrayHasKey('error', $decodedOutput);
-        self::assertIsBool($decodedOutput['error']);
-        self::assertFalse($decodedOutput['error']);
+        $this->assertArrayHasKey('error', $decodedOutput);
+        $this->assertIsBool($decodedOutput['error']);
+        $this->assertFalse($decodedOutput['error']);
     }
 
     /**
