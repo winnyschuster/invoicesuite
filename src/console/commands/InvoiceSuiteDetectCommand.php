@@ -76,7 +76,7 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
             return $this->handleXml(InvoiceSuiteDocumentReader::createFromFile($inpArgFilename))->returnSuccess();
         }
 
-        return $this->returnSuccess();
+        return $this->handleUnknownType()->returnFailure();
     }
 
     /**
@@ -103,11 +103,13 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
                         'mimeType' => $attachment->getAttachmentMimeType(),
                     ];
                 }, $pdfReader->getAdditionalDocumentAttachments()),
+                'error' => false,
             ], JSON_PRETTY_PRINT));
         }
 
         $tableRows[] = ['ID', $pdfReader->getCurrentDocumentFormatProvider()->getUniqueId()];
         $tableRows[] = ['Description', mb_strimwidth($pdfReader->getCurrentDocumentFormatProvider()->getDescription(), 0, 60, '...')];
+        $tableRows[] = ['Error', 'no'];
         $tableRows[] = [new TableSeparator(), new TableSeparator()];
         $tableRows[] = ['Document Attachment name', $pdfReader->getInvoiceDocumentAttachment()->getAttachmentFilename()];
         $tableRows[] = ['Document Attachment type', $pdfReader->getInvoiceDocumentAttachment()->getAttachmentMimeType()];
@@ -140,11 +142,38 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
             return $this->outputLineLF(json_encode([
                 'id' => $xmlOrJsonReader->getCurrentDocumentFormatProvider()->getUniqueId(),
                 'description' => $xmlOrJsonReader->getCurrentDocumentFormatProvider()->getDescription(),
+                'error' => false,
             ], JSON_PRETTY_PRINT));
         }
 
         $tableRows[] = ['ID', $xmlOrJsonReader->getCurrentDocumentFormatProvider()->getUniqueId()];
         $tableRows[] = ['Description', mb_strimwidth($xmlOrJsonReader->getCurrentDocumentFormatProvider()->getDescription(), 0, 60, '...')];
+        $tableRows[] = ['Error', 'no'];
+
+        return $this->outputTable(['Info', 'Value'], $tableRows);
+    }
+
+    /**
+     * Handle output for unknown types
+     *
+     * @return static
+     *
+     * @throws ConsoleInvalidArgumentException
+     * @throws RuntimeException
+     */
+    protected function handleUnknownType(): static
+    {
+        if (true === $this->getBoolOption('output-json')) {
+            return $this->outputLineLF(json_encode([
+                'id' => 'unknown',
+                'description' => 'unknown',
+                'error' => true,
+            ], JSON_PRETTY_PRINT));
+        }
+
+        $tableRows[] = ['ID', 'unknown'];
+        $tableRows[] = ['Description', 'unknown'];
+        $tableRows[] = ['Error', 'Yes'];
 
         return $this->outputTable(['Info', 'Value'], $tableRows);
     }
