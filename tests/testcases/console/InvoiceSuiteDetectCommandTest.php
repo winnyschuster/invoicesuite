@@ -157,6 +157,7 @@ class InvoiceSuiteDetectCommandTest extends InvoiceSuiteConsoleCommandTestCase
     public function testCommandUnknownFile(): void
     {
         $this->expectException(InvoiceSuiteFileNotReadableException::class);
+        $this->expectExceptionMessageMatches('/.*unknown\.xml is not readable.*/');
 
         $commandTester = $this->createCommandTester('invoicesuite:detect');
 

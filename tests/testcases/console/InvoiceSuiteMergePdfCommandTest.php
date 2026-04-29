@@ -11,11 +11,11 @@ use Symfony\Component\Console\Command\Command;
 class InvoiceSuiteMergePdfCommandTest extends InvoiceSuiteConsoleCommandTestCase
 {
     /**
-     * Test that the command lists available providers and returns the providers metadata as JSON.
+     * Test that the command merges PDF and XML successfully
      *
      * @return void
      */
-    public function testCommandMergeAndOutputsJson(): void
+    public function testCommandMerge(): void
     {
         $commandTester = $this->createCommandTester('invoicesuite:merge');
 
