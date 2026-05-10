@@ -114,6 +114,9 @@ lint.ps1
 /examples/15_CustomTemplateInvoice.html
 /examples/15_CustomTemplateInvoice.pdf
 /examples/17_SettingsInvoice.xml
+/examples/18_Invoice.xml
+/examples/18_VisualInvoice.pdf
+/examples/18_HybridInvoice.pdf
 
 /examples.old
 
