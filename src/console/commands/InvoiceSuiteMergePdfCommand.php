@@ -61,16 +61,16 @@ class InvoiceSuiteMergePdfCommand extends InvoiceSuiteAbstractCommand
      */
     protected function handle(): int
     {
-        $xmlOrJsonFilename = $this->getSourceXmlOrJsonFileArgument('document-file');
-        $pdfFilename = $this->getSourcePdfFileArgument('pdf-file');
-        $outputFilename = $this->getTargetFileArgument('output-file', $this->getBoolOption('force'));
+        $inpArgXmlOrJsonFilename = $this->getSourceXmlOrJsonFileArgument('document-file');
+        $inpArgPdfFilename = $this->getSourcePdfFileArgument('pdf-file');
+        $inpArgOutputFilename = $this->getTargetFileArgument('output-file', $this->getBoolOption('force'));
 
         InvoiceSuitePdfDocumentBuilder::createFromDocumentContentAndPdfFile(
-            InvoiceSuiteFileUtils::getContentFromFileOrString($xmlOrJsonFilename),
-            $pdfFilename
-        )->generatePdfDocumentAndSaveToFile($outputFilename);
+            InvoiceSuiteFileUtils::getContentFromFileOrString($inpArgXmlOrJsonFilename),
+            $inpArgPdfFilename
+        )->generatePdfDocumentAndSaveToFile($inpArgOutputFilename);
 
-        $this->outputLineLF(sprintf('<info>Created:</info> %s', $outputFilename));
+        $this->outputLineLF(sprintf('<info>Created:</info> %s', $inpArgOutputFilename));
 
         return $this->returnSuccess();
     }

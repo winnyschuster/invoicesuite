@@ -16,7 +16,9 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
+use horstoeko\invoicesuite\InvoiceSuitePdfDocumentBuilder;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\visualizers\InvoiceSuiteVisualizer;
 use JMS\Serializer\Exception\RuntimeException as JmsRuntimeException;
@@ -51,6 +53,7 @@ class InvoiceSuiteVisualizeCommand extends InvoiceSuiteAbstractCommand
         $this->addOption('format', null, InputOption::VALUE_REQUIRED, 'Output format to use (pdf, html)', 'pdf');
         $this->addOption('template', null, InputOption::VALUE_REQUIRED, 'Use a custom visualizer template file');
         $this->addOption('force', 'f', InputOption::VALUE_NONE, 'Overwrite the target file if it already exists');
+        $this->addOption('embed', null, InputOption::VALUE_NONE, 'Embed invoice document to the target PDF file');
     }
 
     /**
@@ -73,6 +76,7 @@ class InvoiceSuiteVisualizeCommand extends InvoiceSuiteAbstractCommand
         $inpArgOutputFilename = $this->getTargetFileArgument('output-file', $this->getBoolOption('force'));
         $inpOptionFormat = $this->getStringOption('format', 'pdf');
         $inpOptionTemplate = $this->getStringOption('template');
+        $inpOptionEmbed = $this->getBoolOption('embed');
 
         if (!InvoiceSuiteArrayUtils::inArrayNoCase(['pdf', 'html'], $inpOptionFormat)) {
             throw new InvoiceSuiteInvalidArgumentException(sprintf('Invalid option value for format "%s"', $inpOptionFormat));
@@ -90,6 +94,13 @@ class InvoiceSuiteVisualizeCommand extends InvoiceSuiteAbstractCommand
             $visualizer->renderPdfFile($inpArgOutputFilename);
         } else {
             $visualizer->renderMarkupFile($inpArgOutputFilename);
+        }
+
+        if (InvoiceSuiteStringUtils::equalsNoCase($inpOptionFormat, 'pdf') && $inpOptionEmbed) {
+            InvoiceSuitePdfDocumentBuilder::createFromDocumentContentAndPdfFile(
+                InvoiceSuiteFileUtils::getContentFromFileOrString($inpArgInputFilename),
+                $inpArgOutputFilename
+            )->generatePdfDocumentAndSaveToFile($inpArgOutputFilename);
         }
 
         $this->outputLineLF(sprintf('<info>Created:</info> %s', $inpArgOutputFilename));
