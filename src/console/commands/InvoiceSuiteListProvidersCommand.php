@@ -16,6 +16,7 @@ use RuntimeException;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Exception\InvalidArgumentException as ConsoleInvalidArgumentException;
 use Symfony\Component\Console\Input\InputOption;
+use z4kn4fein\SemVer\SemverException;
 
 /**
  * Class representing a console command that lists all available document format providers
@@ -50,6 +51,7 @@ class InvoiceSuiteListProvidersCommand extends InvoiceSuiteAbstractCommand
      *
      * @throws ConsoleInvalidArgumentException
      * @throws RuntimeException
+     * @throws SemverException
      */
     protected function handle(): int
     {
@@ -60,6 +62,7 @@ class InvoiceSuiteListProvidersCommand extends InvoiceSuiteAbstractCommand
                 static fn ($provider) => [
                     'id' => mb_strimwidth($provider->getUniqueId(), 0, 30, '...'),
                     'description' => mb_strimwidth($provider->getDescription(), 0, 60, '...'),
+                    'version' => (string) $provider->getVersion(),
                     'contentType' => $provider->getContentType()->value,
                     'pdfSupportAvailable' => $provider->getIsPdfSupportAvailable(),
                     'xsdValidationAvailable' => $provider->getValidationXsdAvailable(),
@@ -72,6 +75,7 @@ class InvoiceSuiteListProvidersCommand extends InvoiceSuiteAbstractCommand
             static fn ($provider) => [
                 mb_strimwidth($provider->getUniqueId(), 0, 30, '...'),
                 mb_strimwidth($provider->getDescription(), 0, 60, '...'),
+                (string) $provider->getVersion(),
                 $provider->getContentType()->value,
                 $provider->getIsPdfSupportAvailable() ? 'yes' : 'no',
                 $provider->getValidationXsdAvailable() ? 'yes' : 'no',
@@ -79,6 +83,6 @@ class InvoiceSuiteListProvidersCommand extends InvoiceSuiteAbstractCommand
             $this->getRegisteredDocumentFormatProviders()
         );
 
-        return $this->outputTable(['Provider', 'Description', 'Content-Type', 'PDF', 'XSD'], $rowsToOutput)->returnSuccess();
+        return $this->outputTable(['Provider', 'Description', 'Version', 'Content-Type', 'PDF', 'XSD'], $rowsToOutput)->returnSuccess();
     }
 }
