@@ -64,7 +64,7 @@ class InvoiceSuiteMakeProviderCommand extends InvoiceSuiteAbstractCommand
 
         $inpOptionProviderUniqueId = $this->getStringOption('unique-id', InvoiceSuiteStringUtils::lower($inpArgProviderClassName));
         $inpOptionProviderDescription = $this->getStringOption('description', InvoiceSuiteStringUtils::lower($inpArgProviderClassName));
-        $inpOptionforce = $this->getBoolOption('force');
+        $inpOptionForce = $this->getBoolOption('force');
 
         $newProviderReaderClassName = $inpArgProviderClassName . 'Reader';
         $newProviderBuilderClassName = $inpArgProviderClassName . 'Builder';
@@ -85,9 +85,9 @@ class InvoiceSuiteMakeProviderCommand extends InvoiceSuiteAbstractCommand
             '{{PROVIDER_DESCRIPTION}}' => $inpOptionProviderDescription,
         ];
 
-        $this->writeTemplate(InvoiceSuitePathUtils::combinePathWithFile($existingTemplateDirectory, 'provider.tpl'), $newProviderPath, $myReplacements, $inpOptionforce);
-        $this->writeTemplate(InvoiceSuitePathUtils::combinePathWithFile($existingTemplateDirectory, 'provider_reader.tpl'), $newProviderReaderPath, $myReplacements, $inpOptionforce);
-        $this->writeTemplate(InvoiceSuitePathUtils::combinePathWithFile($existingTemplateDirectory, 'provider_builder.tpl'), $newProviderBuilderPath, $myReplacements, $inpOptionforce);
+        $this->writeTemplate(InvoiceSuitePathUtils::combinePathWithFile($existingTemplateDirectory, 'provider.tpl'), $newProviderPath, $myReplacements, $inpOptionForce);
+        $this->writeTemplate(InvoiceSuitePathUtils::combinePathWithFile($existingTemplateDirectory, 'provider_reader.tpl'), $newProviderReaderPath, $myReplacements, $inpOptionForce);
+        $this->writeTemplate(InvoiceSuitePathUtils::combinePathWithFile($existingTemplateDirectory, 'provider_builder.tpl'), $newProviderBuilderPath, $myReplacements, $inpOptionForce);
 
         $this->outputLineLF(sprintf('<info>Created:</info> %s', $newProviderPath));
         $this->outputLineLF(sprintf('<info>Created:</info> %s', $newProviderReaderPath));
