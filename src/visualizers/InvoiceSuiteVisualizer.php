@@ -96,14 +96,14 @@ class InvoiceSuiteVisualizer
     private $pdfPaperSize = 'A4-P';
 
     /**
-     * A callbacl which is called before MPDF is instanciated. Here is the possibillity to set custom options for MPDF
+     * A callback which is called before MPDF is instanciated. Here is the possibillity to set custom options for MPDF
      *
      * @var null|callable(array<string, mixed>, InvoiceSuiteVisualizer): array<string, mixed>
      */
     private $mpdfPreInitCallback;
 
     /**
-     * A callbacl which is called after MPDF is instanciated. Here is the possibillity to set custom options for MPDF
+     * A callback which is called after MPDF is instanciated. Here is the possibillity to set custom options for MPDF
      *
      * @var null|callable(Mpdf, InvoiceSuiteVisualizer): void
      */
