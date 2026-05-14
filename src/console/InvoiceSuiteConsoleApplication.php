@@ -17,6 +17,7 @@ use horstoeko\invoicesuite\console\commands\InvoiceSuiteExportPdfAttachmentsComm
 use horstoeko\invoicesuite\console\commands\InvoiceSuiteListProvidersCommand;
 use horstoeko\invoicesuite\console\commands\InvoiceSuiteMakeProviderCommand;
 use horstoeko\invoicesuite\console\commands\InvoiceSuiteMergePdfCommand;
+use horstoeko\invoicesuite\console\commands\InvoiceSuiteRebuildCacheCommand;
 use horstoeko\invoicesuite\console\commands\InvoiceSuiteValidateCommand;
 use horstoeko\invoicesuite\console\commands\InvoiceSuiteVisualizeCommand;
 use horstoeko\invoicesuite\utils\InvoiceSuitePackageVersion;
@@ -62,5 +63,6 @@ class InvoiceSuiteConsoleApplication extends Application
         $this->addCommand(new InvoiceSuiteVisualizeCommand());
         $this->addCommand(new InvoiceSuiteExportPdfAttachmentsCommand());
         $this->addCommand(new InvoiceSuiteClearCacheCommand());
+        $this->addCommand(new InvoiceSuiteRebuildCacheCommand());
     }
 }

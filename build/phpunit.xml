@@ -171,6 +171,7 @@
             <file>../tests/testcases/console/InvoiceSuiteVisualizeCommandTest.php</file>
             <file>../tests/testcases/console/InvoiceSuiteExportPdfAttachmentsCommandTest.php</file>
             <file>../tests/testcases/console/InvoiceSuiteClearCacheCommandTest.php</file>
+            <file>../tests/testcases/console/InvoiceSuiteRebuildCacheCommandTest.php</file>
         </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">
