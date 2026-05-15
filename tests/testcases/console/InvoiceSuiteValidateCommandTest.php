@@ -31,23 +31,24 @@ final class InvoiceSuiteValidateCommandTest extends InvoiceSuiteConsoleCommandTe
         $decodedOutput = $this->decodeJsonOutput($commandTester->getDisplay());
 
         $this->assertIsArray($decodedOutput);
-        $this->assertArrayHasKey('status', $decodedOutput);
-        $this->assertArrayHasKey('errors', $decodedOutput);
-        $this->assertArrayHasKey('warnings', $decodedOutput);
-        $this->assertArrayHasKey('infos', $decodedOutput);
-        $this->assertArrayHasKey('errormessages', $decodedOutput);
-        $this->assertArrayHasKey('warningmessages', $decodedOutput);
-        $this->assertArrayHasKey('infomessages', $decodedOutput);
-        $this->assertSame('valid', $decodedOutput['status']);
-        $this->assertSame(0, $decodedOutput['errors']);
-        $this->assertSame(0, $decodedOutput['warnings']);
-        $this->assertSame(0, $decodedOutput['infos']);
-        $this->assertIsArray($decodedOutput['errormessages']);
-        $this->assertIsArray($decodedOutput['warningmessages']);
-        $this->assertIsArray($decodedOutput['infomessages']);
-        $this->assertCount(0, $decodedOutput['errormessages']);
-        $this->assertCount(0, $decodedOutput['warningmessages']);
-        $this->assertCount(0, $decodedOutput['infomessages']);
+        $this->assertArrayHasKey('xsd', $decodedOutput);
+        $this->assertArrayHasKey('status', $decodedOutput['xsd']);
+        $this->assertArrayHasKey('errors', $decodedOutput['xsd']);
+        $this->assertArrayHasKey('warnings', $decodedOutput['xsd']);
+        $this->assertArrayHasKey('infos', $decodedOutput['xsd']);
+        $this->assertArrayHasKey('errormessages', $decodedOutput['xsd']);
+        $this->assertArrayHasKey('warningmessages', $decodedOutput['xsd']);
+        $this->assertArrayHasKey('infomessages', $decodedOutput['xsd']);
+        $this->assertSame('valid', $decodedOutput['xsd']['status']);
+        $this->assertSame(0, $decodedOutput['xsd']['errors']);
+        $this->assertSame(0, $decodedOutput['xsd']['warnings']);
+        $this->assertSame(0, $decodedOutput['xsd']['infos']);
+        $this->assertIsArray($decodedOutput['xsd']['errormessages']);
+        $this->assertIsArray($decodedOutput['xsd']['warningmessages']);
+        $this->assertIsArray($decodedOutput['xsd']['infomessages']);
+        $this->assertCount(0, $decodedOutput['xsd']['errormessages']);
+        $this->assertCount(0, $decodedOutput['xsd']['warningmessages']);
+        $this->assertCount(0, $decodedOutput['xsd']['infomessages']);
     }
 
     /**
@@ -96,35 +97,36 @@ final class InvoiceSuiteValidateCommandTest extends InvoiceSuiteConsoleCommandTe
         $decodedOutput = $this->decodeJsonOutput($commandTester->getDisplay());
 
         $this->assertIsArray($decodedOutput);
-        $this->assertArrayHasKey('status', $decodedOutput);
-        $this->assertArrayHasKey('errors', $decodedOutput);
-        $this->assertArrayHasKey('warnings', $decodedOutput);
-        $this->assertArrayHasKey('infos', $decodedOutput);
-        $this->assertArrayHasKey('errormessages', $decodedOutput);
-        $this->assertArrayHasKey('warningmessages', $decodedOutput);
-        $this->assertArrayHasKey('infomessages', $decodedOutput);
-        $this->assertSame('invalid', $decodedOutput['status']);
-        $this->assertSame(4, $decodedOutput['errors']);
-        $this->assertSame(0, $decodedOutput['warnings']);
-        $this->assertSame(0, $decodedOutput['infos']);
-        $this->assertIsArray($decodedOutput['errormessages']);
-        $this->assertIsArray($decodedOutput['warningmessages']);
-        $this->assertIsArray($decodedOutput['infomessages']);
-        $this->assertCount(4, $decodedOutput['errormessages']);
-        $this->assertCount(0, $decodedOutput['warningmessages']);
-        $this->assertCount(0, $decodedOutput['infomessages']);
-        $this->assertArrayHasKey(0, $decodedOutput['errormessages']);
-        $this->assertArrayHasKey(1, $decodedOutput['errormessages']);
-        $this->assertArrayHasKey(2, $decodedOutput['errormessages']);
-        $this->assertArrayHasKey(3, $decodedOutput['errormessages']);
-        $this->assertArrayNotHasKey(4, $decodedOutput['errormessages']);
-        $this->assertIsArray($decodedOutput['errormessages'][0]);
-        $this->assertArrayHasKey('messageContent', $decodedOutput['errormessages'][0]);
-        $this->assertArrayHasKey('messageSeverity', $decodedOutput['errormessages'][0]);
-        $this->assertArrayHasKey('messageTimestap', $decodedOutput['errormessages'][0]);
-        $this->assertArrayHasKey('messageAdditionalData', $decodedOutput['errormessages'][0]);
-        $this->assertStringContainsString("Element '{urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100}TypeCode': This element is not expected. Expected is ( {urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100}Description )", (string) $decodedOutput['errormessages'][0]['messageContent']);
-        $this->assertStringContainsString('error', (string) $decodedOutput['errormessages'][0]['messageSeverity']);
+        $this->assertArrayHasKey('xsd', $decodedOutput);
+        $this->assertArrayHasKey('status', $decodedOutput['xsd']);
+        $this->assertArrayHasKey('errors', $decodedOutput['xsd']);
+        $this->assertArrayHasKey('warnings', $decodedOutput['xsd']);
+        $this->assertArrayHasKey('infos', $decodedOutput['xsd']);
+        $this->assertArrayHasKey('errormessages', $decodedOutput['xsd']);
+        $this->assertArrayHasKey('warningmessages', $decodedOutput['xsd']);
+        $this->assertArrayHasKey('infomessages', $decodedOutput['xsd']);
+        $this->assertSame('invalid', $decodedOutput['xsd']['status']);
+        $this->assertSame(4, $decodedOutput['xsd']['errors']);
+        $this->assertSame(0, $decodedOutput['xsd']['warnings']);
+        $this->assertSame(0, $decodedOutput['xsd']['infos']);
+        $this->assertIsArray($decodedOutput['xsd']['errormessages']);
+        $this->assertIsArray($decodedOutput['xsd']['warningmessages']);
+        $this->assertIsArray($decodedOutput['xsd']['infomessages']);
+        $this->assertCount(4, $decodedOutput['xsd']['errormessages']);
+        $this->assertCount(0, $decodedOutput['xsd']['warningmessages']);
+        $this->assertCount(0, $decodedOutput['xsd']['infomessages']);
+        $this->assertArrayHasKey(0, $decodedOutput['xsd']['errormessages']);
+        $this->assertArrayHasKey(1, $decodedOutput['xsd']['errormessages']);
+        $this->assertArrayHasKey(2, $decodedOutput['xsd']['errormessages']);
+        $this->assertArrayHasKey(3, $decodedOutput['xsd']['errormessages']);
+        $this->assertArrayNotHasKey(4, $decodedOutput['xsd']['errormessages']);
+        $this->assertIsArray($decodedOutput['xsd']['errormessages'][0]);
+        $this->assertArrayHasKey('messageContent', $decodedOutput['xsd']['errormessages'][0]);
+        $this->assertArrayHasKey('messageSeverity', $decodedOutput['xsd']['errormessages'][0]);
+        $this->assertArrayHasKey('messageTimestap', $decodedOutput['xsd']['errormessages'][0]);
+        $this->assertArrayHasKey('messageAdditionalData', $decodedOutput['xsd']['errormessages'][0]);
+        $this->assertStringContainsString("Element '{urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100}TypeCode': This element is not expected. Expected is ( {urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100}Description )", (string) $decodedOutput['xsd']['errormessages'][0]['messageContent']);
+        $this->assertStringContainsString('error', (string) $decodedOutput['xsd']['errormessages'][0]['messageSeverity']);
     }
 
     /**
