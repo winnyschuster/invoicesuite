@@ -26,7 +26,6 @@ use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Exception\InvalidArgumentException as ConsoleInvalidArgumentException;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Class representing a console command that exports attachments from a hybrid PDF invoice document.
@@ -196,13 +195,13 @@ class InvoiceSuiteExportPdfAttachmentsCommand extends InvoiceSuiteAbstractComman
             ];
         }
 
-        $jsonContent = json_encode($exportableAttachments, JSON_PRETTY_PRINT);
-
-        if (false === $jsonContent) {
-            throw new RuntimeException(sprintf('Unable to encode attachments to JSON. Error was: %s', json_last_error_msg()));
-        }
-
         if (in_array($jsonOutputMode, [self::OUTPUT_JSON_FILE, self::OUTPUT_JSON_FILE_AND_SCREEN], true)) {
+            $jsonContent = json_encode($exportableAttachments, JSON_PRETTY_PRINT);
+
+            if (false === $jsonContent) {
+                throw new RuntimeException(sprintf('Unable to encode attachments to JSON. Error was: %s', json_last_error_msg()));
+            }
+
             $targetJsonFilename = InvoiceSuitePathUtils::combinePathWithFile(
                 $toDirectory,
                 InvoiceSuiteFileUtils::combineFilenameWithFileextension(
@@ -226,9 +225,10 @@ class InvoiceSuiteExportPdfAttachmentsCommand extends InvoiceSuiteAbstractComman
             }
         }
 
-        if (in_array($jsonOutputMode, [self::OUTPUT_JSON_SCREEN, self::OUTPUT_JSON_FILE_AND_SCREEN], true)) {
-            $this->outputLineLF($jsonContent, OutputInterface::OUTPUT_RAW);
-        }
+        $this->outputJsonLFWhen(
+            in_array($jsonOutputMode, [self::OUTPUT_JSON_SCREEN, self::OUTPUT_JSON_FILE_AND_SCREEN], true),
+            $exportableAttachments
+        );
 
         return true;
     }
