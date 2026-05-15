@@ -112,7 +112,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
      *
      * @throws RuntimeException
      */
-    protected function outputJsonLF(mixed $value): static
+    protected function outputJson(mixed $value): static
     {
         $jsonValue = json_encode($value, JSON_PRETTY_PRINT);
 
@@ -132,10 +132,10 @@ abstract class InvoiceSuiteAbstractCommand extends Command
      *
      * @throws RuntimeException
      */
-    protected function outputJsonLFWhen(bool $condition, mixed $value): static
+    protected function outputJsonWhen(bool $condition, mixed $value): static
     {
         if ($condition) {
-            return $this->outputJsonLF($value);
+            return $this->outputJson($value);
         }
 
         return $this;

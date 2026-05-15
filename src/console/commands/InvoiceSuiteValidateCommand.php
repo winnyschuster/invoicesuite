@@ -99,7 +99,7 @@ class InvoiceSuiteValidateCommand extends InvoiceSuiteAbstractCommand
             $validationHasErrors = !$this->validateByKosit($inpArgFilename) || $validationHasErrors;
         }
 
-        $this->outputJsonLFWhen($this->getBoolOption('output-json'), $this->jsonValidationResults);
+        $this->outputJsonWhen($this->getBoolOption('output-json'), $this->jsonValidationResults);
 
         return $validationHasErrors ? $this->returnFailure() : $this->returnSuccess();
     }

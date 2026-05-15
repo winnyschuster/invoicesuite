@@ -225,7 +225,7 @@ class InvoiceSuiteExportPdfAttachmentsCommand extends InvoiceSuiteAbstractComman
             }
         }
 
-        $this->outputJsonLFWhen(
+        $this->outputJsonWhen(
             in_array($jsonOutputMode, [self::OUTPUT_JSON_SCREEN, self::OUTPUT_JSON_FILE_AND_SCREEN], true),
             $exportableAttachments
         );

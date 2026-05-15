@@ -119,7 +119,7 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
         }
 
         return $this
-            ->outputJsonLFWhen($this->getBoolOption('output-json'), $jsonResult)
+            ->outputJsonWhen($this->getBoolOption('output-json'), $jsonResult)
             ->outputTableWhen(!$this->getBoolOption('output-json'), ['Info', 'Value'], $tableRows);
     }
 
@@ -145,7 +145,7 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
         $tableRows[] = ['Error', 'no'];
 
         return $this
-            ->outputJsonLFWhen($this->getBoolOption('output-json'), $jsonResult)
+            ->outputJsonWhen($this->getBoolOption('output-json'), $jsonResult)
             ->outputTableWhen(!$this->getBoolOption('output-json'), ['Info', 'Value'], $tableRows);
     }
 
@@ -170,7 +170,7 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
         $tableRows[] = ['Error', 'Yes'];
 
         return $this
-            ->outputJsonLFWhen($this->getBoolOption('output-json'), $jsonResult)
+            ->outputJsonWhen($this->getBoolOption('output-json'), $jsonResult)
             ->outputTableWhen(!$this->getBoolOption('output-json'), ['Info', 'Value'], $tableRows);
     }
 }

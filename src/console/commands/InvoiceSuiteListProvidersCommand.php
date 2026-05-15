@@ -82,7 +82,7 @@ class InvoiceSuiteListProvidersCommand extends InvoiceSuiteAbstractCommand
         );
 
         return $this
-            ->outputJsonLFWhen($this->getBoolOption('output-json'), $jsonRowsToOutput)
+            ->outputJsonWhen($this->getBoolOption('output-json'), $jsonRowsToOutput)
             ->outputTableWhen(!$this->getBoolOption('output-json'), ['Provider', 'Description', 'Version', 'Content-Type', 'PDF', 'XSD'], $rowsToOutput)
             ->returnSuccess();
     }
