@@ -24,6 +24,7 @@ use Symfony\Component\Console\Exception\InvalidArgumentException as ConsoleInval
 use Symfony\Component\Console\Helper\TableSeparator;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Class representing a console command that detects the format of a given file
@@ -76,7 +77,7 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
             return $this->handleXml(InvoiceSuiteDocumentReader::createFromFile($inpArgFilename))->returnSuccess();
         }
 
-        return $this->handleUnknownType()->returnFailure();
+        return $this->handleUnknown()->returnFailure();
     }
 
     /**
@@ -102,7 +103,7 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
                     'mimeType' => $attachment->getAttachmentMimeType(),
                 ], $pdfReader->getAdditionalDocumentAttachments()),
                 'error' => false,
-            ], JSON_PRETTY_PRINT));
+            ], JSON_PRETTY_PRINT), OutputInterface::OUTPUT_RAW);
         }
 
         $tableRows[] = ['ID', $pdfReader->getCurrentDocumentFormatProvider()->getUniqueId()];
@@ -139,7 +140,7 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
                 'id' => $xmlOrJsonReader->getCurrentDocumentFormatProvider()->getUniqueId(),
                 'description' => $xmlOrJsonReader->getCurrentDocumentFormatProvider()->getDescription(),
                 'error' => false,
-            ], JSON_PRETTY_PRINT));
+            ], JSON_PRETTY_PRINT), OutputInterface::OUTPUT_RAW);
         }
 
         $tableRows[] = ['ID', $xmlOrJsonReader->getCurrentDocumentFormatProvider()->getUniqueId()];
@@ -157,14 +158,14 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
      * @throws ConsoleInvalidArgumentException
      * @throws RuntimeException
      */
-    protected function handleUnknownType(): static
+    protected function handleUnknown(): static
     {
         if ($this->getBoolOption('output-json')) {
             return $this->outputLineLF(json_encode([
                 'id' => 'unknown',
                 'description' => 'unknown',
                 'error' => true,
-            ], JSON_PRETTY_PRINT));
+            ], JSON_PRETTY_PRINT), OutputInterface::OUTPUT_RAW);
         }
 
         $tableRows[] = ['ID', 'unknown'];

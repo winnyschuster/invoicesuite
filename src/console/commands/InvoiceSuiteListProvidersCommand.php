@@ -16,6 +16,7 @@ use RuntimeException;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Exception\InvalidArgumentException as ConsoleInvalidArgumentException;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
 use z4kn4fein\SemVer\SemverException;
 
 /**
@@ -68,7 +69,7 @@ class InvoiceSuiteListProvidersCommand extends InvoiceSuiteAbstractCommand
                     'xsdValidationAvailable' => $provider->getValidationXsdAvailable(),
                 ],
                 $this->getRegisteredDocumentFormatProviders()
-            ), JSON_PRETTY_PRINT))->returnSuccess();
+            ), JSON_PRETTY_PRINT), OutputInterface::OUTPUT_RAW)->returnSuccess();
         }
 
         $rowsToOutput = array_map(

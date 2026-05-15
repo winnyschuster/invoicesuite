@@ -25,6 +25,7 @@ use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Exception\InvalidArgumentException as ConsoleInvalidArgumentException;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
 use TypeError;
 use ValueError;
 
@@ -187,7 +188,7 @@ class InvoiceSuiteValidateCommand extends InvoiceSuiteAbstractCommand
                 'errormessages' => $documentValidator->getErrorMessagesInMessageBag(),
                 'warningmessages' => $documentValidator->getWarningMessagesInMessageBag(),
                 'infomessages' => $documentValidator->getInfoMessagesInMessageBag(),
-            ], JSON_PRETTY_PRINT));
+            ], JSON_PRETTY_PRINT), OutputInterface::OUTPUT_RAW);
         } else {
             $tableRows = [
                 [$validatorName, 'Status', $validationWasSuccessful ? 'valid' : 'invalid'],

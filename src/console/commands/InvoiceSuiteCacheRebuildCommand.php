@@ -51,11 +51,9 @@ class InvoiceSuiteCacheRebuildCommand extends InvoiceSuiteAbstractCommand
             ->init()
             ->getClassesWhenItsSubClassOf(InvoiceSuiteAbstractDocumentFormatProvider::class);
 
-        $this->outputLineLF(sprintf(
+        return $this->outputLineLF(sprintf(
             '<info>Cache rebuilt. %d document format providers found.</info>',
             count($documentFormatProviderClasses)
-        ));
-
-        return $this->returnSuccess();
+        ))->returnSuccess();
     }
 }

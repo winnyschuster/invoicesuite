@@ -46,8 +46,6 @@ class InvoiceSuiteCacheClearCommand extends InvoiceSuiteAbstractCommand
     {
         InvoiceSuiteClassFinder::clearCache();
 
-        $this->outputLineLF('<info>Cache cleared.</info>');
-
-        return $this->returnSuccess();
+        return $this->outputLineLF('<info>Cache cleared.</info>')->returnSuccess();
     }
 }
