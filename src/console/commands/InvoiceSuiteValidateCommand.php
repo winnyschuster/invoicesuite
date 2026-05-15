@@ -25,7 +25,6 @@ use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Exception\InvalidArgumentException as ConsoleInvalidArgumentException;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Output\OutputInterface;
 use TypeError;
 use ValueError;
 
@@ -39,6 +38,13 @@ use ValueError;
  */
 class InvoiceSuiteValidateCommand extends InvoiceSuiteAbstractCommand
 {
+    /**
+     * Validation results collected for JSON output.
+     *
+     * @var array<string,array<string,mixed>>
+     */
+    private array $jsonValidationResults = [];
+
     /**
      * Configure command.
      *
@@ -92,6 +98,8 @@ class InvoiceSuiteValidateCommand extends InvoiceSuiteAbstractCommand
         if (InvoiceSuiteArrayUtils::inArrayNoCase(['all', 'kosit'], $inpOptionValidator)) {
             $validationHasErrors = !$this->validateByKosit($inpArgFilename) || $validationHasErrors;
         }
+
+        $this->outputJsonLFWhen($this->getBoolOption('output-json'), $this->jsonValidationResults);
 
         return $validationHasErrors ? $this->returnFailure() : $this->returnSuccess();
     }
@@ -180,7 +188,7 @@ class InvoiceSuiteValidateCommand extends InvoiceSuiteAbstractCommand
         $validationWasSuccessful = !$documentValidator->hasErrorMessagesInMessageBag();
 
         if ($this->getBoolOption('output-json')) {
-            $this->outputLineLF(json_encode([
+            $this->jsonValidationResults[strtolower($validatorName)] = [
                 'status' => $validationWasSuccessful ? 'valid' : 'invalid',
                 'errors' => $documentValidator->countErrorMessagesInMessageBag(),
                 'warnings' => $documentValidator->countWarningMessagesInMessageBag(),
@@ -188,7 +196,7 @@ class InvoiceSuiteValidateCommand extends InvoiceSuiteAbstractCommand
                 'errormessages' => $documentValidator->getErrorMessagesInMessageBag(),
                 'warningmessages' => $documentValidator->getWarningMessagesInMessageBag(),
                 'infomessages' => $documentValidator->getInfoMessagesInMessageBag(),
-            ], JSON_PRETTY_PRINT), OutputInterface::OUTPUT_RAW);
+            ];
         } else {
             $tableRows = [
                 [$validatorName, 'Status', $validationWasSuccessful ? 'valid' : 'invalid'],

@@ -105,7 +105,34 @@ abstract class InvoiceSuiteAbstractCommand extends Command
     }
 
     /**
-     * Undocumented function
+     * Writes a JSON to the output and adds a newline at the end
+     *
+     * @param  mixed  $value
+     * @return static
+     */
+    protected function outputJsonLF(mixed $value): static
+    {
+        return $this->outputLineLF(json_encode($value, JSON_PRETTY_PRINT), OutputInterface::OUTPUT_RAW);
+    }
+
+    /**
+     * Conditionally writes a JSON to the output and adds a newline at the end
+     *
+     * @param  bool   $condition
+     * @param  mixed  $value
+     * @return static
+     */
+    protected function outputJsonLFWhen(bool $condition, mixed $value): static
+    {
+        if ($condition) {
+            return $this->outputJsonLF($value);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Output a table
      *
      * @param  array<int,string>             $headers
      * @param  array<int,array<int, string>> $rows
@@ -124,6 +151,23 @@ abstract class InvoiceSuiteAbstractCommand extends Command
         }
 
         $table->render();
+
+        return $this;
+    }
+
+    /**
+     * Conditionally Output a table
+     *
+     * @param  bool                          $condition
+     * @param  array<int,string>             $headers
+     * @param  array<int,array<int, string>> $rows
+     * @return static
+     */
+    protected function outputTableWhen(bool $condition, array $headers = [], array $rows = []): static
+    {
+        if ($condition) {
+            $this->outputTable($headers, $rows);
+        }
 
         return $this;
     }
