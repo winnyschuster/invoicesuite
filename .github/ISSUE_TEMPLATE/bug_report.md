@@ -22,13 +22,23 @@ Steps to reproduce the behavior:
 **Expected behavior**
 A clear and concise description of what you expected to happen.
 
+**Actual behavior**
+A clear and concise description of what actually happened.
+
+**Affected area**
+If applicable, name the affected invoice format, profile, provider or workflow, for example XRechnung, ZUGFeRD, Factur-X, a reader, a builder, validation, PDF handling, visualization or console commands.
+
+**Input, output or validation result**
+If applicable, add the input document, generated output, validation result or console output that helps to reproduce the problem. Please do not include sensitive invoice data.
+
 **Screenshots**
 If applicable, add screenshots to help explain the problem.
 
 **Sample code**
-If applicable, add sample code to help explain the problem.
+If applicable, add sample code to help explain or reproduce the problem.
 
 **Additional information**
+- horstoeko/invoicesuite version: [e.g. 1.2.3]
 - OS: [e.g. Windows, Linux, macOS]
 - OS version: [e.g. Windows 11, Debian 12]
 - PHP version: [e.g. PHP 8.3, PHP 8.4, PHP 8.5]

@@ -13,7 +13,12 @@ Please delete options that are not relevant.
 - [ ] Bug fix (non-breaking change which fixes an issue)
 - [ ] New feature (non-breaking change which adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] Documentation-only change
 - [ ] This change requires a documentation update
+
+## Affected area
+
+If applicable, name the affected invoice format, profile, provider or workflow, for example XRechnung, ZUGFeRD, Factur-X, a reader, a builder, validation, PDF handling, visualization or console commands.
 
 ## How has this been tested?
 
@@ -30,19 +35,34 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 
 ## Checklist
 
-Pull requests are only reviewed and merged when all relevant checks are in a clean state. This includes coding style, tests, and any other checks required by the project.
+Pull requests are only reviewed and merged when all relevant checks are in a clean state. This includes coding style, PHPStan, tests, and any other checks required by the project.
 
-The coding style must be checked before committing by running:
+The main quality check can be run with:
 
 ```bash
 composer checkstyle:run
 ```
 
-- [ ] I ran `composer checkstyle:run` before committing and the coding style check passed
-- [ ] I ran `composer composer phpcsfixer:run` to fix possible coding style issues
+This runs the lint check, PHP-CS-Fixer in dry-run mode and PHPStan.
+
+Possible coding style issues can be fixed by running:
+
+```bash
+composer phpcsfixer:run
+```
+
+Unit tests can be run with:
+
+```bash
+composer tests
+```
+
+- [ ] I ran `composer checkstyle:run` before committing and the quality check passed
+- [ ] I ran `composer phpcsfixer:run` if possible coding style issues had to be fixed
+- [ ] I ran the relevant unit tests locally
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my own code
-- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have commented my code where this is helpful, particularly in hard-to-understand areas
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
 - [ ] I have added tests that prove my fix is effective or that my feature works
