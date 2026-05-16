@@ -1,3 +1,39 @@
+## v0.0.9
+
+``Previous version v0.0.8``
+
+| Type | Hash    | Date    | Author  | Subject  | Issue(s)
+| :--- | :------ | :------ | :------ | :------- | :-----------: 
+| :new:  | [5de87bee](https://github.com/horstoeko/invoicesuite/commit/5de87bee) | 2026-05-16 09:39:24 CEST | HorstOeko | [ENH] Fixed option description in InvoiceSuiteVisualizer 'pdf-orientation' | 
+| :new:  | [16d1d087](https://github.com/horstoeko/invoicesuite/commit/16d1d087) | 2026-05-16 09:33:39 CEST | HorstOeko | [ENH] Fixed check in InvoiceSuiteVisualizer::addPdfFontData | 
+| :new:  | [d7dbc1e3](https://github.com/horstoeko/invoicesuite/commit/d7dbc1e3) | 2026-05-16 09:19:21 CEST | HorstOeko | [ENH] Added Font- and Paper-Size-Support to InvoiceSuiteVisualizeCommand | 
+| :new:  | [b0d54f3c](https://github.com/horstoeko/invoicesuite/commit/b0d54f3c) | 2026-05-16 07:47:50 CEST | HorstOeko | [ENH] Added new helper-methods in InvoiceSuiteAbstractCommand | 
+| :new:  | [2142c020](https://github.com/horstoeko/invoicesuite/commit/2142c020) | 2026-05-15 20:05:36 CEST | HorstOeko | [ENH] Renamed JSON-methods in InvoiceSuiteAbstractCommand | 
+| :new:  | [3f2392fa](https://github.com/horstoeko/invoicesuite/commit/3f2392fa) | 2026-05-15 08:42:25 CEST | HorstOeko | [ENH] Updated InvoiceSuiteExportPdfAttachmentsCommand to use output-helper methods from InvoiceSuiteAbstractCommand | 
+| :new:  | [1ae68713](https://github.com/horstoeko/invoicesuite/commit/1ae68713) | 2026-05-15 08:21:52 CEST | HorstOeko | [ENH] Improved JSON- and table output handling using new helper methods | 
+| :bug:  | [b364f580](https://github.com/horstoeko/invoicesuite/commit/b364f580) | 2026-05-15 08:12:40 CEST | HorstOeko | [FIX] Fix JSON output for validate console command -> Tests | 
+| :bug:  | [ac38e6d4](https://github.com/horstoeko/invoicesuite/commit/ac38e6d4) | 2026-05-15 07:53:57 CEST | HorstOeko | [FIX] Fix JSON output for validate console command | 
+| :new:  | [04e658db](https://github.com/horstoeko/invoicesuite/commit/04e658db) | 2026-05-15 07:03:52 CEST | HorstOeko | [ENH] Added OUTPUT_RAW to json output of console commands | 
+| :new:  | [933f11dd](https://github.com/horstoeko/invoicesuite/commit/933f11dd) | 2026-05-14 10:25:43 CEST | HorstOeko | [ENH] Renamed Cache-Console-Command classes | 
+| :new:  | [a0d93c9b](https://github.com/horstoeko/invoicesuite/commit/a0d93c9b) | 2026-05-14 10:13:20 CEST | HorstOeko | [ENH] Added InvoiceSuiteRebuildCacheCommand console command | 
+| :new:  | [0346c52a](https://github.com/horstoeko/invoicesuite/commit/0346c52a) | 2026-05-14 09:56:59 CEST | HorstOeko | [ENH] Added InvoiceSuiteClearCacheCommand console command | 
+| :new:  | [a09eafa5](https://github.com/horstoeko/invoicesuite/commit/a09eafa5) | 2026-05-14 07:59:02 CEST | HorstOeko | [ENH] Added new console command "InvoiceSuiteExportPdfAttachmentsCommand" | 
+| :new:  | [ecc70bcf](https://github.com/horstoeko/invoicesuite/commit/ecc70bcf) | 2026-05-13 05:13:31 CEST | HorstOeko | [ENH] Added output of Provider version to the output of InvoiceSuiteListProvidersCommand | 
+| :new:  | [51499765](https://github.com/horstoeko/invoicesuite/commit/51499765) | 2026-05-12 05:02:27 CEST | HorstOeko | [ENH] Added "embed"-Option to InvoiceSuiteVisualizeCommand | 
+| :new:  | [697e11f3](https://github.com/horstoeko/invoicesuite/commit/697e11f3) | 2026-05-10 10:23:43 CEST | HorstOeko | [ENH] Added example for building an electronic invoice document, render it as a visual PDF and embed the invoice XML into that PDF | 
+| :new:  | [bb201bbe](https://github.com/horstoeko/invoicesuite/commit/bb201bbe) | 2026-05-08 10:38:08 CEST | HorstOeko | [ENH] Equalized file-existence-checks | 
+| :new:  | [e863506f](https://github.com/horstoeko/invoicesuite/commit/e863506f) | 2026-05-08 06:37:20 CEST | HorstOeko | [ENH] Improved updateCurrencies in InvoiceSuiteZfFxProviderBuilder | 
+| :new:  | [f02a1ebc](https://github.com/horstoeko/invoicesuite/commit/f02a1ebc) | 2026-05-07 17:00:08 CEST | HorstOeko | [ENH] Added missing entries in InvoiceSuiteBuiltInProviders | 
+| :new:  | [7d802bb8](https://github.com/horstoeko/invoicesuite/commit/7d802bb8) | 2026-05-07 16:52:16 CEST | HorstOeko | [ENH] Added more utils to InvoiceSuiteStringUtils | 
+| :new:  | [0411e27c](https://github.com/horstoeko/invoicesuite/commit/0411e27c) | 2026-05-07 16:25:26 CEST | HorstOeko | [ENH] Used new methods in InvoiceSuiteStringUtils | 
+| :new:  | [5a4304a7](https://github.com/horstoeko/invoicesuite/commit/5a4304a7) | 2026-05-07 16:24:35 CEST | HorstOeko | [ENH] Added more utils to InvoiceSuiteStringUtils | 
+| :new_moon:  | [226fd308](https://github.com/horstoeko/invoicesuite/commit/226fd308) | 2026-05-07 09:06:20 CEST | Andreas Wunderwald | fix: phpcs | 
+| :new_moon:  | [068c31ba](https://github.com/horstoeko/invoicesuite/commit/068c31ba) | 2026-05-06 21:29:02 CEST | Andreas Wunderwald | chore: add support for handling CSV attachments in `InvoiceSuiteAttachment` and update tests accordingly. | 
+| :bug:  | [1e4c78e6](https://github.com/horstoeko/invoicesuite/commit/1e4c78e6) | 2026-05-06 05:23:53 CEST | HorstOeko | [FIX] Updated InvoiceSuiteMergePdfCommand | 
+| :bug:  | [5f07a3d6](https://github.com/horstoeko/invoicesuite/commit/5f07a3d6) | 2026-05-05 17:04:09 CEST | HorstOeko | [FIX] Query Kosit-Validation results | 
+
+:exclamation: _There are 9 internal commit(s)_
+
 ## v0.0.8
 
 ``Previous version v0.0.7``
