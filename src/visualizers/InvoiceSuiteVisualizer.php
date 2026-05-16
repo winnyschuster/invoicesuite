@@ -278,11 +278,31 @@ class InvoiceSuiteVisualizer
     public function addPdfFontDirectory(
         string $directory
     ): static {
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($directory)) {
+            return $this;
+        }
+
         if (!is_dir($directory)) {
             return $this;
         }
 
         $this->pdfFontDirectories[] = $directory;
+
+        return $this;
+    }
+
+    /**
+     * Add multiple additional directories where the PDF-Engine will search for fonts
+     *
+     * @param  string[] $directories
+     * @return static
+     */
+    public function addPdfFontDirectories(
+        array $directories
+    ): static {
+        foreach ($directories as $directory) {
+            $this->addPdfFontDirectory($directory);
+        }
 
         return $this;
     }
@@ -303,7 +323,45 @@ class InvoiceSuiteVisualizer
         string $style,
         string $filename
     ): static {
+        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$name, $style, $filename])) {
+            return $this;
+        }
+
         $this->pdfFontData[$name][$style] = $filename;
+
+        return $this;
+    }
+
+    /**
+     * Add multiple font definitions
+     *
+     * @param  list<array{0: string, 1: string, 2: string}> $data
+     * @return static
+     */
+    public function addPdfFontDatas(
+        array $data
+    ): static {
+        foreach ($data as $dataItem) {
+            $this->addPdfFontData($dataItem[0], $dataItem[1], $dataItem[2]);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Add multiple font definitions from a string array.
+     * Each string in the array must be in the form "name:style:filename".
+     *
+     * @param  string[] $data The Font Data in the form "name:style:filename"
+     * @return static
+     */
+    public function addPdfFontDatasFromStringArray(
+        array $data
+    ): static {
+        foreach ($data as $dataItem) {
+            $dataItemParts = array_map('trim', explode(':', $dataItem, 3));
+            $this->addPdfFontData($dataItemParts[0] ?? '', $dataItemParts[1] ?? '', $dataItemParts[2] ?? '');
+        }
 
         return $this;
     }
@@ -317,6 +375,10 @@ class InvoiceSuiteVisualizer
     public function setPdfFontDefault(
         string $pdfFontDefault
     ): static {
+        if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($pdfFontDefault)) {
+            return $this;
+        }
+
         $this->pdfFontDefault = $pdfFontDefault;
 
         return $this;

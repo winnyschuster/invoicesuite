@@ -381,6 +381,20 @@ abstract class InvoiceSuiteAbstractCommand extends Command
     }
 
     /**
+     * Get an string-array option
+     *
+     * @param  string   $name
+     * @param  string[] $default
+     * @return string[]
+     *
+     * @throws ConsoleInvalidArgumentException
+     */
+    protected function getStringArrayOption(string $name, array $default = []): array
+    {
+        return $this->input->getOption($name) ?? $default;
+    }
+
+    /**
      * Get directory argument. Directory must not be empty and will be created if missing
      *
      * @param  string $name

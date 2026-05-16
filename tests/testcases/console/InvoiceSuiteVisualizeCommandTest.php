@@ -6,6 +6,7 @@ namespace horstoeko\invoicesuite\tests\testcases\console;
 
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
+use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use RuntimeException;
 use Symfony\Component\Console\Command\Command;
 
@@ -67,6 +68,33 @@ final class InvoiceSuiteVisualizeCommandTest extends InvoiceSuiteConsoleCommandT
         $this->assertNotFalse($outputFileContents);
         $this->assertStringContainsString('<body>', $outputFileContents);
         $this->assertStringNotContainsString('<!-- Test Template -->', $outputFileContents);
+    }
+
+    /**
+     * Test that the visualizes a given XML or JSON file and outputs a PDF with custom PDF options
+     *
+     * @return void
+     */
+    public function testCommandVisualizeAsPdfWithCustomPdfOptions(): void
+    {
+        $commandTester = $this->createCommandTester('invoicesuite:visualize');
+
+        $exitCode = $commandTester->execute([
+            'input-file' => $this->getTestAssetFilePath('00_case_comfort_simple.xml'),
+            'output-file' => $this->getTempFilePath('output.pdf'),
+            '--pdf-font-directory' => [$this->getMpdfFontDirectory()],
+            '--pdf-font-data' => ['dejavusanscustom:R:DejaVuSans.ttf'],
+            '--pdf-font-default' => 'dejavusanscustom',
+            '--pdf-paper-size' => 'A5',
+            '--pdf-orientation' => 'landscape',
+        ]);
+
+        $this->assertSame(Command::SUCCESS, $exitCode);
+
+        $outputFileContents = file_get_contents($this->getTempFilePath('output.pdf'));
+
+        $this->assertNotFalse($outputFileContents);
+        $this->assertStringStartsWith('%PDF-', $outputFileContents);
     }
 
     /**
@@ -227,5 +255,15 @@ final class InvoiceSuiteVisualizeCommandTest extends InvoiceSuiteConsoleCommandT
         $this->assertNotFalse($outputFileContents);
         $this->assertStringContainsString('<body>', $outputFileContents);
         $this->assertStringContainsString('<!-- Test Template -->', $outputFileContents);
+    }
+
+    /**
+     * Get the mPDF font directory.
+     *
+     * @return string
+     */
+    private function getMpdfFontDirectory(): string
+    {
+        return InvoiceSuitePathUtils::combineAllPaths(dirname(__DIR__, 3), 'vendor', 'mpdf', 'mpdf', 'ttfonts');
     }
 }
