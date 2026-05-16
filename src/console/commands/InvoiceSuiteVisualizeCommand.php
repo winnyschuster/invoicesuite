@@ -56,7 +56,7 @@ class InvoiceSuiteVisualizeCommand extends InvoiceSuiteAbstractCommand
         $this->addOption('pdf-font-data', null, InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY, 'Add a PDF font definition as name:style:filename');
         $this->addOption('pdf-font-default', null, InputOption::VALUE_REQUIRED, 'Set the default PDF font');
         $this->addOption('pdf-paper-size', null, InputOption::VALUE_REQUIRED, 'Set the PDF paper size', 'A4');
-        $this->addOption('pdf-orientation', null, InputOption::VALUE_REQUIRED, 'Set the PDF orientation (P, L, portrait, landscape)', 'P');
+        $this->addOption('pdf-orientation', null, InputOption::VALUE_REQUIRED, 'Set the PDF orientation (P, L)', 'P');
         $this->addOption('force', 'f', InputOption::VALUE_NONE, 'Overwrite the target file if it already exists');
         $this->addOption('embed', null, InputOption::VALUE_NONE, 'Embed invoice document to the target PDF file');
     }
