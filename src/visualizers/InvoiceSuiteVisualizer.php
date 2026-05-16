@@ -323,7 +323,7 @@ class InvoiceSuiteVisualizer
         string $style,
         string $filename
     ): static {
-        if (InvoiceSuiteStringUtils::allIsNullOrEmpty([$name, $style, $filename])) {
+        if (InvoiceSuiteStringUtils::oneIsNullOrEmpty([$name, $style, $filename])) {
             return $this;
         }
 
