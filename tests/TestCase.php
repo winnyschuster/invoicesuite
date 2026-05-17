@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests;
 
 use Closure;
@@ -39,7 +41,7 @@ abstract class TestCase extends PhpUnitTestCase
     public static function tearDownAfterClass(): void
     {
         foreach (static::$registeredTestCaseFiles as $registeredTestCaseFile) {
-            if (file_exists($registeredTestCaseFile) && is_writeable($registeredTestCaseFile)) {
+            if (file_exists($registeredTestCaseFile) && is_writable($registeredTestCaseFile)) {
                 @unlink($registeredTestCaseFile);
             }
         }
@@ -65,7 +67,7 @@ abstract class TestCase extends PhpUnitTestCase
         parent::tearDown();
 
         foreach ($this->registeredTestFiles as $registeredTestFile) {
-            if (file_exists($registeredTestFile) && is_writeable($registeredTestFile)) {
+            if (file_exists($registeredTestFile) && is_writable($registeredTestFile)) {
                 @unlink($registeredTestFile);
             }
         }
@@ -124,10 +126,8 @@ abstract class TestCase extends PhpUnitTestCase
         string $propertyName
     ): ReflectionProperty {
         $reflector = new ReflectionClass($className);
-        $property = $reflector->getProperty($propertyName);
-        $property->setAccessible(true);
 
-        return $property;
+        return $reflector->getProperty($propertyName);
     }
 
     /**
@@ -142,10 +142,8 @@ abstract class TestCase extends PhpUnitTestCase
         string $propertyName
     ): ReflectionProperty {
         $reflector = new ReflectionClass($object);
-        $property = $reflector->getProperty($propertyName);
-        $property->setAccessible(true);
 
-        return $property;
+        return $reflector->getProperty($propertyName);
     }
 
     /**
@@ -160,10 +158,8 @@ abstract class TestCase extends PhpUnitTestCase
         string $methodName
     ): ReflectionMethod {
         $reflector = new ReflectionClass($className);
-        $method = $reflector->getMethod($methodName);
-        $method->setAccessible(true);
 
-        return $method;
+        return $reflector->getMethod($methodName);
     }
 
     /**
@@ -178,10 +174,8 @@ abstract class TestCase extends PhpUnitTestCase
         string $methodName
     ): ReflectionMethod {
         $reflector = new ReflectionClass($object);
-        $method = $reflector->getMethod($methodName);
-        $method->setAccessible(true);
 
-        return $method;
+        return $reflector->getMethod($methodName);
     }
 
     /**
@@ -210,9 +204,10 @@ abstract class TestCase extends PhpUnitTestCase
         try {
             $this->expectException(ErrorException::class);
 
-            if ($expectMessageRegEx) {
+            if ($expectMessageRegEx !== '' && $expectMessageRegEx !== '0') {
                 $this->expectExceptionMessageMatches($expectMessageRegEx);
             }
+
             $run();
         } finally {
             restore_error_handler();

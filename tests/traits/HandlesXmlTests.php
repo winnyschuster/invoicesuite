@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\traits;
 
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatBuilder;
@@ -317,6 +319,7 @@ trait HandlesXmlTests
         foreach ($ns as $prefix => $uri) {
             $xml->registerXPathNamespace('' !== $prefix ? $prefix : 'ns', $uri);
         }
+
         foreach ($this->customXmlNamespaces as $prefix => $uri) {
             $xml->registerXPathNamespace($prefix, $uri);
         }

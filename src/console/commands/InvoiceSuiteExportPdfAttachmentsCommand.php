@@ -38,8 +38,11 @@ use Symfony\Component\Console\Input\InputOption;
 class InvoiceSuiteExportPdfAttachmentsCommand extends InvoiceSuiteAbstractCommand
 {
     protected const OUTPUT_JSON_NONE = '0';
+
     protected const OUTPUT_JSON_FILE = '1';
+
     protected const OUTPUT_JSON_SCREEN = '2';
+
     protected const OUTPUT_JSON_FILE_AND_SCREEN = '3';
 
     /**
@@ -229,7 +232,7 @@ class InvoiceSuiteExportPdfAttachmentsCommand extends InvoiceSuiteAbstractComman
         $exportableAttachments = [];
         $invoiceDocumentAttachment = $pdfDocumentReader->getInvoiceDocumentAttachment();
 
-        if (null !== $invoiceDocumentAttachment) {
+        if ($invoiceDocumentAttachment instanceof InvoiceSuitePdfExtractorAttachment) {
             $exportableAttachments[] = [
                 'type' => 'invoice',
                 'index' => 1,

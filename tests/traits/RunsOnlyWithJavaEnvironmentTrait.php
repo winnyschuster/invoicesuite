@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace horstoeko\invoicesuite\tests\traits;
 
 use Symfony\Component\Process\ExecutableFinder;
@@ -28,7 +30,7 @@ trait RunsOnlyWithJavaEnvironmentTrait
         try {
             $executableFinder = new ExecutableFinder();
             $this->javaAvailable = !is_null($executableFinder->find('java'));
-        } catch (Throwable $throwable) {
+        } catch (Throwable) {
             $this->javaAvailable = false;
         }
 
