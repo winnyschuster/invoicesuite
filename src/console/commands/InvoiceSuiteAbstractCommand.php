@@ -214,7 +214,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
         $this->ensureTargetFileDirectoryExists($filename);
         $this->ensureTargetFileCanBeCreated($filename, $forceOverwrite);
 
-        if (false === file_put_contents($filename, $content)) {
+        if (false === InvoiceSuiteFileUtils::putContentToFile($filename, $content)) {
             throw new RuntimeException(sprintf('Unable to write file "%s".', $filename));
         }
 

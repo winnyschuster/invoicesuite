@@ -448,7 +448,7 @@ class InvoiceSuiteVisualizer
     public function renderMarkupFile(
         string $toFilename
     ): static {
-        file_put_contents($toFilename, $this->renderMarkup());
+        InvoiceSuiteFileUtils::putContentToFile($toFilename, $this->renderMarkup());
 
         return $this;
     }

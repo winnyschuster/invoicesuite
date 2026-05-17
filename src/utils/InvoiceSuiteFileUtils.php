@@ -86,4 +86,18 @@ class InvoiceSuiteFileUtils extends FileUtils
 
         return $fileContent;
     }
+
+    /**
+     * Put content to a file
+     *
+     * @param  string $filename
+     * @param  mixed  $content
+     * @return bool
+     */
+    public static function putContentToFile(
+        string $filename,
+        mixed $content
+    ): bool {
+        return false !== file_put_contents($filename, $content, LOCK_EX);
+    }
 }

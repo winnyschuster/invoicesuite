@@ -16,6 +16,7 @@ use horstoeko\invoicesuite\concerns\HandlesDocumentRootObject;
 use horstoeko\invoicesuite\concerns\HandlesDocumentSerializer;
 use horstoeko\invoicesuite\concerns\HandlesMessageBag;
 use horstoeko\invoicesuite\concerns\HandlesMethodTracing;
+use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use JMS\Serializer\Exception\RuntimeException;
 use JMS\Serializer\SerializationContext;
 
@@ -75,6 +76,6 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder extends InvoiceSuiteAbs
     public function saveContentToFile(
         string $tofile
     ): void {
-        file_put_contents($tofile, $this->getContent());
+        InvoiceSuiteFileUtils::putContentToFile($tofile, $this->getContent());
     }
 }

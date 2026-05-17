@@ -235,7 +235,7 @@ class ZugferdDocumentProfileConverter
     protected function convertToFile(
         string $toFile
     ): static {
-        file_put_contents($toFile, $this->convertToString());
+        InvoiceSuiteFileUtils::putContentToFile($toFile, $this->convertToString());
 
         return $this;
     }

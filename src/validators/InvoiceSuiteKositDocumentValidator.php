@@ -758,7 +758,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
 
         $this->resetFileToValidateFilename();
 
-        if (false === file_put_contents($this->resolveFileToValidateFilename(), $this->getRawDocumentContent())) {
+        if (false === InvoiceSuiteFileUtils::putContentToFile($this->resolveFileToValidateFilename(), $this->getRawDocumentContent())) {
             $this->addErrorMessageToMessageBag('Cannot create temporary file which contains the XML to validate');
 
             return false;
@@ -1066,7 +1066,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
             return false;
         }
 
-        if (false === file_put_contents($toFilePath, $downloadedContent)) {
+        if (false === InvoiceSuiteFileUtils::putContentToFile($toFilePath, $downloadedContent)) {
             $this->addErrorMessageToMessageBag('Failed to save downloaded content');
 
             return false;

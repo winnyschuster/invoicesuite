@@ -146,7 +146,7 @@ class InvoiceSuiteClassFinder
             // @phpstan-ignore arrayValues.list
             $cacheFilePhpCode = "<?php\ndeclare(strict_types=1);\nreturn " . var_export(array_values($classes), true) . ";\n";
 
-            file_put_contents($cacheFilenameFq, $cacheFilePhpCode, LOCK_EX);
+            InvoiceSuiteFileUtils::putContentToFile($cacheFilenameFq, $cacheFilePhpCode);
         }
 
         return $classes;

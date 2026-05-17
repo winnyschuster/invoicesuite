@@ -25,6 +25,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
+use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageBagItem;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageSeverity;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
@@ -5345,7 +5346,7 @@ class ZugferdDocumentReader extends ZugferdDocument
                 && !InvoiceSuiteStringUtils::stringIsNullOrEmpty($this->binarydatadirectory)
             ) {
                 $binaryDataFilename = InvoiceSuitePathUtils::combinePathWithFile($this->binarydatadirectory, $binaryDataFilename);
-                file_put_contents($binaryDataFilename, $binarydata);
+                InvoiceSuiteFileUtils::putContentToFile($binaryDataFilename, $binarydata);
             }
         }
 
