@@ -1,5 +1,6 @@
 <?php
 
+use horstoeko\invoicesuite\pdfs\extractor\InvoiceSuitePdfExtractorAttachment;
 use horstoeko\invoicesuite\InvoiceSuitePdfDocumentReader;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
@@ -26,7 +27,7 @@ $invoiceDocumentAttachment = $pdfReader->getInvoiceDocumentAttachment();
 echo sprintf("Read PDF invoice: %s\n", $pdfInvoiceFilename);
 echo sprintf("Format provider: %s\n", $pdfReader->getCurrentDocumentFormatProvider()?->getUniqueId() ?? 'unknown');
 
-if (null !== $invoiceDocumentAttachment) {
+if ($invoiceDocumentAttachment instanceof InvoiceSuitePdfExtractorAttachment) {
     $invoiceXmlFilename = InvoiceSuitePathUtils::combinePathWithFile(
         $targetFilesDirectory,
         sprintf('08_%s', InvoiceSuiteFileUtils::getFilenameWithExtension($invoiceDocumentAttachment->getAttachmentFilename()))

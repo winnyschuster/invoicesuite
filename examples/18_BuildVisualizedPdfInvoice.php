@@ -44,8 +44,8 @@ $documentBuilder->setDocumentSellerId('549910');
 $documentBuilder->setDocumentSellerGlobalId('4000001123452', '0088');
 $documentBuilder->setDocumentSellerName('Lieferant GmbH');
 $documentBuilder->setDocumentSellerAddress(
-    newPostcode: '80333',
     newAddressLine1: 'Lieferantenstraße 20',
+    newPostcode: '80333',
     newCity: 'München',
     newCountryId: 'DE'
 );
@@ -59,8 +59,8 @@ $documentBuilder->addDocumentSellerCommunication('EM', 'info@seller.de');
 $documentBuilder->setDocumentBuyerId('GE2020211');
 $documentBuilder->setDocumentBuyerName('Kunden AG Mitte');
 $documentBuilder->setDocumentBuyerAddress(
-    newPostcode: '69876',
     newAddressLine1: 'Kundenstraße 15',
+    newPostcode: '69876',
     newCity: 'Frankfurt',
     newCountryId: 'DE'
 );
@@ -77,17 +77,17 @@ $documentBuilder->setDocumentBuyerReference('0814-4711');
 // Set the single summarized taxes
 
 $documentBuilder->addDocumentTax(
-    newTaxAmount: 19.25,
+    newTaxCategory: 'S',
     newTaxType: 'VAT',
     newBasisAmount: 275.00,
-    newTaxCategory: 'S',
+    newTaxAmount: 19.25,
     newTaxPercent: 7.00
 );
 $documentBuilder->addDocumentTax(
-    newTaxAmount: 37.62,
+    newTaxCategory: 'S',
     newTaxType: 'VAT',
     newBasisAmount: 198.00,
-    newTaxCategory: 'S',
+    newTaxAmount: 37.62,
     newTaxPercent: 19.00
 );
 
@@ -117,8 +117,8 @@ $documentBuilder->setDocumentSummation(
     newTaxTotalAmount: 56.87,
     newTaxTotalAmount2: 49.00,
     newGrossAmount: 529.87,
-    newPrepaidAmount: 0.00,
-    newDueAmount: 529.87
+    newDueAmount: 529.87,
+    newPrepaidAmount: 0.00
 );
 
 // Add first invoiced item/good/product
@@ -128,10 +128,10 @@ $documentBuilder->addDocumentPosition('1');
 // Set the information about product details in the current position
 
 $documentBuilder->setDocumentPositionProductDetails(
-    newProductGlobalId: '4012345001235',
-    newProductGlobalIdType: '0160',
+    newProductName: 'Trennblätter A4',
     newProductSellerId: 'TB100A4',
-    newProductName: 'Trennblätter A4'
+    newProductGlobalId: '4012345001235',
+    newProductGlobalIdType: '0160'
 );
 
 // Set the unit price of the product excluding all charges/disacount
@@ -163,10 +163,10 @@ $documentBuilder->setDocumentPositionSummation(198.00);
 $documentBuilder->addDocumentPosition('2');
 
 $documentBuilder->setDocumentPositionProductDetails(
-    newProductGlobalId: '4000050986428',
-    newProductGlobalIdType: '0160',
+    newProductName: 'Joghurt Banane',
     newProductSellerId: 'ARNR2',
-    newProductName: 'Joghurt Banane'
+    newProductGlobalId: '4000050986428',
+    newProductGlobalIdType: '0160'
 );
 
 $documentBuilder->setDocumentPositionGrossPrice(5.5000);

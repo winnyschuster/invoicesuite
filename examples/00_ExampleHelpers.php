@@ -77,16 +77,16 @@ function helperOutputDocumentReader(InvoiceSuiteAbstractDocumentFormatReader|Inv
     $reader->getDocumentIsCopy($documentIsCopy);
     $reader->getDocumentBuyerReference($documentBuyerReference);
 
-    echo "Document Number ........ {$documentNumber}\n";
-    echo "Document Type .......... {$documentType}\n";
-    echo "Document Name .......... {$documentDescription}\n";
-    echo "Document Language ...... {$documentLanguage}\n";
+    echo sprintf('Document Number ........ %s%s', $documentNumber, PHP_EOL);
+    echo sprintf('Document Type .......... %s%s', $documentType, PHP_EOL);
+    echo sprintf('Document Name .......... %s%s', $documentDescription, PHP_EOL);
+    echo sprintf('Document Language ...... %s%s', $documentLanguage, PHP_EOL);
     echo 'Document Date .......... ' . $documentDate?->format('d.m.Y') . "\n";
     echo 'Document Compl. Date ... ' . $documentCompleteDate?->format('d.m.Y') . "\n";
-    echo "Document Currency ...... {$documentCurrency}\n";
-    echo "Document Tax Currency .. {$documentTaxCurrency}\n";
-    echo "Document Copy .......... {$documentIsCopy}\n";
-    echo "Document Leitweg ....... {$documentBuyerReference}\n";
+    echo sprintf('Document Currency ...... %s%s', $documentCurrency, PHP_EOL);
+    echo sprintf('Document Tax Currency .. %s%s', $documentTaxCurrency, PHP_EOL);
+    echo sprintf('Document Copy .......... %s%s', $documentIsCopy, PHP_EOL);
+    echo sprintf('Document Leitweg ....... %s%s', $documentBuyerReference, PHP_EOL);
 
     while ($reader->nextDocumentNote()) {
         $reader->getDocumentNote($documentNoteContent, $documentNoteContentCode, $documentNoteSubjectCode);
@@ -703,17 +703,17 @@ function helperOutputDocumentReader(InvoiceSuiteAbstractDocumentFormatReader|Inv
             $paymentMeanMandate
         );
 
-        echo "Type ..................... {$paymentMeanTypeCode}\n";
-        echo "Name ..................... {$paymentMeanName}\n";
-        echo "Financial Card ID ........ {$paymentMeanFinancialCardId}\n";
-        echo "Financial Card Holder .... {$paymentMeanFinancialCardHolder}\n";
-        echo "Buyer IBAN ............... {$paymentMeanBuyerIban}\n";
-        echo "Payee IBAN ............... {$paymentMeanPayeeIban}\n";
-        echo "Payee Account Name ....... {$paymentMeanPayeeAccountName}\n";
-        echo "Payee Prop. ID ........... {$paymentMeanPayeeProprietaryId}\n";
-        echo "Payee BIC ................ {$paymentMeanPayeeBic}\n";
-        echo "Payment Reference ........ {$paymentMeanPaymentReference}\n";
-        echo "Payment Mandate .......... {$paymentMeanMandate}\n";
+        echo sprintf('Type ..................... %s%s', $paymentMeanTypeCode, PHP_EOL);
+        echo sprintf('Name ..................... %s%s', $paymentMeanName, PHP_EOL);
+        echo sprintf('Financial Card ID ........ %s%s', $paymentMeanFinancialCardId, PHP_EOL);
+        echo sprintf('Financial Card Holder .... %s%s', $paymentMeanFinancialCardHolder, PHP_EOL);
+        echo sprintf('Buyer IBAN ............... %s%s', $paymentMeanBuyerIban, PHP_EOL);
+        echo sprintf('Payee IBAN ............... %s%s', $paymentMeanPayeeIban, PHP_EOL);
+        echo sprintf('Payee Account Name ....... %s%s', $paymentMeanPayeeAccountName, PHP_EOL);
+        echo sprintf('Payee Prop. ID ........... %s%s', $paymentMeanPayeeProprietaryId, PHP_EOL);
+        echo sprintf('Payee BIC ................ %s%s', $paymentMeanPayeeBic, PHP_EOL);
+        echo sprintf('Payment Reference ........ %s%s', $paymentMeanPaymentReference, PHP_EOL);
+        echo sprintf('Payment Mandate .......... %s%s', $paymentMeanMandate, PHP_EOL);
         echo "\n";
     }
 
@@ -738,7 +738,7 @@ function helperOutputDocumentReader(InvoiceSuiteAbstractDocumentFormatReader|Inv
         $reader->getDocumentPaymentTerm($paymentTermDescription, $paymentTermDueDate, $paymentTermMandate);
         echo sprintf("%s, %s, %s\n", $paymentTermDescription, $paymentTermDueDate?->format('d.m.Y') ?? '', $paymentTermMandate);
 
-        echo sprintf("  DiscountTerm\n");
+        echo "  DiscountTerm\n";
 
         while ($reader->nextDocumentPaymentDiscountTermsInLastPaymentTerm()) {
             $reader->getDocumentPaymentDiscountTermsInLastPaymentTerm(
@@ -758,7 +758,7 @@ function helperOutputDocumentReader(InvoiceSuiteAbstractDocumentFormatReader|Inv
             echo sprintf("  DiscountTerm Period Unit ....... %s\n", $baseperiodUnnit);
         }
 
-        echo sprintf("  PenaltyTerm\n");
+        echo "  PenaltyTerm\n";
 
         while ($reader->nextDocumentPaymentPenaltyTermsInLastPaymentTerm()) {
             $reader->getDocumentPaymentPenaltyTermsInLastPaymentTerm(
@@ -818,7 +818,7 @@ function helperOutputDocumentReader(InvoiceSuiteAbstractDocumentFormatReader|Inv
             $allowanceChargePercent
         );
         echo " - Allowance/Charge\n";
-        echo sprintf("   Is Charge ............. %s\n", true === $allowanceChargeindicator ? 'Yes' : 'No');
+        echo sprintf("   Is Charge ............. %s\n", $allowanceChargeindicator ? 'Yes' : 'No');
         echo sprintf("   Amount ................ %s\n", $allowanceChargeAmount);
         echo sprintf("   Basis Amount .......... %s\n", $allowanceChargeBaseAmount);
         echo sprintf("   Tax Category .......... %s\n", $allowanceChargeTaxCategory);
@@ -1161,7 +1161,7 @@ function helperOutputDocumentReader(InvoiceSuiteAbstractDocumentFormatReader|Inv
             );
             echo "      - Position Gross Price Allowances/Charge:\n";
             echo sprintf("        Charge Amount .......... %s:\n", $positionGrossPriceAllowanceChargeAmount);
-            echo sprintf("        Is Charge .............. %s:\n", true === $positionGrossPriceAllowanceChargeIsCharge ? 'Yes' : 'Mo');
+            echo sprintf("        Is Charge .............. %s:\n", $positionGrossPriceAllowanceChargeIsCharge ? 'Yes' : 'Mo');
             echo sprintf("        Charge Percent ......... %s:\n", $positionGrossPriceAllowanceChargePercent);
             echo sprintf("        Basis Amount ........... %s:\n", $positionGrossPriceAllowanceChargeBasisAmount);
             echo sprintf("        Reason ................. %s:\n", $positionGrossPriceAllowanceChargeReason);
@@ -1333,7 +1333,7 @@ function helperOutputDocumentReader(InvoiceSuiteAbstractDocumentFormatReader|Inv
 
         while ($reader->nextDocumentPositionTax()) {
             $reader->getDocumentPositionTax($positionTaxCategory, $positionTaxType, $positionTaxAmount, $positionTaxPercent, $positionTaxExcemptionReason, $positionTaxExcemptionReasonCode);
-            echo sprintf("   - Tax:\n");
+            echo "   - Tax:\n";
             echo sprintf("     Tax Category ........ %s\n", $positionTaxCategory);
             echo sprintf("     Tax Type ............ %s\n", $positionTaxType);
             echo sprintf("     Tax Amount .......... %s\n", $positionTaxAmount);
@@ -1348,8 +1348,8 @@ function helperOutputDocumentReader(InvoiceSuiteAbstractDocumentFormatReader|Inv
 
         while ($reader->nextDocumentPositionAllowanceCharge()) {
             $reader->getDocumentPositionAllowanceCharge($positionACIndicator, $positionACAmount, $positionACBaseAmount, $positionACReason, $positionACReasonCode, $positionACPercent);
-            echo sprintf("   - Allowance/Charge:\n");
-            echo sprintf("     Is Charge ........... %s\n", true === $positionACIndicator ? 'Yes' : 'No');
+            echo "   - Allowance/Charge:\n";
+            echo sprintf("     Is Charge ........... %s\n", $positionACIndicator ? 'Yes' : 'No');
             echo sprintf("     Amount .............. %s\n", $positionACAmount);
             echo sprintf("     Base Amount ......... %s\n", $positionACBaseAmount);
             echo sprintf("     Percent ............. %s\n", $positionACPercent);
@@ -1375,7 +1375,7 @@ function helperOutputDocumentReader(InvoiceSuiteAbstractDocumentFormatReader|Inv
 
         while ($reader->nextDocumentPositionPostingReference()) {
             $reader->getDocumentPositionPostingReference($positionPostingReferenceType, $positionPostingReferenceAccountId);
-            echo sprintf("   - Posting Reference:\n");
+            echo "   - Posting Reference:\n";
             echo sprintf("     Type ................ %s\n", $positionPostingReferenceType);
             echo sprintf("     Account ID .......... %s\n", $positionPostingReferenceAccountId);
         }
