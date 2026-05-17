@@ -125,17 +125,9 @@ class InvoiceSuitePdfDocumentReader
     public static function createFromFile(
         string $fromFile
     ): static {
-        if (!InvoiceSuiteFileUtils::isReadableFilePath($fromFile)) {
-            throw new InvoiceSuiteFileNotFoundException($fromFile);
-        }
-
-        $fromContent = file_get_contents($fromFile);
-
-        if (false === $fromContent) {
-            throw new InvoiceSuiteFileNotReadableException($fromFile);
-        }
-
-        return static::createFromContent($fromContent);
+        return static::createFromContent(
+            InvoiceSuiteFileUtils::getContentFromFile($fromFile)
+        );
     }
 
     /**

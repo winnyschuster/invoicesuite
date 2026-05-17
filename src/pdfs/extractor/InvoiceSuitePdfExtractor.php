@@ -62,17 +62,9 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
     public static function fromFile(
         string $pdfFilename
     ): static {
-        if (!InvoiceSuiteFileUtils::isReadableFilePath($pdfFilename)) {
-            throw new InvoiceSuiteFileNotFoundException($pdfFilename);
-        }
-
-        $pdfContent = file_get_contents($pdfFilename);
-
-        if (false === $pdfContent) {
-            throw new InvoiceSuiteFileNotReadableException($pdfFilename);
-        }
-
-        return static::fromContent($pdfContent);
+        return static::fromContent(
+            InvoiceSuiteFileUtils::getContentFromFile($pdfFilename)
+        );
     }
 
     /**

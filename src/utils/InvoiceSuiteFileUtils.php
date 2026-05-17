@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\utils;
 
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\stringmanagement\FileUtils;
 
@@ -56,6 +57,31 @@ class InvoiceSuiteFileUtils extends FileUtils
 
         if (false === $fileContent) {
             throw new InvoiceSuiteFileNotReadableException($filenameOrContent);
+        }
+
+        return $fileContent;
+    }
+
+    /**
+     * Returns the content of the file
+     *
+     * @param  string $filename
+     * @return string
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     */
+    public static function getContentFromFile(
+        string $filename
+    ): string {
+        if (!static::isReadableFilePath($filename)) {
+            throw new InvoiceSuiteFileNotFoundException($filename);
+        }
+
+        $fileContent = file_get_contents($filename);
+
+        if (false === $fileContent) {
+            throw new InvoiceSuiteFileNotReadableException($filename);
         }
 
         return $fileContent;

@@ -242,25 +242,6 @@ abstract class InvoiceSuiteAbstractCommand extends Command
     }
 
     /**
-     * Load the content of a file
-     *
-     * @param  string $filename
-     * @return string
-     *
-     * @throws RuntimeException
-     */
-    protected function loadFile(string $filename): string
-    {
-        $content = file_get_contents($filename);
-
-        if (false === $content) {
-            throw new RuntimeException(sprintf('Unable to read file "%s".', $filename));
-        }
-
-        return $content;
-    }
-
-    /**
      * Get a string argument.
      *
      * @param  string $name

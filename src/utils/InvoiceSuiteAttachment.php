@@ -98,17 +98,11 @@ class InvoiceSuiteAttachment
     public static function fromFile(
         string $filename
     ): static {
-        if (!InvoiceSuiteFileUtils::isReadableFilePath($filename)) {
-            throw new InvoiceSuiteFileNotFoundException($filename);
-        }
-
-        $content = file_get_contents($filename);
-
-        if (false === $content) {
-            throw new InvoiceSuiteFileNotReadableException($filename);
-        }
-
-        return new static($content, $filename, static::IS_FROM_FILE);
+        return new static(
+            InvoiceSuiteFileUtils::getContentFromFile($filename),
+            $filename,
+            static::IS_FROM_FILE
+        );
     }
 
     /**

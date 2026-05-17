@@ -163,17 +163,10 @@ class ZugferdDocumentProfileConverter
         string $fromFilename,
         int $newProfileId
     ): static {
-        if (!InvoiceSuiteFileUtils::isReadableFilePath($fromFilename)) {
-            throw new InvoiceSuiteFileNotFoundException($fromFilename);
-        }
-
-        $fromContent = file_get_contents($fromFilename);
-
-        if (false === $fromContent) {
-            throw new InvoiceSuiteFileNotReadableException($fromFilename);
-        }
-
-        return static::convertFromContent($fromContent, $newProfileId);
+        return static::convertFromContent(
+            InvoiceSuiteFileUtils::getContentFromFile($fromFilename),
+            $newProfileId
+        );
     }
 
     /**

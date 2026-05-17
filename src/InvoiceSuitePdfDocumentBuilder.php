@@ -67,19 +67,9 @@ class InvoiceSuitePdfDocumentBuilder
         InvoiceSuiteDocumentBuilder $fromDocumentBuilder,
         string $fromPdfFilename
     ): static {
-        if (!InvoiceSuiteFileUtils::isReadableFilePath($fromPdfFilename)) {
-            throw new InvoiceSuiteFileNotFoundException($fromPdfFilename);
-        }
-
-        $fromPdfContent = file_get_contents($fromPdfFilename);
-
-        if (false === $fromPdfContent) {
-            throw new InvoiceSuiteFileNotReadableException($fromPdfFilename);
-        }
-
         return (new static())
             ->setDocumentBuilder($fromDocumentBuilder)
-            ->setRawPdfContent($fromPdfContent)
+            ->setRawPdfContent(InvoiceSuiteFileUtils::getContentFromFile($fromPdfFilename))
             ->initCurrentPdfConstructor();
     }
 
@@ -118,19 +108,9 @@ class InvoiceSuitePdfDocumentBuilder
         string $fromDocumentContent,
         string $fromPdfFilename
     ): static {
-        if (!InvoiceSuiteFileUtils::isReadableFilePath($fromPdfFilename)) {
-            throw new InvoiceSuiteFileNotFoundException($fromPdfFilename);
-        }
-
-        $fromPdfContent = file_get_contents($fromPdfFilename);
-
-        if (false === $fromPdfContent) {
-            throw new InvoiceSuiteFileNotReadableException($fromPdfFilename);
-        }
-
         return (new static())
             ->setDocumentContent($fromDocumentContent)
-            ->setRawPdfContent($fromPdfContent)
+            ->setRawPdfContent(InvoiceSuiteFileUtils::getContentFromFile($fromPdfFilename))
             ->initCurrentPdfConstructor();
     }
 
@@ -151,6 +131,48 @@ class InvoiceSuitePdfDocumentBuilder
             ->setDocumentContent($fromDocumentContent)
             ->setRawPdfContent($fromPdfContent)
             ->initCurrentPdfConstructor();
+    }
+
+    /**
+     * Create the PDF builder from a document file and a PDF file
+     *
+     * @param  string $fromDocumentFile
+     * @param  string $fromPdfFile
+     * @return static
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws InvoiceSuiteFormatProviderNotFoundException
+     */
+    public static function createFromDocumentFileAndPdfFile(
+        string $fromDocumentFile,
+        string $fromPdfFile
+    ): static {
+        return static::createFromDocumentContentAndPdfFile(
+            InvoiceSuiteFileUtils::getContentFromFile($fromDocumentFile),
+            $fromPdfFile
+        );
+    }
+
+    /**
+     * Create the PDF builder from a document file and a PDF content
+     *
+     * @param  string $fromDocumentFile
+     * @param  string $fromPdfContent
+     * @return static
+     *
+     * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
+     * @throws InvoiceSuiteFormatProviderNotFoundException
+     */
+    public static function createFromDocumentFileAndPdfContent(
+        string $fromDocumentFile,
+        string $fromPdfContent
+    ): static {
+        return static::createFromDocumentContentAndPdfContent(
+            InvoiceSuiteFileUtils::getContentFromFile($fromDocumentFile),
+            $fromPdfContent
+        );
     }
 
     /**

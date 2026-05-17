@@ -12,6 +12,8 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\console\commands;
 
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
+use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
+use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use RuntimeException;
@@ -55,6 +57,7 @@ class InvoiceSuiteMakeProviderCommand extends InvoiceSuiteAbstractCommand
      *
      * @throws InvalidArgumentException
      * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
      * @throws RuntimeException
      */
     protected function handle(): int
@@ -107,12 +110,19 @@ class InvoiceSuiteMakeProviderCommand extends InvoiceSuiteAbstractCommand
      * @return static
      *
      * @throws InvoiceSuiteFileNotFoundException
+     * @throws InvoiceSuiteFileNotReadableException
      * @throws RuntimeException
      */
     protected function writeTemplate(string $templatePath, string $targetPath, array $replacements, bool $forceOverwrite): static
     {
-        $this->ensureFileExists($templatePath);
-        $this->outputFile($targetPath, strtr($this->loadFile($templatePath), $replacements), $forceOverwrite);
+        $this->outputFile(
+            $targetPath,
+            strtr(
+                InvoiceSuiteFileUtils::getContentFromFile($templatePath),
+                $replacements
+            ),
+            $forceOverwrite
+        );
 
         return $this;
     }

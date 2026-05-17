@@ -58,17 +58,9 @@ abstract class InvoiceSuiteAbstractDocumentValidator
     public static function createFromFile(
         string $fromFilename
     ): static {
-        if (!InvoiceSuiteFileUtils::isReadableFilePath($fromFilename)) {
-            throw new InvoiceSuiteFileNotFoundException($fromFilename);
-        }
-
-        $rawDocumentContent = file_get_contents($fromFilename);
-
-        if (false === $rawDocumentContent) {
-            throw new InvoiceSuiteFileNotReadableException($fromFilename);
-        }
-
-        return static::createFromContent($rawDocumentContent);
+        return static::createFromContent(
+            InvoiceSuiteFileUtils::getContentFromFile($fromFilename)
+        );
     }
 
     /**
