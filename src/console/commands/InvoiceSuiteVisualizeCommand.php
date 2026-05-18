@@ -18,7 +18,6 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\InvoiceSuitePdfDocumentBuilder;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
-use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\visualizers\InvoiceSuiteVisualizer;
 use JMS\Serializer\Exception\RuntimeException as JmsRuntimeException;
@@ -111,8 +110,8 @@ class InvoiceSuiteVisualizeCommand extends InvoiceSuiteAbstractCommand
         }
 
         if (InvoiceSuiteStringUtils::equalsNoCase($inpOptionFormat, 'pdf') && $inpOptionEmbed) {
-            InvoiceSuitePdfDocumentBuilder::createFromDocumentContentAndPdfFile(
-                InvoiceSuiteFileUtils::getContentFromFile($inpArgInputFilename),
+            InvoiceSuitePdfDocumentBuilder::createFromDocumentFileAndPdfFile(
+                $inpArgInputFilename,
                 $inpArgOutputFilename
             )->generatePdfDocumentAndSaveToFile($inpArgOutputFilename);
         }

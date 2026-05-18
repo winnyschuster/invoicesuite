@@ -130,6 +130,14 @@
             "Composer\\Config::disableProcessTimeout",
             "vendor/bin/rector --config=./build/phprectorconfig.php"
         ],
+        "rector:dryrun:xd": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php -d xdebug.mode=off -d realpath_cache_size=64M -d realpath_cache_ttl=600 -d opcache.enable_cli=1 -d opcache.file_cache_only=0 -d opcache.file_cache= vendor/bin/rector process --config build/phprectorconfig.php --dry-run"
+        ],
+        "rector:run:xd": [
+            "Composer\\Config::disableProcessTimeout",
+            "@php -d xdebug.mode=off -d realpath_cache_size=64M -d realpath_cache_ttl=600 -d opcache.enable_cli=1 -d opcache.file_cache_only=0 -d opcache.file_cache= vendor/bin/rector process --config build/phprectorconfig.php"
+        ],
         "phpcsfixer:dryrun": [
             "Composer\\Config::disableProcessTimeout",
             "./vendor/bin/php-cs-fixer fix --config=./build/phpcsfixer.php --dry-run --diff"
