@@ -6,6 +6,7 @@ use Rector\Caching\ValueObject\Storage\FileCacheStorage;
 use Rector\CodeQuality\Rector\Class_\ConvertStaticToSelfRector;
 use Rector\CodeQuality\Rector\If_\SimplifyIfReturnBoolRector;
 use Rector\CodeQuality\Rector\New_\NewStaticToNewSelfRector;
+use Rector\CodingStyle\Rector\FuncCall\CallUserFuncArrayToVariadicRector;
 use Rector\CodingStyle\Rector\FuncCall\FunctionFirstClassCallableRector;
 use Rector\CodingStyle\Rector\String_\UseClassKeywordForClassNameResolutionRector;
 use Rector\Config\RectorConfig;
@@ -41,6 +42,7 @@ return RectorConfig::configure()
         SimplifyIfReturnBoolRector::class,
         UseClassKeywordForClassNameResolutionRector::class,
         FunctionFirstClassCallableRector::class,
+        CallUserFuncArrayToVariadicRector::class,
     ])
     ->withPhpVersion(PhpVersion::PHP_82)
     ->withPhpSets(php82: true)
