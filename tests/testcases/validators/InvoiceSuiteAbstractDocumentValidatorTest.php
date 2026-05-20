@@ -48,6 +48,7 @@ final class InvoiceSuiteAbstractDocumentValidatorTest extends TestCase
                     $this->addInfoMessageToMessageBag('info 1');
                     $this->addWarningMessageToMessageBag('warning 1');
                     $this->addErrorMessageToMessageBag('error 1');
+                    $this->addInternalErrorMessageToMessageBag('internal error 1');
                     $this->addMessageToMessageBag('info 2');
 
                     return $this;
@@ -202,13 +203,16 @@ final class InvoiceSuiteAbstractDocumentValidatorTest extends TestCase
         $this->assertTrue($validatorInstance->hasInfoMessagesInMessageBag());
         $this->assertTrue($validatorInstance->hasWarningMessagesInMessageBag());
         $this->assertTrue($validatorInstance->hasErrorMessagesInMessageBag());
+        $this->assertTrue($validatorInstance->hasInternalErrorMessagesInMessageBag());
 
         $this->assertSame(2, $validatorInstance->countInfoMessagesInMessageBag());
         $this->assertSame(1, $validatorInstance->countWarningMessagesInMessageBag());
         $this->assertSame(1, $validatorInstance->countErrorMessagesInMessageBag());
+        $this->assertSame(1, $validatorInstance->countInternalErrorMessagesInMessageBag());
 
         $this->assertCount(2, $validatorInstance->getInfoMessagesInMessageBag());
         $this->assertCount(1, $validatorInstance->getWarningMessagesInMessageBag());
         $this->assertCount(1, $validatorInstance->getErrorMessagesInMessageBag());
+        $this->assertCount(1, $validatorInstance->getInternalErrorMessagesInMessageBag());
     }
 }

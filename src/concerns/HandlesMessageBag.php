@@ -208,6 +208,33 @@ trait HandlesMessageBag
     }
 
     /**
+     * Add a new INTERNALERROR message (creates a new InvoiceSuiteMessageBagItem) to internal message bag.
+     *
+     * If timestamp is not given, the current datetime is used.
+     *
+     * @param  string                       $newMessageContent
+     * @param  null|DateTimeInterface       $newMessageTimestamp
+     * @param  null|array<array-key, mixed> $newMessageAdditionalData the additional data (default empty array)
+     * @return static
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function addInternalErrorMessageToMessageBag(
+        string $newMessageContent,
+        ?DateTimeInterface $newMessageTimestamp = null,
+        ?array $newMessageAdditionalData = null
+    ): static {
+        $this->getMessageBag()->addNewMessage(
+            $newMessageContent,
+            InvoiceSuiteMessageSeverity::INTERNALERROR,
+            $newMessageTimestamp,
+            $newMessageAdditionalData
+        );
+
+        return $this;
+    }
+
+    /**
      * Check if any messages exist in the internal message bag.
      *
      * @return bool
@@ -270,6 +297,18 @@ trait HandlesMessageBag
     }
 
     /**
+     * Check if any INTERNALERROR messages exist in internal message bag.
+     *
+     * @return bool
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function hasInternalErrorMessagesInMessageBag(): bool
+    {
+        return $this->getMessageBag()->hasInternalErrorMessages();
+    }
+
+    /**
      * Count messages by severity in internal message bag.
      *
      * @param  InvoiceSuiteMessageSeverity $filterSeverity
@@ -320,6 +359,18 @@ trait HandlesMessageBag
     }
 
     /**
+     * Count INTERNALERROR messages in internal message bag.
+     *
+     * @return int
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function countInternalErrorMessagesInMessageBag(): int
+    {
+        return $this->getMessageBag()->countInternalErrorMessages();
+    }
+
+    /**
      * Get messages by severity from internal message bag.
      *
      * @param  InvoiceSuiteMessageSeverity            $filterSeverity
@@ -367,5 +418,17 @@ trait HandlesMessageBag
     public function getErrorMessagesInMessageBag(): array
     {
         return $this->getMessageBag()->getErrorMessages();
+    }
+
+    /**
+     * Get INTERNALERROR messages from internal message bag.
+     *
+     * @return array<int, InvoiceSuiteMessageBagItem>
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function getInternalErrorMessagesInMessageBag(): array
+    {
+        return $this->getMessageBag()->getInternalErrorMessages();
     }
 }

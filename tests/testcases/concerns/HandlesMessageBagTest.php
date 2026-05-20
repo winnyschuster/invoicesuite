@@ -182,6 +182,54 @@ final class HandlesMessageBagTest extends TestCase
         $this->assertSame([], $this->messageBag[3]->getMessageAdditionalData());
         $this->assertSame(['key' => 'value'], $this->messageBag[4]->getMessageAdditionalData());
 
+        // addInternalErrorMessageToMessageBag
+
+        $this->addInternalErrorMessageToMessageBag(
+            'Message 6',
+            DateTime::createFromFormat('Ymd', '19700106'),
+            ['key' => 'internal-value']
+        );
+
+        $this->assertCount(6, $this->messageBag);
+        $this->assertArrayHasKey(0, $this->messageBag);
+        $this->assertArrayHasKey(1, $this->messageBag);
+        $this->assertArrayHasKey(2, $this->messageBag);
+        $this->assertArrayHasKey(3, $this->messageBag);
+        $this->assertArrayHasKey(4, $this->messageBag);
+        $this->assertArrayHasKey(5, $this->messageBag);
+        $this->assertArrayNotHasKey(6, $this->messageBag);
+
+        $this->assertInstanceOf(InvoiceSuiteMessageBagItem::class, $this->messageBag[0]);
+        $this->assertInstanceOf(InvoiceSuiteMessageBagItem::class, $this->messageBag[1]);
+        $this->assertInstanceOf(InvoiceSuiteMessageBagItem::class, $this->messageBag[2]);
+        $this->assertInstanceOf(InvoiceSuiteMessageBagItem::class, $this->messageBag[3]);
+        $this->assertInstanceOf(InvoiceSuiteMessageBagItem::class, $this->messageBag[4]);
+        $this->assertInstanceOf(InvoiceSuiteMessageBagItem::class, $this->messageBag[5]);
+        $this->assertSame('Message 1', $this->messageBag[0]->getMessageContent());
+        $this->assertSame('Message 2', $this->messageBag[1]->getMessageContent());
+        $this->assertSame('Message 3', $this->messageBag[2]->getMessageContent());
+        $this->assertSame('Message 4', $this->messageBag[3]->getMessageContent());
+        $this->assertSame('Message 5', $this->messageBag[4]->getMessageContent());
+        $this->assertSame('Message 6', $this->messageBag[5]->getMessageContent());
+        $this->assertSame(InvoiceSuiteMessageSeverity::INFO, $this->messageBag[0]->getMessageSeverity());
+        $this->assertSame(InvoiceSuiteMessageSeverity::INFO, $this->messageBag[1]->getMessageSeverity());
+        $this->assertSame(InvoiceSuiteMessageSeverity::INFO, $this->messageBag[2]->getMessageSeverity());
+        $this->assertSame(InvoiceSuiteMessageSeverity::WARNING, $this->messageBag[3]->getMessageSeverity());
+        $this->assertSame(InvoiceSuiteMessageSeverity::ERROR, $this->messageBag[4]->getMessageSeverity());
+        $this->assertSame(InvoiceSuiteMessageSeverity::INTERNALERROR, $this->messageBag[5]->getMessageSeverity());
+        $this->assertSame('19700101', $this->messageBag[0]->getMessageTimestamp()->format('Ymd'));
+        $this->assertSame('19700102', $this->messageBag[1]->getMessageTimestamp()->format('Ymd'));
+        $this->assertSame('19700103', $this->messageBag[2]->getMessageTimestamp()->format('Ymd'));
+        $this->assertSame('19700104', $this->messageBag[3]->getMessageTimestamp()->format('Ymd'));
+        $this->assertSame('19700105', $this->messageBag[4]->getMessageTimestamp()->format('Ymd'));
+        $this->assertSame('19700106', $this->messageBag[5]->getMessageTimestamp()->format('Ymd'));
+        $this->assertSame([], $this->messageBag[0]->getMessageAdditionalData());
+        $this->assertSame([], $this->messageBag[1]->getMessageAdditionalData());
+        $this->assertSame([], $this->messageBag[2]->getMessageAdditionalData());
+        $this->assertSame([], $this->messageBag[3]->getMessageAdditionalData());
+        $this->assertSame(['key' => 'value'], $this->messageBag[4]->getMessageAdditionalData());
+        $this->assertSame(['key' => 'internal-value'], $this->messageBag[5]->getMessageAdditionalData());
+
         // hasMessagesInMessageBag
 
         $this->assertTrue($this->hasMessagesInMessageBag());
@@ -191,6 +239,7 @@ final class HandlesMessageBagTest extends TestCase
         $this->assertTrue($this->hasMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity::INFO));
         $this->assertTrue($this->hasMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity::WARNING));
         $this->assertTrue($this->hasMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity::ERROR));
+        $this->assertTrue($this->hasMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity::INTERNALERROR));
 
         // hasInfoMessagesInMessageBag
 
@@ -204,11 +253,16 @@ final class HandlesMessageBagTest extends TestCase
 
         $this->assertTrue($this->hasErrorMessagesInMessageBag());
 
+        // hasInternalErrorMessagesInMessageBag
+
+        $this->assertTrue($this->hasInternalErrorMessagesInMessageBag());
+
         // countMessagesInMessageBagBySeverity
 
         $this->assertSame(3, $this->countMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity::INFO));
         $this->assertSame(1, $this->countMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity::WARNING));
         $this->assertSame(1, $this->countMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity::ERROR));
+        $this->assertSame(1, $this->countMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity::INTERNALERROR));
 
         // countInfoMessagesInMessageBag
 
@@ -221,6 +275,10 @@ final class HandlesMessageBagTest extends TestCase
         // countErrorMessagesInMessageBag
 
         $this->assertSame(1, $this->countErrorMessagesInMessageBag());
+
+        // countInternalErrorMessagesInMessageBag
+
+        $this->assertSame(1, $this->countInternalErrorMessagesInMessageBag());
 
         // getMessagesInMessageBagBySeverity
 
@@ -263,6 +321,16 @@ final class HandlesMessageBagTest extends TestCase
         $this->assertSame(InvoiceSuiteMessageSeverity::ERROR, $errorMessages[0]->getMessageSeverity());
         $this->assertSame('19700105', $errorMessages[0]->getMessageTimestamp()->format('Ymd'));
         $this->assertSame(['key' => 'value'], $errorMessages[0]->getMessageAdditionalData());
+
+        $internalErrorMessages = $this->getMessagesInMessageBagBySeverity(InvoiceSuiteMessageSeverity::INTERNALERROR);
+
+        $this->assertCount(1, $internalErrorMessages);
+        $this->assertArrayHasKey(0, $internalErrorMessages);
+        $this->assertArrayNotHasKey(1, $internalErrorMessages);
+        $this->assertSame('Message 6', $internalErrorMessages[0]->getMessageContent());
+        $this->assertSame(InvoiceSuiteMessageSeverity::INTERNALERROR, $internalErrorMessages[0]->getMessageSeverity());
+        $this->assertSame('19700106', $internalErrorMessages[0]->getMessageTimestamp()->format('Ymd'));
+        $this->assertSame(['key' => 'internal-value'], $internalErrorMessages[0]->getMessageAdditionalData());
 
         // getInfoMessagesInMessageBag
 
@@ -310,6 +378,18 @@ final class HandlesMessageBagTest extends TestCase
         $this->assertSame('19700105', $errorMessages[0]->getMessageTimestamp()->format('Ymd'));
         $this->assertSame(['key' => 'value'], $errorMessages[0]->getMessageAdditionalData());
 
+        // getInternalErrorMessagesInMessageBag
+
+        $internalErrorMessages = $this->getInternalErrorMessagesInMessageBag();
+
+        $this->assertCount(1, $internalErrorMessages);
+        $this->assertArrayHasKey(0, $internalErrorMessages);
+        $this->assertArrayNotHasKey(1, $internalErrorMessages);
+        $this->assertSame('Message 6', $internalErrorMessages[0]->getMessageContent());
+        $this->assertSame(InvoiceSuiteMessageSeverity::INTERNALERROR, $internalErrorMessages[0]->getMessageSeverity());
+        $this->assertSame('19700106', $internalErrorMessages[0]->getMessageTimestamp()->format('Ymd'));
+        $this->assertSame(['key' => 'internal-value'], $internalErrorMessages[0]->getMessageAdditionalData());
+
         // clearMessageBag
 
         $this->clearMessageBag();
@@ -319,8 +399,10 @@ final class HandlesMessageBagTest extends TestCase
         $this->assertFalse($this->hasInfoMessagesInMessageBag());
         $this->assertFalse($this->hasWarningMessagesInMessageBag());
         $this->assertFalse($this->hasErrorMessagesInMessageBag());
+        $this->assertFalse($this->hasInternalErrorMessagesInMessageBag());
         $this->assertSame(0, $this->countInfoMessagesInMessageBag());
         $this->assertSame(0, $this->countWarningMessagesInMessageBag());
         $this->assertSame(0, $this->countErrorMessagesInMessageBag());
+        $this->assertSame(0, $this->countInternalErrorMessagesInMessageBag());
     }
 }
