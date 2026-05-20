@@ -138,6 +138,21 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
     }
 
     /**
+     * Copy messages from one messagebag to the current one
+     *
+     * @param  InvoiceSuiteMessageBag $fromMessageBag
+     * @return static
+     */
+    public function copyFromMessageBag(self $fromMessageBag): static
+    {
+        foreach ($fromMessageBag as $fromMessageBagItem) {
+            $this->add($fromMessageBagItem);
+        }
+
+        return $this;
+    }
+
+    /**
      * Check if the bag contains any messages.
      *
      * @return bool true if at least one message exists, otherwise false

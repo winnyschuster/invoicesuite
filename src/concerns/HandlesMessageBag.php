@@ -66,6 +66,21 @@ trait HandlesMessageBag
     }
 
     /**
+     * Copy messages from one messagebag to the current one
+     *
+     * @param  InvoiceSuiteMessageBag $fromMessageBag
+     * @return static
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function copyFromMessageBag(InvoiceSuiteMessageBag $fromMessageBag): static
+    {
+        $this->getMessageBag()->copyFromMessageBag($fromMessageBag);
+
+        return $this;
+    }
+
+    /**
      * Add an existing message bag item to internal message bag.
      *
      * @param  InvoiceSuiteMessageBagItem $newMessageBagItem the item to add
