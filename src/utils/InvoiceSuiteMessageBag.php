@@ -215,6 +215,16 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
     }
 
     /**
+     * Check if the bag contains any ERROR or INTERNALERROR messages.
+     *
+     * @return bool true if at least one ERROR or INTERNALERROR message exists, otherwise false
+     */
+    public function hasErrorOrInternalErrorMessages(): bool
+    {
+        return $this->hasErrorMessages() || $this->hasInternalErrorMessages();
+    }
+
+    /**
      * Count messages by severity.
      *
      * @param  InvoiceSuiteMessageSeverity $filterSeverity the severity to count
@@ -267,6 +277,16 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
     }
 
     /**
+     * Count ERROR and INTERNALERROR messages.
+     *
+     * @return int number of ERROR and INTERNALERROR messages
+     */
+    public function countErrorOrInternalErrorMessages(): int
+    {
+        return $this->countErrorMessages() + $this->countInternalErrorMessages();
+    }
+
+    /**
      * Get messages by severity.
      *
      * @param  InvoiceSuiteMessageSeverity            $filterSeverity the severity to filter by
@@ -316,6 +336,16 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
     public function getInternalErrorMessages(): array
     {
         return $this->getMessagesBySeverity(InvoiceSuiteMessageSeverity::INTERNALERROR);
+    }
+
+    /**
+     * Get ERROR and INTERNALERROR messages.
+     *
+     * @return array<int, InvoiceSuiteMessageBagItem> list of ERROR and INTERNALERROR messages
+     */
+    public function getErrorOrInternalErrorMessages(): array
+    {
+        return [...$this->getErrorMessages(), ...$this->getInternalErrorMessages()];
     }
 
     /**

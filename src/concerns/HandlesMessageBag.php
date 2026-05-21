@@ -309,6 +309,18 @@ trait HandlesMessageBag
     }
 
     /**
+     * Check if any ERROR or INTERNALERROR messages exist in internal message bag.
+     *
+     * @return bool
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function hasErrorOrInternalErrorMessagesInMessageBag(): bool
+    {
+        return $this->getMessageBag()->hasErrorOrInternalErrorMessages();
+    }
+
+    /**
      * Count messages by severity in internal message bag.
      *
      * @param  InvoiceSuiteMessageSeverity $filterSeverity
@@ -371,6 +383,18 @@ trait HandlesMessageBag
     }
 
     /**
+     * Count ERROR and INTERNALERROR messages in internal message bag.
+     *
+     * @return int
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function countErrorOrInternalErrorMessagesInMessageBag(): int
+    {
+        return $this->getMessageBag()->countErrorOrInternalErrorMessages();
+    }
+
+    /**
      * Get messages by severity from internal message bag.
      *
      * @param  InvoiceSuiteMessageSeverity            $filterSeverity
@@ -430,5 +454,17 @@ trait HandlesMessageBag
     public function getInternalErrorMessagesInMessageBag(): array
     {
         return $this->getMessageBag()->getInternalErrorMessages();
+    }
+
+    /**
+     * Get ERROR and INTERNALERROR messages from internal message bag.
+     *
+     * @return array<int, InvoiceSuiteMessageBagItem>
+     *
+     * @throws InvoiceSuiteInvalidArgumentException
+     */
+    public function getErrorOrInternalErrorMessagesInMessageBag(): array
+    {
+        return $this->getMessageBag()->getErrorOrInternalErrorMessages();
     }
 }
