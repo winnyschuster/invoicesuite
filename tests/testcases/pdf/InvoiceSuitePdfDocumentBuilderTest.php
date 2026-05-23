@@ -110,6 +110,7 @@ final class InvoiceSuitePdfDocumentBuilderTest extends TestCase
 
         $this->assertSame('', $pdfDOcumentBuilder->getAdditionalCreatorTool());
         $this->assertSame('Alternative', $pdfDOcumentBuilder->getDocumentRelationshipType());
+        $this->assertSame('B', $pdfDOcumentBuilder->getPdfAConformanceLevel());
         $this->assertEmpty($pdfDOcumentBuilder->getaddAdditionalDocument());
         $this->assertFalse($pdfDOcumentBuilder->getDeterministicMode());
         $this->assertSame('', $pdfDOcumentBuilder->getMetaInformationAuthorTemplate());
@@ -162,6 +163,19 @@ final class InvoiceSuitePdfDocumentBuilderTest extends TestCase
         $this->assertSame('Alternative', $pdfDOcumentBuilder->getDocumentRelationshipType());
         $pdfDOcumentBuilder->setDocumentRelationshipTypeToData();
         $this->assertSame('Data', $pdfDOcumentBuilder->getDocumentRelationshipType());
+
+        $pdfDOcumentBuilder->setPdfAConformanceLevel('A');
+        $this->assertSame('A', $pdfDOcumentBuilder->getPdfAConformanceLevel());
+        $pdfDOcumentBuilder->setPdfAConformanceLevel('U');
+        $this->assertSame('U', $pdfDOcumentBuilder->getPdfAConformanceLevel());
+        $pdfDOcumentBuilder->setPdfAConformanceLevel('X');
+        $this->assertSame('B', $pdfDOcumentBuilder->getPdfAConformanceLevel());
+        $pdfDOcumentBuilder->setPdfAConformanceLevelToAccessible();
+        $this->assertSame('A', $pdfDOcumentBuilder->getPdfAConformanceLevel());
+        $pdfDOcumentBuilder->setPdfAConformanceLevelToUnicode();
+        $this->assertSame('U', $pdfDOcumentBuilder->getPdfAConformanceLevel());
+        $pdfDOcumentBuilder->setPdfAConformanceLevelToBasic();
+        $this->assertSame('B', $pdfDOcumentBuilder->getPdfAConformanceLevel());
 
         $pdfDOcumentBuilder->setDeterministicMode(true);
         $this->assertTrue($pdfDOcumentBuilder->getDeterministicMode());

@@ -294,6 +294,66 @@ class InvoiceSuitePdfDocumentBuilder
     }
 
     /**
+     * Returns the PDF/A Conformance Level. This will return "A", "B" or "U"
+     *
+     * @return string
+     */
+    public function getPdfAConformanceLevel(): string
+    {
+        return $this->getCurrentPdfConstructor()->getPdfAConformanceLevel();
+    }
+
+    /**
+     * Set the PDF/A Conformance Level. Valid values are "A", "B" and "U".
+     *
+     * @param  string $newPdfAConformanceLevel
+     * @return static
+     */
+    public function setPdfAConformanceLevel(
+        string $newPdfAConformanceLevel
+    ): static {
+        $this->getCurrentPdfConstructor()->setPdfAConformanceLevel($newPdfAConformanceLevel);
+
+        return $this;
+    }
+
+    /**
+     * Set the PDF/A Conformane Level to "Accessible" (A)
+     *
+     * @return static
+     */
+    public function setPdfAConformanceLevelToAccessible(): static
+    {
+        $this->getCurrentPdfConstructor()->setPdfAConformanceLevelToAccessible();
+
+        return $this;
+    }
+
+    /**
+     * Set the PDF/A Conformane Level to "Basic" (B)
+     *
+     * @return static
+     */
+    public function setPdfAConformanceLevelToBasic(): static
+    {
+        $this->getCurrentPdfConstructor()->setPdfAConformanceLevelToBasic();
+
+        return $this;
+    }
+
+    /**
+     * Set the PDF/A Conformane Level to "Unicode" (U)
+     *
+     * @return static
+     */
+    public function setPdfAConformanceLevelToUnicode(): static
+    {
+        $this->getCurrentPdfConstructor()->setPdfAConformanceLevelToUnicode();
+
+        return $this;
+    }
+
+    /**
      * Get a list of additional documents to attach
      *
      * @return array<int, array{content: string, filename: string, displayname: string, relationship: string, mimetype: string}>

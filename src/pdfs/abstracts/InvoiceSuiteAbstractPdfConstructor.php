@@ -62,6 +62,21 @@ abstract class InvoiceSuiteAbstractPdfConstructor
     public const AF_RELATIONSHIP_UNSPECIFIED = 'Unspecified';
 
     /**
+     * Constant for PDF/A Conformance Level "Accessible"
+     */
+    public const PDFA_CONFORMANCE_LEVEL_ACCESSIBLE = 'A';
+
+    /**
+     * Constant for PDF/A Conformance Level "Basic"
+     */
+    public const PDFA_CONFORMANCE_LEVEL_BASIC = 'B';
+
+    /**
+     * Constant for PDF/A Conformance Level "Unicode"
+     */
+    public const PDFA_CONFORMANCE_LEVEL_UNICODE = 'U';
+
+    /**
      * The additional creator tool
      *
      * @var string
@@ -74,6 +89,13 @@ abstract class InvoiceSuiteAbstractPdfConstructor
      * @var string
      */
     private $documentRelationshipType = 'Alternative';
+
+    /**
+     * PDF/A conformance level
+     *
+     * @var string
+     */
+    private $pdfAConformanceLevel = 'B';
 
     /**
      * List which holds the additional attachments
@@ -267,6 +289,67 @@ abstract class InvoiceSuiteAbstractPdfConstructor
     public function setDocumentRelationshipTypeToSource()
     {
         return $this->setDocumentRelationshipType(static::AF_RELATIONSHIP_SOURCE);
+    }
+
+    /**
+     * Returns the PDF/A Conformance Level. This will return "A", "B" or "U"
+     *
+     * @return string
+     */
+    public function getPdfAConformanceLevel(): string
+    {
+        return $this->pdfAConformanceLevel;
+    }
+
+    /**
+     * Set the PDF/A Conformance Level. Valid values are "A", "B" and "U". See constants
+     * - PDFA_CONFORMANCE_LEVEL_ACCESSIBLE
+     * - PDFA_CONFORMANCE_LEVEL_BASIC
+     * - PDFA_CONFORMANCE_LEVEL_UNICODE
+     *
+     * @param  string $newPdfAConformanceLevel
+     * @return static
+     */
+    public function setPdfAConformanceLevel(
+        string $newPdfAConformanceLevel
+    ): static {
+        if (!in_array($newPdfAConformanceLevel, [static::PDFA_CONFORMANCE_LEVEL_ACCESSIBLE, static::PDFA_CONFORMANCE_LEVEL_BASIC, static::PDFA_CONFORMANCE_LEVEL_UNICODE])) {
+            $newPdfAConformanceLevel = static::PDFA_CONFORMANCE_LEVEL_BASIC;
+        }
+
+        $this->pdfAConformanceLevel = $newPdfAConformanceLevel;
+
+        return $this;
+    }
+
+    /**
+     * Set the PDF/A Conformane Level to "Accessible" (A)
+     *
+     * @return static
+     */
+    public function setPdfAConformanceLevelToAccessible(): static
+    {
+        return $this->setPdfAConformanceLevel(static::PDFA_CONFORMANCE_LEVEL_ACCESSIBLE);
+    }
+
+    /**
+     * Set the PDF/A Conformane Level to "Basic" (B)
+     *
+     * @return static
+     */
+    public function setPdfAConformanceLevelToBasic(): static
+    {
+        return $this->setPdfAConformanceLevel(static::PDFA_CONFORMANCE_LEVEL_BASIC);
+    }
+
+    /**
+     * Set the PDF/A Conformane Level to "Unicode" (U)
+     *
+     * @return static
+     */
+    public function setPdfAConformanceLevelToUnicode(): static
+    {
+        return $this->setPdfAConformanceLevel(static::PDFA_CONFORMANCE_LEVEL_UNICODE);
     }
 
     /**

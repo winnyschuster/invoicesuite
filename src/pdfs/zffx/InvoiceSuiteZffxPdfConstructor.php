@@ -229,6 +229,7 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
         $this->pdfWriter->addMetadataDescriptionNode($descriptionNodes[1]->asXML());
 
         $descPdfAid = $descriptionNodes[2];
+        $descPdfAid->children('pdfaid', true)->{'conformance'} = $this->getPdfAConformanceLevel();
         $this->pdfWriter->addMetadataDescriptionNode($descPdfAid->asXML());
 
         $descDc = $descriptionNodes[3];
