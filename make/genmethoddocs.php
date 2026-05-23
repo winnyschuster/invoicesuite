@@ -148,8 +148,9 @@ class ExtractClass implements Stringable
 
             $docComment = $method->getDocComment();
             $parameters = [];
+            $methodReturnType = $method->getReturnType();
             $returnDetails = [
-                'type' => 'void',
+                'type' => $this->getReflectionTypeString($methodReturnType),
                 'description' => '',
             ];
             $methodDetails = [
@@ -257,6 +258,47 @@ class ExtractClass implements Stringable
         string $filename
     ): void {
         file_put_contents($filename, $this->getJson());
+    }
+
+    /**
+     * Returns a PHP type string from a reflection type
+     *
+     * @param  null|ReflectionType $reflectionType
+     * @return string
+     */
+    private function getReflectionTypeString(?ReflectionType $reflectionType): string
+    {
+        if ($reflectionType instanceof ReflectionUnionType) {
+            $typeNames = [];
+
+            foreach ($reflectionType->getTypes() as $reflectionNamedType) {
+                $typeNames[] = $this->getReflectionTypeString($reflectionNamedType);
+            }
+
+            return implode('|', $typeNames);
+        }
+
+        if ($reflectionType instanceof ReflectionIntersectionType) {
+            $typeNames = [];
+
+            foreach ($reflectionType->getTypes() as $reflectionNamedType) {
+                $typeNames[] = $this->getReflectionTypeString($reflectionNamedType);
+            }
+
+            return implode('&', $typeNames);
+        }
+
+        if ($reflectionType instanceof ReflectionNamedType) {
+            $typeName = $reflectionType->getName();
+
+            if ($reflectionType->allowsNull() && 'null' !== $typeName && 'mixed' !== $typeName) {
+                return '?' . $typeName;
+            }
+
+            return $typeName;
+        }
+
+        return 'void';
     }
 }
 
