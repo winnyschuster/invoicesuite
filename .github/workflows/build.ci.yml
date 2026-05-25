@@ -238,6 +238,7 @@ jobs:
 
       - name: Publish unit test results
         if: always()
+        continue-on-error: true
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
           files: build/logs/junit.xml
@@ -245,6 +246,7 @@ jobs:
 
       - name: Publish coverage summary
         if: always()
+        continue-on-error: true
         run: php make/genbuildcoveragesummary.php --summary-file="$GITHUB_STEP_SUMMARY" --clover-file="build/logs/clover.xml" --crap4j-file="build/logs/crap4j.xml"
 
       - name: Generate SBOM
@@ -265,6 +267,7 @@ jobs:
 
       - name: Publish build log artifacts
         if: always()
+        continue-on-error: true
         uses: actions/upload-artifact@v7
         with:
           name: Build log artifacts for ${{ matrix.operating-system }} PHP ${{ matrix.phpversion }}
