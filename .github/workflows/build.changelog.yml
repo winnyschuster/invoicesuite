@@ -9,6 +9,10 @@ on:
   workflow_dispatch:
 
 env:
+  COMPOSER_NO_AUDIT: "1"
+  COMPOSER_NO_INTERACTION: "1"
+  COMPOSER_PROCESS_TIMEOUT: "0"
+  XDEBUG_MODE: off
   TARGET_BRANCH: ${{ github.event_name == 'workflow_dispatch' && github.ref_type == 'branch' && github.ref_name || github.event.repository.default_branch }}
 
 concurrency:
@@ -43,29 +47,18 @@ jobs:
           php-version: '8.5'
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, bcmath, intl, gd, exif, iconv, imagick, json, xdebug
           coverage: none
-
-      - name: Get Composer cache directory
-        id: composer-cache
-        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
-
-      - name: Cache Composer dependencies
-        uses: actions/cache@v5
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-8.5-composer-${{ hashFiles('**/composer.json', '**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-8.5-composer-${{ hashFiles('**/composer.json') }}
-            ${{ runner.os }}-8.5-composer-
+          tools: composer:v2
+          ini-values: memory_limit=-1
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Composer dependencies
-        run: |
-          composer config -g github-oauth.github.com ${{ secrets.GITHUB_TOKEN }}
-
-          if [ -f composer.lock ]; then
-            composer install --no-interaction --prefer-dist --no-progress
-          else
-            composer update --no-interaction --prefer-dist --no-progress
-          fi
+        uses: ramsey/composer-install@v4
+        with:
+          dependency-versions: locked
+          composer-options: --prefer-dist
+          require-lock-file: false
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
 
       - name: Update CHANGELOG.md
         run: |

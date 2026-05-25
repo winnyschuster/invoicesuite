@@ -38,32 +38,23 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          coverage: none
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, bcmath, intl, gd, exif, iconv, imagick, json
           tools: composer:v2
-
-      - name: Get Composer cache directory
-        id: composer-cache
-        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
-
-      - name: Cache Composer dependencies
-        uses: actions/cache@v5
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-supply-chain-${{ hashFiles('**/composer.json', '**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-supply-chain-${{ hashFiles('**/composer.json') }}
-            ${{ runner.os }}-composer-supply-chain-
+          coverage: none
+          ini-values: memory_limit=-1
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Prepare build directories
         run: mkdir -p build/supply-chain
 
       - name: Install Composer dependencies
-        run: |
-          if [ -f composer.lock ]; then
-            composer install --prefer-dist --no-progress
-          else
-            composer update --prefer-dist --no-progress
-          fi
+        uses: ramsey/composer-install@v4
+        with:
+          dependency-versions: locked
+          composer-options: --prefer-dist
+          require-lock-file: false
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
 
       - name: Run Composer audit
         id: composer-audit
@@ -83,22 +74,27 @@ jobs:
           echo "exit_code=$audit_exit" >> "$GITHUB_OUTPUT"
 
       - name: Generate Composer license report
+        continue-on-error: true
         run: |
           composer licenses --no-dev --format=json > build/supply-chain/composer-licenses.json
           composer licenses --no-dev --format=summary > build/supply-chain/composer-licenses.txt
 
       - name: Allow CycloneDX Composer plugin
+        continue-on-error: true
         run: composer global config --no-plugins allow-plugins.cyclonedx/cyclonedx-php-composer true
 
       - name: Install CycloneDX Composer plugin
+        continue-on-error: true
         run: composer global require --no-interaction --no-progress cyclonedx/cyclonedx-php-composer
 
       - name: Generate CycloneDX SBOM
+        continue-on-error: true
         run: |
           composer CycloneDX:make-sbom --output-format=JSON --output-file=build/supply-chain/composer-sbom.cdx.json --omit=dev
           composer CycloneDX:make-sbom --output-format=XML --output-file=build/supply-chain/composer-sbom.cdx.xml --omit=dev
 
       - name: Publish supply-chain reports
+        continue-on-error: true
         if: always()
         uses: actions/upload-artifact@v7
         with:
