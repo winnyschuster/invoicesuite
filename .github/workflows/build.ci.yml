@@ -109,9 +109,6 @@ jobs:
         with:
           path: build/.php-cs-fixer.cache
           key: ${{ runner.os }}-php-cs-fixer-php-${{ matrix.phpversion }}-${{ hashFiles('build/phpcsfixer.php', 'composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-php-cs-fixer-php-${{ matrix.phpversion }}-
-            ${{ runner.os }}-php-cs-fixer-
 
       - name: Cache PHPStan
         continue-on-error: true
@@ -119,9 +116,6 @@ jobs:
         with:
           path: build/phpstan
           key: ${{ runner.os }}-phpstan-php-${{ matrix.phpversion }}-${{ hashFiles('build/phpstan.neon', 'composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-phpstan-php-${{ matrix.phpversion }}-
-            ${{ runner.os }}-phpstan-
 
       - name: Run PHP-CS-Fixer
         env:
