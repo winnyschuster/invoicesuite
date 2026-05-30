@@ -1,3 +1,24 @@
+## v0.0.11
+
+``Previous version v0.0.10``
+
+| Type | Hash    | Date    | Author  | Subject  | Issue(s)
+| :--- | :------ | :------ | :------ | :------- | :-----------: 
+| :new:  | [43403102](https://github.com/horstoeko/invoicesuite/commit/43403102) | 2026-05-30 10:58:44 CEST | HorstOeko | [ENH] Made InvoiceSuitePdfDocumentReader and InvoiceSuitePdfExtractor serializable as JSON | 
+| :new:  | [02d8b3ba](https://github.com/horstoeko/invoicesuite/commit/02d8b3ba) | 2026-05-30 09:55:06 CEST | HorstOeko | [ENH] Added "is"-method to InvoiceSuiteArrayUtils | 
+| :new:  | [e020376a](https://github.com/horstoeko/invoicesuite/commit/e020376a) | 2026-05-30 09:48:29 CEST | HorstOeko | [ENH] Added translate-methods to InvoiceSuiteStringUtils | 
+| :new:  | [c6e06d0a](https://github.com/horstoeko/invoicesuite/commit/c6e06d0a) | 2026-05-30 09:03:43 CEST | HorstOeko | [ENH] Strict usage of InvoiceSuiteStringUtils | 
+| :new:  | [07430045](https://github.com/horstoeko/invoicesuite/commit/07430045) | 2026-05-30 08:58:09 CEST | HorstOeko | [ENH] Use InvoiceSuiteStringUtils in InvoiceSuiteInternalMethodGuard | 
+| :new:  | [00f00f8c](https://github.com/horstoeko/invoicesuite/commit/00f00f8c) | 2026-05-30 08:50:31 CEST | HorstOeko | [ENH] Added more String Utilities | 
+| :new:  | [43aae82b](https://github.com/horstoeko/invoicesuite/commit/43aae82b) | 2026-05-30 08:06:50 CEST | HorstOeko | [ENH] Simplified "InvoiceSuiteInternalMethodGuard" | 
+| :new:  | [13dff446](https://github.com/horstoeko/invoicesuite/commit/13dff446) | 2026-05-30 06:54:59 CEST | HorstOeko | [ENH] Improved Tests (Internal Methods) | 
+| :bug:  | [27d41829](https://github.com/horstoeko/invoicesuite/commit/27d41829) | 2026-05-29 05:47:56 CEST | HorstOeko | [FIX] Fixed doc blocks in Peppol-Serializer-Handlers | 
+| :new:  | [99925dd5](https://github.com/horstoeko/invoicesuite/commit/99925dd5) | 2026-05-29 05:45:03 CEST | HorstOeko | [ENH] Use new string utils in InvoiceSuiteInternalMethodGuard | 
+| :new:  | [5c143f80](https://github.com/horstoeko/invoicesuite/commit/5c143f80) | 2026-05-29 05:19:39 CEST | HorstOeko | [ENH] Improved PDF Reeader Performance, Use Guard to protected internal method in Document Reader | 
+| :new:  | [e6ceb6b3](https://github.com/horstoeko/invoicesuite/commit/e6ceb6b3) | 2026-05-29 05:18:44 CEST | HorstOeko | [ENH] Added Internal Method Guard to protect internal public methods | 
+
+:exclamation: _There are 2 internal commit(s)_
+
 ## v0.0.10
 
 ``Previous version v0.0.9``
