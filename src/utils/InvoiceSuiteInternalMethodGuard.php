@@ -45,11 +45,11 @@ class InvoiceSuiteInternalMethodGuard
         $callerStackItem = $callStack[$callerStackPosition] ?? null;
 
         if (!self::isGuardedMethodStackItem($guardedMethodStackItem, $guardedMethod)) {
-            self::throwNotInternalCall($guardedMethod);
+            self::throw($guardedMethod);
         }
 
         if (!is_array($callerStackItem)) {
-            self::throwNotInternalCall($guardedMethod);
+            self::throw($guardedMethod);
         }
 
         $callerClass = $callerStackItem['class'] ?? null;
@@ -57,11 +57,11 @@ class InvoiceSuiteInternalMethodGuard
         $allowedNamespacePrefix = rtrim($allowedNamespacePrefix, '\\') . '\\';
 
         if (!is_string($callerClass) || !InvoiceSuiteStringUtils::startsWith($callerClass, $allowedNamespacePrefix)) {
-            self::throwNotInternalCall($guardedMethod);
+            self::throw($guardedMethod);
         }
 
         if (!is_string($guardedMethodCallSiteFile)) {
-            self::throwNotInternalCall($guardedMethod);
+            self::throw($guardedMethod);
         }
 
         $allowedSourceDirectory ??= dirname(__DIR__);
@@ -69,7 +69,7 @@ class InvoiceSuiteInternalMethodGuard
         $realGuardedMethodCallSiteFile = realpath($guardedMethodCallSiteFile);
 
         if (!is_string($realAllowedSourceDirectory) || !is_string($realGuardedMethodCallSiteFile)) {
-            self::throwNotInternalCall($guardedMethod);
+            self::throw($guardedMethod);
         }
 
         $normalizedAllowedSourceDirectory = str_replace('\\', '/', $realAllowedSourceDirectory);
@@ -80,7 +80,7 @@ class InvoiceSuiteInternalMethodGuard
         }
 
         if (!InvoiceSuiteStringUtils::startsWith($normalizedGuardedMethodCallSiteFile, $normalizedAllowedSourceDirectory)) {
-            self::throwNotInternalCall($guardedMethod);
+            self::throw($guardedMethod);
         }
     }
 
@@ -115,8 +115,8 @@ class InvoiceSuiteInternalMethodGuard
      *
      * @throws InvoiceSuiteInternalMethodCallException
      */
-    private static function throwNotInternalCall(string $guardedMethod): never
+    private static function throw(string $guardedMethod): never
     {
-        throw new InvoiceSuiteInternalMethodCallException(sprintf('%s is marked as @internal and may only be called by internal classes.', $guardedMethod));
+        throw new InvoiceSuiteInternalMethodCallException($guardedMethod);
     }
 }
