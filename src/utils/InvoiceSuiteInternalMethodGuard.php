@@ -43,7 +43,7 @@ class InvoiceSuiteInternalMethodGuard
 
         $callerClass = $caller['class'] ?? null;
 
-        if (false === is_string($callerClass)) {
+        if (!InvoiceSuiteStringUtils::is($callerClass)) {
             throw new InvoiceSuiteInternalMethodCallException($internalMethod);
         }
 
@@ -67,7 +67,7 @@ class InvoiceSuiteInternalMethodGuard
         $className = $backtraceFrame['class'] ?? null;
         $methodName = $backtraceFrame['function'] ?? null;
 
-        if (false === is_string($className) || false === is_string($methodName)) {
+        if (!InvoiceSuiteStringUtils::is($className) || !InvoiceSuiteStringUtils::is($methodName)) {
             return '';
         }
 
@@ -86,7 +86,7 @@ class InvoiceSuiteInternalMethodGuard
         array $namespacePrefixes
     ): bool {
         foreach ($namespacePrefixes as $namespacePrefix) {
-            if (str_starts_with($className, rtrim($namespacePrefix, '\\') . '\\')) {
+            if (InvoiceSuiteStringUtils::startsWith($className, InvoiceSuiteStringUtils::trimEnd($namespacePrefix, '\\') . '\\')) {
                 return true;
             }
         }
