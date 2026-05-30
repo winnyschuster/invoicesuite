@@ -18,6 +18,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use IteratorAggregate;
+use JsonSerializable;
 use LogicException;
 use PrinsFrank\PdfParser\Exception\PdfParserException;
 use PrinsFrank\PdfParser\PdfParser as PrinsFrankPdfParser;
@@ -35,7 +36,7 @@ use Traversable;
  * @implements ArrayAccess<int, InvoiceSuitePdfExtractorAttachment>
  * @implements IteratorAggregate<int, InvoiceSuitePdfExtractorAttachment>
  */
-class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAccess
+class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAccess, JsonSerializable
 {
     /**
      * Array containing all the attached files found in PDF
@@ -48,6 +49,16 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
      * (Hidden) Constructor
      */
     final protected function __construct() {}
+
+    /**
+     * Specify data which should be serialized to JSON
+     *
+     * @return mixed
+     */
+    public function jsonSerialize(): mixed
+    {
+        return $this->attachmentList;
+    }
 
     /**
      * Start getting attached files from a PDF file

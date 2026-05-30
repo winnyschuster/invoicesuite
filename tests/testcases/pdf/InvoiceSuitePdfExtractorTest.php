@@ -13,6 +13,7 @@ use horstoeko\invoicesuite\pdfs\extractor\InvoiceSuitePdfExtractorAttachment;
 use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use IteratorAggregate;
+use JsonSerializable;
 use LogicException;
 
 final class InvoiceSuitePdfExtractorTest extends TestCase
@@ -126,6 +127,49 @@ final class InvoiceSuitePdfExtractorTest extends TestCase
         $this->expectExceptionMessage('notexisting.pdf was not found');
 
         InvoiceSuitePdfExtractor::fromFile($this->getNotExistingSamplePdfPath());
+    }
+
+    public function testJsonSerializable(): void
+    {
+        $extractor = InvoiceSuitePdfExtractor::fromFile($this->getSamplePdfPath());
+
+        $this->assertInstanceOf(JsonSerializable::class, $extractor);
+
+        $jsonEncoded = json_encode($extractor);
+
+        $this->assertIsString($jsonEncoded);
+        $this->assertStringContainsString('"content":', $jsonEncoded);
+        $this->assertStringContainsString('"mimetype":', $jsonEncoded);
+        $this->assertStringContainsString('"filename":', $jsonEncoded);
+
+        $jsonDecoded = json_decode($jsonEncoded);
+
+        $this->assertIsArray($jsonDecoded);
+        $this->assertArrayHasKey(0, $jsonDecoded);
+        $this->assertArrayHasKey(1, $jsonDecoded);
+        $this->assertArrayHasKey(2, $jsonDecoded);
+        $this->assertArrayNotHasKey(3, $jsonDecoded);
+
+        $this->assertIsObject($jsonDecoded[0]);
+        $this->assertObjectHasProperty('content', $jsonDecoded[0]);
+        $this->assertObjectHasProperty('filename', $jsonDecoded[0]);
+        $this->assertObjectHasProperty('mimetype', $jsonDecoded[0]);
+        $this->assertSame('EN16931_Elektron_Aufmass.png', $jsonDecoded[0]->filename);
+        $this->assertSame('image/png', $jsonDecoded[0]->mimetype);
+
+        $this->assertIsObject($jsonDecoded[1]);
+        $this->assertObjectHasProperty('content', $jsonDecoded[1]);
+        $this->assertObjectHasProperty('filename', $jsonDecoded[1]);
+        $this->assertObjectHasProperty('mimetype', $jsonDecoded[1]);
+        $this->assertSame('EN16931_Elektron_ElektronRapport.pdf', $jsonDecoded[1]->filename);
+        $this->assertSame('application/pdf', $jsonDecoded[1]->mimetype);
+
+        $this->assertIsObject($jsonDecoded[2]);
+        $this->assertObjectHasProperty('content', $jsonDecoded[2]);
+        $this->assertObjectHasProperty('filename', $jsonDecoded[2]);
+        $this->assertObjectHasProperty('mimetype', $jsonDecoded[2]);
+        $this->assertSame('factur-x.xml', $jsonDecoded[2]->filename);
+        $this->assertSame('text/xml', $jsonDecoded[2]->mimetype);
     }
 
     private function getSamplePdfPath(): string

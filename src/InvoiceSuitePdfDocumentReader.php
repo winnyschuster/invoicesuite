@@ -23,6 +23,7 @@ use horstoeko\invoicesuite\pdfs\extractor\InvoiceSuitePdfExtractor;
 use horstoeko\invoicesuite\pdfs\extractor\InvoiceSuitePdfExtractorAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use JMS\Serializer\Exception\RuntimeException;
+use JsonSerializable;
 use PrinsFrank\PdfParser\Exception\PdfParserException;
 
 /**
@@ -33,7 +34,7 @@ use PrinsFrank\PdfParser\Exception\PdfParserException;
  * @license  https://opensource.org/licenses/MIT MIT
  * @see      https://github.com/horstoeko/invoicesuite
  */
-class InvoiceSuitePdfDocumentReader
+class InvoiceSuitePdfDocumentReader implements JsonSerializable
 {
     use HandlesCallForwarding;
     use HandlesCurrentDocumentFormatProvider;
@@ -152,6 +153,19 @@ class InvoiceSuitePdfDocumentReader
         string $fromContent
     ): static {
         return new static($fromContent);
+    }
+
+    /**
+     * Specify data which should be serialized to JSON
+     *
+     * @return mixed
+     */
+    public function jsonSerialize(): mixed
+    {
+        return [
+            'invoice' => $this->getInvoiceDocumentAttachment(),
+            'additional' => $this->getAdditionalDocumentAttachments(),
+        ];
     }
 
     /**

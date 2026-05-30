@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\pdfs\extractor;
 
+use JsonSerializable;
+
 /**
  * Class representing an attachment of an PDF extracted by InvoiceSuitePdfExtractor
  *
@@ -19,7 +21,7 @@ namespace horstoeko\invoicesuite\pdfs\extractor;
  * @license  https://opensource.org/licenses/MIT MIT
  * @see      https://github.com/horstoeko/invoicesuite
  */
-class InvoiceSuitePdfExtractorAttachment
+class InvoiceSuitePdfExtractorAttachment implements JsonSerializable
 {
     /**
      * The attachment content
@@ -60,6 +62,20 @@ class InvoiceSuitePdfExtractorAttachment
     }
 
     /**
+     * Specify data which should be serialized to JSON
+     *
+     * @return mixed
+     */
+    public function jsonSerialize(): mixed
+    {
+        return [
+            'content' => $this->getAttachmentContentBase64Encoded(),
+            'filename' => $this->getAttachmentFilename(),
+            'mimetype' => $this->getAttachmentMimeType(),
+        ];
+    }
+
+    /**
      * Get the content of a PDF attachment
      *
      * @return string
@@ -67,6 +83,16 @@ class InvoiceSuitePdfExtractorAttachment
     public function getAttachmentContent(): string
     {
         return $this->attachmentContent;
+    }
+
+    /**
+     * Get the BASE64-encoded content of a PDF attachment
+     *
+     * @return string
+     */
+    public function getAttachmentContentBase64Encoded(): string
+    {
+        return base64_encode($this->getAttachmentContent());
     }
 
     /**

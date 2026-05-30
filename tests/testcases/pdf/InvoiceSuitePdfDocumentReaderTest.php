@@ -15,6 +15,7 @@ use horstoeko\invoicesuite\pdfs\extractor\InvoiceSuitePdfExtractorAttachment;
 use horstoeko\invoicesuite\tests\TestCase;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
+use JsonSerializable;
 
 final class InvoiceSuitePdfDocumentReaderTest extends TestCase
 {
@@ -101,6 +102,52 @@ final class InvoiceSuitePdfDocumentReaderTest extends TestCase
         $this->expectExceptionMessage('The format provider with unique id unknown was not found');
 
         InvoiceSuitePdfDocumentReader::createFromFile($this->getInvalidSamplePdfPath());
+    }
+
+    public function testJsonSerializable(): void
+    {
+        $pdfDocumentReader = InvoiceSuitePdfDocumentReader::createFromFile($this->getSamplePdfPath());
+
+        $this->assertInstanceOf(JsonSerializable::class, $pdfDocumentReader);
+
+        $jsonEncoded = json_encode($pdfDocumentReader);
+
+        $this->assertIsString($jsonEncoded);
+        $this->assertStringContainsString('"invoice":', $jsonEncoded);
+        $this->assertStringContainsString('"additional":', $jsonEncoded);
+        $this->assertStringContainsString('"content":', $jsonEncoded);
+        $this->assertStringContainsString('"mimetype":', $jsonEncoded);
+        $this->assertStringContainsString('"filename":', $jsonEncoded);
+
+        $jsonDecoded = json_decode($jsonEncoded);
+
+        $this->assertIsObject($jsonDecoded);
+        $this->assertObjectHasProperty('invoice', $jsonDecoded);
+        $this->assertObjectHasProperty('additional', $jsonDecoded);
+
+        $this->assertIsObject($jsonDecoded->invoice);
+        $this->assertObjectHasProperty('content', $jsonDecoded->invoice);
+        $this->assertObjectHasProperty('filename', $jsonDecoded->invoice);
+        $this->assertObjectHasProperty('mimetype', $jsonDecoded->invoice);
+
+        $this->assertIsArray($jsonDecoded->additional);
+        $this->assertArrayHasKey(0, $jsonDecoded->additional);
+        $this->assertArrayHasKey(1, $jsonDecoded->additional);
+        $this->assertArrayNotHasKey(2, $jsonDecoded->additional);
+
+        $this->assertIsObject($jsonDecoded->additional[0]);
+        $this->assertObjectHasProperty('content', $jsonDecoded->additional[0]);
+        $this->assertObjectHasProperty('filename', $jsonDecoded->additional[0]);
+        $this->assertObjectHasProperty('mimetype', $jsonDecoded->additional[0]);
+        $this->assertSame('EN16931_Elektron_Aufmass.png', $jsonDecoded->additional[0]->filename);
+        $this->assertSame('image/png', $jsonDecoded->additional[0]->mimetype);
+
+        $this->assertIsObject($jsonDecoded->additional[1]);
+        $this->assertObjectHasProperty('content', $jsonDecoded->additional[1]);
+        $this->assertObjectHasProperty('filename', $jsonDecoded->additional[1]);
+        $this->assertObjectHasProperty('mimetype', $jsonDecoded->additional[1]);
+        $this->assertSame('EN16931_Elektron_ElektronRapport.pdf', $jsonDecoded->additional[1]->filename);
+        $this->assertSame('application/pdf', $jsonDecoded->additional[1]->mimetype);
     }
 
     private function getSamplePdfPath(): string
