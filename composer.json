@@ -73,7 +73,7 @@
         "horstoeko/stringmanagement": "^1",
         "jms/serializer": "^3",
         "mpdf/mpdf": "^8",
-        "prinsfrank/pdfparser": "^2",
+        "prinsfrank/pdfparser": "^2|^3",
         "setasign/fpdf": "^1.8.6",
         "setasign/fpdi": "^2.6.4",
         "symfony/console": "^5.4.46 || ^6.4.14 || ^7.1.7 || ^8",
