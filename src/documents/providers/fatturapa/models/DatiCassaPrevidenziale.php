@@ -77,7 +77,7 @@ final class DatiCassaPrevidenziale
     #[JMS\Expose]
     #[JMS\Groups(['fatturapa'])]
     #[JMS\SerializedName('Ritenuta')]
-    #[JMS\Type('horstoeko\\\invoicesuite\\\documents\\\providers\\\fatturapa\\\models\\\Enum\\\Ritenuta')]
+    #[JMS\Type('enum<\'horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\Ritenuta\',\'value\'>')]
     #[JMS\XmlElement(cdata: false)]
     private ?Ritenuta $ritenuta = null;
 
@@ -88,7 +88,7 @@ final class DatiCassaPrevidenziale
     #[JMS\Expose]
     #[JMS\Groups(['fatturapa'])]
     #[JMS\SerializedName('Natura')]
-    #[JMS\Type('horstoeko\\\invoicesuite\\\documents\\\providers\\\fatturapa\\\models\\\Enum\\\Natura')]
+    #[JMS\Type('enum<\'horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\Natura\',\'value\'>')]
     #[JMS\XmlElement(cdata: false)]
     private ?Natura $natura = null;
 

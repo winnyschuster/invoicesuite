@@ -54,7 +54,7 @@ final class IscrizioneREA
     #[JMS\Expose]
     #[JMS\Groups(['fatturapa'])]
     #[JMS\SerializedName('SocioUnico')]
-    #[JMS\Type('horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\SocioUnico')]
+    #[JMS\Type('enum<\'horstoeko\invoicesuite\documents\providers\fatturapa\models\Enum\SocioUnico\',\'value\'>')]
     #[JMS\XmlElement(cdata: false)]
     private ?SocioUnico $socioUnico = null;
 
