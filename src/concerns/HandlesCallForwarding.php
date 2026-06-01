@@ -14,6 +14,7 @@ namespace horstoeko\invoicesuite\concerns;
 use BadMethodCallException;
 use Error;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteBadMethodCallException;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 
 /**
  * Trait representing methods for forwarding calls
@@ -49,7 +50,7 @@ trait HandlesCallForwarding
         } catch (BadMethodCallException|Error $e) {
             $pattern = '~^Call to undefined method (?P<class>[^:]+)::(?P<method>[^\(]+)\(\)$~';
 
-            if (in_array(preg_match($pattern, $e->getMessage(), $matches), [0, false], true)) {
+            if (InvoiceSuiteArrayUtils::arrayContains([0, false], preg_match($pattern, $e->getMessage(), $matches))) {
                 throw $e;
             }
 

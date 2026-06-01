@@ -18,6 +18,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteInternalMethodCallException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\InvoiceSuitePdfDocumentReader;
 use horstoeko\invoicesuite\pdfs\extractor\InvoiceSuitePdfExtractorAttachment;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
@@ -175,7 +176,7 @@ class InvoiceSuiteExportPdfAttachmentsCommand extends InvoiceSuiteAbstractComman
             return false;
         }
 
-        if (!in_array($jsonOutputMode, [self::OUTPUT_JSON_FILE, self::OUTPUT_JSON_SCREEN, self::OUTPUT_JSON_FILE_AND_SCREEN], true)) {
+        if (!InvoiceSuiteArrayUtils::arrayContains([self::OUTPUT_JSON_FILE, self::OUTPUT_JSON_SCREEN, self::OUTPUT_JSON_FILE_AND_SCREEN], $jsonOutputMode)) {
             throw new RuntimeException('Invalid value for option "output-json". Allowed values are 0, 1, 2 and 3.');
         }
 
@@ -191,7 +192,7 @@ class InvoiceSuiteExportPdfAttachmentsCommand extends InvoiceSuiteAbstractComman
             ];
         }
 
-        if (in_array($jsonOutputMode, [self::OUTPUT_JSON_FILE, self::OUTPUT_JSON_FILE_AND_SCREEN], true)) {
+        if (InvoiceSuiteArrayUtils::arrayContains([self::OUTPUT_JSON_FILE, self::OUTPUT_JSON_FILE_AND_SCREEN], $jsonOutputMode)) {
             $jsonContent = json_encode($exportableAttachments, JSON_PRETTY_PRINT);
 
             if (false === $jsonContent) {
@@ -215,7 +216,7 @@ class InvoiceSuiteExportPdfAttachmentsCommand extends InvoiceSuiteAbstractComman
         }
 
         $this->outputJsonWhen(
-            in_array($jsonOutputMode, [self::OUTPUT_JSON_SCREEN, self::OUTPUT_JSON_FILE_AND_SCREEN], true),
+            InvoiceSuiteArrayUtils::arrayContains([self::OUTPUT_JSON_SCREEN, self::OUTPUT_JSON_FILE_AND_SCREEN], $jsonOutputMode),
             $exportableAttachments
         );
 

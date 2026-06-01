@@ -6,6 +6,7 @@ namespace horstoeko\invoicesuite\concerns;
 
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteClassFinder;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
@@ -45,7 +46,7 @@ trait HandlesDocumentFormatProviders
     public function registerDocumentFormatProvider(
         InvoiceSuiteAbstractDocumentFormatProvider $invoiceSuiteAbstractFormatProvider
     ): static {
-        if (in_array($invoiceSuiteAbstractFormatProvider, $this->registeredDocumentFormatProviders, true)) {
+        if (InvoiceSuiteArrayUtils::arrayContains($this->registeredDocumentFormatProviders, $invoiceSuiteAbstractFormatProvider)) {
             return $this;
         }
 

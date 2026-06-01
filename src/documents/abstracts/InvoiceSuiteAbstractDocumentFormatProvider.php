@@ -255,7 +255,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
     public function hasSerializerGroup(
         string $group
     ): bool {
-        return in_array($group, $this->getSerializerGroups(), true);
+        return InvoiceSuiteArrayUtils::arrayContains($this->getSerializerGroups(), $group);
     }
 
     /**

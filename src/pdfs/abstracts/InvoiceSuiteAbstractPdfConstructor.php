@@ -18,6 +18,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuitePackageVersion;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
@@ -252,7 +253,7 @@ abstract class InvoiceSuiteAbstractPdfConstructor
     public function setDocumentRelationshipType(
         string $newDocumentRelationshipType
     ): static {
-        if (!in_array($newDocumentRelationshipType, [static::AF_RELATIONSHIP_DATA, static::AF_RELATIONSHIP_ALTERNATIVE, static::AF_RELATIONSHIP_SOURCE], true)) {
+        if (!InvoiceSuiteArrayUtils::arrayContains([static::AF_RELATIONSHIP_DATA, static::AF_RELATIONSHIP_ALTERNATIVE, static::AF_RELATIONSHIP_SOURCE], $newDocumentRelationshipType)) {
             $newDocumentRelationshipType = static::AF_RELATIONSHIP_DATA;
         }
 
@@ -313,7 +314,7 @@ abstract class InvoiceSuiteAbstractPdfConstructor
     public function setPdfAConformanceLevel(
         string $newPdfAConformanceLevel
     ): static {
-        if (!in_array($newPdfAConformanceLevel, [static::PDFA_CONFORMANCE_LEVEL_ACCESSIBLE, static::PDFA_CONFORMANCE_LEVEL_BASIC, static::PDFA_CONFORMANCE_LEVEL_UNICODE], true)) {
+        if (!InvoiceSuiteArrayUtils::arrayContains([static::PDFA_CONFORMANCE_LEVEL_ACCESSIBLE, static::PDFA_CONFORMANCE_LEVEL_BASIC, static::PDFA_CONFORMANCE_LEVEL_UNICODE], $newPdfAConformanceLevel)) {
             $newPdfAConformanceLevel = static::PDFA_CONFORMANCE_LEVEL_BASIC;
         }
 
@@ -428,7 +429,7 @@ abstract class InvoiceSuiteAbstractPdfConstructor
             $newRelationshipType = static::AF_RELATIONSHIP_SUPPLEMENT;
         }
 
-        if (!in_array($newRelationshipType, [static::AF_RELATIONSHIP_DATA, static::AF_RELATIONSHIP_ALTERNATIVE, static::AF_RELATIONSHIP_SOURCE, static::AF_RELATIONSHIP_SUPPLEMENT, static::AF_RELATIONSHIP_UNSPECIFIED], true)) {
+        if (!InvoiceSuiteArrayUtils::arrayContains([static::AF_RELATIONSHIP_DATA, static::AF_RELATIONSHIP_ALTERNATIVE, static::AF_RELATIONSHIP_SOURCE, static::AF_RELATIONSHIP_SUPPLEMENT, static::AF_RELATIONSHIP_UNSPECIFIED], $newRelationshipType)) {
             $newRelationshipType = static::AF_RELATIONSHIP_SUPPLEMENT;
         }
 

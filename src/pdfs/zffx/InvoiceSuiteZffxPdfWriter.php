@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\pdfs\zffx;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use Random\RandomException;
@@ -153,7 +154,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
         if ('' === $mimetype) {
             $mimetype = mime_content_type($file);
 
-            if (in_array($mimetype, ['', '0', false], true)) {
+            if (InvoiceSuiteArrayUtils::arrayContains(['', '0', false], $mimetype)) {
                 $mimetype = 'application/octet-stream';
             }
         }

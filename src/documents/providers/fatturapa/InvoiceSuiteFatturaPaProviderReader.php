@@ -7386,7 +7386,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
         $paymentDetailData = $paymentDetail['detail'];
         $paymentMode = $paymentDetailData->getModalitaPagamento();
         $paymentIban = $paymentDetailData->getIBAN() ?? '';
-        $isDirectDebit = in_array($paymentMode, [ModalitaPagamento::MP19, ModalitaPagamento::MP20], true);
+        $isDirectDebit = InvoiceSuiteArrayUtils::arrayContains([ModalitaPagamento::MP19, ModalitaPagamento::MP20], $paymentMode);
 
         $newTypeCode = is_null($paymentMode) ? '' : $paymentMode->value;
         $newName = $paymentDetailData->getIstitutoFinanziario() ?? '';
