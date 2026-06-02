@@ -181,7 +181,7 @@ final class DatiPagamento
             $this->dettaglioPagamento = [];
         }
 
-        if ([] === $this->dettaglioPagamento) {
+        if (InvoiceSuiteArrayUtils::empty($this->dettaglioPagamento)) {
             $this->addOnceToDettaglioPagamento(new DettaglioPagamento());
         }
 

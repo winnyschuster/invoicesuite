@@ -132,7 +132,7 @@ class TransformsType
             $this->transform = [];
         }
 
-        if ([] === $this->transform) {
+        if (InvoiceSuiteArrayUtils::empty($this->transform)) {
             $this->addOnceToTransform(new TransformType());
         }
 

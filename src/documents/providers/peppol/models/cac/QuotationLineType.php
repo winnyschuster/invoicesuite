@@ -229,7 +229,7 @@ class QuotationLineType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -244,7 +244,7 @@ class QuotationLineType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -300,7 +300,7 @@ class QuotationLineType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -513,7 +513,7 @@ class QuotationLineType
     public function firstDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = reset($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::first($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -528,7 +528,7 @@ class QuotationLineType
     public function lastDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = end($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::last($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -584,7 +584,7 @@ class QuotationLineType
             $this->documentReference = [];
         }
 
-        if ([] === $this->documentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->documentReference)) {
             $this->addOnceToDocumentReference(new DocumentReference());
         }
 
@@ -677,7 +677,7 @@ class QuotationLineType
     public function firstSellerProposedSubstituteLineItem(): ?SellerProposedSubstituteLineItem
     {
         $sellerProposedSubstituteLineItem = $this->sellerProposedSubstituteLineItem ?? [];
-        $sellerProposedSubstituteLineItem = reset($sellerProposedSubstituteLineItem);
+        $sellerProposedSubstituteLineItem = InvoiceSuiteArrayUtils::first($sellerProposedSubstituteLineItem);
 
         if (false === $sellerProposedSubstituteLineItem) {
             return null;
@@ -692,7 +692,7 @@ class QuotationLineType
     public function lastSellerProposedSubstituteLineItem(): ?SellerProposedSubstituteLineItem
     {
         $sellerProposedSubstituteLineItem = $this->sellerProposedSubstituteLineItem ?? [];
-        $sellerProposedSubstituteLineItem = end($sellerProposedSubstituteLineItem);
+        $sellerProposedSubstituteLineItem = InvoiceSuiteArrayUtils::last($sellerProposedSubstituteLineItem);
 
         if (false === $sellerProposedSubstituteLineItem) {
             return null;
@@ -748,7 +748,7 @@ class QuotationLineType
             $this->sellerProposedSubstituteLineItem = [];
         }
 
-        if ([] === $this->sellerProposedSubstituteLineItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->sellerProposedSubstituteLineItem)) {
             $this->addOnceToSellerProposedSubstituteLineItem(new SellerProposedSubstituteLineItem());
         }
 
@@ -801,7 +801,7 @@ class QuotationLineType
     public function firstAlternativeLineItem(): ?AlternativeLineItem
     {
         $alternativeLineItem = $this->alternativeLineItem ?? [];
-        $alternativeLineItem = reset($alternativeLineItem);
+        $alternativeLineItem = InvoiceSuiteArrayUtils::first($alternativeLineItem);
 
         if (false === $alternativeLineItem) {
             return null;
@@ -816,7 +816,7 @@ class QuotationLineType
     public function lastAlternativeLineItem(): ?AlternativeLineItem
     {
         $alternativeLineItem = $this->alternativeLineItem ?? [];
-        $alternativeLineItem = end($alternativeLineItem);
+        $alternativeLineItem = InvoiceSuiteArrayUtils::last($alternativeLineItem);
 
         if (false === $alternativeLineItem) {
             return null;
@@ -872,7 +872,7 @@ class QuotationLineType
             $this->alternativeLineItem = [];
         }
 
-        if ([] === $this->alternativeLineItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->alternativeLineItem)) {
             $this->addOnceToAlternativeLineItem(new AlternativeLineItem());
         }
 

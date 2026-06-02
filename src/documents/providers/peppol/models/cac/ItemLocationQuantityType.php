@@ -349,7 +349,7 @@ class ItemLocationQuantityType
     public function firstTradingRestrictions(): ?TradingRestrictions
     {
         $tradingRestrictions = $this->tradingRestrictions ?? [];
-        $tradingRestrictions = reset($tradingRestrictions);
+        $tradingRestrictions = InvoiceSuiteArrayUtils::first($tradingRestrictions);
 
         if (false === $tradingRestrictions) {
             return null;
@@ -364,7 +364,7 @@ class ItemLocationQuantityType
     public function lastTradingRestrictions(): ?TradingRestrictions
     {
         $tradingRestrictions = $this->tradingRestrictions ?? [];
-        $tradingRestrictions = end($tradingRestrictions);
+        $tradingRestrictions = InvoiceSuiteArrayUtils::last($tradingRestrictions);
 
         if (false === $tradingRestrictions) {
             return null;
@@ -420,7 +420,7 @@ class ItemLocationQuantityType
             $this->tradingRestrictions = [];
         }
 
-        if ([] === $this->tradingRestrictions) {
+        if (InvoiceSuiteArrayUtils::empty($this->tradingRestrictions)) {
             $this->addOnceToTradingRestrictions(new TradingRestrictions());
         }
 
@@ -473,7 +473,7 @@ class ItemLocationQuantityType
     public function firstApplicableTerritoryAddress(): ?ApplicableTerritoryAddress
     {
         $applicableTerritoryAddress = $this->applicableTerritoryAddress ?? [];
-        $applicableTerritoryAddress = reset($applicableTerritoryAddress);
+        $applicableTerritoryAddress = InvoiceSuiteArrayUtils::first($applicableTerritoryAddress);
 
         if (false === $applicableTerritoryAddress) {
             return null;
@@ -488,7 +488,7 @@ class ItemLocationQuantityType
     public function lastApplicableTerritoryAddress(): ?ApplicableTerritoryAddress
     {
         $applicableTerritoryAddress = $this->applicableTerritoryAddress ?? [];
-        $applicableTerritoryAddress = end($applicableTerritoryAddress);
+        $applicableTerritoryAddress = InvoiceSuiteArrayUtils::last($applicableTerritoryAddress);
 
         if (false === $applicableTerritoryAddress) {
             return null;
@@ -544,7 +544,7 @@ class ItemLocationQuantityType
             $this->applicableTerritoryAddress = [];
         }
 
-        if ([] === $this->applicableTerritoryAddress) {
+        if (InvoiceSuiteArrayUtils::empty($this->applicableTerritoryAddress)) {
             $this->addOnceToApplicableTerritoryAddress(new ApplicableTerritoryAddress());
         }
 
@@ -637,7 +637,7 @@ class ItemLocationQuantityType
     public function firstDeliveryUnit(): ?DeliveryUnit
     {
         $deliveryUnit = $this->deliveryUnit ?? [];
-        $deliveryUnit = reset($deliveryUnit);
+        $deliveryUnit = InvoiceSuiteArrayUtils::first($deliveryUnit);
 
         if (false === $deliveryUnit) {
             return null;
@@ -652,7 +652,7 @@ class ItemLocationQuantityType
     public function lastDeliveryUnit(): ?DeliveryUnit
     {
         $deliveryUnit = $this->deliveryUnit ?? [];
-        $deliveryUnit = end($deliveryUnit);
+        $deliveryUnit = InvoiceSuiteArrayUtils::last($deliveryUnit);
 
         if (false === $deliveryUnit) {
             return null;
@@ -708,7 +708,7 @@ class ItemLocationQuantityType
             $this->deliveryUnit = [];
         }
 
-        if ([] === $this->deliveryUnit) {
+        if (InvoiceSuiteArrayUtils::empty($this->deliveryUnit)) {
             $this->addOnceToDeliveryUnit(new DeliveryUnit());
         }
 
@@ -761,7 +761,7 @@ class ItemLocationQuantityType
     public function firstApplicableTaxCategory(): ?ApplicableTaxCategory
     {
         $applicableTaxCategory = $this->applicableTaxCategory ?? [];
-        $applicableTaxCategory = reset($applicableTaxCategory);
+        $applicableTaxCategory = InvoiceSuiteArrayUtils::first($applicableTaxCategory);
 
         if (false === $applicableTaxCategory) {
             return null;
@@ -776,7 +776,7 @@ class ItemLocationQuantityType
     public function lastApplicableTaxCategory(): ?ApplicableTaxCategory
     {
         $applicableTaxCategory = $this->applicableTaxCategory ?? [];
-        $applicableTaxCategory = end($applicableTaxCategory);
+        $applicableTaxCategory = InvoiceSuiteArrayUtils::last($applicableTaxCategory);
 
         if (false === $applicableTaxCategory) {
             return null;
@@ -832,7 +832,7 @@ class ItemLocationQuantityType
             $this->applicableTaxCategory = [];
         }
 
-        if ([] === $this->applicableTaxCategory) {
+        if (InvoiceSuiteArrayUtils::empty($this->applicableTaxCategory)) {
             $this->addOnceToApplicableTaxCategory(new ApplicableTaxCategory());
         }
 
@@ -925,7 +925,7 @@ class ItemLocationQuantityType
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
         $allowanceCharge = $this->allowanceCharge ?? [];
-        $allowanceCharge = reset($allowanceCharge);
+        $allowanceCharge = InvoiceSuiteArrayUtils::first($allowanceCharge);
 
         if (false === $allowanceCharge) {
             return null;
@@ -940,7 +940,7 @@ class ItemLocationQuantityType
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
         $allowanceCharge = $this->allowanceCharge ?? [];
-        $allowanceCharge = end($allowanceCharge);
+        $allowanceCharge = InvoiceSuiteArrayUtils::last($allowanceCharge);
 
         if (false === $allowanceCharge) {
             return null;
@@ -996,7 +996,7 @@ class ItemLocationQuantityType
             $this->allowanceCharge = [];
         }
 
-        if ([] === $this->allowanceCharge) {
+        if (InvoiceSuiteArrayUtils::empty($this->allowanceCharge)) {
             $this->addOnceToAllowanceCharge(new AllowanceCharge());
         }
 

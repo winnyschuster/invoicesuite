@@ -111,7 +111,7 @@ class SupplyChainConsignmentType
             $this->specifiedLogisticsTransportMovement = [];
         }
 
-        if ([] === $this->specifiedLogisticsTransportMovement) {
+        if (InvoiceSuiteArrayUtils::empty($this->specifiedLogisticsTransportMovement)) {
             $this->addOnceToSpecifiedLogisticsTransportMovement(new LogisticsTransportMovementType());
         }
 

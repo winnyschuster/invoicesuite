@@ -758,7 +758,7 @@ class HeaderTradeAgreementType
             $this->additionalReferencedDocument = [];
         }
 
-        if ([] === $this->additionalReferencedDocument) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalReferencedDocument)) {
             $this->addOnceToAdditionalReferencedDocument(new ReferencedDocumentType());
         }
 
@@ -932,7 +932,7 @@ class HeaderTradeAgreementType
             $this->ultimateCustomerOrderReferencedDocument = [];
         }
 
-        if ([] === $this->ultimateCustomerOrderReferencedDocument) {
+        if (InvoiceSuiteArrayUtils::empty($this->ultimateCustomerOrderReferencedDocument)) {
             $this->addOnceToUltimateCustomerOrderReferencedDocument(new ReferencedDocumentType());
         }
 

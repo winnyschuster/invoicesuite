@@ -711,7 +711,7 @@ class TenderingTermsType
     public function firstAcceptedVariantsDescription(): ?AcceptedVariantsDescription
     {
         $acceptedVariantsDescription = $this->acceptedVariantsDescription ?? [];
-        $acceptedVariantsDescription = reset($acceptedVariantsDescription);
+        $acceptedVariantsDescription = InvoiceSuiteArrayUtils::first($acceptedVariantsDescription);
 
         if (false === $acceptedVariantsDescription) {
             return null;
@@ -726,7 +726,7 @@ class TenderingTermsType
     public function lastAcceptedVariantsDescription(): ?AcceptedVariantsDescription
     {
         $acceptedVariantsDescription = $this->acceptedVariantsDescription ?? [];
-        $acceptedVariantsDescription = end($acceptedVariantsDescription);
+        $acceptedVariantsDescription = InvoiceSuiteArrayUtils::last($acceptedVariantsDescription);
 
         if (false === $acceptedVariantsDescription) {
             return null;
@@ -782,7 +782,7 @@ class TenderingTermsType
             $this->acceptedVariantsDescription = [];
         }
 
-        if ([] === $this->acceptedVariantsDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->acceptedVariantsDescription)) {
             $this->addOnceToAcceptedVariantsDescription(new AcceptedVariantsDescription());
         }
 
@@ -835,7 +835,7 @@ class TenderingTermsType
     public function firstPriceRevisionFormulaDescription(): ?PriceRevisionFormulaDescription
     {
         $priceRevisionFormulaDescription = $this->priceRevisionFormulaDescription ?? [];
-        $priceRevisionFormulaDescription = reset($priceRevisionFormulaDescription);
+        $priceRevisionFormulaDescription = InvoiceSuiteArrayUtils::first($priceRevisionFormulaDescription);
 
         if (false === $priceRevisionFormulaDescription) {
             return null;
@@ -850,7 +850,7 @@ class TenderingTermsType
     public function lastPriceRevisionFormulaDescription(): ?PriceRevisionFormulaDescription
     {
         $priceRevisionFormulaDescription = $this->priceRevisionFormulaDescription ?? [];
-        $priceRevisionFormulaDescription = end($priceRevisionFormulaDescription);
+        $priceRevisionFormulaDescription = InvoiceSuiteArrayUtils::last($priceRevisionFormulaDescription);
 
         if (false === $priceRevisionFormulaDescription) {
             return null;
@@ -906,7 +906,7 @@ class TenderingTermsType
             $this->priceRevisionFormulaDescription = [];
         }
 
-        if ([] === $this->priceRevisionFormulaDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->priceRevisionFormulaDescription)) {
             $this->addOnceToPriceRevisionFormulaDescription(new PriceRevisionFormulaDescription());
         }
 
@@ -999,7 +999,7 @@ class TenderingTermsType
     public function firstFundingProgram(): ?FundingProgram
     {
         $fundingProgram = $this->fundingProgram ?? [];
-        $fundingProgram = reset($fundingProgram);
+        $fundingProgram = InvoiceSuiteArrayUtils::first($fundingProgram);
 
         if (false === $fundingProgram) {
             return null;
@@ -1014,7 +1014,7 @@ class TenderingTermsType
     public function lastFundingProgram(): ?FundingProgram
     {
         $fundingProgram = $this->fundingProgram ?? [];
-        $fundingProgram = end($fundingProgram);
+        $fundingProgram = InvoiceSuiteArrayUtils::last($fundingProgram);
 
         if (false === $fundingProgram) {
             return null;
@@ -1070,7 +1070,7 @@ class TenderingTermsType
             $this->fundingProgram = [];
         }
 
-        if ([] === $this->fundingProgram) {
+        if (InvoiceSuiteArrayUtils::empty($this->fundingProgram)) {
             $this->addOnceToFundingProgram(new FundingProgram());
         }
 
@@ -1163,7 +1163,7 @@ class TenderingTermsType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -1178,7 +1178,7 @@ class TenderingTermsType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -1234,7 +1234,7 @@ class TenderingTermsType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -1427,7 +1427,7 @@ class TenderingTermsType
     public function firstAdditionalConditions(): ?AdditionalConditions
     {
         $additionalConditions = $this->additionalConditions ?? [];
-        $additionalConditions = reset($additionalConditions);
+        $additionalConditions = InvoiceSuiteArrayUtils::first($additionalConditions);
 
         if (false === $additionalConditions) {
             return null;
@@ -1442,7 +1442,7 @@ class TenderingTermsType
     public function lastAdditionalConditions(): ?AdditionalConditions
     {
         $additionalConditions = $this->additionalConditions ?? [];
-        $additionalConditions = end($additionalConditions);
+        $additionalConditions = InvoiceSuiteArrayUtils::last($additionalConditions);
 
         if (false === $additionalConditions) {
             return null;
@@ -1498,7 +1498,7 @@ class TenderingTermsType
             $this->additionalConditions = [];
         }
 
-        if ([] === $this->additionalConditions) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalConditions)) {
             $this->addOnceToAdditionalConditions(new AdditionalConditions());
         }
 
@@ -1621,7 +1621,7 @@ class TenderingTermsType
     public function firstPenaltyClause(): ?PenaltyClause
     {
         $penaltyClause = $this->penaltyClause ?? [];
-        $penaltyClause = reset($penaltyClause);
+        $penaltyClause = InvoiceSuiteArrayUtils::first($penaltyClause);
 
         if (false === $penaltyClause) {
             return null;
@@ -1636,7 +1636,7 @@ class TenderingTermsType
     public function lastPenaltyClause(): ?PenaltyClause
     {
         $penaltyClause = $this->penaltyClause ?? [];
-        $penaltyClause = end($penaltyClause);
+        $penaltyClause = InvoiceSuiteArrayUtils::last($penaltyClause);
 
         if (false === $penaltyClause) {
             return null;
@@ -1692,7 +1692,7 @@ class TenderingTermsType
             $this->penaltyClause = [];
         }
 
-        if ([] === $this->penaltyClause) {
+        if (InvoiceSuiteArrayUtils::empty($this->penaltyClause)) {
             $this->addOnceToPenaltyClause(new PenaltyClause());
         }
 
@@ -1745,7 +1745,7 @@ class TenderingTermsType
     public function firstRequiredFinancialGuarantee(): ?RequiredFinancialGuarantee
     {
         $requiredFinancialGuarantee = $this->requiredFinancialGuarantee ?? [];
-        $requiredFinancialGuarantee = reset($requiredFinancialGuarantee);
+        $requiredFinancialGuarantee = InvoiceSuiteArrayUtils::first($requiredFinancialGuarantee);
 
         if (false === $requiredFinancialGuarantee) {
             return null;
@@ -1760,7 +1760,7 @@ class TenderingTermsType
     public function lastRequiredFinancialGuarantee(): ?RequiredFinancialGuarantee
     {
         $requiredFinancialGuarantee = $this->requiredFinancialGuarantee ?? [];
-        $requiredFinancialGuarantee = end($requiredFinancialGuarantee);
+        $requiredFinancialGuarantee = InvoiceSuiteArrayUtils::last($requiredFinancialGuarantee);
 
         if (false === $requiredFinancialGuarantee) {
             return null;
@@ -1816,7 +1816,7 @@ class TenderingTermsType
             $this->requiredFinancialGuarantee = [];
         }
 
-        if ([] === $this->requiredFinancialGuarantee) {
+        if (InvoiceSuiteArrayUtils::empty($this->requiredFinancialGuarantee)) {
             $this->addOnceToRequiredFinancialGuarantee(new RequiredFinancialGuarantee());
         }
 
@@ -2029,7 +2029,7 @@ class TenderingTermsType
     public function firstContractualDocumentReference(): ?ContractualDocumentReference
     {
         $contractualDocumentReference = $this->contractualDocumentReference ?? [];
-        $contractualDocumentReference = reset($contractualDocumentReference);
+        $contractualDocumentReference = InvoiceSuiteArrayUtils::first($contractualDocumentReference);
 
         if (false === $contractualDocumentReference) {
             return null;
@@ -2044,7 +2044,7 @@ class TenderingTermsType
     public function lastContractualDocumentReference(): ?ContractualDocumentReference
     {
         $contractualDocumentReference = $this->contractualDocumentReference ?? [];
-        $contractualDocumentReference = end($contractualDocumentReference);
+        $contractualDocumentReference = InvoiceSuiteArrayUtils::last($contractualDocumentReference);
 
         if (false === $contractualDocumentReference) {
             return null;
@@ -2100,7 +2100,7 @@ class TenderingTermsType
             $this->contractualDocumentReference = [];
         }
 
-        if ([] === $this->contractualDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->contractualDocumentReference)) {
             $this->addOnceToContractualDocumentReference(new ContractualDocumentReference());
         }
 
@@ -2233,7 +2233,7 @@ class TenderingTermsType
     public function firstPaymentTerms(): ?PaymentTerms
     {
         $paymentTerms = $this->paymentTerms ?? [];
-        $paymentTerms = reset($paymentTerms);
+        $paymentTerms = InvoiceSuiteArrayUtils::first($paymentTerms);
 
         if (false === $paymentTerms) {
             return null;
@@ -2248,7 +2248,7 @@ class TenderingTermsType
     public function lastPaymentTerms(): ?PaymentTerms
     {
         $paymentTerms = $this->paymentTerms ?? [];
-        $paymentTerms = end($paymentTerms);
+        $paymentTerms = InvoiceSuiteArrayUtils::last($paymentTerms);
 
         if (false === $paymentTerms) {
             return null;
@@ -2304,7 +2304,7 @@ class TenderingTermsType
             $this->paymentTerms = [];
         }
 
-        if ([] === $this->paymentTerms) {
+        if (InvoiceSuiteArrayUtils::empty($this->paymentTerms)) {
             $this->addOnceToPaymentTerms(new PaymentTerms());
         }
 
@@ -2357,7 +2357,7 @@ class TenderingTermsType
     public function firstTendererQualificationRequest(): ?TendererQualificationRequest
     {
         $tendererQualificationRequest = $this->tendererQualificationRequest ?? [];
-        $tendererQualificationRequest = reset($tendererQualificationRequest);
+        $tendererQualificationRequest = InvoiceSuiteArrayUtils::first($tendererQualificationRequest);
 
         if (false === $tendererQualificationRequest) {
             return null;
@@ -2372,7 +2372,7 @@ class TenderingTermsType
     public function lastTendererQualificationRequest(): ?TendererQualificationRequest
     {
         $tendererQualificationRequest = $this->tendererQualificationRequest ?? [];
-        $tendererQualificationRequest = end($tendererQualificationRequest);
+        $tendererQualificationRequest = InvoiceSuiteArrayUtils::last($tendererQualificationRequest);
 
         if (false === $tendererQualificationRequest) {
             return null;
@@ -2428,7 +2428,7 @@ class TenderingTermsType
             $this->tendererQualificationRequest = [];
         }
 
-        if ([] === $this->tendererQualificationRequest) {
+        if (InvoiceSuiteArrayUtils::empty($this->tendererQualificationRequest)) {
             $this->addOnceToTendererQualificationRequest(new TendererQualificationRequest());
         }
 
@@ -2481,7 +2481,7 @@ class TenderingTermsType
     public function firstAllowedSubcontractTerms(): ?AllowedSubcontractTerms
     {
         $allowedSubcontractTerms = $this->allowedSubcontractTerms ?? [];
-        $allowedSubcontractTerms = reset($allowedSubcontractTerms);
+        $allowedSubcontractTerms = InvoiceSuiteArrayUtils::first($allowedSubcontractTerms);
 
         if (false === $allowedSubcontractTerms) {
             return null;
@@ -2496,7 +2496,7 @@ class TenderingTermsType
     public function lastAllowedSubcontractTerms(): ?AllowedSubcontractTerms
     {
         $allowedSubcontractTerms = $this->allowedSubcontractTerms ?? [];
-        $allowedSubcontractTerms = end($allowedSubcontractTerms);
+        $allowedSubcontractTerms = InvoiceSuiteArrayUtils::last($allowedSubcontractTerms);
 
         if (false === $allowedSubcontractTerms) {
             return null;
@@ -2552,7 +2552,7 @@ class TenderingTermsType
             $this->allowedSubcontractTerms = [];
         }
 
-        if ([] === $this->allowedSubcontractTerms) {
+        if (InvoiceSuiteArrayUtils::empty($this->allowedSubcontractTerms)) {
             $this->addOnceToAllowedSubcontractTerms(new AllowedSubcontractTerms());
         }
 
@@ -2605,7 +2605,7 @@ class TenderingTermsType
     public function firstTenderPreparation(): ?TenderPreparation
     {
         $tenderPreparation = $this->tenderPreparation ?? [];
-        $tenderPreparation = reset($tenderPreparation);
+        $tenderPreparation = InvoiceSuiteArrayUtils::first($tenderPreparation);
 
         if (false === $tenderPreparation) {
             return null;
@@ -2620,7 +2620,7 @@ class TenderingTermsType
     public function lastTenderPreparation(): ?TenderPreparation
     {
         $tenderPreparation = $this->tenderPreparation ?? [];
-        $tenderPreparation = end($tenderPreparation);
+        $tenderPreparation = InvoiceSuiteArrayUtils::last($tenderPreparation);
 
         if (false === $tenderPreparation) {
             return null;
@@ -2676,7 +2676,7 @@ class TenderingTermsType
             $this->tenderPreparation = [];
         }
 
-        if ([] === $this->tenderPreparation) {
+        if (InvoiceSuiteArrayUtils::empty($this->tenderPreparation)) {
             $this->addOnceToTenderPreparation(new TenderPreparation());
         }
 
@@ -2729,7 +2729,7 @@ class TenderingTermsType
     public function firstContractExecutionRequirement(): ?ContractExecutionRequirement
     {
         $contractExecutionRequirement = $this->contractExecutionRequirement ?? [];
-        $contractExecutionRequirement = reset($contractExecutionRequirement);
+        $contractExecutionRequirement = InvoiceSuiteArrayUtils::first($contractExecutionRequirement);
 
         if (false === $contractExecutionRequirement) {
             return null;
@@ -2744,7 +2744,7 @@ class TenderingTermsType
     public function lastContractExecutionRequirement(): ?ContractExecutionRequirement
     {
         $contractExecutionRequirement = $this->contractExecutionRequirement ?? [];
-        $contractExecutionRequirement = end($contractExecutionRequirement);
+        $contractExecutionRequirement = InvoiceSuiteArrayUtils::last($contractExecutionRequirement);
 
         if (false === $contractExecutionRequirement) {
             return null;
@@ -2800,7 +2800,7 @@ class TenderingTermsType
             $this->contractExecutionRequirement = [];
         }
 
-        if ([] === $this->contractExecutionRequirement) {
+        if (InvoiceSuiteArrayUtils::empty($this->contractExecutionRequirement)) {
             $this->addOnceToContractExecutionRequirement(new ContractExecutionRequirement());
         }
 
@@ -3053,7 +3053,7 @@ class TenderingTermsType
     public function firstTenderEvaluationParty(): ?TenderEvaluationParty
     {
         $tenderEvaluationParty = $this->tenderEvaluationParty ?? [];
-        $tenderEvaluationParty = reset($tenderEvaluationParty);
+        $tenderEvaluationParty = InvoiceSuiteArrayUtils::first($tenderEvaluationParty);
 
         if (false === $tenderEvaluationParty) {
             return null;
@@ -3068,7 +3068,7 @@ class TenderingTermsType
     public function lastTenderEvaluationParty(): ?TenderEvaluationParty
     {
         $tenderEvaluationParty = $this->tenderEvaluationParty ?? [];
-        $tenderEvaluationParty = end($tenderEvaluationParty);
+        $tenderEvaluationParty = InvoiceSuiteArrayUtils::last($tenderEvaluationParty);
 
         if (false === $tenderEvaluationParty) {
             return null;
@@ -3124,7 +3124,7 @@ class TenderingTermsType
             $this->tenderEvaluationParty = [];
         }
 
-        if ([] === $this->tenderEvaluationParty) {
+        if (InvoiceSuiteArrayUtils::empty($this->tenderEvaluationParty)) {
             $this->addOnceToTenderEvaluationParty(new TenderEvaluationParty());
         }
 
@@ -3297,7 +3297,7 @@ class TenderingTermsType
     public function firstLanguage(): ?Language
     {
         $language = $this->language ?? [];
-        $language = reset($language);
+        $language = InvoiceSuiteArrayUtils::first($language);
 
         if (false === $language) {
             return null;
@@ -3312,7 +3312,7 @@ class TenderingTermsType
     public function lastLanguage(): ?Language
     {
         $language = $this->language ?? [];
-        $language = end($language);
+        $language = InvoiceSuiteArrayUtils::last($language);
 
         if (false === $language) {
             return null;
@@ -3368,7 +3368,7 @@ class TenderingTermsType
             $this->language = [];
         }
 
-        if ([] === $this->language) {
+        if (InvoiceSuiteArrayUtils::empty($this->language)) {
             $this->addOnceToLanguage(new Language());
         }
 
@@ -3421,7 +3421,7 @@ class TenderingTermsType
     public function firstBudgetAccountLine(): ?BudgetAccountLine
     {
         $budgetAccountLine = $this->budgetAccountLine ?? [];
-        $budgetAccountLine = reset($budgetAccountLine);
+        $budgetAccountLine = InvoiceSuiteArrayUtils::first($budgetAccountLine);
 
         if (false === $budgetAccountLine) {
             return null;
@@ -3436,7 +3436,7 @@ class TenderingTermsType
     public function lastBudgetAccountLine(): ?BudgetAccountLine
     {
         $budgetAccountLine = $this->budgetAccountLine ?? [];
-        $budgetAccountLine = end($budgetAccountLine);
+        $budgetAccountLine = InvoiceSuiteArrayUtils::last($budgetAccountLine);
 
         if (false === $budgetAccountLine) {
             return null;
@@ -3492,7 +3492,7 @@ class TenderingTermsType
             $this->budgetAccountLine = [];
         }
 
-        if ([] === $this->budgetAccountLine) {
+        if (InvoiceSuiteArrayUtils::empty($this->budgetAccountLine)) {
             $this->addOnceToBudgetAccountLine(new BudgetAccountLine());
         }
 

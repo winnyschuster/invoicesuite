@@ -135,7 +135,7 @@ class StowageType
     public function firstLocation(): ?Location
     {
         $location = $this->location ?? [];
-        $location = reset($location);
+        $location = InvoiceSuiteArrayUtils::first($location);
 
         if (false === $location) {
             return null;
@@ -150,7 +150,7 @@ class StowageType
     public function lastLocation(): ?Location
     {
         $location = $this->location ?? [];
-        $location = end($location);
+        $location = InvoiceSuiteArrayUtils::last($location);
 
         if (false === $location) {
             return null;
@@ -206,7 +206,7 @@ class StowageType
             $this->location = [];
         }
 
-        if ([] === $this->location) {
+        if (InvoiceSuiteArrayUtils::empty($this->location)) {
             $this->addOnceToLocation(new Location());
         }
 
@@ -259,7 +259,7 @@ class StowageType
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
         $measurementDimension = $this->measurementDimension ?? [];
-        $measurementDimension = reset($measurementDimension);
+        $measurementDimension = InvoiceSuiteArrayUtils::first($measurementDimension);
 
         if (false === $measurementDimension) {
             return null;
@@ -274,7 +274,7 @@ class StowageType
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
         $measurementDimension = $this->measurementDimension ?? [];
-        $measurementDimension = end($measurementDimension);
+        $measurementDimension = InvoiceSuiteArrayUtils::last($measurementDimension);
 
         if (false === $measurementDimension) {
             return null;
@@ -330,7 +330,7 @@ class StowageType
             $this->measurementDimension = [];
         }
 
-        if ([] === $this->measurementDimension) {
+        if (InvoiceSuiteArrayUtils::empty($this->measurementDimension)) {
             $this->addOnceToMeasurementDimension(new MeasurementDimension());
         }
 

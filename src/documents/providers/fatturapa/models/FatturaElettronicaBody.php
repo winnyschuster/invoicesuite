@@ -324,7 +324,7 @@ final class FatturaElettronicaBody
             $this->datiPagamento = [];
         }
 
-        if ([] === $this->datiPagamento) {
+        if (InvoiceSuiteArrayUtils::empty($this->datiPagamento)) {
             $this->addOnceToDatiPagamento(new DatiPagamento());
         }
 
@@ -438,7 +438,7 @@ final class FatturaElettronicaBody
             $this->allegati = [];
         }
 
-        if ([] === $this->allegati) {
+        if (InvoiceSuiteArrayUtils::empty($this->allegati)) {
             $this->addOnceToAllegati(new Allegati());
         }
 

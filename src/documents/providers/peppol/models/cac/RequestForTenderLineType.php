@@ -328,7 +328,7 @@ class RequestForTenderLineType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -343,7 +343,7 @@ class RequestForTenderLineType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -399,7 +399,7 @@ class RequestForTenderLineType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -722,7 +722,7 @@ class RequestForTenderLineType
     public function firstDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = reset($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::first($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -737,7 +737,7 @@ class RequestForTenderLineType
     public function lastDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = end($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::last($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -793,7 +793,7 @@ class RequestForTenderLineType
             $this->documentReference = [];
         }
 
-        if ([] === $this->documentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->documentReference)) {
             $this->addOnceToDocumentReference(new DocumentReference());
         }
 
@@ -846,7 +846,7 @@ class RequestForTenderLineType
     public function firstDeliveryPeriod(): ?DeliveryPeriod
     {
         $deliveryPeriod = $this->deliveryPeriod ?? [];
-        $deliveryPeriod = reset($deliveryPeriod);
+        $deliveryPeriod = InvoiceSuiteArrayUtils::first($deliveryPeriod);
 
         if (false === $deliveryPeriod) {
             return null;
@@ -861,7 +861,7 @@ class RequestForTenderLineType
     public function lastDeliveryPeriod(): ?DeliveryPeriod
     {
         $deliveryPeriod = $this->deliveryPeriod ?? [];
-        $deliveryPeriod = end($deliveryPeriod);
+        $deliveryPeriod = InvoiceSuiteArrayUtils::last($deliveryPeriod);
 
         if (false === $deliveryPeriod) {
             return null;
@@ -917,7 +917,7 @@ class RequestForTenderLineType
             $this->deliveryPeriod = [];
         }
 
-        if ([] === $this->deliveryPeriod) {
+        if (InvoiceSuiteArrayUtils::empty($this->deliveryPeriod)) {
             $this->addOnceToDeliveryPeriod(new DeliveryPeriod());
         }
 
@@ -970,7 +970,7 @@ class RequestForTenderLineType
     public function firstRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
         $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
-        $requiredItemLocationQuantity = reset($requiredItemLocationQuantity);
+        $requiredItemLocationQuantity = InvoiceSuiteArrayUtils::first($requiredItemLocationQuantity);
 
         if (false === $requiredItemLocationQuantity) {
             return null;
@@ -985,7 +985,7 @@ class RequestForTenderLineType
     public function lastRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
         $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
-        $requiredItemLocationQuantity = end($requiredItemLocationQuantity);
+        $requiredItemLocationQuantity = InvoiceSuiteArrayUtils::last($requiredItemLocationQuantity);
 
         if (false === $requiredItemLocationQuantity) {
             return null;
@@ -1041,7 +1041,7 @@ class RequestForTenderLineType
             $this->requiredItemLocationQuantity = [];
         }
 
-        if ([] === $this->requiredItemLocationQuantity) {
+        if (InvoiceSuiteArrayUtils::empty($this->requiredItemLocationQuantity)) {
             $this->addOnceToRequiredItemLocationQuantity(new RequiredItemLocationQuantity());
         }
 
@@ -1174,7 +1174,7 @@ class RequestForTenderLineType
     public function firstSubRequestForTenderLine(): ?SubRequestForTenderLine
     {
         $subRequestForTenderLine = $this->subRequestForTenderLine ?? [];
-        $subRequestForTenderLine = reset($subRequestForTenderLine);
+        $subRequestForTenderLine = InvoiceSuiteArrayUtils::first($subRequestForTenderLine);
 
         if (false === $subRequestForTenderLine) {
             return null;
@@ -1189,7 +1189,7 @@ class RequestForTenderLineType
     public function lastSubRequestForTenderLine(): ?SubRequestForTenderLine
     {
         $subRequestForTenderLine = $this->subRequestForTenderLine ?? [];
-        $subRequestForTenderLine = end($subRequestForTenderLine);
+        $subRequestForTenderLine = InvoiceSuiteArrayUtils::last($subRequestForTenderLine);
 
         if (false === $subRequestForTenderLine) {
             return null;
@@ -1245,7 +1245,7 @@ class RequestForTenderLineType
             $this->subRequestForTenderLine = [];
         }
 
-        if ([] === $this->subRequestForTenderLine) {
+        if (InvoiceSuiteArrayUtils::empty($this->subRequestForTenderLine)) {
             $this->addOnceToSubRequestForTenderLine(new SubRequestForTenderLine());
         }
 

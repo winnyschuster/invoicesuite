@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\utils;
 
+use Countable;
+
 /**
  * class representing array utilities
  *
@@ -19,6 +21,8 @@ class InvoiceSuiteArrayUtils
      *
      * @param  mixed $value
      * @return bool
+     *
+     * @phpstan-assert-if-true array<array-key,mixed> $value
      */
     public static function is(mixed $value): bool
     {
@@ -48,7 +52,7 @@ class InvoiceSuiteArrayUtils
         array $array,
         string $search
     ): bool {
-        return self::arrayContains(array_map(InvoiceSuiteStringUtils::lower(...), $array), InvoiceSuiteStringUtils::lower($search));
+        return in_array(InvoiceSuiteStringUtils::lower($search), array_map(InvoiceSuiteStringUtils::lower(...), $array), true);
     }
 
     /**
@@ -179,7 +183,7 @@ class InvoiceSuiteArrayUtils
     public static function pushArrayToIntIndexedArray(array &$array, array $value): void
     {
         // @phpstan-ignore paramOut.type
-        if ([] !== $value) {
+        if (!static::empty($value)) {
             // @phpstan-ignore paramOut.type
             $array[] = $value;
         }
@@ -241,5 +245,199 @@ class InvoiceSuiteArrayUtils
         array $array
     ): array {
         return $limitCondition ? static::limitToOne($array) : $array;
+    }
+
+    /**
+     * Check whether an array is empty
+     *
+     * @param  mixed $array
+     * @return bool
+     *
+     * @phpstan-assert-if-true array{} $array
+     */
+    public static function empty(mixed $array): bool
+    {
+        return static::is($array) && [] === $array;
+    }
+
+    /**
+     * Filter elements of an array using a callback function
+     *
+     * @template TKey of array-key
+     * @template TValue
+     *
+     * @param  array<TKey,TValue> $array
+     * @param  null|callable      $callback
+     * @param  int                $mode
+     * @return array<TKey,TValue>
+     */
+    public static function filter(array $array, ?callable $callback = null, int $mode = 0): array
+    {
+        return array_filter($array, $callback, $mode);
+    }
+
+    /**
+     * Check whether an array key exists
+     *
+     * @param  array<array-key,mixed> $array
+     * @param  int|string             $key
+     * @return bool
+     */
+    public static function keyExists(array $array, int|string $key): bool
+    {
+        return array_key_exists($key, $array);
+    }
+
+    /**
+     * Gets the first key of an array
+     *
+     * @param  array<array-key,mixed> $array
+     * @return null|int|string
+     */
+    public static function firstKey(array $array): int|string|null
+    {
+        return array_key_first($array);
+    }
+
+    /**
+     * Return all the keys or a subset of the keys of an array
+     *
+     * @param  array<array-key,mixed> $array
+     * @param  mixed                  ...$arguments
+     * @return array<int,int|string>
+     */
+    public static function keys(array $array, mixed ...$arguments): array
+    {
+        if (static::empty($arguments)) {
+            return array_keys($array);
+        }
+
+        return array_keys($array, $arguments[0], true);
+    }
+
+    /**
+     * Applies the callback to the elements of the given arrays
+     *
+     * @param  null|callable          $callback
+     * @param  array<array-key,mixed> $array
+     * @param  array<array-key,mixed> ...$arrays
+     * @return array<array-key,mixed>
+     */
+    public static function map(?callable $callback, array $array, array ...$arrays): array
+    {
+        return array_map($callback, $array, ...$arrays);
+    }
+
+    /**
+     * Merge one or more arrays
+     *
+     * @param  array<array-key,mixed> ...$arrays
+     * @return array<array-key,mixed>
+     */
+    public static function merge(array ...$arrays): array
+    {
+        return array_merge(...$arrays);
+    }
+
+    /**
+     * Searches the array for a given value and returns the first corresponding key
+     *
+     * @param  array<array-key,mixed> $array
+     * @param  mixed                  $search
+     * @param  bool                   $strict
+     * @return false|int|string
+     */
+    public static function search(array $array, mixed $search, bool $strict = true): false|int|string
+    {
+        return array_search($search, $array, true);
+    }
+
+    /**
+     * Return all the values of an array
+     *
+     * @template TValue
+     *
+     * @param  array<array-key,TValue> $array
+     * @return array<int,TValue>
+     */
+    public static function values(array $array): array
+    {
+        return array_values($array);
+    }
+
+    /**
+     * Count all elements in an array or a Countable object
+     *
+     * @param  array<array-key,mixed>|Countable $value
+     * @param  0|1                              $mode
+     * @return int
+     */
+    public static function count(array|Countable $value, int $mode = COUNT_NORMAL): int
+    {
+        return count($value, $mode);
+    }
+
+    /**
+     * Return the first element in an array
+     *
+     * @template TValue
+     *
+     * @param  array<array-key,TValue> $array
+     * @return false|TValue
+     */
+    public static function first(array &$array): mixed
+    {
+        return reset($array);
+    }
+
+    /**
+     * Return the last element in an array
+     *
+     * @template TValue
+     *
+     * @param  array<array-key,TValue> $array
+     * @return false|TValue
+     */
+    public static function last(array &$array): mixed
+    {
+        return end($array);
+    }
+
+    /**
+     * Return the next element in an array
+     *
+     * @template TValue
+     *
+     * @param  array<array-key,TValue> $array
+     * @return false|TValue
+     */
+    public static function next(array &$array): mixed
+    {
+        return next($array);
+    }
+
+    /**
+     * Return the previous element in an array
+     *
+     * @template TValue
+     *
+     * @param  array<array-key,TValue> $array
+     * @return false|TValue
+     */
+    public static function previous(array &$array): mixed
+    {
+        return prev($array);
+    }
+
+    /**
+     * Sort an array by values using a user-defined comparison function
+     *
+     * @param  array<array-key,mixed> $array
+     * @param  callable               $callback
+     * @return bool
+     */
+    public static function sortWithCallback(array &$array, callable $callback): bool
+    {
+        return usort($array, $callback);
     }
 }

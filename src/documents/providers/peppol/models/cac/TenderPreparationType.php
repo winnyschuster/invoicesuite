@@ -211,7 +211,7 @@ class TenderPreparationType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -226,7 +226,7 @@ class TenderPreparationType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -282,7 +282,7 @@ class TenderPreparationType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -375,7 +375,7 @@ class TenderPreparationType
     public function firstProcurementProjectLot(): ?ProcurementProjectLot
     {
         $procurementProjectLot = $this->procurementProjectLot ?? [];
-        $procurementProjectLot = reset($procurementProjectLot);
+        $procurementProjectLot = InvoiceSuiteArrayUtils::first($procurementProjectLot);
 
         if (false === $procurementProjectLot) {
             return null;
@@ -390,7 +390,7 @@ class TenderPreparationType
     public function lastProcurementProjectLot(): ?ProcurementProjectLot
     {
         $procurementProjectLot = $this->procurementProjectLot ?? [];
-        $procurementProjectLot = end($procurementProjectLot);
+        $procurementProjectLot = InvoiceSuiteArrayUtils::last($procurementProjectLot);
 
         if (false === $procurementProjectLot) {
             return null;
@@ -446,7 +446,7 @@ class TenderPreparationType
             $this->procurementProjectLot = [];
         }
 
-        if ([] === $this->procurementProjectLot) {
+        if (InvoiceSuiteArrayUtils::empty($this->procurementProjectLot)) {
             $this->addOnceToProcurementProjectLot(new ProcurementProjectLot());
         }
 
@@ -499,7 +499,7 @@ class TenderPreparationType
     public function firstDocumentTenderRequirement(): ?DocumentTenderRequirement
     {
         $documentTenderRequirement = $this->documentTenderRequirement ?? [];
-        $documentTenderRequirement = reset($documentTenderRequirement);
+        $documentTenderRequirement = InvoiceSuiteArrayUtils::first($documentTenderRequirement);
 
         if (false === $documentTenderRequirement) {
             return null;
@@ -514,7 +514,7 @@ class TenderPreparationType
     public function lastDocumentTenderRequirement(): ?DocumentTenderRequirement
     {
         $documentTenderRequirement = $this->documentTenderRequirement ?? [];
-        $documentTenderRequirement = end($documentTenderRequirement);
+        $documentTenderRequirement = InvoiceSuiteArrayUtils::last($documentTenderRequirement);
 
         if (false === $documentTenderRequirement) {
             return null;
@@ -570,7 +570,7 @@ class TenderPreparationType
             $this->documentTenderRequirement = [];
         }
 
-        if ([] === $this->documentTenderRequirement) {
+        if (InvoiceSuiteArrayUtils::empty($this->documentTenderRequirement)) {
             $this->addOnceToDocumentTenderRequirement(new DocumentTenderRequirement());
         }
 

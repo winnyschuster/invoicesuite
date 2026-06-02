@@ -174,7 +174,7 @@ class GoodsItemContainerType
     public function firstTransportEquipment(): ?TransportEquipment
     {
         $transportEquipment = $this->transportEquipment ?? [];
-        $transportEquipment = reset($transportEquipment);
+        $transportEquipment = InvoiceSuiteArrayUtils::first($transportEquipment);
 
         if (false === $transportEquipment) {
             return null;
@@ -189,7 +189,7 @@ class GoodsItemContainerType
     public function lastTransportEquipment(): ?TransportEquipment
     {
         $transportEquipment = $this->transportEquipment ?? [];
-        $transportEquipment = end($transportEquipment);
+        $transportEquipment = InvoiceSuiteArrayUtils::last($transportEquipment);
 
         if (false === $transportEquipment) {
             return null;
@@ -245,7 +245,7 @@ class GoodsItemContainerType
             $this->transportEquipment = [];
         }
 
-        if ([] === $this->transportEquipment) {
+        if (InvoiceSuiteArrayUtils::empty($this->transportEquipment)) {
             $this->addOnceToTransportEquipment(new TransportEquipment());
         }
 

@@ -187,7 +187,7 @@ class ClassificationCategoryType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -202,7 +202,7 @@ class ClassificationCategoryType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -258,7 +258,7 @@ class ClassificationCategoryType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -311,7 +311,7 @@ class ClassificationCategoryType
     public function firstCategorizesClassificationCategory(): ?CategorizesClassificationCategory
     {
         $categorizesClassificationCategory = $this->categorizesClassificationCategory ?? [];
-        $categorizesClassificationCategory = reset($categorizesClassificationCategory);
+        $categorizesClassificationCategory = InvoiceSuiteArrayUtils::first($categorizesClassificationCategory);
 
         if (false === $categorizesClassificationCategory) {
             return null;
@@ -326,7 +326,7 @@ class ClassificationCategoryType
     public function lastCategorizesClassificationCategory(): ?CategorizesClassificationCategory
     {
         $categorizesClassificationCategory = $this->categorizesClassificationCategory ?? [];
-        $categorizesClassificationCategory = end($categorizesClassificationCategory);
+        $categorizesClassificationCategory = InvoiceSuiteArrayUtils::last($categorizesClassificationCategory);
 
         if (false === $categorizesClassificationCategory) {
             return null;
@@ -382,7 +382,7 @@ class ClassificationCategoryType
             $this->categorizesClassificationCategory = [];
         }
 
-        if ([] === $this->categorizesClassificationCategory) {
+        if (InvoiceSuiteArrayUtils::empty($this->categorizesClassificationCategory)) {
             $this->addOnceToCategorizesClassificationCategory(new CategorizesClassificationCategory());
         }
 

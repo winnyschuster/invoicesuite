@@ -180,7 +180,7 @@ class LineTradeSettlementType
             $this->applicableTradeTax = [];
         }
 
-        if ([] === $this->applicableTradeTax) {
+        if (InvoiceSuiteArrayUtils::empty($this->applicableTradeTax)) {
             $this->addOnceToApplicableTradeTax(new TradeTaxType());
         }
 
@@ -314,7 +314,7 @@ class LineTradeSettlementType
             $this->specifiedTradeAllowanceCharge = [];
         }
 
-        if ([] === $this->specifiedTradeAllowanceCharge) {
+        if (InvoiceSuiteArrayUtils::empty($this->specifiedTradeAllowanceCharge)) {
             $this->addOnceToSpecifiedTradeAllowanceCharge(new TradeAllowanceChargeType());
         }
 
@@ -488,7 +488,7 @@ class LineTradeSettlementType
             $this->additionalReferencedDocument = [];
         }
 
-        if ([] === $this->additionalReferencedDocument) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalReferencedDocument)) {
             $this->addOnceToAdditionalReferencedDocument(new ReferencedDocumentType());
         }
 
@@ -582,7 +582,7 @@ class LineTradeSettlementType
             $this->receivableSpecifiedTradeAccountingAccount = [];
         }
 
-        if ([] === $this->receivableSpecifiedTradeAccountingAccount) {
+        if (InvoiceSuiteArrayUtils::empty($this->receivableSpecifiedTradeAccountingAccount)) {
             $this->addOnceToReceivableSpecifiedTradeAccountingAccount(new TradeAccountingAccountType());
         }
 

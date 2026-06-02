@@ -298,7 +298,7 @@ class AwardingCriterionType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -313,7 +313,7 @@ class AwardingCriterionType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -369,7 +369,7 @@ class AwardingCriterionType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -462,7 +462,7 @@ class AwardingCriterionType
     public function firstWeight(): ?Weight
     {
         $weight = $this->weight ?? [];
-        $weight = reset($weight);
+        $weight = InvoiceSuiteArrayUtils::first($weight);
 
         if (false === $weight) {
             return null;
@@ -477,7 +477,7 @@ class AwardingCriterionType
     public function lastWeight(): ?Weight
     {
         $weight = $this->weight ?? [];
-        $weight = end($weight);
+        $weight = InvoiceSuiteArrayUtils::last($weight);
 
         if (false === $weight) {
             return null;
@@ -533,7 +533,7 @@ class AwardingCriterionType
             $this->weight = [];
         }
 
-        if ([] === $this->weight) {
+        if (InvoiceSuiteArrayUtils::empty($this->weight)) {
             $this->addOnceToWeight(new Weight());
         }
 
@@ -586,7 +586,7 @@ class AwardingCriterionType
     public function firstCalculationExpression(): ?CalculationExpression
     {
         $calculationExpression = $this->calculationExpression ?? [];
-        $calculationExpression = reset($calculationExpression);
+        $calculationExpression = InvoiceSuiteArrayUtils::first($calculationExpression);
 
         if (false === $calculationExpression) {
             return null;
@@ -601,7 +601,7 @@ class AwardingCriterionType
     public function lastCalculationExpression(): ?CalculationExpression
     {
         $calculationExpression = $this->calculationExpression ?? [];
-        $calculationExpression = end($calculationExpression);
+        $calculationExpression = InvoiceSuiteArrayUtils::last($calculationExpression);
 
         if (false === $calculationExpression) {
             return null;
@@ -657,7 +657,7 @@ class AwardingCriterionType
             $this->calculationExpression = [];
         }
 
-        if ([] === $this->calculationExpression) {
+        if (InvoiceSuiteArrayUtils::empty($this->calculationExpression)) {
             $this->addOnceToCalculationExpression(new CalculationExpression());
         }
 
@@ -910,7 +910,7 @@ class AwardingCriterionType
     public function firstMinimumImprovementBid(): ?MinimumImprovementBid
     {
         $minimumImprovementBid = $this->minimumImprovementBid ?? [];
-        $minimumImprovementBid = reset($minimumImprovementBid);
+        $minimumImprovementBid = InvoiceSuiteArrayUtils::first($minimumImprovementBid);
 
         if (false === $minimumImprovementBid) {
             return null;
@@ -925,7 +925,7 @@ class AwardingCriterionType
     public function lastMinimumImprovementBid(): ?MinimumImprovementBid
     {
         $minimumImprovementBid = $this->minimumImprovementBid ?? [];
-        $minimumImprovementBid = end($minimumImprovementBid);
+        $minimumImprovementBid = InvoiceSuiteArrayUtils::last($minimumImprovementBid);
 
         if (false === $minimumImprovementBid) {
             return null;
@@ -981,7 +981,7 @@ class AwardingCriterionType
             $this->minimumImprovementBid = [];
         }
 
-        if ([] === $this->minimumImprovementBid) {
+        if (InvoiceSuiteArrayUtils::empty($this->minimumImprovementBid)) {
             $this->addOnceToMinimumImprovementBid(new MinimumImprovementBid());
         }
 
@@ -1034,7 +1034,7 @@ class AwardingCriterionType
     public function firstSubordinateAwardingCriterion(): ?SubordinateAwardingCriterion
     {
         $subordinateAwardingCriterion = $this->subordinateAwardingCriterion ?? [];
-        $subordinateAwardingCriterion = reset($subordinateAwardingCriterion);
+        $subordinateAwardingCriterion = InvoiceSuiteArrayUtils::first($subordinateAwardingCriterion);
 
         if (false === $subordinateAwardingCriterion) {
             return null;
@@ -1049,7 +1049,7 @@ class AwardingCriterionType
     public function lastSubordinateAwardingCriterion(): ?SubordinateAwardingCriterion
     {
         $subordinateAwardingCriterion = $this->subordinateAwardingCriterion ?? [];
-        $subordinateAwardingCriterion = end($subordinateAwardingCriterion);
+        $subordinateAwardingCriterion = InvoiceSuiteArrayUtils::last($subordinateAwardingCriterion);
 
         if (false === $subordinateAwardingCriterion) {
             return null;
@@ -1105,7 +1105,7 @@ class AwardingCriterionType
             $this->subordinateAwardingCriterion = [];
         }
 
-        if ([] === $this->subordinateAwardingCriterion) {
+        if (InvoiceSuiteArrayUtils::empty($this->subordinateAwardingCriterion)) {
             $this->addOnceToSubordinateAwardingCriterion(new SubordinateAwardingCriterion());
         }
 

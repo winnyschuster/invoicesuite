@@ -42,6 +42,7 @@ use horstoeko\invoicesuite\documents\dto\InvoiceSuiteSummationDTO;
 use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
 use horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradePaymentTermsType;
 use horstoeko\invoicesuite\documents\providers\zffx\models\rsm\CrossIndustryInvoiceType;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFloatUtils;
@@ -10418,7 +10419,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             ->getApplicableHeaderTradeSettlementWithCreate()
             ->getSpecifiedTradePaymentTerms() ?? [];
 
-        $lastPaymentTerm = end($paymentTerms);
+        $lastPaymentTerm = InvoiceSuiteArrayUtils::last($paymentTerms);
 
         if (false === $lastPaymentTerm) {
             $this->traceMethodExit(__METHOD__);
@@ -10544,7 +10545,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             ->getApplicableHeaderTradeSettlementWithCreate()
             ->getSpecifiedTradePaymentTerms() ?? [];
 
-        $lastPaymentTerm = end($paymentTerms);
+        $lastPaymentTerm = InvoiceSuiteArrayUtils::last($paymentTerms);
 
         if (false === $lastPaymentTerm) {
             $this->traceMethodExit(__METHOD__);
@@ -15197,7 +15198,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             ->getApplicableHeaderTradeSettlementWithCreate()
             ->getSpecifiedTradePaymentTerms() ?? [];
 
-        $paymentTerms = array_filter(
+        $paymentTerms = InvoiceSuiteArrayUtils::filter(
             $paymentTerms,
             static fn (TradePaymentTermsType $paymentTerm) => InvoiceSuiteStringUtils::stringIsNullOrEmpty(
                 $paymentTerm->getDirectDebitMandateID()?->getValue()

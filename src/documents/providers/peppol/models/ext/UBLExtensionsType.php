@@ -70,7 +70,7 @@ class UBLExtensionsType
     public function firstUBLExtension(): ?UBLExtension
     {
         $uBLExtension = $this->uBLExtension ?? [];
-        $uBLExtension = reset($uBLExtension);
+        $uBLExtension = InvoiceSuiteArrayUtils::first($uBLExtension);
 
         if (false === $uBLExtension) {
             return null;
@@ -85,7 +85,7 @@ class UBLExtensionsType
     public function lastUBLExtension(): ?UBLExtension
     {
         $uBLExtension = $this->uBLExtension ?? [];
-        $uBLExtension = end($uBLExtension);
+        $uBLExtension = InvoiceSuiteArrayUtils::last($uBLExtension);
 
         if (false === $uBLExtension) {
             return null;
@@ -141,7 +141,7 @@ class UBLExtensionsType
             $this->uBLExtension = [];
         }
 
-        if ([] === $this->uBLExtension) {
+        if (InvoiceSuiteArrayUtils::empty($this->uBLExtension)) {
             $this->addOnceToUBLExtension(new UBLExtension());
         }
 

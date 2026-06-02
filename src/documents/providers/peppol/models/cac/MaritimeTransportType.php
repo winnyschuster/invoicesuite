@@ -273,7 +273,7 @@ class MaritimeTransportType
     public function firstShipsRequirements(): ?ShipsRequirements
     {
         $shipsRequirements = $this->shipsRequirements ?? [];
-        $shipsRequirements = reset($shipsRequirements);
+        $shipsRequirements = InvoiceSuiteArrayUtils::first($shipsRequirements);
 
         if (false === $shipsRequirements) {
             return null;
@@ -288,7 +288,7 @@ class MaritimeTransportType
     public function lastShipsRequirements(): ?ShipsRequirements
     {
         $shipsRequirements = $this->shipsRequirements ?? [];
-        $shipsRequirements = end($shipsRequirements);
+        $shipsRequirements = InvoiceSuiteArrayUtils::last($shipsRequirements);
 
         if (false === $shipsRequirements) {
             return null;
@@ -344,7 +344,7 @@ class MaritimeTransportType
             $this->shipsRequirements = [];
         }
 
-        if ([] === $this->shipsRequirements) {
+        if (InvoiceSuiteArrayUtils::empty($this->shipsRequirements)) {
             $this->addOnceToShipsRequirements(new ShipsRequirements());
         }
 

@@ -1171,7 +1171,7 @@ class ShipmentStageType
     public function firstInstructions(): ?Instructions
     {
         $instructions = $this->instructions ?? [];
-        $instructions = reset($instructions);
+        $instructions = InvoiceSuiteArrayUtils::first($instructions);
 
         if (false === $instructions) {
             return null;
@@ -1186,7 +1186,7 @@ class ShipmentStageType
     public function lastInstructions(): ?Instructions
     {
         $instructions = $this->instructions ?? [];
-        $instructions = end($instructions);
+        $instructions = InvoiceSuiteArrayUtils::last($instructions);
 
         if (false === $instructions) {
             return null;
@@ -1242,7 +1242,7 @@ class ShipmentStageType
             $this->instructions = [];
         }
 
-        if ([] === $this->instructions) {
+        if (InvoiceSuiteArrayUtils::empty($this->instructions)) {
             $this->addOnceToInstructions(new Instructions());
         }
 
@@ -1295,7 +1295,7 @@ class ShipmentStageType
     public function firstDemurrageInstructions(): ?DemurrageInstructions
     {
         $demurrageInstructions = $this->demurrageInstructions ?? [];
-        $demurrageInstructions = reset($demurrageInstructions);
+        $demurrageInstructions = InvoiceSuiteArrayUtils::first($demurrageInstructions);
 
         if (false === $demurrageInstructions) {
             return null;
@@ -1310,7 +1310,7 @@ class ShipmentStageType
     public function lastDemurrageInstructions(): ?DemurrageInstructions
     {
         $demurrageInstructions = $this->demurrageInstructions ?? [];
-        $demurrageInstructions = end($demurrageInstructions);
+        $demurrageInstructions = InvoiceSuiteArrayUtils::last($demurrageInstructions);
 
         if (false === $demurrageInstructions) {
             return null;
@@ -1366,7 +1366,7 @@ class ShipmentStageType
             $this->demurrageInstructions = [];
         }
 
-        if ([] === $this->demurrageInstructions) {
+        if (InvoiceSuiteArrayUtils::empty($this->demurrageInstructions)) {
             $this->addOnceToDemurrageInstructions(new DemurrageInstructions());
         }
 
@@ -1539,7 +1539,7 @@ class ShipmentStageType
     public function firstCarrierParty(): ?CarrierParty
     {
         $carrierParty = $this->carrierParty ?? [];
-        $carrierParty = reset($carrierParty);
+        $carrierParty = InvoiceSuiteArrayUtils::first($carrierParty);
 
         if (false === $carrierParty) {
             return null;
@@ -1554,7 +1554,7 @@ class ShipmentStageType
     public function lastCarrierParty(): ?CarrierParty
     {
         $carrierParty = $this->carrierParty ?? [];
-        $carrierParty = end($carrierParty);
+        $carrierParty = InvoiceSuiteArrayUtils::last($carrierParty);
 
         if (false === $carrierParty) {
             return null;
@@ -1610,7 +1610,7 @@ class ShipmentStageType
             $this->carrierParty = [];
         }
 
-        if ([] === $this->carrierParty) {
+        if (InvoiceSuiteArrayUtils::empty($this->carrierParty)) {
             $this->addOnceToCarrierParty(new CarrierParty());
         }
 
@@ -2503,7 +2503,7 @@ class ShipmentStageType
     public function firstFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
         $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
-        $freightAllowanceCharge = reset($freightAllowanceCharge);
+        $freightAllowanceCharge = InvoiceSuiteArrayUtils::first($freightAllowanceCharge);
 
         if (false === $freightAllowanceCharge) {
             return null;
@@ -2518,7 +2518,7 @@ class ShipmentStageType
     public function lastFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
         $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
-        $freightAllowanceCharge = end($freightAllowanceCharge);
+        $freightAllowanceCharge = InvoiceSuiteArrayUtils::last($freightAllowanceCharge);
 
         if (false === $freightAllowanceCharge) {
             return null;
@@ -2574,7 +2574,7 @@ class ShipmentStageType
             $this->freightAllowanceCharge = [];
         }
 
-        if ([] === $this->freightAllowanceCharge) {
+        if (InvoiceSuiteArrayUtils::empty($this->freightAllowanceCharge)) {
             $this->addOnceToFreightAllowanceCharge(new FreightAllowanceCharge());
         }
 
@@ -2667,7 +2667,7 @@ class ShipmentStageType
     public function firstDetentionTransportEvent(): ?DetentionTransportEvent
     {
         $detentionTransportEvent = $this->detentionTransportEvent ?? [];
-        $detentionTransportEvent = reset($detentionTransportEvent);
+        $detentionTransportEvent = InvoiceSuiteArrayUtils::first($detentionTransportEvent);
 
         if (false === $detentionTransportEvent) {
             return null;
@@ -2682,7 +2682,7 @@ class ShipmentStageType
     public function lastDetentionTransportEvent(): ?DetentionTransportEvent
     {
         $detentionTransportEvent = $this->detentionTransportEvent ?? [];
-        $detentionTransportEvent = end($detentionTransportEvent);
+        $detentionTransportEvent = InvoiceSuiteArrayUtils::last($detentionTransportEvent);
 
         if (false === $detentionTransportEvent) {
             return null;
@@ -2738,7 +2738,7 @@ class ShipmentStageType
             $this->detentionTransportEvent = [];
         }
 
-        if ([] === $this->detentionTransportEvent) {
+        if (InvoiceSuiteArrayUtils::empty($this->detentionTransportEvent)) {
             $this->addOnceToDetentionTransportEvent(new DetentionTransportEvent());
         }
 
@@ -2871,7 +2871,7 @@ class ShipmentStageType
     public function firstRequestedWaypointTransportEvent(): ?RequestedWaypointTransportEvent
     {
         $requestedWaypointTransportEvent = $this->requestedWaypointTransportEvent ?? [];
-        $requestedWaypointTransportEvent = reset($requestedWaypointTransportEvent);
+        $requestedWaypointTransportEvent = InvoiceSuiteArrayUtils::first($requestedWaypointTransportEvent);
 
         if (false === $requestedWaypointTransportEvent) {
             return null;
@@ -2886,7 +2886,7 @@ class ShipmentStageType
     public function lastRequestedWaypointTransportEvent(): ?RequestedWaypointTransportEvent
     {
         $requestedWaypointTransportEvent = $this->requestedWaypointTransportEvent ?? [];
-        $requestedWaypointTransportEvent = end($requestedWaypointTransportEvent);
+        $requestedWaypointTransportEvent = InvoiceSuiteArrayUtils::last($requestedWaypointTransportEvent);
 
         if (false === $requestedWaypointTransportEvent) {
             return null;
@@ -2942,7 +2942,7 @@ class ShipmentStageType
             $this->requestedWaypointTransportEvent = [];
         }
 
-        if ([] === $this->requestedWaypointTransportEvent) {
+        if (InvoiceSuiteArrayUtils::empty($this->requestedWaypointTransportEvent)) {
             $this->addOnceToRequestedWaypointTransportEvent(new RequestedWaypointTransportEvent());
         }
 
@@ -3075,7 +3075,7 @@ class ShipmentStageType
     public function firstPlannedWaypointTransportEvent(): ?PlannedWaypointTransportEvent
     {
         $plannedWaypointTransportEvent = $this->plannedWaypointTransportEvent ?? [];
-        $plannedWaypointTransportEvent = reset($plannedWaypointTransportEvent);
+        $plannedWaypointTransportEvent = InvoiceSuiteArrayUtils::first($plannedWaypointTransportEvent);
 
         if (false === $plannedWaypointTransportEvent) {
             return null;
@@ -3090,7 +3090,7 @@ class ShipmentStageType
     public function lastPlannedWaypointTransportEvent(): ?PlannedWaypointTransportEvent
     {
         $plannedWaypointTransportEvent = $this->plannedWaypointTransportEvent ?? [];
-        $plannedWaypointTransportEvent = end($plannedWaypointTransportEvent);
+        $plannedWaypointTransportEvent = InvoiceSuiteArrayUtils::last($plannedWaypointTransportEvent);
 
         if (false === $plannedWaypointTransportEvent) {
             return null;
@@ -3146,7 +3146,7 @@ class ShipmentStageType
             $this->plannedWaypointTransportEvent = [];
         }
 
-        if ([] === $this->plannedWaypointTransportEvent) {
+        if (InvoiceSuiteArrayUtils::empty($this->plannedWaypointTransportEvent)) {
             $this->addOnceToPlannedWaypointTransportEvent(new PlannedWaypointTransportEvent());
         }
 
@@ -3319,7 +3319,7 @@ class ShipmentStageType
     public function firstTransportEvent(): ?TransportEvent
     {
         $transportEvent = $this->transportEvent ?? [];
-        $transportEvent = reset($transportEvent);
+        $transportEvent = InvoiceSuiteArrayUtils::first($transportEvent);
 
         if (false === $transportEvent) {
             return null;
@@ -3334,7 +3334,7 @@ class ShipmentStageType
     public function lastTransportEvent(): ?TransportEvent
     {
         $transportEvent = $this->transportEvent ?? [];
-        $transportEvent = end($transportEvent);
+        $transportEvent = InvoiceSuiteArrayUtils::last($transportEvent);
 
         if (false === $transportEvent) {
             return null;
@@ -3390,7 +3390,7 @@ class ShipmentStageType
             $this->transportEvent = [];
         }
 
-        if ([] === $this->transportEvent) {
+        if (InvoiceSuiteArrayUtils::empty($this->transportEvent)) {
             $this->addOnceToTransportEvent(new TransportEvent());
         }
 
@@ -3523,7 +3523,7 @@ class ShipmentStageType
     public function firstPassengerPerson(): ?PassengerPerson
     {
         $passengerPerson = $this->passengerPerson ?? [];
-        $passengerPerson = reset($passengerPerson);
+        $passengerPerson = InvoiceSuiteArrayUtils::first($passengerPerson);
 
         if (false === $passengerPerson) {
             return null;
@@ -3538,7 +3538,7 @@ class ShipmentStageType
     public function lastPassengerPerson(): ?PassengerPerson
     {
         $passengerPerson = $this->passengerPerson ?? [];
-        $passengerPerson = end($passengerPerson);
+        $passengerPerson = InvoiceSuiteArrayUtils::last($passengerPerson);
 
         if (false === $passengerPerson) {
             return null;
@@ -3594,7 +3594,7 @@ class ShipmentStageType
             $this->passengerPerson = [];
         }
 
-        if ([] === $this->passengerPerson) {
+        if (InvoiceSuiteArrayUtils::empty($this->passengerPerson)) {
             $this->addOnceToPassengerPerson(new PassengerPerson());
         }
 
@@ -3647,7 +3647,7 @@ class ShipmentStageType
     public function firstDriverPerson(): ?DriverPerson
     {
         $driverPerson = $this->driverPerson ?? [];
-        $driverPerson = reset($driverPerson);
+        $driverPerson = InvoiceSuiteArrayUtils::first($driverPerson);
 
         if (false === $driverPerson) {
             return null;
@@ -3662,7 +3662,7 @@ class ShipmentStageType
     public function lastDriverPerson(): ?DriverPerson
     {
         $driverPerson = $this->driverPerson ?? [];
-        $driverPerson = end($driverPerson);
+        $driverPerson = InvoiceSuiteArrayUtils::last($driverPerson);
 
         if (false === $driverPerson) {
             return null;
@@ -3718,7 +3718,7 @@ class ShipmentStageType
             $this->driverPerson = [];
         }
 
-        if ([] === $this->driverPerson) {
+        if (InvoiceSuiteArrayUtils::empty($this->driverPerson)) {
             $this->addOnceToDriverPerson(new DriverPerson());
         }
 
@@ -3811,7 +3811,7 @@ class ShipmentStageType
     public function firstCrewMemberPerson(): ?CrewMemberPerson
     {
         $crewMemberPerson = $this->crewMemberPerson ?? [];
-        $crewMemberPerson = reset($crewMemberPerson);
+        $crewMemberPerson = InvoiceSuiteArrayUtils::first($crewMemberPerson);
 
         if (false === $crewMemberPerson) {
             return null;
@@ -3826,7 +3826,7 @@ class ShipmentStageType
     public function lastCrewMemberPerson(): ?CrewMemberPerson
     {
         $crewMemberPerson = $this->crewMemberPerson ?? [];
-        $crewMemberPerson = end($crewMemberPerson);
+        $crewMemberPerson = InvoiceSuiteArrayUtils::last($crewMemberPerson);
 
         if (false === $crewMemberPerson) {
             return null;
@@ -3882,7 +3882,7 @@ class ShipmentStageType
             $this->crewMemberPerson = [];
         }
 
-        if ([] === $this->crewMemberPerson) {
+        if (InvoiceSuiteArrayUtils::empty($this->crewMemberPerson)) {
             $this->addOnceToCrewMemberPerson(new CrewMemberPerson());
         }
 

@@ -328,7 +328,7 @@ class SignatureType
             $this->object = [];
         }
 
-        if ([] === $this->object) {
+        if (InvoiceSuiteArrayUtils::empty($this->object)) {
             $this->addOnceToObject(new ObjectType());
         }
 

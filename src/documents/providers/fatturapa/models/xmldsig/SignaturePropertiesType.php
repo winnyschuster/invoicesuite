@@ -145,7 +145,7 @@ class SignaturePropertiesType
             $this->signatureProperty = [];
         }
 
-        if ([] === $this->signatureProperty) {
+        if (InvoiceSuiteArrayUtils::empty($this->signatureProperty)) {
             $this->addOnceToSignatureProperty(new SignaturePropertyType());
         }
 

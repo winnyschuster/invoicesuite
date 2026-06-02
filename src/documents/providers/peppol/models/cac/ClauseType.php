@@ -123,7 +123,7 @@ class ClauseType
     public function firstContent(): ?Content
     {
         $content = $this->content ?? [];
-        $content = reset($content);
+        $content = InvoiceSuiteArrayUtils::first($content);
 
         if (false === $content) {
             return null;
@@ -138,7 +138,7 @@ class ClauseType
     public function lastContent(): ?Content
     {
         $content = $this->content ?? [];
-        $content = end($content);
+        $content = InvoiceSuiteArrayUtils::last($content);
 
         if (false === $content) {
             return null;
@@ -194,7 +194,7 @@ class ClauseType
             $this->content = [];
         }
 
-        if ([] === $this->content) {
+        if (InvoiceSuiteArrayUtils::empty($this->content)) {
             $this->addOnceToContent(new Content());
         }
 

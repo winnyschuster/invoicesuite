@@ -164,7 +164,7 @@ class LotIdentificationType
     public function firstAdditionalItemProperty(): ?AdditionalItemProperty
     {
         $additionalItemProperty = $this->additionalItemProperty ?? [];
-        $additionalItemProperty = reset($additionalItemProperty);
+        $additionalItemProperty = InvoiceSuiteArrayUtils::first($additionalItemProperty);
 
         if (false === $additionalItemProperty) {
             return null;
@@ -179,7 +179,7 @@ class LotIdentificationType
     public function lastAdditionalItemProperty(): ?AdditionalItemProperty
     {
         $additionalItemProperty = $this->additionalItemProperty ?? [];
-        $additionalItemProperty = end($additionalItemProperty);
+        $additionalItemProperty = InvoiceSuiteArrayUtils::last($additionalItemProperty);
 
         if (false === $additionalItemProperty) {
             return null;
@@ -235,7 +235,7 @@ class LotIdentificationType
             $this->additionalItemProperty = [];
         }
 
-        if ([] === $this->additionalItemProperty) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalItemProperty)) {
             $this->addOnceToAdditionalItemProperty(new AdditionalItemProperty());
         }
 

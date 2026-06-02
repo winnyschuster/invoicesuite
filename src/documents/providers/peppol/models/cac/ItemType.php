@@ -414,7 +414,7 @@ class ItemType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -429,7 +429,7 @@ class ItemType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -485,7 +485,7 @@ class ItemType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -718,7 +718,7 @@ class ItemType
     public function firstAdditionalInformation(): ?AdditionalInformation
     {
         $additionalInformation = $this->additionalInformation ?? [];
-        $additionalInformation = reset($additionalInformation);
+        $additionalInformation = InvoiceSuiteArrayUtils::first($additionalInformation);
 
         if (false === $additionalInformation) {
             return null;
@@ -733,7 +733,7 @@ class ItemType
     public function lastAdditionalInformation(): ?AdditionalInformation
     {
         $additionalInformation = $this->additionalInformation ?? [];
-        $additionalInformation = end($additionalInformation);
+        $additionalInformation = InvoiceSuiteArrayUtils::last($additionalInformation);
 
         if (false === $additionalInformation) {
             return null;
@@ -789,7 +789,7 @@ class ItemType
             $this->additionalInformation = [];
         }
 
-        if ([] === $this->additionalInformation) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalInformation)) {
             $this->addOnceToAdditionalInformation(new AdditionalInformation());
         }
 
@@ -842,7 +842,7 @@ class ItemType
     public function firstKeyword(): ?Keyword
     {
         $keyword = $this->keyword ?? [];
-        $keyword = reset($keyword);
+        $keyword = InvoiceSuiteArrayUtils::first($keyword);
 
         if (false === $keyword) {
             return null;
@@ -857,7 +857,7 @@ class ItemType
     public function lastKeyword(): ?Keyword
     {
         $keyword = $this->keyword ?? [];
-        $keyword = end($keyword);
+        $keyword = InvoiceSuiteArrayUtils::last($keyword);
 
         if (false === $keyword) {
             return null;
@@ -913,7 +913,7 @@ class ItemType
             $this->keyword = [];
         }
 
-        if ([] === $this->keyword) {
+        if (InvoiceSuiteArrayUtils::empty($this->keyword)) {
             $this->addOnceToKeyword(new Keyword());
         }
 
@@ -966,7 +966,7 @@ class ItemType
     public function firstBrandName(): ?BrandName
     {
         $brandName = $this->brandName ?? [];
-        $brandName = reset($brandName);
+        $brandName = InvoiceSuiteArrayUtils::first($brandName);
 
         if (false === $brandName) {
             return null;
@@ -981,7 +981,7 @@ class ItemType
     public function lastBrandName(): ?BrandName
     {
         $brandName = $this->brandName ?? [];
-        $brandName = end($brandName);
+        $brandName = InvoiceSuiteArrayUtils::last($brandName);
 
         if (false === $brandName) {
             return null;
@@ -1037,7 +1037,7 @@ class ItemType
             $this->brandName = [];
         }
 
-        if ([] === $this->brandName) {
+        if (InvoiceSuiteArrayUtils::empty($this->brandName)) {
             $this->addOnceToBrandName(new BrandName());
         }
 
@@ -1090,7 +1090,7 @@ class ItemType
     public function firstModelName(): ?ModelName
     {
         $modelName = $this->modelName ?? [];
-        $modelName = reset($modelName);
+        $modelName = InvoiceSuiteArrayUtils::first($modelName);
 
         if (false === $modelName) {
             return null;
@@ -1105,7 +1105,7 @@ class ItemType
     public function lastModelName(): ?ModelName
     {
         $modelName = $this->modelName ?? [];
-        $modelName = end($modelName);
+        $modelName = InvoiceSuiteArrayUtils::last($modelName);
 
         if (false === $modelName) {
             return null;
@@ -1161,7 +1161,7 @@ class ItemType
             $this->modelName = [];
         }
 
-        if ([] === $this->modelName) {
+        if (InvoiceSuiteArrayUtils::empty($this->modelName)) {
             $this->addOnceToModelName(new ModelName());
         }
 
@@ -1294,7 +1294,7 @@ class ItemType
     public function firstManufacturersItemIdentification(): ?ManufacturersItemIdentification
     {
         $manufacturersItemIdentification = $this->manufacturersItemIdentification ?? [];
-        $manufacturersItemIdentification = reset($manufacturersItemIdentification);
+        $manufacturersItemIdentification = InvoiceSuiteArrayUtils::first($manufacturersItemIdentification);
 
         if (false === $manufacturersItemIdentification) {
             return null;
@@ -1309,7 +1309,7 @@ class ItemType
     public function lastManufacturersItemIdentification(): ?ManufacturersItemIdentification
     {
         $manufacturersItemIdentification = $this->manufacturersItemIdentification ?? [];
-        $manufacturersItemIdentification = end($manufacturersItemIdentification);
+        $manufacturersItemIdentification = InvoiceSuiteArrayUtils::last($manufacturersItemIdentification);
 
         if (false === $manufacturersItemIdentification) {
             return null;
@@ -1365,7 +1365,7 @@ class ItemType
             $this->manufacturersItemIdentification = [];
         }
 
-        if ([] === $this->manufacturersItemIdentification) {
+        if (InvoiceSuiteArrayUtils::empty($this->manufacturersItemIdentification)) {
             $this->addOnceToManufacturersItemIdentification(new ManufacturersItemIdentification());
         }
 
@@ -1498,7 +1498,7 @@ class ItemType
     public function firstAdditionalItemIdentification(): ?AdditionalItemIdentification
     {
         $additionalItemIdentification = $this->additionalItemIdentification ?? [];
-        $additionalItemIdentification = reset($additionalItemIdentification);
+        $additionalItemIdentification = InvoiceSuiteArrayUtils::first($additionalItemIdentification);
 
         if (false === $additionalItemIdentification) {
             return null;
@@ -1513,7 +1513,7 @@ class ItemType
     public function lastAdditionalItemIdentification(): ?AdditionalItemIdentification
     {
         $additionalItemIdentification = $this->additionalItemIdentification ?? [];
-        $additionalItemIdentification = end($additionalItemIdentification);
+        $additionalItemIdentification = InvoiceSuiteArrayUtils::last($additionalItemIdentification);
 
         if (false === $additionalItemIdentification) {
             return null;
@@ -1569,7 +1569,7 @@ class ItemType
             $this->additionalItemIdentification = [];
         }
 
-        if ([] === $this->additionalItemIdentification) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalItemIdentification)) {
             $this->addOnceToAdditionalItemIdentification(new AdditionalItemIdentification());
         }
 
@@ -1662,7 +1662,7 @@ class ItemType
     public function firstItemSpecificationDocumentReference(): ?ItemSpecificationDocumentReference
     {
         $itemSpecificationDocumentReference = $this->itemSpecificationDocumentReference ?? [];
-        $itemSpecificationDocumentReference = reset($itemSpecificationDocumentReference);
+        $itemSpecificationDocumentReference = InvoiceSuiteArrayUtils::first($itemSpecificationDocumentReference);
 
         if (false === $itemSpecificationDocumentReference) {
             return null;
@@ -1677,7 +1677,7 @@ class ItemType
     public function lastItemSpecificationDocumentReference(): ?ItemSpecificationDocumentReference
     {
         $itemSpecificationDocumentReference = $this->itemSpecificationDocumentReference ?? [];
-        $itemSpecificationDocumentReference = end($itemSpecificationDocumentReference);
+        $itemSpecificationDocumentReference = InvoiceSuiteArrayUtils::last($itemSpecificationDocumentReference);
 
         if (false === $itemSpecificationDocumentReference) {
             return null;
@@ -1733,7 +1733,7 @@ class ItemType
             $this->itemSpecificationDocumentReference = [];
         }
 
-        if ([] === $this->itemSpecificationDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->itemSpecificationDocumentReference)) {
             $this->addOnceToItemSpecificationDocumentReference(new ItemSpecificationDocumentReference());
         }
 
@@ -1826,7 +1826,7 @@ class ItemType
     public function firstCommodityClassification(): ?CommodityClassification
     {
         $commodityClassification = $this->commodityClassification ?? [];
-        $commodityClassification = reset($commodityClassification);
+        $commodityClassification = InvoiceSuiteArrayUtils::first($commodityClassification);
 
         if (false === $commodityClassification) {
             return null;
@@ -1841,7 +1841,7 @@ class ItemType
     public function lastCommodityClassification(): ?CommodityClassification
     {
         $commodityClassification = $this->commodityClassification ?? [];
-        $commodityClassification = end($commodityClassification);
+        $commodityClassification = InvoiceSuiteArrayUtils::last($commodityClassification);
 
         if (false === $commodityClassification) {
             return null;
@@ -1897,7 +1897,7 @@ class ItemType
             $this->commodityClassification = [];
         }
 
-        if ([] === $this->commodityClassification) {
+        if (InvoiceSuiteArrayUtils::empty($this->commodityClassification)) {
             $this->addOnceToCommodityClassification(new CommodityClassification());
         }
 
@@ -1950,7 +1950,7 @@ class ItemType
     public function firstTransactionConditions(): ?TransactionConditions
     {
         $transactionConditions = $this->transactionConditions ?? [];
-        $transactionConditions = reset($transactionConditions);
+        $transactionConditions = InvoiceSuiteArrayUtils::first($transactionConditions);
 
         if (false === $transactionConditions) {
             return null;
@@ -1965,7 +1965,7 @@ class ItemType
     public function lastTransactionConditions(): ?TransactionConditions
     {
         $transactionConditions = $this->transactionConditions ?? [];
-        $transactionConditions = end($transactionConditions);
+        $transactionConditions = InvoiceSuiteArrayUtils::last($transactionConditions);
 
         if (false === $transactionConditions) {
             return null;
@@ -2021,7 +2021,7 @@ class ItemType
             $this->transactionConditions = [];
         }
 
-        if ([] === $this->transactionConditions) {
+        if (InvoiceSuiteArrayUtils::empty($this->transactionConditions)) {
             $this->addOnceToTransactionConditions(new TransactionConditions());
         }
 
@@ -2074,7 +2074,7 @@ class ItemType
     public function firstHazardousItem(): ?HazardousItem
     {
         $hazardousItem = $this->hazardousItem ?? [];
-        $hazardousItem = reset($hazardousItem);
+        $hazardousItem = InvoiceSuiteArrayUtils::first($hazardousItem);
 
         if (false === $hazardousItem) {
             return null;
@@ -2089,7 +2089,7 @@ class ItemType
     public function lastHazardousItem(): ?HazardousItem
     {
         $hazardousItem = $this->hazardousItem ?? [];
-        $hazardousItem = end($hazardousItem);
+        $hazardousItem = InvoiceSuiteArrayUtils::last($hazardousItem);
 
         if (false === $hazardousItem) {
             return null;
@@ -2145,7 +2145,7 @@ class ItemType
             $this->hazardousItem = [];
         }
 
-        if ([] === $this->hazardousItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->hazardousItem)) {
             $this->addOnceToHazardousItem(new HazardousItem());
         }
 
@@ -2198,7 +2198,7 @@ class ItemType
     public function firstClassifiedTaxCategory(): ?ClassifiedTaxCategory
     {
         $classifiedTaxCategory = $this->classifiedTaxCategory ?? [];
-        $classifiedTaxCategory = reset($classifiedTaxCategory);
+        $classifiedTaxCategory = InvoiceSuiteArrayUtils::first($classifiedTaxCategory);
 
         if (false === $classifiedTaxCategory) {
             return null;
@@ -2213,7 +2213,7 @@ class ItemType
     public function lastClassifiedTaxCategory(): ?ClassifiedTaxCategory
     {
         $classifiedTaxCategory = $this->classifiedTaxCategory ?? [];
-        $classifiedTaxCategory = end($classifiedTaxCategory);
+        $classifiedTaxCategory = InvoiceSuiteArrayUtils::last($classifiedTaxCategory);
 
         if (false === $classifiedTaxCategory) {
             return null;
@@ -2269,7 +2269,7 @@ class ItemType
             $this->classifiedTaxCategory = [];
         }
 
-        if ([] === $this->classifiedTaxCategory) {
+        if (InvoiceSuiteArrayUtils::empty($this->classifiedTaxCategory)) {
             $this->addOnceToClassifiedTaxCategory(new ClassifiedTaxCategory());
         }
 
@@ -2322,7 +2322,7 @@ class ItemType
     public function firstAdditionalItemProperty(): ?AdditionalItemProperty
     {
         $additionalItemProperty = $this->additionalItemProperty ?? [];
-        $additionalItemProperty = reset($additionalItemProperty);
+        $additionalItemProperty = InvoiceSuiteArrayUtils::first($additionalItemProperty);
 
         if (false === $additionalItemProperty) {
             return null;
@@ -2337,7 +2337,7 @@ class ItemType
     public function lastAdditionalItemProperty(): ?AdditionalItemProperty
     {
         $additionalItemProperty = $this->additionalItemProperty ?? [];
-        $additionalItemProperty = end($additionalItemProperty);
+        $additionalItemProperty = InvoiceSuiteArrayUtils::last($additionalItemProperty);
 
         if (false === $additionalItemProperty) {
             return null;
@@ -2393,7 +2393,7 @@ class ItemType
             $this->additionalItemProperty = [];
         }
 
-        if ([] === $this->additionalItemProperty) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalItemProperty)) {
             $this->addOnceToAdditionalItemProperty(new AdditionalItemProperty());
         }
 
@@ -2446,7 +2446,7 @@ class ItemType
     public function firstManufacturerParty(): ?ManufacturerParty
     {
         $manufacturerParty = $this->manufacturerParty ?? [];
-        $manufacturerParty = reset($manufacturerParty);
+        $manufacturerParty = InvoiceSuiteArrayUtils::first($manufacturerParty);
 
         if (false === $manufacturerParty) {
             return null;
@@ -2461,7 +2461,7 @@ class ItemType
     public function lastManufacturerParty(): ?ManufacturerParty
     {
         $manufacturerParty = $this->manufacturerParty ?? [];
-        $manufacturerParty = end($manufacturerParty);
+        $manufacturerParty = InvoiceSuiteArrayUtils::last($manufacturerParty);
 
         if (false === $manufacturerParty) {
             return null;
@@ -2517,7 +2517,7 @@ class ItemType
             $this->manufacturerParty = [];
         }
 
-        if ([] === $this->manufacturerParty) {
+        if (InvoiceSuiteArrayUtils::empty($this->manufacturerParty)) {
             $this->addOnceToManufacturerParty(new ManufacturerParty());
         }
 
@@ -2610,7 +2610,7 @@ class ItemType
     public function firstOriginAddress(): ?OriginAddress
     {
         $originAddress = $this->originAddress ?? [];
-        $originAddress = reset($originAddress);
+        $originAddress = InvoiceSuiteArrayUtils::first($originAddress);
 
         if (false === $originAddress) {
             return null;
@@ -2625,7 +2625,7 @@ class ItemType
     public function lastOriginAddress(): ?OriginAddress
     {
         $originAddress = $this->originAddress ?? [];
-        $originAddress = end($originAddress);
+        $originAddress = InvoiceSuiteArrayUtils::last($originAddress);
 
         if (false === $originAddress) {
             return null;
@@ -2681,7 +2681,7 @@ class ItemType
             $this->originAddress = [];
         }
 
-        if ([] === $this->originAddress) {
+        if (InvoiceSuiteArrayUtils::empty($this->originAddress)) {
             $this->addOnceToOriginAddress(new OriginAddress());
         }
 
@@ -2734,7 +2734,7 @@ class ItemType
     public function firstItemInstance(): ?ItemInstance
     {
         $itemInstance = $this->itemInstance ?? [];
-        $itemInstance = reset($itemInstance);
+        $itemInstance = InvoiceSuiteArrayUtils::first($itemInstance);
 
         if (false === $itemInstance) {
             return null;
@@ -2749,7 +2749,7 @@ class ItemType
     public function lastItemInstance(): ?ItemInstance
     {
         $itemInstance = $this->itemInstance ?? [];
-        $itemInstance = end($itemInstance);
+        $itemInstance = InvoiceSuiteArrayUtils::last($itemInstance);
 
         if (false === $itemInstance) {
             return null;
@@ -2805,7 +2805,7 @@ class ItemType
             $this->itemInstance = [];
         }
 
-        if ([] === $this->itemInstance) {
+        if (InvoiceSuiteArrayUtils::empty($this->itemInstance)) {
             $this->addOnceToItemInstance(new ItemInstance());
         }
 
@@ -2858,7 +2858,7 @@ class ItemType
     public function firstCertificate(): ?Certificate
     {
         $certificate = $this->certificate ?? [];
-        $certificate = reset($certificate);
+        $certificate = InvoiceSuiteArrayUtils::first($certificate);
 
         if (false === $certificate) {
             return null;
@@ -2873,7 +2873,7 @@ class ItemType
     public function lastCertificate(): ?Certificate
     {
         $certificate = $this->certificate ?? [];
-        $certificate = end($certificate);
+        $certificate = InvoiceSuiteArrayUtils::last($certificate);
 
         if (false === $certificate) {
             return null;
@@ -2929,7 +2929,7 @@ class ItemType
             $this->certificate = [];
         }
 
-        if ([] === $this->certificate) {
+        if (InvoiceSuiteArrayUtils::empty($this->certificate)) {
             $this->addOnceToCertificate(new Certificate());
         }
 
@@ -2982,7 +2982,7 @@ class ItemType
     public function firstDimension(): ?Dimension
     {
         $dimension = $this->dimension ?? [];
-        $dimension = reset($dimension);
+        $dimension = InvoiceSuiteArrayUtils::first($dimension);
 
         if (false === $dimension) {
             return null;
@@ -2997,7 +2997,7 @@ class ItemType
     public function lastDimension(): ?Dimension
     {
         $dimension = $this->dimension ?? [];
-        $dimension = end($dimension);
+        $dimension = InvoiceSuiteArrayUtils::last($dimension);
 
         if (false === $dimension) {
             return null;
@@ -3053,7 +3053,7 @@ class ItemType
             $this->dimension = [];
         }
 
-        if ([] === $this->dimension) {
+        if (InvoiceSuiteArrayUtils::empty($this->dimension)) {
             $this->addOnceToDimension(new Dimension());
         }
 

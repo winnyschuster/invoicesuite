@@ -170,7 +170,7 @@ class CapabilityType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -185,7 +185,7 @@ class CapabilityType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -241,7 +241,7 @@ class CapabilityType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -374,7 +374,7 @@ class CapabilityType
     public function firstEvidenceSupplied(): ?EvidenceSupplied
     {
         $evidenceSupplied = $this->evidenceSupplied ?? [];
-        $evidenceSupplied = reset($evidenceSupplied);
+        $evidenceSupplied = InvoiceSuiteArrayUtils::first($evidenceSupplied);
 
         if (false === $evidenceSupplied) {
             return null;
@@ -389,7 +389,7 @@ class CapabilityType
     public function lastEvidenceSupplied(): ?EvidenceSupplied
     {
         $evidenceSupplied = $this->evidenceSupplied ?? [];
-        $evidenceSupplied = end($evidenceSupplied);
+        $evidenceSupplied = InvoiceSuiteArrayUtils::last($evidenceSupplied);
 
         if (false === $evidenceSupplied) {
             return null;
@@ -445,7 +445,7 @@ class CapabilityType
             $this->evidenceSupplied = [];
         }
 
-        if ([] === $this->evidenceSupplied) {
+        if (InvoiceSuiteArrayUtils::empty($this->evidenceSupplied)) {
             $this->addOnceToEvidenceSupplied(new EvidenceSupplied());
         }
 

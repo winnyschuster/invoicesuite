@@ -405,7 +405,7 @@ class FinancialAccountType
     public function firstPaymentNote(): ?PaymentNote
     {
         $paymentNote = $this->paymentNote ?? [];
-        $paymentNote = reset($paymentNote);
+        $paymentNote = InvoiceSuiteArrayUtils::first($paymentNote);
 
         if (false === $paymentNote) {
             return null;
@@ -420,7 +420,7 @@ class FinancialAccountType
     public function lastPaymentNote(): ?PaymentNote
     {
         $paymentNote = $this->paymentNote ?? [];
-        $paymentNote = end($paymentNote);
+        $paymentNote = InvoiceSuiteArrayUtils::last($paymentNote);
 
         if (false === $paymentNote) {
             return null;
@@ -476,7 +476,7 @@ class FinancialAccountType
             $this->paymentNote = [];
         }
 
-        if ([] === $this->paymentNote) {
+        if (InvoiceSuiteArrayUtils::empty($this->paymentNote)) {
             $this->addOnceToPaymentNote(new PaymentNote());
         }
 

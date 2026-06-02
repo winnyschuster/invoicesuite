@@ -386,7 +386,7 @@ class ConsumptionLineType
     public function firstDelivery(): ?Delivery
     {
         $delivery = $this->delivery ?? [];
-        $delivery = reset($delivery);
+        $delivery = InvoiceSuiteArrayUtils::first($delivery);
 
         if (false === $delivery) {
             return null;
@@ -401,7 +401,7 @@ class ConsumptionLineType
     public function lastDelivery(): ?Delivery
     {
         $delivery = $this->delivery ?? [];
-        $delivery = end($delivery);
+        $delivery = InvoiceSuiteArrayUtils::last($delivery);
 
         if (false === $delivery) {
             return null;
@@ -457,7 +457,7 @@ class ConsumptionLineType
             $this->delivery = [];
         }
 
-        if ([] === $this->delivery) {
+        if (InvoiceSuiteArrayUtils::empty($this->delivery)) {
             $this->addOnceToDelivery(new Delivery());
         }
 
@@ -510,7 +510,7 @@ class ConsumptionLineType
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
         $allowanceCharge = $this->allowanceCharge ?? [];
-        $allowanceCharge = reset($allowanceCharge);
+        $allowanceCharge = InvoiceSuiteArrayUtils::first($allowanceCharge);
 
         if (false === $allowanceCharge) {
             return null;
@@ -525,7 +525,7 @@ class ConsumptionLineType
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
         $allowanceCharge = $this->allowanceCharge ?? [];
-        $allowanceCharge = end($allowanceCharge);
+        $allowanceCharge = InvoiceSuiteArrayUtils::last($allowanceCharge);
 
         if (false === $allowanceCharge) {
             return null;
@@ -581,7 +581,7 @@ class ConsumptionLineType
             $this->allowanceCharge = [];
         }
 
-        if ([] === $this->allowanceCharge) {
+        if (InvoiceSuiteArrayUtils::empty($this->allowanceCharge)) {
             $this->addOnceToAllowanceCharge(new AllowanceCharge());
         }
 
@@ -634,7 +634,7 @@ class ConsumptionLineType
     public function firstTaxTotal(): ?TaxTotal
     {
         $taxTotal = $this->taxTotal ?? [];
-        $taxTotal = reset($taxTotal);
+        $taxTotal = InvoiceSuiteArrayUtils::first($taxTotal);
 
         if (false === $taxTotal) {
             return null;
@@ -649,7 +649,7 @@ class ConsumptionLineType
     public function lastTaxTotal(): ?TaxTotal
     {
         $taxTotal = $this->taxTotal ?? [];
-        $taxTotal = end($taxTotal);
+        $taxTotal = InvoiceSuiteArrayUtils::last($taxTotal);
 
         if (false === $taxTotal) {
             return null;
@@ -705,7 +705,7 @@ class ConsumptionLineType
             $this->taxTotal = [];
         }
 
-        if ([] === $this->taxTotal) {
+        if (InvoiceSuiteArrayUtils::empty($this->taxTotal)) {
             $this->addOnceToTaxTotal(new TaxTotal());
         }
 

@@ -377,7 +377,7 @@ class CatalogueReferenceType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -392,7 +392,7 @@ class CatalogueReferenceType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -448,7 +448,7 @@ class CatalogueReferenceType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -501,7 +501,7 @@ class CatalogueReferenceType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -516,7 +516,7 @@ class CatalogueReferenceType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -572,7 +572,7 @@ class CatalogueReferenceType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 

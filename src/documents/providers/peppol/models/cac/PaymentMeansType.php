@@ -400,7 +400,7 @@ class PaymentMeansType
     public function firstInstructionNote(): ?InstructionNote
     {
         $instructionNote = $this->instructionNote ?? [];
-        $instructionNote = reset($instructionNote);
+        $instructionNote = InvoiceSuiteArrayUtils::first($instructionNote);
 
         if (false === $instructionNote) {
             return null;
@@ -415,7 +415,7 @@ class PaymentMeansType
     public function lastInstructionNote(): ?InstructionNote
     {
         $instructionNote = $this->instructionNote ?? [];
-        $instructionNote = end($instructionNote);
+        $instructionNote = InvoiceSuiteArrayUtils::last($instructionNote);
 
         if (false === $instructionNote) {
             return null;
@@ -471,7 +471,7 @@ class PaymentMeansType
             $this->instructionNote = [];
         }
 
-        if ([] === $this->instructionNote) {
+        if (InvoiceSuiteArrayUtils::empty($this->instructionNote)) {
             $this->addOnceToInstructionNote(new InstructionNote());
         }
 
@@ -524,7 +524,7 @@ class PaymentMeansType
     public function firstPaymentID(): ?PaymentID
     {
         $paymentID = $this->paymentID ?? [];
-        $paymentID = reset($paymentID);
+        $paymentID = InvoiceSuiteArrayUtils::first($paymentID);
 
         if (false === $paymentID) {
             return null;
@@ -539,7 +539,7 @@ class PaymentMeansType
     public function lastPaymentID(): ?PaymentID
     {
         $paymentID = $this->paymentID ?? [];
-        $paymentID = end($paymentID);
+        $paymentID = InvoiceSuiteArrayUtils::last($paymentID);
 
         if (false === $paymentID) {
             return null;
@@ -595,7 +595,7 @@ class PaymentMeansType
             $this->paymentID = [];
         }
 
-        if ([] === $this->paymentID) {
+        if (InvoiceSuiteArrayUtils::empty($this->paymentID)) {
             $this->addOnceToPaymentID(new PaymentID());
         }
 

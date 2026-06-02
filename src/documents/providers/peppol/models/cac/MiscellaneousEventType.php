@@ -122,7 +122,7 @@ class MiscellaneousEventType
     public function firstEventLineItem(): ?EventLineItem
     {
         $eventLineItem = $this->eventLineItem ?? [];
-        $eventLineItem = reset($eventLineItem);
+        $eventLineItem = InvoiceSuiteArrayUtils::first($eventLineItem);
 
         if (false === $eventLineItem) {
             return null;
@@ -137,7 +137,7 @@ class MiscellaneousEventType
     public function lastEventLineItem(): ?EventLineItem
     {
         $eventLineItem = $this->eventLineItem ?? [];
-        $eventLineItem = end($eventLineItem);
+        $eventLineItem = InvoiceSuiteArrayUtils::last($eventLineItem);
 
         if (false === $eventLineItem) {
             return null;
@@ -193,7 +193,7 @@ class MiscellaneousEventType
             $this->eventLineItem = [];
         }
 
-        if ([] === $this->eventLineItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->eventLineItem)) {
             $this->addOnceToEventLineItem(new EventLineItem());
         }
 

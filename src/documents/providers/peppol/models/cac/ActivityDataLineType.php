@@ -429,7 +429,7 @@ class ActivityDataLineType
     public function firstSalesItem(): ?SalesItem
     {
         $salesItem = $this->salesItem ?? [];
-        $salesItem = reset($salesItem);
+        $salesItem = InvoiceSuiteArrayUtils::first($salesItem);
 
         if (false === $salesItem) {
             return null;
@@ -444,7 +444,7 @@ class ActivityDataLineType
     public function lastSalesItem(): ?SalesItem
     {
         $salesItem = $this->salesItem ?? [];
-        $salesItem = end($salesItem);
+        $salesItem = InvoiceSuiteArrayUtils::last($salesItem);
 
         if (false === $salesItem) {
             return null;
@@ -500,7 +500,7 @@ class ActivityDataLineType
             $this->salesItem = [];
         }
 
-        if ([] === $this->salesItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->salesItem)) {
             $this->addOnceToSalesItem(new SalesItem());
         }
 

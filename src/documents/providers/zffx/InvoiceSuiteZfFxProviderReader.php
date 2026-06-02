@@ -10499,9 +10499,9 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
         $newPaymentReference = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getPaymentReference()?->getValue() ?? '';
 
         $paymentTerms = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getSpecifiedTradePaymentTerms() ?? []);
-        $paymentTerms = array_filter($paymentTerms, static fn (TradePaymentTermsType $paymentTerm) => ($paymentTerm->getDirectDebitMandateID()?->getValue() ?? '') !== '');
+        $paymentTerms = InvoiceSuiteArrayUtils::filter($paymentTerms, static fn (TradePaymentTermsType $paymentTerm) => ($paymentTerm->getDirectDebitMandateID()?->getValue() ?? '') !== '');
 
-        $paymentTerm = reset($paymentTerms);
+        $paymentTerm = InvoiceSuiteArrayUtils::first($paymentTerms);
 
         $newMandate = false !== $paymentTerm ? ($paymentTerm->getDirectDebitMandateID()?->getValue() ?? '') : '';
 
@@ -11350,7 +11350,7 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
         $documentLogisticServiceCharge = $documentLogisticServiceCharges[InvoiceSuitePointerUtils::getValue('documentlogservicecharge')];
 
         $documentLogisticServiceChargeTaxes = $documentLogisticServiceCharge->getAppliedTradeTax() ?? [];
-        $documentLogisticServiceChargeTax = reset($documentLogisticServiceChargeTaxes);
+        $documentLogisticServiceChargeTax = InvoiceSuiteArrayUtils::first($documentLogisticServiceChargeTaxes);
 
         $newChargeAmount = $documentLogisticServiceCharge->getAppliedAmount()?->getValue() ?? 0.0;
         $newDescription = $documentLogisticServiceCharge->getDescription()?->getValue() ?? '';
@@ -11421,8 +11421,8 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
         $documentSummation = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeSettlement()?->getSpecifiedTradeSettlementHeaderMonetarySummation();
 
         $taxTotalAmounts = $documentSummation?->getTaxTotalAmount() ?? [];
-        $taxTotalAmount = reset($taxTotalAmounts);
-        $taxTotalAmount2 = next($taxTotalAmounts);
+        $taxTotalAmount = InvoiceSuiteArrayUtils::first($taxTotalAmounts);
+        $taxTotalAmount2 = InvoiceSuiteArrayUtils::next($taxTotalAmounts);
 
         $newNetAmount = $this->supportsAtLeastBasicWl() ? ($documentSummation?->getLineTotalAmount()?->getValue() ?? 0.0) : 0.0;
         $newChargeTotalAmount = $this->supportsAtLeastBasicWl() ? ($documentSummation?->getChargeTotalAmount()?->getValue() ?? 0.0) : 0.0;
@@ -11696,7 +11696,7 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
         /**
          * @var IDType
          */
-        $documentPositionProductBatchId = reset($documentPositionProductBatchIds);
+        $documentPositionProductBatchId = InvoiceSuiteArrayUtils::first($documentPositionProductBatchIds);
 
         $newProductId = $this->supportsAtLeastExtended() ? ($documentPositionProduct?->getID()?->getValue() ?? '') : '';
         $newProductName = $documentPositionProduct?->getName()?->getValue() ?? '';
@@ -11999,7 +11999,7 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
         /**
          * @var false|IDType
          */
-        $productGlobalId = reset($productGlobalIds);
+        $productGlobalId = InvoiceSuiteArrayUtils::first($productGlobalIds);
 
         $newProductId = $documentPositionProductReferencedProduct->getID()?->getValue() ?? '';
         $newProductName = $documentPositionProductReferencedProduct->getName()?->getValue() ?? '';

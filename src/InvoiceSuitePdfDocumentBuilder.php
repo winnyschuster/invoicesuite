@@ -21,6 +21,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundExceptio
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\pdfs\abstracts\InvoiceSuiteAbstractPdfConstructor;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use JMS\Serializer\Exception\RuntimeException;
 
@@ -638,7 +639,7 @@ class InvoiceSuitePdfDocumentBuilder
     ): static {
         $this->resolveAvailableDocumentFormatProviders();
 
-        $formatProviders = array_filter(
+        $formatProviders = InvoiceSuiteArrayUtils::filter(
             $this->getRegisteredDocumentFormatProviders(),
             static fn ($formatProvider) => (
                 $formatProvider->getIsSatisfiableBySerializedContent($fromDocumentContent)
@@ -646,11 +647,11 @@ class InvoiceSuitePdfDocumentBuilder
             )
         );
 
-        if ([] === $formatProviders) {
+        if (InvoiceSuiteArrayUtils::empty($formatProviders)) {
             throw new InvoiceSuiteFormatProviderNotFoundException('unknown');
         }
 
-        $formatProvider = reset($formatProviders);
+        $formatProvider = InvoiceSuiteArrayUtils::first($formatProviders);
 
         $this->setCurrentDocumentFormatProvider($formatProvider);
         $this->setRawDocumentContent($fromDocumentContent);

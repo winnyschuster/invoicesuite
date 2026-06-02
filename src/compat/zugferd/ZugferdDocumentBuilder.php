@@ -66,7 +66,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
     final protected function __construct(
         int $profile
     ) {
-        if (!array_key_exists($profile, ZugferdProfiles::PROFILEDEF)) {
+        if (!InvoiceSuiteArrayUtils::keyExists(ZugferdProfiles::PROFILEDEF, $profile)) {
             throw new InvoiceSuiteInvalidArgumentException(sprintf('Unknown profile id %s', $profile));
         }
 
@@ -2639,7 +2639,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
         }
 
         $name = InvoiceSuiteArrayUtils::is($name)
-            ? ($name[array_key_first($name)] ?? '')
+            ? ($name[InvoiceSuiteArrayUtils::firstKey($name)] ?? '')
             : $name;
 
         $this->documentBuilder->addDocumentAdditionalReference(
@@ -3279,15 +3279,15 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
         ?array $rateApplicablePercents = null
     ): static {
         $taxTypeCodes = InvoiceSuiteArrayUtils::is($taxTypeCodes)
-            ? ($taxTypeCodes[array_key_first($taxTypeCodes)] ?? '')
+            ? ($taxTypeCodes[InvoiceSuiteArrayUtils::firstKey($taxTypeCodes)] ?? '')
             : $taxTypeCodes;
 
         $taxCategoryCodes = InvoiceSuiteArrayUtils::is($taxCategoryCodes)
-            ? ($taxCategoryCodes[array_key_first($taxCategoryCodes)] ?? '')
+            ? ($taxCategoryCodes[InvoiceSuiteArrayUtils::firstKey($taxCategoryCodes)] ?? '')
             : $taxCategoryCodes;
 
         $rateApplicablePercents = InvoiceSuiteArrayUtils::is($rateApplicablePercents)
-            ? ($rateApplicablePercents[array_key_first($rateApplicablePercents)] ?? '')
+            ? ($rateApplicablePercents[InvoiceSuiteArrayUtils::firstKey($rateApplicablePercents)] ?? '')
             : $rateApplicablePercents;
 
         $this->documentBuilder->addDocumentLogisticServiceCharge(
@@ -3412,13 +3412,13 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
             return $this;
         }
 
-        $paymentDiscountDays = array_filter(
+        $paymentDiscountDays = InvoiceSuiteArrayUtils::filter(
             $paymentDiscountDays,
             static fn ($k) => isset($paymentDiscountPercents[$k]),
             ARRAY_FILTER_USE_KEY
         );
 
-        if ([] === $paymentDiscountDays) {
+        if (InvoiceSuiteArrayUtils::empty($paymentDiscountDays)) {
             return $this->addDocumentPaymentTerm(trim($description), $dueDate, $directDebitMandateID);
         }
 

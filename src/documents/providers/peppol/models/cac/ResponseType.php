@@ -210,7 +210,7 @@ class ResponseType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -225,7 +225,7 @@ class ResponseType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -281,7 +281,7 @@ class ResponseType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -394,7 +394,7 @@ class ResponseType
     public function firstStatus(): ?Status
     {
         $status = $this->status ?? [];
-        $status = reset($status);
+        $status = InvoiceSuiteArrayUtils::first($status);
 
         if (false === $status) {
             return null;
@@ -409,7 +409,7 @@ class ResponseType
     public function lastStatus(): ?Status
     {
         $status = $this->status ?? [];
-        $status = end($status);
+        $status = InvoiceSuiteArrayUtils::last($status);
 
         if (false === $status) {
             return null;
@@ -465,7 +465,7 @@ class ResponseType
             $this->status = [];
         }
 
-        if ([] === $this->status) {
+        if (InvoiceSuiteArrayUtils::empty($this->status)) {
             $this->addOnceToStatus(new Status());
         }
 

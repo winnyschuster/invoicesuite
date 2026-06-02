@@ -121,7 +121,7 @@ class LineResponseType
     public function firstResponse(): ?Response
     {
         $response = $this->response ?? [];
-        $response = reset($response);
+        $response = InvoiceSuiteArrayUtils::first($response);
 
         if (false === $response) {
             return null;
@@ -136,7 +136,7 @@ class LineResponseType
     public function lastResponse(): ?Response
     {
         $response = $this->response ?? [];
-        $response = end($response);
+        $response = InvoiceSuiteArrayUtils::last($response);
 
         if (false === $response) {
             return null;
@@ -192,7 +192,7 @@ class LineResponseType
             $this->response = [];
         }
 
-        if ([] === $this->response) {
+        if (InvoiceSuiteArrayUtils::empty($this->response)) {
             $this->addOnceToResponse(new Response());
         }
 

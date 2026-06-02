@@ -559,7 +559,7 @@ class ShipmentType
     public function firstHandlingInstructions(): ?HandlingInstructions
     {
         $handlingInstructions = $this->handlingInstructions ?? [];
-        $handlingInstructions = reset($handlingInstructions);
+        $handlingInstructions = InvoiceSuiteArrayUtils::first($handlingInstructions);
 
         if (false === $handlingInstructions) {
             return null;
@@ -574,7 +574,7 @@ class ShipmentType
     public function lastHandlingInstructions(): ?HandlingInstructions
     {
         $handlingInstructions = $this->handlingInstructions ?? [];
-        $handlingInstructions = end($handlingInstructions);
+        $handlingInstructions = InvoiceSuiteArrayUtils::last($handlingInstructions);
 
         if (false === $handlingInstructions) {
             return null;
@@ -630,7 +630,7 @@ class ShipmentType
             $this->handlingInstructions = [];
         }
 
-        if ([] === $this->handlingInstructions) {
+        if (InvoiceSuiteArrayUtils::empty($this->handlingInstructions)) {
             $this->addOnceToHandlingInstructions(new HandlingInstructions());
         }
 
@@ -683,7 +683,7 @@ class ShipmentType
     public function firstInformation(): ?Information
     {
         $information = $this->information ?? [];
-        $information = reset($information);
+        $information = InvoiceSuiteArrayUtils::first($information);
 
         if (false === $information) {
             return null;
@@ -698,7 +698,7 @@ class ShipmentType
     public function lastInformation(): ?Information
     {
         $information = $this->information ?? [];
-        $information = end($information);
+        $information = InvoiceSuiteArrayUtils::last($information);
 
         if (false === $information) {
             return null;
@@ -754,7 +754,7 @@ class ShipmentType
             $this->information = [];
         }
 
-        if ([] === $this->information) {
+        if (InvoiceSuiteArrayUtils::empty($this->information)) {
             $this->addOnceToInformation(new Information());
         }
 
@@ -1287,7 +1287,7 @@ class ShipmentType
     public function firstSpecialInstructions(): ?SpecialInstructions
     {
         $specialInstructions = $this->specialInstructions ?? [];
-        $specialInstructions = reset($specialInstructions);
+        $specialInstructions = InvoiceSuiteArrayUtils::first($specialInstructions);
 
         if (false === $specialInstructions) {
             return null;
@@ -1302,7 +1302,7 @@ class ShipmentType
     public function lastSpecialInstructions(): ?SpecialInstructions
     {
         $specialInstructions = $this->specialInstructions ?? [];
-        $specialInstructions = end($specialInstructions);
+        $specialInstructions = InvoiceSuiteArrayUtils::last($specialInstructions);
 
         if (false === $specialInstructions) {
             return null;
@@ -1358,7 +1358,7 @@ class ShipmentType
             $this->specialInstructions = [];
         }
 
-        if ([] === $this->specialInstructions) {
+        if (InvoiceSuiteArrayUtils::empty($this->specialInstructions)) {
             $this->addOnceToSpecialInstructions(new SpecialInstructions());
         }
 
@@ -1411,7 +1411,7 @@ class ShipmentType
     public function firstDeliveryInstructions(): ?DeliveryInstructions
     {
         $deliveryInstructions = $this->deliveryInstructions ?? [];
-        $deliveryInstructions = reset($deliveryInstructions);
+        $deliveryInstructions = InvoiceSuiteArrayUtils::first($deliveryInstructions);
 
         if (false === $deliveryInstructions) {
             return null;
@@ -1426,7 +1426,7 @@ class ShipmentType
     public function lastDeliveryInstructions(): ?DeliveryInstructions
     {
         $deliveryInstructions = $this->deliveryInstructions ?? [];
-        $deliveryInstructions = end($deliveryInstructions);
+        $deliveryInstructions = InvoiceSuiteArrayUtils::last($deliveryInstructions);
 
         if (false === $deliveryInstructions) {
             return null;
@@ -1482,7 +1482,7 @@ class ShipmentType
             $this->deliveryInstructions = [];
         }
 
-        if ([] === $this->deliveryInstructions) {
+        if (InvoiceSuiteArrayUtils::empty($this->deliveryInstructions)) {
             $this->addOnceToDeliveryInstructions(new DeliveryInstructions());
         }
 
@@ -1605,7 +1605,7 @@ class ShipmentType
     public function firstConsignment(): ?Consignment
     {
         $consignment = $this->consignment ?? [];
-        $consignment = reset($consignment);
+        $consignment = InvoiceSuiteArrayUtils::first($consignment);
 
         if (false === $consignment) {
             return null;
@@ -1620,7 +1620,7 @@ class ShipmentType
     public function lastConsignment(): ?Consignment
     {
         $consignment = $this->consignment ?? [];
-        $consignment = end($consignment);
+        $consignment = InvoiceSuiteArrayUtils::last($consignment);
 
         if (false === $consignment) {
             return null;
@@ -1676,7 +1676,7 @@ class ShipmentType
             $this->consignment = [];
         }
 
-        if ([] === $this->consignment) {
+        if (InvoiceSuiteArrayUtils::empty($this->consignment)) {
             $this->addOnceToConsignment(new Consignment());
         }
 
@@ -1729,7 +1729,7 @@ class ShipmentType
     public function firstGoodsItem(): ?GoodsItem
     {
         $goodsItem = $this->goodsItem ?? [];
-        $goodsItem = reset($goodsItem);
+        $goodsItem = InvoiceSuiteArrayUtils::first($goodsItem);
 
         if (false === $goodsItem) {
             return null;
@@ -1744,7 +1744,7 @@ class ShipmentType
     public function lastGoodsItem(): ?GoodsItem
     {
         $goodsItem = $this->goodsItem ?? [];
-        $goodsItem = end($goodsItem);
+        $goodsItem = InvoiceSuiteArrayUtils::last($goodsItem);
 
         if (false === $goodsItem) {
             return null;
@@ -1800,7 +1800,7 @@ class ShipmentType
             $this->goodsItem = [];
         }
 
-        if ([] === $this->goodsItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->goodsItem)) {
             $this->addOnceToGoodsItem(new GoodsItem());
         }
 
@@ -1853,7 +1853,7 @@ class ShipmentType
     public function firstShipmentStage(): ?ShipmentStage
     {
         $shipmentStage = $this->shipmentStage ?? [];
-        $shipmentStage = reset($shipmentStage);
+        $shipmentStage = InvoiceSuiteArrayUtils::first($shipmentStage);
 
         if (false === $shipmentStage) {
             return null;
@@ -1868,7 +1868,7 @@ class ShipmentType
     public function lastShipmentStage(): ?ShipmentStage
     {
         $shipmentStage = $this->shipmentStage ?? [];
-        $shipmentStage = end($shipmentStage);
+        $shipmentStage = InvoiceSuiteArrayUtils::last($shipmentStage);
 
         if (false === $shipmentStage) {
             return null;
@@ -1924,7 +1924,7 @@ class ShipmentType
             $this->shipmentStage = [];
         }
 
-        if ([] === $this->shipmentStage) {
+        if (InvoiceSuiteArrayUtils::empty($this->shipmentStage)) {
             $this->addOnceToShipmentStage(new ShipmentStage());
         }
 
@@ -2017,7 +2017,7 @@ class ShipmentType
     public function firstTransportHandlingUnit(): ?TransportHandlingUnit
     {
         $transportHandlingUnit = $this->transportHandlingUnit ?? [];
-        $transportHandlingUnit = reset($transportHandlingUnit);
+        $transportHandlingUnit = InvoiceSuiteArrayUtils::first($transportHandlingUnit);
 
         if (false === $transportHandlingUnit) {
             return null;
@@ -2032,7 +2032,7 @@ class ShipmentType
     public function lastTransportHandlingUnit(): ?TransportHandlingUnit
     {
         $transportHandlingUnit = $this->transportHandlingUnit ?? [];
-        $transportHandlingUnit = end($transportHandlingUnit);
+        $transportHandlingUnit = InvoiceSuiteArrayUtils::last($transportHandlingUnit);
 
         if (false === $transportHandlingUnit) {
             return null;
@@ -2088,7 +2088,7 @@ class ShipmentType
             $this->transportHandlingUnit = [];
         }
 
-        if ([] === $this->transportHandlingUnit) {
+        if (InvoiceSuiteArrayUtils::empty($this->transportHandlingUnit)) {
             $this->addOnceToTransportHandlingUnit(new TransportHandlingUnit());
         }
 
@@ -2341,7 +2341,7 @@ class ShipmentType
     public function firstFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
         $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
-        $freightAllowanceCharge = reset($freightAllowanceCharge);
+        $freightAllowanceCharge = InvoiceSuiteArrayUtils::first($freightAllowanceCharge);
 
         if (false === $freightAllowanceCharge) {
             return null;
@@ -2356,7 +2356,7 @@ class ShipmentType
     public function lastFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
         $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
-        $freightAllowanceCharge = end($freightAllowanceCharge);
+        $freightAllowanceCharge = InvoiceSuiteArrayUtils::last($freightAllowanceCharge);
 
         if (false === $freightAllowanceCharge) {
             return null;
@@ -2412,7 +2412,7 @@ class ShipmentType
             $this->freightAllowanceCharge = [];
         }
 
-        if ([] === $this->freightAllowanceCharge) {
+        if (InvoiceSuiteArrayUtils::empty($this->freightAllowanceCharge)) {
             $this->addOnceToFreightAllowanceCharge(new FreightAllowanceCharge());
         }
 

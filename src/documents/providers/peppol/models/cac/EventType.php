@@ -304,7 +304,7 @@ class EventType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -319,7 +319,7 @@ class EventType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -375,7 +375,7 @@ class EventType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -458,7 +458,7 @@ class EventType
     public function firstCurrentStatus(): ?CurrentStatus
     {
         $currentStatus = $this->currentStatus ?? [];
-        $currentStatus = reset($currentStatus);
+        $currentStatus = InvoiceSuiteArrayUtils::first($currentStatus);
 
         if (false === $currentStatus) {
             return null;
@@ -473,7 +473,7 @@ class EventType
     public function lastCurrentStatus(): ?CurrentStatus
     {
         $currentStatus = $this->currentStatus ?? [];
-        $currentStatus = end($currentStatus);
+        $currentStatus = InvoiceSuiteArrayUtils::last($currentStatus);
 
         if (false === $currentStatus) {
             return null;
@@ -529,7 +529,7 @@ class EventType
             $this->currentStatus = [];
         }
 
-        if ([] === $this->currentStatus) {
+        if (InvoiceSuiteArrayUtils::empty($this->currentStatus)) {
             $this->addOnceToCurrentStatus(new CurrentStatus());
         }
 
@@ -582,7 +582,7 @@ class EventType
     public function firstContact(): ?Contact
     {
         $contact = $this->contact ?? [];
-        $contact = reset($contact);
+        $contact = InvoiceSuiteArrayUtils::first($contact);
 
         if (false === $contact) {
             return null;
@@ -597,7 +597,7 @@ class EventType
     public function lastContact(): ?Contact
     {
         $contact = $this->contact ?? [];
-        $contact = end($contact);
+        $contact = InvoiceSuiteArrayUtils::last($contact);
 
         if (false === $contact) {
             return null;
@@ -653,7 +653,7 @@ class EventType
             $this->contact = [];
         }
 
-        if ([] === $this->contact) {
+        if (InvoiceSuiteArrayUtils::empty($this->contact)) {
             $this->addOnceToContact(new Contact());
         }
 

@@ -445,7 +445,7 @@ class CertificateOfOriginApplicationType
     public function firstRemarks(): ?Remarks
     {
         $remarks = $this->remarks ?? [];
-        $remarks = reset($remarks);
+        $remarks = InvoiceSuiteArrayUtils::first($remarks);
 
         if (false === $remarks) {
             return null;
@@ -460,7 +460,7 @@ class CertificateOfOriginApplicationType
     public function lastRemarks(): ?Remarks
     {
         $remarks = $this->remarks ?? [];
-        $remarks = end($remarks);
+        $remarks = InvoiceSuiteArrayUtils::last($remarks);
 
         if (false === $remarks) {
             return null;
@@ -516,7 +516,7 @@ class CertificateOfOriginApplicationType
             $this->remarks = [];
         }
 
-        if ([] === $this->remarks) {
+        if (InvoiceSuiteArrayUtils::empty($this->remarks)) {
             $this->addOnceToRemarks(new Remarks());
         }
 
@@ -609,7 +609,7 @@ class CertificateOfOriginApplicationType
     public function firstEndorserParty(): ?EndorserParty
     {
         $endorserParty = $this->endorserParty ?? [];
-        $endorserParty = reset($endorserParty);
+        $endorserParty = InvoiceSuiteArrayUtils::first($endorserParty);
 
         if (false === $endorserParty) {
             return null;
@@ -624,7 +624,7 @@ class CertificateOfOriginApplicationType
     public function lastEndorserParty(): ?EndorserParty
     {
         $endorserParty = $this->endorserParty ?? [];
-        $endorserParty = end($endorserParty);
+        $endorserParty = InvoiceSuiteArrayUtils::last($endorserParty);
 
         if (false === $endorserParty) {
             return null;
@@ -680,7 +680,7 @@ class CertificateOfOriginApplicationType
             $this->endorserParty = [];
         }
 
-        if ([] === $this->endorserParty) {
+        if (InvoiceSuiteArrayUtils::empty($this->endorserParty)) {
             $this->addOnceToEndorserParty(new EndorserParty());
         }
 
@@ -933,7 +933,7 @@ class CertificateOfOriginApplicationType
     public function firstDocumentDistribution(): ?DocumentDistribution
     {
         $documentDistribution = $this->documentDistribution ?? [];
-        $documentDistribution = reset($documentDistribution);
+        $documentDistribution = InvoiceSuiteArrayUtils::first($documentDistribution);
 
         if (false === $documentDistribution) {
             return null;
@@ -948,7 +948,7 @@ class CertificateOfOriginApplicationType
     public function lastDocumentDistribution(): ?DocumentDistribution
     {
         $documentDistribution = $this->documentDistribution ?? [];
-        $documentDistribution = end($documentDistribution);
+        $documentDistribution = InvoiceSuiteArrayUtils::last($documentDistribution);
 
         if (false === $documentDistribution) {
             return null;
@@ -1004,7 +1004,7 @@ class CertificateOfOriginApplicationType
             $this->documentDistribution = [];
         }
 
-        if ([] === $this->documentDistribution) {
+        if (InvoiceSuiteArrayUtils::empty($this->documentDistribution)) {
             $this->addOnceToDocumentDistribution(new DocumentDistribution());
         }
 
@@ -1057,7 +1057,7 @@ class CertificateOfOriginApplicationType
     public function firstSupportingDocumentReference(): ?SupportingDocumentReference
     {
         $supportingDocumentReference = $this->supportingDocumentReference ?? [];
-        $supportingDocumentReference = reset($supportingDocumentReference);
+        $supportingDocumentReference = InvoiceSuiteArrayUtils::first($supportingDocumentReference);
 
         if (false === $supportingDocumentReference) {
             return null;
@@ -1072,7 +1072,7 @@ class CertificateOfOriginApplicationType
     public function lastSupportingDocumentReference(): ?SupportingDocumentReference
     {
         $supportingDocumentReference = $this->supportingDocumentReference ?? [];
-        $supportingDocumentReference = end($supportingDocumentReference);
+        $supportingDocumentReference = InvoiceSuiteArrayUtils::last($supportingDocumentReference);
 
         if (false === $supportingDocumentReference) {
             return null;
@@ -1128,7 +1128,7 @@ class CertificateOfOriginApplicationType
             $this->supportingDocumentReference = [];
         }
 
-        if ([] === $this->supportingDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->supportingDocumentReference)) {
             $this->addOnceToSupportingDocumentReference(new SupportingDocumentReference());
         }
 
@@ -1181,7 +1181,7 @@ class CertificateOfOriginApplicationType
     public function firstSignature(): ?Signature
     {
         $signature = $this->signature ?? [];
-        $signature = reset($signature);
+        $signature = InvoiceSuiteArrayUtils::first($signature);
 
         if (false === $signature) {
             return null;
@@ -1196,7 +1196,7 @@ class CertificateOfOriginApplicationType
     public function lastSignature(): ?Signature
     {
         $signature = $this->signature ?? [];
-        $signature = end($signature);
+        $signature = InvoiceSuiteArrayUtils::last($signature);
 
         if (false === $signature) {
             return null;
@@ -1252,7 +1252,7 @@ class CertificateOfOriginApplicationType
             $this->signature = [];
         }
 
-        if ([] === $this->signature) {
+        if (InvoiceSuiteArrayUtils::empty($this->signature)) {
             $this->addOnceToSignature(new Signature());
         }
 

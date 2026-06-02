@@ -219,7 +219,7 @@ class CustomerPartyType
     public function firstAdditionalAccountID(): ?AdditionalAccountID
     {
         $additionalAccountID = $this->additionalAccountID ?? [];
-        $additionalAccountID = reset($additionalAccountID);
+        $additionalAccountID = InvoiceSuiteArrayUtils::first($additionalAccountID);
 
         if (false === $additionalAccountID) {
             return null;
@@ -234,7 +234,7 @@ class CustomerPartyType
     public function lastAdditionalAccountID(): ?AdditionalAccountID
     {
         $additionalAccountID = $this->additionalAccountID ?? [];
-        $additionalAccountID = end($additionalAccountID);
+        $additionalAccountID = InvoiceSuiteArrayUtils::last($additionalAccountID);
 
         if (false === $additionalAccountID) {
             return null;
@@ -290,7 +290,7 @@ class CustomerPartyType
             $this->additionalAccountID = [];
         }
 
-        if ([] === $this->additionalAccountID) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalAccountID)) {
             $this->addOnceToAdditionalAccountID(new AdditionalAccountID());
         }
 

@@ -13,6 +13,7 @@ namespace horstoeko\zugferd;
 
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageBagItem;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\validators\InvoiceSuiteKositDocumentValidator;
@@ -488,7 +489,7 @@ class ZugferdKositValidator
     private function convertMessageBagMessagesToSimpleArray(
         array $messages
     ): array {
-        return array_map(
+        return InvoiceSuiteArrayUtils::map(
             static fn (InvoiceSuiteMessageBagItem $messageBagItem) => $messageBagItem->getMessageContent(),
             $messages
         );

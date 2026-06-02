@@ -93,7 +93,7 @@ class TendererPartyQualificationType
     public function firstInterestedProcurementProjectLot(): ?InterestedProcurementProjectLot
     {
         $interestedProcurementProjectLot = $this->interestedProcurementProjectLot ?? [];
-        $interestedProcurementProjectLot = reset($interestedProcurementProjectLot);
+        $interestedProcurementProjectLot = InvoiceSuiteArrayUtils::first($interestedProcurementProjectLot);
 
         if (false === $interestedProcurementProjectLot) {
             return null;
@@ -108,7 +108,7 @@ class TendererPartyQualificationType
     public function lastInterestedProcurementProjectLot(): ?InterestedProcurementProjectLot
     {
         $interestedProcurementProjectLot = $this->interestedProcurementProjectLot ?? [];
-        $interestedProcurementProjectLot = end($interestedProcurementProjectLot);
+        $interestedProcurementProjectLot = InvoiceSuiteArrayUtils::last($interestedProcurementProjectLot);
 
         if (false === $interestedProcurementProjectLot) {
             return null;
@@ -164,7 +164,7 @@ class TendererPartyQualificationType
             $this->interestedProcurementProjectLot = [];
         }
 
-        if ([] === $this->interestedProcurementProjectLot) {
+        if (InvoiceSuiteArrayUtils::empty($this->interestedProcurementProjectLot)) {
             $this->addOnceToInterestedProcurementProjectLot(new InterestedProcurementProjectLot());
         }
 
@@ -257,7 +257,7 @@ class TendererPartyQualificationType
     public function firstAdditionalQualifyingParty(): ?AdditionalQualifyingParty
     {
         $additionalQualifyingParty = $this->additionalQualifyingParty ?? [];
-        $additionalQualifyingParty = reset($additionalQualifyingParty);
+        $additionalQualifyingParty = InvoiceSuiteArrayUtils::first($additionalQualifyingParty);
 
         if (false === $additionalQualifyingParty) {
             return null;
@@ -272,7 +272,7 @@ class TendererPartyQualificationType
     public function lastAdditionalQualifyingParty(): ?AdditionalQualifyingParty
     {
         $additionalQualifyingParty = $this->additionalQualifyingParty ?? [];
-        $additionalQualifyingParty = end($additionalQualifyingParty);
+        $additionalQualifyingParty = InvoiceSuiteArrayUtils::last($additionalQualifyingParty);
 
         if (false === $additionalQualifyingParty) {
             return null;
@@ -328,7 +328,7 @@ class TendererPartyQualificationType
             $this->additionalQualifyingParty = [];
         }
 
-        if ([] === $this->additionalQualifyingParty) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalQualifyingParty)) {
             $this->addOnceToAdditionalQualifyingParty(new AdditionalQualifyingParty());
         }
 

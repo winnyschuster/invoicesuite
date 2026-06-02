@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use JsonSerializable;
 
 /**
@@ -174,7 +175,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($name = reset($this->names)) !== false) {
+        if (($name = InvoiceSuiteArrayUtils::first($this->names)) !== false) {
             $callback($name);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -194,7 +195,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($name = next($this->names)) !== false) {
+        if (($name = InvoiceSuiteArrayUtils::next($this->names)) !== false) {
             $callback($name);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -214,7 +215,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($name = prev($this->names)) !== false) {
+        if (($name = InvoiceSuiteArrayUtils::previous($this->names)) !== false) {
             $callback($name);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -234,7 +235,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($name = end($this->names)) !== false) {
+        if (($name = InvoiceSuiteArrayUtils::last($this->names)) !== false) {
             $callback($name);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -322,7 +323,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     public function filterName(
         callable $callback
     ): array {
-        return array_filter($this->names, $callback);
+        return InvoiceSuiteArrayUtils::filter($this->names, $callback);
     }
 
     /**
@@ -340,8 +341,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredName = $this->filterName($filterCallback);
 
-        if ([] !== $filteredName) {
-            $name = reset($filteredName);
+        if (!InvoiceSuiteArrayUtils::empty($filteredName)) {
+            $name = InvoiceSuiteArrayUtils::first($filteredName);
             $callback($name);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -365,8 +366,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredName = $this->filterName($filterCallback);
 
-        if ([] !== $filteredName) {
-            $name = end($filteredName);
+        if (!InvoiceSuiteArrayUtils::empty($filteredName)) {
+            $name = InvoiceSuiteArrayUtils::last($filteredName);
             $callback($name);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -428,7 +429,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($id = reset($this->ids)) !== false) {
+        if (($id = InvoiceSuiteArrayUtils::first($this->ids)) !== false) {
             $callback($id);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -448,7 +449,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($id = next($this->ids)) !== false) {
+        if (($id = InvoiceSuiteArrayUtils::next($this->ids)) !== false) {
             $callback($id);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -468,7 +469,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($id = prev($this->ids)) !== false) {
+        if (($id = InvoiceSuiteArrayUtils::previous($this->ids)) !== false) {
             $callback($id);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -488,7 +489,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($id = end($this->ids)) !== false) {
+        if (($id = InvoiceSuiteArrayUtils::last($this->ids)) !== false) {
             $callback($id);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -576,7 +577,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     public function filterId(
         callable $callback
     ): array {
-        return array_filter($this->ids, $callback);
+        return InvoiceSuiteArrayUtils::filter($this->ids, $callback);
     }
 
     /**
@@ -594,8 +595,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredId = $this->filterId($filterCallback);
 
-        if ([] !== $filteredId) {
-            $id = reset($filteredId);
+        if (!InvoiceSuiteArrayUtils::empty($filteredId)) {
+            $id = InvoiceSuiteArrayUtils::first($filteredId);
             $callback($id);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -619,8 +620,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredId = $this->filterId($filterCallback);
 
-        if ([] !== $filteredId) {
-            $id = end($filteredId);
+        if (!InvoiceSuiteArrayUtils::empty($filteredId)) {
+            $id = InvoiceSuiteArrayUtils::last($filteredId);
             $callback($id);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -682,7 +683,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($globalId = reset($this->globalIds)) !== false) {
+        if (($globalId = InvoiceSuiteArrayUtils::first($this->globalIds)) !== false) {
             $callback($globalId);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -702,7 +703,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($globalId = next($this->globalIds)) !== false) {
+        if (($globalId = InvoiceSuiteArrayUtils::next($this->globalIds)) !== false) {
             $callback($globalId);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -722,7 +723,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($globalId = prev($this->globalIds)) !== false) {
+        if (($globalId = InvoiceSuiteArrayUtils::previous($this->globalIds)) !== false) {
             $callback($globalId);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -742,7 +743,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($globalId = end($this->globalIds)) !== false) {
+        if (($globalId = InvoiceSuiteArrayUtils::last($this->globalIds)) !== false) {
             $callback($globalId);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -830,7 +831,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     public function filterGlobalId(
         callable $callback
     ): array {
-        return array_filter($this->globalIds, $callback);
+        return InvoiceSuiteArrayUtils::filter($this->globalIds, $callback);
     }
 
     /**
@@ -848,8 +849,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredGlobalId = $this->filterGlobalId($filterCallback);
 
-        if ([] !== $filteredGlobalId) {
-            $globalId = reset($filteredGlobalId);
+        if (!InvoiceSuiteArrayUtils::empty($filteredGlobalId)) {
+            $globalId = InvoiceSuiteArrayUtils::first($filteredGlobalId);
             $callback($globalId);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -873,8 +874,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredGlobalId = $this->filterGlobalId($filterCallback);
 
-        if ([] !== $filteredGlobalId) {
-            $globalId = end($filteredGlobalId);
+        if (!InvoiceSuiteArrayUtils::empty($filteredGlobalId)) {
+            $globalId = InvoiceSuiteArrayUtils::last($filteredGlobalId);
             $callback($globalId);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -936,7 +937,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($taxRegistration = reset($this->taxRegistrations)) !== false) {
+        if (($taxRegistration = InvoiceSuiteArrayUtils::first($this->taxRegistrations)) !== false) {
             $callback($taxRegistration);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -956,7 +957,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($taxRegistration = next($this->taxRegistrations)) !== false) {
+        if (($taxRegistration = InvoiceSuiteArrayUtils::next($this->taxRegistrations)) !== false) {
             $callback($taxRegistration);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -976,7 +977,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($taxRegistration = prev($this->taxRegistrations)) !== false) {
+        if (($taxRegistration = InvoiceSuiteArrayUtils::previous($this->taxRegistrations)) !== false) {
             $callback($taxRegistration);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -996,7 +997,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($taxRegistration = end($this->taxRegistrations)) !== false) {
+        if (($taxRegistration = InvoiceSuiteArrayUtils::last($this->taxRegistrations)) !== false) {
             $callback($taxRegistration);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1084,7 +1085,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     public function filterTaxRegistration(
         callable $callback
     ): array {
-        return array_filter($this->taxRegistrations, $callback);
+        return InvoiceSuiteArrayUtils::filter($this->taxRegistrations, $callback);
     }
 
     /**
@@ -1102,8 +1103,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredTaxRegistration = $this->filterTaxRegistration($filterCallback);
 
-        if ([] !== $filteredTaxRegistration) {
-            $taxRegistration = reset($filteredTaxRegistration);
+        if (!InvoiceSuiteArrayUtils::empty($filteredTaxRegistration)) {
+            $taxRegistration = InvoiceSuiteArrayUtils::first($filteredTaxRegistration);
             $callback($taxRegistration);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1127,8 +1128,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredTaxRegistration = $this->filterTaxRegistration($filterCallback);
 
-        if ([] !== $filteredTaxRegistration) {
-            $taxRegistration = end($filteredTaxRegistration);
+        if (!InvoiceSuiteArrayUtils::empty($filteredTaxRegistration)) {
+            $taxRegistration = InvoiceSuiteArrayUtils::last($filteredTaxRegistration);
             $callback($taxRegistration);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1190,7 +1191,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($address = reset($this->addresses)) !== false) {
+        if (($address = InvoiceSuiteArrayUtils::first($this->addresses)) !== false) {
             $callback($address);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1210,7 +1211,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($address = next($this->addresses)) !== false) {
+        if (($address = InvoiceSuiteArrayUtils::next($this->addresses)) !== false) {
             $callback($address);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1230,7 +1231,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($address = prev($this->addresses)) !== false) {
+        if (($address = InvoiceSuiteArrayUtils::previous($this->addresses)) !== false) {
             $callback($address);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1250,7 +1251,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($address = end($this->addresses)) !== false) {
+        if (($address = InvoiceSuiteArrayUtils::last($this->addresses)) !== false) {
             $callback($address);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1338,7 +1339,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     public function filterAddress(
         callable $callback
     ): array {
-        return array_filter($this->addresses, $callback);
+        return InvoiceSuiteArrayUtils::filter($this->addresses, $callback);
     }
 
     /**
@@ -1356,8 +1357,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredAddress = $this->filterAddress($filterCallback);
 
-        if ([] !== $filteredAddress) {
-            $address = reset($filteredAddress);
+        if (!InvoiceSuiteArrayUtils::empty($filteredAddress)) {
+            $address = InvoiceSuiteArrayUtils::first($filteredAddress);
             $callback($address);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1381,8 +1382,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredAddress = $this->filterAddress($filterCallback);
 
-        if ([] !== $filteredAddress) {
-            $address = end($filteredAddress);
+        if (!InvoiceSuiteArrayUtils::empty($filteredAddress)) {
+            $address = InvoiceSuiteArrayUtils::last($filteredAddress);
             $callback($address);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1444,7 +1445,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($legalOrganisation = reset($this->legalOrganisations)) !== false) {
+        if (($legalOrganisation = InvoiceSuiteArrayUtils::first($this->legalOrganisations)) !== false) {
             $callback($legalOrganisation);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1464,7 +1465,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($legalOrganisation = next($this->legalOrganisations)) !== false) {
+        if (($legalOrganisation = InvoiceSuiteArrayUtils::next($this->legalOrganisations)) !== false) {
             $callback($legalOrganisation);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1484,7 +1485,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($legalOrganisation = prev($this->legalOrganisations)) !== false) {
+        if (($legalOrganisation = InvoiceSuiteArrayUtils::previous($this->legalOrganisations)) !== false) {
             $callback($legalOrganisation);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1504,7 +1505,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($legalOrganisation = end($this->legalOrganisations)) !== false) {
+        if (($legalOrganisation = InvoiceSuiteArrayUtils::last($this->legalOrganisations)) !== false) {
             $callback($legalOrganisation);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1592,7 +1593,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     public function filterLegalOrganisation(
         callable $callback
     ): array {
-        return array_filter($this->legalOrganisations, $callback);
+        return InvoiceSuiteArrayUtils::filter($this->legalOrganisations, $callback);
     }
 
     /**
@@ -1610,8 +1611,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredLegalOrganisation = $this->filterLegalOrganisation($filterCallback);
 
-        if ([] !== $filteredLegalOrganisation) {
-            $legalOrganisation = reset($filteredLegalOrganisation);
+        if (!InvoiceSuiteArrayUtils::empty($filteredLegalOrganisation)) {
+            $legalOrganisation = InvoiceSuiteArrayUtils::first($filteredLegalOrganisation);
             $callback($legalOrganisation);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1635,8 +1636,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredLegalOrganisation = $this->filterLegalOrganisation($filterCallback);
 
-        if ([] !== $filteredLegalOrganisation) {
-            $legalOrganisation = end($filteredLegalOrganisation);
+        if (!InvoiceSuiteArrayUtils::empty($filteredLegalOrganisation)) {
+            $legalOrganisation = InvoiceSuiteArrayUtils::last($filteredLegalOrganisation);
             $callback($legalOrganisation);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1698,7 +1699,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($contact = reset($this->contacts)) !== false) {
+        if (($contact = InvoiceSuiteArrayUtils::first($this->contacts)) !== false) {
             $callback($contact);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1718,7 +1719,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($contact = next($this->contacts)) !== false) {
+        if (($contact = InvoiceSuiteArrayUtils::next($this->contacts)) !== false) {
             $callback($contact);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1738,7 +1739,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($contact = prev($this->contacts)) !== false) {
+        if (($contact = InvoiceSuiteArrayUtils::previous($this->contacts)) !== false) {
             $callback($contact);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1758,7 +1759,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($contact = end($this->contacts)) !== false) {
+        if (($contact = InvoiceSuiteArrayUtils::last($this->contacts)) !== false) {
             $callback($contact);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1846,7 +1847,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     public function filterContact(
         callable $callback
     ): array {
-        return array_filter($this->contacts, $callback);
+        return InvoiceSuiteArrayUtils::filter($this->contacts, $callback);
     }
 
     /**
@@ -1864,8 +1865,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredContact = $this->filterContact($filterCallback);
 
-        if ([] !== $filteredContact) {
-            $contact = reset($filteredContact);
+        if (!InvoiceSuiteArrayUtils::empty($filteredContact)) {
+            $contact = InvoiceSuiteArrayUtils::first($filteredContact);
             $callback($contact);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1889,8 +1890,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredContact = $this->filterContact($filterCallback);
 
-        if ([] !== $filteredContact) {
-            $contact = end($filteredContact);
+        if (!InvoiceSuiteArrayUtils::empty($filteredContact)) {
+            $contact = InvoiceSuiteArrayUtils::last($filteredContact);
             $callback($contact);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1952,7 +1953,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($communication = reset($this->communications)) !== false) {
+        if (($communication = InvoiceSuiteArrayUtils::first($this->communications)) !== false) {
             $callback($communication);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1972,7 +1973,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($communication = next($this->communications)) !== false) {
+        if (($communication = InvoiceSuiteArrayUtils::next($this->communications)) !== false) {
             $callback($communication);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -1992,7 +1993,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($communication = prev($this->communications)) !== false) {
+        if (($communication = InvoiceSuiteArrayUtils::previous($this->communications)) !== false) {
             $callback($communication);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2012,7 +2013,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($communication = end($this->communications)) !== false) {
+        if (($communication = InvoiceSuiteArrayUtils::last($this->communications)) !== false) {
             $callback($communication);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2100,7 +2101,7 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     public function filterCommunication(
         callable $callback
     ): array {
-        return array_filter($this->communications, $callback);
+        return InvoiceSuiteArrayUtils::filter($this->communications, $callback);
     }
 
     /**
@@ -2118,8 +2119,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredCommunication = $this->filterCommunication($filterCallback);
 
-        if ([] !== $filteredCommunication) {
-            $communication = reset($filteredCommunication);
+        if (!InvoiceSuiteArrayUtils::empty($filteredCommunication)) {
+            $communication = InvoiceSuiteArrayUtils::first($filteredCommunication);
             $callback($communication);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -2143,8 +2144,8 @@ class InvoiceSuitePartyDTO implements JsonSerializable
     ): static {
         $filteredCommunication = $this->filterCommunication($filterCallback);
 
-        if ([] !== $filteredCommunication) {
-            $communication = end($filteredCommunication);
+        if (!InvoiceSuiteArrayUtils::empty($filteredCommunication)) {
+            $communication = InvoiceSuiteArrayUtils::last($filteredCommunication);
             $callback($communication);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();

@@ -216,7 +216,7 @@ class ProjectReferenceType
     public function firstWorkPhaseReference(): ?WorkPhaseReference
     {
         $workPhaseReference = $this->workPhaseReference ?? [];
-        $workPhaseReference = reset($workPhaseReference);
+        $workPhaseReference = InvoiceSuiteArrayUtils::first($workPhaseReference);
 
         if (false === $workPhaseReference) {
             return null;
@@ -231,7 +231,7 @@ class ProjectReferenceType
     public function lastWorkPhaseReference(): ?WorkPhaseReference
     {
         $workPhaseReference = $this->workPhaseReference ?? [];
-        $workPhaseReference = end($workPhaseReference);
+        $workPhaseReference = InvoiceSuiteArrayUtils::last($workPhaseReference);
 
         if (false === $workPhaseReference) {
             return null;
@@ -287,7 +287,7 @@ class ProjectReferenceType
             $this->workPhaseReference = [];
         }
 
-        if ([] === $this->workPhaseReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->workPhaseReference)) {
             $this->addOnceToWorkPhaseReference(new WorkPhaseReference());
         }
 

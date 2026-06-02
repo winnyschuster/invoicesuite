@@ -453,7 +453,7 @@ class ItemPropertyType
     public function firstValueQualifier(): ?ValueQualifier
     {
         $valueQualifier = $this->valueQualifier ?? [];
-        $valueQualifier = reset($valueQualifier);
+        $valueQualifier = InvoiceSuiteArrayUtils::first($valueQualifier);
 
         if (false === $valueQualifier) {
             return null;
@@ -468,7 +468,7 @@ class ItemPropertyType
     public function lastValueQualifier(): ?ValueQualifier
     {
         $valueQualifier = $this->valueQualifier ?? [];
-        $valueQualifier = end($valueQualifier);
+        $valueQualifier = InvoiceSuiteArrayUtils::last($valueQualifier);
 
         if (false === $valueQualifier) {
             return null;
@@ -524,7 +524,7 @@ class ItemPropertyType
             $this->valueQualifier = [];
         }
 
-        if ([] === $this->valueQualifier) {
+        if (InvoiceSuiteArrayUtils::empty($this->valueQualifier)) {
             $this->addOnceToValueQualifier(new ValueQualifier());
         }
 
@@ -617,7 +617,7 @@ class ItemPropertyType
     public function firstListValue(): ?ListValue
     {
         $listValue = $this->listValue ?? [];
-        $listValue = reset($listValue);
+        $listValue = InvoiceSuiteArrayUtils::first($listValue);
 
         if (false === $listValue) {
             return null;
@@ -632,7 +632,7 @@ class ItemPropertyType
     public function lastListValue(): ?ListValue
     {
         $listValue = $this->listValue ?? [];
-        $listValue = end($listValue);
+        $listValue = InvoiceSuiteArrayUtils::last($listValue);
 
         if (false === $listValue) {
             return null;
@@ -688,7 +688,7 @@ class ItemPropertyType
             $this->listValue = [];
         }
 
-        if ([] === $this->listValue) {
+        if (InvoiceSuiteArrayUtils::empty($this->listValue)) {
             $this->addOnceToListValue(new ListValue());
         }
 
@@ -781,7 +781,7 @@ class ItemPropertyType
     public function firstItemPropertyGroup(): ?ItemPropertyGroup
     {
         $itemPropertyGroup = $this->itemPropertyGroup ?? [];
-        $itemPropertyGroup = reset($itemPropertyGroup);
+        $itemPropertyGroup = InvoiceSuiteArrayUtils::first($itemPropertyGroup);
 
         if (false === $itemPropertyGroup) {
             return null;
@@ -796,7 +796,7 @@ class ItemPropertyType
     public function lastItemPropertyGroup(): ?ItemPropertyGroup
     {
         $itemPropertyGroup = $this->itemPropertyGroup ?? [];
-        $itemPropertyGroup = end($itemPropertyGroup);
+        $itemPropertyGroup = InvoiceSuiteArrayUtils::last($itemPropertyGroup);
 
         if (false === $itemPropertyGroup) {
             return null;
@@ -852,7 +852,7 @@ class ItemPropertyType
             $this->itemPropertyGroup = [];
         }
 
-        if ([] === $this->itemPropertyGroup) {
+        if (InvoiceSuiteArrayUtils::empty($this->itemPropertyGroup)) {
             $this->addOnceToItemPropertyGroup(new ItemPropertyGroup());
         }
 

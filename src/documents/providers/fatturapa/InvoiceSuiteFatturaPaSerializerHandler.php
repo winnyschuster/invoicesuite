@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\providers\fatturapa;
 
 use DOMNode;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use JMS\Serializer\Context;
 use JMS\Serializer\GraphNavigator;
@@ -157,11 +158,11 @@ class InvoiceSuiteFatturaPaSerializerHandler implements SubscribingHandlerInterf
     ): array {
         $params = $type['params'] ?? [];
 
-        if ([] === $params) {
+        if (InvoiceSuiteArrayUtils::empty($params)) {
             return [0, 8];
         }
 
-        if (1 === count($params)) {
+        if (1 === InvoiceSuiteArrayUtils::count($params)) {
             $s = $params[0];
 
             return [$s, $s];

@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\concerns;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 /**
@@ -96,7 +97,7 @@ trait HandlesSafeInvoking
         $methods = explode('.', $methods);
 
         foreach ($methods as $index => $method) {
-            if ($index === count($methods) - 1) {
+            if ($index === InvoiceSuiteArrayUtils::count($methods) - 1) {
                 $this->safeInvokeTryCall($instance, $method, $value);
             } else {
                 $instance = $this->safeInvokeTryCallAndReturn($instance, $method);

@@ -286,7 +286,7 @@ class TenderResultType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -301,7 +301,7 @@ class TenderResultType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -357,7 +357,7 @@ class TenderResultType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -860,7 +860,7 @@ class TenderResultType
     public function firstSubcontractTerms(): ?SubcontractTerms
     {
         $subcontractTerms = $this->subcontractTerms ?? [];
-        $subcontractTerms = reset($subcontractTerms);
+        $subcontractTerms = InvoiceSuiteArrayUtils::first($subcontractTerms);
 
         if (false === $subcontractTerms) {
             return null;
@@ -875,7 +875,7 @@ class TenderResultType
     public function lastSubcontractTerms(): ?SubcontractTerms
     {
         $subcontractTerms = $this->subcontractTerms ?? [];
-        $subcontractTerms = end($subcontractTerms);
+        $subcontractTerms = InvoiceSuiteArrayUtils::last($subcontractTerms);
 
         if (false === $subcontractTerms) {
             return null;
@@ -931,7 +931,7 @@ class TenderResultType
             $this->subcontractTerms = [];
         }
 
-        if ([] === $this->subcontractTerms) {
+        if (InvoiceSuiteArrayUtils::empty($this->subcontractTerms)) {
             $this->addOnceToSubcontractTerms(new SubcontractTerms());
         }
 
@@ -984,7 +984,7 @@ class TenderResultType
     public function firstWinningParty(): ?WinningParty
     {
         $winningParty = $this->winningParty ?? [];
-        $winningParty = reset($winningParty);
+        $winningParty = InvoiceSuiteArrayUtils::first($winningParty);
 
         if (false === $winningParty) {
             return null;
@@ -999,7 +999,7 @@ class TenderResultType
     public function lastWinningParty(): ?WinningParty
     {
         $winningParty = $this->winningParty ?? [];
-        $winningParty = end($winningParty);
+        $winningParty = InvoiceSuiteArrayUtils::last($winningParty);
 
         if (false === $winningParty) {
             return null;
@@ -1055,7 +1055,7 @@ class TenderResultType
             $this->winningParty = [];
         }
 
-        if ([] === $this->winningParty) {
+        if (InvoiceSuiteArrayUtils::empty($this->winningParty)) {
             $this->addOnceToWinningParty(new WinningParty());
         }
 

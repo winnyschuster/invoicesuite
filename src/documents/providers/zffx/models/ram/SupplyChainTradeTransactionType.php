@@ -144,7 +144,7 @@ class SupplyChainTradeTransactionType
             $this->includedSupplyChainTradeLineItem = [];
         }
 
-        if ([] === $this->includedSupplyChainTradeLineItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->includedSupplyChainTradeLineItem)) {
             $this->addOnceToIncludedSupplyChainTradeLineItem(new SupplyChainTradeLineItemType());
         }
 
@@ -277,7 +277,7 @@ class SupplyChainTradeTransactionType
     public function getLatestIncludedSupplyChainTradeLineItem(): ?SupplyChainTradeLineItemType
     {
         $supplyChainTradeLineItems = $this->getIncludedSupplyChainTradeLineItem() ?? [];
-        $supplyChainTradeLineItem = end($supplyChainTradeLineItems);
+        $supplyChainTradeLineItem = InvoiceSuiteArrayUtils::last($supplyChainTradeLineItems);
 
         if (false === $supplyChainTradeLineItem) {
             return null;
@@ -305,7 +305,7 @@ class SupplyChainTradeTransactionType
     {
         $supplyChainTradeLineItems = $this->getIncludedSupplyChainTradeLineItem() ?? [];
 
-        return [] !== $supplyChainTradeLineItems;
+        return !InvoiceSuiteArrayUtils::empty($supplyChainTradeLineItems);
     }
 
     /**
@@ -315,6 +315,6 @@ class SupplyChainTradeTransactionType
     {
         $supplyChainTradeLineItems = $this->getIncludedSupplyChainTradeLineItem() ?? [];
 
-        return [] === $supplyChainTradeLineItems;
+        return InvoiceSuiteArrayUtils::empty($supplyChainTradeLineItems);
     }
 }

@@ -259,7 +259,7 @@ class TradeFinancingType
     public function firstDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = reset($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::first($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -274,7 +274,7 @@ class TradeFinancingType
     public function lastDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = end($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::last($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -330,7 +330,7 @@ class TradeFinancingType
             $this->documentReference = [];
         }
 
-        if ([] === $this->documentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->documentReference)) {
             $this->addOnceToDocumentReference(new DocumentReference());
         }
 
@@ -463,7 +463,7 @@ class TradeFinancingType
     public function firstClause(): ?Clause
     {
         $clause = $this->clause ?? [];
-        $clause = reset($clause);
+        $clause = InvoiceSuiteArrayUtils::first($clause);
 
         if (false === $clause) {
             return null;
@@ -478,7 +478,7 @@ class TradeFinancingType
     public function lastClause(): ?Clause
     {
         $clause = $this->clause ?? [];
-        $clause = end($clause);
+        $clause = InvoiceSuiteArrayUtils::last($clause);
 
         if (false === $clause) {
             return null;
@@ -534,7 +534,7 @@ class TradeFinancingType
             $this->clause = [];
         }
 
-        if ([] === $this->clause) {
+        if (InvoiceSuiteArrayUtils::empty($this->clause)) {
             $this->addOnceToClause(new Clause());
         }
 

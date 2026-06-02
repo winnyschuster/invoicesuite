@@ -121,7 +121,7 @@ class PricingReferenceType
     public function firstAlternativeConditionPrice(): ?AlternativeConditionPrice
     {
         $alternativeConditionPrice = $this->alternativeConditionPrice ?? [];
-        $alternativeConditionPrice = reset($alternativeConditionPrice);
+        $alternativeConditionPrice = InvoiceSuiteArrayUtils::first($alternativeConditionPrice);
 
         if (false === $alternativeConditionPrice) {
             return null;
@@ -136,7 +136,7 @@ class PricingReferenceType
     public function lastAlternativeConditionPrice(): ?AlternativeConditionPrice
     {
         $alternativeConditionPrice = $this->alternativeConditionPrice ?? [];
-        $alternativeConditionPrice = end($alternativeConditionPrice);
+        $alternativeConditionPrice = InvoiceSuiteArrayUtils::last($alternativeConditionPrice);
 
         if (false === $alternativeConditionPrice) {
             return null;
@@ -192,7 +192,7 @@ class PricingReferenceType
             $this->alternativeConditionPrice = [];
         }
 
-        if ([] === $this->alternativeConditionPrice) {
+        if (InvoiceSuiteArrayUtils::empty($this->alternativeConditionPrice)) {
             $this->addOnceToAlternativeConditionPrice(new AlternativeConditionPrice());
         }
 

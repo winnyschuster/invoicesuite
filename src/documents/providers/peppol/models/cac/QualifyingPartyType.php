@@ -264,7 +264,7 @@ class QualifyingPartyType
     public function firstPersonalSituation(): ?PersonalSituation
     {
         $personalSituation = $this->personalSituation ?? [];
-        $personalSituation = reset($personalSituation);
+        $personalSituation = InvoiceSuiteArrayUtils::first($personalSituation);
 
         if (false === $personalSituation) {
             return null;
@@ -279,7 +279,7 @@ class QualifyingPartyType
     public function lastPersonalSituation(): ?PersonalSituation
     {
         $personalSituation = $this->personalSituation ?? [];
-        $personalSituation = end($personalSituation);
+        $personalSituation = InvoiceSuiteArrayUtils::last($personalSituation);
 
         if (false === $personalSituation) {
             return null;
@@ -335,7 +335,7 @@ class QualifyingPartyType
             $this->personalSituation = [];
         }
 
-        if ([] === $this->personalSituation) {
+        if (InvoiceSuiteArrayUtils::empty($this->personalSituation)) {
             $this->addOnceToPersonalSituation(new PersonalSituation());
         }
 
@@ -628,7 +628,7 @@ class QualifyingPartyType
     public function firstTechnicalCapability(): ?TechnicalCapability
     {
         $technicalCapability = $this->technicalCapability ?? [];
-        $technicalCapability = reset($technicalCapability);
+        $technicalCapability = InvoiceSuiteArrayUtils::first($technicalCapability);
 
         if (false === $technicalCapability) {
             return null;
@@ -643,7 +643,7 @@ class QualifyingPartyType
     public function lastTechnicalCapability(): ?TechnicalCapability
     {
         $technicalCapability = $this->technicalCapability ?? [];
-        $technicalCapability = end($technicalCapability);
+        $technicalCapability = InvoiceSuiteArrayUtils::last($technicalCapability);
 
         if (false === $technicalCapability) {
             return null;
@@ -699,7 +699,7 @@ class QualifyingPartyType
             $this->technicalCapability = [];
         }
 
-        if ([] === $this->technicalCapability) {
+        if (InvoiceSuiteArrayUtils::empty($this->technicalCapability)) {
             $this->addOnceToTechnicalCapability(new TechnicalCapability());
         }
 
@@ -752,7 +752,7 @@ class QualifyingPartyType
     public function firstFinancialCapability(): ?FinancialCapability
     {
         $financialCapability = $this->financialCapability ?? [];
-        $financialCapability = reset($financialCapability);
+        $financialCapability = InvoiceSuiteArrayUtils::first($financialCapability);
 
         if (false === $financialCapability) {
             return null;
@@ -767,7 +767,7 @@ class QualifyingPartyType
     public function lastFinancialCapability(): ?FinancialCapability
     {
         $financialCapability = $this->financialCapability ?? [];
-        $financialCapability = end($financialCapability);
+        $financialCapability = InvoiceSuiteArrayUtils::last($financialCapability);
 
         if (false === $financialCapability) {
             return null;
@@ -823,7 +823,7 @@ class QualifyingPartyType
             $this->financialCapability = [];
         }
 
-        if ([] === $this->financialCapability) {
+        if (InvoiceSuiteArrayUtils::empty($this->financialCapability)) {
             $this->addOnceToFinancialCapability(new FinancialCapability());
         }
 
@@ -876,7 +876,7 @@ class QualifyingPartyType
     public function firstCompletedTask(): ?CompletedTask
     {
         $completedTask = $this->completedTask ?? [];
-        $completedTask = reset($completedTask);
+        $completedTask = InvoiceSuiteArrayUtils::first($completedTask);
 
         if (false === $completedTask) {
             return null;
@@ -891,7 +891,7 @@ class QualifyingPartyType
     public function lastCompletedTask(): ?CompletedTask
     {
         $completedTask = $this->completedTask ?? [];
-        $completedTask = end($completedTask);
+        $completedTask = InvoiceSuiteArrayUtils::last($completedTask);
 
         if (false === $completedTask) {
             return null;
@@ -947,7 +947,7 @@ class QualifyingPartyType
             $this->completedTask = [];
         }
 
-        if ([] === $this->completedTask) {
+        if (InvoiceSuiteArrayUtils::empty($this->completedTask)) {
             $this->addOnceToCompletedTask(new CompletedTask());
         }
 
@@ -1000,7 +1000,7 @@ class QualifyingPartyType
     public function firstDeclaration(): ?Declaration
     {
         $declaration = $this->declaration ?? [];
-        $declaration = reset($declaration);
+        $declaration = InvoiceSuiteArrayUtils::first($declaration);
 
         if (false === $declaration) {
             return null;
@@ -1015,7 +1015,7 @@ class QualifyingPartyType
     public function lastDeclaration(): ?Declaration
     {
         $declaration = $this->declaration ?? [];
-        $declaration = end($declaration);
+        $declaration = InvoiceSuiteArrayUtils::last($declaration);
 
         if (false === $declaration) {
             return null;
@@ -1071,7 +1071,7 @@ class QualifyingPartyType
             $this->declaration = [];
         }
 
-        if ([] === $this->declaration) {
+        if (InvoiceSuiteArrayUtils::empty($this->declaration)) {
             $this->addOnceToDeclaration(new Declaration());
         }
 

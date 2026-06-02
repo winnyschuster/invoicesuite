@@ -252,7 +252,7 @@ class PowerOfAttorneyType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -267,7 +267,7 @@ class PowerOfAttorneyType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -323,7 +323,7 @@ class PowerOfAttorneyType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -456,7 +456,7 @@ class PowerOfAttorneyType
     public function firstWitnessParty(): ?WitnessParty
     {
         $witnessParty = $this->witnessParty ?? [];
-        $witnessParty = reset($witnessParty);
+        $witnessParty = InvoiceSuiteArrayUtils::first($witnessParty);
 
         if (false === $witnessParty) {
             return null;
@@ -471,7 +471,7 @@ class PowerOfAttorneyType
     public function lastWitnessParty(): ?WitnessParty
     {
         $witnessParty = $this->witnessParty ?? [];
-        $witnessParty = end($witnessParty);
+        $witnessParty = InvoiceSuiteArrayUtils::last($witnessParty);
 
         if (false === $witnessParty) {
             return null;
@@ -527,7 +527,7 @@ class PowerOfAttorneyType
             $this->witnessParty = [];
         }
 
-        if ([] === $this->witnessParty) {
+        if (InvoiceSuiteArrayUtils::empty($this->witnessParty)) {
             $this->addOnceToWitnessParty(new WitnessParty());
         }
 
@@ -580,7 +580,7 @@ class PowerOfAttorneyType
     public function firstMandateDocumentReference(): ?MandateDocumentReference
     {
         $mandateDocumentReference = $this->mandateDocumentReference ?? [];
-        $mandateDocumentReference = reset($mandateDocumentReference);
+        $mandateDocumentReference = InvoiceSuiteArrayUtils::first($mandateDocumentReference);
 
         if (false === $mandateDocumentReference) {
             return null;
@@ -595,7 +595,7 @@ class PowerOfAttorneyType
     public function lastMandateDocumentReference(): ?MandateDocumentReference
     {
         $mandateDocumentReference = $this->mandateDocumentReference ?? [];
-        $mandateDocumentReference = end($mandateDocumentReference);
+        $mandateDocumentReference = InvoiceSuiteArrayUtils::last($mandateDocumentReference);
 
         if (false === $mandateDocumentReference) {
             return null;
@@ -651,7 +651,7 @@ class PowerOfAttorneyType
             $this->mandateDocumentReference = [];
         }
 
-        if ([] === $this->mandateDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->mandateDocumentReference)) {
             $this->addOnceToMandateDocumentReference(new MandateDocumentReference());
         }
 

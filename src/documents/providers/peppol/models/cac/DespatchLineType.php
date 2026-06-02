@@ -308,7 +308,7 @@ class DespatchLineType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -323,7 +323,7 @@ class DespatchLineType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -379,7 +379,7 @@ class DespatchLineType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -552,7 +552,7 @@ class DespatchLineType
     public function firstBackorderReason(): ?BackorderReason
     {
         $backorderReason = $this->backorderReason ?? [];
-        $backorderReason = reset($backorderReason);
+        $backorderReason = InvoiceSuiteArrayUtils::first($backorderReason);
 
         if (false === $backorderReason) {
             return null;
@@ -567,7 +567,7 @@ class DespatchLineType
     public function lastBackorderReason(): ?BackorderReason
     {
         $backorderReason = $this->backorderReason ?? [];
-        $backorderReason = end($backorderReason);
+        $backorderReason = InvoiceSuiteArrayUtils::last($backorderReason);
 
         if (false === $backorderReason) {
             return null;
@@ -623,7 +623,7 @@ class DespatchLineType
             $this->backorderReason = [];
         }
 
-        if ([] === $this->backorderReason) {
+        if (InvoiceSuiteArrayUtils::empty($this->backorderReason)) {
             $this->addOnceToBackorderReason(new BackorderReason());
         }
 
@@ -716,7 +716,7 @@ class DespatchLineType
     public function firstOutstandingReason(): ?OutstandingReason
     {
         $outstandingReason = $this->outstandingReason ?? [];
-        $outstandingReason = reset($outstandingReason);
+        $outstandingReason = InvoiceSuiteArrayUtils::first($outstandingReason);
 
         if (false === $outstandingReason) {
             return null;
@@ -731,7 +731,7 @@ class DespatchLineType
     public function lastOutstandingReason(): ?OutstandingReason
     {
         $outstandingReason = $this->outstandingReason ?? [];
-        $outstandingReason = end($outstandingReason);
+        $outstandingReason = InvoiceSuiteArrayUtils::last($outstandingReason);
 
         if (false === $outstandingReason) {
             return null;
@@ -787,7 +787,7 @@ class DespatchLineType
             $this->outstandingReason = [];
         }
 
-        if ([] === $this->outstandingReason) {
+        if (InvoiceSuiteArrayUtils::empty($this->outstandingReason)) {
             $this->addOnceToOutstandingReason(new OutstandingReason());
         }
 
@@ -880,7 +880,7 @@ class DespatchLineType
     public function firstOrderLineReference(): ?OrderLineReference
     {
         $orderLineReference = $this->orderLineReference ?? [];
-        $orderLineReference = reset($orderLineReference);
+        $orderLineReference = InvoiceSuiteArrayUtils::first($orderLineReference);
 
         if (false === $orderLineReference) {
             return null;
@@ -895,7 +895,7 @@ class DespatchLineType
     public function lastOrderLineReference(): ?OrderLineReference
     {
         $orderLineReference = $this->orderLineReference ?? [];
-        $orderLineReference = end($orderLineReference);
+        $orderLineReference = InvoiceSuiteArrayUtils::last($orderLineReference);
 
         if (false === $orderLineReference) {
             return null;
@@ -951,7 +951,7 @@ class DespatchLineType
             $this->orderLineReference = [];
         }
 
-        if ([] === $this->orderLineReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->orderLineReference)) {
             $this->addOnceToOrderLineReference(new OrderLineReference());
         }
 
@@ -1004,7 +1004,7 @@ class DespatchLineType
     public function firstDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = reset($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::first($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -1019,7 +1019,7 @@ class DespatchLineType
     public function lastDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = end($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::last($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -1075,7 +1075,7 @@ class DespatchLineType
             $this->documentReference = [];
         }
 
-        if ([] === $this->documentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->documentReference)) {
             $this->addOnceToDocumentReference(new DocumentReference());
         }
 
@@ -1168,7 +1168,7 @@ class DespatchLineType
     public function firstShipment(): ?Shipment
     {
         $shipment = $this->shipment ?? [];
-        $shipment = reset($shipment);
+        $shipment = InvoiceSuiteArrayUtils::first($shipment);
 
         if (false === $shipment) {
             return null;
@@ -1183,7 +1183,7 @@ class DespatchLineType
     public function lastShipment(): ?Shipment
     {
         $shipment = $this->shipment ?? [];
-        $shipment = end($shipment);
+        $shipment = InvoiceSuiteArrayUtils::last($shipment);
 
         if (false === $shipment) {
             return null;
@@ -1239,7 +1239,7 @@ class DespatchLineType
             $this->shipment = [];
         }
 
-        if ([] === $this->shipment) {
+        if (InvoiceSuiteArrayUtils::empty($this->shipment)) {
             $this->addOnceToShipment(new Shipment());
         }
 

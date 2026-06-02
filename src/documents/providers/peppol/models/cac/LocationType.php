@@ -243,7 +243,7 @@ class LocationType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -258,7 +258,7 @@ class LocationType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -314,7 +314,7 @@ class LocationType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -367,7 +367,7 @@ class LocationType
     public function firstConditions(): ?Conditions
     {
         $conditions = $this->conditions ?? [];
-        $conditions = reset($conditions);
+        $conditions = InvoiceSuiteArrayUtils::first($conditions);
 
         if (false === $conditions) {
             return null;
@@ -382,7 +382,7 @@ class LocationType
     public function lastConditions(): ?Conditions
     {
         $conditions = $this->conditions ?? [];
-        $conditions = end($conditions);
+        $conditions = InvoiceSuiteArrayUtils::last($conditions);
 
         if (false === $conditions) {
             return null;
@@ -438,7 +438,7 @@ class LocationType
             $this->conditions = [];
         }
 
-        if ([] === $this->conditions) {
+        if (InvoiceSuiteArrayUtils::empty($this->conditions)) {
             $this->addOnceToConditions(new Conditions());
         }
 
@@ -691,7 +691,7 @@ class LocationType
     public function firstValidityPeriod(): ?ValidityPeriod
     {
         $validityPeriod = $this->validityPeriod ?? [];
-        $validityPeriod = reset($validityPeriod);
+        $validityPeriod = InvoiceSuiteArrayUtils::first($validityPeriod);
 
         if (false === $validityPeriod) {
             return null;
@@ -706,7 +706,7 @@ class LocationType
     public function lastValidityPeriod(): ?ValidityPeriod
     {
         $validityPeriod = $this->validityPeriod ?? [];
-        $validityPeriod = end($validityPeriod);
+        $validityPeriod = InvoiceSuiteArrayUtils::last($validityPeriod);
 
         if (false === $validityPeriod) {
             return null;
@@ -762,7 +762,7 @@ class LocationType
             $this->validityPeriod = [];
         }
 
-        if ([] === $this->validityPeriod) {
+        if (InvoiceSuiteArrayUtils::empty($this->validityPeriod)) {
             $this->addOnceToValidityPeriod(new ValidityPeriod());
         }
 
@@ -855,7 +855,7 @@ class LocationType
     public function firstSubsidiaryLocation(): ?SubsidiaryLocation
     {
         $subsidiaryLocation = $this->subsidiaryLocation ?? [];
-        $subsidiaryLocation = reset($subsidiaryLocation);
+        $subsidiaryLocation = InvoiceSuiteArrayUtils::first($subsidiaryLocation);
 
         if (false === $subsidiaryLocation) {
             return null;
@@ -870,7 +870,7 @@ class LocationType
     public function lastSubsidiaryLocation(): ?SubsidiaryLocation
     {
         $subsidiaryLocation = $this->subsidiaryLocation ?? [];
-        $subsidiaryLocation = end($subsidiaryLocation);
+        $subsidiaryLocation = InvoiceSuiteArrayUtils::last($subsidiaryLocation);
 
         if (false === $subsidiaryLocation) {
             return null;
@@ -926,7 +926,7 @@ class LocationType
             $this->subsidiaryLocation = [];
         }
 
-        if ([] === $this->subsidiaryLocation) {
+        if (InvoiceSuiteArrayUtils::empty($this->subsidiaryLocation)) {
             $this->addOnceToSubsidiaryLocation(new SubsidiaryLocation());
         }
 
@@ -979,7 +979,7 @@ class LocationType
     public function firstLocationCoordinate(): ?LocationCoordinate
     {
         $locationCoordinate = $this->locationCoordinate ?? [];
-        $locationCoordinate = reset($locationCoordinate);
+        $locationCoordinate = InvoiceSuiteArrayUtils::first($locationCoordinate);
 
         if (false === $locationCoordinate) {
             return null;
@@ -994,7 +994,7 @@ class LocationType
     public function lastLocationCoordinate(): ?LocationCoordinate
     {
         $locationCoordinate = $this->locationCoordinate ?? [];
-        $locationCoordinate = end($locationCoordinate);
+        $locationCoordinate = InvoiceSuiteArrayUtils::last($locationCoordinate);
 
         if (false === $locationCoordinate) {
             return null;
@@ -1050,7 +1050,7 @@ class LocationType
             $this->locationCoordinate = [];
         }
 
-        if ([] === $this->locationCoordinate) {
+        if (InvoiceSuiteArrayUtils::empty($this->locationCoordinate)) {
             $this->addOnceToLocationCoordinate(new LocationCoordinate());
         }
 

@@ -198,7 +198,7 @@ class EndorsementType
     public function firstRemarks(): ?Remarks
     {
         $remarks = $this->remarks ?? [];
-        $remarks = reset($remarks);
+        $remarks = InvoiceSuiteArrayUtils::first($remarks);
 
         if (false === $remarks) {
             return null;
@@ -213,7 +213,7 @@ class EndorsementType
     public function lastRemarks(): ?Remarks
     {
         $remarks = $this->remarks ?? [];
-        $remarks = end($remarks);
+        $remarks = InvoiceSuiteArrayUtils::last($remarks);
 
         if (false === $remarks) {
             return null;
@@ -269,7 +269,7 @@ class EndorsementType
             $this->remarks = [];
         }
 
-        if ([] === $this->remarks) {
+        if (InvoiceSuiteArrayUtils::empty($this->remarks)) {
             $this->addOnceToRemarks(new Remarks());
         }
 
@@ -362,7 +362,7 @@ class EndorsementType
     public function firstSignature(): ?Signature
     {
         $signature = $this->signature ?? [];
-        $signature = reset($signature);
+        $signature = InvoiceSuiteArrayUtils::first($signature);
 
         if (false === $signature) {
             return null;
@@ -377,7 +377,7 @@ class EndorsementType
     public function lastSignature(): ?Signature
     {
         $signature = $this->signature ?? [];
-        $signature = end($signature);
+        $signature = InvoiceSuiteArrayUtils::last($signature);
 
         if (false === $signature) {
             return null;
@@ -433,7 +433,7 @@ class EndorsementType
             $this->signature = [];
         }
 
-        if ([] === $this->signature) {
+        if (InvoiceSuiteArrayUtils::empty($this->signature)) {
             $this->addOnceToSignature(new Signature());
         }
 

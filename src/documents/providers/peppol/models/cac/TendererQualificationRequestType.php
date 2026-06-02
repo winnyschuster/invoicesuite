@@ -272,7 +272,7 @@ class TendererQualificationRequestType
     public function firstPersonalSituation(): ?PersonalSituation
     {
         $personalSituation = $this->personalSituation ?? [];
-        $personalSituation = reset($personalSituation);
+        $personalSituation = InvoiceSuiteArrayUtils::first($personalSituation);
 
         if (false === $personalSituation) {
             return null;
@@ -287,7 +287,7 @@ class TendererQualificationRequestType
     public function lastPersonalSituation(): ?PersonalSituation
     {
         $personalSituation = $this->personalSituation ?? [];
-        $personalSituation = end($personalSituation);
+        $personalSituation = InvoiceSuiteArrayUtils::last($personalSituation);
 
         if (false === $personalSituation) {
             return null;
@@ -343,7 +343,7 @@ class TendererQualificationRequestType
             $this->personalSituation = [];
         }
 
-        if ([] === $this->personalSituation) {
+        if (InvoiceSuiteArrayUtils::empty($this->personalSituation)) {
             $this->addOnceToPersonalSituation(new PersonalSituation());
         }
 
@@ -476,7 +476,7 @@ class TendererQualificationRequestType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -491,7 +491,7 @@ class TendererQualificationRequestType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -547,7 +547,7 @@ class TendererQualificationRequestType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -600,7 +600,7 @@ class TendererQualificationRequestType
     public function firstRequiredBusinessClassificationScheme(): ?RequiredBusinessClassificationScheme
     {
         $requiredBusinessClassificationScheme = $this->requiredBusinessClassificationScheme ?? [];
-        $requiredBusinessClassificationScheme = reset($requiredBusinessClassificationScheme);
+        $requiredBusinessClassificationScheme = InvoiceSuiteArrayUtils::first($requiredBusinessClassificationScheme);
 
         if (false === $requiredBusinessClassificationScheme) {
             return null;
@@ -615,7 +615,7 @@ class TendererQualificationRequestType
     public function lastRequiredBusinessClassificationScheme(): ?RequiredBusinessClassificationScheme
     {
         $requiredBusinessClassificationScheme = $this->requiredBusinessClassificationScheme ?? [];
-        $requiredBusinessClassificationScheme = end($requiredBusinessClassificationScheme);
+        $requiredBusinessClassificationScheme = InvoiceSuiteArrayUtils::last($requiredBusinessClassificationScheme);
 
         if (false === $requiredBusinessClassificationScheme) {
             return null;
@@ -671,7 +671,7 @@ class TendererQualificationRequestType
             $this->requiredBusinessClassificationScheme = [];
         }
 
-        if ([] === $this->requiredBusinessClassificationScheme) {
+        if (InvoiceSuiteArrayUtils::empty($this->requiredBusinessClassificationScheme)) {
             $this->addOnceToRequiredBusinessClassificationScheme(new RequiredBusinessClassificationScheme());
         }
 
@@ -724,7 +724,7 @@ class TendererQualificationRequestType
     public function firstTechnicalEvaluationCriterion(): ?TechnicalEvaluationCriterion
     {
         $technicalEvaluationCriterion = $this->technicalEvaluationCriterion ?? [];
-        $technicalEvaluationCriterion = reset($technicalEvaluationCriterion);
+        $technicalEvaluationCriterion = InvoiceSuiteArrayUtils::first($technicalEvaluationCriterion);
 
         if (false === $technicalEvaluationCriterion) {
             return null;
@@ -739,7 +739,7 @@ class TendererQualificationRequestType
     public function lastTechnicalEvaluationCriterion(): ?TechnicalEvaluationCriterion
     {
         $technicalEvaluationCriterion = $this->technicalEvaluationCriterion ?? [];
-        $technicalEvaluationCriterion = end($technicalEvaluationCriterion);
+        $technicalEvaluationCriterion = InvoiceSuiteArrayUtils::last($technicalEvaluationCriterion);
 
         if (false === $technicalEvaluationCriterion) {
             return null;
@@ -795,7 +795,7 @@ class TendererQualificationRequestType
             $this->technicalEvaluationCriterion = [];
         }
 
-        if ([] === $this->technicalEvaluationCriterion) {
+        if (InvoiceSuiteArrayUtils::empty($this->technicalEvaluationCriterion)) {
             $this->addOnceToTechnicalEvaluationCriterion(new TechnicalEvaluationCriterion());
         }
 
@@ -848,7 +848,7 @@ class TendererQualificationRequestType
     public function firstFinancialEvaluationCriterion(): ?FinancialEvaluationCriterion
     {
         $financialEvaluationCriterion = $this->financialEvaluationCriterion ?? [];
-        $financialEvaluationCriterion = reset($financialEvaluationCriterion);
+        $financialEvaluationCriterion = InvoiceSuiteArrayUtils::first($financialEvaluationCriterion);
 
         if (false === $financialEvaluationCriterion) {
             return null;
@@ -863,7 +863,7 @@ class TendererQualificationRequestType
     public function lastFinancialEvaluationCriterion(): ?FinancialEvaluationCriterion
     {
         $financialEvaluationCriterion = $this->financialEvaluationCriterion ?? [];
-        $financialEvaluationCriterion = end($financialEvaluationCriterion);
+        $financialEvaluationCriterion = InvoiceSuiteArrayUtils::last($financialEvaluationCriterion);
 
         if (false === $financialEvaluationCriterion) {
             return null;
@@ -919,7 +919,7 @@ class TendererQualificationRequestType
             $this->financialEvaluationCriterion = [];
         }
 
-        if ([] === $this->financialEvaluationCriterion) {
+        if (InvoiceSuiteArrayUtils::empty($this->financialEvaluationCriterion)) {
             $this->addOnceToFinancialEvaluationCriterion(new FinancialEvaluationCriterion());
         }
 
@@ -972,7 +972,7 @@ class TendererQualificationRequestType
     public function firstSpecificTendererRequirement(): ?SpecificTendererRequirement
     {
         $specificTendererRequirement = $this->specificTendererRequirement ?? [];
-        $specificTendererRequirement = reset($specificTendererRequirement);
+        $specificTendererRequirement = InvoiceSuiteArrayUtils::first($specificTendererRequirement);
 
         if (false === $specificTendererRequirement) {
             return null;
@@ -987,7 +987,7 @@ class TendererQualificationRequestType
     public function lastSpecificTendererRequirement(): ?SpecificTendererRequirement
     {
         $specificTendererRequirement = $this->specificTendererRequirement ?? [];
-        $specificTendererRequirement = end($specificTendererRequirement);
+        $specificTendererRequirement = InvoiceSuiteArrayUtils::last($specificTendererRequirement);
 
         if (false === $specificTendererRequirement) {
             return null;
@@ -1043,7 +1043,7 @@ class TendererQualificationRequestType
             $this->specificTendererRequirement = [];
         }
 
-        if ([] === $this->specificTendererRequirement) {
+        if (InvoiceSuiteArrayUtils::empty($this->specificTendererRequirement)) {
             $this->addOnceToSpecificTendererRequirement(new SpecificTendererRequirement());
         }
 
@@ -1096,7 +1096,7 @@ class TendererQualificationRequestType
     public function firstEconomicOperatorRole(): ?EconomicOperatorRole
     {
         $economicOperatorRole = $this->economicOperatorRole ?? [];
-        $economicOperatorRole = reset($economicOperatorRole);
+        $economicOperatorRole = InvoiceSuiteArrayUtils::first($economicOperatorRole);
 
         if (false === $economicOperatorRole) {
             return null;
@@ -1111,7 +1111,7 @@ class TendererQualificationRequestType
     public function lastEconomicOperatorRole(): ?EconomicOperatorRole
     {
         $economicOperatorRole = $this->economicOperatorRole ?? [];
-        $economicOperatorRole = end($economicOperatorRole);
+        $economicOperatorRole = InvoiceSuiteArrayUtils::last($economicOperatorRole);
 
         if (false === $economicOperatorRole) {
             return null;
@@ -1167,7 +1167,7 @@ class TendererQualificationRequestType
             $this->economicOperatorRole = [];
         }
 
-        if ([] === $this->economicOperatorRole) {
+        if (InvoiceSuiteArrayUtils::empty($this->economicOperatorRole)) {
             $this->addOnceToEconomicOperatorRole(new EconomicOperatorRole());
         }
 

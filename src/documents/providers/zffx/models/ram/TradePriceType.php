@@ -226,7 +226,7 @@ class TradePriceType
             $this->appliedTradeAllowanceCharge = [];
         }
 
-        if ([] === $this->appliedTradeAllowanceCharge) {
+        if (InvoiceSuiteArrayUtils::empty($this->appliedTradeAllowanceCharge)) {
             $this->addOnceToAppliedTradeAllowanceCharge(new TradeAllowanceChargeType());
         }
 

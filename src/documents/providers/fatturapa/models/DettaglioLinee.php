@@ -381,7 +381,7 @@ final class DettaglioLinee
             $this->codiceArticolo = [];
         }
 
-        if ([] === $this->codiceArticolo) {
+        if (InvoiceSuiteArrayUtils::empty($this->codiceArticolo)) {
             $this->addOnceToCodiceArticolo(new CodiceArticolo());
         }
 
@@ -711,7 +711,7 @@ final class DettaglioLinee
             $this->scontoMaggiorazione = [];
         }
 
-        if ([] === $this->scontoMaggiorazione) {
+        if (InvoiceSuiteArrayUtils::empty($this->scontoMaggiorazione)) {
             $this->addOnceToScontoMaggiorazione(new ScontoMaggiorazione());
         }
 
@@ -1005,7 +1005,7 @@ final class DettaglioLinee
             $this->altriDatiGestionali = [];
         }
 
-        if ([] === $this->altriDatiGestionali) {
+        if (InvoiceSuiteArrayUtils::empty($this->altriDatiGestionali)) {
             $this->addOnceToAltriDatiGestionali(new AltriDatiGestionali());
         }
 

@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use JsonSerializable;
 
 /**
@@ -110,7 +111,7 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO implements JsonSeri
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($allowanceCharge = reset($this->allowanceCharges)) !== false) {
+        if (($allowanceCharge = InvoiceSuiteArrayUtils::first($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -130,7 +131,7 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO implements JsonSeri
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($allowanceCharge = next($this->allowanceCharges)) !== false) {
+        if (($allowanceCharge = InvoiceSuiteArrayUtils::next($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -150,7 +151,7 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO implements JsonSeri
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($allowanceCharge = prev($this->allowanceCharges)) !== false) {
+        if (($allowanceCharge = InvoiceSuiteArrayUtils::previous($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -170,7 +171,7 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO implements JsonSeri
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($allowanceCharge = end($this->allowanceCharges)) !== false) {
+        if (($allowanceCharge = InvoiceSuiteArrayUtils::last($this->allowanceCharges)) !== false) {
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -258,7 +259,7 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO implements JsonSeri
     public function filterAllowanceCharge(
         callable $callback
     ): array {
-        return array_filter($this->allowanceCharges, $callback);
+        return InvoiceSuiteArrayUtils::filter($this->allowanceCharges, $callback);
     }
 
     /**
@@ -276,8 +277,8 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO implements JsonSeri
     ): static {
         $filteredAllowanceCharge = $this->filterAllowanceCharge($filterCallback);
 
-        if ([] !== $filteredAllowanceCharge) {
-            $allowanceCharge = reset($filteredAllowanceCharge);
+        if (!InvoiceSuiteArrayUtils::empty($filteredAllowanceCharge)) {
+            $allowanceCharge = InvoiceSuiteArrayUtils::first($filteredAllowanceCharge);
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -301,8 +302,8 @@ class InvoiceSuitePriceGrossDTO extends InvoiceSuitePriceDTO implements JsonSeri
     ): static {
         $filteredAllowanceCharge = $this->filterAllowanceCharge($filterCallback);
 
-        if ([] !== $filteredAllowanceCharge) {
-            $allowanceCharge = end($filteredAllowanceCharge);
+        if (!InvoiceSuiteArrayUtils::empty($filteredAllowanceCharge)) {
+            $allowanceCharge = InvoiceSuiteArrayUtils::last($filteredAllowanceCharge);
             $callback($allowanceCharge);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();

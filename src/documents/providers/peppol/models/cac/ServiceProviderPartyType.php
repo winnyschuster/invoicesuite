@@ -197,7 +197,7 @@ class ServiceProviderPartyType
     public function firstServiceType(): ?ServiceType
     {
         $serviceType = $this->serviceType ?? [];
-        $serviceType = reset($serviceType);
+        $serviceType = InvoiceSuiteArrayUtils::first($serviceType);
 
         if (false === $serviceType) {
             return null;
@@ -212,7 +212,7 @@ class ServiceProviderPartyType
     public function lastServiceType(): ?ServiceType
     {
         $serviceType = $this->serviceType ?? [];
-        $serviceType = end($serviceType);
+        $serviceType = InvoiceSuiteArrayUtils::last($serviceType);
 
         if (false === $serviceType) {
             return null;
@@ -268,7 +268,7 @@ class ServiceProviderPartyType
             $this->serviceType = [];
         }
 
-        if ([] === $this->serviceType) {
+        if (InvoiceSuiteArrayUtils::empty($this->serviceType)) {
             $this->addOnceToServiceType(new ServiceType());
         }
 

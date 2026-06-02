@@ -216,7 +216,7 @@ class OrderLineType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -231,7 +231,7 @@ class OrderLineType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -287,7 +287,7 @@ class OrderLineType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -380,7 +380,7 @@ class OrderLineType
     public function firstSellerProposedSubstituteLineItem(): ?SellerProposedSubstituteLineItem
     {
         $sellerProposedSubstituteLineItem = $this->sellerProposedSubstituteLineItem ?? [];
-        $sellerProposedSubstituteLineItem = reset($sellerProposedSubstituteLineItem);
+        $sellerProposedSubstituteLineItem = InvoiceSuiteArrayUtils::first($sellerProposedSubstituteLineItem);
 
         if (false === $sellerProposedSubstituteLineItem) {
             return null;
@@ -395,7 +395,7 @@ class OrderLineType
     public function lastSellerProposedSubstituteLineItem(): ?SellerProposedSubstituteLineItem
     {
         $sellerProposedSubstituteLineItem = $this->sellerProposedSubstituteLineItem ?? [];
-        $sellerProposedSubstituteLineItem = end($sellerProposedSubstituteLineItem);
+        $sellerProposedSubstituteLineItem = InvoiceSuiteArrayUtils::last($sellerProposedSubstituteLineItem);
 
         if (false === $sellerProposedSubstituteLineItem) {
             return null;
@@ -451,7 +451,7 @@ class OrderLineType
             $this->sellerProposedSubstituteLineItem = [];
         }
 
-        if ([] === $this->sellerProposedSubstituteLineItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->sellerProposedSubstituteLineItem)) {
             $this->addOnceToSellerProposedSubstituteLineItem(new SellerProposedSubstituteLineItem());
         }
 
@@ -504,7 +504,7 @@ class OrderLineType
     public function firstSellerSubstitutedLineItem(): ?SellerSubstitutedLineItem
     {
         $sellerSubstitutedLineItem = $this->sellerSubstitutedLineItem ?? [];
-        $sellerSubstitutedLineItem = reset($sellerSubstitutedLineItem);
+        $sellerSubstitutedLineItem = InvoiceSuiteArrayUtils::first($sellerSubstitutedLineItem);
 
         if (false === $sellerSubstitutedLineItem) {
             return null;
@@ -519,7 +519,7 @@ class OrderLineType
     public function lastSellerSubstitutedLineItem(): ?SellerSubstitutedLineItem
     {
         $sellerSubstitutedLineItem = $this->sellerSubstitutedLineItem ?? [];
-        $sellerSubstitutedLineItem = end($sellerSubstitutedLineItem);
+        $sellerSubstitutedLineItem = InvoiceSuiteArrayUtils::last($sellerSubstitutedLineItem);
 
         if (false === $sellerSubstitutedLineItem) {
             return null;
@@ -575,7 +575,7 @@ class OrderLineType
             $this->sellerSubstitutedLineItem = [];
         }
 
-        if ([] === $this->sellerSubstitutedLineItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->sellerSubstitutedLineItem)) {
             $this->addOnceToSellerSubstitutedLineItem(new SellerSubstitutedLineItem());
         }
 
@@ -628,7 +628,7 @@ class OrderLineType
     public function firstBuyerProposedSubstituteLineItem(): ?BuyerProposedSubstituteLineItem
     {
         $buyerProposedSubstituteLineItem = $this->buyerProposedSubstituteLineItem ?? [];
-        $buyerProposedSubstituteLineItem = reset($buyerProposedSubstituteLineItem);
+        $buyerProposedSubstituteLineItem = InvoiceSuiteArrayUtils::first($buyerProposedSubstituteLineItem);
 
         if (false === $buyerProposedSubstituteLineItem) {
             return null;
@@ -643,7 +643,7 @@ class OrderLineType
     public function lastBuyerProposedSubstituteLineItem(): ?BuyerProposedSubstituteLineItem
     {
         $buyerProposedSubstituteLineItem = $this->buyerProposedSubstituteLineItem ?? [];
-        $buyerProposedSubstituteLineItem = end($buyerProposedSubstituteLineItem);
+        $buyerProposedSubstituteLineItem = InvoiceSuiteArrayUtils::last($buyerProposedSubstituteLineItem);
 
         if (false === $buyerProposedSubstituteLineItem) {
             return null;
@@ -699,7 +699,7 @@ class OrderLineType
             $this->buyerProposedSubstituteLineItem = [];
         }
 
-        if ([] === $this->buyerProposedSubstituteLineItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->buyerProposedSubstituteLineItem)) {
             $this->addOnceToBuyerProposedSubstituteLineItem(new BuyerProposedSubstituteLineItem());
         }
 
@@ -832,7 +832,7 @@ class OrderLineType
     public function firstOrderLineReference(): ?OrderLineReference
     {
         $orderLineReference = $this->orderLineReference ?? [];
-        $orderLineReference = reset($orderLineReference);
+        $orderLineReference = InvoiceSuiteArrayUtils::first($orderLineReference);
 
         if (false === $orderLineReference) {
             return null;
@@ -847,7 +847,7 @@ class OrderLineType
     public function lastOrderLineReference(): ?OrderLineReference
     {
         $orderLineReference = $this->orderLineReference ?? [];
-        $orderLineReference = end($orderLineReference);
+        $orderLineReference = InvoiceSuiteArrayUtils::last($orderLineReference);
 
         if (false === $orderLineReference) {
             return null;
@@ -903,7 +903,7 @@ class OrderLineType
             $this->orderLineReference = [];
         }
 
-        if ([] === $this->orderLineReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->orderLineReference)) {
             $this->addOnceToOrderLineReference(new OrderLineReference());
         }
 
@@ -956,7 +956,7 @@ class OrderLineType
     public function firstDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = reset($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::first($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -971,7 +971,7 @@ class OrderLineType
     public function lastDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = end($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::last($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -1027,7 +1027,7 @@ class OrderLineType
             $this->documentReference = [];
         }
 
-        if ([] === $this->documentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->documentReference)) {
             $this->addOnceToDocumentReference(new DocumentReference());
         }
 

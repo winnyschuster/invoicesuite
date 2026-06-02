@@ -730,7 +730,7 @@ class HeaderTradeSettlementType
             $this->specifiedTradeSettlementPaymentMeans = [];
         }
 
-        if ([] === $this->specifiedTradeSettlementPaymentMeans) {
+        if (InvoiceSuiteArrayUtils::empty($this->specifiedTradeSettlementPaymentMeans)) {
             $this->addOnceToSpecifiedTradeSettlementPaymentMeans(new TradeSettlementPaymentMeansType());
         }
 
@@ -824,7 +824,7 @@ class HeaderTradeSettlementType
             $this->applicableTradeTax = [];
         }
 
-        if ([] === $this->applicableTradeTax) {
+        if (InvoiceSuiteArrayUtils::empty($this->applicableTradeTax)) {
             $this->addOnceToApplicableTradeTax(new TradeTaxType());
         }
 
@@ -958,7 +958,7 @@ class HeaderTradeSettlementType
             $this->specifiedTradeAllowanceCharge = [];
         }
 
-        if ([] === $this->specifiedTradeAllowanceCharge) {
+        if (InvoiceSuiteArrayUtils::empty($this->specifiedTradeAllowanceCharge)) {
             $this->addOnceToSpecifiedTradeAllowanceCharge(new TradeAllowanceChargeType());
         }
 
@@ -1052,7 +1052,7 @@ class HeaderTradeSettlementType
             $this->specifiedLogisticsServiceCharge = [];
         }
 
-        if ([] === $this->specifiedLogisticsServiceCharge) {
+        if (InvoiceSuiteArrayUtils::empty($this->specifiedLogisticsServiceCharge)) {
             $this->addOnceToSpecifiedLogisticsServiceCharge(new LogisticsServiceChargeType());
         }
 
@@ -1146,7 +1146,7 @@ class HeaderTradeSettlementType
             $this->specifiedTradePaymentTerms = [];
         }
 
-        if ([] === $this->specifiedTradePaymentTerms) {
+        if (InvoiceSuiteArrayUtils::empty($this->specifiedTradePaymentTerms)) {
             $this->addOnceToSpecifiedTradePaymentTerms(new TradePaymentTermsType());
         }
 
@@ -1280,7 +1280,7 @@ class HeaderTradeSettlementType
             $this->invoiceReferencedDocument = [];
         }
 
-        if ([] === $this->invoiceReferencedDocument) {
+        if (InvoiceSuiteArrayUtils::empty($this->invoiceReferencedDocument)) {
             $this->addOnceToInvoiceReferencedDocument(new ReferencedDocumentType());
         }
 
@@ -1374,7 +1374,7 @@ class HeaderTradeSettlementType
             $this->receivableSpecifiedTradeAccountingAccount = [];
         }
 
-        if ([] === $this->receivableSpecifiedTradeAccountingAccount) {
+        if (InvoiceSuiteArrayUtils::empty($this->receivableSpecifiedTradeAccountingAccount)) {
             $this->addOnceToReceivableSpecifiedTradeAccountingAccount(new TradeAccountingAccountType());
         }
 
@@ -1468,7 +1468,7 @@ class HeaderTradeSettlementType
             $this->specifiedAdvancePayment = [];
         }
 
-        if ([] === $this->specifiedAdvancePayment) {
+        if (InvoiceSuiteArrayUtils::empty($this->specifiedAdvancePayment)) {
             $this->addOnceToSpecifiedAdvancePayment(new AdvancePaymentType());
         }
 

@@ -813,7 +813,7 @@ class TransportEquipmentType
     public function firstReferencedConsignmentID(): ?ReferencedConsignmentID
     {
         $referencedConsignmentID = $this->referencedConsignmentID ?? [];
-        $referencedConsignmentID = reset($referencedConsignmentID);
+        $referencedConsignmentID = InvoiceSuiteArrayUtils::first($referencedConsignmentID);
 
         if (false === $referencedConsignmentID) {
             return null;
@@ -828,7 +828,7 @@ class TransportEquipmentType
     public function lastReferencedConsignmentID(): ?ReferencedConsignmentID
     {
         $referencedConsignmentID = $this->referencedConsignmentID ?? [];
-        $referencedConsignmentID = end($referencedConsignmentID);
+        $referencedConsignmentID = InvoiceSuiteArrayUtils::last($referencedConsignmentID);
 
         if (false === $referencedConsignmentID) {
             return null;
@@ -884,7 +884,7 @@ class TransportEquipmentType
             $this->referencedConsignmentID = [];
         }
 
-        if ([] === $this->referencedConsignmentID) {
+        if (InvoiceSuiteArrayUtils::empty($this->referencedConsignmentID)) {
             $this->addOnceToReferencedConsignmentID(new ReferencedConsignmentID());
         }
 
@@ -1207,7 +1207,7 @@ class TransportEquipmentType
     public function firstInformation(): ?Information
     {
         $information = $this->information ?? [];
-        $information = reset($information);
+        $information = InvoiceSuiteArrayUtils::first($information);
 
         if (false === $information) {
             return null;
@@ -1222,7 +1222,7 @@ class TransportEquipmentType
     public function lastInformation(): ?Information
     {
         $information = $this->information ?? [];
-        $information = end($information);
+        $information = InvoiceSuiteArrayUtils::last($information);
 
         if (false === $information) {
             return null;
@@ -1278,7 +1278,7 @@ class TransportEquipmentType
             $this->information = [];
         }
 
-        if ([] === $this->information) {
+        if (InvoiceSuiteArrayUtils::empty($this->information)) {
             $this->addOnceToInformation(new Information());
         }
 
@@ -1631,7 +1631,7 @@ class TransportEquipmentType
     public function firstDamageRemarks(): ?DamageRemarks
     {
         $damageRemarks = $this->damageRemarks ?? [];
-        $damageRemarks = reset($damageRemarks);
+        $damageRemarks = InvoiceSuiteArrayUtils::first($damageRemarks);
 
         if (false === $damageRemarks) {
             return null;
@@ -1646,7 +1646,7 @@ class TransportEquipmentType
     public function lastDamageRemarks(): ?DamageRemarks
     {
         $damageRemarks = $this->damageRemarks ?? [];
-        $damageRemarks = end($damageRemarks);
+        $damageRemarks = InvoiceSuiteArrayUtils::last($damageRemarks);
 
         if (false === $damageRemarks) {
             return null;
@@ -1702,7 +1702,7 @@ class TransportEquipmentType
             $this->damageRemarks = [];
         }
 
-        if ([] === $this->damageRemarks) {
+        if (InvoiceSuiteArrayUtils::empty($this->damageRemarks)) {
             $this->addOnceToDamageRemarks(new DamageRemarks());
         }
 
@@ -1755,7 +1755,7 @@ class TransportEquipmentType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -1770,7 +1770,7 @@ class TransportEquipmentType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -1826,7 +1826,7 @@ class TransportEquipmentType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -1879,7 +1879,7 @@ class TransportEquipmentType
     public function firstSpecialTransportRequirements(): ?SpecialTransportRequirements
     {
         $specialTransportRequirements = $this->specialTransportRequirements ?? [];
-        $specialTransportRequirements = reset($specialTransportRequirements);
+        $specialTransportRequirements = InvoiceSuiteArrayUtils::first($specialTransportRequirements);
 
         if (false === $specialTransportRequirements) {
             return null;
@@ -1894,7 +1894,7 @@ class TransportEquipmentType
     public function lastSpecialTransportRequirements(): ?SpecialTransportRequirements
     {
         $specialTransportRequirements = $this->specialTransportRequirements ?? [];
-        $specialTransportRequirements = end($specialTransportRequirements);
+        $specialTransportRequirements = InvoiceSuiteArrayUtils::last($specialTransportRequirements);
 
         if (false === $specialTransportRequirements) {
             return null;
@@ -1950,7 +1950,7 @@ class TransportEquipmentType
             $this->specialTransportRequirements = [];
         }
 
-        if ([] === $this->specialTransportRequirements) {
+        if (InvoiceSuiteArrayUtils::empty($this->specialTransportRequirements)) {
             $this->addOnceToSpecialTransportRequirements(new SpecialTransportRequirements());
         }
 
@@ -2233,7 +2233,7 @@ class TransportEquipmentType
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
         $measurementDimension = $this->measurementDimension ?? [];
-        $measurementDimension = reset($measurementDimension);
+        $measurementDimension = InvoiceSuiteArrayUtils::first($measurementDimension);
 
         if (false === $measurementDimension) {
             return null;
@@ -2248,7 +2248,7 @@ class TransportEquipmentType
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
         $measurementDimension = $this->measurementDimension ?? [];
-        $measurementDimension = end($measurementDimension);
+        $measurementDimension = InvoiceSuiteArrayUtils::last($measurementDimension);
 
         if (false === $measurementDimension) {
             return null;
@@ -2304,7 +2304,7 @@ class TransportEquipmentType
             $this->measurementDimension = [];
         }
 
-        if ([] === $this->measurementDimension) {
+        if (InvoiceSuiteArrayUtils::empty($this->measurementDimension)) {
             $this->addOnceToMeasurementDimension(new MeasurementDimension());
         }
 
@@ -2357,7 +2357,7 @@ class TransportEquipmentType
     public function firstTransportEquipmentSeal(): ?TransportEquipmentSeal
     {
         $transportEquipmentSeal = $this->transportEquipmentSeal ?? [];
-        $transportEquipmentSeal = reset($transportEquipmentSeal);
+        $transportEquipmentSeal = InvoiceSuiteArrayUtils::first($transportEquipmentSeal);
 
         if (false === $transportEquipmentSeal) {
             return null;
@@ -2372,7 +2372,7 @@ class TransportEquipmentType
     public function lastTransportEquipmentSeal(): ?TransportEquipmentSeal
     {
         $transportEquipmentSeal = $this->transportEquipmentSeal ?? [];
-        $transportEquipmentSeal = end($transportEquipmentSeal);
+        $transportEquipmentSeal = InvoiceSuiteArrayUtils::last($transportEquipmentSeal);
 
         if (false === $transportEquipmentSeal) {
             return null;
@@ -2428,7 +2428,7 @@ class TransportEquipmentType
             $this->transportEquipmentSeal = [];
         }
 
-        if ([] === $this->transportEquipmentSeal) {
+        if (InvoiceSuiteArrayUtils::empty($this->transportEquipmentSeal)) {
             $this->addOnceToTransportEquipmentSeal(new TransportEquipmentSeal());
         }
 
@@ -2881,7 +2881,7 @@ class TransportEquipmentType
     public function firstPositioningTransportEvent(): ?PositioningTransportEvent
     {
         $positioningTransportEvent = $this->positioningTransportEvent ?? [];
-        $positioningTransportEvent = reset($positioningTransportEvent);
+        $positioningTransportEvent = InvoiceSuiteArrayUtils::first($positioningTransportEvent);
 
         if (false === $positioningTransportEvent) {
             return null;
@@ -2896,7 +2896,7 @@ class TransportEquipmentType
     public function lastPositioningTransportEvent(): ?PositioningTransportEvent
     {
         $positioningTransportEvent = $this->positioningTransportEvent ?? [];
-        $positioningTransportEvent = end($positioningTransportEvent);
+        $positioningTransportEvent = InvoiceSuiteArrayUtils::last($positioningTransportEvent);
 
         if (false === $positioningTransportEvent) {
             return null;
@@ -2952,7 +2952,7 @@ class TransportEquipmentType
             $this->positioningTransportEvent = [];
         }
 
-        if ([] === $this->positioningTransportEvent) {
+        if (InvoiceSuiteArrayUtils::empty($this->positioningTransportEvent)) {
             $this->addOnceToPositioningTransportEvent(new PositioningTransportEvent());
         }
 
@@ -3005,7 +3005,7 @@ class TransportEquipmentType
     public function firstQuarantineTransportEvent(): ?QuarantineTransportEvent
     {
         $quarantineTransportEvent = $this->quarantineTransportEvent ?? [];
-        $quarantineTransportEvent = reset($quarantineTransportEvent);
+        $quarantineTransportEvent = InvoiceSuiteArrayUtils::first($quarantineTransportEvent);
 
         if (false === $quarantineTransportEvent) {
             return null;
@@ -3020,7 +3020,7 @@ class TransportEquipmentType
     public function lastQuarantineTransportEvent(): ?QuarantineTransportEvent
     {
         $quarantineTransportEvent = $this->quarantineTransportEvent ?? [];
-        $quarantineTransportEvent = end($quarantineTransportEvent);
+        $quarantineTransportEvent = InvoiceSuiteArrayUtils::last($quarantineTransportEvent);
 
         if (false === $quarantineTransportEvent) {
             return null;
@@ -3076,7 +3076,7 @@ class TransportEquipmentType
             $this->quarantineTransportEvent = [];
         }
 
-        if ([] === $this->quarantineTransportEvent) {
+        if (InvoiceSuiteArrayUtils::empty($this->quarantineTransportEvent)) {
             $this->addOnceToQuarantineTransportEvent(new QuarantineTransportEvent());
         }
 
@@ -3129,7 +3129,7 @@ class TransportEquipmentType
     public function firstDeliveryTransportEvent(): ?DeliveryTransportEvent
     {
         $deliveryTransportEvent = $this->deliveryTransportEvent ?? [];
-        $deliveryTransportEvent = reset($deliveryTransportEvent);
+        $deliveryTransportEvent = InvoiceSuiteArrayUtils::first($deliveryTransportEvent);
 
         if (false === $deliveryTransportEvent) {
             return null;
@@ -3144,7 +3144,7 @@ class TransportEquipmentType
     public function lastDeliveryTransportEvent(): ?DeliveryTransportEvent
     {
         $deliveryTransportEvent = $this->deliveryTransportEvent ?? [];
-        $deliveryTransportEvent = end($deliveryTransportEvent);
+        $deliveryTransportEvent = InvoiceSuiteArrayUtils::last($deliveryTransportEvent);
 
         if (false === $deliveryTransportEvent) {
             return null;
@@ -3200,7 +3200,7 @@ class TransportEquipmentType
             $this->deliveryTransportEvent = [];
         }
 
-        if ([] === $this->deliveryTransportEvent) {
+        if (InvoiceSuiteArrayUtils::empty($this->deliveryTransportEvent)) {
             $this->addOnceToDeliveryTransportEvent(new DeliveryTransportEvent());
         }
 
@@ -3253,7 +3253,7 @@ class TransportEquipmentType
     public function firstPickupTransportEvent(): ?PickupTransportEvent
     {
         $pickupTransportEvent = $this->pickupTransportEvent ?? [];
-        $pickupTransportEvent = reset($pickupTransportEvent);
+        $pickupTransportEvent = InvoiceSuiteArrayUtils::first($pickupTransportEvent);
 
         if (false === $pickupTransportEvent) {
             return null;
@@ -3268,7 +3268,7 @@ class TransportEquipmentType
     public function lastPickupTransportEvent(): ?PickupTransportEvent
     {
         $pickupTransportEvent = $this->pickupTransportEvent ?? [];
-        $pickupTransportEvent = end($pickupTransportEvent);
+        $pickupTransportEvent = InvoiceSuiteArrayUtils::last($pickupTransportEvent);
 
         if (false === $pickupTransportEvent) {
             return null;
@@ -3324,7 +3324,7 @@ class TransportEquipmentType
             $this->pickupTransportEvent = [];
         }
 
-        if ([] === $this->pickupTransportEvent) {
+        if (InvoiceSuiteArrayUtils::empty($this->pickupTransportEvent)) {
             $this->addOnceToPickupTransportEvent(new PickupTransportEvent());
         }
 
@@ -3377,7 +3377,7 @@ class TransportEquipmentType
     public function firstHandlingTransportEvent(): ?HandlingTransportEvent
     {
         $handlingTransportEvent = $this->handlingTransportEvent ?? [];
-        $handlingTransportEvent = reset($handlingTransportEvent);
+        $handlingTransportEvent = InvoiceSuiteArrayUtils::first($handlingTransportEvent);
 
         if (false === $handlingTransportEvent) {
             return null;
@@ -3392,7 +3392,7 @@ class TransportEquipmentType
     public function lastHandlingTransportEvent(): ?HandlingTransportEvent
     {
         $handlingTransportEvent = $this->handlingTransportEvent ?? [];
-        $handlingTransportEvent = end($handlingTransportEvent);
+        $handlingTransportEvent = InvoiceSuiteArrayUtils::last($handlingTransportEvent);
 
         if (false === $handlingTransportEvent) {
             return null;
@@ -3448,7 +3448,7 @@ class TransportEquipmentType
             $this->handlingTransportEvent = [];
         }
 
-        if ([] === $this->handlingTransportEvent) {
+        if (InvoiceSuiteArrayUtils::empty($this->handlingTransportEvent)) {
             $this->addOnceToHandlingTransportEvent(new HandlingTransportEvent());
         }
 
@@ -3501,7 +3501,7 @@ class TransportEquipmentType
     public function firstLoadingTransportEvent(): ?LoadingTransportEvent
     {
         $loadingTransportEvent = $this->loadingTransportEvent ?? [];
-        $loadingTransportEvent = reset($loadingTransportEvent);
+        $loadingTransportEvent = InvoiceSuiteArrayUtils::first($loadingTransportEvent);
 
         if (false === $loadingTransportEvent) {
             return null;
@@ -3516,7 +3516,7 @@ class TransportEquipmentType
     public function lastLoadingTransportEvent(): ?LoadingTransportEvent
     {
         $loadingTransportEvent = $this->loadingTransportEvent ?? [];
-        $loadingTransportEvent = end($loadingTransportEvent);
+        $loadingTransportEvent = InvoiceSuiteArrayUtils::last($loadingTransportEvent);
 
         if (false === $loadingTransportEvent) {
             return null;
@@ -3572,7 +3572,7 @@ class TransportEquipmentType
             $this->loadingTransportEvent = [];
         }
 
-        if ([] === $this->loadingTransportEvent) {
+        if (InvoiceSuiteArrayUtils::empty($this->loadingTransportEvent)) {
             $this->addOnceToLoadingTransportEvent(new LoadingTransportEvent());
         }
 
@@ -3625,7 +3625,7 @@ class TransportEquipmentType
     public function firstTransportEvent(): ?TransportEvent
     {
         $transportEvent = $this->transportEvent ?? [];
-        $transportEvent = reset($transportEvent);
+        $transportEvent = InvoiceSuiteArrayUtils::first($transportEvent);
 
         if (false === $transportEvent) {
             return null;
@@ -3640,7 +3640,7 @@ class TransportEquipmentType
     public function lastTransportEvent(): ?TransportEvent
     {
         $transportEvent = $this->transportEvent ?? [];
-        $transportEvent = end($transportEvent);
+        $transportEvent = InvoiceSuiteArrayUtils::last($transportEvent);
 
         if (false === $transportEvent) {
             return null;
@@ -3696,7 +3696,7 @@ class TransportEquipmentType
             $this->transportEvent = [];
         }
 
-        if ([] === $this->transportEvent) {
+        if (InvoiceSuiteArrayUtils::empty($this->transportEvent)) {
             $this->addOnceToTransportEvent(new TransportEvent());
         }
 
@@ -3789,7 +3789,7 @@ class TransportEquipmentType
     public function firstHaulageTradingTerms(): ?HaulageTradingTerms
     {
         $haulageTradingTerms = $this->haulageTradingTerms ?? [];
-        $haulageTradingTerms = reset($haulageTradingTerms);
+        $haulageTradingTerms = InvoiceSuiteArrayUtils::first($haulageTradingTerms);
 
         if (false === $haulageTradingTerms) {
             return null;
@@ -3804,7 +3804,7 @@ class TransportEquipmentType
     public function lastHaulageTradingTerms(): ?HaulageTradingTerms
     {
         $haulageTradingTerms = $this->haulageTradingTerms ?? [];
-        $haulageTradingTerms = end($haulageTradingTerms);
+        $haulageTradingTerms = InvoiceSuiteArrayUtils::last($haulageTradingTerms);
 
         if (false === $haulageTradingTerms) {
             return null;
@@ -3860,7 +3860,7 @@ class TransportEquipmentType
             $this->haulageTradingTerms = [];
         }
 
-        if ([] === $this->haulageTradingTerms) {
+        if (InvoiceSuiteArrayUtils::empty($this->haulageTradingTerms)) {
             $this->addOnceToHaulageTradingTerms(new HaulageTradingTerms());
         }
 
@@ -3913,7 +3913,7 @@ class TransportEquipmentType
     public function firstHazardousGoodsTransit(): ?HazardousGoodsTransit
     {
         $hazardousGoodsTransit = $this->hazardousGoodsTransit ?? [];
-        $hazardousGoodsTransit = reset($hazardousGoodsTransit);
+        $hazardousGoodsTransit = InvoiceSuiteArrayUtils::first($hazardousGoodsTransit);
 
         if (false === $hazardousGoodsTransit) {
             return null;
@@ -3928,7 +3928,7 @@ class TransportEquipmentType
     public function lastHazardousGoodsTransit(): ?HazardousGoodsTransit
     {
         $hazardousGoodsTransit = $this->hazardousGoodsTransit ?? [];
-        $hazardousGoodsTransit = end($hazardousGoodsTransit);
+        $hazardousGoodsTransit = InvoiceSuiteArrayUtils::last($hazardousGoodsTransit);
 
         if (false === $hazardousGoodsTransit) {
             return null;
@@ -3984,7 +3984,7 @@ class TransportEquipmentType
             $this->hazardousGoodsTransit = [];
         }
 
-        if ([] === $this->hazardousGoodsTransit) {
+        if (InvoiceSuiteArrayUtils::empty($this->hazardousGoodsTransit)) {
             $this->addOnceToHazardousGoodsTransit(new HazardousGoodsTransit());
         }
 
@@ -4037,7 +4037,7 @@ class TransportEquipmentType
     public function firstPackagedTransportHandlingUnit(): ?PackagedTransportHandlingUnit
     {
         $packagedTransportHandlingUnit = $this->packagedTransportHandlingUnit ?? [];
-        $packagedTransportHandlingUnit = reset($packagedTransportHandlingUnit);
+        $packagedTransportHandlingUnit = InvoiceSuiteArrayUtils::first($packagedTransportHandlingUnit);
 
         if (false === $packagedTransportHandlingUnit) {
             return null;
@@ -4052,7 +4052,7 @@ class TransportEquipmentType
     public function lastPackagedTransportHandlingUnit(): ?PackagedTransportHandlingUnit
     {
         $packagedTransportHandlingUnit = $this->packagedTransportHandlingUnit ?? [];
-        $packagedTransportHandlingUnit = end($packagedTransportHandlingUnit);
+        $packagedTransportHandlingUnit = InvoiceSuiteArrayUtils::last($packagedTransportHandlingUnit);
 
         if (false === $packagedTransportHandlingUnit) {
             return null;
@@ -4108,7 +4108,7 @@ class TransportEquipmentType
             $this->packagedTransportHandlingUnit = [];
         }
 
-        if ([] === $this->packagedTransportHandlingUnit) {
+        if (InvoiceSuiteArrayUtils::empty($this->packagedTransportHandlingUnit)) {
             $this->addOnceToPackagedTransportHandlingUnit(new PackagedTransportHandlingUnit());
         }
 
@@ -4161,7 +4161,7 @@ class TransportEquipmentType
     public function firstServiceAllowanceCharge(): ?ServiceAllowanceCharge
     {
         $serviceAllowanceCharge = $this->serviceAllowanceCharge ?? [];
-        $serviceAllowanceCharge = reset($serviceAllowanceCharge);
+        $serviceAllowanceCharge = InvoiceSuiteArrayUtils::first($serviceAllowanceCharge);
 
         if (false === $serviceAllowanceCharge) {
             return null;
@@ -4176,7 +4176,7 @@ class TransportEquipmentType
     public function lastServiceAllowanceCharge(): ?ServiceAllowanceCharge
     {
         $serviceAllowanceCharge = $this->serviceAllowanceCharge ?? [];
-        $serviceAllowanceCharge = end($serviceAllowanceCharge);
+        $serviceAllowanceCharge = InvoiceSuiteArrayUtils::last($serviceAllowanceCharge);
 
         if (false === $serviceAllowanceCharge) {
             return null;
@@ -4232,7 +4232,7 @@ class TransportEquipmentType
             $this->serviceAllowanceCharge = [];
         }
 
-        if ([] === $this->serviceAllowanceCharge) {
+        if (InvoiceSuiteArrayUtils::empty($this->serviceAllowanceCharge)) {
             $this->addOnceToServiceAllowanceCharge(new ServiceAllowanceCharge());
         }
 
@@ -4285,7 +4285,7 @@ class TransportEquipmentType
     public function firstFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
         $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
-        $freightAllowanceCharge = reset($freightAllowanceCharge);
+        $freightAllowanceCharge = InvoiceSuiteArrayUtils::first($freightAllowanceCharge);
 
         if (false === $freightAllowanceCharge) {
             return null;
@@ -4300,7 +4300,7 @@ class TransportEquipmentType
     public function lastFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
         $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
-        $freightAllowanceCharge = end($freightAllowanceCharge);
+        $freightAllowanceCharge = InvoiceSuiteArrayUtils::last($freightAllowanceCharge);
 
         if (false === $freightAllowanceCharge) {
             return null;
@@ -4356,7 +4356,7 @@ class TransportEquipmentType
             $this->freightAllowanceCharge = [];
         }
 
-        if ([] === $this->freightAllowanceCharge) {
+        if (InvoiceSuiteArrayUtils::empty($this->freightAllowanceCharge)) {
             $this->addOnceToFreightAllowanceCharge(new FreightAllowanceCharge());
         }
 
@@ -4409,7 +4409,7 @@ class TransportEquipmentType
     public function firstAttachedTransportEquipment(): ?AttachedTransportEquipment
     {
         $attachedTransportEquipment = $this->attachedTransportEquipment ?? [];
-        $attachedTransportEquipment = reset($attachedTransportEquipment);
+        $attachedTransportEquipment = InvoiceSuiteArrayUtils::first($attachedTransportEquipment);
 
         if (false === $attachedTransportEquipment) {
             return null;
@@ -4424,7 +4424,7 @@ class TransportEquipmentType
     public function lastAttachedTransportEquipment(): ?AttachedTransportEquipment
     {
         $attachedTransportEquipment = $this->attachedTransportEquipment ?? [];
-        $attachedTransportEquipment = end($attachedTransportEquipment);
+        $attachedTransportEquipment = InvoiceSuiteArrayUtils::last($attachedTransportEquipment);
 
         if (false === $attachedTransportEquipment) {
             return null;
@@ -4480,7 +4480,7 @@ class TransportEquipmentType
             $this->attachedTransportEquipment = [];
         }
 
-        if ([] === $this->attachedTransportEquipment) {
+        if (InvoiceSuiteArrayUtils::empty($this->attachedTransportEquipment)) {
             $this->addOnceToAttachedTransportEquipment(new AttachedTransportEquipment());
         }
 
@@ -4653,7 +4653,7 @@ class TransportEquipmentType
     public function firstShipmentDocumentReference(): ?ShipmentDocumentReference
     {
         $shipmentDocumentReference = $this->shipmentDocumentReference ?? [];
-        $shipmentDocumentReference = reset($shipmentDocumentReference);
+        $shipmentDocumentReference = InvoiceSuiteArrayUtils::first($shipmentDocumentReference);
 
         if (false === $shipmentDocumentReference) {
             return null;
@@ -4668,7 +4668,7 @@ class TransportEquipmentType
     public function lastShipmentDocumentReference(): ?ShipmentDocumentReference
     {
         $shipmentDocumentReference = $this->shipmentDocumentReference ?? [];
-        $shipmentDocumentReference = end($shipmentDocumentReference);
+        $shipmentDocumentReference = InvoiceSuiteArrayUtils::last($shipmentDocumentReference);
 
         if (false === $shipmentDocumentReference) {
             return null;
@@ -4724,7 +4724,7 @@ class TransportEquipmentType
             $this->shipmentDocumentReference = [];
         }
 
-        if ([] === $this->shipmentDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->shipmentDocumentReference)) {
             $this->addOnceToShipmentDocumentReference(new ShipmentDocumentReference());
         }
 
@@ -4777,7 +4777,7 @@ class TransportEquipmentType
     public function firstContainedInTransportEquipment(): ?ContainedInTransportEquipment
     {
         $containedInTransportEquipment = $this->containedInTransportEquipment ?? [];
-        $containedInTransportEquipment = reset($containedInTransportEquipment);
+        $containedInTransportEquipment = InvoiceSuiteArrayUtils::first($containedInTransportEquipment);
 
         if (false === $containedInTransportEquipment) {
             return null;
@@ -4792,7 +4792,7 @@ class TransportEquipmentType
     public function lastContainedInTransportEquipment(): ?ContainedInTransportEquipment
     {
         $containedInTransportEquipment = $this->containedInTransportEquipment ?? [];
-        $containedInTransportEquipment = end($containedInTransportEquipment);
+        $containedInTransportEquipment = InvoiceSuiteArrayUtils::last($containedInTransportEquipment);
 
         if (false === $containedInTransportEquipment) {
             return null;
@@ -4848,7 +4848,7 @@ class TransportEquipmentType
             $this->containedInTransportEquipment = [];
         }
 
-        if ([] === $this->containedInTransportEquipment) {
+        if (InvoiceSuiteArrayUtils::empty($this->containedInTransportEquipment)) {
             $this->addOnceToContainedInTransportEquipment(new ContainedInTransportEquipment());
         }
 
@@ -4901,7 +4901,7 @@ class TransportEquipmentType
     public function firstPackage(): ?Package
     {
         $package = $this->package ?? [];
-        $package = reset($package);
+        $package = InvoiceSuiteArrayUtils::first($package);
 
         if (false === $package) {
             return null;
@@ -4916,7 +4916,7 @@ class TransportEquipmentType
     public function lastPackage(): ?Package
     {
         $package = $this->package ?? [];
-        $package = end($package);
+        $package = InvoiceSuiteArrayUtils::last($package);
 
         if (false === $package) {
             return null;
@@ -4972,7 +4972,7 @@ class TransportEquipmentType
             $this->package = [];
         }
 
-        if ([] === $this->package) {
+        if (InvoiceSuiteArrayUtils::empty($this->package)) {
             $this->addOnceToPackage(new Package());
         }
 
@@ -5025,7 +5025,7 @@ class TransportEquipmentType
     public function firstGoodsItem(): ?GoodsItem
     {
         $goodsItem = $this->goodsItem ?? [];
-        $goodsItem = reset($goodsItem);
+        $goodsItem = InvoiceSuiteArrayUtils::first($goodsItem);
 
         if (false === $goodsItem) {
             return null;
@@ -5040,7 +5040,7 @@ class TransportEquipmentType
     public function lastGoodsItem(): ?GoodsItem
     {
         $goodsItem = $this->goodsItem ?? [];
-        $goodsItem = end($goodsItem);
+        $goodsItem = InvoiceSuiteArrayUtils::last($goodsItem);
 
         if (false === $goodsItem) {
             return null;
@@ -5096,7 +5096,7 @@ class TransportEquipmentType
             $this->goodsItem = [];
         }
 
-        if ([] === $this->goodsItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->goodsItem)) {
             $this->addOnceToGoodsItem(new GoodsItem());
         }
 

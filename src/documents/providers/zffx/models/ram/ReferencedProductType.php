@@ -231,7 +231,7 @@ class ReferencedProductType
             $this->globalID = [];
         }
 
-        if ([] === $this->globalID) {
+        if (InvoiceSuiteArrayUtils::empty($this->globalID)) {
             $this->addOnceToGlobalID(new IDType());
         }
 

@@ -290,7 +290,7 @@ class ItemInformationRequestLineType
     public function firstPeriod(): ?Period
     {
         $period = $this->period ?? [];
-        $period = reset($period);
+        $period = InvoiceSuiteArrayUtils::first($period);
 
         if (false === $period) {
             return null;
@@ -305,7 +305,7 @@ class ItemInformationRequestLineType
     public function lastPeriod(): ?Period
     {
         $period = $this->period ?? [];
-        $period = end($period);
+        $period = InvoiceSuiteArrayUtils::last($period);
 
         if (false === $period) {
             return null;
@@ -361,7 +361,7 @@ class ItemInformationRequestLineType
             $this->period = [];
         }
 
-        if ([] === $this->period) {
+        if (InvoiceSuiteArrayUtils::empty($this->period)) {
             $this->addOnceToPeriod(new Period());
         }
 
@@ -414,7 +414,7 @@ class ItemInformationRequestLineType
     public function firstSalesItem(): ?SalesItem
     {
         $salesItem = $this->salesItem ?? [];
-        $salesItem = reset($salesItem);
+        $salesItem = InvoiceSuiteArrayUtils::first($salesItem);
 
         if (false === $salesItem) {
             return null;
@@ -429,7 +429,7 @@ class ItemInformationRequestLineType
     public function lastSalesItem(): ?SalesItem
     {
         $salesItem = $this->salesItem ?? [];
-        $salesItem = end($salesItem);
+        $salesItem = InvoiceSuiteArrayUtils::last($salesItem);
 
         if (false === $salesItem) {
             return null;
@@ -485,7 +485,7 @@ class ItemInformationRequestLineType
             $this->salesItem = [];
         }
 
-        if ([] === $this->salesItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->salesItem)) {
             $this->addOnceToSalesItem(new SalesItem());
         }
 

@@ -147,7 +147,7 @@ final class DatiBeniServizi
             $this->dettaglioLinee = [];
         }
 
-        if ([] === $this->dettaglioLinee) {
+        if (InvoiceSuiteArrayUtils::empty($this->dettaglioLinee)) {
             $this->addOnceToDettaglioLinee(new DettaglioLinee());
         }
 
@@ -160,7 +160,7 @@ final class DatiBeniServizi
     public function getLatestDettaglioLinee(): ?DettaglioLinee
     {
         $dettaglioLinees = $this->getDettaglioLinee() ?? [];
-        $dettaglioLinee = end($dettaglioLinees);
+        $dettaglioLinee = InvoiceSuiteArrayUtils::last($dettaglioLinees);
 
         if (false === $dettaglioLinee) {
             return null;
@@ -288,7 +288,7 @@ final class DatiBeniServizi
             $this->datiRiepilogo = [];
         }
 
-        if ([] === $this->datiRiepilogo) {
+        if (InvoiceSuiteArrayUtils::empty($this->datiRiepilogo)) {
             $this->addOnceToDatiRiepilogo(new DatiRiepilogo());
         }
 

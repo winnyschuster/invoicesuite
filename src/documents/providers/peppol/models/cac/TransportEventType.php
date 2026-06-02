@@ -338,7 +338,7 @@ class TransportEventType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -353,7 +353,7 @@ class TransportEventType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -409,7 +409,7 @@ class TransportEventType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -532,7 +532,7 @@ class TransportEventType
     public function firstCurrentStatus(): ?CurrentStatus
     {
         $currentStatus = $this->currentStatus ?? [];
-        $currentStatus = reset($currentStatus);
+        $currentStatus = InvoiceSuiteArrayUtils::first($currentStatus);
 
         if (false === $currentStatus) {
             return null;
@@ -547,7 +547,7 @@ class TransportEventType
     public function lastCurrentStatus(): ?CurrentStatus
     {
         $currentStatus = $this->currentStatus ?? [];
-        $currentStatus = end($currentStatus);
+        $currentStatus = InvoiceSuiteArrayUtils::last($currentStatus);
 
         if (false === $currentStatus) {
             return null;
@@ -603,7 +603,7 @@ class TransportEventType
             $this->currentStatus = [];
         }
 
-        if ([] === $this->currentStatus) {
+        if (InvoiceSuiteArrayUtils::empty($this->currentStatus)) {
             $this->addOnceToCurrentStatus(new CurrentStatus());
         }
 
@@ -656,7 +656,7 @@ class TransportEventType
     public function firstContact(): ?Contact
     {
         $contact = $this->contact ?? [];
-        $contact = reset($contact);
+        $contact = InvoiceSuiteArrayUtils::first($contact);
 
         if (false === $contact) {
             return null;
@@ -671,7 +671,7 @@ class TransportEventType
     public function lastContact(): ?Contact
     {
         $contact = $this->contact ?? [];
-        $contact = end($contact);
+        $contact = InvoiceSuiteArrayUtils::last($contact);
 
         if (false === $contact) {
             return null;
@@ -727,7 +727,7 @@ class TransportEventType
             $this->contact = [];
         }
 
-        if ([] === $this->contact) {
+        if (InvoiceSuiteArrayUtils::empty($this->contact)) {
             $this->addOnceToContact(new Contact());
         }
 
@@ -860,7 +860,7 @@ class TransportEventType
     public function firstPeriod(): ?Period
     {
         $period = $this->period ?? [];
-        $period = reset($period);
+        $period = InvoiceSuiteArrayUtils::first($period);
 
         if (false === $period) {
             return null;
@@ -875,7 +875,7 @@ class TransportEventType
     public function lastPeriod(): ?Period
     {
         $period = $this->period ?? [];
-        $period = end($period);
+        $period = InvoiceSuiteArrayUtils::last($period);
 
         if (false === $period) {
             return null;
@@ -931,7 +931,7 @@ class TransportEventType
             $this->period = [];
         }
 
-        if ([] === $this->period) {
+        if (InvoiceSuiteArrayUtils::empty($this->period)) {
             $this->addOnceToPeriod(new Period());
         }
 

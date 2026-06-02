@@ -1341,7 +1341,7 @@ class AddressType
     public function firstAddressLine(): ?AddressLine
     {
         $addressLine = $this->addressLine ?? [];
-        $addressLine = reset($addressLine);
+        $addressLine = InvoiceSuiteArrayUtils::first($addressLine);
 
         if (false === $addressLine) {
             return null;
@@ -1356,7 +1356,7 @@ class AddressType
     public function lastAddressLine(): ?AddressLine
     {
         $addressLine = $this->addressLine ?? [];
-        $addressLine = end($addressLine);
+        $addressLine = InvoiceSuiteArrayUtils::last($addressLine);
 
         if (false === $addressLine) {
             return null;
@@ -1412,7 +1412,7 @@ class AddressType
             $this->addressLine = [];
         }
 
-        if ([] === $this->addressLine) {
+        if (InvoiceSuiteArrayUtils::empty($this->addressLine)) {
             $this->addOnceToAddressLine(new AddressLine());
         }
 
@@ -1505,7 +1505,7 @@ class AddressType
     public function firstLocationCoordinate(): ?LocationCoordinate
     {
         $locationCoordinate = $this->locationCoordinate ?? [];
-        $locationCoordinate = reset($locationCoordinate);
+        $locationCoordinate = InvoiceSuiteArrayUtils::first($locationCoordinate);
 
         if (false === $locationCoordinate) {
             return null;
@@ -1520,7 +1520,7 @@ class AddressType
     public function lastLocationCoordinate(): ?LocationCoordinate
     {
         $locationCoordinate = $this->locationCoordinate ?? [];
-        $locationCoordinate = end($locationCoordinate);
+        $locationCoordinate = InvoiceSuiteArrayUtils::last($locationCoordinate);
 
         if (false === $locationCoordinate) {
             return null;
@@ -1576,7 +1576,7 @@ class AddressType
             $this->locationCoordinate = [];
         }
 
-        if ([] === $this->locationCoordinate) {
+        if (InvoiceSuiteArrayUtils::empty($this->locationCoordinate)) {
             $this->addOnceToLocationCoordinate(new LocationCoordinate());
         }
 

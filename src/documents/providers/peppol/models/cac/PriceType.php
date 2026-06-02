@@ -257,7 +257,7 @@ class PriceType
     public function firstPriceChangeReason(): ?PriceChangeReason
     {
         $priceChangeReason = $this->priceChangeReason ?? [];
-        $priceChangeReason = reset($priceChangeReason);
+        $priceChangeReason = InvoiceSuiteArrayUtils::first($priceChangeReason);
 
         if (false === $priceChangeReason) {
             return null;
@@ -272,7 +272,7 @@ class PriceType
     public function lastPriceChangeReason(): ?PriceChangeReason
     {
         $priceChangeReason = $this->priceChangeReason ?? [];
-        $priceChangeReason = end($priceChangeReason);
+        $priceChangeReason = InvoiceSuiteArrayUtils::last($priceChangeReason);
 
         if (false === $priceChangeReason) {
             return null;
@@ -328,7 +328,7 @@ class PriceType
             $this->priceChangeReason = [];
         }
 
-        if ([] === $this->priceChangeReason) {
+        if (InvoiceSuiteArrayUtils::empty($this->priceChangeReason)) {
             $this->addOnceToPriceChangeReason(new PriceChangeReason());
         }
 
@@ -501,7 +501,7 @@ class PriceType
     public function firstValidityPeriod(): ?ValidityPeriod
     {
         $validityPeriod = $this->validityPeriod ?? [];
-        $validityPeriod = reset($validityPeriod);
+        $validityPeriod = InvoiceSuiteArrayUtils::first($validityPeriod);
 
         if (false === $validityPeriod) {
             return null;
@@ -516,7 +516,7 @@ class PriceType
     public function lastValidityPeriod(): ?ValidityPeriod
     {
         $validityPeriod = $this->validityPeriod ?? [];
-        $validityPeriod = end($validityPeriod);
+        $validityPeriod = InvoiceSuiteArrayUtils::last($validityPeriod);
 
         if (false === $validityPeriod) {
             return null;
@@ -572,7 +572,7 @@ class PriceType
             $this->validityPeriod = [];
         }
 
-        if ([] === $this->validityPeriod) {
+        if (InvoiceSuiteArrayUtils::empty($this->validityPeriod)) {
             $this->addOnceToValidityPeriod(new ValidityPeriod());
         }
 
@@ -665,7 +665,7 @@ class PriceType
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
         $allowanceCharge = $this->allowanceCharge ?? [];
-        $allowanceCharge = reset($allowanceCharge);
+        $allowanceCharge = InvoiceSuiteArrayUtils::first($allowanceCharge);
 
         if (false === $allowanceCharge) {
             return null;
@@ -680,7 +680,7 @@ class PriceType
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
         $allowanceCharge = $this->allowanceCharge ?? [];
-        $allowanceCharge = end($allowanceCharge);
+        $allowanceCharge = InvoiceSuiteArrayUtils::last($allowanceCharge);
 
         if (false === $allowanceCharge) {
             return null;
@@ -736,7 +736,7 @@ class PriceType
             $this->allowanceCharge = [];
         }
 
-        if ([] === $this->allowanceCharge) {
+        if (InvoiceSuiteArrayUtils::empty($this->allowanceCharge)) {
             $this->addOnceToAllowanceCharge(new AllowanceCharge());
         }
 

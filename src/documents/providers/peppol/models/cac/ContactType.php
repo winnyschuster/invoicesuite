@@ -343,7 +343,7 @@ class ContactType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -358,7 +358,7 @@ class ContactType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -414,7 +414,7 @@ class ContactType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -467,7 +467,7 @@ class ContactType
     public function firstOtherCommunication(): ?OtherCommunication
     {
         $otherCommunication = $this->otherCommunication ?? [];
-        $otherCommunication = reset($otherCommunication);
+        $otherCommunication = InvoiceSuiteArrayUtils::first($otherCommunication);
 
         if (false === $otherCommunication) {
             return null;
@@ -482,7 +482,7 @@ class ContactType
     public function lastOtherCommunication(): ?OtherCommunication
     {
         $otherCommunication = $this->otherCommunication ?? [];
-        $otherCommunication = end($otherCommunication);
+        $otherCommunication = InvoiceSuiteArrayUtils::last($otherCommunication);
 
         if (false === $otherCommunication) {
             return null;
@@ -538,7 +538,7 @@ class ContactType
             $this->otherCommunication = [];
         }
 
-        if ([] === $this->otherCommunication) {
+        if (InvoiceSuiteArrayUtils::empty($this->otherCommunication)) {
             $this->addOnceToOtherCommunication(new OtherCommunication());
         }
 

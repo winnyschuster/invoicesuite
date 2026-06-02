@@ -85,7 +85,7 @@ class InvoiceSuiteClassFinder
         $this->clear();
 
         foreach (ClassLoader::getRegisteredLoaders() as $loader) {
-            $this->classNames = array_merge($this->classNames, array_keys($loader->getClassMap()));
+            $this->classNames = InvoiceSuiteArrayUtils::merge($this->classNames, InvoiceSuiteArrayUtils::keys($loader->getClassMap()));
         }
 
         return $this;
@@ -102,7 +102,7 @@ class InvoiceSuiteClassFinder
         string $isSubClassOf,
         bool $disableCache = false
     ): array {
-        if (!$disableCache && array_key_exists($isSubClassOf, $this->subClassNames)) {
+        if (!$disableCache && InvoiceSuiteArrayUtils::keyExists($this->subClassNames, $isSubClassOf)) {
             return $this->subClassNames[$isSubClassOf];
         }
 
@@ -143,8 +143,7 @@ class InvoiceSuiteClassFinder
         if (!$disableCache) {
             @mkdir(directory: $cacheFilepath, recursive: true);
 
-            // @phpstan-ignore arrayValues.list
-            $cacheFilePhpCode = "<?php\ndeclare(strict_types=1);\nreturn " . var_export(array_values($classes), true) . ";\n";
+            $cacheFilePhpCode = "<?php\ndeclare(strict_types=1);\nreturn " . var_export(InvoiceSuiteArrayUtils::values($classes), true) . ";\n";
 
             InvoiceSuiteFileUtils::putContentToFile($cacheFilenameFq, $cacheFilePhpCode);
         }

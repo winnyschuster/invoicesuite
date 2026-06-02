@@ -269,7 +269,7 @@ class TenderedProjectType
     public function firstFeeDescription(): ?FeeDescription
     {
         $feeDescription = $this->feeDescription ?? [];
-        $feeDescription = reset($feeDescription);
+        $feeDescription = InvoiceSuiteArrayUtils::first($feeDescription);
 
         if (false === $feeDescription) {
             return null;
@@ -284,7 +284,7 @@ class TenderedProjectType
     public function lastFeeDescription(): ?FeeDescription
     {
         $feeDescription = $this->feeDescription ?? [];
-        $feeDescription = end($feeDescription);
+        $feeDescription = InvoiceSuiteArrayUtils::last($feeDescription);
 
         if (false === $feeDescription) {
             return null;
@@ -340,7 +340,7 @@ class TenderedProjectType
             $this->feeDescription = [];
         }
 
-        if ([] === $this->feeDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->feeDescription)) {
             $this->addOnceToFeeDescription(new FeeDescription());
         }
 
@@ -513,7 +513,7 @@ class TenderedProjectType
     public function firstEvidenceDocumentReference(): ?EvidenceDocumentReference
     {
         $evidenceDocumentReference = $this->evidenceDocumentReference ?? [];
-        $evidenceDocumentReference = reset($evidenceDocumentReference);
+        $evidenceDocumentReference = InvoiceSuiteArrayUtils::first($evidenceDocumentReference);
 
         if (false === $evidenceDocumentReference) {
             return null;
@@ -528,7 +528,7 @@ class TenderedProjectType
     public function lastEvidenceDocumentReference(): ?EvidenceDocumentReference
     {
         $evidenceDocumentReference = $this->evidenceDocumentReference ?? [];
-        $evidenceDocumentReference = end($evidenceDocumentReference);
+        $evidenceDocumentReference = InvoiceSuiteArrayUtils::last($evidenceDocumentReference);
 
         if (false === $evidenceDocumentReference) {
             return null;
@@ -584,7 +584,7 @@ class TenderedProjectType
             $this->evidenceDocumentReference = [];
         }
 
-        if ([] === $this->evidenceDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->evidenceDocumentReference)) {
             $this->addOnceToEvidenceDocumentReference(new EvidenceDocumentReference());
         }
 
@@ -637,7 +637,7 @@ class TenderedProjectType
     public function firstTaxTotal(): ?TaxTotal
     {
         $taxTotal = $this->taxTotal ?? [];
-        $taxTotal = reset($taxTotal);
+        $taxTotal = InvoiceSuiteArrayUtils::first($taxTotal);
 
         if (false === $taxTotal) {
             return null;
@@ -652,7 +652,7 @@ class TenderedProjectType
     public function lastTaxTotal(): ?TaxTotal
     {
         $taxTotal = $this->taxTotal ?? [];
-        $taxTotal = end($taxTotal);
+        $taxTotal = InvoiceSuiteArrayUtils::last($taxTotal);
 
         if (false === $taxTotal) {
             return null;
@@ -708,7 +708,7 @@ class TenderedProjectType
             $this->taxTotal = [];
         }
 
-        if ([] === $this->taxTotal) {
+        if (InvoiceSuiteArrayUtils::empty($this->taxTotal)) {
             $this->addOnceToTaxTotal(new TaxTotal());
         }
 
@@ -801,7 +801,7 @@ class TenderedProjectType
     public function firstTenderLine(): ?TenderLine
     {
         $tenderLine = $this->tenderLine ?? [];
-        $tenderLine = reset($tenderLine);
+        $tenderLine = InvoiceSuiteArrayUtils::first($tenderLine);
 
         if (false === $tenderLine) {
             return null;
@@ -816,7 +816,7 @@ class TenderedProjectType
     public function lastTenderLine(): ?TenderLine
     {
         $tenderLine = $this->tenderLine ?? [];
-        $tenderLine = end($tenderLine);
+        $tenderLine = InvoiceSuiteArrayUtils::last($tenderLine);
 
         if (false === $tenderLine) {
             return null;
@@ -872,7 +872,7 @@ class TenderedProjectType
             $this->tenderLine = [];
         }
 
-        if ([] === $this->tenderLine) {
+        if (InvoiceSuiteArrayUtils::empty($this->tenderLine)) {
             $this->addOnceToTenderLine(new TenderLine());
         }
 
@@ -925,7 +925,7 @@ class TenderedProjectType
     public function firstAwardingCriterionResponse(): ?AwardingCriterionResponse
     {
         $awardingCriterionResponse = $this->awardingCriterionResponse ?? [];
-        $awardingCriterionResponse = reset($awardingCriterionResponse);
+        $awardingCriterionResponse = InvoiceSuiteArrayUtils::first($awardingCriterionResponse);
 
         if (false === $awardingCriterionResponse) {
             return null;
@@ -940,7 +940,7 @@ class TenderedProjectType
     public function lastAwardingCriterionResponse(): ?AwardingCriterionResponse
     {
         $awardingCriterionResponse = $this->awardingCriterionResponse ?? [];
-        $awardingCriterionResponse = end($awardingCriterionResponse);
+        $awardingCriterionResponse = InvoiceSuiteArrayUtils::last($awardingCriterionResponse);
 
         if (false === $awardingCriterionResponse) {
             return null;
@@ -996,7 +996,7 @@ class TenderedProjectType
             $this->awardingCriterionResponse = [];
         }
 
-        if ([] === $this->awardingCriterionResponse) {
+        if (InvoiceSuiteArrayUtils::empty($this->awardingCriterionResponse)) {
             $this->addOnceToAwardingCriterionResponse(new AwardingCriterionResponse());
         }
 

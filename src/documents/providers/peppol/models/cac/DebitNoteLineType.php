@@ -388,7 +388,7 @@ class DebitNoteLineType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -403,7 +403,7 @@ class DebitNoteLineType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -459,7 +459,7 @@ class DebitNoteLineType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -742,7 +742,7 @@ class DebitNoteLineType
     public function firstDiscrepancyResponse(): ?DiscrepancyResponse
     {
         $discrepancyResponse = $this->discrepancyResponse ?? [];
-        $discrepancyResponse = reset($discrepancyResponse);
+        $discrepancyResponse = InvoiceSuiteArrayUtils::first($discrepancyResponse);
 
         if (false === $discrepancyResponse) {
             return null;
@@ -757,7 +757,7 @@ class DebitNoteLineType
     public function lastDiscrepancyResponse(): ?DiscrepancyResponse
     {
         $discrepancyResponse = $this->discrepancyResponse ?? [];
-        $discrepancyResponse = end($discrepancyResponse);
+        $discrepancyResponse = InvoiceSuiteArrayUtils::last($discrepancyResponse);
 
         if (false === $discrepancyResponse) {
             return null;
@@ -813,7 +813,7 @@ class DebitNoteLineType
             $this->discrepancyResponse = [];
         }
 
-        if ([] === $this->discrepancyResponse) {
+        if (InvoiceSuiteArrayUtils::empty($this->discrepancyResponse)) {
             $this->addOnceToDiscrepancyResponse(new DiscrepancyResponse());
         }
 
@@ -866,7 +866,7 @@ class DebitNoteLineType
     public function firstDespatchLineReference(): ?DespatchLineReference
     {
         $despatchLineReference = $this->despatchLineReference ?? [];
-        $despatchLineReference = reset($despatchLineReference);
+        $despatchLineReference = InvoiceSuiteArrayUtils::first($despatchLineReference);
 
         if (false === $despatchLineReference) {
             return null;
@@ -881,7 +881,7 @@ class DebitNoteLineType
     public function lastDespatchLineReference(): ?DespatchLineReference
     {
         $despatchLineReference = $this->despatchLineReference ?? [];
-        $despatchLineReference = end($despatchLineReference);
+        $despatchLineReference = InvoiceSuiteArrayUtils::last($despatchLineReference);
 
         if (false === $despatchLineReference) {
             return null;
@@ -937,7 +937,7 @@ class DebitNoteLineType
             $this->despatchLineReference = [];
         }
 
-        if ([] === $this->despatchLineReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->despatchLineReference)) {
             $this->addOnceToDespatchLineReference(new DespatchLineReference());
         }
 
@@ -990,7 +990,7 @@ class DebitNoteLineType
     public function firstReceiptLineReference(): ?ReceiptLineReference
     {
         $receiptLineReference = $this->receiptLineReference ?? [];
-        $receiptLineReference = reset($receiptLineReference);
+        $receiptLineReference = InvoiceSuiteArrayUtils::first($receiptLineReference);
 
         if (false === $receiptLineReference) {
             return null;
@@ -1005,7 +1005,7 @@ class DebitNoteLineType
     public function lastReceiptLineReference(): ?ReceiptLineReference
     {
         $receiptLineReference = $this->receiptLineReference ?? [];
-        $receiptLineReference = end($receiptLineReference);
+        $receiptLineReference = InvoiceSuiteArrayUtils::last($receiptLineReference);
 
         if (false === $receiptLineReference) {
             return null;
@@ -1061,7 +1061,7 @@ class DebitNoteLineType
             $this->receiptLineReference = [];
         }
 
-        if ([] === $this->receiptLineReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->receiptLineReference)) {
             $this->addOnceToReceiptLineReference(new ReceiptLineReference());
         }
 
@@ -1114,7 +1114,7 @@ class DebitNoteLineType
     public function firstBillingReference(): ?BillingReference
     {
         $billingReference = $this->billingReference ?? [];
-        $billingReference = reset($billingReference);
+        $billingReference = InvoiceSuiteArrayUtils::first($billingReference);
 
         if (false === $billingReference) {
             return null;
@@ -1129,7 +1129,7 @@ class DebitNoteLineType
     public function lastBillingReference(): ?BillingReference
     {
         $billingReference = $this->billingReference ?? [];
-        $billingReference = end($billingReference);
+        $billingReference = InvoiceSuiteArrayUtils::last($billingReference);
 
         if (false === $billingReference) {
             return null;
@@ -1185,7 +1185,7 @@ class DebitNoteLineType
             $this->billingReference = [];
         }
 
-        if ([] === $this->billingReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->billingReference)) {
             $this->addOnceToBillingReference(new BillingReference());
         }
 
@@ -1238,7 +1238,7 @@ class DebitNoteLineType
     public function firstDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = reset($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::first($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -1253,7 +1253,7 @@ class DebitNoteLineType
     public function lastDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = end($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::last($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -1309,7 +1309,7 @@ class DebitNoteLineType
             $this->documentReference = [];
         }
 
-        if ([] === $this->documentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->documentReference)) {
             $this->addOnceToDocumentReference(new DocumentReference());
         }
 
@@ -1402,7 +1402,7 @@ class DebitNoteLineType
     public function firstDelivery(): ?Delivery
     {
         $delivery = $this->delivery ?? [];
-        $delivery = reset($delivery);
+        $delivery = InvoiceSuiteArrayUtils::first($delivery);
 
         if (false === $delivery) {
             return null;
@@ -1417,7 +1417,7 @@ class DebitNoteLineType
     public function lastDelivery(): ?Delivery
     {
         $delivery = $this->delivery ?? [];
-        $delivery = end($delivery);
+        $delivery = InvoiceSuiteArrayUtils::last($delivery);
 
         if (false === $delivery) {
             return null;
@@ -1473,7 +1473,7 @@ class DebitNoteLineType
             $this->delivery = [];
         }
 
-        if ([] === $this->delivery) {
+        if (InvoiceSuiteArrayUtils::empty($this->delivery)) {
             $this->addOnceToDelivery(new Delivery());
         }
 
@@ -1526,7 +1526,7 @@ class DebitNoteLineType
     public function firstTaxTotal(): ?TaxTotal
     {
         $taxTotal = $this->taxTotal ?? [];
-        $taxTotal = reset($taxTotal);
+        $taxTotal = InvoiceSuiteArrayUtils::first($taxTotal);
 
         if (false === $taxTotal) {
             return null;
@@ -1541,7 +1541,7 @@ class DebitNoteLineType
     public function lastTaxTotal(): ?TaxTotal
     {
         $taxTotal = $this->taxTotal ?? [];
-        $taxTotal = end($taxTotal);
+        $taxTotal = InvoiceSuiteArrayUtils::last($taxTotal);
 
         if (false === $taxTotal) {
             return null;
@@ -1597,7 +1597,7 @@ class DebitNoteLineType
             $this->taxTotal = [];
         }
 
-        if ([] === $this->taxTotal) {
+        if (InvoiceSuiteArrayUtils::empty($this->taxTotal)) {
             $this->addOnceToTaxTotal(new TaxTotal());
         }
 
@@ -1650,7 +1650,7 @@ class DebitNoteLineType
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
         $allowanceCharge = $this->allowanceCharge ?? [];
-        $allowanceCharge = reset($allowanceCharge);
+        $allowanceCharge = InvoiceSuiteArrayUtils::first($allowanceCharge);
 
         if (false === $allowanceCharge) {
             return null;
@@ -1665,7 +1665,7 @@ class DebitNoteLineType
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
         $allowanceCharge = $this->allowanceCharge ?? [];
-        $allowanceCharge = end($allowanceCharge);
+        $allowanceCharge = InvoiceSuiteArrayUtils::last($allowanceCharge);
 
         if (false === $allowanceCharge) {
             return null;
@@ -1721,7 +1721,7 @@ class DebitNoteLineType
             $this->allowanceCharge = [];
         }
 
-        if ([] === $this->allowanceCharge) {
+        if (InvoiceSuiteArrayUtils::empty($this->allowanceCharge)) {
             $this->addOnceToAllowanceCharge(new AllowanceCharge());
         }
 
@@ -1854,7 +1854,7 @@ class DebitNoteLineType
     public function firstSubDebitNoteLine(): ?SubDebitNoteLine
     {
         $subDebitNoteLine = $this->subDebitNoteLine ?? [];
-        $subDebitNoteLine = reset($subDebitNoteLine);
+        $subDebitNoteLine = InvoiceSuiteArrayUtils::first($subDebitNoteLine);
 
         if (false === $subDebitNoteLine) {
             return null;
@@ -1869,7 +1869,7 @@ class DebitNoteLineType
     public function lastSubDebitNoteLine(): ?SubDebitNoteLine
     {
         $subDebitNoteLine = $this->subDebitNoteLine ?? [];
-        $subDebitNoteLine = end($subDebitNoteLine);
+        $subDebitNoteLine = InvoiceSuiteArrayUtils::last($subDebitNoteLine);
 
         if (false === $subDebitNoteLine) {
             return null;
@@ -1925,7 +1925,7 @@ class DebitNoteLineType
             $this->subDebitNoteLine = [];
         }
 
-        if ([] === $this->subDebitNoteLine) {
+        if (InvoiceSuiteArrayUtils::empty($this->subDebitNoteLine)) {
             $this->addOnceToSubDebitNoteLine(new SubDebitNoteLine());
         }
 

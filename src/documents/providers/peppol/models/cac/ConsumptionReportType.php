@@ -392,7 +392,7 @@ class ConsumptionReportType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -407,7 +407,7 @@ class ConsumptionReportType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -463,7 +463,7 @@ class ConsumptionReportType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -996,7 +996,7 @@ class ConsumptionReportType
     public function firstConsumptionReportReference(): ?ConsumptionReportReference
     {
         $consumptionReportReference = $this->consumptionReportReference ?? [];
-        $consumptionReportReference = reset($consumptionReportReference);
+        $consumptionReportReference = InvoiceSuiteArrayUtils::first($consumptionReportReference);
 
         if (false === $consumptionReportReference) {
             return null;
@@ -1011,7 +1011,7 @@ class ConsumptionReportType
     public function lastConsumptionReportReference(): ?ConsumptionReportReference
     {
         $consumptionReportReference = $this->consumptionReportReference ?? [];
-        $consumptionReportReference = end($consumptionReportReference);
+        $consumptionReportReference = InvoiceSuiteArrayUtils::last($consumptionReportReference);
 
         if (false === $consumptionReportReference) {
             return null;
@@ -1067,7 +1067,7 @@ class ConsumptionReportType
             $this->consumptionReportReference = [];
         }
 
-        if ([] === $this->consumptionReportReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->consumptionReportReference)) {
             $this->addOnceToConsumptionReportReference(new ConsumptionReportReference());
         }
 
@@ -1120,7 +1120,7 @@ class ConsumptionReportType
     public function firstConsumptionHistory(): ?ConsumptionHistory
     {
         $consumptionHistory = $this->consumptionHistory ?? [];
-        $consumptionHistory = reset($consumptionHistory);
+        $consumptionHistory = InvoiceSuiteArrayUtils::first($consumptionHistory);
 
         if (false === $consumptionHistory) {
             return null;
@@ -1135,7 +1135,7 @@ class ConsumptionReportType
     public function lastConsumptionHistory(): ?ConsumptionHistory
     {
         $consumptionHistory = $this->consumptionHistory ?? [];
-        $consumptionHistory = end($consumptionHistory);
+        $consumptionHistory = InvoiceSuiteArrayUtils::last($consumptionHistory);
 
         if (false === $consumptionHistory) {
             return null;
@@ -1191,7 +1191,7 @@ class ConsumptionReportType
             $this->consumptionHistory = [];
         }
 
-        if ([] === $this->consumptionHistory) {
+        if (InvoiceSuiteArrayUtils::empty($this->consumptionHistory)) {
             $this->addOnceToConsumptionHistory(new ConsumptionHistory());
         }
 

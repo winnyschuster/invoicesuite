@@ -170,7 +170,7 @@ class QualificationResolutionType
     public function firstExclusionReason(): ?ExclusionReason
     {
         $exclusionReason = $this->exclusionReason ?? [];
-        $exclusionReason = reset($exclusionReason);
+        $exclusionReason = InvoiceSuiteArrayUtils::first($exclusionReason);
 
         if (false === $exclusionReason) {
             return null;
@@ -185,7 +185,7 @@ class QualificationResolutionType
     public function lastExclusionReason(): ?ExclusionReason
     {
         $exclusionReason = $this->exclusionReason ?? [];
-        $exclusionReason = end($exclusionReason);
+        $exclusionReason = InvoiceSuiteArrayUtils::last($exclusionReason);
 
         if (false === $exclusionReason) {
             return null;
@@ -241,7 +241,7 @@ class QualificationResolutionType
             $this->exclusionReason = [];
         }
 
-        if ([] === $this->exclusionReason) {
+        if (InvoiceSuiteArrayUtils::empty($this->exclusionReason)) {
             $this->addOnceToExclusionReason(new ExclusionReason());
         }
 
@@ -294,7 +294,7 @@ class QualificationResolutionType
     public function firstResolution(): ?Resolution
     {
         $resolution = $this->resolution ?? [];
-        $resolution = reset($resolution);
+        $resolution = InvoiceSuiteArrayUtils::first($resolution);
 
         if (false === $resolution) {
             return null;
@@ -309,7 +309,7 @@ class QualificationResolutionType
     public function lastResolution(): ?Resolution
     {
         $resolution = $this->resolution ?? [];
-        $resolution = end($resolution);
+        $resolution = InvoiceSuiteArrayUtils::last($resolution);
 
         if (false === $resolution) {
             return null;
@@ -365,7 +365,7 @@ class QualificationResolutionType
             $this->resolution = [];
         }
 
-        if ([] === $this->resolution) {
+        if (InvoiceSuiteArrayUtils::empty($this->resolution)) {
             $this->addOnceToResolution(new Resolution());
         }
 

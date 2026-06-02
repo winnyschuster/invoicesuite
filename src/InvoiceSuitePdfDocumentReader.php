@@ -21,6 +21,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteInternalMethodCallException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\pdfs\extractor\InvoiceSuitePdfExtractor;
 use horstoeko\invoicesuite\pdfs\extractor\InvoiceSuitePdfExtractorAttachment;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use JMS\Serializer\Exception\RuntimeException;
 use JsonSerializable;
@@ -85,7 +86,7 @@ class InvoiceSuitePdfDocumentReader implements JsonSerializable
                 continue;
             }
 
-            $formatProviders = array_filter(
+            $formatProviders = InvoiceSuiteArrayUtils::filter(
                 $this->getRegisteredDocumentFormatProviders(),
                 static fn ($formatProvider) => (
                     $formatProvider->getIsSatisfiableBySerializedContent($pdfExtractorAttachment->getAttachmentContent())
@@ -94,12 +95,12 @@ class InvoiceSuitePdfDocumentReader implements JsonSerializable
                 )
             );
 
-            if ([] === $formatProviders) {
+            if (InvoiceSuiteArrayUtils::empty($formatProviders)) {
                 $this->addAdditionalDocumentAttachments($pdfExtractorAttachment);
                 continue;
             }
 
-            $formatProvider = reset($formatProviders);
+            $formatProvider = InvoiceSuiteArrayUtils::first($formatProviders);
 
             $this->setInvoiceDocumentAttachment($pdfExtractorAttachment);
             $this->setCurrentDocumentFormatProvider($formatProvider);

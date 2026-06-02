@@ -301,7 +301,7 @@ class PeriodType
     public function firstDescriptionCode(): ?DescriptionCode
     {
         $descriptionCode = $this->descriptionCode ?? [];
-        $descriptionCode = reset($descriptionCode);
+        $descriptionCode = InvoiceSuiteArrayUtils::first($descriptionCode);
 
         if (false === $descriptionCode) {
             return null;
@@ -316,7 +316,7 @@ class PeriodType
     public function lastDescriptionCode(): ?DescriptionCode
     {
         $descriptionCode = $this->descriptionCode ?? [];
-        $descriptionCode = end($descriptionCode);
+        $descriptionCode = InvoiceSuiteArrayUtils::last($descriptionCode);
 
         if (false === $descriptionCode) {
             return null;
@@ -372,7 +372,7 @@ class PeriodType
             $this->descriptionCode = [];
         }
 
-        if ([] === $this->descriptionCode) {
+        if (InvoiceSuiteArrayUtils::empty($this->descriptionCode)) {
             $this->addOnceToDescriptionCode(new DescriptionCode());
         }
 
@@ -425,7 +425,7 @@ class PeriodType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -440,7 +440,7 @@ class PeriodType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -496,7 +496,7 @@ class PeriodType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 

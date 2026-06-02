@@ -249,7 +249,7 @@ class ItemIdentificationType
     public function firstPhysicalAttribute(): ?PhysicalAttribute
     {
         $physicalAttribute = $this->physicalAttribute ?? [];
-        $physicalAttribute = reset($physicalAttribute);
+        $physicalAttribute = InvoiceSuiteArrayUtils::first($physicalAttribute);
 
         if (false === $physicalAttribute) {
             return null;
@@ -264,7 +264,7 @@ class ItemIdentificationType
     public function lastPhysicalAttribute(): ?PhysicalAttribute
     {
         $physicalAttribute = $this->physicalAttribute ?? [];
-        $physicalAttribute = end($physicalAttribute);
+        $physicalAttribute = InvoiceSuiteArrayUtils::last($physicalAttribute);
 
         if (false === $physicalAttribute) {
             return null;
@@ -320,7 +320,7 @@ class ItemIdentificationType
             $this->physicalAttribute = [];
         }
 
-        if ([] === $this->physicalAttribute) {
+        if (InvoiceSuiteArrayUtils::empty($this->physicalAttribute)) {
             $this->addOnceToPhysicalAttribute(new PhysicalAttribute());
         }
 
@@ -373,7 +373,7 @@ class ItemIdentificationType
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
         $measurementDimension = $this->measurementDimension ?? [];
-        $measurementDimension = reset($measurementDimension);
+        $measurementDimension = InvoiceSuiteArrayUtils::first($measurementDimension);
 
         if (false === $measurementDimension) {
             return null;
@@ -388,7 +388,7 @@ class ItemIdentificationType
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
         $measurementDimension = $this->measurementDimension ?? [];
-        $measurementDimension = end($measurementDimension);
+        $measurementDimension = InvoiceSuiteArrayUtils::last($measurementDimension);
 
         if (false === $measurementDimension) {
             return null;
@@ -444,7 +444,7 @@ class ItemIdentificationType
             $this->measurementDimension = [];
         }
 
-        if ([] === $this->measurementDimension) {
+        if (InvoiceSuiteArrayUtils::empty($this->measurementDimension)) {
             $this->addOnceToMeasurementDimension(new MeasurementDimension());
         }
 

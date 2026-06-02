@@ -298,7 +298,7 @@ final class DatiGenerali
             $this->datiOrdineAcquisto = [];
         }
 
-        if ([] === $this->datiOrdineAcquisto) {
+        if (InvoiceSuiteArrayUtils::empty($this->datiOrdineAcquisto)) {
             $this->addOnceToDatiOrdineAcquisto(new DatiDocumentiCorrelati());
         }
 
@@ -412,7 +412,7 @@ final class DatiGenerali
             $this->datiContratto = [];
         }
 
-        if ([] === $this->datiContratto) {
+        if (InvoiceSuiteArrayUtils::empty($this->datiContratto)) {
             $this->addOnceToDatiContratto(new DatiDocumentiCorrelati());
         }
 
@@ -526,7 +526,7 @@ final class DatiGenerali
             $this->datiConvenzione = [];
         }
 
-        if ([] === $this->datiConvenzione) {
+        if (InvoiceSuiteArrayUtils::empty($this->datiConvenzione)) {
             $this->addOnceToDatiConvenzione(new DatiDocumentiCorrelati());
         }
 
@@ -640,7 +640,7 @@ final class DatiGenerali
             $this->datiRicezione = [];
         }
 
-        if ([] === $this->datiRicezione) {
+        if (InvoiceSuiteArrayUtils::empty($this->datiRicezione)) {
             $this->addOnceToDatiRicezione(new DatiDocumentiCorrelati());
         }
 
@@ -754,7 +754,7 @@ final class DatiGenerali
             $this->datiFattureCollegate = [];
         }
 
-        if ([] === $this->datiFattureCollegate) {
+        if (InvoiceSuiteArrayUtils::empty($this->datiFattureCollegate)) {
             $this->addOnceToDatiFattureCollegate(new DatiDocumentiCorrelati());
         }
 
@@ -868,7 +868,7 @@ final class DatiGenerali
             $this->datiSAL = [];
         }
 
-        if ([] === $this->datiSAL) {
+        if (InvoiceSuiteArrayUtils::empty($this->datiSAL)) {
             $this->addOnceToDatiSAL(new DatiSAL());
         }
 
@@ -982,7 +982,7 @@ final class DatiGenerali
             $this->datiDDT = [];
         }
 
-        if ([] === $this->datiDDT) {
+        if (InvoiceSuiteArrayUtils::empty($this->datiDDT)) {
             $this->addOnceToDatiDDT(new DatiDDT());
         }
 

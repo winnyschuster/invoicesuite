@@ -407,7 +407,7 @@ class TenderingProcessType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -422,7 +422,7 @@ class TenderingProcessType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -478,7 +478,7 @@ class TenderingProcessType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -531,7 +531,7 @@ class TenderingProcessType
     public function firstNegotiationDescription(): ?NegotiationDescription
     {
         $negotiationDescription = $this->negotiationDescription ?? [];
-        $negotiationDescription = reset($negotiationDescription);
+        $negotiationDescription = InvoiceSuiteArrayUtils::first($negotiationDescription);
 
         if (false === $negotiationDescription) {
             return null;
@@ -546,7 +546,7 @@ class TenderingProcessType
     public function lastNegotiationDescription(): ?NegotiationDescription
     {
         $negotiationDescription = $this->negotiationDescription ?? [];
-        $negotiationDescription = end($negotiationDescription);
+        $negotiationDescription = InvoiceSuiteArrayUtils::last($negotiationDescription);
 
         if (false === $negotiationDescription) {
             return null;
@@ -602,7 +602,7 @@ class TenderingProcessType
             $this->negotiationDescription = [];
         }
 
-        if ([] === $this->negotiationDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->negotiationDescription)) {
             $this->addOnceToNegotiationDescription(new NegotiationDescription());
         }
 
@@ -1115,7 +1115,7 @@ class TenderingProcessType
     public function firstNoticeDocumentReference(): ?NoticeDocumentReference
     {
         $noticeDocumentReference = $this->noticeDocumentReference ?? [];
-        $noticeDocumentReference = reset($noticeDocumentReference);
+        $noticeDocumentReference = InvoiceSuiteArrayUtils::first($noticeDocumentReference);
 
         if (false === $noticeDocumentReference) {
             return null;
@@ -1130,7 +1130,7 @@ class TenderingProcessType
     public function lastNoticeDocumentReference(): ?NoticeDocumentReference
     {
         $noticeDocumentReference = $this->noticeDocumentReference ?? [];
-        $noticeDocumentReference = end($noticeDocumentReference);
+        $noticeDocumentReference = InvoiceSuiteArrayUtils::last($noticeDocumentReference);
 
         if (false === $noticeDocumentReference) {
             return null;
@@ -1186,7 +1186,7 @@ class TenderingProcessType
             $this->noticeDocumentReference = [];
         }
 
-        if ([] === $this->noticeDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->noticeDocumentReference)) {
             $this->addOnceToNoticeDocumentReference(new NoticeDocumentReference());
         }
 
@@ -1239,7 +1239,7 @@ class TenderingProcessType
     public function firstAdditionalDocumentReference(): ?AdditionalDocumentReference
     {
         $additionalDocumentReference = $this->additionalDocumentReference ?? [];
-        $additionalDocumentReference = reset($additionalDocumentReference);
+        $additionalDocumentReference = InvoiceSuiteArrayUtils::first($additionalDocumentReference);
 
         if (false === $additionalDocumentReference) {
             return null;
@@ -1254,7 +1254,7 @@ class TenderingProcessType
     public function lastAdditionalDocumentReference(): ?AdditionalDocumentReference
     {
         $additionalDocumentReference = $this->additionalDocumentReference ?? [];
-        $additionalDocumentReference = end($additionalDocumentReference);
+        $additionalDocumentReference = InvoiceSuiteArrayUtils::last($additionalDocumentReference);
 
         if (false === $additionalDocumentReference) {
             return null;
@@ -1310,7 +1310,7 @@ class TenderingProcessType
             $this->additionalDocumentReference = [];
         }
 
-        if ([] === $this->additionalDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalDocumentReference)) {
             $this->addOnceToAdditionalDocumentReference(new AdditionalDocumentReference());
         }
 
@@ -1363,7 +1363,7 @@ class TenderingProcessType
     public function firstProcessJustification(): ?ProcessJustification
     {
         $processJustification = $this->processJustification ?? [];
-        $processJustification = reset($processJustification);
+        $processJustification = InvoiceSuiteArrayUtils::first($processJustification);
 
         if (false === $processJustification) {
             return null;
@@ -1378,7 +1378,7 @@ class TenderingProcessType
     public function lastProcessJustification(): ?ProcessJustification
     {
         $processJustification = $this->processJustification ?? [];
-        $processJustification = end($processJustification);
+        $processJustification = InvoiceSuiteArrayUtils::last($processJustification);
 
         if (false === $processJustification) {
             return null;
@@ -1434,7 +1434,7 @@ class TenderingProcessType
             $this->processJustification = [];
         }
 
-        if ([] === $this->processJustification) {
+        if (InvoiceSuiteArrayUtils::empty($this->processJustification)) {
             $this->addOnceToProcessJustification(new ProcessJustification());
         }
 
@@ -1527,7 +1527,7 @@ class TenderingProcessType
     public function firstOpenTenderEvent(): ?OpenTenderEvent
     {
         $openTenderEvent = $this->openTenderEvent ?? [];
-        $openTenderEvent = reset($openTenderEvent);
+        $openTenderEvent = InvoiceSuiteArrayUtils::first($openTenderEvent);
 
         if (false === $openTenderEvent) {
             return null;
@@ -1542,7 +1542,7 @@ class TenderingProcessType
     public function lastOpenTenderEvent(): ?OpenTenderEvent
     {
         $openTenderEvent = $this->openTenderEvent ?? [];
-        $openTenderEvent = end($openTenderEvent);
+        $openTenderEvent = InvoiceSuiteArrayUtils::last($openTenderEvent);
 
         if (false === $openTenderEvent) {
             return null;
@@ -1598,7 +1598,7 @@ class TenderingProcessType
             $this->openTenderEvent = [];
         }
 
-        if ([] === $this->openTenderEvent) {
+        if (InvoiceSuiteArrayUtils::empty($this->openTenderEvent)) {
             $this->addOnceToOpenTenderEvent(new OpenTenderEvent());
         }
 

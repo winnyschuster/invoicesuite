@@ -123,7 +123,7 @@ class EconomicOperatorRoleType
     public function firstRoleDescription(): ?RoleDescription
     {
         $roleDescription = $this->roleDescription ?? [];
-        $roleDescription = reset($roleDescription);
+        $roleDescription = InvoiceSuiteArrayUtils::first($roleDescription);
 
         if (false === $roleDescription) {
             return null;
@@ -138,7 +138,7 @@ class EconomicOperatorRoleType
     public function lastRoleDescription(): ?RoleDescription
     {
         $roleDescription = $this->roleDescription ?? [];
-        $roleDescription = end($roleDescription);
+        $roleDescription = InvoiceSuiteArrayUtils::last($roleDescription);
 
         if (false === $roleDescription) {
             return null;
@@ -194,7 +194,7 @@ class EconomicOperatorRoleType
             $this->roleDescription = [];
         }
 
-        if ([] === $this->roleDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->roleDescription)) {
             $this->addOnceToRoleDescription(new RoleDescription());
         }
 

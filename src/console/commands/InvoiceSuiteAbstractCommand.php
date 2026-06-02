@@ -169,11 +169,11 @@ abstract class InvoiceSuiteAbstractCommand extends Command
     {
         $table = (new Table($this->output))->setStyle('box');
 
-        if ([] !== $headers) {
+        if (!InvoiceSuiteArrayUtils::empty($headers)) {
             $table->setHeaders($headers);
         }
 
-        if ([] !== $rows) {
+        if (!InvoiceSuiteArrayUtils::empty($rows)) {
             $table->addRows($rows);
         }
 

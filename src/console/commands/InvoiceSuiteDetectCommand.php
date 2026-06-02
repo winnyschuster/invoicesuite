@@ -19,6 +19,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 use horstoeko\invoicesuite\InvoiceSuitePdfDocumentReader;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use PrinsFrank\PdfParser\Exception\PdfParserException;
 use RuntimeException;
 use Symfony\Component\Console\Exception\InvalidArgumentException as ConsoleInvalidArgumentException;
@@ -97,8 +98,8 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
             'description' => $pdfReader->getCurrentDocumentFormatProvider()->getDescription(),
             'documentAttachmentName' => $pdfReader->getInvoiceDocumentAttachment()->getAttachmentFilename(),
             'documentAttachmentMimeType' => $pdfReader->getInvoiceDocumentAttachment()->getAttachmentMimeType(),
-            'noOfAdditionalAttachments' => count($pdfReader->getAdditionalDocumentAttachments()),
-            'additionalAttachments' => array_map(static fn ($attachment) => [
+            'noOfAdditionalAttachments' => InvoiceSuiteArrayUtils::count($pdfReader->getAdditionalDocumentAttachments()),
+            'additionalAttachments' => InvoiceSuiteArrayUtils::map(static fn ($attachment) => [
                 'name' => $attachment->getAttachmentFilename(),
                 'mimeType' => $attachment->getAttachmentMimeType(),
             ], $pdfReader->getAdditionalDocumentAttachments()),
@@ -114,7 +115,7 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
         $tableRows[] = ['Document Attachment name', $pdfReader->getInvoiceDocumentAttachment()->getAttachmentFilename()];
         $tableRows[] = ['Document Attachment type', $pdfReader->getInvoiceDocumentAttachment()->getAttachmentMimeType()];
         $tableRows[] = [new TableSeparator(), new TableSeparator()];
-        $tableRows[] = ['Additional attachments', count($pdfReader->getAdditionalDocumentAttachments())];
+        $tableRows[] = ['Additional attachments', InvoiceSuiteArrayUtils::count($pdfReader->getAdditionalDocumentAttachments())];
 
         foreach ($pdfReader->getAdditionalDocumentAttachments() as $attachment) {
             $tableRows[] = [new TableSeparator(), new TableSeparator()];

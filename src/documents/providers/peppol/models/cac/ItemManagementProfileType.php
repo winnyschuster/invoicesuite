@@ -336,7 +336,7 @@ class ItemManagementProfileType
     public function firstReplenishmentOwnerDescription(): ?ReplenishmentOwnerDescription
     {
         $replenishmentOwnerDescription = $this->replenishmentOwnerDescription ?? [];
-        $replenishmentOwnerDescription = reset($replenishmentOwnerDescription);
+        $replenishmentOwnerDescription = InvoiceSuiteArrayUtils::first($replenishmentOwnerDescription);
 
         if (false === $replenishmentOwnerDescription) {
             return null;
@@ -351,7 +351,7 @@ class ItemManagementProfileType
     public function lastReplenishmentOwnerDescription(): ?ReplenishmentOwnerDescription
     {
         $replenishmentOwnerDescription = $this->replenishmentOwnerDescription ?? [];
-        $replenishmentOwnerDescription = end($replenishmentOwnerDescription);
+        $replenishmentOwnerDescription = InvoiceSuiteArrayUtils::last($replenishmentOwnerDescription);
 
         if (false === $replenishmentOwnerDescription) {
             return null;
@@ -407,7 +407,7 @@ class ItemManagementProfileType
             $this->replenishmentOwnerDescription = [];
         }
 
-        if ([] === $this->replenishmentOwnerDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->replenishmentOwnerDescription)) {
             $this->addOnceToReplenishmentOwnerDescription(new ReplenishmentOwnerDescription());
         }
 

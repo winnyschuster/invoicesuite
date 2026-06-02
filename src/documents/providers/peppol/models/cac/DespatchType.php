@@ -593,7 +593,7 @@ class DespatchType
     public function firstInstructions(): ?Instructions
     {
         $instructions = $this->instructions ?? [];
-        $instructions = reset($instructions);
+        $instructions = InvoiceSuiteArrayUtils::first($instructions);
 
         if (false === $instructions) {
             return null;
@@ -608,7 +608,7 @@ class DespatchType
     public function lastInstructions(): ?Instructions
     {
         $instructions = $this->instructions ?? [];
-        $instructions = end($instructions);
+        $instructions = InvoiceSuiteArrayUtils::last($instructions);
 
         if (false === $instructions) {
             return null;
@@ -664,7 +664,7 @@ class DespatchType
             $this->instructions = [];
         }
 
-        if ([] === $this->instructions) {
+        if (InvoiceSuiteArrayUtils::empty($this->instructions)) {
             $this->addOnceToInstructions(new Instructions());
         }
 
@@ -877,7 +877,7 @@ class DespatchType
     public function firstNotifyParty(): ?NotifyParty
     {
         $notifyParty = $this->notifyParty ?? [];
-        $notifyParty = reset($notifyParty);
+        $notifyParty = InvoiceSuiteArrayUtils::first($notifyParty);
 
         if (false === $notifyParty) {
             return null;
@@ -892,7 +892,7 @@ class DespatchType
     public function lastNotifyParty(): ?NotifyParty
     {
         $notifyParty = $this->notifyParty ?? [];
-        $notifyParty = end($notifyParty);
+        $notifyParty = InvoiceSuiteArrayUtils::last($notifyParty);
 
         if (false === $notifyParty) {
             return null;
@@ -948,7 +948,7 @@ class DespatchType
             $this->notifyParty = [];
         }
 
-        if ([] === $this->notifyParty) {
+        if (InvoiceSuiteArrayUtils::empty($this->notifyParty)) {
             $this->addOnceToNotifyParty(new NotifyParty());
         }
 

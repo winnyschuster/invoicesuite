@@ -215,7 +215,7 @@ class LogisticsServiceChargeType
             $this->appliedTradeTax = [];
         }
 
-        if ([] === $this->appliedTradeTax) {
+        if (InvoiceSuiteArrayUtils::empty($this->appliedTradeTax)) {
             $this->addOnceToAppliedTradeTax(new TradeTaxType());
         }
 

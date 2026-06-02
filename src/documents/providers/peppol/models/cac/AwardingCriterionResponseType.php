@@ -224,7 +224,7 @@ class AwardingCriterionResponseType
     public function firstAwardingCriterionDescription(): ?AwardingCriterionDescription
     {
         $awardingCriterionDescription = $this->awardingCriterionDescription ?? [];
-        $awardingCriterionDescription = reset($awardingCriterionDescription);
+        $awardingCriterionDescription = InvoiceSuiteArrayUtils::first($awardingCriterionDescription);
 
         if (false === $awardingCriterionDescription) {
             return null;
@@ -239,7 +239,7 @@ class AwardingCriterionResponseType
     public function lastAwardingCriterionDescription(): ?AwardingCriterionDescription
     {
         $awardingCriterionDescription = $this->awardingCriterionDescription ?? [];
-        $awardingCriterionDescription = end($awardingCriterionDescription);
+        $awardingCriterionDescription = InvoiceSuiteArrayUtils::last($awardingCriterionDescription);
 
         if (false === $awardingCriterionDescription) {
             return null;
@@ -295,7 +295,7 @@ class AwardingCriterionResponseType
             $this->awardingCriterionDescription = [];
         }
 
-        if ([] === $this->awardingCriterionDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->awardingCriterionDescription)) {
             $this->addOnceToAwardingCriterionDescription(new AwardingCriterionDescription());
         }
 
@@ -348,7 +348,7 @@ class AwardingCriterionResponseType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -363,7 +363,7 @@ class AwardingCriterionResponseType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -419,7 +419,7 @@ class AwardingCriterionResponseType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -552,7 +552,7 @@ class AwardingCriterionResponseType
     public function firstSubordinateAwardingCriterionResponse(): ?SubordinateAwardingCriterionResponse
     {
         $subordinateAwardingCriterionResponse = $this->subordinateAwardingCriterionResponse ?? [];
-        $subordinateAwardingCriterionResponse = reset($subordinateAwardingCriterionResponse);
+        $subordinateAwardingCriterionResponse = InvoiceSuiteArrayUtils::first($subordinateAwardingCriterionResponse);
 
         if (false === $subordinateAwardingCriterionResponse) {
             return null;
@@ -567,7 +567,7 @@ class AwardingCriterionResponseType
     public function lastSubordinateAwardingCriterionResponse(): ?SubordinateAwardingCriterionResponse
     {
         $subordinateAwardingCriterionResponse = $this->subordinateAwardingCriterionResponse ?? [];
-        $subordinateAwardingCriterionResponse = end($subordinateAwardingCriterionResponse);
+        $subordinateAwardingCriterionResponse = InvoiceSuiteArrayUtils::last($subordinateAwardingCriterionResponse);
 
         if (false === $subordinateAwardingCriterionResponse) {
             return null;
@@ -623,7 +623,7 @@ class AwardingCriterionResponseType
             $this->subordinateAwardingCriterionResponse = [];
         }
 
-        if ([] === $this->subordinateAwardingCriterionResponse) {
+        if (InvoiceSuiteArrayUtils::empty($this->subordinateAwardingCriterionResponse)) {
             $this->addOnceToSubordinateAwardingCriterionResponse(new SubordinateAwardingCriterionResponse());
         }
 

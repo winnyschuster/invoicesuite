@@ -189,7 +189,7 @@ class TransportExecutionTermsType
     public function firstTransportUserSpecialTerms(): ?TransportUserSpecialTerms
     {
         $transportUserSpecialTerms = $this->transportUserSpecialTerms ?? [];
-        $transportUserSpecialTerms = reset($transportUserSpecialTerms);
+        $transportUserSpecialTerms = InvoiceSuiteArrayUtils::first($transportUserSpecialTerms);
 
         if (false === $transportUserSpecialTerms) {
             return null;
@@ -204,7 +204,7 @@ class TransportExecutionTermsType
     public function lastTransportUserSpecialTerms(): ?TransportUserSpecialTerms
     {
         $transportUserSpecialTerms = $this->transportUserSpecialTerms ?? [];
-        $transportUserSpecialTerms = end($transportUserSpecialTerms);
+        $transportUserSpecialTerms = InvoiceSuiteArrayUtils::last($transportUserSpecialTerms);
 
         if (false === $transportUserSpecialTerms) {
             return null;
@@ -260,7 +260,7 @@ class TransportExecutionTermsType
             $this->transportUserSpecialTerms = [];
         }
 
-        if ([] === $this->transportUserSpecialTerms) {
+        if (InvoiceSuiteArrayUtils::empty($this->transportUserSpecialTerms)) {
             $this->addOnceToTransportUserSpecialTerms(new TransportUserSpecialTerms());
         }
 
@@ -313,7 +313,7 @@ class TransportExecutionTermsType
     public function firstTransportServiceProviderSpecialTerms(): ?TransportServiceProviderSpecialTerms
     {
         $transportServiceProviderSpecialTerms = $this->transportServiceProviderSpecialTerms ?? [];
-        $transportServiceProviderSpecialTerms = reset($transportServiceProviderSpecialTerms);
+        $transportServiceProviderSpecialTerms = InvoiceSuiteArrayUtils::first($transportServiceProviderSpecialTerms);
 
         if (false === $transportServiceProviderSpecialTerms) {
             return null;
@@ -328,7 +328,7 @@ class TransportExecutionTermsType
     public function lastTransportServiceProviderSpecialTerms(): ?TransportServiceProviderSpecialTerms
     {
         $transportServiceProviderSpecialTerms = $this->transportServiceProviderSpecialTerms ?? [];
-        $transportServiceProviderSpecialTerms = end($transportServiceProviderSpecialTerms);
+        $transportServiceProviderSpecialTerms = InvoiceSuiteArrayUtils::last($transportServiceProviderSpecialTerms);
 
         if (false === $transportServiceProviderSpecialTerms) {
             return null;
@@ -384,7 +384,7 @@ class TransportExecutionTermsType
             $this->transportServiceProviderSpecialTerms = [];
         }
 
-        if ([] === $this->transportServiceProviderSpecialTerms) {
+        if (InvoiceSuiteArrayUtils::empty($this->transportServiceProviderSpecialTerms)) {
             $this->addOnceToTransportServiceProviderSpecialTerms(new TransportServiceProviderSpecialTerms());
         }
 
@@ -437,7 +437,7 @@ class TransportExecutionTermsType
     public function firstChangeConditions(): ?ChangeConditions
     {
         $changeConditions = $this->changeConditions ?? [];
-        $changeConditions = reset($changeConditions);
+        $changeConditions = InvoiceSuiteArrayUtils::first($changeConditions);
 
         if (false === $changeConditions) {
             return null;
@@ -452,7 +452,7 @@ class TransportExecutionTermsType
     public function lastChangeConditions(): ?ChangeConditions
     {
         $changeConditions = $this->changeConditions ?? [];
-        $changeConditions = end($changeConditions);
+        $changeConditions = InvoiceSuiteArrayUtils::last($changeConditions);
 
         if (false === $changeConditions) {
             return null;
@@ -508,7 +508,7 @@ class TransportExecutionTermsType
             $this->changeConditions = [];
         }
 
-        if ([] === $this->changeConditions) {
+        if (InvoiceSuiteArrayUtils::empty($this->changeConditions)) {
             $this->addOnceToChangeConditions(new ChangeConditions());
         }
 
@@ -561,7 +561,7 @@ class TransportExecutionTermsType
     public function firstPaymentTerms(): ?PaymentTerms
     {
         $paymentTerms = $this->paymentTerms ?? [];
-        $paymentTerms = reset($paymentTerms);
+        $paymentTerms = InvoiceSuiteArrayUtils::first($paymentTerms);
 
         if (false === $paymentTerms) {
             return null;
@@ -576,7 +576,7 @@ class TransportExecutionTermsType
     public function lastPaymentTerms(): ?PaymentTerms
     {
         $paymentTerms = $this->paymentTerms ?? [];
-        $paymentTerms = end($paymentTerms);
+        $paymentTerms = InvoiceSuiteArrayUtils::last($paymentTerms);
 
         if (false === $paymentTerms) {
             return null;
@@ -632,7 +632,7 @@ class TransportExecutionTermsType
             $this->paymentTerms = [];
         }
 
-        if ([] === $this->paymentTerms) {
+        if (InvoiceSuiteArrayUtils::empty($this->paymentTerms)) {
             $this->addOnceToPaymentTerms(new PaymentTerms());
         }
 
@@ -685,7 +685,7 @@ class TransportExecutionTermsType
     public function firstDeliveryTerms(): ?DeliveryTerms
     {
         $deliveryTerms = $this->deliveryTerms ?? [];
-        $deliveryTerms = reset($deliveryTerms);
+        $deliveryTerms = InvoiceSuiteArrayUtils::first($deliveryTerms);
 
         if (false === $deliveryTerms) {
             return null;
@@ -700,7 +700,7 @@ class TransportExecutionTermsType
     public function lastDeliveryTerms(): ?DeliveryTerms
     {
         $deliveryTerms = $this->deliveryTerms ?? [];
-        $deliveryTerms = end($deliveryTerms);
+        $deliveryTerms = InvoiceSuiteArrayUtils::last($deliveryTerms);
 
         if (false === $deliveryTerms) {
             return null;
@@ -756,7 +756,7 @@ class TransportExecutionTermsType
             $this->deliveryTerms = [];
         }
 
-        if ([] === $this->deliveryTerms) {
+        if (InvoiceSuiteArrayUtils::empty($this->deliveryTerms)) {
             $this->addOnceToDeliveryTerms(new DeliveryTerms());
         }
 
@@ -929,7 +929,7 @@ class TransportExecutionTermsType
     public function firstEnvironmentalEmission(): ?EnvironmentalEmission
     {
         $environmentalEmission = $this->environmentalEmission ?? [];
-        $environmentalEmission = reset($environmentalEmission);
+        $environmentalEmission = InvoiceSuiteArrayUtils::first($environmentalEmission);
 
         if (false === $environmentalEmission) {
             return null;
@@ -944,7 +944,7 @@ class TransportExecutionTermsType
     public function lastEnvironmentalEmission(): ?EnvironmentalEmission
     {
         $environmentalEmission = $this->environmentalEmission ?? [];
-        $environmentalEmission = end($environmentalEmission);
+        $environmentalEmission = InvoiceSuiteArrayUtils::last($environmentalEmission);
 
         if (false === $environmentalEmission) {
             return null;
@@ -1000,7 +1000,7 @@ class TransportExecutionTermsType
             $this->environmentalEmission = [];
         }
 
-        if ([] === $this->environmentalEmission) {
+        if (InvoiceSuiteArrayUtils::empty($this->environmentalEmission)) {
             $this->addOnceToEnvironmentalEmission(new EnvironmentalEmission());
         }
 
@@ -1053,7 +1053,7 @@ class TransportExecutionTermsType
     public function firstNotificationRequirement(): ?NotificationRequirement
     {
         $notificationRequirement = $this->notificationRequirement ?? [];
-        $notificationRequirement = reset($notificationRequirement);
+        $notificationRequirement = InvoiceSuiteArrayUtils::first($notificationRequirement);
 
         if (false === $notificationRequirement) {
             return null;
@@ -1068,7 +1068,7 @@ class TransportExecutionTermsType
     public function lastNotificationRequirement(): ?NotificationRequirement
     {
         $notificationRequirement = $this->notificationRequirement ?? [];
-        $notificationRequirement = end($notificationRequirement);
+        $notificationRequirement = InvoiceSuiteArrayUtils::last($notificationRequirement);
 
         if (false === $notificationRequirement) {
             return null;
@@ -1124,7 +1124,7 @@ class TransportExecutionTermsType
             $this->notificationRequirement = [];
         }
 
-        if ([] === $this->notificationRequirement) {
+        if (InvoiceSuiteArrayUtils::empty($this->notificationRequirement)) {
             $this->addOnceToNotificationRequirement(new NotificationRequirement());
         }
 

@@ -424,7 +424,7 @@ class PackageType
     public function firstPackingMaterial(): ?PackingMaterial
     {
         $packingMaterial = $this->packingMaterial ?? [];
-        $packingMaterial = reset($packingMaterial);
+        $packingMaterial = InvoiceSuiteArrayUtils::first($packingMaterial);
 
         if (false === $packingMaterial) {
             return null;
@@ -439,7 +439,7 @@ class PackageType
     public function lastPackingMaterial(): ?PackingMaterial
     {
         $packingMaterial = $this->packingMaterial ?? [];
-        $packingMaterial = end($packingMaterial);
+        $packingMaterial = InvoiceSuiteArrayUtils::last($packingMaterial);
 
         if (false === $packingMaterial) {
             return null;
@@ -495,7 +495,7 @@ class PackageType
             $this->packingMaterial = [];
         }
 
-        if ([] === $this->packingMaterial) {
+        if (InvoiceSuiteArrayUtils::empty($this->packingMaterial)) {
             $this->addOnceToPackingMaterial(new PackingMaterial());
         }
 
@@ -588,7 +588,7 @@ class PackageType
     public function firstContainedPackage(): ?ContainedPackage
     {
         $containedPackage = $this->containedPackage ?? [];
-        $containedPackage = reset($containedPackage);
+        $containedPackage = InvoiceSuiteArrayUtils::first($containedPackage);
 
         if (false === $containedPackage) {
             return null;
@@ -603,7 +603,7 @@ class PackageType
     public function lastContainedPackage(): ?ContainedPackage
     {
         $containedPackage = $this->containedPackage ?? [];
-        $containedPackage = end($containedPackage);
+        $containedPackage = InvoiceSuiteArrayUtils::last($containedPackage);
 
         if (false === $containedPackage) {
             return null;
@@ -659,7 +659,7 @@ class PackageType
             $this->containedPackage = [];
         }
 
-        if ([] === $this->containedPackage) {
+        if (InvoiceSuiteArrayUtils::empty($this->containedPackage)) {
             $this->addOnceToContainedPackage(new ContainedPackage());
         }
 
@@ -752,7 +752,7 @@ class PackageType
     public function firstGoodsItem(): ?GoodsItem
     {
         $goodsItem = $this->goodsItem ?? [];
-        $goodsItem = reset($goodsItem);
+        $goodsItem = InvoiceSuiteArrayUtils::first($goodsItem);
 
         if (false === $goodsItem) {
             return null;
@@ -767,7 +767,7 @@ class PackageType
     public function lastGoodsItem(): ?GoodsItem
     {
         $goodsItem = $this->goodsItem ?? [];
-        $goodsItem = end($goodsItem);
+        $goodsItem = InvoiceSuiteArrayUtils::last($goodsItem);
 
         if (false === $goodsItem) {
             return null;
@@ -823,7 +823,7 @@ class PackageType
             $this->goodsItem = [];
         }
 
-        if ([] === $this->goodsItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->goodsItem)) {
             $this->addOnceToGoodsItem(new GoodsItem());
         }
 
@@ -876,7 +876,7 @@ class PackageType
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
         $measurementDimension = $this->measurementDimension ?? [];
-        $measurementDimension = reset($measurementDimension);
+        $measurementDimension = InvoiceSuiteArrayUtils::first($measurementDimension);
 
         if (false === $measurementDimension) {
             return null;
@@ -891,7 +891,7 @@ class PackageType
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
         $measurementDimension = $this->measurementDimension ?? [];
-        $measurementDimension = end($measurementDimension);
+        $measurementDimension = InvoiceSuiteArrayUtils::last($measurementDimension);
 
         if (false === $measurementDimension) {
             return null;
@@ -947,7 +947,7 @@ class PackageType
             $this->measurementDimension = [];
         }
 
-        if ([] === $this->measurementDimension) {
+        if (InvoiceSuiteArrayUtils::empty($this->measurementDimension)) {
             $this->addOnceToMeasurementDimension(new MeasurementDimension());
         }
 
@@ -1000,7 +1000,7 @@ class PackageType
     public function firstDeliveryUnit(): ?DeliveryUnit
     {
         $deliveryUnit = $this->deliveryUnit ?? [];
-        $deliveryUnit = reset($deliveryUnit);
+        $deliveryUnit = InvoiceSuiteArrayUtils::first($deliveryUnit);
 
         if (false === $deliveryUnit) {
             return null;
@@ -1015,7 +1015,7 @@ class PackageType
     public function lastDeliveryUnit(): ?DeliveryUnit
     {
         $deliveryUnit = $this->deliveryUnit ?? [];
-        $deliveryUnit = end($deliveryUnit);
+        $deliveryUnit = InvoiceSuiteArrayUtils::last($deliveryUnit);
 
         if (false === $deliveryUnit) {
             return null;
@@ -1071,7 +1071,7 @@ class PackageType
             $this->deliveryUnit = [];
         }
 
-        if ([] === $this->deliveryUnit) {
+        if (InvoiceSuiteArrayUtils::empty($this->deliveryUnit)) {
             $this->addOnceToDeliveryUnit(new DeliveryUnit());
         }
 

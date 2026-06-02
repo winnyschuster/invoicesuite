@@ -127,7 +127,7 @@ class SupplierConsumptionType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -142,7 +142,7 @@ class SupplierConsumptionType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -198,7 +198,7 @@ class SupplierConsumptionType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -411,7 +411,7 @@ class SupplierConsumptionType
     public function firstConsumptionLine(): ?ConsumptionLine
     {
         $consumptionLine = $this->consumptionLine ?? [];
-        $consumptionLine = reset($consumptionLine);
+        $consumptionLine = InvoiceSuiteArrayUtils::first($consumptionLine);
 
         if (false === $consumptionLine) {
             return null;
@@ -426,7 +426,7 @@ class SupplierConsumptionType
     public function lastConsumptionLine(): ?ConsumptionLine
     {
         $consumptionLine = $this->consumptionLine ?? [];
-        $consumptionLine = end($consumptionLine);
+        $consumptionLine = InvoiceSuiteArrayUtils::last($consumptionLine);
 
         if (false === $consumptionLine) {
             return null;
@@ -482,7 +482,7 @@ class SupplierConsumptionType
             $this->consumptionLine = [];
         }
 
-        if ([] === $this->consumptionLine) {
+        if (InvoiceSuiteArrayUtils::empty($this->consumptionLine)) {
             $this->addOnceToConsumptionLine(new ConsumptionLine());
         }
 

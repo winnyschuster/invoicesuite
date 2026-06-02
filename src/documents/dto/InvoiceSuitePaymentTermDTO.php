@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\dto;
 
 use DateTimeInterface;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use JsonSerializable;
 
@@ -194,7 +195,7 @@ class InvoiceSuitePaymentTermDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($discountTerm = reset($this->discountTerms)) !== false) {
+        if (($discountTerm = InvoiceSuiteArrayUtils::first($this->discountTerms)) !== false) {
             $callback($discountTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -214,7 +215,7 @@ class InvoiceSuitePaymentTermDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($discountTerm = next($this->discountTerms)) !== false) {
+        if (($discountTerm = InvoiceSuiteArrayUtils::next($this->discountTerms)) !== false) {
             $callback($discountTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -234,7 +235,7 @@ class InvoiceSuitePaymentTermDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($discountTerm = prev($this->discountTerms)) !== false) {
+        if (($discountTerm = InvoiceSuiteArrayUtils::previous($this->discountTerms)) !== false) {
             $callback($discountTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -254,7 +255,7 @@ class InvoiceSuitePaymentTermDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($discountTerm = end($this->discountTerms)) !== false) {
+        if (($discountTerm = InvoiceSuiteArrayUtils::last($this->discountTerms)) !== false) {
             $callback($discountTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -342,7 +343,7 @@ class InvoiceSuitePaymentTermDTO implements JsonSerializable
     public function filterDiscountTerm(
         callable $callback
     ): array {
-        return array_filter($this->discountTerms, $callback);
+        return InvoiceSuiteArrayUtils::filter($this->discountTerms, $callback);
     }
 
     /**
@@ -360,8 +361,8 @@ class InvoiceSuitePaymentTermDTO implements JsonSerializable
     ): static {
         $filteredDiscountTerm = $this->filterDiscountTerm($filterCallback);
 
-        if ([] !== $filteredDiscountTerm) {
-            $discountTerm = reset($filteredDiscountTerm);
+        if (!InvoiceSuiteArrayUtils::empty($filteredDiscountTerm)) {
+            $discountTerm = InvoiceSuiteArrayUtils::first($filteredDiscountTerm);
             $callback($discountTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -385,8 +386,8 @@ class InvoiceSuitePaymentTermDTO implements JsonSerializable
     ): static {
         $filteredDiscountTerm = $this->filterDiscountTerm($filterCallback);
 
-        if ([] !== $filteredDiscountTerm) {
-            $discountTerm = end($filteredDiscountTerm);
+        if (!InvoiceSuiteArrayUtils::empty($filteredDiscountTerm)) {
+            $discountTerm = InvoiceSuiteArrayUtils::last($filteredDiscountTerm);
             $callback($discountTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -448,7 +449,7 @@ class InvoiceSuitePaymentTermDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($penaltyTerm = reset($this->penaltyTerms)) !== false) {
+        if (($penaltyTerm = InvoiceSuiteArrayUtils::first($this->penaltyTerms)) !== false) {
             $callback($penaltyTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -468,7 +469,7 @@ class InvoiceSuitePaymentTermDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($penaltyTerm = next($this->penaltyTerms)) !== false) {
+        if (($penaltyTerm = InvoiceSuiteArrayUtils::next($this->penaltyTerms)) !== false) {
             $callback($penaltyTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -488,7 +489,7 @@ class InvoiceSuitePaymentTermDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($penaltyTerm = prev($this->penaltyTerms)) !== false) {
+        if (($penaltyTerm = InvoiceSuiteArrayUtils::previous($this->penaltyTerms)) !== false) {
             $callback($penaltyTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -508,7 +509,7 @@ class InvoiceSuitePaymentTermDTO implements JsonSerializable
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($penaltyTerm = end($this->penaltyTerms)) !== false) {
+        if (($penaltyTerm = InvoiceSuiteArrayUtils::last($this->penaltyTerms)) !== false) {
             $callback($penaltyTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -596,7 +597,7 @@ class InvoiceSuitePaymentTermDTO implements JsonSerializable
     public function filterPenaltyTerm(
         callable $callback
     ): array {
-        return array_filter($this->penaltyTerms, $callback);
+        return InvoiceSuiteArrayUtils::filter($this->penaltyTerms, $callback);
     }
 
     /**
@@ -614,8 +615,8 @@ class InvoiceSuitePaymentTermDTO implements JsonSerializable
     ): static {
         $filteredPenaltyTerm = $this->filterPenaltyTerm($filterCallback);
 
-        if ([] !== $filteredPenaltyTerm) {
-            $penaltyTerm = reset($filteredPenaltyTerm);
+        if (!InvoiceSuiteArrayUtils::empty($filteredPenaltyTerm)) {
+            $penaltyTerm = InvoiceSuiteArrayUtils::first($filteredPenaltyTerm);
             $callback($penaltyTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -639,8 +640,8 @@ class InvoiceSuitePaymentTermDTO implements JsonSerializable
     ): static {
         $filteredPenaltyTerm = $this->filterPenaltyTerm($filterCallback);
 
-        if ([] !== $filteredPenaltyTerm) {
-            $penaltyTerm = end($filteredPenaltyTerm);
+        if (!InvoiceSuiteArrayUtils::empty($filteredPenaltyTerm)) {
+            $penaltyTerm = InvoiceSuiteArrayUtils::last($filteredPenaltyTerm);
             $callback($penaltyTerm);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();

@@ -263,7 +263,7 @@ class FatturaElettronicaType
             $this->fatturaElettronicaBody = [];
         }
 
-        if ([] === $this->fatturaElettronicaBody) {
+        if (InvoiceSuiteArrayUtils::empty($this->fatturaElettronicaBody)) {
             $this->addOnceToFatturaElettronicaBody(new FatturaElettronicaBody());
         }
 
@@ -283,7 +283,7 @@ class FatturaElettronicaType
             return null;
         }
 
-        $firstBody = reset($this->fatturaElettronicaBody);
+        $firstBody = InvoiceSuiteArrayUtils::first($this->fatturaElettronicaBody);
 
         if (false === $firstBody) {
             return null;
@@ -298,7 +298,7 @@ class FatturaElettronicaType
     public function getLatestFatturaElettronicaBody(): ?FatturaElettronicaBody
     {
         $fatturaElettronicaBodies = $this->getFatturaElettronicaBody() ?? [];
-        $fatturaElettronicaBody = end($fatturaElettronicaBodies);
+        $fatturaElettronicaBody = InvoiceSuiteArrayUtils::last($fatturaElettronicaBodies);
 
         if (false === $fatturaElettronicaBody) {
             return null;

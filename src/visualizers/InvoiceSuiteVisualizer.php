@@ -18,6 +18,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
@@ -352,7 +353,7 @@ class InvoiceSuiteVisualizer
         array $data
     ): static {
         foreach ($data as $dataItem) {
-            $dataItemParts = array_map('trim', explode(':', $dataItem, 3));
+            $dataItemParts = InvoiceSuiteArrayUtils::map('trim', explode(':', $dataItem, 3));
             $this->addPdfFontData($dataItemParts[0] ?? '', $dataItemParts[1] ?? '', $dataItemParts[2] ?? '');
         }
 
@@ -563,7 +564,7 @@ class InvoiceSuiteVisualizer
 
         $config = [
             'tempDir' => sys_get_temp_dir() . '/mpdf',
-            'fontDir' => array_merge($defaultFontDirs, $this->pdfFontDirectories),
+            'fontDir' => InvoiceSuiteArrayUtils::merge($defaultFontDirs, $this->pdfFontDirectories),
             'fontdata' => $defaultFontData + $this->pdfFontData,
             'default_font' => $this->pdfFontDefault,
             'format' => $this->pdfPaperSize,

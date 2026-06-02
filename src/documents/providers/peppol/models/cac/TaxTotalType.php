@@ -256,7 +256,7 @@ class TaxTotalType
     public function firstTaxSubtotal(): ?TaxSubtotal
     {
         $taxSubtotal = $this->taxSubtotal ?? [];
-        $taxSubtotal = reset($taxSubtotal);
+        $taxSubtotal = InvoiceSuiteArrayUtils::first($taxSubtotal);
 
         if (false === $taxSubtotal) {
             return null;
@@ -271,7 +271,7 @@ class TaxTotalType
     public function lastTaxSubtotal(): ?TaxSubtotal
     {
         $taxSubtotal = $this->taxSubtotal ?? [];
-        $taxSubtotal = end($taxSubtotal);
+        $taxSubtotal = InvoiceSuiteArrayUtils::last($taxSubtotal);
 
         if (false === $taxSubtotal) {
             return null;
@@ -327,7 +327,7 @@ class TaxTotalType
             $this->taxSubtotal = [];
         }
 
-        if ([] === $this->taxSubtotal) {
+        if (InvoiceSuiteArrayUtils::empty($this->taxSubtotal)) {
             $this->addOnceToTaxSubtotal(new TaxSubtotal());
         }
 

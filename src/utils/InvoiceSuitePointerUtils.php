@@ -74,7 +74,7 @@ class InvoiceSuitePointerUtils
     ): bool {
         static::initNamedPointerIfNeeded($name);
 
-        return array_key_exists(static::$pointerState[$name], $array);
+        return InvoiceSuiteArrayUtils::keyExists($array, static::$pointerState[$name]);
     }
 
     /**
@@ -170,7 +170,7 @@ class InvoiceSuitePointerUtils
         string $name,
         int $withValue = 0
     ): void {
-        if (!array_key_exists($name, static::$pointerState)) {
+        if (!InvoiceSuiteArrayUtils::keyExists(static::$pointerState, $name)) {
             static::initNamedPointer($name, $withValue);
         }
     }

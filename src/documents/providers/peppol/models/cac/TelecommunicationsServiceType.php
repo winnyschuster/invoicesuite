@@ -927,7 +927,7 @@ class TelecommunicationsServiceType
     public function firstExchangeRate(): ?ExchangeRate
     {
         $exchangeRate = $this->exchangeRate ?? [];
-        $exchangeRate = reset($exchangeRate);
+        $exchangeRate = InvoiceSuiteArrayUtils::first($exchangeRate);
 
         if (false === $exchangeRate) {
             return null;
@@ -942,7 +942,7 @@ class TelecommunicationsServiceType
     public function lastExchangeRate(): ?ExchangeRate
     {
         $exchangeRate = $this->exchangeRate ?? [];
-        $exchangeRate = end($exchangeRate);
+        $exchangeRate = InvoiceSuiteArrayUtils::last($exchangeRate);
 
         if (false === $exchangeRate) {
             return null;
@@ -998,7 +998,7 @@ class TelecommunicationsServiceType
             $this->exchangeRate = [];
         }
 
-        if ([] === $this->exchangeRate) {
+        if (InvoiceSuiteArrayUtils::empty($this->exchangeRate)) {
             $this->addOnceToExchangeRate(new ExchangeRate());
         }
 
@@ -1051,7 +1051,7 @@ class TelecommunicationsServiceType
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
         $allowanceCharge = $this->allowanceCharge ?? [];
-        $allowanceCharge = reset($allowanceCharge);
+        $allowanceCharge = InvoiceSuiteArrayUtils::first($allowanceCharge);
 
         if (false === $allowanceCharge) {
             return null;
@@ -1066,7 +1066,7 @@ class TelecommunicationsServiceType
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
         $allowanceCharge = $this->allowanceCharge ?? [];
-        $allowanceCharge = end($allowanceCharge);
+        $allowanceCharge = InvoiceSuiteArrayUtils::last($allowanceCharge);
 
         if (false === $allowanceCharge) {
             return null;
@@ -1122,7 +1122,7 @@ class TelecommunicationsServiceType
             $this->allowanceCharge = [];
         }
 
-        if ([] === $this->allowanceCharge) {
+        if (InvoiceSuiteArrayUtils::empty($this->allowanceCharge)) {
             $this->addOnceToAllowanceCharge(new AllowanceCharge());
         }
 
@@ -1175,7 +1175,7 @@ class TelecommunicationsServiceType
     public function firstTaxTotal(): ?TaxTotal
     {
         $taxTotal = $this->taxTotal ?? [];
-        $taxTotal = reset($taxTotal);
+        $taxTotal = InvoiceSuiteArrayUtils::first($taxTotal);
 
         if (false === $taxTotal) {
             return null;
@@ -1190,7 +1190,7 @@ class TelecommunicationsServiceType
     public function lastTaxTotal(): ?TaxTotal
     {
         $taxTotal = $this->taxTotal ?? [];
-        $taxTotal = end($taxTotal);
+        $taxTotal = InvoiceSuiteArrayUtils::last($taxTotal);
 
         if (false === $taxTotal) {
             return null;
@@ -1246,7 +1246,7 @@ class TelecommunicationsServiceType
             $this->taxTotal = [];
         }
 
-        if ([] === $this->taxTotal) {
+        if (InvoiceSuiteArrayUtils::empty($this->taxTotal)) {
             $this->addOnceToTaxTotal(new TaxTotal());
         }
 
@@ -1299,7 +1299,7 @@ class TelecommunicationsServiceType
     public function firstCallDuty(): ?CallDuty
     {
         $callDuty = $this->callDuty ?? [];
-        $callDuty = reset($callDuty);
+        $callDuty = InvoiceSuiteArrayUtils::first($callDuty);
 
         if (false === $callDuty) {
             return null;
@@ -1314,7 +1314,7 @@ class TelecommunicationsServiceType
     public function lastCallDuty(): ?CallDuty
     {
         $callDuty = $this->callDuty ?? [];
-        $callDuty = end($callDuty);
+        $callDuty = InvoiceSuiteArrayUtils::last($callDuty);
 
         if (false === $callDuty) {
             return null;
@@ -1370,7 +1370,7 @@ class TelecommunicationsServiceType
             $this->callDuty = [];
         }
 
-        if ([] === $this->callDuty) {
+        if (InvoiceSuiteArrayUtils::empty($this->callDuty)) {
             $this->addOnceToCallDuty(new CallDuty());
         }
 
@@ -1423,7 +1423,7 @@ class TelecommunicationsServiceType
     public function firstTimeDuty(): ?TimeDuty
     {
         $timeDuty = $this->timeDuty ?? [];
-        $timeDuty = reset($timeDuty);
+        $timeDuty = InvoiceSuiteArrayUtils::first($timeDuty);
 
         if (false === $timeDuty) {
             return null;
@@ -1438,7 +1438,7 @@ class TelecommunicationsServiceType
     public function lastTimeDuty(): ?TimeDuty
     {
         $timeDuty = $this->timeDuty ?? [];
-        $timeDuty = end($timeDuty);
+        $timeDuty = InvoiceSuiteArrayUtils::last($timeDuty);
 
         if (false === $timeDuty) {
             return null;
@@ -1494,7 +1494,7 @@ class TelecommunicationsServiceType
             $this->timeDuty = [];
         }
 
-        if ([] === $this->timeDuty) {
+        if (InvoiceSuiteArrayUtils::empty($this->timeDuty)) {
             $this->addOnceToTimeDuty(new TimeDuty());
         }
 

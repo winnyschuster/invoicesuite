@@ -226,7 +226,7 @@ class AdvancePaymentType
             $this->includedTradeTax = [];
         }
 
-        if ([] === $this->includedTradeTax) {
+        if (InvoiceSuiteArrayUtils::empty($this->includedTradeTax)) {
             $this->addOnceToIncludedTradeTax(new TradeTaxType());
         }
 

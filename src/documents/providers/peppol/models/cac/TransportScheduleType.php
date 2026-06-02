@@ -335,7 +335,7 @@ class TransportScheduleType
     public function firstRemarks(): ?Remarks
     {
         $remarks = $this->remarks ?? [];
-        $remarks = reset($remarks);
+        $remarks = InvoiceSuiteArrayUtils::first($remarks);
 
         if (false === $remarks) {
             return null;
@@ -350,7 +350,7 @@ class TransportScheduleType
     public function lastRemarks(): ?Remarks
     {
         $remarks = $this->remarks ?? [];
-        $remarks = end($remarks);
+        $remarks = InvoiceSuiteArrayUtils::last($remarks);
 
         if (false === $remarks) {
             return null;
@@ -406,7 +406,7 @@ class TransportScheduleType
             $this->remarks = [];
         }
 
-        if ([] === $this->remarks) {
+        if (InvoiceSuiteArrayUtils::empty($this->remarks)) {
             $this->addOnceToRemarks(new Remarks());
         }
 

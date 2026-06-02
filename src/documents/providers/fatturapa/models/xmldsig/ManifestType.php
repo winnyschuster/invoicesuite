@@ -145,7 +145,7 @@ class ManifestType
             $this->reference = [];
         }
 
-        if ([] === $this->reference) {
+        if (InvoiceSuiteArrayUtils::empty($this->reference)) {
             $this->addOnceToReference(new ReferenceType());
         }
 

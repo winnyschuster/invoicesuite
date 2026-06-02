@@ -314,7 +314,7 @@ class ProcurementProjectType
     public function firstName(): ?Name
     {
         $name = $this->name ?? [];
-        $name = reset($name);
+        $name = InvoiceSuiteArrayUtils::first($name);
 
         if (false === $name) {
             return null;
@@ -329,7 +329,7 @@ class ProcurementProjectType
     public function lastName(): ?Name
     {
         $name = $this->name ?? [];
-        $name = end($name);
+        $name = InvoiceSuiteArrayUtils::last($name);
 
         if (false === $name) {
             return null;
@@ -385,7 +385,7 @@ class ProcurementProjectType
             $this->name = [];
         }
 
-        if ([] === $this->name) {
+        if (InvoiceSuiteArrayUtils::empty($this->name)) {
             $this->addOnceToName(new Name());
         }
 
@@ -438,7 +438,7 @@ class ProcurementProjectType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -453,7 +453,7 @@ class ProcurementProjectType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -509,7 +509,7 @@ class ProcurementProjectType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -722,7 +722,7 @@ class ProcurementProjectType
     public function firstFeeDescription(): ?FeeDescription
     {
         $feeDescription = $this->feeDescription ?? [];
-        $feeDescription = reset($feeDescription);
+        $feeDescription = InvoiceSuiteArrayUtils::first($feeDescription);
 
         if (false === $feeDescription) {
             return null;
@@ -737,7 +737,7 @@ class ProcurementProjectType
     public function lastFeeDescription(): ?FeeDescription
     {
         $feeDescription = $this->feeDescription ?? [];
-        $feeDescription = end($feeDescription);
+        $feeDescription = InvoiceSuiteArrayUtils::last($feeDescription);
 
         if (false === $feeDescription) {
             return null;
@@ -793,7 +793,7 @@ class ProcurementProjectType
             $this->feeDescription = [];
         }
 
-        if ([] === $this->feeDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->feeDescription)) {
             $this->addOnceToFeeDescription(new FeeDescription());
         }
 
@@ -916,7 +916,7 @@ class ProcurementProjectType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -931,7 +931,7 @@ class ProcurementProjectType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -987,7 +987,7 @@ class ProcurementProjectType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -1120,7 +1120,7 @@ class ProcurementProjectType
     public function firstAdditionalCommodityClassification(): ?AdditionalCommodityClassification
     {
         $additionalCommodityClassification = $this->additionalCommodityClassification ?? [];
-        $additionalCommodityClassification = reset($additionalCommodityClassification);
+        $additionalCommodityClassification = InvoiceSuiteArrayUtils::first($additionalCommodityClassification);
 
         if (false === $additionalCommodityClassification) {
             return null;
@@ -1135,7 +1135,7 @@ class ProcurementProjectType
     public function lastAdditionalCommodityClassification(): ?AdditionalCommodityClassification
     {
         $additionalCommodityClassification = $this->additionalCommodityClassification ?? [];
-        $additionalCommodityClassification = end($additionalCommodityClassification);
+        $additionalCommodityClassification = InvoiceSuiteArrayUtils::last($additionalCommodityClassification);
 
         if (false === $additionalCommodityClassification) {
             return null;
@@ -1191,7 +1191,7 @@ class ProcurementProjectType
             $this->additionalCommodityClassification = [];
         }
 
-        if ([] === $this->additionalCommodityClassification) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalCommodityClassification)) {
             $this->addOnceToAdditionalCommodityClassification(new AdditionalCommodityClassification());
         }
 
@@ -1244,7 +1244,7 @@ class ProcurementProjectType
     public function firstRealizedLocation(): ?RealizedLocation
     {
         $realizedLocation = $this->realizedLocation ?? [];
-        $realizedLocation = reset($realizedLocation);
+        $realizedLocation = InvoiceSuiteArrayUtils::first($realizedLocation);
 
         if (false === $realizedLocation) {
             return null;
@@ -1259,7 +1259,7 @@ class ProcurementProjectType
     public function lastRealizedLocation(): ?RealizedLocation
     {
         $realizedLocation = $this->realizedLocation ?? [];
-        $realizedLocation = end($realizedLocation);
+        $realizedLocation = InvoiceSuiteArrayUtils::last($realizedLocation);
 
         if (false === $realizedLocation) {
             return null;
@@ -1315,7 +1315,7 @@ class ProcurementProjectType
             $this->realizedLocation = [];
         }
 
-        if ([] === $this->realizedLocation) {
+        if (InvoiceSuiteArrayUtils::empty($this->realizedLocation)) {
             $this->addOnceToRealizedLocation(new RealizedLocation());
         }
 
@@ -1448,7 +1448,7 @@ class ProcurementProjectType
     public function firstRequestForTenderLine(): ?RequestForTenderLine
     {
         $requestForTenderLine = $this->requestForTenderLine ?? [];
-        $requestForTenderLine = reset($requestForTenderLine);
+        $requestForTenderLine = InvoiceSuiteArrayUtils::first($requestForTenderLine);
 
         if (false === $requestForTenderLine) {
             return null;
@@ -1463,7 +1463,7 @@ class ProcurementProjectType
     public function lastRequestForTenderLine(): ?RequestForTenderLine
     {
         $requestForTenderLine = $this->requestForTenderLine ?? [];
-        $requestForTenderLine = end($requestForTenderLine);
+        $requestForTenderLine = InvoiceSuiteArrayUtils::last($requestForTenderLine);
 
         if (false === $requestForTenderLine) {
             return null;
@@ -1519,7 +1519,7 @@ class ProcurementProjectType
             $this->requestForTenderLine = [];
         }
 
-        if ([] === $this->requestForTenderLine) {
+        if (InvoiceSuiteArrayUtils::empty($this->requestForTenderLine)) {
             $this->addOnceToRequestForTenderLine(new RequestForTenderLine());
         }
 

@@ -462,7 +462,7 @@ class ContractType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -477,7 +477,7 @@ class ContractType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -533,7 +533,7 @@ class ContractType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -626,7 +626,7 @@ class ContractType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -641,7 +641,7 @@ class ContractType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -697,7 +697,7 @@ class ContractType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -790,7 +790,7 @@ class ContractType
     public function firstContractDocumentReference(): ?ContractDocumentReference
     {
         $contractDocumentReference = $this->contractDocumentReference ?? [];
-        $contractDocumentReference = reset($contractDocumentReference);
+        $contractDocumentReference = InvoiceSuiteArrayUtils::first($contractDocumentReference);
 
         if (false === $contractDocumentReference) {
             return null;
@@ -805,7 +805,7 @@ class ContractType
     public function lastContractDocumentReference(): ?ContractDocumentReference
     {
         $contractDocumentReference = $this->contractDocumentReference ?? [];
-        $contractDocumentReference = end($contractDocumentReference);
+        $contractDocumentReference = InvoiceSuiteArrayUtils::last($contractDocumentReference);
 
         if (false === $contractDocumentReference) {
             return null;
@@ -861,7 +861,7 @@ class ContractType
             $this->contractDocumentReference = [];
         }
 
-        if ([] === $this->contractDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->contractDocumentReference)) {
             $this->addOnceToContractDocumentReference(new ContractDocumentReference());
         }
 

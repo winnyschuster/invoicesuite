@@ -134,7 +134,7 @@ class PromotionalSpecificationType
     public function firstPromotionalEventLineItem(): ?PromotionalEventLineItem
     {
         $promotionalEventLineItem = $this->promotionalEventLineItem ?? [];
-        $promotionalEventLineItem = reset($promotionalEventLineItem);
+        $promotionalEventLineItem = InvoiceSuiteArrayUtils::first($promotionalEventLineItem);
 
         if (false === $promotionalEventLineItem) {
             return null;
@@ -149,7 +149,7 @@ class PromotionalSpecificationType
     public function lastPromotionalEventLineItem(): ?PromotionalEventLineItem
     {
         $promotionalEventLineItem = $this->promotionalEventLineItem ?? [];
-        $promotionalEventLineItem = end($promotionalEventLineItem);
+        $promotionalEventLineItem = InvoiceSuiteArrayUtils::last($promotionalEventLineItem);
 
         if (false === $promotionalEventLineItem) {
             return null;
@@ -205,7 +205,7 @@ class PromotionalSpecificationType
             $this->promotionalEventLineItem = [];
         }
 
-        if ([] === $this->promotionalEventLineItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->promotionalEventLineItem)) {
             $this->addOnceToPromotionalEventLineItem(new PromotionalEventLineItem());
         }
 
@@ -258,7 +258,7 @@ class PromotionalSpecificationType
     public function firstEventTactic(): ?EventTactic
     {
         $eventTactic = $this->eventTactic ?? [];
-        $eventTactic = reset($eventTactic);
+        $eventTactic = InvoiceSuiteArrayUtils::first($eventTactic);
 
         if (false === $eventTactic) {
             return null;
@@ -273,7 +273,7 @@ class PromotionalSpecificationType
     public function lastEventTactic(): ?EventTactic
     {
         $eventTactic = $this->eventTactic ?? [];
-        $eventTactic = end($eventTactic);
+        $eventTactic = InvoiceSuiteArrayUtils::last($eventTactic);
 
         if (false === $eventTactic) {
             return null;
@@ -329,7 +329,7 @@ class PromotionalSpecificationType
             $this->eventTactic = [];
         }
 
-        if ([] === $this->eventTactic) {
+        if (InvoiceSuiteArrayUtils::empty($this->eventTactic)) {
             $this->addOnceToEventTactic(new EventTactic());
         }
 

@@ -279,7 +279,7 @@ class SecondaryHazardType
     public function firstExtension(): ?Extension
     {
         $extension = $this->extension ?? [];
-        $extension = reset($extension);
+        $extension = InvoiceSuiteArrayUtils::first($extension);
 
         if (false === $extension) {
             return null;
@@ -294,7 +294,7 @@ class SecondaryHazardType
     public function lastExtension(): ?Extension
     {
         $extension = $this->extension ?? [];
-        $extension = end($extension);
+        $extension = InvoiceSuiteArrayUtils::last($extension);
 
         if (false === $extension) {
             return null;
@@ -350,7 +350,7 @@ class SecondaryHazardType
             $this->extension = [];
         }
 
-        if ([] === $this->extension) {
+        if (InvoiceSuiteArrayUtils::empty($this->extension)) {
             $this->addOnceToExtension(new Extension());
         }
 

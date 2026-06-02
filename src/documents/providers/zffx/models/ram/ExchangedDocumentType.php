@@ -433,7 +433,7 @@ class ExchangedDocumentType
             $this->includedNote = [];
         }
 
-        if ([] === $this->includedNote) {
+        if (InvoiceSuiteArrayUtils::empty($this->includedNote)) {
             $this->addOnceToIncludedNote(new NoteType());
         }
 

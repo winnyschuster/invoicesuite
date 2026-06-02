@@ -725,7 +725,7 @@ class InvoiceType
     public function firstUBLExtensions(): ?UBLExtension
     {
         $uBLExtensions = $this->uBLExtensions ?? [];
-        $uBLExtensions = reset($uBLExtensions);
+        $uBLExtensions = InvoiceSuiteArrayUtils::first($uBLExtensions);
 
         if (false === $uBLExtensions) {
             return null;
@@ -740,7 +740,7 @@ class InvoiceType
     public function lastUBLExtensions(): ?UBLExtension
     {
         $uBLExtensions = $this->uBLExtensions ?? [];
-        $uBLExtensions = end($uBLExtensions);
+        $uBLExtensions = InvoiceSuiteArrayUtils::last($uBLExtensions);
 
         if (false === $uBLExtensions) {
             return null;
@@ -796,7 +796,7 @@ class InvoiceType
             $this->uBLExtensions = [];
         }
 
-        if ([] === $this->uBLExtensions) {
+        if (InvoiceSuiteArrayUtils::empty($this->uBLExtensions)) {
             $this->addOnceToUBLExtensions(new UBLExtension());
         }
 
@@ -1249,7 +1249,7 @@ class InvoiceType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -1264,7 +1264,7 @@ class InvoiceType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -1320,7 +1320,7 @@ class InvoiceType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -1763,7 +1763,7 @@ class InvoiceType
     public function firstInvoicePeriod(): ?InvoicePeriod
     {
         $invoicePeriod = $this->invoicePeriod ?? [];
-        $invoicePeriod = reset($invoicePeriod);
+        $invoicePeriod = InvoiceSuiteArrayUtils::first($invoicePeriod);
 
         if (false === $invoicePeriod) {
             return null;
@@ -1778,7 +1778,7 @@ class InvoiceType
     public function lastInvoicePeriod(): ?InvoicePeriod
     {
         $invoicePeriod = $this->invoicePeriod ?? [];
-        $invoicePeriod = end($invoicePeriod);
+        $invoicePeriod = InvoiceSuiteArrayUtils::last($invoicePeriod);
 
         if (false === $invoicePeriod) {
             return null;
@@ -1834,7 +1834,7 @@ class InvoiceType
             $this->invoicePeriod = [];
         }
 
-        if ([] === $this->invoicePeriod) {
+        if (InvoiceSuiteArrayUtils::empty($this->invoicePeriod)) {
             $this->addOnceToInvoicePeriod(new InvoicePeriod());
         }
 
@@ -1927,7 +1927,7 @@ class InvoiceType
     public function firstBillingReference(): ?BillingReference
     {
         $billingReference = $this->billingReference ?? [];
-        $billingReference = reset($billingReference);
+        $billingReference = InvoiceSuiteArrayUtils::first($billingReference);
 
         if (false === $billingReference) {
             return null;
@@ -1942,7 +1942,7 @@ class InvoiceType
     public function lastBillingReference(): ?BillingReference
     {
         $billingReference = $this->billingReference ?? [];
-        $billingReference = end($billingReference);
+        $billingReference = InvoiceSuiteArrayUtils::last($billingReference);
 
         if (false === $billingReference) {
             return null;
@@ -1998,7 +1998,7 @@ class InvoiceType
             $this->billingReference = [];
         }
 
-        if ([] === $this->billingReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->billingReference)) {
             $this->addOnceToBillingReference(new BillingReference());
         }
 
@@ -2051,7 +2051,7 @@ class InvoiceType
     public function firstDespatchDocumentReference(): ?DespatchDocumentReference
     {
         $despatchDocumentReference = $this->despatchDocumentReference ?? [];
-        $despatchDocumentReference = reset($despatchDocumentReference);
+        $despatchDocumentReference = InvoiceSuiteArrayUtils::first($despatchDocumentReference);
 
         if (false === $despatchDocumentReference) {
             return null;
@@ -2066,7 +2066,7 @@ class InvoiceType
     public function lastDespatchDocumentReference(): ?DespatchDocumentReference
     {
         $despatchDocumentReference = $this->despatchDocumentReference ?? [];
-        $despatchDocumentReference = end($despatchDocumentReference);
+        $despatchDocumentReference = InvoiceSuiteArrayUtils::last($despatchDocumentReference);
 
         if (false === $despatchDocumentReference) {
             return null;
@@ -2122,7 +2122,7 @@ class InvoiceType
             $this->despatchDocumentReference = [];
         }
 
-        if ([] === $this->despatchDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->despatchDocumentReference)) {
             $this->addOnceToDespatchDocumentReference(new DespatchDocumentReference());
         }
 
@@ -2175,7 +2175,7 @@ class InvoiceType
     public function firstReceiptDocumentReference(): ?ReceiptDocumentReference
     {
         $receiptDocumentReference = $this->receiptDocumentReference ?? [];
-        $receiptDocumentReference = reset($receiptDocumentReference);
+        $receiptDocumentReference = InvoiceSuiteArrayUtils::first($receiptDocumentReference);
 
         if (false === $receiptDocumentReference) {
             return null;
@@ -2190,7 +2190,7 @@ class InvoiceType
     public function lastReceiptDocumentReference(): ?ReceiptDocumentReference
     {
         $receiptDocumentReference = $this->receiptDocumentReference ?? [];
-        $receiptDocumentReference = end($receiptDocumentReference);
+        $receiptDocumentReference = InvoiceSuiteArrayUtils::last($receiptDocumentReference);
 
         if (false === $receiptDocumentReference) {
             return null;
@@ -2246,7 +2246,7 @@ class InvoiceType
             $this->receiptDocumentReference = [];
         }
 
-        if ([] === $this->receiptDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->receiptDocumentReference)) {
             $this->addOnceToReceiptDocumentReference(new ReceiptDocumentReference());
         }
 
@@ -2299,7 +2299,7 @@ class InvoiceType
     public function firstStatementDocumentReference(): ?StatementDocumentReference
     {
         $statementDocumentReference = $this->statementDocumentReference ?? [];
-        $statementDocumentReference = reset($statementDocumentReference);
+        $statementDocumentReference = InvoiceSuiteArrayUtils::first($statementDocumentReference);
 
         if (false === $statementDocumentReference) {
             return null;
@@ -2314,7 +2314,7 @@ class InvoiceType
     public function lastStatementDocumentReference(): ?StatementDocumentReference
     {
         $statementDocumentReference = $this->statementDocumentReference ?? [];
-        $statementDocumentReference = end($statementDocumentReference);
+        $statementDocumentReference = InvoiceSuiteArrayUtils::last($statementDocumentReference);
 
         if (false === $statementDocumentReference) {
             return null;
@@ -2370,7 +2370,7 @@ class InvoiceType
             $this->statementDocumentReference = [];
         }
 
-        if ([] === $this->statementDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->statementDocumentReference)) {
             $this->addOnceToStatementDocumentReference(new StatementDocumentReference());
         }
 
@@ -2423,7 +2423,7 @@ class InvoiceType
     public function firstOriginatorDocumentReference(): ?OriginatorDocumentReference
     {
         $originatorDocumentReference = $this->originatorDocumentReference ?? [];
-        $originatorDocumentReference = reset($originatorDocumentReference);
+        $originatorDocumentReference = InvoiceSuiteArrayUtils::first($originatorDocumentReference);
 
         if (false === $originatorDocumentReference) {
             return null;
@@ -2438,7 +2438,7 @@ class InvoiceType
     public function lastOriginatorDocumentReference(): ?OriginatorDocumentReference
     {
         $originatorDocumentReference = $this->originatorDocumentReference ?? [];
-        $originatorDocumentReference = end($originatorDocumentReference);
+        $originatorDocumentReference = InvoiceSuiteArrayUtils::last($originatorDocumentReference);
 
         if (false === $originatorDocumentReference) {
             return null;
@@ -2494,7 +2494,7 @@ class InvoiceType
             $this->originatorDocumentReference = [];
         }
 
-        if ([] === $this->originatorDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->originatorDocumentReference)) {
             $this->addOnceToOriginatorDocumentReference(new OriginatorDocumentReference());
         }
 
@@ -2547,7 +2547,7 @@ class InvoiceType
     public function firstContractDocumentReference(): ?ContractDocumentReference
     {
         $contractDocumentReference = $this->contractDocumentReference ?? [];
-        $contractDocumentReference = reset($contractDocumentReference);
+        $contractDocumentReference = InvoiceSuiteArrayUtils::first($contractDocumentReference);
 
         if (false === $contractDocumentReference) {
             return null;
@@ -2562,7 +2562,7 @@ class InvoiceType
     public function lastContractDocumentReference(): ?ContractDocumentReference
     {
         $contractDocumentReference = $this->contractDocumentReference ?? [];
-        $contractDocumentReference = end($contractDocumentReference);
+        $contractDocumentReference = InvoiceSuiteArrayUtils::last($contractDocumentReference);
 
         if (false === $contractDocumentReference) {
             return null;
@@ -2618,7 +2618,7 @@ class InvoiceType
             $this->contractDocumentReference = [];
         }
 
-        if ([] === $this->contractDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->contractDocumentReference)) {
             $this->addOnceToContractDocumentReference(new ContractDocumentReference());
         }
 
@@ -2671,7 +2671,7 @@ class InvoiceType
     public function firstAdditionalDocumentReference(): ?AdditionalDocumentReference
     {
         $additionalDocumentReference = $this->additionalDocumentReference ?? [];
-        $additionalDocumentReference = reset($additionalDocumentReference);
+        $additionalDocumentReference = InvoiceSuiteArrayUtils::first($additionalDocumentReference);
 
         if (false === $additionalDocumentReference) {
             return null;
@@ -2686,7 +2686,7 @@ class InvoiceType
     public function lastAdditionalDocumentReference(): ?AdditionalDocumentReference
     {
         $additionalDocumentReference = $this->additionalDocumentReference ?? [];
-        $additionalDocumentReference = end($additionalDocumentReference);
+        $additionalDocumentReference = InvoiceSuiteArrayUtils::last($additionalDocumentReference);
 
         if (false === $additionalDocumentReference) {
             return null;
@@ -2742,7 +2742,7 @@ class InvoiceType
             $this->additionalDocumentReference = [];
         }
 
-        if ([] === $this->additionalDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalDocumentReference)) {
             $this->addOnceToAdditionalDocumentReference(new AdditionalDocumentReference());
         }
 
@@ -2795,7 +2795,7 @@ class InvoiceType
     public function firstProjectReference(): ?ProjectReference
     {
         $projectReference = $this->projectReference ?? [];
-        $projectReference = reset($projectReference);
+        $projectReference = InvoiceSuiteArrayUtils::first($projectReference);
 
         if (false === $projectReference) {
             return null;
@@ -2810,7 +2810,7 @@ class InvoiceType
     public function lastProjectReference(): ?ProjectReference
     {
         $projectReference = $this->projectReference ?? [];
-        $projectReference = end($projectReference);
+        $projectReference = InvoiceSuiteArrayUtils::last($projectReference);
 
         if (false === $projectReference) {
             return null;
@@ -2866,7 +2866,7 @@ class InvoiceType
             $this->projectReference = [];
         }
 
-        if ([] === $this->projectReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->projectReference)) {
             $this->addOnceToProjectReference(new ProjectReference());
         }
 
@@ -2919,7 +2919,7 @@ class InvoiceType
     public function firstSignature(): ?Signature
     {
         $signature = $this->signature ?? [];
-        $signature = reset($signature);
+        $signature = InvoiceSuiteArrayUtils::first($signature);
 
         if (false === $signature) {
             return null;
@@ -2934,7 +2934,7 @@ class InvoiceType
     public function lastSignature(): ?Signature
     {
         $signature = $this->signature ?? [];
-        $signature = end($signature);
+        $signature = InvoiceSuiteArrayUtils::last($signature);
 
         if (false === $signature) {
             return null;
@@ -2990,7 +2990,7 @@ class InvoiceType
             $this->signature = [];
         }
 
-        if ([] === $this->signature) {
+        if (InvoiceSuiteArrayUtils::empty($this->signature)) {
             $this->addOnceToSignature(new Signature());
         }
 
@@ -3283,7 +3283,7 @@ class InvoiceType
     public function firstDelivery(): ?Delivery
     {
         $delivery = $this->delivery ?? [];
-        $delivery = reset($delivery);
+        $delivery = InvoiceSuiteArrayUtils::first($delivery);
 
         if (false === $delivery) {
             return null;
@@ -3298,7 +3298,7 @@ class InvoiceType
     public function lastDelivery(): ?Delivery
     {
         $delivery = $this->delivery ?? [];
-        $delivery = end($delivery);
+        $delivery = InvoiceSuiteArrayUtils::last($delivery);
 
         if (false === $delivery) {
             return null;
@@ -3354,7 +3354,7 @@ class InvoiceType
             $this->delivery = [];
         }
 
-        if ([] === $this->delivery) {
+        if (InvoiceSuiteArrayUtils::empty($this->delivery)) {
             $this->addOnceToDelivery(new Delivery());
         }
 
@@ -3447,7 +3447,7 @@ class InvoiceType
     public function firstPaymentMeans(): ?PaymentMeans
     {
         $paymentMeans = $this->paymentMeans ?? [];
-        $paymentMeans = reset($paymentMeans);
+        $paymentMeans = InvoiceSuiteArrayUtils::first($paymentMeans);
 
         if (false === $paymentMeans) {
             return null;
@@ -3462,7 +3462,7 @@ class InvoiceType
     public function lastPaymentMeans(): ?PaymentMeans
     {
         $paymentMeans = $this->paymentMeans ?? [];
-        $paymentMeans = end($paymentMeans);
+        $paymentMeans = InvoiceSuiteArrayUtils::last($paymentMeans);
 
         if (false === $paymentMeans) {
             return null;
@@ -3518,7 +3518,7 @@ class InvoiceType
             $this->paymentMeans = [];
         }
 
-        if ([] === $this->paymentMeans) {
+        if (InvoiceSuiteArrayUtils::empty($this->paymentMeans)) {
             $this->addOnceToPaymentMeans(new PaymentMeans());
         }
 
@@ -3571,7 +3571,7 @@ class InvoiceType
     public function firstPaymentTerms(): ?PaymentTerms
     {
         $paymentTerms = $this->paymentTerms ?? [];
-        $paymentTerms = reset($paymentTerms);
+        $paymentTerms = InvoiceSuiteArrayUtils::first($paymentTerms);
 
         if (false === $paymentTerms) {
             return null;
@@ -3586,7 +3586,7 @@ class InvoiceType
     public function lastPaymentTerms(): ?PaymentTerms
     {
         $paymentTerms = $this->paymentTerms ?? [];
-        $paymentTerms = end($paymentTerms);
+        $paymentTerms = InvoiceSuiteArrayUtils::last($paymentTerms);
 
         if (false === $paymentTerms) {
             return null;
@@ -3642,7 +3642,7 @@ class InvoiceType
             $this->paymentTerms = [];
         }
 
-        if ([] === $this->paymentTerms) {
+        if (InvoiceSuiteArrayUtils::empty($this->paymentTerms)) {
             $this->addOnceToPaymentTerms(new PaymentTerms());
         }
 
@@ -3695,7 +3695,7 @@ class InvoiceType
     public function firstPrepaidPayment(): ?PrepaidPayment
     {
         $prepaidPayment = $this->prepaidPayment ?? [];
-        $prepaidPayment = reset($prepaidPayment);
+        $prepaidPayment = InvoiceSuiteArrayUtils::first($prepaidPayment);
 
         if (false === $prepaidPayment) {
             return null;
@@ -3710,7 +3710,7 @@ class InvoiceType
     public function lastPrepaidPayment(): ?PrepaidPayment
     {
         $prepaidPayment = $this->prepaidPayment ?? [];
-        $prepaidPayment = end($prepaidPayment);
+        $prepaidPayment = InvoiceSuiteArrayUtils::last($prepaidPayment);
 
         if (false === $prepaidPayment) {
             return null;
@@ -3766,7 +3766,7 @@ class InvoiceType
             $this->prepaidPayment = [];
         }
 
-        if ([] === $this->prepaidPayment) {
+        if (InvoiceSuiteArrayUtils::empty($this->prepaidPayment)) {
             $this->addOnceToPrepaidPayment(new PrepaidPayment());
         }
 
@@ -3819,7 +3819,7 @@ class InvoiceType
     public function firstAllowanceCharge(): ?AllowanceCharge
     {
         $allowanceCharge = $this->allowanceCharge ?? [];
-        $allowanceCharge = reset($allowanceCharge);
+        $allowanceCharge = InvoiceSuiteArrayUtils::first($allowanceCharge);
 
         if (false === $allowanceCharge) {
             return null;
@@ -3834,7 +3834,7 @@ class InvoiceType
     public function lastAllowanceCharge(): ?AllowanceCharge
     {
         $allowanceCharge = $this->allowanceCharge ?? [];
-        $allowanceCharge = end($allowanceCharge);
+        $allowanceCharge = InvoiceSuiteArrayUtils::last($allowanceCharge);
 
         if (false === $allowanceCharge) {
             return null;
@@ -3890,7 +3890,7 @@ class InvoiceType
             $this->allowanceCharge = [];
         }
 
-        if ([] === $this->allowanceCharge) {
+        if (InvoiceSuiteArrayUtils::empty($this->allowanceCharge)) {
             $this->addOnceToAllowanceCharge(new AllowanceCharge());
         }
 
@@ -4076,7 +4076,7 @@ class InvoiceType
             return null;
         }
 
-        if (!array_key_exists($index, $this->taxTotal)) {
+        if (!InvoiceSuiteArrayUtils::keyExists($this->taxTotal, $index)) {
             return null;
         }
 
@@ -4121,7 +4121,7 @@ class InvoiceType
     public function firstTaxTotal(): ?TaxTotal
     {
         $taxTotal = $this->taxTotal ?? [];
-        $taxTotal = reset($taxTotal);
+        $taxTotal = InvoiceSuiteArrayUtils::first($taxTotal);
 
         if (false === $taxTotal) {
             return null;
@@ -4136,7 +4136,7 @@ class InvoiceType
     public function lastTaxTotal(): ?TaxTotal
     {
         $taxTotal = $this->taxTotal ?? [];
-        $taxTotal = end($taxTotal);
+        $taxTotal = InvoiceSuiteArrayUtils::last($taxTotal);
 
         if (false === $taxTotal) {
             return null;
@@ -4178,7 +4178,7 @@ class InvoiceType
             $this->taxTotal = [];
         }
 
-        if (!array_key_exists($index, $this->taxTotal)) {
+        if (!InvoiceSuiteArrayUtils::keyExists($this->taxTotal, $index)) {
             $this->taxTotal[$index] = new TaxTotal();
         }
 
@@ -4196,7 +4196,7 @@ class InvoiceType
             return $this;
         }
 
-        if (!array_key_exists($index, $this->taxTotal)) {
+        if (!InvoiceSuiteArrayUtils::keyExists($this->taxTotal, $index)) {
             return $this;
         }
 
@@ -4230,7 +4230,7 @@ class InvoiceType
             $this->taxTotal = [];
         }
 
-        if ([] === $this->taxTotal) {
+        if (InvoiceSuiteArrayUtils::empty($this->taxTotal)) {
             $this->addOnceToTaxTotal(new TaxTotal());
         }
 
@@ -4283,7 +4283,7 @@ class InvoiceType
     public function firstWithholdingTaxTotal(): ?WithholdingTaxTotal
     {
         $withholdingTaxTotal = $this->withholdingTaxTotal ?? [];
-        $withholdingTaxTotal = reset($withholdingTaxTotal);
+        $withholdingTaxTotal = InvoiceSuiteArrayUtils::first($withholdingTaxTotal);
 
         if (false === $withholdingTaxTotal) {
             return null;
@@ -4298,7 +4298,7 @@ class InvoiceType
     public function lastWithholdingTaxTotal(): ?WithholdingTaxTotal
     {
         $withholdingTaxTotal = $this->withholdingTaxTotal ?? [];
-        $withholdingTaxTotal = end($withholdingTaxTotal);
+        $withholdingTaxTotal = InvoiceSuiteArrayUtils::last($withholdingTaxTotal);
 
         if (false === $withholdingTaxTotal) {
             return null;
@@ -4354,7 +4354,7 @@ class InvoiceType
             $this->withholdingTaxTotal = [];
         }
 
-        if ([] === $this->withholdingTaxTotal) {
+        if (InvoiceSuiteArrayUtils::empty($this->withholdingTaxTotal)) {
             $this->addOnceToWithholdingTaxTotal(new WithholdingTaxTotal());
         }
 
@@ -4447,7 +4447,7 @@ class InvoiceType
     public function firstInvoiceLine(): ?InvoiceLine
     {
         $invoiceLine = $this->invoiceLine ?? [];
-        $invoiceLine = reset($invoiceLine);
+        $invoiceLine = InvoiceSuiteArrayUtils::first($invoiceLine);
 
         if (false === $invoiceLine) {
             return null;
@@ -4462,7 +4462,7 @@ class InvoiceType
     public function lastInvoiceLine(): ?InvoiceLine
     {
         $invoiceLine = $this->invoiceLine ?? [];
-        $invoiceLine = end($invoiceLine);
+        $invoiceLine = InvoiceSuiteArrayUtils::last($invoiceLine);
 
         if (false === $invoiceLine) {
             return null;
@@ -4518,7 +4518,7 @@ class InvoiceType
             $this->invoiceLine = [];
         }
 
-        if ([] === $this->invoiceLine) {
+        if (InvoiceSuiteArrayUtils::empty($this->invoiceLine)) {
             $this->addOnceToInvoiceLine(new InvoiceLine());
         }
 
@@ -4531,7 +4531,7 @@ class InvoiceType
     public function getLatestDocumentLine(): ?InvoiceLine
     {
         $invoiceLines = $this->getInvoiceLine() ?? [];
-        $invoiceLine = end($invoiceLines);
+        $invoiceLine = InvoiceSuiteArrayUtils::last($invoiceLines);
 
         if (false === $invoiceLine) {
             return null;

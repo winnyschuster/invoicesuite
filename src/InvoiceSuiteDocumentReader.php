@@ -28,6 +28,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundExceptio
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInternalMethodCallException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteInternalMethodGuard;
@@ -67,16 +68,16 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
         if (is_null($documentFormatProvider)) {
             $this->resolveAvailableDocumentFormatProviders();
 
-            $formatProviders = array_filter(
+            $formatProviders = InvoiceSuiteArrayUtils::filter(
                 $this->getRegisteredDocumentFormatProviders(),
                 static fn ($formatProvider) => $formatProvider->getIsSatisfiableBySerializedContent($fromContent)
             );
 
-            if ([] === $formatProviders) {
+            if (InvoiceSuiteArrayUtils::empty($formatProviders)) {
                 throw new InvoiceSuiteFormatProviderNotFoundException('unknown');
             }
 
-            $documentFormatProvider = reset($formatProviders);
+            $documentFormatProvider = InvoiceSuiteArrayUtils::first($formatProviders);
         }
 
         $this->setRawDocumentContent($fromContent);

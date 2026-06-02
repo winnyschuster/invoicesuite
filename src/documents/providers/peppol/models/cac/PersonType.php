@@ -849,7 +849,7 @@ class PersonType
     public function firstIdentityDocumentReference(): ?IdentityDocumentReference
     {
         $identityDocumentReference = $this->identityDocumentReference ?? [];
-        $identityDocumentReference = reset($identityDocumentReference);
+        $identityDocumentReference = InvoiceSuiteArrayUtils::first($identityDocumentReference);
 
         if (false === $identityDocumentReference) {
             return null;
@@ -864,7 +864,7 @@ class PersonType
     public function lastIdentityDocumentReference(): ?IdentityDocumentReference
     {
         $identityDocumentReference = $this->identityDocumentReference ?? [];
-        $identityDocumentReference = end($identityDocumentReference);
+        $identityDocumentReference = InvoiceSuiteArrayUtils::last($identityDocumentReference);
 
         if (false === $identityDocumentReference) {
             return null;
@@ -920,7 +920,7 @@ class PersonType
             $this->identityDocumentReference = [];
         }
 
-        if ([] === $this->identityDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->identityDocumentReference)) {
             $this->addOnceToIdentityDocumentReference(new IdentityDocumentReference());
         }
 

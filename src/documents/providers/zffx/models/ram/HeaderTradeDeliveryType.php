@@ -188,7 +188,7 @@ class HeaderTradeDeliveryType
             $this->relatedSupplyChainConsignment = [];
         }
 
-        if ([] === $this->relatedSupplyChainConsignment) {
+        if (InvoiceSuiteArrayUtils::empty($this->relatedSupplyChainConsignment)) {
             $this->addOnceToRelatedSupplyChainConsignment(new LogisticsTransportMovementType());
         }
 

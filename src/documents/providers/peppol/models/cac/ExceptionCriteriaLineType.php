@@ -241,7 +241,7 @@ class ExceptionCriteriaLineType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -256,7 +256,7 @@ class ExceptionCriteriaLineType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -312,7 +312,7 @@ class ExceptionCriteriaLineType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -685,7 +685,7 @@ class ExceptionCriteriaLineType
     public function firstSupplyItem(): ?SupplyItem
     {
         $supplyItem = $this->supplyItem ?? [];
-        $supplyItem = reset($supplyItem);
+        $supplyItem = InvoiceSuiteArrayUtils::first($supplyItem);
 
         if (false === $supplyItem) {
             return null;
@@ -700,7 +700,7 @@ class ExceptionCriteriaLineType
     public function lastSupplyItem(): ?SupplyItem
     {
         $supplyItem = $this->supplyItem ?? [];
-        $supplyItem = end($supplyItem);
+        $supplyItem = InvoiceSuiteArrayUtils::last($supplyItem);
 
         if (false === $supplyItem) {
             return null;
@@ -756,7 +756,7 @@ class ExceptionCriteriaLineType
             $this->supplyItem = [];
         }
 
-        if ([] === $this->supplyItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->supplyItem)) {
             $this->addOnceToSupplyItem(new SupplyItem());
         }
 

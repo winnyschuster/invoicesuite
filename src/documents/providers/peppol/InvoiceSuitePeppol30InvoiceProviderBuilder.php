@@ -38,6 +38,7 @@ use horstoeko\invoicesuite\documents\dto\InvoiceSuiteTaxDTO;
 use horstoeko\invoicesuite\documents\providers\peppol\models\cac\PartyIdentification;
 use horstoeko\invoicesuite\documents\providers\peppol\models\cac\PaymentMeans;
 use horstoeko\invoicesuite\documents\providers\peppol\models\main\Invoice;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteDateTimeUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFloatUtils;
@@ -1813,7 +1814,7 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        $ids = array_filter(
+        $ids = InvoiceSuiteArrayUtils::filter(
             $this
                 ->getUblRootObject()
                 ->getAccountingSupplierParty()
@@ -1881,7 +1882,7 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        $ids = array_filter(
+        $ids = InvoiceSuiteArrayUtils::filter(
             $this
                 ->getUblRootObject()
                 ->getAccountingSupplierParty()
@@ -6487,7 +6488,7 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
             ?->getParty()
             ?->getPartyIdentification() ?? [];
 
-        $ids = array_filter(
+        $ids = InvoiceSuiteArrayUtils::filter(
             $ids,
             static fn (PartyIdentification $partyIdentification) => !$partyIdentification->hasObjectFlag('creditorreference')
         );
@@ -9485,8 +9486,8 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
         // Update Tax
 
         $taxTotal = $this->getUblRootObject()->getTaxTotal();
-        $taxTotal1 = array_key_exists(0, $taxTotal ?? []) ? $taxTotal[0] : null;
-        $taxTotal2 = array_key_exists(1, $taxTotal ?? []) ? $taxTotal[1] : null;
+        $taxTotal1 = InvoiceSuiteArrayUtils::keyExists($taxTotal ?? [], 0) ? $taxTotal[0] : null;
+        $taxTotal2 = InvoiceSuiteArrayUtils::keyExists($taxTotal ?? [], 1) ? $taxTotal[1] : null;
 
         $taxTotal1?->getTaxAmount()?->setCurrencyID($invoiceCurrencyCode);
         $taxTotal2?->getTaxAmount()?->setCurrencyID($taxCurrencyCode);
@@ -9545,7 +9546,7 @@ class InvoiceSuitePeppol30InvoiceProviderBuilder extends InvoiceSuiteAbstractDoc
             ->getUblRootObject()
             ->getPaymentMeans() ?? [];
 
-        $paymentMeans = array_filter(
+        $paymentMeans = InvoiceSuiteArrayUtils::filter(
             $paymentMeans,
             static fn (PaymentMeans $paymentMean) => InvoiceSuiteStringUtils::stringIsNullOrEmpty(
                 $paymentMean->getPaymentMandate()?->getID()?->getValue()

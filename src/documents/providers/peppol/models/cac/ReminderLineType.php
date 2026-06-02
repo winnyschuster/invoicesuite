@@ -265,7 +265,7 @@ class ReminderLineType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -280,7 +280,7 @@ class ReminderLineType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -336,7 +336,7 @@ class ReminderLineType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -739,7 +739,7 @@ class ReminderLineType
     public function firstReminderPeriod(): ?ReminderPeriod
     {
         $reminderPeriod = $this->reminderPeriod ?? [];
-        $reminderPeriod = reset($reminderPeriod);
+        $reminderPeriod = InvoiceSuiteArrayUtils::first($reminderPeriod);
 
         if (false === $reminderPeriod) {
             return null;
@@ -754,7 +754,7 @@ class ReminderLineType
     public function lastReminderPeriod(): ?ReminderPeriod
     {
         $reminderPeriod = $this->reminderPeriod ?? [];
-        $reminderPeriod = end($reminderPeriod);
+        $reminderPeriod = InvoiceSuiteArrayUtils::last($reminderPeriod);
 
         if (false === $reminderPeriod) {
             return null;
@@ -810,7 +810,7 @@ class ReminderLineType
             $this->reminderPeriod = [];
         }
 
-        if ([] === $this->reminderPeriod) {
+        if (InvoiceSuiteArrayUtils::empty($this->reminderPeriod)) {
             $this->addOnceToReminderPeriod(new ReminderPeriod());
         }
 
@@ -863,7 +863,7 @@ class ReminderLineType
     public function firstBillingReference(): ?BillingReference
     {
         $billingReference = $this->billingReference ?? [];
-        $billingReference = reset($billingReference);
+        $billingReference = InvoiceSuiteArrayUtils::first($billingReference);
 
         if (false === $billingReference) {
             return null;
@@ -878,7 +878,7 @@ class ReminderLineType
     public function lastBillingReference(): ?BillingReference
     {
         $billingReference = $this->billingReference ?? [];
-        $billingReference = end($billingReference);
+        $billingReference = InvoiceSuiteArrayUtils::last($billingReference);
 
         if (false === $billingReference) {
             return null;
@@ -934,7 +934,7 @@ class ReminderLineType
             $this->billingReference = [];
         }
 
-        if ([] === $this->billingReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->billingReference)) {
             $this->addOnceToBillingReference(new BillingReference());
         }
 

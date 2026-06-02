@@ -534,7 +534,7 @@ class PaymentMandateType
     public function firstClause(): ?Clause
     {
         $clause = $this->clause ?? [];
-        $clause = reset($clause);
+        $clause = InvoiceSuiteArrayUtils::first($clause);
 
         if (false === $clause) {
             return null;
@@ -549,7 +549,7 @@ class PaymentMandateType
     public function lastClause(): ?Clause
     {
         $clause = $this->clause ?? [];
-        $clause = end($clause);
+        $clause = InvoiceSuiteArrayUtils::last($clause);
 
         if (false === $clause) {
             return null;
@@ -605,7 +605,7 @@ class PaymentMandateType
             $this->clause = [];
         }
 
-        if ([] === $this->clause) {
+        if (InvoiceSuiteArrayUtils::empty($this->clause)) {
             $this->addOnceToClause(new Clause());
         }
 

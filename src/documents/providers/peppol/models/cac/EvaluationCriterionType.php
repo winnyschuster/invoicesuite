@@ -195,7 +195,7 @@ class EvaluationCriterionType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -210,7 +210,7 @@ class EvaluationCriterionType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -266,7 +266,7 @@ class EvaluationCriterionType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -439,7 +439,7 @@ class EvaluationCriterionType
     public function firstExpression(): ?Expression
     {
         $expression = $this->expression ?? [];
-        $expression = reset($expression);
+        $expression = InvoiceSuiteArrayUtils::first($expression);
 
         if (false === $expression) {
             return null;
@@ -454,7 +454,7 @@ class EvaluationCriterionType
     public function lastExpression(): ?Expression
     {
         $expression = $this->expression ?? [];
-        $expression = end($expression);
+        $expression = InvoiceSuiteArrayUtils::last($expression);
 
         if (false === $expression) {
             return null;
@@ -510,7 +510,7 @@ class EvaluationCriterionType
             $this->expression = [];
         }
 
-        if ([] === $this->expression) {
+        if (InvoiceSuiteArrayUtils::empty($this->expression)) {
             $this->addOnceToExpression(new Expression());
         }
 
@@ -603,7 +603,7 @@ class EvaluationCriterionType
     public function firstSuggestedEvidence(): ?SuggestedEvidence
     {
         $suggestedEvidence = $this->suggestedEvidence ?? [];
-        $suggestedEvidence = reset($suggestedEvidence);
+        $suggestedEvidence = InvoiceSuiteArrayUtils::first($suggestedEvidence);
 
         if (false === $suggestedEvidence) {
             return null;
@@ -618,7 +618,7 @@ class EvaluationCriterionType
     public function lastSuggestedEvidence(): ?SuggestedEvidence
     {
         $suggestedEvidence = $this->suggestedEvidence ?? [];
-        $suggestedEvidence = end($suggestedEvidence);
+        $suggestedEvidence = InvoiceSuiteArrayUtils::last($suggestedEvidence);
 
         if (false === $suggestedEvidence) {
             return null;
@@ -674,7 +674,7 @@ class EvaluationCriterionType
             $this->suggestedEvidence = [];
         }
 
-        if ([] === $this->suggestedEvidence) {
+        if (InvoiceSuiteArrayUtils::empty($this->suggestedEvidence)) {
             $this->addOnceToSuggestedEvidence(new SuggestedEvidence());
         }
 

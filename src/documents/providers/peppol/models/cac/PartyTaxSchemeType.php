@@ -301,7 +301,7 @@ class PartyTaxSchemeType
     public function firstExemptionReason(): ?ExemptionReason
     {
         $exemptionReason = $this->exemptionReason ?? [];
-        $exemptionReason = reset($exemptionReason);
+        $exemptionReason = InvoiceSuiteArrayUtils::first($exemptionReason);
 
         if (false === $exemptionReason) {
             return null;
@@ -316,7 +316,7 @@ class PartyTaxSchemeType
     public function lastExemptionReason(): ?ExemptionReason
     {
         $exemptionReason = $this->exemptionReason ?? [];
-        $exemptionReason = end($exemptionReason);
+        $exemptionReason = InvoiceSuiteArrayUtils::last($exemptionReason);
 
         if (false === $exemptionReason) {
             return null;
@@ -372,7 +372,7 @@ class PartyTaxSchemeType
             $this->exemptionReason = [];
         }
 
-        if ([] === $this->exemptionReason) {
+        if (InvoiceSuiteArrayUtils::empty($this->exemptionReason)) {
             $this->addOnceToExemptionReason(new ExemptionReason());
         }
 

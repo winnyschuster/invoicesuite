@@ -13,6 +13,7 @@ namespace horstoeko\zugferd;
 
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageBagItem;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\validators\InvoiceSuiteXsdDocumentValidator;
@@ -113,7 +114,7 @@ class ZugferdXsdValidator
      */
     public function validationPased(): bool
     {
-        return [] === $this->convertMessageBagMessagesToSimpleArray($this->xsdValidator->getErrorMessagesInMessageBag());
+        return InvoiceSuiteArrayUtils::empty($this->convertMessageBagMessagesToSimpleArray($this->xsdValidator->getErrorMessagesInMessageBag()));
     }
 
     /**
@@ -137,7 +138,7 @@ class ZugferdXsdValidator
      */
     public function hasNoValidationErrors(): bool
     {
-        return [] === $this->convertMessageBagMessagesToSimpleArray($this->xsdValidator->getErrorMessagesInMessageBag());
+        return InvoiceSuiteArrayUtils::empty($this->convertMessageBagMessagesToSimpleArray($this->xsdValidator->getErrorMessagesInMessageBag()));
     }
 
     /**
@@ -173,7 +174,7 @@ class ZugferdXsdValidator
     private function convertMessageBagMessagesToSimpleArray(
         array $messages
     ): array {
-        return array_map(
+        return InvoiceSuiteArrayUtils::map(
             static fn (InvoiceSuiteMessageBagItem $messageBagItem) => $messageBagItem->getMessageContent(),
             $messages
         );

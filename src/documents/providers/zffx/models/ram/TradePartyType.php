@@ -216,7 +216,7 @@ class TradePartyType
             $this->iD = [];
         }
 
-        if ([] === $this->iD) {
+        if (InvoiceSuiteArrayUtils::empty($this->iD)) {
             $this->addOnceToID(new IDType());
         }
 
@@ -310,7 +310,7 @@ class TradePartyType
             $this->globalID = [];
         }
 
-        if ([] === $this->globalID) {
+        if (InvoiceSuiteArrayUtils::empty($this->globalID)) {
             $this->addOnceToGlobalID(new IDType());
         }
 
@@ -554,7 +554,7 @@ class TradePartyType
             $this->definedTradeContact = [];
         }
 
-        if ([] === $this->definedTradeContact) {
+        if (InvoiceSuiteArrayUtils::empty($this->definedTradeContact)) {
             $this->addOnceToDefinedTradeContact(new TradeContactType());
         }
 
@@ -728,7 +728,7 @@ class TradePartyType
             $this->specifiedTaxRegistration = [];
         }
 
-        if ([] === $this->specifiedTaxRegistration) {
+        if (InvoiceSuiteArrayUtils::empty($this->specifiedTaxRegistration)) {
             $this->addOnceToSpecifiedTaxRegistration(new TaxRegistrationType());
         }
 

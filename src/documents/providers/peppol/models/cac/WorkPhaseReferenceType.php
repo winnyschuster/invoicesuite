@@ -222,7 +222,7 @@ class WorkPhaseReferenceType
     public function firstWorkPhase(): ?WorkPhase
     {
         $workPhase = $this->workPhase ?? [];
-        $workPhase = reset($workPhase);
+        $workPhase = InvoiceSuiteArrayUtils::first($workPhase);
 
         if (false === $workPhase) {
             return null;
@@ -237,7 +237,7 @@ class WorkPhaseReferenceType
     public function lastWorkPhase(): ?WorkPhase
     {
         $workPhase = $this->workPhase ?? [];
-        $workPhase = end($workPhase);
+        $workPhase = InvoiceSuiteArrayUtils::last($workPhase);
 
         if (false === $workPhase) {
             return null;
@@ -293,7 +293,7 @@ class WorkPhaseReferenceType
             $this->workPhase = [];
         }
 
-        if ([] === $this->workPhase) {
+        if (InvoiceSuiteArrayUtils::empty($this->workPhase)) {
             $this->addOnceToWorkPhase(new WorkPhase());
         }
 
@@ -446,7 +446,7 @@ class WorkPhaseReferenceType
     public function firstWorkOrderDocumentReference(): ?WorkOrderDocumentReference
     {
         $workOrderDocumentReference = $this->workOrderDocumentReference ?? [];
-        $workOrderDocumentReference = reset($workOrderDocumentReference);
+        $workOrderDocumentReference = InvoiceSuiteArrayUtils::first($workOrderDocumentReference);
 
         if (false === $workOrderDocumentReference) {
             return null;
@@ -461,7 +461,7 @@ class WorkPhaseReferenceType
     public function lastWorkOrderDocumentReference(): ?WorkOrderDocumentReference
     {
         $workOrderDocumentReference = $this->workOrderDocumentReference ?? [];
-        $workOrderDocumentReference = end($workOrderDocumentReference);
+        $workOrderDocumentReference = InvoiceSuiteArrayUtils::last($workOrderDocumentReference);
 
         if (false === $workOrderDocumentReference) {
             return null;
@@ -517,7 +517,7 @@ class WorkPhaseReferenceType
             $this->workOrderDocumentReference = [];
         }
 
-        if ([] === $this->workOrderDocumentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->workOrderDocumentReference)) {
             $this->addOnceToWorkOrderDocumentReference(new WorkOrderDocumentReference());
         }
 

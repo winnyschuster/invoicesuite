@@ -323,7 +323,7 @@ class PaymentTermsType
     public function firstPaymentMeansID(): ?PaymentMeansID
     {
         $paymentMeansID = $this->paymentMeansID ?? [];
-        $paymentMeansID = reset($paymentMeansID);
+        $paymentMeansID = InvoiceSuiteArrayUtils::first($paymentMeansID);
 
         if (false === $paymentMeansID) {
             return null;
@@ -338,7 +338,7 @@ class PaymentTermsType
     public function lastPaymentMeansID(): ?PaymentMeansID
     {
         $paymentMeansID = $this->paymentMeansID ?? [];
-        $paymentMeansID = end($paymentMeansID);
+        $paymentMeansID = InvoiceSuiteArrayUtils::last($paymentMeansID);
 
         if (false === $paymentMeansID) {
             return null;
@@ -394,7 +394,7 @@ class PaymentTermsType
             $this->paymentMeansID = [];
         }
 
-        if ([] === $this->paymentMeansID) {
+        if (InvoiceSuiteArrayUtils::empty($this->paymentMeansID)) {
             $this->addOnceToPaymentMeansID(new PaymentMeansID());
         }
 
@@ -487,7 +487,7 @@ class PaymentTermsType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -502,7 +502,7 @@ class PaymentTermsType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -558,7 +558,7 @@ class PaymentTermsType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 

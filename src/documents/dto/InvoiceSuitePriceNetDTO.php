@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\dto;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use JsonSerializable;
 
 /**
@@ -110,7 +111,7 @@ class InvoiceSuitePriceNetDTO extends InvoiceSuitePriceDTO implements JsonSerial
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($tax = reset($this->taxes)) !== false) {
+        if (($tax = InvoiceSuiteArrayUtils::first($this->taxes)) !== false) {
             $callback($tax);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -130,7 +131,7 @@ class InvoiceSuitePriceNetDTO extends InvoiceSuitePriceDTO implements JsonSerial
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($tax = next($this->taxes)) !== false) {
+        if (($tax = InvoiceSuiteArrayUtils::next($this->taxes)) !== false) {
             $callback($tax);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -150,7 +151,7 @@ class InvoiceSuitePriceNetDTO extends InvoiceSuitePriceDTO implements JsonSerial
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($tax = prev($this->taxes)) !== false) {
+        if (($tax = InvoiceSuiteArrayUtils::previous($this->taxes)) !== false) {
             $callback($tax);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -170,7 +171,7 @@ class InvoiceSuitePriceNetDTO extends InvoiceSuitePriceDTO implements JsonSerial
         callable $callback,
         ?callable $callbackElse = null
     ): static {
-        if (($tax = end($this->taxes)) !== false) {
+        if (($tax = InvoiceSuiteArrayUtils::last($this->taxes)) !== false) {
             $callback($tax);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -258,7 +259,7 @@ class InvoiceSuitePriceNetDTO extends InvoiceSuitePriceDTO implements JsonSerial
     public function filterTax(
         callable $callback
     ): array {
-        return array_filter($this->taxes, $callback);
+        return InvoiceSuiteArrayUtils::filter($this->taxes, $callback);
     }
 
     /**
@@ -276,8 +277,8 @@ class InvoiceSuitePriceNetDTO extends InvoiceSuitePriceDTO implements JsonSerial
     ): static {
         $filteredTax = $this->filterTax($filterCallback);
 
-        if ([] !== $filteredTax) {
-            $tax = reset($filteredTax);
+        if (!InvoiceSuiteArrayUtils::empty($filteredTax)) {
+            $tax = InvoiceSuiteArrayUtils::first($filteredTax);
             $callback($tax);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();
@@ -301,8 +302,8 @@ class InvoiceSuitePriceNetDTO extends InvoiceSuitePriceDTO implements JsonSerial
     ): static {
         $filteredTax = $this->filterTax($filterCallback);
 
-        if ([] !== $filteredTax) {
-            $tax = end($filteredTax);
+        if (!InvoiceSuiteArrayUtils::empty($filteredTax)) {
+            $tax = InvoiceSuiteArrayUtils::last($filteredTax);
             $callback($tax);
         } elseif (!is_null($callbackElse)) {
             $callbackElse();

@@ -120,7 +120,7 @@ class TendererRequirementType
     public function firstName(): ?Name
     {
         $name = $this->name ?? [];
-        $name = reset($name);
+        $name = InvoiceSuiteArrayUtils::first($name);
 
         if (false === $name) {
             return null;
@@ -135,7 +135,7 @@ class TendererRequirementType
     public function lastName(): ?Name
     {
         $name = $this->name ?? [];
-        $name = end($name);
+        $name = InvoiceSuiteArrayUtils::last($name);
 
         if (false === $name) {
             return null;
@@ -191,7 +191,7 @@ class TendererRequirementType
             $this->name = [];
         }
 
-        if ([] === $this->name) {
+        if (InvoiceSuiteArrayUtils::empty($this->name)) {
             $this->addOnceToName(new Name());
         }
 
@@ -284,7 +284,7 @@ class TendererRequirementType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -299,7 +299,7 @@ class TendererRequirementType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -355,7 +355,7 @@ class TendererRequirementType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -448,7 +448,7 @@ class TendererRequirementType
     public function firstSuggestedEvidence(): ?SuggestedEvidence
     {
         $suggestedEvidence = $this->suggestedEvidence ?? [];
-        $suggestedEvidence = reset($suggestedEvidence);
+        $suggestedEvidence = InvoiceSuiteArrayUtils::first($suggestedEvidence);
 
         if (false === $suggestedEvidence) {
             return null;
@@ -463,7 +463,7 @@ class TendererRequirementType
     public function lastSuggestedEvidence(): ?SuggestedEvidence
     {
         $suggestedEvidence = $this->suggestedEvidence ?? [];
-        $suggestedEvidence = end($suggestedEvidence);
+        $suggestedEvidence = InvoiceSuiteArrayUtils::last($suggestedEvidence);
 
         if (false === $suggestedEvidence) {
             return null;
@@ -519,7 +519,7 @@ class TendererRequirementType
             $this->suggestedEvidence = [];
         }
 
-        if ([] === $this->suggestedEvidence) {
+        if (InvoiceSuiteArrayUtils::empty($this->suggestedEvidence)) {
             $this->addOnceToSuggestedEvidence(new SuggestedEvidence());
         }
 

@@ -184,7 +184,7 @@ class EventLineItemType
     public function firstRetailPlannedImpact(): ?RetailPlannedImpact
     {
         $retailPlannedImpact = $this->retailPlannedImpact ?? [];
-        $retailPlannedImpact = reset($retailPlannedImpact);
+        $retailPlannedImpact = InvoiceSuiteArrayUtils::first($retailPlannedImpact);
 
         if (false === $retailPlannedImpact) {
             return null;
@@ -199,7 +199,7 @@ class EventLineItemType
     public function lastRetailPlannedImpact(): ?RetailPlannedImpact
     {
         $retailPlannedImpact = $this->retailPlannedImpact ?? [];
-        $retailPlannedImpact = end($retailPlannedImpact);
+        $retailPlannedImpact = InvoiceSuiteArrayUtils::last($retailPlannedImpact);
 
         if (false === $retailPlannedImpact) {
             return null;
@@ -255,7 +255,7 @@ class EventLineItemType
             $this->retailPlannedImpact = [];
         }
 
-        if ([] === $this->retailPlannedImpact) {
+        if (InvoiceSuiteArrayUtils::empty($this->retailPlannedImpact)) {
             $this->addOnceToRetailPlannedImpact(new RetailPlannedImpact());
         }
 

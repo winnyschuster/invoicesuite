@@ -360,7 +360,7 @@ class TradeSettlementHeaderMonetarySummationType
             $this->taxTotalAmount = [];
         }
 
-        if ([] === $this->taxTotalAmount) {
+        if (InvoiceSuiteArrayUtils::empty($this->taxTotalAmount)) {
             $this->addOnceToTaxTotalAmount(new AmountType());
         }
 

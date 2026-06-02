@@ -19,6 +19,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentType;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
@@ -211,7 +212,7 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
 
         $this->resolveAvailableDocumentFormatProviders();
 
-        $formatProviders = array_filter(
+        $formatProviders = InvoiceSuiteArrayUtils::filter(
             $this->getRegisteredDocumentFormatProviders(),
             fn ($formatProvider) => (
                 $formatProvider->getIsSatisfiableBySerializedContent($this->getRawDocumentContent())
@@ -219,13 +220,13 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
             )
         );
 
-        if ([] === $formatProviders) {
+        if (InvoiceSuiteArrayUtils::empty($formatProviders)) {
             $this->addErrorMessageToMessageBag('No format provider for the specified content available');
 
             return false;
         }
 
-        $formatProvider = reset($formatProviders);
+        $formatProvider = InvoiceSuiteArrayUtils::first($formatProviders);
 
         $this->setXsdFilename($formatProvider->getValidationXsdFilename());
 

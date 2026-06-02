@@ -232,7 +232,7 @@ class AwardingTermsType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -247,7 +247,7 @@ class AwardingTermsType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -303,7 +303,7 @@ class AwardingTermsType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -356,7 +356,7 @@ class AwardingTermsType
     public function firstTechnicalCommitteeDescription(): ?TechnicalCommitteeDescription
     {
         $technicalCommitteeDescription = $this->technicalCommitteeDescription ?? [];
-        $technicalCommitteeDescription = reset($technicalCommitteeDescription);
+        $technicalCommitteeDescription = InvoiceSuiteArrayUtils::first($technicalCommitteeDescription);
 
         if (false === $technicalCommitteeDescription) {
             return null;
@@ -371,7 +371,7 @@ class AwardingTermsType
     public function lastTechnicalCommitteeDescription(): ?TechnicalCommitteeDescription
     {
         $technicalCommitteeDescription = $this->technicalCommitteeDescription ?? [];
-        $technicalCommitteeDescription = end($technicalCommitteeDescription);
+        $technicalCommitteeDescription = InvoiceSuiteArrayUtils::last($technicalCommitteeDescription);
 
         if (false === $technicalCommitteeDescription) {
             return null;
@@ -427,7 +427,7 @@ class AwardingTermsType
             $this->technicalCommitteeDescription = [];
         }
 
-        if ([] === $this->technicalCommitteeDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->technicalCommitteeDescription)) {
             $this->addOnceToTechnicalCommitteeDescription(new TechnicalCommitteeDescription());
         }
 
@@ -480,7 +480,7 @@ class AwardingTermsType
     public function firstLowTendersDescription(): ?LowTendersDescription
     {
         $lowTendersDescription = $this->lowTendersDescription ?? [];
-        $lowTendersDescription = reset($lowTendersDescription);
+        $lowTendersDescription = InvoiceSuiteArrayUtils::first($lowTendersDescription);
 
         if (false === $lowTendersDescription) {
             return null;
@@ -495,7 +495,7 @@ class AwardingTermsType
     public function lastLowTendersDescription(): ?LowTendersDescription
     {
         $lowTendersDescription = $this->lowTendersDescription ?? [];
-        $lowTendersDescription = end($lowTendersDescription);
+        $lowTendersDescription = InvoiceSuiteArrayUtils::last($lowTendersDescription);
 
         if (false === $lowTendersDescription) {
             return null;
@@ -551,7 +551,7 @@ class AwardingTermsType
             $this->lowTendersDescription = [];
         }
 
-        if ([] === $this->lowTendersDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->lowTendersDescription)) {
             $this->addOnceToLowTendersDescription(new LowTendersDescription());
         }
 
@@ -634,7 +634,7 @@ class AwardingTermsType
     public function firstPrizeDescription(): ?PrizeDescription
     {
         $prizeDescription = $this->prizeDescription ?? [];
-        $prizeDescription = reset($prizeDescription);
+        $prizeDescription = InvoiceSuiteArrayUtils::first($prizeDescription);
 
         if (false === $prizeDescription) {
             return null;
@@ -649,7 +649,7 @@ class AwardingTermsType
     public function lastPrizeDescription(): ?PrizeDescription
     {
         $prizeDescription = $this->prizeDescription ?? [];
-        $prizeDescription = end($prizeDescription);
+        $prizeDescription = InvoiceSuiteArrayUtils::last($prizeDescription);
 
         if (false === $prizeDescription) {
             return null;
@@ -705,7 +705,7 @@ class AwardingTermsType
             $this->prizeDescription = [];
         }
 
-        if ([] === $this->prizeDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->prizeDescription)) {
             $this->addOnceToPrizeDescription(new PrizeDescription());
         }
 
@@ -758,7 +758,7 @@ class AwardingTermsType
     public function firstPaymentDescription(): ?PaymentDescription
     {
         $paymentDescription = $this->paymentDescription ?? [];
-        $paymentDescription = reset($paymentDescription);
+        $paymentDescription = InvoiceSuiteArrayUtils::first($paymentDescription);
 
         if (false === $paymentDescription) {
             return null;
@@ -773,7 +773,7 @@ class AwardingTermsType
     public function lastPaymentDescription(): ?PaymentDescription
     {
         $paymentDescription = $this->paymentDescription ?? [];
-        $paymentDescription = end($paymentDescription);
+        $paymentDescription = InvoiceSuiteArrayUtils::last($paymentDescription);
 
         if (false === $paymentDescription) {
             return null;
@@ -829,7 +829,7 @@ class AwardingTermsType
             $this->paymentDescription = [];
         }
 
-        if ([] === $this->paymentDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->paymentDescription)) {
             $this->addOnceToPaymentDescription(new PaymentDescription());
         }
 
@@ -942,7 +942,7 @@ class AwardingTermsType
     public function firstAwardingCriterion(): ?AwardingCriterion
     {
         $awardingCriterion = $this->awardingCriterion ?? [];
-        $awardingCriterion = reset($awardingCriterion);
+        $awardingCriterion = InvoiceSuiteArrayUtils::first($awardingCriterion);
 
         if (false === $awardingCriterion) {
             return null;
@@ -957,7 +957,7 @@ class AwardingTermsType
     public function lastAwardingCriterion(): ?AwardingCriterion
     {
         $awardingCriterion = $this->awardingCriterion ?? [];
-        $awardingCriterion = end($awardingCriterion);
+        $awardingCriterion = InvoiceSuiteArrayUtils::last($awardingCriterion);
 
         if (false === $awardingCriterion) {
             return null;
@@ -1013,7 +1013,7 @@ class AwardingTermsType
             $this->awardingCriterion = [];
         }
 
-        if ([] === $this->awardingCriterion) {
+        if (InvoiceSuiteArrayUtils::empty($this->awardingCriterion)) {
             $this->addOnceToAwardingCriterion(new AwardingCriterion());
         }
 
@@ -1066,7 +1066,7 @@ class AwardingTermsType
     public function firstTechnicalCommitteePerson(): ?TechnicalCommitteePerson
     {
         $technicalCommitteePerson = $this->technicalCommitteePerson ?? [];
-        $technicalCommitteePerson = reset($technicalCommitteePerson);
+        $technicalCommitteePerson = InvoiceSuiteArrayUtils::first($technicalCommitteePerson);
 
         if (false === $technicalCommitteePerson) {
             return null;
@@ -1081,7 +1081,7 @@ class AwardingTermsType
     public function lastTechnicalCommitteePerson(): ?TechnicalCommitteePerson
     {
         $technicalCommitteePerson = $this->technicalCommitteePerson ?? [];
-        $technicalCommitteePerson = end($technicalCommitteePerson);
+        $technicalCommitteePerson = InvoiceSuiteArrayUtils::last($technicalCommitteePerson);
 
         if (false === $technicalCommitteePerson) {
             return null;
@@ -1137,7 +1137,7 @@ class AwardingTermsType
             $this->technicalCommitteePerson = [];
         }
 
-        if ([] === $this->technicalCommitteePerson) {
+        if (InvoiceSuiteArrayUtils::empty($this->technicalCommitteePerson)) {
             $this->addOnceToTechnicalCommitteePerson(new TechnicalCommitteePerson());
         }
 

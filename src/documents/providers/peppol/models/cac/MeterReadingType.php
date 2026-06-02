@@ -634,7 +634,7 @@ class MeterReadingType
     public function firstMeterReadingComments(): ?MeterReadingComments
     {
         $meterReadingComments = $this->meterReadingComments ?? [];
-        $meterReadingComments = reset($meterReadingComments);
+        $meterReadingComments = InvoiceSuiteArrayUtils::first($meterReadingComments);
 
         if (false === $meterReadingComments) {
             return null;
@@ -649,7 +649,7 @@ class MeterReadingType
     public function lastMeterReadingComments(): ?MeterReadingComments
     {
         $meterReadingComments = $this->meterReadingComments ?? [];
-        $meterReadingComments = end($meterReadingComments);
+        $meterReadingComments = InvoiceSuiteArrayUtils::last($meterReadingComments);
 
         if (false === $meterReadingComments) {
             return null;
@@ -705,7 +705,7 @@ class MeterReadingType
             $this->meterReadingComments = [];
         }
 
-        if ([] === $this->meterReadingComments) {
+        if (InvoiceSuiteArrayUtils::empty($this->meterReadingComments)) {
             $this->addOnceToMeterReadingComments(new MeterReadingComments());
         }
 

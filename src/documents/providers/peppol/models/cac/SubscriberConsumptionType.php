@@ -244,7 +244,7 @@ class SubscriberConsumptionType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -259,7 +259,7 @@ class SubscriberConsumptionType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -315,7 +315,7 @@ class SubscriberConsumptionType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -488,7 +488,7 @@ class SubscriberConsumptionType
     public function firstOnAccountPayment(): ?OnAccountPayment
     {
         $onAccountPayment = $this->onAccountPayment ?? [];
-        $onAccountPayment = reset($onAccountPayment);
+        $onAccountPayment = InvoiceSuiteArrayUtils::first($onAccountPayment);
 
         if (false === $onAccountPayment) {
             return null;
@@ -503,7 +503,7 @@ class SubscriberConsumptionType
     public function lastOnAccountPayment(): ?OnAccountPayment
     {
         $onAccountPayment = $this->onAccountPayment ?? [];
-        $onAccountPayment = end($onAccountPayment);
+        $onAccountPayment = InvoiceSuiteArrayUtils::last($onAccountPayment);
 
         if (false === $onAccountPayment) {
             return null;
@@ -559,7 +559,7 @@ class SubscriberConsumptionType
             $this->onAccountPayment = [];
         }
 
-        if ([] === $this->onAccountPayment) {
+        if (InvoiceSuiteArrayUtils::empty($this->onAccountPayment)) {
             $this->addOnceToOnAccountPayment(new OnAccountPayment());
         }
 
@@ -652,7 +652,7 @@ class SubscriberConsumptionType
     public function firstSupplierConsumption(): ?SupplierConsumption
     {
         $supplierConsumption = $this->supplierConsumption ?? [];
-        $supplierConsumption = reset($supplierConsumption);
+        $supplierConsumption = InvoiceSuiteArrayUtils::first($supplierConsumption);
 
         if (false === $supplierConsumption) {
             return null;
@@ -667,7 +667,7 @@ class SubscriberConsumptionType
     public function lastSupplierConsumption(): ?SupplierConsumption
     {
         $supplierConsumption = $this->supplierConsumption ?? [];
-        $supplierConsumption = end($supplierConsumption);
+        $supplierConsumption = InvoiceSuiteArrayUtils::last($supplierConsumption);
 
         if (false === $supplierConsumption) {
             return null;
@@ -723,7 +723,7 @@ class SubscriberConsumptionType
             $this->supplierConsumption = [];
         }
 
-        if ([] === $this->supplierConsumption) {
+        if (InvoiceSuiteArrayUtils::empty($this->supplierConsumption)) {
             $this->addOnceToSupplierConsumption(new SupplierConsumption());
         }
 

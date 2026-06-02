@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\concerns;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 /**
@@ -62,7 +63,7 @@ trait HandlesObjectFlags
             return $this;
         }
 
-        $this->objectFlags = array_filter(
+        $this->objectFlags = InvoiceSuiteArrayUtils::filter(
             $this->objectFlags,
             static fn ($currentFlag) => !InvoiceSuiteStringUtils::equalsNoCase((string) $currentFlag, $flag)
         );
@@ -79,9 +80,11 @@ trait HandlesObjectFlags
     public function hasObjectFlag(
         string $flag
     ): bool {
-        return [] !== array_filter(
-            $this->objectFlags,
-            static fn ($currentFlag) => InvoiceSuiteStringUtils::equalsNoCase((string) $currentFlag, $flag)
+        return !InvoiceSuiteArrayUtils::empty(
+            InvoiceSuiteArrayUtils::filter(
+                $this->objectFlags,
+                static fn ($currentFlag) => InvoiceSuiteStringUtils::equalsNoCase((string) $currentFlag, $flag)
+            )
         );
     }
 }

@@ -452,7 +452,7 @@ class HazardousItemType
     public function firstAdditionalInformation(): ?AdditionalInformation
     {
         $additionalInformation = $this->additionalInformation ?? [];
-        $additionalInformation = reset($additionalInformation);
+        $additionalInformation = InvoiceSuiteArrayUtils::first($additionalInformation);
 
         if (false === $additionalInformation) {
             return null;
@@ -467,7 +467,7 @@ class HazardousItemType
     public function lastAdditionalInformation(): ?AdditionalInformation
     {
         $additionalInformation = $this->additionalInformation ?? [];
-        $additionalInformation = end($additionalInformation);
+        $additionalInformation = InvoiceSuiteArrayUtils::last($additionalInformation);
 
         if (false === $additionalInformation) {
             return null;
@@ -523,7 +523,7 @@ class HazardousItemType
             $this->additionalInformation = [];
         }
 
-        if ([] === $this->additionalInformation) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalInformation)) {
             $this->addOnceToAdditionalInformation(new AdditionalInformation());
         }
 
@@ -1136,7 +1136,7 @@ class HazardousItemType
     public function firstSecondaryHazard(): ?SecondaryHazard
     {
         $secondaryHazard = $this->secondaryHazard ?? [];
-        $secondaryHazard = reset($secondaryHazard);
+        $secondaryHazard = InvoiceSuiteArrayUtils::first($secondaryHazard);
 
         if (false === $secondaryHazard) {
             return null;
@@ -1151,7 +1151,7 @@ class HazardousItemType
     public function lastSecondaryHazard(): ?SecondaryHazard
     {
         $secondaryHazard = $this->secondaryHazard ?? [];
-        $secondaryHazard = end($secondaryHazard);
+        $secondaryHazard = InvoiceSuiteArrayUtils::last($secondaryHazard);
 
         if (false === $secondaryHazard) {
             return null;
@@ -1207,7 +1207,7 @@ class HazardousItemType
             $this->secondaryHazard = [];
         }
 
-        if ([] === $this->secondaryHazard) {
+        if (InvoiceSuiteArrayUtils::empty($this->secondaryHazard)) {
             $this->addOnceToSecondaryHazard(new SecondaryHazard());
         }
 
@@ -1260,7 +1260,7 @@ class HazardousItemType
     public function firstHazardousGoodsTransit(): ?HazardousGoodsTransit
     {
         $hazardousGoodsTransit = $this->hazardousGoodsTransit ?? [];
-        $hazardousGoodsTransit = reset($hazardousGoodsTransit);
+        $hazardousGoodsTransit = InvoiceSuiteArrayUtils::first($hazardousGoodsTransit);
 
         if (false === $hazardousGoodsTransit) {
             return null;
@@ -1275,7 +1275,7 @@ class HazardousItemType
     public function lastHazardousGoodsTransit(): ?HazardousGoodsTransit
     {
         $hazardousGoodsTransit = $this->hazardousGoodsTransit ?? [];
-        $hazardousGoodsTransit = end($hazardousGoodsTransit);
+        $hazardousGoodsTransit = InvoiceSuiteArrayUtils::last($hazardousGoodsTransit);
 
         if (false === $hazardousGoodsTransit) {
             return null;
@@ -1331,7 +1331,7 @@ class HazardousItemType
             $this->hazardousGoodsTransit = [];
         }
 
-        if ([] === $this->hazardousGoodsTransit) {
+        if (InvoiceSuiteArrayUtils::empty($this->hazardousGoodsTransit)) {
             $this->addOnceToHazardousGoodsTransit(new HazardousGoodsTransit());
         }
 
@@ -1464,7 +1464,7 @@ class HazardousItemType
     public function firstAdditionalTemperature(): ?AdditionalTemperature
     {
         $additionalTemperature = $this->additionalTemperature ?? [];
-        $additionalTemperature = reset($additionalTemperature);
+        $additionalTemperature = InvoiceSuiteArrayUtils::first($additionalTemperature);
 
         if (false === $additionalTemperature) {
             return null;
@@ -1479,7 +1479,7 @@ class HazardousItemType
     public function lastAdditionalTemperature(): ?AdditionalTemperature
     {
         $additionalTemperature = $this->additionalTemperature ?? [];
-        $additionalTemperature = end($additionalTemperature);
+        $additionalTemperature = InvoiceSuiteArrayUtils::last($additionalTemperature);
 
         if (false === $additionalTemperature) {
             return null;
@@ -1535,7 +1535,7 @@ class HazardousItemType
             $this->additionalTemperature = [];
         }
 
-        if ([] === $this->additionalTemperature) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalTemperature)) {
             $this->addOnceToAdditionalTemperature(new AdditionalTemperature());
         }
 

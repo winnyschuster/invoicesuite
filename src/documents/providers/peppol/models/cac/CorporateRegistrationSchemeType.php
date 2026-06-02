@@ -226,7 +226,7 @@ class CorporateRegistrationSchemeType
     public function firstJurisdictionRegionAddress(): ?JurisdictionRegionAddress
     {
         $jurisdictionRegionAddress = $this->jurisdictionRegionAddress ?? [];
-        $jurisdictionRegionAddress = reset($jurisdictionRegionAddress);
+        $jurisdictionRegionAddress = InvoiceSuiteArrayUtils::first($jurisdictionRegionAddress);
 
         if (false === $jurisdictionRegionAddress) {
             return null;
@@ -241,7 +241,7 @@ class CorporateRegistrationSchemeType
     public function lastJurisdictionRegionAddress(): ?JurisdictionRegionAddress
     {
         $jurisdictionRegionAddress = $this->jurisdictionRegionAddress ?? [];
-        $jurisdictionRegionAddress = end($jurisdictionRegionAddress);
+        $jurisdictionRegionAddress = InvoiceSuiteArrayUtils::last($jurisdictionRegionAddress);
 
         if (false === $jurisdictionRegionAddress) {
             return null;
@@ -297,7 +297,7 @@ class CorporateRegistrationSchemeType
             $this->jurisdictionRegionAddress = [];
         }
 
-        if ([] === $this->jurisdictionRegionAddress) {
+        if (InvoiceSuiteArrayUtils::empty($this->jurisdictionRegionAddress)) {
             $this->addOnceToJurisdictionRegionAddress(new JurisdictionRegionAddress());
         }
 

@@ -119,7 +119,7 @@ class EconomicOperatorShortListType
     public function firstLimitationDescription(): ?LimitationDescription
     {
         $limitationDescription = $this->limitationDescription ?? [];
-        $limitationDescription = reset($limitationDescription);
+        $limitationDescription = InvoiceSuiteArrayUtils::first($limitationDescription);
 
         if (false === $limitationDescription) {
             return null;
@@ -134,7 +134,7 @@ class EconomicOperatorShortListType
     public function lastLimitationDescription(): ?LimitationDescription
     {
         $limitationDescription = $this->limitationDescription ?? [];
-        $limitationDescription = end($limitationDescription);
+        $limitationDescription = InvoiceSuiteArrayUtils::last($limitationDescription);
 
         if (false === $limitationDescription) {
             return null;
@@ -190,7 +190,7 @@ class EconomicOperatorShortListType
             $this->limitationDescription = [];
         }
 
-        if ([] === $this->limitationDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->limitationDescription)) {
             $this->addOnceToLimitationDescription(new LimitationDescription());
         }
 
@@ -363,7 +363,7 @@ class EconomicOperatorShortListType
     public function firstPreSelectedParty(): ?PreSelectedParty
     {
         $preSelectedParty = $this->preSelectedParty ?? [];
-        $preSelectedParty = reset($preSelectedParty);
+        $preSelectedParty = InvoiceSuiteArrayUtils::first($preSelectedParty);
 
         if (false === $preSelectedParty) {
             return null;
@@ -378,7 +378,7 @@ class EconomicOperatorShortListType
     public function lastPreSelectedParty(): ?PreSelectedParty
     {
         $preSelectedParty = $this->preSelectedParty ?? [];
-        $preSelectedParty = end($preSelectedParty);
+        $preSelectedParty = InvoiceSuiteArrayUtils::last($preSelectedParty);
 
         if (false === $preSelectedParty) {
             return null;
@@ -434,7 +434,7 @@ class EconomicOperatorShortListType
             $this->preSelectedParty = [];
         }
 
-        if ([] === $this->preSelectedParty) {
+        if (InvoiceSuiteArrayUtils::empty($this->preSelectedParty)) {
             $this->addOnceToPreSelectedParty(new PreSelectedParty());
         }
 

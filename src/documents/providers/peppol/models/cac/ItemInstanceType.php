@@ -361,7 +361,7 @@ class ItemInstanceType
     public function firstAdditionalItemProperty(): ?AdditionalItemProperty
     {
         $additionalItemProperty = $this->additionalItemProperty ?? [];
-        $additionalItemProperty = reset($additionalItemProperty);
+        $additionalItemProperty = InvoiceSuiteArrayUtils::first($additionalItemProperty);
 
         if (false === $additionalItemProperty) {
             return null;
@@ -376,7 +376,7 @@ class ItemInstanceType
     public function lastAdditionalItemProperty(): ?AdditionalItemProperty
     {
         $additionalItemProperty = $this->additionalItemProperty ?? [];
-        $additionalItemProperty = end($additionalItemProperty);
+        $additionalItemProperty = InvoiceSuiteArrayUtils::last($additionalItemProperty);
 
         if (false === $additionalItemProperty) {
             return null;
@@ -432,7 +432,7 @@ class ItemInstanceType
             $this->additionalItemProperty = [];
         }
 
-        if ([] === $this->additionalItemProperty) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalItemProperty)) {
             $this->addOnceToAdditionalItemProperty(new AdditionalItemProperty());
         }
 

@@ -323,7 +323,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
         $this->_put('<<');
         $s = '';
         $files = $this->files;
-        usort($files, static function ($a, $b) { // Sorting files in name order as PDF specs (if not, issue with Acrobat Reader when trying to download attachments)
+        InvoiceSuiteArrayUtils::sortWithCallback($files, static function ($a, $b) { // Sorting files in name order as PDF specs (if not, issue with Acrobat Reader when trying to download attachments)
             return strcmp($a['name'], $b['name']);
         });
         foreach ($files as $info) {
@@ -374,13 +374,13 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
     {
         parent::_putresources();
 
-        if ([] !== $this->files) {
+        if (!InvoiceSuiteArrayUtils::empty($this->files)) {
             $this->_putfiles();
         }
 
         $this->_putoutputintent();
 
-        if ([] !== $this->metaDataDescriptions) {
+        if (!InvoiceSuiteArrayUtils::empty($this->metaDataDescriptions)) {
             $this->putMetadataDescriptions();
         }
     }
@@ -430,7 +430,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
     {
         parent::_putcatalog();
 
-        if ([] !== $this->files) {
+        if (!InvoiceSuiteArrayUtils::empty($this->files)) {
             if (InvoiceSuiteArrayUtils::is($this->files)) {
                 $files_ref_str = '';
                 foreach ($this->files as $file) {
@@ -451,7 +451,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
             $this->_put(sprintf('/Metadata %s 0 R', $this->descriptionIndex));
         }
 
-        if ([] !== $this->files) {
+        if (!InvoiceSuiteArrayUtils::empty($this->files)) {
             $this->_put('/Names <<');
             $this->_put('/EmbeddedFiles ');
             $this->_put(sprintf('%s 0 R', $this->filesIndex));

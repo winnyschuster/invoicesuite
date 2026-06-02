@@ -185,7 +185,7 @@ class PriceListType
     public function firstValidityPeriod(): ?ValidityPeriod
     {
         $validityPeriod = $this->validityPeriod ?? [];
-        $validityPeriod = reset($validityPeriod);
+        $validityPeriod = InvoiceSuiteArrayUtils::first($validityPeriod);
 
         if (false === $validityPeriod) {
             return null;
@@ -200,7 +200,7 @@ class PriceListType
     public function lastValidityPeriod(): ?ValidityPeriod
     {
         $validityPeriod = $this->validityPeriod ?? [];
-        $validityPeriod = end($validityPeriod);
+        $validityPeriod = InvoiceSuiteArrayUtils::last($validityPeriod);
 
         if (false === $validityPeriod) {
             return null;
@@ -256,7 +256,7 @@ class PriceListType
             $this->validityPeriod = [];
         }
 
-        if ([] === $this->validityPeriod) {
+        if (InvoiceSuiteArrayUtils::empty($this->validityPeriod)) {
             $this->addOnceToValidityPeriod(new ValidityPeriod());
         }
 

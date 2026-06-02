@@ -224,7 +224,7 @@ class CataloguePricingUpdateLineType
     public function firstRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
         $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
-        $requiredItemLocationQuantity = reset($requiredItemLocationQuantity);
+        $requiredItemLocationQuantity = InvoiceSuiteArrayUtils::first($requiredItemLocationQuantity);
 
         if (false === $requiredItemLocationQuantity) {
             return null;
@@ -239,7 +239,7 @@ class CataloguePricingUpdateLineType
     public function lastRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
         $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
-        $requiredItemLocationQuantity = end($requiredItemLocationQuantity);
+        $requiredItemLocationQuantity = InvoiceSuiteArrayUtils::last($requiredItemLocationQuantity);
 
         if (false === $requiredItemLocationQuantity) {
             return null;
@@ -295,7 +295,7 @@ class CataloguePricingUpdateLineType
             $this->requiredItemLocationQuantity = [];
         }
 
-        if ([] === $this->requiredItemLocationQuantity) {
+        if (InvoiceSuiteArrayUtils::empty($this->requiredItemLocationQuantity)) {
             $this->addOnceToRequiredItemLocationQuantity(new RequiredItemLocationQuantity());
         }
 

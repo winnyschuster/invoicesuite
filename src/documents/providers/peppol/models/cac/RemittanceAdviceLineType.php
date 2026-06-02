@@ -308,7 +308,7 @@ class RemittanceAdviceLineType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -323,7 +323,7 @@ class RemittanceAdviceLineType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -379,7 +379,7 @@ class RemittanceAdviceLineType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -912,7 +912,7 @@ class RemittanceAdviceLineType
     public function firstInvoicePeriod(): ?InvoicePeriod
     {
         $invoicePeriod = $this->invoicePeriod ?? [];
-        $invoicePeriod = reset($invoicePeriod);
+        $invoicePeriod = InvoiceSuiteArrayUtils::first($invoicePeriod);
 
         if (false === $invoicePeriod) {
             return null;
@@ -927,7 +927,7 @@ class RemittanceAdviceLineType
     public function lastInvoicePeriod(): ?InvoicePeriod
     {
         $invoicePeriod = $this->invoicePeriod ?? [];
-        $invoicePeriod = end($invoicePeriod);
+        $invoicePeriod = InvoiceSuiteArrayUtils::last($invoicePeriod);
 
         if (false === $invoicePeriod) {
             return null;
@@ -983,7 +983,7 @@ class RemittanceAdviceLineType
             $this->invoicePeriod = [];
         }
 
-        if ([] === $this->invoicePeriod) {
+        if (InvoiceSuiteArrayUtils::empty($this->invoicePeriod)) {
             $this->addOnceToInvoicePeriod(new InvoicePeriod());
         }
 
@@ -1036,7 +1036,7 @@ class RemittanceAdviceLineType
     public function firstBillingReference(): ?BillingReference
     {
         $billingReference = $this->billingReference ?? [];
-        $billingReference = reset($billingReference);
+        $billingReference = InvoiceSuiteArrayUtils::first($billingReference);
 
         if (false === $billingReference) {
             return null;
@@ -1051,7 +1051,7 @@ class RemittanceAdviceLineType
     public function lastBillingReference(): ?BillingReference
     {
         $billingReference = $this->billingReference ?? [];
-        $billingReference = end($billingReference);
+        $billingReference = InvoiceSuiteArrayUtils::last($billingReference);
 
         if (false === $billingReference) {
             return null;
@@ -1107,7 +1107,7 @@ class RemittanceAdviceLineType
             $this->billingReference = [];
         }
 
-        if ([] === $this->billingReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->billingReference)) {
             $this->addOnceToBillingReference(new BillingReference());
         }
 
@@ -1160,7 +1160,7 @@ class RemittanceAdviceLineType
     public function firstDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = reset($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::first($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -1175,7 +1175,7 @@ class RemittanceAdviceLineType
     public function lastDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = end($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::last($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -1231,7 +1231,7 @@ class RemittanceAdviceLineType
             $this->documentReference = [];
         }
 
-        if ([] === $this->documentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->documentReference)) {
             $this->addOnceToDocumentReference(new DocumentReference());
         }
 

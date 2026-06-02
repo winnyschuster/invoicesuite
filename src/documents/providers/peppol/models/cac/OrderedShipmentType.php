@@ -121,7 +121,7 @@ class OrderedShipmentType
     public function firstPackage(): ?Package
     {
         $package = $this->package ?? [];
-        $package = reset($package);
+        $package = InvoiceSuiteArrayUtils::first($package);
 
         if (false === $package) {
             return null;
@@ -136,7 +136,7 @@ class OrderedShipmentType
     public function lastPackage(): ?Package
     {
         $package = $this->package ?? [];
-        $package = end($package);
+        $package = InvoiceSuiteArrayUtils::last($package);
 
         if (false === $package) {
             return null;
@@ -192,7 +192,7 @@ class OrderedShipmentType
             $this->package = [];
         }
 
-        if ([] === $this->package) {
+        if (InvoiceSuiteArrayUtils::empty($this->package)) {
             $this->addOnceToPackage(new Package());
         }
 

@@ -10905,8 +10905,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     private function resolveDocumentSellerIds(): array
     {
         return
-            array_values(
-                array_filter(
+            InvoiceSuiteArrayUtils::values(
+                InvoiceSuiteArrayUtils::filter(
                     InvoiceSuiteArrayUtils::ensure(
                         $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyIdentification() ?? []
                     ),
@@ -10923,8 +10923,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     private function resolveDocumentSellerGlobalIds(): array
     {
         return
-            array_values(
-                array_filter(
+            InvoiceSuiteArrayUtils::values(
+                InvoiceSuiteArrayUtils::filter(
                     InvoiceSuiteArrayUtils::ensure(
                         $this->getUblRootObject()->getAccountingSupplierParty()?->getParty()?->getPartyIdentification() ?? []
                     ),
@@ -10941,8 +10941,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     private function resolveDocumentBuyerIds(): array
     {
         return
-            array_values(
-                array_filter(
+            InvoiceSuiteArrayUtils::values(
+                InvoiceSuiteArrayUtils::filter(
                     InvoiceSuiteArrayUtils::ensure(
                         $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyIdentification() ?? []
                     ),
@@ -10959,8 +10959,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     private function resolveDocumentBuyerGlobalIds(): array
     {
         return
-            array_values(
-                array_filter(
+            InvoiceSuiteArrayUtils::values(
+                InvoiceSuiteArrayUtils::filter(
                     InvoiceSuiteArrayUtils::ensure(
                         $this->getUblRootObject()->getAccountingCustomerParty()?->getParty()?->getPartyIdentification() ?? []
                     ),
@@ -10977,8 +10977,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     private function resolveDocumentShipToIds(): array
     {
         return
-            array_values(
-                array_filter(
+            InvoiceSuiteArrayUtils::values(
+                InvoiceSuiteArrayUtils::filter(
                     InvoiceSuiteArrayUtils::ensure(
                         $this->getUblRootObject()->firstDelivery()?->getDeliveryLocation()?->getID() ?? []
                     ),
@@ -10995,8 +10995,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     private function resolveDocumentShipToGlobalIds(): array
     {
         return
-            array_values(
-                array_filter(
+            InvoiceSuiteArrayUtils::values(
+                InvoiceSuiteArrayUtils::filter(
                     InvoiceSuiteArrayUtils::ensure(
                         $this->getUblRootObject()->firstDelivery()?->getDeliveryLocation()?->getID() ?? []
                     ),
@@ -11013,8 +11013,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     private function resolveDocumentPayeeIds(): array
     {
         return
-            array_values(
-                array_filter(
+            InvoiceSuiteArrayUtils::values(
+                InvoiceSuiteArrayUtils::filter(
                     InvoiceSuiteArrayUtils::ensure(
                         $this->getUblRootObject()->getPayeeParty()?->getPartyIdentification() ?? []
                     ),
@@ -11031,8 +11031,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
     private function resolveDocumentPayeeGlobalIds(): array
     {
         return
-            array_values(
-                array_filter(
+            InvoiceSuiteArrayUtils::values(
+                InvoiceSuiteArrayUtils::filter(
                     InvoiceSuiteArrayUtils::ensure(
                         $this->getUblRootObject()->getPayeeParty()?->getPartyIdentification() ?? []
                     ),
@@ -11054,8 +11054,8 @@ class InvoiceSuitePeppol30CreditNoteProviderReader extends InvoiceSuiteAbstractD
             ?->getPartyWithCreate()
             ?->getPartyIdentification();
 
-        return array_values(
-            array_filter($partyIdentifications ?? [], static fn (PartyIdentification $id) => InvoiceSuiteStringUtils::equalsNoCase($id->getID()?->getSchemeID() ?? '', 'SEPA'))
+        return InvoiceSuiteArrayUtils::values(
+            InvoiceSuiteArrayUtils::filter($partyIdentifications ?? [], static fn (PartyIdentification $id) => InvoiceSuiteStringUtils::equalsNoCase($id->getID()?->getSchemeID() ?? '', 'SEPA'))
         );
     }
 }

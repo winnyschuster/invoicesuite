@@ -188,7 +188,7 @@ class ProcessJustificationType
     public function firstProcessReason(): ?ProcessReason
     {
         $processReason = $this->processReason ?? [];
-        $processReason = reset($processReason);
+        $processReason = InvoiceSuiteArrayUtils::first($processReason);
 
         if (false === $processReason) {
             return null;
@@ -203,7 +203,7 @@ class ProcessJustificationType
     public function lastProcessReason(): ?ProcessReason
     {
         $processReason = $this->processReason ?? [];
-        $processReason = end($processReason);
+        $processReason = InvoiceSuiteArrayUtils::last($processReason);
 
         if (false === $processReason) {
             return null;
@@ -259,7 +259,7 @@ class ProcessJustificationType
             $this->processReason = [];
         }
 
-        if ([] === $this->processReason) {
+        if (InvoiceSuiteArrayUtils::empty($this->processReason)) {
             $this->addOnceToProcessReason(new ProcessReason());
         }
 
@@ -312,7 +312,7 @@ class ProcessJustificationType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -327,7 +327,7 @@ class ProcessJustificationType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -383,7 +383,7 @@ class ProcessJustificationType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 

@@ -211,7 +211,7 @@ class FrameworkAgreementType
     public function firstJustification(): ?Justification
     {
         $justification = $this->justification ?? [];
-        $justification = reset($justification);
+        $justification = InvoiceSuiteArrayUtils::first($justification);
 
         if (false === $justification) {
             return null;
@@ -226,7 +226,7 @@ class FrameworkAgreementType
     public function lastJustification(): ?Justification
     {
         $justification = $this->justification ?? [];
-        $justification = end($justification);
+        $justification = InvoiceSuiteArrayUtils::last($justification);
 
         if (false === $justification) {
             return null;
@@ -282,7 +282,7 @@ class FrameworkAgreementType
             $this->justification = [];
         }
 
-        if ([] === $this->justification) {
+        if (InvoiceSuiteArrayUtils::empty($this->justification)) {
             $this->addOnceToJustification(new Justification());
         }
 
@@ -335,7 +335,7 @@ class FrameworkAgreementType
     public function firstFrequency(): ?Frequency
     {
         $frequency = $this->frequency ?? [];
-        $frequency = reset($frequency);
+        $frequency = InvoiceSuiteArrayUtils::first($frequency);
 
         if (false === $frequency) {
             return null;
@@ -350,7 +350,7 @@ class FrameworkAgreementType
     public function lastFrequency(): ?Frequency
     {
         $frequency = $this->frequency ?? [];
-        $frequency = end($frequency);
+        $frequency = InvoiceSuiteArrayUtils::last($frequency);
 
         if (false === $frequency) {
             return null;
@@ -406,7 +406,7 @@ class FrameworkAgreementType
             $this->frequency = [];
         }
 
-        if ([] === $this->frequency) {
+        if (InvoiceSuiteArrayUtils::empty($this->frequency)) {
             $this->addOnceToFrequency(new Frequency());
         }
 
@@ -499,7 +499,7 @@ class FrameworkAgreementType
     public function firstSubsequentProcessTenderRequirement(): ?SubsequentProcessTenderRequirement
     {
         $subsequentProcessTenderRequirement = $this->subsequentProcessTenderRequirement ?? [];
-        $subsequentProcessTenderRequirement = reset($subsequentProcessTenderRequirement);
+        $subsequentProcessTenderRequirement = InvoiceSuiteArrayUtils::first($subsequentProcessTenderRequirement);
 
         if (false === $subsequentProcessTenderRequirement) {
             return null;
@@ -514,7 +514,7 @@ class FrameworkAgreementType
     public function lastSubsequentProcessTenderRequirement(): ?SubsequentProcessTenderRequirement
     {
         $subsequentProcessTenderRequirement = $this->subsequentProcessTenderRequirement ?? [];
-        $subsequentProcessTenderRequirement = end($subsequentProcessTenderRequirement);
+        $subsequentProcessTenderRequirement = InvoiceSuiteArrayUtils::last($subsequentProcessTenderRequirement);
 
         if (false === $subsequentProcessTenderRequirement) {
             return null;
@@ -570,7 +570,7 @@ class FrameworkAgreementType
             $this->subsequentProcessTenderRequirement = [];
         }
 
-        if ([] === $this->subsequentProcessTenderRequirement) {
+        if (InvoiceSuiteArrayUtils::empty($this->subsequentProcessTenderRequirement)) {
             $this->addOnceToSubsequentProcessTenderRequirement(new SubsequentProcessTenderRequirement());
         }
 

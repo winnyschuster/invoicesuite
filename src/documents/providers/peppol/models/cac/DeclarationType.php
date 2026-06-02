@@ -108,7 +108,7 @@ class DeclarationType
     public function firstName(): ?Name
     {
         $name = $this->name ?? [];
-        $name = reset($name);
+        $name = InvoiceSuiteArrayUtils::first($name);
 
         if (false === $name) {
             return null;
@@ -123,7 +123,7 @@ class DeclarationType
     public function lastName(): ?Name
     {
         $name = $this->name ?? [];
-        $name = end($name);
+        $name = InvoiceSuiteArrayUtils::last($name);
 
         if (false === $name) {
             return null;
@@ -179,7 +179,7 @@ class DeclarationType
             $this->name = [];
         }
 
-        if ([] === $this->name) {
+        if (InvoiceSuiteArrayUtils::empty($this->name)) {
             $this->addOnceToName(new Name());
         }
 
@@ -272,7 +272,7 @@ class DeclarationType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -287,7 +287,7 @@ class DeclarationType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -343,7 +343,7 @@ class DeclarationType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -396,7 +396,7 @@ class DeclarationType
     public function firstEvidenceSupplied(): ?EvidenceSupplied
     {
         $evidenceSupplied = $this->evidenceSupplied ?? [];
-        $evidenceSupplied = reset($evidenceSupplied);
+        $evidenceSupplied = InvoiceSuiteArrayUtils::first($evidenceSupplied);
 
         if (false === $evidenceSupplied) {
             return null;
@@ -411,7 +411,7 @@ class DeclarationType
     public function lastEvidenceSupplied(): ?EvidenceSupplied
     {
         $evidenceSupplied = $this->evidenceSupplied ?? [];
-        $evidenceSupplied = end($evidenceSupplied);
+        $evidenceSupplied = InvoiceSuiteArrayUtils::last($evidenceSupplied);
 
         if (false === $evidenceSupplied) {
             return null;
@@ -467,7 +467,7 @@ class DeclarationType
             $this->evidenceSupplied = [];
         }
 
-        if ([] === $this->evidenceSupplied) {
+        if (InvoiceSuiteArrayUtils::empty($this->evidenceSupplied)) {
             $this->addOnceToEvidenceSupplied(new EvidenceSupplied());
         }
 

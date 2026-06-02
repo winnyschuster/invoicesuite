@@ -342,7 +342,7 @@ class MeterType
     public function firstMeterReading(): ?MeterReading
     {
         $meterReading = $this->meterReading ?? [];
-        $meterReading = reset($meterReading);
+        $meterReading = InvoiceSuiteArrayUtils::first($meterReading);
 
         if (false === $meterReading) {
             return null;
@@ -357,7 +357,7 @@ class MeterType
     public function lastMeterReading(): ?MeterReading
     {
         $meterReading = $this->meterReading ?? [];
-        $meterReading = end($meterReading);
+        $meterReading = InvoiceSuiteArrayUtils::last($meterReading);
 
         if (false === $meterReading) {
             return null;
@@ -413,7 +413,7 @@ class MeterType
             $this->meterReading = [];
         }
 
-        if ([] === $this->meterReading) {
+        if (InvoiceSuiteArrayUtils::empty($this->meterReading)) {
             $this->addOnceToMeterReading(new MeterReading());
         }
 
@@ -466,7 +466,7 @@ class MeterType
     public function firstMeterProperty(): ?MeterProperty
     {
         $meterProperty = $this->meterProperty ?? [];
-        $meterProperty = reset($meterProperty);
+        $meterProperty = InvoiceSuiteArrayUtils::first($meterProperty);
 
         if (false === $meterProperty) {
             return null;
@@ -481,7 +481,7 @@ class MeterType
     public function lastMeterProperty(): ?MeterProperty
     {
         $meterProperty = $this->meterProperty ?? [];
-        $meterProperty = end($meterProperty);
+        $meterProperty = InvoiceSuiteArrayUtils::last($meterProperty);
 
         if (false === $meterProperty) {
             return null;
@@ -537,7 +537,7 @@ class MeterType
             $this->meterProperty = [];
         }
 
-        if ([] === $this->meterProperty) {
+        if (InvoiceSuiteArrayUtils::empty($this->meterProperty)) {
             $this->addOnceToMeterProperty(new MeterProperty());
         }
 

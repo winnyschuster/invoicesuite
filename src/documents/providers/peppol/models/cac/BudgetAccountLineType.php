@@ -174,7 +174,7 @@ class BudgetAccountLineType
     public function firstBudgetAccount(): ?BudgetAccount
     {
         $budgetAccount = $this->budgetAccount ?? [];
-        $budgetAccount = reset($budgetAccount);
+        $budgetAccount = InvoiceSuiteArrayUtils::first($budgetAccount);
 
         if (false === $budgetAccount) {
             return null;
@@ -189,7 +189,7 @@ class BudgetAccountLineType
     public function lastBudgetAccount(): ?BudgetAccount
     {
         $budgetAccount = $this->budgetAccount ?? [];
-        $budgetAccount = end($budgetAccount);
+        $budgetAccount = InvoiceSuiteArrayUtils::last($budgetAccount);
 
         if (false === $budgetAccount) {
             return null;
@@ -245,7 +245,7 @@ class BudgetAccountLineType
             $this->budgetAccount = [];
         }
 
-        if ([] === $this->budgetAccount) {
+        if (InvoiceSuiteArrayUtils::empty($this->budgetAccount)) {
             $this->addOnceToBudgetAccount(new BudgetAccount());
         }
 

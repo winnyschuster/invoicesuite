@@ -1011,7 +1011,7 @@ class DeliveryType
     public function firstNotifyParty(): ?NotifyParty
     {
         $notifyParty = $this->notifyParty ?? [];
-        $notifyParty = reset($notifyParty);
+        $notifyParty = InvoiceSuiteArrayUtils::first($notifyParty);
 
         if (false === $notifyParty) {
             return null;
@@ -1026,7 +1026,7 @@ class DeliveryType
     public function lastNotifyParty(): ?NotifyParty
     {
         $notifyParty = $this->notifyParty ?? [];
-        $notifyParty = end($notifyParty);
+        $notifyParty = InvoiceSuiteArrayUtils::last($notifyParty);
 
         if (false === $notifyParty) {
             return null;
@@ -1082,7 +1082,7 @@ class DeliveryType
             $this->notifyParty = [];
         }
 
-        if ([] === $this->notifyParty) {
+        if (InvoiceSuiteArrayUtils::empty($this->notifyParty)) {
             $this->addOnceToNotifyParty(new NotifyParty());
         }
 
@@ -1175,7 +1175,7 @@ class DeliveryType
     public function firstDeliveryTerms(): ?DeliveryTerms
     {
         $deliveryTerms = $this->deliveryTerms ?? [];
-        $deliveryTerms = reset($deliveryTerms);
+        $deliveryTerms = InvoiceSuiteArrayUtils::first($deliveryTerms);
 
         if (false === $deliveryTerms) {
             return null;
@@ -1190,7 +1190,7 @@ class DeliveryType
     public function lastDeliveryTerms(): ?DeliveryTerms
     {
         $deliveryTerms = $this->deliveryTerms ?? [];
-        $deliveryTerms = end($deliveryTerms);
+        $deliveryTerms = InvoiceSuiteArrayUtils::last($deliveryTerms);
 
         if (false === $deliveryTerms) {
             return null;
@@ -1246,7 +1246,7 @@ class DeliveryType
             $this->deliveryTerms = [];
         }
 
-        if ([] === $this->deliveryTerms) {
+        if (InvoiceSuiteArrayUtils::empty($this->deliveryTerms)) {
             $this->addOnceToDeliveryTerms(new DeliveryTerms());
         }
 

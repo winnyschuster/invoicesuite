@@ -16,6 +16,7 @@ use ArrayIterator;
 use Countable;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use IteratorAggregate;
 use JsonSerializable;
@@ -107,7 +108,7 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
      */
     public function count(): int
     {
-        return count($this->attachmentList);
+        return InvoiceSuiteArrayUtils::count($this->attachmentList);
     }
 
     /**
@@ -119,7 +120,7 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
     public function offsetExists(
         mixed $offset
     ): bool {
-        return is_int($offset) && array_key_exists($offset, $this->attachmentList);
+        return is_int($offset) && InvoiceSuiteArrayUtils::keyExists($this->attachmentList, $offset);
     }
 
     /**
@@ -197,12 +198,12 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
             $pdfParsed = $pdfParser->parseContent($pdfContent);
             $fileSpecs = $pdfParsed->getObjectsByType('Filespec');
 
-            $fileSpecs = array_filter(
+            $fileSpecs = InvoiceSuiteArrayUtils::filter(
                 $fileSpecs,
                 static fn ($fileSpec) => $fileSpec->has('F') && $fileSpec->has('EF')
             );
 
-            $fileSpecs = array_filter(
+            $fileSpecs = InvoiceSuiteArrayUtils::filter(
                 $fileSpecs,
                 static fn ($fileSpec) => $fileSpec->get('EF')->has('F')
             );
@@ -224,7 +225,7 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
         $pdfParsed = $pdfParser->parseString($pdfContent);
         $fileSpecs = $pdfParsed->getCatalog()->getFileSpecifications();
 
-        $fileSpecs = array_filter(
+        $fileSpecs = InvoiceSuiteArrayUtils::filter(
             $fileSpecs,
             static fn ($fileSpec) => !is_null($fileSpec->getEmbeddedFile())
         );
@@ -249,7 +250,7 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
      */
     protected function sortAttachmentListByName(): static
     {
-        usort(
+        InvoiceSuiteArrayUtils::sortWithCallback(
             $this->attachmentList,
             static fn (InvoiceSuitePdfExtractorAttachment $a, InvoiceSuitePdfExtractorAttachment $b): int => strcasecmp($a->getAttachmentFilename(), $b->getAttachmentFilename())
         );

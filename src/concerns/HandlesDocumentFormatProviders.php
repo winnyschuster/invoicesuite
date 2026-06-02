@@ -64,7 +64,7 @@ trait HandlesDocumentFormatProviders
     public function unregisterDocumentFormatProvider(
         InvoiceSuiteAbstractDocumentFormatProvider $existingProvider
     ): static {
-        if (($key = array_search($existingProvider, $this->registeredDocumentFormatProviders, true)) === false) {
+        if (($key = InvoiceSuiteArrayUtils::search($this->registeredDocumentFormatProviders, $existingProvider)) === false) {
             return $this;
         }
 
@@ -82,13 +82,16 @@ trait HandlesDocumentFormatProviders
     public function findDocumentFormatProviderByUniqueId(
         string $formatProviderUniqueId
     ) {
-        $formatProvider = array_filter($this->registeredDocumentFormatProviders, static fn ($formatProvider) => InvoiceSuiteStringUtils::equalsNoCase($formatProvider->getUniqueId(), $formatProviderUniqueId));
+        $formatProvider = InvoiceSuiteArrayUtils::filter(
+            $this->registeredDocumentFormatProviders,
+            static fn ($formatProvider) => InvoiceSuiteStringUtils::equalsNoCase($formatProvider->getUniqueId(), $formatProviderUniqueId)
+        );
 
-        if ([] === $formatProvider) {
+        if (InvoiceSuiteArrayUtils::empty($formatProvider)) {
             return null;
         }
 
-        return reset($formatProvider);
+        return InvoiceSuiteArrayUtils::first($formatProvider);
     }
 
     /**

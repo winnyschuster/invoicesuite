@@ -610,7 +610,7 @@ class GoodsItemType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -625,7 +625,7 @@ class GoodsItemType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -681,7 +681,7 @@ class GoodsItemType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -1594,7 +1594,7 @@ class GoodsItemType
     public function firstItem(): ?Item
     {
         $item = $this->item ?? [];
-        $item = reset($item);
+        $item = InvoiceSuiteArrayUtils::first($item);
 
         if (false === $item) {
             return null;
@@ -1609,7 +1609,7 @@ class GoodsItemType
     public function lastItem(): ?Item
     {
         $item = $this->item ?? [];
-        $item = end($item);
+        $item = InvoiceSuiteArrayUtils::last($item);
 
         if (false === $item) {
             return null;
@@ -1665,7 +1665,7 @@ class GoodsItemType
             $this->item = [];
         }
 
-        if ([] === $this->item) {
+        if (InvoiceSuiteArrayUtils::empty($this->item)) {
             $this->addOnceToItem(new Item());
         }
 
@@ -1718,7 +1718,7 @@ class GoodsItemType
     public function firstGoodsItemContainer(): ?GoodsItemContainer
     {
         $goodsItemContainer = $this->goodsItemContainer ?? [];
-        $goodsItemContainer = reset($goodsItemContainer);
+        $goodsItemContainer = InvoiceSuiteArrayUtils::first($goodsItemContainer);
 
         if (false === $goodsItemContainer) {
             return null;
@@ -1733,7 +1733,7 @@ class GoodsItemType
     public function lastGoodsItemContainer(): ?GoodsItemContainer
     {
         $goodsItemContainer = $this->goodsItemContainer ?? [];
-        $goodsItemContainer = end($goodsItemContainer);
+        $goodsItemContainer = InvoiceSuiteArrayUtils::last($goodsItemContainer);
 
         if (false === $goodsItemContainer) {
             return null;
@@ -1789,7 +1789,7 @@ class GoodsItemType
             $this->goodsItemContainer = [];
         }
 
-        if ([] === $this->goodsItemContainer) {
+        if (InvoiceSuiteArrayUtils::empty($this->goodsItemContainer)) {
             $this->addOnceToGoodsItemContainer(new GoodsItemContainer());
         }
 
@@ -1842,7 +1842,7 @@ class GoodsItemType
     public function firstFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
         $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
-        $freightAllowanceCharge = reset($freightAllowanceCharge);
+        $freightAllowanceCharge = InvoiceSuiteArrayUtils::first($freightAllowanceCharge);
 
         if (false === $freightAllowanceCharge) {
             return null;
@@ -1857,7 +1857,7 @@ class GoodsItemType
     public function lastFreightAllowanceCharge(): ?FreightAllowanceCharge
     {
         $freightAllowanceCharge = $this->freightAllowanceCharge ?? [];
-        $freightAllowanceCharge = end($freightAllowanceCharge);
+        $freightAllowanceCharge = InvoiceSuiteArrayUtils::last($freightAllowanceCharge);
 
         if (false === $freightAllowanceCharge) {
             return null;
@@ -1913,7 +1913,7 @@ class GoodsItemType
             $this->freightAllowanceCharge = [];
         }
 
-        if ([] === $this->freightAllowanceCharge) {
+        if (InvoiceSuiteArrayUtils::empty($this->freightAllowanceCharge)) {
             $this->addOnceToFreightAllowanceCharge(new FreightAllowanceCharge());
         }
 
@@ -1966,7 +1966,7 @@ class GoodsItemType
     public function firstInvoiceLine(): ?InvoiceLine
     {
         $invoiceLine = $this->invoiceLine ?? [];
-        $invoiceLine = reset($invoiceLine);
+        $invoiceLine = InvoiceSuiteArrayUtils::first($invoiceLine);
 
         if (false === $invoiceLine) {
             return null;
@@ -1981,7 +1981,7 @@ class GoodsItemType
     public function lastInvoiceLine(): ?InvoiceLine
     {
         $invoiceLine = $this->invoiceLine ?? [];
-        $invoiceLine = end($invoiceLine);
+        $invoiceLine = InvoiceSuiteArrayUtils::last($invoiceLine);
 
         if (false === $invoiceLine) {
             return null;
@@ -2037,7 +2037,7 @@ class GoodsItemType
             $this->invoiceLine = [];
         }
 
-        if ([] === $this->invoiceLine) {
+        if (InvoiceSuiteArrayUtils::empty($this->invoiceLine)) {
             $this->addOnceToInvoiceLine(new InvoiceLine());
         }
 
@@ -2090,7 +2090,7 @@ class GoodsItemType
     public function firstTemperature(): ?Temperature
     {
         $temperature = $this->temperature ?? [];
-        $temperature = reset($temperature);
+        $temperature = InvoiceSuiteArrayUtils::first($temperature);
 
         if (false === $temperature) {
             return null;
@@ -2105,7 +2105,7 @@ class GoodsItemType
     public function lastTemperature(): ?Temperature
     {
         $temperature = $this->temperature ?? [];
-        $temperature = end($temperature);
+        $temperature = InvoiceSuiteArrayUtils::last($temperature);
 
         if (false === $temperature) {
             return null;
@@ -2161,7 +2161,7 @@ class GoodsItemType
             $this->temperature = [];
         }
 
-        if ([] === $this->temperature) {
+        if (InvoiceSuiteArrayUtils::empty($this->temperature)) {
             $this->addOnceToTemperature(new Temperature());
         }
 
@@ -2214,7 +2214,7 @@ class GoodsItemType
     public function firstContainedGoodsItem(): ?ContainedGoodsItem
     {
         $containedGoodsItem = $this->containedGoodsItem ?? [];
-        $containedGoodsItem = reset($containedGoodsItem);
+        $containedGoodsItem = InvoiceSuiteArrayUtils::first($containedGoodsItem);
 
         if (false === $containedGoodsItem) {
             return null;
@@ -2229,7 +2229,7 @@ class GoodsItemType
     public function lastContainedGoodsItem(): ?ContainedGoodsItem
     {
         $containedGoodsItem = $this->containedGoodsItem ?? [];
-        $containedGoodsItem = end($containedGoodsItem);
+        $containedGoodsItem = InvoiceSuiteArrayUtils::last($containedGoodsItem);
 
         if (false === $containedGoodsItem) {
             return null;
@@ -2285,7 +2285,7 @@ class GoodsItemType
             $this->containedGoodsItem = [];
         }
 
-        if ([] === $this->containedGoodsItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->containedGoodsItem)) {
             $this->addOnceToContainedGoodsItem(new ContainedGoodsItem());
         }
 
@@ -2498,7 +2498,7 @@ class GoodsItemType
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
         $measurementDimension = $this->measurementDimension ?? [];
-        $measurementDimension = reset($measurementDimension);
+        $measurementDimension = InvoiceSuiteArrayUtils::first($measurementDimension);
 
         if (false === $measurementDimension) {
             return null;
@@ -2513,7 +2513,7 @@ class GoodsItemType
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
         $measurementDimension = $this->measurementDimension ?? [];
-        $measurementDimension = end($measurementDimension);
+        $measurementDimension = InvoiceSuiteArrayUtils::last($measurementDimension);
 
         if (false === $measurementDimension) {
             return null;
@@ -2569,7 +2569,7 @@ class GoodsItemType
             $this->measurementDimension = [];
         }
 
-        if ([] === $this->measurementDimension) {
+        if (InvoiceSuiteArrayUtils::empty($this->measurementDimension)) {
             $this->addOnceToMeasurementDimension(new MeasurementDimension());
         }
 
@@ -2622,7 +2622,7 @@ class GoodsItemType
     public function firstContainingPackage(): ?ContainingPackage
     {
         $containingPackage = $this->containingPackage ?? [];
-        $containingPackage = reset($containingPackage);
+        $containingPackage = InvoiceSuiteArrayUtils::first($containingPackage);
 
         if (false === $containingPackage) {
             return null;
@@ -2637,7 +2637,7 @@ class GoodsItemType
     public function lastContainingPackage(): ?ContainingPackage
     {
         $containingPackage = $this->containingPackage ?? [];
-        $containingPackage = end($containingPackage);
+        $containingPackage = InvoiceSuiteArrayUtils::last($containingPackage);
 
         if (false === $containingPackage) {
             return null;
@@ -2693,7 +2693,7 @@ class GoodsItemType
             $this->containingPackage = [];
         }
 
-        if ([] === $this->containingPackage) {
+        if (InvoiceSuiteArrayUtils::empty($this->containingPackage)) {
             $this->addOnceToContainingPackage(new ContainingPackage());
         }
 

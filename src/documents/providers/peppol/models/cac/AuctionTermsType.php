@@ -176,7 +176,7 @@ class AuctionTermsType
     public function firstJustificationDescription(): ?JustificationDescription
     {
         $justificationDescription = $this->justificationDescription ?? [];
-        $justificationDescription = reset($justificationDescription);
+        $justificationDescription = InvoiceSuiteArrayUtils::first($justificationDescription);
 
         if (false === $justificationDescription) {
             return null;
@@ -191,7 +191,7 @@ class AuctionTermsType
     public function lastJustificationDescription(): ?JustificationDescription
     {
         $justificationDescription = $this->justificationDescription ?? [];
-        $justificationDescription = end($justificationDescription);
+        $justificationDescription = InvoiceSuiteArrayUtils::last($justificationDescription);
 
         if (false === $justificationDescription) {
             return null;
@@ -247,7 +247,7 @@ class AuctionTermsType
             $this->justificationDescription = [];
         }
 
-        if ([] === $this->justificationDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->justificationDescription)) {
             $this->addOnceToJustificationDescription(new JustificationDescription());
         }
 
@@ -300,7 +300,7 @@ class AuctionTermsType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -315,7 +315,7 @@ class AuctionTermsType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -371,7 +371,7 @@ class AuctionTermsType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -424,7 +424,7 @@ class AuctionTermsType
     public function firstProcessDescription(): ?ProcessDescription
     {
         $processDescription = $this->processDescription ?? [];
-        $processDescription = reset($processDescription);
+        $processDescription = InvoiceSuiteArrayUtils::first($processDescription);
 
         if (false === $processDescription) {
             return null;
@@ -439,7 +439,7 @@ class AuctionTermsType
     public function lastProcessDescription(): ?ProcessDescription
     {
         $processDescription = $this->processDescription ?? [];
-        $processDescription = end($processDescription);
+        $processDescription = InvoiceSuiteArrayUtils::last($processDescription);
 
         if (false === $processDescription) {
             return null;
@@ -495,7 +495,7 @@ class AuctionTermsType
             $this->processDescription = [];
         }
 
-        if ([] === $this->processDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->processDescription)) {
             $this->addOnceToProcessDescription(new ProcessDescription());
         }
 
@@ -548,7 +548,7 @@ class AuctionTermsType
     public function firstConditionsDescription(): ?ConditionsDescription
     {
         $conditionsDescription = $this->conditionsDescription ?? [];
-        $conditionsDescription = reset($conditionsDescription);
+        $conditionsDescription = InvoiceSuiteArrayUtils::first($conditionsDescription);
 
         if (false === $conditionsDescription) {
             return null;
@@ -563,7 +563,7 @@ class AuctionTermsType
     public function lastConditionsDescription(): ?ConditionsDescription
     {
         $conditionsDescription = $this->conditionsDescription ?? [];
-        $conditionsDescription = end($conditionsDescription);
+        $conditionsDescription = InvoiceSuiteArrayUtils::last($conditionsDescription);
 
         if (false === $conditionsDescription) {
             return null;
@@ -619,7 +619,7 @@ class AuctionTermsType
             $this->conditionsDescription = [];
         }
 
-        if ([] === $this->conditionsDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->conditionsDescription)) {
             $this->addOnceToConditionsDescription(new ConditionsDescription());
         }
 
@@ -672,7 +672,7 @@ class AuctionTermsType
     public function firstElectronicDeviceDescription(): ?ElectronicDeviceDescription
     {
         $electronicDeviceDescription = $this->electronicDeviceDescription ?? [];
-        $electronicDeviceDescription = reset($electronicDeviceDescription);
+        $electronicDeviceDescription = InvoiceSuiteArrayUtils::first($electronicDeviceDescription);
 
         if (false === $electronicDeviceDescription) {
             return null;
@@ -687,7 +687,7 @@ class AuctionTermsType
     public function lastElectronicDeviceDescription(): ?ElectronicDeviceDescription
     {
         $electronicDeviceDescription = $this->electronicDeviceDescription ?? [];
-        $electronicDeviceDescription = end($electronicDeviceDescription);
+        $electronicDeviceDescription = InvoiceSuiteArrayUtils::last($electronicDeviceDescription);
 
         if (false === $electronicDeviceDescription) {
             return null;
@@ -743,7 +743,7 @@ class AuctionTermsType
             $this->electronicDeviceDescription = [];
         }
 
-        if ([] === $this->electronicDeviceDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->electronicDeviceDescription)) {
             $this->addOnceToElectronicDeviceDescription(new ElectronicDeviceDescription());
         }
 

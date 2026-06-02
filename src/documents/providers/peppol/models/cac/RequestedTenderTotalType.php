@@ -344,7 +344,7 @@ class RequestedTenderTotalType
     public function firstMonetaryScope(): ?MonetaryScope
     {
         $monetaryScope = $this->monetaryScope ?? [];
-        $monetaryScope = reset($monetaryScope);
+        $monetaryScope = InvoiceSuiteArrayUtils::first($monetaryScope);
 
         if (false === $monetaryScope) {
             return null;
@@ -359,7 +359,7 @@ class RequestedTenderTotalType
     public function lastMonetaryScope(): ?MonetaryScope
     {
         $monetaryScope = $this->monetaryScope ?? [];
-        $monetaryScope = end($monetaryScope);
+        $monetaryScope = InvoiceSuiteArrayUtils::last($monetaryScope);
 
         if (false === $monetaryScope) {
             return null;
@@ -415,7 +415,7 @@ class RequestedTenderTotalType
             $this->monetaryScope = [];
         }
 
-        if ([] === $this->monetaryScope) {
+        if (InvoiceSuiteArrayUtils::empty($this->monetaryScope)) {
             $this->addOnceToMonetaryScope(new MonetaryScope());
         }
 
@@ -508,7 +508,7 @@ class RequestedTenderTotalType
     public function firstApplicableTaxCategory(): ?ApplicableTaxCategory
     {
         $applicableTaxCategory = $this->applicableTaxCategory ?? [];
-        $applicableTaxCategory = reset($applicableTaxCategory);
+        $applicableTaxCategory = InvoiceSuiteArrayUtils::first($applicableTaxCategory);
 
         if (false === $applicableTaxCategory) {
             return null;
@@ -523,7 +523,7 @@ class RequestedTenderTotalType
     public function lastApplicableTaxCategory(): ?ApplicableTaxCategory
     {
         $applicableTaxCategory = $this->applicableTaxCategory ?? [];
-        $applicableTaxCategory = end($applicableTaxCategory);
+        $applicableTaxCategory = InvoiceSuiteArrayUtils::last($applicableTaxCategory);
 
         if (false === $applicableTaxCategory) {
             return null;
@@ -579,7 +579,7 @@ class RequestedTenderTotalType
             $this->applicableTaxCategory = [];
         }
 
-        if ([] === $this->applicableTaxCategory) {
+        if (InvoiceSuiteArrayUtils::empty($this->applicableTaxCategory)) {
             $this->addOnceToApplicableTaxCategory(new ApplicableTaxCategory());
         }
 

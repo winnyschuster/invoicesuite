@@ -367,7 +367,7 @@ class ClassificationSchemeType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -382,7 +382,7 @@ class ClassificationSchemeType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -438,7 +438,7 @@ class ClassificationSchemeType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -531,7 +531,7 @@ class ClassificationSchemeType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -546,7 +546,7 @@ class ClassificationSchemeType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -602,7 +602,7 @@ class ClassificationSchemeType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -895,7 +895,7 @@ class ClassificationSchemeType
     public function firstClassificationCategory(): ?ClassificationCategory
     {
         $classificationCategory = $this->classificationCategory ?? [];
-        $classificationCategory = reset($classificationCategory);
+        $classificationCategory = InvoiceSuiteArrayUtils::first($classificationCategory);
 
         if (false === $classificationCategory) {
             return null;
@@ -910,7 +910,7 @@ class ClassificationSchemeType
     public function lastClassificationCategory(): ?ClassificationCategory
     {
         $classificationCategory = $this->classificationCategory ?? [];
-        $classificationCategory = end($classificationCategory);
+        $classificationCategory = InvoiceSuiteArrayUtils::last($classificationCategory);
 
         if (false === $classificationCategory) {
             return null;
@@ -966,7 +966,7 @@ class ClassificationSchemeType
             $this->classificationCategory = [];
         }
 
-        if ([] === $this->classificationCategory) {
+        if (InvoiceSuiteArrayUtils::empty($this->classificationCategory)) {
             $this->addOnceToClassificationCategory(new ClassificationCategory());
         }
 

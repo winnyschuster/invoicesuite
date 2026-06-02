@@ -3569,8 +3569,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
         $newName = $anagrafica?->getDenominazione() ?? '';
 
         if ('' === trim($newName)) {
-            // @phpstan-ignore arrayFilter.strict
-            $newName = trim(implode(' ', array_filter([$anagrafica?->getNome(), $anagrafica?->getCognome()])));
+            $newName = trim(implode(' ', InvoiceSuiteArrayUtils::filter([$anagrafica?->getNome(), $anagrafica?->getCognome()])));
         }
 
         $this->traceMethodExit(__METHOD__);
@@ -3853,8 +3852,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
         $newAddressLine1 = '';
 
         if (!is_null($address)) {
-            // @phpstan-ignore arrayFilter.strict
-            $newAddressLine1 = trim(implode(' ', array_filter([$address->getIndirizzo(), $address->getNumeroCivico()])));
+            $newAddressLine1 = trim(implode(' ', InvoiceSuiteArrayUtils::filter([$address->getIndirizzo(), $address->getNumeroCivico()])));
         }
 
         $newAddressLine2 = '';
@@ -4059,8 +4057,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
         $newName = $anagrafica?->getDenominazione() ?? '';
 
         if ('' === trim($newName)) {
-            // @phpstan-ignore arrayFilter.strict
-            $newName = trim(implode(' ', array_filter([$anagrafica?->getNome(), $anagrafica?->getCognome()])));
+            $newName = trim(implode(' ', InvoiceSuiteArrayUtils::filter([$anagrafica?->getNome(), $anagrafica?->getCognome()])));
         }
 
         $this->traceMethodExit(__METHOD__);
@@ -4343,8 +4340,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
         $newAddressLine1 = '';
 
         if (!is_null($address)) {
-            // @phpstan-ignore arrayFilter.strict
-            $newAddressLine1 = trim(implode(' ', array_filter([$address->getIndirizzo(), $address->getNumeroCivico()])));
+            $newAddressLine1 = trim(implode(' ', InvoiceSuiteArrayUtils::filter([$address->getIndirizzo(), $address->getNumeroCivico()])));
         }
 
         $newAddressLine2 = '';
@@ -4518,8 +4514,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
         $newName = $anagrafica?->getDenominazione() ?? '';
 
         if ('' === trim($newName)) {
-            // @phpstan-ignore arrayFilter.strict
-            $newName = trim(implode(' ', array_filter([$anagrafica?->getNome(), $anagrafica?->getCognome()])));
+            $newName = trim(implode(' ', InvoiceSuiteArrayUtils::filter([$anagrafica?->getNome(), $anagrafica?->getCognome()])));
         }
 
         $this->traceMethodExit(__METHOD__);

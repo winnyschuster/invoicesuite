@@ -347,7 +347,7 @@ class TenderLineType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -362,7 +362,7 @@ class TenderLineType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -418,7 +418,7 @@ class TenderLineType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -791,7 +791,7 @@ class TenderLineType
     public function firstWarrantyInformation(): ?WarrantyInformation
     {
         $warrantyInformation = $this->warrantyInformation ?? [];
-        $warrantyInformation = reset($warrantyInformation);
+        $warrantyInformation = InvoiceSuiteArrayUtils::first($warrantyInformation);
 
         if (false === $warrantyInformation) {
             return null;
@@ -806,7 +806,7 @@ class TenderLineType
     public function lastWarrantyInformation(): ?WarrantyInformation
     {
         $warrantyInformation = $this->warrantyInformation ?? [];
-        $warrantyInformation = end($warrantyInformation);
+        $warrantyInformation = InvoiceSuiteArrayUtils::last($warrantyInformation);
 
         if (false === $warrantyInformation) {
             return null;
@@ -862,7 +862,7 @@ class TenderLineType
             $this->warrantyInformation = [];
         }
 
-        if ([] === $this->warrantyInformation) {
+        if (InvoiceSuiteArrayUtils::empty($this->warrantyInformation)) {
             $this->addOnceToWarrantyInformation(new WarrantyInformation());
         }
 
@@ -955,7 +955,7 @@ class TenderLineType
     public function firstDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = reset($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::first($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -970,7 +970,7 @@ class TenderLineType
     public function lastDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = end($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::last($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -1026,7 +1026,7 @@ class TenderLineType
             $this->documentReference = [];
         }
 
-        if ([] === $this->documentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->documentReference)) {
             $this->addOnceToDocumentReference(new DocumentReference());
         }
 
@@ -1119,7 +1119,7 @@ class TenderLineType
     public function firstOfferedItemLocationQuantity(): ?OfferedItemLocationQuantity
     {
         $offeredItemLocationQuantity = $this->offeredItemLocationQuantity ?? [];
-        $offeredItemLocationQuantity = reset($offeredItemLocationQuantity);
+        $offeredItemLocationQuantity = InvoiceSuiteArrayUtils::first($offeredItemLocationQuantity);
 
         if (false === $offeredItemLocationQuantity) {
             return null;
@@ -1134,7 +1134,7 @@ class TenderLineType
     public function lastOfferedItemLocationQuantity(): ?OfferedItemLocationQuantity
     {
         $offeredItemLocationQuantity = $this->offeredItemLocationQuantity ?? [];
-        $offeredItemLocationQuantity = end($offeredItemLocationQuantity);
+        $offeredItemLocationQuantity = InvoiceSuiteArrayUtils::last($offeredItemLocationQuantity);
 
         if (false === $offeredItemLocationQuantity) {
             return null;
@@ -1190,7 +1190,7 @@ class TenderLineType
             $this->offeredItemLocationQuantity = [];
         }
 
-        if ([] === $this->offeredItemLocationQuantity) {
+        if (InvoiceSuiteArrayUtils::empty($this->offeredItemLocationQuantity)) {
             $this->addOnceToOfferedItemLocationQuantity(new OfferedItemLocationQuantity());
         }
 
@@ -1243,7 +1243,7 @@ class TenderLineType
     public function firstReplacementRelatedItem(): ?ReplacementRelatedItem
     {
         $replacementRelatedItem = $this->replacementRelatedItem ?? [];
-        $replacementRelatedItem = reset($replacementRelatedItem);
+        $replacementRelatedItem = InvoiceSuiteArrayUtils::first($replacementRelatedItem);
 
         if (false === $replacementRelatedItem) {
             return null;
@@ -1258,7 +1258,7 @@ class TenderLineType
     public function lastReplacementRelatedItem(): ?ReplacementRelatedItem
     {
         $replacementRelatedItem = $this->replacementRelatedItem ?? [];
-        $replacementRelatedItem = end($replacementRelatedItem);
+        $replacementRelatedItem = InvoiceSuiteArrayUtils::last($replacementRelatedItem);
 
         if (false === $replacementRelatedItem) {
             return null;
@@ -1314,7 +1314,7 @@ class TenderLineType
             $this->replacementRelatedItem = [];
         }
 
-        if ([] === $this->replacementRelatedItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->replacementRelatedItem)) {
             $this->addOnceToReplacementRelatedItem(new ReplacementRelatedItem());
         }
 
@@ -1447,7 +1447,7 @@ class TenderLineType
     public function firstSubTenderLine(): ?SubTenderLine
     {
         $subTenderLine = $this->subTenderLine ?? [];
-        $subTenderLine = reset($subTenderLine);
+        $subTenderLine = InvoiceSuiteArrayUtils::first($subTenderLine);
 
         if (false === $subTenderLine) {
             return null;
@@ -1462,7 +1462,7 @@ class TenderLineType
     public function lastSubTenderLine(): ?SubTenderLine
     {
         $subTenderLine = $this->subTenderLine ?? [];
-        $subTenderLine = end($subTenderLine);
+        $subTenderLine = InvoiceSuiteArrayUtils::last($subTenderLine);
 
         if (false === $subTenderLine) {
             return null;
@@ -1518,7 +1518,7 @@ class TenderLineType
             $this->subTenderLine = [];
         }
 
-        if ([] === $this->subTenderLine) {
+        if (InvoiceSuiteArrayUtils::empty($this->subTenderLine)) {
             $this->addOnceToSubTenderLine(new SubTenderLine());
         }
 

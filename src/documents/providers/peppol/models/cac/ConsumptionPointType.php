@@ -205,7 +205,7 @@ class ConsumptionPointType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -220,7 +220,7 @@ class ConsumptionPointType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -276,7 +276,7 @@ class ConsumptionPointType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -569,7 +569,7 @@ class ConsumptionPointType
     public function firstUtilityMeter(): ?UtilityMeter
     {
         $utilityMeter = $this->utilityMeter ?? [];
-        $utilityMeter = reset($utilityMeter);
+        $utilityMeter = InvoiceSuiteArrayUtils::first($utilityMeter);
 
         if (false === $utilityMeter) {
             return null;
@@ -584,7 +584,7 @@ class ConsumptionPointType
     public function lastUtilityMeter(): ?UtilityMeter
     {
         $utilityMeter = $this->utilityMeter ?? [];
-        $utilityMeter = end($utilityMeter);
+        $utilityMeter = InvoiceSuiteArrayUtils::last($utilityMeter);
 
         if (false === $utilityMeter) {
             return null;
@@ -640,7 +640,7 @@ class ConsumptionPointType
             $this->utilityMeter = [];
         }
 
-        if ([] === $this->utilityMeter) {
+        if (InvoiceSuiteArrayUtils::empty($this->utilityMeter)) {
             $this->addOnceToUtilityMeter(new UtilityMeter());
         }
 

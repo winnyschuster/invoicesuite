@@ -583,7 +583,7 @@ class CatalogueLineType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -598,7 +598,7 @@ class CatalogueLineType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -654,7 +654,7 @@ class CatalogueLineType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -937,7 +937,7 @@ class CatalogueLineType
     public function firstWarrantyInformation(): ?WarrantyInformation
     {
         $warrantyInformation = $this->warrantyInformation ?? [];
-        $warrantyInformation = reset($warrantyInformation);
+        $warrantyInformation = InvoiceSuiteArrayUtils::first($warrantyInformation);
 
         if (false === $warrantyInformation) {
             return null;
@@ -952,7 +952,7 @@ class CatalogueLineType
     public function lastWarrantyInformation(): ?WarrantyInformation
     {
         $warrantyInformation = $this->warrantyInformation ?? [];
-        $warrantyInformation = end($warrantyInformation);
+        $warrantyInformation = InvoiceSuiteArrayUtils::last($warrantyInformation);
 
         if (false === $warrantyInformation) {
             return null;
@@ -1008,7 +1008,7 @@ class CatalogueLineType
             $this->warrantyInformation = [];
         }
 
-        if ([] === $this->warrantyInformation) {
+        if (InvoiceSuiteArrayUtils::empty($this->warrantyInformation)) {
             $this->addOnceToWarrantyInformation(new WarrantyInformation());
         }
 
@@ -1301,7 +1301,7 @@ class CatalogueLineType
     public function firstItemComparison(): ?ItemComparison
     {
         $itemComparison = $this->itemComparison ?? [];
-        $itemComparison = reset($itemComparison);
+        $itemComparison = InvoiceSuiteArrayUtils::first($itemComparison);
 
         if (false === $itemComparison) {
             return null;
@@ -1316,7 +1316,7 @@ class CatalogueLineType
     public function lastItemComparison(): ?ItemComparison
     {
         $itemComparison = $this->itemComparison ?? [];
-        $itemComparison = end($itemComparison);
+        $itemComparison = InvoiceSuiteArrayUtils::last($itemComparison);
 
         if (false === $itemComparison) {
             return null;
@@ -1372,7 +1372,7 @@ class CatalogueLineType
             $this->itemComparison = [];
         }
 
-        if ([] === $this->itemComparison) {
+        if (InvoiceSuiteArrayUtils::empty($this->itemComparison)) {
             $this->addOnceToItemComparison(new ItemComparison());
         }
 
@@ -1425,7 +1425,7 @@ class CatalogueLineType
     public function firstComponentRelatedItem(): ?ComponentRelatedItem
     {
         $componentRelatedItem = $this->componentRelatedItem ?? [];
-        $componentRelatedItem = reset($componentRelatedItem);
+        $componentRelatedItem = InvoiceSuiteArrayUtils::first($componentRelatedItem);
 
         if (false === $componentRelatedItem) {
             return null;
@@ -1440,7 +1440,7 @@ class CatalogueLineType
     public function lastComponentRelatedItem(): ?ComponentRelatedItem
     {
         $componentRelatedItem = $this->componentRelatedItem ?? [];
-        $componentRelatedItem = end($componentRelatedItem);
+        $componentRelatedItem = InvoiceSuiteArrayUtils::last($componentRelatedItem);
 
         if (false === $componentRelatedItem) {
             return null;
@@ -1496,7 +1496,7 @@ class CatalogueLineType
             $this->componentRelatedItem = [];
         }
 
-        if ([] === $this->componentRelatedItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->componentRelatedItem)) {
             $this->addOnceToComponentRelatedItem(new ComponentRelatedItem());
         }
 
@@ -1549,7 +1549,7 @@ class CatalogueLineType
     public function firstAccessoryRelatedItem(): ?AccessoryRelatedItem
     {
         $accessoryRelatedItem = $this->accessoryRelatedItem ?? [];
-        $accessoryRelatedItem = reset($accessoryRelatedItem);
+        $accessoryRelatedItem = InvoiceSuiteArrayUtils::first($accessoryRelatedItem);
 
         if (false === $accessoryRelatedItem) {
             return null;
@@ -1564,7 +1564,7 @@ class CatalogueLineType
     public function lastAccessoryRelatedItem(): ?AccessoryRelatedItem
     {
         $accessoryRelatedItem = $this->accessoryRelatedItem ?? [];
-        $accessoryRelatedItem = end($accessoryRelatedItem);
+        $accessoryRelatedItem = InvoiceSuiteArrayUtils::last($accessoryRelatedItem);
 
         if (false === $accessoryRelatedItem) {
             return null;
@@ -1620,7 +1620,7 @@ class CatalogueLineType
             $this->accessoryRelatedItem = [];
         }
 
-        if ([] === $this->accessoryRelatedItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->accessoryRelatedItem)) {
             $this->addOnceToAccessoryRelatedItem(new AccessoryRelatedItem());
         }
 
@@ -1673,7 +1673,7 @@ class CatalogueLineType
     public function firstRequiredRelatedItem(): ?RequiredRelatedItem
     {
         $requiredRelatedItem = $this->requiredRelatedItem ?? [];
-        $requiredRelatedItem = reset($requiredRelatedItem);
+        $requiredRelatedItem = InvoiceSuiteArrayUtils::first($requiredRelatedItem);
 
         if (false === $requiredRelatedItem) {
             return null;
@@ -1688,7 +1688,7 @@ class CatalogueLineType
     public function lastRequiredRelatedItem(): ?RequiredRelatedItem
     {
         $requiredRelatedItem = $this->requiredRelatedItem ?? [];
-        $requiredRelatedItem = end($requiredRelatedItem);
+        $requiredRelatedItem = InvoiceSuiteArrayUtils::last($requiredRelatedItem);
 
         if (false === $requiredRelatedItem) {
             return null;
@@ -1744,7 +1744,7 @@ class CatalogueLineType
             $this->requiredRelatedItem = [];
         }
 
-        if ([] === $this->requiredRelatedItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->requiredRelatedItem)) {
             $this->addOnceToRequiredRelatedItem(new RequiredRelatedItem());
         }
 
@@ -1797,7 +1797,7 @@ class CatalogueLineType
     public function firstReplacementRelatedItem(): ?ReplacementRelatedItem
     {
         $replacementRelatedItem = $this->replacementRelatedItem ?? [];
-        $replacementRelatedItem = reset($replacementRelatedItem);
+        $replacementRelatedItem = InvoiceSuiteArrayUtils::first($replacementRelatedItem);
 
         if (false === $replacementRelatedItem) {
             return null;
@@ -1812,7 +1812,7 @@ class CatalogueLineType
     public function lastReplacementRelatedItem(): ?ReplacementRelatedItem
     {
         $replacementRelatedItem = $this->replacementRelatedItem ?? [];
-        $replacementRelatedItem = end($replacementRelatedItem);
+        $replacementRelatedItem = InvoiceSuiteArrayUtils::last($replacementRelatedItem);
 
         if (false === $replacementRelatedItem) {
             return null;
@@ -1868,7 +1868,7 @@ class CatalogueLineType
             $this->replacementRelatedItem = [];
         }
 
-        if ([] === $this->replacementRelatedItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->replacementRelatedItem)) {
             $this->addOnceToReplacementRelatedItem(new ReplacementRelatedItem());
         }
 
@@ -1921,7 +1921,7 @@ class CatalogueLineType
     public function firstComplementaryRelatedItem(): ?ComplementaryRelatedItem
     {
         $complementaryRelatedItem = $this->complementaryRelatedItem ?? [];
-        $complementaryRelatedItem = reset($complementaryRelatedItem);
+        $complementaryRelatedItem = InvoiceSuiteArrayUtils::first($complementaryRelatedItem);
 
         if (false === $complementaryRelatedItem) {
             return null;
@@ -1936,7 +1936,7 @@ class CatalogueLineType
     public function lastComplementaryRelatedItem(): ?ComplementaryRelatedItem
     {
         $complementaryRelatedItem = $this->complementaryRelatedItem ?? [];
-        $complementaryRelatedItem = end($complementaryRelatedItem);
+        $complementaryRelatedItem = InvoiceSuiteArrayUtils::last($complementaryRelatedItem);
 
         if (false === $complementaryRelatedItem) {
             return null;
@@ -1992,7 +1992,7 @@ class CatalogueLineType
             $this->complementaryRelatedItem = [];
         }
 
-        if ([] === $this->complementaryRelatedItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->complementaryRelatedItem)) {
             $this->addOnceToComplementaryRelatedItem(new ComplementaryRelatedItem());
         }
 
@@ -2045,7 +2045,7 @@ class CatalogueLineType
     public function firstReplacedRelatedItem(): ?ReplacedRelatedItem
     {
         $replacedRelatedItem = $this->replacedRelatedItem ?? [];
-        $replacedRelatedItem = reset($replacedRelatedItem);
+        $replacedRelatedItem = InvoiceSuiteArrayUtils::first($replacedRelatedItem);
 
         if (false === $replacedRelatedItem) {
             return null;
@@ -2060,7 +2060,7 @@ class CatalogueLineType
     public function lastReplacedRelatedItem(): ?ReplacedRelatedItem
     {
         $replacedRelatedItem = $this->replacedRelatedItem ?? [];
-        $replacedRelatedItem = end($replacedRelatedItem);
+        $replacedRelatedItem = InvoiceSuiteArrayUtils::last($replacedRelatedItem);
 
         if (false === $replacedRelatedItem) {
             return null;
@@ -2116,7 +2116,7 @@ class CatalogueLineType
             $this->replacedRelatedItem = [];
         }
 
-        if ([] === $this->replacedRelatedItem) {
+        if (InvoiceSuiteArrayUtils::empty($this->replacedRelatedItem)) {
             $this->addOnceToReplacedRelatedItem(new ReplacedRelatedItem());
         }
 
@@ -2169,7 +2169,7 @@ class CatalogueLineType
     public function firstRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
         $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
-        $requiredItemLocationQuantity = reset($requiredItemLocationQuantity);
+        $requiredItemLocationQuantity = InvoiceSuiteArrayUtils::first($requiredItemLocationQuantity);
 
         if (false === $requiredItemLocationQuantity) {
             return null;
@@ -2184,7 +2184,7 @@ class CatalogueLineType
     public function lastRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
         $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
-        $requiredItemLocationQuantity = end($requiredItemLocationQuantity);
+        $requiredItemLocationQuantity = InvoiceSuiteArrayUtils::last($requiredItemLocationQuantity);
 
         if (false === $requiredItemLocationQuantity) {
             return null;
@@ -2240,7 +2240,7 @@ class CatalogueLineType
             $this->requiredItemLocationQuantity = [];
         }
 
-        if ([] === $this->requiredItemLocationQuantity) {
+        if (InvoiceSuiteArrayUtils::empty($this->requiredItemLocationQuantity)) {
             $this->addOnceToRequiredItemLocationQuantity(new RequiredItemLocationQuantity());
         }
 
@@ -2293,7 +2293,7 @@ class CatalogueLineType
     public function firstDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = reset($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::first($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -2308,7 +2308,7 @@ class CatalogueLineType
     public function lastDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = end($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::last($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -2364,7 +2364,7 @@ class CatalogueLineType
             $this->documentReference = [];
         }
 
-        if ([] === $this->documentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->documentReference)) {
             $this->addOnceToDocumentReference(new DocumentReference());
         }
 
@@ -2457,7 +2457,7 @@ class CatalogueLineType
     public function firstKeywordItemProperty(): ?KeywordItemProperty
     {
         $keywordItemProperty = $this->keywordItemProperty ?? [];
-        $keywordItemProperty = reset($keywordItemProperty);
+        $keywordItemProperty = InvoiceSuiteArrayUtils::first($keywordItemProperty);
 
         if (false === $keywordItemProperty) {
             return null;
@@ -2472,7 +2472,7 @@ class CatalogueLineType
     public function lastKeywordItemProperty(): ?KeywordItemProperty
     {
         $keywordItemProperty = $this->keywordItemProperty ?? [];
-        $keywordItemProperty = end($keywordItemProperty);
+        $keywordItemProperty = InvoiceSuiteArrayUtils::last($keywordItemProperty);
 
         if (false === $keywordItemProperty) {
             return null;
@@ -2528,7 +2528,7 @@ class CatalogueLineType
             $this->keywordItemProperty = [];
         }
 
-        if ([] === $this->keywordItemProperty) {
+        if (InvoiceSuiteArrayUtils::empty($this->keywordItemProperty)) {
             $this->addOnceToKeywordItemProperty(new KeywordItemProperty());
         }
 

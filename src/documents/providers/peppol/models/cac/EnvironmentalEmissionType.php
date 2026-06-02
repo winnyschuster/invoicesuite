@@ -187,7 +187,7 @@ class EnvironmentalEmissionType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -202,7 +202,7 @@ class EnvironmentalEmissionType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -258,7 +258,7 @@ class EnvironmentalEmissionType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -311,7 +311,7 @@ class EnvironmentalEmissionType
     public function firstEmissionCalculationMethod(): ?EmissionCalculationMethod
     {
         $emissionCalculationMethod = $this->emissionCalculationMethod ?? [];
-        $emissionCalculationMethod = reset($emissionCalculationMethod);
+        $emissionCalculationMethod = InvoiceSuiteArrayUtils::first($emissionCalculationMethod);
 
         if (false === $emissionCalculationMethod) {
             return null;
@@ -326,7 +326,7 @@ class EnvironmentalEmissionType
     public function lastEmissionCalculationMethod(): ?EmissionCalculationMethod
     {
         $emissionCalculationMethod = $this->emissionCalculationMethod ?? [];
-        $emissionCalculationMethod = end($emissionCalculationMethod);
+        $emissionCalculationMethod = InvoiceSuiteArrayUtils::last($emissionCalculationMethod);
 
         if (false === $emissionCalculationMethod) {
             return null;
@@ -382,7 +382,7 @@ class EnvironmentalEmissionType
             $this->emissionCalculationMethod = [];
         }
 
-        if ([] === $this->emissionCalculationMethod) {
+        if (InvoiceSuiteArrayUtils::empty($this->emissionCalculationMethod)) {
             $this->addOnceToEmissionCalculationMethod(new EmissionCalculationMethod());
         }
 

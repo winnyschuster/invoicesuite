@@ -267,7 +267,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
     public function hasFormatProviderParameter(
         string $parameterName
     ): bool {
-        return array_key_exists($parameterName, $this->getParameters());
+        return InvoiceSuiteArrayUtils::keyExists($this->getParameters(), $parameterName);
     }
 
     /**
@@ -396,7 +396,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatProvider
             return false;
         }
 
-        if ([] === $this->getPdfAllowedAttachmentFilenames()) {
+        if (InvoiceSuiteArrayUtils::empty($this->getPdfAllowedAttachmentFilenames())) {
             return false;
         }
 

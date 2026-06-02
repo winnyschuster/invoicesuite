@@ -221,7 +221,7 @@ class EvidenceType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -236,7 +236,7 @@ class EvidenceType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -292,7 +292,7 @@ class EvidenceType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -345,7 +345,7 @@ class EvidenceType
     public function firstCandidateStatement(): ?CandidateStatement
     {
         $candidateStatement = $this->candidateStatement ?? [];
-        $candidateStatement = reset($candidateStatement);
+        $candidateStatement = InvoiceSuiteArrayUtils::first($candidateStatement);
 
         if (false === $candidateStatement) {
             return null;
@@ -360,7 +360,7 @@ class EvidenceType
     public function lastCandidateStatement(): ?CandidateStatement
     {
         $candidateStatement = $this->candidateStatement ?? [];
-        $candidateStatement = end($candidateStatement);
+        $candidateStatement = InvoiceSuiteArrayUtils::last($candidateStatement);
 
         if (false === $candidateStatement) {
             return null;
@@ -416,7 +416,7 @@ class EvidenceType
             $this->candidateStatement = [];
         }
 
-        if ([] === $this->candidateStatement) {
+        if (InvoiceSuiteArrayUtils::empty($this->candidateStatement)) {
             $this->addOnceToCandidateStatement(new CandidateStatement());
         }
 

@@ -130,7 +130,7 @@ class InvoiceSuiteXRechnungUBLInvoiceProvider extends InvoiceSuiteAbstractDocume
             $contentDomXPath->registerNamespace('inv', 'urn:oasis:names:specification:ubl:schema:xsd:Invoice-2');
             $contentDomXPath->registerNamespace('cbc', 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2');
 
-            $contextParameters = array_merge(
+            $contextParameters = InvoiceSuiteArrayUtils::merge(
                 InvoiceSuiteArrayUtils::ensure($this->getFormatProviderParameterValue('CustomizationId', '')),
                 InvoiceSuiteArrayUtils::ensure($this->getFormatProviderParameterValue('AlternativeCustomizationIds', ''))
             );

@@ -498,7 +498,7 @@ class PartyType
     public function firstPartyIdentification(): ?PartyIdentification
     {
         $partyIdentification = $this->partyIdentification ?? [];
-        $partyIdentification = reset($partyIdentification);
+        $partyIdentification = InvoiceSuiteArrayUtils::first($partyIdentification);
 
         if (false === $partyIdentification) {
             return null;
@@ -513,7 +513,7 @@ class PartyType
     public function lastPartyIdentification(): ?PartyIdentification
     {
         $partyIdentification = $this->partyIdentification ?? [];
-        $partyIdentification = end($partyIdentification);
+        $partyIdentification = InvoiceSuiteArrayUtils::last($partyIdentification);
 
         if (false === $partyIdentification) {
             return null;
@@ -569,7 +569,7 @@ class PartyType
             $this->partyIdentification = [];
         }
 
-        if ([] === $this->partyIdentification) {
+        if (InvoiceSuiteArrayUtils::empty($this->partyIdentification)) {
             $this->addOnceToPartyIdentification(new PartyIdentification());
         }
 
@@ -622,7 +622,7 @@ class PartyType
     public function firstPartyName(): ?PartyName
     {
         $partyName = $this->partyName ?? [];
-        $partyName = reset($partyName);
+        $partyName = InvoiceSuiteArrayUtils::first($partyName);
 
         if (false === $partyName) {
             return null;
@@ -637,7 +637,7 @@ class PartyType
     public function lastPartyName(): ?PartyName
     {
         $partyName = $this->partyName ?? [];
-        $partyName = end($partyName);
+        $partyName = InvoiceSuiteArrayUtils::last($partyName);
 
         if (false === $partyName) {
             return null;
@@ -693,7 +693,7 @@ class PartyType
             $this->partyName = [];
         }
 
-        if ([] === $this->partyName) {
+        if (InvoiceSuiteArrayUtils::empty($this->partyName)) {
             $this->addOnceToPartyName(new PartyName());
         }
 
@@ -866,7 +866,7 @@ class PartyType
     public function firstPartyTaxScheme(): ?PartyTaxScheme
     {
         $partyTaxScheme = $this->partyTaxScheme ?? [];
-        $partyTaxScheme = reset($partyTaxScheme);
+        $partyTaxScheme = InvoiceSuiteArrayUtils::first($partyTaxScheme);
 
         if (false === $partyTaxScheme) {
             return null;
@@ -881,7 +881,7 @@ class PartyType
     public function lastPartyTaxScheme(): ?PartyTaxScheme
     {
         $partyTaxScheme = $this->partyTaxScheme ?? [];
-        $partyTaxScheme = end($partyTaxScheme);
+        $partyTaxScheme = InvoiceSuiteArrayUtils::last($partyTaxScheme);
 
         if (false === $partyTaxScheme) {
             return null;
@@ -937,7 +937,7 @@ class PartyType
             $this->partyTaxScheme = [];
         }
 
-        if ([] === $this->partyTaxScheme) {
+        if (InvoiceSuiteArrayUtils::empty($this->partyTaxScheme)) {
             $this->addOnceToPartyTaxScheme(new PartyTaxScheme());
         }
 
@@ -990,7 +990,7 @@ class PartyType
     public function firstPartyLegalEntity(): ?PartyLegalEntity
     {
         $partyLegalEntity = $this->partyLegalEntity ?? [];
-        $partyLegalEntity = reset($partyLegalEntity);
+        $partyLegalEntity = InvoiceSuiteArrayUtils::first($partyLegalEntity);
 
         if (false === $partyLegalEntity) {
             return null;
@@ -1005,7 +1005,7 @@ class PartyType
     public function lastPartyLegalEntity(): ?PartyLegalEntity
     {
         $partyLegalEntity = $this->partyLegalEntity ?? [];
-        $partyLegalEntity = end($partyLegalEntity);
+        $partyLegalEntity = InvoiceSuiteArrayUtils::last($partyLegalEntity);
 
         if (false === $partyLegalEntity) {
             return null;
@@ -1061,7 +1061,7 @@ class PartyType
             $this->partyLegalEntity = [];
         }
 
-        if ([] === $this->partyLegalEntity) {
+        if (InvoiceSuiteArrayUtils::empty($this->partyLegalEntity)) {
             $this->addOnceToPartyLegalEntity(new PartyLegalEntity());
         }
 
@@ -1154,7 +1154,7 @@ class PartyType
     public function firstPerson(): ?Person
     {
         $person = $this->person ?? [];
-        $person = reset($person);
+        $person = InvoiceSuiteArrayUtils::first($person);
 
         if (false === $person) {
             return null;
@@ -1169,7 +1169,7 @@ class PartyType
     public function lastPerson(): ?Person
     {
         $person = $this->person ?? [];
-        $person = end($person);
+        $person = InvoiceSuiteArrayUtils::last($person);
 
         if (false === $person) {
             return null;
@@ -1225,7 +1225,7 @@ class PartyType
             $this->person = [];
         }
 
-        if ([] === $this->person) {
+        if (InvoiceSuiteArrayUtils::empty($this->person)) {
             $this->addOnceToPerson(new Person());
         }
 
@@ -1318,7 +1318,7 @@ class PartyType
     public function firstServiceProviderParty(): ?ServiceProviderParty
     {
         $serviceProviderParty = $this->serviceProviderParty ?? [];
-        $serviceProviderParty = reset($serviceProviderParty);
+        $serviceProviderParty = InvoiceSuiteArrayUtils::first($serviceProviderParty);
 
         if (false === $serviceProviderParty) {
             return null;
@@ -1333,7 +1333,7 @@ class PartyType
     public function lastServiceProviderParty(): ?ServiceProviderParty
     {
         $serviceProviderParty = $this->serviceProviderParty ?? [];
-        $serviceProviderParty = end($serviceProviderParty);
+        $serviceProviderParty = InvoiceSuiteArrayUtils::last($serviceProviderParty);
 
         if (false === $serviceProviderParty) {
             return null;
@@ -1389,7 +1389,7 @@ class PartyType
             $this->serviceProviderParty = [];
         }
 
-        if ([] === $this->serviceProviderParty) {
+        if (InvoiceSuiteArrayUtils::empty($this->serviceProviderParty)) {
             $this->addOnceToServiceProviderParty(new ServiceProviderParty());
         }
 
@@ -1442,7 +1442,7 @@ class PartyType
     public function firstPowerOfAttorney(): ?PowerOfAttorney
     {
         $powerOfAttorney = $this->powerOfAttorney ?? [];
-        $powerOfAttorney = reset($powerOfAttorney);
+        $powerOfAttorney = InvoiceSuiteArrayUtils::first($powerOfAttorney);
 
         if (false === $powerOfAttorney) {
             return null;
@@ -1457,7 +1457,7 @@ class PartyType
     public function lastPowerOfAttorney(): ?PowerOfAttorney
     {
         $powerOfAttorney = $this->powerOfAttorney ?? [];
-        $powerOfAttorney = end($powerOfAttorney);
+        $powerOfAttorney = InvoiceSuiteArrayUtils::last($powerOfAttorney);
 
         if (false === $powerOfAttorney) {
             return null;
@@ -1513,7 +1513,7 @@ class PartyType
             $this->powerOfAttorney = [];
         }
 
-        if ([] === $this->powerOfAttorney) {
+        if (InvoiceSuiteArrayUtils::empty($this->powerOfAttorney)) {
             $this->addOnceToPowerOfAttorney(new PowerOfAttorney());
         }
 

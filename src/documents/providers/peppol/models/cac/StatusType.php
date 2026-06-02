@@ -303,7 +303,7 @@ class StatusType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -318,7 +318,7 @@ class StatusType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -374,7 +374,7 @@ class StatusType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 
@@ -467,7 +467,7 @@ class StatusType
     public function firstStatusReason(): ?StatusReason
     {
         $statusReason = $this->statusReason ?? [];
-        $statusReason = reset($statusReason);
+        $statusReason = InvoiceSuiteArrayUtils::first($statusReason);
 
         if (false === $statusReason) {
             return null;
@@ -482,7 +482,7 @@ class StatusType
     public function lastStatusReason(): ?StatusReason
     {
         $statusReason = $this->statusReason ?? [];
-        $statusReason = end($statusReason);
+        $statusReason = InvoiceSuiteArrayUtils::last($statusReason);
 
         if (false === $statusReason) {
             return null;
@@ -538,7 +538,7 @@ class StatusType
             $this->statusReason = [];
         }
 
-        if ([] === $this->statusReason) {
+        if (InvoiceSuiteArrayUtils::empty($this->statusReason)) {
             $this->addOnceToStatusReason(new StatusReason());
         }
 
@@ -631,7 +631,7 @@ class StatusType
     public function firstText(): ?Text
     {
         $text = $this->text ?? [];
-        $text = reset($text);
+        $text = InvoiceSuiteArrayUtils::first($text);
 
         if (false === $text) {
             return null;
@@ -646,7 +646,7 @@ class StatusType
     public function lastText(): ?Text
     {
         $text = $this->text ?? [];
-        $text = end($text);
+        $text = InvoiceSuiteArrayUtils::last($text);
 
         if (false === $text) {
             return null;
@@ -702,7 +702,7 @@ class StatusType
             $this->text = [];
         }
 
-        if ([] === $this->text) {
+        if (InvoiceSuiteArrayUtils::empty($this->text)) {
             $this->addOnceToText(new Text());
         }
 
@@ -865,7 +865,7 @@ class StatusType
     public function firstCondition(): ?Condition
     {
         $condition = $this->condition ?? [];
-        $condition = reset($condition);
+        $condition = InvoiceSuiteArrayUtils::first($condition);
 
         if (false === $condition) {
             return null;
@@ -880,7 +880,7 @@ class StatusType
     public function lastCondition(): ?Condition
     {
         $condition = $this->condition ?? [];
-        $condition = end($condition);
+        $condition = InvoiceSuiteArrayUtils::last($condition);
 
         if (false === $condition) {
             return null;
@@ -936,7 +936,7 @@ class StatusType
             $this->condition = [];
         }
 
-        if ([] === $this->condition) {
+        if (InvoiceSuiteArrayUtils::empty($this->condition)) {
             $this->addOnceToCondition(new Condition());
         }
 

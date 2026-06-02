@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\concerns;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
+
 /**
  * Trait representing key-value-pair handling.
  *
@@ -37,7 +39,7 @@ trait HandlesKeyValuePairs
     protected function hasKeyValuePair(
         string $newKey
     ): bool {
-        return array_key_exists($newKey, $this->keyValuePairContainer);
+        return InvoiceSuiteArrayUtils::keyExists($this->keyValuePairContainer, $newKey);
     }
 
     /**

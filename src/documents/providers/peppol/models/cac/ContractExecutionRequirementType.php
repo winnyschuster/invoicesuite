@@ -96,7 +96,7 @@ class ContractExecutionRequirementType
     public function firstName(): ?Name
     {
         $name = $this->name ?? [];
-        $name = reset($name);
+        $name = InvoiceSuiteArrayUtils::first($name);
 
         if (false === $name) {
             return null;
@@ -111,7 +111,7 @@ class ContractExecutionRequirementType
     public function lastName(): ?Name
     {
         $name = $this->name ?? [];
-        $name = end($name);
+        $name = InvoiceSuiteArrayUtils::last($name);
 
         if (false === $name) {
             return null;
@@ -167,7 +167,7 @@ class ContractExecutionRequirementType
             $this->name = [];
         }
 
-        if ([] === $this->name) {
+        if (InvoiceSuiteArrayUtils::empty($this->name)) {
             $this->addOnceToName(new Name());
         }
 
@@ -260,7 +260,7 @@ class ContractExecutionRequirementType
     public function firstDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = reset($description);
+        $description = InvoiceSuiteArrayUtils::first($description);
 
         if (false === $description) {
             return null;
@@ -275,7 +275,7 @@ class ContractExecutionRequirementType
     public function lastDescription(): ?Description
     {
         $description = $this->description ?? [];
-        $description = end($description);
+        $description = InvoiceSuiteArrayUtils::last($description);
 
         if (false === $description) {
             return null;
@@ -331,7 +331,7 @@ class ContractExecutionRequirementType
             $this->description = [];
         }
 
-        if ([] === $this->description) {
+        if (InvoiceSuiteArrayUtils::empty($this->description)) {
             $this->addOnceToDescription(new Description());
         }
 

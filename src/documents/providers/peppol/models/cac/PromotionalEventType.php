@@ -246,7 +246,7 @@ class PromotionalEventType
     public function firstPromotionalSpecification(): ?PromotionalSpecification
     {
         $promotionalSpecification = $this->promotionalSpecification ?? [];
-        $promotionalSpecification = reset($promotionalSpecification);
+        $promotionalSpecification = InvoiceSuiteArrayUtils::first($promotionalSpecification);
 
         if (false === $promotionalSpecification) {
             return null;
@@ -261,7 +261,7 @@ class PromotionalEventType
     public function lastPromotionalSpecification(): ?PromotionalSpecification
     {
         $promotionalSpecification = $this->promotionalSpecification ?? [];
-        $promotionalSpecification = end($promotionalSpecification);
+        $promotionalSpecification = InvoiceSuiteArrayUtils::last($promotionalSpecification);
 
         if (false === $promotionalSpecification) {
             return null;
@@ -317,7 +317,7 @@ class PromotionalEventType
             $this->promotionalSpecification = [];
         }
 
-        if ([] === $this->promotionalSpecification) {
+        if (InvoiceSuiteArrayUtils::empty($this->promotionalSpecification)) {
             $this->addOnceToPromotionalSpecification(new PromotionalSpecification());
         }
 

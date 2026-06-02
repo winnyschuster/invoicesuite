@@ -279,7 +279,7 @@ class MeterPropertyType
     public function firstValueQualifier(): ?ValueQualifier
     {
         $valueQualifier = $this->valueQualifier ?? [];
-        $valueQualifier = reset($valueQualifier);
+        $valueQualifier = InvoiceSuiteArrayUtils::first($valueQualifier);
 
         if (false === $valueQualifier) {
             return null;
@@ -294,7 +294,7 @@ class MeterPropertyType
     public function lastValueQualifier(): ?ValueQualifier
     {
         $valueQualifier = $this->valueQualifier ?? [];
-        $valueQualifier = end($valueQualifier);
+        $valueQualifier = InvoiceSuiteArrayUtils::last($valueQualifier);
 
         if (false === $valueQualifier) {
             return null;
@@ -350,7 +350,7 @@ class MeterPropertyType
             $this->valueQualifier = [];
         }
 
-        if ([] === $this->valueQualifier) {
+        if (InvoiceSuiteArrayUtils::empty($this->valueQualifier)) {
             $this->addOnceToValueQualifier(new ValueQualifier());
         }
 

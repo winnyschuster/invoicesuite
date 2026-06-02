@@ -418,7 +418,7 @@ class TaxCategoryType
     public function firstTaxExemptionReason(): ?TaxExemptionReason
     {
         $taxExemptionReason = $this->taxExemptionReason ?? [];
-        $taxExemptionReason = reset($taxExemptionReason);
+        $taxExemptionReason = InvoiceSuiteArrayUtils::first($taxExemptionReason);
 
         if (false === $taxExemptionReason) {
             return null;
@@ -433,7 +433,7 @@ class TaxCategoryType
     public function lastTaxExemptionReason(): ?TaxExemptionReason
     {
         $taxExemptionReason = $this->taxExemptionReason ?? [];
-        $taxExemptionReason = end($taxExemptionReason);
+        $taxExemptionReason = InvoiceSuiteArrayUtils::last($taxExemptionReason);
 
         if (false === $taxExemptionReason) {
             return null;
@@ -489,7 +489,7 @@ class TaxCategoryType
             $this->taxExemptionReason = [];
         }
 
-        if ([] === $this->taxExemptionReason) {
+        if (InvoiceSuiteArrayUtils::empty($this->taxExemptionReason)) {
             $this->addOnceToTaxExemptionReason(new TaxExemptionReason());
         }
 

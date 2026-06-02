@@ -182,7 +182,7 @@ class DeliveryTermsType
     public function firstSpecialTerms(): ?SpecialTerms
     {
         $specialTerms = $this->specialTerms ?? [];
-        $specialTerms = reset($specialTerms);
+        $specialTerms = InvoiceSuiteArrayUtils::first($specialTerms);
 
         if (false === $specialTerms) {
             return null;
@@ -197,7 +197,7 @@ class DeliveryTermsType
     public function lastSpecialTerms(): ?SpecialTerms
     {
         $specialTerms = $this->specialTerms ?? [];
-        $specialTerms = end($specialTerms);
+        $specialTerms = InvoiceSuiteArrayUtils::last($specialTerms);
 
         if (false === $specialTerms) {
             return null;
@@ -253,7 +253,7 @@ class DeliveryTermsType
             $this->specialTerms = [];
         }
 
-        if ([] === $this->specialTerms) {
+        if (InvoiceSuiteArrayUtils::empty($this->specialTerms)) {
             $this->addOnceToSpecialTerms(new SpecialTerms());
         }
 
@@ -346,7 +346,7 @@ class DeliveryTermsType
     public function firstLossRisk(): ?LossRisk
     {
         $lossRisk = $this->lossRisk ?? [];
-        $lossRisk = reset($lossRisk);
+        $lossRisk = InvoiceSuiteArrayUtils::first($lossRisk);
 
         if (false === $lossRisk) {
             return null;
@@ -361,7 +361,7 @@ class DeliveryTermsType
     public function lastLossRisk(): ?LossRisk
     {
         $lossRisk = $this->lossRisk ?? [];
-        $lossRisk = end($lossRisk);
+        $lossRisk = InvoiceSuiteArrayUtils::last($lossRisk);
 
         if (false === $lossRisk) {
             return null;
@@ -417,7 +417,7 @@ class DeliveryTermsType
             $this->lossRisk = [];
         }
 
-        if ([] === $this->lossRisk) {
+        if (InvoiceSuiteArrayUtils::empty($this->lossRisk)) {
             $this->addOnceToLossRisk(new LossRisk());
         }
 

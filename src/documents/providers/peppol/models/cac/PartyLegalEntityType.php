@@ -700,7 +700,7 @@ class PartyLegalEntityType
     public function firstShareholderParty(): ?ShareholderParty
     {
         $shareholderParty = $this->shareholderParty ?? [];
-        $shareholderParty = reset($shareholderParty);
+        $shareholderParty = InvoiceSuiteArrayUtils::first($shareholderParty);
 
         if (false === $shareholderParty) {
             return null;
@@ -715,7 +715,7 @@ class PartyLegalEntityType
     public function lastShareholderParty(): ?ShareholderParty
     {
         $shareholderParty = $this->shareholderParty ?? [];
-        $shareholderParty = end($shareholderParty);
+        $shareholderParty = InvoiceSuiteArrayUtils::last($shareholderParty);
 
         if (false === $shareholderParty) {
             return null;
@@ -771,7 +771,7 @@ class PartyLegalEntityType
             $this->shareholderParty = [];
         }
 
-        if ([] === $this->shareholderParty) {
+        if (InvoiceSuiteArrayUtils::empty($this->shareholderParty)) {
             $this->addOnceToShareholderParty(new ShareholderParty());
         }
 

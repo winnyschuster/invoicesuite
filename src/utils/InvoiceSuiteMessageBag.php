@@ -159,7 +159,7 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
      */
     public function hasMessages(): bool
     {
-        return [] !== $this->messageBagItems;
+        return !InvoiceSuiteArrayUtils::empty($this->messageBagItems);
     }
 
     /**
@@ -171,7 +171,7 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
     public function hasMessagesBySeverity(
         InvoiceSuiteMessageSeverity $filterSeverity
     ): bool {
-        return [] !== $this->filterMessagesBySeverity($filterSeverity);
+        return !InvoiceSuiteArrayUtils::empty($this->filterMessagesBySeverity($filterSeverity));
     }
 
     /**
@@ -233,7 +233,7 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
     public function countBySeverity(
         InvoiceSuiteMessageSeverity $filterSeverity
     ): int {
-        return count($this->filterMessagesBySeverity($filterSeverity));
+        return InvoiceSuiteArrayUtils::count($this->filterMessagesBySeverity($filterSeverity));
     }
 
     /**
@@ -355,7 +355,7 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
      */
     public function count(): int
     {
-        return count($this->messageBagItems);
+        return InvoiceSuiteArrayUtils::count($this->messageBagItems);
     }
 
     /**
@@ -444,8 +444,8 @@ class InvoiceSuiteMessageBag implements ArrayAccess, IteratorAggregate, Countabl
     private function filterMessagesBySeverity(
         InvoiceSuiteMessageSeverity $severity
     ): array {
-        return array_values(
-            array_filter(
+        return InvoiceSuiteArrayUtils::values(
+            InvoiceSuiteArrayUtils::filter(
                 $this->messageBagItems,
                 static fn (InvoiceSuiteMessageBagItem $messageBagItem): bool => $messageBagItem->getMessageSeverity() === $severity
             )

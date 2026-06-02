@@ -209,7 +209,7 @@ class CatalogueRequestLineType
     public function firstNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = reset($note);
+        $note = InvoiceSuiteArrayUtils::first($note);
 
         if (false === $note) {
             return null;
@@ -224,7 +224,7 @@ class CatalogueRequestLineType
     public function lastNote(): ?Note
     {
         $note = $this->note ?? [];
-        $note = end($note);
+        $note = InvoiceSuiteArrayUtils::last($note);
 
         if (false === $note) {
             return null;
@@ -280,7 +280,7 @@ class CatalogueRequestLineType
             $this->note = [];
         }
 
-        if ([] === $this->note) {
+        if (InvoiceSuiteArrayUtils::empty($this->note)) {
             $this->addOnceToNote(new Note());
         }
 
@@ -373,7 +373,7 @@ class CatalogueRequestLineType
     public function firstRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
         $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
-        $requiredItemLocationQuantity = reset($requiredItemLocationQuantity);
+        $requiredItemLocationQuantity = InvoiceSuiteArrayUtils::first($requiredItemLocationQuantity);
 
         if (false === $requiredItemLocationQuantity) {
             return null;
@@ -388,7 +388,7 @@ class CatalogueRequestLineType
     public function lastRequiredItemLocationQuantity(): ?RequiredItemLocationQuantity
     {
         $requiredItemLocationQuantity = $this->requiredItemLocationQuantity ?? [];
-        $requiredItemLocationQuantity = end($requiredItemLocationQuantity);
+        $requiredItemLocationQuantity = InvoiceSuiteArrayUtils::last($requiredItemLocationQuantity);
 
         if (false === $requiredItemLocationQuantity) {
             return null;
@@ -444,7 +444,7 @@ class CatalogueRequestLineType
             $this->requiredItemLocationQuantity = [];
         }
 
-        if ([] === $this->requiredItemLocationQuantity) {
+        if (InvoiceSuiteArrayUtils::empty($this->requiredItemLocationQuantity)) {
             $this->addOnceToRequiredItemLocationQuantity(new RequiredItemLocationQuantity());
         }
 

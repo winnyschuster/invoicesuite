@@ -262,7 +262,7 @@ class CertificateType
     public function firstRemarks(): ?Remarks
     {
         $remarks = $this->remarks ?? [];
-        $remarks = reset($remarks);
+        $remarks = InvoiceSuiteArrayUtils::first($remarks);
 
         if (false === $remarks) {
             return null;
@@ -277,7 +277,7 @@ class CertificateType
     public function lastRemarks(): ?Remarks
     {
         $remarks = $this->remarks ?? [];
-        $remarks = end($remarks);
+        $remarks = InvoiceSuiteArrayUtils::last($remarks);
 
         if (false === $remarks) {
             return null;
@@ -333,7 +333,7 @@ class CertificateType
             $this->remarks = [];
         }
 
-        if ([] === $this->remarks) {
+        if (InvoiceSuiteArrayUtils::empty($this->remarks)) {
             $this->addOnceToRemarks(new Remarks());
         }
 
@@ -426,7 +426,7 @@ class CertificateType
     public function firstDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = reset($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::first($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -441,7 +441,7 @@ class CertificateType
     public function lastDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = end($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::last($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -497,7 +497,7 @@ class CertificateType
             $this->documentReference = [];
         }
 
-        if ([] === $this->documentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->documentReference)) {
             $this->addOnceToDocumentReference(new DocumentReference());
         }
 
@@ -550,7 +550,7 @@ class CertificateType
     public function firstSignature(): ?Signature
     {
         $signature = $this->signature ?? [];
-        $signature = reset($signature);
+        $signature = InvoiceSuiteArrayUtils::first($signature);
 
         if (false === $signature) {
             return null;
@@ -565,7 +565,7 @@ class CertificateType
     public function lastSignature(): ?Signature
     {
         $signature = $this->signature ?? [];
-        $signature = end($signature);
+        $signature = InvoiceSuiteArrayUtils::last($signature);
 
         if (false === $signature) {
             return null;
@@ -621,7 +621,7 @@ class CertificateType
             $this->signature = [];
         }
 
-        if ([] === $this->signature) {
+        if (InvoiceSuiteArrayUtils::empty($this->signature)) {
             $this->addOnceToSignature(new Signature());
         }
 

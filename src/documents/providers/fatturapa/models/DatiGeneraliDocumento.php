@@ -411,7 +411,7 @@ final class DatiGeneraliDocumento
             $this->datiRitenuta = [];
         }
 
-        if ([] === $this->datiRitenuta) {
+        if (InvoiceSuiteArrayUtils::empty($this->datiRitenuta)) {
             $this->addOnceToDatiRitenuta(new DatiRitenuta());
         }
 
@@ -573,7 +573,7 @@ final class DatiGeneraliDocumento
             $this->datiCassaPrevidenziale = [];
         }
 
-        if ([] === $this->datiCassaPrevidenziale) {
+        if (InvoiceSuiteArrayUtils::empty($this->datiCassaPrevidenziale)) {
             $this->addOnceToDatiCassaPrevidenziale(new DatiCassaPrevidenziale());
         }
 
@@ -687,7 +687,7 @@ final class DatiGeneraliDocumento
             $this->scontoMaggiorazione = [];
         }
 
-        if ([] === $this->scontoMaggiorazione) {
+        if (InvoiceSuiteArrayUtils::empty($this->scontoMaggiorazione)) {
             $this->addOnceToScontoMaggiorazione(new ScontoMaggiorazione());
         }
 

@@ -289,7 +289,7 @@ class TransportMeansType
     public function firstRegistrationNationality(): ?RegistrationNationality
     {
         $registrationNationality = $this->registrationNationality ?? [];
-        $registrationNationality = reset($registrationNationality);
+        $registrationNationality = InvoiceSuiteArrayUtils::first($registrationNationality);
 
         if (false === $registrationNationality) {
             return null;
@@ -304,7 +304,7 @@ class TransportMeansType
     public function lastRegistrationNationality(): ?RegistrationNationality
     {
         $registrationNationality = $this->registrationNationality ?? [];
-        $registrationNationality = end($registrationNationality);
+        $registrationNationality = InvoiceSuiteArrayUtils::last($registrationNationality);
 
         if (false === $registrationNationality) {
             return null;
@@ -360,7 +360,7 @@ class TransportMeansType
             $this->registrationNationality = [];
         }
 
-        if ([] === $this->registrationNationality) {
+        if (InvoiceSuiteArrayUtils::empty($this->registrationNationality)) {
             $this->addOnceToRegistrationNationality(new RegistrationNationality());
         }
 
@@ -773,7 +773,7 @@ class TransportMeansType
     public function firstMeasurementDimension(): ?MeasurementDimension
     {
         $measurementDimension = $this->measurementDimension ?? [];
-        $measurementDimension = reset($measurementDimension);
+        $measurementDimension = InvoiceSuiteArrayUtils::first($measurementDimension);
 
         if (false === $measurementDimension) {
             return null;
@@ -788,7 +788,7 @@ class TransportMeansType
     public function lastMeasurementDimension(): ?MeasurementDimension
     {
         $measurementDimension = $this->measurementDimension ?? [];
-        $measurementDimension = end($measurementDimension);
+        $measurementDimension = InvoiceSuiteArrayUtils::last($measurementDimension);
 
         if (false === $measurementDimension) {
             return null;
@@ -844,7 +844,7 @@ class TransportMeansType
             $this->measurementDimension = [];
         }
 
-        if ([] === $this->measurementDimension) {
+        if (InvoiceSuiteArrayUtils::empty($this->measurementDimension)) {
             $this->addOnceToMeasurementDimension(new MeasurementDimension());
         }
 

@@ -106,7 +106,7 @@ class EnergyWaterSupplyType
     public function firstConsumptionReport(): ?ConsumptionReport
     {
         $consumptionReport = $this->consumptionReport ?? [];
-        $consumptionReport = reset($consumptionReport);
+        $consumptionReport = InvoiceSuiteArrayUtils::first($consumptionReport);
 
         if (false === $consumptionReport) {
             return null;
@@ -121,7 +121,7 @@ class EnergyWaterSupplyType
     public function lastConsumptionReport(): ?ConsumptionReport
     {
         $consumptionReport = $this->consumptionReport ?? [];
-        $consumptionReport = end($consumptionReport);
+        $consumptionReport = InvoiceSuiteArrayUtils::last($consumptionReport);
 
         if (false === $consumptionReport) {
             return null;
@@ -177,7 +177,7 @@ class EnergyWaterSupplyType
             $this->consumptionReport = [];
         }
 
-        if ([] === $this->consumptionReport) {
+        if (InvoiceSuiteArrayUtils::empty($this->consumptionReport)) {
             $this->addOnceToConsumptionReport(new ConsumptionReport());
         }
 
@@ -230,7 +230,7 @@ class EnergyWaterSupplyType
     public function firstEnergyTaxReport(): ?EnergyTaxReport
     {
         $energyTaxReport = $this->energyTaxReport ?? [];
-        $energyTaxReport = reset($energyTaxReport);
+        $energyTaxReport = InvoiceSuiteArrayUtils::first($energyTaxReport);
 
         if (false === $energyTaxReport) {
             return null;
@@ -245,7 +245,7 @@ class EnergyWaterSupplyType
     public function lastEnergyTaxReport(): ?EnergyTaxReport
     {
         $energyTaxReport = $this->energyTaxReport ?? [];
-        $energyTaxReport = end($energyTaxReport);
+        $energyTaxReport = InvoiceSuiteArrayUtils::last($energyTaxReport);
 
         if (false === $energyTaxReport) {
             return null;
@@ -301,7 +301,7 @@ class EnergyWaterSupplyType
             $this->energyTaxReport = [];
         }
 
-        if ([] === $this->energyTaxReport) {
+        if (InvoiceSuiteArrayUtils::empty($this->energyTaxReport)) {
             $this->addOnceToEnergyTaxReport(new EnergyTaxReport());
         }
 
@@ -354,7 +354,7 @@ class EnergyWaterSupplyType
     public function firstConsumptionAverage(): ?ConsumptionAverage
     {
         $consumptionAverage = $this->consumptionAverage ?? [];
-        $consumptionAverage = reset($consumptionAverage);
+        $consumptionAverage = InvoiceSuiteArrayUtils::first($consumptionAverage);
 
         if (false === $consumptionAverage) {
             return null;
@@ -369,7 +369,7 @@ class EnergyWaterSupplyType
     public function lastConsumptionAverage(): ?ConsumptionAverage
     {
         $consumptionAverage = $this->consumptionAverage ?? [];
-        $consumptionAverage = end($consumptionAverage);
+        $consumptionAverage = InvoiceSuiteArrayUtils::last($consumptionAverage);
 
         if (false === $consumptionAverage) {
             return null;
@@ -425,7 +425,7 @@ class EnergyWaterSupplyType
             $this->consumptionAverage = [];
         }
 
-        if ([] === $this->consumptionAverage) {
+        if (InvoiceSuiteArrayUtils::empty($this->consumptionAverage)) {
             $this->addOnceToConsumptionAverage(new ConsumptionAverage());
         }
 
@@ -478,7 +478,7 @@ class EnergyWaterSupplyType
     public function firstEnergyWaterConsumptionCorrection(): ?EnergyWaterConsumptionCorrection
     {
         $energyWaterConsumptionCorrection = $this->energyWaterConsumptionCorrection ?? [];
-        $energyWaterConsumptionCorrection = reset($energyWaterConsumptionCorrection);
+        $energyWaterConsumptionCorrection = InvoiceSuiteArrayUtils::first($energyWaterConsumptionCorrection);
 
         if (false === $energyWaterConsumptionCorrection) {
             return null;
@@ -493,7 +493,7 @@ class EnergyWaterSupplyType
     public function lastEnergyWaterConsumptionCorrection(): ?EnergyWaterConsumptionCorrection
     {
         $energyWaterConsumptionCorrection = $this->energyWaterConsumptionCorrection ?? [];
-        $energyWaterConsumptionCorrection = end($energyWaterConsumptionCorrection);
+        $energyWaterConsumptionCorrection = InvoiceSuiteArrayUtils::last($energyWaterConsumptionCorrection);
 
         if (false === $energyWaterConsumptionCorrection) {
             return null;
@@ -549,7 +549,7 @@ class EnergyWaterSupplyType
             $this->energyWaterConsumptionCorrection = [];
         }
 
-        if ([] === $this->energyWaterConsumptionCorrection) {
+        if (InvoiceSuiteArrayUtils::empty($this->energyWaterConsumptionCorrection)) {
             $this->addOnceToEnergyWaterConsumptionCorrection(new EnergyWaterConsumptionCorrection());
         }
 

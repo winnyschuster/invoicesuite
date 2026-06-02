@@ -157,7 +157,7 @@ class SalesItemType
     public function firstActivityProperty(): ?ActivityProperty
     {
         $activityProperty = $this->activityProperty ?? [];
-        $activityProperty = reset($activityProperty);
+        $activityProperty = InvoiceSuiteArrayUtils::first($activityProperty);
 
         if (false === $activityProperty) {
             return null;
@@ -172,7 +172,7 @@ class SalesItemType
     public function lastActivityProperty(): ?ActivityProperty
     {
         $activityProperty = $this->activityProperty ?? [];
-        $activityProperty = end($activityProperty);
+        $activityProperty = InvoiceSuiteArrayUtils::last($activityProperty);
 
         if (false === $activityProperty) {
             return null;
@@ -228,7 +228,7 @@ class SalesItemType
             $this->activityProperty = [];
         }
 
-        if ([] === $this->activityProperty) {
+        if (InvoiceSuiteArrayUtils::empty($this->activityProperty)) {
             $this->addOnceToActivityProperty(new ActivityProperty());
         }
 
@@ -281,7 +281,7 @@ class SalesItemType
     public function firstTaxExclusivePrice(): ?TaxExclusivePrice
     {
         $taxExclusivePrice = $this->taxExclusivePrice ?? [];
-        $taxExclusivePrice = reset($taxExclusivePrice);
+        $taxExclusivePrice = InvoiceSuiteArrayUtils::first($taxExclusivePrice);
 
         if (false === $taxExclusivePrice) {
             return null;
@@ -296,7 +296,7 @@ class SalesItemType
     public function lastTaxExclusivePrice(): ?TaxExclusivePrice
     {
         $taxExclusivePrice = $this->taxExclusivePrice ?? [];
-        $taxExclusivePrice = end($taxExclusivePrice);
+        $taxExclusivePrice = InvoiceSuiteArrayUtils::last($taxExclusivePrice);
 
         if (false === $taxExclusivePrice) {
             return null;
@@ -352,7 +352,7 @@ class SalesItemType
             $this->taxExclusivePrice = [];
         }
 
-        if ([] === $this->taxExclusivePrice) {
+        if (InvoiceSuiteArrayUtils::empty($this->taxExclusivePrice)) {
             $this->addOnceToTaxExclusivePrice(new TaxExclusivePrice());
         }
 
@@ -405,7 +405,7 @@ class SalesItemType
     public function firstTaxInclusivePrice(): ?TaxInclusivePrice
     {
         $taxInclusivePrice = $this->taxInclusivePrice ?? [];
-        $taxInclusivePrice = reset($taxInclusivePrice);
+        $taxInclusivePrice = InvoiceSuiteArrayUtils::first($taxInclusivePrice);
 
         if (false === $taxInclusivePrice) {
             return null;
@@ -420,7 +420,7 @@ class SalesItemType
     public function lastTaxInclusivePrice(): ?TaxInclusivePrice
     {
         $taxInclusivePrice = $this->taxInclusivePrice ?? [];
-        $taxInclusivePrice = end($taxInclusivePrice);
+        $taxInclusivePrice = InvoiceSuiteArrayUtils::last($taxInclusivePrice);
 
         if (false === $taxInclusivePrice) {
             return null;
@@ -476,7 +476,7 @@ class SalesItemType
             $this->taxInclusivePrice = [];
         }
 
-        if ([] === $this->taxInclusivePrice) {
+        if (InvoiceSuiteArrayUtils::empty($this->taxInclusivePrice)) {
             $this->addOnceToTaxInclusivePrice(new TaxInclusivePrice());
         }
 

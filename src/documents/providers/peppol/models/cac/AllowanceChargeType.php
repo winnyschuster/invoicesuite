@@ -346,7 +346,7 @@ class AllowanceChargeType
     public function firstAllowanceChargeReason(): ?AllowanceChargeReason
     {
         $allowanceChargeReason = $this->allowanceChargeReason ?? [];
-        $allowanceChargeReason = reset($allowanceChargeReason);
+        $allowanceChargeReason = InvoiceSuiteArrayUtils::first($allowanceChargeReason);
 
         if (false === $allowanceChargeReason) {
             return null;
@@ -361,7 +361,7 @@ class AllowanceChargeType
     public function lastAllowanceChargeReason(): ?AllowanceChargeReason
     {
         $allowanceChargeReason = $this->allowanceChargeReason ?? [];
-        $allowanceChargeReason = end($allowanceChargeReason);
+        $allowanceChargeReason = InvoiceSuiteArrayUtils::last($allowanceChargeReason);
 
         if (false === $allowanceChargeReason) {
             return null;
@@ -417,7 +417,7 @@ class AllowanceChargeType
             $this->allowanceChargeReason = [];
         }
 
-        if ([] === $this->allowanceChargeReason) {
+        if (InvoiceSuiteArrayUtils::empty($this->allowanceChargeReason)) {
             $this->addOnceToAllowanceChargeReason(new AllowanceChargeReason());
         }
 
@@ -780,7 +780,7 @@ class AllowanceChargeType
     public function firstTaxCategory(): ?TaxCategory
     {
         $taxCategory = $this->taxCategory ?? [];
-        $taxCategory = reset($taxCategory);
+        $taxCategory = InvoiceSuiteArrayUtils::first($taxCategory);
 
         if (false === $taxCategory) {
             return null;
@@ -795,7 +795,7 @@ class AllowanceChargeType
     public function lastTaxCategory(): ?TaxCategory
     {
         $taxCategory = $this->taxCategory ?? [];
-        $taxCategory = end($taxCategory);
+        $taxCategory = InvoiceSuiteArrayUtils::last($taxCategory);
 
         if (false === $taxCategory) {
             return null;
@@ -851,7 +851,7 @@ class AllowanceChargeType
             $this->taxCategory = [];
         }
 
-        if ([] === $this->taxCategory) {
+        if (InvoiceSuiteArrayUtils::empty($this->taxCategory)) {
             $this->addOnceToTaxCategory(new TaxCategory());
         }
 
@@ -944,7 +944,7 @@ class AllowanceChargeType
     public function firstPaymentMeans(): ?PaymentMeans
     {
         $paymentMeans = $this->paymentMeans ?? [];
-        $paymentMeans = reset($paymentMeans);
+        $paymentMeans = InvoiceSuiteArrayUtils::first($paymentMeans);
 
         if (false === $paymentMeans) {
             return null;
@@ -959,7 +959,7 @@ class AllowanceChargeType
     public function lastPaymentMeans(): ?PaymentMeans
     {
         $paymentMeans = $this->paymentMeans ?? [];
-        $paymentMeans = end($paymentMeans);
+        $paymentMeans = InvoiceSuiteArrayUtils::last($paymentMeans);
 
         if (false === $paymentMeans) {
             return null;
@@ -1015,7 +1015,7 @@ class AllowanceChargeType
             $this->paymentMeans = [];
         }
 
-        if ([] === $this->paymentMeans) {
+        if (InvoiceSuiteArrayUtils::empty($this->paymentMeans)) {
             $this->addOnceToPaymentMeans(new PaymentMeans());
         }
 

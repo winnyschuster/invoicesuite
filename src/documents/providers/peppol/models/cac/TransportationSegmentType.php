@@ -327,7 +327,7 @@ class TransportationSegmentType
     public function firstShipmentStage(): ?ShipmentStage
     {
         $shipmentStage = $this->shipmentStage ?? [];
-        $shipmentStage = reset($shipmentStage);
+        $shipmentStage = InvoiceSuiteArrayUtils::first($shipmentStage);
 
         if (false === $shipmentStage) {
             return null;
@@ -342,7 +342,7 @@ class TransportationSegmentType
     public function lastShipmentStage(): ?ShipmentStage
     {
         $shipmentStage = $this->shipmentStage ?? [];
-        $shipmentStage = end($shipmentStage);
+        $shipmentStage = InvoiceSuiteArrayUtils::last($shipmentStage);
 
         if (false === $shipmentStage) {
             return null;
@@ -398,7 +398,7 @@ class TransportationSegmentType
             $this->shipmentStage = [];
         }
 
-        if ([] === $this->shipmentStage) {
+        if (InvoiceSuiteArrayUtils::empty($this->shipmentStage)) {
             $this->addOnceToShipmentStage(new ShipmentStage());
         }
 

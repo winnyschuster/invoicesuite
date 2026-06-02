@@ -146,7 +146,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     public function firstContractingPartyType(): ?ContractingPartyType1
     {
         $contractingPartyType = $this->contractingPartyType ?? [];
-        $contractingPartyType = reset($contractingPartyType);
+        $contractingPartyType = InvoiceSuiteArrayUtils::first($contractingPartyType);
 
         if (false === $contractingPartyType) {
             return null;
@@ -161,7 +161,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     public function lastContractingPartyType(): ?ContractingPartyType1
     {
         $contractingPartyType = $this->contractingPartyType ?? [];
-        $contractingPartyType = end($contractingPartyType);
+        $contractingPartyType = InvoiceSuiteArrayUtils::last($contractingPartyType);
 
         if (false === $contractingPartyType) {
             return null;
@@ -217,7 +217,7 @@ class ContractingPartyType extends ContractingPartyTypeType
             $this->contractingPartyType = [];
         }
 
-        if ([] === $this->contractingPartyType) {
+        if (InvoiceSuiteArrayUtils::empty($this->contractingPartyType)) {
             $this->addOnceToContractingPartyType(new ContractingPartyType1());
         }
 
@@ -270,7 +270,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     public function firstContractingActivity(): ?ContractingActivity
     {
         $contractingActivity = $this->contractingActivity ?? [];
-        $contractingActivity = reset($contractingActivity);
+        $contractingActivity = InvoiceSuiteArrayUtils::first($contractingActivity);
 
         if (false === $contractingActivity) {
             return null;
@@ -285,7 +285,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     public function lastContractingActivity(): ?ContractingActivity
     {
         $contractingActivity = $this->contractingActivity ?? [];
-        $contractingActivity = end($contractingActivity);
+        $contractingActivity = InvoiceSuiteArrayUtils::last($contractingActivity);
 
         if (false === $contractingActivity) {
             return null;
@@ -341,7 +341,7 @@ class ContractingPartyType extends ContractingPartyTypeType
             $this->contractingActivity = [];
         }
 
-        if ([] === $this->contractingActivity) {
+        if (InvoiceSuiteArrayUtils::empty($this->contractingActivity)) {
             $this->addOnceToContractingActivity(new ContractingActivity());
         }
 

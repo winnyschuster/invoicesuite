@@ -250,7 +250,7 @@ class NotificationRequirementType
     public function firstNotifyParty(): ?NotifyParty
     {
         $notifyParty = $this->notifyParty ?? [];
-        $notifyParty = reset($notifyParty);
+        $notifyParty = InvoiceSuiteArrayUtils::first($notifyParty);
 
         if (false === $notifyParty) {
             return null;
@@ -265,7 +265,7 @@ class NotificationRequirementType
     public function lastNotifyParty(): ?NotifyParty
     {
         $notifyParty = $this->notifyParty ?? [];
-        $notifyParty = end($notifyParty);
+        $notifyParty = InvoiceSuiteArrayUtils::last($notifyParty);
 
         if (false === $notifyParty) {
             return null;
@@ -321,7 +321,7 @@ class NotificationRequirementType
             $this->notifyParty = [];
         }
 
-        if ([] === $this->notifyParty) {
+        if (InvoiceSuiteArrayUtils::empty($this->notifyParty)) {
             $this->addOnceToNotifyParty(new NotifyParty());
         }
 
@@ -374,7 +374,7 @@ class NotificationRequirementType
     public function firstNotificationPeriod(): ?NotificationPeriod
     {
         $notificationPeriod = $this->notificationPeriod ?? [];
-        $notificationPeriod = reset($notificationPeriod);
+        $notificationPeriod = InvoiceSuiteArrayUtils::first($notificationPeriod);
 
         if (false === $notificationPeriod) {
             return null;
@@ -389,7 +389,7 @@ class NotificationRequirementType
     public function lastNotificationPeriod(): ?NotificationPeriod
     {
         $notificationPeriod = $this->notificationPeriod ?? [];
-        $notificationPeriod = end($notificationPeriod);
+        $notificationPeriod = InvoiceSuiteArrayUtils::last($notificationPeriod);
 
         if (false === $notificationPeriod) {
             return null;
@@ -445,7 +445,7 @@ class NotificationRequirementType
             $this->notificationPeriod = [];
         }
 
-        if ([] === $this->notificationPeriod) {
+        if (InvoiceSuiteArrayUtils::empty($this->notificationPeriod)) {
             $this->addOnceToNotificationPeriod(new NotificationPeriod());
         }
 
@@ -498,7 +498,7 @@ class NotificationRequirementType
     public function firstNotificationLocation(): ?NotificationLocation
     {
         $notificationLocation = $this->notificationLocation ?? [];
-        $notificationLocation = reset($notificationLocation);
+        $notificationLocation = InvoiceSuiteArrayUtils::first($notificationLocation);
 
         if (false === $notificationLocation) {
             return null;
@@ -513,7 +513,7 @@ class NotificationRequirementType
     public function lastNotificationLocation(): ?NotificationLocation
     {
         $notificationLocation = $this->notificationLocation ?? [];
-        $notificationLocation = end($notificationLocation);
+        $notificationLocation = InvoiceSuiteArrayUtils::last($notificationLocation);
 
         if (false === $notificationLocation) {
             return null;
@@ -569,7 +569,7 @@ class NotificationRequirementType
             $this->notificationLocation = [];
         }
 
-        if ([] === $this->notificationLocation) {
+        if (InvoiceSuiteArrayUtils::empty($this->notificationLocation)) {
             $this->addOnceToNotificationLocation(new NotificationLocation());
         }
 

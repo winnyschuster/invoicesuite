@@ -155,7 +155,7 @@ class DocumentResponseType
     public function firstDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = reset($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::first($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -170,7 +170,7 @@ class DocumentResponseType
     public function lastDocumentReference(): ?DocumentReference
     {
         $documentReference = $this->documentReference ?? [];
-        $documentReference = end($documentReference);
+        $documentReference = InvoiceSuiteArrayUtils::last($documentReference);
 
         if (false === $documentReference) {
             return null;
@@ -226,7 +226,7 @@ class DocumentResponseType
             $this->documentReference = [];
         }
 
-        if ([] === $this->documentReference) {
+        if (InvoiceSuiteArrayUtils::empty($this->documentReference)) {
             $this->addOnceToDocumentReference(new DocumentReference());
         }
 
@@ -359,7 +359,7 @@ class DocumentResponseType
     public function firstLineResponse(): ?LineResponse
     {
         $lineResponse = $this->lineResponse ?? [];
-        $lineResponse = reset($lineResponse);
+        $lineResponse = InvoiceSuiteArrayUtils::first($lineResponse);
 
         if (false === $lineResponse) {
             return null;
@@ -374,7 +374,7 @@ class DocumentResponseType
     public function lastLineResponse(): ?LineResponse
     {
         $lineResponse = $this->lineResponse ?? [];
-        $lineResponse = end($lineResponse);
+        $lineResponse = InvoiceSuiteArrayUtils::last($lineResponse);
 
         if (false === $lineResponse) {
             return null;
@@ -430,7 +430,7 @@ class DocumentResponseType
             $this->lineResponse = [];
         }
 
-        if ([] === $this->lineResponse) {
+        if (InvoiceSuiteArrayUtils::empty($this->lineResponse)) {
             $this->addOnceToLineResponse(new LineResponse());
         }
 

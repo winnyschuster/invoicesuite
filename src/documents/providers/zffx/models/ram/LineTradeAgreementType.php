@@ -411,7 +411,7 @@ class LineTradeAgreementType
             $this->additionalReferencedDocument = [];
         }
 
-        if ([] === $this->additionalReferencedDocument) {
+        if (InvoiceSuiteArrayUtils::empty($this->additionalReferencedDocument)) {
             $this->addOnceToAdditionalReferencedDocument(new ReferencedDocumentType());
         }
 
@@ -625,7 +625,7 @@ class LineTradeAgreementType
             $this->ultimateCustomerOrderReferencedDocument = [];
         }
 
-        if ([] === $this->ultimateCustomerOrderReferencedDocument) {
+        if (InvoiceSuiteArrayUtils::empty($this->ultimateCustomerOrderReferencedDocument)) {
             $this->addOnceToUltimateCustomerOrderReferencedDocument(new ReferencedDocumentType());
         }
 

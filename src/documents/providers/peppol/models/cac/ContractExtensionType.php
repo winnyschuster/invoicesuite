@@ -118,7 +118,7 @@ class ContractExtensionType
     public function firstOptionsDescription(): ?OptionsDescription
     {
         $optionsDescription = $this->optionsDescription ?? [];
-        $optionsDescription = reset($optionsDescription);
+        $optionsDescription = InvoiceSuiteArrayUtils::first($optionsDescription);
 
         if (false === $optionsDescription) {
             return null;
@@ -133,7 +133,7 @@ class ContractExtensionType
     public function lastOptionsDescription(): ?OptionsDescription
     {
         $optionsDescription = $this->optionsDescription ?? [];
-        $optionsDescription = end($optionsDescription);
+        $optionsDescription = InvoiceSuiteArrayUtils::last($optionsDescription);
 
         if (false === $optionsDescription) {
             return null;
@@ -189,7 +189,7 @@ class ContractExtensionType
             $this->optionsDescription = [];
         }
 
-        if ([] === $this->optionsDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->optionsDescription)) {
             $this->addOnceToOptionsDescription(new OptionsDescription());
         }
 
@@ -362,7 +362,7 @@ class ContractExtensionType
     public function firstRenewal(): ?Renewal
     {
         $renewal = $this->renewal ?? [];
-        $renewal = reset($renewal);
+        $renewal = InvoiceSuiteArrayUtils::first($renewal);
 
         if (false === $renewal) {
             return null;
@@ -377,7 +377,7 @@ class ContractExtensionType
     public function lastRenewal(): ?Renewal
     {
         $renewal = $this->renewal ?? [];
-        $renewal = end($renewal);
+        $renewal = InvoiceSuiteArrayUtils::last($renewal);
 
         if (false === $renewal) {
             return null;
@@ -433,7 +433,7 @@ class ContractExtensionType
             $this->renewal = [];
         }
 
-        if ([] === $this->renewal) {
+        if (InvoiceSuiteArrayUtils::empty($this->renewal)) {
             $this->addOnceToRenewal(new Renewal());
         }
 

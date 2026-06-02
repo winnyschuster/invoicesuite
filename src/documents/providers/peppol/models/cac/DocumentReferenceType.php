@@ -508,7 +508,7 @@ class DocumentReferenceType
     public function firstXPath(): ?XPath
     {
         $xPath = $this->xPath ?? [];
-        $xPath = reset($xPath);
+        $xPath = InvoiceSuiteArrayUtils::first($xPath);
 
         if (false === $xPath) {
             return null;
@@ -523,7 +523,7 @@ class DocumentReferenceType
     public function lastXPath(): ?XPath
     {
         $xPath = $this->xPath ?? [];
-        $xPath = end($xPath);
+        $xPath = InvoiceSuiteArrayUtils::last($xPath);
 
         if (false === $xPath) {
             return null;
@@ -579,7 +579,7 @@ class DocumentReferenceType
             $this->xPath = [];
         }
 
-        if ([] === $this->xPath) {
+        if (InvoiceSuiteArrayUtils::empty($this->xPath)) {
             $this->addOnceToXPath(new XPath());
         }
 
@@ -792,7 +792,7 @@ class DocumentReferenceType
     public function firstDocumentDescription(): ?DocumentDescription
     {
         $documentDescription = $this->documentDescription ?? [];
-        $documentDescription = reset($documentDescription);
+        $documentDescription = InvoiceSuiteArrayUtils::first($documentDescription);
 
         if (false === $documentDescription) {
             return null;
@@ -807,7 +807,7 @@ class DocumentReferenceType
     public function lastDocumentDescription(): ?DocumentDescription
     {
         $documentDescription = $this->documentDescription ?? [];
-        $documentDescription = end($documentDescription);
+        $documentDescription = InvoiceSuiteArrayUtils::last($documentDescription);
 
         if (false === $documentDescription) {
             return null;
@@ -863,7 +863,7 @@ class DocumentReferenceType
             $this->documentDescription = [];
         }
 
-        if ([] === $this->documentDescription) {
+        if (InvoiceSuiteArrayUtils::empty($this->documentDescription)) {
             $this->addOnceToDocumentDescription(new DocumentDescription());
         }
 

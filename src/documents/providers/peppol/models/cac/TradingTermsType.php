@@ -94,7 +94,7 @@ class TradingTermsType
     public function firstInformation(): ?Information
     {
         $information = $this->information ?? [];
-        $information = reset($information);
+        $information = InvoiceSuiteArrayUtils::first($information);
 
         if (false === $information) {
             return null;
@@ -109,7 +109,7 @@ class TradingTermsType
     public function lastInformation(): ?Information
     {
         $information = $this->information ?? [];
-        $information = end($information);
+        $information = InvoiceSuiteArrayUtils::last($information);
 
         if (false === $information) {
             return null;
@@ -165,7 +165,7 @@ class TradingTermsType
             $this->information = [];
         }
 
-        if ([] === $this->information) {
+        if (InvoiceSuiteArrayUtils::empty($this->information)) {
             $this->addOnceToInformation(new Information());
         }
 

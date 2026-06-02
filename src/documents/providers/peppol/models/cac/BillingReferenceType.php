@@ -427,7 +427,7 @@ class BillingReferenceType
     public function firstBillingReferenceLine(): ?BillingReferenceLine
     {
         $billingReferenceLine = $this->billingReferenceLine ?? [];
-        $billingReferenceLine = reset($billingReferenceLine);
+        $billingReferenceLine = InvoiceSuiteArrayUtils::first($billingReferenceLine);
 
         if (false === $billingReferenceLine) {
             return null;
@@ -442,7 +442,7 @@ class BillingReferenceType
     public function lastBillingReferenceLine(): ?BillingReferenceLine
     {
         $billingReferenceLine = $this->billingReferenceLine ?? [];
-        $billingReferenceLine = end($billingReferenceLine);
+        $billingReferenceLine = InvoiceSuiteArrayUtils::last($billingReferenceLine);
 
         if (false === $billingReferenceLine) {
             return null;
@@ -498,7 +498,7 @@ class BillingReferenceType
             $this->billingReferenceLine = [];
         }
 
-        if ([] === $this->billingReferenceLine) {
+        if (InvoiceSuiteArrayUtils::empty($this->billingReferenceLine)) {
             $this->addOnceToBillingReferenceLine(new BillingReferenceLine());
         }
 

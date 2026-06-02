@@ -602,7 +602,7 @@ class TradeProductType
             $this->batchID = [];
         }
 
-        if ([] === $this->batchID) {
+        if (InvoiceSuiteArrayUtils::empty($this->batchID)) {
             $this->addOnceToBatchID(new IDType());
         }
 
@@ -776,7 +776,7 @@ class TradeProductType
             $this->applicableProductCharacteristic = [];
         }
 
-        if ([] === $this->applicableProductCharacteristic) {
+        if (InvoiceSuiteArrayUtils::empty($this->applicableProductCharacteristic)) {
             $this->addOnceToApplicableProductCharacteristic(new ProductCharacteristicType());
         }
 
@@ -870,7 +870,7 @@ class TradeProductType
             $this->designatedProductClassification = [];
         }
 
-        if ([] === $this->designatedProductClassification) {
+        if (InvoiceSuiteArrayUtils::empty($this->designatedProductClassification)) {
             $this->addOnceToDesignatedProductClassification(new ProductClassificationType());
         }
 
@@ -964,7 +964,7 @@ class TradeProductType
             $this->individualTradeProductInstance = [];
         }
 
-        if ([] === $this->individualTradeProductInstance) {
+        if (InvoiceSuiteArrayUtils::empty($this->individualTradeProductInstance)) {
             $this->addOnceToIndividualTradeProductInstance(new TradeProductInstanceType());
         }
 
@@ -1098,7 +1098,7 @@ class TradeProductType
             $this->includedReferencedProduct = [];
         }
 
-        if ([] === $this->includedReferencedProduct) {
+        if (InvoiceSuiteArrayUtils::empty($this->includedReferencedProduct)) {
             $this->addOnceToIncludedReferencedProduct(new ReferencedProductType());
         }
 
