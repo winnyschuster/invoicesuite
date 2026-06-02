@@ -60,13 +60,11 @@ class InvoiceSuiteArrayUtils
      *
      * @param  array<array-key, mixed> $array
      * @param  mixed                   $search
-     * @param  bool                    $strict
      * @return bool
      */
     public static function arrayContains(
         array $array,
-        mixed $search,
-        bool $strict = true
+        mixed $search
     ): bool {
         return in_array($search, $array, true);
     }
