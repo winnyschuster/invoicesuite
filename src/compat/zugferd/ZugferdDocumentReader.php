@@ -3171,6 +3171,36 @@ class ZugferdDocumentReader extends ZugferdDocument
     }
 
     /**
+     * Get all ultimate customer order referenced documents as an array.
+     *
+     * @param  null|array<int, array{IssuerAssignedID: string, FormattedIssueDateTime: null|DateTimeInterface, issueDate: null|DateTimeInterface}> $refdocs $refdocs Returns an array of referenced documents, each containing keys: _issuerAssignedId_ and _issueDate_
+     * @return static
+     *
+     * @phpstan-param-out array<int, array{IssuerAssignedID: string, FormattedIssueDateTime: DateTimeInterface|null, issueDate: DateTimeInterface|null}> $refdocs
+     */
+    public function getDocumentUltimateCustomerOrderReferencedDocuments(?array &$refdocs): static
+    {
+        $refdocs = [];
+
+        if ($this->documentReader->firstDocumentUltimateCustomerOrderReference()) {
+            do {
+                $this->documentReader->getDocumentUltimateCustomerOrderReference(
+                    $newReferenceNumber,
+                    $newReferenceDate
+                );
+
+                InvoiceSuiteArrayUtils::pushArrayToIntIndexedArray($refdocs, [
+                    'IssuerAssignedID' => $newReferenceNumber,
+                    'FormattedIssueDateTime' => $newReferenceDate,
+                    'issueDate' => $newReferenceDate,
+                ]);
+            } while ($this->documentReader->nextDocumentUltimateCustomerOrderReference());
+        }
+
+        return $this;
+    }
+
+    /**
      * Get Details of a project reference.
      *
      * @param  null|string $id   __BT-11, From EN 16931__ The identifier of the project to which the invoice relates
@@ -4572,6 +4602,54 @@ class ZugferdDocumentReader extends ZugferdDocument
             $newInvoiceSuiteAttachment,
             $uriId,
             $binaryDataFilename
+        );
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first ultimate customer order referenced document at position level. Returns true if the first position is available, otherwise false.
+     * You may use it together with ZugferdDocumentReader::getDocumentPositionUltimateCustomerOrderReferencedDocument.
+     *
+     * @return bool
+     */
+    public function firstDocumentPositionUltimateCustomerOrderReferencedDocument(): bool
+    {
+        return $this->documentReader->firstDocumentPositionUltimateCustomerOrderReference();
+    }
+
+    /**
+     * Seek to the next ultimate customer order referenced document at position level. Returns true if another position is available, otherwise false.
+     * You may use it together with ZugferdDocumentReader::getDocumentPositionUltimateCustomerOrderReferencedDocument.
+     *
+     * @return bool
+     */
+    public function nextDocumentPositionUltimateCustomerOrderReferencedDocument(): bool
+    {
+        return $this->documentReader->nextDocumentPositionUltimateCustomerOrderReference();
+    }
+
+    /**
+     * Get details of the ultimate customer order referenced document at position level.
+     *
+     * @param  null|string            $issuerAssignedId __BT-X-43, From EXTENDED__ Order number of the end customer
+     * @param  null|string            $lineId           __BT-X-44, From EXTENDED__ Order item (end customer)
+     * @param  null|DateTimeInterface $issueDate        __BT-X-45, From EXTENDED__ Document date of end customer order
+     * @return static
+     *
+     * @phpstan-param-out string $issuerAssignedId
+     * @phpstan-param-out string $lineId
+     * @phpstan-param-out null|DateTimeInterface $issueDate
+     */
+    public function getDocumentPositionUltimateCustomerOrderReferencedDocument(
+        ?string &$issuerAssignedId,
+        ?string &$lineId,
+        ?DateTimeInterface &$issueDate
+    ): static {
+        $this->documentReader->getDocumentPositionUltimateCustomerOrderReference(
+            $issuerAssignedId,
+            $lineId,
+            $issueDate
         );
 
         return $this;
