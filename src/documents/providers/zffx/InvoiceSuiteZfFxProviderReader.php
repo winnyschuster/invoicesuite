@@ -629,17 +629,17 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
 
         // Document-Level Seller seller's tax representative party
 
-        $newDocumentDTO->setTaxRepresentativeParty(new InvoiceSuitePartyDTO());
+        $newDocumentDTO->setSellerTaxRepresentativeParty(new InvoiceSuitePartyDTO());
 
         $this->getDocumentSellerTaxRepresentativeName($newDocumentSellerTaxRepresentativeName);
-        $newDocumentDTO->getTaxRepresentativeParty()->addName($newDocumentSellerTaxRepresentativeName);
+        $newDocumentDTO->getSellerTaxRepresentativeParty()->addName($newDocumentSellerTaxRepresentativeName);
 
         while ($this->nextDocumentSellerTaxRepresentativeId()) {
             $this->getDocumentSellerTaxRepresentativeId(
                 $newDocumentSellerTaxRepresentativeId
             );
 
-            $newDocumentDTO->getTaxRepresentativeParty()->addId(
+            $newDocumentDTO->getSellerTaxRepresentativeParty()->addId(
                 new InvoiceSuiteIdDTO(
                     $newDocumentSellerTaxRepresentativeId
                 )
@@ -652,7 +652,7 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
                 $newDocumentSellerTaxRepresentativeGlobalIdType
             );
 
-            $newDocumentDTO->getTaxRepresentativeParty()->addGlobalId(
+            $newDocumentDTO->getSellerTaxRepresentativeParty()->addGlobalId(
                 new InvoiceSuiteIdDTO(
                     $newDocumentSellerTaxRepresentativeGlobalId,
                     $newDocumentSellerTaxRepresentativeGlobalIdType
@@ -666,7 +666,7 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
                 $newDocumentSellerTaxRepresentativeTaxRegistationId
             );
 
-            $newDocumentDTO->getTaxRepresentativeParty()->addTaxRegistration(
+            $newDocumentDTO->getSellerTaxRepresentativeParty()->addTaxRegistration(
                 new InvoiceSuiteIdDTO(
                     $newDocumentSellerTaxRepresentativeTaxRegistationId,
                     $newDocumentSellerTaxRepresentativeTaxRegistationType
@@ -685,7 +685,7 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
                 $documentSellerTaxRepresentativeAddressSubDivision
             );
 
-            $newDocumentDTO->getTaxRepresentativeParty()->addAddress(new InvoiceSuiteAddressDTO(
+            $newDocumentDTO->getSellerTaxRepresentativeParty()->addAddress(new InvoiceSuiteAddressDTO(
                 $documentSellerTaxRepresentativeAddressLine1,
                 $documentSellerTaxRepresentativeAddressLine2,
                 $documentSellerTaxRepresentativeAddressLine3,
@@ -703,7 +703,7 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
                 $newDocumentSellerTaxRepresentativeLegalOrganisationName
             );
 
-            $newDocumentDTO->getTaxRepresentativeParty()->addLegalOrganisation(new InvoiceSuiteOrganisationDTO(
+            $newDocumentDTO->getSellerTaxRepresentativeParty()->addLegalOrganisation(new InvoiceSuiteOrganisationDTO(
                 $newDocumentSellerTaxRepresentativeLegalOrganisationId,
                 $newDocumentSellerTaxRepresentativeLegalOrganisationType,
                 $newDocumentSellerTaxRepresentativeLegalOrganisationName
@@ -719,7 +719,7 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
                 $newDocumentSellerTaxRepresentativeContactEmailAddress
             );
 
-            $newDocumentDTO->getTaxRepresentativeParty()->addContact(
+            $newDocumentDTO->getSellerTaxRepresentativeParty()->addContact(
                 new InvoiceSuiteContactDTO(
                     $newDocumentSellerTaxRepresentativeContactPersonName,
                     $newDocumentSellerTaxRepresentativeContactDepartmentName,
@@ -736,10 +736,127 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
                 $newDocumentSellerTaxRepresentativeCommunicationUri
             );
 
-            $newDocumentDTO->getTaxRepresentativeParty()->addCommunication(
+            $newDocumentDTO->getSellerTaxRepresentativeParty()->addCommunication(
                 new InvoiceSuiteCommunicationDTO(
                     $newDocumentSellerTaxRepresentativeCommunicationUri,
                     $newDocumentSellerTaxRepresentativeCommunicationType
+                )
+            );
+        }
+
+        // Document-Level Buyer buyer's tax representative party
+
+        $newDocumentDTO->setBuyerTaxRepresentativeParty(new InvoiceSuitePartyDTO());
+
+        $this->getDocumentBuyerTaxRepresentativeName($newDocumentBuyerTaxRepresentativeName);
+        $newDocumentDTO->getBuyerTaxRepresentativeParty()->addName($newDocumentBuyerTaxRepresentativeName);
+
+        while ($this->nextDocumentBuyerTaxRepresentativeId()) {
+            $this->getDocumentBuyerTaxRepresentativeId(
+                $newDocumentBuyerTaxRepresentativeId
+            );
+
+            $newDocumentDTO->getBuyerTaxRepresentativeParty()->addId(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentBuyerTaxRepresentativeId
+                )
+            );
+        }
+
+        while ($this->nextDocumentBuyerTaxRepresentativeGlobalId()) {
+            $this->getDocumentBuyerTaxRepresentativeGlobalId(
+                $newDocumentBuyerTaxRepresentativeGlobalId,
+                $newDocumentBuyerTaxRepresentativeGlobalIdType
+            );
+
+            $newDocumentDTO->getBuyerTaxRepresentativeParty()->addGlobalId(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentBuyerTaxRepresentativeGlobalId,
+                    $newDocumentBuyerTaxRepresentativeGlobalIdType
+                )
+            );
+        }
+
+        while ($this->nextDocumentBuyerTaxRepresentativeTaxRegistration()) {
+            $this->getDocumentBuyerTaxRepresentativeTaxRegistration(
+                $newDocumentBuyerTaxRepresentativeTaxRegistationType,
+                $newDocumentBuyerTaxRepresentativeTaxRegistationId
+            );
+
+            $newDocumentDTO->getBuyerTaxRepresentativeParty()->addTaxRegistration(
+                new InvoiceSuiteIdDTO(
+                    $newDocumentBuyerTaxRepresentativeTaxRegistationId,
+                    $newDocumentBuyerTaxRepresentativeTaxRegistationType
+                )
+            );
+        }
+
+        while ($this->nextDocumentBuyerTaxRepresentativeAddress()) {
+            $this->getDocumentBuyerTaxRepresentativeAddress(
+                $documentBuyerTaxRepresentativeAddressLine1,
+                $documentBuyerTaxRepresentativeAddressLine2,
+                $documentBuyerTaxRepresentativeAddressLine3,
+                $documentBuyerTaxRepresentativeAddressPostCode,
+                $documentBuyerTaxRepresentativeAddressCity,
+                $documentBuyerTaxRepresentativeAddressCountry,
+                $documentBuyerTaxRepresentativeAddressSubDivision
+            );
+
+            $newDocumentDTO->getBuyerTaxRepresentativeParty()->addAddress(new InvoiceSuiteAddressDTO(
+                $documentBuyerTaxRepresentativeAddressLine1,
+                $documentBuyerTaxRepresentativeAddressLine2,
+                $documentBuyerTaxRepresentativeAddressLine3,
+                $documentBuyerTaxRepresentativeAddressPostCode,
+                $documentBuyerTaxRepresentativeAddressCity,
+                $documentBuyerTaxRepresentativeAddressCountry,
+                $documentBuyerTaxRepresentativeAddressSubDivision
+            ));
+        }
+
+        while ($this->nextDocumentBuyerTaxRepresentativeLegalOrganisation()) {
+            $this->getDocumentBuyerTaxRepresentativeLegalOrganisation(
+                $newDocumentBuyerTaxRepresentativeLegalOrganisationType,
+                $newDocumentBuyerTaxRepresentativeLegalOrganisationId,
+                $newDocumentBuyerTaxRepresentativeLegalOrganisationName
+            );
+
+            $newDocumentDTO->getBuyerTaxRepresentativeParty()->addLegalOrganisation(new InvoiceSuiteOrganisationDTO(
+                $newDocumentBuyerTaxRepresentativeLegalOrganisationId,
+                $newDocumentBuyerTaxRepresentativeLegalOrganisationType,
+                $newDocumentBuyerTaxRepresentativeLegalOrganisationName
+            ));
+        }
+
+        while ($this->nextDocumentBuyerTaxRepresentativeContact()) {
+            $this->getDocumentBuyerTaxRepresentativeContact(
+                $newDocumentBuyerTaxRepresentativeContactPersonName,
+                $newDocumentBuyerTaxRepresentativeContactDepartmentName,
+                $newDocumentBuyerTaxRepresentativeContactPhoneNumber,
+                $newDocumentBuyerTaxRepresentativeContactFaxNumber,
+                $newDocumentBuyerTaxRepresentativeContactEmailAddress
+            );
+
+            $newDocumentDTO->getBuyerTaxRepresentativeParty()->addContact(
+                new InvoiceSuiteContactDTO(
+                    $newDocumentBuyerTaxRepresentativeContactPersonName,
+                    $newDocumentBuyerTaxRepresentativeContactDepartmentName,
+                    $newDocumentBuyerTaxRepresentativeContactPhoneNumber,
+                    $newDocumentBuyerTaxRepresentativeContactFaxNumber,
+                    $newDocumentBuyerTaxRepresentativeContactEmailAddress
+                )
+            );
+        }
+
+        while ($this->nextDocumentBuyerTaxRepresentativeCommunication()) {
+            $this->getDocumentBuyerTaxRepresentativeCommunication(
+                $newDocumentBuyerTaxRepresentativeCommunicationType,
+                $newDocumentBuyerTaxRepresentativeCommunicationUri
+            );
+
+            $newDocumentDTO->getBuyerTaxRepresentativeParty()->addCommunication(
+                new InvoiceSuiteCommunicationDTO(
+                    $newDocumentBuyerTaxRepresentativeCommunicationUri,
+                    $newDocumentBuyerTaxRepresentativeCommunicationType
                 )
             );
         }
@@ -6041,6 +6158,625 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
 
         $newType = $documentSellerTaxRepresentativeElectronicCommunication->getURIID()?->getSchemeID() ?? '';
         $newUri = $documentSellerTaxRepresentativeElectronicCommunication->getURIID()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
+
+        return $this;
+    }
+
+    /**
+     * Get the name of the buyer's tax representative party
+     *
+     * @param  null|string $newName __BT-X-362, From EXTENDED__ The full formal name under which the party is registered
+     * @return static
+     *
+     * @phpstan-param-out string $newName
+     */
+    public function getDocumentBuyerTaxRepresentativeName(
+        ?string &$newName
+    ): static {
+        $this->traceMethodEnter(__METHOD__);
+
+        $newName = '';
+
+        if ($this->supportsNotAtLeastBasicWlWithTrace(__METHOD__)) {
+            return $this;
+        }
+
+        $newName = $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getName()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first ID of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function firstDocumentBuyerTaxRepresentativeId(): bool
+    {
+        if ($this->supportsNotAtLeastExtended()) {
+            return false;
+        }
+
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getID() ?? []
+            ),
+            'documentbuyertaxrepresentativeid'
+        );
+    }
+
+    /**
+     * Go to the next ID of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function nextDocumentBuyerTaxRepresentativeId(): bool
+    {
+        if ($this->supportsNotAtLeastExtended()) {
+            return false;
+        }
+
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getID() ?? []
+            ),
+            'documentbuyertaxrepresentativeid'
+        );
+    }
+
+    /**
+     * Get the ID of the buyer's tax representative party
+     *
+     * @param  null|string $newId __BT-X-364, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
+     * @return static
+     *
+     * @phpstan-param-out string $newId
+     */
+    public function getDocumentBuyerTaxRepresentativeId(
+        ?string &$newId
+    ): static {
+        $this->traceMethodEnter(__METHOD__);
+
+        $newId = '';
+
+        if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
+            return $this;
+        }
+
+        /**
+         * @var array<IDType>
+         */
+        $documentBuyerTaxRepresentativeIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getID() ?? []);
+
+        /**
+         * @var IDType
+         */
+        $documentBuyerTaxRepresentativeId = $documentBuyerTaxRepresentativeIds[InvoiceSuitePointerUtils::getValue('documentbuyertaxrepresentativeid')];
+
+        $newId = $documentBuyerTaxRepresentativeId->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first ID of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function firstDocumentBuyerTaxRepresentativeGlobalId(): bool
+    {
+        if ($this->supportsNotAtLeastExtended()) {
+            return false;
+        }
+
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getGlobalID() ?? []
+            ),
+            'documentbuyertaxrepresentativeglobalid'
+        );
+    }
+
+    /**
+     * Go to the next ID of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function nextDocumentBuyerTaxRepresentativeGlobalId(): bool
+    {
+        if ($this->supportsNotAtLeastExtended()) {
+            return false;
+        }
+
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getGlobalID() ?? []
+            ),
+            'documentbuyertaxrepresentativeglobalid'
+        );
+    }
+
+    /**
+     * Get the Global ID of the buyer's tax representative party
+     *
+     * @param  null|string $newGlobalId     __BT-X-365, From EXTENDED__ A global identifier of the party
+     * @param  null|string $newGlobalIdType __BT-X-365-0, From EXTENDED__ Type of the global identifier of the party
+     * @return static
+     *
+     * @phpstan-param-out string $newGlobalId
+     * @phpstan-param-out string $newGlobalIdType
+     */
+    public function getDocumentBuyerTaxRepresentativeGlobalId(
+        ?string &$newGlobalId,
+        ?string &$newGlobalIdType
+    ): static {
+        $this->traceMethodEnter(__METHOD__);
+
+        $newGlobalId = '';
+        $newGlobalIdType = '';
+
+        if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
+            return $this;
+        }
+
+        /**
+         * @var array<IDType>
+         */
+        $documentBuyerTaxRepresentativeGlobalIds = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getGlobalID() ?? []);
+
+        /**
+         * @var IDType
+         */
+        $documentBuyerTaxRepresentativeGlobalId = $documentBuyerTaxRepresentativeGlobalIds[InvoiceSuitePointerUtils::getValue('documentbuyertaxrepresentativeglobalid')];
+
+        $newGlobalId = $documentBuyerTaxRepresentativeGlobalId->getValue() ?? '';
+        $newGlobalIdType = $documentBuyerTaxRepresentativeGlobalId->getSchemeID() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first Tax Registration of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function firstDocumentBuyerTaxRepresentativeTaxRegistration(): bool
+    {
+        if ($this->supportsNotAtLeastExtended()) {
+            return false;
+        }
+
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getSpecifiedTaxRegistration() ?? []
+            ),
+            'documentbuyertaxrepresentativetaxregistration'
+        );
+    }
+
+    /**
+     * Go to the next Tax Registration of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function nextDocumentBuyerTaxRepresentativeTaxRegistration(): bool
+    {
+        if ($this->supportsNotAtLeastExtended()) {
+            return false;
+        }
+
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getSpecifiedTaxRegistration() ?? []
+            ),
+            'documentbuyertaxrepresentativetaxregistration'
+        );
+    }
+
+    /**
+     * Get the Tax Registration of the buyer's tax representative party
+     *
+     * @param  null|string $newTaxRegistrationType __BT-367-0, From EXTENDED__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param  null|string $newTaxRegistrationId   __BT-367, From EXTENDED__ Tax identification number
+     * @return static
+     *
+     * @phpstan-param-out string $newTaxRegistrationType
+     * @phpstan-param-out string $newTaxRegistrationId
+     */
+    public function getDocumentBuyerTaxRepresentativeTaxRegistration(
+        ?string &$newTaxRegistrationType,
+        ?string &$newTaxRegistrationId
+    ): static {
+        $this->traceMethodEnter(__METHOD__);
+
+        $newTaxRegistrationType = '';
+        $newTaxRegistrationId = '';
+
+        if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
+            return $this;
+        }
+
+        /**
+         * @var array<TaxRegistrationType>
+         */
+        $documentBuyerTaxRepresentativeTaxRegistrations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getSpecifiedTaxRegistration() ?? []);
+
+        /**
+         * @var TaxRegistrationType
+         */
+        $documentBuyerTaxRepresentativeTaxRegistration = $documentBuyerTaxRepresentativeTaxRegistrations[InvoiceSuitePointerUtils::getValue('documentbuyertaxrepresentativetaxregistration')];
+
+        $newTaxRegistrationType = $documentBuyerTaxRepresentativeTaxRegistration->getID()?->getSchemeID() ?? '';
+        $newTaxRegistrationId = $documentBuyerTaxRepresentativeTaxRegistration->getID()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first address of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function firstDocumentBuyerTaxRepresentativeAddress(): bool
+    {
+        if ($this->supportsNotAtLeastExtended()) {
+            return false;
+        }
+
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getPostalTradeAddress() ?? []
+            ),
+            'documentbuyertaxrepresentativeaddress'
+        );
+    }
+
+    /**
+     * Go to the next address of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function nextDocumentBuyerTaxRepresentativeAddress(): bool
+    {
+        if ($this->supportsNotAtLeastExtended()) {
+            return false;
+        }
+
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getPostalTradeAddress() ?? []
+            ),
+            'documentbuyertaxrepresentativeaddress'
+        );
+    }
+
+    /**
+     * Set the address of the buyer's tax representative party
+     *
+     * @param  null|string $newAddressLine1 __BT-376, From EXTENDED__ The main line in the address. This is usually the street name and house number or the post office box.
+     * @param  null|string $newAddressLine2 __BT-377, From EXTENDED__ Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param  null|string $newAddressLine3 __BT-378, From EXTENDED__ Line 3 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param  null|string $newPostcode     __BT-375, From EXTENDED__ Zip code of the city or municipality in which the party's address is located
+     * @param  null|string $newCity         __BT-379, From EXTENDED__ Name of the city or municipality in which the party's address is located
+     * @param  null|string $newCountryId    __BT-380, From EXTENDED__ Country in which the party's address is located
+     * @param  null|string $newSubDivision  __BT-381, From EXTENDED__ Region or federal state in which the party's address is located
+     * @return static
+     *
+     * @phpstan-param-out string $newAddressLine1
+     * @phpstan-param-out string $newAddressLine2
+     * @phpstan-param-out string $newAddressLine3
+     * @phpstan-param-out string $newPostcode
+     * @phpstan-param-out string $newCity
+     * @phpstan-param-out string $newCountryId
+     * @phpstan-param-out string $newSubDivision
+     */
+    public function getDocumentBuyerTaxRepresentativeAddress(
+        ?string &$newAddressLine1,
+        ?string &$newAddressLine2,
+        ?string &$newAddressLine3,
+        ?string &$newPostcode,
+        ?string &$newCity,
+        ?string &$newCountryId,
+        ?string &$newSubDivision
+    ): static {
+        $this->traceMethodEnter(__METHOD__);
+
+        $newAddressLine1 = '';
+        $newAddressLine2 = '';
+        $newAddressLine3 = '';
+        $newPostcode = '';
+        $newCity = '';
+        $newCountryId = '';
+        $newSubDivision = '';
+
+        if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
+            return $this;
+        }
+
+        /**
+         * @var array<TradeAddressType>
+         */
+        $documentBuyerTaxRepresentativeAddresses = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getPostalTradeAddress() ?? []);
+
+        /**
+         * @var TradeAddressType
+         */
+        $documentBuyerTaxRepresentativeAddress = $documentBuyerTaxRepresentativeAddresses[InvoiceSuitePointerUtils::getValue('documentbuyertaxrepresentativeaddress')];
+
+        $newAddressLine1 = $documentBuyerTaxRepresentativeAddress->getLineOne()?->getValue() ?? '';
+        $newAddressLine2 = $documentBuyerTaxRepresentativeAddress->getLineTwo()?->getValue() ?? '';
+        $newAddressLine3 = $documentBuyerTaxRepresentativeAddress->getLineThree()?->getValue() ?? '';
+        $newPostcode = $documentBuyerTaxRepresentativeAddress->getPostcodeCode()?->getValue() ?? '';
+        $newCity = $documentBuyerTaxRepresentativeAddress->getCityName()?->getValue() ?? '';
+        $newCountryId = $documentBuyerTaxRepresentativeAddress->getCountryID()?->getValue() ?? '';
+        $newSubDivision = $documentBuyerTaxRepresentativeAddress->getCountrySubDivisionName()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first the legal information of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function firstDocumentBuyerTaxRepresentativeLegalOrganisation(): bool
+    {
+        if ($this->supportsNotAtLeastExtended()) {
+            return false;
+        }
+
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getSpecifiedLegalOrganization() ?? []
+            ),
+            'documentbuyertaxrepresentativelegalorganisation'
+        );
+    }
+
+    /**
+     * Go to the next the legal information of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function nextDocumentBuyerTaxRepresentativeLegalOrganisation(): bool
+    {
+        if ($this->supportsNotAtLeastExtended()) {
+            return false;
+        }
+
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getSpecifiedLegalOrganization() ?? []
+            ),
+            'documentbuyertaxrepresentativelegalorganisation'
+        );
+    }
+
+    /**
+     * Get the legal information of the buyer's tax representative party
+     *
+     * @param  null|string $newType __BT-X-366-0, From EXTENDED__ Type of the identification number of the legal registration of the party
+     * @param  null|string $newId   __BT-X-366, From EXTENDED__ Identification number of the legal registration of the party
+     * @param  null|string $newName __BT-X-363, From EXTENDED__ Name by which the party is known, if different from the party's name
+     * @return static
+     *
+     * @phpstan-param-out string $newType
+     * @phpstan-param-out string $newId
+     * @phpstan-param-out string $newName
+     */
+    public function getDocumentBuyerTaxRepresentativeLegalOrganisation(
+        ?string &$newType,
+        ?string &$newId,
+        ?string &$newName
+    ): static {
+        $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newId = '';
+        $newName = '';
+
+        if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
+            return $this;
+        }
+
+        /**
+         * @var array<LegalOrganizationType>
+         */
+        $documentBuyerTaxRepresentativeLegalOrganisations = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getSpecifiedLegalOrganization() ?? []);
+
+        /**
+         * @var LegalOrganizationType
+         */
+        $documentBuyerTaxRepresentativeLegalOrganisation = $documentBuyerTaxRepresentativeLegalOrganisations[InvoiceSuitePointerUtils::getValue('documentbuyertaxrepresentativelegalorganisation')];
+
+        $newType = $documentBuyerTaxRepresentativeLegalOrganisation->getID()?->getSchemeID() ?? '';
+        $newId = $documentBuyerTaxRepresentativeLegalOrganisation->getID()?->getValue() ?? '';
+        $newName = $documentBuyerTaxRepresentativeLegalOrganisation->getTradingBusinessName()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first contact information of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function firstDocumentBuyerTaxRepresentativeContact(): bool
+    {
+        if ($this->supportsNotAtLeastExtended()) {
+            return false;
+        }
+
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getDefinedTradeContact() ?? []
+            ),
+            'documentbuyertaxrepresentativecontact'
+        );
+    }
+
+    /**
+     * Go to the next contact information of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function nextDocumentBuyerTaxRepresentativeContact(): bool
+    {
+        if ($this->supportsNotAtLeastExtended()) {
+            return false;
+        }
+
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getDefinedTradeContact() ?? []
+            ),
+            'documentbuyertaxrepresentativecontact'
+        );
+    }
+
+    /**
+     * Get the contact information of the buyer's tax representative party
+     *
+     * @param  null|string $newPersonName     __BT-X-369, From EXTENDED__ Name of contact person or department or office for the contact point
+     * @param  null|string $newDepartmentName __BT-X-370, From EXTENDED__ Name of the department for the contact point
+     * @param  null|string $newPhoneNumber    __BT-X-372, From EXTENDED__ Telephone number for the contact point
+     * @param  null|string $newFaxNumber      __BT-X-373, From EXTENDED__ Fax number of the contact point
+     * @param  null|string $newEmailAddress   __BT-X-374, From EXTENDED__ E-Mail address of the contact point
+     * @return static
+     *
+     * @phpstan-param-out string $newPersonName
+     * @phpstan-param-out string $newDepartmentName
+     * @phpstan-param-out string $newPhoneNumber
+     * @phpstan-param-out string $newFaxNumber
+     * @phpstan-param-out string $newEmailAddress
+     */
+    public function getDocumentBuyerTaxRepresentativeContact(
+        ?string &$newPersonName,
+        ?string &$newDepartmentName,
+        ?string &$newPhoneNumber,
+        ?string &$newFaxNumber,
+        ?string &$newEmailAddress
+    ): static {
+        $this->traceMethodEnter(__METHOD__);
+
+        $newPersonName = '';
+        $newDepartmentName = '';
+        $newPhoneNumber = '';
+        $newFaxNumber = '';
+        $newEmailAddress = '';
+
+        if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
+            return $this;
+        }
+
+        /**
+         * @var array<TradeContactType>
+         */
+        $documentBuyerTaxRepresentativeContacts = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getDefinedTradeContact() ?? []);
+
+        /**
+         * @var TradeContactType
+         */
+        $documentBuyerTaxRepresentativeContact = $documentBuyerTaxRepresentativeContacts[InvoiceSuitePointerUtils::getValue('documentbuyertaxrepresentativecontact')];
+
+        $newPersonName = $documentBuyerTaxRepresentativeContact->getPersonName()?->getValue() ?? '';
+        $newDepartmentName = $documentBuyerTaxRepresentativeContact->getDepartmentName()?->getValue() ?? '';
+        $newPhoneNumber = $documentBuyerTaxRepresentativeContact->getTelephoneUniversalCommunication()?->getCompleteNumber()?->getValue() ?? '';
+        $newFaxNumber = $documentBuyerTaxRepresentativeContact->getFaxUniversalCommunication()?->getCompleteNumber()?->getValue() ?? '';
+        $newEmailAddress = $documentBuyerTaxRepresentativeContact->getEmailURIUniversalCommunication()?->getURIID()?->getValue() ?? '';
+
+        $this->traceMethodExit(__METHOD__);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first communication information of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function firstDocumentBuyerTaxRepresentativeCommunication(): bool
+    {
+        if ($this->supportsNotAtLeastExtended()) {
+            return false;
+        }
+
+        return InvoiceSuitePointerUtils::hasFirst(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getURIUniversalCommunication() ?? []
+            ),
+            'documentbuyertaxrepresentativeecommunication'
+        );
+    }
+
+    /**
+     * Go to the next communication information of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function nextDocumentBuyerTaxRepresentativeCommunication(): bool
+    {
+        if ($this->supportsNotAtLeastExtended()) {
+            return false;
+        }
+
+        return InvoiceSuitePointerUtils::hasNext(
+            InvoiceSuiteArrayUtils::ensure(
+                $this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getURIUniversalCommunication() ?? []
+            ),
+            'documentbuyertaxrepresentativeecommunication'
+        );
+    }
+
+    /**
+     * Get communication information of the buyer's tax representative party
+     *
+     * @param  null|string $newType __BT-X-368-0, From EXTENDED__ The type for the party's electronic address
+     * @param  null|string $newUri  __BT-X-368, From EXTENDED__ The party's electronic address
+     * @return static
+     *
+     * @phpstan-param-out string $newType
+     * @phpstan-param-out string $newUri
+     */
+    public function getDocumentBuyerTaxRepresentativeCommunication(
+        ?string &$newType,
+        ?string &$newUri
+    ): static {
+        $this->traceMethodEnter(__METHOD__);
+
+        $newType = '';
+        $newUri = '';
+
+        if ($this->supportsNotAtLeastExtendedWithTrace(__METHOD__)) {
+            return $this;
+        }
+
+        /**
+         * @var array<UniversalCommunicationType>
+         */
+        $documentBuyerTaxRepresentativeElectronicCommunications = InvoiceSuiteArrayUtils::ensure($this->getCrossIndustryRootObject()->getSupplyChainTradeTransaction()?->getApplicableHeaderTradeAgreement()?->getBuyerTaxRepresentativeTradeParty()?->getURIUniversalCommunication() ?? []);
+
+        /**
+         * @var UniversalCommunicationType
+         */
+        $documentBuyerTaxRepresentativeElectronicCommunication = $documentBuyerTaxRepresentativeElectronicCommunications[InvoiceSuitePointerUtils::getValue('documentbuyertaxrepresentativeecommunication')];
+
+        $newType = $documentBuyerTaxRepresentativeElectronicCommunication->getURIID()?->getSchemeID() ?? '';
+        $newUri = $documentBuyerTaxRepresentativeElectronicCommunication->getURIID()?->getValue() ?? '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -15086,6 +15822,13 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
         InvoiceSuitePointerUtils::resetSingle('documentsellertaxrepresentativelegalorganisation');
         InvoiceSuitePointerUtils::resetSingle('documentsellertaxrepresentativecontact');
         InvoiceSuitePointerUtils::resetSingle('documentsellertaxrepresentativeecommunication');
+        InvoiceSuitePointerUtils::resetSingle('documentbuyertaxrepresentativeid');
+        InvoiceSuitePointerUtils::resetSingle('documentbuyertaxrepresentativeglobalid');
+        InvoiceSuitePointerUtils::resetSingle('documentbuyertaxrepresentativetaxregistration');
+        InvoiceSuitePointerUtils::resetSingle('documentbuyertaxrepresentativeaddress');
+        InvoiceSuitePointerUtils::resetSingle('documentbuyertaxrepresentativelegalorganisation');
+        InvoiceSuitePointerUtils::resetSingle('documentbuyertaxrepresentativecontact');
+        InvoiceSuitePointerUtils::resetSingle('documentbuyertaxrepresentativeecommunication');
         InvoiceSuitePointerUtils::resetSingle('documentproductenduserid');
         InvoiceSuitePointerUtils::resetSingle('documentproductenduserglobalid');
         InvoiceSuitePointerUtils::resetSingle('documentproductendusertaxregistration');

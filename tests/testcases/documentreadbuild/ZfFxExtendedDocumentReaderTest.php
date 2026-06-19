@@ -920,6 +920,165 @@ final class ZfFxExtendedDocumentReaderTest extends TestCase
         }, '/Undefined (array key|index)/');
     }
 
+    public function testDocumentBuyerTaxRepresentative(): void
+    {
+        // Name
+
+        static::$document->getDocumentBuyerTaxRepresentativeName($newName);
+
+        $this->assertSame('Tax GmbH', $newName);
+
+        // ID
+
+        $this->assertTrue(static::$document->firstDocumentBuyerTaxRepresentativeId());
+
+        static::$document->getDocumentBuyerTaxRepresentativeId($newId);
+
+        $this->assertSame('0815-1147', $newId);
+
+        $this->assertFalse(static::$document->nextDocumentBuyerTaxRepresentativeId());
+
+        // Global ID
+
+        $this->assertTrue(static::$document->firstDocumentBuyerTaxRepresentativeGlobalId());
+
+        static::$document->getDocumentBuyerTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->assertSame('11111-TR', $newGlobalId);
+        $this->assertSame('0088', $newGlobalIdType);
+
+        $this->assertTrue(static::$document->nextDocumentBuyerTaxRepresentativeGlobalId());
+
+        static::$document->getDocumentBuyerTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->assertSame('22222-TR', $newGlobalId);
+        $this->assertSame('0088', $newGlobalIdType);
+
+        $this->assertFalse(static::$document->nextDocumentBuyerTaxRepresentativeGlobalId());
+
+        // Tax Registration
+
+        $this->assertTrue(static::$document->firstDocumentBuyerTaxRepresentativeTaxRegistration());
+
+        static::$document->getDocumentBuyerTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+
+        $this->assertSame('893489787987', $newTaxRegistrationId);
+        $this->assertSame('VA', $newTaxRegistrationType);
+
+        $this->assertFalse(static::$document->nextDocumentBuyerTaxRepresentativeTaxRegistration());
+
+        // Address
+
+        $this->assertTrue(static::$document->firstDocumentBuyerTaxRepresentativeAddress());
+
+        static::$document->getDocumentBuyerTaxRepresentativeAddress(
+            $newAddressLine1,
+            $newAddressLine2,
+            $newAddressLine3,
+            $newPostcode,
+            $newCity,
+            $newCountryId,
+            $newSubDivision
+        );
+
+        $this->assertSame('Line 1', $newAddressLine1);
+        $this->assertSame('Line 2', $newAddressLine2);
+        $this->assertSame('Line 3', $newAddressLine3);
+        $this->assertSame('06108', $newPostcode);
+        $this->assertSame('City', $newCity);
+        $this->assertSame('DE', $newCountryId);
+        $this->assertSame('Bavaria', $newSubDivision);
+
+        $this->assertFalse(static::$document->nextDocumentBuyerTaxRepresentativeAddress());
+
+        // Legal Organisation
+
+        $this->assertTrue(static::$document->firstDocumentBuyerTaxRepresentativeLegalOrganisation());
+
+        static::$document->getDocumentBuyerTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
+
+        $this->assertSame('8884', $newType);
+        $this->assertSame('19283746555', $newId);
+        $this->assertSame('Tax AG', $newName);
+
+        $this->assertFalse(static::$document->nextDocumentBuyerTaxRepresentativeLegalOrganisation());
+
+        // Contact
+
+        $this->assertTrue(static::$document->firstDocumentBuyerTaxRepresentativeContact());
+
+        static::$document->getDocumentBuyerTaxRepresentativeContact(
+            $newPersonName,
+            $newDepartmentName,
+            $newPhoneNumber,
+            $newFaxNumber,
+            $newEmailAddress
+        );
+
+        $this->assertSame('Horst Meier', $newPersonName);
+        $this->assertSame('Buchhaltung', $newDepartmentName);
+        $this->assertSame('0815-4711-0', $newPhoneNumber);
+        $this->assertSame('0815-4712-0', $newFaxNumber);
+        $this->assertSame('horst.meier@tax.de', $newEmailAddress);
+
+        $this->assertFalse(static::$document->nextDocumentBuyerTaxRepresentativeContact());
+
+        // Communication
+
+        $this->assertTrue(static::$document->firstDocumentBuyerTaxRepresentativeCommunication());
+
+        static::$document->getDocumentBuyerTaxRepresentativeCommunication($newType, $newUri);
+
+        $this->assertSame('EM', $newType);
+        $this->assertSame('info@tax.de', $newUri);
+
+        $this->assertFalse(static::$document->nextDocumentBuyerTaxRepresentativeCommunication());
+
+        // Finals
+
+        $this->expectNoticeOrWarningExt(static function (): void {
+            static::$document->getDocumentBuyerTaxRepresentativeId($newId);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(static function (): void {
+            static::$document->getDocumentBuyerTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(static function (): void {
+            static::$document->getDocumentBuyerTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(static function (): void {
+            static::$document->getDocumentBuyerTaxRepresentativeAddress(
+                $newAddressLine1,
+                $newAddressLine2,
+                $newAddressLine3,
+                $newPostcode,
+                $newCity,
+                $newCountryId,
+                $newSubDivision
+            );
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(static function (): void {
+            static::$document->getDocumentBuyerTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(static function (): void {
+            static::$document->getDocumentBuyerTaxRepresentativeContact(
+                $newPersonName,
+                $newDepartmentName,
+                $newPhoneNumber,
+                $newFaxNumber,
+                $newEmailAddress
+            );
+        }, '/Undefined (array key|index)/');
+
+        $this->expectNoticeOrWarningExt(static function (): void {
+            static::$document->getDocumentBuyerTaxRepresentativeCommunication($newType, $newUri);
+        }, '/Undefined (array key|index)/');
+    }
+
     public function testDocumentProductEndUser(): void
     {
         // Name

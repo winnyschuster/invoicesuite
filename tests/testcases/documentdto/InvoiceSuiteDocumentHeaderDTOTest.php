@@ -56,7 +56,8 @@ final class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $this->assertSame([], $invoiceSuiteDocumentHeaderDTO->getDeliveryNoteReferences());
         $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getSellerParty());
         $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getBuyerParty());
-        $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getTaxRepresentativeParty());
+        $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getSellerTaxRepresentativeParty());
+        $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getBuyerTaxRepresentativeParty());
         $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getProductEndUserParty());
         $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getShipToParty());
         $this->assertNotInstanceOf(InvoiceSuitePartyDTO::class, $invoiceSuiteDocumentHeaderDTO->getUltimateShipToParty());
@@ -320,13 +321,22 @@ final class InvoiceSuiteDocumentHeaderDTOTest extends TestCase
         $this->assertSame($buyerPartyValue, $invoiceSuiteDocumentHeaderDTO->getBuyerParty());
     }
 
-    public function testTaxRepresentativePartyGetterAndSetter(): void
+    public function testSellerTaxRepresentativePartyGetterAndSetter(): void
     {
         $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
-        $taxRepresentativePartyValue = new InvoiceSuitePartyDTO();
-        $invoiceSuiteDocumentHeaderDTO->setTaxRepresentativeParty($taxRepresentativePartyValue);
+        $sellerTaxRepresentativePartyValue = new InvoiceSuitePartyDTO();
+        $invoiceSuiteDocumentHeaderDTO->setSellerTaxRepresentativeParty($sellerTaxRepresentativePartyValue);
 
-        $this->assertSame($taxRepresentativePartyValue, $invoiceSuiteDocumentHeaderDTO->getTaxRepresentativeParty());
+        $this->assertSame($sellerTaxRepresentativePartyValue, $invoiceSuiteDocumentHeaderDTO->getSellerTaxRepresentativeParty());
+    }
+
+    public function testBuyerTaxRepresentativePartyGetterAndSetter(): void
+    {
+        $invoiceSuiteDocumentHeaderDTO = new InvoiceSuiteDocumentHeaderDTO();
+        $buyerTaxRepresentativePartyValue = new InvoiceSuitePartyDTO();
+        $invoiceSuiteDocumentHeaderDTO->setBuyerTaxRepresentativeParty($buyerTaxRepresentativePartyValue);
+
+        $this->assertSame($buyerTaxRepresentativePartyValue, $invoiceSuiteDocumentHeaderDTO->getBuyerTaxRepresentativeParty());
     }
 
     public function testProductEndUserPartyGetterAndSetter(): void

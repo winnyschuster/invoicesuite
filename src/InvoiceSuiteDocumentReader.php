@@ -2158,6 +2158,333 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
     }
 
     /**
+     * Get the name of the buyer's tax representative party
+     *
+     * @param  null|string $newName the full formal name under which the party is registered
+     * @return static
+     *
+     * @phpstan-param-out string $newName
+     */
+    public function getDocumentBuyerTaxRepresentativeName(
+        ?string &$newName
+    ): static {
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerTaxRepresentativeName($newName);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first ID of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function firstDocumentBuyerTaxRepresentativeId(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentBuyerTaxRepresentativeId();
+    }
+
+    /**
+     * Go to the next ID of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function nextDocumentBuyerTaxRepresentativeId(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentBuyerTaxRepresentativeId();
+    }
+
+    /**
+     * Get the ID of the buyer's tax representative party
+     *
+     * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
+     * @return static
+     *
+     * @phpstan-param-out string $newId
+     */
+    public function getDocumentBuyerTaxRepresentativeId(
+        ?string &$newId
+    ): static {
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerTaxRepresentativeId($newId);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first global ID of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function firstDocumentBuyerTaxRepresentativeGlobalId(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentBuyerTaxRepresentativeGlobalId();
+    }
+
+    /**
+     * Go to the next global ID of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function nextDocumentBuyerTaxRepresentativeGlobalId(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentBuyerTaxRepresentativeGlobalId();
+    }
+
+    /**
+     * Get the Global ID of the buyer's tax representative party
+     *
+     * @param  null|string $newGlobalId     a global identifier of the party
+     * @param  null|string $newGlobalIdType type of the global identifier of the party
+     * @return static
+     *
+     * @phpstan-param-out string $newGlobalId
+     * @phpstan-param-out string $newGlobalIdType
+     */
+    public function getDocumentBuyerTaxRepresentativeGlobalId(
+        ?string &$newGlobalId,
+        ?string &$newGlobalIdType
+    ): static {
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first Tax Registration of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function firstDocumentBuyerTaxRepresentativeTaxRegistration(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentBuyerTaxRepresentativeTaxRegistration();
+    }
+
+    /**
+     * Go to the next Tax Registration of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function nextDocumentBuyerTaxRepresentativeTaxRegistration(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentBuyerTaxRepresentativeTaxRegistration();
+    }
+
+    /**
+     * Get the Tax Registration of the buyer's tax representative party
+     *
+     * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
+     * @param  null|string $newTaxRegistrationId   tax identification number
+     * @return static
+     *
+     * @phpstan-param-out string $newTaxRegistrationType
+     * @phpstan-param-out string $newTaxRegistrationId
+     */
+    public function getDocumentBuyerTaxRepresentativeTaxRegistration(
+        ?string &$newTaxRegistrationType,
+        ?string &$newTaxRegistrationId
+    ): static {
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first address of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function firstDocumentBuyerTaxRepresentativeAddress(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentBuyerTaxRepresentativeAddress();
+    }
+
+    /**
+     * Go to the next address of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function nextDocumentBuyerTaxRepresentativeAddress(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentBuyerTaxRepresentativeAddress();
+    }
+
+    /**
+     * Set the address of the buyer's tax representative party
+     *
+     * @param  null|string $newAddressLine1 The main line in the address. This is usually the street name and house number or the post office box.
+     * @param  null|string $newAddressLine2 Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param  null|string $newAddressLine3 Line 3 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
+     * @param  null|string $newPostcode     zip code of the city or municipality in which the party's address is located
+     * @param  null|string $newCity         name of the city or municipality in which the party's address is located
+     * @param  null|string $newCountryId    country in which the party's address is located
+     * @param  null|string $newSubDivision  region or federal state in which the party's address is located
+     * @return static
+     *
+     * @phpstan-param-out string $newAddressLine1
+     * @phpstan-param-out string $newAddressLine2
+     * @phpstan-param-out string $newAddressLine3
+     * @phpstan-param-out string $newPostcode
+     * @phpstan-param-out string $newCity
+     * @phpstan-param-out string $newCountryId
+     * @phpstan-param-out string $newSubDivision
+     */
+    public function getDocumentBuyerTaxRepresentativeAddress(
+        ?string &$newAddressLine1,
+        ?string &$newAddressLine2,
+        ?string &$newAddressLine3,
+        ?string &$newPostcode,
+        ?string &$newCity,
+        ?string &$newCountryId,
+        ?string &$newSubDivision
+    ): static {
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerTaxRepresentativeAddress(
+            $newAddressLine1,
+            $newAddressLine2,
+            $newAddressLine3,
+            $newPostcode,
+            $newCity,
+            $newCountryId,
+            $newSubDivision
+        );
+
+        return $this;
+    }
+
+    /**
+     * Go to the first the legal information of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function firstDocumentBuyerTaxRepresentativeLegalOrganisation(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentBuyerTaxRepresentativeLegalOrganisation();
+    }
+
+    /**
+     * Go to the next the legal information of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function nextDocumentBuyerTaxRepresentativeLegalOrganisation(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentBuyerTaxRepresentativeLegalOrganisation();
+    }
+
+    /**
+     * Get the legal information of the buyer's tax representative party
+     *
+     * @param  null|string $newType type of the identification number of the legal registration of the party
+     * @param  null|string $newId   identification number of the legal registration of the party
+     * @param  null|string $newName name by which the party is known, if different from the party's name
+     * @return static
+     *
+     * @phpstan-param-out string $newType
+     * @phpstan-param-out string $newId
+     * @phpstan-param-out string $newName
+     */
+    public function getDocumentBuyerTaxRepresentativeLegalOrganisation(
+        ?string &$newType,
+        ?string &$newId,
+        ?string &$newName
+    ): static {
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
+
+        return $this;
+    }
+
+    /**
+     * Go to the first contact information of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function firstDocumentBuyerTaxRepresentativeContact(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentBuyerTaxRepresentativeContact();
+    }
+
+    /**
+     * Go to the next contact information of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function nextDocumentBuyerTaxRepresentativeContact(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentBuyerTaxRepresentativeContact();
+    }
+
+    /**
+     * Get the contact information of the buyer's tax representative party
+     *
+     * @param  null|string $newPersonName     name of contact person or department or office for the contact point
+     * @param  null|string $newDepartmentName name of the department for the contact point
+     * @param  null|string $newPhoneNumber    telephone number for the contact point
+     * @param  null|string $newFaxNumber      fax number of the contact point
+     * @param  null|string $newEmailAddress   E-Mail address of the contact point
+     * @return static
+     *
+     * @phpstan-param-out string $newPersonName
+     * @phpstan-param-out string $newDepartmentName
+     * @phpstan-param-out string $newPhoneNumber
+     * @phpstan-param-out string $newFaxNumber
+     * @phpstan-param-out string $newEmailAddress
+     */
+    public function getDocumentBuyerTaxRepresentativeContact(
+        ?string &$newPersonName,
+        ?string &$newDepartmentName,
+        ?string &$newPhoneNumber,
+        ?string &$newFaxNumber,
+        ?string &$newEmailAddress
+    ): static {
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerTaxRepresentativeContact(
+            $newPersonName,
+            $newDepartmentName,
+            $newPhoneNumber,
+            $newFaxNumber,
+            $newEmailAddress
+        );
+
+        return $this;
+    }
+
+    /**
+     * Go to the first communication information of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function firstDocumentBuyerTaxRepresentativeCommunication(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentBuyerTaxRepresentativeCommunication();
+    }
+
+    /**
+     * Go to the next communication information of the buyer's tax representative party
+     *
+     * @return bool
+     */
+    public function nextDocumentBuyerTaxRepresentativeCommunication(): bool
+    {
+        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentBuyerTaxRepresentativeCommunication();
+    }
+
+    /**
+     * Get communication information of the buyer's tax representative party
+     *
+     * @param  null|string $newType the type for the party's electronic address
+     * @param  null|string $newUri  the party's electronic address
+     * @return static
+     *
+     * @phpstan-param-out string $newType
+     * @phpstan-param-out string $newUri
+     */
+    public function getDocumentBuyerTaxRepresentativeCommunication(
+        ?string &$newType,
+        ?string &$newUri
+    ): static {
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentBuyerTaxRepresentativeCommunication($newType, $newUri);
+
+        return $this;
+    }
+
+    /**
      * Get the name of the product end-user party
      *
      * @param  null|string $newName the full formal name under which the party is registered

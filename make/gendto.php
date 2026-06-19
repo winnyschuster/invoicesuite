@@ -380,6 +380,8 @@ function gendto(array $definitions): void
              */
 
             if (true === $propertyIsArray) {
+                $namespace->addUse('horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils');
+
                 /**
                  * -------------------
                  * -- Adder
@@ -410,7 +412,7 @@ function gendto(array $definitions): void
                 $firster->setReturnType('static');
                 $firster->addParameter('callback')->setType('callable');
                 $firster->addParameter('callbackElse')->setType('callable')->setNullable(true)->setDefaultValue(null);
-                $firster->addBody(sprintf('if (($%2$s = reset($this->%1$s)) !== false) {', $propertyClassPropertyName, $propertyName));
+                $firster->addBody(sprintf('if (($%2$s = InvoiceSuiteArrayUtils::first($this->%1$s)) !== false) {', $propertyClassPropertyName, $propertyName));
                 $firster->addBody(sprintf('    $callback($%1$s);', $propertyName));
                 $firster->addBody('} elseif (!is_null($callbackElse)) {');
                 $firster->addBody('    $callbackElse();');
@@ -427,7 +429,7 @@ function gendto(array $definitions): void
                 $nexter->setReturnType('static');
                 $nexter->addParameter('callback')->setType('callable');
                 $nexter->addParameter('callbackElse')->setType('callable')->setNullable(true)->setDefaultValue(null);
-                $nexter->addBody(sprintf('if (($%2$s = next($this->%1$s)) !== false) {', $propertyClassPropertyName, $propertyName));
+                $nexter->addBody(sprintf('if (($%2$s = InvoiceSuiteArrayUtils::next($this->%1$s)) !== false) {', $propertyClassPropertyName, $propertyName));
                 $nexter->addBody(sprintf('    $callback($%1$s);', $propertyName));
                 $nexter->addBody('} elseif (!is_null($callbackElse)) {');
                 $nexter->addBody('    $callbackElse();');
@@ -444,7 +446,7 @@ function gendto(array $definitions): void
                 $prever->setReturnType('static');
                 $prever->addParameter('callback')->setType('callable');
                 $prever->addParameter('callbackElse')->setType('callable')->setNullable(true)->setDefaultValue(null);
-                $prever->addBody(sprintf('if (($%2$s = prev($this->%1$s)) !== false) {', $propertyClassPropertyName, $propertyName));
+                $prever->addBody(sprintf('if (($%2$s = InvoiceSuiteArrayUtils::previous($this->%1$s)) !== false) {', $propertyClassPropertyName, $propertyName));
                 $prever->addBody(sprintf('    $callback($%1$s);', $propertyName));
                 $prever->addBody('} elseif (!is_null($callbackElse)) {');
                 $prever->addBody('    $callbackElse();');
@@ -461,7 +463,7 @@ function gendto(array $definitions): void
                 $laster->setReturnType('static');
                 $laster->addParameter('callback')->setType('callable');
                 $laster->addParameter('callbackElse')->setType('callable')->setNullable(true)->setDefaultValue(null);
-                $laster->addBody(sprintf('if (($%2$s = end($this->%1$s)) !== false) {', $propertyClassPropertyName, $propertyName));
+                $laster->addBody(sprintf('if (($%2$s = InvoiceSuiteArrayUtils::last($this->%1$s)) !== false) {', $propertyClassPropertyName, $propertyName));
                 $laster->addBody(sprintf('    $callback($%1$s);', $propertyName));
                 $laster->addBody('} elseif (!is_null($callbackElse)) {');
                 $laster->addBody('    $callbackElse();');
@@ -540,7 +542,7 @@ function gendto(array $definitions): void
                 $filter = $class->addMethod(sprintf('filter%s', ucfirst((string) $propertyLooperName)));
                 $filter->setReturnType('array');
                 $filter->addParameter('callback')->setType('callable');
-                $filter->addBody(sprintf('return array_filter($this->%1$s, $callback);', $propertyClassPropertyName, $propertyName));
+                $filter->addBody(sprintf('return InvoiceSuiteArrayUtils::filter($this->%1$s, $callback);', $propertyClassPropertyName, $propertyName));
                 $filter->addComment(sprintf('Filter %1$s', $propertyCaption));
                 $filter->addComment(sprintf('@param callable $callback Callback to execute filtering for each item', $propertyCaption));
                 $filter->addComment(sprintf('@return array<%s>', basename((string) $propertyType)));
@@ -557,8 +559,8 @@ function gendto(array $definitions): void
                 $filterfirster->addParameter('callbackElse')->setType('callable')->setNullable(true)->setDefaultValue(null);
                 $filterfirster->addBody(sprintf('$filtered%1$s = $this->filter%1$s($filterCallback);', ucfirst((string) $propertyLooperName)));
                 $filterfirster->addBody('');
-                $filterfirster->addBody(sprintf('if ($filtered%3$s !== []) {', $propertyClassPropertyName, $propertyName, ucfirst((string) $propertyLooperName)));
-                $filterfirster->addBody(sprintf('    $%2$s = reset($filtered%3$s);', $propertyClassPropertyName, $propertyName, ucfirst((string) $propertyLooperName)));
+                $filterfirster->addBody(sprintf('if (!InvoiceSuiteArrayUtils::empty($filtered%3$s)) {', $propertyClassPropertyName, $propertyName, ucfirst((string) $propertyLooperName)));
+                $filterfirster->addBody(sprintf('    $%2$s = InvoiceSuiteArrayUtils::first($filtered%3$s);', $propertyClassPropertyName, $propertyName, ucfirst((string) $propertyLooperName)));
                 $filterfirster->addBody(sprintf('    $callback($%1$s);', $propertyName));
                 $filterfirster->addBody('} elseif (!is_null($callbackElse)) {');
                 $filterfirster->addBody('    $callbackElse();');
@@ -579,8 +581,8 @@ function gendto(array $definitions): void
                 $filterlaster->addParameter('callbackElse')->setType('callable')->setNullable(true)->setDefaultValue(null);
                 $filterlaster->addBody(sprintf('$filtered%1$s = $this->filter%1$s($filterCallback);', ucfirst((string) $propertyLooperName)));
                 $filterlaster->addBody('');
-                $filterlaster->addBody(sprintf('if ($filtered%3$s !== []) {', $propertyClassPropertyName, $propertyName, ucfirst((string) $propertyLooperName)));
-                $filterlaster->addBody(sprintf('    $%2$s = end($filtered%3$s);', $propertyClassPropertyName, $propertyName, ucfirst((string) $propertyLooperName)));
+                $filterlaster->addBody(sprintf('if (!InvoiceSuiteArrayUtils::empty($filtered%3$s)) {', $propertyClassPropertyName, $propertyName, ucfirst((string) $propertyLooperName)));
+                $filterlaster->addBody(sprintf('    $%2$s = InvoiceSuiteArrayUtils::last($filtered%3$s);', $propertyClassPropertyName, $propertyName, ucfirst((string) $propertyLooperName)));
                 $filterlaster->addBody(sprintf('    $callback($%1$s);', $propertyName));
                 $filterlaster->addBody('} elseif (!is_null($callbackElse)) {');
                 $filterlaster->addBody('    $callbackElse();');
@@ -1539,9 +1541,15 @@ $definitions = [
                 'isarray' => false,
                 'isobject' => true,
             ],
-            'taxRepresentativeParty' => [
+            'sellerTaxRepresentativeParty' => [
                 'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
-                'caption' => 'The Tax Representativ Party',
+                'caption' => 'The Seller\'s Tax Representativ Party',
+                'isarray' => false,
+                'isobject' => true,
+            ],
+            'buyerTaxRepresentativeParty' => [
+                'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
+                'caption' => 'The Buyer\'s Tax Representativ Party',
                 'isarray' => false,
                 'isobject' => true,
             ],

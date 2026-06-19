@@ -303,6 +303,73 @@ final class ZugferdPdfDocumentReaderComfortTest extends TestCase
         $this->assertFalse(self::$document->nextDocumentSellerTaxRepresentativeContact());
     }
 
+    public function testDocumentBuyerTaxRepresentativeGeneral(): void
+    {
+        self::$document->getDocumentBuyerTaxRepresentative($buyertaxreprname, $buyertaxreprids, $buyertaxreprdescription);
+        $this->assertSame('', $buyertaxreprname);
+        $this->assertIsArray($buyertaxreprids);
+        $this->assertEmpty($buyertaxreprids);
+        $this->assertSame('', $buyertaxreprdescription);
+    }
+
+    public function testDocumentBuyerTaxRepresentativeGlobalId(): void
+    {
+        self::$document->getDocumentBuyerTaxRepresentativeGlobalId($buyertaxreprglobalids);
+        $this->assertIsArray($buyertaxreprglobalids);
+        $this->assertEmpty($buyertaxreprglobalids);
+    }
+
+    public function testDocumentBuyerTaxRepresentativeTaxRegistration(): void
+    {
+        self::$document->getDocumentBuyerTaxRepresentativeTaxRegistration($buyertaxreprtaxreg);
+        $this->assertIsArray($buyertaxreprtaxreg);
+        $this->assertEmpty($buyertaxreprtaxreg);
+    }
+
+    public function testDocumentBuyerTaxRepresentativeAddress(): void
+    {
+        self::$document->getDocumentBuyerTaxRepresentativeAddress($buyertaxreprlineone, $buyertaxreprlinetwo, $buyertaxreprlinethree, $buyertaxreprpostcode, $buyertaxreprcity, $buyertaxreprcountry, $buyertaxreprsubdivision);
+        $this->assertSame('', $buyertaxreprlineone);
+        $this->assertSame('', $buyertaxreprlinetwo);
+        $this->assertSame('', $buyertaxreprlinethree);
+        $this->assertSame('', $buyertaxreprpostcode);
+        $this->assertSame('', $buyertaxreprcity);
+        $this->assertSame('', $buyertaxreprcountry);
+        $this->assertIsArray($buyertaxreprsubdivision);
+        $this->assertEmpty($buyertaxreprsubdivision);
+    }
+
+    public function testDocumentBuyerTaxRepresentativeLegalOrganization(): void
+    {
+        self::$document->getDocumentBuyerTaxRepresentativeLegalOrganisation($buyertaxreprlegalorgid, $buyertaxreprlegalorgtype, $buyertaxreprlegalorgname);
+        $this->assertSame('', $buyertaxreprlegalorgid);
+        $this->assertSame('', $buyertaxreprlegalorgtype);
+        $this->assertSame('', $buyertaxreprlegalorgname);
+    }
+
+    public function testDocumentBuyerTaxRepresentativeContact(): void
+    {
+        $this->assertFalse(self::$document->firstDocumentBuyerTaxRepresentativeContact());
+
+        self::$document->getDocumentBuyerTaxRepresentativeContact($buyertaxreprcontactpersonname, $buyertaxreprcontactdepartmentname, $buyertaxreprcontactphoneno, $buyertaxreprcontactfaxno, $buyertaxreprcontactemailaddr);
+
+        $this->assertSame('', $buyertaxreprcontactpersonname);
+        $this->assertSame('', $buyertaxreprcontactdepartmentname);
+        $this->assertSame('', $buyertaxreprcontactphoneno);
+        $this->assertSame('', $buyertaxreprcontactfaxno);
+        $this->assertSame('', $buyertaxreprcontactemailaddr);
+
+        $this->assertFalse(self::$document->nextDocumentBuyerTaxRepresentativeContact());
+
+        self::$document->getDocumentBuyerTaxRepresentativeContact($buyertaxreprcontactpersonname, $buyertaxreprcontactdepartmentname, $buyertaxreprcontactphoneno, $buyertaxreprcontactfaxno, $buyertaxreprcontactemailaddr);
+
+        $this->assertSame('', $buyertaxreprcontactpersonname);
+        $this->assertSame('', $buyertaxreprcontactdepartmentname);
+        $this->assertSame('', $buyertaxreprcontactphoneno);
+        $this->assertSame('', $buyertaxreprcontactfaxno);
+        $this->assertSame('', $buyertaxreprcontactemailaddr);
+    }
+
     public function testDocumentShipToGeneral(): void
     {
         self::$document->getDocumentShipTo($shiptoname, $shiptoids, $shiptodescription);

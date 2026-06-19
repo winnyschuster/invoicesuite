@@ -1245,6 +1245,227 @@ class ZugferdDocumentReader extends ZugferdDocument
     }
 
     /**
+     * Get detailed information about the buyer's tax agent.
+     *
+     * @param  null|string            $name        __BT-X-362, From EXTENDED__ The full name of the buyer's tax representative
+     * @param  null|array<int,string> $id          __BT-X-364, From EXTENDED__ An array of identifiers of the buyer's tax representative
+     * @param  null|string            $description __BT-, From __ Further legal information that is relevant for the buyer's tax representative
+     * @return static
+     *
+     * @phpstan-param-out string $name
+     * @phpstan-param-out array<int,string> $id
+     * @phpstan-param-out string $description
+     */
+    public function getDocumentBuyerTaxRepresentative(
+        ?string &$name,
+        ?array &$id,
+        ?string &$description
+    ): static {
+        $id = [];
+        $name = '';
+        $description = '';
+
+        $this->documentReader->getDocumentBuyerTaxRepresentativeName($name);
+
+        if ($this->documentReader->firstDocumentBuyerTaxRepresentativeId()) {
+            do {
+                $this->documentReader->getDocumentBuyerTaxRepresentativeId($newId);
+                InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($id, $newId);
+            } while ($this->documentReader->nextDocumentBuyerTaxRepresentativeId());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get document buyer tax representative global ids.
+     *
+     * @param  null|array<string,string> $globalID __BT-X-365/BT-X-365-0, From EXTENDED__ Returns an array of the buyer's tax representative identifiers indexed by the identification scheme
+     * @return static
+     *
+     * @phpstan-param-out array<string,string> $globalID
+     */
+    public function getDocumentBuyerTaxRepresentativeGlobalId(
+        ?array &$globalID
+    ): static {
+        $globalID = [];
+
+        if ($this->documentReader->firstDocumentBuyerTaxRepresentativeGlobalId()) {
+            do {
+                $this->documentReader->getDocumentBuyerTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
+                InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($globalID, $newGlobalIdType, $newGlobalId);
+            } while ($this->documentReader->nextDocumentBuyerTaxRepresentativeGlobalId());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get detailed information on the buyer's tax representative tax information.
+     *
+     * @param  null|array<string,string> $taxReg __BT-X-367/BT-X-367-0, From EXTENDED__ Array of tax numbers indexed by the schemeid (VA, FC, etc.)
+     * @return static
+     *
+     * @phpstan-param-out array<string,string> $taxReg
+     */
+    public function getDocumentBuyerTaxRepresentativeTaxRegistration(
+        ?array &$taxReg
+    ): static {
+        $taxReg = [];
+
+        if ($this->documentReader->firstDocumentBuyerTaxRepresentativeTaxRegistration()) {
+            do {
+                $this->documentReader->getDocumentBuyerTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+                InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($taxReg, $newTaxRegistrationType, $newTaxRegistrationId);
+            } while ($this->documentReader->nextDocumentBuyerTaxRepresentativeTaxRegistration());
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get the address of the buyer's tax representative.
+     *
+     * @param  null|string            $lineOne     __BT-X-383, From EXTENDED__ The main line in the buyer's tax representative address
+     * @param  null|string            $lineTwo     __BT-X-384, From EXTENDED__ Line 2 of the buyer's tax representative address
+     * @param  null|string            $lineThree   __BT-X-385, From EXTENDED__ Line 3 of the buyer's tax representative address
+     * @param  null|string            $postCode    __BT-X-382, From EXTENDED__ Identifier for a group of properties, such as a zip code
+     * @param  null|string            $city        __BT-X-386, From EXTENDED__ Usual name of the city or municipality in which the buyer's tax representative address is located
+     * @param  null|string            $country     __BT-X-387, From EXTENDED__ Code used to identify the country. The lists of approved countries are maintained by the EN ISO 3166-1 Maintenance Agency "Codes for the representation of names of countries and their subdivisions"
+     * @param  null|array<int,string> $subDivision __BT-X-388, From EXTENDED__ The buyer's tax representative state
+     * @return static
+     *
+     * @phpstan-param-out string $lineOne
+     * @phpstan-param-out string $lineTwo
+     * @phpstan-param-out string $lineThree
+     * @phpstan-param-out string $postCode
+     * @phpstan-param-out string $city
+     * @phpstan-param-out string $country
+     * @phpstan-param-out array<int,string> $subDivision
+     */
+    public function getDocumentBuyerTaxRepresentativeAddress(
+        ?string &$lineOne,
+        ?string &$lineTwo,
+        ?string &$lineThree,
+        ?string &$postCode,
+        ?string &$city,
+        ?string &$country,
+        ?array &$subDivision
+    ): static {
+        $lineOne = '';
+        $lineTwo = '';
+        $lineThree = '';
+        $postCode = '';
+        $city = '';
+        $country = '';
+        $subDivision = [];
+
+        if ($this->documentReader->firstDocumentBuyerTaxRepresentativeAddress()) {
+            $this->documentReader->getDocumentBuyerTaxRepresentativeAddress(
+                $lineOne,
+                $lineTwo,
+                $lineThree,
+                $postCode,
+                $city,
+                $country,
+                $newSubDivision
+            );
+
+            InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($subDivision, $newSubDivision);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get the legal organisation of buyers tax agent.
+     *
+     * @param  null|string $legalOrgId   __BT-X-366, From EXTENDED__ An identifier issued by an official registrar that identifies the buyer's tax representative as a legal entity or legal person
+     * @param  null|string $legalOrgType __BT-X-366-0, From EXTENDED__ The identifier for the identification scheme of the legal registration of the buyer's tax representative. If the identification scheme is used, it must be selected from ISO/IEC 6523 list
+     * @param  null|string $legalOrgName __BT-X-363, From EXTENDED__ A name by which the buyer's tax representative is known, if different from the buyer's tax representative name (also known as the company name)
+     * @return static
+     *
+     * @phpstan-param-out string $legalOrgId
+     * @phpstan-param-out string $legalOrgType
+     * @phpstan-param-out string $legalOrgName
+     */
+    public function getDocumentBuyerTaxRepresentativeLegalOrganisation(
+        ?string &$legalOrgId,
+        ?string &$legalOrgType,
+        ?string &$legalOrgName
+    ): static {
+        $legalOrgId = '';
+        $legalOrgType = '';
+        $legalOrgName = '';
+
+        if ($this->documentReader->firstDocumentBuyerTaxRepresentativeLegalOrganisation()) {
+            $this->documentReader->getDocumentBuyerTaxRepresentativeLegalOrganisation(
+                $legalOrgType,
+                $legalOrgId,
+                $legalOrgName
+            );
+        }
+
+        return $this;
+    }
+
+    /**
+     * Seek to the first buyer tax representative contact of the document. Returns true if a first contact is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentBuyerTaxRepresentativeContact.
+     *
+     * @return bool
+     */
+    public function firstDocumentBuyerTaxRepresentativeContact(): bool
+    {
+        return $this->documentReader->firstDocumentBuyerTaxRepresentativeContact();
+    }
+
+    /**
+     * Seek to the next available buyer tax representative contact of the document. Returns true if another contact is available, otherwise false.
+     * You may use this together with ZugferdDocumentReader::getDocumentBuyerTaxRepresentativeContact.
+     *
+     * @return bool
+     */
+    public function nextDocumentBuyerTaxRepresentativeContact(): bool
+    {
+        return $this->documentReader->nextDocumentBuyerTaxRepresentativeContact();
+    }
+
+    /**
+     * Get contact information of the buyer's tax representative.
+     *
+     * @param  null|string $contactPersonName     __BT-X-369, From EXTENDED__ Such as personal name, name of contact person or department or office
+     * @param  null|string $contactDepartmentName __BT-X-370, From EXTENDED__ If a contact person is specified, either the name or the department must be transmitted
+     * @param  null|string $contactPhoneNo        __BT-X-372, From EXTENDED__ A telephone number for the contact point
+     * @param  null|string $contactFaxNo          __BT-X-373, From EXTENDED__ A fax number of the contact point
+     * @param  null|string $contactEmailAddress   __BT-X-374, From EXTENDED__ An e-mail address of the contact point
+     * @return static
+     *
+     * @phpstan-param-out string $contactPersonName
+     * @phpstan-param-out string $contactDepartmentName
+     * @phpstan-param-out string $contactPhoneNo
+     * @phpstan-param-out string $contactFaxNo
+     * @phpstan-param-out string $contactEmailAddress
+     */
+    public function getDocumentBuyerTaxRepresentativeContact(
+        ?string &$contactPersonName,
+        ?string &$contactDepartmentName,
+        ?string &$contactPhoneNo,
+        ?string &$contactFaxNo,
+        ?string &$contactEmailAddress
+    ): static {
+        $this->documentReader->getDocumentBuyerTaxRepresentativeContact(
+            $contactPersonName,
+            $contactDepartmentName,
+            $contactPhoneNo,
+            $contactFaxNo,
+            $contactEmailAddress
+        );
+
+        return $this;
+    }
+
+    /**
      * Get detailed information on the product end user (general information).
      *
      * @param  null|string            $name        __BT-X-128, From EXTENDED__ Name/company name of the end user

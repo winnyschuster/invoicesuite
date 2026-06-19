@@ -7963,7 +7963,7 @@ final class XRechnungUBLInvoiceBuilderTest extends TestCase
                     ->addContact(new InvoiceSuiteContactDTO('Horst Meier', 'Buchhaltung', '0815-4711', '0815-4712', 'horst.meier@kunde.de'))
                     ->addCommunication(new InvoiceSuiteCommunicationDTO('info@kunde.de', 'EM'))
             )
-            ->setTaxRepresentativeParty(
+            ->setSellerTaxRepresentativeParty(
                 (new InvoiceSuitePartyDTO())
                     ->addName('Tax GmbH')
                     ->addId(new InvoiceSuiteIdDTO('0815-4711'))

@@ -216,11 +216,18 @@ class InvoiceSuiteDocumentHeaderDTO implements JsonSerializable
     protected ?InvoiceSuitePartyDTO $buyerParty = null;
 
     /**
-     * The Tax Representativ Party
+     * The Seller's Tax Representativ Party
      *
      * @var null|InvoiceSuitePartyDTO
      */
-    protected ?InvoiceSuitePartyDTO $taxRepresentativeParty = null;
+    protected ?InvoiceSuitePartyDTO $sellerTaxRepresentativeParty = null;
+
+    /**
+     * The Buyer's Tax Representativ Party
+     *
+     * @var null|InvoiceSuitePartyDTO
+     */
+    protected ?InvoiceSuitePartyDTO $buyerTaxRepresentativeParty = null;
 
     /**
      * The Product Enduser Party
@@ -378,7 +385,8 @@ class InvoiceSuiteDocumentHeaderDTO implements JsonSerializable
      * @param array<InvoiceSuiteReferenceDocumentDTO>    $deliveryNoteReferences          The delivery note reference
      * @param null|InvoiceSuitePartyDTO                  $sellerParty                     The Seller/Supplier Party
      * @param null|InvoiceSuitePartyDTO                  $buyerParty                      The Buyer/Customer Party
-     * @param null|InvoiceSuitePartyDTO                  $taxRepresentativeParty          The Tax Representativ Party
+     * @param null|InvoiceSuitePartyDTO                  $sellerTaxRepresentativeParty    The Seller's Tax Representativ Party
+     * @param null|InvoiceSuitePartyDTO                  $buyerTaxRepresentativeParty     The Buyer's Tax Representativ Party
      * @param null|InvoiceSuitePartyDTO                  $productEndUserParty             The Product Enduser Party
      * @param null|InvoiceSuitePartyDTO                  $shipToParty                     The Ship-To Party
      * @param null|InvoiceSuitePartyDTO                  $ultimateShipToParty             The Ultimate Ship-To Party
@@ -426,7 +434,8 @@ class InvoiceSuiteDocumentHeaderDTO implements JsonSerializable
         array $deliveryNoteReferences = [],
         ?InvoiceSuitePartyDTO $sellerParty = null,
         ?InvoiceSuitePartyDTO $buyerParty = null,
-        ?InvoiceSuitePartyDTO $taxRepresentativeParty = null,
+        ?InvoiceSuitePartyDTO $sellerTaxRepresentativeParty = null,
+        ?InvoiceSuitePartyDTO $buyerTaxRepresentativeParty = null,
         ?InvoiceSuitePartyDTO $productEndUserParty = null,
         ?InvoiceSuitePartyDTO $shipToParty = null,
         ?InvoiceSuitePartyDTO $ultimateShipToParty = null,
@@ -473,7 +482,8 @@ class InvoiceSuiteDocumentHeaderDTO implements JsonSerializable
         $this->setDeliveryNoteReferences($deliveryNoteReferences);
         $this->setSellerParty($sellerParty);
         $this->setBuyerParty($buyerParty);
-        $this->setTaxRepresentativeParty($taxRepresentativeParty);
+        $this->setSellerTaxRepresentativeParty($sellerTaxRepresentativeParty);
+        $this->setBuyerTaxRepresentativeParty($buyerTaxRepresentativeParty);
         $this->setProductEndUserParty($productEndUserParty);
         $this->setShipToParty($shipToParty);
         $this->setUltimateShipToParty($ultimateShipToParty);
@@ -4603,25 +4613,49 @@ class InvoiceSuiteDocumentHeaderDTO implements JsonSerializable
     }
 
     /**
-     * Returns the Tax Representativ Party
+     * Returns the Seller's Tax Representativ Party
      *
      * @return null|InvoiceSuitePartyDTO
      */
-    public function getTaxRepresentativeParty(): ?InvoiceSuitePartyDTO
+    public function getSellerTaxRepresentativeParty(): ?InvoiceSuitePartyDTO
     {
-        return $this->taxRepresentativeParty;
+        return $this->sellerTaxRepresentativeParty;
     }
 
     /**
-     * Sets the Tax Representativ Party
+     * Sets the Seller's Tax Representativ Party
      *
-     * @param  null|InvoiceSuitePartyDTO $taxRepresentativeParty The Tax Representativ Party
+     * @param  null|InvoiceSuitePartyDTO $sellerTaxRepresentativeParty The Seller's Tax Representativ Party
      * @return static
      */
-    public function setTaxRepresentativeParty(
-        ?InvoiceSuitePartyDTO $taxRepresentativeParty
+    public function setSellerTaxRepresentativeParty(
+        ?InvoiceSuitePartyDTO $sellerTaxRepresentativeParty
     ): static {
-        $this->taxRepresentativeParty = $taxRepresentativeParty;
+        $this->sellerTaxRepresentativeParty = $sellerTaxRepresentativeParty;
+
+        return $this;
+    }
+
+    /**
+     * Returns the Buyer's Tax Representativ Party
+     *
+     * @return null|InvoiceSuitePartyDTO
+     */
+    public function getBuyerTaxRepresentativeParty(): ?InvoiceSuitePartyDTO
+    {
+        return $this->buyerTaxRepresentativeParty;
+    }
+
+    /**
+     * Sets the Buyer's Tax Representativ Party
+     *
+     * @param  null|InvoiceSuitePartyDTO $buyerTaxRepresentativeParty The Buyer's Tax Representativ Party
+     * @return static
+     */
+    public function setBuyerTaxRepresentativeParty(
+        ?InvoiceSuitePartyDTO $buyerTaxRepresentativeParty
+    ): static {
+        $this->buyerTaxRepresentativeParty = $buyerTaxRepresentativeParty;
 
         return $this;
     }
