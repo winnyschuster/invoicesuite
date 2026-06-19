@@ -266,7 +266,7 @@ function helperOutputDocumentReader(InvoiceSuiteAbstractDocumentFormatReader|Inv
         echo sprintf("Buyer Comm. ....... %s (%s)\n", $documentBuyerCommunicationUri, $documentBuyerCommunicationType);
     }
 
-    // Read information about the Tax Representative Party
+    // Read information about the seller's tax representative party
 
     echo "\n";
     echo "Tax Representativ Party\n";

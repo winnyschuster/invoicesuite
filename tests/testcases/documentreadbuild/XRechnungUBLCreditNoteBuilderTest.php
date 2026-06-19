@@ -8520,7 +8520,7 @@ final class XRechnungUBLCreditNoteBuilderTest extends TestCase
         $this->assertXPathValueWithIndexAndAttribute('/ns:CreditNote/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID', 0, 'info@kunde.de', 'schemeID', 'EM');
         $this->assertXPathNotExistsWithIndex('/ns:CreditNote/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID', 1);
 
-        // Tax representative Party
+        // seller's tax representative party
 
         $this->assertXPathValueWithIndex('/ns:CreditNote/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name', 0, 'Tax GmbH');
         $this->assertXPathNotExistsWithIndex('/ns:CreditNote/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name', 1);

@@ -610,7 +610,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
             );
         }
 
-        // Document-Level Seller Tax Representative Party
+        // Document-Level Seller seller's tax representative party
 
         $newDocumentDTO->setTaxRepresentativeParty(new InvoiceSuitePartyDTO());
 
@@ -4494,7 +4494,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Get the name of the tax representative party
+     * Get the name of the seller's tax representative party
      *
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
@@ -4523,7 +4523,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Go to the first ID of the tax representative party
+     * Go to the first ID of the seller's tax representative party
      *
      * @return bool
      */
@@ -4533,7 +4533,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Go to the next ID of the tax representative party
+     * Go to the next ID of the seller's tax representative party
      *
      * @return bool
      */
@@ -4543,7 +4543,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Get the ID of the tax representative party
+     * Get the ID of the seller's tax representative party
      *
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
@@ -4562,7 +4562,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Go to the first global ID of the tax representative party
+     * Go to the first global ID of the seller's tax representative party
      *
      * @return bool
      */
@@ -4572,7 +4572,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Go to the next global ID of the tax representative party
+     * Go to the next global ID of the seller's tax representative party
      *
      * @return bool
      */
@@ -4582,7 +4582,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Get the Global ID of the tax representative party
+     * Get the Global ID of the seller's tax representative party
      *
      * @param  null|string $newGlobalId     a global identifier of the party
      * @param  null|string $newGlobalIdType type of the global identifier of the party
@@ -4604,7 +4604,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Go to the first Tax Registration of the tax representative party
+     * Go to the first Tax Registration of the seller's tax representative party
      *
      * @return bool
      */
@@ -4638,7 +4638,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Go to the next Tax Registration of the tax representative party
+     * Go to the next Tax Registration of the seller's tax representative party
      *
      * @return bool
      */
@@ -4672,7 +4672,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Get the Tax Registration of the tax representative party
+     * Get the Tax Registration of the seller's tax representative party
      *
      * @param  null|string $newTaxRegistrationType Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   tax identification number
@@ -4720,7 +4720,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Go to the first address of the tax representative party
+     * Go to the first address of the seller's tax representative party
      *
      * @return bool
      */
@@ -4730,7 +4730,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Go to the next address of the tax representative party
+     * Go to the next address of the seller's tax representative party
      *
      * @return bool
      */
@@ -4740,7 +4740,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Get the address of the tax representative party
+     * Get the address of the seller's tax representative party
      *
      * @param  null|string $newAddressLine1 The main line in the address. This is usually the street name and house number or the post office box.
      * @param  null|string $newAddressLine2 Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
@@ -4777,7 +4777,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Go to the first the legal information of the tax representative party
+     * Go to the first the legal information of the seller's tax representative party
      *
      * @return bool
      */
@@ -4787,7 +4787,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Go to the next the legal information of the tax representative party
+     * Go to the next the legal information of the seller's tax representative party
      *
      * @return bool
      */
@@ -4797,7 +4797,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Get the legal information of the tax representative party
+     * Get the legal information of the seller's tax representative party
      *
      * @param  null|string $newType type of the identification number of the legal registration of the party
      * @param  null|string $newId   identification number of the legal registration of the party
@@ -4822,7 +4822,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Go to the first contact information of the tax representative party
+     * Go to the first contact information of the seller's tax representative party
      *
      * @return bool
      */
@@ -4832,7 +4832,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Go to the next contact information of the tax representative party
+     * Go to the next contact information of the seller's tax representative party
      *
      * @return bool
      */
@@ -4842,7 +4842,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Get the contact information of the tax representative party
+     * Get the contact information of the seller's tax representative party
      *
      * @param  null|string $newPersonName     name of contact person or department or office for the contact point
      * @param  null|string $newDepartmentName name of the department for the contact point
@@ -4873,7 +4873,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Go to the first communication information of the tax representative party
+     * Go to the first communication information of the seller's tax representative party
      *
      * @return bool
      */
@@ -4883,7 +4883,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Go to the next communication information of the tax representative party
+     * Go to the next communication information of the seller's tax representative party
      *
      * @return bool
      */
@@ -4893,7 +4893,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     }
 
     /**
-     * Get communication information of the tax representative party
+     * Get communication information of the seller's tax representative party
      *
      * @param  null|string $newType the type for the party's electronic address
      * @param  null|string $newUri  the party's electronic address

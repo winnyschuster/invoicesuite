@@ -378,7 +378,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
                 )
             );
 
-        // Document-Level Seller Tax Representative Party
+        // Document-Level Seller seller's tax representative party
 
         $newDocumentDTO
             ->getTaxRepresentativeParty()
@@ -4311,7 +4311,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Set the name of the tax representative party
+     * Set the name of the seller's tax representative party
      *
      * @param  null|string $newName __BT-62, From BASIC WL__ The full formal name under which the party is registered
      * @return static
@@ -4350,7 +4350,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Add a name of the tax representative party
+     * Add a name of the seller's tax representative party
      *
      * @param  null|string $newName __BT-62, From BASIC WL__ The full formal name under which the party is registered
      * @return static
@@ -4376,7 +4376,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Set the ID of the tax representative party
+     * Set the ID of the seller's tax representative party
      *
      * @param  null|string $newId __BT-X-116, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
      * @return static
@@ -4409,7 +4409,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Add an ID to the tax representative party
+     * Add an ID to the seller's tax representative party
      *
      * @param  null|string $newId __BT-X-116, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
      * @return static
@@ -4441,7 +4441,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Set the Global ID of the tax representative party
+     * Set the Global ID of the seller's tax representative party
      *
      * @param  null|string $newGlobalId     __BT-X-117, From EXTENDED__ A global identifier of the party
      * @param  null|string $newGlobalIdType __BT-X-117-1, From EXTENDED__ Type of the global identifier of the party
@@ -4476,7 +4476,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Add an ID to the tax representative party
+     * Add an ID to the seller's tax representative party
      *
      * @param  null|string $newGlobalId     __BT-X-117, From EXTENDED__ A global identifier of the party
      * @param  null|string $newGlobalIdType __BT-X-117-1, From EXTENDED__ Type of the global identifier of the party
@@ -4511,7 +4511,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Set the Tax Registration of the tax representative party
+     * Set the Tax Registration of the seller's tax representative party
      *
      * @param  null|string $newTaxRegistrationType __BT-63-0, From BASIC WL__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   __BT-63, From BASIC WL__ Tax identification number
@@ -4546,7 +4546,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Add an Tax Registration to the tax representative party
+     * Add an Tax Registration to the seller's tax representative party
      *
      * @param  null|string $newTaxRegistrationType __BT-63-0, From BASIC WL__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $newTaxRegistrationId   __BT-63, From BASIC WL__ Tax identification number
@@ -4582,7 +4582,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Set the address of the tax representative party
+     * Set the address of the seller's tax representative party
      *
      * @param  null|string $newAddressLine1 __BT-64, From BASIC WL__ The main line in the address. This is usually the street name and house number or the post office box.
      * @param  null|string $newAddressLine2 __BT-65, From BASIC WL__ Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
@@ -4657,7 +4657,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Add an address to the tax representative party
+     * Add an address to the seller's tax representative party
      *
      * @param  null|string $newAddressLine1 __BT-64, From BASIC WL__ The main line in the address. This is usually the street name and house number or the post office box.
      * @param  null|string $newAddressLine2 __BT-65, From BASIC WL__ Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
@@ -4703,7 +4703,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Set the legal information of the tax representative party
+     * Set the legal information of the seller's tax representative party
      *
      * @param  null|string $newType __BT-X-118-0, From EXTENDED__ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-X-118, From EXTENDED__ Identification number of the legal registration of the party
@@ -4756,7 +4756,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Set the legal information of the tax representative party
+     * Set the legal information of the seller's tax representative party
      *
      * @param  null|string $newType __BT-X-118-0, From EXTENDED__ Type of the identification number of the legal registration of the party
      * @param  null|string $newId   __BT-X-118, From EXTENDED__ Identification number of the legal registration of the party
@@ -4786,7 +4786,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Set the contact information of the tax representative party
+     * Set the contact information of the seller's tax representative party
      *
      * @param  null|string $newPersonName     __BT-X-120, From EXTENDED__ Name of contact person or department or office for the contact point
      * @param  null|string $newDepartmentName __BT-X-121, From EXTENDED__ Name of the department for the contact point
@@ -4841,7 +4841,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Add contact information of the tax representative party
+     * Add contact information of the seller's tax representative party
      *
      * @param  null|string $newPersonName     __BT-X-120, From EXTENDED__ Name of contact person or department or office for the contact point
      * @param  null|string $newDepartmentName __BT-X-121, From EXTENDED__ Name of the department for the contact point
@@ -4908,7 +4908,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Set communication information of the tax representative party
+     * Set communication information of the seller's tax representative party
      *
      * @param  null|string $newType __BT-X-125-0, From EXTENDED__ The type for the party's electronic address
      * @param  null|string $newUri  __BT-X-125, From EXTENDED__ The party's electronic address
@@ -4956,7 +4956,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
     }
 
     /**
-     * Add a communication information of the tax representative party
+     * Add a communication information of the seller's tax representative party
      *
      * @param  null|string $newType __BT-X-125-0, From EXTENDED__ The type for the party's electronic address
      * @param  null|string $newUri  __BT-X-125, From EXTENDED__ The party's electronic address

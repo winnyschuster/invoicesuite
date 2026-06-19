@@ -8520,7 +8520,7 @@ final class XRechnungUBLInvoiceBuilderTest extends TestCase
         $this->assertXPathValueWithIndexAndAttribute('/ns:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID', 0, 'info@kunde.de', 'schemeID', 'EM');
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:AccountingCustomerParty/cac:Party/cbc:EndpointID', 1);
 
-        // Tax representative Party
+        // seller's tax representative party
 
         $this->assertXPathValueWithIndex('/ns:Invoice/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name', 0, 'Tax GmbH');
         $this->assertXPathNotExistsWithIndex('/ns:Invoice/cac:TaxRepresentativeParty/cac:PartyName/cbc:Name', 1);

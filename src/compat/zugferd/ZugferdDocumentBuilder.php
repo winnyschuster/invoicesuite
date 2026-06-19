@@ -1068,7 +1068,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
     }
 
     /**
-     * Add a global ID of the tax representative party
+     * Add a global ID of the seller's tax representative party
      *
      * @param  null|string $globalID     __BT-X-117, From EXTENDED__ A global identifier of the party
      * @param  null|string $globalIDType __BT-X-117-1, From EXTENDED__ Type of the global identifier of the party
@@ -1087,7 +1087,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
     }
 
     /**
-     * Set the Tax Registration of the tax representative party
+     * Set the Tax Registration of the seller's tax representative party
      *
      * @param  null|string $taxRegType __BT-63-0, From BASIC WL__ Type of tax identification number of the party (e.g. FC = Tax number or VA = Sales tax identification number).
      * @param  null|string $taxRegId   __BT-63, From BASIC WL__ Tax identification number
@@ -1106,7 +1106,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
     }
 
     /**
-     * Set the address of the tax representative party
+     * Set the address of the seller's tax representative party
      *
      * @param  null|string $lineOne     __BT-64, From BASIC WL__ The main line in the address. This is usually the street name and house number or the post office box.
      * @param  null|string $lineTwo     __BT-65, From BASIC WL__ Line 2 of the address. This is an additional address line in an address that can be used to provide additional details in addition to the main line.
@@ -1140,7 +1140,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
     }
 
     /**
-     * Set legal organisation of the seller's tax representative party
+     * Set legal organisation of the seller's seller's tax representative party
      *
      * @param  null|string $legalOrgId   __BT-, From __ Identification number of the legal registration of the party
      * @param  null|string $legalOrgType __BT-, From __ Type of the identification number of the legal registration of the party
@@ -1162,7 +1162,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
     }
 
     /**
-     * Set the contact information of the tax representative party
+     * Set the contact information of the seller's tax representative party
      *
      * @param  null|string $contactPersonName     __BT-X-120, From EXTENDED__ Name of contact person or department or office for the contact point
      * @param  null|string $contactDepartmentName __BT-X-121, From EXTENDED__ Name of the department for the contact point
@@ -1190,7 +1190,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
     }
 
     /**
-     * Add contact information of the tax representative party
+     * Add contact information of the seller's tax representative party
      *
      * @param  null|string $contactPersonName     __BT-X-120, From EXTENDED__ Name of contact person or department or office for the contact point
      * @param  null|string $contactDepartmentName __BT-X-121, From EXTENDED__ Name of the department for the contact point
