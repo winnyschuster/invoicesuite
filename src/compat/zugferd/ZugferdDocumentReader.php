@@ -1044,13 +1044,13 @@ class ZugferdDocumentReader extends ZugferdDocument
         $name = '';
         $description = '';
 
-        $this->documentReader->getDocumentTaxRepresentativeName($name);
+        $this->documentReader->getDocumentSellerTaxRepresentativeName($name);
 
-        if ($this->documentReader->firstDocumentTaxRepresentativeId()) {
+        if ($this->documentReader->firstDocumentSellerTaxRepresentativeId()) {
             do {
-                $this->documentReader->getDocumentTaxRepresentativeId($newId);
+                $this->documentReader->getDocumentSellerTaxRepresentativeId($newId);
                 InvoiceSuiteArrayUtils::pushStringToIntIndexedArray($id, $newId);
-            } while ($this->documentReader->nextDocumentTaxRepresentativeId());
+            } while ($this->documentReader->nextDocumentSellerTaxRepresentativeId());
         }
 
         return $this;
@@ -1069,11 +1069,11 @@ class ZugferdDocumentReader extends ZugferdDocument
     ): static {
         $globalID = [];
 
-        if ($this->documentReader->firstDocumentTaxRepresentativeGlobalId()) {
+        if ($this->documentReader->firstDocumentSellerTaxRepresentativeGlobalId()) {
             do {
-                $this->documentReader->getDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
+                $this->documentReader->getDocumentSellerTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
                 InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($globalID, $newGlobalIdType, $newGlobalId);
-            } while ($this->documentReader->nextDocumentTaxRepresentativeGlobalId());
+            } while ($this->documentReader->nextDocumentSellerTaxRepresentativeGlobalId());
         }
 
         return $this;
@@ -1092,11 +1092,11 @@ class ZugferdDocumentReader extends ZugferdDocument
     ): static {
         $taxReg = [];
 
-        if ($this->documentReader->firstDocumentTaxRepresentativeTaxRegistration()) {
+        if ($this->documentReader->firstDocumentSellerTaxRepresentativeTaxRegistration()) {
             do {
-                $this->documentReader->getDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+                $this->documentReader->getDocumentSellerTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
                 InvoiceSuiteArrayUtils::pushStringToStringIndexedArray($taxReg, $newTaxRegistrationType, $newTaxRegistrationId);
-            } while ($this->documentReader->nextDocumentTaxRepresentativeTaxRegistration());
+            } while ($this->documentReader->nextDocumentSellerTaxRepresentativeTaxRegistration());
         }
 
         return $this;
@@ -1139,8 +1139,8 @@ class ZugferdDocumentReader extends ZugferdDocument
         $country = '';
         $subDivision = [];
 
-        if ($this->documentReader->firstDocumentTaxRepresentativeAddress()) {
-            $this->documentReader->getDocumentTaxRepresentativeAddress(
+        if ($this->documentReader->firstDocumentSellerTaxRepresentativeAddress()) {
+            $this->documentReader->getDocumentSellerTaxRepresentativeAddress(
                 $lineOne,
                 $lineTwo,
                 $lineThree,
@@ -1177,8 +1177,8 @@ class ZugferdDocumentReader extends ZugferdDocument
         $legalOrgType = '';
         $legalOrgName = '';
 
-        if ($this->documentReader->firstDocumentTaxRepresentativeLegalOrganisation()) {
-            $this->documentReader->getDocumentTaxRepresentativeLegalOrganisation(
+        if ($this->documentReader->firstDocumentSellerTaxRepresentativeLegalOrganisation()) {
+            $this->documentReader->getDocumentSellerTaxRepresentativeLegalOrganisation(
                 $legalOrgType,
                 $legalOrgId,
                 $legalOrgName
@@ -1196,7 +1196,7 @@ class ZugferdDocumentReader extends ZugferdDocument
      */
     public function firstDocumentSellerTaxRepresentativeContact(): bool
     {
-        return $this->documentReader->firstDocumentTaxRepresentativeContact();
+        return $this->documentReader->firstDocumentSellerTaxRepresentativeContact();
     }
 
     /**
@@ -1207,7 +1207,7 @@ class ZugferdDocumentReader extends ZugferdDocument
      */
     public function nextDocumentSellerTaxRepresentativeContact(): bool
     {
-        return $this->documentReader->nextDocumentTaxRepresentativeContact();
+        return $this->documentReader->nextDocumentSellerTaxRepresentativeContact();
     }
 
     /**
@@ -1233,7 +1233,7 @@ class ZugferdDocumentReader extends ZugferdDocument
         ?string &$contactFaxNo,
         ?string &$contactEmailAddress
     ): static {
-        $this->documentReader->getDocumentTaxRepresentativeContact(
+        $this->documentReader->getDocumentSellerTaxRepresentativeContact(
             $contactPersonName,
             $contactDepartmentName,
             $contactPhoneNo,

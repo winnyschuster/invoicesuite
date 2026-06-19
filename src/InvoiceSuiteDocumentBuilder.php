@@ -1560,10 +1560,10 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentTaxRepresentativeName(
+    public function setDocumentSellerTaxRepresentativeName(
         ?string $newName = null
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeName($newName);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerTaxRepresentativeName($newName);
 
         return $this;
     }
@@ -1574,10 +1574,10 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentTaxRepresentativeName(
+    public function addDocumentSellerTaxRepresentativeName(
         ?string $newName = null
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeName($newName);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerTaxRepresentativeName($newName);
 
         return $this;
     }
@@ -1588,10 +1588,10 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentTaxRepresentativeId(
+    public function setDocumentSellerTaxRepresentativeId(
         ?string $newId = null
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeId($newId);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerTaxRepresentativeId($newId);
 
         return $this;
     }
@@ -1602,10 +1602,10 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentTaxRepresentativeId(
+    public function addDocumentSellerTaxRepresentativeId(
         ?string $newId = null
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeId($newId);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerTaxRepresentativeId($newId);
 
         return $this;
     }
@@ -1617,11 +1617,11 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentTaxRepresentativeGlobalId(
+    public function setDocumentSellerTaxRepresentativeGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
     }
@@ -1633,11 +1633,11 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentTaxRepresentativeGlobalId(
+    public function addDocumentSellerTaxRepresentativeGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
     }
@@ -1649,11 +1649,11 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function setDocumentTaxRepresentativeTaxRegistration(
+    public function setDocumentSellerTaxRepresentativeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
     }
@@ -1665,11 +1665,11 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function addDocumentTaxRepresentativeTaxRegistration(
+    public function addDocumentSellerTaxRepresentativeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
     }
@@ -1686,7 +1686,7 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentTaxRepresentativeAddress(
+    public function setDocumentSellerTaxRepresentativeAddress(
         ?string $newAddressLine1 = null,
         ?string $newAddressLine2 = null,
         ?string $newAddressLine3 = null,
@@ -1695,7 +1695,7 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerTaxRepresentativeAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
     }
@@ -1712,7 +1712,7 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentTaxRepresentativeAddress(
+    public function addDocumentSellerTaxRepresentativeAddress(
         ?string $newAddressLine1 = null,
         ?string $newAddressLine2 = null,
         ?string $newAddressLine3 = null,
@@ -1721,7 +1721,7 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
         ?string $newCountryId = null,
         ?string $newSubDivision = null,
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerTaxRepresentativeAddress($newAddressLine1, $newAddressLine2, $newAddressLine3, $newPostcode, $newCity, $newCountryId, $newSubDivision);
 
         return $this;
     }
@@ -1734,12 +1734,12 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentTaxRepresentativeLegalOrganisation(
+    public function setDocumentSellerTaxRepresentativeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
 
         return $this;
     }
@@ -1752,12 +1752,12 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentTaxRepresentativeLegalOrganisation(
+    public function addDocumentSellerTaxRepresentativeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
 
         return $this;
     }
@@ -1772,14 +1772,14 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function setDocumentTaxRepresentativeContact(
+    public function setDocumentSellerTaxRepresentativeContact(
         ?string $newPersonName = null,
         ?string $newDepartmentName = null,
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerTaxRepresentativeContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
     }
@@ -1794,14 +1794,14 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentTaxRepresentativeContact(
+    public function addDocumentSellerTaxRepresentativeContact(
         ?string $newPersonName = null,
         ?string $newDepartmentName = null,
         ?string $newPhoneNumber = null,
         ?string $newFaxNumber = null,
         ?string $newEmailAddress = null,
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerTaxRepresentativeContact($newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress);
 
         return $this;
     }
@@ -1813,11 +1813,11 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentTaxRepresentativeCommunication(
+    public function setDocumentSellerTaxRepresentativeCommunication(
         ?string $newType = null,
         ?string $newUri = null
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentTaxRepresentativeCommunication($newType, $newUri);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->setDocumentSellerTaxRepresentativeCommunication($newType, $newUri);
 
         return $this;
     }
@@ -1829,11 +1829,11 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentTaxRepresentativeCommunication(
+    public function addDocumentSellerTaxRepresentativeCommunication(
         ?string $newType = null,
         ?string $newUri = null
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentTaxRepresentativeCommunication($newType, $newUri);
+        $this->getCurrentDocumentFormatProvider()->getBuilder()->addDocumentSellerTaxRepresentativeCommunication($newType, $newUri);
 
         return $this;
     }

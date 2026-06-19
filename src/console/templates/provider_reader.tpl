@@ -2090,7 +2090,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @phpstan-param-out string $newName
      */
-    public function getDocumentTaxRepresentativeName(
+    public function getDocumentSellerTaxRepresentativeName(
         ?string &$newName
     ): static
     {
@@ -2109,7 +2109,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeId(): bool
+    public function firstDocumentSellerTaxRepresentativeId(): bool
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -2125,7 +2125,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeId(): bool
+    public function nextDocumentSellerTaxRepresentativeId(): bool
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -2144,7 +2144,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @phpstan-param-out string $newId
      */
-    public function getDocumentTaxRepresentativeId(
+    public function getDocumentSellerTaxRepresentativeId(
         ?string &$newId
     ): static
     {
@@ -2163,7 +2163,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeGlobalId(): bool
+    public function firstDocumentSellerTaxRepresentativeGlobalId(): bool
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -2179,7 +2179,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeGlobalId(): bool
+    public function nextDocumentSellerTaxRepresentativeGlobalId(): bool
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -2200,7 +2200,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
      */
-    public function getDocumentTaxRepresentativeGlobalId(
+    public function getDocumentSellerTaxRepresentativeGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static
@@ -2221,7 +2221,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeTaxRegistration(): bool
+    public function firstDocumentSellerTaxRepresentativeTaxRegistration(): bool
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -2237,7 +2237,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeTaxRegistration(): bool
+    public function nextDocumentSellerTaxRepresentativeTaxRegistration(): bool
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -2258,7 +2258,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
      */
-    public function getDocumentTaxRepresentativeTaxRegistration(
+    public function getDocumentSellerTaxRepresentativeTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static
@@ -2279,7 +2279,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeAddress(): bool
+    public function firstDocumentSellerTaxRepresentativeAddress(): bool
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -2295,7 +2295,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeAddress(): bool
+    public function nextDocumentSellerTaxRepresentativeAddress(): bool
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -2326,7 +2326,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      * @phpstan-param-out string $newCountryId
      * @phpstan-param-out string $newSubDivision
      */
-    public function getDocumentTaxRepresentativeAddress(
+    public function getDocumentSellerTaxRepresentativeAddress(
         ?string &$newAddressLine1,
         ?string &$newAddressLine2,
         ?string &$newAddressLine3,
@@ -2357,7 +2357,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeLegalOrganisation(): bool
+    public function firstDocumentSellerTaxRepresentativeLegalOrganisation(): bool
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -2373,7 +2373,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeLegalOrganisation(): bool
+    public function nextDocumentSellerTaxRepresentativeLegalOrganisation(): bool
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -2396,7 +2396,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      * @phpstan-param-out string $newId
      * @phpstan-param-out string $newName
      */
-    public function getDocumentTaxRepresentativeLegalOrganisation(
+    public function getDocumentSellerTaxRepresentativeLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
@@ -2419,7 +2419,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeContact(): bool
+    public function firstDocumentSellerTaxRepresentativeContact(): bool
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -2435,7 +2435,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeContact(): bool
+    public function nextDocumentSellerTaxRepresentativeContact(): bool
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -2462,7 +2462,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      * @phpstan-param-out string $newFaxNumber
      * @phpstan-param-out string $newEmailAddress
      */
-    public function getDocumentTaxRepresentativeContact(
+    public function getDocumentSellerTaxRepresentativeContact(
         ?string &$newPersonName,
         ?string &$newDepartmentName,
         ?string &$newPhoneNumber,
@@ -2489,7 +2489,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeCommunication(): bool
+    public function firstDocumentSellerTaxRepresentativeCommunication(): bool
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -2505,7 +2505,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeCommunication(): bool
+    public function nextDocumentSellerTaxRepresentativeCommunication(): bool
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -2526,7 +2526,7 @@ class {{READER_CLASS_NAME}} extends InvoiceSuiteAbstractDocumentFormatReader
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
      */
-    public function getDocumentTaxRepresentativeCommunication(
+    public function getDocumentSellerTaxRepresentativeCommunication(
         ?string &$newType,
         ?string &$newUri
     ): static

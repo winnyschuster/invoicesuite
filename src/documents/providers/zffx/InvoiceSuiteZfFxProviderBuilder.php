@@ -383,19 +383,19 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
         $newDocumentDTO
             ->getTaxRepresentativeParty()
             ?->firstName(
-                fn (string $item) => $this->setDocumentTaxRepresentativeName($item)
+                fn (string $item) => $this->setDocumentSellerTaxRepresentativeName($item)
             )
             ?->firstId(
-                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentTaxRepresentativeId($item->getId())
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentSellerTaxRepresentativeId($item->getId())
             )
             ?->forEachGlobalId(
-                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentTaxRepresentativeGlobalId($item->getId(), $item->getIdType())
+                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentSellerTaxRepresentativeGlobalId($item->getId(), $item->getIdType())
             )
             ?->firstTaxRegistration(
-                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentTaxRepresentativeTaxRegistration($item->getIdType(), $item->getId())
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentSellerTaxRepresentativeTaxRegistration($item->getIdType(), $item->getId())
             )
             ?->firstAddress(
-                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentTaxRepresentativeAddress(
+                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentSellerTaxRepresentativeAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
                     $item->getAddressLine3(),
@@ -406,14 +406,14 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
                 )
             )
             ?->firstLegalOrganisation(
-                fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentTaxRepresentativeLegalOrganisation(
+                fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentSellerTaxRepresentativeLegalOrganisation(
                     $item->getIdType(),
                     $item->getId(),
                     $item->getName()
                 )
             )
             ?->forEachContact(
-                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentTaxRepresentativeContact(
+                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentSellerTaxRepresentativeContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
                     $item->getPhoneNumber(),
@@ -422,7 +422,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
                 )
             )
             ?->firstCommunication(
-                fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentTaxRepresentativeCommunication(
+                fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentSellerTaxRepresentativeCommunication(
                     $item->getIdType(),
                     $item->getId()
                 )
@@ -4316,7 +4316,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newName __BT-62, From BASIC WL__ The full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentTaxRepresentativeName(
+    public function setDocumentSellerTaxRepresentativeName(
         ?string $newName = null
     ): static {
         $this->traceMethodEnter(__METHOD__);
@@ -4355,7 +4355,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newName __BT-62, From BASIC WL__ The full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentTaxRepresentativeName(
+    public function addDocumentSellerTaxRepresentativeName(
         ?string $newName = null
     ): static {
         $this->traceMethodEnter(__METHOD__);
@@ -4368,7 +4368,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)');
         }
 
-        $this->setDocumentTaxRepresentativeName($newName);
+        $this->setDocumentSellerTaxRepresentativeName($newName);
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4381,7 +4381,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newId __BT-X-116, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentTaxRepresentativeId(
+    public function setDocumentSellerTaxRepresentativeId(
         ?string $newId = null
     ): static {
         $this->traceMethodEnter(__METHOD__);
@@ -4401,7 +4401,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newId)');
         }
 
-        $this->addDocumentTaxRepresentativeId($newId);
+        $this->addDocumentSellerTaxRepresentativeId($newId);
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4414,7 +4414,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newId __BT-X-116, From EXTENDED__ An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentTaxRepresentativeId(
+    public function addDocumentSellerTaxRepresentativeId(
         ?string $newId = null
     ): static {
         $this->traceMethodEnter(__METHOD__);
@@ -4447,7 +4447,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-X-117-1, From EXTENDED__ Type of the global identifier of the party
      * @return static
      */
-    public function setDocumentTaxRepresentativeGlobalId(
+    public function setDocumentSellerTaxRepresentativeGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
@@ -4468,7 +4468,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newGlobalId, $newGlobalIdType])');
         }
 
-        $this->addDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
+        $this->addDocumentSellerTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4482,7 +4482,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newGlobalIdType __BT-X-117-1, From EXTENDED__ Type of the global identifier of the party
      * @return static
      */
-    public function addDocumentTaxRepresentativeGlobalId(
+    public function addDocumentSellerTaxRepresentativeGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
@@ -4517,7 +4517,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newTaxRegistrationId   __BT-63, From BASIC WL__ Tax identification number
      * @return static
      */
-    public function setDocumentTaxRepresentativeTaxRegistration(
+    public function setDocumentSellerTaxRepresentativeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
@@ -4538,7 +4538,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
         }
 
-        $this->addDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+        $this->addDocumentSellerTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4552,7 +4552,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newTaxRegistrationId   __BT-63, From BASIC WL__ Tax identification number
      * @return static
      */
-    public function addDocumentTaxRepresentativeTaxRegistration(
+    public function addDocumentSellerTaxRepresentativeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
@@ -4593,7 +4593,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newSubDivision  __BT-68, From BASIC WL__ Region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentTaxRepresentativeAddress(
+    public function setDocumentSellerTaxRepresentativeAddress(
         ?string $newAddressLine1 = null,
         ?string $newAddressLine2 = null,
         ?string $newAddressLine3 = null,
@@ -4668,7 +4668,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newSubDivision  __BT-68, From BASIC WL__ Region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentTaxRepresentativeAddress(
+    public function addDocumentSellerTaxRepresentativeAddress(
         ?string $newAddressLine1 = null,
         ?string $newAddressLine2 = null,
         ?string $newAddressLine3 = null,
@@ -4687,7 +4687,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newCountryId)');
         }
 
-        $this->setDocumentTaxRepresentativeAddress(
+        $this->setDocumentSellerTaxRepresentativeAddress(
             $newAddressLine1,
             $newAddressLine2,
             $newAddressLine3,
@@ -4710,7 +4710,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newName __BT-X-119, From EXTENDED__ Name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentTaxRepresentativeLegalOrganisation(
+    public function setDocumentSellerTaxRepresentativeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
@@ -4763,7 +4763,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newName __BT-X-119, From EXTENDED__ Name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentTaxRepresentativeLegalOrganisation(
+    public function addDocumentSellerTaxRepresentativeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
@@ -4778,7 +4778,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([$newType, $newId, $newName])');
         }
 
-        $this->setDocumentTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
+        $this->setDocumentSellerTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4795,7 +4795,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newEmailAddress   __BT-X-124, From EXTENDED__ E-Mail address of the contact point
      * @return static
      */
-    public function setDocumentTaxRepresentativeContact(
+    public function setDocumentSellerTaxRepresentativeContact(
         ?string $newPersonName = null,
         ?string $newDepartmentName = null,
         ?string $newPhoneNumber = null,
@@ -4827,7 +4827,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this->traceMethodEarlyExit(__METHOD__, 'allIsNullOrEmpty', 'InvoiceSuiteStringUtils::allIsNullOrEmpty([ $newPersonName, $newDepartmentName, $newPhoneNumber, $newFaxNumber, $newEmailAddress, ])');
         }
 
-        $this->addDocumentTaxRepresentativeContact(
+        $this->addDocumentSellerTaxRepresentativeContact(
             $newPersonName,
             $newDepartmentName,
             $newPhoneNumber,
@@ -4850,7 +4850,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newEmailAddress   __BT-X-124, From EXTENDED__ E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentTaxRepresentativeContact(
+    public function addDocumentSellerTaxRepresentativeContact(
         ?string $newPersonName = null,
         ?string $newDepartmentName = null,
         ?string $newPhoneNumber = null,
@@ -4914,7 +4914,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-125, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function setDocumentTaxRepresentativeCommunication(
+    public function setDocumentSellerTaxRepresentativeCommunication(
         ?string $newType = null,
         ?string $newUri = null
     ): static {
@@ -4962,7 +4962,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
      * @param  null|string $newUri  __BT-X-125, From EXTENDED__ The party's electronic address
      * @return static
      */
-    public function addDocumentTaxRepresentativeCommunication(
+    public function addDocumentSellerTaxRepresentativeCommunication(
         ?string $newType = null,
         ?string $newUri = null
     ): static {
@@ -4976,7 +4976,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
             return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newType, $newUri])');
         }
 
-        $this->setDocumentTaxRepresentativeCommunication($newType, $newUri);
+        $this->setDocumentSellerTaxRepresentativeCommunication($newType, $newUri);
 
         $this->traceMethodExit(__METHOD__);
 

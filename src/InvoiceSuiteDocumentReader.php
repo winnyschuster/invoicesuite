@@ -1838,10 +1838,10 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @phpstan-param-out string $newName
      */
-    public function getDocumentTaxRepresentativeName(
+    public function getDocumentSellerTaxRepresentativeName(
         ?string &$newName
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeName($newName);
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerTaxRepresentativeName($newName);
 
         return $this;
     }
@@ -1851,9 +1851,9 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeId(): bool
+    public function firstDocumentSellerTaxRepresentativeId(): bool
     {
-        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentTaxRepresentativeId();
+        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentSellerTaxRepresentativeId();
     }
 
     /**
@@ -1861,9 +1861,9 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeId(): bool
+    public function nextDocumentSellerTaxRepresentativeId(): bool
     {
-        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentTaxRepresentativeId();
+        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentSellerTaxRepresentativeId();
     }
 
     /**
@@ -1874,10 +1874,10 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @phpstan-param-out string $newId
      */
-    public function getDocumentTaxRepresentativeId(
+    public function getDocumentSellerTaxRepresentativeId(
         ?string &$newId
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeId($newId);
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerTaxRepresentativeId($newId);
 
         return $this;
     }
@@ -1887,9 +1887,9 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeGlobalId(): bool
+    public function firstDocumentSellerTaxRepresentativeGlobalId(): bool
     {
-        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentTaxRepresentativeGlobalId();
+        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentSellerTaxRepresentativeGlobalId();
     }
 
     /**
@@ -1897,9 +1897,9 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeGlobalId(): bool
+    public function nextDocumentSellerTaxRepresentativeGlobalId(): bool
     {
-        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentTaxRepresentativeGlobalId();
+        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentSellerTaxRepresentativeGlobalId();
     }
 
     /**
@@ -1912,11 +1912,11 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
      */
-    public function getDocumentTaxRepresentativeGlobalId(
+    public function getDocumentSellerTaxRepresentativeGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
 
         return $this;
     }
@@ -1926,9 +1926,9 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeTaxRegistration(): bool
+    public function firstDocumentSellerTaxRepresentativeTaxRegistration(): bool
     {
-        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentTaxRepresentativeTaxRegistration();
+        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentSellerTaxRepresentativeTaxRegistration();
     }
 
     /**
@@ -1936,9 +1936,9 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeTaxRegistration(): bool
+    public function nextDocumentSellerTaxRepresentativeTaxRegistration(): bool
     {
-        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentTaxRepresentativeTaxRegistration();
+        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentSellerTaxRepresentativeTaxRegistration();
     }
 
     /**
@@ -1951,11 +1951,11 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
      */
-    public function getDocumentTaxRepresentativeTaxRegistration(
+    public function getDocumentSellerTaxRepresentativeTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         return $this;
     }
@@ -1965,9 +1965,9 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeAddress(): bool
+    public function firstDocumentSellerTaxRepresentativeAddress(): bool
     {
-        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentTaxRepresentativeAddress();
+        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentSellerTaxRepresentativeAddress();
     }
 
     /**
@@ -1975,9 +1975,9 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeAddress(): bool
+    public function nextDocumentSellerTaxRepresentativeAddress(): bool
     {
-        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentTaxRepresentativeAddress();
+        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentSellerTaxRepresentativeAddress();
     }
 
     /**
@@ -2000,7 +2000,7 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      * @phpstan-param-out string $newCountryId
      * @phpstan-param-out string $newSubDivision
      */
-    public function getDocumentTaxRepresentativeAddress(
+    public function getDocumentSellerTaxRepresentativeAddress(
         ?string &$newAddressLine1,
         ?string &$newAddressLine2,
         ?string &$newAddressLine3,
@@ -2009,7 +2009,7 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
         ?string &$newCountryId,
         ?string &$newSubDivision
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeAddress(
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerTaxRepresentativeAddress(
             $newAddressLine1,
             $newAddressLine2,
             $newAddressLine3,
@@ -2027,9 +2027,9 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeLegalOrganisation(): bool
+    public function firstDocumentSellerTaxRepresentativeLegalOrganisation(): bool
     {
-        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentTaxRepresentativeLegalOrganisation();
+        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentSellerTaxRepresentativeLegalOrganisation();
     }
 
     /**
@@ -2037,9 +2037,9 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeLegalOrganisation(): bool
+    public function nextDocumentSellerTaxRepresentativeLegalOrganisation(): bool
     {
-        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentTaxRepresentativeLegalOrganisation();
+        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentSellerTaxRepresentativeLegalOrganisation();
     }
 
     /**
@@ -2054,12 +2054,12 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      * @phpstan-param-out string $newId
      * @phpstan-param-out string $newName
      */
-    public function getDocumentTaxRepresentativeLegalOrganisation(
+    public function getDocumentSellerTaxRepresentativeLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
 
         return $this;
     }
@@ -2069,9 +2069,9 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeContact(): bool
+    public function firstDocumentSellerTaxRepresentativeContact(): bool
     {
-        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentTaxRepresentativeContact();
+        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentSellerTaxRepresentativeContact();
     }
 
     /**
@@ -2079,9 +2079,9 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeContact(): bool
+    public function nextDocumentSellerTaxRepresentativeContact(): bool
     {
-        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentTaxRepresentativeContact();
+        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentSellerTaxRepresentativeContact();
     }
 
     /**
@@ -2100,14 +2100,14 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      * @phpstan-param-out string $newFaxNumber
      * @phpstan-param-out string $newEmailAddress
      */
-    public function getDocumentTaxRepresentativeContact(
+    public function getDocumentSellerTaxRepresentativeContact(
         ?string &$newPersonName,
         ?string &$newDepartmentName,
         ?string &$newPhoneNumber,
         ?string &$newFaxNumber,
         ?string &$newEmailAddress
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeContact(
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerTaxRepresentativeContact(
             $newPersonName,
             $newDepartmentName,
             $newPhoneNumber,
@@ -2123,9 +2123,9 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeCommunication(): bool
+    public function firstDocumentSellerTaxRepresentativeCommunication(): bool
     {
-        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentTaxRepresentativeCommunication();
+        return $this->getCurrentDocumentFormatProvider()->getReader()->firstDocumentSellerTaxRepresentativeCommunication();
     }
 
     /**
@@ -2133,9 +2133,9 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeCommunication(): bool
+    public function nextDocumentSellerTaxRepresentativeCommunication(): bool
     {
-        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentTaxRepresentativeCommunication();
+        return $this->getCurrentDocumentFormatProvider()->getReader()->nextDocumentSellerTaxRepresentativeCommunication();
     }
 
     /**
@@ -2148,11 +2148,11 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
      */
-    public function getDocumentTaxRepresentativeCommunication(
+    public function getDocumentSellerTaxRepresentativeCommunication(
         ?string &$newType,
         ?string &$newUri
     ): static {
-        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentTaxRepresentativeCommunication($newType, $newUri);
+        $this->getCurrentDocumentFormatProvider()->getReader()->getDocumentSellerTaxRepresentativeCommunication($newType, $newUri);
 
         return $this;
     }

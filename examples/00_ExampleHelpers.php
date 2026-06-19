@@ -272,50 +272,50 @@ function helperOutputDocumentReader(InvoiceSuiteAbstractDocumentFormatReader|Inv
     echo "Tax Representativ Party\n";
     echo "\n";
 
-    $reader->getDocumentTaxRepresentativeName($documentTaxRepresentativeName);
-    echo sprintf("TaxRepresentative Name ........ %s\n", $documentTaxRepresentativeName);
+    $reader->getDocumentSellerTaxRepresentativeName($documentSellerTaxRepresentativeName);
+    echo sprintf("TaxRepresentative Name ........ %s\n", $documentSellerTaxRepresentativeName);
 
-    while ($reader->nextDocumentTaxRepresentativeId()) {
-        $reader->getDocumentTaxRepresentativeId($documentTaxRepresentativeGlobalId);
-        echo sprintf("TaxRepresentative ID .......... %s\n", $documentTaxRepresentativeGlobalId);
+    while ($reader->nextDocumentSellerTaxRepresentativeId()) {
+        $reader->getDocumentSellerTaxRepresentativeId($documentSellerTaxRepresentativeGlobalId);
+        echo sprintf("TaxRepresentative ID .......... %s\n", $documentSellerTaxRepresentativeGlobalId);
     }
 
-    while ($reader->nextDocumentTaxRepresentativeGlobalId()) {
-        $reader->getDocumentTaxRepresentativeGlobalId($documentTaxRepresentativeGlobalId, $documentTaxRepresentativeGlobalIdType);
-        echo sprintf("TaxRepresentative Global ID ... %s (%s)\n", $documentTaxRepresentativeGlobalId, $documentTaxRepresentativeGlobalIdType);
+    while ($reader->nextDocumentSellerTaxRepresentativeGlobalId()) {
+        $reader->getDocumentSellerTaxRepresentativeGlobalId($documentSellerTaxRepresentativeGlobalId, $documentSellerTaxRepresentativeGlobalIdType);
+        echo sprintf("TaxRepresentative Global ID ... %s (%s)\n", $documentSellerTaxRepresentativeGlobalId, $documentSellerTaxRepresentativeGlobalIdType);
     }
 
-    while ($reader->nextDocumentTaxRepresentativeTaxRegistration()) {
-        $reader->getDocumentTaxRepresentativeTaxRegistration($documentTaxRepresentativeTaxRegistrationType, $documentTaxRepresentativeTaxRegistrationId);
-        echo sprintf("TaxRepresentative Tax Reg. .... %s (%s)\n", $documentTaxRepresentativeTaxRegistrationId, $documentTaxRepresentativeTaxRegistrationType);
+    while ($reader->nextDocumentSellerTaxRepresentativeTaxRegistration()) {
+        $reader->getDocumentSellerTaxRepresentativeTaxRegistration($documentSellerTaxRepresentativeTaxRegistrationType, $documentSellerTaxRepresentativeTaxRegistrationId);
+        echo sprintf("TaxRepresentative Tax Reg. .... %s (%s)\n", $documentSellerTaxRepresentativeTaxRegistrationId, $documentSellerTaxRepresentativeTaxRegistrationType);
     }
 
-    while ($reader->nextDocumentTaxRepresentativeAddress()) {
-        $reader->getDocumentTaxRepresentativeAddress($documentTaxRepresentativeAddressLine1, $documentTaxRepresentativeAddressLine2, $documentTaxRepresentativeAddressLine3, $documentTaxRepresentativePostCode, $documentTaxRepresentativeCity, $documentTaxRepresentativeCountryId, $documentTaxRepresentativeSubDivision);
-        echo sprintf("TaxRepresentative Address ..... %s\n", $documentTaxRepresentativeAddressLine1);
-        echo sprintf("                          ..... %s\n", $documentTaxRepresentativeAddressLine2);
-        echo sprintf("                          ..... %s\n", $documentTaxRepresentativeAddressLine3);
-        echo sprintf("                          ..... %s %s %s\n", $documentTaxRepresentativeCountryId, $documentTaxRepresentativePostCode, $documentTaxRepresentativeCity);
-        echo sprintf("                          ..... %s\n", $documentTaxRepresentativeSubDivision);
+    while ($reader->nextDocumentSellerTaxRepresentativeAddress()) {
+        $reader->getDocumentSellerTaxRepresentativeAddress($documentSellerTaxRepresentativeAddressLine1, $documentSellerTaxRepresentativeAddressLine2, $documentSellerTaxRepresentativeAddressLine3, $documentSellerTaxRepresentativePostCode, $documentSellerTaxRepresentativeCity, $documentSellerTaxRepresentativeCountryId, $documentSellerTaxRepresentativeSubDivision);
+        echo sprintf("TaxRepresentative Address ..... %s\n", $documentSellerTaxRepresentativeAddressLine1);
+        echo sprintf("                          ..... %s\n", $documentSellerTaxRepresentativeAddressLine2);
+        echo sprintf("                          ..... %s\n", $documentSellerTaxRepresentativeAddressLine3);
+        echo sprintf("                          ..... %s %s %s\n", $documentSellerTaxRepresentativeCountryId, $documentSellerTaxRepresentativePostCode, $documentSellerTaxRepresentativeCity);
+        echo sprintf("                          ..... %s\n", $documentSellerTaxRepresentativeSubDivision);
     }
 
-    while ($reader->nextDocumentTaxRepresentativeLegalOrganisation()) {
-        $reader->getDocumentTaxRepresentativeLegalOrganisation($documentTaxRepresentativeLegalOrgType, $documentTaxRepresentativeLegalOrgId, $documentTaxRepresentativeLegalOrgName);
-        echo sprintf("TaxRepresentative Legal ....... %s (%s), %s\n", $documentTaxRepresentativeLegalOrgId, $documentTaxRepresentativeLegalOrgType, $documentTaxRepresentativeLegalOrgName);
+    while ($reader->nextDocumentSellerTaxRepresentativeLegalOrganisation()) {
+        $reader->getDocumentSellerTaxRepresentativeLegalOrganisation($documentSellerTaxRepresentativeLegalOrgType, $documentSellerTaxRepresentativeLegalOrgId, $documentSellerTaxRepresentativeLegalOrgName);
+        echo sprintf("TaxRepresentative Legal ....... %s (%s), %s\n", $documentSellerTaxRepresentativeLegalOrgId, $documentSellerTaxRepresentativeLegalOrgType, $documentSellerTaxRepresentativeLegalOrgName);
     }
 
-    while ($reader->nextDocumentTaxRepresentativeContact()) {
-        $reader->getDocumentTaxRepresentativeContact($documentTaxRepresentativeContactName, $documentTaxRepresentativeContactDepartmenrName, $documentTaxRepresentativeContactPhoneNumber, $documentTaxRepresentativeContactFaxNumber, $documentTaxRepresentativeContactEmailAddress);
-        echo sprintf("TaxRepresentative Contact ..... %s\n", $documentTaxRepresentativeContactName);
-        echo sprintf("                          ..... %s\n", $documentTaxRepresentativeContactDepartmenrName);
-        echo sprintf("                          ..... %s\n", $documentTaxRepresentativeContactPhoneNumber);
-        echo sprintf("                          ..... %s\n", $documentTaxRepresentativeContactFaxNumber);
-        echo sprintf("                          ..... %s\n", $documentTaxRepresentativeContactEmailAddress);
+    while ($reader->nextDocumentSellerTaxRepresentativeContact()) {
+        $reader->getDocumentSellerTaxRepresentativeContact($documentSellerTaxRepresentativeContactName, $documentSellerTaxRepresentativeContactDepartmenrName, $documentSellerTaxRepresentativeContactPhoneNumber, $documentSellerTaxRepresentativeContactFaxNumber, $documentSellerTaxRepresentativeContactEmailAddress);
+        echo sprintf("TaxRepresentative Contact ..... %s\n", $documentSellerTaxRepresentativeContactName);
+        echo sprintf("                          ..... %s\n", $documentSellerTaxRepresentativeContactDepartmenrName);
+        echo sprintf("                          ..... %s\n", $documentSellerTaxRepresentativeContactPhoneNumber);
+        echo sprintf("                          ..... %s\n", $documentSellerTaxRepresentativeContactFaxNumber);
+        echo sprintf("                          ..... %s\n", $documentSellerTaxRepresentativeContactEmailAddress);
     }
 
-    while ($reader->nextDocumentTaxRepresentativeCommunication()) {
-        $reader->getDocumentTaxRepresentativeCommunication($documentTaxRepresentativeCommunicationType, $documentTaxRepresentativeCommunicationUri);
-        echo sprintf("TaxRepresentative Comm. ....... %s (%s)\n", $documentTaxRepresentativeCommunicationUri, $documentTaxRepresentativeCommunicationType);
+    while ($reader->nextDocumentSellerTaxRepresentativeCommunication()) {
+        $reader->getDocumentSellerTaxRepresentativeCommunication($documentSellerTaxRepresentativeCommunicationType, $documentSellerTaxRepresentativeCommunicationUri);
+        echo sprintf("TaxRepresentative Comm. ....... %s (%s)\n", $documentSellerTaxRepresentativeCommunicationUri, $documentSellerTaxRepresentativeCommunicationType);
     }
 
     // Read information about the Product Enduser Party

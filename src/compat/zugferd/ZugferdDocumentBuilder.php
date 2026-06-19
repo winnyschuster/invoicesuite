@@ -1061,8 +1061,8 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
         ?string $description = null
     ): static {
         $this->unsetSellerTaxRepresentative();
-        $this->documentBuilder->setDocumentTaxRepresentativeName($name);
-        $this->documentBuilder->setDocumentTaxRepresentativeId($id);
+        $this->documentBuilder->setDocumentSellerTaxRepresentativeName($name);
+        $this->documentBuilder->setDocumentSellerTaxRepresentativeId($id);
 
         return $this;
     }
@@ -1078,7 +1078,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
         ?string $globalID = null,
         ?string $globalIDType = null
     ): static {
-        $this->documentBuilder->addDocumentTaxRepresentativeGlobalId(
+        $this->documentBuilder->addDocumentSellerTaxRepresentativeGlobalId(
             $globalID,
             $globalIDType
         );
@@ -1097,7 +1097,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
         ?string $taxRegType = null,
         ?string $taxRegId = null
     ): static {
-        $this->documentBuilder->addDocumentTaxRepresentativeTaxRegistration(
+        $this->documentBuilder->addDocumentSellerTaxRepresentativeTaxRegistration(
             $taxRegType,
             $taxRegId
         );
@@ -1126,7 +1126,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
         ?string $country = null,
         ?string $subDivision = null
     ): static {
-        $this->documentBuilder->setDocumentTaxRepresentativeAddress(
+        $this->documentBuilder->setDocumentSellerTaxRepresentativeAddress(
             $lineOne,
             $lineTwo,
             $lineThree,
@@ -1152,7 +1152,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
         ?string $legalOrgType = null,
         ?string $legalOrgName = null
     ): static {
-        $this->documentBuilder->setDocumentTaxRepresentativeLegalOrganisation(
+        $this->documentBuilder->setDocumentSellerTaxRepresentativeLegalOrganisation(
             $legalOrgType,
             $legalOrgId,
             $legalOrgName
@@ -1178,7 +1178,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
         ?string $contactFaxNo = null,
         ?string $contactEmailAddress = null
     ): static {
-        $this->documentBuilder->setDocumentTaxRepresentativeContact(
+        $this->documentBuilder->setDocumentSellerTaxRepresentativeContact(
             $contactPersonName,
             $contactDepartmentName,
             $contactPhoneNo,
@@ -1206,7 +1206,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
         ?string $contactFaxNo = null,
         ?string $contactEmailAddress = null
     ): static {
-        $this->documentBuilder->addDocumentTaxRepresentativeContact(
+        $this->documentBuilder->addDocumentSellerTaxRepresentativeContact(
             $contactPersonName,
             $contactDepartmentName,
             $contactPhoneNo,

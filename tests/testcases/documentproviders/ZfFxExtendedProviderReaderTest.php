@@ -760,58 +760,58 @@ final class ZfFxExtendedProviderReaderTest extends TestCase
         }, '/Undefined (array key|index)/');
     }
 
-    public function testDocumentTaxRepresentative(): void
+    public function testDocumentSellerTaxRepresentative(): void
     {
         // Name
 
-        static::$document->getDocumentTaxRepresentativeName($newName);
+        static::$document->getDocumentSellerTaxRepresentativeName($newName);
 
         $this->assertSame('Tax GmbH', $newName);
 
         // ID
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeId());
+        $this->assertTrue(static::$document->firstDocumentSellerTaxRepresentativeId());
 
-        static::$document->getDocumentTaxRepresentativeId($newId);
+        static::$document->getDocumentSellerTaxRepresentativeId($newId);
 
         $this->assertSame('0815-1147', $newId);
 
-        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeId());
+        $this->assertFalse(static::$document->nextDocumentSellerTaxRepresentativeId());
 
         // Global ID
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeGlobalId());
+        $this->assertTrue(static::$document->firstDocumentSellerTaxRepresentativeGlobalId());
 
-        static::$document->getDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
+        static::$document->getDocumentSellerTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
 
         $this->assertSame('11111-TR', $newGlobalId);
         $this->assertSame('0088', $newGlobalIdType);
 
-        $this->assertTrue(static::$document->nextDocumentTaxRepresentativeGlobalId());
+        $this->assertTrue(static::$document->nextDocumentSellerTaxRepresentativeGlobalId());
 
-        static::$document->getDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
+        static::$document->getDocumentSellerTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
 
         $this->assertSame('22222-TR', $newGlobalId);
         $this->assertSame('0088', $newGlobalIdType);
 
-        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeGlobalId());
+        $this->assertFalse(static::$document->nextDocumentSellerTaxRepresentativeGlobalId());
 
         // Tax Registration
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeTaxRegistration());
+        $this->assertTrue(static::$document->firstDocumentSellerTaxRepresentativeTaxRegistration());
 
-        static::$document->getDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+        static::$document->getDocumentSellerTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         $this->assertSame('893489787987', $newTaxRegistrationId);
         $this->assertSame('VA', $newTaxRegistrationType);
 
-        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeTaxRegistration());
+        $this->assertFalse(static::$document->nextDocumentSellerTaxRepresentativeTaxRegistration());
 
         // Address
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeAddress());
+        $this->assertTrue(static::$document->firstDocumentSellerTaxRepresentativeAddress());
 
-        static::$document->getDocumentTaxRepresentativeAddress(
+        static::$document->getDocumentSellerTaxRepresentativeAddress(
             $newAddressLine1,
             $newAddressLine2,
             $newAddressLine3,
@@ -829,25 +829,25 @@ final class ZfFxExtendedProviderReaderTest extends TestCase
         $this->assertSame('DE', $newCountryId);
         $this->assertSame('Bavaria', $newSubDivision);
 
-        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeAddress());
+        $this->assertFalse(static::$document->nextDocumentSellerTaxRepresentativeAddress());
 
         // Legal Organisation
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeLegalOrganisation());
+        $this->assertTrue(static::$document->firstDocumentSellerTaxRepresentativeLegalOrganisation());
 
-        static::$document->getDocumentTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
+        static::$document->getDocumentSellerTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
 
         $this->assertSame('8884', $newType);
         $this->assertSame('19283746555', $newId);
         $this->assertSame('Tax AG', $newName);
 
-        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeLegalOrganisation());
+        $this->assertFalse(static::$document->nextDocumentSellerTaxRepresentativeLegalOrganisation());
 
         // Contact
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeContact());
+        $this->assertTrue(static::$document->firstDocumentSellerTaxRepresentativeContact());
 
-        static::$document->getDocumentTaxRepresentativeContact(
+        static::$document->getDocumentSellerTaxRepresentativeContact(
             $newPersonName,
             $newDepartmentName,
             $newPhoneNumber,
@@ -861,35 +861,35 @@ final class ZfFxExtendedProviderReaderTest extends TestCase
         $this->assertSame('0815-4711-99', $newFaxNumber);
         $this->assertSame('horst.meier@tax.de', $newEmailAddress);
 
-        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeContact());
+        $this->assertFalse(static::$document->nextDocumentSellerTaxRepresentativeContact());
 
         // Communication
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeCommunication());
+        $this->assertTrue(static::$document->firstDocumentSellerTaxRepresentativeCommunication());
 
-        static::$document->getDocumentTaxRepresentativeCommunication($newType, $newUri);
+        static::$document->getDocumentSellerTaxRepresentativeCommunication($newType, $newUri);
 
         $this->assertSame('EM', $newType);
         $this->assertSame('info@tax.de', $newUri);
 
-        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeCommunication());
+        $this->assertFalse(static::$document->nextDocumentSellerTaxRepresentativeCommunication());
 
         // Finals
 
         $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeId($newId);
+            static::$document->getDocumentSellerTaxRepresentativeId($newId);
         }, '/Undefined (array key|index)/');
 
         $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
+            static::$document->getDocumentSellerTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
         }, '/Undefined (array key|index)/');
 
         $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+            static::$document->getDocumentSellerTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
         }, '/Undefined (array key|index)/');
 
         $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeAddress(
+            static::$document->getDocumentSellerTaxRepresentativeAddress(
                 $newAddressLine1,
                 $newAddressLine2,
                 $newAddressLine3,
@@ -901,11 +901,11 @@ final class ZfFxExtendedProviderReaderTest extends TestCase
         }, '/Undefined (array key|index)/');
 
         $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
+            static::$document->getDocumentSellerTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
         }, '/Undefined (array key|index)/');
 
         $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeContact(
+            static::$document->getDocumentSellerTaxRepresentativeContact(
                 $newPersonName,
                 $newDepartmentName,
                 $newPhoneNumber,
@@ -915,7 +915,7 @@ final class ZfFxExtendedProviderReaderTest extends TestCase
         }, '/Undefined (array key|index)/');
 
         $this->expectNoticeOrWarningExt(static function (): void {
-            static::$document->getDocumentTaxRepresentativeCommunication($newType, $newUri);
+            static::$document->getDocumentSellerTaxRepresentativeCommunication($newType, $newUri);
         }, '/Undefined (array key|index)/');
     }
 

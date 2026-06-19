@@ -766,58 +766,58 @@ final class XRechnungCIIInvoiceReaderTest extends TestCase
         }, '/Undefined (array key|index)/');
     }
 
-    public function testDocumentTaxRepresentative(): void
+    public function testDocumentSellerTaxRepresentative(): void
     {
         // Name
 
-        static::$document->getDocumentTaxRepresentativeName($newName);
+        static::$document->getDocumentSellerTaxRepresentativeName($newName);
 
         $this->assertSame('Tax GmbH', $newName);
 
         // ID
 
-        $this->assertFalse(static::$document->firstDocumentTaxRepresentativeId());
+        $this->assertFalse(static::$document->firstDocumentSellerTaxRepresentativeId());
 
-        static::$document->getDocumentTaxRepresentativeId($newId);
+        static::$document->getDocumentSellerTaxRepresentativeId($newId);
 
         $this->assertSame('', $newId);
 
-        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeId());
+        $this->assertFalse(static::$document->nextDocumentSellerTaxRepresentativeId());
 
         // Global ID
 
-        $this->assertFalse(static::$document->firstDocumentTaxRepresentativeGlobalId());
+        $this->assertFalse(static::$document->firstDocumentSellerTaxRepresentativeGlobalId());
 
-        static::$document->getDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
-
-        $this->assertSame('', $newGlobalId);
-        $this->assertSame('', $newGlobalIdType);
-
-        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeGlobalId());
-
-        static::$document->getDocumentTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
+        static::$document->getDocumentSellerTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
 
         $this->assertSame('', $newGlobalId);
         $this->assertSame('', $newGlobalIdType);
 
-        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeGlobalId());
+        $this->assertFalse(static::$document->nextDocumentSellerTaxRepresentativeGlobalId());
+
+        static::$document->getDocumentSellerTaxRepresentativeGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->assertSame('', $newGlobalId);
+        $this->assertSame('', $newGlobalIdType);
+
+        $this->assertFalse(static::$document->nextDocumentSellerTaxRepresentativeGlobalId());
 
         // Tax Registration
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeTaxRegistration());
+        $this->assertTrue(static::$document->firstDocumentSellerTaxRepresentativeTaxRegistration());
 
-        static::$document->getDocumentTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+        static::$document->getDocumentSellerTaxRepresentativeTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
 
         $this->assertSame('893489787987', $newTaxRegistrationId);
         $this->assertSame('VA', $newTaxRegistrationType);
 
-        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeTaxRegistration());
+        $this->assertFalse(static::$document->nextDocumentSellerTaxRepresentativeTaxRegistration());
 
         // Address
 
-        $this->assertTrue(static::$document->firstDocumentTaxRepresentativeAddress());
+        $this->assertTrue(static::$document->firstDocumentSellerTaxRepresentativeAddress());
 
-        static::$document->getDocumentTaxRepresentativeAddress(
+        static::$document->getDocumentSellerTaxRepresentativeAddress(
             $newAddressLine1,
             $newAddressLine2,
             $newAddressLine3,
@@ -835,25 +835,25 @@ final class XRechnungCIIInvoiceReaderTest extends TestCase
         $this->assertSame('DE', $newCountryId);
         $this->assertSame('Bavaria', $newSubDivision);
 
-        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeAddress());
+        $this->assertFalse(static::$document->nextDocumentSellerTaxRepresentativeAddress());
 
         // Legal Organisation
 
-        $this->assertFalse(static::$document->firstDocumentTaxRepresentativeLegalOrganisation());
+        $this->assertFalse(static::$document->firstDocumentSellerTaxRepresentativeLegalOrganisation());
 
-        static::$document->getDocumentTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
+        static::$document->getDocumentSellerTaxRepresentativeLegalOrganisation($newType, $newId, $newName);
 
         $this->assertSame('', $newType);
         $this->assertSame('', $newId);
         $this->assertSame('', $newName);
 
-        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeLegalOrganisation());
+        $this->assertFalse(static::$document->nextDocumentSellerTaxRepresentativeLegalOrganisation());
 
         // Contact
 
-        $this->assertFalse(static::$document->firstDocumentTaxRepresentativeContact());
+        $this->assertFalse(static::$document->firstDocumentSellerTaxRepresentativeContact());
 
-        static::$document->getDocumentTaxRepresentativeContact(
+        static::$document->getDocumentSellerTaxRepresentativeContact(
             $newPersonName,
             $newDepartmentName,
             $newPhoneNumber,
@@ -867,18 +867,18 @@ final class XRechnungCIIInvoiceReaderTest extends TestCase
         $this->assertSame('', $newFaxNumber);
         $this->assertSame('', $newEmailAddress);
 
-        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeContact());
+        $this->assertFalse(static::$document->nextDocumentSellerTaxRepresentativeContact());
 
         // Communication
 
-        $this->assertFalse(static::$document->firstDocumentTaxRepresentativeCommunication());
+        $this->assertFalse(static::$document->firstDocumentSellerTaxRepresentativeCommunication());
 
-        static::$document->getDocumentTaxRepresentativeCommunication($newType, $newUri);
+        static::$document->getDocumentSellerTaxRepresentativeCommunication($newType, $newUri);
 
         $this->assertSame('', $newType);
         $this->assertSame('', $newUri);
 
-        $this->assertFalse(static::$document->nextDocumentTaxRepresentativeCommunication());
+        $this->assertFalse(static::$document->nextDocumentSellerTaxRepresentativeCommunication());
     }
 
     public function testDocumentProductEndUser(): void

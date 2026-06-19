@@ -614,115 +614,115 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
 
         $newDocumentDTO->setTaxRepresentativeParty(new InvoiceSuitePartyDTO());
 
-        $this->getDocumentTaxRepresentativeName($newDocumentTaxRepresentativeName);
-        $newDocumentDTO->getTaxRepresentativeParty()->addName($newDocumentTaxRepresentativeName);
+        $this->getDocumentSellerTaxRepresentativeName($newDocumentSellerTaxRepresentativeName);
+        $newDocumentDTO->getTaxRepresentativeParty()->addName($newDocumentSellerTaxRepresentativeName);
 
-        while ($this->nextDocumentTaxRepresentativeId()) {
-            $this->getDocumentTaxRepresentativeId(
-                $newDocumentTaxRepresentativeId
+        while ($this->nextDocumentSellerTaxRepresentativeId()) {
+            $this->getDocumentSellerTaxRepresentativeId(
+                $newDocumentSellerTaxRepresentativeId
             );
 
             $newDocumentDTO->getTaxRepresentativeParty()->addId(
                 new InvoiceSuiteIdDTO(
-                    $newDocumentTaxRepresentativeId
+                    $newDocumentSellerTaxRepresentativeId
                 )
             );
         }
 
-        while ($this->nextDocumentTaxRepresentativeGlobalId()) {
-            $this->getDocumentTaxRepresentativeGlobalId(
-                $newDocumentTaxRepresentativeGlobalId,
-                $newDocumentTaxRepresentativeGlobalIdType
+        while ($this->nextDocumentSellerTaxRepresentativeGlobalId()) {
+            $this->getDocumentSellerTaxRepresentativeGlobalId(
+                $newDocumentSellerTaxRepresentativeGlobalId,
+                $newDocumentSellerTaxRepresentativeGlobalIdType
             );
 
             $newDocumentDTO->getTaxRepresentativeParty()->addGlobalId(
                 new InvoiceSuiteIdDTO(
-                    $newDocumentTaxRepresentativeGlobalId,
-                    $newDocumentTaxRepresentativeGlobalIdType
+                    $newDocumentSellerTaxRepresentativeGlobalId,
+                    $newDocumentSellerTaxRepresentativeGlobalIdType
                 )
             );
         }
 
-        while ($this->nextDocumentTaxRepresentativeTaxRegistration()) {
-            $this->getDocumentTaxRepresentativeTaxRegistration(
-                $newDocumentTaxRepresentativeTaxRegistationType,
-                $newDocumentTaxRepresentativeTaxRegistationId
+        while ($this->nextDocumentSellerTaxRepresentativeTaxRegistration()) {
+            $this->getDocumentSellerTaxRepresentativeTaxRegistration(
+                $newDocumentSellerTaxRepresentativeTaxRegistationType,
+                $newDocumentSellerTaxRepresentativeTaxRegistationId
             );
 
             $newDocumentDTO->getTaxRepresentativeParty()->addTaxRegistration(
                 new InvoiceSuiteIdDTO(
-                    $newDocumentTaxRepresentativeTaxRegistationId,
-                    $newDocumentTaxRepresentativeTaxRegistationType
+                    $newDocumentSellerTaxRepresentativeTaxRegistationId,
+                    $newDocumentSellerTaxRepresentativeTaxRegistationType
                 )
             );
         }
 
-        while ($this->nextDocumentTaxRepresentativeAddress()) {
-            $this->getDocumentTaxRepresentativeAddress(
-                $documentTaxRepresentativeAddressLine1,
-                $documentTaxRepresentativeAddressLine2,
-                $documentTaxRepresentativeAddressLine3,
-                $documentTaxRepresentativeAddressPostCode,
-                $documentTaxRepresentativeAddressCity,
-                $documentTaxRepresentativeAddressCountry,
-                $documentTaxRepresentativeAddressSubDivision
+        while ($this->nextDocumentSellerTaxRepresentativeAddress()) {
+            $this->getDocumentSellerTaxRepresentativeAddress(
+                $documentSellerTaxRepresentativeAddressLine1,
+                $documentSellerTaxRepresentativeAddressLine2,
+                $documentSellerTaxRepresentativeAddressLine3,
+                $documentSellerTaxRepresentativeAddressPostCode,
+                $documentSellerTaxRepresentativeAddressCity,
+                $documentSellerTaxRepresentativeAddressCountry,
+                $documentSellerTaxRepresentativeAddressSubDivision
             );
 
             $newDocumentDTO->getTaxRepresentativeParty()->addAddress(new InvoiceSuiteAddressDTO(
-                $documentTaxRepresentativeAddressLine1,
-                $documentTaxRepresentativeAddressLine2,
-                $documentTaxRepresentativeAddressLine3,
-                $documentTaxRepresentativeAddressPostCode,
-                $documentTaxRepresentativeAddressCity,
-                $documentTaxRepresentativeAddressCountry,
-                $documentTaxRepresentativeAddressSubDivision
+                $documentSellerTaxRepresentativeAddressLine1,
+                $documentSellerTaxRepresentativeAddressLine2,
+                $documentSellerTaxRepresentativeAddressLine3,
+                $documentSellerTaxRepresentativeAddressPostCode,
+                $documentSellerTaxRepresentativeAddressCity,
+                $documentSellerTaxRepresentativeAddressCountry,
+                $documentSellerTaxRepresentativeAddressSubDivision
             ));
         }
 
-        while ($this->nextDocumentTaxRepresentativeLegalOrganisation()) {
-            $this->getDocumentTaxRepresentativeLegalOrganisation(
-                $newDocumentTaxRepresentativeLegalOrganisationType,
-                $newDocumentTaxRepresentativeLegalOrganisationId,
-                $newDocumentTaxRepresentativeLegalOrganisationName
+        while ($this->nextDocumentSellerTaxRepresentativeLegalOrganisation()) {
+            $this->getDocumentSellerTaxRepresentativeLegalOrganisation(
+                $newDocumentSellerTaxRepresentativeLegalOrganisationType,
+                $newDocumentSellerTaxRepresentativeLegalOrganisationId,
+                $newDocumentSellerTaxRepresentativeLegalOrganisationName
             );
 
             $newDocumentDTO->getTaxRepresentativeParty()->addLegalOrganisation(new InvoiceSuiteOrganisationDTO(
-                $newDocumentTaxRepresentativeLegalOrganisationId,
-                $newDocumentTaxRepresentativeLegalOrganisationType,
-                $newDocumentTaxRepresentativeLegalOrganisationName
+                $newDocumentSellerTaxRepresentativeLegalOrganisationId,
+                $newDocumentSellerTaxRepresentativeLegalOrganisationType,
+                $newDocumentSellerTaxRepresentativeLegalOrganisationName
             ));
         }
 
-        while ($this->nextDocumentTaxRepresentativeContact()) {
-            $this->getDocumentTaxRepresentativeContact(
-                $newDocumentTaxRepresentativeContactPersonName,
-                $newDocumentTaxRepresentativeContactDepartmentName,
-                $newDocumentTaxRepresentativeContactPhoneNumber,
-                $newDocumentTaxRepresentativeContactFaxNumber,
-                $newDocumentTaxRepresentativeContactEmailAddress
+        while ($this->nextDocumentSellerTaxRepresentativeContact()) {
+            $this->getDocumentSellerTaxRepresentativeContact(
+                $newDocumentSellerTaxRepresentativeContactPersonName,
+                $newDocumentSellerTaxRepresentativeContactDepartmentName,
+                $newDocumentSellerTaxRepresentativeContactPhoneNumber,
+                $newDocumentSellerTaxRepresentativeContactFaxNumber,
+                $newDocumentSellerTaxRepresentativeContactEmailAddress
             );
 
             $newDocumentDTO->getTaxRepresentativeParty()->addContact(
                 new InvoiceSuiteContactDTO(
-                    $newDocumentTaxRepresentativeContactPersonName,
-                    $newDocumentTaxRepresentativeContactDepartmentName,
-                    $newDocumentTaxRepresentativeContactPhoneNumber,
-                    $newDocumentTaxRepresentativeContactFaxNumber,
-                    $newDocumentTaxRepresentativeContactEmailAddress
+                    $newDocumentSellerTaxRepresentativeContactPersonName,
+                    $newDocumentSellerTaxRepresentativeContactDepartmentName,
+                    $newDocumentSellerTaxRepresentativeContactPhoneNumber,
+                    $newDocumentSellerTaxRepresentativeContactFaxNumber,
+                    $newDocumentSellerTaxRepresentativeContactEmailAddress
                 )
             );
         }
 
-        while ($this->nextDocumentTaxRepresentativeCommunication()) {
-            $this->getDocumentTaxRepresentativeCommunication(
-                $newDocumentTaxRepresentativeCommunicationType,
-                $newDocumentTaxRepresentativeCommunicationUri
+        while ($this->nextDocumentSellerTaxRepresentativeCommunication()) {
+            $this->getDocumentSellerTaxRepresentativeCommunication(
+                $newDocumentSellerTaxRepresentativeCommunicationType,
+                $newDocumentSellerTaxRepresentativeCommunicationUri
             );
 
             $newDocumentDTO->getTaxRepresentativeParty()->addCommunication(
                 new InvoiceSuiteCommunicationDTO(
-                    $newDocumentTaxRepresentativeCommunicationUri,
-                    $newDocumentTaxRepresentativeCommunicationType
+                    $newDocumentSellerTaxRepresentativeCommunicationUri,
+                    $newDocumentSellerTaxRepresentativeCommunicationType
                 )
             );
         }
@@ -4501,7 +4501,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @phpstan-param-out string $newName
      */
-    public function getDocumentTaxRepresentativeName(?string &$newName): static
+    public function getDocumentSellerTaxRepresentativeName(?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -4527,7 +4527,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeId(): bool
+    public function firstDocumentSellerTaxRepresentativeId(): bool
     {
         return false;
     }
@@ -4537,7 +4537,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeId(): bool
+    public function nextDocumentSellerTaxRepresentativeId(): bool
     {
         return false;
     }
@@ -4550,7 +4550,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @phpstan-param-out string $newId
      */
-    public function getDocumentTaxRepresentativeId(?string &$newId): static
+    public function getDocumentSellerTaxRepresentativeId(?string &$newId): static
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -4566,7 +4566,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeGlobalId(): bool
+    public function firstDocumentSellerTaxRepresentativeGlobalId(): bool
     {
         return false;
     }
@@ -4576,7 +4576,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeGlobalId(): bool
+    public function nextDocumentSellerTaxRepresentativeGlobalId(): bool
     {
         return false;
     }
@@ -4591,7 +4591,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
      */
-    public function getDocumentTaxRepresentativeGlobalId(?string &$newGlobalId, ?string &$newGlobalIdType): static
+    public function getDocumentSellerTaxRepresentativeGlobalId(?string &$newGlobalId, ?string &$newGlobalIdType): static
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -4608,7 +4608,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeTaxRegistration(): bool
+    public function firstDocumentSellerTaxRepresentativeTaxRegistration(): bool
     {
         $vatId = $this->getFatturaPaRootObject()
             ->getFatturaElettronicaHeader()
@@ -4634,7 +4634,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
             $taxRegistrations[] = ['type' => 'FC', 'id' => $fiscalCode];
         }
 
-        return InvoiceSuitePointerUtils::hasFirst($taxRegistrations, 'documenttaxrepresentativetaxregistration');
+        return InvoiceSuitePointerUtils::hasFirst($taxRegistrations, 'documentsellertaxrepresentativetaxregistration');
     }
 
     /**
@@ -4642,7 +4642,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeTaxRegistration(): bool
+    public function nextDocumentSellerTaxRepresentativeTaxRegistration(): bool
     {
         $vatId = $this->getFatturaPaRootObject()
             ->getFatturaElettronicaHeader()
@@ -4668,7 +4668,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
             $taxRegistrations[] = ['type' => 'FC', 'id' => $fiscalCode];
         }
 
-        return InvoiceSuitePointerUtils::hasNext($taxRegistrations, 'documenttaxrepresentativetaxregistration');
+        return InvoiceSuitePointerUtils::hasNext($taxRegistrations, 'documentsellertaxrepresentativetaxregistration');
     }
 
     /**
@@ -4681,7 +4681,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
      */
-    public function getDocumentTaxRepresentativeTaxRegistration(?string &$newTaxRegistrationType, ?string &$newTaxRegistrationId): static
+    public function getDocumentSellerTaxRepresentativeTaxRegistration(?string &$newTaxRegistrationType, ?string &$newTaxRegistrationId): static
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -4709,7 +4709,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
             $taxRegistrations[] = ['type' => 'FC', 'id' => $fiscalCode];
         }
 
-        $taxRegistration = $taxRegistrations[InvoiceSuitePointerUtils::getValue('documenttaxrepresentativetaxregistration')] ?? null;
+        $taxRegistration = $taxRegistrations[InvoiceSuitePointerUtils::getValue('documentsellertaxrepresentativetaxregistration')] ?? null;
 
         $newTaxRegistrationType = $taxRegistration['type'] ?? '';
         $newTaxRegistrationId = $taxRegistration['id'] ?? '';
@@ -4724,7 +4724,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeAddress(): bool
+    public function firstDocumentSellerTaxRepresentativeAddress(): bool
     {
         return false;
     }
@@ -4734,7 +4734,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeAddress(): bool
+    public function nextDocumentSellerTaxRepresentativeAddress(): bool
     {
         return false;
     }
@@ -4759,7 +4759,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      * @phpstan-param-out string $newCountryId
      * @phpstan-param-out string $newSubDivision
      */
-    public function getDocumentTaxRepresentativeAddress(?string &$newAddressLine1, ?string &$newAddressLine2, ?string &$newAddressLine3, ?string &$newPostcode, ?string &$newCity, ?string &$newCountryId, ?string &$newSubDivision): static
+    public function getDocumentSellerTaxRepresentativeAddress(?string &$newAddressLine1, ?string &$newAddressLine2, ?string &$newAddressLine3, ?string &$newPostcode, ?string &$newCity, ?string &$newCountryId, ?string &$newSubDivision): static
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -4781,7 +4781,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeLegalOrganisation(): bool
+    public function firstDocumentSellerTaxRepresentativeLegalOrganisation(): bool
     {
         return false;
     }
@@ -4791,7 +4791,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeLegalOrganisation(): bool
+    public function nextDocumentSellerTaxRepresentativeLegalOrganisation(): bool
     {
         return false;
     }
@@ -4808,7 +4808,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      * @phpstan-param-out string $newId
      * @phpstan-param-out string $newName
      */
-    public function getDocumentTaxRepresentativeLegalOrganisation(?string &$newType, ?string &$newId, ?string &$newName): static
+    public function getDocumentSellerTaxRepresentativeLegalOrganisation(?string &$newType, ?string &$newId, ?string &$newName): static
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -4826,7 +4826,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeContact(): bool
+    public function firstDocumentSellerTaxRepresentativeContact(): bool
     {
         return false;
     }
@@ -4836,7 +4836,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeContact(): bool
+    public function nextDocumentSellerTaxRepresentativeContact(): bool
     {
         return false;
     }
@@ -4857,7 +4857,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      * @phpstan-param-out string $newFaxNumber
      * @phpstan-param-out string $newEmailAddress
      */
-    public function getDocumentTaxRepresentativeContact(?string &$newPersonName, ?string &$newDepartmentName, ?string &$newPhoneNumber, ?string &$newFaxNumber, ?string &$newEmailAddress): static
+    public function getDocumentSellerTaxRepresentativeContact(?string &$newPersonName, ?string &$newDepartmentName, ?string &$newPhoneNumber, ?string &$newFaxNumber, ?string &$newEmailAddress): static
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -4877,7 +4877,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @return bool
      */
-    public function firstDocumentTaxRepresentativeCommunication(): bool
+    public function firstDocumentSellerTaxRepresentativeCommunication(): bool
     {
         return false;
     }
@@ -4887,7 +4887,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      *
      * @return bool
      */
-    public function nextDocumentTaxRepresentativeCommunication(): bool
+    public function nextDocumentSellerTaxRepresentativeCommunication(): bool
     {
         return false;
     }
@@ -4902,7 +4902,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
      */
-    public function getDocumentTaxRepresentativeCommunication(?string &$newType, ?string &$newUri): static
+    public function getDocumentSellerTaxRepresentativeCommunication(?string &$newType, ?string &$newUri): static
     {
         $this->traceMethodEnter(__METHOD__);
 
@@ -10157,8 +10157,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
         InvoiceSuitePointerUtils::resetSingle('documentbuyerid');
         InvoiceSuitePointerUtils::resetSingle('documentbuyertaxregistration');
         InvoiceSuitePointerUtils::resetSingle('documentbuyeraddress');
-        InvoiceSuitePointerUtils::resetSingle('documenttaxrepresentativeid');
-        InvoiceSuitePointerUtils::resetSingle('documenttaxrepresentativetaxregistration');
+        InvoiceSuitePointerUtils::resetSingle('documentsellertaxrepresentativeid');
+        InvoiceSuitePointerUtils::resetSingle('documentsellertaxrepresentativetaxregistration');
         InvoiceSuitePointerUtils::resetSingle('documentpaymentmean');
         InvoiceSuitePointerUtils::resetSingle('documentpaymentreference');
         InvoiceSuitePointerUtils::resetSingle('documentpaymentterm');

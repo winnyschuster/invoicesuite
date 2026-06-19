@@ -365,19 +365,19 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
         $newDocumentDTO
             ->getTaxRepresentativeParty()
             ?->firstName(
-                fn (string $item) => $this->setDocumentTaxRepresentativeName($item)
+                fn (string $item) => $this->setDocumentSellerTaxRepresentativeName($item)
             )
             ?->firstId(
-                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentTaxRepresentativeId($item->getId())
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentSellerTaxRepresentativeId($item->getId())
             )
             ?->forEachGlobalId(
-                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentTaxRepresentativeGlobalId($item->getId(), $item->getIdType())
+                fn (InvoiceSuiteIdDTO $item) => $this->addDocumentSellerTaxRepresentativeGlobalId($item->getId(), $item->getIdType())
             )
             ?->firstTaxRegistration(
-                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentTaxRepresentativeTaxRegistration($item->getIdType(), $item->getId())
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentSellerTaxRepresentativeTaxRegistration($item->getIdType(), $item->getId())
             )
             ?->firstAddress(
-                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentTaxRepresentativeAddress(
+                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentSellerTaxRepresentativeAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
                     $item->getAddressLine3(),
@@ -388,14 +388,14 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
                 )
             )
             ?->firstLegalOrganisation(
-                fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentTaxRepresentativeLegalOrganisation(
+                fn (InvoiceSuiteOrganisationDTO $item) => $this->setDocumentSellerTaxRepresentativeLegalOrganisation(
                     $item->getIdType(),
                     $item->getId(),
                     $item->getName()
                 )
             )
             ?->forEachContact(
-                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentTaxRepresentativeContact(
+                fn (InvoiceSuiteContactDTO $item) => $this->addDocumentSellerTaxRepresentativeContact(
                     $item->getPersonName(),
                     $item->getDepartmentName(),
                     $item->getPhoneNumber(),
@@ -404,7 +404,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
                 )
             )
             ?->firstCommunication(
-                fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentTaxRepresentativeCommunication(
+                fn (InvoiceSuiteCommunicationDTO $item) => $this->setDocumentSellerTaxRepresentativeCommunication(
                     $item->getIdType(),
                     $item->getId()
                 )
@@ -3132,7 +3132,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentTaxRepresentativeName(
+    public function setDocumentSellerTaxRepresentativeName(
         ?string $newName = null
     ): static {
         $this->traceMethodEnter(__METHOD__);
@@ -3167,12 +3167,12 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentTaxRepresentativeName(
+    public function addDocumentSellerTaxRepresentativeName(
         ?string $newName = null
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        $this->setDocumentTaxRepresentativeName($newName);
+        $this->setDocumentSellerTaxRepresentativeName($newName);
 
         $this->traceMethodExit(__METHOD__);
 
@@ -3185,7 +3185,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentTaxRepresentativeId(
+    public function setDocumentSellerTaxRepresentativeId(
         ?string $newId = null
     ): static {
         $this->traceMethodEnter(__METHOD__);
@@ -3201,7 +3201,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentTaxRepresentativeId(
+    public function addDocumentSellerTaxRepresentativeId(
         ?string $newId = null
     ): static {
         $this->traceMethodEnter(__METHOD__);
@@ -3218,7 +3218,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentTaxRepresentativeGlobalId(
+    public function setDocumentSellerTaxRepresentativeGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
     ): static {
@@ -3236,7 +3236,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentTaxRepresentativeGlobalId(
+    public function addDocumentSellerTaxRepresentativeGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
     ): static {
@@ -3254,7 +3254,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function setDocumentTaxRepresentativeTaxRegistration(
+    public function setDocumentSellerTaxRepresentativeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
     ): static {
@@ -3303,13 +3303,13 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function addDocumentTaxRepresentativeTaxRegistration(
+    public function addDocumentSellerTaxRepresentativeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
     ): static {
         $this->traceMethodEnter(__METHOD__);
 
-        $this->setDocumentTaxRepresentativeTaxRegistration(
+        $this->setDocumentSellerTaxRepresentativeTaxRegistration(
             $newTaxRegistrationType,
             $newTaxRegistrationId
         );
@@ -3331,7 +3331,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentTaxRepresentativeAddress(
+    public function setDocumentSellerTaxRepresentativeAddress(
         ?string $newAddressLine1 = null,
         ?string $newAddressLine2 = null,
         ?string $newAddressLine3 = null,
@@ -3359,7 +3359,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentTaxRepresentativeAddress(
+    public function addDocumentSellerTaxRepresentativeAddress(
         ?string $newAddressLine1 = null,
         ?string $newAddressLine2 = null,
         ?string $newAddressLine3 = null,
@@ -3383,7 +3383,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentTaxRepresentativeLegalOrganisation(
+    public function setDocumentSellerTaxRepresentativeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null
@@ -3403,7 +3403,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentTaxRepresentativeLegalOrganisation(
+    public function addDocumentSellerTaxRepresentativeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null
@@ -3425,7 +3425,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function setDocumentTaxRepresentativeContact(
+    public function setDocumentSellerTaxRepresentativeContact(
         ?string $newPersonName = null,
         ?string $newDepartmentName = null,
         ?string $newPhoneNumber = null,
@@ -3449,7 +3449,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentTaxRepresentativeContact(
+    public function addDocumentSellerTaxRepresentativeContact(
         ?string $newPersonName = null,
         ?string $newDepartmentName = null,
         ?string $newPhoneNumber = null,
@@ -3470,7 +3470,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentTaxRepresentativeCommunication(
+    public function setDocumentSellerTaxRepresentativeCommunication(
         ?string $newType = null,
         ?string $newUri = null
     ): static {
@@ -3488,7 +3488,7 @@ class InvoiceSuiteFatturaPaProviderBuilder extends InvoiceSuiteAbstractDocumentF
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentTaxRepresentativeCommunication(
+    public function addDocumentSellerTaxRepresentativeCommunication(
         ?string $newType = null,
         ?string $newUri = null
     ): static {

@@ -1123,7 +1123,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseReader
      *
      * @phpstan-param-out string $newName
      */
-    abstract public function getDocumentTaxRepresentativeName(
+    abstract public function getDocumentSellerTaxRepresentativeName(
         ?string &$newName
     ): static;
 
@@ -1132,14 +1132,14 @@ abstract class InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    abstract public function firstDocumentTaxRepresentativeId(): bool;
+    abstract public function firstDocumentSellerTaxRepresentativeId(): bool;
 
     /**
      * Go to the next ID of the tax representative party
      *
      * @return bool
      */
-    abstract public function nextDocumentTaxRepresentativeId(): bool;
+    abstract public function nextDocumentSellerTaxRepresentativeId(): bool;
 
     /**
      * Get the ID of the tax representative party
@@ -1149,7 +1149,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseReader
      *
      * @phpstan-param-out string $newId
      */
-    abstract public function getDocumentTaxRepresentativeId(
+    abstract public function getDocumentSellerTaxRepresentativeId(
         ?string &$newId
     ): static;
 
@@ -1158,14 +1158,14 @@ abstract class InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    abstract public function firstDocumentTaxRepresentativeGlobalId(): bool;
+    abstract public function firstDocumentSellerTaxRepresentativeGlobalId(): bool;
 
     /**
      * Go to the next global ID of the tax representative party
      *
      * @return bool
      */
-    abstract public function nextDocumentTaxRepresentativeGlobalId(): bool;
+    abstract public function nextDocumentSellerTaxRepresentativeGlobalId(): bool;
 
     /**
      * Get the Global ID of the tax representative party
@@ -1177,7 +1177,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseReader
      * @phpstan-param-out string $newGlobalId
      * @phpstan-param-out string $newGlobalIdType
      */
-    abstract public function getDocumentTaxRepresentativeGlobalId(
+    abstract public function getDocumentSellerTaxRepresentativeGlobalId(
         ?string &$newGlobalId,
         ?string &$newGlobalIdType
     ): static;
@@ -1187,14 +1187,14 @@ abstract class InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    abstract public function firstDocumentTaxRepresentativeTaxRegistration(): bool;
+    abstract public function firstDocumentSellerTaxRepresentativeTaxRegistration(): bool;
 
     /**
      * Go to the next Tax Registration of the tax representative party
      *
      * @return bool
      */
-    abstract public function nextDocumentTaxRepresentativeTaxRegistration(): bool;
+    abstract public function nextDocumentSellerTaxRepresentativeTaxRegistration(): bool;
 
     /**
      * Get the Tax Registration of the tax representative party
@@ -1206,7 +1206,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseReader
      * @phpstan-param-out string $newTaxRegistrationType
      * @phpstan-param-out string $newTaxRegistrationId
      */
-    abstract public function getDocumentTaxRepresentativeTaxRegistration(
+    abstract public function getDocumentSellerTaxRepresentativeTaxRegistration(
         ?string &$newTaxRegistrationType,
         ?string &$newTaxRegistrationId
     ): static;
@@ -1216,14 +1216,14 @@ abstract class InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    abstract public function firstDocumentTaxRepresentativeAddress(): bool;
+    abstract public function firstDocumentSellerTaxRepresentativeAddress(): bool;
 
     /**
      * Go to the next address of the tax representative party
      *
      * @return bool
      */
-    abstract public function nextDocumentTaxRepresentativeAddress(): bool;
+    abstract public function nextDocumentSellerTaxRepresentativeAddress(): bool;
 
     /**
      * Get the address of the tax representative party
@@ -1245,7 +1245,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseReader
      * @phpstan-param-out string $newCountryId
      * @phpstan-param-out string $newSubDivision
      */
-    abstract public function getDocumentTaxRepresentativeAddress(
+    abstract public function getDocumentSellerTaxRepresentativeAddress(
         ?string &$newAddressLine1,
         ?string &$newAddressLine2,
         ?string &$newAddressLine3,
@@ -1260,14 +1260,14 @@ abstract class InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    abstract public function firstDocumentTaxRepresentativeLegalOrganisation(): bool;
+    abstract public function firstDocumentSellerTaxRepresentativeLegalOrganisation(): bool;
 
     /**
      * Go to the next the legal information of the tax representative party
      *
      * @return bool
      */
-    abstract public function nextDocumentTaxRepresentativeLegalOrganisation(): bool;
+    abstract public function nextDocumentSellerTaxRepresentativeLegalOrganisation(): bool;
 
     /**
      * Get the legal information of the tax representative party
@@ -1281,7 +1281,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseReader
      * @phpstan-param-out string $newId
      * @phpstan-param-out string $newName
      */
-    abstract public function getDocumentTaxRepresentativeLegalOrganisation(
+    abstract public function getDocumentSellerTaxRepresentativeLegalOrganisation(
         ?string &$newType,
         ?string &$newId,
         ?string &$newName
@@ -1292,14 +1292,14 @@ abstract class InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    abstract public function firstDocumentTaxRepresentativeContact(): bool;
+    abstract public function firstDocumentSellerTaxRepresentativeContact(): bool;
 
     /**
      * Go to the next contact information of the tax representative party
      *
      * @return bool
      */
-    abstract public function nextDocumentTaxRepresentativeContact(): bool;
+    abstract public function nextDocumentSellerTaxRepresentativeContact(): bool;
 
     /**
      * Get the contact information of the tax representative party
@@ -1317,7 +1317,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseReader
      * @phpstan-param-out string $newFaxNumber
      * @phpstan-param-out string $newEmailAddress
      */
-    abstract public function getDocumentTaxRepresentativeContact(
+    abstract public function getDocumentSellerTaxRepresentativeContact(
         ?string &$newPersonName,
         ?string &$newDepartmentName,
         ?string &$newPhoneNumber,
@@ -1330,14 +1330,14 @@ abstract class InvoiceSuiteAbstractDocumentBaseReader
      *
      * @return bool
      */
-    abstract public function firstDocumentTaxRepresentativeCommunication(): bool;
+    abstract public function firstDocumentSellerTaxRepresentativeCommunication(): bool;
 
     /**
      * Go to the next communication information of the tax representative party
      *
      * @return bool
      */
-    abstract public function nextDocumentTaxRepresentativeCommunication(): bool;
+    abstract public function nextDocumentSellerTaxRepresentativeCommunication(): bool;
 
     /**
      * Get communication information of the tax representative party
@@ -1349,7 +1349,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseReader
      * @phpstan-param-out string $newType
      * @phpstan-param-out string $newUri
      */
-    abstract public function getDocumentTaxRepresentativeCommunication(
+    abstract public function getDocumentSellerTaxRepresentativeCommunication(
         ?string &$newType,
         ?string &$newUri
     ): static;

@@ -989,7 +989,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    abstract public function setDocumentTaxRepresentativeName(
+    abstract public function setDocumentSellerTaxRepresentativeName(
         ?string $newName = null
     ): static;
 
@@ -999,7 +999,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    abstract public function addDocumentTaxRepresentativeName(
+    abstract public function addDocumentSellerTaxRepresentativeName(
         ?string $newName = null
     ): static;
 
@@ -1009,7 +1009,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    abstract public function setDocumentTaxRepresentativeId(
+    abstract public function setDocumentSellerTaxRepresentativeId(
         ?string $newId = null
     ): static;
 
@@ -1019,7 +1019,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    abstract public function addDocumentTaxRepresentativeId(
+    abstract public function addDocumentSellerTaxRepresentativeId(
         ?string $newId = null
     ): static;
 
@@ -1030,7 +1030,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    abstract public function setDocumentTaxRepresentativeGlobalId(
+    abstract public function setDocumentSellerTaxRepresentativeGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
     ): static;
@@ -1042,7 +1042,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    abstract public function addDocumentTaxRepresentativeGlobalId(
+    abstract public function addDocumentSellerTaxRepresentativeGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null
     ): static;
@@ -1054,7 +1054,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    abstract public function setDocumentTaxRepresentativeTaxRegistration(
+    abstract public function setDocumentSellerTaxRepresentativeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
     ): static;
@@ -1066,7 +1066,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    abstract public function addDocumentTaxRepresentativeTaxRegistration(
+    abstract public function addDocumentSellerTaxRepresentativeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null
     ): static;
@@ -1083,7 +1083,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    abstract public function setDocumentTaxRepresentativeAddress(
+    abstract public function setDocumentSellerTaxRepresentativeAddress(
         ?string $newAddressLine1 = null,
         ?string $newAddressLine2 = null,
         ?string $newAddressLine3 = null,
@@ -1105,7 +1105,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    abstract public function addDocumentTaxRepresentativeAddress(
+    abstract public function addDocumentSellerTaxRepresentativeAddress(
         ?string $newAddressLine1 = null,
         ?string $newAddressLine2 = null,
         ?string $newAddressLine3 = null,
@@ -1123,7 +1123,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    abstract public function setDocumentTaxRepresentativeLegalOrganisation(
+    abstract public function setDocumentSellerTaxRepresentativeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null
@@ -1137,7 +1137,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    abstract public function addDocumentTaxRepresentativeLegalOrganisation(
+    abstract public function addDocumentSellerTaxRepresentativeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null
@@ -1153,7 +1153,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    abstract public function setDocumentTaxRepresentativeContact(
+    abstract public function setDocumentSellerTaxRepresentativeContact(
         ?string $newPersonName = null,
         ?string $newDepartmentName = null,
         ?string $newPhoneNumber = null,
@@ -1171,7 +1171,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    abstract public function addDocumentTaxRepresentativeContact(
+    abstract public function addDocumentSellerTaxRepresentativeContact(
         ?string $newPersonName = null,
         ?string $newDepartmentName = null,
         ?string $newPhoneNumber = null,
@@ -1186,7 +1186,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    abstract public function setDocumentTaxRepresentativeCommunication(
+    abstract public function setDocumentSellerTaxRepresentativeCommunication(
         ?string $newType = null,
         ?string $newUri = null
     ): static;
@@ -1198,7 +1198,7 @@ abstract class InvoiceSuiteAbstractDocumentBaseBuilder
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    abstract public function addDocumentTaxRepresentativeCommunication(
+    abstract public function addDocumentSellerTaxRepresentativeCommunication(
         ?string $newType = null,
         ?string $newUri = null
     ): static;

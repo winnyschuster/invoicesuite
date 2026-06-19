@@ -336,10 +336,10 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
         $newDocumentDTO
             ->getTaxRepresentativeParty()
             ?->firstName(
-                fn (string $item) => $this->setDocumentTaxRepresentativeName($item)
+                fn (string $item) => $this->setDocumentSellerTaxRepresentativeName($item)
             )
             ?->firstAddress(
-                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentTaxRepresentativeAddress(
+                fn (InvoiceSuiteAddressDTO $item) => $this->setDocumentSellerTaxRepresentativeAddress(
                     $item->getAddressLine1(),
                     $item->getAddressLine2(),
                     $item->getAddressLine3(),
@@ -350,7 +350,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
                 )
             )
             ?->firstTaxRegistration(
-                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentTaxRepresentativeTaxRegistration($item->getIdType(), $item->getId())
+                fn (InvoiceSuiteIdDTO $item) => $this->setDocumentSellerTaxRepresentativeTaxRegistration($item->getIdType(), $item->getId())
             );
 
         // Document-Level Supply Chain Event
@@ -2934,7 +2934,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function setDocumentTaxRepresentativeName(
+    public function setDocumentSellerTaxRepresentativeName(
         ?string $newName = null
     ): static {
         $this->traceMethodEnter(__METHOD__);
@@ -2966,7 +2966,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newName the full formal name under which the party is registered
      * @return static
      */
-    public function addDocumentTaxRepresentativeName(
+    public function addDocumentSellerTaxRepresentativeName(
         ?string $newName = null
     ): static {
         $this->traceMethodEnter(__METHOD__);
@@ -2975,7 +2975,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newName)');
         }
 
-        $this->setDocumentTaxRepresentativeName($newName);
+        $this->setDocumentSellerTaxRepresentativeName($newName);
 
         $this->traceMethodExit(__METHOD__);
 
@@ -2988,7 +2988,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function setDocumentTaxRepresentativeId(
+    public function setDocumentSellerTaxRepresentativeId(
         ?string $newId = null
     ): static {
         $this->traceMethodEnter(__METHOD__);
@@ -3006,7 +3006,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newId An identifier of the party. In many systems, identification is key information.
      * @return static
      */
-    public function addDocumentTaxRepresentativeId(
+    public function addDocumentSellerTaxRepresentativeId(
         ?string $newId = null
     ): static {
         $this->traceMethodEnter(__METHOD__);
@@ -3025,7 +3025,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function setDocumentTaxRepresentativeGlobalId(
+    public function setDocumentSellerTaxRepresentativeGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
@@ -3045,7 +3045,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newGlobalIdType type of the global identifier of the party
      * @return static
      */
-    public function addDocumentTaxRepresentativeGlobalId(
+    public function addDocumentSellerTaxRepresentativeGlobalId(
         ?string $newGlobalId = null,
         ?string $newGlobalIdType = null,
     ): static {
@@ -3065,7 +3065,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function setDocumentTaxRepresentativeTaxRegistration(
+    public function setDocumentSellerTaxRepresentativeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
@@ -3106,7 +3106,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newTaxRegistrationId   tax identification number
      * @return static
      */
-    public function addDocumentTaxRepresentativeTaxRegistration(
+    public function addDocumentSellerTaxRepresentativeTaxRegistration(
         ?string $newTaxRegistrationType = null,
         ?string $newTaxRegistrationId = null,
     ): static {
@@ -3116,7 +3116,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             return $this->traceMethodEarlyExit(__METHOD__, 'oneIsNullOrEmpty', 'InvoiceSuiteStringUtils::oneIsNullOrEmpty([$newTaxRegistrationType, $newTaxRegistrationId])');
         }
 
-        $this->setDocumentTaxRepresentativeTaxRegistration(
+        $this->setDocumentSellerTaxRepresentativeTaxRegistration(
             $newTaxRegistrationType,
             $newTaxRegistrationId
         );
@@ -3138,7 +3138,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function setDocumentTaxRepresentativeAddress(
+    public function setDocumentSellerTaxRepresentativeAddress(
         ?string $newAddressLine1 = null,
         ?string $newAddressLine2 = null,
         ?string $newAddressLine3 = null,
@@ -3206,7 +3206,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newSubDivision  region or federal state in which the party's address is located
      * @return static
      */
-    public function addDocumentTaxRepresentativeAddress(
+    public function addDocumentSellerTaxRepresentativeAddress(
         ?string $newAddressLine1 = null,
         ?string $newAddressLine2 = null,
         ?string $newAddressLine3 = null,
@@ -3221,7 +3221,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
             return $this->traceMethodEarlyExit(__METHOD__, 'stringIsNullOrEmpty', 'InvoiceSuiteStringUtils::stringIsNullOrEmpty($newCountryId)');
         }
 
-        $this->setDocumentTaxRepresentativeAddress(
+        $this->setDocumentSellerTaxRepresentativeAddress(
             $newAddressLine1,
             $newAddressLine2,
             $newAddressLine3,
@@ -3244,7 +3244,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function setDocumentTaxRepresentativeLegalOrganisation(
+    public function setDocumentSellerTaxRepresentativeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
@@ -3266,7 +3266,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newName name by which the party is known, if different from the party's name
      * @return static
      */
-    public function addDocumentTaxRepresentativeLegalOrganisation(
+    public function addDocumentSellerTaxRepresentativeLegalOrganisation(
         ?string $newType = null,
         ?string $newId = null,
         ?string $newName = null,
@@ -3290,7 +3290,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function setDocumentTaxRepresentativeContact(
+    public function setDocumentSellerTaxRepresentativeContact(
         ?string $newPersonName = null,
         ?string $newDepartmentName = null,
         ?string $newPhoneNumber = null,
@@ -3316,7 +3316,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newEmailAddress   E-Mail address of the contact point
      * @return static
      */
-    public function addDocumentTaxRepresentativeContact(
+    public function addDocumentSellerTaxRepresentativeContact(
         ?string $newPersonName = null,
         ?string $newDepartmentName = null,
         ?string $newPhoneNumber = null,
@@ -3339,7 +3339,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function setDocumentTaxRepresentativeCommunication(
+    public function setDocumentSellerTaxRepresentativeCommunication(
         ?string $newType = null,
         ?string $newUri = null
     ): static {
@@ -3359,7 +3359,7 @@ class InvoiceSuitePeppol30CreditNoteProviderBuilder extends InvoiceSuiteAbstract
      * @param  null|string $newUri  the party's electronic address
      * @return static
      */
-    public function addDocumentTaxRepresentativeCommunication(
+    public function addDocumentSellerTaxRepresentativeCommunication(
         ?string $newType = null,
         ?string $newUri = null
     ): static {
