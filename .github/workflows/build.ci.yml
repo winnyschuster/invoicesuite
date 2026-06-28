@@ -105,14 +105,14 @@ jobs:
 
       - name: Cache PHP-CS-Fixer
         continue-on-error: true
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: build/.php-cs-fixer.cache
           key: ${{ runner.os }}-php-cs-fixer-php-${{ matrix.phpversion }}-${{ hashFiles('build/phpcsfixer.php', 'composer.lock') }}
 
       - name: Cache PHPStan
         continue-on-error: true
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: build/phpstan
           key: ${{ runner.os }}-phpstan-php-${{ matrix.phpversion }}-${{ hashFiles('build/phpstan.neon', 'composer.lock') }}
@@ -137,7 +137,7 @@ jobs:
       - name: Cache Schematron application
         continue-on-error: true
         id: cache-validator
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: ${{ env.VALIDATORPATH }}
           key: ${{ runner.os }}-validator-${{ steps.hash-validator.outputs.hash }}
@@ -171,7 +171,7 @@ jobs:
       - name: Cache veraPDF application
         continue-on-error: true
         id: cache-verapdf
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: ${{ env.VERAPDFPATH }}
           key: ${{ runner.os }}-verapdf-${{ steps.hash-verapdf.outputs.hash }}
