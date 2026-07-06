@@ -439,4 +439,17 @@ class InvoiceSuiteArrayUtils
     {
         return usort($array, $callback);
     }
+
+    /**
+     * Return the values from a single column in the input array
+     *
+     * @param  array<array-key, mixed> $array
+     * @param  null|int|string         $columKey
+     * @param  null|int|string         $indexKey
+     * @return array<array-key, mixed>
+     */
+    public static function col(array $array, int|string|null $columKey, int|string|null $indexKey = null): array
+    {
+        return array_column($array, $columKey, $indexKey);
+    }
 }
