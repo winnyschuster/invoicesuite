@@ -24,7 +24,7 @@ class FrameworkAgreementType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExpectedOperatorQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ExpectedOperatorQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $expectedOperatorQuantity;
 
     /**
@@ -35,7 +35,7 @@ class FrameworkAgreementType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MaximumOperatorQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MaximumOperatorQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $maximumOperatorQuantity;
 
     /**
@@ -46,8 +46,8 @@ class FrameworkAgreementType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Justification')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Justification>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Justification', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Justification', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $justification;
 
     /**
@@ -58,8 +58,8 @@ class FrameworkAgreementType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Frequency')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Frequency>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Frequency', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Frequency', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $frequency;
 
     /**
@@ -70,7 +70,7 @@ class FrameworkAgreementType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DurationPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\DurationPeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $durationPeriod;
 
     /**
@@ -81,8 +81,8 @@ class FrameworkAgreementType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SubsequentProcessTenderRequirement')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\SubsequentProcessTenderRequirement>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'SubsequentProcessTenderRequirement', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'SubsequentProcessTenderRequirement', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $subsequentProcessTenderRequirement;
 
     /**

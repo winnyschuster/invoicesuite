@@ -20,8 +20,8 @@ class LineTradeSettlementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ApplicableTradeTax')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradeTaxType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ApplicableTradeTax', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'ApplicableTradeTax', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $applicableTradeTax;
 
     /**
@@ -32,7 +32,7 @@ class LineTradeSettlementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('BillingSpecifiedPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\SpecifiedPeriodType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $billingSpecifiedPeriod;
 
     /**
@@ -43,8 +43,8 @@ class LineTradeSettlementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SpecifiedTradeAllowanceCharge')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradeAllowanceChargeType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'SpecifiedTradeAllowanceCharge', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'SpecifiedTradeAllowanceCharge', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $specifiedTradeAllowanceCharge;
 
     /**
@@ -55,7 +55,7 @@ class LineTradeSettlementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SpecifiedTradeSettlementLineMonetarySummation')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradeSettlementLineMonetarySummationType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $specifiedTradeSettlementLineMonetarySummation;
 
     /**
@@ -66,7 +66,7 @@ class LineTradeSettlementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('InvoiceReferencedDocument')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\ReferencedDocumentType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $invoiceReferencedDocument;
 
     /**
@@ -77,8 +77,8 @@ class LineTradeSettlementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('AdditionalReferencedDocument')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\ram\ReferencedDocumentType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AdditionalReferencedDocument', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'AdditionalReferencedDocument', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $additionalReferencedDocument;
 
     /**
@@ -89,8 +89,8 @@ class LineTradeSettlementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ReceivableSpecifiedTradeAccountingAccount')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradeAccountingAccountType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ReceivableSpecifiedTradeAccountingAccount', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'ReceivableSpecifiedTradeAccountingAccount', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $receivableSpecifiedTradeAccountingAccount;
 
     /**

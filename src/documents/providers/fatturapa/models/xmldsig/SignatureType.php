@@ -65,7 +65,7 @@ class SignatureType
     #[JMS\SerializedName('Object')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\xmldsig\ObjectType>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Object')]
+    #[JMS\XmlList(entry: 'Object', inline: true)]
     private ?array $object = null;
 
     /**

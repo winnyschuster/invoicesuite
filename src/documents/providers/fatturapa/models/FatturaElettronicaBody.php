@@ -56,7 +56,7 @@ final class FatturaElettronicaBody
     #[JMS\SerializedName('DatiPagamento')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\DatiPagamento>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DatiPagamento')]
+    #[JMS\XmlList(entry: 'DatiPagamento', inline: true)]
     private ?array $datiPagamento = null;
 
     /**
@@ -70,7 +70,7 @@ final class FatturaElettronicaBody
     #[JMS\SerializedName('Allegati')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\Allegati>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Allegati')]
+    #[JMS\XmlList(entry: 'Allegati', inline: true)]
     private ?array $allegati = null;
 
     /**

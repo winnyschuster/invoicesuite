@@ -20,8 +20,8 @@ class EnergyWaterSupplyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumptionReport')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\ConsumptionReport>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ConsumptionReport', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'ConsumptionReport', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $consumptionReport;
 
     /**
@@ -32,8 +32,8 @@ class EnergyWaterSupplyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EnergyTaxReport')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\EnergyTaxReport>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'EnergyTaxReport', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'EnergyTaxReport', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $energyTaxReport;
 
     /**
@@ -44,8 +44,8 @@ class EnergyWaterSupplyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumptionAverage')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\ConsumptionAverage>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ConsumptionAverage', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'ConsumptionAverage', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $consumptionAverage;
 
     /**
@@ -56,8 +56,8 @@ class EnergyWaterSupplyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EnergyWaterConsumptionCorrection')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\EnergyWaterConsumptionCorrection>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'EnergyWaterConsumptionCorrection', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'EnergyWaterConsumptionCorrection', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $energyWaterConsumptionCorrection;
 
     /**

@@ -26,7 +26,7 @@ class QuotationLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -37,8 +37,8 @@ class QuotationLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Note')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Note>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Note', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Note', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $note;
 
     /**
@@ -49,7 +49,7 @@ class QuotationLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Quantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Quantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $quantity;
 
     /**
@@ -60,7 +60,7 @@ class QuotationLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LineExtensionAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LineExtensionAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $lineExtensionAmount;
 
     /**
@@ -71,7 +71,7 @@ class QuotationLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TotalTaxAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TotalTaxAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $totalTaxAmount;
 
     /**
@@ -82,7 +82,7 @@ class QuotationLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('RequestForQuotationLineID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\RequestForQuotationLineID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $requestForQuotationLineID;
 
     /**
@@ -93,8 +93,8 @@ class QuotationLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DocumentReference')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\DocumentReference>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DocumentReference', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'DocumentReference', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $documentReference;
 
     /**
@@ -105,7 +105,7 @@ class QuotationLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LineItem')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\LineItem')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $lineItem;
 
     /**
@@ -116,8 +116,8 @@ class QuotationLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SellerProposedSubstituteLineItem')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\SellerProposedSubstituteLineItem>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'SellerProposedSubstituteLineItem', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'SellerProposedSubstituteLineItem', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $sellerProposedSubstituteLineItem;
 
     /**
@@ -128,8 +128,8 @@ class QuotationLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AlternativeLineItem')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\AlternativeLineItem>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AlternativeLineItem', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'AlternativeLineItem', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $alternativeLineItem;
 
     /**
@@ -140,7 +140,7 @@ class QuotationLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('RequestLineReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\RequestLineReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $requestLineReference;
 
     /**

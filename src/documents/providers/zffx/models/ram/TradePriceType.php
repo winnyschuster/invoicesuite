@@ -22,7 +22,7 @@ class TradePriceType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ChargeAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $chargeAmount;
 
     /**
@@ -33,7 +33,7 @@ class TradePriceType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('BasisQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\QuantityType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $basisQuantity;
 
     /**
@@ -44,8 +44,8 @@ class TradePriceType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('AppliedTradeAllowanceCharge')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradeAllowanceChargeType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AppliedTradeAllowanceCharge', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'AppliedTradeAllowanceCharge', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $appliedTradeAllowanceCharge;
 
     /**
@@ -56,7 +56,7 @@ class TradePriceType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('IncludedTradeTax')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradeTaxType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $includedTradeTax;
 
     /**

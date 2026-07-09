@@ -23,8 +23,8 @@ class ContractExtensionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('OptionsDescription')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\OptionsDescription>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'OptionsDescription', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'OptionsDescription', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $optionsDescription;
 
     /**
@@ -35,7 +35,7 @@ class ContractExtensionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MinimumNumberNumeric')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MinimumNumberNumeric')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $minimumNumberNumeric;
 
     /**
@@ -46,7 +46,7 @@ class ContractExtensionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MaximumNumberNumeric')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MaximumNumberNumeric')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $maximumNumberNumeric;
 
     /**
@@ -57,7 +57,7 @@ class ContractExtensionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('OptionValidityPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\OptionValidityPeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $optionValidityPeriod;
 
     /**
@@ -68,8 +68,8 @@ class ContractExtensionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Renewal')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\Renewal>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Renewal', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'Renewal', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $renewal;
 
     /**

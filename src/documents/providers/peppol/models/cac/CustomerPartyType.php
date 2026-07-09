@@ -23,7 +23,7 @@ class CustomerPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CustomerAssignedAccountID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CustomerAssignedAccountID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $customerAssignedAccountID;
 
     /**
@@ -34,7 +34,7 @@ class CustomerPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SupplierAssignedAccountID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SupplierAssignedAccountID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $supplierAssignedAccountID;
 
     /**
@@ -45,8 +45,8 @@ class CustomerPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AdditionalAccountID')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\AdditionalAccountID>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AdditionalAccountID', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'AdditionalAccountID', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $additionalAccountID;
 
     /**
@@ -57,7 +57,7 @@ class CustomerPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Party')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Party')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $party;
 
     /**
@@ -68,7 +68,7 @@ class CustomerPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DeliveryContact')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\DeliveryContact')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $deliveryContact;
 
     /**
@@ -79,7 +79,7 @@ class CustomerPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AccountingContact')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\AccountingContact')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $accountingContact;
 
     /**
@@ -90,7 +90,7 @@ class CustomerPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BuyerContact')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\BuyerContact')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $buyerContact;
 
     /**

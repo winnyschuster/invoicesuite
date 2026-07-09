@@ -30,7 +30,7 @@ class ExternalReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('URI')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\URI')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $uRI;
 
     /**
@@ -41,7 +41,7 @@ class ExternalReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DocumentHash')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\DocumentHash')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $documentHash;
 
     /**
@@ -52,7 +52,7 @@ class ExternalReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('HashAlgorithmMethod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\HashAlgorithmMethod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $hashAlgorithmMethod;
 
     /**
@@ -63,7 +63,7 @@ class ExternalReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExpiryDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $expiryDate;
 
     /**
@@ -74,7 +74,7 @@ class ExternalReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExpiryTime')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $expiryTime;
 
     /**
@@ -85,7 +85,7 @@ class ExternalReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MimeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MimeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $mimeCode;
 
     /**
@@ -96,7 +96,7 @@ class ExternalReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FormatCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\FormatCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $formatCode;
 
     /**
@@ -107,7 +107,7 @@ class ExternalReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EncodingCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\EncodingCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $encodingCode;
 
     /**
@@ -118,7 +118,7 @@ class ExternalReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CharacterSetCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CharacterSetCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $characterSetCode;
 
     /**
@@ -129,7 +129,7 @@ class ExternalReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FileName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\FileName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $fileName;
 
     /**
@@ -140,8 +140,8 @@ class ExternalReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Description')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Description>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Description', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Description', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $description;
 
     /**

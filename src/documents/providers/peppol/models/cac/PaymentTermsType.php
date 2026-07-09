@@ -34,7 +34,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -45,8 +45,8 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PaymentMeansID')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PaymentMeansID>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PaymentMeansID', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'PaymentMeansID', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $paymentMeansID;
 
     /**
@@ -57,7 +57,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PrepaidPaymentReferenceID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PrepaidPaymentReferenceID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $prepaidPaymentReferenceID;
 
     /**
@@ -68,8 +68,8 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Note')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Note>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Note', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Note', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $note;
 
     /**
@@ -80,7 +80,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ReferenceEventCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ReferenceEventCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $referenceEventCode;
 
     /**
@@ -91,7 +91,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SettlementDiscountPercent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SettlementDiscountPercent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $settlementDiscountPercent;
 
     /**
@@ -102,7 +102,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PenaltySurchargePercent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PenaltySurchargePercent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $penaltySurchargePercent;
 
     /**
@@ -113,7 +113,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PaymentPercent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PaymentPercent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $paymentPercent;
 
     /**
@@ -124,7 +124,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Amount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Amount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $amount;
 
     /**
@@ -135,7 +135,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SettlementDiscountAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SettlementDiscountAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $settlementDiscountAmount;
 
     /**
@@ -146,7 +146,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PenaltyAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PenaltyAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $penaltyAmount;
 
     /**
@@ -157,7 +157,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PaymentTermsDetailsURI')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PaymentTermsDetailsURI')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $paymentTermsDetailsURI;
 
     /**
@@ -168,7 +168,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PaymentDueDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $paymentDueDate;
 
     /**
@@ -179,7 +179,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('InstallmentDueDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $installmentDueDate;
 
     /**
@@ -190,7 +190,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('InvoicingPartyReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\InvoicingPartyReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $invoicingPartyReference;
 
     /**
@@ -201,7 +201,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SettlementPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\SettlementPeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $settlementPeriod;
 
     /**
@@ -212,7 +212,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PenaltyPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\PenaltyPeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $penaltyPeriod;
 
     /**
@@ -223,7 +223,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExchangeRate')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ExchangeRate')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $exchangeRate;
 
     /**
@@ -234,7 +234,7 @@ class PaymentTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ValidityPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ValidityPeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $validityPeriod;
 
     /**

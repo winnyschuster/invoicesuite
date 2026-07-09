@@ -24,7 +24,7 @@ class PeriodType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('StartDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $startDate;
 
     /**
@@ -35,7 +35,7 @@ class PeriodType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('StartTime')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $startTime;
 
     /**
@@ -46,7 +46,7 @@ class PeriodType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EndDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $endDate;
 
     /**
@@ -57,7 +57,7 @@ class PeriodType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EndTime')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $endTime;
 
     /**
@@ -68,7 +68,7 @@ class PeriodType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DurationMeasure')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\DurationMeasure')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $durationMeasure;
 
     /**
@@ -79,8 +79,8 @@ class PeriodType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DescriptionCode')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\DescriptionCode>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DescriptionCode', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'DescriptionCode', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $descriptionCode;
 
     /**
@@ -91,8 +91,8 @@ class PeriodType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Description')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Description>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Description', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Description', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $description;
 
     /**

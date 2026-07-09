@@ -23,7 +23,7 @@ class CommodityClassificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('NatureCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\NatureCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $natureCode;
 
     /**
@@ -34,7 +34,7 @@ class CommodityClassificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CargoTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CargoTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $cargoTypeCode;
 
     /**
@@ -45,7 +45,7 @@ class CommodityClassificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CommodityCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CommodityCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $commodityCode;
 
     /**
@@ -56,7 +56,7 @@ class CommodityClassificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ItemClassificationCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ItemClassificationCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $itemClassificationCode;
 
     /**

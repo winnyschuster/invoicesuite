@@ -71,7 +71,7 @@ final class DatiGeneraliDocumento
     #[JMS\SerializedName('DatiRitenuta')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\DatiRitenuta>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DatiRitenuta')]
+    #[JMS\XmlList(entry: 'DatiRitenuta', inline: true)]
     private ?array $datiRitenuta = null;
 
     /**
@@ -96,7 +96,7 @@ final class DatiGeneraliDocumento
     #[JMS\SerializedName('DatiCassaPrevidenziale')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\DatiCassaPrevidenziale>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DatiCassaPrevidenziale')]
+    #[JMS\XmlList(entry: 'DatiCassaPrevidenziale', inline: true)]
     private ?array $datiCassaPrevidenziale = null;
 
     /**
@@ -110,7 +110,7 @@ final class DatiGeneraliDocumento
     #[JMS\SerializedName('ScontoMaggiorazione')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\ScontoMaggiorazione>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ScontoMaggiorazione')]
+    #[JMS\XmlList(entry: 'ScontoMaggiorazione', inline: true)]
     private ?array $scontoMaggiorazione = null;
 
     /**
@@ -146,7 +146,7 @@ final class DatiGeneraliDocumento
     #[JMS\SerializedName('Causale')]
     #[JMS\Type('array<string>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Causale')]
+    #[JMS\XmlList(entry: 'Causale', inline: true)]
     private ?array $causale = null;
 
     /**

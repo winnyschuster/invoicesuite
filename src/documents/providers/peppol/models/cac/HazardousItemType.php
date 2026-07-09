@@ -37,7 +37,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -48,7 +48,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PlacardNotation')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PlacardNotation')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $placardNotation;
 
     /**
@@ -59,7 +59,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PlacardEndorsement')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PlacardEndorsement')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $placardEndorsement;
 
     /**
@@ -70,8 +70,8 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AdditionalInformation')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\AdditionalInformation>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AdditionalInformation', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'AdditionalInformation', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $additionalInformation;
 
     /**
@@ -82,7 +82,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('UNDGCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\UNDGCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $uNDGCode;
 
     /**
@@ -93,7 +93,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EmergencyProceduresCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\EmergencyProceduresCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $emergencyProceduresCode;
 
     /**
@@ -104,7 +104,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MedicalFirstAidGuideCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MedicalFirstAidGuideCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $medicalFirstAidGuideCode;
 
     /**
@@ -115,7 +115,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TechnicalName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TechnicalName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $technicalName;
 
     /**
@@ -126,7 +126,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CategoryName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CategoryName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $categoryName;
 
     /**
@@ -137,7 +137,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('HazardousCategoryCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\HazardousCategoryCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $hazardousCategoryCode;
 
     /**
@@ -148,7 +148,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('UpperOrangeHazardPlacardID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\UpperOrangeHazardPlacardID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $upperOrangeHazardPlacardID;
 
     /**
@@ -159,7 +159,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LowerOrangeHazardPlacardID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LowerOrangeHazardPlacardID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $lowerOrangeHazardPlacardID;
 
     /**
@@ -170,7 +170,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MarkingID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MarkingID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $markingID;
 
     /**
@@ -181,7 +181,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('HazardClassID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\HazardClassID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $hazardClassID;
 
     /**
@@ -192,7 +192,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('NetWeightMeasure')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\NetWeightMeasure')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $netWeightMeasure;
 
     /**
@@ -203,7 +203,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('NetVolumeMeasure')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\NetVolumeMeasure')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $netVolumeMeasure;
 
     /**
@@ -214,7 +214,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Quantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Quantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $quantity;
 
     /**
@@ -225,7 +225,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ContactParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ContactParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $contactParty;
 
     /**
@@ -236,8 +236,8 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SecondaryHazard')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\SecondaryHazard>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'SecondaryHazard', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'SecondaryHazard', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $secondaryHazard;
 
     /**
@@ -248,8 +248,8 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('HazardousGoodsTransit')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\HazardousGoodsTransit>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'HazardousGoodsTransit', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'HazardousGoodsTransit', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $hazardousGoodsTransit;
 
     /**
@@ -260,7 +260,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EmergencyTemperature')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\EmergencyTemperature')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $emergencyTemperature;
 
     /**
@@ -271,7 +271,7 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FlashpointTemperature')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\FlashpointTemperature')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $flashpointTemperature;
 
     /**
@@ -282,8 +282,8 @@ class HazardousItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AdditionalTemperature')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\AdditionalTemperature>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AdditionalTemperature', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'AdditionalTemperature', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $additionalTemperature;
 
     /**

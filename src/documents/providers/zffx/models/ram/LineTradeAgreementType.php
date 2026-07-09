@@ -20,7 +20,7 @@ class LineTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ApplicableTradeDeliveryTerms')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradeDeliveryTermsType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $applicableTradeDeliveryTerms;
 
     /**
@@ -31,7 +31,7 @@ class LineTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SellerOrderReferencedDocument')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\ReferencedDocumentType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $sellerOrderReferencedDocument;
 
     /**
@@ -42,7 +42,7 @@ class LineTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('BuyerOrderReferencedDocument')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\ReferencedDocumentType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $buyerOrderReferencedDocument;
 
     /**
@@ -53,7 +53,7 @@ class LineTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('QuotationReferencedDocument')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\ReferencedDocumentType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $quotationReferencedDocument;
 
     /**
@@ -64,7 +64,7 @@ class LineTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ContractReferencedDocument')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\ReferencedDocumentType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $contractReferencedDocument;
 
     /**
@@ -75,8 +75,8 @@ class LineTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('AdditionalReferencedDocument')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\ram\ReferencedDocumentType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AdditionalReferencedDocument', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'AdditionalReferencedDocument', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $additionalReferencedDocument;
 
     /**
@@ -87,7 +87,7 @@ class LineTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('GrossPriceProductTradePrice')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradePriceType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $grossPriceProductTradePrice;
 
     /**
@@ -98,7 +98,7 @@ class LineTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('NetPriceProductTradePrice')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradePriceType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $netPriceProductTradePrice;
 
     /**
@@ -109,7 +109,7 @@ class LineTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ItemSellerTradeParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradePartyType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $itemSellerTradeParty;
 
     /**
@@ -120,8 +120,8 @@ class LineTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('UltimateCustomerOrderReferencedDocument')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\ram\ReferencedDocumentType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'UltimateCustomerOrderReferencedDocument', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'UltimateCustomerOrderReferencedDocument', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $ultimateCustomerOrderReferencedDocument;
 
     /**

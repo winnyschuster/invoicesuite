@@ -34,7 +34,7 @@ final class DatiGenerali
     #[JMS\SerializedName('DatiOrdineAcquisto')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\DatiDocumentiCorrelati>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DatiOrdineAcquisto')]
+    #[JMS\XmlList(entry: 'DatiOrdineAcquisto', inline: true)]
     private ?array $datiOrdineAcquisto = null;
 
     /**
@@ -48,7 +48,7 @@ final class DatiGenerali
     #[JMS\SerializedName('DatiContratto')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\DatiDocumentiCorrelati>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DatiContratto')]
+    #[JMS\XmlList(entry: 'DatiContratto', inline: true)]
     private ?array $datiContratto = null;
 
     /**
@@ -62,7 +62,7 @@ final class DatiGenerali
     #[JMS\SerializedName('DatiConvenzione')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\DatiDocumentiCorrelati>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DatiConvenzione')]
+    #[JMS\XmlList(entry: 'DatiConvenzione', inline: true)]
     private ?array $datiConvenzione = null;
 
     /**
@@ -76,7 +76,7 @@ final class DatiGenerali
     #[JMS\SerializedName('DatiRicezione')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\DatiDocumentiCorrelati>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DatiRicezione')]
+    #[JMS\XmlList(entry: 'DatiRicezione', inline: true)]
     private ?array $datiRicezione = null;
 
     /**
@@ -90,7 +90,7 @@ final class DatiGenerali
     #[JMS\SerializedName('DatiFattureCollegate')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\DatiDocumentiCorrelati>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DatiFattureCollegate')]
+    #[JMS\XmlList(entry: 'DatiFattureCollegate', inline: true)]
     private ?array $datiFattureCollegate = null;
 
     /**
@@ -104,7 +104,7 @@ final class DatiGenerali
     #[JMS\SerializedName('DatiSAL')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\DatiSAL>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DatiSAL')]
+    #[JMS\XmlList(entry: 'DatiSAL', inline: true)]
     private ?array $datiSAL = null;
 
     /**
@@ -118,7 +118,7 @@ final class DatiGenerali
     #[JMS\SerializedName('DatiDDT')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\DatiDDT>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DatiDDT')]
+    #[JMS\XmlList(entry: 'DatiDDT', inline: true)]
     private ?array $datiDDT = null;
 
     /**

@@ -52,7 +52,7 @@ class SignedInfoType
     #[JMS\SerializedName('Reference')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\xmldsig\ReferenceType>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Reference')]
+    #[JMS\XmlList(entry: 'Reference', inline: true)]
     private ?array $reference = null;
 
     /**

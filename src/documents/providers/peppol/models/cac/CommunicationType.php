@@ -22,7 +22,7 @@ class CommunicationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ChannelCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ChannelCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $channelCode;
 
     /**
@@ -33,7 +33,7 @@ class CommunicationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Channel')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Channel')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $channel;
 
     /**
@@ -44,7 +44,7 @@ class CommunicationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Value')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Value')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $value;
 
     /**

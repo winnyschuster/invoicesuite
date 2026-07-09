@@ -20,7 +20,7 @@ class CatalogueItemSpecificationUpdateLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -31,7 +31,7 @@ class CatalogueItemSpecificationUpdateLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ContractorCustomerParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ContractorCustomerParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $contractorCustomerParty;
 
     /**
@@ -42,7 +42,7 @@ class CatalogueItemSpecificationUpdateLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SellerSupplierParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\SellerSupplierParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $sellerSupplierParty;
 
     /**
@@ -53,7 +53,7 @@ class CatalogueItemSpecificationUpdateLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Item')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Item')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $item;
 
     /**

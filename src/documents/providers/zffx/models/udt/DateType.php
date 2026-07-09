@@ -20,7 +20,7 @@ class DateType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('DateString')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\DateType\DateStringAType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100')]
     private $dateString;
 
     /**

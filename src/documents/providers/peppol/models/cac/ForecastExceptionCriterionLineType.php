@@ -24,7 +24,7 @@ class ForecastExceptionCriterionLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ForecastPurposeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ForecastPurposeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $forecastPurposeCode;
 
     /**
@@ -35,7 +35,7 @@ class ForecastExceptionCriterionLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ForecastTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ForecastTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $forecastTypeCode;
 
     /**
@@ -46,7 +46,7 @@ class ForecastExceptionCriterionLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ComparisonDataSourceCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ComparisonDataSourceCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $comparisonDataSourceCode;
 
     /**
@@ -57,7 +57,7 @@ class ForecastExceptionCriterionLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DataSourceCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\DataSourceCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $dataSourceCode;
 
     /**
@@ -68,7 +68,7 @@ class ForecastExceptionCriterionLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TimeDeltaDaysQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TimeDeltaDaysQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $timeDeltaDaysQuantity;
 
     /**

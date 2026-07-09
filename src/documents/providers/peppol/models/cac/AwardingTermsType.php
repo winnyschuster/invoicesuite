@@ -26,7 +26,7 @@ class AwardingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('WeightingAlgorithmCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\WeightingAlgorithmCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $weightingAlgorithmCode;
 
     /**
@@ -37,8 +37,8 @@ class AwardingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Description')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Description>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Description', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Description', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $description;
 
     /**
@@ -49,8 +49,8 @@ class AwardingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TechnicalCommitteeDescription')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TechnicalCommitteeDescription>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'TechnicalCommitteeDescription', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'TechnicalCommitteeDescription', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $technicalCommitteeDescription;
 
     /**
@@ -61,8 +61,8 @@ class AwardingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LowTendersDescription')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LowTendersDescription>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'LowTendersDescription', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'LowTendersDescription', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $lowTendersDescription;
 
     /**
@@ -73,7 +73,7 @@ class AwardingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PrizeIndicator')]
     #[JMS\Type('bool')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $prizeIndicator;
 
     /**
@@ -84,8 +84,8 @@ class AwardingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PrizeDescription')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PrizeDescription>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PrizeDescription', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'PrizeDescription', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $prizeDescription;
 
     /**
@@ -96,8 +96,8 @@ class AwardingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PaymentDescription')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PaymentDescription>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PaymentDescription', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'PaymentDescription', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $paymentDescription;
 
     /**
@@ -108,7 +108,7 @@ class AwardingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FollowupContractIndicator')]
     #[JMS\Type('bool')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $followupContractIndicator;
 
     /**
@@ -119,7 +119,7 @@ class AwardingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BindingOnBuyerIndicator')]
     #[JMS\Type('bool')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $bindingOnBuyerIndicator;
 
     /**
@@ -130,8 +130,8 @@ class AwardingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AwardingCriterion')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\AwardingCriterion>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AwardingCriterion', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'AwardingCriterion', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $awardingCriterion;
 
     /**
@@ -142,8 +142,8 @@ class AwardingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TechnicalCommitteePerson')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\TechnicalCommitteePerson>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'TechnicalCommitteePerson', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'TechnicalCommitteePerson', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $technicalCommitteePerson;
 
     /**

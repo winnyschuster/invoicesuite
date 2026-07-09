@@ -24,8 +24,8 @@ class EconomicOperatorShortListType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LimitationDescription')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LimitationDescription>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'LimitationDescription', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'LimitationDescription', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $limitationDescription;
 
     /**
@@ -36,7 +36,7 @@ class EconomicOperatorShortListType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExpectedQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ExpectedQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $expectedQuantity;
 
     /**
@@ -47,7 +47,7 @@ class EconomicOperatorShortListType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MaximumQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MaximumQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $maximumQuantity;
 
     /**
@@ -58,7 +58,7 @@ class EconomicOperatorShortListType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MinimumQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MinimumQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $minimumQuantity;
 
     /**
@@ -69,8 +69,8 @@ class EconomicOperatorShortListType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PreSelectedParty')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\PreSelectedParty>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PreSelectedParty', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'PreSelectedParty', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $preSelectedParty;
 
     /**

@@ -21,7 +21,7 @@ class RailTransportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TrainID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TrainID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $trainID;
 
     /**
@@ -32,7 +32,7 @@ class RailTransportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('RailCarID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\RailCarID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $railCarID;
 
     /**

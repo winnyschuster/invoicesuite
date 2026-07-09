@@ -21,7 +21,7 @@ class ItemComparisonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PriceAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PriceAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $priceAmount;
 
     /**
@@ -32,7 +32,7 @@ class ItemComparisonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Quantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Quantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $quantity;
 
     /**

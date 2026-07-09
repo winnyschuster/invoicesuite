@@ -27,7 +27,7 @@ class PaymentMeansType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -38,7 +38,7 @@ class PaymentMeansType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PaymentMeansCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PaymentMeansCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $paymentMeansCode;
 
     /**
@@ -49,7 +49,7 @@ class PaymentMeansType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PaymentDueDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $paymentDueDate;
 
     /**
@@ -60,7 +60,7 @@ class PaymentMeansType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PaymentChannelCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PaymentChannelCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $paymentChannelCode;
 
     /**
@@ -71,7 +71,7 @@ class PaymentMeansType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('InstructionID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\InstructionID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $instructionID;
 
     /**
@@ -82,8 +82,8 @@ class PaymentMeansType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('InstructionNote')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\InstructionNote>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'InstructionNote', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'InstructionNote', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $instructionNote;
 
     /**
@@ -94,8 +94,8 @@ class PaymentMeansType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PaymentID')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PaymentID>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PaymentID', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'PaymentID', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $paymentID;
 
     /**
@@ -106,7 +106,7 @@ class PaymentMeansType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CardAccount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\CardAccount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $cardAccount;
 
     /**
@@ -117,7 +117,7 @@ class PaymentMeansType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PayerFinancialAccount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\PayerFinancialAccount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $payerFinancialAccount;
 
     /**
@@ -128,7 +128,7 @@ class PaymentMeansType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PayeeFinancialAccount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\PayeeFinancialAccount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $payeeFinancialAccount;
 
     /**
@@ -139,7 +139,7 @@ class PaymentMeansType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CreditAccount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\CreditAccount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $creditAccount;
 
     /**
@@ -150,7 +150,7 @@ class PaymentMeansType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PaymentMandate')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\PaymentMandate')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $paymentMandate;
 
     /**
@@ -161,7 +161,7 @@ class PaymentMeansType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TradeFinancing')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\TradeFinancing')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $tradeFinancing;
 
     /**

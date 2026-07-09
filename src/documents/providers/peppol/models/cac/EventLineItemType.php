@@ -21,7 +21,7 @@ class EventLineItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LineNumberNumeric')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LineNumberNumeric')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $lineNumberNumeric;
 
     /**
@@ -32,7 +32,7 @@ class EventLineItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ParticipatingLocationsLocation')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ParticipatingLocationsLocation')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $participatingLocationsLocation;
 
     /**
@@ -43,8 +43,8 @@ class EventLineItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('RetailPlannedImpact')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\RetailPlannedImpact>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'RetailPlannedImpact', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'RetailPlannedImpact', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $retailPlannedImpact;
 
     /**
@@ -55,7 +55,7 @@ class EventLineItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SupplyItem')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\SupplyItem')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $supplyItem;
 
     /**

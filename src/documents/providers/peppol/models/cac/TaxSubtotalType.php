@@ -28,7 +28,7 @@ class TaxSubtotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxableAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TaxableAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $taxableAmount;
 
     /**
@@ -39,7 +39,7 @@ class TaxSubtotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TaxAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $taxAmount;
 
     /**
@@ -50,7 +50,7 @@ class TaxSubtotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CalculationSequenceNumeric')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CalculationSequenceNumeric')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $calculationSequenceNumeric;
 
     /**
@@ -61,7 +61,7 @@ class TaxSubtotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TransactionCurrencyTaxAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TransactionCurrencyTaxAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $transactionCurrencyTaxAmount;
 
     /**
@@ -72,7 +72,7 @@ class TaxSubtotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Percent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Percent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $percent;
 
     /**
@@ -83,7 +83,7 @@ class TaxSubtotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BaseUnitMeasure')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\BaseUnitMeasure')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $baseUnitMeasure;
 
     /**
@@ -94,7 +94,7 @@ class TaxSubtotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PerUnitAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PerUnitAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $perUnitAmount;
 
     /**
@@ -105,7 +105,7 @@ class TaxSubtotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TierRange')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TierRange')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $tierRange;
 
     /**
@@ -116,7 +116,7 @@ class TaxSubtotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TierRatePercent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TierRatePercent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $tierRatePercent;
 
     /**
@@ -127,7 +127,7 @@ class TaxSubtotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxCategory')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\TaxCategory')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $taxCategory;
 
     /**

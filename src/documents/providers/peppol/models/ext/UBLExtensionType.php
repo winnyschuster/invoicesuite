@@ -21,7 +21,7 @@ class UBLExtensionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -32,7 +32,7 @@ class UBLExtensionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Name')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Name')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $name;
 
     /**
@@ -43,7 +43,7 @@ class UBLExtensionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExtensionAgencyID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\ext\ExtensionAgencyID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2')]
     private $extensionAgencyID;
 
     /**
@@ -54,7 +54,7 @@ class UBLExtensionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExtensionAgencyName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\ext\ExtensionAgencyName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2')]
     private $extensionAgencyName;
 
     /**
@@ -65,7 +65,7 @@ class UBLExtensionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExtensionVersionID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\ext\ExtensionVersionID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2')]
     private $extensionVersionID;
 
     /**
@@ -76,7 +76,7 @@ class UBLExtensionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExtensionAgencyURI')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\ext\ExtensionAgencyURI')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2')]
     private $extensionAgencyURI;
 
     /**
@@ -87,7 +87,7 @@ class UBLExtensionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExtensionURI')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\ext\ExtensionURI')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2')]
     private $extensionURI;
 
     /**
@@ -98,7 +98,7 @@ class UBLExtensionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExtensionReasonCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\ext\ExtensionReasonCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2')]
     private $extensionReasonCode;
 
     /**
@@ -109,7 +109,7 @@ class UBLExtensionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExtensionReason')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\ext\ExtensionReason')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2')]
     private $extensionReason;
 
     /**
@@ -120,7 +120,7 @@ class UBLExtensionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExtensionContent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\ext\ExtensionContent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2')]
     private $extensionContent;
 
     /**

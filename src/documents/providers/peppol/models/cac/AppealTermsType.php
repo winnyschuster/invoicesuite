@@ -21,8 +21,8 @@ class AppealTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Description')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Description>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Description', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Description', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $description;
 
     /**
@@ -33,7 +33,7 @@ class AppealTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PresentationPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\PresentationPeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $presentationPeriod;
 
     /**
@@ -44,7 +44,7 @@ class AppealTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AppealInformationParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\AppealInformationParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $appealInformationParty;
 
     /**
@@ -55,7 +55,7 @@ class AppealTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AppealReceiverParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\AppealReceiverParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $appealReceiverParty;
 
     /**
@@ -66,7 +66,7 @@ class AppealTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MediationParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\MediationParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $mediationParty;
 
     /**

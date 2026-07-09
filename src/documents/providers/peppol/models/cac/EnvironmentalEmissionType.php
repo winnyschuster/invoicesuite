@@ -23,7 +23,7 @@ class EnvironmentalEmissionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EnvironmentalEmissionTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\EnvironmentalEmissionTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $environmentalEmissionTypeCode;
 
     /**
@@ -34,7 +34,7 @@ class EnvironmentalEmissionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ValueMeasure')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ValueMeasure')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $valueMeasure;
 
     /**
@@ -45,8 +45,8 @@ class EnvironmentalEmissionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Description')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Description>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Description', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Description', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $description;
 
     /**
@@ -57,8 +57,8 @@ class EnvironmentalEmissionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EmissionCalculationMethod')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\EmissionCalculationMethod>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'EmissionCalculationMethod', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'EmissionCalculationMethod', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $emissionCalculationMethod;
 
     /**

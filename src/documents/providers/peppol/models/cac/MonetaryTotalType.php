@@ -28,7 +28,7 @@ class MonetaryTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LineExtensionAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LineExtensionAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $lineExtensionAmount;
 
     /**
@@ -39,7 +39,7 @@ class MonetaryTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxExclusiveAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TaxExclusiveAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $taxExclusiveAmount;
 
     /**
@@ -50,7 +50,7 @@ class MonetaryTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxInclusiveAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TaxInclusiveAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $taxInclusiveAmount;
 
     /**
@@ -61,7 +61,7 @@ class MonetaryTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AllowanceTotalAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\AllowanceTotalAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $allowanceTotalAmount;
 
     /**
@@ -72,7 +72,7 @@ class MonetaryTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ChargeTotalAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ChargeTotalAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $chargeTotalAmount;
 
     /**
@@ -83,7 +83,7 @@ class MonetaryTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PrepaidAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PrepaidAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $prepaidAmount;
 
     /**
@@ -94,7 +94,7 @@ class MonetaryTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PayableRoundingAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PayableRoundingAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $payableRoundingAmount;
 
     /**
@@ -105,7 +105,7 @@ class MonetaryTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PayableAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PayableAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $payableAmount;
 
     /**
@@ -116,7 +116,7 @@ class MonetaryTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PayableAlternativeAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PayableAlternativeAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $payableAlternativeAmount;
 
     /**

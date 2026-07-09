@@ -21,7 +21,7 @@ class ConsumptionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('UtilityStatementTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\UtilityStatementTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $utilityStatementTypeCode;
 
     /**
@@ -32,7 +32,7 @@ class ConsumptionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MainPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\MainPeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $mainPeriod;
 
     /**
@@ -43,8 +43,8 @@ class ConsumptionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AllowanceCharge')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\AllowanceCharge>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AllowanceCharge', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'AllowanceCharge', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $allowanceCharge;
 
     /**
@@ -55,8 +55,8 @@ class ConsumptionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxTotal')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\TaxTotal>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'TaxTotal', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'TaxTotal', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $taxTotal;
 
     /**
@@ -67,7 +67,7 @@ class ConsumptionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EnergyWaterSupply')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\EnergyWaterSupply')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $energyWaterSupply;
 
     /**
@@ -78,7 +78,7 @@ class ConsumptionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TelecommunicationsSupply')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\TelecommunicationsSupply')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $telecommunicationsSupply;
 
     /**
@@ -89,7 +89,7 @@ class ConsumptionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LegalMonetaryTotal')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\LegalMonetaryTotal')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $legalMonetaryTotal;
 
     /**

@@ -22,7 +22,7 @@ class RegulationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Name')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Name')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $name;
 
     /**
@@ -33,7 +33,7 @@ class RegulationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LegalReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LegalReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $legalReference;
 
     /**
@@ -44,7 +44,7 @@ class RegulationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('OntologyURI')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\OntologyURI')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $ontologyURI;
 
     /**

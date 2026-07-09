@@ -28,7 +28,7 @@ class CrossIndustryInvoiceType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ExchangedDocumentContext')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\ExchangedDocumentContextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100')]
     private $exchangedDocumentContext;
 
     /**
@@ -39,7 +39,7 @@ class CrossIndustryInvoiceType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ExchangedDocument')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\ExchangedDocumentType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100')]
     private $exchangedDocument;
 
     /**
@@ -50,7 +50,7 @@ class CrossIndustryInvoiceType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SupplyChainTradeTransaction')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\SupplyChainTradeTransactionType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100')]
     private $supplyChainTradeTransaction;
 
     /**

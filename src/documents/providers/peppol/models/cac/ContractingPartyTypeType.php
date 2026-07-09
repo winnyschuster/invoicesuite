@@ -21,7 +21,7 @@ class ContractingPartyTypeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PartyTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PartyTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $partyTypeCode;
 
     /**
@@ -32,7 +32,7 @@ class ContractingPartyTypeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PartyType')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PartyType')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $partyType;
 
     /**

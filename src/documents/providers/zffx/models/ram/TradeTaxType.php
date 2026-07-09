@@ -27,7 +27,7 @@ class TradeTaxType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('CalculatedAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $calculatedAmount;
 
     /**
@@ -38,7 +38,7 @@ class TradeTaxType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('TypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\qdt\TaxTypeCodeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $typeCode;
 
     /**
@@ -49,7 +49,7 @@ class TradeTaxType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ExemptionReason')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $exemptionReason;
 
     /**
@@ -60,7 +60,7 @@ class TradeTaxType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('BasisAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $basisAmount;
 
     /**
@@ -71,7 +71,7 @@ class TradeTaxType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('LineTotalBasisAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $lineTotalBasisAmount;
 
     /**
@@ -82,7 +82,7 @@ class TradeTaxType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('AllowanceChargeBasisAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $allowanceChargeBasisAmount;
 
     /**
@@ -93,7 +93,7 @@ class TradeTaxType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('CategoryCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\qdt\TaxCategoryCodeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $categoryCode;
 
     /**
@@ -104,7 +104,7 @@ class TradeTaxType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ExemptionReasonCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\CodeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $exemptionReasonCode;
 
     /**
@@ -115,7 +115,7 @@ class TradeTaxType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('TaxPointDate')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\DateType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $taxPointDate;
 
     /**
@@ -126,7 +126,7 @@ class TradeTaxType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('DueDateTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\qdt\TimeReferenceCodeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $dueDateTypeCode;
 
     /**
@@ -137,7 +137,7 @@ class TradeTaxType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('RateApplicablePercent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\PercentType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $rateApplicablePercent;
 
     /**

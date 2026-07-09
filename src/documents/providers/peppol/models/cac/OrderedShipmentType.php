@@ -20,7 +20,7 @@ class OrderedShipmentType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Shipment')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Shipment')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $shipment;
 
     /**
@@ -31,8 +31,8 @@ class OrderedShipmentType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Package')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\Package>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Package', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'Package', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $package;
 
     /**

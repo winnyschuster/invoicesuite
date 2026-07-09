@@ -22,7 +22,7 @@ class AdvancePaymentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('PaidAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $paidAmount;
 
     /**
@@ -33,7 +33,7 @@ class AdvancePaymentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('FormattedReceivedDateTime')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\qdt\FormattedDateTimeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $formattedReceivedDateTime;
 
     /**
@@ -44,8 +44,8 @@ class AdvancePaymentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('IncludedTradeTax')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradeTaxType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'IncludedTradeTax', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'IncludedTradeTax', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $includedTradeTax;
 
     /**
@@ -56,7 +56,7 @@ class AdvancePaymentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('InvoiceSpecifiedReferencedDocument')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\ReferencedDocumentType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $invoiceSpecifiedReferencedDocument;
 
     /**

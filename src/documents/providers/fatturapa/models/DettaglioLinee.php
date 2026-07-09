@@ -50,7 +50,7 @@ final class DettaglioLinee
     #[JMS\SerializedName('CodiceArticolo')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\CodiceArticolo>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'CodiceArticolo')]
+    #[JMS\XmlList(entry: 'CodiceArticolo', inline: true)]
     private ?array $codiceArticolo = null;
 
     /**
@@ -130,7 +130,7 @@ final class DettaglioLinee
     #[JMS\SerializedName('ScontoMaggiorazione')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\ScontoMaggiorazione>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ScontoMaggiorazione')]
+    #[JMS\XmlList(entry: 'ScontoMaggiorazione', inline: true)]
     private ?array $scontoMaggiorazione = null;
 
     /**
@@ -199,7 +199,7 @@ final class DettaglioLinee
     #[JMS\SerializedName('AltriDatiGestionali')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\AltriDatiGestionali>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AltriDatiGestionali')]
+    #[JMS\XmlList(entry: 'AltriDatiGestionali', inline: true)]
     private ?array $altriDatiGestionali = null;
 
     /**

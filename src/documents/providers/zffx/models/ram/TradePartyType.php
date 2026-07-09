@@ -23,8 +23,8 @@ class TradePartyType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ID', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'ID', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $iD;
 
     /**
@@ -35,8 +35,8 @@ class TradePartyType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('GlobalID')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'GlobalID', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'GlobalID', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $globalID;
 
     /**
@@ -47,7 +47,7 @@ class TradePartyType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('Name')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $name;
 
     /**
@@ -58,7 +58,7 @@ class TradePartyType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('RoleCode')]
     #[JMS\Type('string')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $roleCode;
 
     /**
@@ -69,7 +69,7 @@ class TradePartyType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('Description')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $description;
 
     /**
@@ -80,7 +80,7 @@ class TradePartyType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SpecifiedLegalOrganization')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\LegalOrganizationType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $specifiedLegalOrganization;
 
     /**
@@ -91,8 +91,8 @@ class TradePartyType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('DefinedTradeContact')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradeContactType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DefinedTradeContact', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'DefinedTradeContact', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $definedTradeContact;
 
     /**
@@ -103,7 +103,7 @@ class TradePartyType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('PostalTradeAddress')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradeAddressType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $postalTradeAddress;
 
     /**
@@ -114,7 +114,7 @@ class TradePartyType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('URIUniversalCommunication')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\UniversalCommunicationType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $uRIUniversalCommunication;
 
     /**
@@ -125,8 +125,8 @@ class TradePartyType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SpecifiedTaxRegistration')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\ram\TaxRegistrationType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'SpecifiedTaxRegistration', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'SpecifiedTaxRegistration', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $specifiedTaxRegistration;
 
     /**

@@ -47,7 +47,7 @@ final class DatiDDT
     #[JMS\SerializedName('RiferimentoNumeroLinea')]
     #[JMS\Type('array<int>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'RiferimentoNumeroLinea')]
+    #[JMS\XmlList(entry: 'RiferimentoNumeroLinea', inline: true)]
     private ?array $riferimentoNumeroLinea = null;
 
     /**

@@ -21,7 +21,7 @@ class EmissionCalculationMethodType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CalculationMethodCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CalculationMethodCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $calculationMethodCode;
 
     /**
@@ -32,7 +32,7 @@ class EmissionCalculationMethodType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FullnessIndicationCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\FullnessIndicationCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $fullnessIndicationCode;
 
     /**
@@ -43,7 +43,7 @@ class EmissionCalculationMethodType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MeasurementFromLocation')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\MeasurementFromLocation')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $measurementFromLocation;
 
     /**
@@ -54,7 +54,7 @@ class EmissionCalculationMethodType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MeasurementToLocation')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\MeasurementToLocation')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $measurementToLocation;
 
     /**

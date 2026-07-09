@@ -20,7 +20,7 @@ class DebtorFinancialAccountType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('IBANID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $iBANID;
 
     /**

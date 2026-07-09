@@ -26,7 +26,7 @@ class TransformsType
     #[JMS\SerializedName('Transform')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\xmldsig\TransformType>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Transform')]
+    #[JMS\XmlList(entry: 'Transform', inline: true)]
     private ?array $transform = null;
 
     /**

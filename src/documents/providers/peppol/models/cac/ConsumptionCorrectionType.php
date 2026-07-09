@@ -32,7 +32,7 @@ class ConsumptionCorrectionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CorrectionType')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CorrectionType')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $correctionType;
 
     /**
@@ -43,7 +43,7 @@ class ConsumptionCorrectionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CorrectionTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CorrectionTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $correctionTypeCode;
 
     /**
@@ -54,7 +54,7 @@ class ConsumptionCorrectionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MeterNumber')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MeterNumber')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $meterNumber;
 
     /**
@@ -65,7 +65,7 @@ class ConsumptionCorrectionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('GasPressureQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\GasPressureQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $gasPressureQuantity;
 
     /**
@@ -76,7 +76,7 @@ class ConsumptionCorrectionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ActualTemperatureReductionQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ActualTemperatureReductionQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $actualTemperatureReductionQuantity;
 
     /**
@@ -87,7 +87,7 @@ class ConsumptionCorrectionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('NormalTemperatureReductionQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\NormalTemperatureReductionQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $normalTemperatureReductionQuantity;
 
     /**
@@ -98,7 +98,7 @@ class ConsumptionCorrectionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DifferenceTemperatureReductionQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\DifferenceTemperatureReductionQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $differenceTemperatureReductionQuantity;
 
     /**
@@ -109,8 +109,8 @@ class ConsumptionCorrectionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Description')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Description>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Description', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Description', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $description;
 
     /**
@@ -121,7 +121,7 @@ class ConsumptionCorrectionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CorrectionUnitAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CorrectionUnitAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $correctionUnitAmount;
 
     /**
@@ -132,7 +132,7 @@ class ConsumptionCorrectionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumptionEnergyQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ConsumptionEnergyQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $consumptionEnergyQuantity;
 
     /**
@@ -143,7 +143,7 @@ class ConsumptionCorrectionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumptionWaterQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ConsumptionWaterQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $consumptionWaterQuantity;
 
     /**
@@ -154,7 +154,7 @@ class ConsumptionCorrectionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CorrectionAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CorrectionAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $correctionAmount;
 
     /**

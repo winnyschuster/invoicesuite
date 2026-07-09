@@ -10,8 +10,11 @@ use Rector\CodingStyle\Rector\FuncCall\CallUserFuncArrayToVariadicRector;
 use Rector\CodingStyle\Rector\FuncCall\FunctionFirstClassCallableRector;
 use Rector\CodingStyle\Rector\String_\UseClassKeywordForClassNameResolutionRector;
 use Rector\Config\RectorConfig;
+use Rector\DeadCode\Rector\ClassMethod\RemoveDuplicatedReturnSelfDocblockRector;
+use Rector\DeadCode\Rector\ClassMethod\RemoveMixedDocblockOverruledByNativeTypeRector;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector;
+use Rector\DeadCode\Rector\ClassMethod\RemoveUselessUnionReturnDocblockRector;
 use Rector\DeadCode\Rector\Property\RemoveUselessVarTagRector;
 use Rector\Php80\Rector\Class_\ClassPropertyAssignToConstructorPromotionRector;
 use Rector\TypeDeclaration\Rector\StmtsAwareInterface\DeclareStrictTypesRector;
@@ -43,6 +46,9 @@ return RectorConfig::configure()
         UseClassKeywordForClassNameResolutionRector::class,
         FunctionFirstClassCallableRector::class,
         CallUserFuncArrayToVariadicRector::class,
+        RemoveDuplicatedReturnSelfDocblockRector::class,
+        RemoveUselessUnionReturnDocblockRector::class,
+        RemoveMixedDocblockOverruledByNativeTypeRector::class
     ])
     ->withPhpVersion(PhpVersion::PHP_82)
     ->withPhpSets(php82: true)

@@ -23,7 +23,7 @@ class OrderLineReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LineID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LineID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $lineID;
 
     /**
@@ -34,7 +34,7 @@ class OrderLineReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SalesOrderLineID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SalesOrderLineID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $salesOrderLineID;
 
     /**
@@ -45,7 +45,7 @@ class OrderLineReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('UUID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\UUID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $uUID;
 
     /**
@@ -56,7 +56,7 @@ class OrderLineReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LineStatusCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LineStatusCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $lineStatusCode;
 
     /**
@@ -67,7 +67,7 @@ class OrderLineReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('OrderReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\OrderReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $orderReference;
 
     /**

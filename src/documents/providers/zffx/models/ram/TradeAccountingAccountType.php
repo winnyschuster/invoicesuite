@@ -21,7 +21,7 @@ class TradeAccountingAccountType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $iD;
 
     /**
@@ -32,7 +32,7 @@ class TradeAccountingAccountType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('TypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\qdt\AccountingAccountTypeCodeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $typeCode;
 
     /**

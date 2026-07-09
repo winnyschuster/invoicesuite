@@ -22,7 +22,7 @@ class LotIdentificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LotNumberID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LotNumberID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $lotNumberID;
 
     /**
@@ -33,7 +33,7 @@ class LotIdentificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExpiryDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $expiryDate;
 
     /**
@@ -44,8 +44,8 @@ class LotIdentificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AdditionalItemProperty')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\AdditionalItemProperty>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AdditionalItemProperty', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'AdditionalItemProperty', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $additionalItemProperty;
 
     /**

@@ -25,7 +25,7 @@ class ResultOfVerificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ValidatorID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ValidatorID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $validatorID;
 
     /**
@@ -36,7 +36,7 @@ class ResultOfVerificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ValidationResultCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ValidationResultCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $validationResultCode;
 
     /**
@@ -47,7 +47,7 @@ class ResultOfVerificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ValidationDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $validationDate;
 
     /**
@@ -58,7 +58,7 @@ class ResultOfVerificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ValidationTime')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $validationTime;
 
     /**
@@ -69,7 +69,7 @@ class ResultOfVerificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ValidateProcess')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ValidateProcess')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $validateProcess;
 
     /**
@@ -80,7 +80,7 @@ class ResultOfVerificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ValidateTool')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ValidateTool')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $validateTool;
 
     /**
@@ -91,7 +91,7 @@ class ResultOfVerificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ValidateToolVersion')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ValidateToolVersion')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $validateToolVersion;
 
     /**
@@ -102,7 +102,7 @@ class ResultOfVerificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SignatoryParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\SignatoryParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $signatoryParty;
 
     /**

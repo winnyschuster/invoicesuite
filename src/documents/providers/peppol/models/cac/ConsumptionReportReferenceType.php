@@ -23,7 +23,7 @@ class ConsumptionReportReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumptionReportID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ConsumptionReportID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $consumptionReportID;
 
     /**
@@ -34,7 +34,7 @@ class ConsumptionReportReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumptionType')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ConsumptionType')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $consumptionType;
 
     /**
@@ -45,7 +45,7 @@ class ConsumptionReportReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumptionTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ConsumptionTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $consumptionTypeCode;
 
     /**
@@ -56,7 +56,7 @@ class ConsumptionReportReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TotalConsumedQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TotalConsumedQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $totalConsumedQuantity;
 
     /**
@@ -67,7 +67,7 @@ class ConsumptionReportReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Period')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Period')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $period;
 
     /**

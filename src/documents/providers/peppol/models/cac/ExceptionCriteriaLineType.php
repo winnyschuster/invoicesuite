@@ -29,7 +29,7 @@ class ExceptionCriteriaLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -40,8 +40,8 @@ class ExceptionCriteriaLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Note')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Note>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Note', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Note', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $note;
 
     /**
@@ -52,7 +52,7 @@ class ExceptionCriteriaLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ThresholdValueComparisonCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ThresholdValueComparisonCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $thresholdValueComparisonCode;
 
     /**
@@ -63,7 +63,7 @@ class ExceptionCriteriaLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ThresholdQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ThresholdQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $thresholdQuantity;
 
     /**
@@ -74,7 +74,7 @@ class ExceptionCriteriaLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExceptionStatusCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ExceptionStatusCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $exceptionStatusCode;
 
     /**
@@ -85,7 +85,7 @@ class ExceptionCriteriaLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CollaborationPriorityCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CollaborationPriorityCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $collaborationPriorityCode;
 
     /**
@@ -96,7 +96,7 @@ class ExceptionCriteriaLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExceptionResolutionCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ExceptionResolutionCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $exceptionResolutionCode;
 
     /**
@@ -107,7 +107,7 @@ class ExceptionCriteriaLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SupplyChainActivityTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SupplyChainActivityTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $supplyChainActivityTypeCode;
 
     /**
@@ -118,7 +118,7 @@ class ExceptionCriteriaLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PerformanceMetricTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PerformanceMetricTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $performanceMetricTypeCode;
 
     /**
@@ -129,7 +129,7 @@ class ExceptionCriteriaLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EffectivePeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\EffectivePeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $effectivePeriod;
 
     /**
@@ -140,8 +140,8 @@ class ExceptionCriteriaLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SupplyItem')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\SupplyItem>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'SupplyItem', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'SupplyItem', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $supplyItem;
 
     /**
@@ -152,7 +152,7 @@ class ExceptionCriteriaLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ForecastExceptionCriterionLine')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ForecastExceptionCriterionLine')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $forecastExceptionCriterionLine;
 
     /**

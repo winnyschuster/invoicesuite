@@ -20,7 +20,7 @@ class PricingReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('OriginalItemLocationQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\OriginalItemLocationQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $originalItemLocationQuantity;
 
     /**
@@ -31,8 +31,8 @@ class PricingReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AlternativeConditionPrice')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\AlternativeConditionPrice>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AlternativeConditionPrice', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'AlternativeConditionPrice', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $alternativeConditionPrice;
 
     /**

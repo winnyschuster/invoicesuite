@@ -24,7 +24,7 @@ class TransportEquipmentSealType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -35,7 +35,7 @@ class TransportEquipmentSealType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SealIssuerTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SealIssuerTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $sealIssuerTypeCode;
 
     /**
@@ -46,7 +46,7 @@ class TransportEquipmentSealType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Condition')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Condition')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $condition;
 
     /**
@@ -57,7 +57,7 @@ class TransportEquipmentSealType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SealStatusCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SealStatusCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $sealStatusCode;
 
     /**
@@ -68,7 +68,7 @@ class TransportEquipmentSealType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SealingPartyType')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SealingPartyType')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $sealingPartyType;
 
     /**

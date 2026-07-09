@@ -505,9 +505,7 @@ final class UtilsTest extends TestCase
     {
         $variable = ['John', 'Jack', 'Jim'];
 
-        InvoiceSuiteArrayUtils::sortWithCallback($variable, static function ($a, $b) {
-            return strcmp($a, $b);
-        });
+        InvoiceSuiteArrayUtils::sortWithCallback($variable, static fn ($a, $b) => strcmp((string) $a, (string) $b));
 
         $this->assertSame(['Jack', 'Jim', 'John'], $variable);
     }

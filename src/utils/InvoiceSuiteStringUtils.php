@@ -229,7 +229,7 @@ class InvoiceSuiteStringUtils
      */
     public static function endsWith(?string $haystack, ?string $needle): bool
     {
-        return str_ends_with($haystack, $needle);
+        return str_ends_with((string) $haystack, (string) $needle);
     }
 
     /**
@@ -241,7 +241,7 @@ class InvoiceSuiteStringUtils
      */
     public static function startsWith(?string $haystack, ?string $needle): bool
     {
-        return str_starts_with($haystack, $needle);
+        return str_starts_with((string) $haystack, (string) $needle);
     }
 
     /**

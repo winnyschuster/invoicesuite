@@ -23,7 +23,7 @@ class EndorsementType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DocumentID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\DocumentID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $documentID;
 
     /**
@@ -34,7 +34,7 @@ class EndorsementType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ApprovalStatus')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ApprovalStatus')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $approvalStatus;
 
     /**
@@ -45,8 +45,8 @@ class EndorsementType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Remarks')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Remarks>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Remarks', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Remarks', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $remarks;
 
     /**
@@ -57,7 +57,7 @@ class EndorsementType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EndorserParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\EndorserParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $endorserParty;
 
     /**
@@ -68,8 +68,8 @@ class EndorsementType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Signature')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\Signature>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Signature', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'Signature', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $signature;
 
     /**

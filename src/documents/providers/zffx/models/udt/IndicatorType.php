@@ -19,7 +19,7 @@ class IndicatorType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('Indicator')]
     #[JMS\Type('bool')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100')]
     private $indicator;
 
     /**

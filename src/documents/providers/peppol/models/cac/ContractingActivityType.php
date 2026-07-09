@@ -21,7 +21,7 @@ class ContractingActivityType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ActivityTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ActivityTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $activityTypeCode;
 
     /**
@@ -32,7 +32,7 @@ class ContractingActivityType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ActivityType')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ActivityType')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $activityType;
 
     /**

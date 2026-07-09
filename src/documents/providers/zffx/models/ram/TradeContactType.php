@@ -21,7 +21,7 @@ class TradeContactType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('PersonName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $personName;
 
     /**
@@ -32,7 +32,7 @@ class TradeContactType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('DepartmentName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $departmentName;
 
     /**
@@ -43,7 +43,7 @@ class TradeContactType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('TypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\CodeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $typeCode;
 
     /**
@@ -54,7 +54,7 @@ class TradeContactType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('TelephoneUniversalCommunication')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\UniversalCommunicationType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $telephoneUniversalCommunication;
 
     /**
@@ -65,7 +65,7 @@ class TradeContactType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('FaxUniversalCommunication')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\UniversalCommunicationType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $faxUniversalCommunication;
 
     /**
@@ -76,7 +76,7 @@ class TradeContactType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('EmailURIUniversalCommunication')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\UniversalCommunicationType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $emailURIUniversalCommunication;
 
     /**

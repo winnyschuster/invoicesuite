@@ -27,7 +27,7 @@ class ItemManagementProfileType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FrozenPeriodDaysNumeric')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\FrozenPeriodDaysNumeric')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $frozenPeriodDaysNumeric;
 
     /**
@@ -38,7 +38,7 @@ class ItemManagementProfileType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MinimumInventoryQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MinimumInventoryQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $minimumInventoryQuantity;
 
     /**
@@ -49,7 +49,7 @@ class ItemManagementProfileType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MultipleOrderQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MultipleOrderQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $multipleOrderQuantity;
 
     /**
@@ -60,7 +60,7 @@ class ItemManagementProfileType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('OrderIntervalDaysNumeric')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\OrderIntervalDaysNumeric')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $orderIntervalDaysNumeric;
 
     /**
@@ -71,8 +71,8 @@ class ItemManagementProfileType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ReplenishmentOwnerDescription')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ReplenishmentOwnerDescription>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ReplenishmentOwnerDescription', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'ReplenishmentOwnerDescription', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $replenishmentOwnerDescription;
 
     /**
@@ -83,7 +83,7 @@ class ItemManagementProfileType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TargetServicePercent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TargetServicePercent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $targetServicePercent;
 
     /**
@@ -94,7 +94,7 @@ class ItemManagementProfileType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TargetInventoryQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TargetInventoryQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $targetInventoryQuantity;
 
     /**
@@ -105,7 +105,7 @@ class ItemManagementProfileType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EffectivePeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\EffectivePeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $effectivePeriod;
 
     /**
@@ -116,7 +116,7 @@ class ItemManagementProfileType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Item')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Item')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $item;
 
     /**
@@ -127,7 +127,7 @@ class ItemManagementProfileType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ItemLocationQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ItemLocationQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $itemLocationQuantity;
 
     /**

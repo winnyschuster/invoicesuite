@@ -44,7 +44,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -55,7 +55,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AddressTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\AddressTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $addressTypeCode;
 
     /**
@@ -66,7 +66,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AddressFormatCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\AddressFormatCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $addressFormatCode;
 
     /**
@@ -77,7 +77,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Postbox')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Postbox')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $postbox;
 
     /**
@@ -88,7 +88,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Floor')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Floor')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $floor;
 
     /**
@@ -99,7 +99,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Room')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Room')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $room;
 
     /**
@@ -110,7 +110,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('StreetName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\StreetName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $streetName;
 
     /**
@@ -121,7 +121,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AdditionalStreetName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\AdditionalStreetName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $additionalStreetName;
 
     /**
@@ -132,7 +132,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BlockName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\BlockName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $blockName;
 
     /**
@@ -143,7 +143,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BuildingName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\BuildingName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $buildingName;
 
     /**
@@ -154,7 +154,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BuildingNumber')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\BuildingNumber')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $buildingNumber;
 
     /**
@@ -165,7 +165,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('InhouseMail')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\InhouseMail')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $inhouseMail;
 
     /**
@@ -176,7 +176,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Department')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Department')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $department;
 
     /**
@@ -187,7 +187,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MarkAttention')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MarkAttention')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $markAttention;
 
     /**
@@ -198,7 +198,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MarkCare')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MarkCare')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $markCare;
 
     /**
@@ -209,7 +209,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PlotIdentification')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PlotIdentification')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $plotIdentification;
 
     /**
@@ -220,7 +220,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CitySubdivisionName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CitySubdivisionName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $citySubdivisionName;
 
     /**
@@ -231,7 +231,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CityName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CityName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $cityName;
 
     /**
@@ -242,7 +242,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PostalZone')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PostalZone')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $postalZone;
 
     /**
@@ -253,7 +253,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CountrySubentity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CountrySubentity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $countrySubentity;
 
     /**
@@ -264,7 +264,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CountrySubentityCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CountrySubentityCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $countrySubentityCode;
 
     /**
@@ -275,7 +275,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Region')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Region')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $region;
 
     /**
@@ -286,7 +286,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('District')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\District')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $district;
 
     /**
@@ -297,7 +297,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TimezoneOffset')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TimezoneOffset')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $timezoneOffset;
 
     /**
@@ -308,8 +308,8 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AddressLine')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\AddressLine>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AddressLine', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'AddressLine', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $addressLine;
 
     /**
@@ -320,7 +320,7 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Country')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Country')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $country;
 
     /**
@@ -331,8 +331,8 @@ class AddressType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LocationCoordinate')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\LocationCoordinate>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'LocationCoordinate', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'LocationCoordinate', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $locationCoordinate;
 
     /**

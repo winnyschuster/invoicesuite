@@ -24,7 +24,7 @@ class HazardousGoodsTransitType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TransportEmergencyCardCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TransportEmergencyCardCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $transportEmergencyCardCode;
 
     /**
@@ -35,7 +35,7 @@ class HazardousGoodsTransitType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PackingCriteriaCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PackingCriteriaCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $packingCriteriaCode;
 
     /**
@@ -46,7 +46,7 @@ class HazardousGoodsTransitType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('HazardousRegulationCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\HazardousRegulationCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $hazardousRegulationCode;
 
     /**
@@ -57,7 +57,7 @@ class HazardousGoodsTransitType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('InhalationToxicityZoneCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\InhalationToxicityZoneCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $inhalationToxicityZoneCode;
 
     /**
@@ -68,7 +68,7 @@ class HazardousGoodsTransitType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TransportAuthorizationCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TransportAuthorizationCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $transportAuthorizationCode;
 
     /**
@@ -79,7 +79,7 @@ class HazardousGoodsTransitType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MaximumTemperature')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\MaximumTemperature')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $maximumTemperature;
 
     /**
@@ -90,7 +90,7 @@ class HazardousGoodsTransitType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MinimumTemperature')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\MinimumTemperature')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $minimumTemperature;
 
     /**

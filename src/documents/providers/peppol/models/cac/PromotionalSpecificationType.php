@@ -21,7 +21,7 @@ class PromotionalSpecificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SpecificationID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SpecificationID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $specificationID;
 
     /**
@@ -32,8 +32,8 @@ class PromotionalSpecificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PromotionalEventLineItem')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\PromotionalEventLineItem>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PromotionalEventLineItem', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'PromotionalEventLineItem', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $promotionalEventLineItem;
 
     /**
@@ -44,8 +44,8 @@ class PromotionalSpecificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EventTactic')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\EventTactic>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'EventTactic', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'EventTactic', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $eventTactic;
 
     /**

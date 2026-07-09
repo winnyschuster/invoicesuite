@@ -26,7 +26,7 @@ class RequestedTenderTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EstimatedOverallContractAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\EstimatedOverallContractAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $estimatedOverallContractAmount;
 
     /**
@@ -37,7 +37,7 @@ class RequestedTenderTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TotalAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TotalAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $totalAmount;
 
     /**
@@ -48,7 +48,7 @@ class RequestedTenderTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxIncludedIndicator')]
     #[JMS\Type('bool')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $taxIncludedIndicator;
 
     /**
@@ -59,7 +59,7 @@ class RequestedTenderTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MinimumAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MinimumAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $minimumAmount;
 
     /**
@@ -70,7 +70,7 @@ class RequestedTenderTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MaximumAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MaximumAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $maximumAmount;
 
     /**
@@ -81,8 +81,8 @@ class RequestedTenderTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MonetaryScope')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MonetaryScope>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'MonetaryScope', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'MonetaryScope', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $monetaryScope;
 
     /**
@@ -93,7 +93,7 @@ class RequestedTenderTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AverageSubsequentContractAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\AverageSubsequentContractAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $averageSubsequentContractAmount;
 
     /**
@@ -104,8 +104,8 @@ class RequestedTenderTotalType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ApplicableTaxCategory')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\ApplicableTaxCategory>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ApplicableTaxCategory', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'ApplicableTaxCategory', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $applicableTaxCategory;
 
     /**

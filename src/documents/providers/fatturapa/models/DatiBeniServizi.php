@@ -23,7 +23,7 @@ final class DatiBeniServizi
     #[JMS\SerializedName('DettaglioLinee')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\DettaglioLinee>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DettaglioLinee')]
+    #[JMS\XmlList(entry: 'DettaglioLinee', inline: true)]
     private ?array $dettaglioLinee = null;
 
     /**
@@ -37,7 +37,7 @@ final class DatiBeniServizi
     #[JMS\SerializedName('DatiRiepilogo')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\DatiRiepilogo>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DatiRiepilogo')]
+    #[JMS\XmlList(entry: 'DatiRiepilogo', inline: true)]
     private ?array $datiRiepilogo = null;
 
     /**

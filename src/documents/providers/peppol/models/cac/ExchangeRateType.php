@@ -27,7 +27,7 @@ class ExchangeRateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SourceCurrencyCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SourceCurrencyCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $sourceCurrencyCode;
 
     /**
@@ -38,7 +38,7 @@ class ExchangeRateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SourceCurrencyBaseRate')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SourceCurrencyBaseRate')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $sourceCurrencyBaseRate;
 
     /**
@@ -49,7 +49,7 @@ class ExchangeRateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TargetCurrencyCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TargetCurrencyCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $targetCurrencyCode;
 
     /**
@@ -60,7 +60,7 @@ class ExchangeRateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TargetCurrencyBaseRate')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TargetCurrencyBaseRate')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $targetCurrencyBaseRate;
 
     /**
@@ -71,7 +71,7 @@ class ExchangeRateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExchangeMarketID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ExchangeMarketID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $exchangeMarketID;
 
     /**
@@ -82,7 +82,7 @@ class ExchangeRateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CalculationRate')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CalculationRate')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $calculationRate;
 
     /**
@@ -93,7 +93,7 @@ class ExchangeRateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MathematicOperatorCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MathematicOperatorCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $mathematicOperatorCode;
 
     /**
@@ -104,7 +104,7 @@ class ExchangeRateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Date')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $date;
 
     /**
@@ -115,7 +115,7 @@ class ExchangeRateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ForeignExchangeContract')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ForeignExchangeContract')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $foreignExchangeContract;
 
     /**

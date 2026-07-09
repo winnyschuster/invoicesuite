@@ -21,7 +21,7 @@ class DocumentDistributionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PrintQualifier')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PrintQualifier')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $printQualifier;
 
     /**
@@ -32,7 +32,7 @@ class DocumentDistributionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MaximumCopiesNumeric')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MaximumCopiesNumeric')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $maximumCopiesNumeric;
 
     /**
@@ -43,7 +43,7 @@ class DocumentDistributionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Party')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Party')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $party;
 
     /**

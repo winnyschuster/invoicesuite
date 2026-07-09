@@ -21,7 +21,7 @@ class PickupType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -32,7 +32,7 @@ class PickupType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ActualPickupDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $actualPickupDate;
 
     /**
@@ -43,7 +43,7 @@ class PickupType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ActualPickupTime')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $actualPickupTime;
 
     /**
@@ -54,7 +54,7 @@ class PickupType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EarliestPickupDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $earliestPickupDate;
 
     /**
@@ -65,7 +65,7 @@ class PickupType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EarliestPickupTime')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $earliestPickupTime;
 
     /**
@@ -76,7 +76,7 @@ class PickupType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LatestPickupDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $latestPickupDate;
 
     /**
@@ -87,7 +87,7 @@ class PickupType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LatestPickupTime')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $latestPickupTime;
 
     /**
@@ -98,7 +98,7 @@ class PickupType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PickupLocation')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\PickupLocation')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $pickupLocation;
 
     /**
@@ -109,7 +109,7 @@ class PickupType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PickupParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\PickupParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $pickupParty;
 
     /**

@@ -30,7 +30,7 @@ class AllowanceChargeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -41,7 +41,7 @@ class AllowanceChargeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ChargeIndicator')]
     #[JMS\Type('bool')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $chargeIndicator;
 
     /**
@@ -52,7 +52,7 @@ class AllowanceChargeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AllowanceChargeReasonCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\AllowanceChargeReasonCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $allowanceChargeReasonCode;
 
     /**
@@ -63,8 +63,8 @@ class AllowanceChargeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AllowanceChargeReason')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\AllowanceChargeReason>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AllowanceChargeReason', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'AllowanceChargeReason', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $allowanceChargeReason;
 
     /**
@@ -75,7 +75,7 @@ class AllowanceChargeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MultiplierFactorNumeric')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MultiplierFactorNumeric')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $multiplierFactorNumeric;
 
     /**
@@ -86,7 +86,7 @@ class AllowanceChargeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PrepaidIndicator')]
     #[JMS\Type('bool')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $prepaidIndicator;
 
     /**
@@ -97,7 +97,7 @@ class AllowanceChargeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SequenceNumeric')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SequenceNumeric')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $sequenceNumeric;
 
     /**
@@ -108,7 +108,7 @@ class AllowanceChargeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Amount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Amount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $amount;
 
     /**
@@ -119,7 +119,7 @@ class AllowanceChargeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BaseAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\BaseAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $baseAmount;
 
     /**
@@ -130,7 +130,7 @@ class AllowanceChargeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AccountingCostCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\AccountingCostCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $accountingCostCode;
 
     /**
@@ -141,7 +141,7 @@ class AllowanceChargeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AccountingCost')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\AccountingCost')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $accountingCost;
 
     /**
@@ -152,7 +152,7 @@ class AllowanceChargeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PerUnitAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PerUnitAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $perUnitAmount;
 
     /**
@@ -163,8 +163,8 @@ class AllowanceChargeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxCategory')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\TaxCategory>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'TaxCategory', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'TaxCategory', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $taxCategory;
 
     /**
@@ -175,7 +175,7 @@ class AllowanceChargeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxTotal')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\TaxTotal')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $taxTotal;
 
     /**
@@ -186,8 +186,8 @@ class AllowanceChargeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PaymentMeans')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\PaymentMeans>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PaymentMeans', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'PaymentMeans', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $paymentMeans;
 
     /**

@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\console\commands;
 
 use horstoeko\invoicesuite\concerns\HandlesDocumentFormatProviders;
+use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use RuntimeException;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
@@ -59,7 +60,7 @@ class InvoiceSuiteListProvidersCommand extends InvoiceSuiteAbstractCommand
         $this->resolveAvailableDocumentFormatProviders();
 
         $jsonRowsToOutput = InvoiceSuiteArrayUtils::map(
-            static fn ($provider) => [
+            static fn (InvoiceSuiteAbstractDocumentFormatProvider $provider) => [
                 'id' => mb_strimwidth($provider->getUniqueId(), 0, 30, '...'),
                 'description' => mb_strimwidth($provider->getDescription(), 0, 60, '...'),
                 'version' => (string) $provider->getVersion(),
@@ -71,7 +72,7 @@ class InvoiceSuiteListProvidersCommand extends InvoiceSuiteAbstractCommand
         );
 
         $tableRowsToOutput = InvoiceSuiteArrayUtils::map(
-            static fn ($provider) => [
+            static fn (InvoiceSuiteAbstractDocumentFormatProvider $provider) => [
                 mb_strimwidth($provider->getUniqueId(), 0, 30, '...'),
                 mb_strimwidth($provider->getDescription(), 0, 60, '...'),
                 (string) $provider->getVersion(),

@@ -21,7 +21,7 @@ class BudgetAccountType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -32,7 +32,7 @@ class BudgetAccountType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BudgetYearNumeric')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\BudgetYearNumeric')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $budgetYearNumeric;
 
     /**
@@ -43,7 +43,7 @@ class BudgetAccountType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('RequiredClassificationScheme')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\RequiredClassificationScheme')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $requiredClassificationScheme;
 
     /**

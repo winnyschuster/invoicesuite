@@ -23,7 +23,7 @@ class ReferencedProductType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $iD;
 
     /**
@@ -34,8 +34,8 @@ class ReferencedProductType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('GlobalID')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'GlobalID', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'GlobalID', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $globalID;
 
     /**
@@ -46,7 +46,7 @@ class ReferencedProductType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SellerAssignedID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $sellerAssignedID;
 
     /**
@@ -57,7 +57,7 @@ class ReferencedProductType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('BuyerAssignedID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $buyerAssignedID;
 
     /**
@@ -68,7 +68,7 @@ class ReferencedProductType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('IndustryAssignedID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $industryAssignedID;
 
     /**
@@ -79,7 +79,7 @@ class ReferencedProductType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('Name')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $name;
 
     /**
@@ -90,7 +90,7 @@ class ReferencedProductType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('Description')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $description;
 
     /**
@@ -101,7 +101,7 @@ class ReferencedProductType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('UnitQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\QuantityType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $unitQuantity;
 
     /**

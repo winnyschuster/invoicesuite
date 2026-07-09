@@ -48,7 +48,7 @@ class FatturaElettronicaType
     #[JMS\SerializedName('FatturaElettronicaBody')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\FatturaElettronicaBody>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'FatturaElettronicaBody')]
+    #[JMS\XmlList(entry: 'FatturaElettronicaBody', inline: true)]
     private ?array $fatturaElettronicaBody = null;
 
     /**
@@ -59,7 +59,7 @@ class FatturaElettronicaType
     #[JMS\Groups(['fatturapa'])]
     #[JMS\SerializedName('Signature')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\fatturapa\models\xmldsig\Signature')]
-    #[JMS\XmlElement(namespace: 'http://www.w3.org/2000/09/xmldsig#', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'http://www.w3.org/2000/09/xmldsig#')]
     private ?Signature $signature = null;
 
     /**

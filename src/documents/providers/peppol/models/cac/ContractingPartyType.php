@@ -22,7 +22,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BuyerProfileURI')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\BuyerProfileURI')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $buyerProfileURI;
 
     /**
@@ -33,8 +33,8 @@ class ContractingPartyType extends ContractingPartyTypeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ContractingPartyType')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\ContractingPartyType>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ContractingPartyType', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'ContractingPartyType', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $contractingPartyType;
 
     /**
@@ -45,8 +45,8 @@ class ContractingPartyType extends ContractingPartyTypeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ContractingActivity')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\ContractingActivity>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ContractingActivity', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'ContractingActivity', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $contractingActivity;
 
     /**
@@ -57,7 +57,7 @@ class ContractingPartyType extends ContractingPartyTypeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Party')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Party')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $party;
 
     /**

@@ -26,7 +26,7 @@ class SignatureType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -37,8 +37,8 @@ class SignatureType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Note')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Note>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Note', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Note', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $note;
 
     /**
@@ -49,7 +49,7 @@ class SignatureType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ValidationDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $validationDate;
 
     /**
@@ -60,7 +60,7 @@ class SignatureType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ValidationTime')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $validationTime;
 
     /**
@@ -71,7 +71,7 @@ class SignatureType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ValidatorID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ValidatorID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $validatorID;
 
     /**
@@ -82,7 +82,7 @@ class SignatureType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CanonicalizationMethod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CanonicalizationMethod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $canonicalizationMethod;
 
     /**
@@ -93,7 +93,7 @@ class SignatureType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SignatureMethod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SignatureMethod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $signatureMethod;
 
     /**
@@ -104,7 +104,7 @@ class SignatureType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SignatoryParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\SignatoryParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $signatoryParty;
 
     /**
@@ -115,7 +115,7 @@ class SignatureType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DigitalSignatureAttachment')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\DigitalSignatureAttachment')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $digitalSignatureAttachment;
 
     /**
@@ -126,7 +126,7 @@ class SignatureType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('OriginalDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\OriginalDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $originalDocumentReference;
 
     /**

@@ -22,8 +22,8 @@ class TradingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Information')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Information>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Information', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Information', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $information;
 
     /**
@@ -34,7 +34,7 @@ class TradingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Reference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Reference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $reference;
 
     /**
@@ -45,7 +45,7 @@ class TradingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ApplicableAddress')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ApplicableAddress')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $applicableAddress;
 
     /**

@@ -22,7 +22,7 @@ class ActivityDataLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -33,7 +33,7 @@ class ActivityDataLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SupplyChainActivityTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SupplyChainActivityTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $supplyChainActivityTypeCode;
 
     /**
@@ -44,7 +44,7 @@ class ActivityDataLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BuyerCustomerParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\BuyerCustomerParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $buyerCustomerParty;
 
     /**
@@ -55,7 +55,7 @@ class ActivityDataLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SellerSupplierParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\SellerSupplierParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $sellerSupplierParty;
 
     /**
@@ -66,7 +66,7 @@ class ActivityDataLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ActivityPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ActivityPeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $activityPeriod;
 
     /**
@@ -77,7 +77,7 @@ class ActivityDataLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ActivityOriginLocation')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ActivityOriginLocation')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $activityOriginLocation;
 
     /**
@@ -88,7 +88,7 @@ class ActivityDataLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ActivityFinalLocation')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ActivityFinalLocation')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $activityFinalLocation;
 
     /**
@@ -99,8 +99,8 @@ class ActivityDataLineType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SalesItem')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\SalesItem>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'SalesItem', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'SalesItem', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $salesItem;
 
     /**

@@ -21,7 +21,7 @@ class EventCommentType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Comment')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Comment')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $comment;
 
     /**
@@ -32,7 +32,7 @@ class EventCommentType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('IssueDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $issueDate;
 
     /**
@@ -43,7 +43,7 @@ class EventCommentType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('IssueTime')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $issueTime;
 
     /**

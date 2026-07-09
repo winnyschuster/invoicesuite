@@ -21,7 +21,7 @@ class TradeSettlementPaymentMeansType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('TypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\qdt\PaymentMeansCodeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $typeCode;
 
     /**
@@ -32,7 +32,7 @@ class TradeSettlementPaymentMeansType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('Information')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $information;
 
     /**
@@ -43,7 +43,7 @@ class TradeSettlementPaymentMeansType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ApplicableTradeSettlementFinancialCard')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradeSettlementFinancialCardType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $applicableTradeSettlementFinancialCard;
 
     /**
@@ -54,7 +54,7 @@ class TradeSettlementPaymentMeansType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('PayerPartyDebtorFinancialAccount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\DebtorFinancialAccountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $payerPartyDebtorFinancialAccount;
 
     /**
@@ -65,7 +65,7 @@ class TradeSettlementPaymentMeansType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('PayeePartyCreditorFinancialAccount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\CreditorFinancialAccountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $payeePartyCreditorFinancialAccount;
 
     /**
@@ -76,7 +76,7 @@ class TradeSettlementPaymentMeansType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('PayeeSpecifiedCreditorFinancialInstitution')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\CreditorFinancialInstitutionType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $payeeSpecifiedCreditorFinancialInstitution;
 
     /**

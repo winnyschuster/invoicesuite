@@ -24,7 +24,7 @@ class TransportScheduleType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SequenceNumeric')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SequenceNumeric')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $sequenceNumeric;
 
     /**
@@ -35,7 +35,7 @@ class TransportScheduleType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ReferenceDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $referenceDate;
 
     /**
@@ -46,7 +46,7 @@ class TransportScheduleType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ReferenceTime')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $referenceTime;
 
     /**
@@ -57,7 +57,7 @@ class TransportScheduleType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ReliabilityPercent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ReliabilityPercent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $reliabilityPercent;
 
     /**
@@ -68,8 +68,8 @@ class TransportScheduleType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Remarks')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Remarks>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Remarks', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Remarks', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $remarks;
 
     /**
@@ -80,7 +80,7 @@ class TransportScheduleType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('StatusLocation')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\StatusLocation')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $statusLocation;
 
     /**
@@ -91,7 +91,7 @@ class TransportScheduleType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ActualArrivalTransportEvent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ActualArrivalTransportEvent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $actualArrivalTransportEvent;
 
     /**
@@ -102,7 +102,7 @@ class TransportScheduleType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ActualDepartureTransportEvent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ActualDepartureTransportEvent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $actualDepartureTransportEvent;
 
     /**
@@ -113,7 +113,7 @@ class TransportScheduleType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EstimatedDepartureTransportEvent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\EstimatedDepartureTransportEvent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $estimatedDepartureTransportEvent;
 
     /**
@@ -124,7 +124,7 @@ class TransportScheduleType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EstimatedArrivalTransportEvent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\EstimatedArrivalTransportEvent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $estimatedArrivalTransportEvent;
 
     /**
@@ -135,7 +135,7 @@ class TransportScheduleType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PlannedDepartureTransportEvent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\PlannedDepartureTransportEvent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $plannedDepartureTransportEvent;
 
     /**
@@ -146,7 +146,7 @@ class TransportScheduleType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PlannedArrivalTransportEvent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\PlannedArrivalTransportEvent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $plannedArrivalTransportEvent;
 
     /**

@@ -25,7 +25,7 @@ class PartyTaxSchemeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('RegistrationName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\RegistrationName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $registrationName;
 
     /**
@@ -36,7 +36,7 @@ class PartyTaxSchemeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CompanyID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CompanyID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $companyID;
 
     /**
@@ -47,7 +47,7 @@ class PartyTaxSchemeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxLevelCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TaxLevelCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $taxLevelCode;
 
     /**
@@ -58,7 +58,7 @@ class PartyTaxSchemeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExemptionReasonCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ExemptionReasonCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $exemptionReasonCode;
 
     /**
@@ -69,8 +69,8 @@ class PartyTaxSchemeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ExemptionReason')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ExemptionReason>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ExemptionReason', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'ExemptionReason', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $exemptionReason;
 
     /**
@@ -81,7 +81,7 @@ class PartyTaxSchemeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('RegistrationAddress')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\RegistrationAddress')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $registrationAddress;
 
     /**
@@ -92,7 +92,7 @@ class PartyTaxSchemeType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxScheme')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\TaxScheme')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $taxScheme;
 
     /**

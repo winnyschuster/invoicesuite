@@ -25,7 +25,7 @@ class ImmobilizedSecurityType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ImmobilizationCertificateID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ImmobilizationCertificateID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $immobilizationCertificateID;
 
     /**
@@ -36,7 +36,7 @@ class ImmobilizedSecurityType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SecurityID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SecurityID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $securityID;
 
     /**
@@ -47,7 +47,7 @@ class ImmobilizedSecurityType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('IssueDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $issueDate;
 
     /**
@@ -58,7 +58,7 @@ class ImmobilizedSecurityType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FaceValueAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\FaceValueAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $faceValueAmount;
 
     /**
@@ -69,7 +69,7 @@ class ImmobilizedSecurityType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MarketValueAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MarketValueAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $marketValueAmount;
 
     /**
@@ -80,7 +80,7 @@ class ImmobilizedSecurityType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SharesNumberQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SharesNumberQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $sharesNumberQuantity;
 
     /**
@@ -91,7 +91,7 @@ class ImmobilizedSecurityType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('IssuerParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\IssuerParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $issuerParty;
 
     /**

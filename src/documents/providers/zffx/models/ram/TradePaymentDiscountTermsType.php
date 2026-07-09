@@ -23,7 +23,7 @@ class TradePaymentDiscountTermsType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('BasisDateTime')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\DateTimeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $basisDateTime;
 
     /**
@@ -34,7 +34,7 @@ class TradePaymentDiscountTermsType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('BasisPeriodMeasure')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\MeasureType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $basisPeriodMeasure;
 
     /**
@@ -45,7 +45,7 @@ class TradePaymentDiscountTermsType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('BasisAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $basisAmount;
 
     /**
@@ -56,7 +56,7 @@ class TradePaymentDiscountTermsType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('CalculationPercent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\PercentType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $calculationPercent;
 
     /**
@@ -67,7 +67,7 @@ class TradePaymentDiscountTermsType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ActualDiscountAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $actualDiscountAmount;
 
     /**

@@ -27,7 +27,7 @@ class QualifyingPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ParticipationPercent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ParticipationPercent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $participationPercent;
 
     /**
@@ -38,8 +38,8 @@ class QualifyingPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PersonalSituation')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PersonalSituation>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PersonalSituation', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'PersonalSituation', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $personalSituation;
 
     /**
@@ -50,7 +50,7 @@ class QualifyingPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('OperatingYearsQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\OperatingYearsQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $operatingYearsQuantity;
 
     /**
@@ -61,7 +61,7 @@ class QualifyingPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EmployeeQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\EmployeeQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $employeeQuantity;
 
     /**
@@ -72,7 +72,7 @@ class QualifyingPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BusinessClassificationEvidenceID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\BusinessClassificationEvidenceID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $businessClassificationEvidenceID;
 
     /**
@@ -83,7 +83,7 @@ class QualifyingPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BusinessIdentityEvidenceID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\BusinessIdentityEvidenceID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $businessIdentityEvidenceID;
 
     /**
@@ -94,7 +94,7 @@ class QualifyingPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TendererRoleCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TendererRoleCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $tendererRoleCode;
 
     /**
@@ -105,7 +105,7 @@ class QualifyingPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BusinessClassificationScheme')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\BusinessClassificationScheme')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $businessClassificationScheme;
 
     /**
@@ -116,8 +116,8 @@ class QualifyingPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TechnicalCapability')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\TechnicalCapability>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'TechnicalCapability', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'TechnicalCapability', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $technicalCapability;
 
     /**
@@ -128,8 +128,8 @@ class QualifyingPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FinancialCapability')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\FinancialCapability>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'FinancialCapability', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'FinancialCapability', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $financialCapability;
 
     /**
@@ -140,8 +140,8 @@ class QualifyingPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CompletedTask')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\CompletedTask>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'CompletedTask', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'CompletedTask', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $completedTask;
 
     /**
@@ -152,8 +152,8 @@ class QualifyingPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Declaration')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\Declaration>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Declaration', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'Declaration', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $declaration;
 
     /**
@@ -164,7 +164,7 @@ class QualifyingPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Party')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Party')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $party;
 
     /**
@@ -175,7 +175,7 @@ class QualifyingPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EconomicOperatorRole')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\EconomicOperatorRole')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $economicOperatorRole;
 
     /**

@@ -1543,13 +1543,13 @@ $definitions = [
             ],
             'sellerTaxRepresentativeParty' => [
                 'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
-                'caption' => 'The Seller\'s Tax Representativ Party',
+                'caption' => "The Seller's Tax Representativ Party",
                 'isarray' => false,
                 'isobject' => true,
             ],
             'buyerTaxRepresentativeParty' => [
                 'type' => 'horstoeko\invoicesuite\documents\dto\InvoiceSuitePartyDTO',
-                'caption' => 'The Buyer\'s Tax Representativ Party',
+                'caption' => "The Buyer's Tax Representativ Party",
                 'isarray' => false,
                 'isobject' => true,
             ],

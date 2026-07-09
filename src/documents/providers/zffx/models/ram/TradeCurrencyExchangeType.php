@@ -22,7 +22,7 @@ class TradeCurrencyExchangeType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SourceCurrencyCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\qdt\CurrencyCodeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $sourceCurrencyCode;
 
     /**
@@ -33,7 +33,7 @@ class TradeCurrencyExchangeType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('TargetCurrencyCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\qdt\CurrencyCodeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $targetCurrencyCode;
 
     /**
@@ -44,7 +44,7 @@ class TradeCurrencyExchangeType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ConversionRate')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\RateType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $conversionRate;
 
     /**
@@ -55,7 +55,7 @@ class TradeCurrencyExchangeType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ConversionRateDateTime')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\DateTimeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $conversionRateDateTime;
 
     /**

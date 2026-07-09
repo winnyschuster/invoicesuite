@@ -33,7 +33,7 @@ class UtilityItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -44,7 +44,7 @@ class UtilityItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SubscriberID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SubscriberID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $subscriberID;
 
     /**
@@ -55,7 +55,7 @@ class UtilityItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SubscriberType')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SubscriberType')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $subscriberType;
 
     /**
@@ -66,7 +66,7 @@ class UtilityItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SubscriberTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SubscriberTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $subscriberTypeCode;
 
     /**
@@ -77,8 +77,8 @@ class UtilityItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Description')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Description>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Description', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Description', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $description;
 
     /**
@@ -89,7 +89,7 @@ class UtilityItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PackQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PackQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $packQuantity;
 
     /**
@@ -100,7 +100,7 @@ class UtilityItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PackSizeNumeric')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PackSizeNumeric')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $packSizeNumeric;
 
     /**
@@ -111,7 +111,7 @@ class UtilityItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumptionType')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ConsumptionType')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $consumptionType;
 
     /**
@@ -122,7 +122,7 @@ class UtilityItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumptionTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ConsumptionTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $consumptionTypeCode;
 
     /**
@@ -133,7 +133,7 @@ class UtilityItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CurrentChargeType')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CurrentChargeType')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $currentChargeType;
 
     /**
@@ -144,7 +144,7 @@ class UtilityItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CurrentChargeTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CurrentChargeTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $currentChargeTypeCode;
 
     /**
@@ -155,7 +155,7 @@ class UtilityItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('OneTimeChargeType')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\OneTimeChargeType')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $oneTimeChargeType;
 
     /**
@@ -166,7 +166,7 @@ class UtilityItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('OneTimeChargeTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\OneTimeChargeTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $oneTimeChargeTypeCode;
 
     /**
@@ -177,7 +177,7 @@ class UtilityItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxCategory')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\TaxCategory')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $taxCategory;
 
     /**
@@ -188,7 +188,7 @@ class UtilityItemType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Contract')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Contract')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $contract;
 
     /**

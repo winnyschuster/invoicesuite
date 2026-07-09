@@ -26,7 +26,7 @@ class MaritimeTransportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('VesselID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\VesselID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $vesselID;
 
     /**
@@ -37,7 +37,7 @@ class MaritimeTransportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('VesselName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\VesselName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $vesselName;
 
     /**
@@ -48,7 +48,7 @@ class MaritimeTransportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('RadioCallSignID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\RadioCallSignID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $radioCallSignID;
 
     /**
@@ -59,8 +59,8 @@ class MaritimeTransportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ShipsRequirements')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ShipsRequirements>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ShipsRequirements', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'ShipsRequirements', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $shipsRequirements;
 
     /**
@@ -71,7 +71,7 @@ class MaritimeTransportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('GrossTonnageMeasure')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\GrossTonnageMeasure')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $grossTonnageMeasure;
 
     /**
@@ -82,7 +82,7 @@ class MaritimeTransportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('NetTonnageMeasure')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\NetTonnageMeasure')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $netTonnageMeasure;
 
     /**
@@ -93,7 +93,7 @@ class MaritimeTransportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('RegistryCertificateDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\RegistryCertificateDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $registryCertificateDocumentReference;
 
     /**
@@ -104,7 +104,7 @@ class MaritimeTransportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('RegistryPortLocation')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\RegistryPortLocation')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $registryPortLocation;
 
     /**

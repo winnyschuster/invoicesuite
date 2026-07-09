@@ -25,7 +25,7 @@ class WorkPhaseReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -36,7 +36,7 @@ class WorkPhaseReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('WorkPhaseCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\WorkPhaseCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $workPhaseCode;
 
     /**
@@ -47,8 +47,8 @@ class WorkPhaseReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('WorkPhase')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\WorkPhase>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'WorkPhase', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'WorkPhase', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $workPhase;
 
     /**
@@ -59,7 +59,7 @@ class WorkPhaseReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ProgressPercent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ProgressPercent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $progressPercent;
 
     /**
@@ -70,7 +70,7 @@ class WorkPhaseReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('StartDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $startDate;
 
     /**
@@ -81,7 +81,7 @@ class WorkPhaseReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EndDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $endDate;
 
     /**
@@ -92,8 +92,8 @@ class WorkPhaseReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('WorkOrderDocumentReference')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\WorkOrderDocumentReference>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'WorkOrderDocumentReference', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'WorkOrderDocumentReference', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $workOrderDocumentReference;
 
     /**

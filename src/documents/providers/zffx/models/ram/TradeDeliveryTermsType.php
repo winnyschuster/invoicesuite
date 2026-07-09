@@ -20,7 +20,7 @@ class TradeDeliveryTermsType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('DeliveryTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\qdt\DeliveryTermsCodeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $deliveryTypeCode;
 
     /**
@@ -31,7 +31,7 @@ class TradeDeliveryTermsType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('RelevantTradeLocation')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradeLocationType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $relevantTradeLocation;
 
     /**

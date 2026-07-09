@@ -22,7 +22,7 @@ class WebSiteAccessType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('URI')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\URI')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $uRI;
 
     /**
@@ -33,7 +33,7 @@ class WebSiteAccessType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Password')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Password')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $password;
 
     /**
@@ -44,7 +44,7 @@ class WebSiteAccessType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Login')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Login')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $login;
 
     /**

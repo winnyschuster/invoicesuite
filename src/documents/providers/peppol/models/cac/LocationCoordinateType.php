@@ -27,7 +27,7 @@ class LocationCoordinateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CoordinateSystemCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\CoordinateSystemCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $coordinateSystemCode;
 
     /**
@@ -38,7 +38,7 @@ class LocationCoordinateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LatitudeDegreesMeasure')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LatitudeDegreesMeasure')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $latitudeDegreesMeasure;
 
     /**
@@ -49,7 +49,7 @@ class LocationCoordinateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LatitudeMinutesMeasure')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LatitudeMinutesMeasure')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $latitudeMinutesMeasure;
 
     /**
@@ -60,7 +60,7 @@ class LocationCoordinateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LatitudeDirectionCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LatitudeDirectionCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $latitudeDirectionCode;
 
     /**
@@ -71,7 +71,7 @@ class LocationCoordinateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LongitudeDegreesMeasure')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LongitudeDegreesMeasure')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $longitudeDegreesMeasure;
 
     /**
@@ -82,7 +82,7 @@ class LocationCoordinateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LongitudeMinutesMeasure')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LongitudeMinutesMeasure')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $longitudeMinutesMeasure;
 
     /**
@@ -93,7 +93,7 @@ class LocationCoordinateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LongitudeDirectionCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LongitudeDirectionCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $longitudeDirectionCode;
 
     /**
@@ -104,7 +104,7 @@ class LocationCoordinateType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AltitudeMeasure')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\AltitudeMeasure')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $altitudeMeasure;
 
     /**

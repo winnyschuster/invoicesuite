@@ -33,7 +33,7 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -44,7 +44,7 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumptionType')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ConsumptionType')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $consumptionType;
 
     /**
@@ -55,7 +55,7 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumptionTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ConsumptionTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $consumptionTypeCode;
 
     /**
@@ -66,8 +66,8 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Description')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Description>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Description', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Description', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $description;
 
     /**
@@ -78,7 +78,7 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TotalConsumedQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TotalConsumedQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $totalConsumedQuantity;
 
     /**
@@ -89,7 +89,7 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BasicConsumedQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\BasicConsumedQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $basicConsumedQuantity;
 
     /**
@@ -100,7 +100,7 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ResidentOccupantsNumeric')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ResidentOccupantsNumeric')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $residentOccupantsNumeric;
 
     /**
@@ -111,7 +111,7 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumersEnergyLevelCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ConsumersEnergyLevelCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $consumersEnergyLevelCode;
 
     /**
@@ -122,7 +122,7 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumersEnergyLevel')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ConsumersEnergyLevel')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $consumersEnergyLevel;
 
     /**
@@ -133,7 +133,7 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ResidenceType')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ResidenceType')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $residenceType;
 
     /**
@@ -144,7 +144,7 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ResidenceTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ResidenceTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $residenceTypeCode;
 
     /**
@@ -155,7 +155,7 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('HeatingType')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\HeatingType')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $heatingType;
 
     /**
@@ -166,7 +166,7 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('HeatingTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\HeatingTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $heatingTypeCode;
 
     /**
@@ -177,7 +177,7 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Period')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Period')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $period;
 
     /**
@@ -188,7 +188,7 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('GuidanceDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\GuidanceDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $guidanceDocumentReference;
 
     /**
@@ -199,7 +199,7 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\DocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $documentReference;
 
     /**
@@ -210,8 +210,8 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumptionReportReference')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\ConsumptionReportReference>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ConsumptionReportReference', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'ConsumptionReportReference', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $consumptionReportReference;
 
     /**
@@ -222,8 +222,8 @@ class ConsumptionReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumptionHistory')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\ConsumptionHistory>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ConsumptionHistory', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'ConsumptionHistory', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $consumptionHistory;
 
     /**

@@ -27,7 +27,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -38,7 +38,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Quantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Quantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $quantity;
 
     /**
@@ -49,7 +49,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MinimumQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MinimumQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $minimumQuantity;
 
     /**
@@ -60,7 +60,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MaximumQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MaximumQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $maximumQuantity;
 
     /**
@@ -71,7 +71,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ActualDeliveryDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $actualDeliveryDate;
 
     /**
@@ -82,7 +82,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ActualDeliveryTime')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $actualDeliveryTime;
 
     /**
@@ -93,7 +93,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LatestDeliveryDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $latestDeliveryDate;
 
     /**
@@ -104,7 +104,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LatestDeliveryTime')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $latestDeliveryTime;
 
     /**
@@ -115,7 +115,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ReleaseID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ReleaseID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $releaseID;
 
     /**
@@ -126,7 +126,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TrackingID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TrackingID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $trackingID;
 
     /**
@@ -137,7 +137,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DeliveryAddress')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\DeliveryAddress')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $deliveryAddress;
 
     /**
@@ -148,7 +148,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DeliveryLocation')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\DeliveryLocation')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $deliveryLocation;
 
     /**
@@ -159,7 +159,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AlternativeDeliveryLocation')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\AlternativeDeliveryLocation')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $alternativeDeliveryLocation;
 
     /**
@@ -170,7 +170,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('RequestedDeliveryPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\RequestedDeliveryPeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $requestedDeliveryPeriod;
 
     /**
@@ -181,7 +181,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PromisedDeliveryPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\PromisedDeliveryPeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $promisedDeliveryPeriod;
 
     /**
@@ -192,7 +192,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EstimatedDeliveryPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\EstimatedDeliveryPeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $estimatedDeliveryPeriod;
 
     /**
@@ -203,7 +203,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CarrierParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\CarrierParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $carrierParty;
 
     /**
@@ -214,7 +214,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DeliveryParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\DeliveryParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $deliveryParty;
 
     /**
@@ -225,8 +225,8 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('NotifyParty')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\NotifyParty>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'NotifyParty', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'NotifyParty', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $notifyParty;
 
     /**
@@ -237,7 +237,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Despatch')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Despatch')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $despatch;
 
     /**
@@ -248,8 +248,8 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DeliveryTerms')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\DeliveryTerms>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DeliveryTerms', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'DeliveryTerms', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $deliveryTerms;
 
     /**
@@ -260,7 +260,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MinimumDeliveryUnit')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\MinimumDeliveryUnit')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $minimumDeliveryUnit;
 
     /**
@@ -271,7 +271,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MaximumDeliveryUnit')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\MaximumDeliveryUnit')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $maximumDeliveryUnit;
 
     /**
@@ -282,7 +282,7 @@ class DeliveryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Shipment')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Shipment')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $shipment;
 
     /**

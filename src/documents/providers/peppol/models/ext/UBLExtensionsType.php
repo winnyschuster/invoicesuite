@@ -20,8 +20,8 @@ class UBLExtensionsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('UBLExtension')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\ext\UBLExtension>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'UBLExtension', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2')]
+    #[JMS\XmlList(entry: 'UBLExtension', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2')]
     private $uBLExtension;
 
     /**

@@ -23,7 +23,7 @@ class EventTacticEnumerationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumerIncentiveTacticTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ConsumerIncentiveTacticTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $consumerIncentiveTacticTypeCode;
 
     /**
@@ -34,7 +34,7 @@ class EventTacticEnumerationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DisplayTacticTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\DisplayTacticTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $displayTacticTypeCode;
 
     /**
@@ -45,7 +45,7 @@ class EventTacticEnumerationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FeatureTacticTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\FeatureTacticTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $featureTacticTypeCode;
 
     /**
@@ -56,7 +56,7 @@ class EventTacticEnumerationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TradeItemPackingLabelingTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TradeItemPackingLabelingTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $tradeItemPackingLabelingTypeCode;
 
     /**

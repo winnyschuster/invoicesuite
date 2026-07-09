@@ -25,7 +25,7 @@ class ExchangedDocumentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $iD;
 
     /**
@@ -36,7 +36,7 @@ class ExchangedDocumentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('Name')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $name;
 
     /**
@@ -47,7 +47,7 @@ class ExchangedDocumentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('TypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\qdt\DocumentCodeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $typeCode;
 
     /**
@@ -58,7 +58,7 @@ class ExchangedDocumentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('IssueDateTime')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\DateTimeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $issueDateTime;
 
     /**
@@ -69,7 +69,7 @@ class ExchangedDocumentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('CopyIndicator')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\IndicatorType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $copyIndicator;
 
     /**
@@ -80,7 +80,7 @@ class ExchangedDocumentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('LanguageID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $languageID;
 
     /**
@@ -91,8 +91,8 @@ class ExchangedDocumentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('IncludedNote')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\ram\NoteType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'IncludedNote', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'IncludedNote', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $includedNote;
 
     /**
@@ -103,7 +103,7 @@ class ExchangedDocumentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('EffectiveSpecifiedPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\SpecifiedPeriodType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $effectiveSpecifiedPeriod;
 
     /**

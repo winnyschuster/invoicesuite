@@ -33,7 +33,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -44,7 +44,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FirstName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\FirstName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $firstName;
 
     /**
@@ -55,7 +55,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FamilyName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\FamilyName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $familyName;
 
     /**
@@ -66,7 +66,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Title')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Title')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $title;
 
     /**
@@ -77,7 +77,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MiddleName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MiddleName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $middleName;
 
     /**
@@ -88,7 +88,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('OtherName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\OtherName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $otherName;
 
     /**
@@ -99,7 +99,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('NameSuffix')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\NameSuffix')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $nameSuffix;
 
     /**
@@ -110,7 +110,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('JobTitle')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\JobTitle')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $jobTitle;
 
     /**
@@ -121,7 +121,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('NationalityID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\NationalityID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $nationalityID;
 
     /**
@@ -132,7 +132,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('GenderCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\GenderCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $genderCode;
 
     /**
@@ -143,7 +143,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BirthDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $birthDate;
 
     /**
@@ -154,7 +154,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BirthplaceName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\BirthplaceName')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $birthplaceName;
 
     /**
@@ -165,7 +165,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('OrganizationDepartment')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\OrganizationDepartment')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $organizationDepartment;
 
     /**
@@ -176,7 +176,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Contact')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Contact')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $contact;
 
     /**
@@ -187,7 +187,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FinancialAccount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\FinancialAccount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $financialAccount;
 
     /**
@@ -198,8 +198,8 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('IdentityDocumentReference')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\IdentityDocumentReference>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'IdentityDocumentReference', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'IdentityDocumentReference', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $identityDocumentReference;
 
     /**
@@ -210,7 +210,7 @@ class PersonType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ResidenceAddress')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ResidenceAddress')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $residenceAddress;
 
     /**

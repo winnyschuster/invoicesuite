@@ -24,7 +24,7 @@ class ItemInstanceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ProductTraceID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ProductTraceID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $productTraceID;
 
     /**
@@ -35,7 +35,7 @@ class ItemInstanceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ManufactureDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $manufactureDate;
 
     /**
@@ -46,7 +46,7 @@ class ItemInstanceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ManufactureTime')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $manufactureTime;
 
     /**
@@ -57,7 +57,7 @@ class ItemInstanceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BestBeforeDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $bestBeforeDate;
 
     /**
@@ -68,7 +68,7 @@ class ItemInstanceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('RegistrationID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\RegistrationID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $registrationID;
 
     /**
@@ -79,7 +79,7 @@ class ItemInstanceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SerialID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SerialID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $serialID;
 
     /**
@@ -90,8 +90,8 @@ class ItemInstanceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AdditionalItemProperty')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\AdditionalItemProperty>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AdditionalItemProperty', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'AdditionalItemProperty', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $additionalItemProperty;
 
     /**
@@ -102,7 +102,7 @@ class ItemInstanceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LotIdentification')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\LotIdentification')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $lotIdentification;
 
     /**

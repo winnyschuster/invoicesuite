@@ -20,7 +20,7 @@ class LineResponseType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LineReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\LineReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $lineReference;
 
     /**
@@ -31,8 +31,8 @@ class LineResponseType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Response')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\Response>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Response', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'Response', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $response;
 
     /**

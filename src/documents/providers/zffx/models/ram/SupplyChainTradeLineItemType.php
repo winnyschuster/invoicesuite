@@ -19,7 +19,7 @@ class SupplyChainTradeLineItemType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('AssociatedDocumentLineDocument')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\DocumentLineDocumentType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $associatedDocumentLineDocument;
 
     /**
@@ -30,7 +30,7 @@ class SupplyChainTradeLineItemType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SpecifiedTradeProduct')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradeProductType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $specifiedTradeProduct;
 
     /**
@@ -41,7 +41,7 @@ class SupplyChainTradeLineItemType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SpecifiedLineTradeAgreement')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\LineTradeAgreementType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $specifiedLineTradeAgreement;
 
     /**
@@ -52,7 +52,7 @@ class SupplyChainTradeLineItemType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SpecifiedLineTradeDelivery')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\LineTradeDeliveryType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $specifiedLineTradeDelivery;
 
     /**
@@ -63,7 +63,7 @@ class SupplyChainTradeLineItemType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SpecifiedLineTradeSettlement')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\LineTradeSettlementType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $specifiedLineTradeSettlement;
 
     /**

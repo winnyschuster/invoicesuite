@@ -23,7 +23,7 @@ class TradePaymentTermsType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('Description')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $description;
 
     /**
@@ -34,7 +34,7 @@ class TradePaymentTermsType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('DueDateDateTime')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\DateTimeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $dueDateDateTime;
 
     /**
@@ -45,7 +45,7 @@ class TradePaymentTermsType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('DirectDebitMandateID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $directDebitMandateID;
 
     /**
@@ -56,7 +56,7 @@ class TradePaymentTermsType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('PartialPaymentAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $partialPaymentAmount;
 
     /**
@@ -67,7 +67,7 @@ class TradePaymentTermsType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ApplicableTradePaymentPenaltyTerms')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradePaymentPenaltyTermsType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $applicableTradePaymentPenaltyTerms;
 
     /**
@@ -78,7 +78,7 @@ class TradePaymentTermsType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ApplicableTradePaymentDiscountTerms')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradePaymentDiscountTermsType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $applicableTradePaymentDiscountTerms;
 
     /**
@@ -89,7 +89,7 @@ class TradePaymentTermsType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('PayeeTradeParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradePartyType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $payeeTradeParty;
 
     /**

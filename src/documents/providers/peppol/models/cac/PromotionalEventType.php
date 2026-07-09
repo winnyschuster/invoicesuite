@@ -22,7 +22,7 @@ class PromotionalEventType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PromotionalEventTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PromotionalEventTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $promotionalEventTypeCode;
 
     /**
@@ -33,7 +33,7 @@ class PromotionalEventType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SubmissionDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $submissionDate;
 
     /**
@@ -44,7 +44,7 @@ class PromotionalEventType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FirstShipmentAvailibilityDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $firstShipmentAvailibilityDate;
 
     /**
@@ -55,7 +55,7 @@ class PromotionalEventType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LatestProposalAcceptanceDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $latestProposalAcceptanceDate;
 
     /**
@@ -66,8 +66,8 @@ class PromotionalEventType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PromotionalSpecification')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\PromotionalSpecification>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PromotionalSpecification', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'PromotionalSpecification', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $promotionalSpecification;
 
     /**

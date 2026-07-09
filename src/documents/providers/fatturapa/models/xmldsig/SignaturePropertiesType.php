@@ -26,7 +26,7 @@ class SignaturePropertiesType
     #[JMS\SerializedName('SignatureProperty')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\xmldsig\SignaturePropertyType>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'SignatureProperty')]
+    #[JMS\XmlList(entry: 'SignatureProperty', inline: true)]
     private ?array $signatureProperty = null;
 
     /**

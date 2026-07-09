@@ -20,7 +20,7 @@ class ShareholderPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PartecipationPercent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PartecipationPercent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $partecipationPercent;
 
     /**
@@ -31,7 +31,7 @@ class ShareholderPartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Party')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Party')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $party;
 
     /**

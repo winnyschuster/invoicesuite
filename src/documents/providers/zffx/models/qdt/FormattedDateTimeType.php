@@ -20,7 +20,7 @@ class FormattedDateTimeType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('DateTimeString')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\qdt\FormattedDateTimeType\DateTimeStringAType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:QualifiedDataType:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:QualifiedDataType:100')]
     private $dateTimeString;
 
     /**

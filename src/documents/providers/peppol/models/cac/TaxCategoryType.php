@@ -29,7 +29,7 @@ class TaxCategoryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -40,7 +40,7 @@ class TaxCategoryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Name')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Name')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $name;
 
     /**
@@ -51,7 +51,7 @@ class TaxCategoryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Percent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Percent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $percent;
 
     /**
@@ -62,7 +62,7 @@ class TaxCategoryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BaseUnitMeasure')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\BaseUnitMeasure')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $baseUnitMeasure;
 
     /**
@@ -73,7 +73,7 @@ class TaxCategoryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PerUnitAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PerUnitAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $perUnitAmount;
 
     /**
@@ -84,7 +84,7 @@ class TaxCategoryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxExemptionReasonCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TaxExemptionReasonCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $taxExemptionReasonCode;
 
     /**
@@ -95,8 +95,8 @@ class TaxCategoryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxExemptionReason')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TaxExemptionReason>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'TaxExemptionReason', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'TaxExemptionReason', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $taxExemptionReason;
 
     /**
@@ -107,7 +107,7 @@ class TaxCategoryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TierRange')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TierRange')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $tierRange;
 
     /**
@@ -118,7 +118,7 @@ class TaxCategoryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TierRatePercent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TierRatePercent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $tierRatePercent;
 
     /**
@@ -129,7 +129,7 @@ class TaxCategoryType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxScheme')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\TaxScheme')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $taxScheme;
 
     /**

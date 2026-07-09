@@ -22,7 +22,7 @@ class TradeAddressType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('PostcodeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\CodeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $postcodeCode;
 
     /**
@@ -33,7 +33,7 @@ class TradeAddressType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('LineOne')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $lineOne;
 
     /**
@@ -44,7 +44,7 @@ class TradeAddressType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('LineTwo')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $lineTwo;
 
     /**
@@ -55,7 +55,7 @@ class TradeAddressType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('LineThree')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $lineThree;
 
     /**
@@ -66,7 +66,7 @@ class TradeAddressType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('CityName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $cityName;
 
     /**
@@ -77,7 +77,7 @@ class TradeAddressType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('CountryID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\qdt\CountryIDType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $countryID;
 
     /**
@@ -88,7 +88,7 @@ class TradeAddressType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('CountrySubDivisionName')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $countrySubDivisionName;
 
     /**

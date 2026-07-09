@@ -20,8 +20,8 @@ class TendererPartyQualificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('InterestedProcurementProjectLot')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\InterestedProcurementProjectLot>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'InterestedProcurementProjectLot', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'InterestedProcurementProjectLot', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $interestedProcurementProjectLot;
 
     /**
@@ -32,7 +32,7 @@ class TendererPartyQualificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MainQualifyingParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\MainQualifyingParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $mainQualifyingParty;
 
     /**
@@ -43,8 +43,8 @@ class TendererPartyQualificationType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AdditionalQualifyingParty')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\AdditionalQualifyingParty>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AdditionalQualifyingParty', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'AdditionalQualifyingParty', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $additionalQualifyingParty;
 
     /**

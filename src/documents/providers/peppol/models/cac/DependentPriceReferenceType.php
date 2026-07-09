@@ -20,7 +20,7 @@ class DependentPriceReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Percent')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Percent')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $percent;
 
     /**
@@ -31,7 +31,7 @@ class DependentPriceReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LocationAddress')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\LocationAddress')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $locationAddress;
 
     /**
@@ -42,7 +42,7 @@ class DependentPriceReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DependentLineReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\DependentLineReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $dependentLineReference;
 
     /**

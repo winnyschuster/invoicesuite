@@ -22,7 +22,7 @@ class DutyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Amount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Amount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $amount;
 
     /**
@@ -33,7 +33,7 @@ class DutyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Duty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Duty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $duty;
 
     /**
@@ -44,7 +44,7 @@ class DutyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DutyCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\DutyCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $dutyCode;
 
     /**
@@ -55,7 +55,7 @@ class DutyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxCategory')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\TaxCategory')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $taxCategory;
 
     /**

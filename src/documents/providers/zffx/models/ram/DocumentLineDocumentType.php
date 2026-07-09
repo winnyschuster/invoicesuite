@@ -23,7 +23,7 @@ class DocumentLineDocumentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('LineID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $lineID;
 
     /**
@@ -34,7 +34,7 @@ class DocumentLineDocumentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ParentLineID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $parentLineID;
 
     /**
@@ -45,7 +45,7 @@ class DocumentLineDocumentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('LineStatusCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\qdt\LineStatusCodeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $lineStatusCode;
 
     /**
@@ -56,7 +56,7 @@ class DocumentLineDocumentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('LineStatusReasonCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\CodeType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $lineStatusReasonCode;
 
     /**
@@ -67,8 +67,8 @@ class DocumentLineDocumentType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('IncludedNote')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\ram\NoteType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'IncludedNote', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'IncludedNote', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $includedNote;
 
     /**

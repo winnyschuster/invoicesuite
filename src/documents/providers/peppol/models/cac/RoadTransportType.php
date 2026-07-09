@@ -20,7 +20,7 @@ class RoadTransportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LicensePlateID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LicensePlateID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $licensePlateID;
 
     /**

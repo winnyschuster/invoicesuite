@@ -35,7 +35,7 @@ final class DatiPagamento
     #[JMS\SerializedName('DettaglioPagamento')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\fatturapa\models\DettaglioPagamento>')]
     #[JMS\XmlElement(cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'DettaglioPagamento')]
+    #[JMS\XmlList(entry: 'DettaglioPagamento', inline: true)]
     private ?array $dettaglioPagamento = null;
 
     /**

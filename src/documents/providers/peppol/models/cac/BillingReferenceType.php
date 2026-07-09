@@ -20,7 +20,7 @@ class BillingReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('InvoiceDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\InvoiceDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $invoiceDocumentReference;
 
     /**
@@ -31,7 +31,7 @@ class BillingReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SelfBilledInvoiceDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\SelfBilledInvoiceDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $selfBilledInvoiceDocumentReference;
 
     /**
@@ -42,7 +42,7 @@ class BillingReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CreditNoteDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\CreditNoteDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $creditNoteDocumentReference;
 
     /**
@@ -53,7 +53,7 @@ class BillingReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SelfBilledCreditNoteDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\SelfBilledCreditNoteDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $selfBilledCreditNoteDocumentReference;
 
     /**
@@ -64,7 +64,7 @@ class BillingReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DebitNoteDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\DebitNoteDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $debitNoteDocumentReference;
 
     /**
@@ -75,7 +75,7 @@ class BillingReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ReminderDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ReminderDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $reminderDocumentReference;
 
     /**
@@ -86,7 +86,7 @@ class BillingReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AdditionalDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\AdditionalDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $additionalDocumentReference;
 
     /**
@@ -97,8 +97,8 @@ class BillingReferenceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BillingReferenceLine')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\BillingReferenceLine>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'BillingReferenceLine', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'BillingReferenceLine', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $billingReferenceLine;
 
     /**

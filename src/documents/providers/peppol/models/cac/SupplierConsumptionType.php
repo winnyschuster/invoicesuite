@@ -21,8 +21,8 @@ class SupplierConsumptionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Description')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Description>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Description', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Description', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $description;
 
     /**
@@ -33,7 +33,7 @@ class SupplierConsumptionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('UtilitySupplierParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\UtilitySupplierParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $utilitySupplierParty;
 
     /**
@@ -44,7 +44,7 @@ class SupplierConsumptionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('UtilityCustomerParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\UtilityCustomerParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $utilityCustomerParty;
 
     /**
@@ -55,7 +55,7 @@ class SupplierConsumptionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Consumption')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Consumption')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $consumption;
 
     /**
@@ -66,7 +66,7 @@ class SupplierConsumptionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Contract')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Contract')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $contract;
 
     /**
@@ -77,8 +77,8 @@ class SupplierConsumptionType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumptionLine')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\ConsumptionLine>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ConsumptionLine', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'ConsumptionLine', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $consumptionLine;
 
     /**

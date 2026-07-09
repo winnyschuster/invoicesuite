@@ -21,7 +21,7 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('BuyerReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $buyerReference;
 
     /**
@@ -32,7 +32,7 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SellerTradeParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradePartyType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $sellerTradeParty;
 
     /**
@@ -43,7 +43,7 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('BuyerTradeParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradePartyType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $buyerTradeParty;
 
     /**
@@ -54,7 +54,7 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SalesAgentTradeParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradePartyType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $salesAgentTradeParty;
 
     /**
@@ -65,7 +65,7 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('BuyerTaxRepresentativeTradeParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradePartyType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $buyerTaxRepresentativeTradeParty;
 
     /**
@@ -76,7 +76,7 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SellerTaxRepresentativeTradeParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradePartyType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $sellerTaxRepresentativeTradeParty;
 
     /**
@@ -87,7 +87,7 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ProductEndUserTradeParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradePartyType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $productEndUserTradeParty;
 
     /**
@@ -98,7 +98,7 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ApplicableTradeDeliveryTerms')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradeDeliveryTermsType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $applicableTradeDeliveryTerms;
 
     /**
@@ -109,7 +109,7 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SellerOrderReferencedDocument')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\ReferencedDocumentType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $sellerOrderReferencedDocument;
 
     /**
@@ -120,7 +120,7 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('BuyerOrderReferencedDocument')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\ReferencedDocumentType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $buyerOrderReferencedDocument;
 
     /**
@@ -131,7 +131,7 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('QuotationReferencedDocument')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\ReferencedDocumentType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $quotationReferencedDocument;
 
     /**
@@ -142,7 +142,7 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ContractReferencedDocument')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\ReferencedDocumentType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $contractReferencedDocument;
 
     /**
@@ -153,8 +153,8 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('AdditionalReferencedDocument')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\ram\ReferencedDocumentType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AdditionalReferencedDocument', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'AdditionalReferencedDocument', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $additionalReferencedDocument;
 
     /**
@@ -165,7 +165,7 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('BuyerAgentTradeParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradePartyType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $buyerAgentTradeParty;
 
     /**
@@ -176,7 +176,7 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SpecifiedProcuringProject')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\ProcuringProjectType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $specifiedProcuringProject;
 
     /**
@@ -187,8 +187,8 @@ class HeaderTradeAgreementType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('UltimateCustomerOrderReferencedDocument')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\ram\ReferencedDocumentType>')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'UltimateCustomerOrderReferencedDocument', namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'UltimateCustomerOrderReferencedDocument', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $ultimateCustomerOrderReferencedDocument;
 
     /**

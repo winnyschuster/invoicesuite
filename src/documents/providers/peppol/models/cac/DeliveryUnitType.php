@@ -21,7 +21,7 @@ class DeliveryUnitType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BatchQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\BatchQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $batchQuantity;
 
     /**
@@ -32,7 +32,7 @@ class DeliveryUnitType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ConsumerUnitQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ConsumerUnitQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $consumerUnitQuantity;
 
     /**
@@ -43,7 +43,7 @@ class DeliveryUnitType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('HazardousRiskIndicator')]
     #[JMS\Type('bool')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $hazardousRiskIndicator;
 
     /**

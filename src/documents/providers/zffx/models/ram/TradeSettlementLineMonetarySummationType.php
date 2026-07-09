@@ -20,7 +20,7 @@ class TradeSettlementLineMonetarySummationType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('LineTotalAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $lineTotalAmount;
 
     /**
@@ -31,7 +31,7 @@ class TradeSettlementLineMonetarySummationType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('ChargeTotalAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $chargeTotalAmount;
 
     /**
@@ -42,7 +42,7 @@ class TradeSettlementLineMonetarySummationType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('AllowanceTotalAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $allowanceTotalAmount;
 
     /**
@@ -53,7 +53,7 @@ class TradeSettlementLineMonetarySummationType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('TaxTotalAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $taxTotalAmount;
 
     /**
@@ -64,7 +64,7 @@ class TradeSettlementLineMonetarySummationType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('GrandTotalAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $grandTotalAmount;
 
     /**
@@ -75,7 +75,7 @@ class TradeSettlementLineMonetarySummationType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('TotalAllowanceChargeAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $totalAllowanceChargeAmount;
 
     /**

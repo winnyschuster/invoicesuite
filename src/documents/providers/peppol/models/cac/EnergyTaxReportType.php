@@ -22,7 +22,7 @@ class EnergyTaxReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxEnergyAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TaxEnergyAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $taxEnergyAmount;
 
     /**
@@ -33,7 +33,7 @@ class EnergyTaxReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxEnergyOnAccountAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TaxEnergyOnAccountAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $taxEnergyOnAccountAmount;
 
     /**
@@ -44,7 +44,7 @@ class EnergyTaxReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxEnergyBalanceAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TaxEnergyBalanceAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $taxEnergyBalanceAmount;
 
     /**
@@ -55,7 +55,7 @@ class EnergyTaxReportType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TaxScheme')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\TaxScheme')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $taxScheme;
 
     /**

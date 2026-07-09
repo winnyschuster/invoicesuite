@@ -29,7 +29,7 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TransportServiceCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TransportServiceCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $transportServiceCode;
 
     /**
@@ -40,7 +40,7 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TariffClassCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TariffClassCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $tariffClassCode;
 
     /**
@@ -51,7 +51,7 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Priority')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Priority')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $priority;
 
     /**
@@ -62,7 +62,7 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FreightRateClassCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\FreightRateClassCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $freightRateClassCode;
 
     /**
@@ -73,8 +73,8 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TransportationServiceDescription')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TransportationServiceDescription>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'TransportationServiceDescription', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'TransportationServiceDescription', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $transportationServiceDescription;
 
     /**
@@ -85,7 +85,7 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TransportationServiceDetailsURI')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\TransportationServiceDetailsURI')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $transportationServiceDetailsURI;
 
     /**
@@ -96,7 +96,7 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('NominationDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $nominationDate;
 
     /**
@@ -107,7 +107,7 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('NominationTime')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Time')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $nominationTime;
 
     /**
@@ -118,7 +118,7 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Name')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Name')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $name;
 
     /**
@@ -129,7 +129,7 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SequenceNumeric')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\SequenceNumeric')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $sequenceNumeric;
 
     /**
@@ -140,8 +140,8 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TransportEquipment')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\TransportEquipment>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'TransportEquipment', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'TransportEquipment', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $transportEquipment;
 
     /**
@@ -152,8 +152,8 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SupportedTransportEquipment')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\SupportedTransportEquipment>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'SupportedTransportEquipment', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'SupportedTransportEquipment', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $supportedTransportEquipment;
 
     /**
@@ -164,8 +164,8 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('UnsupportedTransportEquipment')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\UnsupportedTransportEquipment>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'UnsupportedTransportEquipment', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'UnsupportedTransportEquipment', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $unsupportedTransportEquipment;
 
     /**
@@ -176,8 +176,8 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CommodityClassification')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\CommodityClassification>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'CommodityClassification', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'CommodityClassification', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $commodityClassification;
 
     /**
@@ -188,8 +188,8 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('SupportedCommodityClassification')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\SupportedCommodityClassification>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'SupportedCommodityClassification', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'SupportedCommodityClassification', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $supportedCommodityClassification;
 
     /**
@@ -200,8 +200,8 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('UnsupportedCommodityClassification')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\UnsupportedCommodityClassification>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'UnsupportedCommodityClassification', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'UnsupportedCommodityClassification', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $unsupportedCommodityClassification;
 
     /**
@@ -212,7 +212,7 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TotalCapacityDimension')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\TotalCapacityDimension')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $totalCapacityDimension;
 
     /**
@@ -223,8 +223,8 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ShipmentStage')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\ShipmentStage>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ShipmentStage', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'ShipmentStage', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $shipmentStage;
 
     /**
@@ -235,8 +235,8 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TransportEvent')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\TransportEvent>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'TransportEvent', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'TransportEvent', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $transportEvent;
 
     /**
@@ -247,7 +247,7 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ResponsibleTransportServiceProviderParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ResponsibleTransportServiceProviderParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $responsibleTransportServiceProviderParty;
 
     /**
@@ -258,8 +258,8 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EnvironmentalEmission')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\EnvironmentalEmission>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'EnvironmentalEmission', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'EnvironmentalEmission', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $environmentalEmission;
 
     /**
@@ -270,7 +270,7 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EstimatedDurationPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\EstimatedDurationPeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $estimatedDurationPeriod;
 
     /**
@@ -281,8 +281,8 @@ class TransportationServiceType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ScheduledServiceFrequency')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\ScheduledServiceFrequency>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ScheduledServiceFrequency', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'ScheduledServiceFrequency', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $scheduledServiceFrequency;
 
     /**

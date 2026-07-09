@@ -32,7 +32,7 @@ class MeterReadingType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\ID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $iD;
 
     /**
@@ -43,7 +43,7 @@ class MeterReadingType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MeterReadingType')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MeterReadingType')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $meterReadingType;
 
     /**
@@ -54,7 +54,7 @@ class MeterReadingType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MeterReadingTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MeterReadingTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $meterReadingTypeCode;
 
     /**
@@ -65,7 +65,7 @@ class MeterReadingType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PreviousMeterReadingDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $previousMeterReadingDate;
 
     /**
@@ -76,7 +76,7 @@ class MeterReadingType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PreviousMeterQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PreviousMeterQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $previousMeterQuantity;
 
     /**
@@ -87,7 +87,7 @@ class MeterReadingType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LatestMeterReadingDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $latestMeterReadingDate;
 
     /**
@@ -98,7 +98,7 @@ class MeterReadingType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LatestMeterQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LatestMeterQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $latestMeterQuantity;
 
     /**
@@ -109,7 +109,7 @@ class MeterReadingType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PreviousMeterReadingMethod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PreviousMeterReadingMethod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $previousMeterReadingMethod;
 
     /**
@@ -120,7 +120,7 @@ class MeterReadingType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PreviousMeterReadingMethodCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PreviousMeterReadingMethodCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $previousMeterReadingMethodCode;
 
     /**
@@ -131,7 +131,7 @@ class MeterReadingType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LatestMeterReadingMethod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LatestMeterReadingMethod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $latestMeterReadingMethod;
 
     /**
@@ -142,7 +142,7 @@ class MeterReadingType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LatestMeterReadingMethodCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LatestMeterReadingMethodCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $latestMeterReadingMethodCode;
 
     /**
@@ -153,8 +153,8 @@ class MeterReadingType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MeterReadingComments')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MeterReadingComments>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'MeterReadingComments', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'MeterReadingComments', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $meterReadingComments;
 
     /**
@@ -165,7 +165,7 @@ class MeterReadingType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DeliveredQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\DeliveredQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $deliveredQuantity;
 
     /**

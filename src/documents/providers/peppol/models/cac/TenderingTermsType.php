@@ -34,7 +34,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AwardingMethodTypeCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\AwardingMethodTypeCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $awardingMethodTypeCode;
 
     /**
@@ -45,7 +45,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PriceEvaluationCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PriceEvaluationCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $priceEvaluationCode;
 
     /**
@@ -56,7 +56,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MaximumVariantQuantity')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MaximumVariantQuantity')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $maximumVariantQuantity;
 
     /**
@@ -67,7 +67,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('VariantConstraintIndicator')]
     #[JMS\Type('bool')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $variantConstraintIndicator;
 
     /**
@@ -78,8 +78,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AcceptedVariantsDescription')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\AcceptedVariantsDescription>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AcceptedVariantsDescription', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'AcceptedVariantsDescription', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $acceptedVariantsDescription;
 
     /**
@@ -90,8 +90,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PriceRevisionFormulaDescription')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PriceRevisionFormulaDescription>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PriceRevisionFormulaDescription', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'PriceRevisionFormulaDescription', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $priceRevisionFormulaDescription;
 
     /**
@@ -102,7 +102,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FundingProgramCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\FundingProgramCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $fundingProgramCode;
 
     /**
@@ -113,8 +113,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FundingProgram')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\FundingProgram>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'FundingProgram', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'FundingProgram', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $fundingProgram;
 
     /**
@@ -125,7 +125,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MaximumAdvertisementAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\MaximumAdvertisementAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $maximumAdvertisementAmount;
 
     /**
@@ -136,8 +136,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Note')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\Note>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Note', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'Note', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $note;
 
     /**
@@ -148,7 +148,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PaymentFrequencyCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\PaymentFrequencyCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $paymentFrequencyCode;
 
     /**
@@ -159,7 +159,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EconomicOperatorRegistryURI')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\EconomicOperatorRegistryURI')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $economicOperatorRegistryURI;
 
     /**
@@ -170,7 +170,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('RequiredCurriculaIndicator')]
     #[JMS\Type('bool')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $requiredCurriculaIndicator;
 
     /**
@@ -181,7 +181,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('OtherConditionsIndicator')]
     #[JMS\Type('bool')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $otherConditionsIndicator;
 
     /**
@@ -192,8 +192,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AdditionalConditions')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cbc\AdditionalConditions>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AdditionalConditions', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
+    #[JMS\XmlList(entry: 'AdditionalConditions', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $additionalConditions;
 
     /**
@@ -204,7 +204,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LatestSecurityClearanceDate')]
     #[JMS\Type('GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $latestSecurityClearanceDate;
 
     /**
@@ -215,7 +215,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DocumentationFeeAmount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\DocumentationFeeAmount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $documentationFeeAmount;
 
     /**
@@ -226,8 +226,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PenaltyClause')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\PenaltyClause>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PenaltyClause', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'PenaltyClause', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $penaltyClause;
 
     /**
@@ -238,8 +238,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('RequiredFinancialGuarantee')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\RequiredFinancialGuarantee>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'RequiredFinancialGuarantee', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'RequiredFinancialGuarantee', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $requiredFinancialGuarantee;
 
     /**
@@ -250,7 +250,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ProcurementLegislationDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ProcurementLegislationDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $procurementLegislationDocumentReference;
 
     /**
@@ -261,7 +261,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FiscalLegislationDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\FiscalLegislationDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $fiscalLegislationDocumentReference;
 
     /**
@@ -272,7 +272,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EnvironmentalLegislationDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\EnvironmentalLegislationDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $environmentalLegislationDocumentReference;
 
     /**
@@ -283,7 +283,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EmploymentLegislationDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\EmploymentLegislationDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $employmentLegislationDocumentReference;
 
     /**
@@ -294,8 +294,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ContractualDocumentReference')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\ContractualDocumentReference>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ContractualDocumentReference', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'ContractualDocumentReference', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $contractualDocumentReference;
 
     /**
@@ -306,7 +306,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('CallForTendersDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\CallForTendersDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $callForTendersDocumentReference;
 
     /**
@@ -317,7 +317,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('WarrantyValidityPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\WarrantyValidityPeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $warrantyValidityPeriod;
 
     /**
@@ -328,8 +328,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PaymentTerms')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\PaymentTerms>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PaymentTerms', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'PaymentTerms', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $paymentTerms;
 
     /**
@@ -340,8 +340,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TendererQualificationRequest')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\TendererQualificationRequest>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'TendererQualificationRequest', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'TendererQualificationRequest', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $tendererQualificationRequest;
 
     /**
@@ -352,8 +352,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AllowedSubcontractTerms')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\AllowedSubcontractTerms>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'AllowedSubcontractTerms', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'AllowedSubcontractTerms', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $allowedSubcontractTerms;
 
     /**
@@ -364,8 +364,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TenderPreparation')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\TenderPreparation>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'TenderPreparation', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'TenderPreparation', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $tenderPreparation;
 
     /**
@@ -376,8 +376,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ContractExecutionRequirement')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\ContractExecutionRequirement>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ContractExecutionRequirement', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'ContractExecutionRequirement', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $contractExecutionRequirement;
 
     /**
@@ -388,7 +388,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AwardingTerms')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\AwardingTerms')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $awardingTerms;
 
     /**
@@ -399,7 +399,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AdditionalInformationParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\AdditionalInformationParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $additionalInformationParty;
 
     /**
@@ -410,7 +410,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('DocumentProviderParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\DocumentProviderParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $documentProviderParty;
 
     /**
@@ -421,7 +421,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TenderRecipientParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\TenderRecipientParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $tenderRecipientParty;
 
     /**
@@ -432,7 +432,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ContractResponsibleParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ContractResponsibleParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $contractResponsibleParty;
 
     /**
@@ -443,8 +443,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TenderEvaluationParty')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\TenderEvaluationParty>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'TenderEvaluationParty', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'TenderEvaluationParty', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $tenderEvaluationParty;
 
     /**
@@ -455,7 +455,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('TenderValidityPeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\TenderValidityPeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $tenderValidityPeriod;
 
     /**
@@ -466,7 +466,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ContractAcceptancePeriod')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ContractAcceptancePeriod')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $contractAcceptancePeriod;
 
     /**
@@ -477,7 +477,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AppealTerms')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\AppealTerms')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $appealTerms;
 
     /**
@@ -488,8 +488,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Language')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\Language>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Language', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'Language', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $language;
 
     /**
@@ -500,8 +500,8 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('BudgetAccountLine')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\BudgetAccountLine>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'BudgetAccountLine', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'BudgetAccountLine', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $budgetAccountLine;
 
     /**
@@ -512,7 +512,7 @@ class TenderingTermsType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ReplacedNoticeDocumentReference')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\ReplacedNoticeDocumentReference')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $replacedNoticeDocumentReference;
 
     /**

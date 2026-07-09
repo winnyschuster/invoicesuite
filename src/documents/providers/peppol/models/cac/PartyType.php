@@ -24,7 +24,7 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MarkCareIndicator')]
     #[JMS\Type('bool')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $markCareIndicator;
 
     /**
@@ -35,7 +35,7 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('MarkAttentionIndicator')]
     #[JMS\Type('bool')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $markAttentionIndicator;
 
     /**
@@ -46,7 +46,7 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('WebsiteURI')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\WebsiteURI')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $websiteURI;
 
     /**
@@ -57,7 +57,7 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('LogoReferenceID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\LogoReferenceID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $logoReferenceID;
 
     /**
@@ -68,7 +68,7 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('EndpointID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\EndpointID')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $endpointID;
 
     /**
@@ -79,7 +79,7 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('IndustryClassificationCode')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cbc\IndustryClassificationCode')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2')]
     private $industryClassificationCode;
 
     /**
@@ -90,8 +90,8 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PartyIdentification')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\PartyIdentification>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PartyIdentification', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'PartyIdentification', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $partyIdentification;
 
     /**
@@ -102,8 +102,8 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PartyName')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\PartyName>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PartyName', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'PartyName', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $partyName;
 
     /**
@@ -114,7 +114,7 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Language')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Language')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $language;
 
     /**
@@ -125,7 +125,7 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PostalAddress')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\PostalAddress')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $postalAddress;
 
     /**
@@ -136,7 +136,7 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PhysicalLocation')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\PhysicalLocation')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $physicalLocation;
 
     /**
@@ -147,8 +147,8 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PartyTaxScheme')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\PartyTaxScheme>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PartyTaxScheme', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'PartyTaxScheme', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $partyTaxScheme;
 
     /**
@@ -159,8 +159,8 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PartyLegalEntity')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\PartyLegalEntity>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PartyLegalEntity', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'PartyLegalEntity', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $partyLegalEntity;
 
     /**
@@ -171,7 +171,7 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Contact')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\Contact')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $contact;
 
     /**
@@ -182,8 +182,8 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('Person')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\Person>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'Person', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'Person', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $person;
 
     /**
@@ -194,7 +194,7 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('AgentParty')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\AgentParty')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $agentParty;
 
     /**
@@ -205,8 +205,8 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('ServiceProviderParty')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\ServiceProviderParty>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'ServiceProviderParty', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'ServiceProviderParty', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $serviceProviderParty;
 
     /**
@@ -217,8 +217,8 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('PowerOfAttorney')]
     #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\peppol\models\cac\PowerOfAttorney>')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
-    #[JMS\XmlList(inline: true, entry: 'PowerOfAttorney', namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
+    #[JMS\XmlList(entry: 'PowerOfAttorney', inline: true, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $powerOfAttorney;
 
     /**
@@ -229,7 +229,7 @@ class PartyType
     #[JMS\Groups(['ubl'])]
     #[JMS\SerializedName('FinancialAccount')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\peppol\models\cac\FinancialAccount')]
-    #[JMS\XmlElement(namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2')]
     private $financialAccount;
 
     /**

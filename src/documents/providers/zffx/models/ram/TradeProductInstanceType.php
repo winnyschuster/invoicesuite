@@ -20,7 +20,7 @@ class TradeProductInstanceType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('BatchID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $batchID;
 
     /**
@@ -31,7 +31,7 @@ class TradeProductInstanceType
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('SupplierAssignedSerialID')]
     #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType')]
-    #[JMS\XmlElement(namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100', cdata: false)]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $supplierAssignedSerialID;
 
     /**
