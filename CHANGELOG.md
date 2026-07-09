@@ -1,3 +1,23 @@
+## v0.0.12
+
+``Previous version v0.0.11``
+
+| Type | Hash    | Date    | Author  | Subject  | Issue(s)
+| :--- | :------ | :------ | :------ | :------- | :-----------: 
+| :new:  | [f8d26004](https://github.com/horstoeko/invoicesuite/commit/f8d26004) | 2026-07-06 16:47:46 CEST | HorstOeko | [ENH] Added new Methods to InvoiceSuiteArrayUtils | 
+| :new:  | [722f7de5](https://github.com/horstoeko/invoicesuite/commit/722f7de5) | 2026-06-19 12:01:32 CEST | HorstOeko | [ENH] Added support for Buyer Tax Representative Party | 
+| :new:  | [253bc703](https://github.com/horstoeko/invoicesuite/commit/253bc703) | 2026-06-19 07:31:10 CEST | HorstOeko | [ENH] Renamed "DocumentTaxRepresentative"-Methods to "DocumentSellerTaxRepresentative" | 
+| :new:  | [3494560d](https://github.com/horstoeko/invoicesuite/commit/3494560d) | 2026-06-19 07:07:39 CEST | HorstOeko | [ENH] Merged changes from "old" Library | 
+| :new:  | [90032e05](https://github.com/horstoeko/invoicesuite/commit/90032e05) | 2026-06-02 11:28:18 CEST | HorstOeko | [ENH] Added tests for new ArrayUtil-Methods | 
+| :bug:  | [b3336502](https://github.com/horstoeko/invoicesuite/commit/b3336502) | 2026-06-02 09:06:32 CEST | HorstOeko | [FIX] Removed unused Parameter from "arrayContains" | 
+| :new:  | [19870ddd](https://github.com/horstoeko/invoicesuite/commit/19870ddd) | 2026-06-02 07:50:40 CEST | HorstOeko | [ENH] More strict usage of InvoiceSuiteArrayUtils (Part 2) | 
+| :new:  | [5cb4a63e](https://github.com/horstoeko/invoicesuite/commit/5cb4a63e) | 2026-06-01 19:11:02 CEST | HorstOeko | [ENH] More strict usage of InvoiceSuiteArrayUtils | 
+| :new_moon:  | [2efcc8ad](https://github.com/horstoeko/invoicesuite/commit/2efcc8ad) | 2026-06-01 18:25:25 CEST | HorstOeko | {ENH] Switched "in_array" to "InvoiceSuiteArrayUtils::arrayContains" | 
+| :new:  | [384b8294](https://github.com/horstoeko/invoicesuite/commit/384b8294) | 2026-05-31 06:47:31 CEST | HorstOeko | [ENH] Fix Enum Serialization (FatturaPA - Beta) | 
+| :new:  | [e4343c0d](https://github.com/horstoeko/invoicesuite/commit/e4343c0d) | 2026-05-30 15:06:27 CEST | HorstOeko | [ENH] Moved to PHP-Attributes, Removed "doctrine/annotations" | 
+
+:exclamation: _There are 10 internal commit(s)_
+
 ## v0.0.11
 
 ``Previous version v0.0.10``
