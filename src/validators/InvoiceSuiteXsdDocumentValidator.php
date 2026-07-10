@@ -249,8 +249,11 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
         try {
             $doc = new DOMDocument();
 
-            if ($doc->loadXML($this->getRawDocumentContent())) {
-                if ($doc->schemaValidate($this->getXsdFilename())) {
+            $doc->resolveExternals = false;
+            $doc->substituteEntities = false;
+
+            if ($doc->loadXML($this->getRawDocumentContent(), LIBXML_NONET)) {
+                if ($doc->schemaValidate($this->getXsdFilename(), LIBXML_NONET)) {
                     return true;
                 }
 

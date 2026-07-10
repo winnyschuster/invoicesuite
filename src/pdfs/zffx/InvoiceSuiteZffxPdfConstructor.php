@@ -155,7 +155,9 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
     protected function extractInvoiceInformations(): array
     {
         $domDocument = new DOMDocument();
-        $domDocument->loadXML($this->getRawDocumentContent());
+        $domDocument->resolveExternals = false;
+        $domDocument->substituteEntities = false;
+        $domDocument->loadXML($this->getRawDocumentContent(), LIBXML_NONET);
 
         $xpath = new DOMXPath($domDocument);
 
