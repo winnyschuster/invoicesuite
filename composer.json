@@ -153,11 +153,16 @@
             "Composer\\Config::disableProcessTimeout",
             "./vendor/bin/parallel-lint src tests"
         ],
+        "audit:run": [
+            "Composer\\Config::disableProcessTimeout",
+            "composer audit --locked"
+        ],
         "checkstyle:run": [
             "Composer\\Config::disableProcessTimeout",
             "@lint:run",
             "@phpcsfixer:dryrun",
-            "@phpstan:run"
+            "@phpstan:run",
+            "@audit:run"
         ],
         "refactor:run": [
             "@rector:run",
