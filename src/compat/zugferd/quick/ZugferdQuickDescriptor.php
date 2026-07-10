@@ -18,6 +18,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\stringmanagement\StringUtils;
 use horstoeko\zugferd\ZugferdDocumentBuilder;
 use horstoeko\zugferd\ZugferdProfiles;
@@ -940,7 +941,7 @@ class ZugferdQuickDescriptor extends ZugferdDocumentBuilder
         float $allowanceAmount,
         float $logisticServiceCharge
     ) {
-        $vatGroup = md5($taxCategoryCode . '_' . $taxTypeCode . '_' . number_format($taxPercent, 10, '_', '__'));
+        $vatGroup = InvoiceSuiteStringUtils::md5($taxCategoryCode . '_' . $taxTypeCode . '_' . InvoiceSuiteStringUtils::numberFormat($taxPercent, 10, '_', '__'));
 
         if (!isset($this->vatBreakdown[$vatGroup])) {
             $this->vatBreakdown[$vatGroup] = [

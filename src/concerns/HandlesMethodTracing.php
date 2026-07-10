@@ -59,7 +59,7 @@ trait HandlesMethodTracing
 
         // @phpstan-ignore missingType.checkedException
         $this->addInfoMessageToMessageBag(
-            newMessageContent: sprintf('%s %s', InvoiceSuiteStringUtils::upper($newEvent), $newMethod),
+            newMessageContent: InvoiceSuiteStringUtils::sprintf('%s %s', InvoiceSuiteStringUtils::upper($newEvent), $newMethod),
             newMessageAdditionalData: $dataCommon
         );
 
@@ -73,7 +73,7 @@ trait HandlesMethodTracing
 
             // @phpstan-ignore missingType.checkedException
             $this->addWarningMessageToMessageBag(
-                newMessageContent: sprintf('EXIT %s', $newMethod),
+                newMessageContent: InvoiceSuiteStringUtils::sprintf('EXIT %s', $newMethod),
                 newMessageAdditionalData: $dataEarlyExit
             );
         }

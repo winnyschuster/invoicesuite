@@ -86,7 +86,7 @@ class InvoiceSuiteValidateCommand extends InvoiceSuiteAbstractCommand
         $inpOptionValidator = $this->getStringOption('validator', 'all');
 
         if (!InvoiceSuiteArrayUtils::inArrayNoCase(['all', 'xsd', 'kosit'], $inpOptionValidator)) {
-            throw new InvoiceSuiteInvalidArgumentException(sprintf('Invalid option value for validator "%s"', $inpOptionValidator));
+            throw new InvoiceSuiteInvalidArgumentException(InvoiceSuiteStringUtils::sprintf('Invalid option value for validator "%s"', $inpOptionValidator));
         }
 
         $validationHasErrors = false;
@@ -188,7 +188,7 @@ class InvoiceSuiteValidateCommand extends InvoiceSuiteAbstractCommand
         $validationWasSuccessful = !$documentValidator->hasErrorMessagesInMessageBag();
 
         if ($this->getBoolOption('output-json')) {
-            $this->jsonValidationResults[strtolower($validatorName)] = [
+            $this->jsonValidationResults[InvoiceSuiteStringUtils::lower($validatorName)] = [
                 'status' => $validationWasSuccessful ? 'valid' : 'invalid',
                 'errors' => $documentValidator->countErrorMessagesInMessageBag(),
                 'warnings' => $documentValidator->countWarningMessagesInMessageBag(),
@@ -208,7 +208,7 @@ class InvoiceSuiteValidateCommand extends InvoiceSuiteAbstractCommand
             $this->outputTable(['Validator', 'Info', 'Value'], $tableRows);
 
             foreach ($documentValidator->getMessageBag() as $messageBagItem) {
-                $this->outputLineLF(sprintf('<info>%s</info>: %s', $messageBagItem->getMessageSeverityValue(), $messageBagItem->getMessageContent()));
+                $this->outputLineLF(InvoiceSuiteStringUtils::sprintf('<info>%s</info>: %s', $messageBagItem->getMessageSeverityValue(), $messageBagItem->getMessageContent()));
             }
         }
 

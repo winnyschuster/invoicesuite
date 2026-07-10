@@ -14,6 +14,7 @@ namespace horstoeko\invoicesuite\console\commands;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteClassFinder;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 
 /**
@@ -52,7 +53,7 @@ class InvoiceSuiteCacheRebuildCommand extends InvoiceSuiteAbstractCommand
             ->init()
             ->getClassesWhenItsSubClassOf(InvoiceSuiteAbstractDocumentFormatProvider::class);
 
-        return $this->outputLineLF(sprintf(
+        return $this->outputLineLF(InvoiceSuiteStringUtils::sprintf(
             '<info>Cache rebuilt. %d document format providers found.</info>',
             InvoiceSuiteArrayUtils::count($documentFormatProviderClasses)
         ))->returnSuccess();

@@ -23,6 +23,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\pdfs\abstracts\InvoiceSuiteAbstractPdfConstructor;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use JMS\Serializer\Exception\RuntimeException;
 
 /**
@@ -616,7 +617,7 @@ class InvoiceSuitePdfDocumentBuilder
         InvoiceSuiteDocumentBuilder $fromDocumentBuilder
     ): static {
         if (!$fromDocumentBuilder->getCurrentDocumentFormatProvider()->getIsPdfSupportAvailable()) {
-            throw new InvoiceSuiteInvalidArgumentException(sprintf('Provider %s does not support PDF embedding', $fromDocumentBuilder->getCurrentDocumentFormatProvider()->getUniqueId()));
+            throw new InvoiceSuiteInvalidArgumentException(InvoiceSuiteStringUtils::sprintf('Provider %s does not support PDF embedding', $fromDocumentBuilder->getCurrentDocumentFormatProvider()->getUniqueId()));
         }
 
         $this->setCurrentDocumentFormatProvider($fromDocumentBuilder->getCurrentDocumentFormatProvider());

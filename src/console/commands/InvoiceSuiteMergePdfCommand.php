@@ -15,6 +15,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\InvoiceSuitePdfDocumentBuilder;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use RuntimeException;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Input\InputArgument;
@@ -69,7 +70,7 @@ class InvoiceSuiteMergePdfCommand extends InvoiceSuiteAbstractCommand
             $inpArgPdfFilename
         )->generatePdfDocumentAndSaveToFile($inpArgOutputFilename);
 
-        $this->outputLineLF(sprintf('<info>Created:</info> %s', $inpArgOutputFilename));
+        $this->outputLineLF(InvoiceSuiteStringUtils::sprintf('<info>Created:</info> %s', $inpArgOutputFilename));
 
         return $this->returnSuccess();
     }

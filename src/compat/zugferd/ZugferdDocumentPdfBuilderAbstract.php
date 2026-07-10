@@ -18,6 +18,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\InvoiceSuitePdfDocumentBuilder;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 
 /**
  * Legacy-class representing the abstract ZUGFeRD PDF document builder for outgoing documents
@@ -105,7 +106,7 @@ abstract class ZugferdDocumentPdfBuilderAbstract
 
         if (PHP_SAPI !== 'cli') {
             header('Content-Type: application/pdf');
-            header(sprintf('Content-Disposition: inline; filename=%s', rawurlencode(InvoiceSuiteFileUtils::getFilenameWithExtension($toFilename))));
+            header(InvoiceSuiteStringUtils::sprintf('Content-Disposition: inline; filename=%s', rawurlencode(InvoiceSuiteFileUtils::getFilenameWithExtension($toFilename))));
             header('Cache-Control: private, max-age=0, must-revalidate');
             header('Pragma: public');
         }

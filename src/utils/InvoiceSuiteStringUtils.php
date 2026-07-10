@@ -22,11 +22,125 @@ class InvoiceSuiteStringUtils
      *
      * @param  mixed $value
      * @return bool
+     *
+     * @phpstan-assert-if-true string $value
      */
     public static function is(
         mixed $value
     ): bool {
         return is_string($value);
+    }
+
+    /**
+     * Return a specific character
+     *
+     * @param  int    $codePoint
+     * @return string
+     */
+    public static function chr(int $codePoint): string
+    {
+        return chr($codePoint);
+    }
+
+    /**
+     * Split a string by a string
+     *
+     * @param  string            $separator
+     * @param  string            $string
+     * @param  int<min, max>     $limit
+     * @return array<int,string>
+     */
+    public static function explode(string $separator, string $string, int $limit = PHP_INT_MAX): array
+    {
+        return explode($separator, $string, $limit);
+    }
+
+    /**
+     * Join array elements with a string
+     *
+     * @param  string                   $separator
+     * @param  array<array-key, scalar> $array
+     * @return string
+     */
+    public static function implode(string $separator, array $array): string
+    {
+        return implode($separator, $array);
+    }
+
+    /**
+     * Convert a string from one character encoding to another
+     *
+     * @param  string                        $string
+     * @param  string                        $toEncoding
+     * @param  null|array<int,string>|string $fromEncoding
+     * @return string
+     */
+    public static function mbConvertEncoding(string $string, string $toEncoding, array|string|null $fromEncoding = null): string
+    {
+        return mb_convert_encoding($string, $toEncoding, $fromEncoding);
+    }
+
+    /**
+     * Return all supported multibyte encodings
+     *
+     * @return array<int,string>
+     */
+    public static function mbListEncodings(): array
+    {
+        return mb_list_encodings();
+    }
+
+    /**
+     * Get a truncated string with specified width
+     *
+     * @param  string      $string
+     * @param  int         $start
+     * @param  int         $width
+     * @param  string      $trimMarker
+     * @param  null|string $encoding
+     * @return string
+     */
+    public static function mbTrimWidth(string $string, int $start, int $width, string $trimMarker = '', ?string $encoding = null): string
+    {
+        return mb_strimwidth($string, $start, $width, $trimMarker, $encoding);
+    }
+
+    /**
+     * Calculate the md5 hash of a string
+     *
+     * @param  string $string
+     * @param  bool   $binary
+     * @return string
+     */
+    public static function md5(string $string, bool $binary = false): string
+    {
+        return md5($string, $binary);
+    }
+
+    /**
+     * Format a number with grouped thousands
+     *
+     * @param  float       $number
+     * @param  int         $decimals
+     * @param  null|string $decimalSeparator
+     * @param  null|string $thousandsSeparator
+     * @return string
+     */
+    public static function numberFormat(float $number, int $decimals = 0, ?string $decimalSeparator = '.', ?string $thousandsSeparator = ','): string
+    {
+        return number_format($number, $decimals, $decimalSeparator, $thousandsSeparator);
+    }
+
+    /**
+     * Return a formatted string
+     *
+     * @param  string $format
+     * @param  mixed  ...$values
+     * @return string
+     */
+    public static function sprintf(string $format, mixed ...$values): string
+    {
+        return sprintf($format, ...$values);
     }
 
     /**
@@ -176,6 +290,67 @@ class InvoiceSuiteStringUtils
     public static function equalsNoCase(string $str1, string $str2): bool
     {
         return 0 === strcasecmp($str1, $str2);
+    }
+
+    /**
+     * Binary safe string comparison
+     *
+     * @param  string $str1
+     * @param  string $str2
+     * @return int
+     */
+    public static function compare(string $str1, string $str2): int
+    {
+        return strcmp($str1, $str2);
+    }
+
+    /**
+     * Binary safe case-insensitive string comparison
+     *
+     * @param  string $str1
+     * @param  string $str2
+     * @return int
+     */
+    public static function compareNoCase(string $str1, string $str2): int
+    {
+        return strcasecmp($str1, $str2);
+    }
+
+    /**
+     * Get string length
+     *
+     * @param  string $string
+     * @return int
+     */
+    public static function length(string $string): int
+    {
+        return strlen($string);
+    }
+
+    /**
+     * Find the position of the last occurrence of a substring in a string
+     *
+     * @param  string    $haystack
+     * @param  string    $needle
+     * @param  int       $offset
+     * @return false|int
+     */
+    public static function reversePosition(string $haystack, string $needle, int $offset = 0): false|int
+    {
+        return strrpos($haystack, $needle, $offset);
+    }
+
+    /**
+     * Return part of a string
+     *
+     * @param  string   $string
+     * @param  int      $offset
+     * @param  null|int $length
+     * @return string
+     */
+    public static function substring(string $string, int $offset, ?int $length = null): string
+    {
+        return substr($string, $offset, $length);
     }
 
     /**

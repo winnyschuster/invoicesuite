@@ -167,7 +167,7 @@ class ZugferdDocumentReader extends ZugferdDocument
             return $profileDefinition[$parameterName];
         }
 
-        throw new InvoiceSuiteInvalidArgumentException(sprintf('Unknown parameter %s', $parameterName));
+        throw new InvoiceSuiteInvalidArgumentException(InvoiceSuiteStringUtils::sprintf('Unknown parameter %s', $parameterName));
     }
 
     /**

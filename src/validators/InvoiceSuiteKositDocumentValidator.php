@@ -320,7 +320,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      */
     public function getRemoteModeUrl(): string
     {
-        return sprintf('http://%s:%s', $this->remoteModeHost, $this->remoteModePort);
+        return InvoiceSuiteStringUtils::sprintf('http://%s:%s', $this->remoteModeHost, $this->remoteModePort);
     }
 
     /**
@@ -402,9 +402,9 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      */
     private function resolveBaseDirectory(): string
     {
-        $baseDirectorySuffix = md5($this->validatorDownloadUrl . $this->validatorScenarioDownloadUrl);
+        $baseDirectorySuffix = InvoiceSuiteStringUtils::md5($this->validatorDownloadUrl . $this->validatorScenarioDownloadUrl);
 
-        $baseDirectory = InvoiceSuitePathUtils::combinePathWithPath($this->baseDirectory, sprintf('kositvalidator-%s', $baseDirectorySuffix));
+        $baseDirectory = InvoiceSuitePathUtils::combinePathWithPath($this->baseDirectory, InvoiceSuiteStringUtils::sprintf('kositvalidator-%s', $baseDirectorySuffix));
 
         if (!is_dir($baseDirectory)) {
             @mkdir($baseDirectory);
@@ -471,7 +471,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
     private function resolveFileToValidateFilename(): string
     {
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($this->fileToValidateFilename)) {
-            $this->fileToValidateFilename = InvoiceSuitePathUtils::combinePathWithFile($this->resolveBaseDirectory(), sprintf('filetovalidate-%s-%s.xml', uniqid(), uniqid()));
+            $this->fileToValidateFilename = InvoiceSuitePathUtils::combinePathWithFile($this->resolveBaseDirectory(), InvoiceSuiteStringUtils::sprintf('filetovalidate-%s-%s.xml', uniqid(), uniqid()));
         }
 
         return $this->fileToValidateFilename;
@@ -628,13 +628,13 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
         }
 
         if (!$this->runFileDownload($this->validatorDownloadUrl, $this->resolveAppZipFilename())) {
-            $this->addErrorMessageToMessageBag(sprintf('Unable to download from %s containing the JAVA-Application', $this->validatorDownloadUrl));
+            $this->addErrorMessageToMessageBag(InvoiceSuiteStringUtils::sprintf('Unable to download from %s containing the JAVA-Application', $this->validatorDownloadUrl));
 
             return false;
         }
 
         if (!$this->runFileDownload($this->validatorScenarioDownloadUrl, $this->resolveScenatioZipFilename())) {
-            $this->addErrorMessageToMessageBag(sprintf('Unable to download from %s containing the validation scenarios', $this->validatorScenarioDownloadUrl));
+            $this->addErrorMessageToMessageBag(InvoiceSuiteStringUtils::sprintf('Unable to download from %s containing the validation scenarios', $this->validatorScenarioDownloadUrl));
 
             return false;
         }
@@ -659,13 +659,13 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
         $validatorScenarioFile = $this->resolveScenatioZipFilename();
 
         if (!$this->unpackRequiredFile($validatorAppFile)) {
-            $this->addErrorMessageToMessageBag(sprintf('Unable to unpack archive %s containing the JAVA-Application', $validatorAppFile));
+            $this->addErrorMessageToMessageBag(InvoiceSuiteStringUtils::sprintf('Unable to unpack archive %s containing the JAVA-Application', $validatorAppFile));
 
             return false;
         }
 
         if (!$this->unpackRequiredFile($validatorScenarioFile)) {
-            $this->addErrorMessageToMessageBag(sprintf('Unable to unpack archive %s containing the validation scenarios', $validatorScenarioFile));
+            $this->addErrorMessageToMessageBag(InvoiceSuiteStringUtils::sprintf('Unable to unpack archive %s containing the validation scenarios', $validatorScenarioFile));
 
             return false;
         }
@@ -691,7 +691,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
         $zipArchive = new ZipArchive();
 
         if (true !== $zipArchive->open($filename)) {
-            $this->addErrorMessageToMessageBag(sprintf('Failed to open ZIP archive %s', $filename));
+            $this->addErrorMessageToMessageBag(InvoiceSuiteStringUtils::sprintf('Failed to open ZIP archive %s', $filename));
 
             return false;
         }
@@ -713,7 +713,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
 
         if (!$zipArchive->extractTo($this->resolveBaseDirectory())) {
             $zipArchive->close();
-            $this->addErrorMessageToMessageBag(sprintf('Failed to extract ZIP archive %s', $filename));
+            $this->addErrorMessageToMessageBag(InvoiceSuiteStringUtils::sprintf('Failed to extract ZIP archive %s', $filename));
 
             return false;
         }
@@ -920,12 +920,12 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
         ];
 
         foreach ($resultAreas as $resultArea) {
-            $queryResult = $domXPath->query(sprintf("//rep:report/rep:scenarioMatched/rep:validationStepResult[@id='%s']/s:resource/s:name", $resultArea));
+            $queryResult = $domXPath->query(InvoiceSuiteStringUtils::sprintf("//rep:report/rep:scenarioMatched/rep:validationStepResult[@id='%s']/s:resource/s:name", $resultArea));
             $resourceName = is_null($queryResult->item(0)) ? $resultArea : $queryResult->item(0)->nodeValue;
             foreach ($messageTypeMaps as $messageType => $reportMessageType) {
-                $queryResult = $domXPath->query(sprintf("//rep:report/rep:scenarioMatched/rep:validationStepResult[@id='%s']/rep:message[@level='%s']", $resultArea, $reportMessageType));
+                $queryResult = $domXPath->query(InvoiceSuiteStringUtils::sprintf("//rep:report/rep:scenarioMatched/rep:validationStepResult[@id='%s']/rep:message[@level='%s']", $resultArea, $reportMessageType));
                 foreach ($queryResult as $queryItem) {
-                    $this->addMessageToMessageBag(sprintf('%s: %s', $resourceName, $queryItem->nodeValue), InvoiceSuiteMessageSeverity::from($messageType));
+                    $this->addMessageToMessageBag(InvoiceSuiteStringUtils::sprintf('%s: %s', $resourceName, $queryItem->nodeValue), InvoiceSuiteMessageSeverity::from($messageType));
                 }
             }
         }
@@ -1061,7 +1061,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
         $downloadedContent = file_get_contents($url);
 
         if (false === $downloadedContent) {
-            $this->addErrorMessageToMessageBag(sprintf('Failed to download contents from %s', $url));
+            $this->addErrorMessageToMessageBag(InvoiceSuiteStringUtils::sprintf('Failed to download contents from %s', $url));
 
             return false;
         }

@@ -15,6 +15,7 @@ use DOMElement;
 use DOMException;
 use DOMText;
 use horstoeko\invoicesuite\InvoiceSuiteSettings;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use JMS\Serializer\GraphNavigator;
 use JMS\Serializer\Handler\SubscribingHandlerInterface;
 use JMS\Serializer\XmlSerializationVisitor;
@@ -78,7 +79,7 @@ class InvoiceSuiteZfFxSerializerHandler implements SubscribingHandlerInterface
         $data
     ): DOMText {
         $node = $visitor->getDocument()->createTextNode(
-            number_format(
+            InvoiceSuiteStringUtils::numberFormat(
                 $data->getValue(),
                 InvoiceSuiteSettings::getSpecialDecimalPlacesMap($visitor->getCurrentNode()->getNodePath(), InvoiceSuiteSettings::getAmountDecimals()),
                 InvoiceSuiteSettings::getDecimalSeparator(),
@@ -110,7 +111,7 @@ class InvoiceSuiteZfFxSerializerHandler implements SubscribingHandlerInterface
         $data
     ): DOMText {
         $node = $visitor->getDocument()->createTextNode(
-            number_format(
+            InvoiceSuiteStringUtils::numberFormat(
                 $data->getValue(),
                 InvoiceSuiteSettings::getSpecialDecimalPlacesMap($visitor->getCurrentNode()->getNodePath(), InvoiceSuiteSettings::getQuantityDecimals()),
                 InvoiceSuiteSettings::getDecimalSeparator(),
@@ -139,7 +140,7 @@ class InvoiceSuiteZfFxSerializerHandler implements SubscribingHandlerInterface
         $data
     ): DOMText {
         return $visitor->getDocument()->createTextNode(
-            number_format(
+            InvoiceSuiteStringUtils::numberFormat(
                 $data->getValue(),
                 InvoiceSuiteSettings::getSpecialDecimalPlacesMap($visitor->getCurrentNode()->getNodePath(), InvoiceSuiteSettings::getPercentDecimals()),
                 InvoiceSuiteSettings::getDecimalSeparator(),
@@ -163,7 +164,7 @@ class InvoiceSuiteZfFxSerializerHandler implements SubscribingHandlerInterface
         $data
     ): DOMText {
         $node = $visitor->getDocument()->createTextNode(
-            number_format(
+            InvoiceSuiteStringUtils::numberFormat(
                 $data->getValue(),
                 InvoiceSuiteSettings::getSpecialDecimalPlacesMap($visitor->getCurrentNode()->getNodePath(), InvoiceSuiteSettings::getMeasureDecimals()),
                 InvoiceSuiteSettings::getDecimalSeparator(),

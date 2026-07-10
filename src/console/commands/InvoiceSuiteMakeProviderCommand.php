@@ -93,9 +93,9 @@ class InvoiceSuiteMakeProviderCommand extends InvoiceSuiteAbstractCommand
         $this->writeTemplate(InvoiceSuitePathUtils::combinePathWithFile($existingTemplateDirectory, 'provider_reader.tpl'), $newProviderReaderPath, $myReplacements, $inpOptionForce);
         $this->writeTemplate(InvoiceSuitePathUtils::combinePathWithFile($existingTemplateDirectory, 'provider_builder.tpl'), $newProviderBuilderPath, $myReplacements, $inpOptionForce);
 
-        $this->outputLineLF(sprintf('<info>Created:</info> %s', $newProviderPath));
-        $this->outputLineLF(sprintf('<info>Created:</info> %s', $newProviderReaderPath));
-        $this->outputLineLF(sprintf('<info>Created:</info> %s', $newProviderBuilderPath));
+        $this->outputLineLF(InvoiceSuiteStringUtils::sprintf('<info>Created:</info> %s', $newProviderPath));
+        $this->outputLineLF(InvoiceSuiteStringUtils::sprintf('<info>Created:</info> %s', $newProviderReaderPath));
+        $this->outputLineLF(InvoiceSuiteStringUtils::sprintf('<info>Created:</info> %s', $newProviderBuilderPath));
 
         return $this->returnSuccess();
     }

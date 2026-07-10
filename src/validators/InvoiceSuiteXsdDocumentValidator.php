@@ -256,7 +256,7 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
 
                 foreach (libxml_get_errors() as $xmlError) {
                     $this->addErrorMessageToMessageBag(
-                        sprintf(
+                        InvoiceSuiteStringUtils::sprintf(
                             '[line %d] %s : %s',
                             $xmlError->line,
                             $xmlError->code,

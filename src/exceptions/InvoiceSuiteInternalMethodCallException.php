@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\exceptions;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use Throwable;
 
 /**
@@ -33,6 +34,6 @@ class InvoiceSuiteInternalMethodCallException extends InvoiceSuiteBaseException
         string $method,
         ?Throwable $throwable = null
     ) {
-        parent::__construct(sprintf('%s is marked as @internal and may only be called by internal classes.', $method), InvoiceSuiteExceptionCodes::INTERNAL_METHOD_CALL, $throwable);
+        parent::__construct(InvoiceSuiteStringUtils::sprintf('%s is marked as @internal and may only be called by internal classes.', $method), InvoiceSuiteExceptionCodes::INTERNAL_METHOD_CALL, $throwable);
     }
 }

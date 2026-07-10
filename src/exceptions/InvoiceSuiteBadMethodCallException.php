@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\exceptions;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use Throwable;
 
 /**
@@ -33,6 +34,6 @@ class InvoiceSuiteBadMethodCallException extends InvoiceSuiteBaseException
         string $method,
         ?Throwable $throwable = null
     ) {
-        parent::__construct(sprintf('Call to undefined method %s::%s()', static::class, $method), InvoiceSuiteExceptionCodes::BAD_METHOD_CALL, $throwable);
+        parent::__construct(InvoiceSuiteStringUtils::sprintf('Call to undefined method %s::%s()', static::class, $method), InvoiceSuiteExceptionCodes::BAD_METHOD_CALL, $throwable);
     }
 }

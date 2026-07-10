@@ -135,7 +135,7 @@ class InvoiceSuiteExportPdfAttachmentsCommand extends InvoiceSuiteAbstractComman
                 'attachment' => $attachment,
                 'filename' => InvoiceSuitePathUtils::combinePathWithFile(
                     $toDirectory,
-                    sprintf(
+                    InvoiceSuiteStringUtils::sprintf(
                         '%02d_%s_%s',
                         $exportableAttachment['index'],
                         $exportableAttachment['type'],
@@ -147,7 +147,7 @@ class InvoiceSuiteExportPdfAttachmentsCommand extends InvoiceSuiteAbstractComman
 
         foreach ($targetAttachmentFiles as $targetAttachmentFile) {
             $this->outputFile($targetAttachmentFile['filename'], $targetAttachmentFile['attachment']->getAttachmentContent(), $forceOverwrite);
-            $this->outputLineLF(sprintf('<info>Created:</info> %s', $targetAttachmentFile['filename']));
+            $this->outputLineLF(InvoiceSuiteStringUtils::sprintf('<info>Created:</info> %s', $targetAttachmentFile['filename']));
         }
 
         return $this;
@@ -196,7 +196,7 @@ class InvoiceSuiteExportPdfAttachmentsCommand extends InvoiceSuiteAbstractComman
             $jsonContent = json_encode($exportableAttachments, JSON_PRETTY_PRINT);
 
             if (false === $jsonContent) {
-                throw new RuntimeException(sprintf('Unable to encode attachments to JSON. Error was: %s', json_last_error_msg()));
+                throw new RuntimeException(InvoiceSuiteStringUtils::sprintf('Unable to encode attachments to JSON. Error was: %s', json_last_error_msg()));
             }
 
             $targetJsonFilename = InvoiceSuitePathUtils::combinePathWithFile(
@@ -212,7 +212,7 @@ class InvoiceSuiteExportPdfAttachmentsCommand extends InvoiceSuiteAbstractComman
             );
 
             $this->outputFile($targetJsonFilename, $jsonContent, $forceOverwrite);
-            $this->outputLineLFWhen(self::OUTPUT_JSON_FILE === $jsonOutputMode, sprintf('<info>Created:</info> %s', $targetJsonFilename));
+            $this->outputLineLFWhen(self::OUTPUT_JSON_FILE === $jsonOutputMode, InvoiceSuiteStringUtils::sprintf('<info>Created:</info> %s', $targetJsonFilename));
         }
 
         $this->outputJsonWhen(

@@ -353,7 +353,7 @@ class InvoiceSuiteVisualizer
         array $data
     ): static {
         foreach ($data as $dataItem) {
-            $dataItemParts = InvoiceSuiteArrayUtils::map('trim', explode(':', $dataItem, 3));
+            $dataItemParts = InvoiceSuiteArrayUtils::map(InvoiceSuiteStringUtils::trim(...), InvoiceSuiteStringUtils::explode(':', $dataItem, 3));
             $this->addPdfFontData($dataItemParts[0] ?? '', $dataItemParts[1] ?? '', $dataItemParts[2] ?? '');
         }
 

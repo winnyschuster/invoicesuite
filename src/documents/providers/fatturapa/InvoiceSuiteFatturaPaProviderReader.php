@@ -60,6 +60,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuitePointerUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use ValueError;
 
 class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFormatReader
@@ -3685,8 +3686,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
 
         $newName = $anagrafica?->getDenominazione() ?? '';
 
-        if ('' === trim($newName)) {
-            $newName = trim(implode(' ', InvoiceSuiteArrayUtils::filter([$anagrafica?->getNome(), $anagrafica?->getCognome()])));
+        if ('' === InvoiceSuiteStringUtils::trim($newName)) {
+            $newName = InvoiceSuiteStringUtils::trim(InvoiceSuiteStringUtils::implode(' ', InvoiceSuiteArrayUtils::filter([$anagrafica?->getNome(), $anagrafica?->getCognome()])));
         }
 
         $this->traceMethodExit(__METHOD__);
@@ -3969,7 +3970,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
         $newAddressLine1 = '';
 
         if (!is_null($address)) {
-            $newAddressLine1 = trim(implode(' ', InvoiceSuiteArrayUtils::filter([$address->getIndirizzo(), $address->getNumeroCivico()])));
+            $newAddressLine1 = InvoiceSuiteStringUtils::trim(InvoiceSuiteStringUtils::implode(' ', InvoiceSuiteArrayUtils::filter([$address->getIndirizzo(), $address->getNumeroCivico()])));
         }
 
         $newAddressLine2 = '';
@@ -4173,8 +4174,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
 
         $newName = $anagrafica?->getDenominazione() ?? '';
 
-        if ('' === trim($newName)) {
-            $newName = trim(implode(' ', InvoiceSuiteArrayUtils::filter([$anagrafica?->getNome(), $anagrafica?->getCognome()])));
+        if ('' === InvoiceSuiteStringUtils::trim($newName)) {
+            $newName = InvoiceSuiteStringUtils::trim(InvoiceSuiteStringUtils::implode(' ', InvoiceSuiteArrayUtils::filter([$anagrafica?->getNome(), $anagrafica?->getCognome()])));
         }
 
         $this->traceMethodExit(__METHOD__);
@@ -4457,7 +4458,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
         $newAddressLine1 = '';
 
         if (!is_null($address)) {
-            $newAddressLine1 = trim(implode(' ', InvoiceSuiteArrayUtils::filter([$address->getIndirizzo(), $address->getNumeroCivico()])));
+            $newAddressLine1 = InvoiceSuiteStringUtils::trim(InvoiceSuiteStringUtils::implode(' ', InvoiceSuiteArrayUtils::filter([$address->getIndirizzo(), $address->getNumeroCivico()])));
         }
 
         $newAddressLine2 = '';
@@ -4630,8 +4631,8 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
 
         $newName = $anagrafica?->getDenominazione() ?? '';
 
-        if ('' === trim($newName)) {
-            $newName = trim(implode(' ', InvoiceSuiteArrayUtils::filter([$anagrafica?->getNome(), $anagrafica?->getCognome()])));
+        if ('' === InvoiceSuiteStringUtils::trim($newName)) {
+            $newName = InvoiceSuiteStringUtils::trim(InvoiceSuiteStringUtils::implode(' ', InvoiceSuiteArrayUtils::filter([$anagrafica?->getNome(), $anagrafica?->getCognome()])));
         }
 
         $this->traceMethodExit(__METHOD__);

@@ -134,7 +134,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
         $jsonValue = json_encode($value, JSON_PRETTY_PRINT);
 
         if (false === $jsonValue) {
-            throw new RuntimeException(sprintf('Unable to encode value to JSON. Error was: %s', json_last_error_msg()));
+            throw new RuntimeException(InvoiceSuiteStringUtils::sprintf('Unable to encode value to JSON. Error was: %s', json_last_error_msg()));
         }
 
         return $this->outputLineLF($jsonValue, OutputInterface::OUTPUT_RAW);
@@ -215,7 +215,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
         $this->ensureTargetFileCanBeCreated($filename, $forceOverwrite);
 
         if (false === InvoiceSuiteFileUtils::putContentToFile($filename, $content)) {
-            throw new RuntimeException(sprintf('Unable to write file "%s".', $filename));
+            throw new RuntimeException(InvoiceSuiteStringUtils::sprintf('Unable to write file "%s".', $filename));
         }
 
         return $this;
@@ -263,7 +263,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
             return $default;
         }
 
-        throw new RuntimeException(sprintf('Argument "%s" must be a string.', $name));
+        throw new RuntimeException(InvoiceSuiteStringUtils::sprintf('Argument "%s" must be a string.', $name));
     }
 
     /**
@@ -280,7 +280,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
         $value = $this->getStringArgument($name);
 
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($value)) {
-            throw new RuntimeException(sprintf('Value for option %s must be given', $name));
+            throw new RuntimeException(InvoiceSuiteStringUtils::sprintf('Value for option %s must be given', $name));
         }
 
         return $value;
@@ -308,7 +308,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
             return $default;
         }
 
-        throw new RuntimeException(sprintf('Option "%s" must be a string.', $name));
+        throw new RuntimeException(InvoiceSuiteStringUtils::sprintf('Option "%s" must be a string.', $name));
     }
 
     /**
@@ -325,7 +325,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
         $value = $this->getStringOption($name);
 
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($value)) {
-            throw new RuntimeException(sprintf('Value for option %s must be given', $name));
+            throw new RuntimeException(InvoiceSuiteStringUtils::sprintf('Value for option %s must be given', $name));
         }
 
         return $value;
@@ -650,7 +650,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
         }
 
         if (!is_dir($directory) && !mkdir($directory, 0777, true) && !is_dir($directory)) {
-            throw new RuntimeException(sprintf('Unable to create directory "%s".', $directory));
+            throw new RuntimeException(InvoiceSuiteStringUtils::sprintf('Unable to create directory "%s".', $directory));
         }
 
         return $directory;
@@ -694,7 +694,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
         }
 
         if (InvoiceSuiteFileUtils::isReadableFile($filename) && false === $forceOverwrite) {
-            throw new RuntimeException(sprintf('Target file "%s" already exists. Use --force to overwrite.', $filename));
+            throw new RuntimeException(InvoiceSuiteStringUtils::sprintf('Target file "%s" already exists. Use --force to overwrite.', $filename));
         }
 
         return $this;
@@ -741,11 +741,11 @@ abstract class InvoiceSuiteAbstractCommand extends Command
         $fileMimeType = $fileInfo->file($filename, FILEINFO_MIME_TYPE);
 
         if (false === $fileMimeType) {
-            throw new RuntimeException(sprintf('Unable to detect MIME type for file "%s".', $filename));
+            throw new RuntimeException(InvoiceSuiteStringUtils::sprintf('Unable to detect MIME type for file "%s".', $filename));
         }
 
         if (InvoiceSuiteStringUtils::stringIsNullOrEmpty($fileMimeType)) {
-            throw new RuntimeException(sprintf('Unable to detect MIME type for file "%s".', $filename));
+            throw new RuntimeException(InvoiceSuiteStringUtils::sprintf('Unable to detect MIME type for file "%s".', $filename));
         }
 
         return $fileMimeType;
@@ -824,7 +824,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
     protected function ensureIsXmlFile(string $filename): static
     {
         if (!$this->isXmlFile($filename)) {
-            throw new RuntimeException(sprintf('Input file "%s" is not a XML file.', $filename));
+            throw new RuntimeException(InvoiceSuiteStringUtils::sprintf('Input file "%s" is not a XML file.', $filename));
         }
 
         return $this;
@@ -843,7 +843,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
     protected function ensureIsPdfFile(string $filename): static
     {
         if (!$this->isPdfFile($filename)) {
-            throw new RuntimeException(sprintf('Input file "%s" is not a PDF file.', $filename));
+            throw new RuntimeException(InvoiceSuiteStringUtils::sprintf('Input file "%s" is not a PDF file.', $filename));
         }
 
         return $this;
@@ -862,7 +862,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
     protected function ensureIsJsonFile(string $filename): static
     {
         if (!$this->isJsonFile($filename)) {
-            throw new RuntimeException(sprintf('Input file "%s" is not a JSON file.', $filename));
+            throw new RuntimeException(InvoiceSuiteStringUtils::sprintf('Input file "%s" is not a JSON file.', $filename));
         }
 
         return $this;
@@ -881,7 +881,7 @@ abstract class InvoiceSuiteAbstractCommand extends Command
     protected function ensureIsXmlOrJsonFile(string $filename): static
     {
         if (!$this->isXmlOrJsonFile($filename)) {
-            throw new RuntimeException(sprintf('Input file "%s" is not a XML or JSON file.', $filename));
+            throw new RuntimeException(InvoiceSuiteStringUtils::sprintf('Input file "%s" is not a XML or JSON file.', $filename));
         }
 
         return $this;

@@ -225,10 +225,10 @@ abstract class InvoiceSuiteAbstractPdfConstructor
      */
     public function getCreatorToolName(): string
     {
-        $creatorToolName = sprintf('InvoiceSuite PHP library v%s by HorstOeko', InvoiceSuitePackageVersion::getInstalledVersion());
+        $creatorToolName = InvoiceSuiteStringUtils::sprintf('InvoiceSuite PHP library v%s by HorstOeko', InvoiceSuitePackageVersion::getInstalledVersion());
 
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($this->getAdditionalCreatorTool())) {
-            return sprintf('%s / %s', $this->getAdditionalCreatorTool(), $creatorToolName);
+            return InvoiceSuiteStringUtils::sprintf('%s / %s', $this->getAdditionalCreatorTool(), $creatorToolName);
         }
 
         return $creatorToolName;

@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\exceptions;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use Throwable;
 
 /**
@@ -33,6 +34,6 @@ class InvoiceSuiteFormatProviderNotFoundException extends InvoiceSuiteBaseExcept
         string $formatProviderUniqueId,
         ?Throwable $throwable = null
     ) {
-        parent::__construct(sprintf('The format provider with unique id %s was not found', $formatProviderUniqueId), InvoiceSuiteExceptionCodes::FORMATPROVIDER_NOTFOUND, $throwable);
+        parent::__construct(InvoiceSuiteStringUtils::sprintf('The format provider with unique id %s was not found', $formatProviderUniqueId), InvoiceSuiteExceptionCodes::FORMATPROVIDER_NOTFOUND, $throwable);
     }
 }

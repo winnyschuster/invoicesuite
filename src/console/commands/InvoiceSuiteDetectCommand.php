@@ -20,6 +20,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 use horstoeko\invoicesuite\InvoiceSuitePdfDocumentReader;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use PrinsFrank\PdfParser\Exception\PdfParserException;
 use RuntimeException;
 use Symfony\Component\Console\Exception\InvalidArgumentException as ConsoleInvalidArgumentException;
@@ -109,7 +110,7 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
         $tableRows = [];
 
         $tableRows[] = ['ID', $pdfReader->getCurrentDocumentFormatProvider()->getUniqueId()];
-        $tableRows[] = ['Description', mb_strimwidth($pdfReader->getCurrentDocumentFormatProvider()->getDescription(), 0, 60, '...')];
+        $tableRows[] = ['Description', InvoiceSuiteStringUtils::mbTrimWidth($pdfReader->getCurrentDocumentFormatProvider()->getDescription(), 0, 60, '...')];
         $tableRows[] = ['Error', 'no'];
         $tableRows[] = [new TableSeparator(), new TableSeparator()];
         $tableRows[] = ['Document Attachment name', $pdfReader->getInvoiceDocumentAttachment()->getAttachmentFilename()];
@@ -148,7 +149,7 @@ class InvoiceSuiteDetectCommand extends InvoiceSuiteAbstractCommand
         $tableRows = [];
 
         $tableRows[] = ['ID', $xmlOrJsonReader->getCurrentDocumentFormatProvider()->getUniqueId()];
-        $tableRows[] = ['Description', mb_strimwidth($xmlOrJsonReader->getCurrentDocumentFormatProvider()->getDescription(), 0, 60, '...')];
+        $tableRows[] = ['Description', InvoiceSuiteStringUtils::mbTrimWidth($xmlOrJsonReader->getCurrentDocumentFormatProvider()->getDescription(), 0, 60, '...')];
         $tableRows[] = ['Error', 'no'];
 
         return $this

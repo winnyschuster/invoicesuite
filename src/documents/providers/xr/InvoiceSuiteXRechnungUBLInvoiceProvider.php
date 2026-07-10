@@ -18,6 +18,7 @@ use horstoeko\invoicesuite\documents\providers\peppol\models\main\Invoice;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentType;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use z4kn4fein\SemVer\Version;
 
 class InvoiceSuiteXRechnungUBLInvoiceProvider extends InvoiceSuiteAbstractDocumentFormatProvider
@@ -138,7 +139,7 @@ class InvoiceSuiteXRechnungUBLInvoiceProvider extends InvoiceSuiteAbstractDocume
             $contextParameterFound = false;
 
             foreach ($contextParameters as $contextParameter) {
-                $contentQuery = sprintf("//inv:Invoice/cbc:CustomizationID[text()='%s']", $contextParameter);
+                $contentQuery = InvoiceSuiteStringUtils::sprintf("//inv:Invoice/cbc:CustomizationID[text()='%s']", $contextParameter);
 
                 $contentEntries = $contentDomXPath->query($contentQuery);
 
@@ -159,7 +160,7 @@ class InvoiceSuiteXRechnungUBLInvoiceProvider extends InvoiceSuiteAbstractDocume
                 return false;
             }
 
-            $contentQuery = sprintf("//inv:Invoice/cbc:ProfileID[text()='%s']", $this->getFormatProviderParameterValue('ProfileId', ''));
+            $contentQuery = InvoiceSuiteStringUtils::sprintf("//inv:Invoice/cbc:ProfileID[text()='%s']", $this->getFormatProviderParameterValue('ProfileId', ''));
 
             $contentEntries = $contentDomXPath->query($contentQuery);
 

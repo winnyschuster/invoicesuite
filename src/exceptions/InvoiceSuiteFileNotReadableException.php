@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\exceptions;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use Throwable;
 
 /**
@@ -33,6 +34,6 @@ class InvoiceSuiteFileNotReadableException extends InvoiceSuiteBaseException
         string $filename,
         ?Throwable $throwable = null
     ) {
-        parent::__construct(sprintf('The file %s is not readable', $filename), InvoiceSuiteExceptionCodes::FILENOTREADABLE, $throwable);
+        parent::__construct(InvoiceSuiteStringUtils::sprintf('The file %s is not readable', $filename), InvoiceSuiteExceptionCodes::FILENOTREADABLE, $throwable);
     }
 }

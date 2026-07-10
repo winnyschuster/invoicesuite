@@ -18,6 +18,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use IteratorAggregate;
 use JsonSerializable;
 use LogicException;
@@ -234,7 +235,7 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
             $this->attachmentList[] = new InvoiceSuitePdfExtractorAttachment(
                 $fileSpec->getEmbeddedFile()->getStream()->toString(),
                 $fileSpec->getFileSpecificationString(),
-                ltrim($fileSpec->getEmbeddedFile()->getSubType() ?? '', '/')
+                InvoiceSuiteStringUtils::trimStart($fileSpec->getEmbeddedFile()->getSubType() ?? '', '/')
             );
         }
 
@@ -252,7 +253,7 @@ class InvoiceSuitePdfExtractor implements IteratorAggregate, Countable, ArrayAcc
     {
         InvoiceSuiteArrayUtils::sortWithCallback(
             $this->attachmentList,
-            static fn (InvoiceSuitePdfExtractorAttachment $a, InvoiceSuitePdfExtractorAttachment $b): int => strcasecmp($a->getAttachmentFilename(), $b->getAttachmentFilename())
+            static fn (InvoiceSuitePdfExtractorAttachment $a, InvoiceSuitePdfExtractorAttachment $b): int => InvoiceSuiteStringUtils::compareNoCase($a->getAttachmentFilename(), $b->getAttachmentFilename())
         );
 
         return $this;

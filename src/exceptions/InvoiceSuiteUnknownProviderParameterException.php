@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\exceptions;
 
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use Throwable;
 
 /**
@@ -33,6 +34,6 @@ class InvoiceSuiteUnknownProviderParameterException extends InvoiceSuiteBaseExce
         string $parameterName,
         ?Throwable $throwable = null
     ) {
-        parent::__construct(sprintf('Unknown provider parameter %s', $parameterName), InvoiceSuiteExceptionCodes::UNKNOWN_PROVIDER_PARAMETER, $throwable);
+        parent::__construct(InvoiceSuiteStringUtils::sprintf('Unknown provider parameter %s', $parameterName), InvoiceSuiteExceptionCodes::UNKNOWN_PROVIDER_PARAMETER, $throwable);
     }
 }

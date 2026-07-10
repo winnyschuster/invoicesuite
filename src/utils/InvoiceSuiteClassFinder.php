@@ -106,7 +106,7 @@ class InvoiceSuiteClassFinder
             return $this->subClassNames[$isSubClassOf];
         }
 
-        $cacheFilename = md5((string) preg_replace('/[^a-zA-Z0-9]/', '', sprintf('invoicesuite-cf-%s', $isSubClassOf))) . '.cache';
+        $cacheFilename = InvoiceSuiteStringUtils::md5((string) preg_replace('/[^a-zA-Z0-9]/', '', InvoiceSuiteStringUtils::sprintf('invoicesuite-cf-%s', $isSubClassOf))) . '.cache';
         $cacheFilepath = InvoiceSuitePathUtils::combineAllPaths(__DIR__, '..', 'cache');
         $cacheFilenameFq = InvoiceSuitePathUtils::combinePathWithFile($cacheFilepath, $cacheFilename);
 

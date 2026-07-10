@@ -106,14 +106,13 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
         $version = '1.3',
         $binary_data = false
     ): void {
-        // @phpstan-ignore argument.type
-        $this->PDFVersion = sprintf('%.1F', $version);
+        $this->PDFVersion = InvoiceSuiteStringUtils::sprintf('%.1F', $version);
 
         if (true === $binary_data) {
             if (true === $this->deterministicModeEnabled) {
-                $this->PDFVersion .= "\n" . '%' . chr(128) . chr(129) . chr(130) . chr(131);
+                $this->PDFVersion .= "\n" . '%' . InvoiceSuiteStringUtils::chr(128) . InvoiceSuiteStringUtils::chr(129) . InvoiceSuiteStringUtils::chr(130) . InvoiceSuiteStringUtils::chr(131);
             } else {
-                $this->PDFVersion .= "\n" . '%' . chr(random_int(128, 255)) . chr(random_int(128, 255)) . chr(random_int(128, 255)) . chr(random_int(128, 255));
+                $this->PDFVersion .= "\n" . '%' . InvoiceSuiteStringUtils::chr(random_int(128, 255)) . InvoiceSuiteStringUtils::chr(random_int(128, 255)) . InvoiceSuiteStringUtils::chr(random_int(128, 255)) . InvoiceSuiteStringUtils::chr(random_int(128, 255));
             }
         }
     }
@@ -138,17 +137,17 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
         $isUTF8 = false
     ): void {
         if ('' === $name) {
-            $p = strrpos((string) $file, '/');
+            $p = InvoiceSuiteStringUtils::reversePosition((string) $file, '/');
 
             if (false === $p) {
-                $p = strrpos((string) $file, '\\');
+                $p = InvoiceSuiteStringUtils::reversePosition((string) $file, '\\');
             }
 
-            $name = false !== $p ? substr((string) $file, $p + 1) : $file;
+            $name = false !== $p ? InvoiceSuiteStringUtils::substring((string) $file, $p + 1) : $file;
         }
 
         if (!$isUTF8) {
-            $desc = mb_convert_encoding($desc, 'UTF-8', mb_list_encodings());
+            $desc = InvoiceSuiteStringUtils::mbConvertEncoding($desc, 'UTF-8', InvoiceSuiteStringUtils::mbListEncodings());
         }
 
         if ('' === $mimetype) {
@@ -246,7 +245,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
         $this->_put('<<');
         $this->_put('/F (' . $this->_escape($file_info['name']) . ')');
         $this->_put('/Type /Filespec');
-        $this->_put('/UF ' . $this->_textstring(mb_convert_encoding($file_info['name'], 'UTF-8', mb_list_encodings())));
+        $this->_put('/UF ' . $this->_textstring(InvoiceSuiteStringUtils::mbConvertEncoding($file_info['name'], 'UTF-8', InvoiceSuiteStringUtils::mbListEncodings())));
 
         if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($file_info['relationship'])) {
             $this->_put('/AFRelationship /' . $file_info['relationship']);
@@ -267,7 +266,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
     /**
      * Put file stream.
      *
-     * @param  array{file: StreamReader, name: string, desc: string, relationship: string, subtype: string, file_index: int} $file_info
+     * @param  array{file: StreamReader|string, name: string, desc: string, relationship: string, subtype: string, file_index: int} $file_info
      * @return void
      */
     protected function putFileStream(
@@ -283,7 +282,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
 
         $this->_put('/Type /EmbeddedFile');
 
-        if (is_string($file_info['file']) && @is_file($file_info['file'])) {
+        if (InvoiceSuiteStringUtils::is($file_info['file']) && @is_file($file_info['file'])) {
             $fc = file_get_contents($file_info['file']);
         } else {
             $stream = $file_info['file']->getStream();
@@ -297,15 +296,15 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
 
         if (true === $this->deterministicModeEnabled) {
             $md = @date('YmdHis', strtotime('2000-01-01 23:59:59'));
-        } elseif (is_string($file_info['file'])) {
+        } elseif (InvoiceSuiteStringUtils::is($file_info['file'])) {
             $md = @date('YmdHis', filemtime($file_info['file']));
         } else {
             $md = @date('YmdHis');
         }
 
         $fc = gzcompress($fc);
-        $this->_put('/Length ' . strlen($fc));
-        $this->_put(sprintf('/Params <</ModDate (D:%s)>>', $md));
+        $this->_put('/Length ' . InvoiceSuiteStringUtils::length($fc));
+        $this->_put(InvoiceSuiteStringUtils::sprintf('/Params <</ModDate (D:%s)>>', $md));
         $this->_put('>>');
         $this->_putstream($fc);
         $this->_put('endobj');
@@ -324,13 +323,13 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
         $s = '';
         $files = $this->files;
         InvoiceSuiteArrayUtils::sortWithCallback($files, static function ($a, $b) { // Sorting files in name order as PDF specs (if not, issue with Acrobat Reader when trying to download attachments)
-            return strcmp($a['name'], $b['name']);
+            return InvoiceSuiteStringUtils::compare($a['name'], $b['name']);
         });
         foreach ($files as $info) {
-            $s .= sprintf('%s %s 0 R ', $this->_textstring($info['name']), $info['file_index']);
+            $s .= InvoiceSuiteStringUtils::sprintf('%s %s 0 R ', $this->_textstring($info['name']), $info['file_index']);
         }
 
-        $this->_put(sprintf('/Names [%s]', $s));
+        $this->_put(InvoiceSuiteStringUtils::sprintf('/Names [%s]', $s));
         $this->_put('>>');
         $this->_put('endobj');
     }
@@ -355,7 +354,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
         $s .= '</x:xmpmeta>' . "\n";
         $s .= '<?xpacket end="w"?>';
         $this->_put('<<');
-        $this->_put('/Length ' . strlen($s));
+        $this->_put('/Length ' . InvoiceSuiteStringUtils::length($s));
         $this->_put('/Type /Metadata');
         $this->_put('/Subtype /XML');
         $this->_put('>>');
@@ -411,7 +410,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
 
         $this->_newobj();
         $this->_put('<<');
-        $this->_put('/Length ' . strlen($icc));
+        $this->_put('/Length ' . InvoiceSuiteStringUtils::length($icc));
         $this->_put('/N 3');
         $this->_put('/Filter /FlateDecode');
         $this->_put('>>');
@@ -438,28 +437,28 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
                         $files_ref_str .= ' ';
                     }
 
-                    $files_ref_str .= sprintf('%s 0 R', $file['file_index']);
+                    $files_ref_str .= InvoiceSuiteStringUtils::sprintf('%s 0 R', $file['file_index']);
                 }
 
-                $this->_put(sprintf('/AF [%s]', $files_ref_str));
+                $this->_put(InvoiceSuiteStringUtils::sprintf('/AF [%s]', $files_ref_str));
             } else {
-                $this->_put(sprintf('/AF %s 0 R', $this->filesIndex));
+                $this->_put(InvoiceSuiteStringUtils::sprintf('/AF %s 0 R', $this->filesIndex));
             }
         }
 
         if (0 !== $this->descriptionIndex) {
-            $this->_put(sprintf('/Metadata %s 0 R', $this->descriptionIndex));
+            $this->_put(InvoiceSuiteStringUtils::sprintf('/Metadata %s 0 R', $this->descriptionIndex));
         }
 
         if (!InvoiceSuiteArrayUtils::empty($this->files)) {
             $this->_put('/Names <<');
             $this->_put('/EmbeddedFiles ');
-            $this->_put(sprintf('%s 0 R', $this->filesIndex));
+            $this->_put(InvoiceSuiteStringUtils::sprintf('%s 0 R', $this->filesIndex));
             $this->_put('>>');
         }
 
         if (0 !== $this->outputIntentIndex) {
-            $this->_put(sprintf('/OutputIntents [%s 0 R]', $this->outputIntentIndex));
+            $this->_put(InvoiceSuiteStringUtils::sprintf('/OutputIntents [%s 0 R]', $this->outputIntentIndex));
         }
 
         if ($this->openAttachmentPane) {
@@ -478,10 +477,10 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
     {
         parent::_puttrailer();
 
-        $created_id = md5($this->generateMetadataString('created'));
-        $modified_id = md5($this->generateMetadataString('modified'));
+        $created_id = InvoiceSuiteStringUtils::md5($this->generateMetadataString('created'));
+        $modified_id = InvoiceSuiteStringUtils::md5($this->generateMetadataString('modified'));
 
-        $this->_put(sprintf('/ID [<%s><%s>]', $created_id, $modified_id));
+        $this->_put(InvoiceSuiteStringUtils::sprintf('/ID [<%s><%s>]', $created_id, $modified_id));
     }
 
     /**
@@ -513,10 +512,10 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
     ) {
         foreach ($this->PageLinks[$n] as $pl) {
             $this->_newobj();
-            $rect = sprintf('%.2F %.2F %.2F %.2F', $pl[0], $pl[1], $pl[0] + $pl[2], $pl[1] - $pl[3]);
+            $rect = InvoiceSuiteStringUtils::sprintf('%.2F %.2F %.2F %.2F', $pl[0], $pl[1], $pl[0] + $pl[2], $pl[1] - $pl[3]);
             $this->_put('<</Type /Annot /Subtype /Link /Rect [' . $rect . '] /F 4', false); // Fix 1
 
-            if (is_string($pl[4])) {
+            if (InvoiceSuiteStringUtils::is($pl[4])) {
                 if (isset($pl['importedLink'])) {
                     $this->_put('/A <</S /URI /URI (' . $this->_escape($pl[4]) . ')>>');
                     $values = $pl['importedLink']['pdfObject']->value;
@@ -532,7 +531,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
                     if (isset($pl['quadPoints'])) {
                         $s = '/QuadPoints[';
                         foreach ($pl['quadPoints'] as $value) {
-                            $s .= sprintf('%.2F ', $value);
+                            $s .= InvoiceSuiteStringUtils::sprintf('%.2F ', $value);
                         }
                         $s .= ']';
                         $this->_put($s);
@@ -553,7 +552,7 @@ class InvoiceSuiteZffxPdfWriter extends PdfFpdi
                         ? $this->DefPageSize[1] * $this->k
                         : $this->DefPageSize[0] * $this->k;
                 }
-                $this->_put(sprintf(
+                $this->_put(InvoiceSuiteStringUtils::sprintf(
                     '/Dest [%d 0 R /XYZ 0 %.2F null]>>',
                     $this->PageInfo[$l[0]]['n'],
                     $h - $l[1] * $this->k

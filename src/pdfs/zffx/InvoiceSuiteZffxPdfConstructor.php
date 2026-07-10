@@ -271,9 +271,9 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
         $dateString = date('Y-m-d', strtotime($invoiceInformations['date']));
 
         $author = $invoiceInformations['seller'];
-        $keywords = sprintf('%s, FacturX/ZUGFeRD', $invoiceInformations['docTypeName']);
-        $title = sprintf('%s : %s %s', $invoiceInformations['seller'], $invoiceInformations['docTypeName'], $invoiceInformations['invoiceId']);
-        $subject = sprintf('FacturX/ZUGFeRD %s %s dated %s issued by %s', $invoiceInformations['docTypeName'], $invoiceInformations['invoiceId'], $dateString, $invoiceInformations['seller']);
+        $keywords = InvoiceSuiteStringUtils::sprintf('%s, FacturX/ZUGFeRD', $invoiceInformations['docTypeName']);
+        $title = InvoiceSuiteStringUtils::sprintf('%s : %s %s', $invoiceInformations['seller'], $invoiceInformations['docTypeName'], $invoiceInformations['invoiceId']);
+        $subject = InvoiceSuiteStringUtils::sprintf('FacturX/ZUGFeRD %s %s dated %s issued by %s', $invoiceInformations['docTypeName'], $invoiceInformations['invoiceId'], $dateString, $invoiceInformations['seller']);
 
         return [
             'author' => $this->buildMetadataField('author', $author, $invoiceInformations),
@@ -323,7 +323,7 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
             return $defaultValue;
         }
 
-        return sprintf(
+        return InvoiceSuiteStringUtils::sprintf(
             $allTemplates[$whichTemplate],
             $invoiceInformation['invoiceId'],
             $invoiceInformation['docTypeName'],

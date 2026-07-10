@@ -71,7 +71,7 @@ class InvoiceSuiteInternalMethodGuard
             return '';
         }
 
-        return sprintf('%s::%s', $className, $methodName);
+        return InvoiceSuiteStringUtils::sprintf('%s::%s', $className, $methodName);
     }
 
     /**

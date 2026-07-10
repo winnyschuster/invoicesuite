@@ -24,6 +24,7 @@ use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use JMS\Serializer\Exception\RuntimeException;
 
 /**
@@ -166,7 +167,7 @@ abstract class InvoiceSuiteAbstractDocumentValidator
         InvoiceSuiteDocumentBuilder $fromDocumentBuilder
     ): static {
         if (!$this->checkFormatProviderRequirements($fromDocumentBuilder->getCurrentDocumentFormatProvider())) {
-            throw new InvoiceSuiteInvalidArgumentException(sprintf('The provider %s does not meet the requirements.', $fromDocumentBuilder->getCurrentDocumentFormatProvider()->getUniqueId()));
+            throw new InvoiceSuiteInvalidArgumentException(InvoiceSuiteStringUtils::sprintf('The provider %s does not meet the requirements.', $fromDocumentBuilder->getCurrentDocumentFormatProvider()->getUniqueId()));
         }
 
         $this->setCurrentDocumentFormatProvider($fromDocumentBuilder->getCurrentDocumentFormatProvider());
@@ -188,7 +189,7 @@ abstract class InvoiceSuiteAbstractDocumentValidator
         InvoiceSuiteDocumentReader $fromDocumentReader
     ): static {
         if (!$this->checkFormatProviderRequirements($fromDocumentReader->getCurrentDocumentFormatProvider())) {
-            throw new InvoiceSuiteInvalidArgumentException(sprintf('The provider %s does not meet the requirements.', $fromDocumentReader->getCurrentDocumentFormatProvider()->getUniqueId()));
+            throw new InvoiceSuiteInvalidArgumentException(InvoiceSuiteStringUtils::sprintf('The provider %s does not meet the requirements.', $fromDocumentReader->getCurrentDocumentFormatProvider()->getUniqueId()));
         }
 
         $this->setCurrentDocumentFormatProvider($fromDocumentReader->getCurrentDocumentFormatProvider());

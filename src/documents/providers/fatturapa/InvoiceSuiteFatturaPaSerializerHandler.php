@@ -78,7 +78,7 @@ class InvoiceSuiteFatturaPaSerializerHandler implements SubscribingHandlerInterf
 
         $scale = ($minScale === $maxScale) ? $minScale : $minScale;
 
-        $formatted = number_format($data, $scale, '.', '');
+        $formatted = InvoiceSuiteStringUtils::numberFormat($data, $scale, '.', '');
 
         return $visitor->getDocument()->createTextNode($formatted);
     }
@@ -182,6 +182,6 @@ class InvoiceSuiteFatturaPaSerializerHandler implements SubscribingHandlerInterf
             return '';
         }
 
-        return trim((string) $data);
+        return InvoiceSuiteStringUtils::trim((string) $data);
     }
 }

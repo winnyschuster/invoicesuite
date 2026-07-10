@@ -229,7 +229,7 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
         $data
     ): DOMText {
         $node = $visitor->getDocument()->createTextNode(
-            number_format(
+            InvoiceSuiteStringUtils::numberFormat(
                 $data->getValue(),
                 InvoiceSuiteSettings::getSpecialDecimalPlacesMap($visitor->getCurrentNode()->getNodePath(), InvoiceSuiteSettings::getAmountDecimals()),
                 InvoiceSuiteSettings::getDecimalSeparator(),
@@ -261,7 +261,7 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
         $data
     ): DOMText {
         $node = $visitor->getDocument()->createTextNode(
-            number_format(
+            InvoiceSuiteStringUtils::numberFormat(
                 $data->getValue(),
                 InvoiceSuiteSettings::getSpecialDecimalPlacesMap($visitor->getCurrentNode()->getNodePath(), InvoiceSuiteSettings::getQuantityDecimals()),
                 InvoiceSuiteSettings::getDecimalSeparator(),
@@ -290,7 +290,7 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
         $data
     ): DOMText {
         return $visitor->getDocument()->createTextNode(
-            number_format(
+            InvoiceSuiteStringUtils::numberFormat(
                 $data->getValue(),
                 InvoiceSuiteSettings::getSpecialDecimalPlacesMap($visitor->getCurrentNode()->getNodePath(), InvoiceSuiteSettings::getPercentDecimals()),
                 InvoiceSuiteSettings::getDecimalSeparator(),
@@ -314,7 +314,7 @@ class InvoiceSuitePeppol30CreditNoteSerializerHandler implements SubscribingHand
         $data
     ): DOMText {
         $node = $visitor->getDocument()->createTextNode(
-            number_format(
+            InvoiceSuiteStringUtils::numberFormat(
                 $data->getValue(),
                 InvoiceSuiteSettings::getSpecialDecimalPlacesMap($visitor->getCurrentNode()->getNodePath(), InvoiceSuiteSettings::getMeasureDecimals()),
                 InvoiceSuiteSettings::getDecimalSeparator(),

@@ -88,7 +88,7 @@ class InvoiceSuiteVisualizeCommand extends InvoiceSuiteAbstractCommand
         $inpOptionPdfDefaultFont = $this->getStringOption('pdf-font-default');
 
         if (!InvoiceSuiteArrayUtils::inArrayNoCase(['pdf', 'html'], $inpOptionFormat)) {
-            throw new InvoiceSuiteInvalidArgumentException(sprintf('Invalid option value for format "%s"', $inpOptionFormat));
+            throw new InvoiceSuiteInvalidArgumentException(InvoiceSuiteStringUtils::sprintf('Invalid option value for format "%s"', $inpOptionFormat));
         }
 
         $visualizer = InvoiceSuiteVisualizer::createFromFile($inpArgInputFilename);
@@ -102,7 +102,7 @@ class InvoiceSuiteVisualizeCommand extends InvoiceSuiteAbstractCommand
         if (InvoiceSuiteStringUtils::equalsNoCase($inpOptionFormat, 'pdf')) {
             $visualizer->addPdfFontDirectories($inpOptionPdfFontDirectories);
             $visualizer->addPdfFontDatasFromStringArray($inpOptionPdfFontData);
-            $visualizer->setPdfPaperSize(sprintf('%s-%s', $inpOptionPdfPaperSize, $inpOptionPdfPaperOrientation));
+            $visualizer->setPdfPaperSize(InvoiceSuiteStringUtils::sprintf('%s-%s', $inpOptionPdfPaperSize, $inpOptionPdfPaperOrientation));
             $visualizer->setPdfFontDefault($inpOptionPdfDefaultFont);
             $visualizer->renderPdfFile($inpArgOutputFilename);
         } else {
@@ -116,7 +116,7 @@ class InvoiceSuiteVisualizeCommand extends InvoiceSuiteAbstractCommand
             )->generatePdfDocumentAndSaveToFile($inpArgOutputFilename);
         }
 
-        $this->outputLineLF(sprintf('<info>Created:</info> %s', $inpArgOutputFilename));
+        $this->outputLineLF(InvoiceSuiteStringUtils::sprintf('<info>Created:</info> %s', $inpArgOutputFilename));
 
         return $this->returnSuccess();
     }

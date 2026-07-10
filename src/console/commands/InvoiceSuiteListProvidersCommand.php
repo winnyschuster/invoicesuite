@@ -14,6 +14,7 @@ namespace horstoeko\invoicesuite\console\commands;
 use horstoeko\invoicesuite\concerns\HandlesDocumentFormatProviders;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use RuntimeException;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Exception\InvalidArgumentException as ConsoleInvalidArgumentException;
@@ -61,8 +62,8 @@ class InvoiceSuiteListProvidersCommand extends InvoiceSuiteAbstractCommand
 
         $jsonRowsToOutput = InvoiceSuiteArrayUtils::map(
             static fn (InvoiceSuiteAbstractDocumentFormatProvider $provider) => [
-                'id' => mb_strimwidth($provider->getUniqueId(), 0, 30, '...'),
-                'description' => mb_strimwidth($provider->getDescription(), 0, 60, '...'),
+                'id' => InvoiceSuiteStringUtils::mbTrimWidth($provider->getUniqueId(), 0, 30, '...'),
+                'description' => InvoiceSuiteStringUtils::mbTrimWidth($provider->getDescription(), 0, 60, '...'),
                 'version' => (string) $provider->getVersion(),
                 'contentType' => $provider->getContentType()->value,
                 'pdfSupportAvailable' => $provider->getIsPdfSupportAvailable(),
@@ -73,8 +74,8 @@ class InvoiceSuiteListProvidersCommand extends InvoiceSuiteAbstractCommand
 
         $tableRowsToOutput = InvoiceSuiteArrayUtils::map(
             static fn (InvoiceSuiteAbstractDocumentFormatProvider $provider) => [
-                mb_strimwidth($provider->getUniqueId(), 0, 30, '...'),
-                mb_strimwidth($provider->getDescription(), 0, 60, '...'),
+                InvoiceSuiteStringUtils::mbTrimWidth($provider->getUniqueId(), 0, 30, '...'),
+                InvoiceSuiteStringUtils::mbTrimWidth($provider->getDescription(), 0, 60, '...'),
                 (string) $provider->getVersion(),
                 $provider->getContentType()->value,
                 $provider->getIsPdfSupportAvailable() ? 'yes' : 'no',

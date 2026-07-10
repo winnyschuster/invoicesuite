@@ -67,7 +67,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
         int $profile
     ) {
         if (!InvoiceSuiteArrayUtils::keyExists(ZugferdProfiles::PROFILEDEF, $profile)) {
-            throw new InvoiceSuiteInvalidArgumentException(sprintf('Unknown profile id %s', $profile));
+            throw new InvoiceSuiteInvalidArgumentException(InvoiceSuiteStringUtils::sprintf('Unknown profile id %s', $profile));
         }
 
         $this->documentBuilder = InvoiceSuiteDocumentBuilder::createByProviderUniqueId(
@@ -158,7 +158,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
             return $profileDefinition[$parameterName];
         }
 
-        throw new InvoiceSuiteInvalidArgumentException(sprintf('Unknown parameter %s', $parameterName));
+        throw new InvoiceSuiteInvalidArgumentException(InvoiceSuiteStringUtils::sprintf('Unknown parameter %s', $parameterName));
     }
 
     /**
@@ -3589,23 +3589,23 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
         );
 
         if (InvoiceSuiteArrayUtils::empty($paymentDiscountDays)) {
-            return $this->addDocumentPaymentTerm(trim($description), $dueDate, $directDebitMandateID);
+            return $this->addDocumentPaymentTerm(InvoiceSuiteStringUtils::trim($description), $dueDate, $directDebitMandateID);
         }
 
         foreach ($paymentDiscountDays as $paymentDiscountDayIndex => $paymentDiscountDay) {
             $paymentTermsDescription[]
-                = sprintf(
+                = InvoiceSuiteStringUtils::sprintf(
                     isset($paymentDiscountBaseAmounts[$paymentDiscountDayIndex])
                         ? '#SKONTO#TAGE=%s#PROZENT=%s#BASISBETRAG=%s#'
                         : '#SKONTO#TAGE=%s#PROZENT=%s#',
-                    number_format($paymentDiscountDay, 0, '.', ''),
-                    number_format($paymentDiscountPercents[$paymentDiscountDayIndex] ?? 0.0, 2, '.', ''),
-                    number_format($paymentDiscountBaseAmounts[$paymentDiscountDayIndex] ?? 0.0, 2, '.', '')
+                    InvoiceSuiteStringUtils::numberFormat($paymentDiscountDay, 0, '.', ''),
+                    InvoiceSuiteStringUtils::numberFormat($paymentDiscountPercents[$paymentDiscountDayIndex] ?? 0.0, 2, '.', ''),
+                    InvoiceSuiteStringUtils::numberFormat($paymentDiscountBaseAmounts[$paymentDiscountDayIndex] ?? 0.0, 2, '.', '')
                 );
         }
 
         return $this->addDocumentPaymentTerm(
-            trim(sprintf("%s\n%s", implode("\n", $paymentTermsDescription), $description)),
+            InvoiceSuiteStringUtils::trim(InvoiceSuiteStringUtils::sprintf("%s\n%s", InvoiceSuiteStringUtils::implode("\n", $paymentTermsDescription), $description)),
             $dueDate,
             $directDebitMandateID
         );

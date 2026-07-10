@@ -94,7 +94,7 @@ trait HandlesSafeInvoking
         string $methods,
         $value
     ) {
-        $methods = explode('.', $methods);
+        $methods = InvoiceSuiteStringUtils::explode('.', $methods);
 
         foreach ($methods as $index => $method) {
             if ($index === InvoiceSuiteArrayUtils::count($methods) - 1) {
