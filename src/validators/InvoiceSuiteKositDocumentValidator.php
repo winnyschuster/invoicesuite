@@ -120,7 +120,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      *
      * @var int
      */
-    private $remoteModePort = 0;
+    private $remoteModePort = 80;
 
     /**
      * Setup the base directory. In the base directory all files will be downloaded
@@ -304,7 +304,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
     public function setRemoteModePort(
         int $remoteModePort
     ): static {
-        if ($remoteModePort <= 0) {
+        if ($remoteModePort < 1 || $remoteModePort > 65535) {
             return $this;
         }
 
@@ -344,7 +344,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
      */
     public function deactivateRemoteValidation(): static
     {
-        return $this->disableRemoteMode()->setRemoteModeHost('0.0.0.0')->setRemoteModePort(0);
+        return $this->disableRemoteMode()->setRemoteModeHost('0.0.0.0')->setRemoteModePort(80);
     }
 
     /**
@@ -571,7 +571,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
             return false;
         }
 
-        if ($this->remoteModePort <= 0) {
+        if ($this->remoteModePort < 1 || $this->remoteModePort > 65535) {
             $this->addErrorMessageToMessageBag('You must specify the port of the host where the Validator is running in daemon mode');
 
             return false;
@@ -587,6 +587,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
             curl_setopt($httpConnection, CURLOPT_AUTOREFERER, true);
             curl_setopt($httpConnection, CURLOPT_CONNECTTIMEOUT, 10);
             curl_setopt($httpConnection, CURLOPT_TIMEOUT, 120);
+            curl_setopt($httpConnection, CURLOPT_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS);
 
             $response = curl_exec($httpConnection);
 
@@ -810,6 +811,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
             curl_setopt($httpConnection, CURLOPT_POST, true);
             curl_setopt($httpConnection, CURLOPT_POSTFIELDS, $this->getRawDocumentContent());
             curl_setopt($httpConnection, CURLOPT_HTTPHEADER, ['Content-Type: application/xml']);
+            curl_setopt($httpConnection, CURLOPT_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS);
 
             $response = curl_exec($httpConnection);
 
