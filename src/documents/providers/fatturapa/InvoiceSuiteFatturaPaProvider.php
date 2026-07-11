@@ -12,13 +12,12 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\providers\fatturapa;
 
 use Closure;
-use DOMDocument;
 use DOMElement;
-use DOMXPath;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\documents\providers\fatturapa\models\FatturaElettronica;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentType;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteXmlUtils;
 use z4kn4fein\SemVer\Version;
 
 class InvoiceSuiteFatturaPaProvider extends InvoiceSuiteAbstractDocumentFormatProvider
@@ -136,13 +135,13 @@ class InvoiceSuiteFatturaPaProvider extends InvoiceSuiteAbstractDocumentFormatPr
         libxml_clear_errors();
 
         try {
-            $contentDomDocument = new DOMDocument();
+            $contentDomDocument = InvoiceSuiteXmlUtils::loadXml($serializedContent);
 
-            if (!$contentDomDocument->loadXML($serializedContent)) {
+            if (false === $contentDomDocument) {
                 return false;
             }
 
-            $contentDomXPath = new DOMXPath($contentDomDocument);
+            $contentDomXPath = InvoiceSuiteXmlUtils::createDomXPath($contentDomDocument);
 
             $contentDomDocumentRoot = $contentDomDocument->documentElement;
 

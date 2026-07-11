@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\validators;
 
 use DOMDocument;
-use DOMXPath;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInvalidArgumentException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentType;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
@@ -20,6 +19,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageSeverity;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteXmlUtils;
 use horstoeko\invoicesuite\validators\abstracts\InvoiceSuiteAbstractDocumentValidator;
 use Symfony\Component\Process\ExecutableFinder;
 use Symfony\Component\Process\Process;
@@ -862,8 +862,11 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
             return;
         }
 
-        $domDocument = new DOMDocument();
-        $domDocument->load($reportFilename);
+        $domDocument = InvoiceSuiteXmlUtils::loadFile($reportFilename);
+
+        if (false === $domDocument) {
+            return;
+        }
 
         $this->parseValidatorXmlReportByDomDocument($domDocument);
     }
@@ -886,8 +889,11 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
             return;
         }
 
-        $domDocument = new DOMDocument();
-        $domDocument->loadXML($xmlContent);
+        $domDocument = InvoiceSuiteXmlUtils::loadXml($xmlContent);
+
+        if (false === $domDocument) {
+            return;
+        }
 
         $this->parseValidatorXmlReportByDomDocument($domDocument);
     }
@@ -906,7 +912,7 @@ class InvoiceSuiteKositDocumentValidator extends InvoiceSuiteAbstractDocumentVal
     private function parseValidatorXmlReportByDomDocument(
         DOMDocument $domDocument
     ): void {
-        $domXPath = new DOMXPath($domDocument);
+        $domXPath = InvoiceSuiteXmlUtils::createDomXPath($domDocument);
 
         $messageTypeMaps = [
             InvoiceSuiteMessageSeverity::ERROR->value => 'error',

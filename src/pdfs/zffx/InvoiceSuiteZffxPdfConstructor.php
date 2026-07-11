@@ -12,14 +12,14 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\pdfs\zffx;
 
 use DateTime;
-use DOMDocument;
-use DOMXPath;
 use horstoeko\invoicesuite\codelists\InvoiceSuiteCodelistDocumentTypes;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\pdfs\abstracts\InvoiceSuiteAbstractPdfConstructor;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteXmlUtils;
 use Random\RandomException;
+use RuntimeException;
 use setasign\Fpdi\PdfParser\PdfParserException;
 use setasign\Fpdi\PdfParser\StreamReader as PdfStreamReader;
 use setasign\Fpdi\PdfReader\PdfReaderException;
@@ -67,6 +67,7 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
      * @throws PdfParserException
      * @throws PdfReaderException
      * @throws RandomException
+     * @throws RuntimeException
      */
     protected function generatePdfDocument(): static
     {
@@ -151,15 +152,18 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
      * Extract major invoice information from FacturX/ZUGFeRD XML.
      *
      * @return array{invoiceId: string, docTypeName: string, seller: string, date: string}
+     *
+     * @throws RuntimeException
      */
     protected function extractInvoiceInformations(): array
     {
-        $domDocument = new DOMDocument();
-        $domDocument->resolveExternals = false;
-        $domDocument->substituteEntities = false;
-        $domDocument->loadXML($this->getRawDocumentContent(), LIBXML_NONET);
+        $domDocument = InvoiceSuiteXmlUtils::loadXml($this->getRawDocumentContent(), LIBXML_NONET);
 
-        $xpath = new DOMXPath($domDocument);
+        if (false === $domDocument) {
+            throw new RuntimeException('Failed to create DOMDocument from content');
+        }
+
+        $xpath = InvoiceSuiteXmlUtils::createDomXPath($domDocument);
 
         $dateXpath = $xpath->query('//rsm:ExchangedDocument/ram:IssueDateTime/udt:DateTimeString');
         $date = $dateXpath->item(0)->nodeValue;
@@ -211,6 +215,8 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
      * Update PDF metadata to according to FacturX/ZUGFeRD XML data.
      *
      * @return void
+     *
+     * @throws RuntimeException
      */
     private function updatePdfMetadata(): void
     {
@@ -219,7 +225,12 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
         $pdfMetadataInfos = $this->preparePdfMetadata();
         $this->pdfWriter->setPdfMetadataInfos($pdfMetadataInfos);
 
-        $xmp = simplexml_load_file(InvoiceSuitePathUtils::combinePathWithFile(InvoiceSuitePathUtils::combineAllPaths(__DIR__, 'assets'), 'facturx_extension_schema.xmp'));
+        $xmp = InvoiceSuiteXmlUtils::loadSimpleXmlFile(InvoiceSuitePathUtils::combinePathWithFile(InvoiceSuitePathUtils::combineAllPaths(__DIR__, 'assets'), 'facturx_extension_schema.xmp'));
+
+        if (false === $xmp) {
+            throw new RuntimeException('Failed to load PDF metadata extension schema');
+        }
+
         $descriptionNodes = $xmp->xpath('rdf:Description');
 
         $descFx = $descriptionNodes[0];
@@ -265,6 +276,8 @@ class InvoiceSuiteZffxPdfConstructor extends InvoiceSuiteAbstractPdfConstructor
      * Prepare PDF Metadata informations from FacturX/ZUGFeRD XML.
      *
      * @return array{author: string, keywords: string, title: string, subject: string, createdDate: string, modifiedDate: string}
+     *
+     * @throws RuntimeException
      */
     private function preparePdfMetadata(): array
     {

@@ -11,13 +11,12 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\providers\peppol;
 
-use DOMDocument;
-use DOMXPath;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\documents\providers\peppol\models\main\CreditNote;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentType;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteXmlUtils;
 use z4kn4fein\SemVer\Version;
 
 class InvoiceSuitePeppol30CreditNoteProvider extends InvoiceSuiteAbstractDocumentFormatProvider
@@ -117,13 +116,13 @@ class InvoiceSuitePeppol30CreditNoteProvider extends InvoiceSuiteAbstractDocumen
         libxml_clear_errors();
 
         try {
-            $contentDomDocument = new DOMDocument();
+            $contentDomDocument = InvoiceSuiteXmlUtils::loadXml($serializedContent);
 
-            if (!$contentDomDocument->loadXML($serializedContent)) {
+            if (false === $contentDomDocument) {
                 return false;
             }
 
-            $contentDomXPath = new DOMXPath($contentDomDocument);
+            $contentDomXPath = InvoiceSuiteXmlUtils::createDomXPath($contentDomDocument);
             $contentDomXPath->registerNamespace('inv', 'urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2');
             $contentDomXPath->registerNamespace('cbc', 'urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2');
 

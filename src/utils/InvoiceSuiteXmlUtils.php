@@ -6,6 +6,7 @@ namespace horstoeko\invoicesuite\utils;
 
 use DOMDocument;
 use DOMXPath;
+use SimpleXMLElement;
 
 /**
  * Class representing XML utilities
@@ -46,16 +47,47 @@ class InvoiceSuiteXmlUtils
      * Create DOMDocument and load XML
      *
      * @param  string            $source
+     * @param  int               $options
      * @return DOMDocument|false
      */
-    public static function loadXml(string $source): DOMDocument|false
+    public static function loadXml(string $source, int $options = LIBXML_NONET | LIBXML_NOERROR | LIBXML_NOWARNING): DOMDocument|false
     {
         $domDocument = static::createDomDocument();
 
-        if (false === $domDocument->loadXML($source, LIBXML_NONET | LIBXML_NOERROR | LIBXML_NOWARNING)) {
+        if (false === $domDocument->loadXML($source, $options)) {
             return false;
         }
 
         return $domDocument;
+    }
+
+    /**
+     * Create DOMDocument and load XML from a file
+     *
+     * @param  string            $filename
+     * @param  int               $options
+     * @return DOMDocument|false
+     */
+    public static function loadFile(string $filename, int $options = LIBXML_NONET | LIBXML_NOERROR | LIBXML_NOWARNING): DOMDocument|false
+    {
+        $domDocument = static::createDomDocument();
+
+        if (false === $domDocument->load($filename, $options)) {
+            return false;
+        }
+
+        return $domDocument;
+    }
+
+    /**
+     * Load SimpleXML from a file
+     *
+     * @param  string                 $filename
+     * @param  int                    $options
+     * @return false|SimpleXMLElement
+     */
+    public static function loadSimpleXmlFile(string $filename, int $options = LIBXML_NONET | LIBXML_NOERROR | LIBXML_NOWARNING): false|SimpleXMLElement
+    {
+        return simplexml_load_file($filename, SimpleXMLElement::class, $options);
     }
 }

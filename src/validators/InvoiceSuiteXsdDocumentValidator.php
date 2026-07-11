@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\validators;
 
-use DOMDocument;
 use horstoeko\invoicesuite\concerns\HandlesDocumentFormatProviders;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
@@ -24,6 +23,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteContentType;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentTypeResolver;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteXmlUtils;
 use horstoeko\invoicesuite\validators\abstracts\InvoiceSuiteAbstractDocumentValidator;
 use JMS\Serializer\Exception\RuntimeException;
 use Throwable;
@@ -247,12 +247,9 @@ class InvoiceSuiteXsdDocumentValidator extends InvoiceSuiteAbstractDocumentValid
         libxml_clear_errors();
 
         try {
-            $doc = new DOMDocument();
+            $doc = InvoiceSuiteXmlUtils::loadXml($this->getRawDocumentContent(), LIBXML_NONET);
 
-            $doc->resolveExternals = false;
-            $doc->substituteEntities = false;
-
-            if ($doc->loadXML($this->getRawDocumentContent(), LIBXML_NONET)) {
+            if (false !== $doc) {
                 if ($doc->schemaValidate($this->getXsdFilename(), LIBXML_NONET)) {
                     return true;
                 }

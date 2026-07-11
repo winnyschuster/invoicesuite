@@ -32,6 +32,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageBagItem;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageSeverity;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteXmlUtils;
 use JMS\Serializer\Exception\RuntimeException;
 use Stringable;
 
@@ -383,8 +384,11 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
      */
     public function getContentAsDomDocument(): DOMDocument
     {
-        $domDocument = new DOMDocument();
-        $domDocument->loadXML($this->getContent());
+        $domDocument = InvoiceSuiteXmlUtils::loadXml($this->getContent());
+
+        if (false === $domDocument) {
+            throw new RuntimeException('Failed to create DOMDocument from content');
+        }
 
         return $domDocument;
     }
@@ -398,7 +402,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
      */
     public function getContentAsDOMXPath(): DOMXPath
     {
-        return new DOMXPath($this->getContentAsDomDocument());
+        return InvoiceSuiteXmlUtils::createDomXPath($this->getContentAsDomDocument());
     }
 
     /**

@@ -11,8 +11,6 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\providers\zffx;
 
-use DOMDocument;
-use DOMXPath;
 use horstoeko\invoicesuite\documents\abstracts\InvoiceSuiteAbstractDocumentFormatProvider;
 use horstoeko\invoicesuite\documents\providers\zffx\models\rsm\CrossIndustryInvoice;
 use horstoeko\invoicesuite\pdfs\zffx\InvoiceSuiteZffxPdfConstructor;
@@ -20,6 +18,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteContentType;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
+use horstoeko\invoicesuite\utils\InvoiceSuiteXmlUtils;
 use z4kn4fein\SemVer\Version;
 
 class InvoiceSuiteZfFxComfortProvider extends InvoiceSuiteAbstractDocumentFormatProvider
@@ -123,13 +122,13 @@ class InvoiceSuiteZfFxComfortProvider extends InvoiceSuiteAbstractDocumentFormat
         libxml_clear_errors();
 
         try {
-            $contentDomDocument = new DOMDocument();
+            $contentDomDocument = InvoiceSuiteXmlUtils::loadXml($serializedContent);
 
-            if (!$contentDomDocument->loadXML($serializedContent)) {
+            if (false === $contentDomDocument) {
                 return false;
             }
 
-            $contentDomXPath = new DOMXPath($contentDomDocument);
+            $contentDomXPath = InvoiceSuiteXmlUtils::createDomXPath($contentDomDocument);
             $contentDomXPath->registerNamespace('rsm', 'urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100');
             $contentDomXPath->registerNamespace('ram', 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100');
 
