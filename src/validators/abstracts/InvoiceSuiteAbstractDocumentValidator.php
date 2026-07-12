@@ -25,7 +25,7 @@ use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
-use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
 
 /**
  * Class representing methods base functionallity for a document validator
@@ -89,7 +89,7 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      * @return static
      *
      * @throws InvoiceSuiteInvalidArgumentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function createFromDocumentBuilder(
         InvoiceSuiteDocumentBuilder $fromDocumentBuilder
@@ -161,7 +161,7 @@ abstract class InvoiceSuiteAbstractDocumentValidator
      * @return static
      *
      * @throws InvoiceSuiteInvalidArgumentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     protected function setDocumentBuilder(
         InvoiceSuiteDocumentBuilder $fromDocumentBuilder

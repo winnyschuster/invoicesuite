@@ -33,7 +33,8 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteMessageBagItem;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageSeverity;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteXmlUtils;
-use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
+use RuntimeException;
 use Stringable;
 
 /**
@@ -99,7 +100,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
      *
      * @return string
      *
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public function __toString(): string
     {
@@ -366,7 +367,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
      *
      * @return string
      *
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public function getContent(): string
     {
@@ -380,7 +381,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
      *
      * @return DOMDocument
      *
-     * @throws \RuntimeException
+     * @throws JMSSerializerRuntimeException
      * @throws RuntimeException
      */
     public function getContentAsDomDocument(): DOMDocument
@@ -393,7 +394,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
      *
      * @return DOMXPath
      *
-     * @throws \RuntimeException
+     * @throws JMSSerializerRuntimeException
      * @throws RuntimeException
      */
     public function getContentAsDOMXPath(): DOMXPath
@@ -407,7 +408,7 @@ class ZugferdDocumentBuilder extends ZugferdDocument implements Stringable
      * @param  string $xmlfilename
      * @return static
      *
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public function writeFile(
         string $xmlfilename

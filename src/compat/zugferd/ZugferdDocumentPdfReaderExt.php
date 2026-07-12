@@ -17,7 +17,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundExceptio
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInternalMethodCallException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\InvoiceSuitePdfDocumentReader;
-use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
 use PrinsFrank\PdfParser\Exception\PdfParserException;
 
 /**
@@ -78,8 +78,8 @@ class ZugferdDocumentPdfReaderExt
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
+     * @throws JMSSerializerRuntimeException
      * @throws PdfParserException
-     * @throws RuntimeException
      */
     public static function fromFile(
         string $pdfFilename
@@ -96,8 +96,8 @@ class ZugferdDocumentPdfReaderExt
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
+     * @throws JMSSerializerRuntimeException
      * @throws PdfParserException
-     * @throws RuntimeException
      */
     public static function fromContent(
         string $pdfContent
@@ -116,8 +116,8 @@ class ZugferdDocumentPdfReaderExt
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
+     * @throws JMSSerializerRuntimeException
      * @throws PdfParserException
-     * @throws RuntimeException
      */
     public static function readAndGuessFromFile(
         string $pdfFilename
@@ -134,8 +134,8 @@ class ZugferdDocumentPdfReaderExt
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
+     * @throws JMSSerializerRuntimeException
      * @throws PdfParserException
-     * @throws RuntimeException
      */
     public static function readAndGuessFromContent(
         string $pdfContent
@@ -154,8 +154,8 @@ class ZugferdDocumentPdfReaderExt
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
+     * @throws JMSSerializerRuntimeException
      * @throws PdfParserException
-     * @throws RuntimeException
      */
     public static function getInvoiceDocumentContentFromFile(
         string $pdfFilename
@@ -172,8 +172,8 @@ class ZugferdDocumentPdfReaderExt
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
+     * @throws JMSSerializerRuntimeException
      * @throws PdfParserException
-     * @throws RuntimeException
      */
     public static function getInvoiceDocumentContentFromContent(
         string $pdfContent
@@ -192,8 +192,8 @@ class ZugferdDocumentPdfReaderExt
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
+     * @throws JMSSerializerRuntimeException
      * @throws PdfParserException
-     * @throws RuntimeException
      */
     public static function getAdditionalDocumentContentsFromFile(
         string $pdfFilename
@@ -210,8 +210,8 @@ class ZugferdDocumentPdfReaderExt
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
+     * @throws JMSSerializerRuntimeException
      * @throws PdfParserException
-     * @throws RuntimeException
      */
     public static function getAdditionalDocumentContentsFromContent(
         string $pdfContent
@@ -226,7 +226,7 @@ class ZugferdDocumentPdfReaderExt
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public function resolveInvoiceDocumentReader(): ZugferdDocumentReader
     {

@@ -30,7 +30,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteMessageBagItem;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageSeverity;
 use horstoeko\invoicesuite\utils\InvoiceSuitePathUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
-use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
 
 /**
  * Legacy-class representing the ZUGFeRD document reader for incoming documents
@@ -90,7 +90,7 @@ class ZugferdDocumentReader extends ZugferdDocument
      * @throws InvoiceSuiteFileNotReadableException
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function readAndGuessFromFile(
         string $xmlFilename
@@ -106,7 +106,7 @@ class ZugferdDocumentReader extends ZugferdDocument
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function readAndGuessFromContent(
         string $xmlContent

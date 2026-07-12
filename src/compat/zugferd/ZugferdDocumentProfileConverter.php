@@ -18,7 +18,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentBuilder;
 use horstoeko\invoicesuite\InvoiceSuiteDocumentReader;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
-use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
 
 /**
  * Class representing a converter to change a document's profile to another profile
@@ -78,7 +78,7 @@ class ZugferdDocumentProfileConverter
      * @throws InvoiceSuiteFileNotReadableException
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function convertFromFileToFile(
         string $fromFilename,
@@ -99,7 +99,7 @@ class ZugferdDocumentProfileConverter
      * @throws InvoiceSuiteFileNotReadableException
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function convertFromFileToString(
         string $fromFilename,
@@ -118,7 +118,7 @@ class ZugferdDocumentProfileConverter
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function convertFromContentToFile(
         string $fromContent,
@@ -137,7 +137,7 @@ class ZugferdDocumentProfileConverter
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function convertFromContentToString(
         string $fromContent,
@@ -157,7 +157,7 @@ class ZugferdDocumentProfileConverter
      * @throws InvoiceSuiteFileNotReadableException
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     protected static function convertFromFile(
         string $fromFilename,
@@ -178,7 +178,7 @@ class ZugferdDocumentProfileConverter
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     protected static function convertFromContent(
         string $fromContent,
@@ -230,7 +230,7 @@ class ZugferdDocumentProfileConverter
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     protected function convertToFile(
         string $toFile
@@ -247,7 +247,7 @@ class ZugferdDocumentProfileConverter
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     protected function convertToString(): string
     {
@@ -261,7 +261,7 @@ class ZugferdDocumentProfileConverter
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     protected function performConversion(): static
     {

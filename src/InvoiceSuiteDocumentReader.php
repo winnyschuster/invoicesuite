@@ -34,7 +34,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteInternalMethodGuard;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageBagItem;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageSeverity;
-use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
 
 /**
  * Class representing the document reader
@@ -59,7 +59,7 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     final protected function __construct(
         string $fromContent,
@@ -113,7 +113,7 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      * @throws InvoiceSuiteFileNotReadableException
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function createFromFile(
         string $fromFile
@@ -129,7 +129,7 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function createFromContent(
         string $fromContent
@@ -151,7 +151,7 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function createFromFileWithDocumentFormatProvider(
         string $fromFile,
@@ -177,7 +177,7 @@ class InvoiceSuiteDocumentReader extends InvoiceSuiteAbstractDocumentBaseReader
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function createFromContentWithDocumentFormatProvider(
         string $fromContent,

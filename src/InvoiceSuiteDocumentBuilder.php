@@ -26,7 +26,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageBagItem;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageSeverity;
-use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
 
 /**
  * Class representing the document builder
@@ -95,7 +95,7 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      *
      * @return string
      *
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public function getContent(): string
     {
@@ -108,7 +108,7 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      * @param  string $tofile
      * @return void
      *
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public function saveContentToFile(
         string $tofile
@@ -123,7 +123,7 @@ class InvoiceSuiteDocumentBuilder extends InvoiceSuiteAbstractDocumentBaseBuilde
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public function copyToReader(): InvoiceSuiteDocumentReader
     {

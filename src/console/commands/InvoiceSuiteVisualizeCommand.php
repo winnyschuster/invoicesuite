@@ -20,7 +20,7 @@ use horstoeko\invoicesuite\InvoiceSuitePdfDocumentBuilder;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\visualizers\InvoiceSuiteVisualizer;
-use JMS\Serializer\Exception\RuntimeException as JmsRuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
 use RuntimeException;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
 use Symfony\Component\Console\Input\InputArgument;
@@ -71,7 +71,7 @@ class InvoiceSuiteVisualizeCommand extends InvoiceSuiteAbstractCommand
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInvalidArgumentException
      * @throws InvoiceSuiteUnknownContentException
-     * @throws JmsRuntimeException
+     * @throws JMSSerializerRuntimeException
      * @throws RuntimeException
      */
     protected function handle(): int

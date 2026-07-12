@@ -18,7 +18,7 @@ use horstoeko\invoicesuite\concerns\HandlesMessageBag;
 use horstoeko\invoicesuite\concerns\HandlesMethodTracing;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
 use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
 
 /**
  * Class representing methods for a reader
@@ -55,7 +55,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatReader extends InvoiceSuiteAbst
      * @return static
      *
      * @throws InvoiceSuiteUnknownContentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public function deserializeFromContent(
         string $fromContent

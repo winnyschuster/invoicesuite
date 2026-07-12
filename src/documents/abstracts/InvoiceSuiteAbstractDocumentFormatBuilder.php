@@ -17,7 +17,7 @@ use horstoeko\invoicesuite\concerns\HandlesDocumentSerializer;
 use horstoeko\invoicesuite\concerns\HandlesMessageBag;
 use horstoeko\invoicesuite\concerns\HandlesMethodTracing;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
-use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
 use JMS\Serializer\SerializationContext;
 
 /**
@@ -54,7 +54,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder extends InvoiceSuiteAbs
      *
      * @return string
      *
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public function getContent(): string
     {
@@ -71,7 +71,7 @@ abstract class InvoiceSuiteAbstractDocumentFormatBuilder extends InvoiceSuiteAbs
      * @param  string $tofile
      * @return void
      *
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public function saveContentToFile(
         string $tofile

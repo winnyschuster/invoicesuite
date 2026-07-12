@@ -24,7 +24,7 @@ use horstoeko\invoicesuite\pdfs\abstracts\InvoiceSuiteAbstractPdfConstructor;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
-use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
 
 /**
  * Class representing the PDF document builder
@@ -63,7 +63,7 @@ class InvoiceSuitePdfDocumentBuilder
      * @throws InvoiceSuiteFileNotFoundException
      * @throws InvoiceSuiteFileNotReadableException
      * @throws InvoiceSuiteInvalidArgumentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function createFromDocumentBuilderAndPdfFile(
         InvoiceSuiteDocumentBuilder $fromDocumentBuilder,
@@ -83,7 +83,7 @@ class InvoiceSuitePdfDocumentBuilder
      * @return static
      *
      * @throws InvoiceSuiteInvalidArgumentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function createFromDocumentBuilderAndPdfContent(
         InvoiceSuiteDocumentBuilder $fromDocumentBuilder,
@@ -611,7 +611,7 @@ class InvoiceSuitePdfDocumentBuilder
      * @return static
      *
      * @throws InvoiceSuiteInvalidArgumentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     protected function setDocumentBuilder(
         InvoiceSuiteDocumentBuilder $fromDocumentBuilder

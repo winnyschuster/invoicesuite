@@ -17,7 +17,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageBagItem;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\validators\InvoiceSuiteKositDocumentValidator;
-use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
 
 /**
  * Legacy-class representing the KOSIT document validator for incoming documents
@@ -43,7 +43,7 @@ class ZugferdKositValidator
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInvalidArgumentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public function __construct(
         $document = null
@@ -59,7 +59,7 @@ class ZugferdKositValidator
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInvalidArgumentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public function setDocument(
         $document
@@ -99,7 +99,7 @@ class ZugferdKositValidator
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInvalidArgumentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function fromString(
         string $document
@@ -115,7 +115,7 @@ class ZugferdKositValidator
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInvalidArgumentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function fromZugferdDocument(
         ZugferdDocument $zugferdDocument

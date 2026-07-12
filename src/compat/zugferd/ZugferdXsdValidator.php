@@ -17,7 +17,7 @@ use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteMessageBagItem;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use horstoeko\invoicesuite\validators\InvoiceSuiteXsdDocumentValidator;
-use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
 
 /**
  * Legacy-class representing the validator against a XSD
@@ -43,7 +43,7 @@ class ZugferdXsdValidator
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInvalidArgumentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public function __construct(
         $document = null
@@ -59,7 +59,7 @@ class ZugferdXsdValidator
      *
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInvalidArgumentException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public function setDocument(
         $document

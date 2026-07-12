@@ -23,7 +23,7 @@ use horstoeko\invoicesuite\pdfs\extractor\InvoiceSuitePdfExtractor;
 use horstoeko\invoicesuite\pdfs\extractor\InvoiceSuitePdfExtractorAttachment;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
-use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
 use JsonSerializable;
 use PrinsFrank\PdfParser\Exception\PdfParserException;
 
@@ -70,8 +70,8 @@ class InvoiceSuitePdfDocumentReader implements JsonSerializable
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
+     * @throws JMSSerializerRuntimeException
      * @throws PdfParserException
-     * @throws RuntimeException
      */
     final protected function __construct(
         string $fromContent
@@ -127,8 +127,8 @@ class InvoiceSuitePdfDocumentReader implements JsonSerializable
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
+     * @throws JMSSerializerRuntimeException
      * @throws PdfParserException
-     * @throws RuntimeException
      */
     public static function createFromFile(
         string $fromFile
@@ -147,8 +147,8 @@ class InvoiceSuitePdfDocumentReader implements JsonSerializable
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
+     * @throws JMSSerializerRuntimeException
      * @throws PdfParserException
-     * @throws RuntimeException
      */
     public static function createFromContent(
         string $fromContent

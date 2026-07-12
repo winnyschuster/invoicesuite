@@ -16,7 +16,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteInternalMethodCallException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteUnknownContentException;
-use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
 use PrinsFrank\PdfParser\Exception\PdfParserException;
 
 /**
@@ -41,8 +41,8 @@ class ZugferdDocumentPdfReader
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
+     * @throws JMSSerializerRuntimeException
      * @throws PdfParserException
-     * @throws RuntimeException
      */
     public static function readAndGuessFromFile(
         string $pdfFilename
@@ -59,8 +59,8 @@ class ZugferdDocumentPdfReader
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
+     * @throws JMSSerializerRuntimeException
      * @throws PdfParserException
-     * @throws RuntimeException
      */
     public static function readAndGuessFromContent(
         string $pdfContent
@@ -79,8 +79,8 @@ class ZugferdDocumentPdfReader
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
+     * @throws JMSSerializerRuntimeException
      * @throws PdfParserException
-     * @throws RuntimeException
      */
     public static function getXmlFromFile(
         string $pdfFilename
@@ -97,8 +97,8 @@ class ZugferdDocumentPdfReader
      * @throws InvoiceSuiteFormatProviderNotFoundException
      * @throws InvoiceSuiteInternalMethodCallException
      * @throws InvoiceSuiteUnknownContentException
+     * @throws JMSSerializerRuntimeException
      * @throws PdfParserException
-     * @throws RuntimeException
      */
     public static function getXmlFromContent(
         string $pdfContent

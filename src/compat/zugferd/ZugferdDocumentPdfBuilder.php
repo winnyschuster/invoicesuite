@@ -16,7 +16,7 @@ use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotFoundException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFileNotReadableException;
 use horstoeko\invoicesuite\exceptions\InvoiceSuiteFormatProviderNotFoundException;
 use horstoeko\invoicesuite\utils\InvoiceSuiteFileUtils;
-use JMS\Serializer\Exception\RuntimeException;
+use JMS\Serializer\Exception\RuntimeException as JMSSerializerRuntimeException;
 
 /**
  * Legacy-class representing the ZUGFeRD PDF document builder for outgoing documents
@@ -38,7 +38,7 @@ class ZugferdDocumentPdfBuilder extends ZugferdDocumentPdfBuilderAbstract
      *
      * @throws InvoiceSuiteFileNotReadableException
      * @throws InvoiceSuiteFormatProviderNotFoundException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public function __construct(
         ZugferdDocumentBuilder $documentBuilder,
@@ -60,7 +60,7 @@ class ZugferdDocumentPdfBuilder extends ZugferdDocumentPdfBuilderAbstract
      * @throws InvoiceSuiteFileNotFoundException
      * @throws InvoiceSuiteFileNotReadableException
      * @throws InvoiceSuiteFormatProviderNotFoundException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function fromPdfFile(
         ZugferdDocumentBuilder $documentBuilder,
@@ -82,7 +82,7 @@ class ZugferdDocumentPdfBuilder extends ZugferdDocumentPdfBuilderAbstract
      *
      * @throws InvoiceSuiteFileNotReadableException
      * @throws InvoiceSuiteFormatProviderNotFoundException
-     * @throws RuntimeException
+     * @throws JMSSerializerRuntimeException
      */
     public static function fromPdfString(
         ZugferdDocumentBuilder $documentBuilder,
