@@ -1,3 +1,20 @@
+## v0.0.13
+
+``Previous version v0.0.12``
+
+| Type | Hash    | Date    | Author  | Subject  | Issue(s)
+| :--- | :------ | :------ | :------ | :------- | :-----------: 
+| :new:  | [72149c5b](https://github.com/horstoeko/invoicesuite/commit/72149c5b) | 2026-07-12 18:47:28 CEST | HorstOeko | [ENH] Aliased JMS\RuntimeException to "JMSSerializerRuntimeException" | 
+| :new:  | [4c43ff12](https://github.com/horstoeko/invoicesuite/commit/4c43ff12) | 2026-07-11 09:36:29 CEST | HorstOeko | [ENH] Improved usage of XmlUtils | 
+| :new:  | [b3db6159](https://github.com/horstoeko/invoicesuite/commit/b3db6159) | 2026-07-11 09:22:40 CEST | HorstOeko | [ENH] Use of InvoiceSuiteXmlUtils | 
+| :new:  | [0581cd66](https://github.com/horstoeko/invoicesuite/commit/0581cd66) | 2026-07-11 08:58:21 CEST | HorstOeko | [ENH] Added InvoiceSuiteXmlUtils | 
+| :new:  | [5f4413d1](https://github.com/horstoeko/invoicesuite/commit/5f4413d1) | 2026-07-11 08:05:37 CEST | HorstOeko | [ENH] Securred KositValidator | 
+| :new:  | [cbda42f0](https://github.com/horstoeko/invoicesuite/commit/cbda42f0) | 2026-07-11 07:31:24 CEST | HorstOeko | [ENH] Changed minimum version of "setasign/fpdi" | 
+| :new:  | [a20ca619](https://github.com/horstoeko/invoicesuite/commit/a20ca619) | 2026-07-10 17:18:18 CEST | HorstOeko | [ENH] Secured XML handling | 
+| :new:  | [3d7b7349](https://github.com/horstoeko/invoicesuite/commit/3d7b7349) | 2026-07-10 05:00:47 CEST | HorstOeko | [ENH] Wrappers for String-Functions in InvoiceSuiteStringUtils | 
+
+:exclamation: _There are 2 internal commit(s)_
+
 ## v0.0.12
 
 ``Previous version v0.0.11``
