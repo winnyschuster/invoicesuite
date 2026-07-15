@@ -902,6 +902,121 @@ final class ZfFxMinimumDocumentReaderTest extends TestCase
         $this->assertFalse(static::$document->nextDocumentBuyerTaxRepresentativeCommunication());
     }
 
+    public function testDocumentSalesAgent(): void
+    {
+        // Name
+
+        static::$document->getDocumentSalesAgentName($newName);
+
+        $this->assertSame('', $newName);
+
+        // ID
+
+        $this->assertFalse(static::$document->firstDocumentSalesAgentId());
+
+        static::$document->getDocumentSalesAgentId($newId);
+
+        $this->assertSame('', $newId);
+
+        $this->assertFalse(static::$document->nextDocumentSalesAgentId());
+
+        // Global ID
+
+        $this->assertFalse(static::$document->firstDocumentSalesAgentGlobalId());
+
+        static::$document->getDocumentSalesAgentGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->assertSame('', $newGlobalId);
+        $this->assertSame('', $newGlobalIdType);
+
+        $this->assertFalse(static::$document->nextDocumentSalesAgentGlobalId());
+
+        static::$document->getDocumentSalesAgentGlobalId($newGlobalId, $newGlobalIdType);
+
+        $this->assertSame('', $newGlobalId);
+        $this->assertSame('', $newGlobalIdType);
+
+        $this->assertFalse(static::$document->nextDocumentSalesAgentGlobalId());
+
+        // Tax Registration
+
+        $this->assertFalse(static::$document->firstDocumentSalesAgentTaxRegistration());
+
+        static::$document->getDocumentSalesAgentTaxRegistration($newTaxRegistrationType, $newTaxRegistrationId);
+
+        $this->assertSame('', $newTaxRegistrationId);
+        $this->assertSame('', $newTaxRegistrationType);
+
+        $this->assertFalse(static::$document->nextDocumentSalesAgentTaxRegistration());
+
+        // Address
+
+        $this->assertFalse(static::$document->firstDocumentSalesAgentAddress());
+
+        static::$document->getDocumentSalesAgentAddress(
+            $newAddressLine1,
+            $newAddressLine2,
+            $newAddressLine3,
+            $newPostcode,
+            $newCity,
+            $newCountryId,
+            $newSubDivision
+        );
+
+        $this->assertSame('', $newAddressLine1);
+        $this->assertSame('', $newAddressLine2);
+        $this->assertSame('', $newAddressLine3);
+        $this->assertSame('', $newPostcode);
+        $this->assertSame('', $newCity);
+        $this->assertSame('', $newCountryId);
+        $this->assertSame('', $newSubDivision);
+
+        $this->assertFalse(static::$document->nextDocumentSalesAgentAddress());
+
+        // Legal Organisation
+
+        $this->assertFalse(static::$document->firstDocumentSalesAgentLegalOrganisation());
+
+        static::$document->getDocumentSalesAgentLegalOrganisation($newType, $newId, $newName);
+
+        $this->assertSame('', $newType);
+        $this->assertSame('', $newId);
+        $this->assertSame('', $newName);
+
+        $this->assertFalse(static::$document->nextDocumentSalesAgentLegalOrganisation());
+
+        // Contact
+
+        $this->assertFalse(static::$document->firstDocumentSalesAgentContact());
+
+        static::$document->getDocumentSalesAgentContact(
+            $newPersonName,
+            $newDepartmentName,
+            $newPhoneNumber,
+            $newFaxNumber,
+            $newEmailAddress
+        );
+
+        $this->assertSame('', $newPersonName);
+        $this->assertSame('', $newDepartmentName);
+        $this->assertSame('', $newPhoneNumber);
+        $this->assertSame('', $newFaxNumber);
+        $this->assertSame('', $newEmailAddress);
+
+        $this->assertFalse(static::$document->nextDocumentSalesAgentContact());
+
+        // Communication
+
+        $this->assertFalse(static::$document->firstDocumentSalesAgentCommunication());
+
+        static::$document->getDocumentSalesAgentCommunication($newType, $newUri);
+
+        $this->assertSame('', $newType);
+        $this->assertSame('', $newUri);
+
+        $this->assertFalse(static::$document->nextDocumentSalesAgentCommunication());
+    }
+
     public function testDocumentProductEndUser(): void
     {
         // Name
