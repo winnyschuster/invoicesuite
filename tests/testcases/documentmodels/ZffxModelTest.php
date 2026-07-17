@@ -25,10 +25,12 @@ use horstoeko\invoicesuite\documents\providers\zffx\models\ram\AdvancePaymentTyp
 use horstoeko\invoicesuite\documents\providers\zffx\models\ram\CreditorFinancialAccountType;
 use horstoeko\invoicesuite\documents\providers\zffx\models\ram\CreditorFinancialInstitutionType;
 use horstoeko\invoicesuite\documents\providers\zffx\models\ram\DebtorFinancialAccountType;
+use horstoeko\invoicesuite\documents\providers\zffx\models\ram\DebtorFinancialInstitutionType;
 use horstoeko\invoicesuite\documents\providers\zffx\models\ram\DocumentContextParameterType;
 use horstoeko\invoicesuite\documents\providers\zffx\models\ram\DocumentLineDocumentType;
 use horstoeko\invoicesuite\documents\providers\zffx\models\ram\ExchangedDocumentContextType;
 use horstoeko\invoicesuite\documents\providers\zffx\models\ram\ExchangedDocumentType;
+use horstoeko\invoicesuite\documents\providers\zffx\models\ram\FinancialAdjustmentType;
 use horstoeko\invoicesuite\documents\providers\zffx\models\ram\HeaderTradeAgreementType;
 use horstoeko\invoicesuite\documents\providers\zffx\models\ram\HeaderTradeDeliveryType;
 use horstoeko\invoicesuite\documents\providers\zffx\models\ram\HeaderTradeSettlementType;
@@ -131,6 +133,17 @@ final class ZffxModelTest extends TestCase
         $model->unsetValue();
 
         $this->assertNull($model->getValue());
+
+        // Property ListID
+
+        $testValue = 'dummy-ListIDValue';
+        $model->setListID($testValue);
+
+        $this->assertSame($testValue, $model->getListID());
+
+        $model->unsetListID();
+
+        $this->assertNull($model->getListID());
     }
 
     /**
@@ -694,6 +707,48 @@ final class ZffxModelTest extends TestCase
 
         $this->assertInstanceOf(IDType::class, $testValueForIBANID);
         $this->assertSame($testValueForIBANID, $model->getIBANID());
+
+        // Property AccountName
+
+        $testValue = new TextType();
+        $model->setAccountName($testValue);
+
+        $this->assertEquals($testValue, $model->getAccountName());
+
+        $model->unsetAccountName();
+
+        $this->assertNotInstanceOf(TextType::class, $model->getAccountName());
+
+        $testValueForAccountName = $model->getAccountNameWithCreate();
+
+        $this->assertInstanceOf(TextType::class, $testValueForAccountName);
+        $this->assertSame($testValueForAccountName, $model->getAccountName());
+    }
+
+    /**
+     * Tests methods of \horstoeko\invoicesuite\documents\providers\zffx\models\ram\DebtorFinancialInstitutionType.
+     */
+    public function testModelsZffxextendedRamDebtorFinancialInstitutionType(): void
+    {
+        $model = new DebtorFinancialInstitutionType();
+
+        $this->assertInstanceOf(DebtorFinancialInstitutionType::class, $model);
+
+        // Property BICID
+
+        $testValue = new IDType();
+        $model->setBICID($testValue);
+
+        $this->assertEquals($testValue, $model->getBICID());
+
+        $model->unsetBICID();
+
+        $this->assertNotInstanceOf(IDType::class, $model->getBICID());
+
+        $testValueForBICID = $model->getBICIDWithCreate();
+
+        $this->assertInstanceOf(IDType::class, $testValueForBICID);
+        $this->assertSame($testValueForBICID, $model->getBICID());
     }
 
     /**
@@ -1102,6 +1157,48 @@ final class ZffxModelTest extends TestCase
 
         $this->assertInstanceOf(SpecifiedPeriodType::class, $testValueForEffectiveSpecifiedPeriod);
         $this->assertSame($testValueForEffectiveSpecifiedPeriod, $model->getEffectiveSpecifiedPeriod());
+    }
+
+    /**
+     * Tests methods of \horstoeko\invoicesuite\documents\providers\zffx\models\ram\FinancialAdjustmentType.
+     */
+    public function testModelsZffxextendedRamFinancialAdjustmentType(): void
+    {
+        $model = new FinancialAdjustmentType();
+
+        $this->assertInstanceOf(FinancialAdjustmentType::class, $model);
+
+        // Property Reason
+
+        $testValue = new TextType();
+        $model->setReason($testValue);
+
+        $this->assertEquals($testValue, $model->getReason());
+
+        $model->unsetReason();
+
+        $this->assertNotInstanceOf(TextType::class, $model->getReason());
+
+        $testValueForReason = $model->getReasonWithCreate();
+
+        $this->assertInstanceOf(TextType::class, $testValueForReason);
+        $this->assertSame($testValueForReason, $model->getReason());
+
+        // Property ActualAmount
+
+        $testValue = new AmountType();
+        $model->setActualAmount($testValue);
+
+        $this->assertEquals($testValue, $model->getActualAmount());
+
+        $model->unsetActualAmount();
+
+        $this->assertNotInstanceOf(AmountType::class, $model->getActualAmount());
+
+        $testValueForActualAmount = $model->getActualAmountWithCreate();
+
+        $this->assertInstanceOf(AmountType::class, $testValueForActualAmount);
+        $this->assertSame($testValueForActualAmount, $model->getActualAmount());
     }
 
     /**
@@ -2188,6 +2285,70 @@ final class ZffxModelTest extends TestCase
 
         $this->assertInstanceOf(TradeSettlementHeaderMonetarySummationType::class, $testValueForSpecifiedTradeSettlementHeaderMonetarySummation);
         $this->assertSame($testValueForSpecifiedTradeSettlementHeaderMonetarySummation, $model->getSpecifiedTradeSettlementHeaderMonetarySummation());
+
+        // (1) Property SpecifiedFinancialAdjustment - Test set empty array
+
+        $specifiedFinancialAdjustmentItems = [];
+        $model->setSpecifiedFinancialAdjustment($specifiedFinancialAdjustmentItems);
+
+        $this->assertIsArray($model->getSpecifiedFinancialAdjustment());
+        $this->assertCount(0, $model->getSpecifiedFinancialAdjustment());
+
+        // (2) Property SpecifiedFinancialAdjustment - Add instance
+
+        $specifiedFinancialAdjustmentItem = new FinancialAdjustmentType();
+        $model->addToSpecifiedFinancialAdjustment($specifiedFinancialAdjustmentItem);
+
+        $this->assertIsArray($model->getSpecifiedFinancialAdjustment());
+        $this->assertCount(1, $model->getSpecifiedFinancialAdjustment());
+
+        // (3) Property SpecifiedFinancialAdjustment - Add and create instance
+
+        $testValueForSpecifiedFinancialAdjustmentItem = $model->addToSpecifiedFinancialAdjustmentWithCreate();
+
+        $this->assertInstanceOf(FinancialAdjustmentType::class, $testValueForSpecifiedFinancialAdjustmentItem);
+        $this->assertIsArray($model->getSpecifiedFinancialAdjustment());
+        $this->assertCount(2, $model->getSpecifiedFinancialAdjustment());
+
+        // (4) Property SpecifiedFinancialAdjustment - Add once an instance
+
+        $specifiedFinancialAdjustmentOnceItem = new FinancialAdjustmentType();
+
+        $model->addOnceToSpecifiedFinancialAdjustment($specifiedFinancialAdjustmentOnceItem);
+        $model->addOnceToSpecifiedFinancialAdjustment($specifiedFinancialAdjustmentOnceItem);
+
+        $itemsAfterOnce = $model->getSpecifiedFinancialAdjustment();
+
+        $this->assertIsArray($itemsAfterOnce);
+        $this->assertCount(2, $itemsAfterOnce);
+
+        // (5) Property SpecifiedFinancialAdjustment - Add once an instance with implicit creation
+
+        $firstSpecifiedFinancialAdjustmentOnceItem = $model->addOnceToSpecifiedFinancialAdjustmentWithCreate();
+
+        $this->assertInstanceOf(FinancialAdjustmentType::class, $firstSpecifiedFinancialAdjustmentOnceItem);
+
+        $itemsAfterFirstOnceWithCreate = $model->getSpecifiedFinancialAdjustment();
+
+        $this->assertIsArray($itemsAfterFirstOnceWithCreate);
+        $this->assertCount(2, $itemsAfterFirstOnceWithCreate);
+
+        // (6) Property SpecifiedFinancialAdjustment - Add once an instance with implicit creation (2)
+
+        $secondSpecifiedFinancialAdjustmentOnceItem = $model->addOnceToSpecifiedFinancialAdjustmentWithCreate();
+
+        $this->assertIsArray($itemsAfterFirstOnceWithCreate);
+        $this->assertCount(2, $itemsAfterFirstOnceWithCreate);
+        $this->assertSame($firstSpecifiedFinancialAdjustmentOnceItem, $secondSpecifiedFinancialAdjustmentOnceItem);
+
+        // (7) Property SpecifiedFinancialAdjustment - Clear
+
+        $model->clearSpecifiedFinancialAdjustment();
+
+        $itemsAfterClear = $model->getSpecifiedFinancialAdjustment();
+
+        $this->assertIsArray($itemsAfterClear);
+        $this->assertCount(0, $itemsAfterClear);
 
         // (1) Property InvoiceReferencedDocument - Test set empty array
 
@@ -4627,18 +4788,18 @@ final class ZffxModelTest extends TestCase
 
         // Property TypeCode
 
-        $testValue = new CodeType();
+        $testValue = new ContactTypeCodeType();
         $model->setTypeCode($testValue);
 
         $this->assertEquals($testValue, $model->getTypeCode());
 
         $model->unsetTypeCode();
 
-        $this->assertNotInstanceOf(CodeType::class, $model->getTypeCode());
+        $this->assertNotInstanceOf(ContactTypeCodeType::class, $model->getTypeCode());
 
         $testValueForTypeCode = $model->getTypeCodeWithCreate();
 
-        $this->assertInstanceOf(CodeType::class, $testValueForTypeCode);
+        $this->assertInstanceOf(ContactTypeCodeType::class, $testValueForTypeCode);
         $this->assertSame($testValueForTypeCode, $model->getTypeCode());
 
         // Property TelephoneUniversalCommunication
@@ -4971,14 +5132,19 @@ final class ZffxModelTest extends TestCase
 
         // Property RoleCode
 
-        $testValue = 'dummy-RoleCodeValue';
+        $testValue = new PartyRoleCodeType();
         $model->setRoleCode($testValue);
 
-        $this->assertSame($testValue, $model->getRoleCode());
+        $this->assertEquals($testValue, $model->getRoleCode());
 
         $model->unsetRoleCode();
 
-        $this->assertNull($model->getRoleCode());
+        $this->assertNotInstanceOf(PartyRoleCodeType::class, $model->getRoleCode());
+
+        $testValueForRoleCode = $model->getRoleCodeWithCreate();
+
+        $this->assertInstanceOf(PartyRoleCodeType::class, $testValueForRoleCode);
+        $this->assertSame($testValueForRoleCode, $model->getRoleCode());
 
         // Property Description
 
@@ -6080,6 +6246,22 @@ final class ZffxModelTest extends TestCase
         $this->assertInstanceOf(TradeCountryType::class, $testValueForOriginTradeCountry);
         $this->assertSame($testValueForOriginTradeCountry, $model->getOriginTradeCountry());
 
+        // Property ManufacturerTradeParty
+
+        $testValue = new TradePartyType();
+        $model->setManufacturerTradeParty($testValue);
+
+        $this->assertEquals($testValue, $model->getManufacturerTradeParty());
+
+        $model->unsetManufacturerTradeParty();
+
+        $this->assertNotInstanceOf(TradePartyType::class, $model->getManufacturerTradeParty());
+
+        $testValueForManufacturerTradeParty = $model->getManufacturerTradePartyWithCreate();
+
+        $this->assertInstanceOf(TradePartyType::class, $testValueForManufacturerTradeParty);
+        $this->assertSame($testValueForManufacturerTradeParty, $model->getManufacturerTradeParty());
+
         // (1) Property IncludedReferencedProduct - Test set empty array
 
         $includedReferencedProductItems = [];
@@ -6446,21 +6628,69 @@ final class ZffxModelTest extends TestCase
         $this->assertInstanceOf(AmountType::class, $testValueForAllowanceTotalAmount);
         $this->assertSame($testValueForAllowanceTotalAmount, $model->getAllowanceTotalAmount());
 
-        // Property TaxTotalAmount
+        // (1) Property TaxTotalAmount - Test set empty array
 
-        $testValue = new AmountType();
-        $model->setTaxTotalAmount($testValue);
+        $taxTotalAmountItems = [];
+        $model->setTaxTotalAmount($taxTotalAmountItems);
 
-        $this->assertEquals($testValue, $model->getTaxTotalAmount());
+        $this->assertIsArray($model->getTaxTotalAmount());
+        $this->assertCount(0, $model->getTaxTotalAmount());
 
-        $model->unsetTaxTotalAmount();
+        // (2) Property TaxTotalAmount - Add instance
 
-        $this->assertNotInstanceOf(AmountType::class, $model->getTaxTotalAmount());
+        $taxTotalAmountItem = new AmountType();
+        $model->addToTaxTotalAmount($taxTotalAmountItem);
 
-        $testValueForTaxTotalAmount = $model->getTaxTotalAmountWithCreate();
+        $this->assertIsArray($model->getTaxTotalAmount());
+        $this->assertCount(1, $model->getTaxTotalAmount());
 
-        $this->assertInstanceOf(AmountType::class, $testValueForTaxTotalAmount);
-        $this->assertSame($testValueForTaxTotalAmount, $model->getTaxTotalAmount());
+        // (3) Property TaxTotalAmount - Add and create instance
+
+        $testValueForTaxTotalAmountItem = $model->addToTaxTotalAmountWithCreate();
+
+        $this->assertInstanceOf(AmountType::class, $testValueForTaxTotalAmountItem);
+        $this->assertIsArray($model->getTaxTotalAmount());
+        $this->assertCount(2, $model->getTaxTotalAmount());
+
+        // (4) Property TaxTotalAmount - Add once an instance
+
+        $taxTotalAmountOnceItem = new AmountType();
+
+        $model->addOnceToTaxTotalAmount($taxTotalAmountOnceItem);
+        $model->addOnceToTaxTotalAmount($taxTotalAmountOnceItem);
+
+        $itemsAfterOnce = $model->getTaxTotalAmount();
+
+        $this->assertIsArray($itemsAfterOnce);
+        $this->assertCount(2, $itemsAfterOnce);
+
+        // (5) Property TaxTotalAmount - Add once an instance with implicit creation
+
+        $firstTaxTotalAmountOnceItem = $model->addOnceToTaxTotalAmountWithCreate();
+
+        $this->assertInstanceOf(AmountType::class, $firstTaxTotalAmountOnceItem);
+
+        $itemsAfterFirstOnceWithCreate = $model->getTaxTotalAmount();
+
+        $this->assertIsArray($itemsAfterFirstOnceWithCreate);
+        $this->assertCount(2, $itemsAfterFirstOnceWithCreate);
+
+        // (6) Property TaxTotalAmount - Add once an instance with implicit creation (2)
+
+        $secondTaxTotalAmountOnceItem = $model->addOnceToTaxTotalAmountWithCreate();
+
+        $this->assertIsArray($itemsAfterFirstOnceWithCreate);
+        $this->assertCount(2, $itemsAfterFirstOnceWithCreate);
+        $this->assertSame($firstTaxTotalAmountOnceItem, $secondTaxTotalAmountOnceItem);
+
+        // (7) Property TaxTotalAmount - Clear
+
+        $model->clearTaxTotalAmount();
+
+        $itemsAfterClear = $model->getTaxTotalAmount();
+
+        $this->assertIsArray($itemsAfterClear);
+        $this->assertCount(0, $itemsAfterClear);
 
         // Property GrandTotalAmount
 
@@ -6583,6 +6813,22 @@ final class ZffxModelTest extends TestCase
 
         $this->assertInstanceOf(CreditorFinancialAccountType::class, $testValueForPayeePartyCreditorFinancialAccount);
         $this->assertSame($testValueForPayeePartyCreditorFinancialAccount, $model->getPayeePartyCreditorFinancialAccount());
+
+        // Property PayerSpecifiedDebtorFinancialInstitution
+
+        $testValue = new DebtorFinancialInstitutionType();
+        $model->setPayerSpecifiedDebtorFinancialInstitution($testValue);
+
+        $this->assertEquals($testValue, $model->getPayerSpecifiedDebtorFinancialInstitution());
+
+        $model->unsetPayerSpecifiedDebtorFinancialInstitution();
+
+        $this->assertNotInstanceOf(DebtorFinancialInstitutionType::class, $model->getPayerSpecifiedDebtorFinancialInstitution());
+
+        $testValueForPayerSpecifiedDebtorFinancialInstitution = $model->getPayerSpecifiedDebtorFinancialInstitutionWithCreate();
+
+        $this->assertInstanceOf(DebtorFinancialInstitutionType::class, $testValueForPayerSpecifiedDebtorFinancialInstitution);
+        $this->assertSame($testValueForPayerSpecifiedDebtorFinancialInstitution, $model->getPayerSpecifiedDebtorFinancialInstitution());
 
         // Property PayeeSpecifiedCreditorFinancialInstitution
 

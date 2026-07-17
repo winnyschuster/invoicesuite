@@ -24,6 +24,17 @@ class AllowanceChargeReasonCodeType
     private $value;
 
     /**
+     * @var null|string
+     */
+    #[JMS\Accessor(getter: 'getListID', setter: 'setListID')]
+    #[JMS\Expose]
+    #[JMS\Groups(['zffx'])]
+    #[JMS\SerializedName('listID')]
+    #[JMS\Type('string')]
+    #[JMS\XmlAttribute]
+    private $listID;
+
+    /**
      * @return null|string
      */
     public function getValue(): ?string
@@ -49,6 +60,36 @@ class AllowanceChargeReasonCodeType
     public function unsetValue(): static
     {
         $this->value = null;
+
+        return $this;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getListID(): ?string
+    {
+        return $this->listID;
+    }
+
+    /**
+     * @param  null|string $listID
+     * @return static
+     */
+    public function setListID(
+        ?string $listID = null
+    ): static {
+        $this->listID = InvoiceSuiteStringUtils::asNullWhenEmpty($listID);
+
+        return $this;
+    }
+
+    /**
+     * @return static
+     */
+    public function unsetListID(): static
+    {
+        $this->listID = null;
 
         return $this;
     }

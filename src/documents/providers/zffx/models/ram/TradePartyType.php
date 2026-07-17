@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\providers\zffx\models\ram;
 
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
+use horstoeko\invoicesuite\documents\providers\zffx\models\qdt\PartyRoleCodeType;
 use horstoeko\invoicesuite\documents\providers\zffx\models\udt\IDType;
 use horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
-use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
 use JMS\Serializer\Annotation as JMS;
 
 class TradePartyType
@@ -51,13 +51,13 @@ class TradePartyType
     private $name;
 
     /**
-     * @var null|string
+     * @var null|PartyRoleCodeType
      */
     #[JMS\Accessor(getter: 'getRoleCode', setter: 'setRoleCode')]
     #[JMS\Expose]
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('RoleCode')]
-    #[JMS\Type('string')]
+    #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\qdt\PartyRoleCodeType')]
     #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $roleCode;
 
@@ -358,21 +358,31 @@ class TradePartyType
     }
 
     /**
-     * @return null|string
+     * @return null|PartyRoleCodeType
      */
-    public function getRoleCode(): ?string
+    public function getRoleCode(): ?PartyRoleCodeType
     {
         return $this->roleCode;
     }
 
     /**
-     * @param  null|string $roleCode
+     * @return PartyRoleCodeType
+     */
+    public function getRoleCodeWithCreate(): PartyRoleCodeType
+    {
+        $this->roleCode ??= new PartyRoleCodeType();
+
+        return $this->roleCode;
+    }
+
+    /**
+     * @param  null|PartyRoleCodeType $roleCode
      * @return static
      */
     public function setRoleCode(
-        ?string $roleCode = null
+        ?PartyRoleCodeType $roleCode = null
     ): static {
-        $this->roleCode = InvoiceSuiteStringUtils::asNullWhenEmpty($roleCode);
+        $this->roleCode = $roleCode;
 
         return $this;
     }

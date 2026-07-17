@@ -17218,7 +17218,7 @@ class InvoiceSuiteZfFxProviderBuilder extends InvoiceSuiteAbstractDocumentFormat
         }
 
         if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newTaxTotalAmount)) {
-            $positionSummation->getTaxTotalAmountWithCreate()->setValue($newTaxTotalAmount);
+            $positionSummation->addOnceToTaxTotalAmountWithCreate()->setValue($newTaxTotalAmount);
         }
 
         if ($this->supportsAtLeastExtended() && !InvoiceSuiteFloatUtils::floatIsNullOrEmpty($newGrossAmount)) {

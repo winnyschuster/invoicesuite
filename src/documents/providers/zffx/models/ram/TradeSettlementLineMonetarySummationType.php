@@ -6,6 +6,7 @@ namespace horstoeko\invoicesuite\documents\providers\zffx\models\ram;
 
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
 use horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType;
+use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use JMS\Serializer\Annotation as JMS;
 
 class TradeSettlementLineMonetarySummationType
@@ -46,14 +47,15 @@ class TradeSettlementLineMonetarySummationType
     private $allowanceTotalAmount;
 
     /**
-     * @var null|AmountType
+     * @var null|array<AmountType>
      */
     #[JMS\Accessor(getter: 'getTaxTotalAmount', setter: 'setTaxTotalAmount')]
     #[JMS\Expose]
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('TaxTotalAmount')]
-    #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType')]
+    #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\udt\AmountType>')]
     #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'TaxTotalAmount', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $taxTotalAmount;
 
     /**
@@ -199,29 +201,19 @@ class TradeSettlementLineMonetarySummationType
     }
 
     /**
-     * @return null|AmountType
+     * @return null|array<AmountType>
      */
-    public function getTaxTotalAmount(): ?AmountType
+    public function getTaxTotalAmount(): ?array
     {
         return $this->taxTotalAmount;
     }
 
     /**
-     * @return AmountType
-     */
-    public function getTaxTotalAmountWithCreate(): AmountType
-    {
-        $this->taxTotalAmount ??= new AmountType();
-
-        return $this->taxTotalAmount;
-    }
-
-    /**
-     * @param  null|AmountType $taxTotalAmount
+     * @param  null|array<AmountType> $taxTotalAmount
      * @return static
      */
     public function setTaxTotalAmount(
-        ?AmountType $taxTotalAmount = null
+        ?array $taxTotalAmount = null
     ): static {
         $this->taxTotalAmount = $taxTotalAmount;
 
@@ -236,6 +228,70 @@ class TradeSettlementLineMonetarySummationType
         $this->taxTotalAmount = null;
 
         return $this;
+    }
+
+    /**
+     * @return static
+     */
+    public function clearTaxTotalAmount(): static
+    {
+        $this->taxTotalAmount = [];
+
+        return $this;
+    }
+
+    /**
+     * @param  AmountType $taxTotalAmount
+     * @return static
+     */
+    public function addToTaxTotalAmount(
+        AmountType $taxTotalAmount
+    ): static {
+        $this->taxTotalAmount[] = $taxTotalAmount;
+
+        return $this;
+    }
+
+    /**
+     * @return AmountType
+     */
+    public function addToTaxTotalAmountWithCreate(): AmountType
+    {
+        $this->addToTaxTotalAmount($taxTotalAmount = new AmountType());
+
+        return $taxTotalAmount;
+    }
+
+    /**
+     * @param  AmountType $taxTotalAmount
+     * @return static
+     */
+    public function addOnceToTaxTotalAmount(
+        AmountType $taxTotalAmount
+    ): static {
+        if (!InvoiceSuiteArrayUtils::is($this->taxTotalAmount)) {
+            $this->taxTotalAmount = [];
+        }
+
+        $this->taxTotalAmount[0] = $taxTotalAmount;
+
+        return $this;
+    }
+
+    /**
+     * @return AmountType
+     */
+    public function addOnceToTaxTotalAmountWithCreate(): AmountType
+    {
+        if (!InvoiceSuiteArrayUtils::is($this->taxTotalAmount)) {
+            $this->taxTotalAmount = [];
+        }
+
+        if (InvoiceSuiteArrayUtils::empty($this->taxTotalAmount)) {
+            $this->addOnceToTaxTotalAmount(new AmountType());
+        }
+
+        return $this->taxTotalAmount[0];
     }
 
     /**

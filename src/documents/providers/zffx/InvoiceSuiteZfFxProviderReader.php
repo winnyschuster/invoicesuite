@@ -17138,11 +17138,13 @@ class InvoiceSuiteZfFxProviderReader extends InvoiceSuiteAbstractDocumentFormatR
         }
 
         $positionSummation = $this->resolveCurrentDocumentPosition()->getSpecifiedLineTradeSettlement()?->getSpecifiedTradeSettlementLineMonetarySummation();
+        $taxTotalAmounts = $positionSummation?->getTaxTotalAmount() ?? [];
+        $taxTotalAmount = InvoiceSuiteArrayUtils::first($taxTotalAmounts);
 
         $newNetAmount = $positionSummation?->getLineTotalAmount()?->getValue() ?? 0.0;
         $newChargeTotalAmount = $this->supportsAtLeastExtended() ? ($positionSummation?->getChargeTotalAmount()?->getValue() ?? 0.0) : 0.0;
         $newDiscountTotalAmount = $this->supportsAtLeastExtended() ? ($positionSummation?->getAllowanceTotalAmount()?->getValue() ?? 0.0) : 0.0;
-        $newTaxTotalAmount = $this->supportsAtLeastExtended() ? ($positionSummation?->getTaxTotalAmount()?->getValue() ?? 0.0) : 0.0;
+        $newTaxTotalAmount = $this->supportsAtLeastExtended() && false !== $taxTotalAmount ? ($taxTotalAmount->getValue() ?? 0.0) : 0.0;
         $newGrossAmount = $this->supportsAtLeastExtended() ? ($positionSummation?->getGrandTotalAmount()?->getValue() ?? 0.0) : 0.0;
 
         $this->traceMethodExit(__METHOD__);

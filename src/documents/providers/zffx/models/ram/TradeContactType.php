@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace horstoeko\invoicesuite\documents\providers\zffx\models\ram;
 
 use horstoeko\invoicesuite\concerns\HandlesObjectFlags;
-use horstoeko\invoicesuite\documents\providers\zffx\models\udt\CodeType;
+use horstoeko\invoicesuite\documents\providers\zffx\models\qdt\ContactTypeCodeType;
 use horstoeko\invoicesuite\documents\providers\zffx\models\udt\TextType;
 use JMS\Serializer\Annotation as JMS;
 
@@ -36,13 +36,13 @@ class TradeContactType
     private $departmentName;
 
     /**
-     * @var null|CodeType
+     * @var null|ContactTypeCodeType
      */
     #[JMS\Accessor(getter: 'getTypeCode', setter: 'setTypeCode')]
     #[JMS\Expose]
     #[JMS\Groups(['zffx'])]
     #[JMS\SerializedName('TypeCode')]
-    #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\udt\CodeType')]
+    #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\qdt\ContactTypeCodeType')]
     #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
     private $typeCode;
 
@@ -160,29 +160,29 @@ class TradeContactType
     }
 
     /**
-     * @return null|CodeType
+     * @return null|ContactTypeCodeType
      */
-    public function getTypeCode(): ?CodeType
+    public function getTypeCode(): ?ContactTypeCodeType
     {
         return $this->typeCode;
     }
 
     /**
-     * @return CodeType
+     * @return ContactTypeCodeType
      */
-    public function getTypeCodeWithCreate(): CodeType
+    public function getTypeCodeWithCreate(): ContactTypeCodeType
     {
-        $this->typeCode ??= new CodeType();
+        $this->typeCode ??= new ContactTypeCodeType();
 
         return $this->typeCode;
     }
 
     /**
-     * @param  null|CodeType $typeCode
+     * @param  null|ContactTypeCodeType $typeCode
      * @return static
      */
     public function setTypeCode(
-        ?CodeType $typeCode = null
+        ?ContactTypeCodeType $typeCode = null
     ): static {
         $this->typeCode = $typeCode;
 

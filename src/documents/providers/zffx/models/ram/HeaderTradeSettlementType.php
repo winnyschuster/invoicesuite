@@ -208,6 +208,18 @@ class HeaderTradeSettlementType
     private $specifiedTradeSettlementHeaderMonetarySummation;
 
     /**
+     * @var null|array<FinancialAdjustmentType>
+     */
+    #[JMS\Accessor(getter: 'getSpecifiedFinancialAdjustment', setter: 'setSpecifiedFinancialAdjustment')]
+    #[JMS\Expose]
+    #[JMS\Groups(['zffx'])]
+    #[JMS\SerializedName('SpecifiedFinancialAdjustment')]
+    #[JMS\Type('array<horstoeko\invoicesuite\documents\providers\zffx\models\ram\FinancialAdjustmentType>')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    #[JMS\XmlList(entry: 'SpecifiedFinancialAdjustment', inline: true, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    private $specifiedFinancialAdjustment;
+
+    /**
      * @var null|array<ReferencedDocumentType>
      */
     #[JMS\Accessor(getter: 'getInvoiceReferencedDocument', setter: 'setInvoiceReferencedDocument')]
@@ -1191,6 +1203,100 @@ class HeaderTradeSettlementType
         $this->specifiedTradeSettlementHeaderMonetarySummation = null;
 
         return $this;
+    }
+
+    /**
+     * @return null|array<FinancialAdjustmentType>
+     */
+    public function getSpecifiedFinancialAdjustment(): ?array
+    {
+        return $this->specifiedFinancialAdjustment;
+    }
+
+    /**
+     * @param  null|array<FinancialAdjustmentType> $specifiedFinancialAdjustment
+     * @return static
+     */
+    public function setSpecifiedFinancialAdjustment(
+        ?array $specifiedFinancialAdjustment = null
+    ): static {
+        $this->specifiedFinancialAdjustment = $specifiedFinancialAdjustment;
+
+        return $this;
+    }
+
+    /**
+     * @return static
+     */
+    public function unsetSpecifiedFinancialAdjustment(): static
+    {
+        $this->specifiedFinancialAdjustment = null;
+
+        return $this;
+    }
+
+    /**
+     * @return static
+     */
+    public function clearSpecifiedFinancialAdjustment(): static
+    {
+        $this->specifiedFinancialAdjustment = [];
+
+        return $this;
+    }
+
+    /**
+     * @param  FinancialAdjustmentType $specifiedFinancialAdjustment
+     * @return static
+     */
+    public function addToSpecifiedFinancialAdjustment(
+        FinancialAdjustmentType $specifiedFinancialAdjustment
+    ): static {
+        $this->specifiedFinancialAdjustment[] = $specifiedFinancialAdjustment;
+
+        return $this;
+    }
+
+    /**
+     * @return FinancialAdjustmentType
+     */
+    public function addToSpecifiedFinancialAdjustmentWithCreate(): FinancialAdjustmentType
+    {
+        $this->addToSpecifiedFinancialAdjustment($specifiedFinancialAdjustment = new FinancialAdjustmentType());
+
+        return $specifiedFinancialAdjustment;
+    }
+
+    /**
+     * @param  FinancialAdjustmentType $specifiedFinancialAdjustment
+     * @return static
+     */
+    public function addOnceToSpecifiedFinancialAdjustment(
+        FinancialAdjustmentType $specifiedFinancialAdjustment
+    ): static {
+        if (!InvoiceSuiteArrayUtils::is($this->specifiedFinancialAdjustment)) {
+            $this->specifiedFinancialAdjustment = [];
+        }
+
+        $this->specifiedFinancialAdjustment[0] = $specifiedFinancialAdjustment;
+
+        return $this;
+    }
+
+    /**
+     * @return FinancialAdjustmentType
+     */
+    public function addOnceToSpecifiedFinancialAdjustmentWithCreate(): FinancialAdjustmentType
+    {
+        if (!InvoiceSuiteArrayUtils::is($this->specifiedFinancialAdjustment)) {
+            $this->specifiedFinancialAdjustment = [];
+        }
+
+        if (InvoiceSuiteArrayUtils::empty($this->specifiedFinancialAdjustment)) {
+            $this->addOnceToSpecifiedFinancialAdjustment(new FinancialAdjustmentType());
+        }
+
+        return $this->specifiedFinancialAdjustment[0];
     }
 
     /**

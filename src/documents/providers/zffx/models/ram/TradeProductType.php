@@ -184,6 +184,17 @@ class TradeProductType
     private $originTradeCountry;
 
     /**
+     * @var null|TradePartyType
+     */
+    #[JMS\Accessor(getter: 'getManufacturerTradeParty', setter: 'setManufacturerTradeParty')]
+    #[JMS\Expose]
+    #[JMS\Groups(['zffx'])]
+    #[JMS\SerializedName('ManufacturerTradeParty')]
+    #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\TradePartyType')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    private $manufacturerTradeParty;
+
+    /**
      * @var null|array<ReferencedProductType>
      */
     #[JMS\Accessor(getter: 'getIncludedReferencedProduct', setter: 'setIncludedReferencedProduct')]
@@ -1007,6 +1018,46 @@ class TradeProductType
     public function unsetOriginTradeCountry(): static
     {
         $this->originTradeCountry = null;
+
+        return $this;
+    }
+
+    /**
+     * @return null|TradePartyType
+     */
+    public function getManufacturerTradeParty(): ?TradePartyType
+    {
+        return $this->manufacturerTradeParty;
+    }
+
+    /**
+     * @return TradePartyType
+     */
+    public function getManufacturerTradePartyWithCreate(): TradePartyType
+    {
+        $this->manufacturerTradeParty ??= new TradePartyType();
+
+        return $this->manufacturerTradeParty;
+    }
+
+    /**
+     * @param  null|TradePartyType $manufacturerTradeParty
+     * @return static
+     */
+    public function setManufacturerTradeParty(
+        ?TradePartyType $manufacturerTradeParty = null
+    ): static {
+        $this->manufacturerTradeParty = $manufacturerTradeParty;
+
+        return $this;
+    }
+
+    /**
+     * @return static
+     */
+    public function unsetManufacturerTradeParty(): static
+    {
+        $this->manufacturerTradeParty = null;
 
         return $this;
     }

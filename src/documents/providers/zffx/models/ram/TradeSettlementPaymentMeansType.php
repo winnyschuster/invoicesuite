@@ -69,6 +69,17 @@ class TradeSettlementPaymentMeansType
     private $payeePartyCreditorFinancialAccount;
 
     /**
+     * @var null|DebtorFinancialInstitutionType
+     */
+    #[JMS\Accessor(getter: 'getPayerSpecifiedDebtorFinancialInstitution', setter: 'setPayerSpecifiedDebtorFinancialInstitution')]
+    #[JMS\Expose]
+    #[JMS\Groups(['zffx'])]
+    #[JMS\SerializedName('PayerSpecifiedDebtorFinancialInstitution')]
+    #[JMS\Type('horstoeko\invoicesuite\documents\providers\zffx\models\ram\DebtorFinancialInstitutionType')]
+    #[JMS\XmlElement(cdata: false, namespace: 'urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100')]
+    private $payerSpecifiedDebtorFinancialInstitution;
+
+    /**
      * @var null|CreditorFinancialInstitutionType
      */
     #[JMS\Accessor(getter: 'getPayeeSpecifiedCreditorFinancialInstitution', setter: 'setPayeeSpecifiedCreditorFinancialInstitution')]
@@ -275,6 +286,46 @@ class TradeSettlementPaymentMeansType
     public function unsetPayeePartyCreditorFinancialAccount(): static
     {
         $this->payeePartyCreditorFinancialAccount = null;
+
+        return $this;
+    }
+
+    /**
+     * @return null|DebtorFinancialInstitutionType
+     */
+    public function getPayerSpecifiedDebtorFinancialInstitution(): ?DebtorFinancialInstitutionType
+    {
+        return $this->payerSpecifiedDebtorFinancialInstitution;
+    }
+
+    /**
+     * @return DebtorFinancialInstitutionType
+     */
+    public function getPayerSpecifiedDebtorFinancialInstitutionWithCreate(): DebtorFinancialInstitutionType
+    {
+        $this->payerSpecifiedDebtorFinancialInstitution ??= new DebtorFinancialInstitutionType();
+
+        return $this->payerSpecifiedDebtorFinancialInstitution;
+    }
+
+    /**
+     * @param  null|DebtorFinancialInstitutionType $payerSpecifiedDebtorFinancialInstitution
+     * @return static
+     */
+    public function setPayerSpecifiedDebtorFinancialInstitution(
+        ?DebtorFinancialInstitutionType $payerSpecifiedDebtorFinancialInstitution = null,
+    ): static {
+        $this->payerSpecifiedDebtorFinancialInstitution = $payerSpecifiedDebtorFinancialInstitution;
+
+        return $this;
+    }
+
+    /**
+     * @return static
+     */
+    public function unsetPayerSpecifiedDebtorFinancialInstitution(): static
+    {
+        $this->payerSpecifiedDebtorFinancialInstitution = null;
 
         return $this;
     }
