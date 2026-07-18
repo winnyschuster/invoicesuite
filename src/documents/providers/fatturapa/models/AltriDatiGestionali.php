@@ -42,7 +42,7 @@ final class AltriDatiGestionali
     #[JMS\Expose]
     #[JMS\Groups(['fatturapa'])]
     #[JMS\SerializedName('RiferimentoNumero')]
-    #[JMS\Type('fatturapa_decimal<2>')]
+    #[JMS\Type('fatturapa_decimal<2,8>')]
     #[JMS\XmlElement(cdata: false)]
     private ?float $riferimentoNumero = null;
 

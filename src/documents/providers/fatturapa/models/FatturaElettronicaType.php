@@ -24,7 +24,7 @@ class FatturaElettronicaType
     #[JMS\SerializedName('schemaLocation')]
     #[JMS\Type('string')]
     #[JMS\XmlAttribute(namespace: 'http://www.w3.org/2001/XMLSchema-instance')]
-    private ?string $schemaLocation = 'http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2 http://www.fatturapa.gov.it/export/fatturazione/sdi/fatturapa/v1.2/Schema_del_file_xml_FatturaPA_versione_1.2.xsd';
+    private ?string $schemaLocation = 'http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2 https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.4/Schema_VFPR12_v1.2.3.xsd';
 
     /**
      * @translation-german Rechnungs-Header

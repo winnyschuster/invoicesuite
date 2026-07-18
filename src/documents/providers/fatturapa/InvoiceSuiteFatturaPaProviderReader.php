@@ -3991,10 +3991,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
     {
         $this->traceMethodEnter(__METHOD__);
 
-        $newBuyerReference = $this->getFatturaPaRootObject()
-            ->getFatturaElettronicaHeader()
-            ?->getDatiTrasmissione()
-            ?->getCodiceDestinatario() ?? '';
+        $newBuyerReference = '';
 
         $this->traceMethodExit(__METHOD__);
 
@@ -4930,7 +4927,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      */
     public function firstDocumentBuyerCommunication(): bool
     {
-        return false;
+        return InvoiceSuitePointerUtils::hasFirst($this->getBuyerCommunications(), 'documentbuyerecommunication');
     }
 
     /**
@@ -4940,7 +4937,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      */
     public function nextDocumentBuyerCommunication(): bool
     {
-        return false;
+        return InvoiceSuitePointerUtils::hasNext($this->getBuyerCommunications(), 'documentbuyerecommunication');
     }
 
     /**
@@ -4959,6 +4956,13 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
 
         $newType = '';
         $newUri = '';
+
+        $buyerCommunication = $this->getBuyerCommunications()[InvoiceSuitePointerUtils::getValue('documentbuyerecommunication')] ?? null;
+
+        if (!is_null($buyerCommunication)) {
+            $newType = $buyerCommunication['type'];
+            $newUri = $buyerCommunication['uri'];
+        }
 
         $this->traceMethodExit(__METHOD__);
 
@@ -9358,7 +9362,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
 
         foreach ($this->getFatturaPaRootObject()->getFirstFatturaElettronicaBody()?->getDatiPagamento() ?? [] as $paymentBlock) {
             foreach ($paymentBlock->getDettaglioPagamento() ?? [] as $paymentDetail) {
-                if (is_null($paymentDetail->getDataScadenzaPagamento()) && is_null($paymentBlock->getCondizioniPagamento())) {
+                if (!$this->isPaymentTermDetail($paymentDetail)) {
                     continue;
                 }
 
@@ -9383,7 +9387,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
 
         foreach ($this->getFatturaPaRootObject()->getFirstFatturaElettronicaBody()?->getDatiPagamento() ?? [] as $paymentBlock) {
             foreach ($paymentBlock->getDettaglioPagamento() ?? [] as $paymentDetail) {
-                if (is_null($paymentDetail->getDataScadenzaPagamento()) && is_null($paymentBlock->getCondizioniPagamento())) {
+                if (!$this->isPaymentTermDetail($paymentDetail)) {
                     continue;
                 }
 
@@ -9416,7 +9420,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
 
         foreach ($this->getFatturaPaRootObject()->getFirstFatturaElettronicaBody()?->getDatiPagamento() ?? [] as $paymentBlock) {
             foreach ($paymentBlock->getDettaglioPagamento() ?? [] as $paymentDetail) {
-                if (is_null($paymentDetail->getDataScadenzaPagamento()) && is_null($paymentBlock->getCondizioniPagamento())) {
+                if (!$this->isPaymentTermDetail($paymentDetail)) {
                     continue;
                 }
 
@@ -9456,7 +9460,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      */
     public function firstDocumentPaymentDiscountTermsInLastPaymentTerm(): bool
     {
-        return false;
+        $paymentDetail = $this->getCurrentPaymentTermDetail();
+        $paymentDiscounts = [];
+
+        if (!is_null($paymentDetail) && (!is_null($paymentDetail->getScontoPagamentoAnticipato()) || !is_null($paymentDetail->getDataLimitePagamentoAnticipato()))) {
+            $paymentDiscounts[] = $paymentDetail;
+        }
+
+        return InvoiceSuitePointerUtils::hasFirst($paymentDiscounts, 'documentpaymenttermpaymentdiscount');
     }
 
     /**
@@ -9466,7 +9477,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      */
     public function nextDocumentPaymentDiscountTermsInLastPaymentTerm(): bool
     {
-        return false;
+        $paymentDetail = $this->getCurrentPaymentTermDetail();
+        $paymentDiscounts = [];
+
+        if (!is_null($paymentDetail) && (!is_null($paymentDetail->getScontoPagamentoAnticipato()) || !is_null($paymentDetail->getDataLimitePagamentoAnticipato()))) {
+            $paymentDiscounts[] = $paymentDetail;
+        }
+
+        return InvoiceSuitePointerUtils::hasNext($paymentDiscounts, 'documentpaymenttermpaymentdiscount');
     }
 
     /**
@@ -9497,6 +9515,13 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
         $newBasePeriod = 0.0;
         $newBasePeriodUnit = '';
 
+        $paymentDetail = $this->getCurrentPaymentTermDetail();
+
+        if (!is_null($paymentDetail)) {
+            $newDiscountAmount = $paymentDetail->getScontoPagamentoAnticipato() ?? 0.0;
+            $newBaseDate = $paymentDetail->getDataLimitePagamentoAnticipato();
+        }
+
         $this->traceMethodExit(__METHOD__);
 
         return $this;
@@ -9509,7 +9534,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      */
     public function firstDocumentPaymentPenaltyTermsInLastPaymentTerm(): bool
     {
-        return false;
+        $paymentDetail = $this->getCurrentPaymentTermDetail();
+        $paymentPenalties = [];
+
+        if (!is_null($paymentDetail) && (!is_null($paymentDetail->getPenalitaPagamentiRitardati()) || !is_null($paymentDetail->getDataDecorrenzaPenale()))) {
+            $paymentPenalties[] = $paymentDetail;
+        }
+
+        return InvoiceSuitePointerUtils::hasFirst($paymentPenalties, 'documentpaymenttermpaymentpenalty');
     }
 
     /**
@@ -9519,7 +9551,14 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      */
     public function nextDocumentPaymentPenaltyTermsInLastPaymentTerm(): bool
     {
-        return false;
+        $paymentDetail = $this->getCurrentPaymentTermDetail();
+        $paymentPenalties = [];
+
+        if (!is_null($paymentDetail) && (!is_null($paymentDetail->getPenalitaPagamentiRitardati()) || !is_null($paymentDetail->getDataDecorrenzaPenale()))) {
+            $paymentPenalties[] = $paymentDetail;
+        }
+
+        return InvoiceSuitePointerUtils::hasNext($paymentPenalties, 'documentpaymenttermpaymentpenalty');
     }
 
     /**
@@ -9549,6 +9588,13 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
         $newBaseDate = null;
         $newBasePeriod = 0.0;
         $newBasePeriodUnit = '';
+
+        $paymentDetail = $this->getCurrentPaymentTermDetail();
+
+        if (!is_null($paymentDetail)) {
+            $newPenaltyAmount = $paymentDetail->getPenalitaPagamentiRitardati() ?? 0.0;
+            $newBaseDate = $paymentDetail->getDataDecorrenzaPenale();
+        }
 
         $this->traceMethodExit(__METHOD__);
 
@@ -9838,13 +9884,6 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
             $newNetAmount += $tax->getImponibileImporto() ?? 0.0;
             $newTaxBasisAmount += $tax->getImponibileImporto() ?? 0.0;
             $newTaxTotalAmount += $tax->getImposta() ?? 0.0;
-        }
-
-        foreach ($paymentDetails as $paymentDetail) {
-            if (!is_null($paymentDetail['detail']->getImportoPagamento())) {
-                $newDueAmount = $paymentDetail['detail']->getImportoPagamento();
-                break;
-            }
         }
 
         $this->traceMethodExit(__METHOD__);
@@ -10795,7 +10834,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
      */
     public function firstDocumentPositionNetPrice(): bool
     {
-        return false;
+        return !is_null($this->resolveCurrentDocumentPosition()?->getPrezzoUnitario());
     }
 
     /**
@@ -10817,7 +10856,7 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
         $position = $this->resolveCurrentDocumentPosition();
 
         $newNetPrice = $position?->getPrezzoUnitario() ?? 0.0;
-        $newNetPriceBasisQuantity = $position?->getQuantita() ?? 1.0;
+        $newNetPriceBasisQuantity = 1.0;
         $newNetPriceBasisQuantityUnit = $position?->getUnitaMisura() ?? '';
 
         $this->traceMethodExit(__METHOD__);
@@ -11974,5 +12013,70 @@ class InvoiceSuiteFatturaPaProviderReader extends InvoiceSuiteAbstractDocumentFo
         );
 
         return $positions[InvoiceSuitePointerUtils::getValue('documentposition')] ?? null;
+    }
+
+    /**
+     * Get the electronic routing information of the buyer in DTO-compatible form.
+     *
+     * @return array<int,array{type:string,uri:string}>
+     */
+    private function getBuyerCommunications(): array
+    {
+        $transmissionData = $this
+            ->getFatturaPaRootObject()
+            ->getFatturaElettronicaHeader()
+            ?->getDatiTrasmissione();
+
+        $certifiedEmailAddress = $transmissionData?->getPECDestinatario();
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($certifiedEmailAddress)) {
+            return [['type' => 'PEC', 'uri' => (string) $certifiedEmailAddress]];
+        }
+
+        $receiverCode = $transmissionData?->getCodiceDestinatario();
+
+        if (!InvoiceSuiteStringUtils::stringIsNullOrEmpty($receiverCode)) {
+            return [['type' => 'CODICE_DESTINATARIO', 'uri' => (string) $receiverCode]];
+        }
+
+        return [];
+    }
+
+    /**
+     * Check whether a payment detail contains explicit payment-term information.
+     *
+     * @param  DettaglioPagamento $paymentDetail
+     * @return bool
+     */
+    private function isPaymentTermDetail(
+        DettaglioPagamento $paymentDetail
+    ): bool {
+        return !is_null($paymentDetail->getDataRiferimentoTerminiPagamento())
+            || !is_null($paymentDetail->getGiorniTerminiPagamento())
+            || !is_null($paymentDetail->getDataScadenzaPagamento())
+            || !is_null($paymentDetail->getScontoPagamentoAnticipato())
+            || !is_null($paymentDetail->getDataLimitePagamentoAnticipato())
+            || !is_null($paymentDetail->getPenalitaPagamentiRitardati())
+            || !is_null($paymentDetail->getDataDecorrenzaPenale());
+    }
+
+    /**
+     * Resolve the payment detail selected by the current payment-term pointer.
+     *
+     * @return null|DettaglioPagamento
+     */
+    private function getCurrentPaymentTermDetail(): ?DettaglioPagamento
+    {
+        $paymentDetails = [];
+
+        foreach ($this->getFatturaPaRootObject()->getFirstFatturaElettronicaBody()?->getDatiPagamento() ?? [] as $paymentBlock) {
+            foreach ($paymentBlock->getDettaglioPagamento() ?? [] as $paymentDetail) {
+                if ($this->isPaymentTermDetail($paymentDetail)) {
+                    $paymentDetails[] = $paymentDetail;
+                }
+            }
+        }
+
+        return $paymentDetails[InvoiceSuitePointerUtils::getValue('documentpaymentterm')] ?? null;
     }
 }

@@ -41,7 +41,7 @@ final class ScontoMaggiorazione
     #[JMS\Expose]
     #[JMS\Groups(['fatturapa'])]
     #[JMS\SerializedName('Importo')]
-    #[JMS\Type('fatturapa_decimal<2>')]
+    #[JMS\Type('fatturapa_decimal<2,8>')]
     #[JMS\XmlElement(cdata: false)]
     private ?float $importo = null;
 

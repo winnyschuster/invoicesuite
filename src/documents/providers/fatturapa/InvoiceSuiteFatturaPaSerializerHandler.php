@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace horstoeko\invoicesuite\documents\providers\fatturapa;
 
+use DateTimeInterface;
 use DOMNode;
 use horstoeko\invoicesuite\utils\InvoiceSuiteArrayUtils;
 use horstoeko\invoicesuite\utils\InvoiceSuiteStringUtils;
@@ -54,6 +55,12 @@ class InvoiceSuiteFatturaPaSerializerHandler implements SubscribingHandlerInterf
                 'type' => 'fatturapa_int',
                 'method' => 'deserializeIntFromXml',
             ],
+            [
+                'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
+                'format' => 'xml',
+                'type' => 'GoetasWebservices\Xsd\XsdToPhp\XMLSchema\Date',
+                'method' => 'serializeDateToXml',
+            ],
         ];
     }
 
@@ -76,9 +83,14 @@ class InvoiceSuiteFatturaPaSerializerHandler implements SubscribingHandlerInterf
 
         [$minScale, $maxScale] = $this->readScaleParams($type);
 
-        $scale = ($minScale === $maxScale) ? $minScale : $minScale;
+        $formatted = InvoiceSuiteStringUtils::numberFormat($data, $maxScale, '.', '');
 
-        $formatted = InvoiceSuiteStringUtils::numberFormat($data, $scale, '.', '');
+        if ($minScale < $maxScale) {
+            [$integerPart, $decimalPart] = InvoiceSuiteStringUtils::explode('.', $formatted, 2);
+            $decimalPart = rtrim($decimalPart, '0');
+            $decimalPart = str_pad($decimalPart, $minScale, '0');
+            $formatted = '' === $decimalPart ? $integerPart : $integerPart . '.' . $decimalPart;
+        }
 
         return $visitor->getDocument()->createTextNode($formatted);
     }
@@ -147,6 +159,24 @@ class InvoiceSuiteFatturaPaSerializerHandler implements SubscribingHandlerInterf
         }
 
         return (int) $s;
+    }
+
+    /**
+     * Serialize an XML Schema date from any DateTimeInterface implementation.
+     *
+     * @param  XmlSerializationVisitor $visitor
+     * @param  DateTimeInterface       $data
+     * @param  array<string,mixed>     $type
+     * @param  Context                 $context
+     * @return DOMNode
+     */
+    public function serializeDateToXml(
+        XmlSerializationVisitor $visitor,
+        DateTimeInterface $data,
+        array $type,
+        Context $context
+    ): DOMNode {
+        return $visitor->getDocument()->createTextNode($data->format('Y-m-d'));
     }
 
     /**

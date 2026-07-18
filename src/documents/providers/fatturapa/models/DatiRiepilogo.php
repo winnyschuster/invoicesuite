@@ -54,7 +54,7 @@ final class DatiRiepilogo
     #[JMS\Expose]
     #[JMS\Groups(['fatturapa'])]
     #[JMS\SerializedName('Arrotondamento')]
-    #[JMS\Type('fatturapa_decimal<2>')]
+    #[JMS\Type('fatturapa_decimal<2,8>')]
     #[JMS\XmlElement(cdata: false)]
     private ?float $arrotondamento = null;
 

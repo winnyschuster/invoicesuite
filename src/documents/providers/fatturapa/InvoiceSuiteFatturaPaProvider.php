@@ -22,6 +22,8 @@ use z4kn4fein\SemVer\Version;
 
 class InvoiceSuiteFatturaPaProvider extends InvoiceSuiteAbstractDocumentFormatProvider
 {
+    private const DOCUMENT_NAMESPACE = 'http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2';
+
     /**
      * Get the unique identificator for this provider
      *
@@ -141,25 +143,20 @@ class InvoiceSuiteFatturaPaProvider extends InvoiceSuiteAbstractDocumentFormatPr
                 return false;
             }
 
-            $contentDomXPath = InvoiceSuiteXmlUtils::createDomXPath($contentDomDocument);
-
             $contentDomDocumentRoot = $contentDomDocument->documentElement;
 
-            if (!$contentDomDocumentRoot instanceof DOMElement) {
+            if (
+                !$contentDomDocumentRoot instanceof DOMElement
+                || 'FatturaElettronica' !== $contentDomDocumentRoot->localName
+                || self::DOCUMENT_NAMESPACE !== $contentDomDocumentRoot->namespaceURI
+                || !in_array($contentDomDocumentRoot->getAttribute('versione'), ['FPA12', 'FPR12'], true)
+            ) {
                 return false;
             }
 
-            $contentDomDocumentRootNs = $contentDomDocumentRoot->namespaceURI ?? '';
-
-            if ('' !== $contentDomDocumentRootNs) {
-                $contentDomXPath->registerNamespace('d', $contentDomDocumentRootNs);
-            }
-
-            $contentDomXPathQuery = ('' !== $contentDomDocumentRootNs)
-                ? '//d:FatturaElettronica/FatturaElettronicaHeader'
-                : '//FatturaElettronica/FatturaElettronicaHeader';
-
-            $contentEntries = $contentDomXPath->query($contentDomXPathQuery);
+            $contentDomXPath = InvoiceSuiteXmlUtils::createDomXPath($contentDomDocument);
+            $contentDomXPath->registerNamespace('fatturapa', self::DOCUMENT_NAMESPACE);
+            $contentEntries = $contentDomXPath->query('/fatturapa:FatturaElettronica/FatturaElettronicaHeader');
 
             if (false === $contentEntries) {
                 return false;

@@ -38,7 +38,19 @@ final class FatturaPaProviderTest extends TestCase
 
         $this->assertFalse($provider->getIsPdfSupportAvailable());
         $this->assertCount(0, $provider->getPdfAllowedAttachmentFilenames());
+        $this->assertSame('', $provider->getPdfDefaultAttachmentFilename());
         $this->assertSame('', $provider->getPdfConstructorClassName());
+    }
+
+    public function testXsdParameters(): void
+    {
+        $provider = new InvoiceSuiteFatturaPaProvider();
+
+        $this->assertTrue($provider->getValidationXsdAvailable());
+        $this->assertSame(
+            realpath(__DIR__ . '/../../../src/documents/providers/fatturapa/xsd/Schema_VFPR12_v1.2.3.xsd'),
+            realpath($provider->getValidationXsdFilename())
+        );
     }
 
     public function testGetSerializerMetadataDirectories(): void
@@ -84,23 +96,33 @@ final class FatturaPaProviderTest extends TestCase
 
         $xml = <<<'XML_WRAP'
         <?xml version="1.0" encoding="UTF-8"?>
-        <FatturaElettronica xmlns="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2 http://www.fatturapa.gov.it/export/fatturazione/sdi/fatturapa/v1.2/Schema_del_file_xml_FatturaPA_versione_1.2.xsd">
+        <p:FatturaElettronica versione="FPR12" xmlns:p="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2">
             <FatturaElettronicaHeader>
             </FatturaElettronicaHeader>
-        </FatturaElettronica>
+        </p:FatturaElettronica>
         XML_WRAP;
 
         $this->assertTrue($provider->getIsSatisfiableBySerializedContent($xml));
 
         $xml = <<<'XML_WRAP'
         <?xml version="1.0" encoding="UTF-8"?>
-        <p:FatturaElettronica versione="FPA12" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:p="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2 http://www.fatturapa.gov.it/export/fatturazione/sdi/fatturapa/v1.2/Schema_del_file_xml_FatturaPA_versione_1.2.xsd">
-            <p:FatturaElettronicaHeader>
-            </p:FatturaElettronicaHeader>
+        <p:FatturaElettronica versione="FPR12" xmlns:p="urn:not-fatturapa">
+            <FatturaElettronicaHeader>
+            </FatturaElettronicaHeader>
         </p:FatturaElettronica>
         XML_WRAP;
 
-        $this->assertTrue($provider->getIsSatisfiableBySerializedContent($xml));
+        $this->assertFalse($provider->getIsSatisfiableBySerializedContent($xml));
+
+        $xml = <<<'XML_WRAP'
+        <?xml version="1.0" encoding="UTF-8"?>
+        <p:FatturaElettronica versione="UNKNOWN" xmlns:p="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2">
+            <FatturaElettronicaHeader>
+            </FatturaElettronicaHeader>
+        </p:FatturaElettronica>
+        XML_WRAP;
+
+        $this->assertFalse($provider->getIsSatisfiableBySerializedContent($xml));
 
         $xml = <<<'XML_WRAP'
         <?xml version="1.0" encoding="UTF-8"?>

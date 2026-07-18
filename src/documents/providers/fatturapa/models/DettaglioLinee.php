@@ -71,7 +71,7 @@ final class DettaglioLinee
     #[JMS\Expose]
     #[JMS\Groups(['fatturapa'])]
     #[JMS\SerializedName('Quantita')]
-    #[JMS\Type('fatturapa_decimal<2>')]
+    #[JMS\Type('fatturapa_decimal<2,8>')]
     #[JMS\XmlElement(cdata: false)]
     private ?float $quantita = null;
 
@@ -115,7 +115,7 @@ final class DettaglioLinee
     #[JMS\Expose]
     #[JMS\Groups(['fatturapa'])]
     #[JMS\SerializedName('PrezzoUnitario')]
-    #[JMS\Type('fatturapa_decimal<2>')]
+    #[JMS\Type('fatturapa_decimal<2,8>')]
     #[JMS\XmlElement(cdata: false)]
     private ?float $prezzoUnitario = null;
 
@@ -140,7 +140,7 @@ final class DettaglioLinee
     #[JMS\Expose]
     #[JMS\Groups(['fatturapa'])]
     #[JMS\SerializedName('PrezzoTotale')]
-    #[JMS\Type('fatturapa_decimal<2>')]
+    #[JMS\Type('fatturapa_decimal<2,8>')]
     #[JMS\XmlElement(cdata: false)]
     private ?float $prezzoTotale = null;
 
