@@ -1,84 +1,65 @@
-## Pull request requirements
+# Pull request requirements
 
-- Open or reference an accepted issue before starting larger changes.
+Please read and confirm the following requirements before submitting this pull request.
+
+Pull requests that do not contain the requested information, contain unchecked mandatory confirmations, or appear to be unreviewed bulk-generated submissions may be closed without further review.
+
 - Submit only one logical change per pull request.
-- Explain why the change is necessary.
-- Add or update meaningful tests.
-- Confirm that you have personally reviewed and tested every submitted change.
-- Unrequested bulk refactorings, formatting changes, generated documentation
-  changes, and repository-wide mechanical edits may be closed without review.
-- The submitter remains fully responsible for generated or automated content.
-- Automated or AI-supported changes are only permitted if the submitter has checked, 
-  tested and comprehensibly justified each change themselves.
+- Explain the problem being solved and why the change is necessary.
+- Reference an existing issue for larger changes, new features, broad refactorings, or other changes that have not previously been discussed with the maintainers.
+- Add or update meaningful tests where applicable.
+- Personally review, understand, and test every submitted change.
+- Do not submit unrelated formatting changes, generated documentation changes, repository-wide mechanical edits, or unsolicited bulk refactorings.
+- You remain fully responsible for all submitted content, including automated or AI-assisted changes.
+- Automated or AI-assisted changes are accepted only when every change has been personally reviewed, understood, tested, and clearly justified by the submitter.
 
 # Description
 
-Please answer all questions in this template as completely as possible. Pull requests with missing or incomplete information will not be reviewed or merged.
+Describe the problem and the proposed solution.
 
-Please include a summary of the change and which issue is fixed. Also include the relevant motivation and context. List any dependencies that are required for this change.
+Explain why this change is necessary and provide any relevant context. List any new dependencies introduced by this change.
 
-Fixes # (issue)
+Related issue: #
 
-## Type of change
+# Type of change
 
-Please delete options that are not relevant.
+Select all applicable options.
 
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] Documentation-only change
-- [ ] This change requires a documentation update
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Refactoring without functional changes
+- [ ] Performance improvement
+- [ ] Documentation change
+- [ ] Breaking change
+- [ ] Other
 
-## Affected area
+# Testing
 
-If applicable, name the affected invoice format, profile, provider or workflow, for example XRechnung, ZUGFeRD, Factur-X, a reader, a builder, validation, PDF handling, visualization or console commands.
+Describe exactly how you tested the change.
 
-## How has this been tested?
-
-Please describe the tests that you ran to verify your changes. Provide instructions so the changes can be reproduced. Also list any relevant details about your test configuration.
-
-- [ ] Test A
-- [ ] Test B
+Include the commands you ran, the relevant test cases, and any instructions required to reproduce the results.
 
 **Test configuration**
 
-- OS:
-- OS version:
+- Operating system:
+- Operating system version:
 - PHP version:
+- Relevant dependency versions:
 
-## Checklist
+# Mandatory checklist
 
-Pull requests are only reviewed and merged when all relevant checks are in a clean state. This includes coding style, PHPStan, tests, and any other checks required by the project.
+- [ ] This pull request contains one logical change.
+- [ ] I have explained why this change is necessary.
+- [ ] I have personally reviewed every changed file.
+- [ ] I understand the submitted code and can explain how it works.
+- [ ] I have tested the change locally.
+- [ ] Existing tests pass locally.
+- [ ] My changes introduce no new warnings or static-analysis errors.
+- [ ] I have added or updated meaningful tests where applicable.
+- [ ] I have updated the documentation where necessary.
+- [ ] I have not included unrelated formatting, generated, or mechanical changes.
+- [ ] I accept full responsibility for automated or AI-assisted content contained in this pull request.
 
-The main quality check can be run with:
+# Additional information
 
-```bash
-composer checkstyle:run
-```
-
-This runs the lint check, PHP-CS-Fixer in dry-run mode and PHPStan.
-
-Possible coding style issues can be fixed by running:
-
-```bash
-composer phpcsfixer:run
-```
-
-Unit tests can be run with:
-
-```bash
-composer tests
-```
-
-- [ ] I ran `composer checkstyle:run` before committing and the quality check passed
-- [ ] I ran `composer phpcsfixer:run` if possible coding style issues had to be fixed
-- [ ] I ran the relevant unit tests locally
-- [ ] My code follows the style guidelines of this project
-- [ ] I have performed a self-review of my own code
-- [ ] I have commented my code where this is helpful, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation
-- [ ] My changes generate no new warnings
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] New and existing unit tests pass locally with my changes
-- [ ] Any dependent changes have been merged and published in downstream modules
-- [ ] I answered all questions in this template completely
+Add screenshots, logs, benchmark results, migration notes, compatibility considerations, or other information that may help reviewers evaluate the change.
