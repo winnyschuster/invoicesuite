@@ -52,6 +52,7 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+          persist-credentials: false
 
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
