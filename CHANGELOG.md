@@ -1,3 +1,14 @@
+## v0.0.16
+
+``Previous version v0.0.15``
+
+| Type | Hash    | Date    | Author  | Subject  | Issue(s)
+| :--- | :------ | :------ | :------ | :------- | :-----------: 
+| :bug:  | [c572e6b5](https://github.com/horstoeko/invoicesuite/commit/c572e6b5) | 2026-07-22 05:23:22 CEST | HorstOeko | [FIX] Better autodetection of providers (Beta) | 
+| :bug:  | [915b2e26](https://github.com/horstoeko/invoicesuite/commit/915b2e26) | 2026-07-22 04:54:47 CEST | HorstOeko | [FIX] Better autodetection of providers (Beta) | 
+
+:exclamation: _There is one internal commit_
+
 ## v0.0.15
 
 :exclamation: _There are 3 internal commit(s)_
