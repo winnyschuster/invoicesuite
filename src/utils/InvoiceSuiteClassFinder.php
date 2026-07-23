@@ -91,6 +91,14 @@ class InvoiceSuiteClassFinder
             $vendorDirectory = realpath($vendorDirectory);
 
             foreach ($loader->getPrefixesPsr4() as $namespacePrefix => $sourceDirectories) {
+                if (InvoiceSuiteStringUtils::startsWith($namespacePrefix, 'horstoeko\invoicesuite')) {
+                    continue;
+                }
+
+                if (InvoiceSuiteStringUtils::startsWith($namespacePrefix, 'horstoeko\zugferd')) {
+                    continue;
+                }
+
                 foreach ($sourceDirectories as $sourceDirectory) {
                     $sourceDirectory = realpath($sourceDirectory);
 
