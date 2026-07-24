@@ -1,3 +1,15 @@
+## v0.0.17
+
+``Previous version v0.0.16``
+
+| Type | Hash    | Date    | Author  | Subject  | Issue(s)
+| :--- | :------ | :------ | :------ | :------- | :-----------: 
+| :bug:  | [e3da4ede](https://github.com/horstoeko/invoicesuite/commit/e3da4ede) | 2026-07-23 08:29:35 CEST | HorstOeko | [FIX] Temporary removed PSR-4 Provider Detection | 
+| :new:  | [a3712996](https://github.com/horstoeko/invoicesuite/commit/a3712996) | 2026-07-23 05:19:21 CEST | HorstOeko | [ENH] PSR-4 Detection performance improved | 
+| :new:  | [845672ac](https://github.com/horstoeko/invoicesuite/commit/845672ac) | 2026-07-22 18:36:18 CEST | HorstOeko | [ENH] Added PSR-4-Provider-Detection (Beta) | 
+
+:exclamation: _There are 2 internal commit(s)_
+
 ## v0.0.16
 
 ``Previous version v0.0.15``
